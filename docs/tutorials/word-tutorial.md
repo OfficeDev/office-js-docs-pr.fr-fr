@@ -4,23 +4,24 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: f7397ef74890fb1a2ab89a044e919c863655999f
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741133"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131830"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
 Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui:
 
 > [!div class="checklist"]
-> * Insère une plage de texte
-> * Formats de texte
-> * Remplacer du texte et insérer du texte à divers emplacements
-> * Insère des images, du code HTML et des tableaux
-> * Crée et met à jour des contrôles de contenu 
+>
+> - Insère une plage de texte
+> - Formats de texte
+> - Remplacer du texte et insérer du texte à divers emplacements
+> - Insère des images, du code HTML et des tableaux
+> - Crée et met à jour des contrôles de contenu
 
 > [!TIP]
 > Si vous avez déjà exécuté le démarrage rapide [Créer votre premier complément du volet des tâches de Word](../quickstarts/word-quickstart.md) et que vous souhaitez utiliser ce projet comme point de départ pour ce didacticiel, accédez directement à la section [Insérer une plage de texte](#insert-a-range-of-text) pour commencer ce didacticiel.
@@ -38,9 +39,9 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-word.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-word.png)
 
-Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -91,7 +92,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
    - La méthode `context.sync` envoie toutes les commandes en file d’attente vers Word pour exécution.
 
-   - L’élément `Word.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre. 
+   - L’élément `Word.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre.
 
     ```js
     function insertParagraph() {
@@ -154,7 +155,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/word-quickstart-addin-2b.png)
+    ![Capture d’écran de Word avec le bouton Afficher le volet Office en surbrillance](../images/word-quickstart-addin-2b.png)
 
 3. Dans le volet des tâches, cliquez sur le bouton **Insérer un paragraphe**.
 
@@ -162,7 +163,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 5. Cliquez de nouveau sur le bouton **Insérer un paragraphe**. Remarque : le nouveau paragraphe apparaît au-dessus du précédent, car la méthode `insertParagraph` effectue l’insertion au début du corps du document.
 
-    ![Didacticiel Word- Insérer un paragraphe](../images/word-tutorial-insert-paragraph-2.png)
+    ![Capture d’écran montrant le bouton Insérer un paragraphe dans le complément](../images/word-tutorial-insert-paragraph-2.png)
 
 ## <a name="format-text"></a>Mettre en forme du texte
 
@@ -191,7 +192,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     ```js
     function applyStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to style text.
 
             return context.sync();
@@ -203,20 +204,20 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
             }
         });
     }
-    ``` 
+    ```
 
 6. À l’intérieur de la fonction `applyStyle()`, remplacez `TODO1` par le code suivant. Le code applique un style à un paragraphe, mais les styles peuvent également être appliqués aux plages de texte.
 
     ```js
     var firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
-    ``` 
+    ```
 
 ### <a name="apply-a-custom-style-to-text"></a>Appliquer un style personnalisé au texte
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `apply-style`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `apply-style`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
@@ -235,7 +236,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     ```js
     function applyCustomStyle() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply the custom style.
 
             return context.sync();
@@ -247,14 +248,14 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
             }
         });
     }
-    ``` 
+    ```
 
 6. À l’intérieur de la fonction `applyCustomStyle()`, remplacez `TODO1` par le code suivant. Le code applique un style personnalisé qui n’existe pas encore. Vous allez créer un style nommé **MyCustomStyle** lors de l’étape [Test du complément](#test-the-add-in-1).
 
     ```js
     var lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
-    ``` 
+    ```
 
 7. Vérifiez que vous avez enregistré toutes les modifications que vous avez apportées au projet.
 
@@ -262,7 +263,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `apply-custom-style`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `apply-custom-style`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
@@ -281,7 +282,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     ```js
     function changeFont() {
         Word.run(function (context) {
-            
+
             // TODO1: Queue commands to apply a different font.
 
             return context.sync();
@@ -293,7 +294,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
             }
         });
     }
-    ``` 
+    ```
 
 6. À l’intérieur de la fonction `changeFont()`, remplacez `TODO1` par le code suivant. Le code obtient une référence au deuxième paragraphe en utilisant la méthode `ParagraphCollection.getFirst` chaînée à la méthode `Paragraph.getNext`.
 
@@ -304,7 +305,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
             bold: true,
             size: 18
         });
-    ``` 
+    ```
 
 7. Vérifiez que vous avez enregistré toutes les modifications que vous avez apportées au projet.
 
@@ -324,7 +325,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 7. Sélectionnez le bouton **Modifier la police**. La police Courier New, 18 pt, en gras, est appliquée au deuxième paragraphe.
 
-    ![Didacticiel Word- Appliquer des styles et une police](../images/word-tutorial-apply-styles-and-font-2.png)
+    ![Capture d’écran montrant les résultats de l’application des styles et des polices définis pour les boutons complément Appliquer un style, Appliquer un style personnalisé et Modifier la police](../images/word-tutorial-apply-styles-and-font-2.png)
 
 ## <a name="replace-text-and-insert-text"></a>Remplacer du texte et insérer du texte
 
@@ -334,7 +335,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `change-font`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `change-font`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
@@ -347,6 +348,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
     ```
+
 5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
@@ -370,7 +372,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
             }
         });
     }
-    ``` 
+    ```
 
 6. À l’intérieur de la fonction `insertTextIntoRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
@@ -378,7 +380,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
    - Le premier paramètre de la méthode `Range.insertText` correspond à la chaîne à insérer dans l’objet `Range`.
 
-   - Le deuxième paramètre spécifie l’emplacement où le texte supplémentaire doit être inséré dans la plage. Outre « Fin », les autres options possibles sont : « Début », « Avant », « Après » et « Remplacer ». 
+   - Le deuxième paramètre spécifie l’emplacement où le texte supplémentaire doit être inséré dans la plage. Outre « Fin », les autres options possibles sont : « Début », « Avant », « Après » et « Remplacer ».
 
    - La différence entre « Fin » et « Après » est que « Fin » insère le nouveau texte à la fin de la plage existante, tandis que l’option « Après » crée une plage avec la chaîne et insère la nouvelle plage après la plage existante. De même, « Début » insère le texte au début de la plage existante, tandis que l’option « Avant » insère une nouvelle plage. L’option « Remplacer » remplace le texte de la plage existante par la chaîne dans le premier paramètre.
 
@@ -465,7 +467,7 @@ function insertTextIntoRange() {
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `insert-text-into-range`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `insert-text-into-range`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
@@ -529,7 +531,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre *_pas_*_ dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
+8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre *_pas_* _ dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -545,7 +547,7 @@ function insertTextIntoRange() {
 
 1. Ouvrez le fichier _*./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `insert-text-outside-range`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `insert-text-outside-range`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
@@ -606,9 +608,9 @@ function insertTextIntoRange() {
 
 8. Dans le document, sélectionnez l’expression « several » (plusieurs). *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
 
-9. Sélectionnez le bouton permettant de **modifier la condition de quantité** (Change Quantity Term). Notez que « many » (beaucoup) remplace le texte sélectionné.
+9. Sélectionnez le bouton **Modifier la condition de quantité**. Notez que « beaucoup » remplace le texte sélectionné.
 
-    ![Didacticiel Word- Ajout et remplacement de texte](../images/word-tutorial-text-replace-2.png)
+    ![Capture d’écran montrant le résultat de la sélection des boutons de complément Insérer une abréviation, Ajouter des informations sur la version et Modifier la condition de quantité](../images/word-tutorial-text-replace-2.png)
 
 ## <a name="insert-images-html-and-tables"></a>Insérer des images, du code HTML et des tableaux
 
@@ -616,7 +618,7 @@ Dans cette étape du didacticiel, vous allez découvrir comment insérer des ima
 
 ### <a name="define-an-image"></a>Définir une image
 
-Procédez comme suit pour définir l’image que vous allez insérer dans le document dans la partie suivante de ce didacticiel. 
+Procédez comme suit pour définir l’image que vous allez insérer dans le document dans la partie suivante de ce didacticiel.
 
 1. À la racine du projet, créez un fichier nommé **base64Image.js**.
 
@@ -631,7 +633,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `replace-text`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `replace-text`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
@@ -680,7 +682,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `insert-image`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `insert-image`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
@@ -693,6 +695,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
     ```
+
 5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
@@ -727,7 +730,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `insert-html`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `insert-html`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
@@ -802,9 +805,9 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 5. Sélectionnez le bouton **Insérer du code HTML**, puis notez que deux paragraphes sont insérés à la fin du document, et que le premier est affiché dans la police Verdana.
 
-6. Sélectionnez le bouton **Insérer un tableau** et notez qu’un tableau est inséré après le deuxième paragraphe.
+6. Sélectionnez le bouton **Insérer un tableau** et remarquez qu’un tableau est inséré après le deuxième paragraphe.
 
-    ![Didacticiel Word- Insérer une image, du code HTML et un tableau](../images/word-tutorial-insert-image-html-table-2.png)
+    ![Capture d’écran illustrant le résultat de la sélection des boutons de complément Insérer une image, Insérer du code HTML et Insérer un tableau](../images/word-tutorial-insert-image-html-table-2.png)
 
 ## <a name="create-and-update-content-controls"></a>Créer et mettre à jour des contrôles de contenu
 
@@ -819,7 +822,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `insert-table`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `insert-table`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
@@ -832,6 +835,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
     ```
+
 5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
@@ -876,7 +880,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `create-content-control`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `create-content-control`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
@@ -931,9 +935,9 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 4. Dans le document, sélectionnez le texte « Office 365 », puis sélectionnez le bouton **Créer un contrôle de contenu**. L’expression est intégrée dans des balises nommées « Service name » (Nom de service).
 
-7. Sélectionnez le bouton **Renommer le service** et notez que le texte du contrôle de contenu devient « Fabrikam Online Productivity Suite ».
+5. Sélectionnez le bouton **Renommer le service** et remarquez que le texte du contrôle de contenu devient « Suite de productivité en ligne Fabrikam ».
 
-    ![Didacticiel Word-Créer un contrôle de contenu et modifier son texte](../images/word-tutorial-content-control-2.png)
+    ![Capture d’écran illustrant le résultat de la sélection des boutons de complément Créer un contrôle de contenu et Renommer le service](../images/word-tutorial-content-control-2.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -944,6 +948,5 @@ Dans ce didacticiel, vous avez créé un Word tâche volet complément qui insè
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Développement de compléments Office](../develop/develop-overview.md)
-
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)

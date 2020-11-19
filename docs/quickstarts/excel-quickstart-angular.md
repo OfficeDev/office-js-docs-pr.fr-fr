@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide d’Angular
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et d’Angular pour Office.
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 602b17dae29dfc43ab6b37648c3ad2f7fcfe86af
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5898d9bd3072e829c35afac90348cb844f96011c
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741182"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132318"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-angular"></a>Créer un complément de volet de tâches Excel à l’aide d’Angular
 
@@ -29,9 +29,9 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-![Générateur Yeoman](../images/yo-office-excel-angular-2.png)
+![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office, avec l’option type de projet réglée sur l’infrastructure Angular](../images/yo-office-excel-angular-2.png)
 
-Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -56,13 +56,13 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 3. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-3b.png)
+    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/excel-quickstart-addin-3b.png)
 
 4. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
+5. En bas du volet Office, cliquez sur le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
 
-    ![Complément Excel](../images/excel-quickstart-addin-3c.png)
+    ![Capture d’écran d’Excel, avec le volet Office du complément ouvert et le bouton Exécuter mis en surbrillance dans ce volet](../images/excel-quickstart-addin-3c.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 09/22/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: f4a3827b630ccee7cd8cef6222bfe6bac82f8ba2
-ms.sourcegitcommit: fd110305c2be8660ab8a47c1da3e3969bd1ede86
+ms.openlocfilehash: c9db8d0d69829a474867e210ea491b1872b8c100
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "48214609"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132269"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -48,8 +48,8 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
     - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yo-office-outlook.png)
-    
+    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-outlook.png)
+
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -62,7 +62,7 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
 ### <a name="explore-the-project"></a>Explorer le projet
 
-Le projet de complément que vous avez créé à l’aide du générateur Yeoman contient un exemple de code pour un complément de volet de tâches très simple. 
+Le projet de complément que vous avez créé à l’aide du générateur Yeoman contient un exemple de code pour un complément de volet de tâches très simple.
 
 - Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
 - Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
@@ -110,14 +110,14 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 1. Sélectionnez l’onglet **Accueil** (ou l’onglet **Message** si vous avez ouvert le message dans une nouvelle fenêtre), puis sélectionnez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook avec le bouton du complément mis en surbrillance](../images/quick-start-button-1.png)
+    ![Capture d’écran illustrant la fenêtre d’un message dans Outlook avec le bouton du ruban du complément mis en évidence](../images/quick-start-button-1.png)
 
     > [!NOTE]
-    > Si le message d’erreur « Désolé... nous ne pouvons pas ouvrir ce complément à partir de localhost » s’affiche dans le volet Office, suivez les étapes décrites dans l’[article résolution des problèmes](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+    > Si le message d’erreur « Désolé... nous ne pouvons pas ouvrir ce complément à partir de localhost » s’affiche dans le volet Office, suivez les étapes décrites dans l’article [Résolution des problèmes](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
-1. Faites défiler vers le bas du volet Office et sélectionnez le lien **Exécuter** pour écrire l’objet du message dans le volet Office.
+1. Faites défiler vers le bas le volet Office et sélectionnez le lien **Exécuter** pour écrire l’objet du message dans le volet Office.
 
-    ![Capture d’écran du volet Office du complément avec le lien d’exécution mis en évidence](../images/quick-start-task-pane-2.png)
+    ![Capture d’écran illustrant le volet Office du complément avec le lien d’exécution mis en évidence](../images/quick-start-task-pane-2.png)
 
     ![Capture d’écran du volet Office du complément, affichant le sujet du message](../images/quick-start-task-pane-3.png)
 
@@ -267,7 +267,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution q
 
 1. À l’aide de Visual Studio, testez le complément Outlook que vous venez de créer en appuyant sur F5 ou en sélectionnant le bouton **Démarrer**. Le complément est hébergé localement sur IIS.
 
-1. Dans la boîte de dialogue**Se connecter à un compte de messagerie Exchange**, entrez l’adresse de messagerie et mot de passe pour votre [compte Microsoft](https://account.microsoft.com/account), puis sélectionnez**Se connecter**. Lorsque la page de connexion Outlook.com s’ouvre dans un navigateur, connectez-vous à votre compte de courrier avec les mêmes informations d’identification que vous avez entrées précédemment.
+1. Dans la boîte de dialogue **Se connecter à un compte de messagerie Exchange**, entrez l’adresse de messagerie et mot de passe pour votre [compte Microsoft](https://account.microsoft.com/account), puis sélectionnez **Se connecter**. Lorsque la page de connexion Outlook.com s’ouvre dans un navigateur, connectez-vous à votre compte de courrier avec les mêmes informations d’identification que vous avez entrées précédemment.
 
     > [!NOTE]
     > Si la boîte de dialogue **Se connecter au compte de messagerie Exchange** vous invite à vous connecter à plusieurs reprises, l’authentification de base est peut-être désactivée pour les comptes sur votre client Microsoft 365. Pour tester ce complément, connectez-vous à l’aide d’un [compte Microsoft](https://account.microsoft.com/account) à la place.
