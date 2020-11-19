@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 10/02/2020
+ms.date: 11/12/2020
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 78a3d2c8d3d44ceb98b0eb0964ea487bcb019aec
-ms.sourcegitcommit: d7fd52260eb6971ab82009c835b5a752dc696af4
+ms.openlocfilehash: 8c962fb5772ed906fe6096a7e039d0be31a26c77
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "48370534"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49132381"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -18,11 +18,12 @@ Ce didacticiel vous apprend à créer un complément Outlook qui peut être util
 Dans ce didacticiel, vous allez :
 
 > [!div class="checklist"]
-> * Créer un projet de complément Outlook
-> * Définir des boutons qui s’afficheront dans la fenêtre composer un message
-> * Implémenter une expérience de première exécution qui collecte des informations de l’utilisateur et extrait les données à partir d’un service externe
-> * Implémenter un bouton de l’interface utilisateur qui appelle une fonction
-> * Implémenter un volet des tâches qui insère du contenu dans le corps d’un message
+>
+> - Créer un projet de complément Outlook
+> - Définir des boutons qui s’afficheront dans la fenêtre composer un message
+> - Implémenter une expérience de première exécution qui collecte des informations de l’utilisateur et extrait les données à partir d’un service externe
+> - Implémenter un bouton de l’interface utilisateur qui appelle une fonction
+> - Implémenter un volet des tâches qui insère du contenu dans le corps d’un message
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -43,15 +44,15 @@ Dans ce didacticiel, vous allez :
 
 ## <a name="setup"></a>Configuration
 
-Le complément que vous allez créer dans ce didacticiel lit les[gists](https://gist.github.com) à partir du compte utilisateur GitHub et ajoute le gist sélectionné dans le corps d’un message. Procédez comme suit pour créer deux nouveaux gists que vous pouvez utiliser pour tester le complément que vous allez créer.
+Le complément que vous allez créer dans le cadre de ce didacticiel lira les[gists](https://gist.github.com) à partir du compte GitHub de l’utilisateur et ajoutera le gist sélectionné au corps d’un message. Procédez comme suit pour créer deux nouveaux gists que vous pouvez utiliser pour tester le complément que vous allez créer.
 
 1. [Connectez-vous à GitHub](https://github.com/login).
 
 1. [Créer une nouveau gist](https://gist.github.com).
 
-    - Dans la zone**Description gist...**, entrez **Hello World Markdown**.
+    - Dans la zone **Description gist...**, entrez **Hello World Markdown**.
 
-    - Dans la zone**Nom de fichier incluant l’extension... **, entrez **test.md**.
+    - Dans la zone **Nom de fichier incluant l’extension...**, entrez **test.md**.
 
     - Ajouter la démarque suivante à la zone de texte multiligne :
 
@@ -69,13 +70,13 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
           ```
         ```
 
-    - Sélectionnez le bouton**créer un gist public**.
+    - Sélectionnez le bouton **créer un gist public**.
 
 1. [Créer un nouveau gist](https://gist.github.com).
 
-    - Dans la zone**Description gist...**, entrez **Hello World Html**.
+    - Dans la zone **Description gist...**, entrez **Hello World Html**.
 
-    - Dans la zone**Nom de fichier incluant l’extension...**, entrez **test.html**.
+    - Dans la zone **Nom de fichier incluant l’extension...**, entrez **test.html**.
 
     - Ajouter la démarque suivante à la zone de texte multiligne :
 
@@ -95,7 +96,7 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
         </html>
         ```
 
-    - Sélectionnez le bouton**créer un gist public**.
+    - Sélectionnez le bouton **créer un gist public**.
 
 ## <a name="create-an-outlook-add-in-project"></a>Créer un projet de complément Outlook
 
@@ -109,8 +110,8 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
     - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
-    ![Capture d’écran des invites et des réponses relatives au générateur Yeoman](../images/yeoman-prompts-2.png)
-    
+    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yeoman-prompts-2.png)
+
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
@@ -135,7 +136,7 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-Le manifeste d’un complément contrôle la manière dont il apparaît dans Outlook. Il définit la façon dont le complément est affiché dans la liste des compléments, les boutons qui apparaissent sur le ruban, et il configure les URL pour les fichiers HTML et JavaScript utilisés par le complément.
+Le manifeste d’un complément contrôle la manière dont il apparaît dans Outlook. Il définit la façon dont le complément est affiché dans la liste des compléments, les boutons qui apparaissent sur le ruban, ainsi que les URL des fichiers HTML et JavaScript utilisés par le complément.
 
 #### <a name="specify-basic-information"></a>Spécifiez les informations de base
 
@@ -146,6 +147,7 @@ Apportez les mises à jour suivantes dans le fichier **manifest.xml** pour spéc
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
+
 1. Recherchez l’`Description` élément, remplacez la valeur par défaut avec une description du complément et enregistrez le fichier.
 
     ```xml
@@ -157,9 +159,9 @@ Apportez les mises à jour suivantes dans le fichier **manifest.xml** pour spéc
 Avant d’aller plus loin, nous allons tester le complément base créé par le générateur pour confirmer que le projet est correctement configuré.
 
 > [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
+> Les compléments Office doivent utiliser HTTPs, et non HTTP, même en cas de développement. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez l’invite pour installer le certificat fourni par le générateur Yeoman. Il se peut que vous deviez également exécuter votre invite de commandes ou votre terminal en tant qu’administrateur pour que les modifications soient apportées.
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre (s’il n’est pas déjà en cours d’exécution).
 
     ```command&nbsp;line
     npm run dev-server
@@ -167,25 +169,25 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
 
 1. Suivez les instructions disponibles dans [Chargement indépendant de compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le fichier **manifest.xml** situé dans le répertoire racine du projet.
 
-1. Dans Outlook, ouvrez un message existant et sélectionnez le bouton **Afficher le volet Office**. Si tout est configuré correctement, le volet des tâches va s’ouvrir et afficher la page d’accueil du complément.
+1. Dans Outlook, ouvrez un message existant, puis sélectionnez le bouton **Afficher le volet Office**. Si tout est correctement configuré, le volet Office s’ouvre et affiche la page d’accueil du complément.
 
-    ![Capture d’écran du bouton et du volet des tâches ajoutés par l’exemple](../images/button-and-pane.png)
+    ![Capture d’écran du bouton Afficher le volet Office et du volet Git the gist ajouté par l’échantillon](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>Définir des boutons
 
-À présent que vous avez vérifié que le complément base fonctionne, vous pouvez le personnaliser pour ajouter davantage de fonctionnalités. Par défaut, le manifeste définit uniquement les boutons de la fenêtre de lecture de message. Nous allons mettre à jour le manifeste pour supprimer les boutons de la fenêtre de lecture de message et définir deux nouveaux boutons pour la fenêtre composer un message :
+Maintenant que vous avez vérifié que le complément de base fonctionne, vous pouvez le personnaliser pour ajouter des fonctionnalités supplémentaires. Par défaut, le manifeste définit uniquement les boutons de la fenêtre Lire le message. Mettons à jour le fichier manifest pour supprimer les boutons de la fenêtre Lire le message et définir deux nouveaux boutons pour la fenêtre Composer un message :
 
-- **Insérer un gist**: bouton qui ouvre un le volet des tâches
+- **Insérer un gist** : bouton qui ouvre un le volet des tâches
 
-- **Insérer gist par défaut**: bouton qui appelle une fonction
+- **Insérer gist par défaut** : bouton qui appelle une fonction
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>Supprimer le point d’extension MessageReadCommandSurface
 
-Ouvrir le fichier **manifest.xml** et rechercher l’`ExtensionPoint` élément avec un type `MessageReadCommandSurface`. Supprimer cet `ExtensionPoint` élément (y compris sa balise de fermeture) pour supprimer les boutons de la fenêtre de lecture de message.
+Ouvrez le fichier **manifest.xml** et recherchez l’élément `ExtensionPoint` avec le type `MessageReadCommandSurface`. Supprimez cet élément `ExtensionPoint` (y compris sa balise de fermeture) pour supprimer les boutons de la fenêtre Lire le message.
 
-### <a name="add-the-messagecomposecommandsurface-extension-point"></a>Supprimer le point d’extension MessageComposeCommandSurface
+### <a name="add-the-messagecomposecommandsurface-extension-point"></a>Ajouter le point d’extension MessageComposeCommandSurface
 
-Recherchez la ligne dans le manifeste qui lit `</DesktopFormFactor>`. Situé immédiatement avant cette ligne, insérez le balisage XML suivant. Notez les points suivants concernant ce balisage :
+Recherchez la ligne dans le manifeste `</DesktopFormFactor>`. Juste avant cette ligne, insérez le balisage XML suivant. Notez ce qui suit :
 
 - L’élément `ExtensionPoint` avec `xsi:type="MessageComposeCommandSurface"` indique que vous définissez des boutons à ajouter à la fenêtre de composition d’un message.
 
@@ -240,7 +242,7 @@ Recherchez la ligne dans le manifeste qui lit `</DesktopFormFactor>`. Situé imm
 
 ### <a name="update-resources-in-the-manifest"></a>Ressources de mise à jour dans le fichier manifeste
 
-Le code précédent fait référence à des étiquettes, des info-bulles et des URL que vous devez définir avant que le manifeste ne soit valide. Vous devez spécifier ces informations dans la section `Resources` du manifeste.
+Le code précédent fait référence aux étiquettes, info-bulles et URL que vous devez définir pour que le manifeste soit valide. Vous spécifierez ces informations dans la section `Resources` du manifeste.
 
 1. Recherchez l’élément `Resources` dans le fichier manifeste, puis supprimez entièrement l’élément (balise de fermeture comprise).
 
@@ -275,13 +277,11 @@ Le code précédent fait référence à des étiquettes, des info-bulles et des 
 
 ### <a name="reinstall-the-add-in"></a>Réinstallez le complément.
 
-Étant donné que vous avez installé le complément à partir d’un fichier, vous devez le réinstaller afin que les modifications soient prises en compte.
+Étant donné que vous avez précédemment installé le complément à partir d’un fichier, vous devez le réinstaller afin que les modifications soient prises en compte.
 
-1. Suivez les instructions de [Charger les compléments Outlook pour les tests](../outlook/sideload-outlook-add-ins-for-testing.md) pour localiser la section **Compléments personnalisés** en bas de la boîte de dialogue**Mes compléments** .
+1. Suivez les instructions pour supprimer **Git the gist** des [compléments sideloaded](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
-1. Cliquez sur le bouton **... ** en regard de l’entrée **Git the Gist**, puis sélectionnez **Supprimer**.
-
-1. Fermer la fenêtre**Mes compléments**.
+1. Fermer la fenêtre **Mes compléments**.
 
 1. Le bouton personnalisé doit disparaître du ruban temporairement.
 
@@ -289,9 +289,9 @@ Le code précédent fait référence à des étiquettes, des info-bulles et des 
 
 Une fois le complément réinstallé, vous pouvez vérifier qu’il a été correctement installé en consultant les commandes **Insérer gist** et **Insérer gist par défaut** dans le fenêtre de composition du message. Notez que rien ne se produit si vous sélectionnez un des ces éléments, car vous n’avez pas encore terminé de générer ce complément.
 
-- Si vous exécutez ce complément dans Outlook 2016 ou versions ultérieures sur Windows, vous devriez voir deux nouveaux boutons dans le ruban de la fenêtre de composition d’un message : **Insérer gist** et **Insérer gist par défaut**.
+- Si vous exécutez ce complément dans Outlook 2016 ou une version ultérieures sur Windows, vous devriez voir deux nouveaux boutons dans le ruban de la fenêtre de composition d’un message : **Insérer gist** et **Insérer gist par défaut**.
 
-    ![Capture d’écran du ruban dans Outlook sur Windows avec boutons du complément mis en évidence](../images/add-in-buttons-in-windows.png)
+    ![Capture d’écran du menu de dépassement de ruban dans Outlook sur Windows avec les boutons du complément mis en évidence](../images/add-in-buttons-in-windows.png)
 
 - Si vous exécutez ce complément dans Outlook sur le web, vous devriez voir apparaître un nouveau bouton en bas de la fenêtre de composition d’un message. Sélectionnez ce bouton pour afficher les options **Insérer gist** et **Insérer gist par défaut**.
 
@@ -644,7 +644,7 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
 
 ### <a name="fetch-data-from-github"></a>Récupérer des données à partir de GitHub
 
-Le fichier**dialog.js** que vous venez de créer spécifie que le complément doit charger les gists lorsque l’`change` événement se déclenche pour le champ nom d’utilisateur GitHub. Pour récupérer les gists de l’utilisateur à partir de GitHub, vous utiliserez le [API GitHub Gists](https://developer.github.com/v3/gists/).
+Le fichier **dialog.js** que vous venez de créer spécifie que le complément doit charger les gists lorsque l’`change` événement se déclenche pour le champ nom d’utilisateur GitHub. Pour récupérer les gists de l’utilisateur à partir de GitHub, vous utiliserez le [API GitHub Gists](https://developer.github.com/v3/gists/).
 
 Dans le dossier **./src**, créez un nouveau sous-dossier nommé **helpers**. Dans le dossier **./src/helpers**, créez un fichier nommé **gist-api.js** et ajoutez le code suivant pour récupérer les gists de l’utilisateur à partir de GitHub et créer la liste des gists.
 
@@ -944,11 +944,11 @@ Enregistrez toutes vos modifications et exécutez `npm run dev-server` depuis l�
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 
-1. Dans la fenêtre composer un message, sélectionnez le bouton**Insérer gist par défaut**. Vous devriez être invité à configurer le complément.
+1. Dans la fenêtre Composer un message, sélectionnez le bouton **Insérer gist par défaut**. Vous devriez voir une boîte de dialogue dans laquelle vous pouvez configurer le complément, en commençant par l’invite de définition de votre nom d’utilisateur GitHub.
 
-    ![Capture d’écran de l’invite à configurer le complément ](../images/addin-prompt-configure.png)
+    ![Capture d’écran de l’invite de la boîte de dialogue permettant de configurer le complément](../images/addin-prompt-configure.png)
 
-1. Dans la boîte de dialogue Paramètres, entrez votre nom d’utilisateur GitHub, puis soit **onglet** soit cliquez ailleurs dans la boîte de dialogue pour appeler l’`change` l’événement, qui devrait charger votre liste de gists. Sélectionnez un gist par défaut, puis cliquez sur**Terminer**.
+1. Dans la boîte de dialogue Paramètres, entrez votre nom d’utilisateur GitHub, puis soit **Onglet** soit cliquez ailleurs dans la boîte de dialogue pour faire apparaître l’événement `change`, qui devrait charger votre liste de gists publiques. Sélectionnez un gist par défaut, puis cliquez sur **Terminer**.
 
     ![Capture d’écran de la boîte de dialogue des paramètres du complément](../images/addin-settings.png)
 
@@ -1305,11 +1305,11 @@ Enregistrez toutes vos modifications et exécutez `npm run dev-server` depuis l�
 
 1. Ouvrez Outlook et rédigez un nouveau message.
 
-1. Dans la fenêtre composer un message, sélectionnez le bouton**Insérer gist**. Vous devriez voir un volet des tâches qui s’ouvre à droite du formulaire Composer.
+1. Dans la fenêtre composer un message, sélectionnez le bouton **Insérer gist**. Vous devriez voir un volet des tâches qui s’ouvre à droite du formulaire Composer.
 
-1. Dans le volet des tâches, sélectionnez le gist**Hello World Html**, puis sélectionnez **insérer** pour insérer ce gist dans le corps du message.
+1. Dans le volet des tâches, sélectionnez le gist **Hello World Html**, puis sélectionnez **Insérer** pour insérer ce gist dans le corps du message.
 
-![Capture d’écran du volet de tâhces du complément](../images/addin-taskpane.png)
+![Capture d’écran du volet Office Complément et du contenu du gist sélectionné qui s’affiche dans le corps du message](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

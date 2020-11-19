@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 07/10/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 9ca4177024276a676fed76746da4ecf81121fc3b
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159142"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131793"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -38,9 +38,9 @@ Dans ce didacticiel, vous allez :
     * **Sélectionnez un type de script :** `JavaScript`
     * **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Le générateur de yeoman pour les compléments Office vous invite pour les fonctions personnalisées](../images/starcountPrompt.png)
+    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées](../images/starcountPrompt.png)
     
-    Le générateur crée le projet et installe les composants Node.js de la prise en charge.
+    Le générateur crée le projet et installe les composants Node de la prise en charge.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -81,19 +81,19 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 
 1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
 
-   ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
+   ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
    
-2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
-3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
+3. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
-4. Sélectionnez le fichier**manifest.xml** puis sélectionnez**Ouvrir**, puis sélectionnez **Télécharger**.
+4. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
 --- 
     
 ## <a name="try-out-a-prebuilt-custom-function"></a>Essayer une fonction personnalisée prédéfinie
 
-Le projet de fonctions personnalisées que vous avez créé contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier**manifest.xml**indique que toutes les fonctions personnalisées appartiennent à l’`CONTOSO`espace de noms. L’espace de noms CONTOSO permet d’accéder aux fonctions personnalisées dans Excel.
+Le projet de fonctions personnalisées que vous avez créé contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier **manifest.xml** indique que toutes les fonctions personnalisées appartiennent à l’`CONTOSO`espace de noms. L’espace de noms CONTOSO permet d’accéder aux fonctions personnalisées dans Excel.
 
 Essayez de reproduire la`ADD` fonction personnalisée en complétant les étapes suivantes dans Excel:
 
@@ -101,7 +101,7 @@ Essayez de reproduire la`ADD` fonction personnalisée en complétant les étapes
 
 2. Exécutez la`CONTOSO.ADD` fonction, avec les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
 
-Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés et renvoie le résultat**210** .
+Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés et renvoie le résultat **210** .
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Créer une fonction personnalisée qui demande les données à partir du web
 
@@ -149,21 +149,21 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 1. Fermez Excel, puis rouvrez-le.
 
-2. Dans Excel, sélectionnez l’onglet **Insertion**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Ruban Insertion dans Excel pour Windows avec la flèche Mes compléments mise en évidence](../images/select-insert.png)
+2. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence](../images/select-insert.png)
 
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
-    ![Ruban Insertion dans Excel sur Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
+    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.  ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
-2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
-3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
+3. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
-4. Sélectionnez le fichier**manifest.xml** puis sélectionnez**Ouvrir**, puis sélectionnez **Télécharger**.
+4. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
 ---
 
@@ -217,20 +217,20 @@ function clock(invocation) {
 
 1. Fermez Excel, puis rouvrez-le.
 
-2. Dans Excel, sélectionnez l’onglet **Insertion**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Ruban Insertion dans Excel pour Windows avec la flèche Mes compléments mise en évidence](../images/select-insert.png)
+2. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence](../images/select-insert.png)
 
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
-    ![Ruban Insertion dans Excel sur Windows avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
+    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.  ![Ruban Insertion dans Excel sur le web avec l’icône Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance](../images/excel-cf-online-register-add-in-1.png)
 
-2. Sélectionnez**Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
+2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
-3. Sélectionnez **Parcourir... ** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
+3. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
 
-4. Sélectionnez le fichier**manifest.xml** puis sélectionnez**Ouvrir**, puis sélectionnez **Télécharger**.
+4. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
 --- 
 

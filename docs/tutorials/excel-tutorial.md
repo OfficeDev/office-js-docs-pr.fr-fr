@@ -1,27 +1,28 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 10/14/2020
+ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 51bec98cd0de1d00b4bfbcda372e450ce040d8b9
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: f3cc1881520c4e84b6f325917e9c862e5e7ddbc5
+ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741154"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "49131821"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
 Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui:
 
 > [!div class="checklist"]
-> * Crée un tableau
-> * Filtres et tris un tableau
-> * Crée un graphique (Chart)
-> * Figer une en-tête de tableau
-> * Protège une feuille de calcul
-> * Ouvrir une boîte de dialogue
+>
+> - Crée un tableau
+> - Filtres et tris un tableau
+> - Crée un graphique (Chart)
+> - Figer une en-tête de tableau
+> - Protège une feuille de calcul
+> - Ouvrir une boîte de dialogue
 
 > [!TIP]
 > Si vous avez déjà exécuté le démarrage rapide [Créer votre premier complément du volet des tâches d’Excel](../quickstarts/excel-quickstart-jquery.md) à l’aide du générateur Yeoman et que vous souhaitez utiliser ce projet comme point de départ pour ce didacticiel, accédez directement à la section [Créer un tableau](#create-a-table) pour commencer ce didacticiel.
@@ -39,9 +40,9 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-![Générateur Yeoman](../images/yo-office-excel.png)
+![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office](../images/yo-office-excel.png)
 
-Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -158,7 +159,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
         > [!NOTE]
         > Les objets de collection Excel.js, tels que `TableCollection`, `WorksheetCollection` et `TableColumnCollection` ont une propriété `items` qui correspond à un tableau de types d’objet enfant, comme `Table` ou `Worksheet` ou `TableColumn` ; mais un objet `*Collection` n’est pas lui-même un tableau.
 
-    - Le code définit ensuite la plage de la colonne **Amount** sous la forme Euros à la deuxième décimale. 
+    - Le code définit ensuite la plage de la colonne **Amount** sous la forme Euros à la deuxième décimale.
 
     - Enfin, il s’assure que la largeur des colonnes et la hauteur des lignes sont assez grandes pour contenir l’élément de données le plus long (ou le plus haut). Notez que le code doit rechercher des objets `Range` à mettre en forme. Les objets `TableColumn` et `TableRow` n’ont pas de propriétés de mise en forme.
 
@@ -200,11 +201,11 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Bouton Complément Excel](../images/excel-quickstart-addin-3b.png)
+    ![Capture d’écran du menu Accueil d’Excel avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-3b.png)
 
 3. Dans le volet Office, sélectionnez le bouton **Créer un tableau**.
 
-    ![Didacticiel Excel -Créer un tableau](../images/excel-tutorial-create-table-2.png)
+    ![Capture d’écran d’Excel, affichant le volet Office Complément avec le bouton créer un tableau, et un tableau dans la feuille de calcul rempli avec les données de date, de commerçant, de catégorie et de montant](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table"></a>Filtrer et trier un tableau
 
@@ -259,13 +260,13 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
     var categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
-    ``` 
+    ```
 
 ### <a name="sort-the-table"></a>Tri du tableau
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `filter-table`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `filter-table`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
@@ -331,7 +332,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 4. Choisissez le bouton **Filtrer le tableau** et le bouton **Trier le tableau** dans n’importe quel ordre.
 
-    ![Didacticiel Excel- Filtrer et trier un tableau](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Capture d’écran d’Excel, avec les boutons Filtrer le tableau et Trier le tableau mis en évidence dans le volet Office Complément](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart"></a>Création d’un graphique (chart)
 
@@ -399,9 +400,9 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     ```
 
 8. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
-   
+
    - Les paramètres de la méthode `setPosition` spécifient les cellules situées en haut à gauche et en bas à droite de la zone de feuille de calcul devant contenir le graphique. Excel peut ajuster des éléments, tels que la largeur de ligne pour que le graphique s’affiche correctement dans l’espace attribué.
-   
+
    - Une « série » est un ensemble de points de données dans une colonne du tableau. Étant donné qu’il n’existe qu’une seule colonne autre que de type chaîne dans le tableau, Excel déduit que la colonne est la seule colonne de points de données pour le graphique. Il interprète les autres colonnes comme des étiquettes de graphique. Par conséquent, il y aura simplement une série dans le graphique et un index 0. Il s’agit de celle à étiqueter avec « Valeur en &euro; ».
 
     ```js
@@ -426,7 +427,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
 4. Sélectionnez le bouton **Créer un graphique**. Un graphique est créé dans lequel seules les données provenant des lignes filtrées sont incluses. Les étiquettes sur les points de données en bas sont organisées selon l’ordre de tri du graphique, à savoir les noms de marchand par ordre alphabétique inversé.
 
-    ![Didacticiel Excel -Créer un graphique (chart)](../images/excel-tutorial-create-chart-2.png)
+    ![Capture d’écran d’Excel avec un bouton créer un graphique visible dans le volet Office Complément, et un graphique dans la feuille de calcul affichant les données de dépenses de courses et d’éducation](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header"></a>Figer un en-tête de tableau
 
@@ -436,7 +437,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `create-chart`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `create-chart`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
@@ -496,7 +497,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 6. Faites suffisamment défiler la feuille de calcul vers le bas pour voir que l’en-tête du tableau est toujours visible dans la partie supérieure même lorsque les lignes du haut sont masquées.
 
-    ![Didacticiel Excel-Figer l’en-tête](../images/excel-tutorial-freeze-header-2.png)
+    ![Capture d’écran illustrant une feuille de calcul Excel avec un en-tête de tableau figé](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>Protéger une feuille de calcul
 
@@ -511,7 +512,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
         <Label resid="<!--TODO2: Button label -->" />
-        <Supertip>            
+        <Supertip>
             <Title resid="<!-- TODO3: Button tool tip title -->" />
             <Description resid="<!-- TODO4: Button tool tip description -->" />
         </Supertip>
@@ -538,26 +539,26 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. L’élément `SuperTip` définit l’info-bulle du bouton. Le titre de l’info-bulle doit être identique à l’étiquette du bouton, nous utilisons donc le même ID de ressource : « ProtectionButtonLabel ». La description de l’info-bulle sera « Cliquez pour activer/désactiver la protection de la feuille de calcul ». Néanmoins, l’élément `resid` doit être « ProtectionButtonToolTip ». Lorsque vous avez terminé, l’élément `SuperTip` doit ressembler à ceci : 
+5. L’élément `SuperTip` définit l’info-bulle du bouton. Le titre de l’info-bulle doit être identique à l’étiquette du bouton, nous utilisons donc le même ID de ressource : « ProtectionButtonLabel ». La description de l’info-bulle sera « Cliquez pour activer/désactiver la protection de la feuille de calcul ». Néanmoins, l’élément `resid` doit être « ProtectionButtonToolTip ». Lorsque vous avez terminé, l’élément `SuperTip` doit ressembler à ceci :
 
     ```xml
-    <Supertip>            
+    <Supertip>
         <Title resid="ProtectionButtonLabel" />
         <Description resid="ProtectionButtonToolTip" />
     </Supertip>
     ```
 
-   > [!NOTE] 
-   > Dans un complément de production, vous n’utiliseriez pas la même icône pour deux boutons différents, mais pour simplifier ce didacticiel, nous allons le faire. Par conséquent, le balisage `Icon` de notre nouvel élément `Control` est simplement une copie de l’élément `Icon` provenant de l’élément `Control` existant. 
+   > [!NOTE]
+   > Dans un complément de production, vous n’utiliseriez pas la même icône pour deux boutons différents, mais pour simplifier ce didacticiel, nous allons le faire. Par conséquent, le balisage `Icon` de notre nouvel élément `Control` est simplement une copie de l’élément `Icon` provenant de l’élément `Control` existant.
 
 6. Le type de l’élément `Action` se trouvant à l’intérieur de l’élément `Control` d’origine est défini sur `ShowTaskpane`, mais notre nouveau bouton ne va pas ouvrir un volet Office, il va exécuter une fonction personnalisée que vous allez créer à une étape ultérieure. Remplacez donc `TODO5` par `ExecuteFunction`, qui correspond au type d’action des boutons qui déclenchent des fonctions personnalisées. Létiquette d’ouverture de l’élément `Action` doit ressembler à ceci :
- 
+
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
 7. L’élément `Action` d’origine possède des éléments enfants qui spécifient un ID de volet Office ainsi qu’une URL de la page qui doit être ouverte dans le volet Office. Toutefois, un élément `Action` de type `ExecuteFunction` comporte un élément enfant unique qui nomme la fonction que le contrôle exécute. Vous créerez cette fonction à une étape ultérieure, et la nommerez `toggleProtection`. Par conséquent, remplacez `TODO6` par le balisage suivant :
- 
+
     ```xml
     <FunctionName>toggleProtection</FunctionName>
     ```
@@ -567,7 +568,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
         <Label resid="ProtectionButtonLabel" />
-        <Supertip>            
+        <Supertip>
             <Title resid="ProtectionButtonLabel" />
             <Description resid="ProtectionButtonToolTip" />
         </Supertip>
@@ -607,7 +608,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     ```js
     function toggleProtection(args) {
         Excel.run(function (context) {
-            
+
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
             return context.sync();
@@ -641,7 +642,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     } else {
         sheet.protection.protect();
     }
-    ``` 
+    ```
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
 
@@ -656,10 +657,10 @@ Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à prése
 Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*read*) des informations provenant du document Office.
 
 1. À l’intérieur de la fonction `toggleProtection`, remplacez `TODO2` par le code suivant. Remarque :
-   
+
    - Chaque objet Excel possède une méthode `load`. Vous spécifiez les propriétés de l’objet que vous voulez lire dans le paramètre en tant que chaîne de noms séparés par des virgules. Dans ce cas, la propriété que vous devez lire est une sous-propriété de la propriété `protection`. Pour référence la sous-propriété, procédez presque exactement de la même façon que vous le feriez à n’importe quel autre emplacement de votre code, sauf que vous devez utiliser une barre oblique (« / ») au lieu d’un point « . ».
 
-   - Pour être sûr que la logique de bouton bascule, qui lit `sheet.protection.protected`, ne s’exécute pas tant que la synchronisation (`sync`) n’est pas terminée et que l’élément `sheet.protection.protected` n’a pas été affecté à la valeur correcte récupérée à partir du document, elle sera déplacée (à l’étape suivante) dans une fonction `then` qui ne s’exécutera pas tant que la synchronisation (`sync`) ne sera pas terminée. 
+   - Pour être sûr que la logique de bouton bascule, qui lit `sheet.protection.protected`, ne s’exécute pas tant que la synchronisation (`sync`) n’est pas terminée et que l’élément `sheet.protection.protected` n’a pas été affecté à la valeur correcte récupérée à partir du document, elle sera déplacée (à l’étape suivante) dans une fonction `then` qui ne s’exécutera pas tant que la synchronisation (`sync`) ne sera pas terminée.
 
     ```js
     sheet.load('protection/protected');
@@ -671,7 +672,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
         )
         // TODO4: Move the final call of `context.sync` here and ensure that it
         //        does not run until the toggle logic has been queued.
-    ``` 
+    ```
 
 2. Il n’est pas possible que deux instructions `return` se trouvent dans le même chemin de code, donc supprimez la dernière ligne `return context.sync();` à la fin de la fonction `Excel.run`. Vous ajouterez un nouvel élément final `context.sync` dans une étape ultérieure.
 
@@ -691,8 +692,8 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
     ```js
     function toggleProtection(args) {
-        Excel.run(function (context) {            
-          var sheet = context.workbook.worksheets.getActiveWorksheet();          
+        Excel.run(function (context) {
+          var sheet = context.workbook.worksheets.getActiveWorksheet();
           sheet.load('protection/protected');
 
           return context.sync()
@@ -723,22 +724,22 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 1. Fermez toutes les applications Office, y compris Excel.
 
-2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier de cache. Cette opération est nécessaire pour effacer complètement l’ancienne version du complément de
+2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier de cache. Cette opération est nécessaire pour effacer complètement l’ancienne version du complément de l’application cliente.
 
     - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
     - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
-    
-        > [!NOTE]
-        > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` où `{host}` est l’application Office (par exemple, `Excel`)
-        >    - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` où `{host}` est l’application Office (par exemple, `Excel`)
-        >    - `com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
-        >    - `com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+
+      > [!NOTE]
+      > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
+      >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` où `{host}` est l’application Office (par exemple, `Excel`)
+      >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` où `{host}` est l’application Office (par exemple, `Excel`)
+      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+      >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 3. Si le serveur web local est déjà en cours d’exécution, arrêtez-le en fermant la fenêtre de commande du nœud.
 
-4. Étant donné que votre fichier manifeste a été mis à jour, vous devez à nouveau charger une version test du complément à l’aide du fichier manifeste mis à jour. Démarrez le serveur web local et chargez indépendamment votre complément : 
+4. Étant donné que votre fichier manifeste a été mis à jour, vous devez à nouveau charger une version test du complément à l’aide du fichier manifeste mis à jour. Démarrez le serveur web local et chargez indépendamment votre complément :
 
     - Pour tester votre complément dans Excel, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Excel avec votre complément chargé.
 
@@ -754,9 +755,9 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
         Pour utiliser votre complément, ouvrez un nouveau document dans Excel sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-5. Sous l’onglet **Accueil** d’Excel, sélectionnez le bouton **Activer/désactiver la protection de la feuille de calcul**. Notez que la plupart des contrôles figurant sur le ruban sont désactivés (et visuellement grisés) comme on peut le voir dans la capture d’écran suivante. 
+5. Sous l’onglet **Accueil** d’Excel, sélectionnez le bouton **Activer/désactiver la protection de la feuille de calcul**. Notez que la plupart des contrôles figurant sur le ruban sont désactivés (et visuellement grisés) comme on peut le voir dans la capture d’écran suivante.
 
-    ![Didacticiel Excel-Ruban avec protection activée](../images/excel-tutorial-ribbon-with-protection-on-2.png)
+    ![Capture d’écran du ruban Excel avec le bouton de protection de la feuille de calcul activé mis en évidence. La plupart des autres boutons apparaissent grisés et désactivés.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
 6. Sélectionnez une cellule comme vous le feriez si vous vouliez modifier son contenu. Excel affiche un message d’erreur indiquant que la feuille de calcul est protégée.
 
@@ -1006,9 +1007,9 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 5. Dans la boîte de dialogue, entrez un nom et appuyez sur le bouton **OK**. Ce nom apparaît sur le volet Office et la boîte de dialogue se ferme.
 
-6. Si vous le souhaitez, vous pouvez commenter la ligne `dialog.close();` dans la fonction `processMessage`. Ensuite, répétez les étapes de cette section. La boîte de dialogue reste ouverte et vous pouvez modifier le nom. Vous pouvez la fermer manuellement en appuyant sur la croix (**X**) en haut à droite.
+6. Si vous le souhaitez, vous pouvez commenter la ligne `dialog.close();` dans la fonction`processMessage`. Ensuite, répétez les étapes de cette section. La boîte de dialogue reste ouverte et vous pouvez modifier le nom. Vous pouvez la fermer manuellement en appuyant sur la croix (**X**) en haut à droite.
 
-    ![Didacticiel Excel- Boîte de dialogue](../images/excel-tutorial-dialog-open-2.png)
+    ![Capture d’écran d’Excel, avec un bouton de boîte de dialogue Ouvrir visible dans le volet Office Complément, et une boîte de dialogue affichée sur la feuille de calcul](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -1019,6 +1020,6 @@ Ce didacticiel vous apprend à créer un complément Excel qui interagit avec de
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Développement de compléments Office](../develop/develop-overview.md)
-* [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
