@@ -189,6 +189,10 @@
                       href: develop/create-addin-commands.md
                     - name: Activer et désactiver des commandes de compléments
                       href: design/disable-add-in-commands.md
+                    - name: Intégrer des boutons prédéfinis Office dans les onglets personnalisés.
+                      href: design/built-in-button-integration.md
+                    - name: Positionner un onglet personnalisé sur le ruban
+                      href: design/custom-tab-placement.md
                 - name: Compléments de contenu
                   href: design/content-add-ins.md
                 - name: Boîtes de dialogue
