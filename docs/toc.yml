@@ -1,1201 +1,1202 @@
-- name: Documentation pour compléments Office
-  href: index.yml
-- name: À propos des compléments Office
-  href: overview/office-add-ins.md
-  displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: Prise en main
-  items:
-    - name: Guide du débutant
-      href: overview/learning-path-beginner.md
-      displayName: develop
-    - name: Démarrages rapides
-      items:
-        - name: Complément Excel
-          href: quickstarts/excel-quickstart-jquery.md
-        - name: Fonctions personnalisées dans Excel
-          href: quickstarts/excel-custom-functions-quickstart.md
-        - name: Complément OneNote
-          href: quickstarts/onenote-quickstart.md
-        - name: Complément Outlook
-          href: quickstarts/outlook-quickstart.md
-        - name: Complément PowerPoint
-          href: quickstarts/powerpoint-quickstart.md
-        - name: Complément Project
-          href: quickstarts/project-quickstart.md
-        - name: Complément Word
-          href: quickstarts/word-quickstart.md
-        - name: "Authentification unique\_(SSO)"
-          href: quickstarts/sso-quickstart-redirect.md
-    - name: Explorer les API Office JS à l’aide de Script Lab
-      href: overview/explore-with-script-lab.md
-      displayName: 'Excel, Word, PowerPoint'
-    - name: Configuration de votre environnement de développement
-      href: overview/set-up-your-dev-environment.md
-      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-- name: Cycle de voie de développement
-  items:
-    - name: Présentation du cycle de vie
-      href: overview/core-concepts-office-add-ins.md
-      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: Prévision
-      items:
-        - name: Meilleures pratiques en matière de développement de compléments
-          href: concepts/add-in-development-best-practices.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Versions d’Office et ensembles de conditions requises
-          href: develop/office-versions-and-requirement-sets.md
-        - name: Disponibilité de la plateforme et de l’application Office
-          href: overview/office-add-in-availability.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Configuration requise pour exécuter des compléments
-          href: concepts/requirements-for-running-office-add-ins.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Installer la dernière version d’Office
-          href: develop/install-latest-office-version.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-    - name: Développer
-      items:
-        - name: Présentation
-          href: develop/develop-overview.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Compréhension de l’API JavaScript pour Office
-          href: develop/understanding-the-javascript-api-for-office.md
-        - name: Utilisation du modèle de l’API propre à l’application
-          href: develop/application-specific-api-model.md
-        - name: Utilisation du modèle de l’API courante
-          items:
-            - name: Modèle d’objet d’API JavaScript courant
-              href: develop/office-javascript-api-object-model.md
-            - name: Programmation asynchrone dans des compléments Office
-              href: develop/asynchronous-programming-in-office-add-ins.md
-            - name: Prise en charge des compléments de contenu et de volet Office
-              href: develop/support-for-task-pane-and-content-add-ins.md
-            - name: Conserver l’état et les paramètres
-              href: develop/persisting-add-in-state-and-settings.md
-            - name: Lier des régions dans un document ou une feuille de calcul
-              href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-        - name: Configurer et exécuter votre complément
-          items:
-            - name: Référencer Office.js
-              href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
-            - name: Spécifier les applications Office et les exigences de l’API
-              href: develop/specify-office-hosts-and-api-requirements.md
-            - name: Séquence de chargement d’un complément Office
-              href: develop/loading-the-dom-and-runtime-environment.md
-            - name: Initialiser votre complément
-              href: develop/initialize-add-in.md
-              displayName: manifest
-            - name: Ouvrir automatiquement un volet de tâches avec un document
-              href: develop/automatically-open-a-task-pane-with-a-document.md
-              displayName: manifest
-        - name: Manifeste
-          items:
-            - name: Présentation
-              href: develop/add-in-manifests.md
-            - name: Trouver l’ordre approprié d’éléments manifestes
-              href: develop/manifest-element-ordering.md
-            - name: Mettre à jour la version du manifeste et de l’API
-              href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
-              displayName: manifest
-        - name: 'Confidentialité, sécurité et authentification'
-          items:
-            - name: Vue d’ensemble de la confidentialité et de la sécurité du complément
-              href: concepts/privacy-and-security.md
-            - name: Vue d’ensemble de l’authentification et de l’autorisation
-              href: develop/overview-authn-authz.md
-            - name: Authentifier et autoriser avec l’API de dialogue Office
-              href: develop/auth-with-office-dialog-api.md
-            - name: Autoriser des services externes
-              href: develop/auth-external-add-ins.md
-            - name: Autoriser la connexion à Microsoft Graph sans authentification unique
-              href: develop/authorize-to-microsoft-graph-without-sso.md
-            - name: Activer l’authentification unique dans un complément
-              items:
-                - name: Activer l’authentification unique
-                  href: develop/sso-in-office-add-ins.md
-                - name: Démarrage rapide authentification unique
-                  href: quickstarts/sso-quickstart.md
-                - name: Personnaliser votre complément compatible avec l’authentification unique
-                  href: quickstarts/sso-quickstart-customize.md
-                - name: Autoriser la connexion à Microsoft Graph avec l’authentification unique
-                  href: develop/authorize-to-microsoft-graph.md
-                - name: Créer un complément d’authentification unique à l’aide d’ASP.NET
-                  href: develop/create-sso-office-add-ins-aspnet.md
-                - name: Créer un complément d’authentification unique à l’aide de Node.js
-                  href: develop/create-sso-office-add-ins-nodejs.md
-                - name: "Enregistrer un complément\_Office utilisant l’authentification unique avec Azure\_AD v2.0"
-                  href: develop/register-sso-add-in-aad-v2.md
-                - name: Octroi du consentement administrateur pour le complément
-                  href: develop/grant-admin-consent-to-an-add-in.md
-                - name: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
-                  href: develop/troubleshoot-sso-in-office-add-ins.md
-            - name: Demander des autorisations d’utilisation de l’API dans des compléments
-              href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
-        - name: Interface utilisateur et UX
-          items:
-            - name: Vue d’ensemble
-              href: design/add-in-design.md
-            - name: Conseils
-              items:
-                - name: Accessibilité
-                  href: design/accessibility-guidelines.md
-                - name: Visualisation de données
-                  href: design/data-visualization-guidelines.md
-                - name: Voix
-                  href: design/voice-guidelines.md
-            - name: Modèles et langages de conception UX
-              items:
-                - name: Langage de création
-                  items:
-                    - name: Vue d'ensemble
-                      href: design/add-in-design-language.md
-                    - name: Couleur
-                      href: design/add-in-color.md
-                    - name: Icônes
-                      items:
-                        - name: Conseils relatifs aux icônes
-                          href: design/add-in-icons.md
-                        - name: Nouveau style
-                          href: design/add-in-icons-fresh.md
-                        - name: Style ligne unique
-                          href: design/add-in-icons-monoline.md
-                    - name: Disposition
-                      href: design/add-in-layout.md
-                    - name: Mouvement
-                      href: design/using-motion-office-addins.md
-                    - name: Typographie
-                      href: design/add-in-typography.md
-                - name: Modèles de conception UX pour les scénarios courants
-                  items:
-                    - name: Vue d’ensemble
-                      href: design/ux-design-pattern-templates.md
-                    - name: Authentification
-                      href: design/authentication-patterns.md
-                    - name: Personnalisation
-                      href: design/branding-patterns.md
-                    - name: Première exécution
-                      href: design/first-run-experience-patterns.md
-                    - name: Navigation
-                      href: design/navigation-patterns.md
-            - name: Éléments de l’interface
-              items:
-                - name: Vue d'ensemble
-                  href: design/interface-elements.md
-                - name: Commandes de complément
-                  items:
-                    - name: Concepts basiques pour les commandes de complément
-                      href: design/add-in-commands.md
-                    - name: Créer des commandes de complément
-                      href: develop/create-addin-commands.md
-                    - name: Activer et désactiver des commandes de compléments
-                      href: design/disable-add-in-commands.md
-                    - name: Intégrer des boutons prédéfinis Office dans les onglets personnalisés.
-                      href: design/built-in-button-integration.md
-                    - name: Positionner un onglet personnalisé sur le ruban
-                      href: design/custom-tab-placement.md
-                - name: Compléments de contenu
-                  href: design/content-add-ins.md
-                - name: Boîtes de dialogue
-                  items:
-                    - name: Présentation
-                      href: design/dialog-boxes.md
-                    - name: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
-                      href: develop/dialog-api-in-office-add-ins.md
-                    - name: Pratiques recommandées et règles pour l’API de dialogue Office
-                      href: develop/dialog-best-practices.md
-                    - name: Envoyer les données à partir de la page hôte vers la boîte de dialogue
-                      href: develop/parent-to-dialog.md
-                    - name: Gestion des erreurs et des événements dans la boîte de dialogue Office
-                      href: develop/dialog-handle-errors-events.md
-                    - name: Utiliser la boîte de dialogue Office pour lire une vidéo
-                      href: develop/dialog-video.md
-                - name: Volets de tâches
-                  href: design/task-pane-add-ins.md
-            - name: Raccourcis clavier
-              href: design/keyboard-shortcuts.md
-            - name: Localisation
-              href: develop/localization.md
-            - name: Ressources
-              items:
-                - name: Kits de ressources de conception
-                  href: design/design-toolkits.md
-                - name: Prise en main de Fabric React
-                  href: design/using-office-ui-fabric-react.md
-                - name: Interface utilisateur Office avec Fabric
-                  href: design/office-ui-fabric.md
-        - name: Infrastructures et IDE
-          items:
-            - name: Développement de compléments avec Angular
-              href: develop/add-ins-with-angular2.md
-            - name: Développement d’un complément avec Visual Studio Code
-              href: develop/develop-add-ins-vscode.md
-            - name: Développement d’un complément avec Visual Studio
-              items:
-                - name: Vue d’ensemble
-                  href: develop/develop-add-ins-visual-studio.md
-                  displayName: Visual Studio
-                - name: "Déboguer des compléments Office dans Visual\_Studio"
-                  href: develop/debug-office-add-ins-in-visual-studio.md
-                - name: Obtenir JavaScript IntelliSense dans Visual Studio
-                  href: develop/get-javascript-intellisense-in-visual-studio.md
-                - name: Convertir des projets JavaScript en TypeScript
-                  href: develop/convert-javascript-to-typescript.md
-        - name: Conditions particulières pour les compléments sur iPad
-          href: develop/develop-office-add-ins-for-the-ipad.md
-    - name: Test et débogage
-      items:
-        - name: Test et débogage de compléments Office
-          href: testing/test-debug-office-add-ins.md
-          displayName: 'test, debug'
-        - name: Windows
-          items:
-            - name: Chargez des compléments Office sur Windows à partir d’un partage réseau
-              href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
-            - name: Attacher un débogueur à partir du volet Office
-              href: testing/attach-debugger-from-task-pane.md
-            - name: Débogage à l’aide des outils de développement
-              href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
-            - name: "Tester avec Internet Explorer\_11"
-              href: testing/ie-11-testing.md
-        - name: Navigateur web
-          items:
-            - name: Charger une version test des compléments dans Office sur le web
-              href: testing/sideload-office-add-ins-for-testing.md
-            - name: Déboguer dans Office sur le web
-              href: testing/debug-add-ins-in-office-online.md
-        - name: iPad et Mac
-          items:
-            - name: "Chargement de versions test de compléments\_Office sur iPad et Mac"
-              href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
-            - name: Débogage sur Mac
-              href: testing/debug-office-add-ins-on-ipad-and-mac.md
-        - name: Vider le cache Office
-          href: testing/clear-cache.md
-          displayName: 'uninstall, sideload'
-        - name: Déboguer avec la journalisation runtime
-          href: testing/runtime-logging.md
-        - name: Extension de débogueur pour Visual Studio Code
-          href: testing/debug-with-vs-extension.md
-        - name: Performances
-          items:
-            - name: Éviter d’utiliser la méthode context.sync dans des boucles
-              href: concepts/correlated-objects-pattern.md
-            - name: Limites des ressources et optimisation des performances pour les compléments Office
-              href: concepts/resource-limits-and-performance-optimization.md
-        - name: Résolution des erreurs de l’utilisateur
-          href: testing/testing-and-troubleshooting.md
-        - name: Résolution des erreurs de développement
-          href: testing/troubleshoot-development-errors.md
-        - name: Tests d’utilisation
-          href: develop/usability-testing.md
-        - name: Valider le manifeste d’un complément Office
-          href: testing/troubleshoot-manifest.md
-    - name: Publier
-      items:
-        - name: Publier des compléments Office
-          href: publish/publish.md
-        - name: Publier votre complément (VS Code)
-          href: publish/publish-add-in-vs-code.md
-        - name: "Visual\_Studio"
-          items:
-            - name: Publier votre complément (Visual Studio)
-              href: publish/package-your-add-in-using-visual-studio.md
-            - name: "Héberger un complément pour Office sur Microsoft\_Azure"
-              href: publish/host-an-office-add-in-on-microsoft-azure.md
-        - name: Publication de compléments sur AppSource
-          href: /office/dev/store/submit-to-the-office-store
-        - name: Stratégies de validation AppSource
-          href: /legal/marketplace/certification-policies
-        - name: Publier des compléments via le déploiement centralisé
-          href: publish/centralized-deployment.md
-        - name: Publier des compléments dans un catalogue d’applications SharePoint
-          href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
-    - name: Référence
-      items:
-        - name: Documentation de référence de l'API
-          href: reference/javascript-api-for-office.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
-        - name: Ensembles de conditions requises des API (communes)
-          items:
-            - name: Ensembles de conditions requises concernant les commandes de complément
-              href: reference/requirement-sets/add-in-commands-requirement-sets.md
-            - name: Ensembles de conditions requises de l’API de dialogue
-              href: reference/requirement-sets/dialog-api-requirement-sets.md
-            - name: Ensembles de conditions requises de l’API d’identité
-              href: reference/requirement-sets/identity-api-requirement-sets.md
-            - name: Ensembles de conditions requises de coercition d’image
-              href: reference/requirement-sets/image-coercion-requirement-sets.md
-            - name: Séries de conditions requises des API communes pour Office
-              href: reference/requirement-sets/office-add-in-requirement-sets.md
-            - name: Séries de conditions requises pour ouvrir une fenêtre de navigateur
-              href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
-            - name: Ensembles de conditions requises des API ruban
-              href: reference/requirement-sets/ribbon-api-requirement-sets.md
-            - name: Ensembles de conditions requises d'exécution partagés
-              href: reference/requirement-sets/shared-runtime-requirement-sets.md
-        - name: Référence du manifeste du complément pour Office
-          items:
-            - name: AllowSnapshot
-              href: reference/manifest/allowsnapshot.md
-            - name: AlternateId
-              href: reference/manifest/alternateid.md
-            - name: AppDomain
-              href: reference/manifest/appdomain.md
-            - name: AppDomains
-              href: reference/manifest/appdomains.md
-            - name: CitationText
-              href: reference/manifest/citationtext.md
-            - name: DefaultLocale
-              href: reference/manifest/defaultlocale.md
-            - name: DefaultSettings
-              href: reference/manifest/defaultsettings.md
-            - name: Description
-              href: reference/manifest/description.md
-            - name: DesktopSettings
-              href: reference/manifest/desktopsettings.md
-            - name: Dictionary
-              href: reference/manifest/dictionary.md
-            - name: DictionaryHomePage
-              href: reference/manifest/dictionaryhomepage.md
-            - name: DisableEntityHighlighting
-              href: reference/manifest/disableentityhighlighting.md
-            - name: DisplayName
-              href: reference/manifest/displayname.md
-            - name: EquivalentAddin
-              href: reference/manifest/equivalentaddin.md
-            - name: EquivalentAddins
-              href: reference/manifest/equivalentaddins.md
-            - name: ExtendedOverrides
-              href: reference/manifest/extendedoverrides.md
-            - name: ExtendedPermission
-              href: reference/manifest/extendedpermission.md
-            - name: ExtendedPermissions
-              href: reference/manifest/extendedpermissions.md
-            - name: FileName
-              href: reference/manifest/filename.md
-            - name: Formulaire
-              href: reference/manifest/form.md
-            - name: FormSettings
-              href: reference/manifest/formsettings.md
-            - name: HighResolutionIconUrl
-              href: reference/manifest/highresolutioniconurl.md
-            - name: Hôte
-              href: reference/manifest/host.md
-            - name: Hôtes
-              href: reference/manifest/hosts.md
-            - name: IconUrl
-              href: reference/manifest/iconurl.md
-            - name: ID
-              href: reference/manifest/id.md
-            - name: Métadonnées
-              href: reference/manifest/metadata.md
-            - name: Méthode
-              href: reference/manifest/method.md
-            - name: Méthodes
-              href: reference/manifest/methods.md
-            - name: Espace de noms
-              href: reference/manifest/namespace.md
-            - name: OfficeApp
-              href: reference/manifest/officeapp.md
-            - name: Remplacer
-              href: reference/manifest/override.md
-            - name: Autorisations
-              href: reference/manifest/permissions.md
-            - name: PhoneSettings
-              href: reference/manifest/phonesettings.md
-            - name: ProgId
-              href: reference/manifest/progid.md
-            - name: ProviderName
-              href: reference/manifest/providername.md
-            - name: QueryUri
-              href: reference/manifest/queryuri.md
-            - name: RequestedHeight
-              href: reference/manifest/requestedheight.md
-            - name: RequestedWidth
-              href: reference/manifest/requestedwidth.md
-            - name: Configuration requise
-              href: reference/manifest/requirements.md
-            - name: Rule
-              href: reference/manifest/rule.md
-            - name: Set
-              href: reference/manifest/set.md
-            - name: documents
-              href: reference/manifest/sets.md
-            - name: SourceLocation
-              href: reference/manifest/sourcelocation.md
-            - name: SupportUrl
-              href: reference/manifest/supporturl.md
-            - name: TabletSettings
-              href: reference/manifest/tabletsettings.md
-            - name: TargetDialect
-              href: reference/manifest/targetdialect.md
-            - name: TargetDialects
-              href: reference/manifest/targetdialects.md
-            - name: Jetons
-              href: reference/manifest/tokens.md
-            - name: Jeton
-              href: reference/manifest/token.md
-            - name: Tapez
-              href: reference/manifest/type.md
-            - name: Version
-              href: reference/manifest/version.md
-            - name: VersionOverrides
-              items:
-                - name: VersionOverrides
-                  href: reference/manifest/versionoverrides.md
-                - name: Action
-                  href: reference/manifest/action.md
-                - name: AllFormFactors
-                  href: reference/manifest/allformfactors.md
-                - name: Authorization
-                  href: reference/manifest/authorization.md
-                - name: Autorisations
-                  href: reference/manifest/authorizations.md
-                - name: Contrôle
-                  href: reference/manifest/control.md
-                - name: CustomTab
-                  href: reference/manifest/customtab.md
-                - name: Activé
-                  href: reference/manifest/enabled.md
-                - name: EquivalentAddin
-                  href: reference/manifest/equivalentaddin.md
-                - name: EquivalentAddins
-                  href: reference/manifest/equivalentaddins.md
-                - name: Événement
-                  href: reference/manifest/event.md
-                - name: ExtensionPoint
-                  href: reference/manifest/extensionpoint.md
-                - name: DesktopFormFactor
-                  href: reference/manifest/desktopformfactor.md
-                - name: FunctionFile
-                  href: reference/manifest/functionfile.md
-                - name: GetStarted
-                  href: reference/manifest/getstarted.md
-                - name: Group
-                  href: reference/manifest/group.md
-                - name: Hôtes
-                  href: reference/manifest/hosts.md
-                - name: Icône
-                  href: reference/manifest/icon.md
-                - name: LaunchEvent
-                  href: reference/manifest/launchevent.md
-                - name: LaunchEvents
-                  href: reference/manifest/launchevents.md
-                - name: MobileFormFactor
-                  href: reference/manifest/mobileformfactor.md
-                - name: OfficeMenu
-                  href: reference/manifest/officemenu.md
-                - name: OfficeTab
-                  href: reference/manifest/officetab.md
-                - name: Page
-                  href: reference/manifest/page.md
-                - name: Ressources
-                  href: reference/manifest/resources.md
-                - name: Runtime
-                  href: reference/manifest/runtime.md
-                - name: Services d’exécution
-                  href: reference/manifest/runtimes.md
-                - name: Étendues
-                  href: reference/manifest/scopes.md
-                - name: Script
-                  href: reference/manifest/script.md
-                - name: SourceLocation (fonctions personnalisées)
-                  href: reference/manifest/customfunctionssourcelocation.md
-                - name: Supertip
-                  href: reference/manifest/supertip.md
-                - name: SupportsSharedFolders
-                  href: reference/manifest/supportssharedfolders.md
-                - name: WebApplicationInfo
-                  href: reference/manifest/webapplicationinfo.md
-        - name: Traiter les limites de stratégie de même origine
-          href: develop/addressing-same-origin-policy-limitations.md
-        - name: Navigateurs utilisés par les compléments Office
-          href: concepts/browsers-used-by-office-web-add-ins.md
-          displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-        - name: Codes d’erreur
-          href: reference/javascript-api-for-office-error-codes.md
-        - name: Objets Window non pris en charge
-          href: reference/window-objects-unsupported-in-add-ins.md
-    - name: Ressources
-      href: resources/resources-links-help.md
-      displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
-- name: Excel
-  items:
-    - name: Documentation sur les compléments Excel
-      href: excel/index.yml
-      displayName: Excel
-    - name: Vue d'ensemble
-      href: excel/excel-add-ins-overview.md
-      displayName: Excel
-    - name: Création de votre premier complément Excel
-      items:
-        - name: Volet de tâches
-          href: quickstarts/excel-quickstart-jquery-redirect.md
-          displayName: Excel
-        - name: Volet de tâches (angulaire)
-          href: quickstarts/excel-quickstart-angular.md
-          displayName: Excel
-        - name: Volet de tâches (réagir)
-          href: quickstarts/excel-quickstart-react.md
-          displayName: Excel
-        - name: Volet de tâches (vue)
-          href: quickstarts/excel-quickstart-vue.md
-          displayName: Excel
-    - name: Didacticiel sur le complément Excel
-      href: tutorials/excel-tutorial.md
-      displayName: Excel
-    - name: sur les API JavaScript pour Excel
-      items:
-        - name: Vue d'ensemble
-          href: reference/overview/excel-add-ins-reference-overview.md
-          displayName: Excel
-        - name: Ensembles de conditions requises de l’API
-          items:
-            - name: Vue d'ensemble
-              href: reference/requirement-sets/excel-api-requirement-sets.md
-              displayName: Excel
-            - name: API de vue d’ensemble Excel
-              href: reference/requirement-sets/excel-preview-apis.md
-              displayName: Excel
-            - name: Ensemble de conditions requises pour ExcelApi en ligne uniquement
-              href: reference/requirement-sets/excel-api-online-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.12
-              href: reference/requirement-sets/excel-api-1-12-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.11
-              href: reference/requirement-sets/excel-api-1-11-requirement-set.md
-              displayName: Excel
-            - name: "Ensemble de conditions requises ExcelApi\_1.10"
-              href: reference/requirement-sets/excel-api-1-10-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.9
-              href: reference/requirement-sets/excel-api-1-9-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.8
-              href: reference/requirement-sets/excel-api-1-8-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.7
-              href: reference/requirement-sets/excel-api-1-7-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.6
-              href: reference/requirement-sets/excel-api-1-6-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.5
-              href: reference/requirement-sets/excel-api-1-5-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.4
-              href: reference/requirement-sets/excel-api-1-4-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.3
-              href: reference/requirement-sets/excel-api-1-3-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.2
-              href: reference/requirement-sets/excel-api-1-2-requirement-set.md
-              displayName: Excel
-            - name: Ensemble de conditions requises ExcelApi 1.1
-              href: reference/requirement-sets/excel-api-1-1-requirement-set.md
-              displayName: Excel
-        - name: Référence d’API
-          href: reference/excel-api-reference.md
-          displayName: Excel
-        - name: Modèle d’objet Excel
-          href: excel/excel-add-ins-core-concepts.md
-          displayName: Excel
-        - name: Valeurs vides et null dans les compléments Excel
-          href: excel/excel-add-ins-blank-null-values.md
-          displayName: Excel
-        - name: Appel de fonctions intégrées
-          href: excel/excel-add-ins-worksheet-functions.md
-          displayName: Excel
-        - name: Graphiques
-          href: excel/excel-add-ins-charts.md
-          displayName: Excel
-        - name: Co-création dans des macros complémentaires Excel
-          href: excel/co-authoring-in-excel-add-ins.md
-          displayName: Excel
-        - name: Commentaires
-          href: excel/excel-add-ins-comments.md
-          displayName: Excel
-        - name: Mise en forme conditionnelle de plages
-          href: excel/excel-add-ins-conditional-formatting.md
-          displayName: Excel
-        - name: Configurer votre complément pour utiliser un runtime partagé
-          href: excel/configure-your-add-in-to-use-a-shared-runtime.md
-          displayName: Excel
-        - name: Validation de données
-          href: excel/excel-add-ins-data-validation.md
-          displayName: Excel
-        - name: Retarder l’exécution pendant la modification de la cellule
-          href: excel/excel-add-ins-delay-in-cell-edit.md
-          displayName: Excel
-        - name: Gestion des erreurs
-          href: excel/excel-add-ins-error-handling.md
-          displayName: Excel
-        - name: Événements
-          href: excel/excel-add-ins-events.md
-          displayName: Excel
-        - name: Plages multiples
-          href: excel/excel-add-ins-multiple-ranges.md
-          displayName: Excel
-        - name: Optimisation des performances
-          href: excel/performance.md
-          displayName: Excel
-        - name: Tableaux croisés dynamiques
-          href: excel/excel-add-ins-pivottables.md
-          displayName: Excel
-        - name: Plages (fondamentales)
-          href: excel/excel-add-ins-ranges.md
-          displayName: Excel
-        - name: Plages (avancées)
-          href: excel/excel-add-ins-ranges-advanced.md
-          displayName: Excel
-        - name: Exécuter le code sur le document ouvert
-          href: excel/run-code-on-document-open.md
-          displayName: Excel
-        - name: Formes
-          href: excel/excel-add-ins-shapes.md
-          displayName: Excel
-        - name: Afficher ou masquer un complément Office dans un runtime partagé
-          href: excel/show-hide-add-in.md
-          displayName: Excel
-        - name: Tables
-          href: excel/excel-add-ins-tables.md
-          displayName: Excel
-        - name: Classeurs
-          href: excel/excel-add-ins-workbooks.md
-          displayName: Excel
-        - name: Feuilles de calcul
-          href: excel/excel-add-ins-worksheets.md
-          displayName: Excel
-        - name: Résoudre les problèmes liés aux compléments Excel
-          href: excel/excel-add-ins-troubleshooting.md
-          displayName: Excel
-    - name: Fonctions personnalisées
-      items:
-        - name: Vue d’ensemble
-          href: excel/custom-functions-overview.md
-          displayName: 'Excel, Custom Functions'
-        - name: Ensembles de conditions requises de l’API CustomFunctionsRuntime
-          href: excel/custom-functions-requirement-sets.md
-          displayName: 'Excel, Custom Functions'
-        - name: Didacticiels
-          items:
-            - name: Créer votre premier projet de fonctions personnalisées
-              href: quickstarts/excel-custom-functions-quickstart-redirect.md
-              displayName: 'Excel, Custom Functions'
-            - name: Didacticiel sur les fonctions personnalisées
-              href: tutorials/excel-tutorial-create-custom-functions.md
-              displayName: 'Excel, Custom Functions'
-            - name: Données de fonction personnalisée partagées avec le didacticiel du volet Office
-              href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
-              displayName: 'Excel, Custom Functions'
-        - name: Instructions d’attribution de noms
-          href: excel/custom-functions-naming.md
-          displayName: 'Excel, Custom Functions'
-        - name: Options de paramètres
-          href: excel/custom-functions-parameter-options.md
-          displayName: 'Excel, Custom Functions'
-        - name: Gestion des erreurs
-          href: excel/custom-functions-errors.md
-          displayName: 'Excel, Custom Functions'
-        - name: Générer automatiquement des métadonnées JSON
-          href: excel/custom-functions-json-autogeneration.md
-          displayName: 'Excel, Custom Functions'
-        - name: Appeler des API Excel JS
-          href: excel/call-excel-apis-from-custom-function.md
-          displayName: 'Excel, Custom Functions'
-        - name: Identifier un XLL équivalent
-          href: excel/make-custom-functions-compatible-with-xll-udf.md
-          displayName: 'Excel, Custom Functions'
-        - name: Localisation
-          href: excel/custom-functions-localize.md
-          displayName: 'Excel, Custom Functions'
-        - name: Créer manuellement des métadonnées JSON
-          href: excel/custom-functions-json.md
-          displayName: 'Excel, Custom Functions'
-        - name: Retourne un tableau dynamique
-          href: excel/custom-functions-dynamic-arrays.md
-          displayName: 'Excel, Custom Functions'
-        - name: Runtime partagé requis
-          href: excel/custom-functions-shared-overview.md
-          displayName: 'Excel, Custom Functions'
-        - name: Fonctions personnalisées sans interface utilisateur
-          items:
-            - name: Authentification des fonctions personnalisées sans interface utilisateur
-              href: excel/custom-functions-authentication.md
-              displayName: 'Excel, Custom Functions'
-            - name: Débogage des fonctions sans interface utilisateur
-              href: excel/custom-functions-debugging.md
-              displayName: 'Excel, Custom Functions'
-            - name: Runtime
-              href: excel/custom-functions-runtime.md
-              displayName: 'Excel, Custom Functions'
-        - name: Fonctions volatiles
-          href: excel/custom-functions-volatile.md
-          displayName: 'Excel, Custom Functions'
-        - name: Requêtes web
-          href: excel/custom-functions-web-reqs.md
-          displayName: 'Excel, Custom Functions'
-        - name: Résolution des problèmes
-          href: excel/custom-functions-troubleshooting.md
-          displayName: 'Excel, Custom Functions'
-- name: OneNote
-  items:
-    - name: Documentation sur les compléments OneNote
-      href: onenote/index.yml
-      displayName: OneNote
-    - name: Vue d'ensemble
-      href: onenote/onenote-add-ins-programming-overview.md
-      displayName: OneNote
-    - name: Créer votre premier complément OneNote
-      href: quickstarts/onenote-quickstart-redirect.md
-      displayName: OneNote
-    - name: API JavaScript pour OneNote
-      items:
-        - name: Vue d’ensemble
-          href: reference/overview/onenote-add-ins-javascript-reference.md
-          displayName: OneNote
-        - name: Ensembles de conditions requises de l’API
-          href: reference/requirement-sets/onenote-api-requirement-sets.md
-          displayName: OneNote
-        - name: Référence d’API
-          href: reference/onenote-api-reference.md
-          displayName: OneNote
-        - name: Utiliser du contenu de page OneNote
-          href: onenote/onenote-add-ins-page-content.md
-          displayName: OneNote
-- name: Outlook
-  items:
-    - name: Documentation sur les compléments Outlook
-      href: outlook/index.yml
-      displayName: Outlook
-    - name: Vue d'ensemble
-      href: outlook/outlook-add-ins-overview.md
-      displayName: Outlook
-    - name: Création de votre premier complément Outlook
-      href: quickstarts/outlook-quickstart.md
-      displayName: Outlook
-    - name: "Didacticiel sur le complément\_Outlook"
-      href: tutorials/outlook-tutorial.md
-      displayName: Outlook
-    - name: API JavaScript pour Outlook
-      displayName: Outlook
-      items:
-        - name: Vue d’ensemble
-          href: outlook/apis.md
-          displayName: Outlook
-        - name: Ensembles de conditions requises de l’API
-          displayName: Outlook
-          items:
-            - name: Vue d’ensemble
-              href: reference/requirement-sets/outlook-api-requirement-sets.md
-              displayName: Outlook
-            - name: Ensemble de conditions requises (aperçu)
-              items:
-                - name: Vue d'ensemble
-                  href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
-                - name: Office
-                  href: reference/objectmodel/preview-requirement-set/office.md
-                - name: Office.context
-                  href: reference/objectmodel/preview-requirement-set/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
-                - name: Référence de l’API pour Outlook Preview
-                  href: reference/outlook-api-reference-preview.md
-            - name: "Ensemble de conditions requises\_1.9"
-              items:
-                - name: Vue d’ensemble
-                  href: reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.9/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.9/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.9
-                  href: reference/outlook-api-reference-1-9.md
-            - name: "Ensemble de conditions requises\_1.8"
-              items:
-                - name: Vue d'ensemble
-                  href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.8/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.8/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
-                - name: "Référence de l’API Outlook\_1.8"
-                  href: reference/outlook-api-reference-1-8.md
-            - name: Ensemble de conditions requises 1.7
-              items:
-                - name: Vue d’ensemble
-                  href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.7/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.7/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.7
-                  href: reference/outlook-api-reference-1-7.md
-            - name: Ensemble de conditions requises 1.6
-              items:
-                - name: Vue d'ensemble
-                  href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.6/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.6/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.6
-                  href: reference/outlook-api-reference-1-6.md
-            - name: "Ensemble de conditions requises\_1.5"
-              items:
-                - name: Vue d’ensemble
-                  href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.5/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.5/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
-                - name: "Référence de l’API Outlook\_1.5"
-                  href: reference/outlook-api-reference-1-5.md
-            - name: "Ensemble de conditions requises\_1.4"
-              items:
-                - name: Vue d’ensemble
-                  href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.4/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.4/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.4
-                  href: reference/outlook-api-reference-1-4.md
-            - name: "Ensemble de conditions requises\_1.3"
-              items:
-                - name: Vue d’ensemble
-                  href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.3/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.3/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.3
-                  href: reference/outlook-api-reference-1-3.md
-            - name: "Ensemble de conditions requises\_1.2"
-              items:
-                - name: Vue d'ensemble
-                  href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.2/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.2/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.2
-                  href: reference/outlook-api-reference-1-2.md
-            - name: "Ensemble de conditions requises\_1.1"
-              items:
-                - name: Vue d’ensemble
-                  href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
-                - name: Office
-                  href: reference/objectmodel/requirement-set-1.1/office.md
-                - name: Office.context
-                  href: reference/objectmodel/requirement-set-1.1/Office.context.md
-                - name: Office.context.mailbox
-                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
-                - name: Office.context.mailbox.item
-                  href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
-                - name: Référence de l’API Outlook 1.1
-                  href: reference/outlook-api-reference-1-1.md
-        - name: Référence API - dernière version
-          href: reference/outlook-api-reference-1-9.md
-          displayName: Outlook
-    - name: Concepts
-      items:
-        - name: Instructions de création d’un complément Outlook
-          href: outlook/outlook-addin-design.md
-        - name: Commandes de complément
-          href: outlook/add-in-commands-for-outlook.md
-        - name: Compléments contextuels
-          href: outlook/contextual-outlook-add-ins.md
-        - name: Compléments d’extension de module
-          href: outlook/extension-module-outlook-add-ins.md
-        - name: Compléments pour Outlook Mobile
-          href: outlook/outlook-mobile-addins.md
-        - name: Réunion en ligne sur un appareil mobile
-          href: outlook/online-meeting.md
-        - name: Ajouts à l'envoi
-          href: outlook/outlook-on-send-addins.md
-        - name: Ajouter à l'envoi
-          href: outlook/append-on-send.md
-        - name: Activation basée sur un événement
-          href: outlook/autolaunch.md
-        - name: Volet des tâches pouvant être épinglé
-          href: outlook/pinnable-taskpane.md
-        - name: Accès délégué
-          href: outlook/delegate-access.md
-        - name: Manifestes
-          items:
-            - name: "Manifestes des compléments\_Outlook"
-              href: outlook/manifests.md
-            - name: Règles d’activation
-              href: outlook/activation-rules.md
-            - name: "Ajouter la prise en charge d’Outlook\_Mobile"
-              href: outlook/add-mobile-support.md
-        - name: configuration requise pour les compléments
-          href: outlook/add-in-requirements.md
-        - name: 'API de complément '
-          href: outlook/apis.md
-        - name: Appel des API REST Outlook
-          href: outlook/use-rest-api.md
-        - name: Appel des services Web Exchange
-          href: outlook/web-services.md
-        - name: Obtenir ou définir des données d’élément
-          href: outlook/item-data.md
-        - name: Obtenir ou définir des catégories
-          href: outlook/categories.md
-        - name: Obtenir ou définir des en-têtes Internet
-          href: outlook/internet-headers.md
-        - name: Obtenir ou définir la récurrence
-          href: outlook/get-and-set-recurrence.md
-        - name: Obtenir ou définir des métadonnées de complément
-          href: outlook/metadata-for-an-outlook-add-in.md
-        - name: Gérer l’état et des paramètres des compléments
-          href: outlook/manage-state-and-settings-outlook.md
-        - name: Scénario de lecture
-          items:
-            - name: Vue d'ensemble
-              href: outlook/read-scenario.md
-            - name: Utiliser des expressions régulières pour activer les compléments contextuels
-              href: outlook/use-regular-expressions-to-show-an-outlook-add-in.md
-            - name: Faire correspondre des entités connues d’un élément
-              href: outlook/match-strings-in-an-item-as-well-known-entities.md
-            - name: Extraire des entités d’un élément
-              href: outlook/extract-entity-strings-from-an-item.md
-            - name: Obtention de pièces jointes
-              href: outlook/get-attachments-of-an-outlook-item.md
-        - name: Scénario de composition
-          items:
-            - name: Vue d’ensemble
-              href: outlook/compose-scenario.md
-            - name: Ajouter et supprimer des pièces jointes
-              href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
-            - name: Obtenir et définir des données d’élément
-              href: outlook/get-and-set-item-data-in-a-compose-form.md
-            - name: Obtenir et définir des destinataires
-              href: outlook/get-set-or-add-recipients.md
-            - name: Insérer des données dans le corps
-              href: outlook/insert-data-in-the-body.md
-            - name: Obtenir et définir un objet
-              href: outlook/get-or-set-the-subject.md
-            - name: Obtenir et définir des heures
-              href: outlook/get-or-set-the-time-of-an-appointment.md
-            - name: Obtenir et définir un emplacement
-              href: outlook/get-or-set-the-location-of-an-appointment.md
-        - name: Confidentialité et sécurité
-          items:
-            - name: Vue d’ensemble
-              href: outlook/privacy-and-security.md
-            - name: Présentation des autorisations de complément
-              href: outlook/understanding-outlook-add-in-permissions.md
-        - name: Authentification
-          items:
-            - name: Vue d'ensemble
-              href: outlook/authentication.md
-            - name: S’authentifier avec un jeton à authentification unique
-              href: outlook/authenticate-a-user-with-an-sso-token.md
-            - name: S’authentifier avec un jeton d’identité
-              href: outlook/authenticate-a-user-with-an-identity-token.md
-            - name: Valider un jeton d’identité
-              href: outlook/validate-an-identity-token.md
-            - name: Présentation du jeton d’identité
-              href: outlook/inside-the-identity-token.md
-            - name: "Scénario\_: Implémenter l’authentification unique"
-              href: outlook/implement-sso-in-outlook-add-in.md
-        - name: Tests et conseils
-          items:
-            - name: Vue d'ensemble
-              href: outlook/testing-and-tips.md
-            - name: Charger une version test d’un complément
-              href: outlook/sideload-outlook-add-ins-for-testing.md
-            - name: Comparer la prise en charge de complément dans Outlook sur Mac
-              href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
-            - name: Conseils pour la gestion des valeurs de date
-              href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
-            - name: Limites pour l’activation et l’API JavaScript
-              href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
-            - name: Résoudre les problèmes d’activation de compléments
-              href: outlook/troubleshoot-outlook-add-in-activation.md
-- name: PowerPoint
-  items:
-    - name: Documentation sur les compléments PowerPoint
-      href: powerpoint/index.yml
-      displayName: PowerPoint
-    - name: Vue d'ensemble
-      href: powerpoint/powerpoint-add-ins.md
-      displayName: PowerPoint
-    - name: Création de votre premier complément PowerPoint
-      href: quickstarts/powerpoint-quickstart-redirect.md
-      displayName: PowerPoint
-    - name: Didacticiel sur les compléments PowerPoint
-      href: tutorials/powerpoint-tutorial.md
-      displayName: PowerPoint
-    - name: API JavaScript pour PowerPoint
-      items:
-        - name: Vue d’ensemble
-          href: reference/overview/powerpoint-add-ins-reference-overview.md
-          displayName: PowerPoint
-        - name: Ensembles de conditions requises de l’API
-          items:
-            - name: Vue d’ensemble
-              href: reference/requirement-sets/powerpoint-api-requirement-sets.md
-              displayName: PowerPoint
-            - name: API d’aperçu PowerPoint
-              href: reference/requirement-sets/powerpoint-preview-apis.md
-              displayName: PowerPoint
-        - name: Référence API
-          href: reference/powerpoint-api-reference.md
-          displayName: PowerPoint
-        - name: Obtention du document complet à partir d’un complément
-          href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
-          displayName: PowerPoint
-        - name: "Utiliser des thèmes de document dans vos compléments\_PowerPoint"
-          href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
-          displayName: PowerPoint
-- name: Project
-  items:
-    - name: Documentation sur les compléments Project
-      href: project/index.yml
-      displayName: Project
-    - name: Vue d’ensemble
-      href: project/project-add-ins.md
-      displayName: Project
-    - name: Création de votre premier complément Project
-      href: quickstarts/project-quickstart-redirect.md
-      displayName: Project
-    - name: API JavaScript pour Project
-      items:
-        - name: Vue d'ensemble
-          href: reference/overview/project-add-ins-reference-overview.md
-          displayName: Project
-        - name: Créer un complément Project qui utilise REST avec un service OData local
-          href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
-          displayName: Project
-        - name: Créer votre premier complément de volet des tâches pour Project à l’aide d’un éditeur de texte
-          href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
-          displayName: Project
-- name: Visio
-  items:
-    - name: Documentation Visio
-      href: visio/index.yml
-      displayName: Visio
-    - name: Vue d’ensemble
-      href: reference/overview/visio-javascript-reference-overview.md
-      displayName: Visio
-    - name: Référence d’API
-      href: reference/visio-api-reference.md
-      displayName: Visio
-- name: Word
-  items:
-    - name: Documentation sur les compléments Word
-      href: word/index.yml
-      displayName: Word
-    - name: Vue d’ensemble
-      href: word/word-add-ins-programming-overview.md
-      displayName: Word
-    - name: Créer votre premier complément Word
-      href: quickstarts/word-quickstart-redirect.md
-      displayName: Word
-    - name: Didacticiel sur les compléments Word
-      href: tutorials/word-tutorial.md
-      displayName: Word
-    - name: API JavaScript pour Word
-      items:
-        - name: Vue d'ensemble
-          href: reference/overview/word-add-ins-reference-overview.md
-          displayName: Word
-        - name: Ensembles de conditions requises de l’API
-          items:
-            - name: Vue d'ensemble
-              href: reference/requirement-sets/word-api-requirement-sets.md
-              displayName: Word
-            - name: API de vue d’ensemble Word
-              href: reference/requirement-sets/word-preview-apis.md
-              displayName: Word
-            - name: Ensemble de conditions requises WordApi 1.3
-              href: reference/requirement-sets/word-api-1-3-requirement-set.md
-              displayName: Word
-            - name: Ensemble de conditions requises WordApi 1.2
-              href: reference/requirement-sets/word-api-1-2-requirement-set.md
-              displayName: Word
-            - name: Ensemble de conditions requises WordApi 1.1
-              href: reference/requirement-sets/word-api-1-1-requirement-set.md
-              displayName: Word
-        - name: Référence d’API
-          href: reference/word-api-reference.md
-          displayName: Word
-        - name: Modèle d’objet Word
-          href: word/word-add-ins-core-concepts.md
-          displayName: Word
-        - name: "Créer des compléments plus performants pour Word avec Office\_Open\_XML"
-          href: word/create-better-add-ins-for-word-with-office-open-xml.md
-          displayName: Word
-        - name: Compléments de dictionnaire du volet des tâches
-          href: word/dictionary-task-pane-add-ins.md
-          displayName: Word
-        - name: Obtention du document complet à partir d’un complément
-          href: word/get-the-whole-document-from-an-add-in-for-word.md
-          displayName: Word
-        - name: Lecture et écriture de données dans la sélection active
-          href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
-          displayName: Word
-        - name: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
-          href: word/search-option-guidance.md
-          displayName: Word
-- name: Modèles et pratiques
-  items:
-    - name: Vue d’ensemble
-      href: overview/patterns-and-practices-overview.md
-    - name: Ouvrir dans Excel
-      href: excel/pnp-open-in-excel.md
-      displayName: Excel
-    - name: Traitement par lots des appels distants de fonction personnalisée
-      href: excel/custom-functions-batching.md
-      displayName: 'Excel, Custom Functions'
-    - name: Authentification
-      href: develop/authentication-pnp.md
-    - name: Gérer une résolution élevée et redimensionner la résolution dans votre solution Office
-      href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
-- name: Ressources de transition VSTO et COM
-  items:
-    - name: Guide pour les développeurs de compléments VSTO
-      href: overview/learning-path-transition.md
-    - name: Partager du code à partir d’un complément VSTO vers un complément Office
-      href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-    - name: Rendre votre complément Office compatible avec un complément COM existant
-      href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
-      displayName: manifest
+items:
+  - name: Documentation pour compléments Office
+    href: index.yml
+  - name: À propos des compléments Office
+    href: overview/office-add-ins.md
+    displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+  - name: Prise en main
+    items:
+      - name: Guide du débutant
+        href: overview/learning-path-beginner.md
+        displayName: develop
+      - name: Démarrages rapides
+        items:
+          - name: Complément Excel
+            href: quickstarts/excel-quickstart-jquery.md
+          - name: Fonctions personnalisées dans Excel
+            href: quickstarts/excel-custom-functions-quickstart.md
+          - name: Complément OneNote
+            href: quickstarts/onenote-quickstart.md
+          - name: Complément Outlook
+            href: quickstarts/outlook-quickstart.md
+          - name: Complément PowerPoint
+            href: quickstarts/powerpoint-quickstart.md
+          - name: Complément Project
+            href: quickstarts/project-quickstart.md
+          - name: Complément Word
+            href: quickstarts/word-quickstart.md
+          - name: "Authentification unique\_(SSO)"
+            href: quickstarts/sso-quickstart-redirect.md
+      - name: Explorer les API Office JS à l’aide de Script Lab
+        href: overview/explore-with-script-lab.md
+        displayName: 'Excel, Word, PowerPoint'
+      - name: Configuration de votre environnement de développement
+        href: overview/set-up-your-dev-environment.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+  - name: Cycle de voie de développement
+    items:
+      - name: Présentation du cycle de vie
+        href: overview/core-concepts-office-add-ins.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+      - name: Prévision
+        items:
+          - name: Meilleures pratiques en matière de développement de compléments
+            href: concepts/add-in-development-best-practices.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Versions d’Office et ensembles de conditions requises
+            href: develop/office-versions-and-requirement-sets.md
+          - name: Disponibilité de la plateforme et de l’application Office
+            href: overview/office-add-in-availability.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Configuration requise pour exécuter des compléments
+            href: concepts/requirements-for-running-office-add-ins.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Installer la dernière version d’Office
+            href: develop/install-latest-office-version.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+      - name: Développer
+        items:
+          - name: Présentation
+            href: develop/develop-overview.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Compréhension de l’API JavaScript pour Office
+            href: develop/understanding-the-javascript-api-for-office.md
+          - name: Utilisation du modèle de l’API propre à l’application
+            href: develop/application-specific-api-model.md
+          - name: Utilisation du modèle de l’API courante
+            items:
+              - name: Modèle d’objet d’API JavaScript courant
+                href: develop/office-javascript-api-object-model.md
+              - name: Programmation asynchrone dans des compléments Office
+                href: develop/asynchronous-programming-in-office-add-ins.md
+              - name: Prise en charge des compléments de contenu et de volet Office
+                href: develop/support-for-task-pane-and-content-add-ins.md
+              - name: Conserver l’état et les paramètres
+                href: develop/persisting-add-in-state-and-settings.md
+              - name: Lier des régions dans un document ou une feuille de calcul
+                href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
+          - name: Configurer et exécuter votre complément
+            items:
+              - name: Référencer Office.js
+                href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
+              - name: Spécifier les applications Office et les exigences de l’API
+                href: develop/specify-office-hosts-and-api-requirements.md
+              - name: Séquence de chargement d’un complément Office
+                href: develop/loading-the-dom-and-runtime-environment.md
+              - name: Initialiser votre complément
+                href: develop/initialize-add-in.md
+                displayName: manifest
+              - name: Ouvrir automatiquement un volet de tâches avec un document
+                href: develop/automatically-open-a-task-pane-with-a-document.md
+                displayName: manifest
+          - name: Manifeste
+            items:
+              - name: Présentation
+                href: develop/add-in-manifests.md
+              - name: Trouver l’ordre approprié d’éléments manifestes
+                href: develop/manifest-element-ordering.md
+              - name: Mettre à jour la version du manifeste et de l’API
+                href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+                displayName: manifest
+          - name: 'Confidentialité, sécurité et authentification'
+            items:
+              - name: Vue d’ensemble de la confidentialité et de la sécurité du complément
+                href: concepts/privacy-and-security.md
+              - name: Vue d’ensemble de l’authentification et de l’autorisation
+                href: develop/overview-authn-authz.md
+              - name: Authentifier et autoriser avec l’API de dialogue Office
+                href: develop/auth-with-office-dialog-api.md
+              - name: Autoriser des services externes
+                href: develop/auth-external-add-ins.md
+              - name: Autoriser la connexion à Microsoft Graph sans authentification unique
+                href: develop/authorize-to-microsoft-graph-without-sso.md
+              - name: Activer l’authentification unique dans un complément
+                items:
+                  - name: Activer l’authentification unique
+                    href: develop/sso-in-office-add-ins.md
+                  - name: Démarrage rapide authentification unique
+                    href: quickstarts/sso-quickstart.md
+                  - name: Personnaliser votre complément compatible avec l’authentification unique
+                    href: quickstarts/sso-quickstart-customize.md
+                  - name: Autoriser la connexion à Microsoft Graph avec l’authentification unique
+                    href: develop/authorize-to-microsoft-graph.md
+                  - name: Créer un complément d’authentification unique à l’aide d’ASP.NET
+                    href: develop/create-sso-office-add-ins-aspnet.md
+                  - name: Créer un complément d’authentification unique à l’aide de Node.js
+                    href: develop/create-sso-office-add-ins-nodejs.md
+                  - name: "Enregistrer un complément\_Office utilisant l’authentification unique avec Azure\_AD v2.0"
+                    href: develop/register-sso-add-in-aad-v2.md
+                  - name: Octroi du consentement administrateur pour le complément
+                    href: develop/grant-admin-consent-to-an-add-in.md
+                  - name: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
+                    href: develop/troubleshoot-sso-in-office-add-ins.md
+              - name: Demander des autorisations d’utilisation de l’API dans des compléments
+                href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
+          - name: Interface utilisateur et UX
+            items:
+              - name: Vue d’ensemble
+                href: design/add-in-design.md
+              - name: Conseils
+                items:
+                  - name: Accessibilité
+                    href: design/accessibility-guidelines.md
+                  - name: Visualisation de données
+                    href: design/data-visualization-guidelines.md
+                  - name: Voix
+                    href: design/voice-guidelines.md
+              - name: Modèles et langages de conception UX
+                items:
+                  - name: Langage de création
+                    items:
+                      - name: Vue d'ensemble
+                        href: design/add-in-design-language.md
+                      - name: Couleur
+                        href: design/add-in-color.md
+                      - name: Icônes
+                        items:
+                          - name: Conseils relatifs aux icônes
+                            href: design/add-in-icons.md
+                          - name: Nouveau style
+                            href: design/add-in-icons-fresh.md
+                          - name: Style ligne unique
+                            href: design/add-in-icons-monoline.md
+                      - name: Disposition
+                        href: design/add-in-layout.md
+                      - name: Mouvement
+                        href: design/using-motion-office-addins.md
+                      - name: Typographie
+                        href: design/add-in-typography.md
+                  - name: Modèles de conception UX pour les scénarios courants
+                    items:
+                      - name: Vue d’ensemble
+                        href: design/ux-design-pattern-templates.md
+                      - name: Authentification
+                        href: design/authentication-patterns.md
+                      - name: Personnalisation
+                        href: design/branding-patterns.md
+                      - name: Première exécution
+                        href: design/first-run-experience-patterns.md
+                      - name: Navigation
+                        href: design/navigation-patterns.md
+              - name: Éléments de l’interface
+                items:
+                  - name: Vue d'ensemble
+                    href: design/interface-elements.md
+                  - name: Commandes de complément
+                    items:
+                      - name: Concepts basiques pour les commandes de complément
+                        href: design/add-in-commands.md
+                      - name: Créer des commandes de complément
+                        href: develop/create-addin-commands.md
+                      - name: Activer et désactiver des commandes de compléments
+                        href: design/disable-add-in-commands.md
+                      - name: Intégrer des boutons prédéfinis Office dans les onglets personnalisés.
+                        href: design/built-in-button-integration.md
+                      - name: Positionner un onglet personnalisé sur le ruban
+                        href: design/custom-tab-placement.md
+                  - name: Compléments de contenu
+                    href: design/content-add-ins.md
+                  - name: Boîtes de dialogue
+                    items:
+                      - name: Présentation
+                        href: design/dialog-boxes.md
+                      - name: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
+                        href: develop/dialog-api-in-office-add-ins.md
+                      - name: Pratiques recommandées et règles pour l’API de dialogue Office
+                        href: develop/dialog-best-practices.md
+                      - name: Envoyer les données à partir de la page hôte vers la boîte de dialogue
+                        href: develop/parent-to-dialog.md
+                      - name: Gestion des erreurs et des événements dans la boîte de dialogue Office
+                        href: develop/dialog-handle-errors-events.md
+                      - name: Utiliser la boîte de dialogue Office pour lire une vidéo
+                        href: develop/dialog-video.md
+                  - name: Volets de tâches
+                    href: design/task-pane-add-ins.md
+              - name: Raccourcis clavier
+                href: design/keyboard-shortcuts.md
+              - name: Localisation
+                href: develop/localization.md
+              - name: Ressources
+                items:
+                  - name: Kits de ressources de conception
+                    href: design/design-toolkits.md
+                  - name: Prise en main de Fabric React
+                    href: design/using-office-ui-fabric-react.md
+                  - name: Interface utilisateur Office avec Fabric
+                    href: design/office-ui-fabric.md
+          - name: Infrastructures et IDE
+            items:
+              - name: Développement de compléments avec Angular
+                href: develop/add-ins-with-angular2.md
+              - name: Développement d’un complément avec Visual Studio Code
+                href: develop/develop-add-ins-vscode.md
+              - name: Développement d’un complément avec Visual Studio
+                items:
+                  - name: Vue d’ensemble
+                    href: develop/develop-add-ins-visual-studio.md
+                    displayName: Visual Studio
+                  - name: "Déboguer des compléments Office dans Visual\_Studio"
+                    href: develop/debug-office-add-ins-in-visual-studio.md
+                  - name: Obtenir JavaScript IntelliSense dans Visual Studio
+                    href: develop/get-javascript-intellisense-in-visual-studio.md
+                  - name: Convertir des projets JavaScript en TypeScript
+                    href: develop/convert-javascript-to-typescript.md
+          - name: Conditions particulières pour les compléments sur iPad
+            href: develop/develop-office-add-ins-for-the-ipad.md
+      - name: Test et débogage
+        items:
+          - name: Test et débogage de compléments Office
+            href: testing/test-debug-office-add-ins.md
+            displayName: 'test, debug'
+          - name: Windows
+            items:
+              - name: Chargez des compléments Office sur Windows à partir d’un partage réseau
+                href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
+              - name: Attacher un débogueur à partir du volet Office
+                href: testing/attach-debugger-from-task-pane.md
+              - name: Débogage à l’aide des outils de développement
+                href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+              - name: "Tester avec Internet Explorer\_11"
+                href: testing/ie-11-testing.md
+          - name: Navigateur web
+            items:
+              - name: Charger une version test des compléments dans Office sur le web
+                href: testing/sideload-office-add-ins-for-testing.md
+              - name: Déboguer dans Office sur le web
+                href: testing/debug-add-ins-in-office-online.md
+          - name: iPad et Mac
+            items:
+              - name: "Chargement de versions test de compléments\_Office sur iPad et Mac"
+                href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+              - name: Débogage sur Mac
+                href: testing/debug-office-add-ins-on-ipad-and-mac.md
+          - name: Vider le cache Office
+            href: testing/clear-cache.md
+            displayName: 'uninstall, sideload'
+          - name: Déboguer avec la journalisation runtime
+            href: testing/runtime-logging.md
+          - name: Extension de débogueur pour Visual Studio Code
+            href: testing/debug-with-vs-extension.md
+          - name: Performances
+            items:
+              - name: Éviter d’utiliser la méthode context.sync dans des boucles
+                href: concepts/correlated-objects-pattern.md
+              - name: Limites des ressources et optimisation des performances pour les compléments Office
+                href: concepts/resource-limits-and-performance-optimization.md
+          - name: Résolution des erreurs de l’utilisateur
+            href: testing/testing-and-troubleshooting.md
+          - name: Résolution des erreurs de développement
+            href: testing/troubleshoot-development-errors.md
+          - name: Tests d’utilisation
+            href: develop/usability-testing.md
+          - name: Valider le manifeste d’un complément Office
+            href: testing/troubleshoot-manifest.md
+      - name: Publier
+        items:
+          - name: Publier des compléments Office
+            href: publish/publish.md
+          - name: Publier votre complément (VS Code)
+            href: publish/publish-add-in-vs-code.md
+          - name: "Visual\_Studio"
+            items:
+              - name: Publier votre complément (Visual Studio)
+                href: publish/package-your-add-in-using-visual-studio.md
+              - name: "Héberger un complément pour Office sur Microsoft\_Azure"
+                href: publish/host-an-office-add-in-on-microsoft-azure.md
+          - name: Publication de compléments sur AppSource
+            href: /office/dev/store/submit-to-the-office-store
+          - name: Stratégies de validation AppSource
+            href: /legal/marketplace/certification-policies
+          - name: Publier des compléments via le déploiement centralisé
+            href: publish/centralized-deployment.md
+          - name: Publier des compléments dans un catalogue d’applications SharePoint
+            href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+      - name: Référence
+        items:
+          - name: Documentation de référence de l'API
+            href: reference/javascript-api-for-office.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
+          - name: Ensembles de conditions requises des API (communes)
+            items:
+              - name: Ensembles de conditions requises concernant les commandes de complément
+                href: reference/requirement-sets/add-in-commands-requirement-sets.md
+              - name: Ensembles de conditions requises de l’API de dialogue
+                href: reference/requirement-sets/dialog-api-requirement-sets.md
+              - name: Ensembles de conditions requises de l’API d’identité
+                href: reference/requirement-sets/identity-api-requirement-sets.md
+              - name: Ensembles de conditions requises de coercition d’image
+                href: reference/requirement-sets/image-coercion-requirement-sets.md
+              - name: Séries de conditions requises des API communes pour Office
+                href: reference/requirement-sets/office-add-in-requirement-sets.md
+              - name: Séries de conditions requises pour ouvrir une fenêtre de navigateur
+                href: reference/requirement-sets/open-browser-window-api-requirement-sets.md
+              - name: Ensembles de conditions requises des API ruban
+                href: reference/requirement-sets/ribbon-api-requirement-sets.md
+              - name: Ensembles de conditions requises d'exécution partagés
+                href: reference/requirement-sets/shared-runtime-requirement-sets.md
+          - name: Référence du manifeste du complément pour Office
+            items:
+              - name: AllowSnapshot
+                href: reference/manifest/allowsnapshot.md
+              - name: AlternateId
+                href: reference/manifest/alternateid.md
+              - name: AppDomain
+                href: reference/manifest/appdomain.md
+              - name: AppDomains
+                href: reference/manifest/appdomains.md
+              - name: CitationText
+                href: reference/manifest/citationtext.md
+              - name: DefaultLocale
+                href: reference/manifest/defaultlocale.md
+              - name: DefaultSettings
+                href: reference/manifest/defaultsettings.md
+              - name: Description
+                href: reference/manifest/description.md
+              - name: DesktopSettings
+                href: reference/manifest/desktopsettings.md
+              - name: Dictionary
+                href: reference/manifest/dictionary.md
+              - name: DictionaryHomePage
+                href: reference/manifest/dictionaryhomepage.md
+              - name: DisableEntityHighlighting
+                href: reference/manifest/disableentityhighlighting.md
+              - name: DisplayName
+                href: reference/manifest/displayname.md
+              - name: EquivalentAddin
+                href: reference/manifest/equivalentaddin.md
+              - name: EquivalentAddins
+                href: reference/manifest/equivalentaddins.md
+              - name: ExtendedOverrides
+                href: reference/manifest/extendedoverrides.md
+              - name: ExtendedPermission
+                href: reference/manifest/extendedpermission.md
+              - name: ExtendedPermissions
+                href: reference/manifest/extendedpermissions.md
+              - name: FileName
+                href: reference/manifest/filename.md
+              - name: Formulaire
+                href: reference/manifest/form.md
+              - name: FormSettings
+                href: reference/manifest/formsettings.md
+              - name: HighResolutionIconUrl
+                href: reference/manifest/highresolutioniconurl.md
+              - name: Hôte
+                href: reference/manifest/host.md
+              - name: Hôtes
+                href: reference/manifest/hosts.md
+              - name: IconUrl
+                href: reference/manifest/iconurl.md
+              - name: ID
+                href: reference/manifest/id.md
+              - name: Métadonnées
+                href: reference/manifest/metadata.md
+              - name: Méthode
+                href: reference/manifest/method.md
+              - name: Méthodes
+                href: reference/manifest/methods.md
+              - name: Espace de noms
+                href: reference/manifest/namespace.md
+              - name: OfficeApp
+                href: reference/manifest/officeapp.md
+              - name: Remplacer
+                href: reference/manifest/override.md
+              - name: Autorisations
+                href: reference/manifest/permissions.md
+              - name: PhoneSettings
+                href: reference/manifest/phonesettings.md
+              - name: ProgId
+                href: reference/manifest/progid.md
+              - name: ProviderName
+                href: reference/manifest/providername.md
+              - name: QueryUri
+                href: reference/manifest/queryuri.md
+              - name: RequestedHeight
+                href: reference/manifest/requestedheight.md
+              - name: RequestedWidth
+                href: reference/manifest/requestedwidth.md
+              - name: Configuration requise
+                href: reference/manifest/requirements.md
+              - name: Rule
+                href: reference/manifest/rule.md
+              - name: Set
+                href: reference/manifest/set.md
+              - name: documents
+                href: reference/manifest/sets.md
+              - name: SourceLocation
+                href: reference/manifest/sourcelocation.md
+              - name: SupportUrl
+                href: reference/manifest/supporturl.md
+              - name: TabletSettings
+                href: reference/manifest/tabletsettings.md
+              - name: TargetDialect
+                href: reference/manifest/targetdialect.md
+              - name: TargetDialects
+                href: reference/manifest/targetdialects.md
+              - name: Jetons
+                href: reference/manifest/tokens.md
+              - name: Jeton
+                href: reference/manifest/token.md
+              - name: Tapez
+                href: reference/manifest/type.md
+              - name: Version
+                href: reference/manifest/version.md
+              - name: VersionOverrides
+                items:
+                  - name: VersionOverrides
+                    href: reference/manifest/versionoverrides.md
+                  - name: Action
+                    href: reference/manifest/action.md
+                  - name: AllFormFactors
+                    href: reference/manifest/allformfactors.md
+                  - name: Authorization
+                    href: reference/manifest/authorization.md
+                  - name: Autorisations
+                    href: reference/manifest/authorizations.md
+                  - name: Contrôle
+                    href: reference/manifest/control.md
+                  - name: CustomTab
+                    href: reference/manifest/customtab.md
+                  - name: Activé
+                    href: reference/manifest/enabled.md
+                  - name: EquivalentAddin
+                    href: reference/manifest/equivalentaddin.md
+                  - name: EquivalentAddins
+                    href: reference/manifest/equivalentaddins.md
+                  - name: Événement
+                    href: reference/manifest/event.md
+                  - name: ExtensionPoint
+                    href: reference/manifest/extensionpoint.md
+                  - name: DesktopFormFactor
+                    href: reference/manifest/desktopformfactor.md
+                  - name: FunctionFile
+                    href: reference/manifest/functionfile.md
+                  - name: GetStarted
+                    href: reference/manifest/getstarted.md
+                  - name: Group
+                    href: reference/manifest/group.md
+                  - name: Hôtes
+                    href: reference/manifest/hosts.md
+                  - name: Icône
+                    href: reference/manifest/icon.md
+                  - name: LaunchEvent
+                    href: reference/manifest/launchevent.md
+                  - name: LaunchEvents
+                    href: reference/manifest/launchevents.md
+                  - name: MobileFormFactor
+                    href: reference/manifest/mobileformfactor.md
+                  - name: OfficeMenu
+                    href: reference/manifest/officemenu.md
+                  - name: OfficeTab
+                    href: reference/manifest/officetab.md
+                  - name: Page
+                    href: reference/manifest/page.md
+                  - name: Ressources
+                    href: reference/manifest/resources.md
+                  - name: Runtime
+                    href: reference/manifest/runtime.md
+                  - name: Services d’exécution
+                    href: reference/manifest/runtimes.md
+                  - name: Étendues
+                    href: reference/manifest/scopes.md
+                  - name: Script
+                    href: reference/manifest/script.md
+                  - name: SourceLocation (fonctions personnalisées)
+                    href: reference/manifest/customfunctionssourcelocation.md
+                  - name: Supertip
+                    href: reference/manifest/supertip.md
+                  - name: SupportsSharedFolders
+                    href: reference/manifest/supportssharedfolders.md
+                  - name: WebApplicationInfo
+                    href: reference/manifest/webapplicationinfo.md
+          - name: Traiter les limites de stratégie de même origine
+            href: develop/addressing-same-origin-policy-limitations.md
+          - name: Navigateurs utilisés par les compléments Office
+            href: concepts/browsers-used-by-office-web-add-ins.md
+            displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Codes d’erreur
+            href: reference/javascript-api-for-office-error-codes.md
+          - name: Objets Window non pris en charge
+            href: reference/window-objects-unsupported-in-add-ins.md
+      - name: Ressources
+        href: resources/resources-links-help.md
+        displayName: 'Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook'
+  - name: Excel
+    items:
+      - name: Documentation sur les compléments Excel
+        href: excel/index.yml
+        displayName: Excel
+      - name: Vue d'ensemble
+        href: excel/excel-add-ins-overview.md
+        displayName: Excel
+      - name: Création de votre premier complément Excel
+        items:
+          - name: Volet de tâches
+            href: quickstarts/excel-quickstart-jquery-redirect.md
+            displayName: Excel
+          - name: Volet de tâches (angulaire)
+            href: quickstarts/excel-quickstart-angular.md
+            displayName: Excel
+          - name: Volet de tâches (réagir)
+            href: quickstarts/excel-quickstart-react.md
+            displayName: Excel
+          - name: Volet de tâches (vue)
+            href: quickstarts/excel-quickstart-vue.md
+            displayName: Excel
+      - name: Didacticiel sur le complément Excel
+        href: tutorials/excel-tutorial.md
+        displayName: Excel
+      - name: sur les API JavaScript pour Excel
+        items:
+          - name: Vue d'ensemble
+            href: reference/overview/excel-add-ins-reference-overview.md
+            displayName: Excel
+          - name: Ensembles de conditions requises de l’API
+            items:
+              - name: Vue d'ensemble
+                href: reference/requirement-sets/excel-api-requirement-sets.md
+                displayName: Excel
+              - name: API de vue d’ensemble Excel
+                href: reference/requirement-sets/excel-preview-apis.md
+                displayName: Excel
+              - name: Ensemble de conditions requises pour ExcelApi en ligne uniquement
+                href: reference/requirement-sets/excel-api-online-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.12
+                href: reference/requirement-sets/excel-api-1-12-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.11
+                href: reference/requirement-sets/excel-api-1-11-requirement-set.md
+                displayName: Excel
+              - name: "Ensemble de conditions requises ExcelApi\_1.10"
+                href: reference/requirement-sets/excel-api-1-10-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.9
+                href: reference/requirement-sets/excel-api-1-9-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.8
+                href: reference/requirement-sets/excel-api-1-8-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.7
+                href: reference/requirement-sets/excel-api-1-7-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.6
+                href: reference/requirement-sets/excel-api-1-6-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.5
+                href: reference/requirement-sets/excel-api-1-5-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.4
+                href: reference/requirement-sets/excel-api-1-4-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.3
+                href: reference/requirement-sets/excel-api-1-3-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.2
+                href: reference/requirement-sets/excel-api-1-2-requirement-set.md
+                displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.1
+                href: reference/requirement-sets/excel-api-1-1-requirement-set.md
+                displayName: Excel
+          - name: Référence d’API
+            href: reference/excel-api-reference.md
+            displayName: Excel
+          - name: Modèle d’objet Excel
+            href: excel/excel-add-ins-core-concepts.md
+            displayName: Excel
+          - name: Valeurs vides et null dans les compléments Excel
+            href: excel/excel-add-ins-blank-null-values.md
+            displayName: Excel
+          - name: Appel de fonctions intégrées
+            href: excel/excel-add-ins-worksheet-functions.md
+            displayName: Excel
+          - name: Graphiques
+            href: excel/excel-add-ins-charts.md
+            displayName: Excel
+          - name: Co-création dans des macros complémentaires Excel
+            href: excel/co-authoring-in-excel-add-ins.md
+            displayName: Excel
+          - name: Commentaires
+            href: excel/excel-add-ins-comments.md
+            displayName: Excel
+          - name: Mise en forme conditionnelle de plages
+            href: excel/excel-add-ins-conditional-formatting.md
+            displayName: Excel
+          - name: Configurer votre complément pour utiliser un runtime partagé
+            href: excel/configure-your-add-in-to-use-a-shared-runtime.md
+            displayName: Excel
+          - name: Validation de données
+            href: excel/excel-add-ins-data-validation.md
+            displayName: Excel
+          - name: Retarder l’exécution pendant la modification de la cellule
+            href: excel/excel-add-ins-delay-in-cell-edit.md
+            displayName: Excel
+          - name: Gestion des erreurs
+            href: excel/excel-add-ins-error-handling.md
+            displayName: Excel
+          - name: Événements
+            href: excel/excel-add-ins-events.md
+            displayName: Excel
+          - name: Plages multiples
+            href: excel/excel-add-ins-multiple-ranges.md
+            displayName: Excel
+          - name: Optimisation des performances
+            href: excel/performance.md
+            displayName: Excel
+          - name: Tableaux croisés dynamiques
+            href: excel/excel-add-ins-pivottables.md
+            displayName: Excel
+          - name: Plages (fondamentales)
+            href: excel/excel-add-ins-ranges.md
+            displayName: Excel
+          - name: Plages (avancées)
+            href: excel/excel-add-ins-ranges-advanced.md
+            displayName: Excel
+          - name: Exécuter le code sur le document ouvert
+            href: excel/run-code-on-document-open.md
+            displayName: Excel
+          - name: Formes
+            href: excel/excel-add-ins-shapes.md
+            displayName: Excel
+          - name: Afficher ou masquer un complément Office dans un runtime partagé
+            href: excel/show-hide-add-in.md
+            displayName: Excel
+          - name: Tables
+            href: excel/excel-add-ins-tables.md
+            displayName: Excel
+          - name: Classeurs
+            href: excel/excel-add-ins-workbooks.md
+            displayName: Excel
+          - name: Feuilles de calcul
+            href: excel/excel-add-ins-worksheets.md
+            displayName: Excel
+          - name: Résoudre les problèmes liés aux compléments Excel
+            href: excel/excel-add-ins-troubleshooting.md
+            displayName: Excel
+      - name: Fonctions personnalisées
+        items:
+          - name: Vue d’ensemble
+            href: excel/custom-functions-overview.md
+            displayName: 'Excel, Custom Functions'
+          - name: Ensembles de conditions requises de l’API CustomFunctionsRuntime
+            href: excel/custom-functions-requirement-sets.md
+            displayName: 'Excel, Custom Functions'
+          - name: Didacticiels
+            items:
+              - name: Créer votre premier projet de fonctions personnalisées
+                href: quickstarts/excel-custom-functions-quickstart.md
+                displayName: 'Excel, Custom Functions'
+              - name: Didacticiel sur les fonctions personnalisées
+                href: tutorials/excel-tutorial-create-custom-functions.md
+                displayName: 'Excel, Custom Functions'
+              - name: Données de fonction personnalisée partagées avec le didacticiel du volet Office
+                href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
+                displayName: 'Excel, Custom Functions'
+          - name: Instructions d’attribution de noms
+            href: excel/custom-functions-naming.md
+            displayName: 'Excel, Custom Functions'
+          - name: Options de paramètres
+            href: excel/custom-functions-parameter-options.md
+            displayName: 'Excel, Custom Functions'
+          - name: Gestion des erreurs
+            href: excel/custom-functions-errors.md
+            displayName: 'Excel, Custom Functions'
+          - name: Générer automatiquement des métadonnées JSON
+            href: excel/custom-functions-json-autogeneration.md
+            displayName: 'Excel, Custom Functions'
+          - name: Appeler des API Excel JS
+            href: excel/call-excel-apis-from-custom-function.md
+            displayName: 'Excel, Custom Functions'
+          - name: Identifier un XLL équivalent
+            href: excel/make-custom-functions-compatible-with-xll-udf.md
+            displayName: 'Excel, Custom Functions'
+          - name: Localisation
+            href: excel/custom-functions-localize.md
+            displayName: 'Excel, Custom Functions'
+          - name: Créer manuellement des métadonnées JSON
+            href: excel/custom-functions-json.md
+            displayName: 'Excel, Custom Functions'
+          - name: Retourne un tableau dynamique
+            href: excel/custom-functions-dynamic-arrays.md
+            displayName: 'Excel, Custom Functions'
+          - name: Runtime partagé requis
+            href: excel/custom-functions-shared-overview.md
+            displayName: 'Excel, Custom Functions'
+          - name: Fonctions personnalisées sans interface utilisateur
+            items:
+              - name: Authentification des fonctions personnalisées sans interface utilisateur
+                href: excel/custom-functions-authentication.md
+                displayName: 'Excel, Custom Functions'
+              - name: Débogage des fonctions sans interface utilisateur
+                href: excel/custom-functions-debugging.md
+                displayName: 'Excel, Custom Functions'
+              - name: Runtime
+                href: excel/custom-functions-runtime.md
+                displayName: 'Excel, Custom Functions'
+          - name: Fonctions volatiles
+            href: excel/custom-functions-volatile.md
+            displayName: 'Excel, Custom Functions'
+          - name: Requêtes web
+            href: excel/custom-functions-web-reqs.md
+            displayName: 'Excel, Custom Functions'
+          - name: Résolution des problèmes
+            href: excel/custom-functions-troubleshooting.md
+            displayName: 'Excel, Custom Functions'
+  - name: OneNote
+    items:
+      - name: Documentation sur les compléments OneNote
+        href: onenote/index.yml
+        displayName: OneNote
+      - name: Vue d'ensemble
+        href: onenote/onenote-add-ins-programming-overview.md
+        displayName: OneNote
+      - name: Créer votre premier complément OneNote
+        href: quickstarts/onenote-quickstart-redirect.md
+        displayName: OneNote
+      - name: API JavaScript pour OneNote
+        items:
+          - name: Vue d’ensemble
+            href: reference/overview/onenote-add-ins-javascript-reference.md
+            displayName: OneNote
+          - name: Ensembles de conditions requises de l’API
+            href: reference/requirement-sets/onenote-api-requirement-sets.md
+            displayName: OneNote
+          - name: Référence d’API
+            href: reference/onenote-api-reference.md
+            displayName: OneNote
+          - name: Utiliser du contenu de page OneNote
+            href: onenote/onenote-add-ins-page-content.md
+            displayName: OneNote
+  - name: Outlook
+    items:
+      - name: Documentation sur les compléments Outlook
+        href: outlook/index.yml
+        displayName: Outlook
+      - name: Vue d'ensemble
+        href: outlook/outlook-add-ins-overview.md
+        displayName: Outlook
+      - name: Création de votre premier complément Outlook
+        href: quickstarts/outlook-quickstart.md
+        displayName: Outlook
+      - name: "Didacticiel sur le complément\_Outlook"
+        href: tutorials/outlook-tutorial.md
+        displayName: Outlook
+      - name: API JavaScript pour Outlook
+        displayName: Outlook
+        items:
+          - name: Vue d’ensemble
+            href: outlook/apis.md
+            displayName: Outlook
+          - name: Ensembles de conditions requises de l’API
+            displayName: Outlook
+            items:
+              - name: Vue d’ensemble
+                href: reference/requirement-sets/outlook-api-requirement-sets.md
+                displayName: Outlook
+              - name: Ensemble de conditions requises (aperçu)
+                items:
+                  - name: Vue d'ensemble
+                    href: reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md
+                  - name: Office
+                    href: reference/objectmodel/preview-requirement-set/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/preview-requirement-set/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
+                  - name: Référence de l’API pour Outlook Preview
+                    href: reference/outlook-api-reference-preview.md
+              - name: "Ensemble de conditions requises\_1.9"
+                items:
+                  - name: Vue d’ensemble
+                    href: reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.9/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.9/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.9
+                    href: reference/outlook-api-reference-1-9.md
+              - name: "Ensemble de conditions requises\_1.8"
+                items:
+                  - name: Vue d'ensemble
+                    href: reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.8/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.8/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
+                  - name: "Référence de l’API Outlook\_1.8"
+                    href: reference/outlook-api-reference-1-8.md
+              - name: Ensemble de conditions requises 1.7
+                items:
+                  - name: Vue d’ensemble
+                    href: reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.7/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.7/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.7
+                    href: reference/outlook-api-reference-1-7.md
+              - name: Ensemble de conditions requises 1.6
+                items:
+                  - name: Vue d'ensemble
+                    href: reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.6/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.6/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.6
+                    href: reference/outlook-api-reference-1-6.md
+              - name: "Ensemble de conditions requises\_1.5"
+                items:
+                  - name: Vue d’ensemble
+                    href: reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.5/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.5/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
+                  - name: "Référence de l’API Outlook\_1.5"
+                    href: reference/outlook-api-reference-1-5.md
+              - name: "Ensemble de conditions requises\_1.4"
+                items:
+                  - name: Vue d’ensemble
+                    href: reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.4/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.4/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.4
+                    href: reference/outlook-api-reference-1-4.md
+              - name: "Ensemble de conditions requises\_1.3"
+                items:
+                  - name: Vue d’ensemble
+                    href: reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.3/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.3/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.3
+                    href: reference/outlook-api-reference-1-3.md
+              - name: "Ensemble de conditions requises\_1.2"
+                items:
+                  - name: Vue d'ensemble
+                    href: reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.2/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.2/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.2
+                    href: reference/outlook-api-reference-1-2.md
+              - name: "Ensemble de conditions requises\_1.1"
+                items:
+                  - name: Vue d’ensemble
+                    href: reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md
+                  - name: Office
+                    href: reference/objectmodel/requirement-set-1.1/office.md
+                  - name: Office.context
+                    href: reference/objectmodel/requirement-set-1.1/Office.context.md
+                  - name: Office.context.mailbox
+                    href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.md
+                  - name: Office.context.mailbox.item
+                    href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
+                  - name: Référence de l’API Outlook 1.1
+                    href: reference/outlook-api-reference-1-1.md
+          - name: Référence API - dernière version
+            href: reference/outlook-api-reference-1-9.md
+            displayName: Outlook
+      - name: Concepts
+        items:
+          - name: Instructions de création d’un complément Outlook
+            href: outlook/outlook-addin-design.md
+          - name: Commandes de complément
+            href: outlook/add-in-commands-for-outlook.md
+          - name: Compléments contextuels
+            href: outlook/contextual-outlook-add-ins.md
+          - name: Compléments d’extension de module
+            href: outlook/extension-module-outlook-add-ins.md
+          - name: Compléments pour Outlook Mobile
+            href: outlook/outlook-mobile-addins.md
+          - name: Réunion en ligne sur un appareil mobile
+            href: outlook/online-meeting.md
+          - name: Ajouts à l'envoi
+            href: outlook/outlook-on-send-addins.md
+          - name: Ajouter à l'envoi
+            href: outlook/append-on-send.md
+          - name: Activation basée sur un événement
+            href: outlook/autolaunch.md
+          - name: Volet des tâches pouvant être épinglé
+            href: outlook/pinnable-taskpane.md
+          - name: Accès délégué
+            href: outlook/delegate-access.md
+          - name: Manifestes
+            items:
+              - name: "Manifestes des compléments\_Outlook"
+                href: outlook/manifests.md
+              - name: Règles d’activation
+                href: outlook/activation-rules.md
+              - name: "Ajouter la prise en charge d’Outlook\_Mobile"
+                href: outlook/add-mobile-support.md
+          - name: configuration requise pour les compléments
+            href: outlook/add-in-requirements.md
+          - name: 'API de complément '
+            href: outlook/apis.md
+          - name: Appel des API REST Outlook
+            href: outlook/use-rest-api.md
+          - name: Appel des services Web Exchange
+            href: outlook/web-services.md
+          - name: Obtenir ou définir des données d’élément
+            href: outlook/item-data.md
+          - name: Obtenir ou définir des catégories
+            href: outlook/categories.md
+          - name: Obtenir ou définir des en-têtes Internet
+            href: outlook/internet-headers.md
+          - name: Obtenir ou définir la récurrence
+            href: outlook/get-and-set-recurrence.md
+          - name: Obtenir ou définir des métadonnées de complément
+            href: outlook/metadata-for-an-outlook-add-in.md
+          - name: Gérer l’état et des paramètres des compléments
+            href: outlook/manage-state-and-settings-outlook.md
+          - name: Scénario de lecture
+            items:
+              - name: Vue d'ensemble
+                href: outlook/read-scenario.md
+              - name: Utiliser des expressions régulières pour activer les compléments contextuels
+                href: outlook/use-regular-expressions-to-show-an-outlook-add-in.md
+              - name: Faire correspondre des entités connues d’un élément
+                href: outlook/match-strings-in-an-item-as-well-known-entities.md
+              - name: Extraire des entités d’un élément
+                href: outlook/extract-entity-strings-from-an-item.md
+              - name: Obtention de pièces jointes
+                href: outlook/get-attachments-of-an-outlook-item.md
+          - name: Scénario de composition
+            items:
+              - name: Vue d’ensemble
+                href: outlook/compose-scenario.md
+              - name: Ajouter et supprimer des pièces jointes
+                href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
+              - name: Obtenir et définir des données d’élément
+                href: outlook/get-and-set-item-data-in-a-compose-form.md
+              - name: Obtenir et définir des destinataires
+                href: outlook/get-set-or-add-recipients.md
+              - name: Insérer des données dans le corps
+                href: outlook/insert-data-in-the-body.md
+              - name: Obtenir et définir un objet
+                href: outlook/get-or-set-the-subject.md
+              - name: Obtenir et définir des heures
+                href: outlook/get-or-set-the-time-of-an-appointment.md
+              - name: Obtenir et définir un emplacement
+                href: outlook/get-or-set-the-location-of-an-appointment.md
+          - name: Confidentialité et sécurité
+            items:
+              - name: Vue d’ensemble
+                href: outlook/privacy-and-security.md
+              - name: Présentation des autorisations de complément
+                href: outlook/understanding-outlook-add-in-permissions.md
+          - name: Authentification
+            items:
+              - name: Vue d'ensemble
+                href: outlook/authentication.md
+              - name: S’authentifier avec un jeton à authentification unique
+                href: outlook/authenticate-a-user-with-an-sso-token.md
+              - name: S’authentifier avec un jeton d’identité
+                href: outlook/authenticate-a-user-with-an-identity-token.md
+              - name: Valider un jeton d’identité
+                href: outlook/validate-an-identity-token.md
+              - name: Présentation du jeton d’identité
+                href: outlook/inside-the-identity-token.md
+              - name: "Scénario\_: Implémenter l’authentification unique"
+                href: outlook/implement-sso-in-outlook-add-in.md
+          - name: Tests et conseils
+            items:
+              - name: Vue d'ensemble
+                href: outlook/testing-and-tips.md
+              - name: Charger une version test d’un complément
+                href: outlook/sideload-outlook-add-ins-for-testing.md
+              - name: Comparer la prise en charge de complément dans Outlook sur Mac
+                href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
+              - name: Conseils pour la gestion des valeurs de date
+                href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
+              - name: Limites pour l’activation et l’API JavaScript
+                href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
+              - name: Résoudre les problèmes d’activation de compléments
+                href: outlook/troubleshoot-outlook-add-in-activation.md
+  - name: PowerPoint
+    items:
+      - name: Documentation sur les compléments PowerPoint
+        href: powerpoint/index.yml
+        displayName: PowerPoint
+      - name: Vue d'ensemble
+        href: powerpoint/powerpoint-add-ins.md
+        displayName: PowerPoint
+      - name: Création de votre premier complément PowerPoint
+        href: quickstarts/powerpoint-quickstart-redirect.md
+        displayName: PowerPoint
+      - name: Didacticiel sur les compléments PowerPoint
+        href: tutorials/powerpoint-tutorial.md
+        displayName: PowerPoint
+      - name: API JavaScript pour PowerPoint
+        items:
+          - name: Vue d’ensemble
+            href: reference/overview/powerpoint-add-ins-reference-overview.md
+            displayName: PowerPoint
+          - name: Ensembles de conditions requises de l’API
+            items:
+              - name: Vue d’ensemble
+                href: reference/requirement-sets/powerpoint-api-requirement-sets.md
+                displayName: PowerPoint
+              - name: API d’aperçu PowerPoint
+                href: reference/requirement-sets/powerpoint-preview-apis.md
+                displayName: PowerPoint
+          - name: Référence API
+            href: reference/powerpoint-api-reference.md
+            displayName: PowerPoint
+          - name: Obtention du document complet à partir d’un complément
+            href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+            displayName: PowerPoint
+          - name: "Utiliser des thèmes de document dans vos compléments\_PowerPoint"
+            href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+            displayName: PowerPoint
+  - name: Project
+    items:
+      - name: Documentation sur les compléments Project
+        href: project/index.yml
+        displayName: Project
+      - name: Vue d’ensemble
+        href: project/project-add-ins.md
+        displayName: Project
+      - name: Création de votre premier complément Project
+        href: quickstarts/project-quickstart-redirect.md
+        displayName: Project
+      - name: API JavaScript pour Project
+        items:
+          - name: Vue d'ensemble
+            href: reference/overview/project-add-ins-reference-overview.md
+            displayName: Project
+          - name: Créer un complément Project qui utilise REST avec un service OData local
+            href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+            displayName: Project
+          - name: Créer votre premier complément de volet des tâches pour Project à l’aide d’un éditeur de texte
+            href: project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md
+            displayName: Project
+  - name: Visio
+    items:
+      - name: Documentation Visio
+        href: visio/index.yml
+        displayName: Visio
+      - name: Vue d’ensemble
+        href: reference/overview/visio-javascript-reference-overview.md
+        displayName: Visio
+      - name: Référence d’API
+        href: reference/visio-api-reference.md
+        displayName: Visio
+  - name: Word
+    items:
+      - name: Documentation sur les compléments Word
+        href: word/index.yml
+        displayName: Word
+      - name: Vue d’ensemble
+        href: word/word-add-ins-programming-overview.md
+        displayName: Word
+      - name: Créer votre premier complément Word
+        href: quickstarts/word-quickstart-redirect.md
+        displayName: Word
+      - name: Didacticiel sur les compléments Word
+        href: tutorials/word-tutorial.md
+        displayName: Word
+      - name: API JavaScript pour Word
+        items:
+          - name: Vue d'ensemble
+            href: reference/overview/word-add-ins-reference-overview.md
+            displayName: Word
+          - name: Ensembles de conditions requises de l’API
+            items:
+              - name: Vue d'ensemble
+                href: reference/requirement-sets/word-api-requirement-sets.md
+                displayName: Word
+              - name: API de vue d’ensemble Word
+                href: reference/requirement-sets/word-preview-apis.md
+                displayName: Word
+              - name: Ensemble de conditions requises WordApi 1.3
+                href: reference/requirement-sets/word-api-1-3-requirement-set.md
+                displayName: Word
+              - name: Ensemble de conditions requises WordApi 1.2
+                href: reference/requirement-sets/word-api-1-2-requirement-set.md
+                displayName: Word
+              - name: Ensemble de conditions requises WordApi 1.1
+                href: reference/requirement-sets/word-api-1-1-requirement-set.md
+                displayName: Word
+          - name: Référence d’API
+            href: reference/word-api-reference.md
+            displayName: Word
+          - name: Modèle d’objet Word
+            href: word/word-add-ins-core-concepts.md
+            displayName: Word
+          - name: "Créer des compléments plus performants pour Word avec Office\_Open\_XML"
+            href: word/create-better-add-ins-for-word-with-office-open-xml.md
+            displayName: Word
+          - name: Compléments de dictionnaire du volet des tâches
+            href: word/dictionary-task-pane-add-ins.md
+            displayName: Word
+          - name: Obtention du document complet à partir d’un complément
+            href: word/get-the-whole-document-from-an-add-in-for-word.md
+            displayName: Word
+          - name: Lecture et écriture de données dans la sélection active
+            href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+            displayName: Word
+          - name: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
+            href: word/search-option-guidance.md
+            displayName: Word
+  - name: Modèles et pratiques
+    items:
+      - name: Vue d’ensemble
+        href: overview/patterns-and-practices-overview.md
+      - name: Ouvrir dans Excel
+        href: excel/pnp-open-in-excel.md
+        displayName: Excel
+      - name: Traitement par lots des appels distants de fonction personnalisée
+        href: excel/custom-functions-batching.md
+        displayName: 'Excel, Custom Functions'
+      - name: Authentification
+        href: develop/authentication-pnp.md
+      - name: Gérer une résolution élevée et redimensionner la résolution dans votre solution Office
+        href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+  - name: Ressources de transition VSTO et COM
+    items:
+      - name: Guide pour les développeurs de compléments VSTO
+        href: overview/learning-path-transition.md
+      - name: Partager du code à partir d’un complément VSTO vers un complément Office
+        href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
+      - name: Rendre votre complément Office compatible avec un complément COM existant
+        href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
+        displayName: manifest
