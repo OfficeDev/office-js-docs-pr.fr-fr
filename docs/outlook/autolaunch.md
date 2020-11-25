@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 09/21/2020
+ms.date: 11/24/2020
 localization_priority: Normal
-ms.openlocfilehash: 1ddf5cd17934df261ef0002f38d92ed0dc40ca00
-ms.sourcegitcommit: 4a03d8b3f676ee2d91114813cb81bce5da3c8d6b
+ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
+ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "48175548"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "49408840"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
 
@@ -188,7 +188,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 ## <a name="try-it-out"></a>Essayez
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre (s’il n’est pas déjà en cours d’exécution).
 
     ```command&nbsp;line
     npm run dev-server
@@ -219,6 +219,7 @@ Certaines API de Office.js qui modifient ou modifient l’interface utilisateur 
   - `displayDialogAsync`
   - `messageParent`
 - Sous `Office.context.auth` :
+  - `getAccessToken`
   - `getAccessTokenAsync`
 
 ## <a name="see-also"></a>Voir aussi
