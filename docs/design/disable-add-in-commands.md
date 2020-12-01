@@ -1,14 +1,14 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 11/07/2020
+ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 7a9994ae25285c876236879e65861ee3cc59f7e5
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
+ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996388"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "49505463"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -32,7 +32,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 Les API d’activation/de désactivation appartiennent à l’ensemble de conditions requises [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
 
 > [!NOTE]
-> L’ensemble de conditions requises **RibbonApi 1,1** n’étant pas encore pris en charge dans le manifeste, vous ne pouvez pas le spécifier dans la section du manifeste `<Requirements>` . Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et seulement si* , cet appel `true` est renvoyé, votre code peut appeler les API activer/désactiver. Si l’appel de la `isSetSupported` méthode retournée `false` est activé, toutes les commandes de complément personnalisées sont activées en totalité. Vous devez concevoir votre complément de production, ainsi que toutes les instructions dans l’application, pour tenir compte de la façon dont il fonctionnera lorsque l’ensemble de conditions requises **RibbonApi 1,1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation `isSetSupported` , reportez-vous à la rubrique [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)de l’API, notamment [utiliser les vérifications d’exécution dans votre code JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (La section [définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au ruban 1,1.)
+> L’ensemble de conditions requises **RibbonApi 1,1** n’étant pas encore pris en charge dans le manifeste, vous ne pouvez pas le spécifier dans la section du manifeste `<Requirements>` . Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et seulement si*, cet appel `true` est renvoyé, votre code peut appeler les API activer/désactiver. Si l’appel de la `isSetSupported` méthode retournée `false` est activé, toutes les commandes de complément personnalisées sont activées en totalité. Vous devez concevoir votre complément de production, ainsi que toutes les instructions dans l’application, pour tenir compte de la façon dont il fonctionnera lorsque l’ensemble de conditions requises **RibbonApi 1,1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation `isSetSupported` , reportez-vous à la rubrique [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)de l’API, notamment [utiliser les vérifications d’exécution dans votre code JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (La section [définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au ruban 1,1.)
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
@@ -143,6 +143,10 @@ function enableChartFormat() {
 ```
 
 Quatrièmement, définissez le gestionnaire `disableChartFormat`. Il est identique à `enableChartFormat`, sauf que la propriété **activé** de l’objet bouton a la valeur `false`.
+
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer/désactiver la visibilité de l’onglet et l’état activé d’un bouton en même temps
+
+La méthode **requestUpdate** est également utilisée pour faire basculer la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur cet exemple de code, voir [activer et désactiver des commandes de complément](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Pratiques recommandées : test pour les erreurs de contrôle d'état
 
