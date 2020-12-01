@@ -188,7 +188,9 @@ items:
                         href: design/add-in-commands.md
                       - name: Créer des commandes de complément
                         href: develop/create-addin-commands.md
-                      - name: Activer et désactiver des commandes de compléments
+                      - name: Créer des onglets contextuels personnalisés
+                        href: design/contextual-tabs.md
+                      - name: Activer et désactiver des commandes de complément
                         href: design/disable-add-in-commands.md
                       - name: Intégrer des boutons prédéfinis Office dans les onglets personnalisés.
                         href: design/built-in-button-integration.md
@@ -1117,7 +1119,7 @@ items:
       - name: Vue d’ensemble
         href: reference/overview/visio-javascript-reference-overview.md
         displayName: Visio
-      - name: Référence d’API
+      - name: Référence API
         href: reference/visio-api-reference.md
         displayName: Visio
   - name: Word
