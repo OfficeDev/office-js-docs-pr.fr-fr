@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
-ms.date: 07/09/2020
+ms.date: 12/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 9b44b988ddd6552d5f7d14088a0b6f3ae1e410ed
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: dea2125ccd64eba2e3f1695c8ca1111a710321a4
+ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093881"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "49530926"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
@@ -75,12 +75,18 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
-    ![Ruban Outlook 2016 avec une flèche pointant sur le bouton Store](../images/outlook-sideload-desktop-store.png)
+    ![Ruban Outlook 2016 pointant sur le bouton obtenir des compléments](../images/outlook-sideload-desktop-store.png)
 
-    > [!NOTE]
-    > Si vous ne voyez pas le bouton **Obtenir des compléments** dans votre version d’Outlook, cliquez sur le bouton **Store** situé dans le ruban à la place.
+    > [!IMPORTANT]
+    > Si vous ne voyez pas le bouton **obtenir des compléments** dans votre version d’Outlook, sélectionnez :
+    >
+    > - Bouton **Store** du ruban, le cas échéant.
+    >
+    >   OR
+    >
+    > - Menu **fichier** , puis sélectionnez le bouton **gérer les compléments** sous l’onglet **informations** pour ouvrir la boîte de dialogue **compléments** dans Outlook sur le Web.<br>Vous pouvez en savoir plus sur l’expérience Web dans la section précédente [chargement d’un complément dans Outlook sur le Web](#sideload-an-add-in-in-outlook-on-the-web).
 
-1. Sélectionnez **Compléments**, puis **Mes compléments**.
+1. S’il y a des onglets dans la partie supérieure de la boîte de dialogue, vérifiez que l’onglet **compléments** est sélectionné. Sélectionnez **mes compléments**.
 
     ![Boîte de dialogue du Store Outlook 2016 avec Mes compléments sélectionné](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -94,10 +100,10 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
 1. Ouvrez Outlook 2013 sur Windows.
 
-1. Sélectionnez le menu **fichier** , puis cliquez sur le bouton **gérer les compléments** sous l’onglet **informations** . Outlook ouvre un navigateur.
+1. Sélectionnez le menu **fichier** , puis cliquez sur le bouton **gérer les compléments** sous l’onglet **informations** . Outlook ouvre la version Web dans un navigateur.
 
 1. Suivez les étapes de la section [chargement d’un complément dans Outlook sur le Web](#sideload-an-add-in-in-outlook-on-the-web) en fonction de votre version d’Outlook sur le Web.
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
 
-Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites précédemment dans cet article pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez les points de suspension ( `...` ) pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément spécifique.
+Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites précédemment dans cet article pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Sélectionnez les points de suspension ( `...` ) pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément spécifique.
