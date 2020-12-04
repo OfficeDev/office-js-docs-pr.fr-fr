@@ -1,14 +1,14 @@
 ---
 title: Office.context-ensemble de conditions requises 1.2
 description: Membres de l’objet Office. Context disponibles pour les compléments Outlook utilisant l’ensemble de conditions requises de l’API de boîte aux lettres 1,2.
-ms.date: 03/18/2020
+ms.date: 12/02/2020
 localization_priority: Normal
-ms.openlocfilehash: da9df156ad75bf437a12812fe9144e0fd6a9586f
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 1b697cbe29be7d0af6fec65e47d080ebd1af17ae
+ms.sourcegitcommit: 1737026df569b62957d38b62c0b16caee4f0cdfe
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431289"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "49570778"
 ---
 # <a name="context-mailbox-requirement-set-12"></a>contexte (boîte aux lettres requise définie sur 1,2)
 
@@ -30,9 +30,7 @@ Office. Context fournit des interfaces partagées qui sont utilisées par des co
 | [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [Diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [hote](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [plateforme](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [requise](#requirements-requirementsetsupport) | Composition<br>Lecture | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Lecture | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [ui](#ui-ui) | Composition<br>Lecture | [UI](/javascript/api/office/office.ui?view=outlook-js-1.2&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -100,7 +98,10 @@ Obtient des informations sur l’environnement dans lequel le complément est en
 ##### <a name="example"></a>Exemple
 
 ```js
-console.log(JSON.stringify(Office.context.diagnostics));
+var contextInfo = Office.context.diagnostics;
+console.log("Office application: " + contextInfo.host);
+console.log("Office version: " + contextInfo.version);
+console.log("Platform: " + contextInfo.platform);
 ```
 
 <br>
@@ -144,58 +145,6 @@ function sayHelloWithDisplayLanguage() {
 function write(message){
   document.getElementById('message').innerText += message;
 }
-```
-
-<br>
-
----
----
-
-#### <a name="host-hosttype"></a>hôte : [HostType](/javascript/api/office/office.hosttype)
-
-Obtient l’application Office qui héberge le complément.
-
-##### <a name="type"></a>Type
-
-*   [HostType](/javascript/api/office/office.hosttype)
-
-##### <a name="requirements"></a>Configuration requise
-
-|Conditions requises| Valeur|
-|---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
-
-##### <a name="example"></a>Exemple
-
-```js
-console.log(JSON.stringify(Office.context.host));
-```
-
-<br>
-
----
----
-
-#### <a name="platform-platformtype"></a>plateforme : [PlatformType](/javascript/api/office/office.platformtype)
-
-Fournit la plateforme sur laquelle le complément est en cours d’exécution.
-
-##### <a name="type"></a>Type
-
-*   [PlatformType](/javascript/api/office/office.platformtype)
-
-##### <a name="requirements"></a>Configuration requise
-
-|Conditions requises| Valeur|
-|---|---|
-|[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
-|[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
-
-##### <a name="example"></a>Exemple
-
-```js
-console.log(JSON.stringify(Office.context.platform));
 ```
 
 <br>
