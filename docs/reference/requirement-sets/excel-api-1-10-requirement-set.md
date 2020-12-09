@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Excel 1,10
 description: Détails sur l’ensemble de conditions requises ExcelApi 1,10.
-ms.date: 11/09/2020
+ms.date: 11/19/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b7bfd8038883dc527721d648b2b75d7187886f49
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 951835a040b767bc9cf802be4d3bb0790b49fc06
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996242"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603784"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Nouveautés de l’API JavaScript pour Excel 1,10
 
@@ -19,7 +19,7 @@ Le ExcelApi 1,10 a introduit des fonctionnalités clés, telles que des commenta
 |:--- |:--- |:--- |
 | [Commentaires](../../excel/excel-add-ins-comments.md) | Ajouter, modifier et supprimer des listes. | [Comment](/javascript/api/excel/excel.comment), [CommentCollection](/javascript/api/excel/excel.commentcollection) |
 | [Décrit](../../excel/excel-add-ins-ranges-advanced.md#group-data-for-an-outline) | Grouper des lignes et des colonnes pour former des plans de développement/réduction. | [Plage](/javascript/api/excel/excel.range), [feuille de calcul](/javascript/api/excel/excel.worksheet) |
-| [Slicers](../../excel/excel-add-ins-pivottables.md#slicers) | Insérer et configurez segments aux tableaux et tableaux croisés dynamiques. | [Segment](/javascript/api/excel/excel.slicer) |
+| [Slicers](../../excel/excel-add-ins-pivottables.md#filter-with-slicers) | Insérer et configurez segments aux tableaux et tableaux croisés dynamiques. | [Segment](/javascript/api/excel/excel.slicer) |
 | [Autres événements de feuille de calcul](../../excel/excel-add-ins-events.md) | Écouter les événements Click et sort dans la feuille de calcul. | [Feuille de calcul (événements)](/javascript/api/excel/excel.worksheet#events) |
 
 ## <a name="api-list"></a>Liste des API

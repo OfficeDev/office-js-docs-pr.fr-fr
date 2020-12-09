@@ -3,12 +3,12 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec les fonctions Excel XLL définies par l’utilisateur qui offrent une fonctionnalité équivalente à vos fonctions personnalisées
 ms.date: 08/13/2020
 localization_priority: Normal
-ms.openlocfilehash: 3a4793053950fccca74de4b9ebf8998a7d635d67
-ms.sourcegitcommit: 65c15a9040279901ea7ff7f522d86c8fddb98e14
+ms.openlocfilehash: c34dcf5ef546fa0f337b2cbd11cca7d5e25e2de3
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "46672686"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603777"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
@@ -61,12 +61,12 @@ Le tableau suivant compare les fonctionnalités des fonctions définies par l’
 | **Plateformes prises en charge** | Windows | Windows, macOS, navigateur Web | Windows, macOS, navigateur Web |
 | **Formats de fichiers pris en charge** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |
 | **Saisie semi-automatique de formule** | Non | Oui | Oui |
-| **Diffusion en continu** | Possible via xlfRTD et le rappel XLL. | Non | Oui |
+| **Diffusion en continu** | Possible via xlfRTD et le rappel XLL. | Oui | Oui |
 | **Localisation des fonctions** | Non | Non. Le nom et l’ID doivent correspondre aux fonctions de la XLL existante. | Oui |
 | **Fonctions volatiles** | Oui | Oui | Oui |
 | **Prise en charge du recalcul multi-thread** | Oui | Oui | Oui |
 | **Comportement du calcul** | Aucune interface utilisateur. Excel peut ne pas répondre pendant le calcul. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs verront #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
-| **Ensembles de conditions requises** | N/A | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
+| **Ensembles de conditions requises** | S/O | CustomFunctions 1,1 et versions ultérieures | CustomFunctions 1,1 et versions ultérieures |
 
 ## <a name="see-also"></a>Voir aussi
 

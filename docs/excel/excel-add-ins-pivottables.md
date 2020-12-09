@@ -1,14 +1,14 @@
 ---
 title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
-ms.date: 04/20/2020
+ms.date: 12/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f1a692f493fc945f114270b69b2ce2004588b731
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 0a1fefa6a855ab9ee1ccd71fd0dc60f282d2944b
+ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408522"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49603798"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
 
@@ -28,6 +28,7 @@ Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’o
 - Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) qui comporte plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
 - Ces [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) peuvent être ajoutées à des collections de hiérarchies spécifiques pour définir le mode de tableau croisé dynamique des données (comme expliqué dans la [section suivante](#hierarchies)).
 - Un [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contient un [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) qui comporte exactement un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield). Si la conception s’étend pour inclure des tableaux croisés dynamiques OLAP, cela peut changer.
+- Un champ [PivotField](/javascript/api/excel/excel.pivotfield) peut être appliqué à un ou plusieurs [PivotFilters](/javascript/api/excel/excel.pivotfilters) , tant que le [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) du champ est affecté à une catégorie de hiérarchie. 
 - Un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) contient un [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) avec plusieurs [PivotItems](/javascript/api/excel/excel.pivotitem).
 - Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotLayout](/javascript/api/excel/excel.pivotlayout) qui définit où les [champs PivotFields](/javascript/api/excel/excel.pivotfield) et [PivotItems](/javascript/api/excel/excel.pivotitem) sont affichés dans la feuille de calcul.
 
@@ -35,13 +36,13 @@ Examinons comment ces relations s’appliquent à certains exemples de données.
 
 ![Collection de ventes de fruit de différents types de batteries de serveurs différentes.](../images/excel-pivots-raw-data.png)
 
-Les données de ventes de la batterie de fruits seront utilisées pour créer un tableau croisé dynamique. Chaque colonne, telle que **types**, est `PivotHierarchy` . La hiérarchie de **types** contient le champ **types** . Le champ **types** contient les éléments **Apple**, **Kiwi**, **citron**, **citron**et **orange**.
+Les données de ventes de la batterie de fruits seront utilisées pour créer un tableau croisé dynamique. Chaque colonne, telle que **types**, est `PivotHierarchy` . La hiérarchie de **types** contient le champ **types** . Le champ **types** contient les éléments **Apple**, **Kiwi**, **citron**, **citron** et **orange**.
 
 ### <a name="hierarchies"></a>Hierarchies
 
 Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : [ligne](/javascript/api/excel/excel.rowcolumnpivothierarchy), [colonne](/javascript/api/excel/excel.rowcolumnpivothierarchy), [données](/javascript/api/excel/excel.datapivothierarchy)et [filtre](/javascript/api/excel/excel.filterpivothierarchy).
 
-Les données de la batterie de serveurs affichées précédemment ont cinq hiérarchies : **batteries**de serveurs, **type**, **classification**, **caisses vendues à la batterie de serveurs**et **caisses vendues en gros**. Chaque hiérarchie peut uniquement exister dans l’une des quatre catégories. Si le **type** est ajouté aux hiérarchies de colonne, il ne peut pas également se trouver dans les hiérarchies de ligne, de données ou de filtre. Si **type** est par la suite ajouté aux hiérarchies de lignes, il est supprimé des hiérarchies de colonne. Ce comportement est le même, que l’attribution de hiérarchie soit réalisée via l’interface utilisateur Excel ou les API JavaScript pour Excel.
+Les données de la batterie de serveurs affichées précédemment ont cinq hiérarchies : **batteries** de serveurs, **type**, **classification**, **caisses vendues à la batterie de serveurs** et **caisses vendues en gros**. Chaque hiérarchie peut uniquement exister dans l’une des quatre catégories. Si le **type** est ajouté aux hiérarchies de colonne, il ne peut pas également se trouver dans les hiérarchies de ligne, de données ou de filtre. Si **type** est par la suite ajouté aux hiérarchies de lignes, il est supprimé des hiérarchies de colonne. Ce comportement est le même, que l’attribution de hiérarchie soit réalisée via l’interface utilisateur Excel ou les API JavaScript pour Excel.
 
 Les hiérarchies de ligne et de colonne définissent le mode de regroupement des données. Par exemple, une hiérarchie de lignes de **batteries de serveurs** regroupe tous les jeux de données de la même batterie de serveurs. Le choix entre la hiérarchie de ligne et de colonne définit l’orientation du tableau croisé dynamique.
 
@@ -226,7 +227,140 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="slicers"></a>Slicers
+## <a name="filter-a-pivottable"></a>Filtrer un tableau croisé dynamique
+
+La méthode principale de filtrage des données de tableau croisé dynamique est avec PivotFilters. Les segments offrent une méthode de filtrage alternative moins flexible. 
+
+[PivotFilters](/javascript/api/excel/excel.pivotfilters) filtre les données en fonction des quatre [catégories de hiérarchie](#hierarchies) d’un tableau croisé dynamique (filtres, colonnes, lignes et valeurs). Il existe quatre types de PivotFilters, permettant le filtrage basé sur la date du calendrier, l’analyse des chaînes, la comparaison des nombres et le filtrage en fonction d’une entrée personnalisée. 
+
+Les [segments](/javascript/api/excel/excel.slicer) peuvent être appliqués aux tableaux croisés dynamiques et aux tableaux Excel réguliers. Lorsqu’elle est appliquée à un tableau croisé dynamique, les segments fonctionnent comme un [PivotManualFilter](#pivotmanualfilter) et permettent le filtrage basé sur une entrée personnalisée. Contrairement à PivotFilters, les segments ont un [composant d’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, vous gérez le filtrage et vous contrôlez son apparence visuelle. 
+
+### <a name="filter-with-pivotfilters"></a>Filtre avec PivotFilters
+
+La fonction [PivotFilters](/javascript/api/excel/excel.pivotfilters) vous permet de filtrer les données de tableau croisé dynamique sur la base des quatre [catégories de hiérarchie](#hierarchies) (filtres, colonnes, lignes et valeurs). Dans le modèle objet PivotTable, `PivotFilters` sont appliquées à un [champ](/javascript/api/excel/excel.pivotfield)de tableau croisé dynamique et chacune `PivotField` peut avoir une ou plusieurs affectations `PivotFilters` . Pour appliquer PivotFilters à un champ de tableau croisé dynamique, les [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) correspondantes du champ doivent être affectées à une catégorie hiérarchique. 
+
+#### <a name="types-of-pivotfilters"></a>Types de PivotFilters
+
+| Type de filtre | Objectif de filtrage | Référence de l’API JavaScript pour Excel |
+|:--- |:--- |:--- |
+| DateFilter | Filtrage basé sur la date du calendrier. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| LabelFilter | Filtrage de comparaison de texte. | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
+| ManualFilter | Filtrage de saisie personnalisé. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
+| ValueFilter | Filtrage de comparaison de nombres. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
+
+#### <a name="create-a-pivotfilter"></a>Créer un PivotFilter
+
+Pour filtrer les données de tableau croisé dynamique avec un filtre de tableau croisé dynamique * (tel qu’un PivotDateFilter), appliquez le filtre à un [champ](/javascript/api/excel/excel.pivotfield)de tableau croisé dynamique. Les quatre exemples de code suivants montrent comment utiliser chacun des quatre types de PivotFilters. 
+
+##### <a name="pivotdatefilter"></a>PivotDateFilter
+
+Le premier exemple de code applique un [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) à la date champ PivotField **mis à jour** , en masquant toutes les données avant le **2020-08-01**. 
+
+> [!IMPORTANT] 
+> Un filtre de tableau croisé dynamique * ne peut pas être appliqué à un champ PivotField sauf si le PivotHierarchy de ce champ est affecté à une catégorie hiérarchique. Dans l’exemple de code suivant, le `dateHierarchy` doit être ajouté à la catégorie du tableau croisé dynamique `rowHierarchies` pour pouvoir être utilisé pour le filtrage.
+
+```js
+Excel.run(function (context) {
+    // Get the PivotTable and the date hierarchy.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    var dateHierarchy = pivotTable.rowHierarchies.getItemOrNullObject("Date Updated");
+    
+    return context.sync().then(function () {
+        // PivotFilters can only be applied to PivotHierarchies that are being used for pivoting.
+        // If it's not already there, add "Date Updated" to the hierarchies.
+        if (dateHierarchy.isNullObject) {
+          dateHierarchy = pivotTable.rowHierarchies.add(pivotTable.hierarchies.getItem("Date Updated"));
+        }
+
+        // Apply a date filter to filter out anything logged before August.
+        var filterField = dateHierarchy.fields.getItem("Date Updated");
+        var dateFilter = {
+          condition: Excel.DateFilterCondition.afterOrEqualTo,
+          comparator: {
+            date: "2020-08-01",
+            specificity: Excel.FilterDatetimeSpecificity.month
+          }
+        };
+        filterField.applyFilter({ dateFilter: dateFilter });
+        
+        return context.sync();
+    });
+});
+```
+
+> [!NOTE]
+> Les trois extraits de code suivants affichent uniquement des extraits spécifiques au filtre, au lieu d' `Excel.run` appels complets.
+
+##### <a name="pivotlabelfilter"></a>PivotLabelFilter
+
+Le deuxième extrait de code montre comment appliquer un [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) au **type** PivotField, à l’aide de la `LabelFilterCondition.beginsWith` propriété pour exclure les étiquettes qui commencent par la lettre **L**. 
+
+```js
+    // Get the "Type" field.
+    var filterField = pivotTable.hierarchies.getItem("Type").fields.getItem("Type");
+
+    // Filter out any types that start with "L" ("Lemons" and "Limes" in this case).
+    var filter: Excel.PivotLabelFilter = {
+      condition: Excel.LabelFilterCondition.beginsWith,
+      substring: "L",
+      exclusive: true
+    };
+
+    // Apply the label filter to the field.
+    filterField.applyFilter({ labelFilter: filter });
+```
+
+##### <a name="pivotmanualfilter"></a>PivotManualFilter
+
+Le troisième extrait de code applique un filtre manuel avec [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) dans le champ **classification** , en filtrant les données qui n’incluent pas la classification **Organic**. 
+
+```js
+    // Apply a manual filter to include only a specific PivotItem (the string "Organic").
+    var filterField = classHierarchy.fields.getItem("Classification");
+    var manualFilter = { selectedItems: ["Organic"] };
+    filterField.applyFilter({ manualFilter: manualFilter });
+```
+
+##### <a name="pivotvaluefilter"></a>PivotValueFilter
+
+Pour comparer des nombres, utilisez un filtre de valeur avec [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), comme illustré dans l’extrait de code final. Le `PivotValueFilter` compare les données de la **batterie de serveurs** de la batterie aux données du champ PivotField de **grossiste des caisses vendues** , y compris celles dont la somme des caisses vendues dépasse la valeur **500**. 
+
+```js
+    // Get the "Farm" field.
+    var filterField = pivotTable.hierarchies.getItem("Farm").fields.getItem("Farm");
+    
+    // Filter to only include rows with more than 500 wholesale crates sold.
+    var filter: Excel.PivotValueFilter = {
+      condition: Excel.ValueFilterCondition.greaterThan,
+      comparator: 500,
+      value: "Sum of Crates Sold Wholesale"
+    };
+    
+    // Apply the value filter to the field.
+    filterField.applyFilter({ valueFilter: filter });
+```
+
+#### <a name="remove-pivotfilters"></a>Suppression de PivotFilters
+
+Pour supprimer tous les PivotFilters, appliquez la `clearAllFilters` méthode à chaque champ de tableau croisé dynamique, comme illustré dans l’exemple de code suivant. 
+
+```js
+Excel.run(function (context) {
+    // Get the PivotTable.
+    var pivotTable = context.workbook.worksheets.getActiveWorksheet().pivotTables.getItem("Farm Sales");
+    pivotTable.hierarchies.load("name");
+    
+    return context.sync().then(function () {
+        // Clear the filters on each PivotField.
+        pivotTable.hierarchies.items.forEach(function (hierarchy) {
+          hierarchy.fields.getItem(hierarchy.name).clearAllFilters();
+        });
+        return context.sync();
+    });
+});
+```
+
+### <a name="filter-with-slicers"></a>Filtre avec des segments
 
 Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant qu’objets [SlicerItem](/javascript/api/excel/excel.sliceritem) dans le `Slicer` . Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
 
@@ -235,7 +369,7 @@ Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’�
 > [!NOTE]
 > Les techniques décrites dans cette section se concentrent sur l’utilisation des segments connectés aux tableaux croisés dynamiques. Les mêmes techniques s’appliquent également à l’utilisation de segments connectés à des tables.
 
-### <a name="create-a-slicer"></a>Créer un segment
+#### <a name="create-a-slicer"></a>Créer un segment
 
 Vous pouvez créer un segment dans un classeur ou une feuille de calcul à l’aide de la `Workbook.slicers.add` méthode ou de la `Worksheet.slicers.add` méthode. Cette opération ajoute un Slicer au [SlicerCollection](/javascript/api/excel/excel.slicercollection) de l’objet spécifié `Workbook` ou `Worksheet` . La `SlicerCollection.add` méthode comporte trois paramètres :
 
@@ -257,14 +391,14 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="filter-items-with-a-slicer"></a>Filtrer des éléments avec un segment
+#### <a name="filter-items-with-a-slicer"></a>Filtrer des éléments avec un segment
 
 Le segment filtre le tableau croisé dynamique avec les éléments de la `sourceField` . La `Slicer.selectItems` méthode définit les éléments qui restent dans le Slicer. Ces éléments sont transmis à la méthode en tant que `string[]` , représentant les clés des éléments. Toutes les lignes contenant ces éléments restent dans l’agrégation du tableau croisé dynamique. Appels suivants permettant de `selectItems` définir la liste aux clés spécifiées dans ces appels.
 
 > [!NOTE]
 > Si reçoit `Slicer.selectItems` un élément qui ne se trouve pas dans la source de données, une `InvalidArgument` erreur est générée. Le contenu peut être vérifié via la `Slicer.slicerItems` propriété, qui est une [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
 
-L’exemple de code suivant montre trois éléments sélectionnés pour le Slicer : **citron**, **citron**et **orange**.
+L’exemple de code suivant montre trois éléments sélectionnés pour le Slicer : **citron**, **citron** et **orange**.
 
 ```js
 Excel.run(function (context) {
@@ -285,7 +419,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="style-and-format-a-slicer"></a>Style et formatage d’un segment
+#### <a name="style-and-format-a-slicer"></a>Style et formatage d’un segment
 
 Vous pouvez ajuster les paramètres d’affichage d’un segment par le biais de `Slicer` Propriétés. L’exemple de code suivant définit le style sur **SlicerStyleLight6**, définit le texte en haut du Slicer sur **types de fruit**, place le segment à la position **(395, 15)** sur la couche de dessin et définit la taille du Slicer sur **135x150** pixels.
 
@@ -302,7 +436,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="delete-a-slicer"></a>Supprimer un segment
+#### <a name="delete-a-slicer"></a>Supprimer un segment
 
 Pour supprimer un segment, appelez la `Slicer.delete` méthode. L’exemple de code suivant supprime le premier segment de la feuille de calcul active.
 
@@ -372,8 +506,8 @@ Excel.run(function (context) {
 
 L’exemple précédent définit le calcul sur la colonne, par rapport au champ d’une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez la `baseItem` propriété.
 
-L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie de données ventes de la batterie de serveurs par rapport à celles d' **une**batterie de serveurs.
-La `baseField` **batterie de serveurs**is, de sorte que nous voyons les différences entre les autres batteries de serveurs, ainsi que les répartitions pour chaque type de fruit similaire (**type** est également une hiérarchie de lignes dans cet exemple).
+L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie de données ventes de la batterie de serveurs par rapport à celles d' **une** batterie de serveurs.
+La `baseField` **batterie de serveurs** is, de sorte que nous voyons les différences entre les autres batteries de serveurs, ainsi que les répartitions pour chaque type de fruit similaire (**type** est également une hiérarchie de lignes dans cet exemple).
 
 ![Tableau croisé dynamique montrant les différences entre les ventes de fruit et les autres. Cela montre à la fois la différence entre les ventes de fruits totales des batteries de serveurs et les ventes de types de fruits. Si « une batterie de serveurs » n’a pas vendu un type particulier de fruit, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
 
