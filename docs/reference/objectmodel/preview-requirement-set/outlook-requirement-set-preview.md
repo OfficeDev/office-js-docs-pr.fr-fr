@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook (aper�
 description: Les fonctionnalités et les API qui sont actuellement en préversion pour les compléments Outlook.
 ms.date: 10/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d91105e0cfbb97dc1a239e40b1c81adc4e76988b
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: 2f83f81dcf7aa7ab0e3a48fff4279c1e08ba6286
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626595"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612749"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -114,7 +114,7 @@ Ajout de la prise en charge d’Outlook à l' `Runtimes` élément de manifeste.
 
 Ajout d’une nouvelle fonction qui renvoie les données d’initialisation transmises lorsque le complément est [activé par un message actionnable](/outlook/actionable-messages/invoke-add-in-from-actionable-message).
 
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (classique)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le Web (moderne)
 
 <br>
 
@@ -162,7 +162,7 @@ Ajout d’une nouvelle énumération `ComposeType` disponible en mode compositio
 
 ### <a name="notification-messages-with-actions"></a>Messages de notification avec actions
 
-Cette fonctionnalité permet à votre complément d’inclure un message de notification avec une action personnalisée en plus de l’action **Ignorer** par défaut.
+Cette fonctionnalité permet à votre complément d’inclure un message de notification avec une action personnalisée en plus de l’action **Ignorer** par défaut. Dans la session moderne Outlook sur le Web, cette fonctionnalité est disponible uniquement en mode composition.
 
 #### <a name="officenotificationmessagedetailsactions"></a>[Office. NotificationMessageDetails. actions](/javascript/api/outlook/office.notificationmessagedetails#actions)
 

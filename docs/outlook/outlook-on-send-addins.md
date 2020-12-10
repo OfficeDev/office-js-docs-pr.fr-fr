@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 11/25/2020
+ms.date: 12/09/2020
 localization_priority: Normal
-ms.openlocfilehash: 1d2c82e5a44509257b82f9c871e57730b1e98f26
-ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
+ms.openlocfilehash: 2ad30d2cbfef61d383c13af452557b7406608723
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "49530933"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612756"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -299,8 +299,8 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la stratégie|Résultat|
 |---|---|
-|Désactivé|Envoi autorisé. L’élément message ou réunion peut être envoyé sans exécution du complément sur envoi, même si le complément n’a pas encore été mis à jour à partir d’Exchange.|
-|Activé|L’envoi est autorisé uniquement lorsque le complément a été mis à jour à partir d’Exchange ; dans le cas contraire, l’envoi est bloqué.|
+|Désactivé|Les manifestes actuellement téléchargés des compléments à l’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur des messages ou des éléments de réunion envoyés. Il s’agit de l’état/du comportement par défaut.|
+|Activé|Une fois que les derniers manifestes des compléments d’envoi sont téléchargés à partir d’Exchange, les compléments sont exécutés sur les messages ou les éléments de réunion envoyés. Dans le cas contraire, l’envoi est bloqué.|
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
 
@@ -332,8 +332,8 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la clé|Résultat|
 |---|---|
-|false|Envoi autorisé. L’élément message ou réunion peut être envoyé sans exécution du complément sur envoi, même si le complément n’a pas encore été mis à jour à partir d’Exchange.|
-|true|L’envoi est autorisé uniquement lorsque les compléments ont été mis à jour à partir d’Exchange ; dans le cas contraire, l’envoi est bloqué et le bouton **Envoyer** est désactivé.|
+|false|Les manifestes actuellement téléchargés des compléments à l’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur des messages ou des éléments de réunion envoyés. Il s’agit de l’état/du comportement par défaut.|
+|true|Une fois que les derniers manifestes des compléments d’envoi sont téléchargés à partir d’Exchange, les compléments sont exécutés sur les messages ou les éléments de réunion envoyés. Sinon, l’envoi est bloqué et le bouton **Envoyer** est désactivé.|
 
 ---
 

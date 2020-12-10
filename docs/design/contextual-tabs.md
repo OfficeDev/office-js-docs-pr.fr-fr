@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans les compléments Offic
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre complément Office.
 ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: 49a773aca0651b88c972c24a4cde0aa1e300d5e7
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: d8617c7dd8748d15393c0e38c527062e5894e791
+ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505553"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "49612735"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Créer des onglets contextuels personnalisés dans les compléments Office (aperçu)
 
@@ -117,7 +117,7 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     - La `id` propriété doit être unique parmi tous les groupes de l’onglet. Utilisez un bref ID descriptif.
     - `label`Est une chaîne conviviale qui sert d’étiquette au groupe.
     - La `icon` valeur de la propriété est un tableau d’objets qui spécifient les icônes du groupe sur le ruban en fonction de la taille du ruban et de la fenêtre de l’application Office.
-    - La `controls` valeur de la propriété est un tableau d’objets qui spécifient les boutons et d’autres contrôles dans le groupe. Il doit y avoir au moins un et *six pour un groupe*.
+    - La `controls` valeur de la propriété est un tableau d’objets qui spécifient les boutons et les menus du groupe. Il doit y avoir au moins un et *six pour un groupe*.
 
     > [!IMPORTANT]
     > *Le nombre total de contrôles sur l’onglet entier ne peut pas être supérieur à 20.* Par exemple, vous pouvez avoir 3 groupes avec 6 contrôles chacun, et un quatrième groupe avec 2 contrôles, mais vous ne pouvez pas avoir 4 groupes avec 6 contrôles chacun.  
@@ -135,7 +135,7 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }
     ```
 
-1. Chaque groupe doit avoir une icône d’au moins deux tailles, 32x32 PX et 80x80 px. Vous pouvez également avoir des icônes de taille 16x16, 20x20, 24x24, 40x40, 48 x 48 et 64 x 64. Office décide de l’icône à utiliser en fonction de la taille du ruban et de la fenêtre de l’application Office. Ajoutez les objets suivants au tableau d’icônes. (Si la taille de la fenêtre et du ruban est suffisante pour qu’au moins un des *contrôles* du groupe s’affiche, aucune icône de groupe n’apparaît. Pour obtenir un exemple, Regardez le groupe **styles** sur le ruban Word lorsque vous réduisez et développez la fenêtre Word.) À propos de ce balisage, notez les éléments suivants :
+1. Chaque groupe doit avoir une icône d’au moins deux tailles, 32x32 PX et 80x80 px. Si vous le souhaitez, vous pouvez également avoir des icônes de taille de 16x16 PX, 20x20 PX, 24x24 PX, 40x40 PX, 48 x 48 px et 64 x 64 px. Office décide de l’icône à utiliser en fonction de la taille du ruban et de la fenêtre de l’application Office. Ajoutez les objets suivants au tableau d’icônes. (Si la taille de la fenêtre et du ruban est suffisante pour qu’au moins un des *contrôles* du groupe s’affiche, aucune icône de groupe n’apparaît. Pour obtenir un exemple, Regardez le groupe **styles** sur le ruban Word lorsque vous réduisez et développez la fenêtre Word.) À propos de ce balisage, notez les éléments suivants :
 
     - Les deux propriétés sont requises.
     - L' `size` unité de mesure de la propriété est exprimée en pixels. Les icônes sont toujours carrées, de sorte que le nombre est à la fois la hauteur et la largeur.
@@ -193,7 +193,7 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
 Voici l’exemple complet de l’objet BLOB JSON :
 
 ```json
-'{
+`{
   "actions": [
     {
       "id": "executeWriteData",
@@ -246,7 +246,7 @@ Voici l’exemple complet de l’objet BLOB JSON :
       ]
     }
   ]
-}'
+}`
 ```
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Enregistrer l’onglet contextuel avec Office avec requestCreateControls
@@ -260,7 +260,7 @@ Voici un exemple. Notez que la chaîne JSON doit être convertie en objet JavaSc
 
 ```javascript
 Office.onReady(async () => {
-    const contextualTabJSON = ' ... '; // Assign the JSON string such as the one at the end of the preceding section.
+    const contextualTabJSON = ` ... `; // Assign the JSON string such as the one at the end of the preceding section.
     const contextualTab = JSON.parse(contextualTabJSON);
     await Office.ribbon.requestCreateControls(contextualTab);
 });
@@ -289,7 +289,7 @@ Office.onReady(async () => {
 });
 ```
 
-Ensuite, définissez les gestionnaires. Voici un exemple simple d’un `showDataTab` , mais voir la [gestion des erreurs](#error-handling) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
+Ensuite, définissez les gestionnaires. Voici un exemple simple de a `showDataTab` , mais voir [la gestion de l’erreur HostRestartNeeded](#handling-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
 
 - Office effectue un contrôle lorsqu’il met à jour l’état du ruban. La méthode  [Office. Ribbon. requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) met en file d’attente une requête à mettre à jour. La méthode permet de résoudre l’objet dès qu' `Promise` il a mis en file d’attente la demande, et non lors de la mise à jour du ruban.
 - Le paramètre de la `requestUpdate` méthode est un objet [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie l’onglet par son ID *exactement comme spécifié dans JSON* et (2) indique la visibilité de l’onglet.
@@ -363,7 +363,59 @@ function myContextChanges() {
 }
 ```
 
-## <a name="error-handling"></a>Gestion des erreurs
+## <a name="localizing-the-json-blob"></a>Localisation de l’objet BLOB JSON
+
+L’objet BLOB JSON transmis à `requestCreateControls` n’est pas localisé de la même façon que le balisage de manifeste pour les onglets principaux personnalisés est localisé (ce qui est décrit lors [de la localisation du contrôle à partir du manifeste](../develop/localization.md#control-localization-from-the-manifest)). Au lieu de cela, la localisation doit être effectuée au moment de l’exécution à l’aide d’objets BLOB JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser une `switch` instruction qui teste la propriété [Office. Context. displayLanguage](/javascript/api/office/office.context#displayLanguage) . Voici un exemple :
+
+```javascript
+function GetContextualTabsJsonSupportedLocale () {
+    var displayLanguage = Office.context.displayLanguage;
+
+        switch (displayLanguage) {
+            case 'en-US':
+                return `{
+                    "actions": [
+                        // actions omitted
+                     ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Data",
+                          "groups": [
+                              // groups omitted
+                          ]
+                        }
+                    ]
+                }`;
+
+            case 'fr-FR':
+                return `{
+                    "actions": [
+                        // actions omitted 
+                    ],
+                    "tabs": [
+                        {
+                          "id": "CtxTab1",
+                          "label": "Données",
+                          "groups": [
+                              // groups omitted
+                          ]
+                       }
+                    ]
+               }`;
+
+            // Other cases omitted
+       }
+}
+```
+
+Votre code appelle ensuite la fonction pour obtenir l’objet BLOB localisé qui est transmis `requestCreateControls` , comme dans l’exemple suivant :
+
+```javascript
+var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+```
+
+## <a name="handling-the-hostrestartneeded-error"></a>Gestion de l’erreur HostRestartNeeded
 
 Dans certains scénarios, Office ne peut pas mettre à jour le ruban et renvoie une erreur. Par exemple, si le complément est mis à niveau et que le complément mis à niveau dispose d'un autre groupe de commandes de complément personnalisé, l’application Office doit être fermée et ouverte de nouveau. La méthode `requestUpdate` renvoie l'erreur `HostRestartNeeded` jusqu'à ce que cela soit effectué. Voici comment vous pouvez gérer cette erreur. Dans ce cas, la méthode `reportError` affiche l’erreur à l’utilisateur.
 
