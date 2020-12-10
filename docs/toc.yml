@@ -438,7 +438,7 @@ items:
                 href: reference/manifest/tokens.md
               - name: Jeton
                 href: reference/manifest/token.md
-              - name: Tapez
+              - name: Type
                 href: reference/manifest/type.md
               - name: Version
                 href: reference/manifest/version.md
@@ -810,7 +810,7 @@ items:
                     href: reference/outlook-api-reference-preview.md
               - name: "Ensemble de conditions requises\_1.9"
                 items:
-                  - name: Vue d’ensemble
+                  - name: Vue d'ensemble
                     href: reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md
                   - name: Office
                     href: reference/objectmodel/requirement-set-1.9/office.md
@@ -1074,14 +1074,17 @@ items:
             displayName: PowerPoint
           - name: Ensembles de conditions requises de l’API
             items:
-              - name: Vue d’ensemble
+              - name: Vue d'ensemble
                 href: reference/requirement-sets/powerpoint-api-requirement-sets.md
                 displayName: PowerPoint
               - name: API d’aperçu PowerPoint
                 href: reference/requirement-sets/powerpoint-preview-apis.md
                 displayName: PowerPoint
-          - name: Référence API
+          - name: Référence d’API
             href: reference/powerpoint-api-reference.md
+            displayName: PowerPoint
+          - name: Insérer et supprimer des diapositives dans une présentation
+            href: powerpoint/insert-slides-into-presentation.md
             displayName: PowerPoint
           - name: Obtention du document complet à partir d’un complément
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
@@ -1119,7 +1122,7 @@ items:
       - name: Vue d’ensemble
         href: reference/overview/visio-javascript-reference-overview.md
         displayName: Visio
-      - name: Référence API
+      - name: Référence d’API
         href: reference/visio-api-reference.md
         displayName: Visio
   - name: Word
