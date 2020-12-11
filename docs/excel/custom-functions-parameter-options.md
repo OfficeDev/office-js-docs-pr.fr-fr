@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/09/2020
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, telles que les plages Excel, les paramètres facultatifs, le contexte d’appel, et bien plus encore.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: 0a803a4d41354530584b25d2bf9df944af430909
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 9f43955324c148a0af030fb796b82f6d72f429c5
+ms.sourcegitcommit: b300e63a96019bdcf5d9f856497694dbd24bfb11
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071619"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "49624665"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -119,7 +119,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Votre fonction personnalisée peut accepter une plage de données de cellule comme paramètre d’entrée. Une fonction peut également renvoyer une plage de données. Excel passe une plage de données de cellule sous la forme d’un tableau à deux dimensions.
 
-Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante prend le paramètre `values`, c’est-à-dire un type de `Excel.CustomFunctionDimensionality.matrix`. Notez que dans les métadonnées JSON pour cette fonction, la propriété du paramètre `type` est définie sur `matrix` .
+Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre `values` , et la syntaxe JSDOC `number[][]` définit la propriété du paramètre `dimensionality` sur `matrix` dans les métadonnées JSON pour cette fonction. 
 
 ```js
 /**
