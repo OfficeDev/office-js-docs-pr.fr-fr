@@ -89,6 +89,10 @@ items:
               - name: Ouvrir automatiquement un volet de tâches avec un document
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: Configurer votre complément pour utiliser un runtime partagé
+                href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+              - name: Exécuter le code sur le document ouvert
+                href: develop/run-code-on-document-open.md
           - name: Manifeste
             items:
               - name: Présentation
@@ -216,6 +220,8 @@ items:
                     href: design/task-pane-add-ins.md
               - name: Raccourcis clavier
                 href: design/keyboard-shortcuts.md
+              - name: Afficher ou masquer un complément Office dans un volet des tâches
+                href: develop/show-hide-add-in.md
               - name: Localisation
                 href: develop/localization.md
               - name: Ressources
@@ -623,9 +629,6 @@ items:
           - name: Mise en forme conditionnelle de plages
             href: excel/excel-add-ins-conditional-formatting.md
             displayName: Excel
-          - name: Configurer votre complément pour utiliser un runtime partagé
-            href: excel/configure-your-add-in-to-use-a-shared-runtime.md
-            displayName: Excel
           - name: Validation de données
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -653,14 +656,8 @@ items:
           - name: Plages (avancées)
             href: excel/excel-add-ins-ranges-advanced.md
             displayName: Excel
-          - name: Exécuter le code sur le document ouvert
-            href: excel/run-code-on-document-open.md
-            displayName: Excel
           - name: Formes
             href: excel/excel-add-ins-shapes.md
-            displayName: Excel
-          - name: Afficher ou masquer un complément Office dans un runtime partagé
-            href: excel/show-hide-add-in.md
             displayName: Excel
           - name: Tables
             href: excel/excel-add-ins-tables.md
@@ -719,9 +716,6 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Retourne un tableau dynamique
             href: excel/custom-functions-dynamic-arrays.md
-            displayName: 'Excel, Custom Functions'
-          - name: Runtime partagé requis
-            href: excel/custom-functions-shared-overview.md
             displayName: 'Excel, Custom Functions'
           - name: Fonctions personnalisées sans interface utilisateur
             items:
