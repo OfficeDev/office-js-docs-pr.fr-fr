@@ -1,30 +1,30 @@
 ---
 title: Runtimes dans le fichier manifeste
-description: L’élément runtimes spécifie le runtime de votre complément.
+description: L’élément Runtimes spécifie le runtime de votre add-in.
 ms.date: 06/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 082491befc6b9dbdc474b0e40f9defd90a4ef75f
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: afbcc6a909c51d2ed56292ef1541193f7f698d28
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159359"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789162"
 ---
-# <a name="runtimes-element"></a>Élément runtimes
+# <a name="runtimes-element"></a>Élément Runtimes
 
-Spécifie le runtime de votre complément. Enfant de l' [`<Host>`](host.md) élément.
+Spécifie le runtime de votre add-in. Enfant de [`<Host>`](host.md) l’élément.
 
 > [!NOTE]
-> Lors de l’exécution dans Office sur Windows, votre complément utilise le navigateur Internet Explorer 11.
+> Lorsque vous exécutez Office sur Windows, votre application utilise le navigateur Internet Explorer 11.
 
-Dans Excel, cet élément active le ruban, le volet des tâches et les fonctions personnalisées pour utiliser le même Runtime. Pour plus d’informations, reportez-vous [à la rubrique Configure Your Excel Add-in to use a Shared JavaScript Runtime](../../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+Dans Excel, cet élément permet au ruban, au volet Des tâches et aux fonctions personnalisées d’utiliser le même runtime. Pour plus d’informations, voir Configurer votre add-in Excel pour utiliser [un runtime JavaScript partagé.](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 
-Dans Outlook, cet élément active l’activation de complément basée sur les événements. Pour plus d’informations, reportez-vous à [la rubrique Configurer votre complément Outlook pour l’activation basée sur les événements](../../outlook/autolaunch.md).
+Dans Outlook, cet élément active l’activation des compléments basés sur des événements. Pour plus d’informations, voir Configurer votre complément [Outlook pour l’activation basée sur des événements.](../../outlook/autolaunch.md)
 
-**Type de complément :** Volet Office, messagerie
+**Type de add-in :** Volet De tâches, Courrier
 
 > [!IMPORTANT]
-> **Outlook**: la fonctionnalité d’activation basée sur un événement est actuellement [en](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) préversion et disponible uniquement dans Outlook sur le Web. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature).
+> **Outlook**: la fonctionnalité d’activation basée sur des événements est actuellement en [prévisualisation](../../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) et disponible uniquement dans Outlook sur le web. Pour plus d’informations, [voir Comment afficher un aperçu de la fonctionnalité d’activation basée sur des événements.](../../outlook/autolaunch.md#how-to-preview-the-event-based-activation-feature)
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -42,8 +42,8 @@ Dans Outlook, cet élément active l’activation de complément basée sur les 
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-| [Runtime](runtime.md) | Oui |  Le runtime de votre complément. |
+| [Runtime](runtime.md) | Oui |  Runtime de votre add-in. |
 
-## <a name="see-also"></a>Consultez également
+## <a name="see-also"></a>Voir aussi
 
 - [Runtime](runtime.md)

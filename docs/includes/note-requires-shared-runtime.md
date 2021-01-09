@@ -1,2 +1,2 @@
 > [!NOTE]
-> Pour cet article, votre complément Office doit être configuré pour utiliser un runtime partagé. Pour plus d’informations, reportez-vous [à la rubrique Configure Your Office Add-in use a Shared Runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+> Cet article nécessite que votre add-in Office soit configuré pour utiliser un runtime partagé. Pour plus d’informations, voir [Configurer votre add-in Office pour utiliser un runtime partagé.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

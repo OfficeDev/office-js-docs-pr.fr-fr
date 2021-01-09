@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Excel qui con
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: e45bea36b8826912a38838429d83990293fc47db
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131793"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789204"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -40,7 +40,7 @@ Dans ce didacticiel, vous allez :
 
     ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées](../images/starcountPrompt.png)
     
-    Le générateur crée le projet et installe les composants Node de la prise en charge.
+    Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
     [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -243,4 +243,4 @@ function clock(invocation) {
 Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Ensuite, vous pouvez modifier votre projet pour utiliser un runtime partagé, ce qui permet à votre fonction d’interagir plus facilement avec le volet de tâches. Suivez la procédure décrite dans cet article :
 
 > [!div class="nextstepaction"]
-> [Configurer votre complément pour utiliser un runtime partagé](../excel/configure-your-add-in-to-use-a-shared-runtime.md)
+> [Configurer votre complément pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

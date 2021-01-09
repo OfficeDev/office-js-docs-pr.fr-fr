@@ -1,18 +1,18 @@
 ---
-title: Créer des onglets contextuels personnalisés dans les compléments Office
-description: Découvrez comment ajouter des onglets contextuels personnalisés à votre complément Office.
+title: Créer des onglets contextuels personnalisés dans les add-ins Office
+description: Découvrez comment ajouter des onglets contextuels personnalisés à votre add-in Office.
 ms.date: 11/20/2020
 localization_priority: Normal
-ms.openlocfilehash: d8617c7dd8748d15393c0e38c527062e5894e791
-ms.sourcegitcommit: cba180ae712d88d8d9ec417b4d1c7112cd8fdd17
+ms.openlocfilehash: 3939e3338c734e1d6400dc261b59e35de63e5779
+ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49612735"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "49789134"
 ---
-# <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Créer des onglets contextuels personnalisés dans les compléments Office (aperçu)
+# <a name="create-custom-contextual-tabs-in-office-add-ins-preview"></a>Créer des onglets contextuels personnalisés dans les add-ins Office (aperçu)
 
-Un onglet contextuel est un contrôle d’onglet masqué dans le ruban Office qui s’affiche dans la ligne d’onglet lorsqu’un événement spécifié se produit dans le document Office. Par exemple, l’onglet **création de table** qui s’affiche dans le ruban Excel lorsqu’un tableau est sélectionné. Vous pouvez inclure des onglets contextuels personnalisés dans votre complément Office et spécifier lorsqu’ils sont visibles ou masqués, en créant des gestionnaires d’événements qui modifient la visibilité. (Toutefois, les onglets contextuels personnalisés ne répondent pas aux changements de focus.)
+Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui s’affiche dans la ligne d’onglet lorsqu’un événement spécifié se produit dans le document Office. Par exemple, **l’onglet Création de** tableau qui apparaît sur le ruban Excel lorsqu’un tableau est sélectionné. Vous pouvez inclure des onglets contextuels personnalisés dans votre add-in Office et spécifier quand ils sont visibles ou masqués en créant des handlers d’événements qui modifient la visibilité. (Toutefois, les onglets contextuels personnalisés ne répondent pas aux changements de focus.)
 
 > [!NOTE]
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
@@ -20,51 +20,51 @@ Un onglet contextuel est un contrôle d’onglet masqué dans le ruban Office qu
 > - [Concepts basiques pour les commandes de complément](add-in-commands.md)
 
 > [!IMPORTANT]
-> Les onglets contextuels personnalisés sont en aperçu. Essayez de les tester dans un environnement de développement ou de test, mais ne les ajoutez pas à un complément de production.
+> Les onglets contextuels personnalisés sont en prévisualisation. Testez-les dans un environnement de développement ou de test, mais ne les ajoutez pas à un module de production.
 >
-> Les onglets contextuels personnalisés sont actuellement uniquement pris en charge sur Excel et uniquement sur ces plateformes et génèrent les éléments suivants :
+> Les onglets contextuels personnalisés sont actuellement uniquement pris en charge sur Excel et uniquement sur ces plateformes et builds :
 >
-> - Excel sur Windows (Microsoft 365 uniquement, pas une licence perpétuelle) : version 2011 (Build 13426,20274). Votre abonnement Microsoft 365 doit peut-être être sur le [canal actuel (](https://insider.office.com/join/windows) préversion) précédemment appelé « canal mensuel (ciblé) » ou « Insider Slower ».
+> - Excel sur Windows (Microsoft 365 uniquement, et non la licence perpétuelle) : version 2011 (build 13426.20274). Votre abonnement Microsoft 365 doit peut-être être sur le canal actuel [(prévisualisation)](https://insider.office.com/join/windows) anciennement appelé « Canal mensuel (ciblé) » ou « Insider Slow ».
 
 > [!NOTE]
-> Les onglets contextuels personnalisés fonctionnent uniquement sur les plateformes qui prennent en charge les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et la façon de les utiliser, voir [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)pour les API.
+> Les onglets contextuels personnalisés fonctionnent uniquement sur les plateformes qui supportent les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et sur leur utilisation, voir Spécifier les [applications Office et les conditions requises des API.](../develop/specify-office-hosts-and-api-requirements.md)
 >
-> - [SharedRuntime 1,1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportement des onglets contextuels personnalisés
 
-L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets contextuels Office intégrés. Les éléments suivants sont les principes de base pour les onglets contextuels personnalisés de placement :
+L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets contextuels Office intégrés. Les principes de base des onglets contextuels personnalisés de placement sont les suivants :
 
-- Lorsqu’un onglet contextuel personnalisé est visible, il s’affiche à l’extrémité droite du ruban.
-- Si un ou plusieurs onglets contextuels prédéfinis et un ou plusieurs onglets contextuels personnalisés provenant de compléments sont visibles en même temps, les onglets contextuels personnalisés sont toujours à droite de tous les onglets contextuels intégrés.
-- Si votre complément comporte plusieurs onglets contextuels et des contextes dans lesquels plusieurs sont visibles, ils apparaissent dans l’ordre dans lequel ils sont définis dans votre complément. (Le sens est le même que celui de la langue d’Office ; autrement dit, de gauche à droite dans les langues se lisant de gauche à droite, mais de droite à gauche dans les langues se lisant de droite à gauche.) Pour plus d’informations sur la définition des [groupes et des contrôles de l’onglet, voir define the Groups and Controls](#define-the-groups-and-controls-that-appear-on-the-tab) .
-- Si plusieurs compléments disposent d’un onglet contextuel visible dans un contexte spécifique, ils apparaissent dans l’ordre dans lequel les compléments ont été lancés.
-- Les onglets *contextuels* personnalisés, contrairement aux onglets principaux personnalisés, ne sont pas ajoutés de façon permanente au ruban de l’application Office. Ils sont présents uniquement dans les documents Office sur lesquels votre complément est en cours d’exécution.
+- Lorsqu’un onglet contextuel personnalisé est visible, il apparaît à l’extrémité droite du ruban.
+- Si un ou plusieurs onglets contextuels intégrés et un ou plusieurs onglets contextuels personnalisés des modules sont visibles en même temps, les onglets contextuels personnalisés sont toujours à droite de tous les onglets contextuels intégrés.
+- Si votre add-in possède plusieurs onglets contextuels et qu’il existe des contextes dans lesquels plusieurs onglets sont visibles, ils apparaissent dans l’ordre dans lequel ils sont définis dans votre module. (Le sens est identique à celui de la langue d’Office; c’est-à-dire, de gauche à droite dans les langues de gauche à droite, mais de droite à gauche dans les langues de droite à gauche.) Pour [plus d’informations sur](#define-the-groups-and-controls-that-appear-on-the-tab) leur définition, voir Définir les groupes et les contrôles qui apparaissent sous l’onglet.
+- Si plusieurs d’entre eux ont un onglet contextuel visible dans un contexte spécifique, ils apparaissent dans l’ordre dans lequel les modules ont été lancés.
+- Contrairement *aux* onglets principaux personnalisés, les onglets contextuels personnalisés ne sont pas ajoutés définitivement au ruban de l’application Office. Elles sont présentes uniquement dans les documents Office sur lesquels votre add-in est en cours d’exécution.
 
-## <a name="major-steps-for-including-a-contextual-tab-in-an-add-in"></a>Étapes principales pour l’inclusion d’un onglet contextuel dans un complément
+## <a name="major-steps-for-including-a-contextual-tab-in-an-add-in"></a>Étapes principales pour l’ajout d’un onglet contextuel dans un add-in
 
-Voici les principales étapes à suivre pour inclure un onglet contextuel personnalisé dans un complément :
+Les étapes principales d’ajout d’un onglet contextuel personnalisé dans un add-in sont les suivantes :
 
-1. Configurez le complément pour qu’il utilise un runtime partagé.
-1. Définissez l’onglet, ainsi que les groupes et les contrôles qui s’y trouvent.
-1. Enregistrer l’onglet contextuel avec Office.
-1. Spécifier les circonstances dans lesquelles l’onglet sera visible.
+1. Configurez le add-in pour utiliser un runtime partagé.
+1. Définissez l’onglet, ainsi que les groupes et les contrôles qui y apparaissent.
+1. Inscrivez l’onglet contextuel auprès d’Office.
+1. Spécifiez les circonstances dans le cas où l’onglet sera visible.
 
-## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>Configurer le complément pour utiliser un runtime partagé
+## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>Configurer le add-in pour utiliser un runtime partagé
 
-L’ajout d’onglets contextuels personnalisés nécessite que votre complément utilise le runtime partagé. Pour plus d’informations, consultez [la rubrique Configure an Add-in use a Shared Runtime](../excel/configure-your-add-in-to-use-a-shared-runtime.md).
+L’ajout d’onglets contextuels personnalisés nécessite que votre add-in utilise le runtime partagé. Pour plus d’informations, [voir Configurer un module complémentaire pour utiliser un runtime partagé.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 
-## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>Définir les groupes et les contrôles qui apparaissent sur l’onglet
+## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>Définir les groupes et les contrôles qui apparaissent sous l’onglet
 
-Contrairement aux onglets principaux personnalisés, qui sont définis avec XML dans le manifeste, les onglets contextuels personnalisés sont définis au moment de l’exécution avec un blob JSON. Votre code analyse le BLOB dans un objet JavaScript, puis passe l’objet à la méthode [Office. Ribbon. requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-) . Les onglets contextuels personnalisés sont présents uniquement dans les documents sur lesquels votre complément est en cours d’exécution. Cette fonction est différente des onglets principaux personnalisés qui sont ajoutés au ruban de l’application Office lorsque le complément est installé et reste présent lors de l’ouverture d’un autre document. De plus, la `requestCreateControls` méthode ne peut être exécutée qu’une seule fois dans une session de votre complément. Si elle est encore appelée, une erreur est générée.
+Contrairement aux onglets principaux personnalisés, qui sont définis avec du XML dans le manifeste, les onglets contextuels personnalisés sont définis lors de l’runtime avec un blob JSON. Votre code parse le blob dans un objet JavaScript, puis passe l’objet à la méthode [Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls-tabDefinition-) Les onglets contextuels personnalisés sont uniquement présents dans les documents sur lesquels votre module est en cours d’exécution. Cela est différent des onglets principaux personnalisés qui sont ajoutés au ruban de l’application Office lorsque le module est installé et restent présents à l’ouverture d’un autre document. En outre, `requestCreateControls` la méthode ne peut être exécuté qu’une seule fois dans une session de votre add-in. Si elle est appelée à nouveau, une erreur est lancée.
 
 > [!NOTE]
-> La structure des propriétés et sous-propriétés du BLOB JSON (et les noms de clés) est à peu près parallèle à la structure de l’élément [CustomTab](../reference/manifest/customtab.md) et ses éléments descendants dans le fichier manifeste XML.
+> La structure des propriétés et sous-propriétés de l’objet blob JSON (et les noms clés) est à peu près parallèle à la structure de l’élément [CustomTab](../reference/manifest/customtab.md) et de ses éléments descendants dans le manifeste XML.
 
-Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels pas à pas. (Le schéma complet pour l’onglet contextuel JSON se trouve [ surdynamic-ribbon.schema.js](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Ce lien peut ne pas fonctionner dans la période d’aperçu anticipé des onglets contextuels. Si le lien ne fonctionne pas, vous pouvez trouver le dernier brouillon du schéma [sur brouillon dynamic-ribbon.schema.jssur](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json).) Si vous travaillez dans Visual Studio code, vous pouvez utiliser ce fichier pour obtenir IntelliSense et valider votre JSON. Pour plus d’informations, consultez la rubrique [Editing JSON with Visual Studio code-JSON schemas and Settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
+Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas. (Le schéma complet de l’onglet contextuel JSON est [dynamic-ribbon.schema.jssur](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Il se peut que ce lien ne fonctionne pas pendant la période d’aperçu préliminaire pour les onglets contextuels. Si le lien ne fonctionne pas, vous pouvez trouver le dernier brouillon du schéma à [l'dynamic-ribbon.schema.jssur](https://github.com/OfficeDev/testing-assets/tree/master/jsonschema/dynamic-ribbon.schema.json).) Si vous travaillez dans Visual Studio Code, vous pouvez utiliser ce fichier pour obtenir IntelliSense et valider votre JSON. Pour plus d’informations, voir [Modification de JSON avec Visual Studio Code - Schémas et paramètres JSON.](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
 
 
-1. Commencez par créer une chaîne JSON avec deux propriétés de tableau nommées `actions` et `tabs` . Le `actions` tableau est une spécification de toutes les fonctions qui peuvent être exécutées par des contrôles dans l’onglet contextuel. Le `tabs` tableau définit un ou plusieurs onglets contextuels, *jusqu’à un maximum de 10*.
+1. Commencez par créer une chaîne JSON avec deux propriétés de tableau `actions` nommées et `tabs` . Le tableau est une spécification de toutes les fonctions qui peuvent être exécutées par des `actions` contrôles sous l’onglet contextuel. Le `tabs` tableau définit un ou plusieurs onglets contextuels, *jusqu’à un maximum de 10*.
 
     ```json
     '{
@@ -77,12 +77,12 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }'
     ```
 
-1. Cet exemple simple d’onglet contextuel ne comporte qu’un seul bouton et, par conséquent, une seule action. Ajoutez ce qui suit en tant que membre unique du `actions` tableau. À propos de ce balisage, notez les éléments suivants :
+1. Cet exemple simple d’onglet contextuel n’aura qu’un seul bouton et, par conséquent, une seule action. Ajoutez ce qui suit en tant que seul membre du `actions` tableau. À propos de ce markup, notez :
 
-    - Les `id` `type` Propriétés et sont obligatoires.
-    - La valeur de `type` peut être « ExecuteFunction » ou « ShowTaskpane ».
-    - La `functionName` propriété est utilisée uniquement lorsque la valeur de `type` est `ExecuteFunction` . Il s’agit du nom d’une fonction définie dans FunctionFile. Pour plus d’informations sur les FunctionFile, consultez la rubrique [concepts de base pour les commandes de complément](add-in-commands.md).
-    - Dans une étape ultérieure, vous mapperez cette action sur un bouton de l’onglet contextuel.
+    - Les `id` `type` propriétés et les propriétés sont obligatoires.
+    - La valeur `type` peut être « ExecuteFunction » ou « ShowTaskpane ».
+    - La `functionName` propriété est utilisée uniquement lorsque la valeur est `type` `ExecuteFunction` . Il s’agit du nom d’une fonction définie dans functionFile. Pour plus d’informations sur FunctionFile, voir [Concepts de base pour les commandes de module complémentaire.](add-in-commands.md)
+    - Dans une étape ultérieure, vous allez ma cartographier cette action sur un bouton de l’onglet contextuel.
 
     ```json
     {
@@ -92,14 +92,14 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }
    ```
 
-1. Ajoutez ce qui suit en tant que membre unique du `tabs` tableau. À propos de ce balisage, notez les éléments suivants :
+1. Ajoutez ce qui suit en tant que seul membre du `tabs` tableau. À propos de ce markup, notez :
 
-    - La propriété `id` est requise. Utilisez un bref ID descriptif qui est unique parmi tous les onglets contextuels de votre complément.
-    - La propriété `label` est requise. Il s’agit d’une chaîne conviviale qui servira d’étiquette de l’onglet contextuel.
-    - La propriété `groups` est requise. Il définit les groupes de contrôles qui s’affichent sous l’onglet. Il doit comporter au moins un membre *et pas plus de 20*. (Il existe également des limites quant au nombre de contrôles que vous pouvez avoir sur un onglet contextuel personnalisé et qui contraignent également le nombre de groupes dont vous disposez. Pour plus d’informations, reportez-vous à l’étape suivante.)
+    - La propriété `id` est requise. Utilisez un bref ID descriptif unique parmi tous les onglets contextuels de votre module.
+    - La propriété `label` est requise. Il s’agit d’une chaîne conviviale qui sert d’étiquette à l’onglet contextuel.
+    - La propriété `groups` est requise. Il définit les groupes de contrôles qui apparaîtront sous l’onglet. Elle doit avoir au moins un *membre et pas plus de 20*. (Il existe également des limites au nombre de contrôles que vous pouvez avoir sur un onglet contextuel personnalisé et qui limitent également le nombre de groupes que vous avez. Pour plus d’informations, voir l’étape suivante.)
 
     > [!NOTE]
-    > L’objet Tab peut également avoir une `visible` propriété facultative qui spécifie si l’onglet est visible immédiatement au démarrage du complément. Étant donné que les onglets contextuels sont normalement masqués jusqu’à ce qu’un événement utilisateur déclenche sa visibilité (par exemple, l’utilisateur sélectionnant une entité d’un certain type dans le document), la `visible` propriété est définie par défaut `false` lorsqu’il n’est pas présent. Dans une section ultérieure, nous montrons comment définir la propriété sur `true` en réponse à un événement.
+    > L’objet tabulation peut également avoir une propriété facultative qui spécifie si l’onglet est visible immédiatement au démarrage `visible` du module. Dans la mesure où les onglets contextuels sont normalement masqués jusqu’à ce qu’un événement utilisateur déclenche leur visibilité (par exemple, l’utilisateur sélectionnant une entité d’un type dans le document), la propriété se présente par défaut lorsqu’elle n’est pas `visible` `false` présente. Dans une section ultérieure, nous montrons comment définir la propriété en `true` réponse à un événement.
 
     ```json
     {
@@ -111,16 +111,16 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }
     ```
 
-1. Dans l’exemple simple en cours, l’onglet contextuel ne comporte qu’un seul groupe. Ajoutez ce qui suit en tant que membre unique du `groups` tableau. À propos de ce balisage, notez les éléments suivants :
+1. Dans l’exemple continu simple, l’onglet contextuel ne possède qu’un seul groupe. Ajoutez ce qui suit en tant que seul membre du `groups` tableau. À propos de ce markup, notez :
 
     - Toutes les propriétés sont requises.
-    - La `id` propriété doit être unique parmi tous les groupes de l’onglet. Utilisez un bref ID descriptif.
-    - `label`Est une chaîne conviviale qui sert d’étiquette au groupe.
-    - La `icon` valeur de la propriété est un tableau d’objets qui spécifient les icônes du groupe sur le ruban en fonction de la taille du ruban et de la fenêtre de l’application Office.
-    - La `controls` valeur de la propriété est un tableau d’objets qui spécifient les boutons et les menus du groupe. Il doit y avoir au moins un et *six pour un groupe*.
+    - La `id` propriété doit être unique parmi tous les groupes de l’onglet. Utilisez un ID bref et descriptif.
+    - Il `label` s’agit d’une chaîne conviviale qui sert d’étiquette au groupe.
+    - La valeur de la propriété est un tableau d’objets qui spécifient les icônes que le groupe aura sur le ruban en fonction de la taille du ruban et de la fenêtre de `icon` l’application Office.
+    - La valeur de la propriété est un tableau d’objets qui spécifient les boutons et `controls` les menus du groupe. Il doit y en avoir au moins un et pas *plus de 6 dans un groupe.*
 
     > [!IMPORTANT]
-    > *Le nombre total de contrôles sur l’onglet entier ne peut pas être supérieur à 20.* Par exemple, vous pouvez avoir 3 groupes avec 6 contrôles chacun, et un quatrième groupe avec 2 contrôles, mais vous ne pouvez pas avoir 4 groupes avec 6 contrôles chacun.  
+    > *Le nombre total de contrôles sur l’onglet entier ne peut pas être supérieur à 20.* Par exemple, vous pouvez avoir 3 groupes avec 6 contrôles chacun et un quatrième groupe avec 2 contrôles, mais vous ne pouvez pas avoir 4 groupes avec 6 contrôles chacun.  
 
     ```json
     {
@@ -135,14 +135,14 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }
     ```
 
-1. Chaque groupe doit avoir une icône d’au moins deux tailles, 32x32 PX et 80x80 px. Si vous le souhaitez, vous pouvez également avoir des icônes de taille de 16x16 PX, 20x20 PX, 24x24 PX, 40x40 PX, 48 x 48 px et 64 x 64 px. Office décide de l’icône à utiliser en fonction de la taille du ruban et de la fenêtre de l’application Office. Ajoutez les objets suivants au tableau d’icônes. (Si la taille de la fenêtre et du ruban est suffisante pour qu’au moins un des *contrôles* du groupe s’affiche, aucune icône de groupe n’apparaît. Pour obtenir un exemple, Regardez le groupe **styles** sur le ruban Word lorsque vous réduisez et développez la fenêtre Word.) À propos de ce balisage, notez les éléments suivants :
+1. Chaque groupe doit avoir une icône d’au moins deux tailles, 32 x 32 px et 80 x 80 px. Si vous le souhaitez, vous pouvez également avoir des icônes de tailles 16 x 16 px, 20 x 20 px, 24 x 24 px, 40 x 40 px, 48 x 48 px et 64 x 64 px. Office décide de l’icône à utiliser en fonction de la taille du ruban et de la fenêtre de l’application Office. Ajoutez les objets suivants au tableau d’icônes. (Si les tailles de la fenêtre et  du ruban sont suffisamment grandes pour qu’au moins l’un des contrôles du groupe apparaisse, aucune icône de groupe ne s’affiche. Pour obtenir un exemple, regardez le groupe **Styles** sur le ruban Word lorsque vous réduirez et développez la fenêtre Word.) À propos de ce markup, notez :
 
-    - Les deux propriétés sont requises.
-    - L' `size` unité de mesure de la propriété est exprimée en pixels. Les icônes sont toujours carrées, de sorte que le nombre est à la fois la hauteur et la largeur.
+    - Les deux propriétés sont obligatoires.
+    - `size`L’unité de mesure de la propriété est pixels. Les icônes sont toujours carrées, de sorte que le nombre est à la fois la hauteur et la largeur.
     - La `sourceLocation` propriété spécifie l’URL complète de l’icône.
 
     > [!IMPORTANT]
-    > Tout comme vous devez généralement modifier les URL dans le manifeste du complément lorsque vous passez du développement à la production (par exemple, en modifiant le domaine de localhost vers contoso.com), vous devez également modifier les URL dans vos onglets contextuels JSON.
+    > Tout comme vous devez généralement modifier les URL dans le manifeste du add-in lorsque vous passez du développement à la production (par exemple, en modifiant le domaine localhost en contoso.com), vous devez également modifier les URL dans vos onglets contextuels JSON.
 
     ```json
     {
@@ -155,16 +155,16 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }
     ```
 
-1. Dans notre exemple simple en cours, le groupe ne possède qu’un seul bouton. Ajoutez l’objet suivant en tant que membre unique du `controls` tableau. À propos de ce balisage, notez les éléments suivants :
+1. Dans notre exemple simple en cours, le groupe ne possède qu’un seul bouton. Ajoutez l’objet suivant comme seul membre du `controls` tableau. À propos de ce markup, notez :
 
-    - Toutes les propriétés, à l’exception `enabled` de, sont obligatoires.
-    - `type` Spécifie le type de contrôle. Les valeurs peuvent être « Button », « menu » ou « MobileButton ».
-    - `id` peut contenir jusqu’à 125 caractères. 
+    - Toutes les propriétés, à l’exception `enabled` de , sont obligatoires.
+    - `type` spécifie le type de contrôle. Les valeurs peuvent être « Button », « Menu » ou « MobileButton ».
+    - `id` peut prendre jusqu’à 125 caractères. 
     - `actionId` doit être l’ID d’une action définie dans le `actions` tableau. (Voir l’étape 1 de cette section.)
-    - `label` est une chaîne conviviale à utiliser comme étiquette du bouton.
-    - `superTip` représente une forme enrichie d’info-bulle. Les `title` Propriétés et `description` sont toutes deux requises.
+    - `label` est une chaîne conviviale qui sert d’étiquette au bouton.
+    - `superTip` représente une forme enrichie d’info-conseil. Les `title` propriétés et les `description` propriétés sont requises.
     - `icon` spécifie les icônes du bouton. Les remarques précédentes sur l’icône de groupe s’appliquent également ici.
-    - `enabled` (facultatif) indique si le bouton est activé lorsque l’onglet contextuel s’affiche. La valeur par défaut est `true` . 
+    - `enabled` (facultatif) indique si le bouton est activé au démarrage de l’onglet contextuel. La valeur par défaut, si elle n’est pas présente, est `true` . 
 
     ```json
     {
@@ -190,7 +190,7 @@ Nous allons construire un exemple d’objet de BLOB JSON d’onglets contextuels
     }
     ```
  
-Voici l’exemple complet de l’objet BLOB JSON :
+Voici l’exemple complet du blob JSON :
 
 ```json
 `{
@@ -249,14 +249,14 @@ Voici l’exemple complet de l’objet BLOB JSON :
 }`
 ```
 
-## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Enregistrer l’onglet contextuel avec Office avec requestCreateControls
+## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Inscrire l’onglet contextuel auprès d’Office avec requestCreateControls
 
-L’onglet contextuel est inscrit avec Office en appelant la méthode [Office. Ribbon. requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) . Cette opération s’effectue généralement dans la fonction qui est affectée à `Office.initialize` ou avec la `Office.onReady` méthode. Pour plus d’informations sur ces méthodes et l’initialisation du complément, reportez-vous à la rubrique [initialiser votre complément Office](../develop/initialize-add-in.md). Toutefois, vous pouvez appeler la méthode à tout moment après l’initialisation.
+L’onglet contextuel est inscrit auprès d’Office en appelant [la méthode Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Cette tâche est généralement effectuée dans la fonction affectée à la méthode ou `Office.initialize` avec `Office.onReady` celle-ci. Pour plus d’informations sur ces méthodes et l’initialisation du add-in, voir [Initialize your Office Add-in](../develop/initialize-add-in.md). Vous pouvez toutefois appeler la méthode à tout moment après l’initialisation.
 
 > [!IMPORTANT]
-> La `requestCreateControls` méthode ne peut être appelée qu’une seule fois dans une session donnée d’un complément. Une erreur est générée si elle est encore appelée.
+> La `requestCreateControls` méthode ne peut être appelée qu’une seule fois dans une session donnée d’un add-in. Une erreur est lancée si elle est appelée à nouveau.
 
-Voici un exemple. Notez que la chaîne JSON doit être convertie en objet JavaScript avec la `JSON.parse` méthode avant de pouvoir être transmise à une fonction JavaScript.
+Voici un exemple. Notez que la chaîne JSON doit être convertie en objet JavaScript avec la méthode pour pouvoir être transmise `JSON.parse` à une fonction JavaScript.
 
 ```javascript
 Office.onReady(async () => {
@@ -266,11 +266,11 @@ Office.onReady(async () => {
 });
 ```
 
-## <a name="specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate"></a>Spécifier les contextes lorsque l’onglet est visible avec requestUpdate
+## <a name="specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate"></a>Spécifier les contextes où l’onglet sera visible avec requestUpdate
 
-En règle générale, un onglet contextuel personnalisé doit s’afficher lorsqu’un événement initié par l’utilisateur modifie le contexte du complément. Imaginez un scénario dans lequel l’onglet doit être visible lorsque, et uniquement lorsqu’un graphique (de la feuille de calcul par défaut d’un classeur Excel) est activé.
+En règle générale, un onglet contextuel personnalisé doit apparaître lorsqu’un événement initié par l’utilisateur modifie le contexte du add-in. Envisagez un scénario dans lequel l’onglet doit être visible lorsque, et uniquement quand, un graphique (dans la feuille de calcul par défaut d’un workbook Excel) est activé.
 
-Commencez par attribuer des gestionnaires. Cette opération est généralement exécutée dans la `Office.onReady` méthode, comme dans l’exemple suivant, qui affecte des gestionnaires (créés à une étape ultérieure) aux `onActivated` `onDeactivated` événements et de tous les graphiques de la feuille de calcul.
+Commencez par affecter des handlers. Cela est généralement effectué dans la méthode comme dans l’exemple suivant qui affecte des handlers (créés à une étape ultérieure) aux événements et aux graphiques de la feuille `Office.onReady` `onActivated` de `onDeactivated` calcul.
 
 ```javascript
 Office.onReady(async () => {
@@ -289,11 +289,11 @@ Office.onReady(async () => {
 });
 ```
 
-Ensuite, définissez les gestionnaires. Voici un exemple simple de a `showDataTab` , mais voir [la gestion de l’erreur HostRestartNeeded](#handling-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
+Ensuite, définissez les handlers. Voici un exemple simple d’une erreur, mais voir Gestion de l’erreur `showDataTab` [HostRestartNeeded](#handling-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
 
-- Office effectue un contrôle lorsqu’il met à jour l’état du ruban. La méthode  [Office. Ribbon. requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) met en file d’attente une requête à mettre à jour. La méthode permet de résoudre l’objet dès qu' `Promise` il a mis en file d’attente la demande, et non lors de la mise à jour du ruban.
-- Le paramètre de la `requestUpdate` méthode est un objet [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie l’onglet par son ID *exactement comme spécifié dans JSON* et (2) indique la visibilité de l’onglet.
-- Si vous avez plusieurs onglets contextuels personnalisés qui doivent être visibles dans le même contexte, il vous suffit d’ajouter des objets Tab supplémentaires au `tabs` tableau.
+- Office effectue un contrôle lorsqu’il met à jour l’état du ruban. La  [méthode Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) met en file d’attente une demande de mise à jour. La méthode résout l’objet dès qu’il a mis la demande en file d’attente, et non lorsque `Promise` le ruban est réellement mis à jour.
+- Le paramètre de la méthode est un objet `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie l’onglet par son ID exactement comme spécifié dans le *JSON* et (2) spécifie la visibilité de l’onglet.
+- Si vous avez plusieurs onglets contextuels personnalisés qui doivent être visibles dans le même contexte, il vous suffit d’ajouter des objets onglet supplémentaires au `tabs` tableau.
 
 ```javascript
 async function showDataTab() {
@@ -307,9 +307,9 @@ async function showDataTab() {
 }
 ```
 
-Le gestionnaire permettant de masquer l’onglet est quasiment identique, à la différence qu’il rétablit la `visible` propriété sur `false` .
+Le handler pour masquer l’onglet est presque identique, sauf qu’il définit à `visible` nouveau la propriété sur `false` .
 
-La bibliothèque JavaScript Office fournit également plusieurs interfaces (types) pour faciliter la création de l' `RibbonUpdateData` objet. Voici la `showDataTab` fonction dans la machine à écrire et elle utilise ces types.
+La bibliothèque JavaScript Office fournit également plusieurs interfaces (types) pour faciliter la construction de `RibbonUpdateData` l’objet. Voici la fonction `showDataTab` dans TypeScript qui utilise ces types.
 
 ```typescript
 const showDataTab = async () => {
@@ -319,9 +319,9 @@ const showDataTab = async () => {
 }
 ```
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer/désactiver la visibilité de l’onglet et l’état activé d’un bouton en même temps
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer la visibilité de l’onglet et l’état activé d’un bouton en même temps
 
-La `requestUpdate` méthode est également utilisée pour faire basculer l’état activé ou désactivé d’un bouton personnalisé dans un onglet contextuel personnalisé ou un onglet de base personnalisé. Pour plus d’informations à ce sujet, consultez la rubrique [activer et désactiver des commandes de complément](disable-add-in-commands.md). Il peut y avoir des scénarios dans lesquels vous souhaitez modifier à la fois la visibilité d’un onglet et l’état activé d’un bouton en même temps. Vous pouvez effectuer cette opération à l’aide d’un seul appel de `requestUpdate` . Voici un exemple dans lequel un bouton d’un onglet principal est activé en même temps qu’un onglet contextuel est rendu visible.
+La méthode est également utilisée pour activer ou désactiver l’état d’un bouton personnalisé sur un onglet contextuel personnalisé ou un `requestUpdate` onglet principal personnalisé. Pour plus d’informations à ce sujet, voir [Enable and Disable Add-in Commands](disable-add-in-commands.md). Il peut y avoir des scénarios dans lesquels vous souhaitez modifier la visibilité d’un onglet et l’état activé d’un bouton en même temps. Vous pouvez le faire avec un seul appel de `requestUpdate` . Voici un exemple dans lequel un bouton d’un onglet principal est activé en même temps qu’un onglet contextuel est rendu visible.
 
 ```javascript
 function myContextChanges() {
@@ -343,7 +343,7 @@ function myContextChanges() {
 }
 ```
 
-Dans l’exemple suivant, le bouton activé se trouve sur le même onglet contextuel qui est rendu visible.
+Dans l’exemple suivant, le bouton activé se trouve sur le même onglet contextuel que celui qui est rendu visible.
 
 ```javascript
 function myContextChanges() {
@@ -363,9 +363,9 @@ function myContextChanges() {
 }
 ```
 
-## <a name="localizing-the-json-blob"></a>Localisation de l’objet BLOB JSON
+## <a name="localizing-the-json-blob"></a>Localisation de l’objet blob JSON
 
-L’objet BLOB JSON transmis à `requestCreateControls` n’est pas localisé de la même façon que le balisage de manifeste pour les onglets principaux personnalisés est localisé (ce qui est décrit lors [de la localisation du contrôle à partir du manifeste](../develop/localization.md#control-localization-from-the-manifest)). Au lieu de cela, la localisation doit être effectuée au moment de l’exécution à l’aide d’objets BLOB JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser une `switch` instruction qui teste la propriété [Office. Context. displayLanguage](/javascript/api/office/office.context#displayLanguage) . Voici un exemple :
+Le blob JSON passé à n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés est localisée (ce qui est décrit lors de la localisation du contrôle à partir du `requestCreateControls` [manifeste).](../develop/localization.md#control-localization-from-the-manifest) Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser `switch` une instruction qui teste la propriété [Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Voici un exemple :
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -409,7 +409,7 @@ function GetContextualTabsJsonSupportedLocale () {
 }
 ```
 
-Votre code appelle ensuite la fonction pour obtenir l’objet BLOB localisé qui est transmis `requestCreateControls` , comme dans l’exemple suivant :
+Ensuite, votre code appelle la fonction pour obtenir l’objet blob local qui est transmis à , comme `requestCreateControls` dans l’exemple suivant :
 
 ```javascript
 var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
