@@ -1,14 +1,14 @@
 ---
 title: Manifestes des compléments Outlook
 description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
-ms.date: 10/31/2019
+ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f4d60919db15c4f470ecccac634abee94973bb6c
-ms.sourcegitcommit: 5d29801180f6939ec10efb778d2311be67d8b9f1
+ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "42324939"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839823"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
@@ -274,9 +274,11 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
-L’élément **VersionOverrides** représente l’emplacement des informations pour les commandes de complément. Pour obtenir des informations supplémentaires sur cet élément, reportez-vous à la rubrique [Définir des commandes de complément dans votre manifeste](../develop/define-add-in-commands.md).
+L’élément **VersionOverrides** représente l’emplacement des informations pour les [commandes de complément](add-in-commands-for-outlook.md).
 
 Cet élément est également l’endroit où les compléments définissent la prise en charge des [compléments mobiles](add-mobile-support.md).
+
+Pour plus d’informations sur cet élément, consultez [Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word](../develop/create-addin-commands.md).
 
 ## <a name="localization"></a>Localisation
 
@@ -324,7 +326,7 @@ Les compléments Outlook spécifient l’élément **Hosts** comme ci-dessous.
 </OfficeApp>
 ```
 
-Il existe une différence avec l’élément **Hosts** au sein de l’élément **VersionOverrides**, qui est abordée dans [Définir des commandes de complément dans votre manifeste](../develop/define-add-in-commands.md).
+Il existe une différence avec l’élément **Hosts** au sein de l’élément **VersionOverrides**, qui est abordée dans [Créer des commandes de complément dans votre manifeste pour Excel, PowerPoint et Word](../develop/create-addin-commands.md).
 
 ## <a name="requirements"></a>Configuration requise
 
@@ -420,7 +422,7 @@ Pour plus de détails et des exemples de règles d’activation, voir [Règles d
 
 ## <a name="next-steps-add-in-commands"></a>Prochaines étapes : commandes de complément
 
-Après avoir défini un manifeste de base, [définissez des commandes pour votre complément](../develop/define-add-in-commands.md). Les commandes de complément se présentent sous forme de bouton dans le ruban. Ainsi, les utilisateurs peuvent activer votre complément de façon simple et intuitive. Pour plus d’informations, voir [Commandes de complément pour Outlook](add-in-commands-for-outlook.md).
+Une fois que vous avez défini un manifeste de base, définissez les commandes de complément pour votre complément. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 Pour un exemple de complément qui définit les commandes de complément, voir [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 

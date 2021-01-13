@@ -1,16 +1,16 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: Créez une fonction personnalisée Excel pour votre Complément Office.
 title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 052c90f81af79d420c60783f8dfc6b256e8da370
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 97037f201a237cdc6dae551552a0a1609a58b34c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789127"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839872"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -35,8 +35,8 @@ function sphereVolume(radius) {
 }
 ```
 
-> [!NOTE]
-> La section [problèmes connus](#known-issues)plus loin dans cet article indique les limitations en cours de fonctions personnalisées.
+> [!TIP]
+> Si votre complément de fonction personnalisée utilise un volet Office ou un bouton du ruban, outre l’exécution du code de fonction personnalisée, vous devez configurer un runtime JavaScript partagé. Pour plus d’information, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Comment une fonction personnalisée est définie dans le code
 
@@ -88,10 +88,6 @@ Excel sur le web et Windows connecté à un abonnement Microsoft 365 vous perme
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
-## <a name="known-issues"></a>Problèmes connus
-
-Consulter les problèmes connus sur notre[repo GitHub Fonctions Excel Personnalisées](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
-
 ## <a name="next-steps"></a>Étapes suivantes
 
 Vous voulez essayer les fonctions personnalisées ? Consultez la documentation sur le [démarrage rapide de fonction personnalisée](../quickstarts/excel-custom-functions-quickstart.md) ou le [didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
@@ -103,3 +99,4 @@ Un autre moyen simple d’essayer des fonctions personnalisées consiste à util
 * [Ensembles de besoins de fonctions personnalisées](custom-functions-requirement-sets.md)
 * [Règles de noms des fonctions personnalisées](custom-functions-naming.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)
+* [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
