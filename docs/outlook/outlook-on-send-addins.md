@@ -3,12 +3,12 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 01/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c10774287aa34cdc193d72c22487a40fabb9479e
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 8fc0f0d9f0664c3a4ba1c343306d779106b27862
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789197"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839739"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -46,7 +46,7 @@ Vous pouvez utiliser la fonctionnalité d’envoi pour créer un complément Ou
 - Vérifier que la ligne d’objet du message est remplie
 - Définir un destinataire prédéterminé
 
-La validation est effectuée côté client dans Outlook lorsque l’événement d’envoi est déclenché, et le module dispose de 5 minutes avant son heure d’attente. Si la validation échoue, l’envoi de l’élément est bloqué et un message d’erreur s’affiche dans une barre d’informations qui invite l’utilisateur à prendre des mesures.
+La validation est effectuée côté client dans Outlook lorsque l’événement d’envoi est déclenché et que le module dispose de 5 minutes avant son heure d’attente. Si la validation échoue, l’envoi de l’élément est bloqué et un message d’erreur s’affiche dans une barre d’informations qui invite l’utilisateur à prendre des mesures.
 
 > [!NOTE]
 > Dans Outlook sur le web, lorsque la fonctionnalité d’envoi est déclenchée dans un message en cours de composition dans l’onglet du navigateur Outlook, l’élément est publié dans sa propre fenêtre de navigateur ou onglet afin de terminer la validation et d’autres traitements.
@@ -300,7 +300,7 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 |État de la stratégie|Résultat|
 |---|---|
 |Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
-|Activé|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
+|Activé|Une fois que les derniers manifestes des applications d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
 
@@ -333,7 +333,7 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 |État de la clé|Résultat|
 |---|---|
 |false|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
-|true|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué et le **bouton** Envoyer est désactivé.|
+|true|Une fois que les derniers manifestes des applications d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué et le **bouton** Envoyer est désactivé.|
 
 ---
 
@@ -397,7 +397,7 @@ Les compléments d’envoi s’exécutent pendant l’envoi, si le serveur Excha
 Pendant que les modules d’envoi traitent un élément, l’utilisateur peut modifier l’élément en ajoutant, par exemple, du texte inapproprié ou des pièces jointes. Si vous souhaitez empêcher l’utilisateur de modifier l’élément pendant que votre application est en cours de traitement lors de l’envoi, vous pouvez implémenter une solution de contournement à l’aide d’une boîte de dialogue. Cette solution de contournement peut être utilisée dans Outlook sur le web (classique), Windows et Mac.
 
 > [!IMPORTANT]
-> Outlook moderne sur le web : pour empêcher l’utilisateur de modifier l’élément pendant que votre application est en cours de traitement lors de l’envoi, vous devez définir l’indicateur *OnSendAddinsEnabled* sur tel que décrit dans la section Installer les applications Outlook qui utilisent la section d’envoi plus tôt dans cet `true` article. [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
+> Outlook sur le web moderne : pour empêcher l’utilisateur de modifier l’élément pendant que votre application est en cours de traitement lors de l’envoi, vous devez définir l’indicateur *OnSendAddinsEnabled* sur tel que décrit dans la section Installer les applications Outlook qui utilisent la section d’envoi plus tôt dans cet `true` article. [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
 
 Dans votre handler d’envoi :
 
@@ -477,7 +477,7 @@ L’API d’envoi nécessite `VersionOverrides v1_1`. L’exemple vous montre co
 > [!NOTE]
 > Pour plus d’informations, voir les commandes suivantes :
 > - [Manifestes de complément Outlook](manifests.md)
-> - [Manifeste XML des compléments Office](../overview/add-in-manifests.md)
+> - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
 
 
 ### <a name="event-and-item-objects-and-bodygetasync-and-bodysetasync-methods"></a>Les objets `Event` et `item` et les méthodes `body.getAsync` et `body.setAsync`

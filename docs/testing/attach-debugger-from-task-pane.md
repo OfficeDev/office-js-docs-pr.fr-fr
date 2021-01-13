@@ -1,14 +1,14 @@
 ---
 title: Attacher un débogueur à partir du volet Office
-description: Découvrez comment attacher un débogueur à partir du volet Office
+description: Découvrez comment attacher un débogger à partir du volet Des tâches
 ms.date: 06/17/2020
 localization_priority: Normal
-ms.openlocfilehash: 2ebbf32c6df6a9f2eb71ae933a9378efe2c1d2f2
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 02899ab17b90b4f0dd959369d345462686b0f889
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430533"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839991"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
@@ -17,7 +17,7 @@ Dans Office 2016 pour Windows, version 77xx.xxxx ou ultérieure, vous pouvez a
 Pour lancer l’outil **Attacher le débogueur**, cliquez sur le coin supérieur droit du volet Office pour activer le menu **Caractéristique** (comme illustré dans le cercle rouge dans l’image suivante).
 
 > [!NOTE]
-> - Actuellement, le seul débogueur pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](https://msdn.microsoft.com/library/mt752379.aspx) ou une mise à jour ultérieure. Si Visual Studio n’est pas installé, la sélection de l’option **attacher le débogueur** n’entraîne aucune action.
+> - Actuellement, le seul débogueur pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](/previous-versions/mt752379(v=vs.140)) ou une mise à jour ultérieure. Si vous n’avez pas Visual Studio installé, la  sélection de l’option Attacher le débogger n’entraîne aucune action.
 > - Vous ne pouvez déboguer JavaScript côté client qu’à l’aide de l’outil **Attacher le débogueur**. Pour déboguer du code côté serveur, comme avec un serveur Node.js, vous disposez de nombreuses options. Pour plus d’informations sur le débogage avec Visual Studio Code, reportez-vous à la rubrique sur le [débogage de Node.js dans VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Si vous n’utilisez pas Visual Studio Code, recherchez « déboguer Node.js » ou « déboguer {nom de serveur} ».
 
 ![Capture d’écran du menu Attacher le débogueur](../images/attach-debugger.png)
@@ -36,7 +36,7 @@ Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de
 
 Pour plus d’informations sur le débogage dans Visual Studio, consultez les rubriques suivantes :
 
-- Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates).
+- Pour lancer et utiliser l’explorateur DOM dans Visual Studio, consultez le conseil 4 dans la section relative aux [conseils et astuces](/archive/blogs/officeapps/building-great-looking-apps-for-office-using-the-new-project-templates#tips_tricks) du billet de blog sur la [création d’applications attrayantes pour Office à l’aide de nouveaux modèles de projet](/archive/blogs/officeapps/building-great-looking-apps-for-office-using-the-new-project-templates).
 - Pour définir des points d’arrêt, consultez la rubrique [Utilisation des points d’arrêt](/visualstudio/debugger/using-breakpoints?view=vs-2015&preserve-view=true).
 - Pour utiliser F12, consultez la rubrique [Utilisation des outils de développement F12](/previous-versions/windows/internet-explorer/ie-developer/samples/bg182326(v=vs.85)).
 - Pour utiliser les outils de développement Microsoft Edge, voir [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab).

@@ -3,12 +3,12 @@ title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 06/02/2020
 localization_priority: Priority
-ms.openlocfilehash: 7792b2196b686f36b81869ce81a3e3b87659f1c2
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 8a3de7ae6f507ac21dce89d13417e87d5c89a428
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292393"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839683"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -76,7 +76,7 @@ Le déploiement de compléments Outlook nécessite :
 - Microsoft 365, Exchange Online ou Exchange Server 2013 ou version ultérieure
 - Outlook 2013 ou une version ultérieure
 
-Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir d’AppSource. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, reportez-vous à [Installation ou suppression de compléments Outlook pour votre organisation](https://technet.microsoft.com/library/jj943752(v=exchg.150).aspx) sur TechNet.
+Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir d’AppSource. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, reportez-vous à [Installation ou suppression de compléments Outlook pour votre organisation](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/install-or-remove-outlook-add-ins) sur TechNet.
 
 ## <a name="see-also"></a>Voir aussi
 

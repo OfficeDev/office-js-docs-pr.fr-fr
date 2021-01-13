@@ -1,55 +1,55 @@
 ---
-title: Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
-description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
+title: Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
+description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 11/24/2020
+ms.date: 01/06/2021
 localization_priority: Normal
-ms.openlocfilehash: d7ba4a0fb87ec51db56892f4eb3002ae5b7fa6ec
-ms.sourcegitcommit: f4fa1a0187466ea136009d1fe48ec67e4312c934
+ms.openlocfilehash: d6893733af52bba7917531b2e8d5a442ce3dcd77
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "49408840"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839830"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur les événements (aperçu)
+# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
 
-Sans la fonctionnalité d’activation basée sur un événement, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre complément d’exécuter des tâches en fonction de certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer le volet des tâches et les fonctionnalités sans interface utilisateur. Actuellement, les événements suivants sont pris en charge.
+Sans la fonctionnalité d’activation basée sur des événements, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre application d’exécuter des tâches basées sur certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer le volet Des tâches et la fonctionnalité sans interface utilisateur. Pour l’instant, les événements suivants sont pris en charge.
 
-- `OnNewMessageCompose`: Lors de la composition d’un nouveau message (inclut répondre, répondre à tous et transférer)
+- `OnNewMessageCompose`: Lors de la composition d’un nouveau message (y compris répondre, répondre à tous et transmettre)
 - `OnNewAppointmentOrganizer`: Lors de la création d’un rendez-vous
 
   > [!IMPORTANT]
-  > Cette fonctionnalité ne s’active **pas** lors de la modification d’un élément, par exemple, un brouillon ou un rendez-vous existant.
+  > Cette fonctionnalité ne **s’active** pas lors de la modification d’un élément, par exemple un brouillon ou un rendez-vous existant.
 
-À la fin de cette procédure pas à pas, vous disposez d’un complément qui s’exécute chaque fois qu’un nouveau message est créé.
+À la fin de cette walkthrough, vous aurez un module qui s’exécute chaque fois qu’un nouveau message est créé.
 
 > [!IMPORTANT]
-> Cette fonctionnalité est uniquement prise en charge pour l' [Aperçu](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le Web avec un abonnement Microsoft 365. Pour plus d’informations, voir [comment afficher un aperçu de la fonctionnalité activation basée sur les événements](#how-to-preview-the-event-based-activation-feature) dans cet article.
+> Cette fonctionnalité est uniquement prise en charge pour [la prévisualisation](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web avec un abonnement Microsoft 365. Pour [plus d’informations,](#how-to-preview-the-event-based-activation-feature) voir comment afficher un aperçu de la fonctionnalité d’activation basée sur des événements dans cet article.
 >
-> Les fonctionnalités d’aperçu étant susceptibles d’être modifiées sans préavis, elles ne doivent pas être utilisées dans les compléments de production.
+> Étant donné que les fonctionnalités d’aperçu sont sujettes à modification sans préavis, elles ne doivent pas être utilisées dans les modules de production.
 
-## <a name="how-to-preview-the-event-based-activation-feature"></a>Comment afficher un aperçu de la fonctionnalité d’activation basée sur un événement
+## <a name="how-to-preview-the-event-based-activation-feature"></a>Comment afficher un aperçu de la fonctionnalité d’activation basée sur des événements
 
-Nous vous invitons à tester la fonctionnalité d’activation basée sur les événements. Faites-nous part de vos scénarios et de vos possibilités d’amélioration en nous donnant des commentaires via GitHub (voir la section **Commentaires** à la fin de cette page).
+Nous vous invitons à tester la fonctionnalité d’activation basée sur des événements ! Faites-nous part de vos scénarios et de la façon dont nous pouvons les améliorer en nous faisant part de vos commentaires via GitHub (voir la **section** Commentaires à la fin de cette page).
 
-Pour afficher un aperçu de cette fonctionnalité :
+Pour afficher un aperçu de cette fonctionnalité :
 
-- Faites référence à la bibliothèque **beta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation de la machine à écrire et IntelliSense se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
-- [Configurez la version ciblée sur votre client Microsoft 365](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+- Référencez **la bibliothèque bêta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
+- [Configurez la version ciblée sur votre client Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Terminez le [démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
+Terminez [le démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de compl?ment avec le générateur Yeoman pour les compl?ments Office.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer l’activation basée sur les événements de votre complément, vous devez configurer l’élément [runtimes](../reference/manifest/runtimes.md) et le point d’extension [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) dans le manifeste. Pour le moment, `DesktopFormFactor` est le seul facteur de forme pris en charge.
+Pour activer l’activation basée sur des événements de votre complément, vous devez configurer l’élément [Runtimes](../reference/manifest/runtimes.md) et le point d’extension [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) dans le manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
 
-1. Dans votre éditeur de code, ouvrez le projet Quick Start.
+1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
-1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
+1. Ouvrez **lemanifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez le `<VersionOverrides>` nœud entier (y compris les balises ouvrantes et fermantes) et remplacez-le par le code XML suivant.
+1. Sélectionnez l’intégralité du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le `<VersionOverrides>` par le code XML suivant.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -150,10 +150,10 @@ Pour activer l’activation basée sur les événements de votre complément, vo
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le Web utilise un fichier HTML qui fait référence au même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le manifeste, car la plateforme Outlook détermine finalement s’il faut utiliser du code HTML ou JavaScript basé sur le client Outlook. Par exemple, pour configurer la gestion des événements, indiquez l’emplacement du code HTML dans l' `Runtime` élément, puis dans son `Override` élément enfant, indiquez l’emplacement du fichier JavaScript inline ou référencé par le code html.
+Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui fait référence au même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du client Outlook. Ainsi, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez la rubrique [manifestes des compléments Outlook](manifests.md).
+> Pour en savoir plus sur les manifestes pour les add-ins Outlook, consultez les [manifestes de ces derniers.](manifests.md)
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
@@ -167,15 +167,26 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
     ```js
     function onMessageComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
     function onAppointmentComposeHandler(event) {
-      setSubject();
-      event.completed();
+      setSubject(event);
     }
-    function setSubject() {
-      Office.context.mailbox.item.subject.setAsync("Set by an event-based add-in!");
+    function setSubject(event) {
+      Office.context.mailbox.item.subject.setAsync(
+        "Set by an event-based add-in!",
+        {
+          "asyncContext" : event
+        },
+        function (asyncResult) {
+          // Handle success or error.
+          if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+            console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
+          }
+    
+          // Call event.completed() after all work is done.
+          asyncResult.asyncContext.completed();
+        });
     }
     ```
 
@@ -188,7 +199,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 ## <a name="try-it-out"></a>Essayez
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre (s’il n’est pas déjà en cours d’exécution).
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
     ```command&nbsp;line
     npm run dev-server
@@ -198,17 +209,17 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur le web, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur le Web avec l’objet défini sur la composition.](../images/outlook-web-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec l’objet de la composition.](../images/outlook-web-autolaunch.png)
 
-## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur les événements
+## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur des événements
 
-Les compléments qui s’activent sur la base des événements sont conçus pour une exécution à court terme, jusqu’à 330 secondes seulement. Nous vous recommandons de faire en sorte que votre complément appelle la `event.completed` méthode pour signaler qu’il a terminé le traitement de l’événement Launch. Le complément se termine également lorsque l’utilisateur ferme la fenêtre de composition.
+Les add-ins qui s’activent en fonction des événements sont conçus pour être de courte durée, jusqu’à 330 secondes uniquement. Nous vous recommandons de demander à votre add-in d’appeler la méthode pour signaler qu’il a terminé `event.completed` le traitement de l’événement de lancement. Le add-in se termine également lorsque l’utilisateur ferme la fenêtre de composition.
 
-Si l’utilisateur a plusieurs compléments qui s’abonnent au même événement, la plateforme Outlook lance les compléments sans ordre particulier. Actuellement, seuls cinq compléments basés sur les événements peuvent être exécutés activement. Tout complément supplémentaire est placé dans une file d’attente, puis exécuté comme les compléments précédemment actifs sont terminés ou désactivés.
+Si l’utilisateur a plusieurs add-ins abonnés au même événement, la plateforme Outlook lance les modules dans un ordre particulier. Actuellement, seuls cinq add-ins basés sur des événements peuvent être activement en cours d’exécution. Tous les compléments supplémentaires sont dirigés vers une file d’attente, puis exécutés à mesure que les compléments précédemment actifs sont terminés ou désactivés.
 
-L’utilisateur peut basculer ou naviguer hors de l’élément de courrier actuel dans lequel le complément a commencé. Le complément qui a été lancé terminera son opération en arrière-plan.
+L’utilisateur peut basculer ou naviguer à partir de l’élément de messagerie actuel où le module a commencé à s’exécute. Le module qui a été lancé terminera son opération en arrière-plan.
 
-Certaines API de Office.js qui modifient ou modifient l’interface utilisateur ne sont pas autorisées dans les compléments basés sur des événements. Les API bloquées sont les suivantes.
+Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir des add-ins basés sur des événements. Les API bloquées sont les suivantes.
 
 - Sous `Office.context.mailbox` :
   - `displayAppointmentForm`

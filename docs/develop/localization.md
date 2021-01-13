@@ -1,24 +1,24 @@
 ---
 title: Localisation des compléments Office
-description: Vous pouvez utiliser l’API JavaScript Office pour déterminer les paramètres régionaux et les chaînes d’affichage en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
+description: Vous pouvez utiliser l’API JavaScript office pour déterminer un paramètre local et afficher des chaînes basées sur les paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
 ms.date: 07/21/2020
 localization_priority: Normal
-ms.openlocfilehash: 4a8696286c9e95595a3ae82a7af67a93e4894312
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2e44c3d28ffc11328e1fae0707c641259f687e8e
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292749"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839893"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
-Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript Office pour déterminer les paramètres régionaux et les chaînes d’affichage en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
+Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript office pour déterminer un paramètre local et afficher des chaînes basées sur les paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Utiliser l’API JavaScript pour déterminer les chaînes propres aux paramètres régionaux
 
-L’API JavaScript pour Office fournit deux propriétés qui prennent en charge l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application et des données Office :
+L’API JavaScript office fournit deux propriétés qui assurent l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application Office et les données :
 
-- [Context. displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l’application Office. L’exemple suivant vérifie si l’application Office utilise les paramètres régionaux en-US ou fr-FR, et affiche un message d’accueil spécifique aux paramètres régionaux.
+- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l’application Office. L’exemple suivant vérifie si l’application Office utilise les paramètres régionaux en-US ou fr-FR et affiche un message d’accueil spécifique aux paramètres régionaux.
 
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -48,7 +48,7 @@ L’API JavaScript pour Office fournit deux propriétés qui prennent en charge 
 ## <a name="control-localization-from-the-manifest"></a>Contrôler la localisation à partir du manifeste
 
 
-Chaque complément Office indique un élément [DefaultLocale] élément et un paramètre régional dans son manifeste. Par défaut, la plateforme de complément Office et les applications clientes Office appliquent les valeurs des éléments [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl]et [SourceLocation] à tous les paramètres régionaux. Vous pouvez éventuellement prendre en charge des valeurs spécifiques pour les paramètres régionaux spécifiques, en spécifiant un élément enfant [Override] pour chaque paramètre régional supplémentaire, pour chacun des cinq éléments. La valeur de l’élément [DefaultLocale] et de l’attribut `Locale` de l’élément [Override] est spécifiée en fonction de la norme [RFC 3066] relative aux balises pour l’identification des langues (« Tags for the Identification of Languages »). Le tableau 1 décrit la prise en charge de localisation de ces éléments.
+Chaque complément Office indique un élément [DefaultLocale] élément et un paramètre régional dans son manifeste. Par défaut, la plateforme de l’Application Office et les applications clientes Office appliquent les valeurs des éléments [Description,] [DisplayName,] [IconUrl,] [HighResolutionIconUrl]et [SourceLocation] à tous les paramètres régionaux. Vous pouvez éventuellement prendre en charge des valeurs spécifiques pour les paramètres régionaux spécifiques, en spécifiant un élément enfant [Override] pour chaque paramètre régional supplémentaire, pour chacun des cinq éléments. La valeur de l’élément [DefaultLocale] et de l’attribut `Locale` de l’élément [Override] est spécifiée en fonction de la norme [RFC 3066] relative aux balises pour l’identification des langues (« Tags for the Identification of Languages »). Le tableau 1 décrit la prise en charge de localisation de ces éléments.
 
 *Tableau 1. Prise en charge de localisation*
 
@@ -81,7 +81,7 @@ Par exemple, un complément Office peut spécifier [DefaultLocale] en tant que `
 ```
 
 > [!NOTE]
-> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, `de` n’est pas prise en charge dans toutes les combinaisons de plateformes et d’applications clientes Office.
+> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons `de` d’applications et de plateformes clientes Office.
 
 Cela signifie que le complément adopte le paramètre régional `en-us` par défaut. Les utilisateurs voient le nom d’affichage « Video player » pour tous les paramètres régionaux, sauf si le paramètre régional de l’ordinateur client est `fr-fr`, auquel cas ils verront le nom d’affichage « Lecteur vidéo ».
 
@@ -152,9 +152,9 @@ Pour les compléments Outlook, l’élément [SourceLocation] s’aligne égalem
 
 ## <a name="match-datetime-format-with-client-locale"></a>Mettre en correspondance le format de date/heure avec le paramètre régional du client
 
-Vous pouvez obtenir les paramètres régionaux de l’interface utilisateur de l’application cliente Office à l’aide de la propriété [displayLanguage] . Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application Office. Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application hôte. Une solution consiste à préparer un fichier de ressources qui spécifie le format d’affichage de date/heure à utiliser pour chaque paramètre régional pris en charge par le complément Office.
+Vous pouvez obtenir les paramètres régionaux de l’interface utilisateur de l’application cliente Office à l’aide de la [propriété displayLanguage.] Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application Office. Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application hôte. Une solution consiste à préparer un fichier de ressources qui spécifie le format d’affichage de date/heure à utiliser pour chaque paramètre régional pris en charge par le complément Office.
 
-Vous pouvez obtenir les paramètres régionaux des données de l’application cliente Office à l’aide de la propriété [contentLanguage] . Vous pouvez obtenir les paramètres régionaux des données de l’application d’hébergement en utilisant la propriété contentLanguage. En fonction de cette valeur, vous pouvez correctement interpréter ou afficher des chaînes de date/heure.
+Vous pouvez obtenir les paramètres régionaux des données de l’application cliente Office à l’aide de la [propriété contentLanguage.] Vous pouvez obtenir les paramètres régionaux des données de l’application d’hébergement en utilisant la propriété contentLanguage. En fonction de cette valeur, vous pouvez correctement interpréter ou afficher des chaînes de date/heure.
 
 
 ## <a name="use-ajax-for-globalization-and-localization"></a>Utiliser Ajax pour l’internationalisation et la localisation
@@ -172,11 +172,11 @@ Pour plus d’informations, voir Walkthrough: Globalizing a Date by Using Client
 Cette section inclut des exemples expliquant comment localiser la description, le nom d’affichage et l’interface utilisateur d’une Complément Office. 
 
 > [!NOTE]
-> Pour télécharger Visual Studio 2019, voir la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/). Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
+> Pour télécharger Visual Studio 2019, consultez la [page Visual Studio IDE.](https://visualstudio.microsoft.com/vs/) Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurer Office pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
-Pour exécuter l’exemple de code fourni, configurez Office sur votre ordinateur afin d’utiliser des langues supplémentaires afin de pouvoir tester votre complément en changeant la langue utilisée pour l’affichage dans les menus et les commandes, pour la modification et la vérification, ou pour les deux.
+Pour exécuter l’exemple de code fourni, configurez Office sur votre ordinateur pour utiliser des langues supplémentaires afin de pouvoir tester votre complément en changeant la langue utilisée pour l’affichage dans les menus et les commandes, pour la modification et la preuve, ou les deux.
 
 Vous pouvez utiliser un module linguistique Office pour installer une autre langue. Pour plus d’informations sur les Modules linguistiques et où les obtenir, voir [Pack d’accessoires linguistiques pour Office](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f).
 
@@ -184,16 +184,16 @@ Après avoir installé le Pack d’accessoires linguistiques, vous pouvez config
 
 ### <a name="create-an-office-add-in-project"></a>Créer un projet de complément Office
 
-Vous devez créer un projet de complément Office Visual Studio 2019.
+Vous devez créer un projet de Visual Studio Office 2019.
 
 > [!NOTE]
-> Si vous n’avez pas installé Visual Studio 2019, reportez-vous à la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2019, [Utilisez le programme d’installation de Visual Studio](/visualstudio/install/modify-visual-studio/) pour vous assurer que la charge de travail de développement Office/SharePoint est installée.
+> Si vous n’avez pas installé Visual Studio 2019, consultez la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2019, utilisez le programme [d’installation Visual Studio](/visualstudio/install/modify-visual-studio/) pour vous assurer que la charge de travail de développement Office/SharePoint est installée.
 
 1. Choisissez **Créer un nouveau projet**.
 
 2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Word**, puis sélectionnez **Suivant**.
 
-3. Nommez votre projet **worldreadyapp** et sélectionnez **créer**.
+3. Nommez votre projet **WorldReadyAddIn** et sélectionnez **Créer.**
 
 4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
@@ -264,9 +264,9 @@ Pour activer les chaînes localisées pour le titre et le paragraphe, placez les
 
 Pour ajouter le fichier de ressources au projet de complément :
 
-1. Dans **l’Explorateur de solutions** dans Visual Studio, cliquez avec le bouton droit sur le projet**WorldReadyAddInWeb**, puis choisissez **Ajouter** > **Nouvel élément**. 
+1. Dans **l’Explorateur de solutions** dans Visual Studio, cliquez avec le bouton droit sur le projet **WorldReadyAddInWeb**, puis choisissez **Ajouter** > **Nouvel élément**. 
 
-2. Dans la boîte de dialogue**Ajouter un nouvel élément**, choisissez **Fichier JavaScript**.
+2. Dans la boîte de dialogue **Ajouter un nouvel élément**, choisissez **Fichier JavaScript**.
 
 3. Entrez **UIStrings.js** comme nom de fichier puis sélectionnez **Ajouter**.
 
@@ -333,13 +333,13 @@ Pour utiliser le fichier de ressources de votre complément, vous devez ajouter 
 
 Ajoutez le code HTML suivant dans la balise head pour Home.html pour que **UIStrings** soit disponible pour votre code.
 
-Si vous souhaitez modifier la localisation de votre complément en fonction de la langue utilisée pour l’affichage dans les menus et les commandes de l’application cliente Office, vous utilisez la propriété **Office. Context. displayLanguage** pour obtenir les paramètres régionaux de cette langue. Par exemple, si la langue de l’application utilise l’espagnol pour l’affichage dans les menus et les commandes, la propriété **Office. Context. displayLanguage** renverra le code de langue ES-es.
+Si vous souhaitez modifier la localisation de votre application en fonction de la langue utilisée pour l’affichage dans les menus et les commandes de l’application cliente Office, utilisez la propriété **Office.context.displayLanguage** pour obtenir les paramètres régionaux de cette langue. Par exemple, si la langue de l’application utilise l’espagnol pour l’affichage dans les menus et les commandes, la propriété **Office.context.displayLanguage** retourne le code de langue es-ES.
 
-Si vous souhaitez modifier la localisation de votre complément en fonction de la langue utilisée pour la modification du contenu du document, utilisez la propriété **Office. Context. contentLanguage** pour obtenir les paramètres régionaux de cette langue. Par exemple, si la langue de l’application utilise l’espagnol pour modifier le contenu du document, la propriété **Office. Context. contentLanguage** renverra le code de langue ES-es.
+Si vous souhaitez modifier la localisation de votre add-in en fonction de la langue utilisée pour modifier le contenu du document, utilisez la propriété **Office.context.contentLanguage** pour obtenir les paramètres régionaux de cette langue. Par exemple, si la langue de l’application utilise l’espagnol pour modifier le contenu du document, la propriété **Office.context.contentLanguage** retourne le code de langue es-ES.
 
-Une fois que vous avez déterminé la langue utilisée par l’application, vous pouvez utiliser **UIStrings** pour obtenir l’ensemble des chaînes localisées qui correspondent à la langue de l’application.
+Une fois que vous connaissez la langue que l’application utilise, vous pouvez utiliser **UIStrings** pour obtenir l’ensemble de chaînes localisées qui correspond à la langue de l’application.
 
-Remplacez le code du fichier Home.js par le code suivant. Le code montre comment changer les chaînes utilisées dans les éléments d’interface utilisateur de Home.html en fonction de la langue d’affichage de l’application hôte ou de la langue d’édition de l’application hôte. Le code montre comment vous pouvez modifier les chaînes utilisées dans les éléments de l’interface utilisateur sur Home.html, en fonction de la langue d’affichage de l’application ou de la langue d’édition de l’application.
+Remplacez le code du fichier Home.js par le code suivant. Le code montre comment changer les chaînes utilisées dans les éléments d’interface utilisateur de Home.html en fonction de la langue d’affichage de l’application hôte ou de la langue d’édition de l’application hôte. Le code montre comment vous pouvez modifier les chaînes utilisées dans les éléments d’interface utilisateur sur Home.html en fonction de la langue d’affichage de l’application ou de la langue d’édition de l’application.
 
 > [!NOTE]
 > Pour activer ou désactiver la localisation du complément en fonction de la langue utilisée pour l’édition, supprimez le commentaire de la ligne de code `var myLanguage = Office.context.contentLanguage;` et ajoutez un commentaire à la ligne de code `var myLanguage = Office.context.displayLanguage;`
@@ -381,7 +381,7 @@ Remplacez le code du fichier Home.js par le code suivant. Le code montre comment
 
 ### <a name="test-your-localized-add-in"></a>Tester votre complément localisé
 
-Pour tester votre complément localisé, modifiez la langue utilisée pour l’affichage ou la modification dans l’application Office, puis exécutez votre complément.
+Pour tester votre application localisée, modifiez la langue utilisée pour l’affichage ou la modification dans l’application Office, puis exécutez votre application.
 
 Pour changer la langue utilisée pour l’affichage ou l’édition dans votre complément :
 
@@ -391,7 +391,7 @@ Pour changer la langue utilisée pour l’affichage ou l’édition dans votre c
 
     ![Boîte de dialogue Options Word](../images/office15-app-how-to-localize-fig04.png)
 
-2. Sous **Choisir la langue d’affichage**, sélectionnez la langue que vous souhaitez afficher, par exemple espagnol, puis sélectionnez la flèche vers le haut pour déplacer la langue Espagnol en première position dans la liste. Sinon, pour modifier la langue utilisée pour l’édition, sous **choisir les langues d’édition**, choisissez la langue que vous souhaitez utiliser pour la modification, par exemple, espagnol, puis choisissez **définir par défaut**.
+2. Sous **Choisir la langue d’affichage**, sélectionnez la langue que vous souhaitez afficher, par exemple espagnol, puis sélectionnez la flèche vers le haut pour déplacer la langue Espagnol en première position dans la liste. Vous pouvez également modifier la langue utilisée pour la modification, sous Choisir les **langues** d’édition, choisissez la langue que vous souhaitez utiliser pour la modification, par exemple, l’espagnol, puis choisissez Définir par **défaut.**
 
 3. Sélectionnez **OK** pour confirmer votre choix, puis fermez Word.
 
@@ -399,7 +399,7 @@ Pour changer la langue utilisée pour l’affichage ou l’édition dans votre c
 
 5. Dans Word, sélectionnez **Accueil** > **Afficher le volet de tâches**.
 
-Une fois en cours d’exécution, les chaînes de l’interface utilisateur du complément changent pour correspondre à la langue utilisée par l’application, comme illustré dans la figure suivante.
+Une fois l’exécution en cours d’exécution, les chaînes de l’interface utilisateur du add-in changent pour correspondre à la langue utilisée par l’application, comme illustré dans la figure suivante.
 
 
 Le complément de volet de tâches est chargé dans Word 2013 et les chaînes de l’interface utilisateur du complément changent pour correspondre à la langue utilisée par l’application hôte, comme indiqué dans la figure suivante.

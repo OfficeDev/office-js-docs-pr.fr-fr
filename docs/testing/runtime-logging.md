@@ -3,19 +3,19 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ba3c4cf4d94007cd0dc96480a7805f507d358c2
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: 5dcaa224726965447fe971780ca7f2d218fce753
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308529"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840070"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
 Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément ainsi que plusieurs erreurs d’installation. Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources. La journalisation runtime est particulièrement utile pour déboguer des compléments qui implémentent des commandes de complément et des fonctions personnalisées Excel.
 
 > [!NOTE]
-> La fonctionnalité de journalisation Runtime est actuellement disponible pour Office 2016 ou version ultérieure sur le bureau.
+> La fonctionnalité de journalisation runtime est actuellement disponible pour Office 2016 ou version ultérieure sur ordinateur de bureau.
 
 > [!IMPORTANT]
 > La journalisation runtime affecte les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
@@ -61,7 +61,7 @@ L’activation de la journalisation de l’exécution à partir de la ligne de c
 2. Ajoutez la clé de registre `RuntimeLogging` sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\`.
 
     > [!NOTE]
-    > Si la `Developer` clé (dossier) n’existe pas déjà sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` , procédez comme suit pour la créer.
+    > Si la clé (dossier) n’existe pas déjà sous , complétez `Developer` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\` les étapes suivantes pour la créer.
     >
     > 1. Cliquez avec le bouton droit de votre souris sur la clé (dossier) **WEF**, puis sélectionnez **Nouveau** > **Clé**.
     > 1. Nommez la nouvelle clé **Développeur**.
@@ -73,7 +73,7 @@ L’activation de la journalisation de l’exécution à partir de la ligne de c
 
 L’image suivante indique à quoi doit ressembler le registre. Pour désactiver la fonctionnalité, supprimez la clé de registre `RuntimeLogging`.
 
-![Capture d’écran de l’Éditeur du Registre avec la clé de registre RuntimeLogging](http://i.imgur.com/Sa9TyI6.png)
+![Capture d’écran de l’Éditeur du Registre avec la clé de registre RuntimeLogging](../images/runtime-logging-registry.png)
 
 ## <a name="runtime-logging-on-mac"></a>Journalisation de l’exécution sur Mac
 
@@ -87,7 +87,7 @@ L’image suivante indique à quoi doit ressembler le registre. Pour désactiver
 
     `<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution. `<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.
 
-    Définissez `<bundle id>` l’une des valeurs suivantes pour activer la journalisation à l’exécution pour l’application correspondante :
+    Définissez `<bundle id>` cette propriété sur l’une des valeurs suivantes pour activer la journalisation runtime pour l’application correspondante :
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -128,10 +128,6 @@ Pour utiliser la journalisation runtime pour résoudre les problèmes de chargem
 2. Si rien ne se produit et que votre complément n’apparaît pas (et ne s’affiche pas dans la boîte de dialogue des compléments), ouvrez le fichier journal.
 
 3. Recherchez le fichier journal pour l’ID de votre complément, que vous définissez dans votre manifeste. Dans le fichier journal, cet ID est intitulé `SolutionId`.
-
-Dans l’exemple suivant, le fichier journal identifie un contrôle qui pointe vers un fichier de ressources qui n’existe pas. Pour cet exemple, la correction consistera à corriger la faute de frappe dans le manifeste ou à ajouter la ressource manquante.
-
-![Capture d’écran d’un fichier journal avec une entrée qui spécifie un ID de ressource qui est introuvable](http://i.imgur.com/f8bouLA.png)
 
 ## <a name="known-issues-with-runtime-logging"></a>Problèmes connus avec la journalisation runtime
 

@@ -1,24 +1,24 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
-description: Découvrez comment convertir un projet de complément Office dans Visual Studio pour utiliser la machine à écrire.
+description: Découvrez comment convertir un projet de add-in Office dans Visual Studio pour utiliser TypeScript.
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: e05861e3fef79f87afc820eb62b2a52aaa953f31
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430484"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839963"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. Cet article décrit ce processus de conversion pour un complément Excel. Vous pouvez utiliser le même processus pour convertir les autres types de projet de complément Office de JavaScript au format TypeScript dans Visual Studio.
 
 > [!IMPORTANT]
-> Cet article décrit les étapes *minimales* nécessaires pour garantir que, lorsque vous appuyez sur F5, le code est transpile en JavaScript qui est ensuite versions test chargées automatiquement dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le `var` mot clé au lieu de `let` et elles ne sont pas déclarées avec un type spécifié. Pour tirer pleinement parti du typage fort de la machine à écrire, pensez à apporter d’autres modifications au code. 
+> Cet article décrit  les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière secondaire automatiquement dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le mot clé et non avec `var` `let` un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code. 
 
 > [!NOTE]
-> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](/office/dev/add-ins/), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -56,7 +56,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
 
 4. Sous l’onglet **Outils**, choisissez **Gestionnaire de packages NuGet**, puis **Gérer un package NuGet pour Solution...**.
 
-5. L’onglet **Parcourir** étant sélectionné, entrez **jQuery. Machine à écrire. DefinitelyTyped**. Installez ce package, ou mettez-le à jour s’il est déjà installé. Cela permet de s’assurer que les définitions d’autodactylographiés jQuery sont incluses dans votre projet. Les packages pour jQuery apparaissent dans un fichier généré par Visual Studio, appelé **packages.config**.
+5. Une fois **l’onglet** Parcourir sélectionné, entrez **jquery. TypeScript.DefinitelyTyped**. Installez ce package ou mettez-le à jour s’il est déjà installé. Cela garantit que les définitions TypeScript jQuery sont incluses dans votre projet. Les packages pour jQuery apparaissent dans un fichier généré par Visual Studio, appelé **packages.config**.
 
     > [!NOTE]
     > Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript.
@@ -95,7 +95,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
 
 ## <a name="run-the-converted-add-in-project"></a>Exécuter le projet de complément converti
 
-1. Dans Visual Studio, appuyez sur**F5** ou sélectionnez le bouton**Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** affiché dans le ruban. Le complément sera hébergé localement sur IIS.
+1. Dans Visual Studio, appuyez sur **F5** ou sélectionnez le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Show Taskpane** affiché dans le ruban. Le complément sera hébergé localement sur IIS.
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 

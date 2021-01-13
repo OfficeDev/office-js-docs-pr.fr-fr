@@ -3,12 +3,12 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: abcae0766079f090ec15b9d11ec66c43355bfb0f
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: a06936892d9f2cdb7d83bc0c5097dfd2bdea0156
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431240"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839781"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 Pour faire suite à l’exemple précédent, la fonction JavaScript suivante, `setAddInSetting`, montre comment utiliser la méthode [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) pour définir un paramètre nommé `cookie` avec la date du jour, et conserver les données en utilisant la méthode [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) pour réenregistrer tous les paramètres d’itinérance sur le serveur.
 
-La `set` méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code transmet une méthode de rappel, `saveMyAddInSettingsCallback` , à `saveAsync` la fin de l’appel asynchrone,  `saveMyAddInSettingsCallback` est appelée à l’aide d’un paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
+La méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre `set` à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code transmet une méthode de rappel, à « When the asynchronous call finishes » (Lorsque l’appel asynchrone se termine), est appelée à l’aide d’un `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
 
 ```js
 // Set a roaming setting.
@@ -114,7 +114,7 @@ Vous pouvez spécifier les données propres à un élément dans la boîte aux l
 
 Comme pour les paramètres d’itinérance, les modifications apportées aux propriétés personnalisées sont stockées dans des copies en mémoire des propriétés de la session Outlook en cours. Pour vous assurer que les propriétés personnalisées seront disponibles dans la prochaine session, utilisez [CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-).
 
-Ces propriétés personnalisées propres aux éléments, spécifiques à un complément, sont accessibles uniquement à l’aide de l' `CustomProperties` objet. Ces propriétés sont différentes de la propriété [UserProperties](/office/vba/api/Outlook.UserProperties) personnalisée, basée sur MAPI dans le modèle objet Outlook, et des propriétés étendues dans les services Web Exchange (EWS). Vous ne pouvez pas accéder directement à l' `CustomProperties` aide du modèle objet Outlook, EWS ou Rest. Pour savoir comment accéder à `CustomProperties` l’aide d’EWS ou REST, consultez la section [obtenir des propriétés personnalisées à l’aide d’EWS ou Rest](#get-custom-properties-using-ews-or-rest).
+Ces propriétés personnalisées spécifiques à un élément et spécifiques au add-in sont accessibles uniquement à l’aide de `CustomProperties` l’objet. Ces propriétés sont différentes des propriétés [UserProperties](/office/vba/api/Outlook.UserProperties) personnalisées basées sur MAPI dans le modèle objet Outlook et des propriétés étendues dans les services web Exchange (EWS). Vous ne pouvez pas accéder directement `CustomProperties` à l’aide du modèle objet Outlook, EWS ou REST. Pour découvrir comment accéder à l’aide d’EWS ou rest, voir la section Obtenir des propriétés personnalisées à l’aide `CustomProperties` [d’EWS ou REST](#get-custom-properties-using-ews-or-rest).
 
 ### <a name="using-custom-properties"></a>Utilisation de propriétés personnalisées
 
@@ -197,11 +197,11 @@ Pour obtenir **CustomProperties** à l’aide de EWS ou REST, vous devez commenc
 
 #### <a name="how-custom-properties-are-stored-on-an-item"></a>Comment les propriétés personnalisées sont stockées sur un élément
 
-Les propriétés personnalisées définies par un complément ne sont pas équivalentes aux propriétés de base MAPI normales. Les API de complément sérialisent tout votre complément `CustomProperties` en tant que charge utile JSON, puis les enregistrent dans une seule propriété étendue MAPI dont le nom est `cecp-<app-guid>` ( `<app-guid>` est l’ID de votre complément) et le GUID de jeu de propriétés est `{00020329-0000-0000-C000-000000000046}` . (Pour plus d’informations sur cet objet, voir[MS-OXCEXT 2.2.5 Propriétés d’Application de messagerie Personnalisées](https://msdn.microsoft.com/library/hh968549(v=exchg.80).aspx).) Vous pouvez ensuite utiliser EWS ou REST pour obtenir cette propriété basée MAPI.
+Les propriétés personnalisées définies par un complément ne sont pas équivalentes aux propriétés de base MAPI normales. Les API de votre add-in sérialisent tous vos modules en tant que charge utile JSON, puis les enregistrent dans une seule propriété étendue basée sur MAPI dont le nom est ( est l’ID de votre `CustomProperties` `cecp-<app-guid>` `<app-guid>` add-in) et le GUID du jeu de propriétés est `{00020329-0000-0000-C000-000000000046}` . (Pour plus d’informations sur cet objet, voir[MS-OXCEXT 2.2.5 Propriétés d’Application de messagerie Personnalisées](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481).) Vous pouvez ensuite utiliser EWS ou REST pour obtenir cette propriété basée MAPI.
 
 #### <a name="get-custom-properties-using-ews"></a>Obtenir des propriétés personnalisées à l’aide de EWS
 
-Votre complément de messagerie peut obtenir la `CustomProperties` propriété étendue MAPI à l’aide de l’opération de [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) de l’EWS. Accès `GetItem` côté serveur à l’aide d’un jeton de rappel ou côté client à l’aide de la méthode [Mailbox. makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) . Dans la `GetItem` demande, spécifiez la `CustomProperties` propriété MAPI dans son jeu de propriétés à l’aide des informations fournies dans la section précédente [Comment les propriétés personnalisées sont stockées sur un élément](#how-custom-properties-are-stored-on-an-item).
+Votre add-in de messagerie peut obtenir la propriété étendue basée sur MAPI à l’aide de l’opération `CustomProperties` [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) EWS. Accès côté serveur à l’aide d’un jeton de rappel ou côté client à l’aide de la méthode `GetItem` [mailbox.makeEwsRequestAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) Dans la demande, spécifiez la propriété basée sur MAPI dans son jeu de propriétés à l’aide des détails fournis dans la section précédente Comment les `GetItem` `CustomProperties` propriétés personnalisées sont stockées [sur un élément](#how-custom-properties-are-stored-on-an-item).
 
 L’exemple suivant montre comment obtenir un élément et ses propriétés personnalisées.
 
@@ -258,7 +258,7 @@ Vous pouvez également obtenir plus de propriétés personnalisées si vous les 
 
 #### <a name="get-custom-properties-using-rest"></a>Obtenir des propriétés personnalisées à l’aide de REST
 
-Dans votre complément, vous pouvez construire votre requête REST contre les messages et événements pour obtenir ceux qui déjà ont des propriétés personnalisées. Dans la requête, spécifiez la propriété basée MAPI**CustomProperties**dans son ensemble de propriété à l’aide des informations fournies dans la section précédente[Comment les propriétés personnalisées sont stockées sur un élément](#how-custom-properties-are-stored-on-an-item).
+Dans votre complément, vous pouvez construire votre requête REST contre les messages et événements pour obtenir ceux qui déjà ont des propriétés personnalisées. Dans la requête, spécifiez la propriété basée MAPI **CustomProperties** dans son ensemble de propriété à l’aide des informations fournies dans la section précédente [Comment les propriétés personnalisées sont stockées sur un élément](#how-custom-properties-are-stored-on-an-item).
 
 L’exemple suivant montre comment obtenir tous les événements ayant des propriétés personnalisées définies par votre complément et vous assurer que la réponse inclut la valeur de la propriété pour vous permettre d’appliquer une logique de filtrage.
 

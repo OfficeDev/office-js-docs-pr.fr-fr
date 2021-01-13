@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: d0dae515df3d8fb3ec1bcb12f553b21b341552ad
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 2dba67cabaf11d6e10560ba3dbe5babde3ed0c92
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740846"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49840005"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -75,7 +75,7 @@ Utilisez l’API Office JavaScript partagée pour :
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Prêt à créer votre premier complément Word ? Consultez la page [Création de votre premier complément Word](word-add-ins.md). Utilisez le [manifeste de complément](../develop/add-in-manifests.md) pour décrire l’emplacement d’hébergement de votre complément et son affichage, et définir des autorisations et d’autres informations.
+Prêt à créer votre premier complément Word ? Consultez la page [Création de votre premier complément Word](../quickstarts/word-quickstart.md). Utilisez le [manifeste de complément](../develop/add-in-manifests.md) pour décrire l’emplacement d’hébergement de votre complément et son affichage, et définir des autorisations et d’autres informations.
 
 Pour savoir comment concevoir un complément Word de qualité qui offre une expérience intéressante aux utilisateurs, consultez les [recommandations de conception](../design/add-in-design.md) et les [meilleures pratiques](../concepts/add-in-development-best-practices.md).
 
@@ -86,4 +86,4 @@ Une fois le développement de votre complément terminé, vous pouvez le [publie
 * [Développement de compléments Office](../develop/develop-overview.md)
 * [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Référence sur l’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md)
+* [Référence d’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md)

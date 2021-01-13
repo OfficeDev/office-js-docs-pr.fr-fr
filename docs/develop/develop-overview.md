@@ -3,12 +3,12 @@ title: Développement de compléments Office
 description: Présentation du développement de compléments Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: c0a4ebbae234c9ac1da3b0765a04e31f956ef617
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 02ef856d17a82f9e63a555bae09d53d91e6ccc9c
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131891"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839942"
 ---
 # <a name="develop-office-add-ins"></a>Développement de compléments Office
 
@@ -85,11 +85,11 @@ Un complément Office peut utiliser l’API JavaScript Office pour interagir ave
 
 Script Lab est un complément qui vous permet d’explorer l’API JavaScript Office et d’exécuter des extraits de code lorsque vous travaillez dans un programme Office tel qu’Excel ou Word. Il est disponible gratuitement via [AppSource](https://appsource.microsoft.com/product/office/WA104380862), il s’agit d’un outil utile pour inclure votre kit de ressources de développement pendant que vous projetez et vérifiez les fonctionnalités de votre complément. Dans Script Lab, vous pouvez accéder à une bibliothèque d'exemples intégrés pour essayer rapidement des API ou même utiliser un exemple comme point de départ pour votre propre code.
 
-La vidéo suivante d’une minute illustre Script Lab en action.
+La vidéo d’une minute suivante illustre Script Lab en action.
 
 [![Vidéo d’aperçu montrant l’exécution de Script Lab dans Excel, Word et PowerPoint](../images/screenshot-wide-youtube.png 'Vidéo de la version préliminaire de Script Lab')](https://aka.ms/scriptlabvideo)
 
-Si vous souhaitez en savoir plus sur Script Lab, veuillez consulter[Explorez les API JavaScript à l’aide de Script Lab](../overview/explore-with-script-lab.md).
+Si vous souhaitez en savoir plus sur Script Lab, veuillez consulter[Axplorer les API Office JavaScript à l’aide d’un Script Lab](../overview/explore-with-script-lab.md).
 
 ## <a name="extending-the-office-ui"></a>Extension de l’interface utilisateur Office
 
@@ -111,7 +111,7 @@ Cet article décrit les différentes façons de créer des compléments Office, 
 
 ### <a name="create-an-office-add-in"></a>Créer un complément Office
 
-Vous pouvez créer rapidement un complément de base pour Excel, OneNote, Outlook, PowerPoint, Project ou Word en effectuant un [démarrage rapide de 5 minutes](/office/dev/add-ins/). Si vous avez déjà effectué un démarrage rapide et que vous voulez créer un complément légèrement plus complexe, vous devez essayer le [Didacticiel](/office/dev/add-ins/).
+Vous pouvez créer rapidement un complément de base pour Excel, OneNote, Outlook, PowerPoint, Project ou Word en effectuant un [démarrage rapide de 5 minutes](../index.yml). Si vous avez déjà effectué un démarrage rapide et que vous voulez créer un complément légèrement plus complexe, vous devez essayer le [Didacticiel](../index.yml).
 
 ### <a name="learn-more"></a>En savoir plus
 

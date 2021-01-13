@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 143c5254a2a6bb00fba44373878baf5626443777
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 460f6a6d58e6405a0ede909eec755d454744461b
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132297"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839725"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-react"></a>Créer un complément de volet de tâches Excel à l’aide de React
 
@@ -31,7 +31,7 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office, avec le type de projet défini sur l’infrastructure React](../images/yo-office-excel-react-2.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -60,7 +60,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 4. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-5. En bas du volet Office, cliquez sur le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
+5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
 
     ![Capture d’écran d’Excel, avec le volet Office du complément ouvert et le bouton Exécuter mis en surbrillance dans ce volet](../images/excel-quickstart-addin-3c.png)
 
@@ -73,7 +73,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel à l�
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial-create-table.md)
+* [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)
 * [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 * [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)

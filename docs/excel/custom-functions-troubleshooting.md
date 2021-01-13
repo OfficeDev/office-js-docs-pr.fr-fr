@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 description: Résoudre les problèmes courants liés aux fonctions personnalisées Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: fb187c443f02df92f9d489d4c6463f76d072a5e5
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071661"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839837"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -37,7 +37,7 @@ En règle générale, ces erreurs correspondent aux erreurs que vous devez déj�
 
 Les informations relatives aux fonctions personnalisées sont mises en cache par Office. Lorsque vous développez et rechargez de manière répétée un complément avec des fonctions personnalisées, il peut arriver que modifications n’apparaissent pas. Pour y remédier, videz le cache Office. Pour plus d’informations, voir [Vider le cache Office](../testing/clear-cache.md).
 
-## <a name="common-issues"></a>Problèmes courants
+## <a name="common-problems-and-solutions"></a>Problèmes courants et solutions
 
 ### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Impossible d’ouvrir les compléments d’hôte local : utiliser une exception de bouclage local
 
@@ -53,7 +53,7 @@ Quand Excel attend la fin de l’exécution d’une fonction personnalisée, il 
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erreur : le serveur de développement est déjà en cours d’exécution sur le port 3000
 
-Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de développement est déjà en cours d’exécution sur le port 3000 (ou le port utilisé par votre complément) peut s’afficher. Vous pouvez arrêter le serveur de développement en exécutant `npm stop` ou en fermant la fenêtre Node.js. Dans certains cas, l’arrêt de l’exécution du serveur de développement peut prendre quelques minutes.
+Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de développement est déjà en cours d’exécution sur le port 3000 (ou le port utilisé par votre complément) peut s’afficher. Vous pouvez arrêter le serveur de développement en exécutant `npm stop` ou en fermant la fenêtre Node.js. Dans certains cas, l’exécution du serveur dev peut prendre quelques minutes.
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Mon fonctions ne se chargent pas : associer les fonctions
 
@@ -76,7 +76,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Pour plus d’informations sur ce processus, voir [Association de noms de fonction aux métadonnées JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+Pour plus d’informations sur ce processus, voir [Associating function names with JSON metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+
+## <a name="known-issues"></a>Problèmes connus
+
+Les problèmes connus sont suivis et signalés dans le référentiel GitHub fonctions [personnalisées Excel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 

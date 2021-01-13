@@ -1,84 +1,84 @@
 ---
-title: Ouvrir Excel à partir de votre page Web et incorporer votre complément Office
-description: Ouvrez Excel à partir de votre page Web et incorporez votre complément Office.
+title: Ouvrez Excel à partir de votre page web et incorporez votre add-in Office
+description: Ouvrez Excel à partir de votre page web et incorporez votre add-in Office.
 ms.date: 09/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 00846ca5ca05e65fd75629f5aad0e4fb3d947ab1
-ms.sourcegitcommit: 42202d7e2ac24dffa77cf937f5697a1cd79ee790
+ms.openlocfilehash: a88cc647fc1dba8ab6e6ddc0b504aab96517026a
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "48308543"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839865"
 ---
-# <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrir Excel à partir de votre page Web et incorporer votre complément Office
+# <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrez Excel à partir de votre page web et incorporez votre add-in Office
 
-:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image du bouton Excel de votre page Web ouverture d’un nouveau document Excel avec votre complément incorporé et en cours d’ouverture automatique.":::
+:::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image du bouton Excel sur votre page web ouvrant un nouveau document Excel avec votre application incorporée et à l’ouverture automatique.":::
 
-Étendez votre application Web SaaS pour permettre à vos clients d’ouvrir leurs données à partir d’une page Web directement dans Microsoft Excel. Un scénario courant est que les clients travailleront avec des données dans votre application Web. Ils voudront ensuite copier les données dans un document Excel. Par exemple, ils peuvent souhaiter effectuer des analyses supplémentaires à l’aide d’Excel. En règle générale, le client doit exporter les données vers un fichier, par exemple un fichier. csv, puis importer ces données dans Excel. Ils doivent également ajouter manuellement votre complément Office au document.
+Étendez votre application web SaaS afin que vos clients peuvent ouvrir leurs données à partir d’une page web directement dans Microsoft Excel. Un scénario courant est que les clients vont travailler avec des données dans votre application web. Ensuite, ils souhaiteront copier les données dans un document Excel. Par exemple, ils peuvent vouloir effectuer des analyses supplémentaires à l’aide d’Excel. En règle générale, le client doit exporter les données dans un fichier, tel qu’un fichier .csv, puis importer ces données dans Excel. Ils doivent également ajouter manuellement votre add-in Office au document.
 
-Réduisez le nombre d’étapes à un seul clic sur votre page Web qui génère et ouvre le document Excel. Vous pouvez également incorporer votre complément Office dans le document et l’afficher à l’ouverture du document. Cela garantit que le client a toujours accès aux fonctionnalités de votre application. Lorsque le document s’ouvre, les données sélectionnées par le client et votre complément Office sont déjà disponibles pour qu’ils continuent de fonctionner.
+Réduisez le nombre d’étapes en un seul clic sur votre page web qui génère et ouvre le document Excel. Vous pouvez également incorporer votre add-in Office à l’intérieur du document et l’afficher à l’ouverture du document. Cela garantit que le client a toujours accès aux fonctionnalités de votre application. Lorsque le document s’ouvre, les données sélectionnées par le client et votre add-in Office sont déjà disponibles pour qu’ils continuent de fonctionner.
 
-Cet article décrit le code et les techniques à appliquer pour mettre en œuvre ce scénario dans votre application Web SaaS.
+Cet article vous présente le code et les techniques permettant d’implémenter ce scénario dans votre propre application web SaaS.
 
-## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>Créer un nouveau document Excel et incorporer un complément Office
+## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>Créer un document Excel et incorporer un add-in Office
 
-Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page Web et à incorporer un complément dans le document. L' [exemple de code de complément Office OOXML embed](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) montre comment incorporer le [complément script Lab](https://appsource.microsoft.com/product/office/wa104380862) dans un nouveau document Office. Bien que l’exemple fonctionne avec n’importe quel document Office, nous allons nous concentrer sur les feuilles de calcul Excel dans cet article. Procédez comme suit pour générer et exécuter l’exemple.
+Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L’exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) de l’add-in [OOXML Office](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) montre comment incorporer le module de laboratoire de script dans un nouveau document Office. Bien que l’exemple fonctionne avec n’importe quel document Office, nous nous concentrerons simplement sur les feuilles de calcul Excel dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
 
-1. Extrayez l’exemple de code de  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier sur votre ordinateur.
-2. Pour générer et exécuter l’exemple, suivez les étapes de la section **pour utiliser le projet** du fichier Lisez-moi.
-3. Lorsque vous exécutez l’exemple, il affiche une page Web semblable à la capture d’écran suivante. Utilisez la page Web pour créer un nouveau document Excel qui contient script Lab lors de son ouverture.
-:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Image du bouton Excel de votre page Web ouverture d’un nouveau document Excel avec votre complément incorporé et en cours d’ouverture automatique.":::
+1. Extrayez l’exemple de code  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier de votre ordinateur.
+2. Pour créer et exécuter l’exemple, suivez les étapes de la section **Pour utiliser le** projet du lisez-moi.
+3. Lorsque vous exécutez l’exemple, il affiche une page web semblable à la capture d’écran suivante. Utilisez la page web pour créer un document Excel qui contient Script Lab lorsqu’il s’ouvre.
+:::image type="content" source="../images/embed-script-lab-sample-ui.png" alt-text="Capture d’écran de la page web affichée par l’exemple de laboratoire de script pour sélectionner un fichier Excel et y incorporer le module de laboratoire de script.":::
 
 ### <a name="how-the-sample-works"></a>Fonctionnement de l’exemple
 
-L’exemple de code utilise le kit de développement logiciel (SDK) OOXML pour incorporer le complément script Lab dans le document Excel que vous choisissez. Les informations suivantes sont extraites de la [section **à propos du code** ](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) du fichier Lisez-moi.
+L’exemple de code utilise le SDK OOXML pour incorporer le module de laboratoire de script dans le document Excel que vous choisissez. Les informations suivantes sont tirées de la section À propos [ **de la section de code**](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) dans le fichier Lisez-moi.
 
 Le fichier **Home.aspx.cs**:
 
-- Fournit les gestionnaires d’événements de bouton et la manipulation d’interface utilisateur de base.
+- Fournit les handlers d’événements de bouton et la manipulation de base de l’interface utilisateur.
 - Utilise des techniques ASP.NET standard pour charger et télécharger le fichier.
-- Utilise l’extension de nom de fichier du fichier téléchargé (xlsx, docx ou pptx) pour déterminer le type de fichier. Cela doit être fait dès le départ, car le kit de développement logiciel (SDK) Open XML comporte généralement des API distinctes pour chaque type de fichier.
-- Appelle le **OOXMLHelper** pour valider le fichier et appelle l' **AddInEmbedder** pour incorporer le script Lab dans le fichier et pour qu’il s’ouvre automatiquement.
+- Utilise l’extension de nom de fichier du fichier téléchargé (xlsx, docx ou pptx) pour déterminer le type de fichier. Cette étape doit être effectuée au départ, car le SDK Open XML possède généralement des API distinctes pour chaque type de fichier.
+- Appels dans **OOXMLHelper** pour valider le fichier et appels dans **AddInEmbedder** pour incorporer Script Lab dans le fichier et définir pour s’ouvrir automatiquement.
 
 Le fichier **AddInEmbedder.cs**:
 
-- Fournit la logique métier principale, qui dans cet exemple est une méthode qui incorpore le script Lab.
-- Effectue des appels dans l’assistance OOXML en fonction du type de fichier.
+- Fournit la logique métier principale, qui dans cet exemple est une méthode qui incorpore Script Lab.
+- Effectue des appels dans l’aide OOXML en fonction du type de fichier.
 
 Le fichier **OOXMLHelper.cs**:
 
 - Fournit toutes les manipulations OOXML détaillées.
-- Utilise une technique standard pour valider le fichier Office, qui consiste simplement à appeler la méthode **document. Open** dessus. Si le fichier n’est pas valide, la méthode génère une exception.
-- Contient principalement du code qui a été généré par les outils de productivité du kit de développement logiciel (SDK) Open XML 2,5 qui sont disponibles sur le lien du [Kit de développement logiciel (SDK) Open xml 2,5](/office/open-xml/open-xml-sdk).
+- Utilise une technique standard pour valider le fichier Office, qui consiste simplement à appeler la **méthode Document.Open** dessus. Si le fichier n’est pas valide, la méthode envoie une exception.
+- Contient principalement du code généré par les outils de productivité du SDK Open XML 2.5 qui sont disponibles sur le lien du [SDK Open XML 2.5.](/office/open-xml/open-xml-sdk)
 
-La méthode **GenerateWebExtensionPart1Content** dans le fichier **OOXMLHelper.cs** définit la référence à l’ID de script Lab dans Microsoft AppSource :
+La **méthode GenerateWebExtensionPart1Content** du **fichier OOXMLHelper.cs** définit la référence à l’ID de Script Lab dans Microsoft AppSource :
 
 ```csharp
 We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionStoreReference() { Id = "wa104380862", Version = "1.1.0.0", Store = "en-US", StoreType = "OMEX" };
 ```
 
-- La valeur **StoreType** est « OMEX », un alias pour Microsoft AppSource.
-- La valeur **Store** est « en-US » dans la section culture de Microsoft AppSource pour script Lab.
-- La valeur **ID** est l’ID de la ressource Microsoft AppSource pour script Lab.
+- La **valeur StoreType** est « OMEX », alias de Microsoft AppSource.
+- La **valeur du Store** est « en-US » dans la section culture Microsoft AppSource pour Script Lab.
+- La **valeur d’ID** est l’ID d’actif Microsoft AppSource pour Script Lab.
 
-Si vous configurez un complément à partir d’un catalogue de partage de fichiers pour une ouverture automatique, vous utiliserez des valeurs différentes :
+Si vous souhaitez ouvrir automatiquement un module de partage de fichiers à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
 
-La valeur **StoreType** est « FileSystem ».
+La **valeur StoreType** est « FileSystem ».
 
-- La valeur **Store** est l’URL du partage réseau ; par exemple, " \\ \\ MyComputer \\ MySharedFolder". Il doit s’agir de l’URL exacte qui apparaît en tant qu’adresse de catalogue approuvé du partage dans le centre de gestion de la confidentialité Office.
-- La valeur **ID** est l’ID de l’application dans le manifeste des compléments.
+- La **valeur du Store** est l’URL du partage réseau . par exemple, « \\ \\ MyComputer \\ MySharedFolder ». Il doit s’agit de l’URL exacte qui apparaît en tant qu’adresse de catalogue approuvé du partage dans le Centre de confiance Office.
+- La **valeur de l’ID** est l’ID d’application dans le manifeste des applications.
 > [!NOTE]
-> Pour plus d’informations sur les autres valeurs de ces attributs, consultez la rubrique [ouvrir automatiquement un volet Office avec un document](../develop/automatically-open-a-task-pane-with-a-document.md).
+> Pour plus d’informations sur les autres valeurs de ces attributs, voir Ouvrir automatiquement un volet Des tâches [avec un document.](../develop/automatically-open-a-task-pane-with-a-document.md)
 
 ## <a name="use-the-fluent-ui"></a>Utiliser l’interface utilisateur Fluent
 
-:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Image du bouton Excel de votre page Web ouverture d’un nouveau document Excel avec votre complément incorporé et en cours d’ouverture automatique.":::
+:::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Icônes d’interface utilisateur Fluent pour Word, Excel et PowerPoint.":::
 
-Il est recommandé d’utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à effectuer une transition entre les produits Microsoft. Vous devez toujours utiliser une icône Office pour indiquer l’application Office qui sera lancée à partir de votre page Web. Nous allons modifier l’exemple de code de façon à utiliser l’icône Excel pour indiquer qu’il lance l’application Excel.
+Une meilleure pratique consiste à utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à passer d’un produit Microsoft à l’autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel afin d’indiquer qu’il lance l’application Excel.
 
 1. Ouvrez l’exemple dans Visual Studio.
-1. Ouvrez la page **Home. aspx** .
-1. Recherchez le code suivant qui est le bouton Télécharger sur le formulaire :
+1. Ouvrez la page **Home.aspx.**
+1. Recherchez le code suivant qui est le bouton de téléchargement sur le formulaire :
     ```html
     <asp:Button ID="btnDownload" runat="server" Text="Download" OnClick="btnDownload_Click" /> 
     ```
@@ -86,37 +86,37 @@ Il est recommandé d’utiliser l’interface utilisateur Fluent pour aider vos 
     ```html
     <asp:Image  src="https://static2.sharepointonline.com/files/fabric/assets/brand-icons/product/svg/excel_48x1.svg" width="48" height="48" ID="btnDownload" runat="server" OnClick="btnDownload_Click" AlternateText="Open in Microsoft Excel" role="button" ImageUrl=""/>  
     ```
-1. Appuyez sur **F5** (ou **débogage > démarrer le débogage**). L’icône apparaît lorsque la page d’accueil est chargée.
+1. Appuyez **sur F5** (ou **déboguer > démarrer le débogage).** L’icône s’affiche lors du chargement de la page d’accueil.
 
-Pour plus d’informations, consultez la rubrique icônes de la [marque Office](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) sur le portail du développeur de l’interface utilisateur Fluent.  
+Pour plus d’informations, voir [Icônes de marque Office](https://developer.microsoft.com/fluentui#/styles/web/office-brand-icons) sur le portail du développeur de l’interface utilisateur Fluent.  
 
-## <a name="upload-the-excel-document-to-microsoft-onedrive"></a>Télécharger le document Excel dans Microsoft OneDrive
+## <a name="upload-the-excel-document-to-microsoft-onedrive"></a>Télécharger le document Excel vers Microsoft OneDrive
 
-Nous vous recommandons de télécharger de nouveaux documents sur OneDrive si votre client utilise OneDrive. Cela leur permet de rechercher et d’utiliser plus facilement les documents. Nous allons créer un nouvel exemple de code et voir comment vous pouvez utiliser le kit de développement logiciel (SDK) Microsoft Graph pour télécharger un nouveau document Excel dans OneDrive.
+Nous vous recommandons de charger de nouveaux documents sur OneDrive si votre client utilise OneDrive. Cela leur permet de trouver et d’utiliser plus facilement les documents. Nous allons créer un exemple de code et voir comment vous pouvez utiliser le SDK Microsoft Graph pour télécharger un nouveau document Excel sur OneDrive.
 
-### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>Utiliser un démarrage rapide pour créer une nouvelle application Web Microsoft Graph
+### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>Utiliser un démarrage rapide pour créer une nouvelle application web Microsoft Graph
 
-1. Accédez à [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) et suivez les étapes pour créer et ouvrir un exemple de code de démarrage rapide qui interagit avec les services Office 365.
-1. À l' **étape 1 : choisissez une langue ou une plateforme**, choisissez **ASP.NET MVC**. Bien que les étapes de cette procédure utilisent l’option MVC ASP.NET, les étapes suivent un modèle qui s’applique à n’importe quel langage ou plateforme.
-1. À l' **étape 2 : obtenir un ID d’application et une clé secrète**, choisissez **obtenir un ID d’application et une clé secrète**.
+1. Suivez les étapes de création et d’ouverture d’un exemple de code de démarrage rapide qui [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) interagit avec les services Office 365.
+1. À **l’étape 1 : choisissez la langue ou la plateforme,** choisissez **ASP.NET MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
+1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir un ID d’application et un **secret**.
 1. Connectez-vous à votre compte Microsoft 365.  
-1. Sur la page **Veuillez enregistrer votre application secrète** de l’application, enregistrez la clé secrète de l’application à un emplacement de fichier où vous pourrez la récupérer et l’utiliser ultérieurement.
-1. Choisissez **obtenu, revenez au démarrage rapide**.
-1. À l' **étape 2 : inscription réussie !** Entrez le code secret de l’application générée.
-1. À l' **étape 3 : démarrer le codage**, choisissez **Télécharger l’exemple de code basé sur le kit de développement logiciel (SDK)**.
+1. Dans la page **Web Veuillez enregistrer votre** secret d’application, enregistrez-la dans un emplacement de fichier où vous pourrez l’extraire et l’utiliser ultérieurement.
+1. Choose **Got it, take me back to the quick start**.
+1. À **l’étape 2 : l’inscription a réussi !** Entrez la secret de l’application générée.
+1. In **step 3: Start coding**, choose **Download the SDK-based code sample**.
 1. Extrayez le dossier zip de téléchargement dans un dossier local.  
-1. Ouvrez le fichier Graph-Tutorial. sln dans Visual Studio 2019.
-1. Générez et exécutez la solution et assurez-vous qu’elle fonctionne correctement. Vous devriez être en mesure d’utiliser la page Web du calendrier pour afficher votre calendrier Microsoft 365.
+1. Ouvrez le fichier graph-tutorial.sln dans Visual Studio 2019.
+1. Créez et exécutez la solution et confirmez qu’elle fonctionne correctement. Vous devriez être en mesure d’utiliser la page web de calendrier pour afficher votre calendrier Microsoft 365.
 
-### <a name="upload-a-file-to-onedrive"></a>Charger un fichier dans OneDrive
+### <a name="upload-a-file-to-onedrive"></a>Télécharger un fichier sur OneDrive
 
-1. Ouvrez la solution **Graph-Tutorial. sln** dans Visual Studio 2019, puis ouvrez le fichier **PrivateSettings.config** .
-1. Ajoutez un nouveau fichier d’étendue **. ReadWrite**   à la clé **Ida : AppScopes** afin qu’il se présente comme le code suivant :
+1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019, puis **PrivateSettings.config** fichier.
+1. Ajoutez une nouvelle **étendue Files.ReadWrite** à la clé   **ida:AppScopes** afin qu’elle ressemble au code suivant :
     ```xml
     <add key="ida:AppScopes" value="User.Read Calendars.Read Files.ReadWrite " />
     ```
-1. Ouvrez le fichier **index. cshtml** .
-1. Insérez le code ActionLink suivant pour créer un bouton permettant de télécharger un fichier dans OneDrive.
+1. Ouvrez **le fichier Index.cshtml.**
+1. Insérez le code ActionLink suivant pour créer un bouton pour télécharger un fichier sur OneDrive.
     ```razor
     @if (Request.IsAuthenticated)
     {
@@ -125,7 +125,7 @@ Nous vous recommandons de télécharger de nouveaux documents sur OneDrive si vo
         @Html.ActionLink("Click here to create a new file on OneDrive", "CreateOneDriveFile", "Home", new { area = "" }, new { @class = "btn btn-primary btn-large" })
     }
     ```
-1. Ouvrez le fichier **HomeController.cs** .
+1. Ouvrez **HomeController.cs** fichier.
 1. Insérez le code suivant pour gérer la demande à partir du lien d’action.
     ```csharp
     public void CreateOneDriveFile()
@@ -136,8 +136,8 @@ Nous vous recommandons de télécharger de nouveaux documents sur OneDrive si vo
             }
         }
     ```
-1. Ouvrez le fichier **GraphHelper.cs** .
-1. Insérez le code suivant pour appeler l’API Microsoft Graph afin de créer un nouveau fichier sur OneDrive.
+1. Ouvrez **GraphHelper.cs** fichier.
+1. Insérez le code suivant pour appeler l’API Microsoft Graph afin de créer un fichier sur OneDrive.
     ```csharp
     public static async Task UploadFile(string fileName, System.IO.MemoryStream stream)
         {
@@ -152,47 +152,47 @@ Nous vous recommandons de télécharger de nouveaux documents sur OneDrive si vo
             return;
         }
     ```
-1. Appuyez sur **F5** (ou **débogage > démarrer le débogage**). L’application Web démarrera.
-1. Choisissez **Cliquer ici pour vous connecter**et vous connecter.
-1. Choisissez **Cliquer ici pour créer un fichier sur OneDrive**.
-1. Ouvrez un nouvel onglet de navigateur et connectez-vous à votre compte OneDrive. Le fichier test.txt est affiché dans le dossier racine.
+1. Appuyez **sur F5** (ou **déboguer > démarrer le débogage).** L’application web démarre.
+1. Cliquez **ici pour vous connectez** et connectez-vous.
+1. Cliquez **ici pour créer un fichier sur OneDrive.**
+1. Ouvrez un nouvel onglet de navigateur et connectez-vous à votre compte OneDrive. Vous verrez le fichier test.txt dans le dossier racine.
 
-Maintenant que vous avez appris à télécharger un fichier dans OneDrive, vous pouvez réutiliser ce code pour télécharger un document Excel que vous créez.
+Maintenant que vous avez appris à télécharger un fichier sur OneDrive, vous pouvez réutiliser ce code pour télécharger n’importe quel document Excel que vous créez.
 
 ## <a name="additional-considerations-for-your-solution"></a>Considérations supplémentaires pour votre solution
 
-La solution de tout le monde est différente en termes de technologies et d’approches. Les considérations suivantes vous aideront à planifier comment modifier votre solution pour ouvrir des documents et incorporer votre complément Office.
+La solution de tout le monde est différente en termes de technologies et d’approches. Les considérations suivantes vous aideront à planifier la modification de votre solution pour ouvrir des documents et incorporer votre add-in Office.
 
-### <a name="create-a-new-excel-spreadsheet-from-the-web-page"></a>Créer une nouvelle feuille de calcul Excel à partir de la page Web
+### <a name="create-a-new-excel-spreadsheet-from-the-web-page"></a>Créer une feuille de calcul Excel à partir de la page web
 
-L’exemple modifie un document Excel existant. Un scénario plus courant consiste à créer une nouvelle feuille de calcul Excel à partir de votre page Web. Vous trouverez des informations supplémentaires sur la création d’une nouvelle feuille de calcul dans **créer un document de feuilles de calcul** en fournissant un nom de fichier. Cet article explique comment créer le fichier localement, mais vous pouvez également créer le fichier dans un flux à l’aide d’une surcharge de la méthode SpreadsheetDocument. Create.
+L’exemple modifie un document Excel existant. Un scénario plus courant consiste à créer une feuille de calcul Excel à partir de votre page web. Vous trouverez des détails supplémentaires sur la création d’une feuille de calcul dans Créer un **document** de feuilles de calcul en fournissant un nom de fichier. Cet article montre comment créer le fichier localement, mais vous pouvez également créer le fichier dans un flux à l’aide d’une surcharge sur la méthode SpreadsheetDocument.Create.
 
-### <a name="read-custom-properties-when-your-add-in-starts"></a>Lecture des propriétés personnalisées au démarrage de votre complément
+### <a name="read-custom-properties-when-your-add-in-starts"></a>Lire les propriétés personnalisées au démarrage de votre add-in
 
-L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel à l’aide du kit de développement logiciel (SDK) OOXML. Script Lab lit l’ID d’extrait de code à partir du document Excel, puis affiche cet extrait de code à l’ouverture. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre complément (par exemple, une chaîne de requête ou un jeton d’authentification temporaire). Pour plus d’informations sur la lecture des propriétés personnalisées au démarrage de votre complément, voir **Persisting Add-in State and Settings** .
+L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel à l’aide du SDK OOXML. Script Lab lit l’ID d’extrait de code à partir du document Excel, puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
 
 ### <a name="initialize-the-excel-document-with-data"></a>Initialiser le document Excel avec des données
 
-En règle générale, lorsque le client ouvre un document Excel à partir de votre site Web, il s’attend à ce que le document contienne des données du site Web. Il existe deux façons d’écrire des données dans le document.
+En règle générale, lorsque le client ouvre un document Excel à partir de votre site web, il s’attend à ce que le document contienne certaines données du site web. Il existe deux façons d’écrire des données dans le document.
 
-- **Utilisez le kit de développement logiciel (SDK) OOXML pour écrire les données**. Vous pouvez utiliser le kit de développement logiciel (SDK) pour écrire directement des données dans le document. Cette approche est utile si vous souhaitez que les données soient disponibles le moment où le document est ouvert.
-- **Transmettez une propriété de requête personnalisée à votre complément Office**. Lorsque vous générez le document, vous incorporez une propriété personnalisée pour le complément Office qui contient une chaîne de requête qui récupère toutes les données requises. Lorsque votre complément s’ouvre, il récupère la requête, exécute la requête et utilise l’API Office JS pour insérer le résultat de la requête dans le document.
+- **Utilisez le SDK OOXML pour écrire les données.** Vous pouvez utiliser le SDK pour écrire directement des données dans le document. Cette approche est utile si vous souhaitez que les données soient disponibles dès que le document est ouvert.
+- **Passez une propriété de requête personnalisée à votre add-in Office.** Lorsque vous générez le document, vous incorporez une propriété personnalisée pour le add-in Office qui contient une chaîne de requête qui récupère toutes les données requises. Lorsque votre application s’ouvre, elle récupère la requête, exécute la requête et utilise l’API JS Office pour insérer le résultat de la requête dans le document.
 
-### <a name="working-with-the-ooxml-sdk"></a>Utilisation du kit de développement logiciel (SDK) OOXML
+### <a name="working-with-the-ooxml-sdk"></a>Travailler avec le SDK OOXML
 
-Le kit de développement logiciel (SDK) OOXML est basé sur .NET. Si votre application Web n’est pas .NET, vous devez rechercher une autre façon de travailler avec OOXML.
+Le SDK OOXML est basé sur .NET. Si votre application web n’est pas .NET, vous devez rechercher une autre façon de travailler avec OOXML.
 
-Une version JavaScript du kit de développement logiciel (SDK) OOXML est disponible dans le [Kit de développement logiciel (SDK) Open XML pour JavaScript](https://archive.codeplex.com/?p=openxmlsdkjs).
+Il existe une version JavaScript du SDK OOXML disponible dans le [SDK Open XML pour JavaScript.](https://archive.codeplex.com/?p=openxmlsdkjs)
 
-Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .NET du reste de votre application Web. Appelez ensuite la fonction Azure (pour générer le document Excel) à partir de votre application Web. Pour plus d’informations sur les fonctions Azure, reportez-vous à la rubrique [Présentation des fonctions Azure](https://docs.microsoft.com/azure/azure-functions/functions-overview).
+Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .NET du reste de votre application web. Appelez ensuite la fonction Azure (pour générer le document Excel) à partir de votre application Web. Pour plus d’informations sur les fonctions Azure, voir [une présentation des fonctions Azure.](/azure/azure-functions/functions-overview)
 
-### <a name="use-single-sign-on"></a>Utiliser l’authentification unique
+### <a name="use-single-sign-on"></a>Utiliser l' sign-on unique
 
-Pour simplifier l’authentification, nous vous recommandons d’implémenter l’authentification unique dans votre complément. Pour plus d’informations, consultez la rubrique [activer l’authentification unique pour les compléments Office](../develop/sso-in-office-add-ins.md) .
+Pour simplifier l’authentification, nous vous recommandons d’implémenter l’authentification unique. Pour plus d’informations, [voir Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Bienvenue dans le kit de développement logiciel (SDK) Open XML 2,5 pour Office](/office/open-xml/open-xml-sdk)
+- [Bienvenue dans le SDK Open XML 2.5 pour Office](/office/open-xml/open-xml-sdk)
 - [Ouvrir automatiquement un volet de tâches avec un document](../develop/automatically-open-a-task-pane-with-a-document.md)
 - [Conservation de l’état et des paramètres des compléments](../develop/persisting-add-in-state-and-settings.md)
 - [Créer un document de feuilles de calcul en fournissant un nom de fichier](/office/open-xml/how-to-create-a-spreadsheet-document-by-providing-a-file-name)
