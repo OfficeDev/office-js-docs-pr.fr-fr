@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: 495638ee70630c5330e800419076463273bd2491
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e664893445ed6d9ee9a7adf23f3b3b189df8634e
+ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293353"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "49839998"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -129,7 +129,7 @@ Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque
 > Il existe deux exceptions à ce comportement :
 >
 > - Il s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
-> - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js#displaydialogasync-startaddress--options--callback-), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
+> - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displaydialogasync-startaddress--options--callback-), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
 
 L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, y compris dans le bureau Office.
 
@@ -334,7 +334,7 @@ Les sections suivantes présentent des exemples de fichiers manifeste XML versio
         <bt:Image id="Contoso.TaskpaneButton.Icon16" DefaultValue="https://myCDN/Images/Button16x16.png" />
         <bt:Image id="Contoso.TaskpaneButton.Icon32" DefaultValue="https://myCDN/Images/Button32x32.png" />
         <bt:Image id="Contoso.TaskpaneButton.Icon80" DefaultValue="https://myCDN/Images/Button80x80.png" />
-        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://i.imgur.com/qDujiX0.png" />
+        <bt:Image id="Contoso.FunctionButton.Icon" DefaultValue="https://myCDN/Images/ButtonFunction.png" />
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Contoso.FunctionFile.Url" DefaultValue="https://commandsimple.azurewebsites.net/FunctionFile.html" />
