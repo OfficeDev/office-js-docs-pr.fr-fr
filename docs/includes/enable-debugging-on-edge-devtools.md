@@ -1,5 +1,5 @@
 Lorsque le complément s’exécute dans Microsoft Edge, le code sans interface utilisateur ne peut pas être joint au débogueur par défaut.
-Le code sans interface utilisateur est tout code en cours d'exécution lorsque le volet des tâches n'est pas visible, tel que les commandes de complément. Pour activer le débogage, exécutez les commandes [Windows PowerShell](https://docs.microsoft.com/powershell/scripting/getting-started/getting-started-with-windows-powershell) suivantes :
+Le code sans interface utilisateur est tout code en cours d'exécution lorsque le volet des tâches n'est pas visible, tel que les commandes de complément. Pour activer le débogage, exécutez les commandes [Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell) suivantes :
 
 1. Exécutez la commande suivante pour obtenir des informations sur le package de l’application **Microsoft. Win32WebViewHost**.
     
