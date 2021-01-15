@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 09/24/2020
+ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 6fc1661a49bd5ba60a42ab891eee5a640b579feb
-ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
+ms.openlocfilehash: 0bd231cc870322dd6f756defd14e4d67a69478b4
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48268557"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771248"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -31,9 +31,9 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 |Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
 |Windows 8,1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Peu importe|Internet Explorer 11|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _et_ &nbsp; < &nbsp; 16.0.13127.20082<sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13127.20082<sup>1</sup>| Non |Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13127.20082<sup>1</sup>| Oui<sup>5</sup>|  Voir note 4 ci-dessous. |
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _et_ &nbsp; < &nbsp; 16.0.13530.20316 <sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20316<sup>1</sup>| Non |Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20316<sup>1</sup>| Oui<sup>4</sup>|  Microsoft Edge<sup>2, 3</sup> avec WebView2 (basé sur le chrome) |
 
 <sup>1</sup> pour plus d’informations, consultez la [page historique des mises à jour](/officeupdates/update-history-office365-proplus-by-date) et [Découvrez comment trouver votre version de client Office et votre canal de mise à jour](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) .
 
@@ -41,9 +41,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
-<sup>4</sup> le navigateur utilisé pour cette combinaison de versions dépend du canal de mise à jour de l’abonnement Microsoft 365. Si l’utilisateur est sur le [canal bêta](https://insider.office.com/join/windows) (auparavant le canal rapide des Insiders), Office utilise Microsoft Edge avec WebView2 (basé sur le chrome). Pour tout autre canal, Office utilise Microsoft Edge avec le WebView d’origine (EdgeHTML). La prise en charge de WebView2 dans d’autres canaux est attendue en début de 2021. *Voir aussi la note 5*.
-
-<sup>5</sup> le contrôle WebView2 incorporable doit être installé en plus de l’installation de Microsoft Edge pour permettre à Office de l’incorporer. Pour l’installer, voir [Microsoft Edge WebView2 (Preview)/embed Web Content... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> le contrôle WebView2 incorporable doit être installé en plus de l’installation de Microsoft Edge pour permettre à Office de l’incorporer. Pour l’installer, voir [Microsoft Edge WebView2/embed Web Content... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 
 > [!IMPORTANT]
@@ -62,7 +60,7 @@ Les compléments Office ne prennent pas en charge les travailleurs de services l
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 
-Par défaut, les barres de défilement dans Microsoft Edge sont masquées jusqu’au moment où elles sont survolées. Pour vous assurer que la barre de défilement est toujours visible, les styles CSS qui s’appliquent à l’`<body>`élément des pages dans le volet des tâches doivent inclure la propriété [-ms-overflow-style](https://developer.mozilla.org/docs/Web/CSS/-ms-overflow-style) et la valeur `scrollbar` doit être attribuée. 
+Par défaut, les barres de défilement dans Microsoft Edge sont masquées jusqu’au moment où elles sont survolées. Pour vous assurer que la barre de défilement est toujours visible, les styles CSS qui s’appliquent à l’`<body>`élément des pages dans le volet des tâches doivent inclure la propriété [-ms-overflow-style](https://developer.mozilla.org/docs/Archive/Web/CSS/-ms-overflow-style) et la valeur `scrollbar` doit être attribuée.
 
 ### <a name="when-debugging-with-the-microsoft-edge-devtools-the-add-in-crashes-or-reloads"></a>Lorsque vous déboguez avec Microsoft Edge DevTools, le complément se bloque ou se recharge
 

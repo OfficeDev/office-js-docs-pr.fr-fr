@@ -1,14 +1,14 @@
 ---
-ms.date: 11/06/2020
+ms.date: 12/22/2020
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 23ad0466c157b6dbb9d5fd5fbecf3fd5fe479752
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: 4f7553646f51518fd4c5ed6c66081f910ec813a1
+ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071647"
+ms.lasthandoff: 12/28/2020
+ms.locfileid: "49735556"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -63,7 +63,6 @@ Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvo
 
 Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`.
 
----
 <a id="customfunction"></a>
 
 ### <a name="customfunction"></a>@fonctionpersonnalisée
@@ -133,14 +132,13 @@ Dans l’exemple suivant, la phrase « A function that adds two numbers » («
  */
 ```
 
----
 <a id="helpurl"></a>
 
 ### <a name="helpurl"></a>@urlaide
 
 Syntaxe: @urlaide _url_
 
-L’ _url_ fournie est affichée dans Excel.
+L’_url_ fournie est affichée dans Excel.
 
 Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
 
@@ -153,7 +151,6 @@ Dans l’exemple suivant, le `helpurl` est `www.contoso.com/weatherhelp` .
  */
 ```
 
----
 <a id="param"></a>
 
 ### <a name="param"></a>@param
@@ -220,7 +217,6 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="requiresAddress"></a>
 
 ### <a name="requiresaddress"></a>@requièreuneadresse
@@ -229,12 +225,28 @@ Indique que l’adresse de la cellule dans laquelle la fonction est évaluée do
 
 Le dernier paramètre de la fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
 
----
+L’exemple suivant montre comment utiliser le `invocation` paramètre en combinaison avec `@requiresAddress` pour renvoyer l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour plus d’informations, consultez la rubrique [paramètre invocation](custom-functions-parameter-options.md#invocation-parameter) .
+
+```js
+/**
+ * Return the address of the cell that invoked the custom function. 
+ * @customfunction
+ * @param {number} first First parameter.
+ * @param {number} second Second parameter.
+ * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @requiresAddress 
+ */
+function getAddress(first, second, invocation) {
+  var address = invocation.address;
+  return address;
+}
+```
+
 <a id="returns"></a>
 
 ### <a name="returns"></a>@renvoie :
 
-Syntaxe: @renvoie { _type_ }
+Syntaxe: @renvoie {_type_}
 
 Fournit le type pour la valeur renvoyée.
 
@@ -255,7 +267,6 @@ function add(first: number, second: number): number {
 }
 ```
 
----
 <a id="streaming"></a>
 
 ### <a name="streaming"></a>@diffusionencontinu
@@ -271,7 +282,6 @@ Les exceptions levées par une fonction en continu sont ignorées. `setResult()`
 
 Les fonctions de diffusion en continu ne peuvent pas être marquées comme étant [@volatile](#volatile).
 
----
 <a id="volatile"></a>
 
 ### <a name="volatile"></a>@volatile

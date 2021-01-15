@@ -3,12 +3,12 @@ title: Élément Group dans le fichier manifeste
 description: Définit un groupe de contrôles d’interface utilisateur dans un onglet.
 ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ee8d499767eccb95b4fdf9ceb91dd2cd12bce95
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 3872ece926cc399ed2b30d4dabaacfb741e060ab
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087944"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771396"
 ---
 # <a name="group-element"></a>Élément Group
 
@@ -26,7 +26,7 @@ Obligatoire. Identificateur unique du groupe. Il s’agit d’une chaîne avec u
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | Oui |  Étiquette pour CustomTab ou group.  |
 |  [Icon](icon.md)      | Oui |  Image d’un groupe.  |
@@ -35,7 +35,7 @@ Obligatoire. Identificateur unique du groupe. Il s’agit d’une chaîne avec u
 
 ### <a name="label"></a>Label
 
-Obligatoire. Libellé du groupe. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
+Obligatoire. Libellé du groupe. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
 
 ### <a name="icon"></a>Icône
 

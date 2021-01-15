@@ -3,7 +3,7 @@ Les compléments sont souvent mis en cache dans Office pour Mac, pour des rais
 Vous pouvez vider le cache à l’aide du menu personnalité de n’importe quel complément du volet Office.
 - Sélectionnez le menu personnalité. Sélectionnez **Effacer le cache web**.
     > [!NOTE]
-    > Vous devez exécuter macOS version 10.13.6 ou ultérieure pour afficher le menu Caractéristique.
+    > Vous devez exécuter macOS version 10.13.6 ou ultérieure pour afficher le menu personnalité.
 
     ![Capture d’écran de l’option effacer le cache Web du menu caractéristique](../images/mac-clear-cache-menu.png)
 

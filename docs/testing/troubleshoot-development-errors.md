@@ -1,14 +1,14 @@
 ---
 title: Résoudre les erreurs de développement avec les compléments Office
 description: Découvrez comment résoudre les problèmes liés aux erreurs de développement dans les compléments Office.
-ms.date: 09/08/2020
+ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 5801146165446352ec806f6f832e9976f96467ac
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 48216230db4bf90ca53ef10d98786877bd3905c2
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47409394"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771423"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résoudre les erreurs de développement avec les compléments Office
 
@@ -64,6 +64,17 @@ Consultez la documentation de référence pour savoir si la propriété est en l
 // This will do nothing, since `id` is a read-only property.
 myChart.id = "5";
 ```
+
+## <a name="getting-error-this-add-in-is-no-longer-available"></a>Obtention de l’erreur : « ce complément n’est plus disponible »
+
+Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres causes, veuillez nous indiquer l’outil de commentaires en bas de la page.
+
+- Si vous utilisez Visual Studio, il y a peut-être un problème avec le chargement. Fermez toutes les instances de l’hôte Office et de Visual Studio. Redémarrez Visual Studio et appuyez de nouveau sur F5.
+- Le manifeste du complément a été supprimé de son emplacement de déploiement, tel que le déploiement centralisé, un catalogue SharePoint ou un partage réseau.
+- La valeur de l’élément [ID](../reference/manifest/id.md) dans le manifeste a été modifiée directement dans la copie déployée. Si, pour une raison quelconque, vous souhaitez modifier cet ID, supprimez d’abord le complément de l’hôte Office, puis remplacez le manifeste d’origine par le manifeste modifié. Vous avez beaucoup besoin de vider le cache Office pour supprimer toutes les traces de l’original. Consultez la section les [modifications apportées aux commandes de complément, y compris les boutons du ruban et les éléments de menu, ne prennent pas effet](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) plus haut dans cet article.
+- Le manifeste du complément possède un `resid` qui n’est défini nulle part dans la section [ressources](../reference/manifest/resources.md) du manifeste, ou il existe une incompatibilité dans l’orthographe de l' `resid` emplacement où il est utilisé et où il est défini dans la `<Resources>` section.
+- Il existe un `resid` attribut quelque part dans le manifeste avec plus de 32 caractères. Un `resid` attribut et l' `id` attribut de la ressource correspondante dans la `<Resources>` section ne peuvent pas contenir plus de 32 caractères.
+- Le complément dispose d’une commande de complément personnalisée, mais vous essayez de l’exécuter sur une plateforme qui ne la prend pas en charge. Pour plus d’informations, consultez la rubrique [ensembles de conditions requises pour les commandes de complément](../reference/requirement-sets/add-in-commands-requirement-sets.md).
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>Le complément ne fonctionne pas sur Edge, mais fonctionne sur d’autres navigateurs
 

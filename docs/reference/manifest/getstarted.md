@@ -3,12 +3,12 @@ title: Élément GetStarted dans le fichier manifeste
 description: Fournit des informations utilisées par la légende qui apparaît lorsque le complément est installé dans Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 01b10b8316c87b046cf816d6f86551bf1a349267
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 0ad6196dc45e4ea06c2b43ac5da66a560ab0b899
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292292"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771413"
 ---
 # <a name="getstarted-element"></a>Élément GetStarted
 
@@ -24,15 +24,15 @@ Fournit des informations utilisées par la légende qui apparaît lorsque le com
 
 ### <a name="title"></a>Titre 
 
-Obligatoire. Le titre est utilisé pour la partie supérieure de la légende. L’attribut **resid** fait référence à un ID valide de l’élément **ShortStrings** dans la section [Resources](resources.md).
+Obligatoire. Le titre est utilisé pour la partie supérieure de la légende. L’attribut **RESID** fait référence à un ID valide dans l’élément **ShortStrings** dans la section [Resources](resources.md) et ne peut pas contenir plus de 32 caractères.
 
 ### <a name="description"></a>Description
 
-Obligatoire. Description/Contenu du corps de la légende. L’attribut **resid** fait référence à un ID valide de l’élément **LongStrings** dans la section [Resources](resources.md).
+Obligatoire. Description/Contenu du corps de la légende. L’attribut **RESID** fait référence à un ID valide dans l’élément **LongStrings** dans la section [Resources](resources.md) et ne peut pas contenir plus de 32 caractères.
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 
-Obligatoire. URL vers une page dans laquelle l’utilisateur peut obtenir des informations sur votre complément. L’attribut **resid** fait référence à un ID valide de l’élément **Urls** dans la section [Resources](resources.md).
+Obligatoire. URL vers une page dans laquelle l’utilisateur peut obtenir des informations sur votre complément. L’attribut **RESID** fait référence à un ID valide dans l’élément **URLs** de la section [Resources](resources.md) et ne peut pas contenir plus de 32 caractères.
 
 > [!NOTE]
 > **LearnMoreUrl** n’est pas actuellement restitué dans les clients Word, Excel ou PowerPoint. Nous vous recommandons d’ajouter cette URL pour tous les clients afin que l’URL soit restituée lorsqu’elle est disponible. 

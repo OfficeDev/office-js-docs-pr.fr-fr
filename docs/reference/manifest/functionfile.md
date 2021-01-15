@@ -3,12 +3,12 @@ title: Élément FunctionFile dans le fichier manifest
 description: Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 4c47c3e4b824f2b93aaea17cef88e01f748d6f95
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 44bfd514025b8a23f4f6acdf3fec004485ca4c5a
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996444"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771393"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 
@@ -17,7 +17,7 @@ Spécifie le fichier de code source pour les opérations qu’un complément exp
 * Commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
 * Raccourcis clavier qui exécutent une fonction JavaScript.
 
-L' `FunctionFile` élément est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). L' `resid` attribut de l' `FunctionFile` élément est défini sur la valeur de l' `id` attribut d’un `Url` élément dans l' `Resources` élément qui contient l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de complément sans interface utilisateur, comme défini par l' [élément Control](control.md).
+L' `FunctionFile` élément est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). L' `resid` attribut de l' `FunctionFile` élément ne peut pas comporter plus de 32 caractères et est défini sur la valeur de `id` l’attribut d’un `Url` élément dans l' `Resources` élément qui contient l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de complément sans interface utilisateur, comme défini par l' [élément Control](control.md).
 
 Voici un exemple de l' `FunctionFile` élément.
 

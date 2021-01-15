@@ -3,12 +3,12 @@ title: Élément CustomTab dans le fichier manifest
 description: Sur le ruban, indiquez l’onglet et le groupe où placer leurs commandes de complément.
 ms.date: 11/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 99670b27d963060a008899a8808ca967cfd710a6
-ms.sourcegitcommit: 3189c4bd62dbe5950b19f28ac2c1314b6d304dca
+ms.openlocfilehash: 642222af02431814e4e64141504911c67ca829fa
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "49087937"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771325"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -23,7 +23,7 @@ L’attribut **ID** doit être unique dans le manifeste.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [Group](group.md)      | Non |  Définit un groupe de commandes.  |
 |  [OfficeGroup](#officegroup)      | Non |  Représente un groupe de contrôles Office prédéfini.  |
@@ -31,7 +31,7 @@ L’attribut **ID** doit être unique dans le manifeste.
 |  [InsertAfter](#insertafter)      | Non |  Spécifie que l’onglet personnalisé doit se trouver immédiatement après un onglet Office prédéfini spécifié.  |
 |  [InsertBefore](#insertbefore)      | Non |  Spécifie que l’onglet personnalisé doit se trouver immédiatement avant un onglet Office prédéfini spécifié.  |
 
-### <a name="group"></a>Group
+### <a name="group"></a>Groupe
 
 Facultatif, mais si ce n’est pas le cas, il doit y avoir au moins un élément **OfficeGroup** . Voir [Élément group](group.md). L’ordre des **groupes** et des **OfficeGroup** dans le manifeste doit être l’ordre dans lequel vous souhaitez qu’ils apparaissent dans l’onglet personnalisé. Ils peuvent être mélangés s’il y a plusieurs éléments, mais ils doivent tous être au-dessus de l’élément **label** .
 
@@ -41,7 +41,7 @@ Facultatif, mais si ce n’est pas le cas, il doit y avoir au moins un élément
 
 ### <a name="label-tab"></a>Label (Tab)
 
-Obligatoire. Étiquette de l’onglet personnalisé. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
+Obligatoire. Étiquette de l’onglet personnalisé. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
 
 ### <a name="insertafter"></a>InsertAfter
 

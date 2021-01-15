@@ -3,12 +3,12 @@ title: Élément Control dans le fichier manifeste
 description: Définit une fonction JavaScript qui exécute une action ou lance un volet Office.
 ms.date: 01/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 55faa52e5020691967e65b33c2d975535405b2a4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 820ef39ba2b4ac296e5f5d598d5f45cc2ded701d
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612318"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771374"
 ---
 # <a name="control-element"></a>Élément Control
 
@@ -29,10 +29,10 @@ Définit une fonction JavaScript qui exécute une action ou lance un volet Offic
 Un bouton effectue une action unique quand il est sélectionné. Il peut exécuter une fonction ou afficher un volet Office. Chaque contrôle bouton doit avoir un `id` unique dans le manifeste. 
 
 ### <a name="child-elements"></a>Éléments enfants
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .        |
-|  **ToolTip**    |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
+|  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md)  .        |
+|  **ToolTip**    |Non|Info-bulle pour le bouton. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** . **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour le bouton.    |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
@@ -147,10 +147,10 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 
 ### <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .      |
-|  **ToolTip**    |Non|Info-bulle pour le bouton. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
+|  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .      |
+|  **ToolTip**    |Non|Info-bulle pour le bouton. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** . **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément [Resources](resources.md).|        
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour ce bouton.    |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  **Éléments**     | Oui |  Collection de boutons à afficher dans le menu. Contient les éléments **Élément** pour chaque élément de sous-menu. Chaque élément **Item** contient les éléments enfants du [contrôle Button](#button-control).|
@@ -246,9 +246,9 @@ Un bouton mobile effectue une action unique lorsque l’utilisateur le sélectio
 La valeur `MobileButton` de **xsi:type** est définie dans le schéma VersionOverrides 1.1. Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, l’attribut `xsi:type` doit avoir la valeur `VersionOverridesV1_1`.
 
 ### <a name="child-elements"></a>Éléments enfants
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** doit être défini sur la valeur de l' **attribut ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .        |
+|  **Label**     | Oui |  Texte du bouton. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md)  .        |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
 

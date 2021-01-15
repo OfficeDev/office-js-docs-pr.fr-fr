@@ -3,12 +3,12 @@ title: Élémznr VersionOverrides dans le fichier manifest
 description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
 ms.date: 03/05/2020
 localization_priority: Normal
-ms.openlocfilehash: a744772c01c57c41a9dc20ee0accea5f070c3ff3
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: 772eaa416909d24f8035ed3e1445d1e4f06a244e
+ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819825"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "49771304"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -38,7 +38,7 @@ Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). L’attribut `resid` de l’élément **Description** est défini sur la valeur de l’attribut `id` de l’élément `String` qui contient le texte.|
+|  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). L' `resid` attribut de l’élément **Description** ne peut pas comporter plus de 32 caractères et est défini sur la valeur de l' `id` attribut de l' `String` élément qui contient le texte.|
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.|
 |  [Hôtes](hosts.md)                |  Oui  |  Spécifie une collection d’applications Office. L’élément hosts enfant remplace l’élément hosts dans la partie parent du manifeste.  |
 |  [Ressources](resources.md)    |  Oui  | Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste.|
