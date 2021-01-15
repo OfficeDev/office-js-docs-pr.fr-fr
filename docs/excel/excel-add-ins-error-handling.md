@@ -1,14 +1,14 @@
 ---
 title: Gestion des erreurs avec l’API JavaScript pour Excel
 description: Découvrez la logique de gestion des erreurs de l’API JavaScript pour Excel afin de prendre en compte les erreurs d’utilisation.
-ms.date: 01/06/2021
+ms.date: 01/13/2021
 localization_priority: Normal
-ms.openlocfilehash: fd863e9783336ba9121312ba06aae03330d57562
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 813755a70f3662354dbfa958531da563680521c4
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789120"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870643"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Gestion des erreurs avec l’API JavaScript pour Excel
 
@@ -56,7 +56,7 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 |`AccessDenied` |Vous ne pouvez pas effectuer l’opération demandée.|
 |`ActivityLimitReached`|La limite d’activité a été atteinte.|
 |`ApiNotAvailable`|L’API demandée n’est pas disponible.|
-|`ApiNotFound`|L’API que vous essayez d’utiliser est in trouver. Il peut être disponible dans une version plus récente d’Excel. Pour plus d’informations, voir l’article sur les ensembles de conditions requises de [l’API JavaScript](../reference/requirement-sets/excel-api-requirement-sets.md) pour Excel.|
+|`ApiNotFound`|L’API que vous essayez d’utiliser est in trouver. Il peut être disponible dans une version plus récente d’Excel. Pour plus [d’informations,](../reference/requirement-sets/excel-api-requirement-sets.md) voir l’article sur les ensembles de conditions requises de l’API JavaScript pour Excel.|
 |`BadPassword`|Le mot de passe que vous avez fourni est incorrect.|
 |`Conflict`|La demande n’a pas pu être traitée en raison d’un conflit.|
 |`ContentLengthRequired`|Un `Content-length` en-tête HTTP est manquant.|
@@ -82,7 +82,11 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 |`UnsupportedOperation`|L’opération tentée n’est pas prise en charge.|
 |`UnsupportedSheet`|Ce type de feuille ne prend pas en charge cette opération, car il s’agit d’une feuille Macro ou Graphique.|
 
+> [!NOTE]
+> Le tableau précédent répertorie les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API JavaScript pour Excel. Si vous travaillez avec l’API commune au lieu de l’API JavaScript excel spécifique à l’application, consultez les codes d’erreur de [l’API commune Office](../reference/javascript-api-for-office-error-codes.md) pour en savoir plus sur les messages d’erreur pertinents.
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Objet OfficeExtension.Error (API JavaScript pour Excel)](/javascript/api/office/officeextension.error?view=excel-js-preview&preserve-view=true)
+- [Codes d’erreur d’API communes Office](../reference/javascript-api-for-office-error-codes.md)

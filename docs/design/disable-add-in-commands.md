@@ -1,38 +1,38 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 11/20/2020
+ms.date: 01/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 4e519d97d703f6983c72c9b8c4f4865814d80bba
-ms.sourcegitcommit: 6619e07cdfa68f9fa985febd5f03caf7aee57d5e
+ms.openlocfilehash: 798dd723e0388becdd3419c5af87ceb360d32a41
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "49505463"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870629"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
 Lorsque seulement quelques fonctionnalités de votre complément doivent être disponibles dans certains contextes, vous pouvez activer ou désactiver vos commandes de complément personnalisées par programme. Par exemple, une fonction qui modifie l’en-tête d’un tableau doit être uniquement activée lorsque le curseur se trouve dans un tableau.
 
-Vous pouvez également spécifier si la commande est activée ou désactivée lorsque l’application cliente Office s’ouvre.
+Vous pouvez également spécifier si la commande est activée ou désactivée à l’ouverture de l’application cliente Office.
 
 > [!NOTE]
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
 >
 > - [Concepts basiques pour les commandes de complément](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Prise en charge de l’application et de la plateforme Office uniquement
+## <a name="office-application-and-platform-support-only"></a>Prise en charge des applications et des plateformes Office uniquement
 
-Les API décrites dans cet article sont disponibles uniquement dans Excel, et uniquement dans Office sous Windows, Office sur Mac et Office sur le Web.
+Les API décrites dans cet article sont disponibles uniquement dans Excel, et uniquement dans Office sur Windows, Office sur Mac et Office sur le web.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une combinaison d’applications Office et de plateformes prend en charge les API dont un complément a besoin. Pour plus d’informations, consultez la rubrique [versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les applications Office utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’runtime pour déterminer si une combinaison d’application Office et de plateforme prend en charge les API requises par un application. Pour plus d’informations, voir [les versions d’Office et les ensembles de conditions requises.](../develop/office-versions-and-requirement-sets.md)
 
-Les API d’activation/de désactivation appartiennent à l’ensemble de conditions requises [RibbonApi 1,1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
+Les API d’activer/désactiver appartiennent à [l’ensemble de conditions requises RibbonApi 1.1.](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 
 > [!NOTE]
-> L’ensemble de conditions requises **RibbonApi 1,1** n’étant pas encore pris en charge dans le manifeste, vous ne pouvez pas le spécifier dans la section du manifeste `<Requirements>` . Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et seulement si*, cet appel `true` est renvoyé, votre code peut appeler les API activer/désactiver. Si l’appel de la `isSetSupported` méthode retournée `false` est activé, toutes les commandes de complément personnalisées sont activées en totalité. Vous devez concevoir votre complément de production, ainsi que toutes les instructions dans l’application, pour tenir compte de la façon dont il fonctionnera lorsque l’ensemble de conditions requises **RibbonApi 1,1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation `isSetSupported` , reportez-vous à la rubrique [spécifier les applications Office et les conditions requises](../develop/specify-office-hosts-and-api-requirements.md)de l’API, notamment [utiliser les vérifications d’exécution dans votre code JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code). (La section [définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au ruban 1,1.)
+> L’ensemble de conditions requises **RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste, vous ne pouvez donc pas le spécifier dans la section du `<Requirements>` manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et uniquement si*, cet appel renvoie, votre code peut appeler les API `true` d’activer/désactiver. Si l’appel de renvoie, toutes les commandes de modules sont `isSetSupported` `false` activées en temps réel. Vous devez concevoir votre application de production, ainsi que les instructions dans l’application, pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation, voir Spécifier les applications Office et les conditions requises de l’API, en particulier utiliser les vérifications à l’runtime `isSetSupported` dans votre code [JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) [](../develop/specify-office-hosts-and-api-requirements.md). (La section [Définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au Ruban 1.1.)
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
@@ -76,10 +76,10 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
-1. Créez un objet [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande et son onglet parent, selon leur ID, comme spécifié dans le manifeste. et (2) indique l’état activé ou désactivé de la commande.
+1. Créez [un objet RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande, ainsi que son groupe parent et son onglet, par leurs ID déclarés dans le manifeste ; et (2) spécifie l’état activé ou désactivé de la commande.
 2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-).
 
-Voici un exemple simple. Veuillez noter que « MyButton » et « OfficeAddinTab1 » sont copiés à partir du manifeste.
+Voici un exemple simple. Notez que « MyButton », « OfficeAddinTab1 » et « CustomGroup111 » sont copiés à partir du manifeste.
 
 ```javascript
 function enableButton() {
@@ -87,13 +87,20 @@ function enableButton() {
         tabs: [
             {
                 id: "OfficeAppTab1", 
-                controls: [
-                {
-                    id: "MyButton", 
-                    enabled: true
-                }
-            ]}
-        ]});
+                groups: [
+                    {
+                      id: "CustomGroup111",
+                      controls: [
+                        {
+                            id: "MyButton", 
+                            enabled: true
+                        }
+                      ]
+                    }
+                ]
+            }
+        ]
+    });
 }
 ```
 
@@ -102,7 +109,8 @@ Nous proposons également plusieurs interfaces (types) pour faciliter la constru
 ```typescript
 const enableButton = async () => {
     const button: Control = {id: "MyButton", enabled: true};
-    const parentTab: Tab = {id: "OfficeAddinTab1", controls: [button]};
+    const parentGroup: Group = {id: "CustomGroup111", controls: [button]};
+    const parentTab: Tab = {id: "OfficeAddinTab1", groups: [parentGroup]};
     const ribbonUpdater: RibbonUpdaterData = { tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -135,8 +143,18 @@ Troisièmement, définissez le gestionnaire `enableChartFormat`. Voici un exempl
 
 ```javascript
 function enableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: true};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: true
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -144,9 +162,9 @@ function enableChartFormat() {
 
 Quatrièmement, définissez le gestionnaire `disableChartFormat`. Il est identique à `enableChartFormat`, sauf que la propriété **activé** de l’objet bouton a la valeur `false`.
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer/désactiver la visibilité de l’onglet et l’état activé d’un bouton en même temps
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer la visibilité de l’onglet et l’état activé d’un bouton en même temps
 
-La méthode **requestUpdate** est également utilisée pour faire basculer la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur cet exemple de code, voir [activer et désactiver des commandes de complément](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
+La **méthode requestUpdate** est également utilisée pour faire bascule la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur ce code et un exemple de code, voir [Créer des onglets contextuels personnalisés dans les add-ins Office.](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Pratiques recommandées : test pour les erreurs de contrôle d'état
 
@@ -159,8 +177,18 @@ L’exemple suivant présente une fonction qui désactive un bouton et enregistr
 
 ```javascript
 function disableChartFormat() {
-    var button = {id: "ChartFormatButton", enabled: false};
-    var parentTab = {id: "CustomChartTab", controls: [button]};
+    var button = {
+                  id: "ChartFormatButton", 
+                  enabled: false
+                 };
+    var parentGroup = {
+                       id: "MyGroup",
+                       controls: [button]
+                      };
+    var parentTab = {
+                     id: "CustomChartTab", 
+                     groups: [parentGroup]
+                    };
     var ribbonUpdater = {tabs: [parentTab]};
     await Office.ribbon.requestUpdate(ribbonUpdater);
 
@@ -191,8 +219,18 @@ Dans certains scénarios, Office ne peut pas mettre à jour le ruban et renvoie 
 ```javascript
 function disableChartFormat() {
     try {
-        var button = {id: "ChartFormatButton", enabled: false};
-        var parentTab = {id: "CustomChartTab", controls: [button]};
+        var button = {
+                      id: "ChartFormatButton", 
+                      enabled: false
+                     };
+        var parentGroup = {
+                           id: "MyGroup",
+                           controls: [button]
+                          };
+        var parentTab = {
+                         id: "CustomChartTab", 
+                         groups: [parentGroup]
+                        };
         var ribbonUpdater = {tabs: [parentTab]};
         await Office.ribbon.requestUpdate(ribbonUpdater);
 

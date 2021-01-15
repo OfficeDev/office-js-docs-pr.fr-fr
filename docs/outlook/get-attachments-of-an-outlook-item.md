@@ -1,20 +1,28 @@
 ---
 title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
-ms.date: 08/20/2020
+ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 57191820e27bc78431d0a7c97ffd6b8f23e75f4b
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 386ed16281066eaf38112a905cbd4eae634898f2
+ms.sourcegitcommit: 6a378d2a3679757c5014808ae9da8ababbfe8b16
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293911"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "49870650"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
-Un complément Outlook ne peut pas transmettre les pièces jointes d’un élément sélectionné directement au service distant exécuté sur votre serveur. À la place, le complément peut utiliser l’API de pièces jointes pour envoyer des informations relatives aux pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
+Vous pouvez obtenir les pièces jointes d’un élément Outlook de deux manières, mais l’option que vous utilisez dépend de votre scénario.
 
-Pour envoyer des informations sur les pièces jointes au service distant, vous utilisez les propriétés et la fonction suivantes :
+1. Envoyez les informations de pièce jointe à votre service distant.
+
+    Votre add-in peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
+
+1. Utilisez [l’API getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge [: AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+
+    Cette API peut être pratique si EWS/REST n’est pas disponible (par exemple, en raison de la configuration d’administration de votre serveur Exchange) ou si votre application souhaite utiliser le contenu base64 directement en HTML ou JavaScript. En outre, l’API est disponible dans les scénarios de composition où la pièce jointe n’a peut-être pas encore été synchronisée avec Exchange . Pour plus d’informations, voir Gérer les pièces `getAttachmentContentAsync` [jointes d’un](add-and-remove-attachments-to-an-item-in-a-compose-form.md) élément dans un formulaire de composition dans Outlook.
+
+Cet article traite de la première option. Pour envoyer des informations de pièce jointe au service distant, utilisez les propriétés et la fonction suivantes.
 
 - Propriété [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) &ndash; fournit l’URL des services web Exchange (EWS) sur le serveur Exchange qui héberge la boîte aux lettres. Votre service utilise cette URL pour appeler la méthode [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) ou l’opération EWS [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation).
 
@@ -24,7 +32,7 @@ Pour envoyer des informations sur les pièces jointes au service distant, vous u
 
 ## <a name="using-the-attachments-api"></a>Utilisation de l’API de pièces jointes
 
-Pour utiliser l’API de pièces jointes afin d'obtenir des pièces jointes à partir d’une boîte aux lettres Exchange, procédez comme suit :
+Pour utiliser l’API de pièces jointes afin d’obtenir des pièces jointes à partir d’une boîte aux lettres Exchange, effectuez les étapes suivantes.
 
 1. Affichez le complément lorsque l’utilisateur visualise un message ou un rendez-vous qui contient une pièce jointe.
 
@@ -412,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md)
 - [Explorer l’API managée EWS, EWS et les services web dans Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Prise en main des applications clientes d'API managée EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Authentification unique du complément Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
