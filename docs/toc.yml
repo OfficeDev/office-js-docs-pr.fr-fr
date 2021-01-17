@@ -26,7 +26,7 @@ items:
           - name: Complément Word
             href: quickstarts/word-quickstart.md
           - name: "Authentification unique\_(SSO)"
-            href: quickstarts/sso-quickstart-redirect.md
+            href: quickstarts/sso-quickstart.md
       - name: Explorer les API Office JS à l’aide de Script Lab
         href: overview/explore-with-script-lab.md
         displayName: 'Excel, Word, PowerPoint'
@@ -521,7 +521,7 @@ items:
           - name: Navigateurs utilisés par les compléments Office
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
-          - name: Codes d’erreur
+          - name: Codes d'erreur de l'API commune de l'Office
             href: reference/javascript-api-for-office-error-codes.md
           - name: Objets Window non pris en charge
             href: reference/window-objects-unsupported-in-add-ins.md
@@ -539,7 +539,7 @@ items:
       - name: Création de votre premier complément Excel
         items:
           - name: Volet de tâches
-            href: quickstarts/excel-quickstart-jquery-redirect.md
+            href: quickstarts/excel-quickstart-jquery.md
             displayName: Excel
           - name: Volet de tâches (angulaire)
             href: quickstarts/excel-quickstart-angular.md
@@ -606,7 +606,7 @@ items:
                 href: reference/requirement-sets/excel-api-1-1-requirement-set.md
                 displayName: Excel
           - name: Référence d’API
-            href: reference/excel-api-reference.md
+            href: /javascript/api/excel?view=excel-js-preview
             displayName: Excel
           - name: Modèle d’objet Excel
             href: excel/excel-add-ins-core-concepts.md
@@ -742,11 +742,11 @@ items:
       - name: Documentation sur les compléments OneNote
         href: onenote/index.yml
         displayName: OneNote
-      - name: Vue d’ensemble
+      - name: Vue d'ensemble
         href: onenote/onenote-add-ins-programming-overview.md
         displayName: OneNote
       - name: Créer votre premier complément OneNote
-        href: quickstarts/onenote-quickstart-redirect.md
+        href: quickstarts/onenote-quickstart.md
         displayName: OneNote
       - name: API JavaScript pour OneNote
         items:
@@ -757,7 +757,7 @@ items:
             href: reference/requirement-sets/onenote-api-requirement-sets.md
             displayName: OneNote
           - name: Référence d’API
-            href: reference/onenote-api-reference.md
+            href: /javascript/api/onenote?view=onenote-js-1.1
             displayName: OneNote
           - name: Utiliser du contenu de page OneNote
             href: onenote/onenote-add-ins-page-content.md
@@ -801,7 +801,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/preview-requirement-set/Office.context.mailbox.item.md
                   - name: Référence de l’API pour Outlook Preview
-                    href: reference/outlook-api-reference-preview.md
+                    href: /javascript/api/outlook?view=outlook-js-preview
               - name: "Ensemble de conditions requises\_1.9"
                 items:
                   - name: Vue d'ensemble
@@ -815,7 +815,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.9/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.9
-                    href: reference/outlook-api-reference-1-9.md
+                    href: /javascript/api/outlook?view=outlook-js-1.9
               - name: "Ensemble de conditions requises\_1.8"
                 items:
                   - name: Vue d'ensemble
@@ -829,7 +829,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.8/Office.context.mailbox.item.md
                   - name: "Référence de l’API Outlook\_1.8"
-                    href: reference/outlook-api-reference-1-8.md
+                    href: /javascript/api/outlook?view=outlook-js-1.8
               - name: Ensemble de conditions requises 1.7
                 items:
                   - name: Vue d’ensemble
@@ -843,7 +843,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.7/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.7
-                    href: reference/outlook-api-reference-1-7.md
+                    href: /javascript/api/outlook?view=outlook-js-1.7
               - name: Ensemble de conditions requises 1.6
                 items:
                   - name: Vue d'ensemble
@@ -857,7 +857,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.6/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.6
-                    href: reference/outlook-api-reference-1-6.md
+                    href: /javascript/api/outlook?view=outlook-js-1.6
               - name: "Ensemble de conditions requises\_1.5"
                 items:
                   - name: Vue d’ensemble
@@ -871,7 +871,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.5/Office.context.mailbox.item.md
                   - name: "Référence de l’API Outlook\_1.5"
-                    href: reference/outlook-api-reference-1-5.md
+                    href: /javascript/api/outlook?view=outlook-js-1.5
               - name: "Ensemble de conditions requises\_1.4"
                 items:
                   - name: Vue d’ensemble
@@ -885,7 +885,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.4/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.4
-                    href: reference/outlook-api-reference-1-4.md
+                    href: /javascript/api/outlook?view=outlook-js-1.4
               - name: "Ensemble de conditions requises\_1.3"
                 items:
                   - name: Vue d’ensemble
@@ -899,7 +899,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.3/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.3
-                    href: reference/outlook-api-reference-1-3.md
+                    href: /javascript/api/outlook?view=outlook-js-1.3
               - name: "Ensemble de conditions requises\_1.2"
                 items:
                   - name: Vue d'ensemble
@@ -913,7 +913,7 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.2/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.2
-                    href: reference/outlook-api-reference-1-2.md
+                    href: /javascript/api/outlook?view=outlook-js-1.2
               - name: "Ensemble de conditions requises\_1.1"
                 items:
                   - name: Vue d’ensemble
@@ -927,9 +927,9 @@ items:
                   - name: Office.context.mailbox.item
                     href: reference/objectmodel/requirement-set-1.1/Office.context.mailbox.item.md
                   - name: Référence de l’API Outlook 1.1
-                    href: reference/outlook-api-reference-1-1.md
+                    href: /javascript/api/outlook?view=outlook-js-1.1
           - name: Référence API - dernière version
-            href: reference/outlook-api-reference-1-9.md
+            href: /javascript/api/outlook?view=outlook-js-1.9
             displayName: Outlook
       - name: Concepts
         items:
@@ -1056,7 +1056,7 @@ items:
         href: powerpoint/powerpoint-add-ins.md
         displayName: PowerPoint
       - name: Création de votre premier complément PowerPoint
-        href: quickstarts/powerpoint-quickstart-redirect.md
+        href: quickstarts/powerpoint-quickstart.md
         displayName: PowerPoint
       - name: Didacticiel sur les compléments PowerPoint
         href: tutorials/powerpoint-tutorial.md
@@ -1081,7 +1081,7 @@ items:
                 href: reference/requirement-sets/powerpoint-api-1-1-requirement-set.md
                 displayName: PowerPoint
           - name: Référence d’API
-            href: reference/powerpoint-api-reference.md
+            href: /javascript/api/powerpoint?view=powerpoint-js-1.1
             displayName: PowerPoint
           - name: Insérer et supprimer des diapositives dans une présentation
             href: powerpoint/insert-slides-into-presentation.md
@@ -1101,7 +1101,7 @@ items:
         href: project/project-add-ins.md
         displayName: Project
       - name: Création de votre premier complément Project
-        href: quickstarts/project-quickstart-redirect.md
+        href: quickstarts/project-quickstart.md
         displayName: Project
       - name: API JavaScript pour Project
         items:
@@ -1123,7 +1123,7 @@ items:
         href: reference/overview/visio-javascript-reference-overview.md
         displayName: Visio
       - name: Référence d’API
-        href: reference/visio-api-reference.md
+        href: /javascript/api/visio?view=visio-js-1.1
         displayName: Visio
   - name: Word
     items:
@@ -1134,7 +1134,7 @@ items:
         href: word/word-add-ins-programming-overview.md
         displayName: Word
       - name: Créer votre premier complément Word
-        href: quickstarts/word-quickstart-redirect.md
+        href: quickstarts/word-quickstart.md
         displayName: Word
       - name: Didacticiel sur les compléments Word
         href: tutorials/word-tutorial.md
@@ -1162,7 +1162,7 @@ items:
                 href: reference/requirement-sets/word-api-1-1-requirement-set.md
                 displayName: Word
           - name: Référence d’API
-            href: reference/word-api-reference.md
+            href: /javascript/api/word?view=word-js-preview
             displayName: Word
           - name: Modèle d’objet Word
             href: word/word-add-ins-core-concepts.md
