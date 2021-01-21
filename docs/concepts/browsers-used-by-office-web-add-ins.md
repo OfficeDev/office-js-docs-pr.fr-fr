@@ -1,62 +1,62 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 01/04/2021
+ms.date: 01/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 0bd231cc870322dd6f756defd14e4d67a69478b4
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: c540eece3b74bb043cc8f4921c7c774511b5a60a
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771248"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916460"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
-Les compléments Office sont des applications Web qui sont affichées à l’aide d’iFrames lorsqu’ils sont exécutés dans Office sur le Web et qui utilisent des contrôles de navigateur incorporés dans Office pour les clients mobiles et de bureau. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur et le moteur incorporés sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
+Les add-ins Office sont des applications web qui s’affichent à l’aide d’iFrames lors de l’exécution dans Office sur le web et à l’aide de contrôles de navigateur incorporés dans Office pour les clients de bureau et mobiles. Les compléments ont également besoin d’un moteur JavaScript pour exécuter le code JavaScript. Le navigateur incorporé et le moteur sont fournis par un navigateur installé sur l’ordinateur de l’utilisateur.
 
 Le navigateur utilisé dépend de ce qui suit :
 
 - Système d’exploitation de l’ordinateur.
-- Si le complément est exécuté dans Office sur le Web, Microsoft 365 ou sans abonnement Office 2013 ou version ultérieure.
+- Si le module est en cours d’exécution dans Office sur le web, Microsoft 365 ou Office 2013 sans abonnement ou ultérieur.
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|OS|Version d’Office|WebView2 Edge installé (basé sur le chrome) ?|Navigateur|
+|SYSTÈME D’EXPLOITATION|Version d’Office|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.|
 |Mac|indifférent|Non applicable|Safari|
 |iOS|indifférent|Non applicable|Safari|
 |Android|indifférent|Non applicable|Chrome|
-|Windows 7, 8,1, 10 | Office 2013 sans abonnement ou version ultérieure|Peu importe|Internet Explorer 11|
+|Windows 7, 8.1, 10 | Office 2013 sans abonnement ou ultérieur|Peu importe|Internet Explorer 11|
 |Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
-|Windows 8,1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
+|Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Peu importe|Internet Explorer 11|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _et_ &nbsp; < &nbsp; 16.0.13530.20316 <sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
-|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20316<sup>1</sup>| Non |Microsoft Edge<sup>2, 3</sup> avec WebView d’origine (EdgeHTML)|
-|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20316<sup>1</sup>| Oui<sup>4</sup>|  Microsoft Edge<sup>2, 3</sup> avec WebView2 (basé sur le chrome) |
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _ET_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3 avec</sup> WebView d’origine (EdgeHTML)|
+|Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Non |Microsoft Edge<sup>2, 3 avec</sup> WebView d’origine (EdgeHTML)|
+|Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Oui<sup>4</sup>|  Microsoft Edge<sup>2, 3</sup> avec WebView2 (basé sur Chromium) |
 
-<sup>1</sup> pour plus d’informations, consultez la [page historique des mises à jour](/officeupdates/update-history-office365-proplus-by-date) et [Découvrez comment trouver votre version de client Office et votre canal de mise à jour](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) .
+<sup>1 Consultez</sup> la [page historique des](/officeupdates/update-history-office365-proplus-by-date) mises à jour et découvrez comment trouver la version de votre client [Office](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) et le canal de mise à jour pour plus d’informations.
 
-<sup>2</sup> lorsque Microsoft Edge est utilisé, le narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
+<sup>2</sup> Lorsque Microsoft Edge est utilisé, le Narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la balise dans la page qui s’ouvre dans le volet `<title>` Des tâches. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
-<sup>3</sup> si votre complément inclut l' `Runtimes` élément dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
+<sup>3</sup> Si votre application inclut l’élément dans le manifeste, elle utilise Internet Explorer 11, quelle que soit la `Runtimes` version windows ou Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
-<sup>4</sup> le contrôle WebView2 incorporable doit être installé en plus de l’installation de Microsoft Edge pour permettre à Office de l’incorporer. Pour l’installer, voir [Microsoft Edge WebView2/embed Web Content... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> Le contrôle WebView2 intégrable doit être installé en plus de l’installation de Microsoft Edge afin qu’Office puisse l’incorporer. Pour l’installer, [voir Microsoft Edge WebView2 / Incorporer du contenu web... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 
 > [!IMPORTANT]
-> Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si les utilisateurs de votre complément disposent de plateformes qui utilisent Internet Explorer 11, pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou version ultérieure, vous disposez de deux options :
+> Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si l’un des utilisateurs de votre add-in dispose de plateformes qui utilisent Internet Explorer 11, vous disposez de deux options pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou une ultérieure :
 >
-> - Écrivez votre code dans ECMAScript 2015 (également appelé ES6) ou JavaScript ultérieur, ou dans une écriture à écrire, puis compilez votre code en ES5 JavaScript à l’aide d’un compilateur tel que [Babel](https://babeljs.io/) ou [TSC](https://www.typescriptlang.org/index.html).
-> - Écrivez dans ECMAScript 2015 ou une version ultérieure JavaScript, mais chargez également une bibliothèque de [Polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) comme [Core-js](https://github.com/zloirock/core-js) qui permet à Internet Explorer d’exécuter votre code.
+> - Écrivez votre code dans ECMAScript 2015 (également appelé ES6) ou version ultérieure JavaScript, ou dans TypeScript, puis compilez votre code en JavaScript ES5 à l’aide d’un compilateur tel que [celui-ci ou](https://babeljs.io/) [tsc.](https://www.typescriptlang.org/index.html)
+> - Écrivez en JavaScript ECMAScript 2015 ou version ultérieure, mais chargez également une [bibliothèque polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) telle que [core-js](https://github.com/zloirock/core-js) qui permet à IE d’exécuter votre code.
 >
 > Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
-## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes liés à Microsoft Edge
+## <a name="troubleshooting-microsoft-edge-issues"></a>Résolution des problèmes de Microsoft Edge
 
-### <a name="service-workers-are-not-working"></a>Les travailleurs de services ne fonctionnent pas
+### <a name="service-workers-are-not-working"></a>Les employés de service ne fonctionnent pas
 
-Les compléments Office ne prennent pas en charge les travailleurs de services lorsque le WebView d’origine de [Microsoft Edge](/microsoft-edge/hosting/webview) est utilisé. Elles sont prises en charge avec le [WebView2 Edge basé sur le chrome](/microsoft-edge/hosting/webview2).
+Les add-ins Office ne sont pas en charge par les travailleurs de service lorsque le [Microsoft Edge WebView](/microsoft-edge/hosting/webview) d’origine est utilisé. Ils sont pris en charge avec le [edge WebView2 basé sur Chromium.](/microsoft-edge/hosting/webview2)
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 
@@ -72,7 +72,7 @@ Microsoft Edge exige que localhost bénéficie d’une exemption de bouclage sur
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obtenir des erreurs lors de la tentative de téléchargement d’un fichier PDF
 
-Le téléchargement direct d’objets BLOB sous forme de fichiers PDF dans un complément n’est pas pris en charge lorsque le serveur Edge est le navigateur. La solution de contournement consiste à créer une application Web simple qui télécharge les objets BLOB en tant que fichiers PDF. Dans votre complément, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et transmettez l’URL de l’application Web. Cette opération ouvre l’application Web dans une fenêtre de navigateur en dehors d’Office.
+Le téléchargement direct des blobs en tant que fichiers PDF dans un add-in n’est pas pris en charge lorsque Edge est le navigateur. La solution de contournement consiste à créer une application web simple qui télécharge les blobs sous forme de fichiers PDF. Dans votre application, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et passez l’URL de l’application web. Cette procédure ouvre l’application web dans une fenêtre de navigateur en dehors d’Office.
 
 ## <a name="see-also"></a>Voir aussi
 
