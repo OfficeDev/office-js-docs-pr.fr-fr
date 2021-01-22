@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 11/09/2020
+ms.date: 1/19/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 627c8ce235a69e6da4a15c7064a2937b1fed5d05
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 6f8bfea30cba8de818ab5a587c47786c57035b76
+ms.sourcegitcommit: 54d141cefb7bdc5f16330747d0ec8e8e2bd03e93
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132367"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "49916467"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -38,7 +38,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office](../images/yo-office-excel.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -62,9 +62,9 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 
 4. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-5. En bas du volet Office, cliquez sur le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
+5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
 
-    ![Capture d’écran d’Excel, avec le volet Office Complément ouvert et le bouton Exécuter mis en surbrillance dans ce volet](../images/excel-quickstart-addin-3c.png)
+    ![Capture d’écran d’Excel, avec le volet Office du complément ouvert et le bouton Exécuter mis en surbrillance dans ce volet](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>Étapes suivantes
 
@@ -82,7 +82,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 
 2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Excel**, puis sélectionnez **Suivant**.
 
-3. Nommez votre projet et sélectionnez **Créer**.
+3. Nommez votre projet **ExcelWebAddIn1**, puis sélectionnez **Créer**.
 
 4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
 
@@ -176,7 +176,7 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
+1. Dans l’**explorateur de solutions**, accédez au projet de complément **ExcelWebAddIn1**, puis ouvrez le répertoire **ExcelWebAddIn1Manifest**. Ce répertoire contient votre fichier manifeste, **ExcelWebAddIn1.xml**. Un fichier manifeste XML définit les paramètres et les fonctionnalités du complément. Consultez la section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) précédente pour plus d’informations sur les deux projets créés par votre solution Visual Studio. 
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
@@ -202,11 +202,11 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ens
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/excel-quickstart-addin-2a.png)
+    ![Capture d’écran du menu Accueil d’Excel, avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée sur vert.
+4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
     ![Capture d’écran d’Excel avec le volet Office Complément ouvert](../images/excel-quickstart-addin-2c.png)
 
