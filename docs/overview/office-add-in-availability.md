@@ -1,14 +1,14 @@
 ---
 title: Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 01/19/2021
+ms.date: 01/22/2021
 localization_priority: Priority
-ms.openlocfilehash: e4adb8f4349b6712d009f2920ee567dbb781e3b9
-ms.sourcegitcommit: 4fc5829d66cdd52f110d9a59dd7317b520807cbe
+ms.openlocfilehash: 1abb20ef2e215655ef395a03e8da083673118042
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "49908920"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944325"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 
@@ -580,7 +580,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Office sur Android<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message lu</a><br>
-      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface-preview">Organisateur de rendez-vous (composer) : réunion en ligne</a> (aperçu)<br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">Organisateur de rendez-vous (composer) : réunion en ligne</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
