@@ -1,20 +1,20 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
-description: Les compléments Outlook Mobile sont pris en charge sur tous les comptes professionnels de Microsoft 365, les comptes Outlook.com et le support sont bientôt disponibles dans les comptes gmail.
+description: Les add-ins Outlook mobile sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les comptes Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 34fbb01d596c4da38fe81438088cd71d8c7e152a
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 24d396f67a3d73f7c3c357be7861164f586a50da
+ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093895"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "49944318"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
 Les compléments fonctionnent désormais sur Outlook Mobile, avec les mêmes API que celles disponibles pour d’autres points de terminaison Outlook. Si vous avez déjà créé un complément pour Outlook, il est facile de le faire fonctionner sur Outlook Mobile.
 
-Les compléments Outlook Mobile sont pris en charge sur tous les comptes professionnels de Microsoft 365, les comptes Outlook.com et le support sont bientôt disponibles dans les comptes gmail.
+Les add-ins Outlook Mobile sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
 
 **Exemple de volet Office dans Outlook sur iOS**
 
@@ -27,7 +27,7 @@ Les compléments Outlook Mobile sont pris en charge sur tous les comptes profess
 ![Capture d’écran d’un volet Office dans Outlook sur Android](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> Les compléments ne fonctionnent pas dans la version moderne d’Outlook dans un navigateur mobile. Pour plus d’informations, consultez [la rubrique Outlook sur votre navigateur mobile est en cours de mise à niveau](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816).
+> Les applications ne fonctionnent pas dans la version moderne d’Outlook dans un navigateur mobile. Pour plus d’informations, [consultez Outlook sur votre navigateur mobile](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)en cours de mise à niveau.
 
 ## <a name="whats-different-on-mobile"></a>Qu’est-ce qui est différent sur mobile ?
 
@@ -35,7 +35,7 @@ Les compléments Outlook Mobile sont pris en charge sur tous les comptes profess
     - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
     - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie qu’il `MobileMessageReadCommandSurface` s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode organisateur de rendez-vous est pris en charge pour les compléments intégrés au fournisseur de réunions en ligne qui déclarent le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface-preview). Pour plus d’informations sur ce scénario, reportez-vous à l’article [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](online-meeting.md) .
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Pour plus [d’informations](online-meeting.md) sur ce scénario, consultez l’article Créer un application outlook mobile pour un fournisseur de réunion en ligne.
 
 - L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 
@@ -69,7 +69,7 @@ Pour tester un complément sur Outlook Mobile, vous pouvez charger de manière i
 
 Une fois que votre complément fonctionne, testez-le sur différentes tailles d’écran, y compris sur des téléphones et des tablettes. Vous devez vous assurer qu’il respecte les instructions d’accessibilité en matière de contraste, de taille de police et de couleur, et qu’il peut être utilisé avec un lecteur d’écran comme VoiceOver sur iOS ou TalkBack sur Android.
 
-Le dépannage sur mobile peut être difficile dans la mesure où vous ne disposez pas des outils que vous utilisez. Toutefois, une option de résolution des problèmes sur iOS consiste à utiliser Fiddler (consultez [ce didacticiel sur son utilisation avec un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+La résolution des problèmes sur les appareils mobiles peut être difficile, car vous n’avez peut-être pas les outils que vous avez l’habitude d’utiliser. Toutefois, une option de dépannage sur iOS consiste à utiliser Fiddler (consultez ce didacticiel sur son utilisation avec [un appareil iOS).](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
