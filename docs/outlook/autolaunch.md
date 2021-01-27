@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 01/06/2021
+ms.date: 01/25/2021
 localization_priority: Normal
-ms.openlocfilehash: d6893733af52bba7917531b2e8d5a442ce3dcd77
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 4790de491b84cfba3b64bfb6c176e7bf1ff42ec7
+ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839830"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "49990504"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
 
@@ -150,7 +150,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui fait référence au même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du client Outlook. Ainsi, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
+Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui fait référence au même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes pour les add-ins Outlook, consultez les [manifestes de ces derniers.](manifests.md)
@@ -197,7 +197,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
 
@@ -213,7 +213,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur des événements
 
-Les add-ins qui s’activent en fonction des événements sont conçus pour être de courte durée, jusqu’à 330 secondes uniquement. Nous vous recommandons de demander à votre add-in d’appeler la méthode pour signaler qu’il a terminé `event.completed` le traitement de l’événement de lancement. Le add-in se termine également lorsque l’utilisateur ferme la fenêtre de composition.
+Les add-ins qui s’activent en fonction des événements sont conçus pour être de courte durée, jusqu’à environ 300 secondes. Nous vous recommandons de demander à votre add-in d’appeler la méthode pour signaler qu’il a terminé `event.completed` le traitement de l’événement de lancement. Le add-in se termine également lorsque l’utilisateur ferme la fenêtre de composition.
 
 Si l’utilisateur a plusieurs add-ins abonnés au même événement, la plateforme Outlook lance les modules dans un ordre particulier. Actuellement, seuls cinq add-ins basés sur des événements peuvent être activement en cours d’exécution. Tous les compléments supplémentaires sont dirigés vers une file d’attente, puis exécutés à mesure que les compléments précédemment actifs sont terminés ou désactivés.
 
