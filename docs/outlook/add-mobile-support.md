@@ -3,16 +3,16 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: a4fb02fee8bb429d0193903ba03fcee17b7ede48
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 90f3f9b4e22c446713f7503d6372e0b7a13bf9ee
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607616"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043868"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
-L’utilisation de commandes de complément dans Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations](#code-considerations)) dont ils disposent déjà dans Outlook sur le Web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
+L’utilisation des commandes de macros dans Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations)](#code-considerations)que dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 
 ## <a name="updating-the-manifest"></a>Mise à jour du manifeste
 
@@ -20,7 +20,7 @@ La première étape de l’activation des commandes de complément dans Outlook�
 
 Cet élément contient toutes les informations pour charger le complément dans des clients mobiles. Cela vous permet de définir entièrement différents éléments de l’interface utilisateur et fichiers JavaScript pour l’expérience mobile.
 
-L’exemple suivant montre un bouton de volet Office unique dans un `MobileFormFactor` élément.
+L’exemple suivant montre un bouton de volet de tâches unique dans un `MobileFormFactor` élément.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -72,7 +72,7 @@ La conception d’un complément pour mobile implique certaines considérations 
 
 La méthode [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
 
-L’ensemble de conditions requises pour les boîtes aux lettres 1,5 a introduit une nouvelle version d' [Office. Context. Mailbox. getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST, ainsi qu’une nouvelle propriété [Office. Context. Mailbox. restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
+L’ensemble de conditions requises de boîte aux lettres 1.5 a introduit une nouvelle version [d’Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST, ainsi qu’une nouvelle propriété [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
 
 ### <a name="pinch-zoom"></a>Pincer pour zoomer
 
@@ -84,11 +84,11 @@ Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et e
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 
-Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les compléments intégrés à un fournisseur de réunions en ligne peuvent être activés dans le mode organisateur de rendez-vous. Pour plus d’informations sur cette exception, consultez l’article [créer un complément Outlook Mobile pour un fournisseur de réunion en ligne](online-meeting.md) .
+Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus [d’informations](online-meeting.md) sur cette exception, consultez l’article Créer un application outlook mobile pour un fournisseur de réunion en ligne.
 
 ### <a name="unsupported-apis"></a>API non prises en charge
 
-Les API introduites dans l’ensemble de conditions requises 1,6 ou version ultérieure ne sont pas prises en charge par Outlook Mobile. Les API suivantes des ensembles de conditions requises précédents ne sont pas non plus prises en charge.
+Les API introduites dans l’ensemble de conditions requises 1.6 ou ultérieure ne sont pas pris en charge par Outlook Mobile. Les API suivantes des ensembles de conditions requises antérieures ne sont pas non plus pris en charge.
 
   - [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
   - [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
@@ -109,4 +109,4 @@ Les API introduites dans l’ensemble de conditions requises 1,6 ou version ult�
 
 ## <a name="see-also"></a>Voir aussi
 
-[Prise en charge de l’ensemble de conditions requises](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

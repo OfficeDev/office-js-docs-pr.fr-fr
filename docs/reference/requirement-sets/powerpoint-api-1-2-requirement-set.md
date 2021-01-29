@@ -1,15 +1,15 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour PowerPoint 1.2
 description: Détails sur l’ensemble de conditions requises PowerPointApi 1.2.
-ms.date: 01/08/2021
+ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 0f6d1e766de81fef5d071152f6116ab56613ec9d
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 0aa82b8edc6aab65ebcce7c6bfcb50471c9e38e9
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49841531"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043875"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>Nouveautés de l’API JavaScript 1.2 pour PowerPoint
 
@@ -19,7 +19,7 @@ Le premier tableau fournit un résumé concis des API, tandis que le tableau sui
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
-| Insérer et supprimer des diapositives | Permet l’insertion de diapositives existantes dans la présentation actuelle à partir d’une autre présentation, ainsi que la possibilité de supprimer des diapositives. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
+| [Insérer et supprimer des diapositives](../../powerpoint/insert-slides-into-presentation.md) | Permet l’insertion de diapositives existantes dans la présentation actuelle à partir d’une autre présentation, ainsi que la possibilité de supprimer des diapositives. | [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#delete--), [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|
 
 ## <a name="api-list"></a>Liste des API
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie l’ensemble de conditions requises de l’API Ja
 
 | Classe | Champs | Description |
 |:---|:---|:---|
-|[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[mise en forme](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|Spécifie la mise en forme à utiliser lors de l’insertion d’une diapositive.|
+|[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[mise en forme](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|Spécifie la mise en forme à utiliser lors de l’insertion des diapositives.|
 ||[sourceSlideIds](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceslideids)|Spécifie les diapositives de la présentation source qui seront insérées dans la présentation actuelle.|
 ||[targetSlideId](/javascript/api/powerpoint/powerpoint.insertslideoptions#targetslideid)|Spécifie l’endroit où seront insérées les nouvelles diapositives dans la présentation.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[insertSlidesFromBase64(base64File: string, options?: PowerPoint.InsertSlideOptions)](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-)|Insère les diapositives spécifiées d’une présentation dans la présentation actuelle.|

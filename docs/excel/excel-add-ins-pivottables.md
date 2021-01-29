@@ -1,65 +1,65 @@
 ---
-title: Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
-description: Utilisez l’API JavaScript pour Excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
-ms.date: 12/07/2020
+title: Utiliser des tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
+description: Utilisez l’API JavaScript excel pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
+ms.date: 01/26/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a1fefa6a855ab9ee1ccd71fd0dc60f282d2944b
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 9832322d40bbeb247685ff2498bdce42975c0377
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603798"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043910"
 ---
-# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utilisation des tableaux croisés dynamiques avec l’API JavaScript pour Excel
+# <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utiliser des tableaux croisés dynamiques à l’aide de l’API JavaScript pour Excel
 
-Les tableaux croisés dynamiques rationalisent les grands ensembles de données. Ils permettent la manipulation rapide des données groupées. L’API JavaScript pour Excel permet à votre complément de créer des tableaux croisés dynamiques et d’interagir avec leurs composants. Cet article explique comment les tableaux croisés dynamiques sont représentés par l’API JavaScript Office et fournit des exemples de code pour les scénarios clés.
+Les tableaux croisés dynamiques simplifient les jeux de données plus volumineux. Elles permettent la manipulation rapide des données groupées. L’API JavaScript pour Excel permet à votre application de créer des tableaux croisés dynamiques et d’interagir avec leurs composants. Cet article décrit comment les tableaux croisés dynamiques sont représentés par l’API JavaScript pour Office et fournit des exemples de code pour les scénarios clés.
 
-Si vous n’êtes pas familiarisé avec la fonctionnalité de tableaux croisés dynamiques, envisagez de les explorer comme un utilisateur final.
-Reportez-vous à la rubrique [créer un tableau croisé dynamique pour analyser les données de feuille de calcul](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) pour obtenir une introduction à ces outils.
+Si vous ne connaissez pas la fonctionnalité des tableaux croisés dynamiques, envisagez de les explorer en tant qu’utilisateur final.
+Voir [Créer un tableau croisé dynamique pour analyser les](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) données de feuille de calcul afin d’obtenir une bonne base sur ces outils.
 
 > [!IMPORTANT]
-> Les tableaux croisés dynamiques créés avec OLAP ne sont actuellement pas pris en charge. Il n’existe pas non plus de prise en charge de PowerPivot.
+> Les tableaux croisés dynamiques créés avec OLAP ne sont actuellement pas pris en charge. Il n’existe pas non plus de prise en charge de Power Pivot.
 
 ## <a name="object-model"></a>Modèle d’objet
 
-Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’objet central pour les tableaux croisés dynamiques de l’API JavaScript pour Office.
+Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’objet central des tableaux croisés dynamiques dans l’API JavaScript pour Office.
 
-- `Workbook.pivotTables` et `Worksheet.pivotTables` sont [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui contiennent respectivement les [tableaux croisés dynamiques](/javascript/api/excel/excel.pivottable) dans le classeur et la feuille de calcul.
-- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) qui comporte plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
-- Ces [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) peuvent être ajoutées à des collections de hiérarchies spécifiques pour définir le mode de tableau croisé dynamique des données (comme expliqué dans la [section suivante](#hierarchies)).
-- Un [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contient un [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) qui comporte exactement un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield). Si la conception s’étend pour inclure des tableaux croisés dynamiques OLAP, cela peut changer.
-- Un champ [PivotField](/javascript/api/excel/excel.pivotfield) peut être appliqué à un ou plusieurs [PivotFilters](/javascript/api/excel/excel.pivotfilters) , tant que le [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) du champ est affecté à une catégorie de hiérarchie. 
-- Un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) contient un [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) avec plusieurs [PivotItems](/javascript/api/excel/excel.pivotitem).
-- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotLayout](/javascript/api/excel/excel.pivotlayout) qui définit où les [champs PivotFields](/javascript/api/excel/excel.pivotfield) et [PivotItems](/javascript/api/excel/excel.pivotitem) sont affichés dans la feuille de calcul.
+- `Workbook.pivotTables` et `Worksheet.pivotTables` sont [des PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) qui contiennent respectivement les tableaux [croisés dynamiques](/javascript/api/excel/excel.pivottable) dans le workbook et la feuille de calcul.
+- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) qui possède plusieurs [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- Ces [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) peuvent être ajoutées à des collections de hiérarchies spécifiques pour définir la façon dont le tableau croisé dynamique analyse les données (comme expliqué dans la [section suivante).](#hierarchies)
+- Une [PivotHierarchy contient](/javascript/api/excel/excel.pivothierarchy) un [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) qui possède exactement un [champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield). Si la conception est étendue pour inclure des tableaux croisés dynamiques OLAP, cela peut changer.
+- Un [champ de](/javascript/api/excel/excel.pivotfield) tableau croisé dynamique peut avoir un ou plusieurs filtres de tableau croisé dynamique [appliqués,](/javascript/api/excel/excel.pivotfilters) tant que la [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) du champ est affectée à une catégorie de hiérarchie. 
+- Un [champ de](/javascript/api/excel/excel.pivotfield) tableau croisé dynamique contient un [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) qui a plusieurs [pivotItems](/javascript/api/excel/excel.pivotitem).
+- Un [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) contient un [pivotLayout](/javascript/api/excel/excel.pivotlayout) qui définit l’endroit où les [pivotFields](/javascript/api/excel/excel.pivotfield) et [pivotItems](/javascript/api/excel/excel.pivotitem) sont affichés dans la feuille de calcul.
 
-Examinons comment ces relations s’appliquent à certains exemples de données. Les données suivantes décrivent les ventes de fruit de différentes batteries de serveurs. Il s’agit de l’exemple de cet article.
+Examinons comment ces relations s’appliquent à certains exemples de données. Les données suivantes décrivent les ventes de fruit de différentes batteries de serveurs. Ce sera l’exemple tout au long de cet article.
 
-![Collection de ventes de fruit de différents types de batteries de serveurs différentes.](../images/excel-pivots-raw-data.png)
+![Collection de ventes de fruit de différents types de batteries de serveurs.](../images/excel-pivots-raw-data.png)
 
-Les données de ventes de la batterie de fruits seront utilisées pour créer un tableau croisé dynamique. Chaque colonne, telle que **types**, est `PivotHierarchy` . La hiérarchie de **types** contient le champ **types** . Le champ **types** contient les éléments **Apple**, **Kiwi**, **citron**, **citron** et **orange**.
+Les données de ventes de cette batterie de serveurs de fruit seront utilisées pour la production d’un tableau croisé dynamique. Chaque colonne, telle que **Types,** est une `PivotHierarchy` . La **hiérarchie Types** contient le champ **Types.** Le **champ Types** contient les éléments **Apple**, **Domaine,** **Citron,** **Vert** et **Orange**.
 
 ### <a name="hierarchies"></a>Hierarchies
 
-Les tableaux croisés dynamiques sont organisés en fonction de quatre catégories de hiérarchie : [ligne](/javascript/api/excel/excel.rowcolumnpivothierarchy), [colonne](/javascript/api/excel/excel.rowcolumnpivothierarchy), [données](/javascript/api/excel/excel.datapivothierarchy)et [filtre](/javascript/api/excel/excel.filterpivothierarchy).
+Les tableaux croisés dynamiques sont organisés en quatre catégories hiérarchiques : [ligne,](/javascript/api/excel/excel.rowcolumnpivothierarchy) [colonne,](/javascript/api/excel/excel.rowcolumnpivothierarchy) [données](/javascript/api/excel/excel.datapivothierarchy)et [filtre.](/javascript/api/excel/excel.filterpivothierarchy)
 
-Les données de la batterie de serveurs affichées précédemment ont cinq hiérarchies : **batteries** de serveurs, **type**, **classification**, **caisses vendues à la batterie de serveurs** et **caisses vendues en gros**. Chaque hiérarchie peut uniquement exister dans l’une des quatre catégories. Si le **type** est ajouté aux hiérarchies de colonne, il ne peut pas également se trouver dans les hiérarchies de ligne, de données ou de filtre. Si **type** est par la suite ajouté aux hiérarchies de lignes, il est supprimé des hiérarchies de colonne. Ce comportement est le même, que l’attribution de hiérarchie soit réalisée via l’interface utilisateur Excel ou les API JavaScript pour Excel.
+Les données de batterie indiquées précédemment disposent de cinq hiérarchies : Batteries **de** serveurs, **Type**, **Classification**, **Caisses vendues** à la batterie de serveurs et **Caisses vendues en commun**. Chaque hiérarchie ne peut exister que dans l’une des quatre catégories. Si **type** est ajouté aux hiérarchies de colonnes, il ne peut pas non plus se trouver dans les hiérarchies de lignes, de données ou de filtres. Si **Type** est ensuite ajouté aux hiérarchies de lignes, il est supprimé des hiérarchies de colonnes. Ce comportement est le même si l’affectation de hiérarchie est effectuée via l’interface utilisateur Excel ou les API JavaScript pour Excel.
 
-Les hiérarchies de ligne et de colonne définissent le mode de regroupement des données. Par exemple, une hiérarchie de lignes de **batteries de serveurs** regroupe tous les jeux de données de la même batterie de serveurs. Le choix entre la hiérarchie de ligne et de colonne définit l’orientation du tableau croisé dynamique.
+Les hiérarchies de lignes et de colonnes définissent le regroupement des données. Par exemple, une hiérarchie de lignes **de** batteries de serveurs groupe tous les ensembles de données de la même batterie de serveurs. Le choix entre la hiérarchie de lignes et de colonnes définit l’orientation du tableau croisé dynamique.
 
-Les hiérarchies de données sont les valeurs à agréger en fonction des hiérarchies de ligne et de colonne. Un tableau croisé dynamique avec une hiérarchie de lignes de **batteries de serveurs** et une hiérarchie de données de **grossistes vendus en gros** indique le total de tous les fruits de chaque batterie de serveurs.
+Les hiérarchies de données sont les valeurs à agréger en fonction des hiérarchies de lignes et de colonnes. Un tableau croisé dynamique avec  une hiérarchie de lignes de batteries de serveurs et une hiérarchie de données de la vente **de caisses montre** le total total (par défaut) de tous les différents produits pour chaque batterie de serveurs.
 
-Les hiérarchies de filtre incluent ou excluent les données du tableau croisé dynamique en fonction des valeurs contenues dans ce type filtré. Une hiérarchie de filtrage de **classification** avec le type **Organic** Selected affiche uniquement les données pour les fruits organiques.
+Les hiérarchies de filtres incluent ou excluent des données du tableau croisé dynamique en fonction des valeurs de ce type filtré. Une hiérarchie de filtres de **classification** avec le type **organique** sélectionné affiche uniquement les données pour les fruit organiques.
 
-Voici les données de la batterie de serveurs à nouveau, ainsi qu’un tableau croisé dynamique. Le tableau croisé dynamique utilise la **batterie de serveurs** et le **type** comme hiérarchies de lignes, les **caisses vendues au niveau** de la batterie de serveurs et des **caisses vendus en gros** en tant que hiérarchies de données (avec la fonction d’agrégation par défaut Sum) et une **classification** en tant que hiérarchie de filtres (avec l’option **Organic** sélectionnée).
+Voici à nouveau les données de la batterie de serveurs, ainsi qu’un tableau croisé dynamique. Le tableau croisé dynamique utilise farm  **and** **Type** comme hiérarchies de lignes, La vente des **caisses** sur la batterie de serveurs et la vente  **de caisses** en tant que hiérarchies de données (avec la fonction d’agrégation par défaut de somme) et classification en tant que hiérarchie de filtre (avec l’alimentation organique sélectionnée).
 
-![Sélection de données sur les ventes de fruit en regard d’un tableau croisé dynamique avec des hiérarchies de lignes, de données et de filtres.](../images/excel-pivot-table-and-data.png)
+![Sélection de données de ventes de fruit à côté d’un tableau croisé dynamique avec des hiérarchies de lignes, de données et de filtres.](../images/excel-pivot-table-and-data.png)
 
-Ce tableau croisé dynamique peut être généré via l’API JavaScript ou via l’interface utilisateur d’Excel. Ces deux options permettent une manipulation supplémentaire via les compléments.
+Ce tableau croisé dynamique peut être généré par le biais de l’API JavaScript ou de l’interface utilisateur d’Excel. Les deux options permettent d’autres manipulations par le biais de leurs modules.
 
 ## <a name="create-a-pivottable"></a>Créer un tableau croisé dynamique
 
-Les tableaux croisés dynamiques nécessitent un nom, une source et une destination. La source peut être une adresse de plage ou un nom de table (transmis en tant que `Range` `string` type, ou `Table` type). La destination est une adresse de plage (sous la forme a `Range` ou `string` ).
-Les exemples suivants illustrent différentes techniques de création de tableau croisé dynamique.
+Les tableaux croisés dynamiques ont besoin d’un nom, d’une source et d’une destination. La source peut être une adresse de plage ou un nom de table (transmis en tant `Range` `string` que , ou `Table` type). La destination est une adresse de plage (donnée en tant que a `Range` ou `string` ).
+Les exemples suivants montrent différentes techniques de création de tableau croisé dynamique.
 
 ### <a name="create-a-pivottable-with-range-addresses"></a>Créer un tableau croisé dynamique avec des adresses de plage
 
@@ -74,7 +74,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="create-a-pivottable-with-range-objects"></a>Création d’un tableau croisé dynamique avec des objets Range
+### <a name="create-a-pivottable-with-range-objects"></a>Créer un tableau croisé dynamique avec des objets Range
 
 ```js
 Excel.run(function (context) {
@@ -89,7 +89,7 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="create-a-pivottable-at-the-workbook-level"></a>Création d’un tableau croisé dynamique au niveau du classeur
+### <a name="create-a-pivottable-at-the-workbook-level"></a>Créer un tableau croisé dynamique au niveau du workbook
 
 ```js
 Excel.run(function (context) {
@@ -104,7 +104,7 @@ Excel.run(function (context) {
 
 ## <a name="use-an-existing-pivottable"></a>Utiliser un tableau croisé dynamique existant
 
-Les tableaux croisés dynamiques créés manuellement sont également accessibles via la collection de tableau croisé dynamique du classeur ou de feuilles de calcul individuelles. Le code suivant obtient un tableau croisé dynamique nommé **mon tableau croisé dynamique** à partir du classeur.
+Les tableaux croisés dynamiques créés manuellement sont également accessibles via la collection de tableaux croisés dynamiques du manuel ou des feuilles de calcul individuelles. Le code suivant obtient un tableau croisé dynamique nommé **My Pivot** à partir du workbook.
 
 ```js
 Excel.run(function (context) {
@@ -115,11 +115,11 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-and-columns-to-a-pivottable"></a>Ajouter des lignes et des colonnes à un tableau croisé dynamique
 
-Lignes et colonnes tableau croisé dynamique des données autour de ces valeurs.
+Les lignes et les colonnes pivotent les données autour des valeurs de ces champs.
 
-L’ajout de la colonne **batterie de serveurs** pivote toutes les ventes autour de chaque batterie de serveurs. L’ajout des lignes de type et de **classification** répartit davantage les données en fonction des fruits vendus et s’il s’agit d’un **type** Organic ou non.
+L’ajout **de la** colonne Batterie de serveurs pivote toutes les ventes autour de chaque batterie de serveurs. L’ajout **des lignes Type** et **Classification** décompose davantage les données en fonction des fruit vendus et selon qu’il s’agit d’un produit organique ou non.
 
-![Un tableau croisé dynamique avec une colonne de batterie de serveurs et des lignes de type et de classification.](../images/excel-pivots-table-rows-and-columns.png)
+![Tableau croisé dynamique avec une colonne de batterie de serveurs et des lignes Type et Classification.](../images/excel-pivots-table-rows-and-columns.png)
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 });
 ```
 
-Vous pouvez également utiliser un tableau croisé dynamique avec uniquement des lignes ou des colonnes.
+Vous pouvez également avoir un tableau croisé dynamique avec uniquement des lignes ou des colonnes.
 
 ```js
 Excel.run(function (context) {
@@ -149,11 +149,11 @@ Excel.run(function (context) {
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>Ajouter des hiérarchies de données au tableau croisé dynamique
 
-Les hiérarchies de données remplissent le tableau croisé dynamique avec des informations à combiner en fonction des lignes et des colonnes. L’ajout des hiérarchies de données des **caisses vendues au niveau** de la batterie de serveurs et des **caisses vendus en gros** fournit des sommes de ces chiffres pour chaque ligne et colonne.
+Les hiérarchies de données remplissent le tableau croisé dynamique avec des informations à combiner en fonction des lignes et des colonnes. L’ajout des hiérarchies de données **des caisses vendues** au niveau de la batterie de serveurs et des **caisses vendues permet** d’obtenir les sommes de ces chiffres pour chaque ligne et colonne.
 
-Dans l’exemple, la **batterie de serveurs** et le **type** sont des lignes, avec le caisse ventes comme données.
+Dans l’exemple, **farm** et **Type** sont des lignes, avec les ventes de caisses en tant que données.
 
-![Tableau croisé dynamique illustrant les ventes totales de fruits différents en fonction de la batterie de serveurs à partir de laquelle ils provenaient.](../images/excel-pivots-data-hierarchy.png)
+![Tableau croisé dynamique montrant les ventes totales de différents fruit en fonction de la batterie de serveurs d’où ils sont issus.](../images/excel-pivots-data-hierarchy.png)
 
 ```js
 Excel.run(function (context) {
@@ -172,19 +172,19 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="pivottable-layouts-and-getting-pivoted-data"></a>Dispositions de tableau croisé dynamique et obtention de données croisées dynamiques
+## <a name="pivottable-layouts-and-getting-pivoted-data"></a>Dispositions de tableau croisé dynamique et obtention de données pivotées
 
-Un [PivotLayout](/javascript/api/excel/excel.pivotlayout) définit l’emplacement des hiérarchies et de leurs données. Vous accédez à la disposition pour déterminer les plages dans lesquelles les données sont stockées.
+Un [pivotLayout](/javascript/api/excel/excel.pivotlayout) définit le placement des hiérarchies et leurs données. Vous accédez à la disposition pour déterminer les plages où les données sont stockées.
 
 Le diagramme suivant montre les appels de fonction de disposition qui correspondent aux plages du tableau croisé dynamique.
 
-![Diagramme montrant les sections d’un tableau croisé dynamique renvoyées par les fonctions Get Range de la disposition.](../images/excel-pivots-layout-breakdown.png)
+![Diagramme montrant quelles sections d’un tableau croisé dynamique sont renvoyées par les fonctions get range de la disposition.](../images/excel-pivots-layout-breakdown.png)
 
 ### <a name="get-data-from-the-pivottable"></a>Obtenir des données à partir du tableau croisé dynamique
 
-La disposition définit le mode d’affichage du tableau croisé dynamique dans la feuille de calcul. Cela signifie que l' `PivotLayout` objet contrôle les plages utilisées pour les éléments de tableau croisé dynamique. Utiliser les plages fournies par la disposition pour obtenir les données collectées et les agréger par le tableau croisé dynamique. En particulier, utilisez `PivotLayout.getDataBodyRange` pour accéder à ce que génère le tableau croisé dynamique.
+La disposition définit la façon dont le tableau croisé dynamique est affiché dans la feuille de calcul. Cela signifie que `PivotLayout` l’objet contrôle les plages utilisées pour les éléments de tableau croisé dynamique. Utilisez les plages fournies par la disposition pour obtenir les données collectées et agrégées par le tableau croisé dynamique. En particulier, utilisez `PivotLayout.getDataBodyRange` pour accéder à ce que le tableau croisé dynamique produit.
 
-Le code suivant montre comment obtenir la dernière ligne des données du tableau croisé dynamique en parcourant la disposition ( **Total général** des colonnes de vente en gros des caisses **vendues au** sein de la batterie de serveurs et **de la somme des colonnes de grossiste vendues** dans l’exemple précédent). Ces valeurs sont ensuite additionnées pour un total final, qui s’affiche dans la cellule **E30** (en dehors du tableau croisé dynamique).
+Le code suivant montre comment obtenir la dernière ligne des données du tableau croisé dynamique en passant par la disposition (le **total total des** **montants** vendus à la batterie de serveurs et la somme des **caisses vendues dans** l’exemple précédent). Ces valeurs sont ensuite additionées pour un total final, qui est affiché dans la cellule **E30** (en dehors du tableau croisé dynamique).
 
 ```js
 Excel.run(function (context) {
@@ -202,19 +202,19 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="layout-types"></a>Types de mise en page
+### <a name="layout-types"></a>Types de disposition
 
-Les tableaux croisés dynamiques ont trois styles de disposition : compact, plan et tabulaire. Nous avons vu le style compact dans les exemples précédents.
+Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents.
 
-Les exemples suivants utilisent respectivement les styles de plan et de tableau. L’exemple de code montre comment effectuer un basculement entre les différentes dispositions.
+Les exemples suivants utilisent respectivement les styles plan et tabulaire. L’exemple de code montre comment faire un cycle entre les différentes dispositions.
 
-#### <a name="outline-layout"></a>Mise en page du plan
+#### <a name="outline-layout"></a>Disposition du plan
 
-![Tableau croisé dynamique à l’aide de la mise en forme du plan.](../images/excel-pivots-outline-layout.png)
+![Tableau croisé dynamique utilisant la disposition de plan.](../images/excel-pivots-outline-layout.png)
 
 #### <a name="tabular-layout"></a>Disposition tabulaire
 
-![Un tableau croisé dynamique à l’aide de la disposition tabulaire.](../images/excel-pivots-tabular-layout.png)
+![Tableau croisé dynamique utilisant la disposition tabulaire.](../images/excel-pivots-tabular-layout.png)
 
 ## <a name="delete-a-pivottable"></a>Supprimer un tableau croisé dynamique
 
@@ -229,35 +229,35 @@ Excel.run(function (context) {
 
 ## <a name="filter-a-pivottable"></a>Filtrer un tableau croisé dynamique
 
-La méthode principale de filtrage des données de tableau croisé dynamique est avec PivotFilters. Les segments offrent une méthode de filtrage alternative moins flexible. 
+La méthode principale de filtrage des données de tableau croisé dynamique est avec des filtres de tableau croisé dynamique. Les slicers offrent une autre méthode de filtrage moins flexible. 
 
-[PivotFilters](/javascript/api/excel/excel.pivotfilters) filtre les données en fonction des quatre [catégories de hiérarchie](#hierarchies) d’un tableau croisé dynamique (filtres, colonnes, lignes et valeurs). Il existe quatre types de PivotFilters, permettant le filtrage basé sur la date du calendrier, l’analyse des chaînes, la comparaison des nombres et le filtrage en fonction d’une entrée personnalisée. 
+[Les filtres de tableau](/javascript/api/excel/excel.pivotfilters) croisé dynamique filtrent les données en fonction des quatre [catégories hiérarchiques](#hierarchies) d’un tableau croisé dynamique (filtres, colonnes, lignes et valeurs). Il existe quatre types de filtres de tableau croisé dynamique, ce qui permet le filtrage basé sur les dates du calendrier, l’comparaison des chaînes, la comparaison des nombres et le filtrage en fonction d’une entrée personnalisée. 
 
-Les [segments](/javascript/api/excel/excel.slicer) peuvent être appliqués aux tableaux croisés dynamiques et aux tableaux Excel réguliers. Lorsqu’elle est appliquée à un tableau croisé dynamique, les segments fonctionnent comme un [PivotManualFilter](#pivotmanualfilter) et permettent le filtrage basé sur une entrée personnalisée. Contrairement à PivotFilters, les segments ont un [composant d’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d). Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, vous gérez le filtrage et vous contrôlez son apparence visuelle. 
+[Les slicers peuvent](/javascript/api/excel/excel.slicer) être appliqués à la fois aux tableaux croisés dynamiques et aux tableaux Excel ordinaires. Lorsqu’ils sont appliqués à un tableau croisé dynamique, les slicers fonctionnent comme un [pivotManualFilter](#pivotmanualfilter) et autorisent le filtrage en fonction d’une entrée personnalisée. Contrairement aux filtres de tableau croisé dynamique, les slicers ont un [composant d’interface utilisateur Excel.](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, gérez le filtrage et contrôlez son apparence visuelle. 
 
-### <a name="filter-with-pivotfilters"></a>Filtre avec PivotFilters
+### <a name="filter-with-pivotfilters"></a>Filtrer avec des filtres de tableau croisé dynamique
 
-La fonction [PivotFilters](/javascript/api/excel/excel.pivotfilters) vous permet de filtrer les données de tableau croisé dynamique sur la base des quatre [catégories de hiérarchie](#hierarchies) (filtres, colonnes, lignes et valeurs). Dans le modèle objet PivotTable, `PivotFilters` sont appliquées à un [champ](/javascript/api/excel/excel.pivotfield)de tableau croisé dynamique et chacune `PivotField` peut avoir une ou plusieurs affectations `PivotFilters` . Pour appliquer PivotFilters à un champ de tableau croisé dynamique, les [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) correspondantes du champ doivent être affectées à une catégorie hiérarchique. 
+[Les filtres de tableau](/javascript/api/excel/excel.pivotfilters) croisé dynamique vous permettent de filtrer les données de tableau croisé dynamique en fonction des quatre [catégories hiérarchiques (filtres,](#hierarchies) colonnes, lignes et valeurs). Dans le modèle objet de tableau croisé dynamique, sont appliqués à un champ de tableau croisé dynamique , et chacun peut `PivotFilters` avoir un ou plusieurs [](/javascript/api/excel/excel.pivotfield) `PivotField` `PivotFilters` attribués . Pour appliquer des filtres de tableau croisé dynamique à un champ de tableau croisé dynamique, la [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) correspondante du champ doit être affectée à une catégorie hiérarchique. 
 
-#### <a name="types-of-pivotfilters"></a>Types de PivotFilters
+#### <a name="types-of-pivotfilters"></a>Types de filtres de tableau croisé dynamique
 
-| Type de filtre | Objectif de filtrage | Référence de l’API JavaScript pour Excel |
+| Type de filtre | Objectif du filtre | Référence de l’API JavaScript pour Excel |
 |:--- |:--- |:--- |
-| DateFilter | Filtrage basé sur la date du calendrier. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
+| DateFilter | Filtrage basé sur les dates du calendrier. | [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) |
 | LabelFilter | Filtrage de comparaison de texte. | [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) |
-| ManualFilter | Filtrage de saisie personnalisé. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
+| ManualFilter | Filtrage d’entrée personnalisé. | [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) |
 | ValueFilter | Filtrage de comparaison de nombres. | [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter) |
 
-#### <a name="create-a-pivotfilter"></a>Créer un PivotFilter
+#### <a name="create-a-pivotfilter"></a>Créer un filtre de tableau croisé dynamique
 
-Pour filtrer les données de tableau croisé dynamique avec un filtre de tableau croisé dynamique * (tel qu’un PivotDateFilter), appliquez le filtre à un [champ](/javascript/api/excel/excel.pivotfield)de tableau croisé dynamique. Les quatre exemples de code suivants montrent comment utiliser chacun des quatre types de PivotFilters. 
+Pour filtrer les données de tableau croisé dynamique avec un (par exemple, un ), appliquez `Pivot*Filter` le filtre à un champ de tableau croisé `PivotDateFilter` [dynamique.](/javascript/api/excel/excel.pivotfield) Les quatre exemples de code suivants montrent comment utiliser chacun des quatre types de filtres croisés dynamiques. 
 
 ##### <a name="pivotdatefilter"></a>PivotDateFilter
 
-Le premier exemple de code applique un [PivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) à la date champ PivotField **mis à jour** , en masquant toutes les données avant le **2020-08-01**. 
+Le premier exemple de code applique un [pivotDateFilter](/javascript/api/excel/excel.pivotdatefilter) au champ de tableau croisé dynamique **date-mise** à jour, masquant les données antérieures au **08-2020-08-01**. 
 
 > [!IMPORTANT] 
-> Un filtre de tableau croisé dynamique * ne peut pas être appliqué à un champ PivotField sauf si le PivotHierarchy de ce champ est affecté à une catégorie hiérarchique. Dans l’exemple de code suivant, le `dateHierarchy` doit être ajouté à la catégorie du tableau croisé dynamique `rowHierarchies` pour pouvoir être utilisé pour le filtrage.
+> A `Pivot*Filter` can’t be applied to a PivotField unless that field’s PivotHierarchy is assigned to a hierarchy category. Dans l’exemple de code suivant, le tableau croisé dynamique doit être ajouté à la catégorie du tableau croisé dynamique avant de pouvoir être `dateHierarchy` `rowHierarchies` utilisé pour le filtrage.
 
 ```js
 Excel.run(function (context) {
@@ -289,11 +289,11 @@ Excel.run(function (context) {
 ```
 
 > [!NOTE]
-> Les trois extraits de code suivants affichent uniquement des extraits spécifiques au filtre, au lieu d' `Excel.run` appels complets.
+> Les trois extraits de code suivants affichent uniquement des extraits spécifiques au filtre, au lieu d’appels `Excel.run` complets.
 
 ##### <a name="pivotlabelfilter"></a>PivotLabelFilter
 
-Le deuxième extrait de code montre comment appliquer un [PivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) au **type** PivotField, à l’aide de la `LabelFilterCondition.beginsWith` propriété pour exclure les étiquettes qui commencent par la lettre **L**. 
+Le deuxième extrait de code montre comment appliquer un [pivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) au champ de tableau croisé dynamique **de type,** en utilisant la propriété pour exclure les étiquettes qui commencent par la lettre `LabelFilterCondition.beginsWith` **L**. 
 
 ```js
     // Get the "Type" field.
@@ -312,7 +312,7 @@ Le deuxième extrait de code montre comment appliquer un [PivotLabelFilter](/jav
 
 ##### <a name="pivotmanualfilter"></a>PivotManualFilter
 
-Le troisième extrait de code applique un filtre manuel avec [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) dans le champ **classification** , en filtrant les données qui n’incluent pas la classification **Organic**. 
+Le troisième extrait de code applique un filtre manuel avec [PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter) au champ **Classification,** en filtrant les données qui n’incluent pas la classification **Organique**. 
 
 ```js
     // Apply a manual filter to include only a specific PivotItem (the string "Organic").
@@ -323,7 +323,7 @@ Le troisième extrait de code applique un filtre manuel avec [PivotManualFilter]
 
 ##### <a name="pivotvaluefilter"></a>PivotValueFilter
 
-Pour comparer des nombres, utilisez un filtre de valeur avec [PivotValueFilter](/javascript/api/excel/excel.pivotvaluefilter), comme illustré dans l’extrait de code final. Le `PivotValueFilter` compare les données de la **batterie de serveurs** de la batterie aux données du champ PivotField de **grossiste des caisses vendues** , y compris celles dont la somme des caisses vendues dépasse la valeur **500**. 
+Pour comparer des nombres, utilisez un filtre de valeurs avec [PivotValueFilter,](/javascript/api/excel/excel.pivotvaluefilter)comme illustré dans l’extrait de code final. Compare les données du champ de tableau croisé dynamique de la batterie de serveurs aux données du champ PivotField de la vente de caisses, y compris uniquement les batteries dont la somme des caisses vendues dépasse la valeur `PivotValueFilter` **500**.   
 
 ```js
     // Get the "Farm" field.
@@ -340,9 +340,9 @@ Pour comparer des nombres, utilisez un filtre de valeur avec [PivotValueFilter](
     filterField.applyFilter({ valueFilter: filter });
 ```
 
-#### <a name="remove-pivotfilters"></a>Suppression de PivotFilters
+#### <a name="remove-pivotfilters"></a>Supprimer des filtres de tableau croisé dynamique
 
-Pour supprimer tous les PivotFilters, appliquez la `clearAllFilters` méthode à chaque champ de tableau croisé dynamique, comme illustré dans l’exemple de code suivant. 
+Pour supprimer tous les filtres de tableau croisé dynamique, appliquez la méthode à chaque champ de tableau croisé dynamique, comme `clearAllFilters` illustré dans l’exemple de code suivant. 
 
 ```js
 Excel.run(function (context) {
@@ -360,24 +360,24 @@ Excel.run(function (context) {
 });
 ```
 
-### <a name="filter-with-slicers"></a>Filtre avec des segments
+### <a name="filter-with-slicers"></a>Filtrer avec des slicers
 
-Les [segments](/javascript/api/excel/excel.slicer) permettent aux données d’être filtrées à partir d’un tableau croisé dynamique ou d’un tableau Excel. Un segment utilise des valeurs d’une colonne ou d’un champ PivotField spécifié pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant qu’objets [SlicerItem](/javascript/api/excel/excel.sliceritem) dans le `Slicer` . Votre complément peut ajuster ces filtres, comme les utilisateurs peuvent les[utiliser (par le biais de l’interface utilisateur Excel](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d)). Le segment se trouve au-dessus de la feuille de calcul de la couche de dessin, comme illustré dans la capture d’écran suivante.
+[Les slicers](/javascript/api/excel/excel.slicer) permettent de filtrer les données à partir d’un tableau ou d’un tableau croisé dynamique Excel. Un slicer utilise les valeurs d’une colonne spécifiée ou d’un champ de tableau croisé dynamique pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant [qu’objets SlicerItem](/javascript/api/excel/excel.sliceritem) dans `Slicer` le . Votre add-in peut ajuster ces filtres, tout comme les utilisateurs[(via l’interface utilisateur Excel).](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) Le slicer se trouve au-dessus de la feuille de calcul dans la couche de dessin, comme illustré dans la capture d’écran suivante.
 
-![Données de filtrage de segment sur un tableau croisé dynamique.](../images/excel-slicer.png)
+![Un slicer filtrant des données sur un tableau croisé dynamique.](../images/excel-slicer.png)
 
 > [!NOTE]
-> Les techniques décrites dans cette section se concentrent sur l’utilisation des segments connectés aux tableaux croisés dynamiques. Les mêmes techniques s’appliquent également à l’utilisation de segments connectés à des tables.
+> Les techniques décrites dans cette section se concentrent sur l’utilisation de slicers connectés à des tableaux croisés dynamiques. Les mêmes techniques s’appliquent également à l’utilisation de slicers connectés à des tables.
 
-#### <a name="create-a-slicer"></a>Créer un segment
+#### <a name="create-a-slicer"></a>Créer un slicer
 
-Vous pouvez créer un segment dans un classeur ou une feuille de calcul à l’aide de la `Workbook.slicers.add` méthode ou de la `Worksheet.slicers.add` méthode. Cette opération ajoute un Slicer au [SlicerCollection](/javascript/api/excel/excel.slicercollection) de l’objet spécifié `Workbook` ou `Worksheet` . La `SlicerCollection.add` méthode comporte trois paramètres :
+Vous pouvez créer un slicer dans un workbook ou une feuille de calcul à l’aide `Workbook.slicers.add` de la méthode ou de la `Worksheet.slicers.add` méthode. Cela ajoute un slicer à [la SlicerCollection](/javascript/api/excel/excel.slicercollection) de l’objet `Workbook` ou `Worksheet` spécifié. La `SlicerCollection.add` méthode a trois paramètres :
 
-- `slicerSource`: La source de données sur laquelle le nouveau segment est basé. Il peut s’agir `PivotTable` d’un, `Table` , ou d’une chaîne représentant le nom ou l’ID d’un ou d’un `PivotTable` `Table` .
-- `sourceField`: Champ dans la source de données à utiliser pour filtrer. Il peut s’agir `PivotField` d’un, `TableColumn` , ou d’une chaîne représentant le nom ou l’ID d’un ou d’un `PivotField` `TableColumn` .
-- `slicerDestination`: La feuille de calcul dans laquelle le nouveau segment sera créé. Il peut s’agir `Worksheet` d’un objet ou du nom ou de l’ID d’un `Worksheet` . Ce paramètre n’est pas nécessaire lorsque le `SlicerCollection` est accessible via `Worksheet.slicers` . Dans ce cas, la feuille de calcul de la collection est utilisée comme destination.
+- `slicerSource`: source de données sur laquelle repose le nouveau slicer. Il peut s’agit d’une chaîne , ou d’une chaîne représentant `PivotTable` `Table` le nom ou l’ID d’un `PivotTable` ou `Table` .
+- `sourceField`: champ dans la source de données par lequel filtrer. Il peut s’agit d’une chaîne , ou d’une chaîne représentant `PivotField` `TableColumn` le nom ou l’ID d’un `PivotField` ou `TableColumn` .
+- `slicerDestination`: feuille de calcul dans laquelle le nouveau slicer sera créé. Il peut s’agit `Worksheet` d’un objet ou du nom ou de l’ID d’un `Worksheet` . Ce paramètre est inutile lorsque le `SlicerCollection` paramètre est accessible via `Worksheet.slicers` . Dans ce cas, la feuille de calcul de la collection est utilisée comme destination.
 
-L’exemple de code suivant ajoute un nouveau segment à la feuille de calcul de **tableau croisé dynamique** . La source du Slicer est le tableau croisé dynamique de la **batterie de serveurs** et les filtres utilisant les données de **type** . Le segment est également nommé **segment de fruit** pour référence ultérieure.
+L’exemple de code suivant ajoute un nouveau slicer à la feuille de calcul **Pivot.** La source du slicer  est le tableau croisé dynamique Ventes de batterie de serveurs et filtre à l’aide des **données type.** Le slicer est également nommé **Fruit Slicer pour** référence ultérieure.
 
 ```js
 Excel.run(function (context) {
@@ -391,14 +391,14 @@ Excel.run(function (context) {
 });
 ```
 
-#### <a name="filter-items-with-a-slicer"></a>Filtrer des éléments avec un segment
+#### <a name="filter-items-with-a-slicer"></a>Filtrer des éléments avec un slicer
 
-Le segment filtre le tableau croisé dynamique avec les éléments de la `sourceField` . La `Slicer.selectItems` méthode définit les éléments qui restent dans le Slicer. Ces éléments sont transmis à la méthode en tant que `string[]` , représentant les clés des éléments. Toutes les lignes contenant ces éléments restent dans l’agrégation du tableau croisé dynamique. Appels suivants permettant de `selectItems` définir la liste aux clés spécifiées dans ces appels.
+Le slicer filtre le tableau croisé dynamique avec les éléments du `sourceField` . La `Slicer.selectItems` méthode définit les éléments qui restent dans le slicer. Ces éléments sont transmis à la méthode en tant `string[]` que , représentant les clés des éléments. Toutes les lignes contenant ces éléments restent dans l’agrégation du tableau croisé dynamique. Appels suivants `selectItems` pour définir la liste sur les touches spécifiées dans ces appels.
 
 > [!NOTE]
-> Si reçoit `Slicer.selectItems` un élément qui ne se trouve pas dans la source de données, une `InvalidArgument` erreur est générée. Le contenu peut être vérifié via la `Slicer.slicerItems` propriété, qui est une [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
+> Si un élément qui ne se trouve pas dans la source de données est transmis, une `Slicer.selectItems` `InvalidArgument` erreur est lancée. Le contenu peut être vérifié par le biais de la propriété, qui est `Slicer.slicerItems` un [SlicerItemCollection](/javascript/api/excel/excel.sliceritemcollection).
 
-L’exemple de code suivant montre trois éléments sélectionnés pour le Slicer : **citron**, **citron** et **orange**.
+L’exemple de code suivant montre trois éléments sélectionnés pour le slicer : **Sella,** **Tilleul** et **Orange**.
 
 ```js
 Excel.run(function (context) {
@@ -409,7 +409,7 @@ Excel.run(function (context) {
 });
 ```
 
-Pour supprimer tous les filtres du segment, utilisez la `Slicer.clearFilters` méthode, comme illustré dans l’exemple suivant.
+Pour supprimer tous les filtres du slicer, utilisez la `Slicer.clearFilters` méthode, comme illustré dans l’exemple suivant.
 
 ```js
 Excel.run(function (context) {
@@ -419,9 +419,9 @@ Excel.run(function (context) {
 });
 ```
 
-#### <a name="style-and-format-a-slicer"></a>Style et formatage d’un segment
+#### <a name="style-and-format-a-slicer"></a>Style et mise en forme d’un slicer
 
-Vous pouvez ajuster les paramètres d’affichage d’un segment par le biais de `Slicer` Propriétés. L’exemple de code suivant définit le style sur **SlicerStyleLight6**, définit le texte en haut du Slicer sur **types de fruit**, place le segment à la position **(395, 15)** sur la couche de dessin et définit la taille du Slicer sur **135x150** pixels.
+Vous pouvez ajuster les paramètres d’affichage d’un slicer par le biais de `Slicer` propriétés. L’exemple de code suivant définit le style sur **SlicerStyleLight6,** définit le texte en haut du slicer sur **Types** de fruit, place le slicer à la position **(395, 15)** sur la couche de dessin et définit la taille du slicer à **135 x 150** pixels.
 
 ```js
 Excel.run(function (context) {
@@ -436,9 +436,9 @@ Excel.run(function (context) {
 });
 ```
 
-#### <a name="delete-a-slicer"></a>Supprimer un segment
+#### <a name="delete-a-slicer"></a>Supprimer un slicer
 
-Pour supprimer un segment, appelez la `Slicer.delete` méthode. L’exemple de code suivant supprime le premier segment de la feuille de calcul active.
+Pour supprimer un slicer, appelez la `Slicer.delete` méthode. L’exemple de code suivant supprime le premier slicer de la feuille de calcul actuelle.
 
 ```js
 Excel.run(function (context) {
@@ -450,11 +450,11 @@ Excel.run(function (context) {
 
 ## <a name="change-aggregation-function"></a>Modifier la fonction d’agrégation
 
-Les hiérarchies de données ont leurs valeurs agrégées. Pour les jeux de données de nombres, il s’agit d’une somme par défaut. La `summarizeBy` propriété définit ce comportement en fonction d’un type [AggregationFunction](/javascript/api/excel/excel.aggregationfunction) .
+Les hiérarchies de données ont leurs valeurs agrégées. Pour les jeux de données de nombres, il s’agit d’une somme par défaut. La `summarizeBy` propriété définit ce comportement en fonction d’un type [AggregationFunction.](/javascript/api/excel/excel.aggregationfunction)
 
-Les types de fonction d’agrégation actuellement pris en charge sont `Sum` ,, `Count` `Average` , `Max` , `Min` ,,,,,, `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` et `Automatic` (valeur par défaut).
+Les types de fonctions d’agrégation actuellement pris en charge sont `Sum` `Count` , et `Average` `Max` `Min` `Product` `CountNumbers` `StandardDeviation` `StandardDeviationP` `Variance` `VarianceP` `Automatic` (par défaut).
 
-Les exemples de code suivants modifient l’agrégation pour qu’elle soit la moyenne des données.
+Les exemples de code suivants modifient l’agrégation en moyenne des données.
 
 ```js
 Excel.run(function (context) {
@@ -470,21 +470,21 @@ Excel.run(function (context) {
 });
 ```
 
-## <a name="change-calculations-with-a-showasrule"></a>Modifier les calculs avec une ShowAsRule
+## <a name="change-calculations-with-a-showasrule"></a>Modifier les calculs avec une méthode ShowAsRule
 
-Les tableaux croisés dynamiques agrègent par défaut les données de leurs hiérarchies de ligne et de colonne indépendamment. Un [ShowAsRule](/javascript/api/excel/excel.showasrule) modifie la hiérarchie des données en valeurs de sortie en fonction d’autres éléments du tableau croisé dynamique.
+Par défaut, les tableaux croisés dynamiques agrègent les données de leurs hiérarchies de lignes et de colonnes indépendamment. Un [objet ShowAsRule](/javascript/api/excel/excel.showasrule) modifie la hiérarchie de données en valeurs de sortie basées sur d’autres éléments du tableau croisé dynamique.
 
-L' `ShowAsRule` objet possède trois propriétés :
+`ShowAsRule`L’objet possède trois propriétés :
 
-- `calculation`: Type de calcul relatif à appliquer à la hiérarchie de données (la valeur par défaut est `none` ).
-- `baseField`: [Champ de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) dans la hiérarchie contenant les données de base avant l’application du calcul. Étant donné que les tableaux croisés dynamiques Excel ont un mappage un-à-un de la hiérarchie sur champ, vous utiliserez le même nom pour accéder à la hiérarchie et au champ.
-- `baseItem`: La valeur de [PivotItem](/javascript/api/excel/excel.pivotitem) individuelle comparée aux valeurs des champs de base basés sur le type de calcul. Tous les calculs ne nécessitent pas ce champ.
+- `calculation`: type de calcul relatif à appliquer à la hiérarchie de données (la valeur par défaut est `none` ).
+- `baseField`: Champ [de tableau croisé dynamique](/javascript/api/excel/excel.pivotfield) dans la hiérarchie contenant les données de base avant l’application du calcul. Étant donné que les tableaux croisés dynamiques Excel ont un mappage un-à-un de hiérarchie à champ, vous utiliserez le même nom pour accéder à la hiérarchie et au champ.
+- `baseItem`: Tableau [croisé dynamique individuel comparé](/javascript/api/excel/excel.pivotitem) aux valeurs des champs de base en fonction du type de calcul. Tous les calculs ne nécessitent pas ce champ.
 
-L’exemple suivant montre comment définir le calcul sur la **somme des caisses vendues dans** la hiérarchie des données de la batterie de serveurs pour qu’elle soit un pourcentage du total de la colonne.
-Nous souhaitons toujours que la granularité s’étende au niveau du type de fruit, c’est pourquoi nous allons utiliser la hiérarchie des lignes de **type** et le champ sous-jacent.
-L’exemple dispose également d’une **batterie de serveurs** comme première hiérarchie de lignes, de sorte que le nombre total d’entrées de batterie de serveurs affiche également le pourcentage de production de chaque batterie.
+L’exemple suivant définit le calcul de la hiérarchie de données Somme des **caisses vendues** à la batterie de serveurs comme un pourcentage du total des colonnes.
+Nous voulons toujours que la granularité s’étende au niveau du type de fruit. Nous allons donc utiliser la hiérarchie de ligne **Type** et son champ sous-jacent.
+La batterie  de serveurs est également la première hiérarchie de ligne dans l’exemple, de sorte que le nombre total d’entrées de la batterie de serveurs affiche également le pourcentage que chaque batterie de serveurs est responsable de la production.
 
-![Tableau croisé dynamique indiquant le pourcentage de ventes de fruits par rapport au total général pour les batteries individuelles et les types de fruits individuels au sein de chaque batterie de serveurs.](../images/excel-pivots-showas-percentage.png)
+![Tableau croisé dynamique montrant les pourcentages de ventes de fruit par rapport au total global des batteries de serveurs individuelles et des types de fruit individuels au sein de chaque batterie de serveurs.](../images/excel-pivots-showas-percentage.png)
 
 ```js
 Excel.run(function (context) {
@@ -504,12 +504,12 @@ Excel.run(function (context) {
 });
 ```
 
-L’exemple précédent définit le calcul sur la colonne, par rapport au champ d’une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez la `baseItem` propriété.
+L’exemple précédent a fixé le calcul à la colonne, par rapport au champ d’une hiérarchie de lignes individuelle. Lorsque le calcul est lié à un élément individuel, utilisez la `baseItem` propriété.
 
-L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie de données ventes de la batterie de serveurs par rapport à celles d' **une** batterie de serveurs.
-La `baseField` **batterie de serveurs** is, de sorte que nous voyons les différences entre les autres batteries de serveurs, ainsi que les répartitions pour chaque type de fruit similaire (**type** est également une hiérarchie de lignes dans cet exemple).
+L’exemple suivant montre le `differenceFrom` calcul. Il affiche la différence entre les entrées de hiérarchie des données de ventes de la batterie de serveurs par rapport à celles des **batteries de serveurs A**.
+Il s’agit d’une batterie de serveurs, ce qui nous permet de voir les différences entre les autres batteries de serveurs, ainsi que les répartitions pour chaque type de fruit comme ( Le type est également une hiérarchie de lignes dans `baseField` cet exemple). 
 
-![Tableau croisé dynamique montrant les différences entre les ventes de fruit et les autres. Cela montre à la fois la différence entre les ventes de fruits totales des batteries de serveurs et les ventes de types de fruits. Si « une batterie de serveurs » n’a pas vendu un type particulier de fruit, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
+![Tableau croisé dynamique montrant les différences de ventes de fruit entre les « batteries de serveurs » et les autres. Cela montre à la fois la différence entre les ventes totales de fruit des batteries de serveurs et les ventes de types de fruit. Si « Une batterie de serveurs » n’a pas vendu un type particulier de fruit, « #N/A » s’affiche.](../images/excel-pivots-showas-differencefrom.png)
 
 ```js
 Excel.run(function (context) {
@@ -549,5 +549,5 @@ Excel.run(function (context) {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Référence de l’API JavaScript pour Excel](/javascript/api/excel)
