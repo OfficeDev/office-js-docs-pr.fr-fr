@@ -2,13 +2,13 @@
 title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 05/22/2020
-localization_priority: Normal
-ms.openlocfilehash: fe8184a5bd084450c3be6d3d13707bf92f5c508f
-ms.sourcegitcommit: 7d5407d3900d2ad1feae79a4bc038afe50568be0
-ms.translationtype: MT
+localization_priority: Priority
+ms.openlocfilehash: 2b7cda61ee0fe1af99ed726d060d59bbe9e99fa7
+ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "46530491"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "50043903"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -18,24 +18,24 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 
-Pour supprimer tous les compléments versions test chargées d’Excel, Word et PowerPoint, supprimez le contenu du dossier :
+Pour éliminer tous les compléments chargés indépendamment dans Excel, Word et PowerPoint supprimez les contenus du dossier :
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
-Si le dossier suivant existe, supprimez son contenu :
+Si le dossier suivant existe, supprimez également son contenu :
 
 ```
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites dans [chargement des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Choisissez le bouton `...` de sélection () pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du `Wef` dossier comme indiqué précédemment pour Excel, Word et PowerPoint.
+Pour supprimer un complément chargé indépendamment d’Outlook, suivez la procédure décrite dans [Charger indépendamment des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour rechercher le complément dans la section **Compléments personnalisés** de la boîte de dialogue qui répertorie les compléments installés. Sélectionnez les points de suspension (`...`) du complément, puis sélectionnez **Supprimer** pour supprimer ce complément spécifique. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du dossier `Wef` comme indiqué précédemment pour Excel, Word et PowerPoint.
 
 En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Office dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge.
 
 > [!TIP]
-> Si vous souhaitez que le complément versions test chargées reflète uniquement les modifications récentes apportées à ses fichiers HTML ou JavaScript, il n’est pas nécessaire de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **F5** pour recharger le complément.
+> Si vous souhaitez que le complément chargé indépendamment reflète les modifications récentes apportées à ses fichiers sources HTML ou JavaScript, vous n’avez normalement pas besoin de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **F5** pour recharger le complément.
 
 > [!NOTE]
 > Pour vider le cache Office à l'aide des étapes ci-dessous, votre complément doit avoir un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](../outlook/outlook-on-send-addins.md), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](../reference/manifest/sourcelocation.md), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
