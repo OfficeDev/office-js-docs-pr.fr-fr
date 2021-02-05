@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 96bf3a6835b1a0ab6e5aa85a837515a3071e5610
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944304"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104818"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -276,7 +276,7 @@ Ce point d’extension place un basculement adapté au mode dans l’surface de 
 
 L’attribut doit être attribué à l’élément contenu dans ce `Control` point `xsi:type` d’extension. `MobileButton`
 
-Les images doivent être en échelle de gris à `Icon` l’aide d’un code hexas ou de son équivalent `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
+Les images doivent être en échelles de gris à l’aide de code hex ou de son équivalent `Icon` `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
 
 #### <a name="example"></a>Exemple
 
@@ -305,9 +305,9 @@ Les images doivent être en échelle de gris à `Icon` l’aide d’un code hexa
 ### <a name="launchevent-preview"></a>LaunchEvent (aperçu)
 
 > [!NOTE]
-> Ce point d’extension est uniquement pris en charge en [prévisualisation](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web avec un abonnement Microsoft 365.
+> Ce point d’extension est uniquement pris en charge en [prévisualisation](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web et Windows avec un abonnement Microsoft 365.
 
-Ce point d’extension permet à un application de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Actuellement, les seuls événements pris en charge sont `OnNewMessageCompose` et `OnNewAppointmentOrganizer` . Pour en savoir plus sur ce scénario, consultez l’article Configurer votre complément Outlook pour [l’activation](../../outlook/autolaunch.md) basée sur des événements.
+Ce point d’extension permet à un application de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Actuellement, les seuls événements pris en charge sont `OnNewMessageCompose` et `OnNewAppointmentOrganizer` . Pour en savoir plus sur ce scénario, consultez l’article Configurer votre complément Outlook pour [l’activation](../../outlook/autolaunch.md) basée sur un événement.
 
 #### <a name="child-elements"></a>Éléments enfants
 

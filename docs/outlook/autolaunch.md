@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 01/25/2021
+ms.date: 02/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 4790de491b84cfba3b64bfb6c176e7bf1ff42ec7
-ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
+ms.openlocfilehash: a4fce335738d1bcff2be43e4e609998be89fca20
+ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "49990504"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "50104857"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
 
@@ -24,7 +24,7 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 À la fin de cette walkthrough, vous aurez un module qui s’exécute chaque fois qu’un nouveau message est créé.
 
 > [!IMPORTANT]
-> Cette fonctionnalité est uniquement prise en charge pour [la prévisualisation](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web avec un abonnement Microsoft 365. Pour [plus d’informations,](#how-to-preview-the-event-based-activation-feature) voir comment afficher un aperçu de la fonctionnalité d’activation basée sur des événements dans cet article.
+> Cette fonctionnalité est uniquement prise en charge pour [la prévisualisation](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web et Windows avec un abonnement Microsoft 365. Pour [plus d’informations,](#how-to-preview-the-event-based-activation-feature) voir comment afficher un aperçu de la fonctionnalité d’activation basée sur des événements dans cet article.
 >
 > Étant donné que les fonctionnalités d’aperçu sont sujettes à modification sans préavis, elles ne doivent pas être utilisées dans les modules de production.
 
@@ -34,8 +34,10 @@ Nous vous invitons à tester la fonctionnalité d’activation basée sur des é
 
 Pour afficher un aperçu de cette fonctionnalité :
 
-- Référencez **la bibliothèque bêta** sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
-- [Configurez la version ciblée sur votre client Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+- Pour Outlook sur le web :
+  - [Configurez la version ciblée sur votre client Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+  - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve dans le CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
+- Pour Outlook sur Windows : la build minimale requise est 16.0.13729.20000. Rejoignez le [programme Office Insider pour](https://insider.office.com) accéder aux versions bêta d’Office.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -43,7 +45,7 @@ Terminez [le démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer l’activation basée sur des événements de votre complément, vous devez configurer l’élément [Runtimes](../reference/manifest/runtimes.md) et le point d’extension [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) dans le manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
+Pour activer l’activation basée sur des événements de votre complément, vous devez configurer l’élément [Runtimes](../reference/manifest/runtimes.md) et le point d’extension [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) dans le nœud `VersionOverridesV1_1` du manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
@@ -134,7 +136,8 @@ Pour activer l’activation basée sur des événements de votre complément, vo
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/runtime.js" />
+        <!-- Entry needed for Outlook Desktop. -->
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -150,7 +153,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui fait référence au même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
+Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. Ainsi, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes pour les add-ins Outlook, consultez les [manifestes de ces derniers.](manifests.md)
@@ -190,12 +193,24 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     }
     ```
 
-1. À la fin du fichier, ajoutez les instructions suivantes.
+1. Pour que les fonctions fonctionnent dans **Outlook sur le web** avec ce projet généré par le générateur Yeoman pour les applications Office, ajoutez les instructions suivantes à la fin du fichier.
 
     ```js
     g.onMessageComposeHandler = onMessageComposeHandler;
     g.onAppointmentComposeHandler = onAppointmentComposeHandler;
     ```
+
+1. Pour que les fonctions fonctionnent **dans Outlook sur Windows,** ajoutez le code JavaScript suivant à la fin du fichier.
+
+    ```js
+    if (Office.actions) {
+      // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
+      Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
+      Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
+    }
+    ```
+
+    **Remarque**: la vérification `Office.actions` permet de s’assurer qu’Outlook sur le web ignore ces instructions.
 
 ## <a name="try-it-out"></a>Try it out
 
@@ -209,17 +224,21 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur le web, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec l’objet de la composition.](../images/outlook-web-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec l’objet de la composition](../images/outlook-web-autolaunch-1.png)
+
+1. Dans Outlook sur Windows, créez un message.
+
+    ![Capture d’écran d’une fenêtre de message dans Outlook sur Windows avec l’objet de la composition](../images/outlook-win-autolaunch.png)
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur des événements
 
-Les add-ins qui s’activent en fonction des événements sont conçus pour être de courte durée, jusqu’à environ 300 secondes. Nous vous recommandons de demander à votre add-in d’appeler la méthode pour signaler qu’il a terminé `event.completed` le traitement de l’événement de lancement. Le add-in se termine également lorsque l’utilisateur ferme la fenêtre de composition.
+Les add-ins qui s’activent en fonction des événements sont censés être de courte durée, légers et aussi légers que possible. Pour signaler que votre add-in a terminé le traitement de l’événement de lancement, nous vous recommandons de demander à votre module d’appeler la `event.completed` méthode. Si cet appel n’est pas effectué, le délai d’un délai d’environ 300 secondes s’élève à environ 300 secondes, soit la durée maximale autorisée pour l’exécution de ces derniers. Le add-in se termine également lorsque l’utilisateur ferme la fenêtre de composition.
 
 Si l’utilisateur a plusieurs add-ins abonnés au même événement, la plateforme Outlook lance les modules dans un ordre particulier. Actuellement, seuls cinq add-ins basés sur des événements peuvent être activement en cours d’exécution. Tous les compléments supplémentaires sont dirigés vers une file d’attente, puis exécutés à mesure que les compléments précédemment actifs sont terminés ou désactivés.
 
 L’utilisateur peut basculer ou naviguer à partir de l’élément de messagerie actuel où le module a commencé à s’exécute. Le module qui a été lancé terminera son opération en arrière-plan.
 
-Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir des add-ins basés sur des événements. Les API bloquées sont les suivantes.
+Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir des add-ins basés sur des événements. Les API bloquées sont les suivantes :
 
 - Sous `Office.context.mailbox` :
   - `displayAppointmentForm`
