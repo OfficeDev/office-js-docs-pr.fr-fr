@@ -1,14 +1,14 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 description: Fonctionnalités et API actuellement en prévisualisation pour les add-ins Outlook.
-ms.date: 02/02/2021
+ms.date: 02/05/2021
 localization_priority: Normal
-ms.openlocfilehash: 39dd1221f4dea9674c89cdaad20024ce408f8db3
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 92ba3510af0c8b9ebdf9ca4368c889b821a9cb3b
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104839"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173954"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Ensemble de conditions requises de l’API du complément Outlook (aperçu)
 
@@ -20,7 +20,7 @@ Le sous-ensemble de l’API de l’API JavaScript pour Outlook inclut des objets
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> Vous pourrez peut-être afficher un aperçu des fonctionnalités dans Outlook sur le web en configurant la version ciblée [sur votre client Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) « Configurer l’accès à l’aperçu » est indiqué sur cette page pour les fonctionnalités applicables.
+> Vous pourrez peut-être afficher un aperçu des fonctionnalités dans Outlook sur le web en configurant la version ciblée [sur votre client Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) Cette page indique « Configurer l’accès en aperçu » pour les fonctionnalités applicables.
 >
 > Pour d’autres fonctionnalités, vous pouvez demander l’accès aux bits d’aperçu pour Outlook sur le web à l’aide de votre compte Microsoft 365 en remplissant et en envoyant [ce formulaire.](https://aka.ms/OWAPreview) « Demander l’accès en prévisualisation » est indiqué sur ces fonctionnalités.
 
@@ -30,9 +30,9 @@ L’ensemble de conditions requises preview inclut toutes les fonctionnalités d
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
 
-### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation de complément sur des éléments protégés par la Gestion des droits de l’information (IRM)
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation de compléments sur des éléments protégés par la Gestion des droits de l’information (IRM)
 
-Les add-ins peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, un administrateur client doit activer le droit d’utilisation en paramètres de stratégie personnalisée Autoriser l’accès par programme `OBJMODEL` dans Office.  Pour plus [d’informations, voir droits d’utilisation et descriptions.](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions)
+Les add-ins peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, un administrateur client doit activer le droit d’utilisation en paramètres de stratégie personnalisée Autoriser l’accès par programmation `OBJMODEL` dans Office.  Pour plus [d’informations, voir droits d’utilisation et descriptions.](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions)
 
 **Disponible dans**: Outlook sur Windows, à partir de la build 13229.10000 (connecté à un abonnement Microsoft 365)
 
@@ -220,13 +220,13 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 Ajout d’un nouvel objet qui représente les données de session d’un élément.
 
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
 
 #### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
 
 Ajout d’une nouvelle propriété pour gérer les données de session d’un élément en mode Composition.
 
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
 
 ## <a name="see-also"></a>Voir aussi
 
