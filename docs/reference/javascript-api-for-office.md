@@ -5,12 +5,12 @@ title: Documentation référence de l’API JavaScript pour Office
 description: En savoir plus sur les API JavaScript pour Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 128f4fa146ace079c8999083b49fe83b68120b07
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 8c467003bfd3481f35864225876e3ee024910eef
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741126"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234155"
 ---
 # <a name="api-reference-documentation"></a>Documentation de référence de l'API
 
@@ -23,7 +23,7 @@ Un complément peut utiliser les API JavaScript pour Office pour interagir avec 
 
 Vous devez utiliser les API propres à l’application dans la mesure du possible, et utiliser les API communes uniquement pour les scénarios qui ne sont pas pris en charge par les API propres à l’application. Si vous souhaitez en savoir plus sur ces deux modèles API, consultez<a href="../develop/develop-overview.md#api-models">Développement de compléments Office</a>.
 
-<h2>Référence API</h2>
+<h2>Référence d’API</h2>
 
 <ul class="panelContent cardsF cols cols3">
     <li>
