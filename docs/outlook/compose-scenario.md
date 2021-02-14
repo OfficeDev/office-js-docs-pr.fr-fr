@@ -1,14 +1,14 @@
 ---
 title: Créer des compléments Outlook pour les formulaires de composition
 description: Découvrez les scénarios et fonctionnalités des compléments Outlook pour les formulaires de composition.
-ms.date: 04/15/2019
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: e8c12c6705bf466f12a8f16eb7f6024678a0d468
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9156f2e1393c27eea359a6b63da47bc24a8a6828
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608963"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234253"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
 
@@ -56,4 +56,4 @@ Les compléments de composition sont implémentés en tant que [Commandes de com
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main des compléments Outlook pour Office 365](../quickstarts/outlook-quickstart.md)
+- [Prise en main des compléments Outlook pour Office](../quickstarts/outlook-quickstart.md)

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour Outlook.
-ms.date: 01/26/2021
+ms.date: 02/08/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 8838a1fb08b37218bf02a8dc0760a317c2e90e86
-ms.sourcegitcommit: adbc9d59ffa5efdff5afa9115e0990544f2246ab
+ms.openlocfilehash: d3a9255ccba922ecaef5aafe8407e98d4ab2fc33
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "49990511"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234141"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -112,7 +112,7 @@ Les compléments sont pris en charge dans Outlook sur les plateformes suivantes.
 >
 > <sup>3</sup> La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). La prise en charge de la version 1.4 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 13 septembre 2016 pour Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). La prise en charge de la version 1.4 dans Outlook 2016 a été ajoutée dans le cadre la [mise à jour du 3 juillet 2018 pour Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 >
-> <sup>4</sup> prise en charge de la préversion pour le nouvel Outlook sur Mac est disponible dans la version 16.38.506. Pour plus d’informations, consultez la section [nouvelle Outlook sur Mac](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#new-outlook-on-mac-preview).
+> <sup>4</sup> prise en charge de la nouvelle interface utilisateur (préversion) d’Outlook sur Mac est disponible dans la version 16.38.506. Pour plus d’informations, consultez la section [Prise en charge du macro complémentaire dans Outlook sur le nouvel interface d’utilisateur Mac](../../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview).
 >
 > <sup>5</sup> actuellement, d’autres aspects sont à prendre en considération lors de la conception et de l’implémentation de compléments pour les clients mobiles. Par exemple, le seul mode pris en charge est lecture de message. Pour plus d’informations, voir considérations relatives au code [lors de l’ajout de la prise en charge des commandes de complément pour les](../../outlook/add-mobile-support.md#code-considerations)Outlook Mobile.
 

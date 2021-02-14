@@ -1,14 +1,14 @@
 ---
 title: Conditions requises pour les compléments Outlook
 description: Pour que les compléments Outlook se chargent et fonctionnent correctement, les serveurs et les clients doivent répondre à plusieurs conditions.
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 353c03fc0cdfe83c5f775df09dfb7c6b23cca191
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: dd7831ce8ebd1165f920fe24775f46cd8cd7f91c
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294002"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234295"
 ---
 # <a name="outlook-add-in-requirements"></a>Conditions requises pour les compléments Outlook
 
@@ -22,11 +22,11 @@ Pour que les compléments Outlook se chargent et fonctionnent correctement, les 
    - Outlook 2016 ou version ultérieure sur Mac
    - Outlook sur iOS
    - Outlook sur Android
-   - Outlook sur le web pour Exchange 2016 ou une version ultérieure et Office 365
+   - Outlook sur le web pour Exchange 2016 ou une version ultérieure
    - Outlook sur le web pour Exchange 2013
    - Outlook.com
 
-- Le client doit être connecté à un serveur Exchange ou Microsoft 365 par une connexion directe. Lors de la configuration du client, l'utilisateur doit choisir un **Exchange**, **Office 365**, ou**Outlook.com** type de compte. Si le client est configuré pour se connecter avec POP3 ou IMAP, les add-ins ne se chargeront pas.
+- Le client doit être connecté à un serveur Exchange ou Microsoft 365 par une connexion directe. Lors de la configuration du client, l'utilisateur doit choisir un **Exchange**, **Office**, ou **Outlook.com** type de compte. Si le client est configuré pour se connecter avec POP3 ou IMAP, les add-ins ne se chargeront pas.
 
 ## <a name="mail-server-requirements"></a>Configuration requise pour le serveur de messagerie
 

@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/22/2021
+ms.date: 02/09/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: ae14416cd7fbcfeca10e4ace25997395fc9b44c1
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 2ba89f400feaf0664ad98f47d8c933431341466e
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944335"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234190"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -98,10 +98,10 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 > [!NOTE]
 > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
 
     ```command&nbsp;line
-    npm run dev-server
+    npm start
     ```
 
 1. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le complément dans Outlook.
@@ -134,7 +134,7 @@ Félicitations, vous avez créé votre premier complément de volet de tâches O
     > [!NOTE]
     > Si vous avez déjà installé Visual Studio 2019, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée.
 
-- Office 365
+- Microsoft 365
 
     > [!NOTE]
     > Si vous n’avez pas d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en vous inscrivant au [programme développeur Microsoft 365](https://developer.microsoft.com/office/dev-program).
