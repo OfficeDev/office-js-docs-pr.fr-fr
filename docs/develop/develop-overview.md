@@ -3,12 +3,12 @@ title: Développement de compléments Office
 description: Présentation du développement de compléments Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 02ef856d17a82f9e63a555bae09d53d91e6ccc9c
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 0d19ec8203e7141b6667713786d790eb0a12bba2
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839942"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237888"
 ---
 # <a name="develop-office-add-ins"></a>Développement de compléments Office
 

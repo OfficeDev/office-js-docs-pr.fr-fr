@@ -5,12 +5,12 @@ title: Créer des fonctions personnalisées dans Excel
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 97037f201a237cdc6dae551552a0a1609a58b34c
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 804895f3e10cac849dc20b67625e4f30164eb41d
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839872"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237671"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -84,7 +84,7 @@ Pour afficher un manifeste de travail complet à partir d’un exemple de compl�
 
 ## <a name="coauthoring"></a>Co-édition
 
-Excel sur le web et Windows connecté à un abonnement Microsoft 365 vous permettent de co-éditer dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue coauteur est invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
+Excel sur le web et sur Windows connecté à un abonnement Microsoft 365 vous permettent de co-éditer dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue coauteur est invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 

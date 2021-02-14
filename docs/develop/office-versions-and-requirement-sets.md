@@ -1,14 +1,14 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
-description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript
-ms.date: 07/07/2020
+description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript.
+ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 14b88402b1ee563d992b6f37f95be4fa7f337388
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293211"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237664"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -62,4 +62,4 @@ Il existe différentes méthodes pour spécifier les applications Office et les 
 - [Spécifier les exigences en matière d’applications Office et d’API](../develop/specify-office-hosts-and-api-requirements.md)
 - [Installer la dernière version d’Office](../develop/install-latest-office-version.md)
 - [Aperçu des canaux de mise à jour pour les applications Microsoft 365](/deployoffice/overview-of-update-channels-for-office-365-proplus)
-- [Tirez le meilleur parti d’Office avec Office 365](https://products.office.com/compare-all-microsoft-office-products?tab=2)
+- [Réinventez la productivité avec Microsoft 365 et Microsoft Teams](https://products.office.com/compare-all-microsoft-office-products?tab=2)
