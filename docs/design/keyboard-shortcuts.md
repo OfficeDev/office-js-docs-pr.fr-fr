@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans les add-ins Office
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre add-in Office.
 ms.date: 12/17/2020
 localization_priority: Normal
-ms.openlocfilehash: dc99674b92ebb415b1d49fb28821d8c2e34c8077
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 7374c23bacad031024edc7b84da951a8e91fc175
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789148"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237685"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins-preview"></a>Ajouter des raccourcis clavier personnalisés à vos add-ins Office (aperçu)
 
@@ -35,7 +35,7 @@ L’ajout de raccourcis clavier personnalisés nécessite que votre add-in utili
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Lier le fichier de mappage au manifeste
 
-Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, ajoutez un élément `<VersionOverrides>` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez l’attribut sur l’URL complète d’un fichier JSON dans votre projet que vous `Url` créerez à une étape ultérieure.
+Juste *en dessous* (pas à l’intérieur) de l’élément dans le `<VersionOverrides>` manifeste, ajoutez un élément [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez l’attribut sur l’URL complète d’un fichier JSON dans votre projet que vous `Url` créerez à une étape ultérieure.
 
 ```xml
     ...
@@ -86,12 +86,12 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     > [!NOTE]
     > Vous pouvez utiliser « CONTROL » à la place de « Ctrl » tout au long de cet article.
 
-    Dans une étape ultérieure, les actions seront elles-mêmes mappées aux fonctions que vous écrivez. Dans cet exemple, vous masquez ultérieurement SHOWTASKPANE à une fonction qui appelle la méthode et HIDETASKPANE à une fonction qui `Office.addin.showAsTaskpane` appelle la `Office.addin.hide` méthode.
+    Dans une étape ultérieure, les actions seront elles-mêmes mappées sur les fonctions que vous écrivez. Dans cet exemple, vous masquez ultérieurement SHOWTASKPANE à une fonction qui appelle la méthode et HIDETASKPANE à une fonction qui `Office.addin.showAsTaskpane` appelle la `Office.addin.hide` méthode.
 
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>Créer un mappage des actions à leurs fonctions
 
 1. Dans votre projet, ouvrez le fichier JavaScript chargé par votre page HTML dans `<FunctionFile>` l’élément.
-1. Dans le fichier JavaScript, utilisez l’API [Office.actions.associate](/javascript/api/office/office.actions#associate) pour ma cartographier chaque action que vous avez spécifiée dans le fichier JSON sur une fonction JavaScript. Ajoutez le javaScript suivant au fichier. Notez les informations suivantes sur le code :
+1. Dans le fichier JavaScript, utilisez l’API [Office.actions.associate](/javascript/api/office/office.actions#associate) pour ma cartographier chaque action que vous avez spécifiée dans le fichier JSON sur une fonction JavaScript. Ajoutez le javaScript suivant au fichier. Notez ce qui suit à propos du code :
 
     - Le premier paramètre est l’une des actions du fichier JSON.
     - Le deuxième paramètre est la fonction qui s’exécute lorsqu’un utilisateur appuie sur la combinaison de touches mappée à l’action dans le fichier JSON.
@@ -117,7 +117,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     });
     ```
 
-1. Ajoutez un deuxième appel de `Office.actions.associate` fonction pour maque `HIDETASKPANE` l’action sur une fonction qui appelle [Office.addin.hide](/javascript/api/office/office.addin#hide--). Voici un exemple :
+1. Ajoutez un deuxième appel de `Office.actions.associate` fonction pour maque l’action `HIDETASKPANE` sur une fonction qui appelle [Office.addin.hide](/javascript/api/office/office.addin#hide--). Voici un exemple :
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -139,7 +139,7 @@ La suite des étapes précédentes permet à votre add-in de faire tourner la vi
 
 Utilisez les instructions suivantes lors de la spécification des objets dans le tableau de la `action` shortcuts.jssuivantes :
 
-- Les noms des `id` propriétés `name` sont obligatoires.
+- Les noms des `id` propriétés `name` et sont obligatoires.
 - La `id` propriété est utilisée pour identifier de manière unique l’action à appeler à l’aide d’un raccourci clavier.
 - La `name` propriété doit être une chaîne conviviale décrivant l’action. Il doit s’agit d’une combinaison des caractères A - Z, a - z, 0 - 9, et des signes de ponctuation « - », « _ » et « + ».
 - La propriété `type` est facultative. Actuellement, `ExecuteFunction` seul le type est pris en charge.
@@ -198,11 +198,11 @@ Voici un exemple :
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Les touches d’accès, également appelées raccourcis de touches séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H,** ne sont pas pris en charge dans les add-ins Office.
+> Les touches d’accès, également appelées raccourcis clavier séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H,** ne sont pas pris en charge dans les add-ins Office.
 
 ### <a name="using-shortcuts-when-the-focus-is-in-the-task-pane"></a>Utilisation de raccourcis lorsque le focus se trouve dans le volet Des tâches
 
-Pour l’instant, les raccourcis clavier d’un add-in Office ne peuvent être appelés que lorsque le focus de l’utilisateur se trouve dans la feuille de calcul. Lorsque le focus de l’utilisateur se trouve à l’intérieur de l’interface utilisateur d’Office (par exemple, le volet Office), aucun des raccourcis du add-in n’est ignoré. Comme solution de contournement, le add-in peut définir des handlers de clavier qui peuvent appeler certaines actions lorsque le focus de l’utilisateur est à l’intérieur de l’interface utilisateur du add-in.
+Actuellement, les raccourcis clavier d’un add-in Office ne peuvent être appelés que lorsque le focus de l’utilisateur se trouve dans la feuille de calcul. Lorsque le focus de l’utilisateur se trouve à l’intérieur de l’interface utilisateur d’Office (par exemple, le volet Office), aucun des raccourcis du add-in n’est ignoré. Comme solution de contournement, le add-in peut définir des handlers de clavier qui peuvent appeler certaines actions lorsque le focus de l’utilisateur est à l’intérieur de l’interface utilisateur du add-in.
 
 ## <a name="using-key-combinations-that-are-already-used-by-office-or-another-add-in"></a>Utilisation de combinaisons de touches déjà utilisées par Office ou un autre module
 
@@ -213,7 +213,7 @@ Actuellement, il n’existe aucune solution de contournement lorsque deux ou plu
 - Utilisez uniquement les raccourcis clavier avec le modèle suivant dans votre add-in : **Ctrl+Shift+Alt+* x***, où *x* est une autre touche.
 - Si vous avez besoin de raccourcis clavier, consultez la liste des [raccourcis](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)clavier Excel et évitez d’en utiliser un dans votre module.
 
-## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Raccourcis du navigateur qui ne peuvent pas être préférés
+## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Raccourcis de navigateur qui ne peuvent pas être préférés
 
 Vous ne pouvez utiliser aucune des combinaisons de clavier suivantes. Ils sont utilisés par les navigateurs et ne peuvent pas être utilisés. Cette liste est un travail en cours. Si vous découvrez d’autres combinaisons qui ne peuvent pas être overridées, faites-le nous savoir à l’aide de l’outil de commentaires en bas de cette page.
 

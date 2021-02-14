@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un add-in Office.
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: bece18d6b861db97c1f4b455e8ab4ff9ce83a5a8
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: 9061b4c048a133572e615152d61df611e5f15068
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043882"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237862"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -86,7 +86,7 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Office, sauf si :
 
 - la page active dans la boîte de dialogue se trouve dans le même domaine que la page hôte ;
-- La bibliothèque de l’API JavaScript pour Office est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque de l’API JavaScript pour Office, le script de la page doit affecter une méthode à la propriété, bien qu’il puisse s’agit `Office.initialize` d’une méthode vide. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
+- La bibliothèque de l’API JavaScript pour Office est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque d’API JavaScript pour Office, le script de la page doit affecter une méthode à la propriété, bien qu’il puisse s’agit `Office.initialize` d’une méthode vide. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
 Le code de la boîte de dialogue utilise la fonction [messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer une valeur booléenne ou un message de type chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON converti en chaîne ou un autre élément pouvant être sérialisé en chaîne. Voici un exemple :
 
@@ -252,7 +252,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement avec la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée [dans office.onReady ou Office.iniméthodes tialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
+Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement à l’auprès de la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée [dans office.onReady ou Office.iniméthodes tialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
 
 ```javascript
 Office.onReady()
@@ -292,7 +292,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Messagerie conditionnelle d’une page parent à une boîte de dialogue
 
-Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
+Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
 
 > [!NOTE]
 > Dans certains cas, l’API, qui fait partie de l’ensemble de conditions `messageChild` [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte.](parent-to-dialog.md)

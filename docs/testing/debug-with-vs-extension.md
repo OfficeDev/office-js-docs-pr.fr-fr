@@ -1,18 +1,18 @@
 ---
 title: Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 description: Utilisez l’extension Visual Studio code Microsoft Office déboguer votre module de déboguer votre add-in Office.
-ms.date: 05/14/2020
+ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 83791d5d60238288e3059809b8b8c02b1f4f768f
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 60f7e6646cc0bfa2740e3bac0cab5f603b32dd84
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840110"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237930"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
-L Microsoft Office extension de déboguer du Visual Studio pour le code vous permet de déboguer votre add-in Office par rapport au runtime Edge.
+L’extension Microsoft Office déboguer de l’application pour Visual Studio Code vous permet de déboguer votre application Office par rapport à Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage sur Microsoft Edge WebView2 (basé sur Chromium), [consultez cet article.](./debug-desktop-using-edge-chromium.md)
 
 Ce mode de débogage est dynamique, ce qui vous permet de définir des points d’arrêt pendant l’exécution du code. Vous pouvez voir les modifications dans votre code immédiatement lorsque le déboguer est attaché, tout cela sans perdre votre session de débogage. Vos modifications de code sont également persistantes, afin que vous pouvez voir les résultats de plusieurs modifications apportées à votre code. L’image suivante illustre cette extension en action.
 
@@ -50,7 +50,7 @@ Une Visual Studio code est ouvert, accédez manuellement au dossier du projet.
 > [!TIP]
 > Pour ouvrir Visual Studio code en tant qu’administrateur, sélectionnez **l’option** Exécuter en tant qu’administrateur lors de l’ouverture Visual Studio Code après l’avoir recherché dans Windows.
 
-5. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de add-in » et installez-la.
+5. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de l’extension de module de 2013
 
 6. Dans le dossier .vscode de votre projet, ouvrez le **fichierlaunch.jssur.** Ajoutez le code suivant à la `configurations` section :
 
@@ -87,4 +87,4 @@ Une Visual Studio code est ouvert, accédez manuellement au dossier du projet.
 
 * [Débogage des compléments avec les outils de développement sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-* [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md)
+* [Déboguer des applications sur Windows à l’aide de Microsoft Edge WebView2 (basé sur Chromium)](debug-desktop-using-edge-chromium.md)

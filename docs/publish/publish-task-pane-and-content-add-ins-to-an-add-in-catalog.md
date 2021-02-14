@@ -1,14 +1,14 @@
 ---
 title: Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue d’applications pour leur organisation.
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 827c11c5c8666bc1478e36bb9568c536a61c1f63
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 737448a498741ec0327939dc9e562fc04d78a8e5
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408795"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234176"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 
@@ -16,12 +16,12 @@ Un catalogue d’applications est une collection de sites dédiée dans une appl
 
 > [!IMPORTANT]
 > - Les catalogues d’applications sur SharePoint ne prennent pas en charge les fonctionnalités de complément qui sont implémentées dans le nœud `VersionOverrides` du [manifeste de complément](../develop/add-in-manifests.md), comme les commandes de complément.
-> - Si vous ciblez un environnement de Cloud ou hybride, nous vous recommandons d' [utiliser un déploiement centralisé via le centre d’administration Microsoft 365](../publish/centralized-deployment.md) pour publier vos compléments.
+> - Si vous ciblez un environnement cloud ou hybride, nous vous recommandons d’utiliser le déploiement centralisé via le Centre d’administration [Microsoft 365](../publish/centralized-deployment.md) pour publier vos modules.
 > - Les catalogues d’applications dans SharePoint ne sont pas pris en charge par Office sur Mac. Pour déployer des compléments Office sur les clients Mac, vous devez les envoyer à [AppSource](/office/dev/store/submit-to-the-office-store).
 
 ## <a name="create-an-app-catalog"></a>Créer un catalogue d’applications
 
-Suivez les étapes décrites dans l’une des sections suivantes pour créer un catalogue d’applications avec SharePoint Server local ou Office 365.
+Pour créer un catalogue d’applications avec SharePoint Server local ou Microsoft 365, complétez les étapes de l’une des sections suivantes.
 
 ### <a name="to-create-an-app-catalog-for-on-premises-sharepoint-server"></a>Création d’un catalogue d’applications pour SharePoint Server local
 
@@ -31,23 +31,23 @@ Une fois que vous avez créé le catalogue d’applications, suivez les étapes 
 
 ### <a name="to-create-an-app-catalog-on-microsoft-365"></a>Pour créer un catalogue d’applications sur Microsoft 365
 
-Pour créer le catalogue d’applications SharePoint, suivez les instructions de [la rubrique créer la collection de sites de catalogue d’applications](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection). Une fois que vous avez créé le catalogue d’applications, suivez les étapes de la section suivante pour publier un complément Office.
+Pour créer le catalogue d’applications SharePoint, suivez les instructions de la collection de sites Créer le [catalogue d’applications.](/sharepoint/use-app-catalog#step-1-create-the-app-catalog-site-collection) Une fois que vous avez créé le catalogue d’applications, suivez les étapes de la section suivante pour publier un add-in Office.
 
 ## <a name="publish-an-office-add-in"></a>Publier un complément Office
 
-Suivez les étapes décrites dans l’une des sections suivantes pour publier un complément Office dans un catalogue d’applications sur Microsoft 365 ou SharePoint Server sur site.
+Complétez les étapes de l’une des sections suivantes pour publier un add-in Office dans un catalogue d’applications sur Microsoft 365 ou SharePoint Server local.
 
-### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>Pour publier un complément Office dans un catalogue d’applications SharePoint sur Microsoft 365
+### <a name="to-publish-an-office-add-in-to-a-sharepoint-app-catalog-on-microsoft-365"></a>Pour publier un add-in Office dans un catalogue d’applications SharePoint sur Microsoft 365
 
 1. Accédez à la [Page de sites actifs du nouveau Centre d’administration SharePoint](https://admin.microsoft.com/sharepoint?page=siteManagement&modern=true) et connectez-vous à l’aide d’un compte disposant des [autorisations d’administrateur](/sharepoint/sharepoint-admin-role) pour votre organisation.
 
     > [!NOTE]
-    > Si vous disposez de Microsoft 365 Germany, connectez-vous [au centre d’administration de microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=848041), puis accédez au centre d’administration SharePoint et ouvrez la page autres fonctionnalités. <br>Si vous avez Microsoft 365 géré par 21Vianet (Chine), [Connectez-vous au centre d’administration de microsoft 365](https://go.microsoft.com/fwlink/p/?linkid=850627), puis accédez au centre d’administration SharePoint et ouvrez la page autres fonctionnalités.
+    > Si vous disposez de Microsoft 365 Germany, connectez-vous au Centre d’administration [Microsoft 365,](https://go.microsoft.com/fwlink/p/?linkid=848041)puis accédez au Centre d’administration SharePoint et ouvrez la page Autres fonctionnalités. <br>Si vous avez Microsoft 365 géré par 21Vianet (Chine), connectez-vous au Centre d’administration [Microsoft 365,](https://go.microsoft.com/fwlink/p/?linkid=850627)puis accédez au Centre d’administration SharePoint et ouvrez la page Autres fonctionnalités.
 
 1. Ouvrez le site de catalogue d’applications en sélectionnant son URL dans la colonne URL.
 
     > [!NOTE]
-    > Si vous venez de créer le site de catalogue d’applications dans la section précédente, la configuration du site peut prendre quelques minutes.
+    > Si vous avez créé le site de catalogue d’applications dans la section précédente, la configuration du site peut prendre quelques minutes.
 
 1. Choisissez **Distribuer des applications pour Office**.
 1. Dans la page **Applications pour Office**, cliquez sur **Nouveau**.
@@ -93,4 +93,4 @@ Pour les applications Office sur le bureau, vous pouvez rechercher des compléme
 1. Dans la boîte de dialogue Compléments Office, choisissez l’onglet **MON ORGANISATION** Les compléments Office sont alors affichés.
 1. Choisissez un complément Office, puis sélectionnez **Ajouter**.
 
-Par ailleurs, un administrateur peut spécifier un catalogue d’applications sur SharePoint à l’aide d’une stratégie de groupe. Les paramètres de stratégie pertinents sont disponibles dans les [fichiers de modèle d’administration (ADMX/adml) pour les applications Microsoft 365, office 2019 et office 2016](https://www.microsoft.com/download/details.aspx?id=49030) et se trouvent sous **User Configuration administration\Microsoft Office 2016 \ Security Settings\Trust approuvés Catalogs**.
+Par ailleurs, un administrateur peut spécifier un catalogue d’applications sur SharePoint à l’aide d’une stratégie de groupe. Les paramètres de stratégie appropriés sont disponibles dans les fichiers de modèles d’administration [(ADMX/ADML) pour Microsoft 365 Apps, Office 2019 et Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) et se trouvent sous **Configuration utilisateur\Stratégies\Modèles d’administration\Microsoft Office 2016\Paramètres de sécurité\Centre** de gestion de la confidentialité\Catalogues de confiance.

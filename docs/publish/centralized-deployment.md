@@ -1,23 +1,23 @@
 ---
-title: Publier des add-ins Office à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365
+title: Publier des add-ins Office à l’aide d’un déploiement centralisé via le Centre d’administration Microsoft 365
 description: Découvrez comment utiliser le déploiement centralisé pour déployer des add-ins internes ainsi que des add-ins fournis par des isvs.
-ms.date: 01/12/2021
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: c1f36d1ad640adbecdd3338200e742e76831a67a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 479c80e2898f4c875f0c108fc6ab40fe54a4de1a
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839753"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234204"
 ---
-# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publier des add-ins Office à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365
+# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publier des add-ins Office à l’aide d’un déploiement centralisé via le Centre d’administration Microsoft 365
 
 Le Centre d’administration Microsoft 365 permet aux administrateurs de déployer facilement des add-ins Office pour des utilisateurs et des groupes au sein de leur organisation. Les compléments déployés via le centre d’administration sont disponibles pour les utilisateurs directement dans leurs applications Office, sans qu’aucune configuration client ne soit requise. Vous pouvez utiliser le déploiement centralisé pour déployer des compléments internes, ainsi que des compléments fournis par des éditeurs de logiciels indépendants.
 
 Le Centre d’administration Microsoft 365 prend actuellement en charge les scénarios suivants.
 
 - Déploiement centralisé de nouveaux compléments et de ceux mis à jour pour des utilisateurs, des groupes ou une organisation.
-- Déploiement sur plusieurs plateformes clientes, notamment Windows, Mac et le web. Pour Outlook, le déploiement vers iOS et Android est également pris en charge. (Toutefois, alors que l’installation utilisateur des applications pour Excel, Outlook, Word et PowerPoint sur iPad est prise en charge, le déploiement centralisé sur iPad **n’est** pas pris en charge.)
+- Déploiement sur plusieurs plateformes clientes, notamment Windows, Mac et le web. Pour Outlook, le déploiement vers iOS et Android est également pris en charge. (Toutefois, si l’installation utilisateur des applications pour Excel, Outlook, Word et PowerPoint sur iPad est prise en charge, le déploiement centralisé sur iPad **n’est** pas pris en charge.)
 - Déploiement en anglais et pour les clients du monde entier.
 - Déploiement de compléments hébergés sur le cloud.
 - Déploiement de compléments hébergés au sein d’un pare-feu.
@@ -44,7 +44,7 @@ Selon la taille de l’audience cible, vous pouvez ajouter des étapes à cette 
 
 ## <a name="publish-an-office-add-in-via-centralized-deployment"></a>Publication d’un complément Office via le déploiement centralisé
 
-Avant de commencer, confirmez que votre organisation répond à toutes les conditions requises pour l’utilisation du déploiement centralisé, comme décrit dans Déterminer si le déploiement centralisé des modules est efficace pour votre organisation [Microsoft 365.](/microsoft-365/admin/manage/centralized-deployment-of-add-ins)
+Avant de commencer, confirmez que votre organisation répond à toutes les conditions requises pour utiliser le déploiement centralisé, comme décrit dans Determine [if Centralized Deployment of add-ins works for your Microsoft 365 organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
 
 Si votre organisation répond à toutes les conditions requises, procédez comme suit pour publier un complément Office via un déploiement centralisé :
 
@@ -67,7 +67,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     > [!NOTE]
     > Avec l’option Office Store, les mises à jour et améliorations du complément sont automatiquement disponibles pour les utilisateurs sans intervention de votre part.
 
-    ![Sélectionnez une boîte de dialogue de ajout dans le Centre d’administration Microsoft 365](../images/select-an-add-in.png)
+    ![Sélectionnez une boîte de dialogue de add-in dans le Centre d’administration Microsoft 365](../images/select-an-add-in.png)
 
 9. Choisissez **Continuer** après avoir passé en revue les détails du module, la politique de confidentialité et les termes du contrat de licence.
 
@@ -75,12 +75,12 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
 
 10. Dans la page **Attribuer des utilisateurs,** sélectionnez **Tout le** monde, **Utilisateurs/Groupes** spécifiques ou **Moi seul.** Utilisez la zone de recherche pour trouver les utilisateurs et groupes vers lesquels vous voulez déployer le complément. Pour les add-ins Outlook, vous pouvez également choisir la méthode de déploiement **Fixe,** **Disponible** ou **Facultatif**.
 
-    ![Gérer les utilisateurs ayant accès à la méthode de déploiement dans le Centre d’administration Microsoft 365](../images/manage-users-deployment-admin-center.png)
+    ![Gérer les personnes qui disposent de la méthode d’accès et de déploiement dans le Centre d’administration Microsoft 365](../images/manage-users-deployment-admin-center.png)
 
     > [!NOTE]
-    > Les add-ins qui utilisent l' [sign-on unique (SSO)](../develop/sso-in-office-add-ins.md) invitent l’administrateur à consentir aux étendues répertoriées dans le manifeste du add-in.  Si le même service de backing est utilisé sur plusieurs modules (le même ID d’application Azure est utilisé avec l' chacune d’elles), les étendues de chaque application sont invités à donner leur consentement à chaque déploiement. Cette page affiche également la liste des autorisations dont le module a besoin.
+    > Les add-ins qui utilisent l' [sign-on unique (SSO)](../develop/sso-in-office-add-ins.md) invitent l’administrateur à consentir aux étendues répertoriées dans le manifeste du add-in.  Si le même service de backing est utilisé dans plusieurs applications (le même ID d’application Azure est utilisé avec ssO dans différents modules), les étendues de chaque application sont invités à donner leur consentement à chaque déploiement. Cette page affiche également la liste des autorisations dont le module a besoin.
 
-11. Lorsque vous avez terminé, choisissez **Déployer.** Ce processus peut prendre jusqu’à trois minutes. Ensuite, terminez la procédure en appuyant sur **Suivant**. Votre complément apparaît à présent avec d’autres applications dans Office 365.
+11. Lorsque vous avez terminé, choisissez **Déployer.** Ce processus peut prendre jusqu’à trois minutes. Ensuite, terminez la procédure en appuyant sur **Suivant**. Votre application s’y voit désormais avec d’autres applications Office.
 
     > [!NOTE]
     > Lorsqu’un administrateur choisit **Déployer,** le consentement est donné pour tous les utilisateurs.
@@ -114,7 +114,7 @@ Le tableau suivant décrit les différents états qui s’appliquent à un compl
 
 ## <a name="updating-office-add-ins-that-are-published-via-centralized-deployment"></a>Mise à jour des compléments Office publiés via un déploiement centralisé
 
-Une fois qu’un add-in Office a été publié via un déploiement centralisé, toutes les modifications apportées à l’application web du add-in seront automatiquement disponibles pour tous les utilisateurs une fois ces modifications implémentées dans l’application web. Les modifications apportées au fichier manifeste [XML](../develop/add-in-manifests.md) d’un add-in pour, par exemple, mettre à jour l’icône du module, le texte ou les commandes de ce dernier, se produisent comme suit :
+Une fois qu’un add-in Office a été publié via un déploiement centralisé, toutes les modifications apportées à l’application web du add-in seront automatiquement disponibles pour tous les utilisateurs une fois ces modifications implémentées dans l’application web. Les modifications apportées au fichier manifeste [XML](../develop/add-in-manifests.md) d’un add-in pour, par exemple, mettre à jour l’icône, le texte ou les commandes du module, se produisent comme suit :
 
 - **Add-in** métier : si un administrateur a téléchargé explicitement un fichier manifeste (à partir de son appareil ou en pointant vers une URL) lors de l’implémentation du déploiement centralisé via le Centre d’administration Microsoft 365, l’administrateur doit télécharger un nouveau fichier manifeste qui contient les modifications souhaitées. Une fois que le fichier manifeste a été chargé, le complément est mis à jour au démarrage suivant des applications Office concernées.
 

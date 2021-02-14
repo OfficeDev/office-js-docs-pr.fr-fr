@@ -138,7 +138,7 @@ items:
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
           - name: Interface utilisateur et UX
             items:
-              - name: Présentation
+              - name: Vue d’ensemble
                 href: design/add-in-design.md
               - name: Conseils
                 items:
@@ -496,6 +496,8 @@ items:
                     href: reference/manifest/officemenu.md
                   - name: OfficeTab
                     href: reference/manifest/officetab.md
+                  - name: OverriddenByRibbonApi
+                    href: reference/manifest/overriddenbyribbonapi.md
                   - name: Page
                     href: reference/manifest/page.md
                   - name: Ressources

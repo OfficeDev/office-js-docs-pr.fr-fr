@@ -1,14 +1,14 @@
 ---
 title: Configuration de votre environnement de développement
 description: Configurer votre environnement de développement pour créer des add-ins Office.
-ms.date: 10/14/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: eddf8bdf7b20a54667e6f8eb38bdace801ea1813
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 1dd0cc6bb035a0274e36fe9916dcd2481bdf0b39
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839711"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234127"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
@@ -29,7 +29,7 @@ Installez Node.js en [téléchargeant la dernière version recommandée à parti
 
 ## <a name="install-npm"></a>Installer npm
 
-npm est un registre de logiciel open source à partir duquel télécharger les packages utilisés dans le développement de modules office.
+npm est un registre logiciel open source à partir duquel télécharger les packages utilisés dans le développement de applications Office.
 
 Pour installer npm, exécutez la commande suivante dans la ligne de commande :
 
@@ -45,9 +45,9 @@ npm -v
 
 Vous pouvez utiliser un gestionnaire de version Node pour vous permettre de basculer entre plusieurs versions de Node.js et npm, mais cela n’est pas strictement nécessaire. Pour plus d’informations sur la façon de faire, voir [les instructions de npm.](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-## <a name="get-office-365"></a>Obtenir Office 365
+## <a name="get-microsoft-365"></a>Obtenir Microsoft 365
 
-Si vous n’avez pas déjà un compte Office 365, vous pouvez obtenir gratuitement un abonnement de 90 jours renouvelable de Microsoft 365 en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
+Si vous n’avez pas encore de compte Microsoft 365, vous pouvez obtenir un abonnement Microsoft 365 renouvelable gratuit de 90 jours qui inclut toutes les applications Office en rejoignant le programme pour les développeurs [Microsoft 365.](https://developer.microsoft.com/office/dev-program)
 
 ## <a name="install-a-code-editor"></a>Installer un éditeur de code
 
@@ -72,7 +72,7 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
-- [Développement de add-ins Office](../develop/develop-overview.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
 - [Publier des compléments Office](../publish/publish.md)

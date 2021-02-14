@@ -1,30 +1,30 @@
 ---
-title: Chargement de compléments Office à des fins de test à partir d’un partage réseau
-description: Découvrez comment chargement un complément Office à des fins de test à partir d’un partage réseau
+title: Chargement de version test des add-ins Office à partir d’un partage réseau
+description: Découvrez comment recharger une version test d’un add-in Office à partir d’un partage réseau
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 268fb79c6340aa2d0b8e8278683a0c47b3b60c0e
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7e584b5543d988ed51f932254d48981d51afa0fc
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611245"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237972"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de compléments Office à des fins de test à partir d’un partage réseau
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de version test des add-ins Office à partir d’un partage réseau
 
-Vous pouvez tester un complément Office dans un client Office qui se trouve sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un hôte local et que vous souhaitez tester le complément à partir d’un serveur non local ou d’un compte Cloud.
+Vous pouvez tester un add-in Office dans un client Office qui se trouve sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le module à partir d’un serveur non local ou d’un compte cloud.
 
 > [!IMPORTANT]
-> Le déploiement par partage réseau n’est pas pris en charge pour les compléments de production. Cette méthode présente les limitations suivantes :
+> Le déploiement par partage réseau n’est pas pris en charge pour les modules de production. Cette méthode présente les limitations suivantes :
 > 
-> - Le complément peut uniquement être installé sur les ordinateurs Windows.
-> - Si une nouvelle version d’un complément modifie le ruban, chaque utilisateur doit réinstaller le complément...
+> - Le module peut uniquement être installé sur des ordinateurs Windows.
+> - Si une nouvelle version d’un add-in change le ruban, chaque utilisateur devra réinstaller le module.
 
 
 > [!NOTE]
 > Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
-Cet article s’applique uniquement au test des compléments Word, Excel, PowerPoint et Project et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
+Cet article s’applique uniquement au test des applications word, Excel, PowerPoint et Project, et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -74,7 +74,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
     ![Boîte de dialogue Centre de gestion de la confidentialité avec le catalogue sélectionné](../images/sideload-windows-trust-center-dialog.png)
 
-8. Cliquez sur le bouton **OK** pour fermer la boîte de dialogue **options** .
+8. Sélectionnez le **bouton OK** pour fermer la boîte de dialogue **Options.**
 
 9. Fermez et ouvrez de nouveau l’application Office afin que vos modifications prennent effet.
 
@@ -126,9 +126,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 4. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer celui-ci.
 
-## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
+## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Vous pouvez supprimer un complément précédemment versions test chargées en effaçant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon d’effacer le cache sur Windows, consultez l’article [effacer le cache Office](clear-cache.md#clear-the-office-cache-on-windows).
+Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon de effacer le cache sur Windows, voir l’article [Effacer le cache Office.](clear-cache.md#clear-the-office-cache-on-windows)
 
 ## <a name="see-also"></a>Voir aussi
 

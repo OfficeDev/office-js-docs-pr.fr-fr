@@ -3,12 +3,12 @@ title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 7bf64b3a49228ade65350f9d730e68ec71401c60
-ms.sourcegitcommit: 8546889a759590c3798ce56e311d9e46f0171413
+ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "50104818"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237706"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -261,7 +261,7 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-Ce point d’extension place un basculement adapté au mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un application mobile Outlook pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
+Ce point d’extension place un basculement approprié en mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un application mobile Outlook pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
 
 > [!NOTE]
 > Ce point d’extension est uniquement pris en charge sur Android avec un abonnement Microsoft 365.
@@ -305,7 +305,7 @@ Les images doivent être en échelles de gris à l’aide de code hex ou de son 
 ### <a name="launchevent-preview"></a>LaunchEvent (aperçu)
 
 > [!NOTE]
-> Ce point d’extension est uniquement pris en charge en [prévisualisation](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web et Windows avec un abonnement Microsoft 365.
+> Ce point d’extension est uniquement pris en charge en [prévisualisation](../objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur le web et sur Windows avec un abonnement Microsoft 365.
 
 Ce point d’extension permet à un application de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Actuellement, les seuls événements pris en charge sont `OnNewMessageCompose` et `OnNewAppointmentOrganizer` . Pour en savoir plus sur ce scénario, consultez l’article Configurer votre complément Outlook pour [l’activation](../../outlook/autolaunch.md) basée sur un événement.
 

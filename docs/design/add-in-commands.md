@@ -1,14 +1,14 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 11/01/2020
+ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: b2f63e3a7d0e112b698b4913590d81c2015970d2
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: c9d69b21be5cca0c37feb14f43649b55df532466
+ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132157"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "50173947"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -73,12 +73,18 @@ Vous pouvez insérer les boutons prédéfinis du ruban Office dans vos groupes p
 > [!NOTE]
 > Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni dans tous les scénarios. Pour plus d’informations, voir [Intégrer des boutons prédéfinis Office dans les onglets personnalisés](built-in-button-integration.md).
 
+### <a name="contextual-tabs-preview"></a>Onglets contextuels (préversion)
+
+Vous pouvez spécifier qu’un onglet n’est visible que dans le ruban dans certains contextes, par exemple lorsque vous sélectionnez un graphique dans Excel.
+
+> [!NOTE]
+> Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni dans tous les scénarios. Si vous souhaitez en savoir, veuillez consulter la rubrique [Créer des onglets contextuels personnalisés dans des compléments Office](contextual-tabs.md).
 
 ## <a name="supported-platforms"></a>Plateformes prises en charge
 
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes, à l’exception des limitations spécifiées plus haut dans les sous-sections de [Fonctionnalités de commande](#command-capabilities).
 
-- Office sur Windows (build 16.0.6769+ connectée à un abonnement Microsoft 365)
+- Office on Windows (build 16.0.6769+, connecté à un abonnement Microsoft 365)
 - Office 2019 sur Windows
 - Office sur Mac (build 15.33+, connecté à un abonnement Microsoft 365)
 - Office 2019 sur Mac
@@ -102,17 +108,18 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
   - Placez les commandes sous l’onglet Accueil si la fonctionnalité ne correspond à aucun autre onglet, et si vous avez moins de six commandes de niveau supérieur. Vous pouvez également ajouter des commandes à l’onglet Accueil si votre complément doit fonctionner sur toutes les versions d’Office (par exemple, Office sur le web ou le bureau) et si un onglet n’est pas disponible dans toutes les versions (par exemple, si l’onglet Création n’existe pas dans Office sur le web).  
   - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur.
   - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
-  - N’ajoutez pas de boutons superflus pour augmenter la surface réservée de votre complément.
+  - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
   - Ne positionnez pas un onglet personnalisé à gauche de l’onglet d’Accueil, ou ne lui donnez pas le focus par défaut lors de l’ouverture du document, sauf si votre complément est le principal mode d’interaction des utilisateurs avec le document. Donner une importance excessive à votre complément dérange et contrarie les utilisateurs et les administrateurs.
   - Si votre complément est le principal mode d’interaction des utilisateurs avec le document et que vous avez un onglet de ruban personnalisé, envisagez d’intégrer dans l’onglet les boutons de fonctions d’Office dont les utilisateurs ont fréquemment besoin.
+  - Si la fonctionnalité fournie avec un onglet personnalisé ne doit être disponible que dans certains contextes, utilisez les [onglets contextuels personnalisés](contextual-tabs.md). Si vous utilisez des onglets contextuels personnalisés, veillez à implémenter une [expérience de secours pour les cas d’utilisation de votre complément sur des plateformes qui ne prennent pas en charge les onglets contextuels personnalisés](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
   > [!NOTE]
-  > Les compléments qui prennent trop d’espace peuvent ne pas obtenir la [validation AppSource](/legal/marketplace/certification-policies).
+  > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](/legal/marketplace/certification-policies).
 
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de votre complément qui fonctionne aussi sur les applications Office qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner à la fois dans les applications sensibles aux commandes (avec des commandes) et non sensibles aux commandes (sous forme de volet de tâches).
 
-   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
+   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
 
    ![Capture d’écran comparant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016. Dans la version 2013, le volet Office doit contenir toutes les commandes, tandis que dans la version 2016, les commandes peuvent se trouver dans le ruban.](../images/office-task-pane-add-ins.png)
 

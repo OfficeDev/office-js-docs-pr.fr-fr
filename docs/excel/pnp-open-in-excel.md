@@ -1,14 +1,14 @@
 ---
 title: Ouvrez Excel à partir de votre page web et incorporez votre add-in Office
 description: Ouvrez Excel à partir de votre page web et incorporez votre add-in Office.
-ms.date: 09/15/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: a88cc647fc1dba8ab6e6ddc0b504aab96517026a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 437174b2fe9d04e3b25d42159efe7b38f45eb90c
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839865"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237923"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrez Excel à partir de votre page web et incorporez votre add-in Office
 
@@ -22,7 +22,7 @@ Cet article vous présente le code et les techniques permettant d’implémenter
 
 ## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>Créer un document Excel et incorporer un add-in Office
 
-Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L’exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) de l’add-in [OOXML Office](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) montre comment incorporer le module de laboratoire de script dans un nouveau document Office. Bien que l’exemple fonctionne avec n’importe quel document Office, nous nous concentrerons simplement sur les feuilles de calcul Excel dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
+Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L’exemple de code du module d’incorporation [ooXML Office](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) montre comment incorporer le module de laboratoire de script dans un nouveau document Office. [](https://appsource.microsoft.com/product/office/wa104380862) Bien que l’exemple fonctionne avec n’importe quel document Office, nous nous concentrerons simplement sur les feuilles de calcul Excel dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
 
 1. Extrayez l’exemple de code  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier de votre ordinateur.
 2. Pour créer et exécuter l’exemple, suivez les étapes de la section **Pour utiliser le** projet du lisez-moi.
@@ -51,7 +51,7 @@ Le fichier **OOXMLHelper.cs**:
 - Utilise une technique standard pour valider le fichier Office, qui consiste simplement à appeler la **méthode Document.Open** dessus. Si le fichier n’est pas valide, la méthode envoie une exception.
 - Contient principalement du code généré par les outils de productivité du SDK Open XML 2.5 qui sont disponibles sur le lien du [SDK Open XML 2.5.](/office/open-xml/open-xml-sdk)
 
-La **méthode GenerateWebExtensionPart1Content** du **fichier OOXMLHelper.cs** définit la référence à l’ID de Script Lab dans Microsoft AppSource :
+La **méthode GenerateWebExtensionPart1Content** du fichier **OOXMLHelper.cs** définit la référence à l’ID de Script Lab dans Microsoft AppSource :
 
 ```csharp
 We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionStoreReference() { Id = "wa104380862", Version = "1.1.0.0", Store = "en-US", StoreType = "OMEX" };
@@ -61,7 +61,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 - La **valeur du Store** est « en-US » dans la section culture Microsoft AppSource pour Script Lab.
 - La **valeur d’ID** est l’ID d’actif Microsoft AppSource pour Script Lab.
 
-Si vous souhaitez ouvrir automatiquement un module de partage de fichiers à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
+Si vous souhaitez ouvrir automatiquement un add-in à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
 
 La **valeur StoreType** est « FileSystem ».
 
@@ -74,7 +74,7 @@ La **valeur StoreType** est « FileSystem ».
 
 :::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Icônes d’interface utilisateur Fluent pour Word, Excel et PowerPoint.":::
 
-Une meilleure pratique consiste à utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à passer d’un produit Microsoft à l’autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel afin d’indiquer qu’il lance l’application Excel.
+Une meilleure pratique consiste à utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à passer d’un produit Microsoft à un autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel pour indiquer qu’il lance l’application Excel.
 
 1. Ouvrez l’exemple dans Visual Studio.
 1. Ouvrez la page **Home.aspx.**
@@ -96,11 +96,11 @@ Nous vous recommandons de charger de nouveaux documents sur OneDrive si votre cl
 
 ### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>Utiliser un démarrage rapide pour créer une nouvelle application web Microsoft Graph
 
-1. Suivez les étapes de création et d’ouverture d’un exemple de code de démarrage rapide qui [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) interagit avec les services Office 365.
-1. À **l’étape 1 : choisissez la langue ou la plateforme,** choisissez **ASP.NET MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
-1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir un ID d’application et un **secret**.
+1. Suivez les étapes de création et d’ouverture d’un exemple de code de démarrage rapide qui [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) interagit avec les services Office.
+1. À **l’étape 1 : choisissez la langue ou la plateforme,** **choisissez ASP.NET MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
+1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir **un ID d’application et un secret**.
 1. Connectez-vous à votre compte Microsoft 365.  
-1. Dans la page **Web Veuillez enregistrer votre** secret d’application, enregistrez-la dans un emplacement de fichier où vous pourrez l’extraire et l’utiliser ultérieurement.
+1. Sur la page **Web Veuillez enregistrer votre** secret d’application, enregistrez-la dans un emplacement de fichier où vous pourrez l’extraire et l’utiliser ultérieurement.
 1. Choose **Got it, take me back to the quick start**.
 1. À **l’étape 2 : l’inscription a réussi !** Entrez la secret de l’application générée.
 1. In **step 3: Start coding**, choose **Download the SDK-based code sample**.
@@ -188,7 +188,7 @@ Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .
 
 ### <a name="use-single-sign-on"></a>Utiliser l' sign-on unique
 
-Pour simplifier l’authentification, nous vous recommandons d’implémenter l’authentification unique. Pour plus d’informations, [voir Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
+Pour simplifier l’authentification, nous vous recommandons d’implémenter l’authentification unique. Pour plus d’informations, [voir Activer l' sign-on unique pour les add-ins Office](../develop/sso-in-office-add-ins.md)
 
 ## <a name="see-also"></a>Voir aussi
 

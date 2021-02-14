@@ -1,39 +1,56 @@
 ---
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
-ms.date: 12/01/2020
+ms.date: 02/10/2021
 localization_priority: Normal
-ms.openlocfilehash: dea2125ccd64eba2e3f1695c8ca1111a710321a4
-ms.sourcegitcommit: c2fd7f982f3da748ef6be5c3a7434d859f8b46b9
+ms.openlocfilehash: b783b815af84a7fd8b4abd52cdd8e0925bfb9ecf
+ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "49530926"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "50234246"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
-## <a name="sideload-an-add-in-in-outlook-on-the-web"></a>Chargement d’un complément dans Outlook sur le web
+## <a name="sideload-automatically"></a>Chargement de version de version automatique
 
-Le processus de chargement d’un complément dans Outlook sur le Web dépend de si vous utilisez la version nouvelle ou classique.
+Si vous avez créé votre add-in Outlook à l’aide du générateur Yeoman pour les [add-ins Office,](https://github.com/OfficeDev/generator-office)il est préférable d’utiliser le chargement de version secondaire via la ligne de commande. Cela tirera parti de nos outils et chargements de version de version sur tous vos appareils pris en charge dans une seule commande.
 
-- Si la barre d’outils de boîte aux lettres ressemble à l’image suivante, reportez-vous à la section relative au [chargement de la version test d’un complément dans la nouvelle version d’Outlook sur le web](#sideload-an-add-in-in-the-new-outlook-on-the-web).
+1. À l’aide de la ligne de commande, accédez au répertoire racine de votre projet de add-in généré par Yeoman. Exécutez la commande `npm start`.
+
+2. Votre application Outlook charge automatiquement une version de version vers Outlook sur votre ordinateur de bureau. Une boîte de dialogue s’affiche, indiquant qu’il y a une tentative de chargement de version de chargement du module, répertoriant le nom et l’emplacement du fichier manifeste. Sélectionnez **OK,** qui enregistre le manifeste.
+
+> [!IMPORTANT]
+> Si le manifeste contient une erreur ou si le chemin d’accès au manifeste n’est pas valide, vous recevrez un message d’erreur.
+
+3. Si votre manifeste ne contient aucune erreur et que le chemin d’accès est valide, votre application sera désormais rechargée de nouveau et disponible à la fois sur votre bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
+
+## <a name="sideload-manually"></a>Chargement de version de version manuelle
+
+Bien que nous recommandions vivement le chargement de version secondaire automatiquement via la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version antérieure d’un add-in Outlook basé sur le client Outlook.
+
+### <a name="outlook-on-the-web"></a>Outlook sur le web
+
+Le processus de chargement d’une version d’évaluation d’un module dans Outlook sur le web varie selon que vous utilisez la nouvelle version ou la version classique.
+
+- Si la barre d’outils de boîte aux lettres ressemble à l’image suivante, reportez-vous à la section relative au [chargement de la version test d’un complément dans la nouvelle version d’Outlook sur le web](#new-outlook-on-the-web).
 
     ![capture d’écran partielle de la nouvelle version de la barre d’outils d’Outlook sur le web](../images/outlook-on-the-web-new-toolbar.png)
 
-- Si la barre d’outils de boîte aux lettres ressemble à l’image suivante, reportez-vous à la section relative au [chargement de la version test d’un complément dans la version classique d’Outlook sur le web](#sideload-an-add-in-in-classic-outlook-on-the-web).
+- Si la barre d’outils de boîte aux lettres ressemble à l’image suivante, reportez-vous à la section relative au [chargement de la version test d’un complément dans la version classique d’Outlook sur le web](#classic-outlook-on-the-web).
 
     ![capture d’écran partielle de la version classique de la barre d’outils d’Outlook sur le web](../images/outlook-on-the-web-classic-toolbar.png)
 
 > [!NOTE]
 > Si votre organisation a inclus son logo dans la barre d’outils de boîte aux lettres, le rendu sera peut-être légèrement différent de celui figurant dans les images précédentes.
 
-### <a name="sideload-an-add-in-in-the-new-outlook-on-the-web"></a>Chargement d’un complément dans la nouvelle version d’Outlook sur le web
+### <a name="new-outlook-on-the-web"></a>Nouvel Outlook sur le web
 
-1. Accédez à [Outlook dans Office 365](https://outlook.office.com).
+1. Accédez à [Outlook sur le web](https://outlook.office.com).
 
-1. Dans Outlook sur le web, créez un message.
+1. Créez un message.
 
 1. Sélectionnez **...** au bas du nouveau message, puis sélectionnez **Obtenir des compléments** dans le menu qui s’affiche.
 
@@ -49,9 +66,9 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-### <a name="sideload-an-add-in-in-classic-outlook-on-the-web"></a>Chargement d’un complément dans la version classique d’Outlook sur le web
+### <a name="classic-outlook-on-the-web"></a>Outlook sur le web classique
 
-1. Accédez à [Outlook dans Office 365](https://outlook.office.com).
+1. Accédez à [Outlook sur le web](https://outlook.office.com).
 
 1. Cliquez sur l’icône en forme d’engrenage située en haut à droite de la barre d’outils et sélectionnez **Gérer des compléments**.
 
@@ -67,26 +84,26 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-## <a name="sideload-an-add-in-in-outlook-on-the-desktop"></a>Chargement d’un complément dans la version de bureau d’Outlook
+### <a name="outlook-on-the-desktop"></a>Outlook sur le bureau
 
-### <a name="outlook-2016-or-later"></a>Outlook 2016 ou version ultérieure
+#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou une ultérieure
 
-1. Ouvrez Outlook 2016 ou une version ultérieure sur Windows ou Mac.
+1. Ouvrez Outlook 2016 ou une édition ultérieure sur Windows ou Mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
-    ![Ruban Outlook 2016 pointant sur le bouton obtenir des compléments](../images/outlook-sideload-desktop-store.png)
+    ![Ruban Outlook 2016 pointant vers le bouton Obtenir des modules](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
-    > Si vous ne voyez pas le bouton **obtenir des compléments** dans votre version d’Outlook, sélectionnez :
+    > Si vous ne voyez pas le bouton Obtenir **des modules** dans votre version d’Outlook, sélectionnez :
     >
-    > - Bouton **Store** du ruban, le cas échéant.
+    > - **Bouton Stocker** sur le ruban, si disponible.
     >
-    >   OR
+    >   Ou
     >
-    > - Menu **fichier** , puis sélectionnez le bouton **gérer les compléments** sous l’onglet **informations** pour ouvrir la boîte de dialogue **compléments** dans Outlook sur le Web.<br>Vous pouvez en savoir plus sur l’expérience Web dans la section précédente [chargement d’un complément dans Outlook sur le Web](#sideload-an-add-in-in-outlook-on-the-web).
+    > - **Menu** Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations** pour ouvrir la boîte de dialogue Des **modules complémentaires** dans Outlook sur le web.<br>Vous pouvez en savoir plus sur l’expérience web dans la section précédente Chargement d’une version de version de version antérieure d’un [add-in dans Outlook sur le web.](#outlook-on-the-web)
 
-1. S’il y a des onglets dans la partie supérieure de la boîte de dialogue, vérifiez que l’onglet **compléments** est sélectionné. Sélectionnez **mes compléments**.
+1. S’il existe des onglets en haut de la boîte de dialogue, **assurez-vous** que l’onglet Des applications est sélectionné. Choose **My add-ins**.
 
     ![Boîte de dialogue du Store Outlook 2016 avec Mes compléments sélectionné](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -96,14 +113,19 @@ Le processus de chargement d’un complément dans Outlook sur le Web dépend de
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-### <a name="outlook-2013"></a>Outlook 2013
+#### <a name="outlook-2013"></a>Outlook 2013
 
 1. Ouvrez Outlook 2013 sur Windows.
 
-1. Sélectionnez le menu **fichier** , puis cliquez sur le bouton **gérer les compléments** sous l’onglet **informations** . Outlook ouvre la version Web dans un navigateur.
+1. Sélectionnez **le** menu Fichier, puis le bouton Gérer les **modules complémentaires** sous **l’onglet** Informations. Outlook ouvre la version web dans un navigateur.
 
-1. Suivez les étapes de la section [chargement d’un complément dans Outlook sur le Web](#sideload-an-add-in-in-outlook-on-the-web) en fonction de votre version d’Outlook sur le Web.
+1. Suivez les étapes de la section Chargement de version sideload d’un [add-in](#outlook-on-the-web) dans Outlook sur le web en fonction de votre version d’Outlook sur le web.
 
-## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément versions test chargées
+## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Pour supprimer un complément versions test chargées à partir d’Outlook, suivez les étapes décrites précédemment dans cet article pour trouver le complément dans la section **compléments personnalisés** de la boîte de dialogue qui répertorie vos compléments installés. Sélectionnez les points de suspension ( `...` ) pour le complément, puis cliquez sur **supprimer** pour supprimer ce complément spécifique.
+Sur toutes les versions d’Outlook, la clé de  la suppression d’un module de chargement secondaire est la boîte de dialogue Mes applications qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le `...` add-in, puis sélectionnez **Supprimer**.
+
+Pour accéder à la boîte de dialogue Mes applications pour votre client [](#sideload-manually) Outlook, utilisez les dernières **étapes** répertoriées pour le chargement de version manuelle dans les sections précédentes de cet article.
+
+Pour supprimer un add-in chargé de côté d’Outlook, utilisez les étapes décrites précédemment dans cet article pour rechercher le module dans la section Custom **add-ins** de la boîte de dialogue qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le module, puis choisissez Supprimer pour `...` supprimer ce dernier. 
+

@@ -1,14 +1,14 @@
 ---
 title: Autoriser la connexion à Microsoft Graph avec l’authentification unique
 description: Découvrez comment les utilisateurs d’un add-in Office peuvent utiliser l' sign-on unique (SSO) pour extraire des données de Microsoft Graph.
-ms.date: 07/30/2020
+ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: d6d06b9d7ff42b72495f513ed2c6b8f6f36df1d0
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 2f72b19023d9c5fdb8e35466bbd64269cbab81ec
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839970"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50237863"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
@@ -16,7 +16,7 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bu
 
 > [!NOTE]
 > La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location d’Office 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Architecture de complément pour l’authentification unique et Microsoft Graph
 
@@ -42,7 +42,7 @@ Le diagramme suivant montre comment fonctionne le processus de connexion et l’
 10. Azure AD renvoie le jeton d’accès à Microsoft Graph (et un jeton d’actualisation si le complément demande l’autorisation *offline_access*) au complément.
 11. Le code côté serveur met en cache le jeton d’accès à Microsoft Graph.
 12. Le code côté serveur effectue des requêtes à Microsoft Graph et inclut le jeton d’accès à Microsoft Graph.
-13. Microsoft Graph renvoie des données au module, qui peuvent les transmettre à l’interface utilisateur du module.
+13. Microsoft Graph renvoie les données au module, qui peuvent les transmettre à l’interface utilisateur du module.
 14. Lorsque le jeton d’accès à Microsoft Graph expire, le code côté serveur peut utiliser son jeton d’actualisation pour obtenir un nouveau jeton d’accès à Microsoft Graph.
 
 ## <a name="develop-an-sso-add-in-that-accesses-microsoft-graph"></a>Développer un complément authentification unique qui accède à Microsoft Graph
@@ -69,9 +69,9 @@ Pour obtenir des exemples de scénarios et procédures détaillées, consultez l
 
 Lorsqu’un administrateur Microsoft 365 acquiert un add-in à partir [d’AppSource,](https://appsource.microsoft.com)il peut le redistribuer par déploiement [centralisé](../publish/centralized-deployment.md) et accorder le consentement de l’administrateur au add-in pour accéder aux étendues Microsoft Graph. Toutefois, il est également possible pour l’utilisateur final d’acquérir le add-in directement à partir d’AppSource, auquel cas l’utilisateur doit donner son consentement au module. Cela peut créer un problème de performances potentiel pour lequel nous avons fourni une solution.
 
-Si votre code transmet l’option dans l’appel de , par exemple, Office peut demander à l’utilisateur son consentement si `allowConsentPrompt` `getAccessToken` Azure AD signale à Office que le consentement n’a pas encore été accordé au module. `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` Toutefois, pour des raisons de sécurité, Office peut uniquement invite l’utilisateur à consentir à l’étendue Azure `profile` AD. Office ne peut pas être invité à consentir à des *étendues Microsoft Graph,* pas même `User.Read` . Cela signifie que si l’utilisateur donne son consentement à l’invite, Office retourne un jeton d’a bootstrap. Toutefois, la tentative d’échange du jeton d’a bootstrap contre un jeton d’accès à Microsoft Graph échouera avec l’erreur AADSTS65001, ce qui signifie que le consentement (aux étendues Microsoft Graph) n’a pas été accordé.
+Si votre code passe l’option dans l’appel de , par exemple, Office peut demander à l’utilisateur son consentement si `allowConsentPrompt` `getAccessToken` Azure AD signale à Office que le consentement n’a pas encore été accordé au module. `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` Toutefois, pour des raisons de sécurité, Office peut uniquement invite l’utilisateur à consentir à l’étendue Azure `profile` AD. *Office ne peut pas être invité à consentir à des étendues Microsoft Graph,* pas même `User.Read` . Cela signifie que si l’utilisateur donne son consentement à l’invite, Office retourne un jeton d’a bootstrap. Toutefois, la tentative d’échange du jeton d’a bootstrap contre un jeton d’accès à Microsoft Graph échouera avec l’erreur AADSTS65001, ce qui signifie que le consentement (aux étendues Microsoft Graph) n’a pas été accordé.
 
-Votre code peut et doit gérer cette erreur en revenir à un autre système d’authentification, ce qui invite l’utilisateur à donner son consentement aux étendues Microsoft Graph. (Pour obtenir des exemples de code, voir Créer un [add-in Office Node.js](create-sso-office-add-ins-nodejs.md) qui utilise l' sign-on unique et [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md) and the samples they link to.) Toutefois, l’ensemble du processus nécessite plusieurs allers-retours vers Azure AD. Vous pouvez éviter cette pénalité de performances en incluant `forMSGraphAccess` l’option dans l’appel de ; par `getAccessToken` exemple, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` .  Cela indique à Office que votre application a besoin d’étendues Microsoft Graph. Office demande à Azure AD de vérifier que le consentement aux étendues Microsoft Graph a déjà été accordé au add-in. Si c’est le cas, le jeton d’a bootstrap est renvoyé. Si ce n’est pas le cas, l’appel de `getAccessToken` retournera l’erreur 13012. Votre code peut gérer cette erreur en revenir immédiatement à un autre système d’authentification, sans tenter d’échanger des jetons avec Azure AD.
+Votre code peut et doit gérer cette erreur en revenir à un autre système d’authentification, qui invite l’utilisateur à donner son consentement aux étendues Microsoft Graph. (Pour obtenir des exemples de code, voir Créer un [add-in Office Node.js](create-sso-office-add-ins-nodejs.md) qui utilise l' sign-on unique et [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md) and the samples they link to.) Toutefois, l’ensemble du processus nécessite plusieurs allers-retours vers Azure AD. Vous pouvez éviter cette pénalité de performances en incluant `forMSGraphAccess` l’option dans l’appel de ; par `getAccessToken` exemple, `OfficeRuntime.auth.getAccessToken( { forMSGraphAccess: true } )` .  Cela indique à Office que votre application a besoin d’étendues Microsoft Graph. Office demande à Azure AD de vérifier que le consentement aux étendues Microsoft Graph a déjà été accordé au add-in. Si c’est le cas, le jeton d’a bootstrap est renvoyé. Si ce n’est pas le cas, l’appel de `getAccessToken` retournera l’erreur 13012. Votre code peut gérer cette erreur en revenir immédiatement à un autre système d’authentification, sans tenter d’échanger des jetons avec Azure AD.
 
 En tant que meilleure pratique, passez toujours aux moments où votre application sera distribuée dans AppSource et nécessite des `forMSGraphAccess` `getAccessToken` étendues Microsoft Graph.
 
