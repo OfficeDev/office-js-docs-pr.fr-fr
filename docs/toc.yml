@@ -1202,7 +1202,7 @@ items:
     items:
       - name: Guide pour les développeurs de compléments VSTO
         href: overview/learning-path-transition.md
-      - name: Partager du code à partir d’un complément VSTO vers un complément Office
+      - name: Partager du code d’un complément VSTO vers un complément Office
         href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
       - name: Rendre votre complément Office compatible avec un complément COM existant
         href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
