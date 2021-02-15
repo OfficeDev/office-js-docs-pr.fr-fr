@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments Word
 description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re (et remplace) des plages de texte, des paragraphes, des images, du code HTML, des tableaux et des contr?les de contenu. Vous découvrirez également comment mettre en forme du texte et comment insérer (et remplacer) du contenu dans les contrôles de contenu.
-ms.date: 10/14/2020
+ms.date: 02/09/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 3f76ca75e07a5d071d1824b1ea96542f1014c9d1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 735526c1ac85ba67d45d8a9c0b14da271e52796a
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131830"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238105"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -41,7 +41,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-word.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -505,7 +505,7 @@ function insertTextIntoRange() {
 
 6. À l’intérieur de la fonction `insertTextBeforeRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - La méthode est destinée à ajouter une plage dont le texte est « Office 2019 », avant la plage contenant le texte « Office 365 ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - La méthode est destinée à ajouter une plage dont le texte est « Office 2019 », avant la plage contenant le texte « Microsoft 365 ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
    - Le premier paramètre de la méthode `Range.insertText` correspond à la chaîne à ajouter.
 
@@ -531,7 +531,7 @@ function insertTextIntoRange() {
         //        been queued.
     ```
 
-8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre *_pas_* _ dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
+8. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre ***pas*** dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
 
     ```js
     doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
@@ -545,7 +545,7 @@ function insertTextIntoRange() {
 
 ### <a name="replace-the-text-of-a-range"></a>Remplacer le texte d’une plage
 
-1. Ouvrez le fichier _*./src/taskpane/taskpane.html**.
+1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
 2. Recherchez l’élément `<button>` du bouton `insert-text-outside-range`, puis ajoutez la balise suivante après cette ligne :
 
@@ -602,13 +602,13 @@ function insertTextIntoRange() {
 
 5. Sélectionnez le bouton **Insérer une abréviation**. L’abréviation « (C2R) » est ajoutée. Notez également qu’en bas du document, un nouveau paragraphe est ajouté avec l’intégralité du texte développé, car la nouvelle chaîne a été ajoutée à la plage existante.
 
-6. Dans le document, sélectionnez l’expression « Office 365 ». *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
+6. Dans le document, sélectionnez l’expression « Microsoft 365 ». *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
 
-7. Sélectionnez le bouton **Ajouter les informations de version**. L’expression « Office 2019 » est insérée entre « Office 2016 » et « Office 365 ». Notez également qu’en bas du document, un nouveau paragraphe est ajouté. Celui-ci contient uniquement le texte sélectionné à l’origine, car la nouvelle chaîne est devenue une nouvelle plage plutôt que d’être ajoutée à la plage d’origine.
+7. Sélectionnez le bouton **Ajouter les informations de version**. L’expression « Office 2019 » est insérée entre « Office 2016 » et « Microsoft 365 ». Notez également qu’en bas du document, un nouveau paragraphe est ajouté. Celui-ci contient uniquement le texte sélectionné à l’origine, car la nouvelle chaîne est devenue une nouvelle plage plutôt que d’être ajoutée à la plage d’origine.
 
 8. Dans le document, sélectionnez l’expression « several » (plusieurs). *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
 
-9. Sélectionnez le bouton **Modifier la condition de quantité**. Notez que « beaucoup » remplace le texte sélectionné.
+9. Sélectionnez le bouton permettant de **modifier la condition de quantité** (Change Quantity Term). Notez que « many » (beaucoup) remplace le texte sélectionné.
 
     ![Capture d’écran montrant le résultat de la sélection des boutons de complément Insérer une abréviation, Ajouter des informations sur la version et Modifier la condition de quantité](../images/word-tutorial-text-replace-2.png)
 
@@ -805,7 +805,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 5. Sélectionnez le bouton **Insérer du code HTML**, puis notez que deux paragraphes sont insérés à la fin du document, et que le premier est affiché dans la police Verdana.
 
-6. Sélectionnez le bouton **Insérer un tableau** et remarquez qu’un tableau est inséré après le deuxième paragraphe.
+6. Sélectionnez le bouton **Insérer un tableau** et notez qu’un tableau est inséré après le deuxième paragraphe.
 
     ![Capture d’écran illustrant le résultat de la sélection des boutons de complément Insérer une image, Insérer du code HTML et Insérer un tableau](../images/word-tutorial-insert-image-html-table-2.png)
 
@@ -857,7 +857,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 6. À l’intérieur de la fonction `createContentControl()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - Ce code est destiné à intégrer l’expression « Office 365 » dans un contrôle de contenu. Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - Ce code est destiné à intégrer l’expression « Microsoft 365 » dans un contrôle de contenu. Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
    - La propriété `ContentControl.title` indique le titre visible du contrôle de contenu.
 
@@ -931,11 +931,11 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 2. Si le volet des tâches du complément n’est pas déjà ouvert dans Word, sélectionnez l’onglet **Accueil**, puis cliquez sur le bouton **Afficher le volet de tâches** du ruban pour l’ouvrir.
 
-3. Dans le volet des tâches, cliquez sur le bouton **Insérer un paragraphe** pour vous assurer qu’il existe un paragraphe contenant « Office 365 » en haut du document.
+3. Dans le volet des tâches, cliquez sur le bouton **Insérer un paragraphe** pour vous assurer qu’il existe un paragraphe contenant « Microsoft 365 » en haut du document.
 
-4. Dans le document, sélectionnez le texte « Office 365 », puis sélectionnez le bouton **Créer un contrôle de contenu**. L’expression est intégrée dans des balises nommées « Service name » (Nom de service).
+4. Dans le document, sélectionnez le texte « Microsoft 365 », puis sélectionnez le bouton **Créer un contrôle de contenu**. L’expression est intégrée dans des balises nommées « Service name » (Nom de service).
 
-5. Sélectionnez le bouton **Renommer le service** et remarquez que le texte du contrôle de contenu devient « Suite de productivité en ligne Fabrikam ».
+5. Sélectionnez le bouton **Renommer le service** et notez que le texte du contrôle de contenu devient « Fabrikam Online Productivity Suite ».
 
     ![Capture d’écran illustrant le résultat de la sélection des boutons de complément Créer un contrôle de contenu et Renommer le service](../images/word-tutorial-content-control-2.png)
 

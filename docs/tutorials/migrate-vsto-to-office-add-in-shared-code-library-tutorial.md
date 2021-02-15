@@ -1,15 +1,15 @@
 ---
-ms.date: 07/07/2020
+ms.date: 02/09/2021
 ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 localization_priority: Priority
-ms.openlocfilehash: 761820dece1d5b8322de38863e10ad2f536445b9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
+ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131744"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "50238091"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -33,7 +33,7 @@ Compétences et techniques décrites dans ce didacticiel :
 
 - Créer une bibliothèque de classes partagées en refactorisant le code dans une bibliothèque de classes .NET.
 - Créez un wrapper API REST à l’aide de ASP.NET Core pour la bibliothèque de classes partagées.
-- Appeler l’API REST à partir du complément Office pour accéder au code partagé.
+- Appelez l’API REST à partir du complément Office pour accéder au code partagé.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -50,17 +50,17 @@ Pour la configuration de votre environnement de développement :
 
 Vous devez également disposer des éléments ci-après :
 
-- Un compte Microsoft 365. Vous pouvez participer au [Programme pour les développeurs Microsoft 365](https://aka.ms/devprogramsignup) qui inclut un an d’abonnement gratuit à Office 365.
+- Un compte Microsoft 365. Vous pouvez rejoindre le [programme pour les développeurs Microsoft 365](https://aka.ms/devprogramsignup) qui offre un abonnement Microsoft 365 renouvelable de 90 jours qui inclut les applications Office.
 - Un locataire Microsoft Azure. Un abonnement d’évaluation peut être obtenu ici : [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>Le composant VSTO d’analyseur de cellule
 
-Ce didacticiel utilise la solution PnP pour [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration). Le dossier **/Start** contient la solution de complément VSTO que vous allez migrer. Votre objectif est de migrer le complément VSTO vers un complément Office moderne en partageant le code lorsque cela est possible.
+Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration). Le dossier **/Start** contient la solution de complément VSTO que vous allez migrer. Votre objectif est de migrer le complément VSTO vers un complément Office moderne en partageant le code lorsque cela est possible.
 
 > [!NOTE]
 > L’exemple utilise C# , mais vous pouvez utiliser les techniques décrites dans ce didacticiel pour appliquer un complément VSTO écrit dans n’importe quel langage .NET.
 
-1. Téléchargez la solution PnP pour [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) vers un dossier de travail de votre ordinateur.
+1. Téléchargez la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) vers un dossier de travail de votre ordinateur.
 1. Démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
 1. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellule**, puis choisissez **Propriétés**.
@@ -91,10 +91,10 @@ La logique métier, les algorithmes, les fonctions d’assistance et autres code
 Examinez le complément VSTO. Dans le code suivant, chaque section est identifiée en tant que code de DOCUMENT, d’interface utilisateur ou d’ALGORITHME.
 
 ```csharp
-// **_ UI CODE _*_
+// *** UI CODE ***
 private void btnUnicode_Click(object sender, EventArgs e)
 {
-    // _*_ DOCUMENT CODE _*_
+    // *** DOCUMENT CODE ***
     Microsoft.Office.Interop.Excel.Range rangeCell;
     rangeCell = Globals.ThisAddIn.Application.ActiveCell;
 
@@ -105,7 +105,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         cellValue = rangeCell.Value.ToString();
     }
 
-    // _*_ ALGORITHM CODE _*_
+    // *** ALGORITHM CODE ***
     //convert string to Unicode listing
     string result = "";
     foreach (char c in cellValue)
@@ -115,7 +115,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
         result += $"{c}: {unicode}\r\n";
     }
 
-    // _*_ UI CODE _*_
+    // *** UI CODE ***
     //Output the result
     txtResult.Text = result;
 }
@@ -124,7 +124,7 @@ private void btnUnicode_Click(object sender, EventArgs e)
 Grâce à cette approche, vous pouvez voir qu’une section de code peut être partagée avec le complément Office. Le code suivant doit être refactorisé dans une bibliothèque de classes distincte.
 
 ```csharp
-// _*_ ALGORITHM CODE _*_
+// *** ALGORITHM CODE ***
 //convert string to Unicode listing
 string result = "";
 foreach (char c in cellValue)
@@ -139,7 +139,7 @@ foreach (char c in cellValue)
 
 Les compléments VSTO étant créés dans Visual Studio en tant que projets .NET, nous réutiliser .NET aussi souvent que possible pour simplifier les choses. La technique suivante consiste à créer une bibliothèque de classes et à refactoriser le code partagé dans cette bibliothèque.
 
-1. Si ce n'est pas encore fait, démarrez Visual Studio 2019 et ouvrez la solution *\start\Cell-Analyzer.sln*.
+1. Si ce n'est pas encore fait, démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
 2. Cliquez avec le bouton droit sur la solution dans l’**Explorateur de solutions** et choisissez **Ajouter > Nouvelle solution**.
 3. Dans la **boîte de dialogue Ajouter un nouveau projet**, choisissez **Bibliothèque de classes (.NET Framework)**, puis sélectionnez **Suivant**.
     > [!NOTE]
@@ -171,7 +171,7 @@ public class CellOperations
 
 ### <a name="use-the-shared-class-library-in-the-vsto-add-in"></a>Utiliser la bibliothèque de classes partagées dans le complément VSTO
 
-Vous devez maintenant mettre à jour le complément VSTO pour utiliser la bibliothèque de classes. Il est important que les compléments VSTO et Office utilisent la même bibliothèque de classes partagées pour permettre aux résolutions de bogues et aux fonctionnalités d'être réalisées au même endroit.
+Vous devez maintenant mettre à jour le complément VSTO pour utiliser la bibliothèque de classes. Il est important que les compléments VSTO et Office utilisent la même bibliothèque de classes partagées pour permettre de réaliser au même endroit les résolutions de bogues et les fonctionnalités.
 
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellules**, puis choisissez **Ajouter une référence**.
 2. Sélectionnez **CellAnalyzerSharedLibrary**, puis choisissez **OK**.
@@ -432,9 +432,9 @@ Vous voulez enfin publier le projet API REST sur le cloud. Dans les étapes suiv
 
 Vous pouvez maintenant tester le service. Ouvrez un navigateur et entrez une URL qui accède directement au nouveau service. Par exemple, utilisez `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` où *myappservice* est le seul nom que vous avez créé pour le nouvel App Service.
 
-### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Utiliser Azure App Service à partir du complément Office
+### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Utiliser Azure App Service à partir du complément Office
 
-La dernière étape consiste à mettre à jour le code dans le complément Office pour utiliser Azure App Service au lieu de localhost.
+La dernière étape consiste à mettre à jour le code dans le complément Office pour utiliser Azure App Service au lieu de localhost.
 
 1. Dans l'**Explorateur de solutions**, développez le projet **CellAnalyzerOfficeAddinWeb** et ouvrez le fichier **Home.js**.
 1. Modifiez la constante `url` afin d’utiliser l’URL d'Azure App Service, comme illustré dans la ligne de code suivante. Remplacez `<myappservice>` par le nom unique que vous avez créé pour le nouvel App Service.
@@ -451,7 +451,7 @@ La dernière étape consiste à mettre à jour le code dans le complément Offic
 1. Sélectionnez **OK**.
 1. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
 
-Excel exécute et charge une version test du complément Office. Pour vérifier que App Service fonctionne correctement, entrez une valeur de texte dans une cellule, puis choisissez **Afficher l'Unicode** dans le complément Office. Il doit appeler le service et afficher les valeurs Unicode pour les caractères de texte.
+Excel exécute et charge une version test du complément Office. Pour vérifier que App Service fonctionne correctement, entrez une valeur de texte dans une cellule, puis choisissez **Afficher l'Unicode** dans le complément Office. Il doit appeler le service et afficher les valeurs Unicode pour les caractères de texte.
 
 ## <a name="conclusion"></a>Conclusion
 
