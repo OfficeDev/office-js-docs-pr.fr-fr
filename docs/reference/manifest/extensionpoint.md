@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 02/01/2021
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 20e1f58070d61b02a1c2c2fcefc4ce2b0ad94979
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237706"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270720"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -264,7 +264,7 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 Ce point d’extension place un basculement approprié en mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un application mobile Outlook pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
 
 > [!NOTE]
-> Ce point d’extension est uniquement pris en charge sur Android avec un abonnement Microsoft 365.
+> Ce point d’extension est uniquement pris en charge sur Android et iOS avec un abonnement Microsoft 365.
 
 #### <a name="child-elements"></a>Éléments enfants
 

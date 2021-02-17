@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
-description: Les add-ins Outlook mobile sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les comptes Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
+description: Les add-ins Outlook Mobile sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 24d396f67a3d73f7c3c357be7861164f586a50da
-ms.sourcegitcommit: 6c5716d92312887e3d944bf12d9985560109b3c0
+ms.openlocfilehash: 586a473e1036e8480f395da49011f540d87e1b5f
+ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "49944318"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50270706"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
@@ -32,10 +32,10 @@ Les add-ins Outlook Mobile sont pris en charge sur tous les comptes d’entrepri
 ## <a name="whats-different-on-mobile"></a>Qu’est-ce qui est différent sur mobile ?
 
 - La taille réduite et la rapidité des interactions compliquent la conception pour les environnements mobiles. Pour garantir la qualité des expériences pour nos clients, nous définissons des critères de validation stricts qui doivent être respectés par un complément qui déclare prendre en charge les environnements mobiles pour être approuvé dans AppSource.
-    - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
-    - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
+  - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
+  - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Pour plus [d’informations](online-meeting.md) sur ce scénario, consultez l’article Créer un application outlook mobile pour un fournisseur de réunion en ligne.
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface.](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) Pour plus [d’informations sur](online-meeting.md) ce scénario, consultez l’article Créer un application mobile Outlook pour un fournisseur de réunion en ligne.
 
 - L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 
