@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c1bf36e57b5ce796b61f88724ee60ed6fb95ed3
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: a3e2167adec824934d1bc20d0e6613f9057e5c70
+ms.sourcegitcommit: 7cd501d0fdbbd4636bd08647b638dd5ca4c7c630
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238042"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "50282995"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurer votre complément Outlook pour l’activation basée sur des événements (aperçu)
 
@@ -51,7 +51,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 
 1. Ouvrez **lemanifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le `<VersionOverrides>` par le code XML suivant.
+1. Sélectionnez l’intégralité du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le `<VersionOverrides>` code XML suivant, puis enregistrez vos modifications.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -153,7 +153,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
+Outlook sur Windows utilise un fichier JavaScript, tandis qu’Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. Ainsi, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes pour les add-ins Outlook, consultez les [manifestes de ces derniers.](manifests.md)
@@ -212,9 +212,11 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
     **Remarque**: la vérification `Office.actions` permet de s’assurer qu’Outlook sur le web ignore ces instructions.
 
+1. Enregistrez vos modifications.
+
 ## <a name="try-it-out"></a>Try it out
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre add-in est chargé de nouveau.
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
 
     ```command&nbsp;line
     npm start
@@ -227,6 +229,10 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 1. Dans Outlook sur Windows, créez un message.
 
     ![Capture d’écran d’une fenêtre de message dans Outlook sur Windows avec l’objet de la composition](../images/outlook-win-autolaunch.png)
+
+## <a name="debug"></a>Debug
+
+Lorsque vous implémentez vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir Déboguer votre complément Outlook basé [sur des événements.](debug-autolaunch.md)
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur des événements
 
@@ -254,4 +260,5 @@ Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Manifestes de complément Outlook](manifests.md)
+[Manifestes des add-ins](manifests.md) 
+ Outlook [Comment déboguer des add-ins basés sur des événements](debug-autolaunch.md)
