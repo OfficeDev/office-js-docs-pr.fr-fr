@@ -1049,6 +1049,8 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: Résoudre les problèmes d’activation de compléments
                 href: outlook/troubleshoot-outlook-add-in-activation.md
+              - name: Débogage de l’activation basée sur un événement
+                href: outlook/debug-autolaunch.md
   - name: PowerPoint
     items:
       - name: Documentation sur les compléments PowerPoint
