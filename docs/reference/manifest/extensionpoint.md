@@ -3,12 +3,12 @@ title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 920f02cdaad47fa773695da4bc51e5b6c0a1fa6d
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e5b638969730be47c30c98d4fc231e58d492ac36
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270720"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505464"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -225,6 +225,9 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 
 Ce point d’extension place des boutons sur le ruban pour l’extension de module.
 
+> [!IMPORTANT]
+> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+
 #### <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Description  |
@@ -265,6 +268,8 @@ Ce point d’extension place un basculement approprié en mode dans l’surface 
 
 > [!NOTE]
 > Ce point d’extension est uniquement pris en charge sur Android et iOS avec un abonnement Microsoft 365.
+>
+> L’inscription des [événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 #### <a name="child-elements"></a>Éléments enfants
 
@@ -309,6 +314,9 @@ Les images doivent être en échelles de gris à l’aide de code hex ou de son 
 
 Ce point d’extension permet à un application de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Actuellement, les seuls événements pris en charge sont `OnNewMessageCompose` et `OnNewAppointmentOrganizer` . Pour en savoir plus sur ce scénario, consultez l’article Configurer votre complément Outlook pour [l’activation](../../outlook/autolaunch.md) basée sur un événement.
 
+> [!IMPORTANT]
+> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+
 #### <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Description  |
@@ -333,6 +341,9 @@ Ce point d’extension permet à un application de s’activer en fonction des �
 
 Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié. Pour plus d’informations sur l’utilisation de ce point d’extension, voir La fonctionnalité d’envoi pour [les modules complémentaires Outlook.](../../outlook/outlook-on-send-addins.md)
 
+> [!IMPORTANT]
+> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+
 | Élément | Description  |
 |:-----|:-----|
 |  [Event](event.md) |  Indique l’événement et la fonction gestionnaire d’événements.  |
@@ -348,6 +359,9 @@ Ce point d’extension ajoute un gestionnaire d’événements pour un événeme
 ### <a name="detectedentity"></a>DetectedEntity
 
 Ce point d’extension ajoute une activation de complément contextuel sur un type d’entité spécifié.
+
+> [!IMPORTANT]
+> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:type`l’attribut doit avoir la valeur `VersionOverridesV1_1`.
 

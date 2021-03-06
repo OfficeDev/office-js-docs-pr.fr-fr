@@ -1,18 +1,18 @@
 ---
 title: Élément ExtendedOverrides dans le fichier manifeste
-description: Spécifie les URL pour une extension au format JSON du manifeste.
-ms.date: 11/06/2020
+description: Spécifie les URL d’une extension au format JSON du manifeste.
+ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 76491af34d1caf0ec266826df97a5363e336b85d
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996687"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505471"
 ---
 # <a name="extendedoverrides-element"></a>Élément ExtendedOverrides
 
-Spécifie les URL complètes des fichiers au format JSON qui étendent le manifeste.
+Spécifie les URL complètes pour les fichiers au format JSON qui étendent le manifeste. Pour plus d’informations sur l’utilisation de cet élément et de ses éléments descendants, voir [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 **Type de complément :** volet Office
 
@@ -36,10 +36,21 @@ Spécifie les URL complètes des fichiers au format JSON qui étendent le manife
 
 |Attribut|Description|
 |:-----|:-----|
-|URL (obligatoire)| URL complète du fichier JSON des substitutions étendues. Il peut s’agir d’un modèle d’URL qui utilise des jetons définis par l’élément [tokens](tokens.md) .|
-|ResourcesUrl (facultatif) | URL complète d’un fichier qui fournit des ressources supplémentaires, telles que des chaînes localisées, pour le fichier spécifié dans l' `Url` attribut. Il peut s’agir d’un modèle d’URL qui utilise des jetons définis par l’élément [tokens](tokens.md) .|
+|Url (obligatoire)| URL complète du fichier JSON de remplacements étendu. À l’avenir, cette valeur pourrait être un modèle d’URL qui utilise des jetons définis par [l’élément Tokens.](tokens.md) Voir [exemples.](#examples)|
+|ResourcesUrl (facultatif) | URL complète d’un fichier qui fournit des ressources supplémentaires, telles que des chaînes localisées, pour le fichier spécifié dans `Url` l’attribut. Il peut s’agit d’un modèle d’URL qui utilise des jetons définis par [l’élément Tokens.](tokens.md)|
 
-## <a name="example"></a>Exemple
+## <a name="examples"></a>範例
+
+```XML
+<OfficeApp ...>
+  <!-- other elements omitted -->
+  <ExtendedOverrides Url="http://contoso.com/addinmetadata/extended-manifest-overrides.json"
+                     ResourceUrl="https://contoso.com/addin/my-resources.json">
+  </ExtendedOverrides>
+</OfficeApp>
+```
+
+À l’avenir, cette valeur pourrait être un modèle d’URL qui utilise des jetons définis par [l’élément Tokens.](tokens.md) Voici un exemple.
 
 ```XML
 <OfficeApp ...>

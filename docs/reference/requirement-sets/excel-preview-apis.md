@@ -1,15 +1,15 @@
 ---
 title: Version d’évaluation API JavaScript Excel
 description: Détails sur les API JavaScript Excel à venir.
-ms.date: 01/26/2021
+ms.date: 02/24/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 10057123cc159af0c00a6b6e6345d8f6ab316822
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: 0663b6330c402f64e7ed7e8f598a52848bbe1319
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043896"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505534"
 ---
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
@@ -21,13 +21,14 @@ Le premier tableau fournit un résumé concis des API, tandis que le tableau sui
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
+| Événements de changement de formule | Suivre les modifications apportées aux formules, y compris la source et le type d’événement à l’origine d’une modification. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
 | Types de données liées | Ajoute la prise en charge des types de données connectés à Excel à partir de sources externes. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
 | Vues de feuille nommée | Permet de contrôler par programme les affichages de feuille de calcul par utilisateur. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview) |
 | Tâches | Transformez les commentaires en tâches affectées aux utilisateurs. | [Tâche](/javascript/api/excel/excel.task) |
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API JavaScript pour Excel actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript pour Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript pour Excel.](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
+Le tableau suivant répertorie les API JavaScript excel actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript pour Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript pour Excel.](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -64,7 +65,7 @@ Le tableau suivant répertorie les API JavaScript pour Excel actuellement en pr�
 |[NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection)|[add(name: string)](/javascript/api/excel/excel.namedsheetviewcollection#add-name-)|Crée un affichage feuille avec le nom donné.|
 ||[enterTemporary()](/javascript/api/excel/excel.namedsheetviewcollection#entertemporary--)|Crée et active un nouvel affichage de feuille temporaire.|
 ||[exit()](/javascript/api/excel/excel.namedsheetviewcollection#exit--)|Quitte l’affichage feuille actif.|
-||[getActive()](/javascript/api/excel/excel.namedsheetviewcollection#getactive--)|Obtient l’affichage feuille de calcul actif.|
+||[getActive()](/javascript/api/excel/excel.namedsheetviewcollection#getactive--)|Obtient la vue de feuille de calcul active.|
 ||[getCount()](/javascript/api/excel/excel.namedsheetviewcollection#getcount--)|Obtient le nombre d’affichages de feuille dans cette feuille de calcul.|
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getitem-key-)|Obtient une vue de feuille à l’aide de son nom.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getitemat-index-)|Obtient une vue de feuille par son index dans la collection.|
@@ -76,7 +77,7 @@ Le tableau suivant répertorie les API JavaScript pour Excel actuellement en pr�
 ||[fillEmptyCells](/javascript/api/excel/excel.pivotlayout#fillemptycells)|Spécifie si les cellules vides du tableau croisé dynamique doivent être remplies avec le `emptyCellText` .|
 ||[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getcell-datahierarchy--rowitems--columnitems-)|Obtient une cellule unique dans le tableau croisé dynamique basé sur une hiérarchie de données ainsi que les éléments de ligne et de colonne de leurs hiérarchies respectives.|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|Style appliqué au tableau croisé dynamique.|
-||[repeatAllItemLabels(repeatLabels: boolean)](/javascript/api/excel/excel.pivotlayout#repeatallitemlabels-repeatlabels-)|Définit le paramètre « Répéter toutes les étiquettes d’éléments » dans tous les champs du tableau croisé dynamique.|
+||[repeatAllItemLabels(repeatLabels: boolean)](/javascript/api/excel/excel.pivotlayout#repeatallitemlabels-repeatlabels-)|Définit le paramètre « Répéter toutes les étiquettes d’éléments » sur tous les champs du tableau croisé dynamique.|
 ||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setstyle-style-)|Définit le style appliqué au tableau croisé dynamique.|
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showfieldheaders)|Spécifie si le tableau croisé dynamique affiche les en-têtes de champ (légendes de champ et les drop-downs de filtre).|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshonopen)|Spécifie si le tableau croisé dynamique est actualisé à l’ouverture du manuel.|
@@ -133,7 +134,7 @@ Le tableau suivant répertorie les API JavaScript pour Excel actuellement en pr�
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.taskcollection#getitemornullobject-key-)|Obtient une tâche à l’aide de son ID.|
 ||[items](/javascript/api/excel/excel.taskcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[TaskHistoryRecord](/javascript/api/excel/excel.taskhistoryrecord)|[anchorId](/javascript/api/excel/excel.taskhistoryrecord#anchorid)|Représente l’ID de l’objet auquel la tâche est ancrée (par exemple, commentId pour les tâches jointes aux commentaires).|
-||[assignee](/javascript/api/excel/excel.taskhistoryrecord#assignee)|Représente l’utilisateur affecté à la tâche pour un type d’enregistrement d’historique « Assigner » ou l’utilisateur à désattribuer à la tâche pour un type d’enregistrement d’historique « Non affecté ».|
+||[assignee](/javascript/api/excel/excel.taskhistoryrecord#assignee)|Représente l’utilisateur affecté à la tâche pour un type d’enregistrement d’historique « Assigner » ou l’utilisateur à désattribuer à la tâche pour un type d’enregistrement d’historique « Unassign ».|
 ||[attributionUser](/javascript/api/excel/excel.taskhistoryrecord#attributionuser)|Représente l’utilisateur qui a créé ou modifié la tâche.|
 ||[dueDate](/javascript/api/excel/excel.taskhistoryrecord#duedate)|Représente la date d’échéance de la tâche.|
 ||[historyRecordCreatedDate](/javascript/api/excel/excel.taskhistoryrecord#historyrecordcreateddate)|Représente la date de création de l’enregistrement d’historique des tâches.|
@@ -147,11 +148,11 @@ Le tableau suivant répertorie les API JavaScript pour Excel actuellement en pr�
 |[TaskHistoryRecordCollection](/javascript/api/excel/excel.taskhistoryrecordcollection)|[getCount()](/javascript/api/excel/excel.taskhistoryrecordcollection#getcount--)|Obtient le nombre d’enregistrements d’historique dans la collection pour la tâche.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.taskhistoryrecordcollection#getitemat-index-)|Obtient un enregistrement d’historique des tâches à l’aide de son index dans la collection.|
 ||[items](/javascript/api/excel/excel.taskhistoryrecordcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Utilisateur](/javascript/api/excel/excel.user)|[displayName](/javascript/api/excel/excel.user#displayname)|Représente le nom d’affichage de l’utilisateur.|
+|[User](/javascript/api/excel/excel.user)|[displayName](/javascript/api/excel/excel.user#displayname)|Représente le nom d’affichage de l’utilisateur.|
 ||[email](/javascript/api/excel/excel.user#email)|Représente l’adresse e-mail de l’utilisateur.|
 ||[uid](/javascript/api/excel/excel.user#uid)|Représente l’ID unique de l’utilisateur.|
 |[Classeur](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Renvoie une collection de types de données liées qui font partie du manuel.|
-||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches présentes dans le manuel.|
+||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches qui sont présentes dans le workbook.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Spécifie si le volet liste des champs du tableau croisé dynamique est affiché au niveau du workbook.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True si le classeur utilise le calendrier depuis 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedsheetviews)|Renvoie une collection d’affichages de feuille présents dans la feuille de calcul.|

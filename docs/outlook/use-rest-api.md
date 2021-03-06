@@ -1,18 +1,21 @@
 ---
 title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
-ms.date: 09/18/2020
+ms.date: 02/26/2021
 localization_priority: Normal
-ms.openlocfilehash: 067934f18b02d5106b58a7ec2a0de11a6ea35581
-ms.sourcegitcommit: 09e1d8ff14b3c09a3eb11c91432c224a539181a4
+ms.openlocfilehash: c0df1df4fdbda22768562892874e09bbeb760473
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "48268550"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505485"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 
-L’espace de noms [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) permet d’accéder à de nombreux champs communs pour les messages et les rendez-vous. Toutefois, dans certains scénarios, un complément peut avoir besoin d’accéder aux données qui ne sont pas exposées par l’espace de noms. Par exemple, le complément peut dépendre de propriétés personnalisées définies par une application extérieure ou avoir besoin rechercher dans la boîte aux lettres de l’utilisateur des messages provenant du même expéditeur. Dans ces scénarios, l’[API REST Outlook](/outlook/rest/index) est la méthode recommandée pour récupérer les informations.
+L’espace de noms [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) permet d’accéder à de nombreux champs communs pour les messages et les rendez-vous. Toutefois, dans certains scénarios, un complément peut avoir besoin d’accéder aux données qui ne sont pas exposées par l’espace de noms. Par exemple, le complément peut dépendre de propriétés personnalisées définies par une application extérieure ou avoir besoin rechercher dans la boîte aux lettres de l’utilisateur des messages provenant du même expéditeur. Dans ces scénarios, l’[API REST Outlook](/outlook/rest) est la méthode recommandée pour récupérer les informations.
+
+> [!NOTE]
+> Vous pouvez également accéder aux [API REST Outlook via Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph), mais il existe quelques différences clés. Pour plus d’informations, veuillez [comparer Microsoft Graph et Outlook](/outlook/rest/compare-graph).
 
 ## <a name="get-an-access-token"></a>Obtenir un jeton d’accès
 
@@ -84,7 +87,7 @@ var restHost = Office.context.mailbox.restUrl;
 Une fois que votre complément a le jeton d’accès, l’ID de l’élément et l’URL de l’API REST, il peut transmettre ces informations à un service principal qui appelle l’API REST, ou l’appeler directement à l’aide d’AJAX. L’exemple suivant appelle l’API REST de courrier Outlook pour obtenir le message actuel.
 
 > [!IMPORTANT]
-> Pour les déploiements Exchange sur site, les demandes côté client utilisant AJAX ou des bibliothèques similaires échouent car CORS n’est pas pris en charge dans cette installation de serveur.
+> Pour les déploiements Exchange locaux, les demandes côté client utilisant AJAX ou des bibliothèques similaires échouent, car CORS n’est pas pris en charge dans cette configuration de serveur.
 
 ```js
 function getCurrentItem(accessToken) {

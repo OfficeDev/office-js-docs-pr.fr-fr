@@ -1,18 +1,18 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
-ms.date: 07/07/2020
+ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: e345d0a1682e0125373a309e1e56eb2d6298ac7d
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771409"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505408"
 ---
 # <a name="action-element"></a>Élément Action
 
-Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un  [bouton](control.md#button-control) ou un contrôle de [menu](control.md#menu-dropdown-button-controls) .
+Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contrôle  [Bouton](control.md#button-control) [ou](control.md#menu-dropdown-button-controls) Menu.
 
 ## <a name="attributes"></a>Attributs
 
@@ -29,7 +29,6 @@ Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un  [bout
 |  [TaskpaneId](#taskpaneid) | Spécifie l’ID du conteneur de volet des tâches.|
 |  [Title](#title) | Indique le titre personnalisé du volet Office.|
 |  [SupportsPinning](#supportspinning) | Indique qu’un volet des tâches prend en charge l’épinglage, ce qui conserve le volet des tâches ouvert lorsque l’utilisateur modifie la sélection.|
-  
 
 ## <a name="xsitype"></a>xsi:type
 
@@ -37,6 +36,9 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 - `ExecuteFunction`
 - `ShowTaskpane`
+
+> [!IMPORTANT]
+> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) boîte [aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible lorsque **xsi:type** est `ExecuteFunction` .
 
 ## <a name="functionname"></a>FunctionName
 
@@ -50,7 +52,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Élément obligatoire lorsque **xsi : type** est « ShowTaskpane ». Spécifie l’emplacement du fichier source pour cette action. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **URL** dans l’élément **URL** de l’élément [Resources](resources.md) .
+Élément obligatoire lorsque **xsi:type** est « ShowTaskpane ». Spécifie l’emplacement du fichier source pour cette action. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources.](resources.md)
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -104,7 +106,7 @@ Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneI
 
 Élément facultatif quand **xsi:type** est « ShowTaskpane ». Indique le titre personnalisé du volet Office pour cette action.
 
-L’exemple suivant montre une action qui utilise l’élément **title** . Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (RESID), qui est défini dans la section **ressources** du manifeste et ne peut pas comporter plus de 32 caractères.
+L’exemple suivant illustre une action qui utilise **l’élément Title.** Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -132,9 +134,10 @@ L’exemple suivant montre une action qui utilise l’élément **title** . Note
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Bien que l' `SupportsPinning` élément ait été introduit dans l' [ensemble de conditions requises 1,5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Microsoft 365 à l’aide des éléments suivants.
-> - Outlook 2016 ou version ultérieure sur Windows (version 7628,1000 ou ultérieure)
-> - Outlook 2016 ou version ultérieure sur Mac (Build 16.13.503 ou version ultérieure)
+> Bien que l’élément a été introduit dans l’ensemble de conditions requises 1.5, il est actuellement uniquement pris en charge pour les abonnés `SupportsPinning` Microsoft 365 à l’aide des éléments suivants. [](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
+>
+> - Outlook 2016 ou une ultérieure sur Windows (build 7628.1000 ou ultérieure)
+> - Outlook 2016 ou une ultérieure sur Mac (build 16.13.503 ou ultérieure)
 > - Outlook moderne sur le web
 
 ```xml

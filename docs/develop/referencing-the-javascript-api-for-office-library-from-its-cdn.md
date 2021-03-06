@@ -1,18 +1,18 @@
 ---
 title: Référencement de la bibliothèque de l’API JavaScript Office
-description: Découvrez comment référencer la bibliothèque d’API JavaScript Office et les définitions de type dans votre complément.
-ms.date: 06/23/2020
+description: Découvrez comment référencer la bibliothèque de l’API JavaScript office et les définitions de type dans votre application.
+ms.date: 02/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 64dd08329b7bbc8c249bd270a431b6cbe93ec52c
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 346a34c0cbc31b5e569a5106dcd2bc01593b114a
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293183"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505191"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Référencement de la bibliothèque de l’API JavaScript Office
 
-La bibliothèque de l' [API JavaScript pour Office](../reference/javascript-api-for-office.md) fournit les API que votre complément peut utiliser pour interagir avec l’application Office. Pour référencer la bibliothèque, le moyen le plus simple consiste à utiliser le réseau de distribution de contenu (CDN) en ajoutant la `<script>` balise suivante dans la `<head>` section de votre page HTML :  
+La [bibliothèque de l’API JavaScript](../reference/javascript-api-for-office.md) pour Office fournit les API que votre application peut utiliser pour interagir avec l’application Office. Le moyen le plus simple de référencer la bibliothèque consiste à utiliser le réseau de distribution de contenu (CDN) en ajoutant la balise suivante dans la `<script>` section de votre page HTML `<head>` :  
 
 ```html
 <head>
@@ -21,23 +21,23 @@ La bibliothèque de l' [API JavaScript pour Office](../reference/javascript-api-
 </head>
 ```
 
-Cela permet de télécharger et de mettre en cache les fichiers de l’API JavaScript pour Office la première fois que votre complément se charge pour s’assurer qu’il utilise l’implémentation la plus à jour de Office.js et ses fichiers associés pour la version spécifiée.
+Cela permet de télécharger et de mettre en cache les fichiers de l’API JavaScript pour Office lors du premier chargement de votre application pour vous assurer qu’elle utilise l’implémentation la plus à jour de Office.js et de ses fichiers associés pour la version spécifiée.
 
 > [!IMPORTANT]
-> Vous devez référencer l’API JavaScript Office depuis l’intérieur `<head>` de la section de la page pour vérifier que l’API est entièrement initialisée avant tout élément Body. Les applications Office exigent que les compléments soient initialisés dans un délai de 5 secondes après l’activation. Si votre complément n’est pas activé dans ce délai, il sera déclaré comme bloqué et un message d’erreur sera affiché à l’utilisateur.
+> Vous devez référencer l’API JavaScript Office à partir de la section de la page pour vous assurer que l’API est entièrement initialisée avant les `<head>` éléments body.
 
-## <a name="api-versioning-and-backward-compatibility"></a>Contrôle de version de l’API et compatibilité descendante
+## <a name="api-versioning-and-backward-compatibility"></a>Gestion des versions d’API et compatibilité avec les versions antérieures
 
-Dans l’extrait de code HTML précédent, l’élément `/1/` devant `office.js` dans l’URL du CDN spécifie la dernière version incrémentielle dans la version 1 de Office.js. Étant donné que l’API JavaScript pour Office conserve la compatibilité descendante, la dernière version continuera à prendre en charge les membres d’API qui ont été introduits précédemment dans la version 1. Si vous devez mettre à niveau un projet existant, consultez [la rubrique mise à jour de la version de vos fichiers de schéma de manifeste et de l’API JavaScript pour Office](update-your-javascript-api-for-office-and-manifest-schema-version.md). 
+Dans l’extrait de code HTML précédent, la partie avant de l’URL du CDN spécifie la dernière version incrémentielle dans la version 1 de `/1/` `office.js` Office.js. Étant donné que l’API JavaScript Pour Office maintient la compatibilité ascendante, la dernière version continuera à prendre en charge les membres d’API qui ont été introduits précédemment dans la version 1. Si vous devez mettre à niveau un projet existant, voir Mettre à jour la version de votre API JavaScript Office et des fichiers [de schéma de manifeste.](update-your-javascript-api-for-office-and-manifest-schema-version.md) 
 
 Si vous envisagez de publier votre complément Office à partir d’AppSource, vous devez utiliser cette référence au CDN. Les références locales sont adaptées uniquement au développement interne et au débogage des scénarios.
 
 > [!NOTE]
 > Pour utiliser les API destinées à la prévisualisation, référencez la version d’évaluation de la bibliothèque de l’interface API JavaScript Office dans le CDN : `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
 
-## <a name="enabling-intellisense-for-a-typescript-project"></a>Activation d’IntelliSense pour un projet de dactylographié
+## <a name="enabling-intellisense-for-a-typescript-project"></a>Activation IntelliSense pour un projet TypeScript
 
-En plus de référencer l’API JavaScript pour Office, comme décrit précédemment, vous pouvez également activer IntelliSense pour le projet de complément de récriture à l’aide des définitions de type de [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js). Pour ce faire, exécutez la commande suivante dans une invite du système à nœud (ou une fenêtre git bash) à partir de la racine de votre dossier de projet. [Node.js](https://nodejs.org) doit être installé (qui inclut npm).
+En plus de référencer l’API JavaScript Office comme décrit précédemment, vous pouvez également activer IntelliSense pour le projet de complément TypeScript à l’aide des définitions de type de [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/office-js). Pour ce faire, exécutez la commande suivante dans une invite système node (ou une fenêtre Git Bash) à partir de la racine du dossier de votre projet. [Node.js](https://nodejs.org) doit être installé (qui inclut npm).
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
@@ -45,7 +45,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="preview-apis"></a>API d’aperçu
 
-De nouvelles API JavaScript sont introduites pour la première fois dans « Preview », puis elles deviennent une partie d’un ensemble de conditions requises spécifiques, après un test suffisant, et les commentaires des utilisateurs sont nécessaires.
+Les nouvelles API JavaScript sont d’abord introduites dans « aperçu », puis font partie d’un ensemble de conditions requises numérotées spécifique une fois que des tests suffisants ont eu lieu et que des commentaires de l’utilisateur sont requis.
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 

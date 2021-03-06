@@ -1,27 +1,27 @@
 ---
 title: Élément Override dans le fichier manifest
-description: L’élément override vous permet de spécifier la valeur d’un paramètre en fonction d’une condition spécifiée.
+description: L’élément Override vous permet de spécifier la valeur d’un paramètre en fonction d’une condition spécifiée.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 2c66503f9f95155a096b1b6fb23332eed8422da6
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: d2146cc1f44e829bc78076c8093b2ebf791dc722
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996311"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505338"
 ---
 # <a name="override-element"></a>Élément Override
 
-Permet de remplacer la valeur d’un paramètre de manifeste en fonction d’une condition spécifiée. Il existe deux types de conditions :
+Permet de remplacer la valeur d’un paramètre de manifeste en fonction d’une condition spécifiée. Il existe deux types de conditions :
 
-- Paramètres régionaux Office différents de ceux par défaut.
-- Modèle de la prise en charge de l’ensemble de conditions requises qui est différente du modèle par défaut.
+- Paramètres régionaux Office différents de la valeur par défaut.
+- Modèle de prise en charge de l’ensemble de conditions requises différent du modèle par défaut.
 
-Il existe deux types d' `<Override>` éléments : un pour les substitutions de paramètres régionaux, appelé **LocaleTokenOverride** , et l’autre pour les substitutions d’ensemble de conditions requises, appelé **RequirementTokenOverride**. Mais il n’existe aucun `type` paramètre pour l' `<Override>` élément. La différence est déterminée par l’élément parent et le type de l’élément parent. Un `<Override>` élément qui se trouve à l’intérieur d’un `<Token>` élément dont le `xsi:type` est `RequirementToken` , doit être de type **RequirementTokenOverride**. Un `<Override>` élément situé à l’intérieur d’un autre élément parent, ou à l’intérieur d’un `<Override>` élément de type `LocaleToken` , doit être de type **LocaleTokenOverride**. Chaque type est décrit dans des sections distinctes ci-dessous.
+Il existe deux types d’éléments, l’un pour les remplacements de `<Override>` paramètres régionaux, appelé **LocaleTokenOverride** et l’autre pour les substitutions d’ensembles de conditions requises, appelé **RequirementTokenOverride**. Mais il n’existe `type` aucun paramètre pour `<Override>` l’élément. La différence est déterminée par l’élément parent et le type de l’élément parent. Un `<Override>` élément qui se trouve à l’intérieur d’un élément dont , doit être de type `<Token>` `xsi:type` `RequirementToken` **RequirementTokenOverride**. Un élément à l’intérieur d’un autre élément parent, ou à l’intérieur d’un élément de type, doit `<Override>` `<Override>` être de type `LocaleToken` **LocaleTokenOverride**. Chaque type est décrit dans des sections distinctes ci-dessous. Pour plus d’informations sur l’utilisation de cet élément lorsqu’il est enfant d’un élément, voir Work `<Token>` [with extended overrides of the manifest](../../develop/extended-overrides.md).
 
-## <a name="override-element-of-type-localetokenoverride"></a>Élément override de type LocaleTokenOverride
+## <a name="override-element-of-type-localetokenoverride"></a>Élément Override de type LocaleTokenOverride
 
-Un `<Override>` élément exprime un conditionnel et peut être lu sous la forme d’un «if... Then... " résultat. Si l' `<Override>` élément est de type **LocaleTokenOverride** , l' `Locale` attribut est la condition, et l' `Value` attribut est le à la suite. Par exemple, le code suivant est lu « si le paramètre paramètres régionaux Office est fr-fr, le nom complet est «lecteur vidéo ».»
+Un `<Override>` élément exprime une conditionnel et peut être lu en tant que « If ... alors... . Si `<Override>` l’élément est de type **LocaleTokenOverride**, l’attribut est la `Locale` condition et `Value` l’attribut en est la conséquence. Par exemple, l’exemple suivant indique « Si le paramètre de paramètres régionaux Office est fr-fr, le nom complet est Lecteur vidéo ».
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -92,9 +92,9 @@ Un `<Override>` élément exprime un conditionnel et peut être lu sous la forme
 - [Localisation des compléments Office](../../develop/localization.md)
 - [Raccourcis clavier](../../design/keyboard-shortcuts.md)
 
-## <a name="override-element-of-type-requirementtokenoverride"></a>Élément override de type RequirementTokenOverride
+## <a name="override-element-of-type-requirementtokenoverride"></a>Élément Override de type RequirementTokenOverride
 
-Un `<Override>` élément exprime un conditionnel et peut être lu sous la forme d’un «if... Then... " résultat. Si l' `<Override>` élément est de type **RequirementTokenOverride** , l’élément enfant `<Requirements>` exprime la condition, et l' `Value` attribut est le à la suite. Par exemple, le premier `<Override>` des éléments suivants est lu « si la plateforme actuelle prend en charge la version 1,7 de FeatureOne, puis utilisez la chaîne «oldAddinVersion » à la place du `${token.requirements}` jeton dans l’URL du grand-parent `<ExtendedOverrides>` (au lieu de la chaîne par défaut « mise à niveau »)».
+Un `<Override>` élément exprime une conditionnel et peut être lu en tant que « If ... then ... » . Si `<Override>` l’élément est de type **RequirementTokenOverride**, l’élément enfant exprime la condition et l’attribut `<Requirements>` en est le `Value` résultat. Par exemple, la première partie de ce qui suit est lue « Si la plateforme actuelle prend en charge FeatureOne version 1.7, utilisez la chaîne « oldAddinVersion » à la place du jeton dans l’URL de l’enfant (au lieu de la chaîne par défaut `<Override>` `${token.requirements}` « upgrade `<ExtendedOverrides>` »).
 
 ```xml
 <ExtendedOverrides Url="http://contoso.com/addinmetadata/${token.requirements}/extended-manifest-overrides.json">
@@ -146,7 +146,7 @@ Un `<Override>` élément exprime un conditionnel et peut être lu sous la forme
 
 |Attribut|Type|Requis|Description|
 |:-----|:-----|:-----|:-----|
-|Valeur|string|obligatoire|Valeur du jeton de grand-parent lorsque la condition est satisfaite.|
+|Valeur|string|obligatoire|Valeur du jeton de preuve lorsque la condition est remplie.|
 
 ### <a name="example"></a>Exemple
 

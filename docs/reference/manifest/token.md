@@ -1,18 +1,18 @@
 ---
-title: Élément de jeton dans le fichier manifeste
-description: Spécifie un jeton ou un caractère générique qui peut être utilisé avec les modèles d’URL dans le manifeste.
+title: Élément Token dans le fichier manifeste
+description: Spécifie un jeton ou un caractère générique qui peut être utilisé avec des modèles d’URL dans le manifeste.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 5e26af44c566ab09ac81c8194e1ae7d85aaac327
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 48078f8211a8fd3f0e3f9d7c3f3aabd1d31b0a6d
+ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996685"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "50505366"
 ---
 # <a name="token-element"></a>Élément Token
 
-Définit un jeton d’URL individuel.
+Définit un jeton d’URL individuel. Pour plus d’informations sur l’utilisation de cet élément, voir [Work with extended overrides of the manifest](../../develop/extended-overrides.md).
 
 **Type de complément :** volet Office
 
@@ -36,9 +36,9 @@ Définit un jeton d’URL individuel.
 
 |Attribut|Description|
 |:-----|:-----|
-|DefaultValue|Valeur par défaut de ce jeton si aucune condition n’est `<Override>` correspondante dans un élément enfant.|
-|Nom|Nom du jeton. Ce nom est défini par l’utilisateur. Le type du jeton est déterminé par l’attribut type.|
-|xsi:type|Définit le type de jeton. Cet attribut doit être défini sur l’un des éléments suivants :  `"RequirementsToken"` , ou  `"LocaleToken"` .|
+|DefaultValue|Valeur par défaut de ce jeton si aucune condition dans un élément `<Override>` enfant ne correspond.|
+|Nom|Nom du jeton. Ce nom est défini par l’utilisateur. Le type du jeton est déterminé par l’attribut de type.|
+|xsi:type|Définit le type de jeton. Cet attribut doit être définie sur l’une des valeurs  `"RequirementsToken"` : ou  `"LocaleToken"` .|
 
 ## <a name="example"></a>Exemple
 
