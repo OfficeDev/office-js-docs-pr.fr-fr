@@ -97,6 +97,8 @@ items:
             items:
               - name: Présentation
                 href: develop/add-in-manifests.md
+              - name: Remplacements étendus
+                href: develop/extended-overrides.md
               - name: Trouver l’ordre approprié d’éléments manifestes
                 href: develop/manifest-element-ordering.md
               - name: Mettre à jour la version du manifeste et de l’API
