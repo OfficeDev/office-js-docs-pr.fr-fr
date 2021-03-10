@@ -1,18 +1,18 @@
 ---
-title: Insérer et supprimer des diapositives dans une présentation PowerPoint
-description: Découvrez comment insérer des diapositives d’une présentation dans une autre et comment les supprimer.
-ms.date: 01/08/2021
+title: Insérer des diapositives dans une présentation PowerPoint
+description: Découvrez comment insérer des diapositives d’une présentation dans une autre.
+ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: a9a4b2efd1e970d9c45885f9a17046bec4de7e72
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 810a398c336c6715cac138840ed8524cff6c0dac
+ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839718"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "50613912"
 ---
-# <a name="insert-and-delete-slides-in-a-powerpoint-presentation"></a>Insérer et supprimer des diapositives dans une présentation PowerPoint
+# <a name="insert-slides-in-a-powerpoint-presentation"></a>Insérer des diapositives dans une présentation PowerPoint
 
-Un add-in PowerPoint peut insérer des diapositives d’une présentation dans la présentation actuelle à l’aide de la bibliothèque JavaScript propre à l’application De PowerPoint. Vous pouvez contrôler si les diapositives insérées conservent la mise en forme de la présentation source ou la mise en forme de la présentation cible. Vous pouvez également supprimer des diapositives de la présentation.
+Un add-in PowerPoint peut insérer des diapositives d’une présentation dans la présentation actuelle à l’aide de la bibliothèque JavaScript propre à l’application De PowerPoint. Vous pouvez contrôler si les diapositives insérées conservent la mise en forme de la présentation source ou la mise en forme de la présentation cible.
 
 Les API d’insertion de diapositives sont principalement utilisées dans les scénarios de modèles de présentation : il existe un petit nombre de présentations connues qui servent de pools de diapositives qui peuvent être insérées par le module. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation le critère de sélection (par exemple, titres ou images) avec les ID de diapositive. Les API peuvent également être utilisées dans des scénarios où l’utilisateur peut insérer des diapositives  à partir de n’importe quelle présentation arbitraire, mais dans ce scénario, l’utilisateur est effectivement limité à l’insertion de toutes les diapositives de la présentation source. Pour [plus d’informations à](#selecting-which-slides-to-insert) ce sujet, voir Sélection des diapositives à insérer.
 
@@ -23,7 +23,7 @@ Il existe deux étapes pour insérer des diapositives d’une présentation dans
 
 ## <a name="convert-the-source-presentation-to-base64"></a>Convertir la présentation source en base64
 
-Il existe de nombreuses façons de convertir un fichier en base64. Le langage de programmation et la bibliothèque que vous utilisez, et s’il faut les convertir côté serveur ou côté client, sont déterminés par votre scénario. Le plus souvent, vous allez faire la conversion dans JavaScript côté client à l’aide d’un [objet FileReader.](https://developer.mozilla.org/docs/Web/API/FileReader) L’exemple suivant illustre cette pratique.
+Il existe plusieurs façons de convertir un fichier en base64. Le langage de programmation et la bibliothèque que vous utilisez, et s’il faut les convertir côté serveur ou côté client, sont déterminés par votre scénario. Le plus souvent, vous allez faire la conversion dans JavaScript côté client à l’aide d’un [objet FileReader.](https://developer.mozilla.org/docs/Web/API/FileReader) L’exemple suivant illustre cette pratique.
 
 1. Commencez par obtenir une référence au fichier PowerPoint source. Dans cet exemple, nous allons utiliser un contrôle de type pour demander à `<input>` l’utilisateur de choisir un `file` fichier. Ajoutez le markup suivant à la page du add-in.
 
@@ -89,7 +89,7 @@ async function insertAllSlides() {
 Vous pouvez contrôler certains aspects du résultat d’insertion, y compris l’endroit où les diapositives sont insérées et si elles obtiennent la mise en forme source ou cible, en passant un objet [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) en tant que deuxième paramètre à `insertSlidesFromBase64` . Voici un exemple. Tenez compte du code suivant :
 
 - Il existe deux valeurs possibles pour la propriété `formatting` : « UseDestinationTheme » et « KeepSourceFormatting ». Si vous le souhaitez, vous pouvez utiliser `InsertSlideFormatting` l’enum (par exemple, `PowerPoint.InsertSlideFormatting.useDestinationTheme` ).
-- La fonction insère les diapositives de la présentation source immédiatement après la diapositive spécifiée par la `targetSlideId` propriété. La valeur de cette propriété est une chaîne de l’une des trois formes possibles : ***nnn*#**, * *#* mmmmmmmmmmm*** ou **_nnn_ #* mmmmm***, où *nnn* est l’ID de la diapositive (généralement 3 chiffres) et *mmmmmmmmm est* l’ID de création de la diapositive (généralement 9 chiffres). Voici quelques exemples `267#763315295` : `267#` , et `#763315295` .
+- La fonction insère les diapositives de la présentation source immédiatement après la diapositive spécifiée par la `targetSlideId` propriété. La valeur de cette propriété est une chaîne de l’une des trois formes possibles : ***nnn*#**, * *#* mmmmmmmmmmm*** ou **_nnn_ #* mmmmmmmmm***, où *nnn* est l’ID de la diapositive (généralement 3 chiffres) et *mmmmmmmmm est* l’ID de création de la diapositive (généralement 9 chiffres). Voici quelques exemples `267#763315295` : `267#` , et `#763315295` .
 
 ```javascript
 async function insertSlidesDestinationFormatting() {
@@ -170,22 +170,6 @@ async function insertAfterSelectedSlide() {
 > [!NOTE]
 > Les diapositives sont insérées dans le même ordre relatif dans lequel elles apparaissent dans la présentation source, quel que soit l’ordre dans lequel elles apparaissent dans le tableau.
 
-Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’une diapositive dans la présentation source. Pour cette raison, vous ne pouvez utiliser la propriété que si vous connaissez les ID source au moment du codage ou que votre application peut les récupérer lors de l’utilisation à partir d’une source de `sourceSlideIds` données. Étant donné que les utilisateurs ne peuvent pas mémoriser les ID de diapositive, vous devez également permettre à l’utilisateur de sélectionner des diapositives, par titre ou par image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
+Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’une diapositive dans la présentation source. Pour cette raison, vous ne pouvez utiliser la propriété que si vous connaissez les ID source au moment du codage ou que votre application peut les récupérer lors de l’utilisation à partir d’une source de `sourceSlideIds` données. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID de diapositive, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par titre ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
 
 Par conséquent, la propriété est principalement utilisée dans les scénarios de modèles de présentation : le add-in est conçu pour fonctionner avec un ensemble spécifique de présentations qui servent de pools de diapositives qui peuvent être `sourceSlideIds` insérées. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (comme des titres ou des images) avec des ID de diapositive ou de création de diapositives qui ont été créés à partir de l’ensemble de présentations sources possibles.
-
-## <a name="delete-slides"></a>Supprimer des diapositives
-
-Vous pouvez supprimer une diapositive en obtenant une référence à l’objet [Slide](/javascript/api/powerpoint/powerpoint.slide) qui représente la diapositive et en appelant la `Slide.delete` méthode. Voici un exemple dans lequel la quatrième diapositive est supprimée.
-
-```javascript
-async function deleteSlide() {
-  await PowerPoint.run(async function(context) {
-
-    // The slide index is zero-based. 
-    const slide = context.presentation.slides.getItemAt(3);
-    slide.delete();
-    await context.sync();
-  });
-}
-```

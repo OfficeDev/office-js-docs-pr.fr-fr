@@ -1,14 +1,14 @@
 ---
-ms.date: 02/04/2021
+ms.date: 03/08/2021
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, tels que les plages Excel, les paramètres facultatifs, le contexte d’appel, etc.
 title: Options pour les fonctions personnalisées Excel
 localization_priority: Normal
-ms.openlocfilehash: afe6947b1a1b9022a0284535b9ab1d68c9777c14
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
+ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173905"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "50613926"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -119,7 +119,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Votre fonction personnalisée peut accepter une plage de données de cellule comme paramètre d’entrée. Une fonction peut également renvoyer une plage de données. Excel passe une plage de données de cellule sous forme de tableau à deux dimensions.
 
-Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre et la syntaxe JSDOC définit la propriété du paramètre dans les métadonnées `values` `number[][]` `dimensionality` `matrix` JSON pour cette fonction. 
+Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre et la syntaxe JSDOC définit la propriété du paramètre dans les métadonnées `values` `number[][]` `dimensionality` `matrix` JSON de cette fonction. 
 
 ```js
 /**
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>Paramètre de plage unique
 
-Un paramètre de plage unique n’est techniquement pas un paramètre exercissable, mais il est inclus ici, car la déclaration est très similaire aux paramètres ext ments ex r us. Il apparaît à l’utilisateur comme ADD(A2:B3) où une seule plage est passée à partir d’Excel. L’exemple suivant montre comment déclarer un paramètre de plage unique.
+Un paramètre de plage unique n’est techniquement pas un paramètre exercable, mais il est inclus ici, car la déclaration est très similaire aux paramètres répétés. Il apparaît à l’utilisateur comme ADD(A2:B3) où une seule plage est passée à partir d’Excel. L’exemple suivant montre comment déclarer un paramètre de plage unique.
 
 ```JS
 /**
@@ -217,13 +217,13 @@ function addSingleRange(singleRange) {
 
 ### <a name="repeating-range-parameter"></a>Paramètre de plage répétée
 
-Un paramètre de plage exercidable permet de passer plusieurs plages ou nombres. Par exemple, l’utilisateur peut entrer ADD(5,B2,C3,8,E5:E8). Les plages exercidées sont généralement spécifiées avec le type, car il s’agit de `number[][][]` matrices en trois dimensions. Pour obtenir un exemple, consultez le principal exemple répertorié pour les paramètres répétés(#repeating-parameters).
+Un paramètre de plage exercidable permet de passer plusieurs plages ou nombres. Par exemple, l’utilisateur peut entrer ADD(5,B2,C3,8,E5:E8). Les plages exercidées sont généralement spécifiées avec le type, car il s’agit de matrices en `number[][][]` trois dimensions. Pour obtenir un exemple, voir l’exemple principal répertorié pour [les paramètres répétés.](#repeating-parameters)
 
 
 ### <a name="declaring-repeating-parameters"></a>Déclaration de paramètres répétés
 Dans Typescript, indiquez que le paramètre est multidimensionnel. Par exemple, cela indiquerait un tableau à une dimension, un tableau à  `ADD(values: number[])` `ADD(values:number[][])` deux dimensions, etc.
 
-Dans JavaScript, utilisez pour les tableaux à une dimension, pour les tableaux à deux dimensions, et ainsi de `@param values {number[]}` suite pour plus de `@param <name> {number[][]}` dimensions.
+Dans JavaScript, utilisez pour les tableaux à une dimension, pour les tableaux à deux `@param values {number[]}` `@param <name> {number[][]}` dimensions, etc. pour plus de dimensions.
 
 Pour JSON écrit à la main, assurez-vous que votre paramètre est spécifié comme dans votre fichier JSON, et vérifiez que vos paramètres sont `"repeating": true` marqués comme `"dimensionality": matrix` .
 
@@ -268,12 +268,13 @@ La fonction personnalisée suivante prend trois paramètres d’entrée, récup�
 
 ```js
 /**
- * Return the address of three parameters. 
+ * Return the addresses of three parameters. 
  * @customfunction
  * @param {string} firstParameter First parameter.
  * @param {string} secondParameter Second parameter.
- * @param {string} thirdParameter Third parameter
+ * @param {string} thirdParameter Third parameter.
  * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array. 
  * @requiresParameterAddresses
  */
 function getParameterAddresses(firstParameter, secondParameter, thirdParameter, invocation) {
