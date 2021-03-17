@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 02/09/2021
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 495bcd65f9b69a14b20548de000ff84ea938c418
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 09bc44e78f202474757317b4b07bce50d6235aa1
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237811"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836899"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -25,12 +25,12 @@ Pour en savoir plus sur les limites de la fonctionnalité d’envoi, consultez l
 
 Le tableau suivant présente les combinaisons client-serveur pris en charge pour la fonctionnalité d’envoi. Les combinaisons exclues ne sont pas pris en charge.
 
-| Client | Exchange Online | Exchange 2016 local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 local<br>(Mise à jour cumulative 1 ou ultérieure) |
+| Client | Exchange Online | Exchange 2016 local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 local<br>(Mise à jour cumulative 1 ou ultérieure) |
 |---|:---:|:---:|:---:|
 |Windows :<br>version 1910 (build 12130.20272) ou version ultérieure|Oui|Oui|Oui|
 |Mac :<br>build 16.30 ou ultérieure|Oui|Non|Non|
-|Navigateur web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|
-|Navigateur web :<br>interface utilisateur Outlook classique|Non applicable|Oui|Oui|
+|Navigateur Web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|
+|Navigateur Web :<br>interface utilisateur Outlook classique|Non applicable|Oui|Oui|
 
 > [!NOTE]
 > La fonctionnalité d’envoi a été officiellement publiée dans l’ensemble de conditions requises 1.8 (pour plus d’informations, voir la prise en charge actuelle du serveur et du [client).](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
@@ -293,7 +293,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 Les compléments pour Outlook sur Windows qui utilisent la fonctionnalité d’envoi doivent s’exécuter pour tous les utilisateurs qui les ont installés. Toutefois, si les utilisateurs sont obligés d’exécuter le complément pour respecter les normes de conformité, la stratégie de groupe **Désactiver l’envoi lorsque les extensions Web ne peuvent pas être chargées** doit être **Activée** sur chaque ordinateur concerné.
 
-Pour activer les stratégies de boîte aux lettres, les administrateurs peuvent télécharger [l’outil modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030) et accéder aux modèles d’administration les plus récents en exécutant l’éditeur de stratégie de groupe local, **gpedit.msc**.
+Pour définir des stratégies de boîte aux lettres, les administrateurs peuvent télécharger l’outil [Modèles](https://www.microsoft.com/download/details.aspx?id=49030) d’administration, puis accéder aux derniers modèles d’administration en exécutant l’Éditeur de stratégie de groupe local, **gpedit.msc**.
 
 #### <a name="what-the-policy-does"></a>Rôle de la stratégie
 
@@ -301,15 +301,15 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la stratégie|Résultat|
 |---|---|
-|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
-|Activé|Une fois que les derniers manifestes des applications d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
+|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit du statut/comportement par défaut.|
+|Activé|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
 
 Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuvent activer la stratégie d’envoi en veillant à ce que le paramètre de la stratégie de groupe de l’utilisateur **Désactiver l'envoi lorsque les extensions Web ne sont pas chargées** soit **Activé**. Pour désactiver la stratégie pour un utilisateur, l’administrateur doit la paramétrer sur **Désactivé**. Pour gérer ce paramètre de stratégie, vous pouvez procéder comme suit.
 
 1. Téléchargez l’[outil de modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030).
-1. Ouvrez l’éditeur de stratégie de groupe local (**gpedit.msc**).
+1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
 1. Accédez à **Configuration utilisateur > modèles d’administration > Microsoft Outlook 2016 > Sécurité > Centre de gestion de la confidentialité**.
 1. Sélectionnez le paramètre **Désactiver l’envoi lorsque les extensions Web ne peuvent pas charger**.
 1. Ouvrir le lien pour modifier le paramètre de stratégie.
@@ -335,7 +335,7 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 |État de la clé|Résultat|
 |---|---|
 |false|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
-|true|Une fois que les derniers manifestes des applications d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué et le **bouton** Envoyer est désactivé.|
+|true|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir d’Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué et le **bouton** Envoyer est désactivé.|
 
 ---
 
@@ -357,9 +357,9 @@ Les compléments s’exécutent pendant l’événement d’envoi pour autoriser
 
 |Scénario|Fonctionnalité d’envoi (Boîte aux lettres 1)|Fonctionnalité d’envoi (Boîte aux lettres 2)|Session web Outlook (classique)|Résultat|Pris en charge ?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|2 |Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|3 |Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
+|1|Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|2|Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|3|Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
 |4 |Activé|Désactivé|Nouvelle session|Aucun complément d’envoi ne s’exécute ; un message ou un élément de réunion est envoyé.|Pris en charge.|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navigateur web (Outlook moderne), Windows, Mac
@@ -372,8 +372,8 @@ Pour appliquer l’envoi, les administrateurs doivent s’assurer que la straté
 
 |Scénario|Stratégie d’envoi de la boîte aux lettres 1|Compléments d’envoi activés ?|Action de la boîte aux lettres 1|Résultat|Pris en charge ?|
 |:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1 |Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
-|2 |Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
+|1|Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
+|2|Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>La fonctionnalité/stratégie d’envoi est activée sur la boîte aux lettres de l’utilisateur, les compléments qui prennent en charge cette fonctionnalité sont installés et activés et le mode hors connexion est activé
 

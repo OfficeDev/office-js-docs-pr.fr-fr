@@ -1,18 +1,18 @@
 ---
-title: ProgId, élément dans le fichier manifeste
-description: L’élément ProgId spécifie l’ID programmatique du complément COM équivalent pour le volet Office de votre complément Web.
-ms.date: 06/19/2019
+title: Élément ProgId dans le fichier manifeste
+description: L’élément ProgId spécifie l’ID programmatique du compl?ment COM équivalent pour le volet Des tâches de votre compl?ment web.
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e27e75aa05cd4fd605094be98d1db0a2413f1f36
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 484de764dda745e93f39c16d51b9da0a65c0b337
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611749"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836878"
 ---
-# <a name="progid-element"></a>ProgId, élément
+# <a name="progid-element"></a>Élément ProgId
 
-Spécifie l’identificateur programmatique du complément COM équivalent pour le volet Office de votre complément Web.
+Spécifie l’identificateur programmatique du compl?ment COM équivalent pour le volet Des tâches de votre compl?ment web.
 
 **Type de complément :** volet Office
 
@@ -24,9 +24,9 @@ Spécifie l’identificateur programmatique du complément COM équivalent pour 
 
 ## <a name="contained-in"></a>Contenu dans
 
-[EquivalentAdd-in](equivalentaddin.md)
+[EquivalentAddin](equivalentaddin.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Rendre votre complément Office compatible avec un complément COM existant](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

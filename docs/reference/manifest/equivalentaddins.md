@@ -1,20 +1,20 @@
 ---
 title: Élément EquivalentAddins dans le fichier manifeste
-description: Spécifie la compatibilité descendante avec un complément COM équivalent, XLL ou les deux.
-ms.date: 05/03/2019
+description: Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: df854bd6bf7b7be0328235726e3adfc9fc44c5b4
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: cce316ceac2b6c79a0f7ea1378411b864923cada
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611553"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836829"
 ---
 # <a name="equivalentaddins-element"></a>Élément EquivalentAddins
 
-Spécifie la compatibilité descendante avec un complément COM équivalent, XLL ou les deux.
+Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
 
-**Type de complément :** Volet Office, fonction personnalisée
+**Type de add-in :** Volet Des tâches, Fonction personnalisée
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,4 +35,4 @@ Spécifie la compatibilité descendante avec un complément COM équivalent, XLL
 ## <a name="see-also"></a>Voir aussi
 
 - [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Rendre votre complément Office compatible avec un complément COM existant](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)

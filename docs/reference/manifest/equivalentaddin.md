@@ -1,20 +1,20 @@
 ---
 title: Élément EquivalentAddin dans le fichier manifeste
-description: Spécifie la compatibilité descendante pour un complément COM équivalent ou une XLL.
-ms.date: 06/19/2019
+description: Spécifie la compatibilité ascendante pour un add-in COM ou une XLL équivalent.
+ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e14fe91bf7a5fe321019acf205ddb1753fedd569
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 412a3ce7bd12d886b7b88b5b84938e28295aba5d
+ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611560"
+ms.lasthandoff: 03/17/2021
+ms.locfileid: "50836836"
 ---
 # <a name="equivalentaddin-element"></a>Élément EquivalentAddin
 
-Spécifie la compatibilité descendante pour un complément COM équivalent ou une XLL.
+Spécifie la compatibilité ascendante pour un add-in COM ou une XLL équivalent.
 
-**Type de complément :** Volet Office, fonction personnalisée
+**Type de add-in :** Volet Des tâches, Fonction personnalisée
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -26,22 +26,22 @@ Spécifie la compatibilité descendante pour un complément COM équivalent ou u
 
 ## <a name="contained-in"></a>Contenu dans
 
-[EquivalentAdd-ins](equivalentaddins.md)
+[EquivalentAddins](equivalentaddins.md)
 
 ## <a name="must-contain"></a>Doit contenir
 
-[Type](type.md)
+[Type (Type)](type.md)
 
 ## <a name="can-contain"></a>Peut contenir
 
-[ProgID](progid.md) 
- [Nom de fichier](filename.md)
+[ProgId](progid.md) 
+ [FileName](filename.md)
 
 ## <a name="remarks"></a>Remarques
 
-Pour spécifier un complément COM en tant que complément équivalent, fournissez les `ProgId` `Type` éléments et. Pour spécifier un XLL en tant que complément équivalent, fournissez les `FileName` éléments et `Type` .
+Pour spécifier un compl?ment COM en tant que compl?ment équivalent, fournissez les deux `ProgId` `Type` éléments. Pour spécifier un XLL en tant que module équivalent, fournissez à la fois les `FileName` éléments et les `Type` éléments.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](../../excel/make-custom-functions-compatible-with-xll-udf.md)
-- [Faire en sorte que votre complément Excel soit compatible avec un complément COM existant](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Rendre votre complément Office compatible avec un complément COM existant](../../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
