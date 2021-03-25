@@ -3,12 +3,12 @@ ms.date: 03/15/2021
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 344239c35e38bd88bfee5338289d1c2a929ea14c
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836864"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178047"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -223,7 +223,7 @@ Indique que l’adresse de la cellule dans laquelle la fonction est évaluée do
 
 Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à `@requiresAddress` utiliser. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
 
-L’exemple suivant montre comment utiliser le paramètre en combinaison avec pour renvoyer l’adresse de la cellule qui `invocation` a appelé votre fonction `@requiresAddress` personnalisée. Pour plus [d’informations,](custom-functions-parameter-options.md#invocation-parameter) voir paramètre Invocation.
+L’exemple suivant montre comment utiliser le paramètre en combinaison avec pour renvoyer l’adresse de la cellule `invocation` qui a appelé votre fonction `@requiresAddress` personnalisée. Pour plus [d’informations,](custom-functions-parameter-options.md#invocation-parameter) voir paramètre Invocation.
 
 ```js
 /**
@@ -245,11 +245,11 @@ function getAddress(first, second, invocation) {
 
 Indique que la fonction doit renvoyer les adresses des paramètres d’entrée. 
 
-Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à  `@requiresParameterAddresses` utiliser. Le commentaire JSDoc doit également inclure une balise spécifiant que la valeur de retour est `@returns` une matrice, par exemple `@returns {string[][]}` ou `@returns {number[][]}` . Pour [plus d’informations,](/office/dev/add-ins/excel/custom-functions-json-autogeneration#matrix-type) voir Types de matrices. 
+Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à  `@requiresParameterAddresses` utiliser. Le commentaire JSDoc doit également inclure une balise spécifiant que la valeur de retour est `@returns` une matrice, par exemple `@returns {string[][]}` ou `@returns {number[][]}` . Pour [plus d’informations,](#matrix-type) voir Types de matrices. 
 
 Lorsque la fonction est appelée, la `parameterAddresses` propriété contient les adresses des paramètres d’entrée.
 
-L’exemple suivant montre comment utiliser le paramètre en combinaison avec pour renvoyer les `invocation` `@requiresParameterAddresses` adresses de trois paramètres d’entrée. Pour [plus d’informations, voir Détecter l’adresse d’un](/office/dev/add-ins/excel/custom-functions-parameter-options#detect-the-address-of-a-parameter) paramètre. 
+L’exemple suivant montre comment utiliser le paramètre en combinaison avec pour renvoyer les `invocation` `@requiresParameterAddresses` adresses de trois paramètres d’entrée. Pour [plus d’informations, voir Détecter l’adresse d’un](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) paramètre. 
 
 ```js
 /**

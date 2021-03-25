@@ -1,16 +1,16 @@
 ---
-title: Publier des add-ins Office à l’aide d’un déploiement centralisé via le Centre d’administration Microsoft 365
+title: Publier des add-ins Office à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365
 description: Découvrez comment utiliser le déploiement centralisé pour déployer des add-ins internes ainsi que des add-ins fournis par des isvs.
-ms.date: 02/09/2021
+ms.date: 03/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 479c80e2898f4c875f0c108fc6ab40fe54a4de1a
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 8e784bdad18438b8ff734f4beaade416a286c35d
+ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234204"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "51178019"
 ---
-# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publier des add-ins Office à l’aide d’un déploiement centralisé via le Centre d’administration Microsoft 365
+# <a name="publish-office-add-ins-using-centralized-deployment-via-the-microsoft-365-admin-center"></a>Publier des add-ins Office à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365
 
 Le Centre d’administration Microsoft 365 permet aux administrateurs de déployer facilement des add-ins Office pour des utilisateurs et des groupes au sein de leur organisation. Les compléments déployés via le centre d’administration sont disponibles pour les utilisateurs directement dans leurs applications Office, sans qu’aucune configuration client ne soit requise. Vous pouvez utiliser le déploiement centralisé pour déployer des compléments internes, ainsi que des compléments fournis par des éditeurs de logiciels indépendants.
 
@@ -49,12 +49,13 @@ Avant de commencer, confirmez que votre organisation répond à toutes les condi
 Si votre organisation répond à toutes les conditions requises, procédez comme suit pour publier un complément Office via un déploiement centralisé :
 
 1. Connectez-vous à Microsoft 365 à l’aide de votre compte d’éducation ou de travail.
-2. Sélectionnez l’icône du lanceur d’applications située en haut à gauche et choisissez **Administrateur**.
-3. Dans le menu de navigation, appuyez sur **Afficher plus**, puis choisissez **Paramètres** > **Services et compléments**.
-4. Si un message s’affiche en haut de la page pour annoncer le nouveau Centre d’administration Microsoft 365, sélectionnez le message pour aller à la prévisualisation du Centre d’administration (voir à propos du Centre d’administration [Microsoft 365).](/microsoft-365/admin/admin-overview/about-the-admin-center)
-5. Choisissez **Déployer un complément** en haut de la page.
-6. Choisissez **Suivant** après avoir consulté la configuration requise.
-7. Dans la page **Déploiement centralisé**, choisissez l’une des options suivantes :
+1. Sélectionnez l’icône du lanceur d’applications située en haut à gauche et choisissez **Administrateur**.
+1. Dans le menu de navigation, **sélectionnez Afficher plus,** puis choisissez **Applications intégrées**  >  **paramètres.**
+1. En haut de la page, choisissez **Les modules.**
+1. Si un message s’affiche en haut de la page pour annoncer le nouveau Centre d’administration Microsoft 365, sélectionnez le message pour aller à la prévisualisation du Centre d’administration (voir à propos du Centre d’administration [Microsoft 365).](/microsoft-365/admin/admin-overview/about-the-admin-center)
+1. Choisissez **Déployer un complément** en haut de la page.
+1. Choisissez **Suivant** après avoir consulté la configuration requise.
+1. Dans la page **Déploiement centralisé**, choisissez l’une des options suivantes :
 
     - **Je veux ajouter un complément à partir de l’Office Store**.
     - **J’ai le fichier manifeste (.xml) sur cet appareil**. Pour cette option, sélectionnez **Parcourir** afin de recherche le fichier manifeste (.xml) que vous voulez utiliser.
@@ -67,7 +68,7 @@ Si votre organisation répond à toutes les conditions requises, procédez comme
     > [!NOTE]
     > Avec l’option Office Store, les mises à jour et améliorations du complément sont automatiquement disponibles pour les utilisateurs sans intervention de votre part.
 
-    ![Sélectionnez une boîte de dialogue de add-in dans le Centre d’administration Microsoft 365](../images/select-an-add-in.png)
+    ![Sélectionnez une boîte de dialogue de ajout dans le Centre d’administration Microsoft 365](../images/select-an-add-in.png)
 
 9. Choisissez **Continuer** après avoir passé en revue les détails du module, la politique de confidentialité et les termes du contrat de licence.
 
