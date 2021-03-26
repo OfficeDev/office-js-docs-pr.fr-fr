@@ -45,8 +45,7 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 | Élément                                                                                      | Contenu | Volet de tâches | Outlook |
 | :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
 | [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| 
-  [Id][]                                                                                       |    X    |     X     |    X    |
+| [Id][]                                                                                       |    X    |     X     |    X    |
 | [Version][]                                                                                  |    X    |     X     |    X    |
 | [ProviderName][]                                                                             |    X    |     X     |    X    |
 | [DefaultLocale][]                                                                            |    X    |     X     |    X    |
@@ -58,13 +57,8 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 | [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
 | [DesktopSettings][]                                                                          |         |           |    X    |
 | [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| 
-  [Permissions (ContentApp)][]<br/>
-  [Permissions (TaskPaneApp)][]<br/>
-  [Permissions (MailApp)][] |    X    |     X     |    X    |
-| 
-  [Rule (RuleCollection)][]<br/>
-  [Rule (MailApp)][]                                             |         |           |    X    |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
 | [Requirements (MailApp)][]                                                                  |         |           |    X    |
 | [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
 | [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
