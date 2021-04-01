@@ -10,13 +10,13 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 02/12/2021
-  ms.openlocfilehash: 848727c2b49c2ab8609fe07b98d25c307acb0315
-  ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+  ms.date: 03/29/2021
+  ms.openlocfilehash: 1b6dc17b648a283cdca57051a049f7247cc151c8
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 02/14/2021
-  ms.locfileid: "50238056"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435248"
 highlightedContent:
   items:
   - itemType: overview
@@ -102,12 +102,12 @@ conceptualContent:
     - url: /office/dev/store/add-in-submission-guide
       itemType: how-to-guide
       text: Consulter le guide de soumission de l’App Store Microsoft 365
-  - title: Engager
+  - title: Impliquer
     links:
     - url: https://developer.microsoft.com/office
       itemType: whats-new
       text: Rejoindre le programme pour les développeurs
-    - url: https://officespdev.uservoice.com
+    - url: /answers/products/m365
       itemType: architecture
       text: Demander des fonctionnalités
     - url: https://stackoverflow.com/questions/tagged/office-js
