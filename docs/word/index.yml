@@ -1,41 +1,41 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments Word
-summary: Avec les compléments Word, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut être exécutée dans Word sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments Word.
+summary: Avec les applications Word, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans Word sur plusieurs plateformes, y compris sur le web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments Word.
 metadata:
   title: Documentation sur les compléments Word
   description: Ressources pour découvrir les compléments Word.
   ms.prod: word
   ms.topic: landing-page
-  ms.date: 06/09/2020
+  ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: b9b464711f87211f4f10014c145acb2d66f327ef
-  ms.sourcegitcommit: 604361e55dee45c7a5d34c2fa6937693c154fc24
+  ms.openlocfilehash: cea0e108bcefef31c71b6499b3fa8918e7f5bae6
+  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/03/2020
-  ms.locfileid: "47363743"
+  ms.lasthandoff: 03/30/2021
+  ms.locfileid: "51435241"
 landingContent:
-- title: À propos des compléments Word
+- title: À propos des add-ins Word
   linkLists:
   - linkListType: overview
     links:
-    - text: Qu’est-ce que les compléments Word ?
+    - text: Que sont les add-ins Word ?
       url: word-add-ins-programming-overview.md
   - linkListType: quickstart
     links:
     - text: Créer votre premier complément Word
       url: ../quickstarts/word-quickstart.md
-    - text: Explorer les API avec script Lab
+    - text: Explorer les API avec Script Lab
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Utiliser l’API JavaScript pour Word pour interagir avec le contenu et les métadonnées d’un document
+    - text: Utiliser l’API JavaScript pour Word pour interagir avec le contenu et les métadonnées du document
       url: ../reference/overview/word-add-ins-reference-overview.md
-    - text: Tester et déboguer un complément Word
+    - text: Tester et déboguer un add-in Word
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déploiement et publication d’un complément Word
+    - text: Déployer et publier un add-in Word
       url: ../publish/publish.md
-- title: Concepts clés des compléments Office
+- title: Concepts clés des add-ins Office
   linkLists:
   - linkListType: overview
     links:
@@ -56,7 +56,7 @@ landingContent:
     - text: Poser des questions
       url: https://stackoverflow.com/questions/tagged/office-js
     - text: Demander des fonctionnalités
-      url: https://officespdev.uservoice.com/
+      url: /answers/products/m365
     - text: Signaler des problèmes
       url: https://github.com/officedev/office-js/issues
     - text: Ressources supplémentaires sur les compléments Office
