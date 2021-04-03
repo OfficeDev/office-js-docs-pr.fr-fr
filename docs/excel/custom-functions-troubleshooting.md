@@ -1,14 +1,14 @@
 ---
-ms.date: 01/08/2020
+ms.date: 03/30/2021
 description: Résoudre les problèmes courants liés aux fonctions personnalisées Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: d9f912b1cd98b04c6d0e207c79491313dc794719
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
+ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839837"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "51506139"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -39,9 +39,9 @@ Les informations relatives aux fonctions personnalisées sont mises en cache par
 
 ## <a name="common-problems-and-solutions"></a>Problèmes courants et solutions
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exception"></a>Impossible d’ouvrir les compléments d’hôte local : utiliser une exception de bouclage local
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>Can’t open add-in from localhost: Use a local loopback exemption
 
-Si vous voyez le message d’erreur « Nous ne pouvons pas ouvrir ce complément à partir de l’hôte local », vous devez activer une exception de bouclage local. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+Si l’erreur « Nous ne pouvons pas ouvrir ce module à partir de localhost » s’est produite, vous devez activer une exemption de bouclisation locale. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Rapports de journalisation d’exécution « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») dans Excel sur Windows
 
