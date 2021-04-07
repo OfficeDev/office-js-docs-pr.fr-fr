@@ -1,18 +1,18 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
-description: Exemples de code qui montrent comment effectuer des tâches courantes avec des classeurs ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
-ms.date: 08/24/2020
+description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
+ms.date: 04/05/2021
 localization_priority: Normal
-ms.openlocfilehash: f0af6cc889a110406d987664575a6f3d1b30aa7b
-ms.sourcegitcommit: ed2a98b6fb5b432fa99c6cefa5ce52965dc25759
+ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "47819503"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604651"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de classeurs utilisant l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes `Workbook` prises en charge par l’objet, voir [Workbook, objet (interface API JavaScript pour Excel)](/javascript/api/excel/excel.workbook). Cet article décrit également les actions de niveau classeur effectuées via l’objet[Application](/javascript/api/excel/excel.application).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de classeurs utilisant l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Workbook` [Objet Workbook (interface API JavaScript pour Excel).](/javascript/api/excel/excel.workbook) Cet article décrit également les actions de niveau classeur effectuées via l’objet[Application](/javascript/api/excel/excel.application).
 
 L’objet classeur est le point d’entrée pour votre complément pour interagir avec Excel. Il gère les collections de feuilles de calcul, des tableaux, des tableaux croisés dynamiques et plus, via lesquels les données Excel sont consultées et modifiées. L’objet[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) donne accès à votre complément aux données de tous les classeurs via les feuilles de calcul individuelles. Plus précisément, il permet à votre complément d’ajouter des feuilles de calcul et naviguer parmi celles-ci, et assigner des gestionnaires d’événements de feuille de calcul. L’article [Manipuler des feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md) décrit comment accéder et modifier des feuilles de calcul.
 
@@ -51,7 +51,7 @@ Excel.createWorkbook();
 
 La `createWorkbook` méthode peut également créer une copie d’un classeur existant. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .xlsx. Le classeur résultant sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .xlsx valide.
 
-Vous pouvez obtenir le classeur actif de votre complément en tant que chaîne codée en base 64 à l’aide du [découpage de fichiers](/javascript/api/office/office.document#getfileasync-filetype--options--callback-). La catégorie[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
+Vous pouvez obtenir le classez actuel de votre add-in sous la forme d’une chaîne codée en base 64 à l’aide du [slicing de fichier.](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) La catégorie[FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
 
 ```js
 var myFile = document.getElementById("file");
@@ -75,15 +75,19 @@ reader.readAsDataURL(myFile.files[0]);
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one-preview"></a>Insérer une copie d’un classeur existant dans l’offre actuelle (préversion)
 
 > [!NOTE]
-> Pour l’instant, la méthode `WorksheetCollection.addFromBase64` est disponible uniquement dans la préversion publique et uniquement pour Office sur Windows et Mac. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> La `Workbook.insertWorksheetsFromBase64` méthode est actuellement disponible uniquement en prévisualisation publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
 
-L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un classeur[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) a la `addFromBase64`méthode pour insérer des copies de feuilles de calcul du classeur cible dans lui-même. Le fichier de l’autre classeur est passé en tant que chaîne codé en base 64, comme le `Excel.createWorkbook` appel.
+L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode pour insérer des copies des feuilles de calcul du `insertWorksheetsFromBase64` workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, tout comme `Excel.createWorkbook` l’appel. 
 
 ```TypeScript
-addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet | string): OfficeExtension.ClientResult<string[]>;
+insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-L’exemple suivant montre des feuilles de calcul d’un classeur en cours d’insertion dans le classeur actif, juste après la feuille de calcul active. Notez que`null` est passé pour le`sheetNamesToInsert?: string[]` paramètre. Cela signifie que les feuilles de calcul sont insérées.
+L’exemple suivant insère un autre workbook dans le workbook en cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul active. Notez `[]` qu’il est transmis en tant que paramètre pour [la propriété InsertWorksheetOptions.](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` Cela signifie que toutes les feuilles de calcul du manuel existant sont insérées dans le manuel en cours.
+
+> [!IMPORTANT]
+> La `insertWorksheetsFromBase64` méthode est prise en charge pour Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le web, cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le web. 
 
 ```js
 var myFile = document.getElementById("file");
@@ -91,22 +95,26 @@ var reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
-        // strip off the metadata before the base64-encoded string
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var workbookContents = reader.result.toString().substr(startIndex + 7);
-
-        var sheets = context.workbook.worksheets;
-        sheets.addFromBase64(
-            workbookContents,
-            null, // get all the worksheets
-            Excel.WorksheetPositionType.after, // insert them after the worksheet specified by the next parameter
-            sheets.getActiveWorksheet() // insert them after the active worksheet
-        );
-        return context.sync();
+        // Remove the metadata before the base64-encoded string.
+        const startIndex = reader.result.toString().indexOf("base64,");
+        const workbookContents = reader.result.toString().substr(startIndex + 7);
+            
+        // Retrieve the workbook.
+        const workbook = context.workbook;
+            
+        // Set up the insert options. 
+        var options = { 
+            sheetNamesToInsert: [], // Insert all the worksheets from the source workbook.
+            positionType: Excel.WorksheetPositionType.after, // Insert after the `relativeTo` sheet.
+            relativeTo: "Sheet1" }; // The sheet relative to which the other worksheets will be inserted. Used with `positionType`.
+            
+         // Insert the workbook. 
+         workbook.insertWorksheetsFromBase64(workbookContents, options);
+         return context.sync();
     });
 };
 
-// read in the file as a data URL so we can parse the base64-encoded string
+// Read in the file as a data URL so we can parse the base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
@@ -129,7 +137,7 @@ Excel.run(function (context) {
 
 La méthode`protect` accepte un paramètre de chaîne facultatif. Cette chaîne représente le mot de passe nécessaire pour un utilisateur pour ignorer la protection et modifier la structure du classeur.
 
-La protection peut également être définie au niveau de la feuille de calcul pour empêcher la modification de données non souhaitée. Pour plus d’informations, voir la section**protection des données** de l’article[manipuler des feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md#data-protection).
+La protection peut également être définie au niveau de la feuille de calcul pour empêcher la modification de données non souhaitée. Pour plus d’informations, voir la section **protection des données** de l’article [manipuler des feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md#data-protection).
 
 > [!NOTE]
 > Pour plus d’informations sur la protection du classeur dans Excel, voir l’article [protéger un classeur](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517).
@@ -173,7 +181,7 @@ Excel.run(function (context) {
 
 #### <a name="worksheet-level-custom-properties"></a>Propriétés personnalisées au niveau de la feuille de calcul
 
-Les propriétés personnalisées peuvent également être définies au niveau de la feuille de calcul. Elles sont similaires aux propriétés personnalisées au niveau du document, à la seule différence que la même clé peut être répétée dans différentes feuilles de calcul. L’exemple suivant montre comment créer une propriété personnalisée nommée **WorksheetGroup** avec la valeur « alpha » sur la feuille de calcul active, puis la récupérer.
+Les propriétés personnalisées peuvent également être définies au niveau de la feuille de calcul. Ces propriétés sont similaires aux propriétés personnalisées au niveau du document, sauf que la même clé peut être répétée dans différentes feuilles de calcul. L’exemple suivant montre comment créer une propriété personnalisée nommée **WorksheetGroup** avec la valeur « Alpha » dans la feuille de calcul actuelle, puis la récupérer.
 
 ```js
 Excel.run(function (context) {
@@ -220,15 +228,15 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="access-application-culture-settings"></a>Accéder aux paramètres de culture de l’application
+## <a name="access-application-culture-settings"></a>Accéder aux paramètres de culture d’application
 
-Un classeur comporte des paramètres de langue et de culture qui influent sur l’affichage de certaines données. Ces paramètres permettent de localiser les données lorsque les utilisateurs de votre complément partagent des classeurs dans différentes langues et cultures. Votre complément peut utiliser l’analyse de chaîne pour localiser le format des nombres, des dates et des heures en fonction des paramètres de culture du système, de sorte que chaque utilisateur voit des données dans leur propre format de culture.
+Un workbook a des paramètres de langue et de culture qui affectent l’affichage de certaines données. Ces paramètres peuvent vous aider à trouver des données lorsque les utilisateurs de votre add-in partagent des workbooks dans différentes langues et cultures. Votre add-in peut utiliser l’analyse de chaîne pour localiser le format des nombres, des dates et des heures en fonction des paramètres de culture système afin que chaque utilisateur voie les données dans le format de sa propre culture.
 
-`Application.cultureInfo` définit les paramètres de culture du système en tant qu’objet [CultureInfo](/javascript/api/excel/excel.cultureinfo) . Contient des paramètres tels que le séparateur décimal numérique ou le format de date.
+`Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être [modifiés via l’interface utilisateur Excel](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e). Les paramètres système sont conservés dans l' `CultureInfo` objet. Toutes les modifications locales sont conservées en tant que propriétés au niveau de l' [application](/javascript/api/excel/excel.application), telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être [modifiés via l’interface utilisateur d’Excel.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
 
-L’exemple suivant montre comment remplacer le caractère séparateur décimal d’une chaîne numérique « , » par le caractère utilisé par les paramètres système.
+L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 
 ```js
 // This will convert a number like "14,37" to "14.37"
@@ -359,6 +367,6 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Utiliser les feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md)
 - [Utiliser les plages à l’aide de l’API JavaScript Excel](excel-add-ins-ranges.md)

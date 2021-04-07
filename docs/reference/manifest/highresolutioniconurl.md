@@ -1,14 +1,14 @@
 ---
 title: Élément HighResolutionIconUrl dans le fichier manifeste
 description: Spécifie l’URL de l’image qui est utilisée pour représenter votre complément Office dans l’UX d’insertion UX et l’Office Store sur les écrans à haute résolution (DPI).
-ms.date: 12/04/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 77675e768895a568bdfee97fc4d5006e1e890937
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 42a7ebf0e02eb365962b574821d5a7004a8b867f
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641353"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604643"
 ---
 # <a name="highresolutioniconurl-element"></a>HighResolutionIconUrl, élément
 
@@ -34,6 +34,6 @@ Spécifie l’URL de l’image qui est utilisée pour représenter votre complé
 
 ## <a name="remarks"></a>Remarques
 
-Pour un complément de messagerie, l’icône est affichée **dans l'**  >  interface utilisateur**gérer les compléments** . Pour un complément de contenu ou de volet Office, l’icône s’affiche dans l’interface utilisateur, sous **Insérer** > **Compléments**.
+Pour un module de messagerie, l’icône s’affiche dans l’interface utilisateur gérer les  >  **fichiers des modules.** Pour un complément de contenu ou de volet Office, l’icône s’affiche dans l’interface utilisateur, sous **Insérer** > **Compléments**.
 
-L’image doit être dans un des formats de fichier suivants : GIF, JPG, PNG, EXIF, BMP ou TIFF. Pour les applications de contenu et de volet des tâches, la résolution d’image recommandée est de 64 x 64 pixels. Pour les applications de messagerie, l’image doit faire 128 x 128 pixels. Pour plus d’informations, voir la section _Créer une identité visuelle cohérente pour votre application_ dans [Création de listings efficaces dans AppSource et dans Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).
+L’image doit être dans un des formats de fichier suivants : GIF, JPG, PNG, EXIF, BMP ou TIFF. Pour les applications de contenu et de volet de tâches, la résolution d’image doit être de 64 x 64 pixels. Pour les applications de messagerie, l’image doit faire 128 x 128 pixels. Pour plus d’informations, voir la section _Créer une identité visuelle cohérente pour votre application_ dans [Création de listings efficaces dans AppSource et dans Office](/office/dev/store/create-effective-office-store-listings#create-a-consistent-visual-identity).

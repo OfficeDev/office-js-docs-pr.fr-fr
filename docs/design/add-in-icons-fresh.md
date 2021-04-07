@@ -1,14 +1,14 @@
 ---
 title: Recommandations en matière d’icônes de style pour les add-ins Office
-description: Obtenez des instructions sur l’utilisation des icônes d’icônes de style Nouveau dans les add-ins Office.
-ms.date: 03/24/2021
+description: Recommandations en matière d’utilisation des icônes de style Fresh dans les add-ins Office.
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b26146ed86be221a829f32ef2062df5c1ae0b2b2
-ms.sourcegitcommit: 5ad32261f80e7ab371aba032d9024ad1275c23f9
+ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2021
-ms.locfileid: "51221416"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604665"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style pour les add-ins Office
 
@@ -28,7 +28,7 @@ Suivez ces instructions lorsque vous créez vos icônes :
 |Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne réaffectez pas les glyphes Office UI Fabric pour les commandes de l’application Office dans le ruban de l’application Office ou les menus contextuels. Les icônes de structure sont stylistiquement différentes et ne correspondront pas.|
 |Réutilisez les métaphores visuelles d’Office courantes telles que le pinceau pour mettre en forme ou la loupe pour rechercher.|Ne réutilisez pas les métaphores visuelles pour différentes commandes. L’utilisation de la même icône pour différents comportements et concepts peut semer la confusion. |
 |Redessinez vos icônes pour les réduire ou les agrandir. Prenez le temps de redessiner les découpages, les coins et des bords arrondis pour optimiser la netteté de ligne. |Ne redimensionnez pas vos icônes en réduisant ou en agrandissant leurs tailles. Cela peut entraîner une mauvaise qualité visuelle et des actions peu claires. Les icônes complexes créées dans une plus grande taille risquent de perdre en clarté si elles sont redimensionnées pour être réduites sans être redessinées. |
-|Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque entrent souvent en conflit avec les styles d’icône du ruban de l’application Office et peuvent attirer l’attention des utilisateurs dans un environnement saturé. |
+|Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque entrent souvent en conflit avec les styles d’icône de ruban de l’application Office et peuvent attirer l’attention des utilisateurs dans un environnement saturé. |
 |Utilisez le format PNG avec un arrière-plan transparent. ||
 |Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. ||
 
@@ -44,6 +44,9 @@ Les icônes du bureau Office sont des images bitmap. Différentes tailles appara
 - 48 px
 - 64 px (recommandé, meilleur choix pour Mac)
 - 80 px (obligatoire)
+
+> [!IMPORTANT]
+> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et Dans Office pour la taille et d’autres exigences.
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
 
@@ -102,18 +105,18 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 |Gris foncé 32|128, 128, 128|#808080| ![Gris foncé pour 32 px et plus](../images/color-dark-gray-32.png) |32 px et supérieures|
 |Gris moyen 32|158, 158, 158|#9E9E9E| ![Gris moyen pour 32 px et plus](../images/color-medium-gray-32.png) |32 px et supérieures|
 |TOUT gris clair|179, 179, 179|#B3B3B3| ![Gris clair pour toutes les tailles d’image](../images/color-light-gray-all.png) |Toutes les tailles|
-|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins](../images/color-dark-gray-16.png) |16 px et inférieur|
+|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins](../images/color-dark-gray-16.png) |16 px et au-dessous|
 |Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit](../images/color-medium-gray-16.png) |16 et moins|
 |Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus](../images/color-blue-32.png) |32 px et supérieures|
-|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins](../images/color-blue-16.png) |16 px et au-dessous|
+|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins](../images/color-blue-16.png) |16 px et inférieur|
 |TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image](../images/color-yellow-all.png) |Toutes les tailles|
 |Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus](../images/color-orange-32.png) |32 px et supérieures|
-|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins](../images/color-orange-16.png) |16 px et au-dessous|
+|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins](../images/color-orange-16.png) |16 px et inférieur|
 |TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image](../images/color-pink-all.png) |Toutes les tailles|
 |Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus](../images/color-green-32.png) |32 px et supérieures|
 |Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins](../images/color-green-16.png) |16 px et inférieur|
 |Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus](../images/color-red-32.png) |32 px et supérieures|
-|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins](../images/color-red-16.png) |16 px et inférieur|
+|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins](../images/color-red-16.png) |16 px et au-dessous|
 |Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus](../images/color-purple-32.png) |32 px et supérieures|
 |Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et moins](../images/color-purple-16.png) |16 px et au-dessous|
 

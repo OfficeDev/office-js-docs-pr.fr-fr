@@ -1,14 +1,14 @@
 ---
 title: Élément Ressources dans le fichier manifest
 description: L’élément Resources contient des icônes, des chaînes, des URL pour le nœud VersionOverrides.
-ms.date: 10/09/2018
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a528b05904ef65c3643aaebb9149eb2091e2287
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: bdf73420345ca4d054438bfba5217254e6682e6d
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641269"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604616"
 ---
 # <a name="resources-element"></a>Élément Resources
 
@@ -28,8 +28,9 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 > [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
-### <a name="images"></a>Images
-Chaque icône doit disposer de trois éléments **images** , un pour chacune des trois tailles obligatoires :
+### <a name="images"></a>Des images
+
+Chaque icône doit avoir trois **éléments Images,** un pour chacune des trois tailles obligatoires :
 
 - 16x16
 - 32x32
@@ -44,7 +45,9 @@ Les tailles supplémentaires suivantes sont également prises en charge, mais ne
 - 64x64
 
 > [!IMPORTANT]
-> Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook remplacera alors automatiquement une image générique ou par défaut.
+>
+> - Si cette image est l’icône représentative de votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
+> - Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook remplacera alors automatiquement une image générique ou par défaut.
 
 ## <a name="resources-examples"></a>Exemples de ressources
 

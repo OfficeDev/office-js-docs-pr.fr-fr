@@ -1,14 +1,14 @@
 ---
 title: Instructions relatives aux icônes de style monoligne pour les add-ins Office
-description: Obtenez des instructions sur l’utilisation des icônes de style Monoline dans les add-ins Office.
-ms.date: 2/09/2021
+description: Recommandations en matière d’utilisation des icônes de style Monoline dans les add-ins Office.
+ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 262cde129c7f7d3dd3f32b32e0a8e750cf016ef8
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: b74b89b2d622a6166fa111ef92bd8b2fffe79f8a
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237951"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604672"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monoligne pour les add-ins Office
 
@@ -30,7 +30,7 @@ Les instructions suivantes sont pour les développeurs tiers qui souhaitent cré
 #### <a name="conveying-meaning"></a>Transmission d’une signification
 
 - Utilisez des éléments descriptifs tels qu’une page pour représenter un document ou une enveloppe pour représenter le courrier électronique.
-- Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier est toujours représenté par une enveloppe, et non par un cachet.
+- Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier électronique est toujours représenté par une enveloppe, et non par un cachet.
 - Utilisez une métaphore principale pendant le développement de concepts.
 
 #### <a name="reduction-of-elements"></a>Réduction des éléments
@@ -56,21 +56,24 @@ Monoline est un style minimal. Tout utilise une couleur plate, ce qui signifie q
 
 ### <a name="sizes"></a>Tailles
 
-Nous vous recommandons de produire chaque icône de toutes ces tailles pour prendre en charge les appareils à hautes dimensions. Les *tailles absolument requises* sont de 16 px, 20 px et 32 px, car il s’s’il s’tt de la taille 100 %.
+Nous vous recommandons de produire chaque icône de toutes ces tailles pour prendre en charge les appareils à hautes dimensions. Les tailles *absolument requises* sont de 16 px, 20 px et 32 px, car il s’s’il s’tt de la taille 100 %.
 
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
+
+> [!IMPORTANT]
+> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et Dans Office pour la taille et d’autres exigences.
 
 ### <a name="layout"></a>Disposition
 
 Voici un exemple de mise en page d’icône avec un modificateur.
 
-![Diagramme d’icône avec modificateur en bas à droite](../images/monolineicon1.png)  ![Diagramme de la même icône avec un arrière-plan de grille ajouté et des légendes pour la base, le modificateur, l’remplissage et le cutout](../images/monolineicon2.png)
+![Diagramme de l’icône avec modificateur en bas à droite](../images/monolineicon1.png)  ![Diagramme de la même icône avec un arrière-plan de grille et des légendes ajoutés pour la base, le modificateur, l’remplissage et le cutout](../images/monolineicon2.png)
 
 #### <a name="elements"></a>Éléments
 
 - **Base**: concept principal représenté par l’icône. Il s’agit généralement du seul élément visuel nécessaire à l’icône, mais le concept principal peut parfois être amélioré avec un élément secondaire, un modificateur.
 
-- **Modificateur** Tout élément qui superpose la base ; autrement dit, un modificateur qui représente généralement une action ou un état. Il modifie l’élément de base en agissant en tant qu’ajout, modification ou descripteur.
+- **Modificateur** Tout élément qui superpose la base ; autrement dit, un modificateur qui représente généralement une action ou un état. Il modifie l’élément de base en agissant comme un ajout, une modification ou un descripteur.
 
 ![Diagramme de la grille avec zones de base et de modificateur appelées](../images/monolineicon3.png)
 
@@ -96,22 +99,22 @@ Chaque icône de taille possède une quantité spécifiée de remplissage autour
 
 |**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80 px**|**96 px**|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|![Icône de 16 px avec remplissage de 0 px](../images/monolineicon7.png)|![Icône 20 px avec remplissage 1 px](../images/monolineicon8.png)|![Icône 24 px avec remplissage 1 px](../images/monolineicon9.png)|![Icône 32 px avec remplissage 2 px](../images/monolineicon10.png)|![Icône 40 px avec remplissage 2 px](../images/monolineicon11.png)|![Icône 48 px avec remplissage 3 px](../images/monolineicon12.png)|![Icône 64 px avec remplissage 4 px](../images/monolineicon13.png)|![Icône 80 px avec remplissage de 5 px](../images/monolineicon14.png)|![Icône 96 px avec remplissage de 6 px](../images/monolineicon15.png)|
+|![Icône de 16 px avec remplissage de 0 px](../images/monolineicon7.png)|![Icône 20 px avec remplissage 1 px](../images/monolineicon8.png)|![Icône 24 px avec remplissage 1 px](../images/monolineicon9.png)|![Icône 32 px avec remplissage de 2 px](../images/monolineicon10.png)|![Icône 40 px avec remplissage 2 px](../images/monolineicon11.png)|![Icône 48 px avec remplissage 3 px](../images/monolineicon12.png)|![Icône 64 px avec remplissage 4 px](../images/monolineicon13.png)|![Icône 80 px avec remplissage de 5 px](../images/monolineicon14.png)|![Icône 96 px avec remplissage de 6 px](../images/monolineicon15.png)|
 
 #### <a name="line-weights"></a>Poids des lignes
 
-La monoligne est un style en courbes et en contours. Selon la taille que vous produisez, l’icône doit utiliser les poids de ligne suivants.
+Le monoligne est un style en courbes et en contours. Selon la taille que vous produisez, l’icône doit utiliser les poids de ligne suivants.
 
 |Taille de l’icône :|16px|20px|24px|32px|40px|48px|64px|80 px|96 px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-|**Poids de trait :**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
+|**Poids de ligne :**|1px|1px|1px|1px|2px|2px|2px|2px|3px|
 |**Exemple d’icône :**|![Icône 16 px](../images/monolineicon16.png)|![Icône 20 px](../images/monolineicon17.png)|![Icône 24 px](../images/monolineicon18.png)|![Icône 32 px](../images/monolineicon19.png)|![Icône 40 px](../images/monolineicon20.png)|![Icône 48 px](../images/monolineicon21.png)|![Icône 64 px](../images/monolineicon22.png)|![Icône 80 px](../images/monolineicon23.png)|![Icône 96 px](../images/monolineicon24.png)|
 
 #### <a name="cutouts"></a>Cutouts
 
 Lorsqu’un élément d’icône est placé au-dessus d’un autre élément, un cutout (de l’élément inférieur) est utilisé pour fournir de l’espace entre les deux éléments, principalement à des fins de lisibilité. Cela se produit généralement lorsqu’un modificateur est placé au-dessus d’un élément de base, mais dans certains cas, aucun des éléments n’est un modificateur. Ces coupures entre les deux éléments sont parfois appelées « intervalle ».
 
-La taille de l’intervalle doit être identique à la largeur du trait utilisé sur cette taille. Si vous faites une icône de 16 px, la largeur de l’intervalle est de 1 px et s’il s’agit d’une icône de 48 px, l’écart doit être de 2 px. L’exemple suivant montre une icône de 32 px avec un intervalle de 1 px entre le modificateur et la base sous-jacente.
+La taille de l’intervalle doit être identique à la largeur de trait utilisée sur cette taille. Si vous faites une icône de 16 px, la largeur de l’intervalle est de 1 px et s’il s’agit d’une icône de 48 px, l’écart doit être de 2 px. L’exemple suivant montre une icône de 32 px avec un intervalle de 1 px entre le modificateur et la base sous-jacente.
 
 ![Icône 32 px avec un intervalle de 1 px entre le modificateur et la base sous-jacente](../images/monolineicon25.png)
 
@@ -192,7 +195,7 @@ Utilisez **un gris moyen** pour le « contenu » intérieur, tel que les lignes 
 
 #### <a name="text-lines"></a>Lignes de texte
 
-Lorsque des lignes de texte sont dans un « conteneur » (par exemple, du texte sur un document), utilisez un gris moyen. Les lignes de texte qui ne sont pas dans un conteneur doivent être **en gris foncé.**
+Lorsque des lignes de texte sont dans un « conteneur » (par exemple, du texte sur un document), utilisez un gris moyen. Les lignes de texte qui ne sont pas dans un conteneur doivent **être gris foncé**.
 
 ### <a name="text"></a>Texte
 
@@ -202,4 +205,11 @@ Lorsque des lignes de texte sont dans un « conteneur » (par exemple, du texte 
 
 ### <a name="icon-file-format"></a>Format de fichier d’icône
 
-Les dernières icônes doivent être enregistrées en tant que fichiers image .png. Utilisez le format PNG avec un arrière-plan transparent et une profondeur 32 bits.
+Les icônes finales doivent être enregistrées en tant que fichiers image .png. Utilisez le format PNG avec un arrière-plan transparent et une profondeur 32 bits.
+
+## <a name="see-also"></a>Voir aussi
+
+- [Élément de manifeste d’icône](../reference/manifest/icon.md)
+- [Élément manifeste IconUrl](../reference/manifest/iconurl.md)
+- [Élément manifeste HighResolutionIconUrl](../reference/manifest/highresolutioniconurl.md)
+- [Créer une icône pour votre add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

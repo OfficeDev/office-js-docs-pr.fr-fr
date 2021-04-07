@@ -3,12 +3,12 @@ title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
 ms.date: 03/24/2021
 localization_priority: Normal
-ms.openlocfilehash: b9f4d07122779a893bd10e8d28b4f1b329125630
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 489367231e1ed48e0bee6f0a32ccc47a8b39aed9
+ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506132"
+ms.lasthandoff: 04/07/2021
+ms.locfileid: "51604630"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -50,7 +50,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si l’un des utilisateurs de votre add-in dispose de plateformes qui utilisent Internet Explorer 11, vous disposez de deux options pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou une ultérieure :
 >
 > - Écrivez votre code dans ECMAScript 2015 (également appelé ES6) ou version ultérieure JavaScript, ou dans TypeScript, puis compilez votre code en JavaScript ES5 à l’aide d’un compilateur tel que [celui-ci ou](https://babeljs.io/) [tsc.](https://www.typescriptlang.org/index.html)
-> - Écrivez en JavaScript ECMAScript 2015 ou version ultérieure, mais chargez également une [bibliothèque polyfill](https://wikipedia.org/wiki/Polyfill_(programming)) telle que [core-js](https://github.com/zloirock/core-js) qui permet à IE d’exécuter votre code.
+> - Écrivez en JavaScript ECMAScript 2015 ou version ultérieure, mais chargez également une [bibliothèque polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming)) telle que [core-js](https://github.com/zloirock/core-js) qui permet à IE d’exécuter votre code.
 >
 > Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
@@ -58,7 +58,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 ### <a name="service-workers-are-not-working"></a>Les employés de service ne fonctionnent pas
 
-Les add-ins Office ne sont pas en charge par les travailleurs de service lorsque le [Microsoft Edge WebView](/microsoft-edge/hosting/webview) d’origine est utilisé. Ils sont pris en charge avec le [edge WebView2 basé sur Chromium.](/microsoft-edge/hosting/webview2)
+Les add-ins Office ne sont pas en charge par les travailleurs de service lorsque le WebView Microsoft Edge d’origine, [EdgeHTML,](https://en.wikipedia.org/wiki/EdgeHTML)est utilisé. Ils sont pris en charge avec le [edge WebView2 basé sur Chromium.](/microsoft-edge/hosting/webview2)
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 
