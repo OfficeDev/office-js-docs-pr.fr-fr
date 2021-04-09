@@ -1,14 +1,14 @@
 ---
 title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel JavaScript
-description: Cet article traite de la mise en forme conditionnelle dans le contexte des compléments JavaScript pour Excel.
-ms.date: 07/28/2020
+description: Découvrez la mise en forme conditionnelle dans le contexte des add-ins JavaScript pour Excel.
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 04a1b18c47d76d44201ea222eac305bb8d438b58
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: 5736923ac3c4623342d9a77bd58d5682a551a2a6
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408592"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650911"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
@@ -33,7 +33,7 @@ La `Range.conditionalFormats` propriété est un ensemble d’objets [Conditiona
 -    `topBottom`
 
 > [!NOTE]
-> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. Pour en savoir plus sur ce modèle, consultez la section [ \* méthodes OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) .
+> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section [ \* Méthodes OrNullObject.](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)
 
 Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela est déterminé par la `type` propriété, c'est-à-dire une [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) valeur enum. `type` est défini lorsque vous ajoutez une mise en forme conditionnelle à une plage.
 
@@ -110,7 +110,7 @@ await context.sync();
 La mise en forme conditionnelle personnalisée applique un format défini par l’utilisateur aux cellules en fonction d’une formule de complexité arbitraire. L’objet [ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule) vous permet de définir la formule dans des notations différentes :
 
 -    `formula` -Notation standard.
--    `formulaLocal` -Localisé en fonction de la langue de l’utilisateur.
+-    `formulaLocal` - Localisée en fonction de la langue de l’utilisateur.
 -    `formulaR1C1` -Notation type L1C1.
 
 L’exemple suivant colore les polices de cellules avec des valeurs supérieures à la cellule située à leur gauche en vert.
@@ -133,7 +133,7 @@ await context.sync();
 ```
 ### <a name="data-bar"></a>[Barre de données](/javascript/api/excel/excel.databarconditionalformat)
 
-La mise en forme conditionnelle de la barre de données ajoute des barres de données aux cellules. Par défaut, les valeurs minimales et maximales dans la plage forment les limites et les tailles proportionnelles des barres de données. L' `DataBarConditionalFormat` objet possède plusieurs propriétés permettant de contrôler l’apparence de la barre. 
+La mise en forme conditionnelle de la barre de données ajoute des barres de données aux cellules. Par défaut, les valeurs minimales et maximales dans la plage forment les limites et les tailles proportionnelles des barres de données. `DataBarConditionalFormat`L’objet possède plusieurs propriétés pour contrôler l’apparence de la barre. 
 
 L’exemple suivant met en forme la plage contenant des barres de données remplissant de gauche à droite.
 
@@ -157,7 +157,7 @@ La mise en forme conditionnelle du jeu d’icônes utilise Excel [icônes](/java
 
 L’exemple suivant montre un jeu d’icônes trois triangles utilisé dans la plage.
 
-![Plage avec des triangles verts vers le haut pour les valeurs supérieures à 1000, lignes jaunes pour les valeurs comprises entre 700 et 1000, et triangles rouges vers le bas pour les valeurs inférieures.](../images/excel-conditional-format-iconset.png)
+![Plage avec triangles verts vers le haut pour les valeurs supérieures à 1 000, lignes jaunes pour les valeurs entre 700 et 1 000 et triangles rouges vers le bas pour les valeurs inférieures.](../images/excel-conditional-format-iconset.png)
 
 ```typescript
 const sheet = context.workbook.worksheets.getItem("Sample");
@@ -198,7 +198,7 @@ await context.sync();
 
 La mise en forme conditionnelle prédéfinie applique un format défini par l’utilisateur pour la plage basée sur une règle standard sélectionnée. Ces règles sont définies par le [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) dans le [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
-L’exemple suivant colore la police en blanc dès que la valeur d’une cellule est au moins un écart-type au-dessus de la moyenne de la plage.
+L’exemple suivant colore la police en blanc lorsque la valeur d’une cellule est au moins un écart-type au-dessus de la moyenne de la plage.
 
 ![Une plage de cellules avec police en blanc où les valeurs sont au moins un écart-type standard au-dessus de la moyenne.](../images/excel-conditional-format-preset.png)
 
@@ -222,7 +222,7 @@ await context.sync();
 
 La mise en forme conditionnelle de comparaison de texte utilise des comparaisons de chaînes comme condition. La `rule` propriété est un [ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule) définissant une chaîne à comparer avec la cellule et un opérateur pour spécifier le type de comparaison. 
 
-L’exemple suivant montre comment appliquer la couleur rouge à la police lorsque le texte d’une cellule contient « retardée ».
+L’exemple suivant formate la couleur rouge de la police lorsque le texte d’une cellule contient « Delayed ».
 
 ![Une plage de cellules contenant « Différé » en rouge.](../images/excel-conditional-format-text.png)
 
@@ -336,8 +336,7 @@ await context.sync();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
-- [Utiliser les plages à l’aide de l’API JavaScript Excel](../excel/excel-add-ins-ranges.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 - [Objet ConditionalFormat (API JavaScript pour Excel)](/javascript/api/excel/excel.conditionalformat)
 - [Ajouter, modifier ou effacer des formats conditionnels](https://support.office.com/article/add-change-or-clear-conditional-formats-8a1cc355-b113-41b7-a483-58460332a1af)
 - [Utilisez des formules avec mise en forme conditionnelle](https://support.office.com/article/Use-formulas-with-conditional-formatting-FED60DFA-1D3F-4E13-9ECB-F1951FF89D7F)

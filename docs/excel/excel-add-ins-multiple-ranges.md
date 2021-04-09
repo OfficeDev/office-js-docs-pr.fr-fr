@@ -1,14 +1,14 @@
 ---
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
-description: Découvrez comment la bibliothèque JavaScript d’Excel permet à votre complément d’effectuer des opérations et de définir des propriétés sur plusieurs plages simultanément.
-ms.date: 04/30/2019
+description: Découvrez comment la bibliothèque JavaScript Excel permet à votre add-in d’effectuer des opérations et de définir des propriétés simultanément sur plusieurs plages.
+ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 6a508d8481d9851c7f7ae98ec959fcec9663972c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609768"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650890"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 
@@ -16,7 +16,7 @@ La bibliothèque JavaScript Excel permet à votre complément d’effectuer des 
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Un ensemble de plages (éventuellement discontinues) est représenté par un objet [RangeAreas](/javascript/api/excel/excel.rangeareas) . Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
+Un ensemble de plages (éventuellement peuigues) est représenté par un [objet RangeAreas.](/javascript/api/excel/excel.rangeareas) Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
 
 - Les types de données pour les propriétés et le comportement des méthodes et des getters.
 - Les types de données de paramètres et des comportements de la méthode.
@@ -60,12 +60,12 @@ Quelques exemples :
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()`(nommé `getOffsetRangeAreas` sur l' `RangeAreas` objet)
+- `getOffsetRange()` (nommé `getOffsetRangeAreas` sur `RangeAreas` l’objet)
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()`(nommé `getUsedRangeAreas` sur l' `RangeAreas` objet)
-- `getUsedRangeOrNullObject()`(nommé `getUsedRangeAreasOrNullObject` sur l' `RangeAreas` objet)
+- `getUsedRange()` (nommé `getUsedRangeAreas` sur `RangeAreas` l’objet)
+- `getUsedRangeOrNullObject()` (nommé `getUsedRangeAreasOrNullObject` sur `RangeAreas` l’objet)
 - `load()`
 - `set()`
 - `setDirty()`
@@ -94,13 +94,13 @@ Une fois que vous avez un`RangeAreas`objet, vous pouvez en créer d’autres à 
 > Vous ne pouvez pas ajouter directement des plages supplémentaires à un objet`RangeAreas`. Par exemple, la collection dans`RangeAreas.areas`n’a pas une méthode`add`.
 
 > [!WARNING]
-> N’essayez pas d’ajouter ou de supprimer directement les membres du tableau`RangeAreas.areas.items`. Cela mènera à un comportement indésirable dans votre code. Par exemple, il est possible de pousser un objet`Range` supplémentaire sur le tableau, mais ceci entrainera des erreurs car les propriétés`RangeAreas`et les méthodes se comportent comme si le nouvel élément n’existait pas. Par exemple, la propriété`areaCount`n’inclut pas les plages poussées de cette manière, et le `RangeAreas.getItemAt(index)` lance une erreur si`index`est plus grand que`areasCount-1`. De la même façon, supprimer un objet`Range`dans la plage`RangeAreas.areas.items`en obtenant une référence liée à celui-ci et en appelant sa méthode`Range.delete` entraîne des bogues: bien que `Range`l’objet*soit*supprimé, les propriétés et les méthodes de l’objet`RangeAreas`parent se comporte, ou tente de le faire, comme s’il existait encore. Par exemple, si votre code appelle`RangeAreas.calculate`, Office essaiera de calculer la plage, mais comprendra une erreur car l’objet de la plage n’est plus là.
+> N’essayez pas d’ajouter ou de supprimer directement les membres du tableau`RangeAreas.areas.items`. Cela mènera à un comportement indésirable dans votre code. Par exemple, il est possible de pousser un objet`Range` supplémentaire sur le tableau, mais ceci entrainera des erreurs car les propriétés`RangeAreas`et les méthodes se comportent comme si le nouvel élément n’existait pas. Par exemple, la propriété`areaCount`n’inclut pas les plages poussées de cette manière, et le `RangeAreas.getItemAt(index)` lance une erreur si`index`est plus grand que`areasCount-1`. De la même façon, supprimer un objet`Range`dans la plage`RangeAreas.areas.items`en obtenant une référence liée à celui-ci et en appelant sa méthode`Range.delete` entraîne des bogues: bien que `Range`l’objet *soit* supprimé, les propriétés et les méthodes de l’objet`RangeAreas`parent se comporte, ou tente de le faire, comme s’il existait encore. Par exemple, si votre code appelle`RangeAreas.calculate`, Office essaiera de calculer la plage, mais comprendra une erreur car l’objet de la plage n’est plus là.
 
 ## <a name="set-properties-on-multiple-ranges"></a>Définir les propriétés sur plusieurs plages
 
 Paramétrer une propriété sur un objet `RangeAreas` établit une propriété correspondante sur toutes les plages dans la collection`RangeAreas.areas`.
 
-Ce qui suit est un exemple de paramétrage d’une propriété sur des plages multiples. La fonction surligne les plages**F3:F5** and **H3:H5**.
+Ce qui suit est un exemple de paramétrage d’une propriété sur des plages multiples. La fonction surligne les plages **F3:F5** and **H3:H5**.
 
 ```js
 Excel.run(function (context) {
@@ -119,7 +119,7 @@ Cet exemple s’applique aux scénarios dans lesquels vous pouvez coder en dur l
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>Obtenir des cellules spéciales à partir de plusieurs plages
 
-Les méthodes `getSpecialCells` et `getSpecialCellsOrNullObject` sur l’objet `RangeAreas` fonctionnent de manière analogue aux méthodes du même nom sur l’objet `Range`. Ces méthodes retournent les cellules disposant de la caractéristique spécifiée à partir de toutes les plages dans la collection `RangeAreas.areas`. Voir la section [Trouver des cellules spéciales dans une plage](excel-add-ins-ranges-advanced.md#find-special-cells-within-a-range) pour plus d’informations sur les cellules spéciales.
+Les méthodes `getSpecialCells` et `getSpecialCellsOrNullObject` sur l’objet `RangeAreas` fonctionnent de manière analogue aux méthodes du même nom sur l’objet `Range`. Ces méthodes retournent les cellules disposant de la caractéristique spécifiée à partir de toutes les plages dans la collection `RangeAreas.areas`. Pour plus d’informations sur les cellules spéciales, voir [Rechercher des cellules spéciales dans une plage.](excel-add-ins-ranges-special-cells.md)
 
 Lors de l’appel de la méthode `getSpecialCells` ou `getSpecialCellsOrNullObject` sur un objet `RangeAreas` :
 
@@ -128,7 +128,7 @@ Lors de l’appel de la méthode `getSpecialCells` ou `getSpecialCellsOrNullObje
 
 ## <a name="read-properties-of-rangeareas"></a>Lire les propriétés de RangeAreas
 
-La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car une propriété donnée peut avoir des valeurs différentes pour des plages différentes au sein du`RangeAreas`. La règle générales est que si une valeur consistante*peut*être renvoyée, elle sera renvoyée. Par exemple, dans le code suivant, le code RGB pour rose (`#FFC0CB`) et`true`sera connecté à la console car les deux plages dans l’objet`RangeAreas` dispose d’un remplissage rose et les deux sont des colonnes entières.
+La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car une propriété donnée peut avoir des valeurs différentes pour des plages différentes au sein du`RangeAreas`. La règle générales est que si une valeur consistante *peut* être renvoyée, elle sera renvoyée. Par exemple, dans le code suivant, le code RGB pour rose (`#FFC0CB`) et`true`sera connecté à la console car les deux plages dans l’objet`RangeAreas` dispose d’un remplissage rose et les deux sont des colonnes entières.
 
 ```js
 Excel.run(function (context) {
@@ -180,5 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Utilisation de plages à l’aide de l’API JavaScript pour Excel (basique)](excel-add-ins-ranges.md)
-- [Utiliser les plages à l’aide de l’API JavaScript Excel (avancé)](excel-add-ins-ranges-advanced.md)
+- [Lire ou écrire dans une grande plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-large.md)

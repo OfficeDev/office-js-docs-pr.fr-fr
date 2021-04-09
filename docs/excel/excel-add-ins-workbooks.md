@@ -1,14 +1,15 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
-description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
+description: Découvrez comment effectuer des tâches courantes avec des workbooks ou des fonctionnalités au niveau de l’application à l’aide de l’API JavaScript pour Excel.
 ms.date: 04/05/2021
+ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f2b359cf101dd5743549a2170a870cecf7fd2758
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: 2fe11aaba45dae1f0cd1375e28226ecd959950fe
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604651"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650827"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -78,13 +79,13 @@ reader.readAsDataURL(myFile.files[0]);
 > La `Workbook.insertWorksheetsFromBase64` méthode est actuellement disponible uniquement en prévisualisation publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode pour insérer des copies des feuilles de calcul du `insertWorksheetsFromBase64` workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, tout comme `Excel.createWorkbook` l’appel. 
+L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode pour insérer des copies des feuilles de calcul du `insertWorksheetsFromBase64` workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, comme `Excel.createWorkbook` l’appel. 
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
-L’exemple suivant insère un autre workbook dans le workbook en cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul active. Notez `[]` qu’il est transmis en tant que paramètre pour [la propriété InsertWorksheetOptions.](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` Cela signifie que toutes les feuilles de calcul du manuel existant sont insérées dans le manuel en cours.
+L’exemple suivant insère un autre workbook dans le workbook en cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul active. Notez `[]` qu’il est transmis en tant que paramètre pour [la propriété InsertWorksheetOptions.](/javascript/api/excel/excel.insertworksheetoptions) `sheetNamesToInsert` Cela signifie que toutes les feuilles de calcul du workbook existant sont insérées dans le workbook actuel.
 
 > [!IMPORTANT]
 > La `insertWorksheetsFromBase64` méthode est prise en charge pour Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le web, cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le web. 
@@ -369,4 +370,3 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Utiliser les feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md)
-- [Utiliser les plages à l’aide de l’API JavaScript Excel](excel-add-ins-ranges.md)
