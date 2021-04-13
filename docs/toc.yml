@@ -623,6 +623,9 @@ items:
           - name: Appel de fonctions intégrées
             href: excel/excel-add-ins-worksheet-functions.md
             displayName: Excel
+          - name: Cellules
+            href: excel/excel-add-ins-cells.md
+            displayName: Excel
           - name: Graphiques
             href: excel/excel-add-ins-charts.md
             displayName: Excel
@@ -632,14 +635,8 @@ items:
           - name: Commentaires
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: Mise en forme conditionnelle de plages
-            href: excel/excel-add-ins-conditional-formatting.md
-            displayName: Excel
           - name: Validation de données
             href: excel/excel-add-ins-data-validation.md
-            displayName: Excel
-          - name: Retarder l’exécution pendant la modification de la cellule
-            href: excel/excel-add-ins-delay-in-cell-edit.md
             displayName: Excel
           - name: Gestion des erreurs
             href: excel/excel-add-ins-error-handling.md
@@ -647,21 +644,71 @@ items:
           - name: Événements
             href: excel/excel-add-ins-events.md
             displayName: Excel
-          - name: Plages multiples
-            href: excel/excel-add-ins-multiple-ranges.md
-            displayName: Excel
           - name: Optimisation des performances
             href: excel/performance.md
             displayName: Excel
           - name: Tableaux croisés dynamiques
             href: excel/excel-add-ins-pivottables.md
             displayName: Excel
-          - name: Plages (fondamentales)
-            href: excel/excel-add-ins-ranges.md
-            displayName: Excel
-          - name: Plages (avancées)
-            href: excel/excel-add-ins-ranges-advanced.md
-            displayName: Excel
+          - name: Plages et Cellules
+            items:
+              - name: Obtenir une plage
+                href: excel/excel-add-ins-ranges-get.md
+                displayName: Excel
+              - name: Insérer une plage de cellules
+                href: excel/excel-add-ins-ranges-insert.md
+                displayName: Excel
+              - name: Effacer ou supprimer une plage de cellules
+                href: excel/excel-add-ins-ranges-clear-delete.md
+                displayName: Excel
+              - name: Définir ou obtenir la plage sélectionnée
+                href: excel/excel-add-ins-ranges-set-get.md
+                displayName: Excel
+              - name: 'Définir ou obtenir des valeurs, du texte ou des formules'
+                href: excel/excel-add-ins-ranges-set-get-values.md
+                displayName: Excel
+              - name: Définir le format de plage
+                href: excel/excel-add-ins-ranges-set-format.md
+                displayName: Excel
+              - name: Mise en forme conditionnelle de plages
+                href: excel/excel-add-ins-conditional-formatting.md
+                displayName: Excel
+              - name: Lire ou écrire dans une plage non liée
+                href: excel/excel-add-ins-ranges-unbounded.md
+                displayName: Excel
+              - name: Lire ou écrire dans une grande plage
+                href: excel/excel-add-ins-ranges-large.md
+                displayName: Excel
+              - name: Rechercher une cellule en utilisant la correspondance de chaîne
+                href: excel/excel-add-ins-ranges-string-match.md
+                displayName: Excel
+              - name: Utiliser des dates à l’aide de plug-in Moment-MSDate
+                href: excel/excel-add-ins-ranges-dates.md
+                displayName: Excel
+              - name: Rechercher des cellules spéciaux dans une plage
+                href: excel/excel-add-ins-ranges-special-cells.md
+                displayName: Excel
+              - name: 'Couper, copier et coller'
+                href: excel/excel-add-ins-ranges-cut-copy-paste.md
+                displayName: Excel
+              - name: Supprimer les doublons
+                href: excel/excel-add-ins-ranges-remove-duplicates.md
+                displayName: Excel
+              - name: Regrouper des données pour un plan
+                href: excel/excel-add-ins-ranges-group.md
+                displayName: Excel
+              - name: Gérer les tableaux dynamiques et la fuite
+                href: excel/excel-add-ins-ranges-dynamic-arrays.md
+                displayName: Excel
+              - name: Obtenir les antécédents dans les formules
+                href: excel/excel-add-ins-ranges-precedents.md
+                displayName: Excel
+              - name: Retarder l’exécution pendant la modification de la cellule
+                href: excel/excel-add-ins-delay-in-cell-edit.md
+                displayName: Excel
+              - name: Utilisation de plusieurs plages
+                href: excel/excel-add-ins-multiple-ranges.md
+                displayName: Excel
           - name: Formes
             href: excel/excel-add-ins-shapes.md
             displayName: Excel
