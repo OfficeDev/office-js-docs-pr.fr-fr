@@ -1,0 +1,2 @@
+> [!NOTE]
+> L’API JavaScript Excel ne comprend pas d’objet ou de classe « Cellule ». L’API JavaScript Excel définit plutôt toutes les cellules Excel comme objets`Range`. Une cellule individuelle dans l’interface utilisateur d’Excel se traduit par un objet`Range` avec une cellule dans l’API JavaScript Excel. Un objet `Range` peut également contenir plusieurs cellules contiguës. Consultez [Travailler avec des cellules de calcul à l’aide de l’API JavaScript Excel](/office/dev/add-ins/excel/excel-add-ins-cells) pour en savoir plus.

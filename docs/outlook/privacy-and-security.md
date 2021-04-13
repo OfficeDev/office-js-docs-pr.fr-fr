@@ -1,14 +1,14 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 10/07/2020
+ms.date: 04/07/2021
 localization_priority: Priority
-ms.openlocfilehash: aa30b4c9aff9a07761d06ae538d56a01f2c30e0d
-ms.sourcegitcommit: 4bfef315102bd5b4333ff9aeaa6537cffb5bca9e
+ms.openlocfilehash: 4df59aaffa01be97ecf2b6349cdc6f6aca91ef07
+ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "48398415"
+ms.lasthandoff: 04/09/2021
+ms.locfileid: "51650834"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -39,7 +39,7 @@ Le schéma de manifeste version 1.1 comprend quatre niveaux d’autorisation.
 |Lire/écrire dans l’élément|ReadWriteItem|
 |Lire/écrire dans la boîte aux lettres|ReadWriteMailbox|
 
-Les quatre niveaux d’autorisations sont cumulatifs : l’autorisation **boîte aux lettres en lecture/écriture** inclut les autorisations de **élément en lecture/écriture**, **lire élément** et ** restreint**, l’autorisation **élément en lecture/écriture** inclut **lire élément** et **restreint**et l’autorisation **lire élément** inclut **restreint**.
+Les quatre niveaux d’autorisations sont cumulatifs : l’autorisation **boîte aux lettres en lecture/écriture** inclut les autorisations de **élément en lecture/écriture**, **lire élément** et **restreint**, l’autorisation **élément en lecture/écriture** inclut **lire élément** et **restreint** et l’autorisation **lire élément** inclut **restreint**.
 
 L’illustration suivante affiche les quatre niveaux d’autorisations et décrit les fonctionnalités proposées aux utilisateurs finaux, développeur et administrateur par chaque niveau. Pour plus d’informations sur ces autorisations, voir [utilisateurs : problèmes de performances et de confidentialité](#end-users-privacy-and-performance-concerns), [développeurs : choix d’autorisation et les limites de l’utilisation de ressources](#developers-permission-choices-and-resource-usage-limits), et [comprendre les autorisations de complément Outlook](understanding-outlook-add-in-permissions.md).
 
