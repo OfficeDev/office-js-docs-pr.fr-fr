@@ -1,14 +1,14 @@
 ---
 title: Ressources supplémentaires sur les compléments Office
 description: Ressources utiles sur la rubrique des add-ins Office
-ms.date: 03/29/2021
+ms.date: 04/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 97059d27dc95e3d31a6ef8c72b59434c55fcf7ce
-ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+ms.openlocfilehash: de774386acca2825734ac50096b83d562df0263b
+ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/30/2021
-ms.locfileid: "51435318"
+ms.lasthandoff: 04/16/2021
+ms.locfileid: "51862322"
 ---
 # <a name="office-add-ins-additional-resources"></a>Ressources supplémentaires sur les compléments Office
 
@@ -18,11 +18,11 @@ Ces ressources fournissent des informations supplémentaires et vous aident à d
 |-----------------|------------|
 |**Questions de l’API JavaScript pour Office** | Publiez des questions de l’API dans le forum [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) à l’aide de la balise `office-js` et incluez aussi la balise `outlook-web-addins` si votre question concerne les compléments Outlook. Notez que le forum Stack Overflow impose certaines exigences, telles qu’un titre descriptif, un énoncé complet et concis du problème et suffisamment de précisions pour permettre de reproduire le problème. Les demandes de fonctionnalité ou les questions trop larges sont hors-sujet. Si vous êtes un nouvel utilisateur, consultez le [centre d’aide de Stack Overflow](https://stackoverflow.com/help/how-to-ask) pour plus d’informations.|
 |**Problèmes de l’API JavaScript pour Office**| Si vous rencontrez un problème (bogue) avec l’API JavaScript pour Office, veuillez envoyer une question au référentiel GitHub <a href="https://github.com/officedev/office-js/issues" target="_blank">OfficeDev/office-js</a>.|
-|**Demandes de fonctionnalité de l’API JavaScript pour Office**| Pour envoyer une demande de fonctionnalité pour l’API JavaScript office, utilisez le site [Microsoft 365&A.](/answers/products/m365)|
+|**Demandes de fonctionnalité de l’API JavaScript pour Office**| Pour envoyer une demande de fonctionnalité pour l'API JavaScript Office, publiez votre idée à la communauté technique de la plateforme de développement [Microsoft 365.](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)|
 |**Problèmes de documentation**| Si vous rencontrez un problème (bogue) avec la documentation, envoyez un problème au référentiel <a href="https://github.com/officedev/office-js-docs-pr/issues" target="_blank">GitHub OfficeDev/office-js-docs-pr.</a>|
 |**Mises à jours de la documentation**| Pour apporter des modifications à  la documentation vous-même, sélectionnez le lien Modifier dans un article et envoyez une requête de pull au référentiel <a href="https://github.com/officedev/office-js-docs-pr" target="_blank">GitHub OfficeDev/office-js-docs-pr.</a>|
-|**Script Lab**| Si vous souhaitez explorer les API JavaScript office ou tester les API d’aperçu, vous pouvez utiliser Script Lab dans Excel, Outlook, PowerPoint et Word. Pour plus d’informations, voir[Explorer l’API JavaScript Office à l’aide de Script Lab](../overview/explore-with-script-lab.md). |
-|**Cours Pluralsight sur les compléments Office**| Le cours « <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">Fundamentals of Building Office Add-ins with Office JavaScript APIs</a> » de John Brown vous explique comment développer un Add-in PowerPoint à partir de zéro, notamment des informations sur la façon de communiquer avec Trello et de publier le add-in sur l’Office Store.|
+|**Script Lab**| Si vous souhaitez explorer les API JavaScript office ou tester les API d'aperçu, vous pouvez utiliser Script Lab dans Excel, Outlook, PowerPoint et Word. Pour plus d’informations, voir[Explorer l’API JavaScript Office à l’aide de Script Lab](../overview/explore-with-script-lab.md). |
+|**Cours Pluralsight sur les compléments Office**| Le cours « <a href="https://www.pluralsight.com/courses/build-office-addins-js-api" target="_blank">Fundamentals of Building Office Add-ins with Office JavaScript APIs</a> » de John Brown vous explique comment développer un Add-in PowerPoint à partir de zéro, notamment des informations sur la façon de communiquer avec Trello et de publier le add-in sur l'Office Store.|
 |**Cours LinkedIn sur les compléments Office**| <a href="https://www.linkedin.com/learning/microsoft-office-add-ins-for-developers/microsoft-office-add-ins?u=3322">Le cours de Bill Ayer «compléments Microsoft Office pour les développeurs»</a>offre une vue d’ensemble de la plateforme et décrit de nombreux concepts principaux des compléments Office.|
 |***Création de compléments Office à l’aide du* livre Office. js**| <a href="https://leanpub.com/buildingofficeaddins">Le livre de Michael Zlatkovsky *création des compléments Office à l’aide d'Office.js*</a> décrit les principes et modèles de conception partagés par les API 2016 pour Excel, Word et OneNote. Michael est membre de l’équipe d’extensibilité Office chez Microsoft et un MVP Microsoft, mais ce manuel est créé de façon indépendante sans contribution de Microsoft. Ni Microsoft, ni Michael ne recueillent de profits sur ce livre, car les résultats des dons sont reversés à des fins de secours et à des causes charitables humanitaires.|
 
