@@ -142,7 +142,7 @@ items:
                 href: develop/itp-and-third-party-cookies.md
           - name: Interface utilisateur et UX
             items:
-              - name: Vue d’ensemble
+              - name: Présentation
                 href: design/add-in-design.md
               - name: Conseils
                 items:
@@ -1146,6 +1146,9 @@ items:
             displayName: PowerPoint
           - name: Obtention du document complet à partir d’un complément
             href: powerpoint/get-the-whole-document-from-an-add-in-for-powerpoint.md
+            displayName: PowerPoint
+          - name: 'Utiliser des balises personnalisées sur des présentations, diapositives et formes'
+            href: powerpoint/tagging-presentations-slides-shapes.md
             displayName: PowerPoint
           - name: "Utiliser des thèmes de document dans vos compléments\_PowerPoint"
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
