@@ -142,7 +142,7 @@ items:
                 href: develop/itp-and-third-party-cookies.md
           - name: Interface utilisateur et UX
             items:
-              - name: Présentation
+              - name: Vue d’ensemble
                 href: design/add-in-design.md
               - name: Conseils
                 items:
@@ -1257,6 +1257,8 @@ items:
         href: develop/authentication-pnp.md
       - name: Gérer une résolution élevée et redimensionner la résolution dans votre solution Office
         href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
+      - name: Appel à la communauté des compléments Office
+        href: overview/office-add-ins-community-call.md
   - name: Ressources de transition VSTO et COM
     items:
       - name: Guide pour les développeurs de compléments VSTO
