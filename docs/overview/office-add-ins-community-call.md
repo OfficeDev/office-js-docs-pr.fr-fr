@@ -1,16 +1,16 @@
 ---
 title: Microsoft Office d'appel de la communauté des add-ins
-description: Planification et ressources Microsoft Office d'appels de la communauté des Microsoft Office par mois
+description: Planification et ressources Microsoft Office d'appel de la communauté des Microsoft Office par mois
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: bad2ad176d0a843f5d03ec58b3db365a02ecbbe1
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: fbd2acdd7b6153829473dd0ea29290d02e6f8c84
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959293"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024317"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office d'appel de la communauté des add-ins
+# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des modules
 
 L Microsoft Office de la communauté des compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L'appel de la communauté a lieu le deuxième mercredi de chaque mois à 8:00 PDT. Vous pouvez télécharger l'invitation de calendrier sur [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
 
@@ -23,7 +23,7 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 - [Appel de la communauté des add-ins Office - 11 novembre 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)
 - [Appel de la communauté des add-ins Office - 14 octobre 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-october-14-2020%E2%80%AF/)
 - [Appel de la communauté des add-ins Office - 9 septembre 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-september-9-2020/)
-- [Appel de la communauté des add-ins Office - 12 août 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%e2%80%af)
+- [Appel de la communauté des add-ins Office - 12 août 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-august-12-2020%E2%80%AF/)
 - [Appel de la communauté des add-ins Office - 8 juillet 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-july-8-2020/)
 - [Appel de la communauté des add-ins Office - 10 juin 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-june-10-2020/)
 

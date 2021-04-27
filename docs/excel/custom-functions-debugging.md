@@ -1,16 +1,16 @@
 ---
-ms.date: 04/09/2021
+ms.date: 04/12/2021
 description: Découvrez comment déboguer vos fonctions personnalisées Excel qui n'utilisent pas de volet de tâches.
 title: Débogage de fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: 5b27ca44dbb891c2e1f4ae86175595dc902b74ba
-ms.sourcegitcommit: 094caf086c2696e78fbdfdc6030cb0c89d32b585
+ms.openlocfilehash: c6954af4638ae416c789af339d35187467e37b7f
+ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/16/2021
-ms.locfileid: "51862336"
+ms.lasthandoff: 04/26/2021
+ms.locfileid: "52024324"
 ---
-# <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
+# <a name="ui-less-custom-functions-debugging"></a>Débogage des fonctions personnalisées sans interface utilisateur
 
 Cet article traite du  débogage uniquement pour les fonctions personnalisées qui n'utilisent pas de volet de tâches ou d'autres éléments d'interface utilisateur (fonctions personnalisées sans interface utilisateur). 
 
@@ -53,8 +53,8 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 ### <a name="start-the-vs-code-debugger"></a>Démarrer le débogger VS Code
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
-5. Dans le menu déroulant Exécuter, choisissez **Excel Desktop (Edge Chromium).**
-6. Sélectionnez **F5** (ou **exécutez -> démarrer** le débogage à partir du menu) pour commencer le débogage. Un nouveau workbook Excel s'ouvre avec votre add-in déjà chargé et prêt à l'emploi.
+5. Dans le menu déroulant Exécuter, choisissez **Excel Desktop (Fonctions personnalisées).**
+6. Sélectionnez **F5** (ou **exécutez -> démarrer le** débogage à partir du menu) pour commencer le débogage. Un nouveau workbook Excel s'ouvre avec votre add-in déjà chargé et prêt à l'emploi.
 
 ### <a name="start-debugging"></a>Démarrer le débogage
 
@@ -72,7 +72,7 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 
 1. Ouvrez le dossier de projet racine de vos fonctions personnalisées dans [VS Code.](https://code.visualstudio.com/)
 2. Choose **Terminal > Run Task** and type or select **Watch**. Cela surveillera et reconstruira les modifications apportées aux fichiers.
-3. Choose **Terminal > Run Task** and type or select **Dev Server**.
+3. Choisissez **Terminal > exécuter la tâche** et tapez ou sélectionnez Serveur **dev.**
 
 ### <a name="start-the-vs-code-debugger"></a>Démarrer le débogger VS Code
 
@@ -80,7 +80,7 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 5. Dans les options Debug, choisissez **Office Online (Edge Chromium).**
 6. Ouvrez Excel dans le navigateur Microsoft Edge et créez un nouveau workbook.
 7. Choisissez **Partager** dans le ruban et copiez le lien pour l'URL de ce nouveau workbook.
-8. Sélectionnez **F5** (ou **exécutez > démarrer le débogage** à partir du menu) pour commencer le débogage. Une invite s'affiche, qui demande l'URL de votre document.
+8. Sélectionnez **F5** (ou **exécutez > démarrer** le débogage à partir du menu) pour commencer le débogage. Une invite s'affiche, qui demande l'URL de votre document.
 9. Collez l'URL de votre workbook et appuyez sur Entrée.
 
 ### <a name="sideload-your-add-in"></a>Charger une version test de votre complément
@@ -102,7 +102,7 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 
 ## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>Utiliser les outils de développement de navigateur pour déboguer des fonctions personnalisées dans Excel sur le web
 
-Vous pouvez utiliser les outils de développement de navigateur pour déboguer des fonctions personnalisées sans interface utilisateur dans Excel sur le web. Les étapes suivantes fonctionnent pour Windows et macOS.
+Vous pouvez utiliser les outils de développement du navigateur pour déboguer des fonctions personnalisées sans interface utilisateur dans Excel sur le web. Les étapes suivantes fonctionnent pour Windows et macOS.
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Exécuter votre add-in à partir de Visual Studio Code
 
@@ -161,7 +161,7 @@ Si vous devez modifier le code, vous pouvez effectuer des modifications dans Vis
 
 Plusieurs tâches de build sont disponibles :
 - `npm run watch`: se construit pour le développement et se reconstruit automatiquement lorsqu'un fichier source est enregistré
-- `npm run build-dev`: builds pour le développement une fois
+- `npm run build-dev`: crée une fois pour le développement
 - `npm run build`: builds pour la production
 - `npm run dev-server`: exécute le serveur web utilisé pour le développement
 
@@ -171,7 +171,7 @@ Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur un or
 - `npm run stop`: arrête Excel et le débogage.
 
 ## <a name="next-steps"></a>Étapes suivantes
-Découvrez les [pratiques d'authentification](custom-functions-authentication.md)pour les fonctions personnalisées sans interface utilisateur.
+Découvrez les [pratiques d'authentification pour les fonctions personnalisées sans interface utilisateur.](custom-functions-authentication.md)
 
 ## <a name="see-also"></a>Voir aussi
 
