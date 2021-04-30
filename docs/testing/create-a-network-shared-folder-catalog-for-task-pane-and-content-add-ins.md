@@ -1,30 +1,30 @@
 ---
-title: Chargement de version test des add-ins Office à partir d’un partage réseau
-description: Découvrez comment recharger une version test d’un add-in Office à partir d’un partage réseau
+title: Chargement de Office pour les tester à partir d'un partage réseau
+description: Découvrez comment recharger une version test d Office pour le test à partir d'un partage réseau
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 7e584b5543d988ed51f932254d48981d51afa0fc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 79ab14ca34530c870d3be4cc962a7e3df358e9bc
+ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237972"
+ms.lasthandoff: 04/30/2021
+ms.locfileid: "52100277"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de version test des add-ins Office à partir d’un partage réseau
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de Office pour les tester à partir d'un partage réseau
 
-Vous pouvez tester un add-in Office dans un client Office qui se trouve sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le module à partir d’un serveur non local ou d’un compte cloud.
+Vous pouvez tester un Office dans un client Office qui se trouve sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le module à partir d'un serveur non local ou d'un compte cloud.
 
 > [!IMPORTANT]
-> Le déploiement par partage réseau n’est pas pris en charge pour les modules de production. Cette méthode présente les limitations suivantes :
+> Le déploiement par partage réseau n'est pas pris en charge pour les modules de production. Cette méthode présente les limitations suivantes :
 > 
-> - Le module peut uniquement être installé sur des ordinateurs Windows.
-> - Si une nouvelle version d’un add-in change le ruban, chaque utilisateur devra réinstaller le module.
+> - Le module peut uniquement être installé sur Windows ordinateurs.
+> - Si une nouvelle version d'un add-in change le ruban, chaque utilisateur devra réinstaller le module.
 
 
 > [!NOTE]
 > Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
-Cet article s’applique uniquement au test des applications word, Excel, PowerPoint et Project, et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
+Cet article s'applique uniquement aux tests de Excel, de PowerPoint et de Project et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un complément Outlook, consultez une des rubriques suivantes pour charger une version de votre complément :
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -120,6 +120,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
+    > [!NOTE]
+    > Pour Visual Studio projets, utilisez le manifeste créé par le projet dans le `{projectfolder}\bin\Debug\OfficeAppManifests` dossier.
+
 2. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban. Dans Project, sélectionnez **Mes compléments** sous l’onglet **Project** du ruban.
 
 3. Choisissez **DOSSIER PARTAGÉ** dans la boîte de dialogue **Compléments Office**.
@@ -128,7 +131,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon de effacer le cache sur Windows, voir l’article [Effacer le cache Office.](clear-cache.md#clear-the-office-cache-on-windows)
+Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Vous pouvez trouver plus d'informations sur la façon de Windows cache dans l'article Effacer [le cache Office cache.](clear-cache.md#clear-the-office-cache-on-windows)
 
 ## <a name="see-also"></a>Voir aussi
 
