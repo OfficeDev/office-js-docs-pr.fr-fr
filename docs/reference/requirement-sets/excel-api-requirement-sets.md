@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel.
-ms.date: 10/26/2020
+ms.date: 05/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f99e9033d4b5acbcba6c4f799bcc73b263cfaf6c
-ms.sourcegitcommit: a4e09546fd59579439025aca9cc58474b5ae7676
+ms.openlocfilehash: 6fb5587b7eb3120a1e4b7db7dc6327bdcadc6691
+ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "48774731"
+ms.lasthandoff: 05/07/2021
+ms.locfileid: "52266088"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ## <a name="requirement-set-availability"></a>Disponibilité d’ensemble de conditions requises
 
-Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure sur Windows, et Office sur le web, iPad et Mac. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications clientes Office qui prennent en charge chaque ensemble de conditions et la version ou le numéro de build de ces applications.
+Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications clientes Office qui prennent en charge chaque ensemble de conditions et les versions ou numéro de build de ces applications.
 
 > [!NOTE]
 > Pour utiliser des API dans l’un des ensembles de conditions requises numérotés ou `ExcelApiOnline`, vous devez référencer la bibliothèque de **production** sur le CDN : https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
@@ -42,7 +42,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 | [ExcelApi 1.1](excel-api-1-1-requirement-set.md)  | Version 1509 (Build 4266.1001) ou version ultérieure   | 15.0 ou version ultérieure | 15.20 ou version ultérieure | Janvier 2016 |
 
 > [!NOTE]
-> Les versions perpétuelles d'Office prennent en charge l'ensemble des conditions requises suivantes :
+> Les versions sans abonnement d'Office prennent en charge l'ensemble des conditions requises suivantes :
 >
 > - Office 2019 prend en charge ExcelApi 1.8 et versions antérieures.
 > - Office 2016 prend uniquement en charge l'ensemble des conditions requises de ExcelApi 1.1.
@@ -75,7 +75,7 @@ else {
 
 ### <a name="defining-requirement-set-support-in-the-manifest"></a>Définition de la prise en charge de l’ensemble de conditions requises dans le manifeste
 
-Vous pouvez utiliser l’[élément Requirements](../manifest/requirements.md) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’application Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément `Requirements` du manifeste, le complément ne s’exécute pas dans cette application ou plateforme et ne s’affiche pas dans la liste de compléments dans **Mes compléments** .Si votre complément requiert une configuration spécifique pour les fonctionnalités complètes, mais qu’il peut fournir une valeur même pour les utilisateurs sur les plateformes qui ne prennent pas en charge la condition requise, nous vous recommandons de vérifier la prise en charge des exigences au moment de l’exécution, comme décrit ci-dessus, au lieu de définir la prise en charge de la condition requise dans le manifeste.
+Vous pouvez utiliser l’[élément Requirements](../manifest/requirements.md) dans le manifeste de complément pour spécifier les ensembles de conditions requises minimales et/ou les méthodes d’API que votre complément doit activer. Si la plateforme ou l’application Office ne prend pas en charge les ensembles de conditions requises ou les méthodes d’API spécifiées dans l’élément `Requirements` du manifeste, le complément ne s’exécute pas dans cette application ou plateforme et ne s’affiche pas dans la liste de compléments dans **Mes compléments**.Si votre complément requiert une configuration spécifique pour les fonctionnalités complètes, mais qu’il peut fournir une valeur même pour les utilisateurs sur les plateformes qui ne prennent pas en charge la condition requise, nous vous recommandons de vérifier la prise en charge des exigences au moment de l’exécution, comme décrit ci-dessus, au lieu de définir la prise en charge de la condition requise dans le manifeste.
 
 L’exemple de code suivant montre l’élément `Requirements` dans un manifeste indiquant que le complément doit être chargé dans toutes les applications clientes Office prenant en charge l’ensemble de conditions requises ExcelApi version 1.3 ou ultérieure.
 
