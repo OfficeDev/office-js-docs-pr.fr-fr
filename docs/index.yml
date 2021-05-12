@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Documentation pour compléments Office
-summary: Utilisez la plateforme des applications Office pour créer des solutions qui étendent les applications Office et interagissent avec du contenu dans des documents Office et dans les messages électroniques et les éléments de calendrier Outlook. Avec les add-ins Office, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer des solutions qui peuvent s’exécuter dans Office sur le web, Windows, Mac et mobile.
+summary: 'Utilisez la plateforme des Office pour créer des solutions qui étendent les applications Office et interagissent avec du contenu dans des documents Office et dans des messages Outlook et des éléments de calendrier. Avec Office, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer des solutions qui peuvent s’exécuter dans Office sur le Web, Windows, Mac et mobile.'
 brand: office
 metadata:
   title: Documentation pour compléments Office
@@ -10,109 +10,103 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 03/29/2021
-  ms.openlocfilehash: 1b6dc17b648a283cdca57051a049f7247cc151c8
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
-  ms.translationtype: MT
-  ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435248"
+  ms.date: 05/10/2021
 highlightedContent:
   items:
-  - itemType: overview
-    title: Vue d’ensemble de la plateforme de compléments pour Office
-    url: overview/office-add-ins.md
-  - itemType: quickstart
-    title: Configurer un add-in Excel en 5 minutes
-    url: quickstarts/excel-quickstart-jquery.md
-  - itemType: learn
-    title: 'Microsoft Learn : Présentation de la personnalisation du client Office avec les add-ins'
-    url: /learn/modules/intro-office-add-ins
-  - itemType: learn
-    title: 'Microsoft Learn: Extend Office clients with Office Add-ins'
-    url: /learn/paths/m365-office-add-in-associate
-  - itemType: whats-new
-    title: Blog du développeur Microsoft 365
-    url: https://developer.microsoft.com/office/blogs/technology/add-ins
-  - itemType: how-to-guide
-    title: Guide du débutant pour les add-ins Office
-    url: overview/learning-path-beginner.md
-  - itemType: reference
-    title: Documentation référence de l’API JavaScript pour Office
-    url: /javascript/api/overview
-  - itemType: sample
-    title: 'GitHub : Modèles et pratiques pour les add-ins Office'
-    url: https://github.com/OfficeDev/PnP-OfficeAddins
+    - itemType: overview
+      title: Vue d’ensemble de la plateforme de compléments pour Office
+      url: overview/office-add-ins.md
+    - itemType: quickstart
+      title: Configurer un Excel en 5 minutes
+      url: quickstarts/excel-quickstart-jquery.md
+    - itemType: learn
+      title: 'Microsoft Learn : Présentation de la personnalisation Office client avec les add-ins'
+      url: /learn/modules/intro-office-add-ins
+    - itemType: learn
+      title: 'Microsoft Learn : étendre Office clients avec Office de client'
+      url: /learn/paths/m365-office-add-in-associate
+    - itemType: whats-new
+      title: Microsoft 365 Blog du développeur
+      url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
+    - itemType: how-to-guide
+      title: Office Guide du débutant pour les add-ins
+      url: overview/learning-path-beginner.md
+    - itemType: reference
+      title: Documentation référence de l’API JavaScript pour Office
+      url: /javascript/api/overview
+    - itemType: sample
+      title: 'GitHub : modèles et pratiques pour les Office de recherche'
+      url: 'https://github.com/OfficeDev/PnP-OfficeAddins'
 conceptualContent:
   title: Votre parcours de développeur
   summary: ''
   items:
-  - title: Explorer
-    links:
-    - url: overview/learning-path-beginner.md
-      itemType: get-started
-      text: Commencer à utiliser les compléments Office
-    - url: overview/explore-with-script-lab.md
-      itemType: sample
-      text: Tester et tester Script Lab
-    - url: quickstarts/outlook-quickstart.md
-      itemType: quickstart
-      text: Configurer un add-in Outlook en 5 minutes
-    - url: quickstarts/powerpoint-quickstart.md
-      itemType: quickstart
-      text: Configurer un add-in PowerPoint en 5 minutes
-  - title: Créer
-    links:
-    - url: tutorials/excel-tutorial.md
-      itemType: tutorial
-      text: Développement d’un add-in Excel complet
-    - url: tutorials/outlook-tutorial.md
-      itemType: tutorial
-      text: Découvrir le didacticiel sur le add-in Outlook
-    - url: overview/patterns-and-practices-overview.md
-      itemType: sample
-      text: Utiliser des modèles et pratiques courants
-    - url: /javascript/api/overview
-      itemType: reference
-      text: Lire la documentation de référence de l’API
-  - title: Test et débogage
-    links:
-    - url: testing/test-debug-office-add-ins.md
-      itemType: overview
-      text: Consultez la vue d’ensemble du débogage
-    - url: testing/testing-and-troubleshooting.md
-      itemType: concept
-      text: Résolution des erreurs de l’utilisateur
-    - url: testing/troubleshoot-manifest.md
-      itemType: architecture
-      text: Vérifier le manifeste d’un add-in
-  - title: Déployer
-    links:
-    - url: publish/publish.md
-      itemType: deploy
-      text: Explorer les options de déploiement
-    - url: publish/centralized-deployment.md
-      itemType: deploy
-      text: En savoir plus sur le déploiement centralisé
-  - title: Publier
-    links:
-    - url: /office/dev/store
-      itemType: overview
-      text: Valider votre add-in Office
-    - url: /office/dev/store/add-in-submission-guide
-      itemType: how-to-guide
-      text: Consulter le guide de soumission de l’App Store Microsoft 365
-  - title: Impliquer
-    links:
-    - url: https://developer.microsoft.com/office
-      itemType: whats-new
-      text: Rejoindre le programme pour les développeurs
-    - url: /answers/products/m365
-      itemType: architecture
-      text: Demander des fonctionnalités
-    - url: https://stackoverflow.com/questions/tagged/office-js
-      itemType: reference
-      text: Poser des questions sur les Office.js sur Stack Overflow
-    - url: https://github.com/OfficeDev/office-js/issues
-      itemType: reference
-      text: Signaler un bogue ou un problème
+    - title: Explorer
+      links:
+        - url: overview/learning-path-beginner.md
+          itemType: get-started
+          text: Commencer à utiliser les compléments Office
+        - url: overview/explore-with-script-lab.md
+          itemType: sample
+          text: Testez et testez les Script Lab
+        - url: quickstarts/outlook-quickstart.md
+          itemType: quickstart
+          text: Configurer un Outlook en 5 minutes
+        - url: quickstarts/powerpoint-quickstart.md
+          itemType: quickstart
+          text: Configurer un PowerPoint en 5 minutes
+    - title: Créer
+      links:
+        - url: tutorials/excel-tutorial.md
+          itemType: tutorial
+          text: Développer un Excel complet
+        - url: tutorials/outlook-tutorial.md
+          itemType: tutorial
+          text: Découvrir le didacticiel Outlook de l’aide
+        - url: overview/patterns-and-practices-overview.md
+          itemType: sample
+          text: Utiliser des modèles et pratiques courants
+        - url: /javascript/api/overview
+          itemType: reference
+          text: Lire la documentation de référence de l’API
+    - title: Test et débogage
+      links:
+        - url: testing/test-debug-office-add-ins.md
+          itemType: overview
+          text: Consultez la vue d’ensemble du débogage
+        - url: testing/testing-and-troubleshooting.md
+          itemType: concept
+          text: Résolution des erreurs de l’utilisateur
+        - url: testing/troubleshoot-manifest.md
+          itemType: architecture
+          text: Vérifier le manifeste d’un add-in
+    - title: Déployer
+      links:
+        - url: publish/publish.md
+          itemType: deploy
+          text: Explorer les options de déploiement
+        - url: publish/centralized-deployment.md
+          itemType: deploy
+          text: En savoir plus sur le déploiement centralisé
+    - title: Publier
+      links:
+        - url: /office/dev/store
+          itemType: overview
+          text: Valider votre Office de projet
+        - url: /office/dev/store/add-in-submission-guide
+          itemType: how-to-guide
+          text: Consulter le guide Microsoft 365 soumission de l’App Store
+    - title: Impliquer
+      links:
+        - url: 'https://developer.microsoft.com/office'
+          itemType: whats-new
+          text: Rejoindre le programme pour les développeurs
+        - url: /answers/products/m365
+          itemType: architecture
+          text: Demander des fonctionnalités
+        - url: 'https://stackoverflow.com/questions/tagged/office-js'
+          itemType: reference
+          text: Poser des questions sur les Office.js sur Stack Overflow
+        - url: 'https://github.com/OfficeDev/office-js/issues'
+          itemType: reference
+          text: Signaler un bogue ou un problème
