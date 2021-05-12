@@ -1,14 +1,14 @@
 ---
 title: Modèles de conception de l’expérience utilisateur pour les compléments Office
-description: Obtenez une vue d’ensemble des modèles de conception de l’interface utilisateur pour les compléments Office, y compris les modèles de navigation, d’authentification, de première utilisation et de personnalisation.
-ms.date: 03/19/2019
+description: Obtenez une vue d’ensemble des modèles de conception d’interface utilisateur pour les Office, y compris les modèles de navigation, d’authentification, de première utilisation et de authentification.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: d7201cd91dbfd019a7b045a7f63c1c86a74b9142
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608459"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330107"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Modèles de conception de l’expérience utilisateur pour les compléments Office
 
@@ -16,15 +16,15 @@ La conception de l’expérience utilisateur pour les compléments Office doit o
 
 Nos modèles d’expérience utilisateur sont composés de composants. Les composants sont des contrôles qui aident vos clients à interagir avec les éléments de votre logiciel ou service. Les boutons, la navigation et les menus sont des exemples de composants courants qui ont souvent des comportements et des styles cohérents.
 
-Office UI Fabric rend les composants qui ressemblent à une partie d’Office et se comportent comme une partie d’Office. Utilisez Fabric pour une intégration facile avec Office. Si votre complément a son propre langage de composant préexistant, vous n’avez pas besoin de l’abandonner en faveur de Fabric. Recherchez les opportunités pour le conserver lors de l’intégration avec Office. Pensez à remplacer les éléments stylistiques, à supprimer les conflits ou à adopter des styles et des comportements qui éliminent la confusion de l’utilisateur.
+[L’interface utilisateur Fluent React composants](using-office-ui-fabric-react.md) se comportent comme une partie de Office, tout comme les composants neutres de l’infrastructure de [Office UI Fabric JS](fabric-core.md). Tirez parti de l’un ou l’autre des ensembles de composants à intégrer à Office. Sinon, si votre add-in possède son propre langage de composant existant, vous n’avez pas besoin de l’ignorer. Recherchez les opportunités pour le conserver lors de l’intégration avec Office. Pensez à remplacer les éléments stylistiques, à supprimer les conflits ou à adopter des styles et des comportements qui éliminent la confusion de l’utilisateur.
 
-Les modèles fournis sont les meilleures solutions pratiques basées sur des scénarios courants d’utilisation et sur les recherches en expérience utilisateur. Ils sont destinés à fournir une entrée rapide à la conception et au développement de compléments, et fournir des conseils pour obtenir un équilibre entre les éléments Microsoft et les éléments de la marque. Fournir une expérience utilisateur propre et moderne qui assure un équilibre entre les éléments de conception du langage de conception Microsoft Fabric et l’identité de marque unique du partenaire peut vous aider à augmenter la rétention utilisateur et l’adoption de votre complément.
+Les modèles fournis sont les meilleures solutions pratiques basées sur des scénarios courants d’utilisation et sur les recherches en expérience utilisateur. Ils sont destinés à fournir un point d’entrée rapide pour concevoir et développer des modules, ainsi que des conseils pour trouver un équilibre entre les éléments de marque Microsoft et les vôtres. Fournir une expérience utilisateur propre et moderne qui équilibre les éléments de conception du langage de conception de l’interface utilisateur Fluent de Microsoft et l’identité de marque unique du partenaire peut aider à augmenter la rétention et l’adoption par les utilisateurs de votre add-in.
 
 Utiliser les modèles de motif expérience utilisateur pour :
 
 * Appliquer des solutions à des scénarios client courants.
 * Appliquer les meilleures pratiques en matière de conception.
-* Incorporer les composants et styles d’[Office UI Fabric](https://developer.microsoft.com/fabric#/get-started).
+* Incorporer [des composants et des](https://developer.microsoft.com/fluentui#/get-started) styles d’interface utilisateur Fluent.
 * Créer des compléments qui s’intègrent visuellement à l’interface utilisateur d’Office par défaut.
 * Imaginer et visualiser l’expérience utilisateur.
 
@@ -44,7 +44,7 @@ Les modèles sont organisés par les actions clés ou les expériences qui sont 
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Kits de ressources de conception](design-toolkits.md)
-* [Office UI Fabric](https://developer.microsoft.com/fabric)
+* [Kits d’outils de conception](design-toolkits.md)
+* [Interface utilisateur Fluent](https://developer.microsoft.com/fluentui#)
 * [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
-* [Prise en main de Fabric React](../design/using-office-ui-fabric-react.md)
+* [Interface utilisateur Fluent React dans Office de l’interface utilisateur](using-office-ui-fabric-react.md)

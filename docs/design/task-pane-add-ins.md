@@ -1,14 +1,14 @@
 ---
 title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: ed3f3b8fdf7cf62b6016fe8b03393de0d56dfb33
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: d235d6c437ee124441389e68b54fc6ab8cde8dae
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132017"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330149"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
 
@@ -16,40 +16,40 @@ Les volets des tâches sont des surfaces d’interface qui s’affichent génér
 
 *Figure 1. Mise en page type du volet Office*
 
-![Illustration d’une disposition de volet des tâches par défaut avec des onglets de section en haut, le logo de société et le nom de la société en bas à gauche, et une icône de paramètres dans le coin inférieur droit](../images/overview-with-app-task-pane.png)
+![Illustration affichant une disposition classique du volet Des tâches avec des onglets de section en haut, le logo de la société et le nom de la société en bas à gauche, et une icône de paramètres en bas à droite](../images/overview-with-app-task-pane.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
 |À faire|À ne pas faire|
 |:-----|:--------|
 |<ul><li>Inclure le nom de votre complément dans le titre.</li></ul>|<ul><li>Ne pas ajouter le nom de votre société au titre.</li></ul>|
-|<ul><li>Utiliser des noms descriptifs courts dans le titre.</li></ul>|<ul><li>N’ajoutez pas de chaînes telles que « complément », « pour Word » ou « pour Office » au titre de votre complément.</li></ul>|
+|<ul><li>Utiliser des noms descriptifs courts dans le titre.</li></ul>|<ul><li>N’ajoutez pas de chaînes telles que « add-in », « for Word » ou « for Office » au titre de votre application.</li></ul>|
 |<ul><li>Inclure un élément de navigation ou de commande comme le CommandBar ou le tableau croisé dynamique en haut de votre complément.</li></ul>||
 |<ul><li>Inclure un élément de la marque tel que le BrandBar en bas de votre complément, sauf si votre complément doit être utilisé dans Outlook.</li></ul>||
 
 ## <a name="variants"></a>Variantes
 
-Les images suivantes présentent les différentes tailles de volet de tâches avec le ruban d’application Office à une résolution 1366x768. Pour Excel, un espace vertical supplémentaire est nécessaire pour accueillir la barre de formule.  
+Les images suivantes montrent les différentes tailles de volet de tâches avec application Office ruban avec une résolution de 1 366 x 768. Pour Excel, l’espace vertical supplémentaire est requis pour s’adapter à la barre de formule.  
 
 *Figure 2. Tailles de volet des tâches du bureau Office 2016*
 
-![Diagramme affichant les tailles de volet des tâches du Bureau à la résolution 1366x768](../images/office-2016-taskpane-sizes.png)
+![Diagramme affichant les tailles du volet Des tâches du bureau à une résolution de 1 366 x 768](../images/office-2016-taskpane-sizes.png)
 
-- Excel-320x455 pixels
-- PowerPoint-320 x 531 pixels
-- Word-320 x 531 pixels
-- Outlook-348x535 pixels
+- Excel - 320 x 455 pixels
+- PowerPoint - 320 x 531 pixels
+- Word - 320 x 531 pixels
+- Outlook - 348 x 535 pixels
 
 <br/>
 
-*Figure 3. Tailles des volets Office*
+*Figure 3. Office tailles de volet de tâches*
 
-![Diagramme affichant la taille des volets des tâches à la résolution 1366x768](../images/office-365-taskpane-sizes.png)
+![Diagramme affichant les tailles du volet Des tâches à une résolution de 1 366 x 768](../images/office-365-taskpane-sizes.png)
 
-- Excel-350x378 pixels
-- PowerPoint-348x391 pixels
-- Word-329x445 pixels
-- Outlook (sur le Web)-320x570 pixels
+- Excel - 350 x 378 pixels
+- PowerPoint - 348 x 391 pixels
+- Word - 329 x 445 pixels
+- Outlook (sur le web) - 320 x 570 pixels
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
@@ -59,13 +59,13 @@ Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
 *Figure 4. Menu Caractéristique sur Windows*
 
-![Diagramme illustrant le menu de personnalité sur le bureau Windows](../images/personality-menu-win.png)
+![Diagramme montrant le menu Personnalité sur Windows bureau](../images/personality-menu-win.png)
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace à 34 x 32 pixels, comme illustré.
 
 *figure 5. Menu Caractéristique sur Mac*
 
-![Diagramme illustrant le menu de personnalité sur le bureau Mac](../images/personality-menu-mac.png)
+![Diagramme montrant le menu Personnalité sur le bureau Mac](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implémentation
 
@@ -73,5 +73,5 @@ Pour consulter un exemple qui implémente un volet des tâches, reportez-vous à
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Office UI Fabric dans des compléments Office](office-ui-fabric.md)
+- [Fabric Core dans les Office de base](fabric-core.md)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)

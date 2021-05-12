@@ -1,23 +1,23 @@
 ---
-title: Utilisation d’Office UI Fabric React dans des compléments Office
-description: Découvrez comment utiliser Office UI Fabric React dans les compléments Office.
-ms.date: 02/09/2021
+title: Interface utilisateur Fluent React dans Office de l’interface utilisateur
+description: Découvrez comment utiliser l’interface utilisateur Fluent React dans Office de l’interface utilisateur.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f8f61d1b094fa71b8a400a6a6d9ea3029c53b051
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: cb7f04c21a52a2e4a3f271abc56aa325dd2b02fd
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237727"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330141"
 ---
-# <a name="use-office-ui-fabric-react-in-office-add-ins"></a>Utilisation d’Office UI Fabric React dans des compléments Office
+# <a name="use-fluent-ui-react-in-office-add-ins"></a>Utiliser l’interface utilisateur Fluent React dans Office de l’interface utilisateur
 
-Office UI Fabric est une infrastructure frontale JavaScript pour créer des expériences utilisateur pour Office. Si vous créez votre add-in à l’aide de React, envisagez d’utiliser Fabric React pour créer votre expérience utilisateur. Fabric fournit plusieurs composants UX react, tels que des boutons ou des case à cocher, que vous pouvez utiliser dans votre add-in.
-
-Cet article décrit la création d’un complément conçu avec la fonction React et utilise les composants Fabric React.
+Fluent UI React est l’infrastructure frontale JavaScript open source officielle conçue pour créer des expériences qui s’intègrent parfaitement à un large éventail de produits Microsoft, notamment Office. Il fournit des composants robustes, à jour et accessibles React qui sont hautement personnalisables à l’aide de CSS-in-JS.
 
 > [!NOTE]
-> [Fabric Core](office-ui-fabric.md#use-fabric-core-icons-fonts-colors) est inclus dans Fabric React, ce qui signifie que votre complément aura également accès à Fabric Core une fois que vous aurez effectué les étapes décrites dans cet article.
+> Cet article décrit l’utilisation de l’interface utilisateur Fluent React dans le contexte de Office de l’interface utilisateur. Mais il est également utilisé dans un large éventail d’applications Microsoft 365 et d’extensions. Pour plus d’informations, consultez [la React](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) interface utilisateur Fluent et le site web d’interface utilisateur [Fluent open](https://github.com/microsoft/fluentui)source.
+
+Cet article explique comment créer un add-in qui est créé à l’React et qui utilise l’interface utilisateur Fluent React composants.
 
 ## <a name="create-an-add-in-project"></a>Création d’un projet de complément
 
@@ -76,13 +76,13 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
         Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office. Ensuite, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise les composants UX de Fabric React.
+3. Pour ouvrir le volet Des tâches  du add-in, sous l’onglet Accueil, sélectionnez le bouton Afficher le **volet Des** tâches. Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office. Dans le reste de cette walkthrough, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise des composants UX à partir de fluent UI React.
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane](../images/word-task-pane-yo-default.png)
 
-## <a name="create-a-react-component-that-uses-fabric-react"></a>Créer un composant React utilisant Fabric React
+## <a name="create-a-react-component-that-uses-fluent-ui-react"></a>Créer un composant React qui utilise l’interface utilisateur Fluent React
 
-À ce stade, vous avez créé un complément très rudimentaire du volet Office standard en utilisant React. Ensuite, procédez comme suit pour créer un nouveau composant React (`ButtonPrimaryExample`) dans le projet de complément. Le composant utilise les composants `Label` et `PrimaryButton` de Fabric React.
+À ce stade, vous avez créé un complément très rudimentaire du volet Office standard en utilisant React. Ensuite, procédez comme suit pour créer un nouveau composant React (`ButtonPrimaryExample`) dans le projet de complément. Le composant utilise les composants de l’interface utilisateur `Label` `PrimaryButton` Fluent React.
 
 1. Ouvrez le dossier du projet créé par le générateur Yeoman et accédez à **src\taskpane\components**.
 2. Dans ce dossier, créez un fichier nommé **Button.tsx**.
@@ -102,7 +102,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
     // In the click event, write text to the document.
     await Word.run(async (context) => {
       let body = context.document.body;
-      body.insertParagraph('Hello Office UI Fabric React!', Word.InsertLocation.end);
+      body.insertParagraph('Hello Fluent UI React!', Word.InsertLocation.end);
       await context.sync();
     });
   }
@@ -126,10 +126,10 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Ce code effectue les opérations suivantes :
 
 - Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.
-- Référence les composants de Fabric (`PrimaryButton`, `IButtonProps`, `Label`) utilisés pour créer `ButtonPrimaryExample`.
+- Fait référence à l’interface utilisateur Fluent React composants ( `PrimaryButton` , , ) qui sont utilisés pour créer `IButtonProps` `Label` `ButtonPrimaryExample` .
 - Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.
 - Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.
-- Définit l’interface utilisateur du composant React dans la fonction `render`. Le balisage HTML utilise les composants `Label` et `PrimaryButton` de Fabric React et spécifie que lorsque l’événement `onClick` se déclenche, la fonction `insertText` s’exécute.
+- Définit l’interface utilisateur du composant React dans la fonction `render`. Le code HTML utilise les composants de l’interface utilisateur Fluent React et spécifie que lorsque l’événement se déclenche, la fonction `Label` `PrimaryButton` `onClick` `insertText` s’exécute.
 
 ## <a name="add-the-react-component-to-your-add-in"></a>Ajoutez le composant React à votre complément
 
@@ -172,11 +172,10 @@ Dans Word, le volet Office complément se met automatiquement à jour lorsque vo
 
 ![Capture d’écran montrant l’application Word avec « Insérer du texte... » bouton et texte qui précède immédiatement mis en surbrill](../images/word-task-pane-with-react-component.png)
 
-Félicitations, vous avez créé un complément de volet Office à l’aide de React et Office UI Fabric React !
+Félicitations, vous avez créé un add-in du volet Des tâches à l’aide de React’interface utilisateur Fluent et React !
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Office UI Fabric dans des compléments Office](office-ui-fabric.md)
-- [Office UI Fabric React](https://developer.microsoft.com/fabric)
+- [Word Add-in GettingStartedFabricReact](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)
+- [Fabric Core dans les Office de base](fabric-core.md)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](ux-design-pattern-templates.md)
-- [Démarrer avec un exemple de code Fabric React](https://github.com/OfficeDev/Word-Add-in-GettingStartedFabricReact)

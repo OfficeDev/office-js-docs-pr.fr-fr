@@ -1,14 +1,14 @@
 ---
 title: Meilleures pratiques en matière de développement de compléments Office
-description: Appliquer les meilleures pratiques lors du développement pour créer des compléments Office.
-ms.date: 10/14/2020
+description: Appliquez les meilleures pratiques lors du développement pour créer des Office de développement.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 17393d921129efcfb74eed3dd168633c2f58291b
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132178"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330079"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -21,7 +21,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 - Créez des compléments qui aident les utilisateurs à réaliser des tâches rapidement et efficacement. Concentrez-vous sur des scénarios adaptés aux applications Office. Par exemple :
   - Réalisez des tâches de création essentielles plus rapidement et plus facilement, avec moins d’interruptions.
   - Développez de nouveaux scénarios dans Office.
-  - Intégrez des services complémentaires dans les applications Office.
+  - Incorporez des services complémentaires dans Office applications.
   - Améliorez l’expérience Office pour accroître la productivité.
 - Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#create-an-engaging-first-run-experience).
 - Rédigez une [description claire pour AppSource](/office/dev/store/create-effective-office-store-listings). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
@@ -36,11 +36,11 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
 - Proposez une interface utilisateur pédagogique pour guider les utilisateurs et la personnaliser.
 
-  ![Capture d’écran illustrant une comparaison « do » vs. L’exemple de « do » affiche un complément qui inclut un bouton que les utilisateurs peuvent cliquer pour commencer. L’exemple « ne pas » montre un complément sans aucune étape ni bouton.](../images/contoso-part-catalog-do-dont.png)
+  ![Capture d’écran montrant une comparaison « À faire » et « Ne pas faire ». L’exemple « Faire » montre un add-in qui inclut un bouton sur le bouton sur quoi les utilisateurs peuvent cliquer pour commencer. L’exemple « À ne pas faire » montre un add-in sans étapes ni boutons d’introduction.](../images/contoso-part-catalog-do-dont.png)
 
 - Si votre complément de contenu est lié à des données dans le document de l’utilisateur, incluez des exemples de données ou un modèle pour montrer aux utilisateurs le format de données à utiliser.
 
-  ![Capture d’écran illustrant une comparaison « do » vs. L’exemple « do » affiche un complément qui inclut un bouton que les utilisateurs peuvent cliquer pour insérer des exemples de données. L’exemple « ne pas » montre un complément sans exemples de données ou de boutons.](../images/add-in-title.png)
+  ![Capture d’écran montrant une comparaison « À faire » et « Ne pas faire ». L’exemple « Faire » montre un add-in qui inclut un bouton sur le bouton que les utilisateurs peuvent cliquer pour insérer des exemples de données. L’exemple « À ne pas faire » montre un add-in sans exemple de données ou de boutons.](../images/add-in-title.png)
 
 - Offrez des [essais gratuits](/office/dev/store/decide-on-a-pricing-model). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
@@ -56,7 +56,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ## <a name="apply-ux-design-principles"></a>Application des principes de conception de l’expérience utilisateur
 
-- Assurez-vous que l’aspect, la convivialité et la fonctionnalité de votre complément améliorent l’expérience Office. Utilisez [Office UI Fabric](https://developer.microsoft.com/fabric).
+- Assurez-vous que l’aspect, la convivialité et la fonctionnalité de votre complément améliorent l’expérience Office. Voir [Concevoir l’interface utilisateur de Office de l’interface utilisateur.](../design/add-in-design.md)
 
 - Privilégiez le contenu plutôt que l’apparence. Évitez les éléments d’interface utilisateur superflus qui n’ajoutent pas de valeur à l’expérience utilisateur.
 
@@ -76,7 +76,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
-- Utilisez la propriété [Context. touchEnabled](/javascript/api/office/office.context#touchenabled) pour déterminer si l’application Office sur laquelle votre complément est exécuté est compatible avec la fonction tactile.
+- Utilisez la [propriété Context.touchEnabled](/javascript/api/office/office.context#touchenabled) pour détecter si l’application Office sur lequel votre application s’exécute est tactile.
 
   > [!NOTE]
   > Cette propriété n’est pas prise en charge dans Outlook.
@@ -90,7 +90,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 - Testez votre complément sur un véritable appareil en utilisant le [chargement de version test](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Si vous utilisez [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) pour vos éléments de conception, un grand nombre de ces éléments sont pris en charge.
+> Si vous utilisez l’interface utilisateur [Fluent React](../design/using-office-ui-fabric-react.md) pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Optimisation et contrôle des performances du complément
@@ -120,7 +120,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 - Surveillez l’état de votre service et utilisez la télémétrie pour surveiller le succès d’utilisateur.
 
-- Réduisez les échanges de données entre le complément et le document Office. Pour plus d’informations, reportez-vous à [la rubrique éviter d’utiliser la méthode Context. Sync dans les boucles](correlated-objects-pattern.md).
+- Réduisez les échanges de données entre le Office document. Pour plus d’informations, voir [Éviter d’utiliser la méthode context.sync en boucles.](correlated-objects-pattern.md)
 
 ## <a name="market-your-add-in"></a>Commercialisation de votre complément
 

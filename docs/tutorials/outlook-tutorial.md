@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 02/01/2021
+ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 56def561fee6525c6daa73fe1153f220bae503c3
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 1114c7b106cdc6d66e370b9d168ac87fda068a24
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238098"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52329925"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -136,7 +136,7 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-Le manifeste d’un complément contrôle la manière dont il apparaît dans Outlook. Il définit la façon dont le complément est affiché dans la liste des compléments, les boutons qui apparaissent sur le ruban, et il configure les URL pour les fichiers HTML et JavaScript utilisés par le complément.
+Le manifeste d’un complément contrôle la manière dont il apparaît dans Outlook. Il définit la façon dont le complément est affiché dans la liste des compléments, les boutons qui apparaissent sur le ruban, ainsi que les URL des fichiers HTML et JavaScript utilisés par le complément.
 
 #### <a name="specify-basic-information"></a>Spécifiez les informations de base
 
@@ -315,7 +315,7 @@ Commençons par créer l’interface utilisateur pour la boîte de dialogue. Dan
   <!-- Office JavaScript API -->
   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-  <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+<!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
   <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
   <!-- Template styles -->
@@ -976,7 +976,7 @@ Dans le projet que vous avez créé, le code HTML du volet de tâches est spéci
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
 
-    <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+   <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
     <!-- Template styles -->
