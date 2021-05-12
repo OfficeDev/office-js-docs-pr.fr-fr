@@ -1,19 +1,20 @@
 ---
 title: Instructions de disposition pour les compléments Office
-description: Obtenir des instructions sur la mise en page d’un volet Office ou d’une boîte de dialogue dans un complément Office.
-ms.date: 06/27/2018
+description: Obtenez des instructions sur la disposition d’un volet de tâches ou d’une boîte de dialogue dans un Office de tâches.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: c88d2e9d978a22688eb10b57607750286209e5d5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1eea665028abc90b2361edae45e81bc85481a429
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607665"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330009"
 ---
 # <a name="layout"></a>Disposition
+
 Chaque conteneur HTML incorporé dans Office aura une disposition. Ces dispositions sont les écrans principaux de votre complément. Dans ces dispositions, vous créerez des expériences qui permettent aux clients de lancer des actions, de modifier des paramètres, d’afficher, de faire défiler ou de parcourir du contenu. Concevez votre complément avec une disposition cohérente à travers les écrans afin de garantir la continuité de l’expérience. Si vous avez un site web existant que vos clients utilisent souvent, envisagez de réutiliser les dispositions de vos pages web existantes. Adaptez-les pour qu’elles s’intègrent harmonieusement dans des conteneurs HTML Office.
 
-Pour des recommandations sur la disposition, voir [Volet des tâches](task-pane-add-ins.md), [Contenu](content-add-ins.md) et [Boîte de dialogue](dialog-boxes.md). Pour plus d’informations sur la façon d’assembler des composants Office UI Fabric dans des flux d’expérience utilisateur et des dispositions courants , voir [Modèles de conception UX](ux-design-pattern-templates.md).
+Pour des recommandations sur la disposition, voir [Volet des tâches](task-pane-add-ins.md), [Contenu](content-add-ins.md) et [Boîte de dialogue](dialog-boxes.md). Pour plus d’informations sur la façon d’assembler des [React](using-office-ui-fabric-react.md)d’interface utilisateur Fluent ou [Office UI Fabric JS](fabric-core.md), des composants dans des dispositions courantes et des flux d’expérience utilisateur, voir modèles de modèles de conception d’expérience [utilisateur.](ux-design-pattern-templates.md)
 
 Appliquez les recommandations générales suivantes pour les dispositions :
 

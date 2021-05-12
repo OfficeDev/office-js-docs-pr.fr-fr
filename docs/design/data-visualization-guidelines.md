@@ -1,31 +1,26 @@
 ---
 title: Règles de style de visualisation de données pour les compléments Office
-description: Obtenez des pratiques recommandées pour visualiser les données dans un complément Office.
-ms.date: 01/14/2019
+description: Obtenez quelques bonnes pratiques pour visualiser des données dans un Office de recherche.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: f3fa2a6cc5a9d27135ad4290eded838dfaecb7d6
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: ac32d7f284850fc8daef1fb1588940844123550f
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132073"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330177"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
 Une bonne visualisation des données permet aux utilisateurs de rechercher des informations dans leurs données. Ils peuvent utiliser ces informations pour raconter des histoires qui informent et persuadent. Cet article fournit des instructions pour vous aider à créer des visualisations de données efficaces dans vos compléments pour Excel et d’autres applications Office.
 
-Nous vous recommandons d’utiliser [Office UI Fabric](https://developer.microsoft.com/fabric) pour créer l’apparence de vos visualisations de données. Office UI Fabric comprend des styles et des composants qui s’intègrent parfaitement à l’apparence Office.
-<!--The following figure shows a data visualization in an add-in that uses Fabric.
-
-![Image of a data visualization with Fabric elements applied**](../images/fabric-data-visualization.png) 
-
--->
+Nous vous recommandons d’utiliser [l’interface utilisateur Fluent](../design/add-in-design.md) pour créer le chrome pour vos visualisations de données. L’interface utilisateur Fluent inclut des styles et des composants qui s’intègrent parfaitement à l Office l’apparence.
 
 ## <a name="data-visualization-elements"></a>Éléments de visualisation de données
 
-Les visualisations de données partagent un cadre général et des éléments visuels et interactifs communs, y compris les titres, les étiquettes et les tracés de données, comme illustré dans la figure suivante.
+Les visualisations de données partagent une infrastructure générale et des éléments visuels et interactifs communs, notamment des titres, des étiquettes et des traçages de données, comme illustré dans la figure suivante.
 
-![Graphique en courbes avec titre, axes, légende et zone de traçage étiquetée](../images/excel-charts-visualization.png)
+![Graphique en lignes avec titre, axes, légende et zone de traçage étiquetés](../images/excel-charts-visualization.png)
 
 ### <a name="chart-titles"></a>Titres de graphique
 
@@ -33,14 +28,14 @@ Suivez ces instructions pour les titres de graphique :
 
 - Faites en sorte que vos titres de graphique soient lisibles. Positionnez-les pour créer une hiérarchie visuelle claire par rapport au reste du graphique.
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
-- Intégrez les [recommandations relatives aux polices d’Office UI Fabric](https://developer.microsoft.com/fabric#/styles/typography) pour harmoniser vos graphiques avec l’interface utilisateur Office, qui utilise la police Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
+- Incorporez [la piste de types d’interface](https://developer.microsoft.com/fluentui#/styles/web/typography) utilisateur Fluent pour rendre vos graphiques cohérents avec l Office’interface utilisateur, qui utilise Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
 
 ### <a name="axis-labels"></a>Étiquettes d’axe
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez fabric, reportez-vous à la [palette couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez l’interface utilisateur Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -60,11 +55,11 @@ Pour des recommandations sur l’utilisation des couleurs dans les visualisation
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez fabric, reportez-vous à la [palette couleurs neutres](https://developer.microsoft.com/fabric#/styles/colors).
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez l’interface utilisateur Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 
-![Visualisation des données d’un graphique en courbes avec quadrillage](../images/data-visualization.png)
+![Visualisation des données d’un graphique en lignes avec un quadrillage](../images/data-visualization.png)
 
 ### <a name="legends"></a>Légendes
 

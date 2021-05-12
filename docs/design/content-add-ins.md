@@ -1,14 +1,14 @@
 ---
 title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
-ms.date: 07/07/2020
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cf4ea46b4b924683756063bb36c3f2ea2b8c6764
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 89c8c7eb96d6b1cf6484133b52acbe7d0ccb5298
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132080"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52329995"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -16,7 +16,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 *Figure 1. Mise en page type pour les compléments de contenu*
 
-![Disposition standard des compléments de contenu dans une application Office](../images/overview-with-app-content.png)
+![Disposition type pour les applications de contenu dans une application Office de contenu](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -25,7 +25,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 ## <a name="variants"></a>Variantes
 
-Les tailles des compléments de contenu pour Excel et PowerPoint dans le bureau Office et Microsoft 365 sont spécifiées par l’utilisateur.
+Les tailles de contenu des Excel et PowerPoint dans Office bureau et Microsoft 365 sont spécifiées par l’utilisateur.
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
@@ -35,13 +35,13 @@ Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
 *Figure 2. Menu Caractéristique sur Windows*
 
-![12x32 : menu de personnalité pixel sur le bureau Windows](../images/personality-menu-win.png)
+![Menu de personnalité de 12 x 32 pixels sur Windows bureau](../images/personality-menu-win.png)
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace occupé à 34 x 32 pixels, comme illustré.
 
 *Figure 3. Menu Caractéristique sur Mac*
 
-![34-menu de personnalité pixel sur le bureau Mac](../images/personality-menu-mac.png)
+![Menu de personnalité de 34 x 32 pixels sur le bureau Mac](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implémentation
 
@@ -49,13 +49,13 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
 
-- Vérifiez si votre complément Office fonctionne sur une [plateforme ou une application Office spécifique](../overview/office-add-in-availability.md).
+- Vérifiez si votre Office fonctionne sur une application ou une plateforme [Office spécifique.](../overview/office-add-in-availability.md)
 - Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
 - Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Application cliente Office et disponibilité de la plateforme pour les compléments Office](../overview/office-add-in-availability.md)
-- [Office UI Fabric dans des compléments Office](../design/office-ui-fabric.md)
+- [Fabric Core dans les Office de base](fabric-core.md)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
 - [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

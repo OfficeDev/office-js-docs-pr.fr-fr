@@ -1,22 +1,22 @@
 ---
-title: Recommandations en matière d’icônes de style pour les add-ins Office
-description: Recommandations en matière d’utilisation des icônes de style Fresh dans les add-ins Office.
-ms.date: 03/30/2021
+title: Recommandations en matière d’icônes de style Office des produits
+description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cc891593ec9518d256047cfa172553cc41d3e12e
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604665"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330044"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style pour les add-ins Office
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office des produits
 
-Les versions Office 2013+ (sans abonnement) d’Office utilisent l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, consultez les instructions relatives aux icônes de style Monoline pour les [add-ins Office.](add-in-icons-monoline.md)
+Les Office versions 2013 et 2013 (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, voir recommandations en matière d’icônes de style Monoline pour Office les [modules.](add-in-icons-monoline.md)
 
-## <a name="office-fresh-visual-style"></a>Style visuel Office Fresh
+## <a name="office-fresh-visual-style"></a>Office Style visuel à nouveau
 
-Les icônes Fresh incluent uniquement les éléments de communication essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux s’adapter aux clients Office sans abonnement.
+Les icônes Fresh incluent uniquement les éléments de communication essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux s’adapter Office clients sans abonnement.
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -25,10 +25,10 @@ Suivez ces instructions lorsque vous créez vos icônes :
 |À faire|À ne pas faire|
 |:---|:---|
 |Conservez des éléments visuels simples et clairs, en vous concentrant sur les éléments clés de la communication.| N’utilisez pas d’artefacts qui rendent votre icône désordonnée.|
-|Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne réaffectez pas les glyphes Office UI Fabric pour les commandes de l’application Office dans le ruban de l’application Office ou les menus contextuels. Les icônes de structure sont stylistiquement différentes et ne correspondront pas.|
+|Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne réaffectez pas les glyphes Fabric Core pour les commandes de application Office du ruban ou des menus contextuels. Les icônes Fabric Core sont stylistiquement différentes et ne correspondent pas.|
 |Réutilisez les métaphores visuelles d’Office courantes telles que le pinceau pour mettre en forme ou la loupe pour rechercher.|Ne réutilisez pas les métaphores visuelles pour différentes commandes. L’utilisation de la même icône pour différents comportements et concepts peut semer la confusion. |
 |Redessinez vos icônes pour les réduire ou les agrandir. Prenez le temps de redessiner les découpages, les coins et des bords arrondis pour optimiser la netteté de ligne. |Ne redimensionnez pas vos icônes en réduisant ou en agrandissant leurs tailles. Cela peut entraîner une mauvaise qualité visuelle et des actions peu claires. Les icônes complexes créées dans une plus grande taille risquent de perdre en clarté si elles sont redimensionnées pour être réduites sans être redessinées. |
-|Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque entrent souvent en conflit avec les styles d’icône de ruban de l’application Office et peuvent attirer l’attention des utilisateurs dans un environnement saturé. |
+|Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque entrent souvent en conflit application Office styles d’icône du ruban et peuvent attirer l’attention des utilisateurs dans un environnement saturé. |
 |Utilisez le format PNG avec un arrière-plan transparent. ||
 |Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. ||
 
@@ -46,7 +46,7 @@ Les icônes du bureau Office sont des images bitmap. Différentes tailles appara
 - 80 px (obligatoire)
 
 > [!IMPORTANT]
-> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et Dans Office pour la taille et d’autres exigences.
+> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
 
@@ -54,7 +54,7 @@ Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pou
 
 ## <a name="icon-anatomy-and-layout"></a>Mise en page et structure de l’icône
 
-Les icônes Office sont généralement composées d’un élément de base avec des modificateurs d’action et conceptuels superposés. Les modificateurs d’action représentent des concepts tels qu’ajouter, ouvrir, nouveau ou fermer. Les modificateurs conceptuels représentent l’état, l’altération ou une description de l’icône.
+Office icônes sont généralement composées d’un élément de base avec des modificateurs d’action et conceptuels superposés. Les modificateurs d’action représentent des concepts tels qu’ajouter, ouvrir, nouveau ou fermer. Les modificateurs conceptuels représentent l’état, l’altération ou une description de l’icône.
 
 Pour créer des commandes qui s’alignent sur l’interface utilisateur d’Office, suivez les instructions de mise en forme pour les éléments de base et les modificateurs. Cela garantit que vos commandes auront un aspect professionnel et que vos clients auront confiance en votre complément. Si vous apportez des exceptions à ces instructions, faites-le intentionnellement.
 
@@ -89,7 +89,7 @@ Tous les modificateurs doivent avoir un cutout transparent de 1 px entre chaque 
 ## <a name="icon-colors"></a>Couleurs de l’icône
 
 > [!NOTE]
-> Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restituées dans Microsoft UI Fabric et la palette de couleurs est différente de la palette présentée dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
+> Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restitues avec l’interface utilisateur Fluent et la palette de couleurs est différente de la palette décrite dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes sur l’utilisation des couleurs :
 
@@ -108,13 +108,13 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 |Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins](../images/color-dark-gray-16.png) |16 px et au-dessous|
 |Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit](../images/color-medium-gray-16.png) |16 et moins|
 |Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus](../images/color-blue-32.png) |32 px et supérieures|
-|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins](../images/color-blue-16.png) |16 px et inférieur|
+|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins](../images/color-blue-16.png) |16 px et au-dessous|
 |TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image](../images/color-yellow-all.png) |Toutes les tailles|
 |Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus](../images/color-orange-32.png) |32 px et supérieures|
-|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins](../images/color-orange-16.png) |16 px et inférieur|
+|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins](../images/color-orange-16.png) |16 px et au-dessous|
 |TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image](../images/color-pink-all.png) |Toutes les tailles|
 |Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus](../images/color-green-32.png) |32 px et supérieures|
-|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins](../images/color-green-16.png) |16 px et inférieur|
+|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins](../images/color-green-16.png) |16 px et au-dessous|
 |Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus](../images/color-red-32.png) |32 px et supérieures|
 |Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins](../images/color-red-16.png) |16 px et au-dessous|
 |Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus](../images/color-purple-32.png) |32 px et supérieures|
