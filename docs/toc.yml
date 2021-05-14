@@ -144,6 +144,10 @@ items:
             items:
               - name: Vue d’ensemble
                 href: design/add-in-design.md
+              - name: Interface utilisateur Fluent - Comment faire pour les modules add-in Office ?
+                href: design/using-office-ui-fabric-react.md
+              - name: Cœur de fabric dans les modules
+                href: design/fabric-core.md
               - name: Conseils
                 items:
                   - name: Accessibilité
@@ -186,6 +190,8 @@ items:
                         href: design/first-run-experience-patterns.md
                       - name: Navigation
                         href: design/navigation-patterns.md
+              - name: Boîte de forme d’outils De conception
+                href: design/design-toolkits.md
               - name: Éléments de l’interface
                 items:
                   - name: Vue d'ensemble
@@ -228,14 +234,6 @@ items:
                 href: develop/show-hide-add-in.md
               - name: Localisation
                 href: develop/localization.md
-              - name: Ressources
-                items:
-                  - name: Kits de ressources de conception
-                    href: design/design-toolkits.md
-                  - name: Prise en main de Fabric React
-                    href: design/using-office-ui-fabric-react.md
-                  - name: Interface utilisateur Office avec Fabric
-                    href: design/office-ui-fabric.md
           - name: Infrastructures et IDE
             items:
               - name: Développement de compléments avec Angular
