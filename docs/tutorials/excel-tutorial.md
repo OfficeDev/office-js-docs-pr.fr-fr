@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Dans ce didacticiel, vous allez développer un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 02/03/2021
+ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0fa22b7b91f041c95abad9981dd89e620cf9af1c
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
+ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613933"
+ms.lasthandoff: 05/12/2021
+ms.locfileid: "52330016"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -74,7 +74,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 7. Au sein de l’appel de méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
 
-    - La première partie de ce code détermine si la version Excel de l’utilisateur prend en charge une version d’Excel.js qui inclut toutes les API utilisées dans cette série de didacticiels. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l’interface utilisateur appelant des API non prises en charge. Cela permet à l’utilisateur de toujours utiliser les parties du complément prises en charge par leur version d’Excel.
+    - La première partie de ce code détermine si la version d' Excel de l'utilisateur prend en charge une version d'Excel.js qui inclut toutes les API que cette série de tutoriels utilisera. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l'interface utilisateur qui appellerait les API non prises en charge. Cela permettra à l'utilisateur de continuer à utiliser les parties du complément qui sont prises en charge par sa version d' Excel.
 
     - La deuxième partie de ce code ajoute un gestionnaire d’événements pour le bouton `create-table`.
 
@@ -207,18 +207,18 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
     ![Capture d’écran d’Excel, affichant le volet Office Complément avec le bouton créer un tableau, et un tableau dans la feuille de calcul rempli avec les données de date, de commerçant, de catégorie et de montant](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table"></a>Filtrer et trier un tableau
+## <a name="filter-and-sort-a-table&quot;></a>Filtrer et trier un tableau
 
 Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vous avez créé précédemment.
 
-### <a name="filter-the-table"></a>Filtrage du tableau
+### <a name=&quot;filter-the-table&quot;></a>Filtrage du tableau
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
 2. Recherchez l’élément `<button>` du bouton `create-table`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
-    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
     ```
 
 3. Ouvrez le fichier **./src/taskpane/taskpane.js**.
@@ -226,7 +226,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-table`, puis ajoutez le code suivant après cette ligne :
 
     ```js
-    document.getElementById("filter-table").onclick = filterTable;
+    document.getElementById(&quot;filter-table").onclick = filterTable;
     ```
 
 5. Ajoutez la fonction suivante à la fin du fichier :
@@ -393,7 +393,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
    - Le deuxième paramètre spécifie la plage de données à inclure dans le graphique.
 
-   - Le troisième paramètre détermine si une série de points de données provenant du tableau doit être représentée sous forme de graphique par ligne ou par colonne. L’option `auto` demande à Excel de déterminer la meilleure méthode.
+   - Le troisième paramètre détermine si une série de points de données de la table doit être représentée par ligne ou par colonne. L’option `auto` indique à Excel de décider de la meilleure méthode.
 
     ```js
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
@@ -429,18 +429,18 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
     ![Capture d’écran d’Excel avec un bouton créer un graphique visible dans le volet Office Complément, et un graphique dans la feuille de calcul affichant les données de dépenses de courses et d’éducation](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header"></a>Figer un en-tête de tableau
+## <a name="freeze-a-table-header&quot;></a>Figer un en-tête de tableau
 
 Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défiler pour afficher les lignes suivantes, la ligne d’en-tête peut être masquée. Dans cette étape du didacticiel, vous allez figer la ligne d’en-tête du tableau que vous avez créé précédemment, afin qu’elle reste visible même lorsque l’utilisateur fait défiler la feuille de calcul vers le bas.
 
-### <a name="freeze-the-tables-header-row"></a>Figer la ligne d’en-tête du tableau
+### <a name=&quot;freeze-the-tables-header-row&quot;></a>Figer la ligne d’en-tête du tableau
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
 2. Recherchez l’élément `<button>` du bouton `create-chart`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
-    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
+    <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
     ```
 
 3. Ouvrez le fichier **./src/taskpane/taskpane.js**.
@@ -448,7 +448,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-chart`, puis ajoutez le code suivant après cette ligne :
 
     ```js
-    document.getElementById("freeze-header").onclick = freezeHeader;
+    document.getElementById(&quot;freeze-header").onclick = freezeHeader;
     ```
 
 5. Ajoutez la fonction suivante à la fin du fichier :
@@ -474,7 +474,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
    - La collection `Worksheet.freezePanes` est un ensemble de volets de la feuille de calcul qui sont épinglés, c’est-à-dire figés, lorsque vous faites défiler la feuille de calcul.
 
-   - La méthode `freezeRows` prend comme paramètre le nombre de lignes, à partir du haut, qui doivent être figées. Nous transmettons la valeur `1` pour épingler la première ligne.
+   - La méthode `freezeRows` prend comme paramètre le nombre de lignes, à partir du haut, qui doivent être épinglées. `1` est transmis pour épingler la première rangée.
 
     ```js
     var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -724,7 +724,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 1. Fermez toutes les applications Office, y compris Excel.
 
-2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier de cache. Cette opération est nécessaire pour effacer complètement l’ancienne version du complément de l’application cliente.
+2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier cache. Cela est nécessaire pour effacer complètement l’ancienne version du complément de l’application cliente.
 
     - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
@@ -759,7 +759,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
     ![Capture d’écran du ruban Excel avec le bouton de protection de la feuille de calcul activé mis en évidence. La plupart des autres boutons apparaissent grisés et désactivés.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
-6. Sélectionnez une cellule comme vous le feriez si vous vouliez modifier son contenu. Excel affiche un message d’erreur indiquant que la feuille de calcul est protégée.
+6. Choisissez une cellule comme vous le feriez si vous vouliez modifier son contenu. Excel affiche un message d'erreur indiquant que la feuille de calcul est protégée.
 
 7. Sélectionnez le bouton **Toggle Worksheet Protection** à nouveau pour réactiver les contrôles. Vous pouvez alors modifier une nouvelle fois les valeurs de cellule.
 
@@ -789,7 +789,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <!-- For more information on Office UI Fabric, visit https://developer.microsoft.com/fabric. -->
+            <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
             <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
 
             <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
@@ -936,7 +936,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     document.getElementById("open-dialog").onclick = openDialog;
     ```
 
-6. Ajoutez la déclaration suivante à la fin du fichier. Cette variable est utilisée pour conserver un objet dans le contexte d’exécution de la page parent qui agit en tant qu’intermédiaire pour le contexte d’exécution de la page de boîte de dialogue.
+6. Ajoutez la déclaration suivante à la fin du fichier. Cette variable est utilisée pour contenir un objet dans le contexte d'exécution de la page parent qui agit comme un intermédiaire vers le contexte d'exécution de la page de dialogue.
 
     ```js
     var dialog = null;
@@ -1003,7 +1003,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 3. Sélectionnez le bouton **Boîte de dialogue Ouvrir** dans le volet Office.
 
-4. Lorsque la boîte de dialogue est ouverte, faites-la glisser et redimensionnez-la. Notez que vous pouvez interagir avec la feuille de calcul, appuyez sur les autres boutons dans le volet Office, mais vous ne pouvez pas lancer une deuxième boîte de dialogue à partir de la même page de volet de tâches.
+4. Lorsque la boîte de dialogue est ouverte, faites-la glisser et redimensionnez-la. Notez que vous pouvez interagir avec la feuille de calcul et appuyer sur d'autres boutons du volet des tâches, mais que vous ne pouvez pas lancer une deuxième boîte de dialogue à partir de la même page du volet des tâches.
 
 5. Dans la boîte de dialogue, entrez un nom et appuyez sur le bouton **OK**. Ce nom apparaît sur le volet Office et la boîte de dialogue se ferme.
 
