@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments Outlook
-summary: Avec les applications Outlook, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans Outlook sur plusieurs plateformes, y compris sur le web, Windows, Mac et iOS. Découvrez comment créer, tester, déboguer et publier des compléments Outlook.
+summary: Avec les modules Outlook, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut fonctionner en Outlook sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iOS. Découvrez comment créer, tester, déboguer et publier des compléments Outlook.
 metadata:
   title: Documentation sur les compléments Outlook
   description: Ressources pour découvrir les compléments Outlook.
@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 0270157672cc3756485af1daf2cc088fc5f3cb4f
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 22a4d97562287d7c4ef60208e87cc1c42f7ddf68
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435234"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555289"
 landingContent:
-- title: À propos des add-ins Outlook
+- title: À Outlook add-ins
   linkLists:
   - linkListType: overview
     links:
-    - text: Que sont les add-ins Outlook ?
+    - text: Quels sont Outlook add-ins?
       url: outlook-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -29,13 +29,13 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Utiliser l’API JavaScript Outlook pour interagir avec des objets
+    - text: Utilisez l Outlook API JavaScript pour interagir avec des objets
       url: apis.md
-    - text: Tester et déboguer un add-in Outlook
+    - text: Testez et débogez un Outlook add-in
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un add-in Outlook
+    - text: Déployer et publier un Outlook add-in
       url: ../publish/publish.md
-- title: Concepts clés des add-ins Office
+- title: Concepts Office add-ins clés
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Poser des questions
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: Demander des fonctionnalités
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: Signaler des problèmes
       url: https://github.com/officedev/office-js/issues
     - text: Ressources supplémentaires sur les compléments Office
