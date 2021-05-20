@@ -1,23 +1,23 @@
 ---
-title: Runtimes dans le fichier manifeste
-description: L'élément Runtimes spécifie le runtime de votre add-in.
-ms.date: 04/16/2021
+title: Temps d’exécution dans le fichier manifeste
+description: L’élément Runtimes spécifie le temps d’exécution de votre module.
+ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 8f4a602c05b9af7bde9f644ef40b61a214e66cd5
-ms.sourcegitcommit: da8ad214406f2e1cd80982af8a13090e76187dbd
+ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/21/2021
-ms.locfileid: "51917085"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555296"
 ---
-# <a name="runtimes-element"></a>Élément Runtimes
+# <a name="runtimes-element"></a>Élément runtimes
 
-Spécifie le runtime de votre add-in. Enfant de [`<Host>`](host.md) l'élément.
+Spécifie le temps d’exécution de votre module d’exécution. Enfant de [`<Host>`](host.md) l’élément.
 
 > [!NOTE]
-> Lors de l'exécution dans Office sur Windows, un add-in qui possède un élément dans son manifeste ne s'exécute pas nécessairement dans le même contrôle webview que dans le `<Runtimes>` cas contraire. Pour plus d'informations sur la façon dont les versions de Windows et d'Office déterminent le contrôle webview utilisé normalement, voir Navigateurs utilisés par les [applications Office.](../../concepts/browsers-used-by-office-web-add-ins.md) Si les conditions décrites ici pour l'utilisation de Microsoft Edge avec WebView2 (basé sur Chromium) sont remplies, le add-in utilise ce navigateur, qu'il ait ou non un `<Runtimes>` élément. Toutefois, lorsque ces conditions ne sont pas remplies, un add-in avec un élément utilise toujours Internet Explorer 11, quelle que soit la version de Windows ou `<Runtimes>` de Microsoft 365.
+> Lors de l’exécution Office sur Windows, un add-in qui a un élément dans son manifeste ne fonctionne `<Runtimes>` pas nécessairement dans le même contrôle webview qu’il le ferait autrement. Pour plus d’informations sur la façon dont les versions de Windows et Office déterminent quel contrôle webview est normalement utilisé, [voir Navigateurs utilisés par Office Add-ins](../../concepts/browsers-used-by-office-web-add-ins.md). Si les conditions décrites pour l’utilisation de Microsoft Edge avec WebView2 (basé sur Chromium) sont remplies, alors l’add-in utilise ce navigateur, qu’il ait ou non un `<Runtimes>` élément. Toutefois, lorsque ces conditions ne sont pas remplies, un module avec un `<Runtimes>` élément utilise toujours Internet Explorer 11 indépendamment de la version Windows ou Microsoft 365 version.
 
-**Type de add-in :** Volet De tâches, Courrier
+**Type d’add-in :** Volet de tâche, Courrier
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
@@ -37,10 +37,10 @@ Spécifie le runtime de votre add-in. Enfant de [`<Host>`](host.md) l'élément.
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-| [Runtime](runtime.md) | Oui |  Runtime de votre add-in. |
+| [Runtime](runtime.md) | Oui |  Le temps d’exécution de votre add-in. **Important :** À l’heure actuelle, vous ne pouvez définir qu’un `<Runtime>` seul élément. |
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Runtime](runtime.md)
 - [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [Configurer votre complément Outlook pour l'activation basée sur des événements](../../outlook/autolaunch.md)
+- [Configurez votre Outlook add-in pour l’activation basée sur l’événement](../../outlook/autolaunch.md)

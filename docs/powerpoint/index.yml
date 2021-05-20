@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments PowerPoint
-summary: Avec les applications PowerPoint, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans PowerPoint sur plusieurs plateformes, y compris sur le web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
+summary: Avec les modules PowerPoint, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut fonctionner en PowerPoint sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
 metadata:
   title: Documentation sur les compléments PowerPoint
   description: Ressources pour découvrir les compléments PowerPoint.
@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 047b49ece238efac495da5a74e1699e2ccdcfea5
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 4fdc2e9da42cdaa7aafe954383c1c1c48bb404ce
+  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435297"
+  ms.lasthandoff: 05/19/2021
+  ms.locfileid: "52555170"
 landingContent:
-- title: À propos des add-ins PowerPoint
+- title: À PowerPoint’ajouts
   linkLists:
   - linkListType: overview
     links:
-    - text: Que sont les add-ins PowerPoint ?
+    - text: Quels sont PowerPoint add-ins?
       url: powerpoint-add-ins.md
     - text: API JavaScript pour PowerPoint
       url: ../reference/overview/powerpoint-add-ins-reference-overview.md
@@ -31,11 +31,11 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Tester et déboguer un add-in PowerPoint
+    - text: Testez et débogez un PowerPoint add-ins
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier des add-ins PowerPoint
+    - text: Déployer et publier un PowerPoint add-ins
       url: ../publish/publish.md
-- title: Concepts clés des add-ins Office
+- title: Concepts Office add-ins clés
   linkLists:
   - linkListType: overview
     links:
@@ -54,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Poser des questions
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: Demander des fonctionnalités
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: Signaler des problèmes
       url: https://github.com/officedev/office-js/issues
     - text: Ressources supplémentaires sur les compléments Office

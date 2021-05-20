@@ -1,14 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
-description: Documentation de référence de l’élément VersionOverrides pour les fichiers manifeste des compléments Office (XML).
-ms.date: 03/05/2020
+description: Documentation de référence de l’élément VersionOverrides Office fichiers manifestes add-ins (XML).
+ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 772eaa416909d24f8035ed3e1445d1e4f06a244e
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 0a70ded82b4603b1ac70698947a4710a4a44b5b6
+ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771304"
+ms.lasthandoff: 05/19/2021
+ms.locfileid: "52555149"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -18,38 +18,38 @@ ms.locfileid: "49771304"
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **xmlns**       |  Oui  |  Espace de noms du schéma VersionOverrides. Les valeurs autorisées varient en fonction de la `<VersionOverrides>` valeur **xsi : type** de cet élément et de la valeur **xsi : type** de l' `<OfficeApp>` élément parent. Voir les [valeurs d’espace de noms](#namespace-values) ci-dessous.|
+|  **xmlns**       |  Oui  |  L’espace nominatif versionOverrides schéma. Les valeurs autorisées varient en fonction de `<VersionOverrides>` la valeur **xsi:type de cet** élément et de la valeur **xsi:type** de l’élément `<OfficeApp>` parent. Voir les [valeurs namespace](#namespace-values) ci-dessous.|
 |  **xsi:type**  |  Oui  | Version du schéma. À ce stade, les seules valeurs valides sont `VersionOverridesV1_0` et `VersionOverridesV1_1`. |
 
-### <a name="namespace-values"></a>Valeurs d’espace de noms
+### <a name="namespace-values"></a>Valeurs de l’espace nominatif
 
-Le code suivant répertorie la valeur requise de la valeur **xmlns** en fonction de la valeur **xsi : type** de l' `<OfficeApp>` élément parent.
+Ce qui suit énumère la valeur requise de la **valeur xmlns** en fonction de la **valeur xsi:type** de l’élément `<OfficeApp>` parent.
 
-- **Taskpaneapp,** prend en charge uniquement la version 1,0 de VersionOverrides et le **xmlns** doit être `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
-- **ContentApp** prend en charge uniquement la version 1,0 de VersionOverrides et le **xmlns** doit être `http://schemas.microsoft.com/office/contentappversionoverrides` .
-- **MailApp** prend en charge les versions 1,0 et 1,1 de VersionOverrides, de sorte que la valeur de **xmlns** varie en fonction de la `<VersionOverrides>` valeur **xsi : type** de cet élément :
-    - Lorsque **xsi : type** est `VersionOverridesV1_0` , **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides` .
-    - Lorsque **xsi : type** est `VersionOverridesV1_1` , **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` .
+- **TaskPaneApp prend** en charge uniquement la version 1.0 de VersionOverrides, et **les xmlns** doivent être `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
+- **ContentApp** prend en charge uniquement la version 1.0 de VersionOverrides, et **les xmlns** doivent être `http://schemas.microsoft.com/office/contentappversionoverrides` .
+- **MailApp** prend en charge les versions 1.0 et 1.1 de VersionOverrides, de sorte que la valeur **des xmlns** varie en fonction de la `<VersionOverrides>` valeur **xsi:type de cet** élément :
+    - Lorsque **xsi:type** est `VersionOverridesV1_0` , **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides` .
+    - Lorsque **xsi:type** est `VersionOverridesV1_1` , **xmlns** doit être `http://schemas.microsoft.com/office/mailappversionoverrides/1.1` .
 
 > [!NOTE]
-> Actuellement, seul Outlook 2016 ou version ultérieure prend en charge le schéma VersionOverrides v 1.1 et le `VersionOverridesV1_1` type.
+> Actuellement, Outlook 2016 ou plus tard prend en charge le schéma VersionOverrides v1.1 et le `VersionOverridesV1_1` type.
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). L' `resid` attribut de l’élément **Description** ne peut pas comporter plus de 32 caractères et est défini sur la valeur de l' `id` attribut de l' `String` élément qui contient le texte.|
+|  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). `resid`L’attribut de **l’élément Description** ne peut pas être supérieur à 32 caractères et est défini sur la valeur de `id` `String` l’attribut de l’élément qui contient le texte.|
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.|
-|  [Hôtes](hosts.md)                |  Oui  |  Spécifie une collection d’applications Office. L’élément hosts enfant remplace l’élément hosts dans la partie parent du manifeste.  |
+|  [Hôtes](hosts.md)                |  Oui  |  Spécifie une collection d’applications Office’utilisation. L’élément hôtes de l’enfant l’emporte sur l’élément Hôtes dans la partie parente du manifeste.  |
 |  [Ressources](resources.md)    |  Oui  | Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste.|
-|  [EquivalentAddins](equivalentaddins.md)    |  Non  | Spécifie les compléments natifs (COM/XLL) équivalents au complément Web. Le complément Web n’est pas activé si un complément natif équivalent est installé.|
+|  [EquivalentAddins](equivalentaddins.md)    |  Non  | Spécifie les modules d’ajout natifs (COM/XLL) équivalents à l’add-in web. L’add-in web n’est pas activé si un module d’ajout natif équivalent est installé.|
 |  **VersionOverrides**    |  Non  | Définit des commandes de complément sous une version plus récente du schéma. Voir [Mise en œuvre de plusieurs versions](#implementing-multiple-versions) pour plus d’informations. |
-|  [WebApplicationInfo](webapplicationinfo.md)    |  Non  | Fournit des détails sur l’inscription du complément avec des émetteurs de jetons sécurisés, tels qu’Azure Active Directory V 2.0. |
-|  [ExtendedPermissions](extendedpermissions.md) |  Non  |  Spécifie une collection d’autorisations étendues.<br><br>**Important**: étant donné que l’API [Office. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-preview&preserve-view=true#appendonsendasync-data--options--callback-) est actuellement en préversion, les compléments qui utilisent l' `ExtendedPermissions` élément ne peuvent pas être publiés sur AppSource ou déployés via un déploiement centralisé. |
+|  [WebApplicationInfo](webapplicationinfo.md)    |  Non  | Spécifie les détails de l’enregistrement de l’add-in auprès d’émetteurs de jetons sécurisés, tels que Azure Active Directory V2.0. |
+|  [ExtendedPermissions](extendedpermissions.md) |  Non  |  Spécifie une collection d’autorisations étendues. |
 
 ### <a name="versionoverrides-example"></a>Exemple VersionOverrides
 
-Voici un exemple d’un `<VersionOverrides>` élément typique, y compris des éléments enfants qui ne sont pas obligatoires, mais qui sont généralement utilisés.
+Ce qui suit est un exemple d’élément `<VersionOverrides>` typique, y compris certains éléments enfant qui ne sont pas nécessaires, mais sont généralement utilisés.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">
