@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555212"
 landingContent:
-- title: À Project’ajouts
+- title: À propos Project des modules
   linkLists:
   - linkListType: overview
     links:
-    - text: Quels sont Project add-ins?
+    - text: Que sont Project des modules ?
       url: project-add-ins.md
     - text: API JavaScript pour Project
       url: ../reference/overview/project-add-ins-reference-overview.md
@@ -29,11 +29,11 @@ landingContent:
       url: ../quickstarts/project-quickstart.md
   - linkListType: how-to-guide
     links:
-    - text: Testez et débogez un Project add-ins
+    - text: Tester et déboguer un Project de test
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un Project Add-ins
+    - text: Déployer et publier un Project de publication
       url: ../publish/publish.md
-- title: Concepts Office add-ins clés
+- title: Concepts clés Office des add-ins
   linkLists:
   - linkListType: overview
     links:

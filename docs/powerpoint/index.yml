@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments PowerPoint
-summary: Avec les modules PowerPoint, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut fonctionner en PowerPoint sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
+summary: Avec les PowerPoint, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans PowerPoint sur plusieurs plateformes, notamment sur le web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
 metadata:
   title: Documentation sur les compléments PowerPoint
   description: Ressources pour découvrir les compléments PowerPoint.
@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555170"
 landingContent:
-- title: À PowerPoint’ajouts
+- title: À propos PowerPoint des modules
   linkLists:
   - linkListType: overview
     links:
-    - text: Quels sont PowerPoint add-ins?
+    - text: Que sont PowerPoint des modules ?
       url: powerpoint-add-ins.md
     - text: API JavaScript pour PowerPoint
       url: ../reference/overview/powerpoint-add-ins-reference-overview.md
@@ -31,11 +31,11 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Testez et débogez un PowerPoint add-ins
+    - text: Tester et déboguer un PowerPoint de test
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un PowerPoint add-ins
+    - text: Déployer et publier un PowerPoint de publication
       url: ../publish/publish.md
-- title: Concepts Office add-ins clés
+- title: Concepts clés Office des add-ins
   linkLists:
   - linkListType: overview
     links:
