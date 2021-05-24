@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments Word
-summary: Avec les modules word, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans Word sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments Word.
+summary: Avec les applications Word, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans Word sur plusieurs plateformes, y compris sur le web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments Word.
 metadata:
   title: Documentation sur les compléments Word
   description: Ressources pour découvrir les compléments Word.
@@ -19,23 +19,23 @@ landingContent:
   linkLists:
   - linkListType: overview
     links:
-    - text: Qu’est-ce que les modules Word ?
+    - text: Que sont les add-ins Word ?
       url: word-add-ins-programming-overview.md
   - linkListType: quickstart
     links:
     - text: Créer votre premier complément Word
       url: ../quickstarts/word-quickstart.md
-    - text: Explorez les API avec Script Lab
+    - text: Explorer les API avec Script Lab
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Utilisez le mot API JavaScript pour interagir avec le contenu des documents et les métadonnées
+    - text: Utiliser l’API JavaScript pour Word pour interagir avec le contenu et les métadonnées du document
       url: ../reference/overview/word-add-ins-reference-overview.md
-    - text: Testez et débogez un module Word
+    - text: Tester et déboguer un add-in Word
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un module word
+    - text: Déployer et publier un add-in Word
       url: ../publish/publish.md
-- title: Concepts Office add-ins clés
+- title: Concepts clés Office des add-ins
   linkLists:
   - linkListType: overview
     links:

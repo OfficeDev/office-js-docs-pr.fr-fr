@@ -1,25 +1,25 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.7
-description: Vue d’ensemble de l’API de complément Outlook (ensemble de conditions requises 1,7)
-ms.date: 12/17/2019
+description: Vue d’ensemble Outlook API du module de mise en Outlook (ensemble de conditions requises 1.7)
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f8dc9fe097b56d3e940a5d7d945c5ccc50e07077
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6130cdadb63c7c3093b869950832e7a68358ea81
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431387"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590812"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Ensemble de conditions requises de l’API du complément Outlook 1.7
 
-Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-17"></a>Nouveautés de la version 1.7
 
-L’ensemble de conditions requises de la version 1.7 comprend toutes les fonctionnalités de l’[Ensemble de conditions requises de la version 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). Les fonctionnalités suivantes ont été ajoutées.
+L’ensemble de conditions requises 1.7 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Nouvelles API ajoutées concernant la périodicité sur les messages et rendez-vous qui sont des demandes de réunion.
 - Modification de la propriété item.from pour également être disponibles en mode Composer.

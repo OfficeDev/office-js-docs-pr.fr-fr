@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments Outlook
-summary: Avec les modules Outlook, vous pouvez utiliser des technologies Web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut fonctionner en Outlook sur plusieurs plateformes, y compris sur le Web, Windows, Mac et iOS. Découvrez comment créer, tester, déboguer et publier des compléments Outlook.
+summary: Avec les Outlook, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans Outlook sur plusieurs plateformes, y compris sur le web, Windows, Mac et iOS. Découvrez comment créer, tester, déboguer et publier des compléments Outlook.
 metadata:
   title: Documentation sur les compléments Outlook
   description: Ressources pour découvrir les compléments Outlook.
@@ -15,11 +15,11 @@ metadata:
   ms.lasthandoff: 05/19/2021
   ms.locfileid: "52555289"
 landingContent:
-- title: À Outlook add-ins
+- title: À propos Outlook des modules
   linkLists:
   - linkListType: overview
     links:
-    - text: Quels sont Outlook add-ins?
+    - text: Que sont Outlook des modules ?
       url: outlook-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -29,13 +29,13 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Utilisez l Outlook API JavaScript pour interagir avec des objets
+    - text: Utiliser l Outlook API JavaScript pour interagir avec des objets
       url: apis.md
-    - text: Testez et débogez un Outlook add-in
+    - text: Tester et déboguer un Outlook de test
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un Outlook add-in
+    - text: Déployer et publier un Outlook de publication
       url: ../publish/publish.md
-- title: Concepts Office add-ins clés
+- title: Concepts clés Office des add-ins
   linkLists:
   - linkListType: overview
     links:

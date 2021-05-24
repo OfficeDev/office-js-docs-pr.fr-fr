@@ -1,14 +1,14 @@
 ---
-title: Office.context.mailbox - Ensemble de conditions requises 1.7
-description: Ensemble de conditions requises de l’API de boîte aux lettres Outlook version 1.7 du modèle objet Boîte aux lettres.
-ms.date: 02/22/2021
+title: Office.context.mailbox - ensemble de conditions requises 1.7
+description: Outlook Ensemble de conditions requises de l’API de boîte aux lettres version 1.7 du modèle objet Mailbox.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 5f3e67e674fa6b7f0be062cd1b1ee2217b99aefb
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 22ef0c2692cfb4abddc67a6adc26be99e099fa85
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505372"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590987"
 ---
 # <a name="mailbox-requirement-set-17"></a>boîte aux lettres (ensemble de conditions requises 1.7)
 
@@ -29,9 +29,9 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 | Propriété | Minimum<br>niveau d’autorisation | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|---|:---:|
 | [diagnostics](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#diagnostics) | ReadItem | Composition<br>Lire | [Diagnostics](/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#ewsurl) | ReadItem | Composition<br>Lire | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ewsUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#ewsurl) | ReadItem | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [item](office.context.mailbox.item.md) | Restreint | Composition<br>Lire | [Élément](/javascript/api/outlook/office.item?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#resturl) | ReadItem | Composition<br>Lire | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [restUrl](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#resturl) | ReadItem | Composition<br>Lire | Chaîne | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [userProfile](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#userprofile) | ReadItem | Composition<br>Lire | [UserProfile](/javascript/api/outlook/office.userprofile?view=outlook-js-1.7&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="methods"></a>Méthodes
@@ -58,7 +58,7 @@ Permet d’accéder au modèle d’objet de complément Outlook pour Microsoft O
 Vous pouvez vous abonner aux événements suivants et les désabonner à l’aide de [addHandlerAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#addhandlerasync-eventtype--handler--options--callback-) et [removeHandlerAsync,](/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true#removehandlerasync-eventtype--options--callback-) respectivement.
 
 > [!IMPORTANT]
-> Les événements sont disponibles uniquement avec le volet Des tâches.
+> Les événements sont uniquement disponibles avec l’implémentation du volet Des tâches.
 
 | Événement | Description | Minimum<br>ensemble de conditions requises |
 |---|---|:---:|

@@ -1,38 +1,41 @@
 ---
-title: Ensemble de conditions requises de l’API du complément Outlook 1,9
-description: Ensemble de conditions requises 1,9 pour l’API de complément Outlook.
-ms.date: 10/14/2020
+title: Outlook conditions requises de l’API du add-in 1.9
+description: Ensemble de conditions requises 1.9 pour Outlook API de votre application.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: b2174052a60580a895ef82a4b5d8f00ed6899feb
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: e73f8805f87950b969be18214a570b747b1e1314
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48628052"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590497"
 ---
-# <a name="outlook-add-in-api-requirement-set-19"></a>Ensemble de conditions requises de l’API du complément Outlook 1,9
+# <a name="outlook-add-in-api-requirement-set-19"></a>Outlook conditions requises de l’API du add-in 1.9
 
-Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
-## <a name="whats-new-in-19"></a>Quelles sont les nouveautés de 1,9 ?
+> [!NOTE]
+> Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
-L’ensemble de conditions requises 1,9 inclut toutes les fonctionnalités de l' [ensemble de conditions requises 1,8](../requirement-set-1.8/outlook-requirement-set-1.8.md). Les fonctionnalités suivantes ont été ajoutées.
+## <a name="whats-new-in-19"></a>Nouveautés de la 1.9
 
-- Ajout de nouvelles API pour les fonctionnalités ajout d’envoi, propriétés personnalisées et formulaire d’affichage.
-- Prise en charge supplémentaire de `Dialog.messageChild` .
+L’ensemble de conditions requises 1.9 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). Les fonctionnalités suivantes ont été ajoutées.
+
+- Ajout de nouvelles API pour l’ajout à l’envoi, les propriétés personnalisées et les fonctionnalités de formulaire d’affichage.
+- Prise en charge supplémentaire pour `Dialog.messageChild` .
 
 ### <a name="change-log"></a>Journal des modifications
 
-- Ajout de la méthode [CustomProperties. GetAll](/javascript/api/outlook/office.customproperties?view=outlook-js-1.9&preserve-view=true#getall--): ajoute une nouvelle fonction à l' `CustomProperties` objet qui obtient toutes les propriétés personnalisées.
-- Ajout de la méthode [Dialog. messageChild](../../../develop/dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box): ajoute une nouvelle méthode qui remet un message à partir de la page hôte, telle qu’un volet de tâches ou un fichier de fonctions sans interface utilisateur, à une boîte de dialogue ouverte à partir de la page.
-- Ajout de l' [élément de manifeste ExtendedPermissions](../../manifest/extendedpermissions.md): ajoute un élément enfant à l’élément de manifeste [VersionOverrides](../../manifest/versionoverrides.md) . Pour qu’un complément prenne en charge la [fonctionnalité Append-on-Send](../../../outlook/append-on-send.md), l' `AppendOnSend` autorisation étendue doit être incluse dans la collection des autorisations étendues.
-- Ajout de la méthode [Office. Context. Mailbox. displayAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayappointmentformasync-itemid--options--callback-): ajoute une nouvelle fonction à l' `Mailbox` objet qui affiche un rendez-vous existant. Il s’agit de la version asynchrone de la `displayAppointmentForm` méthode.
-- Ajout de la méthode [Office. Context. Mailbox. displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaymessageformasync-itemid--options--callback-): ajoute une nouvelle fonction à l' `Mailbox` objet qui affiche un message existant. Il s’agit de la version asynchrone de la `displayMessageForm` méthode.
-- Ajout de la méthode [Office. Context. Mailbox. displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-): ajoute une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de rendez-vous. Il s’agit de la version asynchrone de la `displayNewAppointmentForm` méthode.
-- Ajout de la méthode [Office. Context. Mailbox. displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaynewmessageformasync-parameters--options--callback-): ajoute une nouvelle fonction à l' `Mailbox` objet qui affiche un nouveau formulaire de message. Il s’agit de la version asynchrone de la `displayNewMessageForm` méthode.
-- Ajout de la méthode [Office. Context. Mailbox. Item. Body. appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-): ajoute une nouvelle fonction à l' `Body` objet qui ajoute des données à la fin du corps de l’élément en mode composition.
-- Ajout de la méthode [Office. Context. Mailbox. Item. displayReplyAllFormAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre à tous » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyAllForm` méthode.
-- Ajout de la méthode [Office. Context. Mailbox. Item. displayReplyFormAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction à l' `Item` objet qui affiche le formulaire « répondre » en mode lecture. Il s’agit de la version asynchrone de la `displayReplyForm` méthode.
+- Ajout de [CustomProperties.getAll](/javascript/api/outlook/office.customproperties?view=outlook-js-1.9&preserve-view=true#getall--): ajoute une nouvelle fonction à `CustomProperties` l’objet qui obtient toutes les propriétés personnalisées.
+- Ajout de [Dialog.messageChild](../../../develop/dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box): ajoute une nouvelle méthode qui fournit un message à partir de la page hôte, tel qu’un volet Des tâches ou un fichier de fonction sans interface utilisateur, à une boîte de dialogue qui a été ouverte à partir de la page.
+- Ajout de [l’élément manifeste ExtendedPermissions](../../manifest/extendedpermissions.md): ajoute un élément enfant à l’élément manifeste [VersionOverrides.](../../manifest/versionoverrides.md) Pour qu’un module [](../../../outlook/append-on-send.md)de prise en charge de la fonctionnalité d’ajout à l’envoi, l’autorisation étendue doit être incluse dans la `AppendOnSend` collection d’autorisations étendues.
+- Ajout [Office.context.mailbox.displayAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displayappointmentformasync-itemid--options--callback-): ajoute une nouvelle fonction à l’objet qui affiche un `Mailbox` rendez-vous existant. Il s’agit de la version async de la `displayAppointmentForm` méthode.
+- Ajout [Office.context.mailbox.displayMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaymessageformasync-itemid--options--callback-): ajoute une nouvelle fonction à l’objet qui affiche un `Mailbox` message existant. Il s’agit de la version async de la `displayMessageForm` méthode.
+- Ajout [Office.context.mailbox.displayNewAppointmentFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaynewappointmentformasync-parameters--options--callback-): ajoute une nouvelle fonction à l’objet qui affiche un nouveau formulaire `Mailbox` de rendez-vous. Il s’agit de la version async de la `displayNewAppointmentForm` méthode.
+- Ajout [Office.context.mailbox.displayNewMessageFormAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true#displaynewmessageformasync-parameters--options--callback-): ajoute une nouvelle fonction à l’objet qui affiche un `Mailbox` nouveau formulaire de message. Il s’agit de la version async de la `displayNewMessageForm` méthode.
+- Ajout de [Office.context.mailbox.item.body.appendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-): ajoute une nouvelle fonction à l’objet qui ajoute des données à la fin du corps de l’élément en `Body` mode composition.
+- Ajout [Office.context.mailbox.item.displayReplyAllFormAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction à l’objet qui affiche le formulaire « Répondre à tous » en `Item` mode lecture. Il s’agit de la version async de la `displayReplyAllForm` méthode.
+- Ajout [Office.context.mailbox.item.displayReplyFormAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction à l’objet qui affiche le formulaire « Répondre » en `Item` mode lecture. Il s’agit de la version async de la `displayReplyForm` méthode.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,6 +1,6 @@
 ---
-title: Débogez votre module basé sur Outlook’add-in (aperçu)
-description: Découvrez comment débobug vos Outlook qui implémente l’activation basée sur les événements.
+title: Déboguer votre Outlook d’événement (prévisualisation)
+description: Découvrez comment déboguer votre complément Outlook qui implémente l’activation basée sur des événements.
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
@@ -11,60 +11,60 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 05/19/2021
 ms.locfileid: "52555268"
 ---
-# <a name="debug-your-event-based-outlook-add-in-preview"></a>Débogez votre module basé sur Outlook’add-in (aperçu)
+# <a name="debug-your-event-based-outlook-add-in-preview"></a>Déboguer votre Outlook d’événement (prévisualisation)
 
-Cet article fournit des conseils de débogage lorsque vous implémentez [l’activation](autolaunch.md) basée sur les événements dans votre module supplémentaire. La fonction d’activation basée sur l’événement est actuellement en avant-première.
+Cet article fournit des instructions de débogage lorsque vous implémentez l’activation basée sur des [événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur des événements est actuellement en prévisualisation.
 
 > [!IMPORTANT]
-> Cette capacité de débogage n’est prise en charge que pour l’aperçu Outlook sur Windows avec un abonnement Microsoft 365'abonnement. Pour plus d’informations, consultez le [débogage Preview pour la section fonctionnalité d’activation basée sur l’événement](#preview-debugging-for-the-event-based-activation-feature) dans cet article.
+> Cette fonctionnalité de débogage est uniquement prise en charge pour la prévisualisation dans Outlook sur Windows avec un abonnement Microsoft 365'abonnement. Pour plus d’informations, voir la section [Débogage d’aperçu](#preview-debugging-for-the-event-based-activation-feature) pour la fonctionnalité d’activation basée sur des événements dans cet article.
 
-Dans cet article, nous discutons des étapes clés pour permettre le débogage.
+Dans cet article, nous abordons les étapes clés pour activer le débogage.
 
-- [Marquer l’add-in pour le débogage](#mark-your-add-in-for-debugging)
+- [Marquer le add-in pour le débogage](#mark-your-add-in-for-debugging)
 - [Configurer Visual Studio Code](#configure-visual-studio-code)
-- [Attachez-Visual Studio Code](#attach-visual-studio-code)
+- [Attacher les Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-Vous avez plusieurs options pour créer votre projet d’ajout. Selon l’option que vous utilisez, les étapes peuvent varier. Lorsque c’est le cas, si vous avez utilisé le générateur Yeoman pour Office Add-ins pour créer votre projet add-in (par exemple, en faisant la [procédure pas à pas d’activation basée sur l’événement),](autolaunch.md)puis suivez les étapes yo **bureau,** sinon suivez les **autres** étapes. Visual Studio Code doit être au moins la version 1.56.1.
+Plusieurs options s’offrent à vous pour créer votre projet de add-in. En fonction de l’option que vous utilisez, les étapes peuvent varier. Si c’est le cas, si vous avez utilisé le générateur Yeoman pour les compléments Office pour créer votre projet de complément (par exemple, en  faisant la procédure pas à pas [d’activation](autolaunch.md)basée sur l’événement), suivez les étapes de **yo office,** sinon suivez les autres étapes. Visual Studio Code doit être au moins la version 1.56.1.
 
-## <a name="preview-debugging-for-the-event-based-activation-feature"></a>Débugging d’aperçu pour la fonction d’activation basée sur l’événement
+## <a name="preview-debugging-for-the-event-based-activation-feature"></a>Prévisualiser le débogage pour la fonctionnalité d’activation basée sur des événements
 
-Nous vous invitons à essayer la capacité de débogage de la fonction d’activation basée sur l’événement ! Faites-nous part de vos scénarios et de la façon dont nous pouvons nous améliorer en nous donnant des commentaires par GitHub **(voir la** section Commentaires à la fin de cette page).
+Nous vous invitons à tester la fonctionnalité de débogage pour la fonctionnalité d’activation basée sur des événements ! Faites-nous part de vos scénarios et de la façon dont nous pouvons les améliorer en nous faisant part de vos commentaires GitHub (voir la **section** Commentaires à la fin de cette page).
 
-Pour prévisualiser cette Outlook sur Windows, la construction minimale requise est de 16.0.13729.20000. Pour accéder aux Office bêta, rejoignez le [programme Office Insider](https://insider.office.com).
+Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minimale requise est 16.0.13729.20000. Pour accéder à Office versions bêta, rejoignez [le programme Office Insider.](https://insider.office.com)
 
-## <a name="mark-your-add-in-for-debugging"></a>Marquez votre add-in pour le débogage
+## <a name="mark-your-add-in-for-debugging"></a>Marquer votre add-in pour le débogage
 
-1. Définissez la clé du registre `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` . `[Add-in ID]` est **l’Id** dans le manifeste add-in.
+1. Définissez la clé de `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` Registre. `[Add-in ID]` est **l’ID** dans le manifeste du add-in.
 
-    **yo office**: Dans une fenêtre de ligne de commande, naviguez jusqu’à la racine de votre dossier d’ajout, puis exécutez la commande suivante.
+    **yo office**: dans une fenêtre de ligne de commande, accédez à la racine du dossier de votre add-in, puis exécutez la commande suivante.
 
     ```command&nbsp;line
     npm start
     ```
 
-    En plus de construire le code et de démarrer le serveur local, cette commande doit définir la `UseDirectDebugger` clé de registre pour cet add-in à `1` .
+    Outre la création du code et le démarrage du serveur local, cette commande doit définir la clé de Registre pour `UseDirectDebugger` ce complément sur `1` .
 
-    **Autre**: Ajouter la clé `UseDirectDebugger` de registre sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\` . Remplacer `[Add-in ID]` par **l’id** du manifeste add-in. Définissez la clé du registre pour `1` .
+    **Autre**: ajoutez la `UseDirectDebugger` clé de Registre sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\` . Remplacez `[Add-in ID]` par **l’ID** du manifeste du module. Définissez la clé de Registre sur `1` .
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
 1. Démarrez Outlook bureau (ou redémarrez Outlook s’il est déjà ouvert).
-1. Composez un nouveau message ou rendez-vous. Vous devriez voir le dialogue suivant. *N’interagissez* pas encore avec le dialogue.
+1. Rédigez un nouveau message ou rendez-vous. Vous devriez voir la boîte de dialogue suivante. *N’interagissez* pas encore avec la boîte de dialogue.
 
-    ![Capture d’écran du dialogue de gestionnaire basé sur l’événement Debug](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Capture d’écran de la boîte de dialogue Debug Event-based handler](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>Configurer Visual Studio Code
 
-### <a name="yo-office"></a>yo bureau
+### <a name="yo-office"></a>yo office
 
-1. De retour dans la fenêtre de la ligne de commande, Visual Studio Code.
+1. De retour dans la fenêtre de ligne de commande, ouvrez Visual Studio Code.
 
     ```command&nbsp;line
     code .
     ```
 
-1. Dans Visual Studio Code, ouvrez le fichier **./.vscode/launch.jset** ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
+1. Dans Visual Studio Code, ouvrez le fichier **./.vscode/launch.js** et ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
 
     ```json
     {
@@ -80,18 +80,18 @@ Pour prévisualiser cette Outlook sur Windows, la construction minimale requise 
 
 ### <a name="other"></a>Autre
 
-1. Créez un nouveau dossier appelé **Debugging (peut-être** dans votre **dossier** Desktop).
+1. Créez un dossier appelé **Débogage** (éventuellement dans votre **dossier Bureau).**
 1. Ouvrez Visual Studio Code.
-1. Accédez   >  **au dossier d’ouverture** de fichier, naviguez vers le dossier que vous venez de créer, puis **choisissez Select Folder**.
-1. Sur la barre d’activité, **sélectionnez l’élément Debug** (Ctrl+Shift+D).
+1. Accédez **à Dossier**  >  **d’ouverture de** fichier, accédez au dossier que vous avez créé, puis **sélectionnez Sélectionner un dossier.**
+1. Dans la barre d’activité, sélectionnez **l’élément Débogage** (Ctrl+Shift+D).
 
-    ![Capture d’écran de l’icône Debug sur la barre d’activité](../images/vs-code-debug.png)
+    ![Capture d’écran de l’icône Débogage dans la barre d’activité](../images/vs-code-debug.png)
 
-1. Sélectionnez **la création d'launch.jssur le lien de** fichier.
+1. Sélectionnez **créer une launch.jssur le lien de** fichier.
 
-    ![Capture d’écran du lien pour créer launch.jssur le fichier dans Visual Studio Code](../images/vs-code-create-launch.json.png)
+    ![Capture d’écran du lien pour créer une launch.jsfichier dans Visual Studio Code](../images/vs-code-create-launch.json.png)
 
-1. Dans la **baisse de l’environnement** sélectionné, **sélectionnez Edge :** Lancez-le pour créer une launch.jsdans le fichier.
+1. Dans la **dropdown Sélectionner un** environnement, **sélectionnez Edge : Lancer** pour créer une launch.jsfichier.
 1. Ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
 
     ```json
@@ -106,36 +106,36 @@ Pour prévisualiser cette Outlook sur Windows, la construction minimale requise 
     }
     ```
 
-## <a name="attach-visual-studio-code"></a>Attachez-Visual Studio Code
+## <a name="attach-visual-studio-code"></a>Attacher les Visual Studio Code
 
-1. Pour trouver le **bundle.js** de l’add-in, ouvrez le dossier suivant dans Windows Explorer et recherchez **l’id** de votre module d’identification (trouvé dans le manifeste).
+1. Pour rechercher l’ID **dubundle.js,** ouvrez le dossier suivant dans l’Explorateur Windows et recherchez l’ID de votre Windows (trouvé dans le manifeste). 
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
     ```
 
-    Ouvrez le dossier préfixé avec cet ID et copiez son chemin complet. Dans Visual Studio Code, ouvrez **bundle.js** de ce dossier. Le modèle du cheminement de fichiers doit être le suivant :
+    Ouvrez le dossier précédé de cet ID et copiez son chemin d’accès complet. Dans Visual Studio Code, ouvrez **bundle.js** à partir de ce dossier. Le modèle du chemin d’accès au fichier doit être le suivant :
 
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
-1. Placez les points de rupture bundle.js où vous voulez que le débugger s’arrête.
-1. Dans le **dropdown DEBUG,** sélectionnez le nom **Debugging Direct,** puis sélectionnez **Exécuter**.
+1. Placez les points d’arrêt bundle.js l’endroit où vous souhaitez que le débogger s’arrête.
+1. Dans la **dropdown DEBUG,** sélectionnez le nom **Débogage** direct, puis sélectionnez **Exécuter**.
 
-    ![Capture d’écran de la sélection de débogging direct à partir d’options de configuration dans Visual Studio Code dropdown de Debug](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Capture d’écran de la sélection du débogage direct à partir des options de configuration dans la Visual Studio Code de débogage](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Debug
 
-1. Après avoir confirmé que le débougger est attaché, revenez à Outlook, et dans le dialogue de gestionnaire basé sur **l’événement Debug,** choisissez **OK** .
+1. Après avoir confirmé que le déboguer est attaché, revenir  à Outlook, puis dans la boîte de dialogue de débogage basée sur l’événement, choisissez **OK** .
 
-1. Vous pouvez maintenant atteindre vos points de rupture dans Visual Studio Code, vous permettant de déboger votre code d’activation basé sur l’événement.
+1. Vous pouvez désormais atteindre vos points d’arrêt dans Visual Studio Code, ce qui vous permet de déboguer votre code d’activation basé sur des événements.
 
-## <a name="stop-debugging"></a>Arrêtez le débogage
+## <a name="stop-debugging"></a>Arrêter le débogage
 
-Pour arrêter le débogage pour le reste de la session de bureau Outlook en cours, dans le dialogue de gestionnaire basé sur **l’événement Debug,** choisissez **Annuler**. Pour ré-activer le débogage, redémarrez Outlook bureau.
+Pour arrêter le débogage pour le reste de la session de bureau Outlook en cours, dans la boîte de dialogue **Debug Event-based handler** ( Annuler ). Pour ré-activer le débogage, redémarrez Outlook bureau.
 
-Pour empêcher le dialogue **de gestionnaire basé sur l’événement Debug** d’apparaître et d’arrêter le débogage pour les sessions de Outlook suivantes, supprimez la clé de registre associée ou définissez sa valeur pour : `0` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` .
+Pour empêcher que la boîte de dialogue du **handler** basé sur un événement de débogage s’insérable et arrêter le débogage pour les sessions Outlook suivantes, supprimez la clé de Registre associée ou définissez sa valeur sur : `0` `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger` .
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configurez votre Outlook add-in pour l’activation basée sur l’événement](autolaunch.md)
+- [Configurer votre complément Outlook pour l’activation basée sur des événements](autolaunch.md)
 - [Déboguer votre complément avec la journalisation runtime](../testing/runtime-logging.md#runtime-logging-on-windows)

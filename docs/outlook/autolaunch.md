@@ -1,73 +1,76 @@
 ---
-title: Configurez votre Outlook add-in pour l’activation basée sur l’événement (aperçu)
-description: Découvrez comment configurer vos Outlook pour l’activation basée sur l’événement.
+title: Configurer votre complément Outlook pour l’activation basée sur des événements
+description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 05/18/2021
+ms.date: 05/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 721f05e1c835e066744598ecb2bd416c6a6b0526
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: a0d0b27c9b49132024c78577a4432d85542cf76f
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555244"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590504"
 ---
-# <a name="configure-your-outlook-add-in-for-event-based-activation-preview"></a>Configurez votre Outlook add-in pour l’activation basée sur l’événement (aperçu)
+# <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
-Sans la fonction d’activation basée sur l’événement, un utilisateur doit lancer explicitement un module supplémentaire pour accomplir ses tâches. Cette fonctionnalité permet à votre module d’exécuter des tâches en fonction de certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer avec le volet de tâche et les fonctionnalités sans interface utilisateur.
+Sans la fonctionnalité d’activation basée sur des événements, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre application d’exécuter des tâches basées sur certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer le volet Des tâches et la fonctionnalité sans interface utilisateur.
 
-À la fin de cette procédure pas à pas, vous aurez un add-in qui s’exécute chaque fois qu’un nouvel élément est créé et définit le sujet.
+À la fin de cette walkthrough, vous aurez un add-in qui s’exécute chaque fois qu’un nouvel élément est créé et définit l’objet.
 
-> [!IMPORTANT]
-> Cette fonctionnalité n’est prise en [charge que](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) pour un aperçu Outlook sur le web et sur Windows avec un abonnement Microsoft 365 spécial. Pour plus de détails, voir [Comment prévisualiser la fonction d’activation basée sur l’événement](#how-to-preview-the-event-based-activation-feature) dans cet article.
->
-> Étant donné que les fonctionnalités d’aperçu sont sujettes à changement sans préavis, elles ne doivent pas être utilisées dans les modules de production.
+> [!NOTE]
+> La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md). Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="supported-events"></a>Événements pris en charge
 
-À l’heure actuelle, les événements suivants sont pris en charge.
+Pour l’instant, les événements suivants sont pris en charge.
 
 |Événement|Description|Clients|
 |---|---|---|
-|`OnNewMessageCompose`|Sur la composition d’un nouveau message (inclut la réponse, répondre tous, et en avant) mais pas sur l’édition, par exemple, un projet.|Windows, web|
-|`OnNewAppointmentOrganizer`|Sur la création d’un nouveau rendez-vous, mais pas sur l’édition d’un existant.|Windows, web|
-|`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression des pièces jointes lors de la composition d’un message.|Windows|
-|`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression des pièces jointes lors de la composition d’un rendez-vous.|Windows|
-|`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.|Windows|
-|`OnAppointmentAttendeesChanged`|Sur l’ajout ou la suppression des participants lors de la composition d’un rendez-vous.|Windows|
-|`OnAppointmentTimeChanged`|À la date/heure changeante tout en composant un rendez-vous.|Windows|
-|`OnAppointmentRecurrenceChanged`|Lors de l’ajout, de la modification ou de la suppression des détails de récurrence lors de la composition d’un rendez-vous. Si la date/heure est modifiée, `OnAppointmentTimeChanged` l’événement sera également déclenché.|Windows|
-|`OnInfoBarDismissClicked`|Lors du rejet d’une notification lors de la composition d’un message ou d’un élément de rendez-vous. Seul l’add-in qui a ajouté la notification sera notifié.|Windows|
+|`OnNewMessageCompose`|Lors de la composition d’un nouveau message (y compris répondre, répondre à tous et transmettre), mais pas lors de la modification, par exemple, d’un brouillon.|Windows, web|
+|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas de la modification d’un rendez-vous existant.|Windows, web|
+|`OnMessageAttachmentsChanged`\*|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.|Windows|
+|`OnAppointmentAttachmentsChanged`\*|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.|Windows|
+|`OnMessageRecipientsChanged`\*|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.|Windows|
+|`OnAppointmentAttendeesChanged`\*|Lors de l’ajout ou de la suppression de participants lors de la composition d’un rendez-vous.|Windows|
+|`OnAppointmentTimeChanged`\*|Lors de la modification de la date et de l’heure lors de la composition d’un rendez-vous.|Windows|
+|`OnAppointmentRecurrenceChanged`\*|Lors de l’ajout, de la modification ou de la suppression des détails de la récurrence lors de la composition d’un rendez-vous. Si la date/l’heure est modifiée, `OnAppointmentTimeChanged` l’événement est également déclenché.|Windows|
+|`OnInfoBarDismissClicked`\*|Lors du rejet d’une notification lors de la composition d’un élément de message ou de rendez-vous. Seul le add-in qui a ajouté la notification sera averti.|Windows|
 
-## <a name="how-to-preview-the-event-based-activation-feature"></a>Comment prévisualiser la fonction d’activation basée sur l’événement
+> [!IMPORTANT]
+> \*Cet événement est uniquement pris en charge pour la [prévisualisation](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md) dans Outlook sur Windows avec un abonnement Microsoft 365 abonnement. Pour plus d’informations, voir [La prévisualisation](#how-to-preview) dans cet article.
+>
+> Étant donné que les fonctionnalités d’aperçu sont sujettes à modification sans préavis, elles ne doivent pas être utilisées dans les modules de production.
 
-Nous vous invitons à essayer la fonction d’activation basée sur l’événement! Faites-nous part de vos scénarios et de la façon dont nous pouvons nous améliorer en nous donnant des commentaires par GitHub **(voir la** section Commentaires à la fin de cette page).
+## <a name="how-to-preview"></a>Comment prévisualiser
 
-Pour prévisualiser cette fonctionnalité :
+Nous vous invitons à essayer les nouveaux événements ! Faites-nous part de vos scénarios et de la façon dont nous pouvons les améliorer en nous faisant part de vos commentaires GitHub (voir la **section** Commentaires à la fin de cette page).
+
+Pour afficher un aperçu de cette fonctionnalité :
 
 - Pour Outlook sur le web :
-  - [Configurez la version ciblée sur votre Microsoft 365 locataire](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
-  - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de type](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) pour la compilation typescript IntelliSense est trouvé à la CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
+  - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
+  - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur Windows :
-  - La construction minimale requise est de 16.0.14026.20000. Rejoignez [le Office Insider pour](https://insider.office.com) accéder aux versions Office bêta.
-  - Configurez le registre. Outlook comprend une copie locale des versions bêta et de production des Office.js au lieu de charger à partir du CDN. Par défaut, la copie de production locale de l’API est référencée. Pour passer à la copie bêta locale des API JavaScript Outlook, vous devez ajouter cette entrée de registre, sinon les API bêta peuvent ne pas être trouvées.
-    1. Créez la clé du registre `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` .
-    1. Ajouter une entrée nommée `EnableBetaAPIsInJavaScript` et définir la valeur à `1` . L’image suivante indique à quoi doit ressembler le registre.
+  - La build minimale requise est 16.0.14026.20000. Rejoignez le [Office Insider pour](https://insider.office.com) accéder à Office versions bêta.
+  - Configurez le Registre. Outlook inclut une copie locale des versions de production et bêta de Office.js au lieu de charger à partir du CDN. Par défaut, la copie de production locale de l’API est référencé. Pour basculer vers la copie bêta locale des API JavaScript Outlook, vous devez ajouter cette entrée de Registre, sinon les API bêta risquent de ne pas être trouvées.
+    1. Créez la clé de `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` Registre.
+    1. Ajoutez une entrée nommée `EnableBetaAPIsInJavaScript` et définissez la valeur sur `1` . L’image suivante indique à quoi doit ressembler le registre.
 
-        ![Capture d’écran de l’éditeur du registre avec une valeur clé du registre EnableBetaAPIsInJavaScript](../images/outlook-beta-registry-key.png)
+        ![Capture d’écran de l’éditeur du Registre avec une valeur de clé de Registre EnableBetaAPIsInJavaScript](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Complétez [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet d’ajout avec le générateur Yeoman pour Office add-ins.
+[Complétez Outlook démarrage](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rapide qui crée un projet de compl?ment avec le générateur Yeoman pour Office compl?ments.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer l’activation basée sur l’événement de votre module, vous devez configurer [l’élément Runtimes](../reference/manifest/runtimes.md) et le point [d’extension LaunchEvent](../reference/manifest/extensionpoint.md#launchevent-preview) `VersionOverridesV1_1` dans le nœud du manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
+Pour activer l’activation basée sur des événements de votre complément, vous devez configurer l’élément [Runtimes](../reference/manifest/runtimes.md) et le point d’extension [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) dans le nœud `VersionOverridesV1_1` du manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
-1. Ouvrez **manifest.xml** fichier situé à l’origine de votre projet.
+1. Ouvrez **lemanifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez `<VersionOverrides>` l’ensemble du nœud (y compris les balises ouvertes et proches) et remplacez-le par le XML suivant, puis enregistrez vos modifications.
+1. Sélectionnez l’intégralité du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le `<VersionOverrides>` code XML suivant, puis enregistrez vos modifications.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -178,18 +181,18 @@ Pour activer l’activation basée sur l’événement de votre module, vous dev
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans `Resources` le nœud du manifeste que la plate-forme Outlook détermine en fin de compte s’il faut utiliser HTML ou JavaScript en fonction de la Outlook client. En tant que tel, pour configurer la gestion d’événements, fournir l’emplacement du HTML dans `Runtime` l’élément, puis dans `Override` son élément enfant fournir l’emplacement du fichier JavaScript inlined ou référencé par le HTML.
+Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes Outlook les add-ins, [consultez Outlook manifestes add-in](manifests.md).
+> Pour en savoir plus sur les manifestes de Outlook de votre Outlook, consultez la Outlook [des manifestes de modules.](manifests.md)
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
-Vous devez implémenter la manipulation de vos événements sélectionnés.
+Vous devez implémenter la gestion de vos événements sélectionnés.
 
-Dans ce scénario, vous ajouterez la manipulation pour composer de nouveaux éléments.
+Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux éléments.
 
-1. À partir du même projet de démarrage rapide, ouvrez le **fichier ./src/commandes/commands.jsdans** votre éditeur de code.
+1. À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.
 
 1. Après la `action` fonction, insérez les fonctions JavaScript suivantes.
 
@@ -228,6 +231,9 @@ Dans ce scénario, vous ajouterez la manipulation pour composer de nouveaux él�
 
 1. Enregistrez vos modifications.
 
+> [!IMPORTANT]
+> Windows : actuellement, les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements.
+
 ## <a name="try-it-out"></a>Try it out
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
@@ -237,21 +243,21 @@ Dans ce scénario, vous ajouterez la manipulation pour composer de nouveaux él�
     ```
 
     > [!NOTE]
-    > Si votre module d’ajout n’a pas été automatiquement sideloaded, puis suivez les instructions [dans sideload Outlook add-ins](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pour les tests pour sideload manuellement l’add-in dans Outlook.
+    > Si votre application [n’a](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pas été automatiquement chargé de manière test, suivez les instructions du chargement de version test des Outlook pour tester le chargement de version test du Outlook.
 
 1. Dans Outlook sur le web, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur le web avec le sujet mis sur composer](../images/outlook-web-autolaunch-1.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur le web avec l’objet de la composition](../images/outlook-web-autolaunch-1.png)
 
-1. En Outlook sur Windows, créez un nouveau message.
+1. Dans Outlook sur Windows, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec le sujet mis sur composer](../images/outlook-win-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet de la composition](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > Si vous lancez votre add-in depuis localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas *pu accéder à {your-add-in-name-here}*. Assurez-vous d’avoir une connexion réseau. Si le problème persiste, s’il vous plaît réessayer plus tard. », vous devrez peut-être activer une exemption loopback.
+    > Si vous exécutez votre add-in à partir de l’host local et que vous voyez l’erreur « Désolé, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
     >
     > 1. Fermez Outlook.
-    > 1. Ouvrez le **gestionnaire de tâches et** assurez-vous que le processus **msoadfsb.exe'est** pas en cours d’exécution.
+    > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
     > 1. Exécutez la commande suivante.
     >
     >    ```command&nbsp;line
@@ -262,38 +268,40 @@ Dans ce scénario, vous ajouterez la manipulation pour composer de nouveaux él�
 
 ## <a name="debug"></a>Debug
 
-Lorsque vous modifiez la gestion des événements de lancement dans votre module d’ajout, vous devez savoir que :
+Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [retirez l’add-in](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) puis chargez-le de nouveau.
-- Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez les Outlook sur Windows, ou actualisez l’onglet navigateur en cours d’exécution Outlook sur le Web.
+- Si vous avez mis à jour le manifeste, [supprimez-le, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau.
+- Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
-Lors de la mise en œuvre de vos propres fonctionnalités, vous devrez peut-être débogdier votre code. Pour obtenir des conseils sur la façon de déboger l’activation add-in basée sur les événements, [consultez Debug votre module basé sur Outlook’add-in](debug-autolaunch.md).
+Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer](debug-autolaunch.md)votre complément basé sur Outlook événement.
 
-L’enregistrement de temps d’exécution est également disponible pour cette fonctionnalité Windows. Pour plus d’informations, [consultez Votre add-in avec l’enregistrement de temps d’exécution](../testing/runtime-logging.md#runtime-logging-on-windows).
+La journalisation runtime est également disponible pour cette fonctionnalité sur Windows. Pour plus d’informations, voir [Déboguer votre add-in avec la journalisation runtime.](../testing/runtime-logging.md#runtime-logging-on-windows)
 
-## <a name="deploy-to-users"></a>Déployer aux utilisateurs
+## <a name="deploy-to-users"></a>Déployer pour les utilisateurs
 
-Vous pouvez déployer des modules d’add-in basés sur des événements en téléchargeant le manifeste via le Microsoft 365'administration. Dans le portail admin, élargissez la section **Paramètres** dans le volet navigation puis sélectionnez **applications intégrées**. Sur la page **Applications intégrées,** choisissez l’action **Télécharger’applications personnalisées.**
+Vous pouvez déployer des add-ins basés sur des événements en téléchargeant le manifeste via Microsoft 365 centre d’administration. Dans le portail d’administration, **développez la** section Paramètres dans le volet de navigation, puis sélectionnez **Applications intégrées.** Dans la page **Applications intégrées,** sélectionnez l Télécharger **d’applications personnalisées.**
 
-![Capture d’écran de la page Applications intégrées sur le Microsoft 365 d’administration, y compris l’action Télécharger’applications personnalisées](../images/outlook-deploy-event-based-add-ins.png)
+![Capture d’écran de la page Applications intégrées dans le Centre d’administration Microsoft 365, y compris l’action Télécharger applications personnalisées](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource et magasins inclients : La possibilité de déployer des modules d’ajout basés sur des événements ou de mettre à jour les modules d’activation existants pour inclure la fonction d’activation basée sur l’événement devrait être disponible prochainement.
+Magasins AppSource et inclients : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur des événements devrait être disponible prochainement.
 
 > [!IMPORTANT]
-> Les modules d’accès basés sur des événements sont limités aux déploiements gérés par admin uniquement. Pour l’instant, les utilisateurs ne peuvent pas obtenir d’add-ins basés sur des événements à partir d’AppSource ou de magasins inclients.
+> Les add-ins basés sur des événements sont limités aux déploiements gérés par l’administrateur uniquement. Pour l’instant, les utilisateurs ne peuvent pas obtenir de add-ins basés sur des événements à partir d’AppSource ou de magasins inclients.
 
-## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations d’activation basés sur l’événement
+## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur des événements
 
-On s’attend à ce que les gestionnaires d’événements de lancement add-in soient de courte durée, légers et non invasifs que possible. Après activation, votre module s’exécutera dans un délai d’environ 300 secondes, soit la durée maximale autorisée pour l’exécution d’add-ins basés sur l’événement. Pour signaler que votre module a terminé le traitement d’un événement de lancement, nous vous recommandons d’appeler la méthode par le gestionnaire `event.completed` associé. (Notez que le code inclus après l’instruction `event.completed` n’est pas garanti pour s’exécuter.) Chaque fois qu’un événement déclenché par vos poignées d’ajout est déclenché, l’add-in est réactivé et exécute le gestionnaire d’événements associé, et la fenêtre de délai d’attente est réinitialisée. L’add-in se termine après qu’il s’arrête, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
+Les handlers d’événements de lancement de modules sont censés être de courte durée, légers et aussi peu invasifs que possible. Après l’activation, votre complément prendra un délai d’environ 300 secondes, durée maximale autorisée pour l’exécution de compléments basés sur des événements. Pour signaler que votre add-in a terminé le traitement d’un événement de lancement, nous vous recommandons d’avoir le handler associé qui appelle la `event.completed` méthode. (Notez que le code inclus après `event.completed` l’instruction n’est pas garanti pour s’exécuter.) Chaque fois qu’un événement géré par votre add-in est déclenché, celui-ci est réactivé et exécute le handler d’événements associé, et la fenêtre d’délai est réinitialisée. Le add-in se termine à l’issue de son utilisation, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
 
-Si l’utilisateur dispose de plusieurs modules d’ajout qui se sont abonnés au même événement, la plate-forme Outlook lance les modules sans ordre particulier. Actuellement, seuls cinq modules d’ajout basés sur des événements peuvent être activement en cours d’exécution.
+Si l’utilisateur a plusieurs add-ins abonnés au même événement, la plateforme Outlook lance les modules dans un ordre particulier. Actuellement, seuls cinq add-ins basés sur des événements peuvent être activement en cours d’exécution.
 
-L’utilisateur peut passer ou naviguer loin de l’élément de messagerie actuel où l’add-in a commencé à s’exécuter. L’add-in qui a été lancé terminera son opération en arrière-plan.
+L’utilisateur peut basculer ou naviguer à partir de l’élément de messagerie actuel où le module a commencé à s’exécute. Le module qui a été lancé terminera son opération en arrière-plan.
 
-Certaines Office.js qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir d’add-ins basés sur des événements. Voici les API bloquées :
+Les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements dans Windows client.
+
+Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir des add-ins basés sur des événements. Les API bloquées sont les suivantes :
 
 - Sous `OfficeRuntime.auth` :
-  - `getAccessToken`(Windows seulement)
+  - `getAccessToken`(Windows uniquement)
 - Sous `Office.context.auth` :
   - `getAccessToken`
   - `getAccessTokenAsync`
@@ -311,4 +319,4 @@ Certaines Office.js qui modifient ou modifient l’interface utilisateur ne sont
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifestes de complément Outlook](manifests.md)
-- [Comment débobug les modules d’add-in basés sur les événements](debug-autolaunch.md)
+- [Comment déboguer des add-ins basés sur des événements](debug-autolaunch.md)

@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
-description: Recommandations sur la façon de résoudre les problèmes liés à l' signature unique (SSO) dans les add-ins Office et de gérer des conditions ou des erreurs spéciales.
+description: Recommandations sur la façon de résoudre les problèmes liés à l' sign-on unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 834f23b67531315947526d37403e5ddae6d768e8
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 3d6f78802c51035664f7d12aa787c89aa62057d9
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237804"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590931"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
@@ -16,7 +16,7 @@ Cet article fournit des conseils sur la résolution des problèmes liés à l’
 
 > [!NOTE]
 > La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, voir [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Outils de débogage
 
@@ -35,7 +35,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 
 L’API [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) n’est pas prise en charge par le complément ou la version d’Office.
 
-- La version d’Office ne prend pas en charge la SSO. La version requise est l’abonnement Microsoft 365, quel que soit le canal mensuel.
+- La version d’Office ne prend pas en charge la SSO. La version requise est Microsoft 365 abonnement, dans n’importe quel canal mensuel.
 - Le manifeste de complément n’inclut pas la section [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) appropriée.
 
 Votre complément doit corriger cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
@@ -59,7 +59,7 @@ L’utilisateur a annulé la connexion ou l’autorisation, par exemple, en choi
 
 ### <a name="13003"></a>13003
 
-Type d’utilisateur non pris en charge. L’utilisateur n’est pas inscrit à Office avec un compte Microsoft valide, un compte Microsoft 365 Éducation ou un compte de travail. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Dans Outlook, cette erreur peut également se produire [si](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) l’authentification moderne est désactivée pour le client de l’utilisateur dans Exchange Online. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+Type d’utilisateur non pris en charge. L’utilisateur n’est pas Office avec un compte Microsoft valide, un compte Microsoft 365 Éducation ou un compte de travail. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Dans Outlook, cette erreur peut également [](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) se produire si l’authentification moderne est désactivée pour le client de l’utilisateur dans Exchange Online. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
@@ -77,7 +77,7 @@ Erreur du client. Cette erreur apparaît uniquement dans **Office sur le web**. 
 
 ### <a name="13007"></a>13007
 
-L’application Office n’a pas pu obtenir un jeton d’accès au service web du module.
+L Office’application n’a pas pu obtenir un jeton d’accès au service web du module.
 
 - Si cette erreur se produit en cours de développement, assurez-vous que l’enregistrement de votre complément, ainsi que son manifeste, spécifient l’autorisation `profile` (et l’autorisation `openid` si vous utilisez MSAL.NET). Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - En production, plusieurs causes peuvent entraîner cette erreur. En voici certaines :
@@ -92,13 +92,13 @@ L’utilisateur a déclenché une opération qui appelle `getAccessToken` avant 
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine Microsoft 365 de l’utilisateur et le domaine sont dans une zone de sécurité différente dans `login.microsoftonline.com` les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine de Microsoft 365 utilisateur et le domaine se sont dans une zone de sécurité différente dans `login.microsoftonline.com` les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 
 Il existe plusieurs causes possibles :
 
-- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir également [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
+- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir aussi les [ensembles de conditions requises de l’API d’identité.](../reference/requirement-sets/identity-api-requirement-sets.md)
 - L’option `forMSGraphAccess` a été transmise à l’appel à `getAccessToken` et l’utilisateur a obtenu le complément à partir d’AppSource. Dans ce scénario, l’administrateur du client n’a pas donné son accord au complément pour les étendues Microsoft Graph (autorisations) dont il a besoin. Le fait de rappeler `getAccessToken` avec le `allowConsentPrompt` ne résoudra pas le problème, car Office est autorisé à inviter l’utilisateur à donner l’autorisation uniquement à l’étendue de `profile` AAD.
 
 Votre code doit basculer vers un autre système d’authentification des utilisateurs.
@@ -107,7 +107,7 @@ En développement, le complément est sideloaded dans Outlook et l’option `for
 
 ### <a name="13013"></a>13013
 
-Le nombre d’appels a été trop élevé en peu de temps. Office a donc limitée `getAccessToken` l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios lorsque le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée dans [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+Le nombre d’appels a été trop élevé en un court laps de `getAccessToken` temps, Office a donc limitée l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios lorsque le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée dans [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 

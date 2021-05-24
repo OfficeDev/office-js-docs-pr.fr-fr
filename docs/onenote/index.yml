@@ -8,19 +8,21 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 3f5e65b4309bf150e425fac789a1807301d5130e
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: d8466a48c3fd35532989ecb707f8f77b0b1a47bb
+  ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435304"
+  ms.lasthandoff: 05/21/2021
+  ms.locfileid: "52592016"
 landingContent:
-- title: À propos des add-ins OneNote
+- title: À propos OneNote des modules
   linkLists:
   - linkListType: overview
     links:
-    - text: Que sont les add-ins OneNote ?
+    - text: Que sont OneNote des modules ?
       url: onenote-add-ins-programming-overview.md
+    - text: OneNote Vue d’ensemble de l’API
+      url: /graph/integrate-with-onenote
   - linkListType: quickstart
     links:
     - text: Créer votre premier complément OneNote
@@ -29,11 +31,11 @@ landingContent:
     links:
     - text: Utiliser l’API JavaScript OneNote pour interagir avec les objets et le contenu du bloc-notes
       url: ../reference/overview/onenote-add-ins-javascript-reference.md
-    - text: Tester et déboguer un add-in OneNote
+    - text: Tester et déboguer un OneNote de test
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un add-in OneNote
+    - text: Déployer et publier un OneNote de publication
       url: ../publish/publish.md
-- title: Concepts clés des add-ins Office
+- title: Concepts clés Office des add-ins
   linkLists:
   - linkListType: overview
     links:
@@ -52,9 +54,9 @@ landingContent:
   - linkListType: reference
     links:
     - text: Poser des questions
-      url: https://stackoverflow.com/questions/tagged/office-js
+      url: /answers/topics/office-addins-dev.html
     - text: Demander des fonctionnalités
-      url: /answers/products/m365
+      url: https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform
     - text: Signaler des problèmes
       url: https://github.com/officedev/office-js/issues
     - text: Ressources supplémentaires sur les compléments Office

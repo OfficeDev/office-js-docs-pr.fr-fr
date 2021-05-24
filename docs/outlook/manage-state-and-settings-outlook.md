@@ -1,25 +1,25 @@
 ---
-title: Gérer l'état et les paramètres d'un Outlook de gestion
-description: Découvrez comment faire persister l'état et les paramètres d'un Outlook un autre.
-ms.date: 04/29/2021
+title: Gérer l’état et les paramètres d’un Outlook de gestion
+description: Découvrez comment faire persister l’état et les paramètres d’un Outlook un autre.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 6652034ffa6844d22fd725adc5adcc4a4063c1cb
-ms.sourcegitcommit: 6057afc1776e1667b231d2e9809d261d372151f6
+ms.openlocfilehash: 69c22ab912d5099c42d6c69b364465a585cba1d4
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/30/2021
-ms.locfileid: "52100284"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52592009"
 ---
-# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l'état et les paramètres d'un Outlook de gestion
+# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’état et les paramètres d’un Outlook de gestion
 
 > [!NOTE]
-> Veuillez consulter [l'état et les paramètres persistants](../develop/persisting-add-in-state-and-settings.md) du module de mise en place dans la section **Concepts** de base de cette documentation avant de lire cet article.
+> Veuillez consulter [l’état et les paramètres persistants](../develop/persisting-add-in-state-and-settings.md) du module de mise en place dans la section **Concepts** de base de cette documentation avant de lire cet article.
 
-Pour les Outlook, l'API JavaScript Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour l'enregistrement de l'état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
+Pour les Outlook, l’API JavaScript Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
 
 |**Objet**|**Emplacement de stockage**|
 |:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Étant donné que ces paramètres sont stockés dans la boîte aux lettres du serveur de l'utilisateur, ils peuvent « se déplacer » avec l'utilisateur et sont disponibles pour le module lorsqu'il est en cours d'exécution dans le contexte d'un client pris en charge accédant à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Étant donné que ces paramètres sont stockés dans la boîte aux lettres du serveur de l’utilisateur, ils peuvent « se déplacer » avec l’utilisateur et sont disponibles pour le module lorsqu’il est en cours d’exécution dans le contexte d’un client pris en charge accédant à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Élément de message, de rendez-vous ou de demande de réunion qu’utilise le complément. Seul le complément qui a créé les propriétés personnalisées d’élément de complément Outlook peut y accéder, et uniquement dans l’élément où elles sont enregistrées.|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Enregistrement des paramètres en tant que paramètres d’itinérance dans la boîte aux lettres de l’utilisateur pour les compléments Outlook
@@ -144,15 +144,15 @@ Le tableau suivant récapitule le comportement des propriétés personnalisées 
 |Nouvelle composition|null|null|null|
 |Répondre, répondre à tous|null|null|null|
 |Transférer|Charge les propriétés du parent|null|null|
-|Élément envoyé à partir d'une nouvelle composition|null|null|null|
+|Élément envoyé à partir d’une nouvelle composition|null|null|null|
 |Élément envoyé à partir de la réponse ou de la réponse à tous|null|null|null|
-|Élément envoyé de l'avant|Supprime les propriétés du parent s'il n'est pas enregistré|null|null|
+|Élément envoyé de l’avant|Supprime les propriétés du parent s’il n’est pas enregistré|null|null|
 
 Pour gérer la situation sur les Windows :
 
-1. Recherchez les propriétés existantes lors de l'initialisation de votre add-in, et conservez-les ou déséchantez-les selon vos besoins.
+1. Recherchez les propriétés existantes lors de l’initialisation de votre add-in, et conservez-les ou déséchantez-les selon vos besoins.
 1. Lorsque vous définirez des propriétés personnalisées, incluez une propriété supplémentaire pour indiquer si les propriétés personnalisées ont été ajoutées lors de la lecture du message ou par mode lecture du complément. Cela vous aidera à différencier si la propriété a été créée au cours de la composition ou héritée du parent.
-1. Vous pouvez également utiliser [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (actuellement en prévisualisation) pour vérifier si l'utilisateur envoie un e-mail ou répond.
+1. Pour vérifier si l’utilisateur envoie un e-mail ou répond, vous pouvez utiliser [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (disponible à partir de l’ensemble de conditions requises 1.10).
 
 ## <a name="see-also"></a>Voir aussi
 

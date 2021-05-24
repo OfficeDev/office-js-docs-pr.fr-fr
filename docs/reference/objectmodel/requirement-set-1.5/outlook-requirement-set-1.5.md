@@ -1,25 +1,25 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.5
-description: Les fonctionnalités et les API qui ont été introduites pour les compléments Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1,5.
-ms.date: 12/17/2019
+description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.5.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bc91ea93a6c3653dd326306139ee460132412a81
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7d780538a77f54db6f1234a6d29a3bcdea9533b0
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44612037"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590840"
 ---
 # <a name="outlook-add-in-api-requirement-set-15"></a>Ensemble de conditions requises de l’API du complément Outlook 1.5
 
-Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-15"></a>Nouveautés de la version 1.5
 
-L’ensemble de conditions requises de la version 1.5 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md). Les fonctionnalités suivantes ont été ajoutées :
+L’ensemble de conditions requises 1.5 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.4](../requirement-set-1.4/outlook-requirement-set-1.4.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Prise en charge des [volets Office épinglables](../../../outlook/pinnable-taskpane.md).
 - Prise en charge de l’appel des [API REST](../../../outlook/use-rest-api.md).
@@ -29,7 +29,7 @@ L’ensemble de conditions requises de la version 1.5 comprend toutes les fonct
 ### <a name="change-log"></a>Journal des modifications
 
 - Ajout de la méthode [Office.context.mailbox.addHandlerAsync](office.context.mailbox.md#methods) : ajoute un gestionnaire d’événements pour un événement pris en charge.
-- Ajout de la méthode [Office. Context. Mailbox. removeHandlerAsync](office.context.mailbox.md#methods): supprime les gestionnaires d’événements pour un type d’événement pris en charge.
+- Ajout [Office.context.mailbox.removeHandlerAsync](office.context.mailbox.md#methods): supprime les handlers d’événements pour un type d’événement pris en charge.
 - Ajout de l’énumération [Office.EventType](office.md#eventtype-string) : spécifie l’événement associé à un gestionnaire d’événements et prend en charge l’événement ItemChanger.
 - Ajout de la propriété [Office.context.mailbox.restUrl](office.context.mailbox.md#properties) : obtient l’URL du point de terminaison REST de ce compte de messagerie.
 - Modification de la méthode [Office.context.mailbox.getCallbackTokenAsync](office.context.mailbox.md#methods) : cette nouvelle version comprend une nouvelle signature (`getCallbackTokenAsync([options], callback)`). La version d’origine est toujours disponible et reste inchangée.

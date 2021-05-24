@@ -1,29 +1,29 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.3
-description: Les fonctionnalités et les API qui ont été introduites pour les compléments Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1,3.
-ms.date: 12/17/2019
+description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.3.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: bf7dc9e3977df626241cdafdebd8d4b4e473d494
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430967"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52591036"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Ensemble de conditions requises de l’API du complément Outlook 1.3
 
-Le sous-ensemble d’API de complément Outlook de l’API JavaScript pour Office comprend des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un complément Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-13"></a>Nouveautés de la version 1.3
 
-L’ensemble de conditions requises de la version 1.3 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Les fonctionnalités suivantes ont été ajoutées :
+L’ensemble de conditions requises 1.3 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.2](../requirement-set-1.2/outlook-requirement-set-1.2.md). Les fonctionnalités suivantes ont été ajoutées :
 
 - Prise en charge des [commandes de complément](../../../outlook/add-in-commands-for-outlook.md).
 - Possibilité d’enregistrer ou de fermer un élément en cours de composition.
-- Objet [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) amélioré pour permettre aux compléments d’obtenir ou de définir le corps entier.
+- Objet [Body](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true) amélioré permettant aux add-ins d’obtenir ou de définir l’intégralité du corps.
 - Nouvelles méthodes de conversion pour convertir les ID aux formats EWS et REST.
 - Possibilité d’ajouter des messages de notification dans la barre d’informations sur les éléments.
 

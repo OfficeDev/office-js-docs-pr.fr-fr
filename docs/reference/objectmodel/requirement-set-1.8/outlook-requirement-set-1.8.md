@@ -1,25 +1,25 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.8
-description: Ensemble de conditions requises 1.8 pour l’API du add-in Outlook.
-ms.date: 03/10/2021
+description: Ensemble de conditions requises 1.8 pour Outlook API de votre application.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 9ff66bcaeecf54dde10821df1b48df6d20cb953d
-ms.sourcegitcommit: 929dcf2f415b94f42330a9035ed11a5cedad88f1
+ms.openlocfilehash: 333bfd43ba488949f9eead0058da2e7a1b99a25f
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "50830964"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590959"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 
-Le sous-ensemble de l’API de l’API JavaScript pour Outlook inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un application Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-18"></a>Nouveautés de la version 1.8
 
-L’ensemble de conditions requises de la version 1.8 comprend toutes les fonctionnalités de l’[ensemble de conditions requises de la version 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). Les fonctionnalités suivantes ont été ajoutées.
+L’ensemble de conditions requises 1.8 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Ajout de nouvelles fonctionnalités d’API pour les pièces jointes, de catégories, d’accès délégué, d’emplacement amélioré, d’en-têtes Internet et de blocage d’envoi.
 - Ajout d’un paramètre `options` facultatif à Event.completed.

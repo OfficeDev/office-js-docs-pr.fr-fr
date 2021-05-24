@@ -1,16 +1,16 @@
 ---
-title: Espace de noms Office-ensemble de conditions requises 1,3
-description: Les membres d’espace de noms Office sont disponibles pour les compléments Outlook à l’aide de l’API de boîte aux lettres Set 1,3.
-ms.date: 03/18/2020
+title: Office de noms - ensemble de conditions requises 1.3
+description: Office’espace de noms disponible pour les Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.3.
+ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 93f92759e893a836a7bb35b743089acdafbebb5a
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: f4aecf016e259141fd8adb2683864d4c36bdaf4b
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47430708"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52592002"
 ---
-# <a name="office-mailbox-requirement-set-13"></a>Office (boîte aux lettres requise définie sur 1,3)
+# <a name="office-mailbox-requirement-set-13"></a>Office (ensemble de conditions requises de boîte aux lettres 1.3)
 
 L’espace de noms Office fournit des interfaces partagées qui sont utilisées par des compléments dans toutes les applications Office. Cette liste documente uniquement les interfaces utilisées par des compléments Outlook. Pour obtenir une liste complète des espaces de noms Office, consultez la page relative à l’[interface API commune](/javascript/api/office).
 
@@ -21,27 +21,27 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 |[Version de l’ensemble minimal de conditions de boîte aux lettres](../../requirement-sets/outlook-api-requirement-sets.md)| 1.1|
 |[Mode Outlook applicable](../../../outlook/outlook-add-ins-overview.md#extension-points)| Rédaction ou lecture|
 
-##### <a name="properties"></a>Propriétés
+## <a name="properties"></a>Propriétés
 
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [context](office.context.md) | Composition<br>Lecture | [Context](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | Composition<br>Lire | [Context](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-##### <a name="enumerations"></a>Énumérations
+## <a name="enumerations"></a>Énumérations
 
 | Énumération | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
-### <a name="namespaces"></a>Espaces de noms
+## <a name="namespaces"></a>Espaces de noms
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.3&preserve-view=true): inclut un certain nombre d’énumérations propres à Outlook, par exemple,,,,, `ItemType` `EntityType` `AttachmentType` `RecipientType` `ResponseType` et `ItemNotificationMessageType` .
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.3&preserve-view=true): inclut un certain nombre d’Outlook spécifiques à l’utilisateur, par exemple, `ItemType` , , , et `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` .
 
-## <a name="enumeration-details"></a>Détails de l’énumération
+## <a name="enumeration-details"></a>Détails de l’éumération
 
-#### <a name="asyncresultstatus-string"></a>AsyncResultStatus : chaîne
+#### <a name="asyncresultstatus-string"></a>AsyncResultStatus: String
 
 Spécifie le résultat d’un appel asynchrone.
 
@@ -49,7 +49,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 *   String
 
-##### <a name="properties"></a>Propriétés :
+##### <a name="properties"></a>Propriétés
 
 |Nom| Type| Description|
 |---|---|---|
@@ -68,7 +68,7 @@ Spécifie le résultat d’un appel asynchrone.
 ---
 ---
 
-#### <a name="coerciontype-string"></a>CoercionType : chaîne
+#### <a name="coerciontype-string"></a>CoercionType: String
 
 Indique comment forcer le type des données retournées ou définies par la méthode appelée.
 
@@ -76,7 +76,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 *   String
 
-##### <a name="properties"></a>Propriétés :
+##### <a name="properties"></a>Propriétés
 
 |Nom| Type| Description|
 |---|---|---|
@@ -95,7 +95,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 ---
 ---
 
-#### <a name="sourceproperty-string"></a>SourceProperty : chaîne
+#### <a name="sourceproperty-string"></a>SourceProperty: String
 
 Spécifie la source des données renvoyées par la méthode appelée.
 
@@ -103,7 +103,7 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 *   String
 
-##### <a name="properties"></a>Propriétés :
+##### <a name="properties"></a>Propriétés
 
 |Nom| Type| Description|
 |---|---|---|

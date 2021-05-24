@@ -1,14 +1,14 @@
 ---
 title: Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 description: Ensembles de conditions requises pris en charge pour Excel, OneNote, Outlook, PowerPoint, Project et Word.
-ms.date: 05/03/2021
+ms.date: 05/11/2021
 localization_priority: Priority
-ms.openlocfilehash: 3566c096f48ddaed671f211086d2e36964f63b4d
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: ea41a8116bb1e54f9e7dcb290e1a48c61e6f0f68
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253374"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590868"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 
@@ -20,7 +20,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
 |:---:|:---:|:---:|:---:|:---:|:---:|
 
 > [!NOTE]
-> La version initiale d’Office 2016 installée via MSI contient uniquement les ensembles de conditions ExcelApi 1.1, WordApi 1.1 et API commune. Pour plus d’informations sur l’historique de mise à jour des différentes versions d’Office, consultez la section [Voir aussi](#see-also).
+> La version initiale d’Office 2016 installée via MSI contient uniquement les ensembles de conditions ExcelApi 1.1, WordApi 1.1 et API commune. Pour plus d’informations sur l’historique de mise à jour des différentes versions d’Office, consultez la section [Voir aussi](#see-also).
 
 ## <a name="excel"></a>Excel
 
@@ -34,7 +34,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   <tr>
     <td>Office sur le web</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu<br>
       - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
@@ -44,18 +44,18 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-4-requirement-set">ExcelApi 1.4</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-9-requirement-set">ExcelApi 1.9</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-11-requirement-set">ExcelApi 1.11</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-12-requirement-set">ExcelApi 1.12</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-online-requirement-set">ExcelApiOnline</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets">RibbonAPI 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets">RibbonAPI 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/shared-runtime-requirement-sets">SharedRuntime 1.1</a>
     </td>
     <td>
@@ -74,9 +74,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu<br>
       - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
@@ -86,12 +86,12 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-4-requirement-set">ExcelApi 1.4</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-9-requirement-set">ExcelApi 1.9</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-11-requirement-set">ExcelApi 1.11</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-12-requirement-set">ExcelApi 1.12</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
@@ -99,7 +99,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-12">ImageCoercion 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/open-browser-window-api-requirement-sets">OpenBrowserWindowApi 1.1</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets">RibbonAPI 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets">RibbonAPI 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/shared-runtime-requirement-sets">SharedRuntime 1.1</a>
     </td>
     <td>
@@ -118,9 +118,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2019 sur Windows<br>(achat définitif)</td>
+    <td>Office 2019 sur Windows<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
@@ -129,10 +129,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-4-requirement-set">ExcelApi 1.4</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a>
     </td>
@@ -154,7 +154,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   <tr>
     <td>Office 2016 sur Windows<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-1-requirement-set">ExcelApi 1.1</a><br>
@@ -179,7 +179,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   <tr>
     <td>Office 2013 sur Windows<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
@@ -200,21 +200,21 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-1-requirement-set">ExcelApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-4-requirement-set">ExcelApi 1.4</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-9-requirement-set">ExcelApi 1.9</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-11-requirement-set">ExcelApi 1.11</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-12-requirement-set">ExcelApi 1.12</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
@@ -236,9 +236,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu<br>
       - CustomFunctions<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
@@ -248,12 +248,12 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-4-requirement-set">ExcelApi 1.4</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-9-requirement-set">ExcelApi 1.9</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-10-requirement-set">ExcelApi 1.10</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-11-requirement-set">ExcelApi 1.11</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-12-requirement-set">ExcelApi 1.12</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
@@ -261,7 +261,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-12">ImageCoercion 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/open-browser-window-api-requirement-sets">OpenBrowserWindowApi 1.1</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets">RibbonAPI 1.1</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/ribbon-api-requirement-sets">RibbonAPI 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/shared-runtime-requirement-sets">SharedRuntime 1.1</a>
     </td>
     <td>
@@ -281,9 +281,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2019 sur Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
@@ -292,10 +292,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-2-requirement-set">ExcelApi 1.2</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-3-requirement-set">ExcelApi 1.3</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-4-requirement-set">ExcelApi 1.4</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-5-requirement-set">ExcelApi 1.5</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-6-requirement-set">ExcelApi 1.6</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-7-requirement-set">ExcelApi 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-8-requirement-set">ExcelApi 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a>
     </td>
@@ -316,9 +316,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2016 sur Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - Contenu </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/excel-api-1-1-requirement-set">ExcelApi 1.1</a><br>
@@ -343,7 +343,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
 </table>
 
-*&ast; : ajouté avec les mises à jour après la publication.*
+*&ast; : ajouté avec les mises à jour après la publication.*
 
 ## <a name="custom-functions-excel-only"></a>Fonctions personnalisées (Excel seulement)
 
@@ -365,7 +365,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td></td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>- CustomFunctions</td>
     <td>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
@@ -375,7 +375,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td></td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>- CustomFunctions</td>
     <td>
       - <a href="/office/dev/add-ins/excel/custom-functions-requirement-sets">CustomFunctionsRuntime 1.1</a><br>
@@ -411,9 +411,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Mailbox 1.9</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10">Mailbox 1.10</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><sup>1</sup>
     </td>
     <td>Non disponible</td>
@@ -438,7 +439,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -454,16 +455,17 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9">Mailbox 1.9</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10">Mailbox 1.10</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><sup>1</sup><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/open-browser-window-api-requirement-sets">OpenBrowserWindowApi 1.1</a>
     </td>
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office 2019 sur Windows<br>(achat définitif)</td>
+    <td>Office 2019 sur Windows<br>(achat définitif)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -518,10 +520,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur iOS<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur iOS<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message lu</a><br>
-      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">Organisateur de rendez-vous (composer) : réunion en ligne</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">Organisateur de rendez-vous (composer) : réunion en ligne</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -534,7 +536,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(interface utilisateur actuelle<br>connectée à un abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(interface utilisateur actuelle<br>connectée à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -549,15 +551,15 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><sup>1</sup><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/open-browser-window-api-requirement-sets">OpenBrowserWindowApi 1.1</a>
     </td>
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(nouvelle interface utilisateur (aperçu)<sup>3</sup>,<br>connectée à un abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(nouvelle interface utilisateur (aperçu)<sup>3</sup>,<br>connectée à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -572,14 +574,14 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4">Mailbox 1.4</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5">Mailbox 1.5</a><br>
       - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6">Mailbox 1.6</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
-      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7">Mailbox 1.7</a><br>
+      - <a href="/office/dev/add-ins/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8">Mailbox 1.8</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/identity-api-requirement-sets">IdentityAPI 1.3</a><sup>1</sup>
     </td>
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office 2019 sur Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -598,7 +600,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office 2016 sur Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagereadcommandsurface">Message lu</a><br>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#messagecomposecommandsurface">Composer un message</a><br>
@@ -617,10 +619,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Non disponible</td>
   </tr>
   <tr>
-    <td>Office sur Android<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur Android<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobilemessagereadcommandsurface">Message lu</a><br>
-      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">Organisateur de rendez-vous (composer) : réunion en ligne</a><br>
+      - <a href="/office/dev/add-ins/reference/manifest/extensionpoint#mobileonlinemeetingcommandsurface">Organisateur de rendez-vous (composer) : réunion en ligne</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -642,7 +644,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
 > <sup>3</sup> prise en charge de la préversion pour le nouvel Outlook sur Mac est disponible dans la version 16.38.506. Pour plus d’informations, consultez la section [Prise en charge du macro complémentaire dans Outlook sur le nouvel interface d’utilisateur Mac](../outlook/compare-outlook-add-in-support-in-outlook-for-mac.md#add-in-support-in-outlook-on-new-mac-ui-preview).
 
 > [!IMPORTANT]
-> La prise en charge du client pour un ensemble de conditions requises peut être limitée par la prise en charge d’Exchange Server. Consultez [Ensembles de conditions requises de l’API JavaScript pour Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) pour plus d’informations sur les ensembles de conditions requises pris en charge par Exchange Server et le client Outlook.
+> La prise en charge du client pour un ensemble de conditions requises peut être limitée par la prise en charge d’Exchange Server. Consultez [Ensembles de conditions requises de l’API JavaScript pour Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) pour plus d’informations sur les ensembles de conditions requises pris en charge par Exchange Server et le client Outlook.
 
 <br/>
 
@@ -658,7 +660,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   <tr>
     <td>Office sur le web</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -689,9 +691,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -725,9 +727,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2019 sur Windows<br>(achat définitif)</td>
+    <td>Office 2019 sur Windows<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -759,7 +761,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
   <tr>
     <td>Office 2016 sur Windows<br>(achat définitif)</td>
-    <td>- Volet Office</td>
+    <td>- Volet Office</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-1-requirement-set">WordApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
@@ -787,7 +789,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
   <tr>
     <td>Office 2013 sur Windows<br>(achat définitif)</td>
-    <td>- Volet Office</td>
+    <td>- Volet Office</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a>
@@ -813,8 +815,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
-    <td>- Volet Office</td>
+    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>- Volet Office</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-1-requirement-set">WordApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-2-requirement-set">WordApi 1.2</a><br>
@@ -843,9 +845,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -879,9 +881,9 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2019 sur Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -912,8 +914,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2016 sur Mac<br>(achat définitif)</td>
-    <td>- Volet Office</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
+    <td>- Volet Office</td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/word-api-1-1-requirement-set">WordApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
@@ -941,7 +943,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
 </table>
 
-*&ast; : ajouté avec les mises à jour après la publication.*
+*&ast; : ajouté avec les mises à jour après la publication.*
 
 <br/>
 
@@ -958,7 +960,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Office sur le web</td>
     <td>
       - Contenu<br>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -981,10 +983,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office pour Windows<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Contenu<br>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -1008,10 +1010,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2019 sur Windows<br>(achat définitif)</td>
+    <td>Office 2019 sur Windows<br>(achat définitif)</td>
     <td>
       - Contenu<br>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -1033,7 +1035,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Office 2016 sur Windows<br>(achat définitif)</td>
     <td>
       - Contenu<br>
-      - Volet Office </td>
+      - Volet Office </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a>
@@ -1053,7 +1055,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Office 2013 sur Windows<br>(achat définitif)</td>
     <td>
       - Contenu<br>
-      - Volet Office </td>
+      - Volet Office </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a>
@@ -1070,10 +1072,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur iPad<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Contenu<br>
-      - Volet Office </td>
+      - Volet Office </td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/powerpoint-api-1-1-requirement-set">PowerPointApi 1.1</a><br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/powerpoint-api-1-2-requirement-set">PowerPointApi 1.2</a><br>
@@ -1093,10 +1095,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
+    <td>Office sur Mac<br>(connecté à un abonnement Microsoft 365)</td>
     <td>
       - Contenu<br>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -1120,10 +1122,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2019 sur Mac<br>(achat définitif)</td>
+    <td>Office 2019 sur Mac<br>(achat définitif)</td>
     <td>
       - Contenu<br>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -1142,10 +1144,10 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     </td>
   </tr>
   <tr>
-    <td>Office 2016 sur Mac<br>(achat définitif)</td>
+    <td>Office 2016 sur Mac<br>(achat définitif)</td>
     <td>
       - Contenu<br>
-      - Volet Office </td>
+      - Volet Office </td>
     <td>
        - <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a>*<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/image-coercion-requirement-sets#imagecoercion-11">ImageCoercion 1.1</a>
@@ -1163,7 +1165,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
 </table>
 
-*&ast; : ajouté avec les mises à jour après la publication.*
+*&ast; : ajouté avec les mises à jour après la publication.*
 
 <br/>
 
@@ -1180,7 +1182,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <td>Office sur le web</td>
     <td>
       - Contenu<br>
-      - Volet Office<br>
+      - Volet Office<br>
       - <a href="/office/dev/add-ins/reference/requirement-sets/add-in-commands-requirement-sets">Commandes de complément</a>
     </td>
     <td>
@@ -1209,8 +1211,8 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
     <th><a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets"><b>API communes</b></a></th>
   </tr>
   <tr>
-    <td>Office 2019 sur Windows<br>(achat définitif)</td>
-    <td>- Volet Office</td>
+    <td>Office 2019 sur Windows<br>(achat définitif)</td>
+    <td>- Volet Office</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#selection">Selection</a><br>
@@ -1219,7 +1221,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
   <tr>
     <td>Office 2016 sur Windows<br>(achat définitif)</td>
-    <td>- Volet Office</td>
+    <td>- Volet Office</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#selection">Selection</a><br>
@@ -1228,7 +1230,7 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
   </tr>
   <tr>
     <td>Office 2013 sur Windows<br>(achat définitif)</td>
-    <td>- Volet Office</td>
+    <td>- Volet Office</td>
     <td>- <a href="/office/dev/add-ins/reference/requirement-sets/dialog-api-requirement-sets">DialogApi 1.1</a></td>
     <td>
       - <a href="/office/dev/add-ins/reference/requirement-sets/office-add-in-requirement-sets#selection">Selection</a><br>
@@ -1241,15 +1243,15 @@ Pour fonctionner comme prévu, votre complément Office peut dépendre d'une app
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md)
 - [Versions d’Office et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md)
 - [Ensembles de conditions requises des API communes](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Ensembles de conditions requises concernant les commandes de complément](../reference/requirement-sets/add-in-commands-requirement-sets.md)
 - [Documentation de référence de l’API](../reference/javascript-api-for-office.md)
-- [Historique des mises à jour de Microsoft 365 Apps](/officeupdates/update-history-office365-proplus-by-date)
-- [Historique des mises à jour d’Office 2016 et 2019 (Démarrer en un clic)](/officeupdates/update-history-office-2019)
-- [Historique des mises à jour d’Office 2013 (Démarrer en un clic)](/officeupdates/update-history-office-2013)
-- [Historique des mises à jour d’Office 2010, 2013 et 2016 (MSI)](/officeupdates/office-updates-msi)
-- [Historique des mises à jour d’Outlook 2010, 2013 et 2016 (MSI)](/officeupdates/outlook-updates-msi)
+- [Historique des mises à jour de Microsoft 365 Apps](/officeupdates/update-history-office365-proplus-by-date)
+- [Historique des mises à jour d’Office 2016 et 2019 (Démarrer en un clic)](/officeupdates/update-history-office-2019)
+- [Historique des mises à jour d’Office 2013 (Démarrer en un clic)](/officeupdates/update-history-office-2013)
+- [Historique des mises à jour d’Office 2010, 2013 et 2016 (MSI)](/officeupdates/office-updates-msi)
+- [Historique des mises à jour d’Outlook 2010, 2013 et 2016 (MSI)](/officeupdates/outlook-updates-msi)
 - [Historique des mises à jour d’Office pour Mac](/officeupdates/update-history-office-for-mac)
 - [Développement de compléments Office](../develop/develop-overview.md)

@@ -1,20 +1,20 @@
 ---
-title: Temps d’exécution dans le fichier manifeste
-description: L’élément Runtime configure votre module d’ajout pour utiliser un temps d’exécution JavaScript partagé pour ses différents composants, par exemple, ruban, volet de tâches, fonctions personnalisées.
-ms.date: 05/14/2021
+title: Runtime dans le fichier manifeste
+description: L’élément Runtime configure votre add-in pour utiliser un runtime JavaScript partagé pour ses différents composants, par exemple, ruban, volet des tâches, fonctions personnalisées.
+ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: c59e5a23e53940aea46c758d710b4a455cb5c0cc
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
+ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555303"
+ms.lasthandoff: 05/21/2021
+ms.locfileid: "52590911"
 ---
-# <a name="runtime-element"></a>Élément runtime
+# <a name="runtime-element"></a>Élément Runtime
 
-Configure votre module d’ajout pour utiliser un temps d’exécution JavaScript partagé afin que les différents composants s’exécutent tous dans le même temps d’exécution. Enfant de [`<Runtimes>`](runtimes.md) l’élément.
+Configure votre add-in pour utiliser un runtime JavaScript partagé afin que différents composants s’exécutent tous dans le même runtime. Enfant de [`<Runtimes>`](runtimes.md) l’élément.
 
-**Type d’add-in :** Volet de tâche, Courrier
+**Type de add-in :** Volet De tâches, Courrier
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 
@@ -32,19 +32,19 @@ Configure votre module d’ajout pour utiliser un temps d’exécution JavaScrip
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
-| [Override](override.md) (aperçu) | Non | **Outlook**: Spécifie l’emplacement de l’URL du fichier JavaScript Outlook Desktop nécessite pour [les gestionnaires de points d’extension LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent-preview) **Important**: À l’heure actuelle, vous ne pouvez définir `<Override>` qu’un seul élément et il doit être de type `javascript` .|
+| [Override](override.md) | Non | **Outlook**: spécifie l’emplacement d’URL du fichier JavaScript dont Outlook Desktop a besoin pour les handleurs de [point d’extension LaunchEvent.](../../reference/manifest/extensionpoint.md#launchevent) **Important**: Pour le moment, vous ne pouvez définir qu’un seul élément et `<Override>` il doit être de type `javascript` .|
 
 ## <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **resid**  |  Oui  | Spécifie l’emplacement de l’URL de la page HTML pour votre module d’ajout. Le `resid` ne peut pas être plus de 32 caractères et doit correspondre à un attribut `id` d’un `Url` élément dans `Resources` l’élément. |
-|  **vie**  |  Non  | La valeur par défaut `lifetime` pour est `short` et n’a pas besoin d’être spécifiée. Outlook add-ins n’utilisent que la `short` valeur. Si vous souhaitez utiliser un temps d’exécution partagé dans un Excel add-in, définissez explicitement la valeur à `long` . |
+|  **resid**  |  Oui  | Spécifie l’emplacement URL de la page HTML de votre application. Il ne peut pas y avoir plus de 32 caractères et doit correspondre à un `resid` `id` attribut `Url` d’un élément dans `Resources` l’élément. |
+|  **lifetime**  |  Non  | La valeur par `lifetime` défaut est `short` et n’a pas besoin d’être spécifiée. Outlook’utilisent que la `short` valeur. Si vous souhaitez utiliser un runtime partagé dans un Excel, définissez explicitement la valeur sur `long` . |
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Services d’exécution](runtimes.md)
 - [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
-- [Configurez votre Outlook add-in pour l’activation basée sur l’événement](../../outlook/autolaunch.md)
+- [Configurer votre complément Outlook pour l’activation basée sur des événements](../../outlook/autolaunch.md)

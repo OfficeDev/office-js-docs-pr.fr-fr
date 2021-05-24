@@ -14,26 +14,26 @@ ms.locfileid: "52555191"
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
-## <a name="sideload-automatically"></a>Sideload automatiquement
+## <a name="sideload-automatically"></a>Chargement de version de version de version automatique
 
-Si vous avez créé votre Outlook add-in en utilisant [le générateur Yeoman pour Office Add-ins,](https://github.com/OfficeDev/generator-office)sideloading est préférable de le faire à travers la ligne de commande. Cela profitera de notre outillage et de notre charge latérale sur tous vos appareils pris en charge en une seule commande.
+Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de faire un chargement de version de version par le biais de la ligne de commande. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
 
-1. À l’aide de la ligne de commande, accédez à l’annuaire racine de votre projet yeoman généré add-in. Exécutez la commande `npm start`.
+1. À l’aide de la ligne de commande, accédez au répertoire racine de votre projet de add-in généré par Yeoman. Exécutez la commande `npm start`.
 
-1. Votre Outlook add-in sera automatiquement sideload pour Outlook votre ordinateur de bureau. Vous verrez apparaître un dialogue, indiquant qu’il y a une tentative de sideload l’add-in, énumérant le nom et l’emplacement du fichier manifeste. Sélectionnez **OK**, qui enregistrera le manifeste.
+1. Votre Outlook de bureau est automatiquement chargé de manière Outlook sur votre ordinateur de bureau. Une boîte de dialogue s’affiche, indiquant qu’il y a une tentative de chargement de version de chargement du module, répertoriant le nom et l’emplacement du fichier manifeste. Sélectionnez **OK,** qui enregistre le manifeste.
 
     > [!IMPORTANT]
-    > Si le manifeste contient une erreur ou si le chemin vers le manifeste est invalide, vous recevrez un message d’erreur.
+    > Si le manifeste contient une erreur ou si le chemin d’accès au manifeste n’est pas valide, vous recevrez un message d’erreur.
 
-1. Si votre manifeste ne contient aucune erreur et que le chemin est valide, votre module sera désormais sideloaded et disponible à la fois sur votre bureau et dans les Outlook sur le Web. Il sera également installé sur tous vos appareils pris en charge.
+1. Si votre manifeste ne contient aucune erreur et que le chemin d’accès est valide, votre application sera désormais rechargée de nouveau et disponible à la fois sur votre ordinateur de bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
 
-## <a name="sideload-manually"></a>Sideload manuellement
+## <a name="sideload-manually"></a>Chargement manuel d’une version de version
 
-Bien que nous vous recommandons fortement de recharger automatiquement à travers la ligne de commande telle que couverte dans la section précédente, vous pouvez également sideload manuellement un add-in Outlook basé sur le client Outlook.
+Bien que nous recommandions vivement le chargement de version secondaire automatiquement via la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de Outlook basée sur le client Outlook.
 
 ### <a name="outlook-on-the-web"></a>Outlook sur le web
 
-Le processus de chargement latéral d’un add-in Outlook sur le web dépend si vous utilisez la nouvelle version ou classique.
+Le processus de chargement de version d’évaluation d’un Outlook sur le web varie selon que vous utilisez la nouvelle version ou la version classique.
 
 - Si la barre d’outils de boîte aux lettres ressemble à l’image suivante, reportez-vous à la section relative au [chargement de la version test d’un complément dans la nouvelle version d’Outlook sur le web](#new-outlook-on-the-web).
 
@@ -46,11 +46,11 @@ Le processus de chargement latéral d’un add-in Outlook sur le web dépend si 
 > [!NOTE]
 > Si votre organisation a inclus son logo dans la barre d’outils de boîte aux lettres, le rendu sera peut-être légèrement différent de celui figurant dans les images précédentes.
 
-### <a name="new-outlook-on-the-web"></a>Nouvelles Outlook sur le web
+### <a name="new-outlook-on-the-web"></a>Nouveaux Outlook sur le web
 
 1. Accédez à [Outlook sur le web](https://outlook.office.com).
 
-1. Créez un nouveau message.
+1. Créez un message.
 
 1. Sélectionnez **...** au bas du nouveau message, puis sélectionnez **Obtenir des compléments** dans le menu qui s’affiche.
 
@@ -66,7 +66,7 @@ Le processus de chargement latéral d’un add-in Outlook sur le web dépend si 
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-### <a name="classic-outlook-on-the-web"></a>Les Outlook classiques sur le web
+### <a name="classic-outlook-on-the-web"></a>Modèles Outlook classiques sur le web
 
 1. Accédez à [Outlook sur le web](https://outlook.office.com).
 
@@ -86,24 +86,24 @@ Le processus de chargement latéral d’un add-in Outlook sur le web dépend si 
 
 ### <a name="outlook-on-the-desktop"></a>Outlook sur le bureau
 
-#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou plus tard
+#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
 
-1. Ouvrez Outlook 2016 ou plus tard sur Windows ou Mac.
+1. Ouvrez Outlook 2016 ou ultérieur sur Windows mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
-    ![Outlook 2016 ruban pointant vers le bouton Get Add-ins](../images/outlook-sideload-desktop-store.png)
+    ![Outlook 2016 ruban pointant vers le bouton Obtenir des modules](../images/outlook-sideload-desktop-store.png)
 
     > [!IMPORTANT]
-    > Si vous ne voyez pas le bouton **Get Add-ins** dans votre version de Outlook, sélectionnez :
+    > Si vous ne voyez pas le bouton Obtenir **des** Outlook, sélectionnez :
     >
-    > - **Rangez** le bouton sur le ruban, si disponible.
+    > - **Bouton Stocker** sur le ruban, si disponible.
     >
     >   OR
     >
-    > - **Menu** de fichiers, puis sélectionnez **le bouton Manage Add-ins** sur **l’onglet Info** pour ouvrir le dialogue **Add-ins** Outlook sur le web.<br>Vous pouvez en savoir plus sur l’expérience Web dans la section [précédente Sideload un add-in dans Outlook sur le web](#outlook-on-the-web).
+    > - **Menu** Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations** pour ouvrir la boîte de dialogue Des Outlook sur le web. <br>Vous pouvez en savoir plus sur l’expérience web dans la section précédente chargement de version de chargement [d’un Outlook sur le web.](#outlook-on-the-web)
 
-1. S’il y a des onglets près du haut du dialogue, **assurez-vous que l’onglet Add-ins** est sélectionné. Choisissez **mes add-ins**.
+1. S’il existe des onglets en haut de la boîte de dialogue, **assurez-vous** que l’onglet Des applications est sélectionné. Choose **My add-ins**.
 
     ![Boîte de dialogue du Store Outlook 2016 avec Mes compléments sélectionné](../images/outlook-sideload-store-select-add-ins.png)
 
@@ -115,16 +115,16 @@ Le processus de chargement latéral d’un add-in Outlook sur le web dépend si 
 
 #### <a name="outlook-2013"></a>Outlook 2013
 
-1. Ouvert Outlook 2013 le Windows.
+1. Ouvrez Outlook 2013 sur Windows.
 
-1. Sélectionnez **le** menu Fichier, puis **sélectionnez le bouton Manage Add-ins** sur l’onglet **Info.** Outlook ouvrira la version Web dans un navigateur.
+1. Sélectionnez **le** menu Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations.** Outlook ouvre la version web dans un navigateur.
 
-1. Suivez les étapes du [Sideload un add-in dans Outlook sur la](#outlook-on-the-web) section web en fonction de votre version de Outlook sur le web.
+1. Suivez les étapes du chargement d’une version de version Outlook sur [le web](#outlook-on-the-web) en fonction de votre version de Outlook sur le web.
 
-## <a name="remove-a-sideloaded-add-in"></a>Retirer un add-in sideloaded
+## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Sur toutes les versions de Outlook, la clé pour supprimer un module d’ajout sideloaded est le dialogue **My Add-ins** qui répertorie vos modules d’ajout installés. Choisissez l’ellipsis ( `...` ) pour l’add-in puis sélectionnez **Supprimer**.
+Sur toutes les versions de Outlook, la clé de la suppression  d’un module de chargement de version ultérieure est la boîte de dialogue Mes applications qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le `...` add-in, puis sélectionnez **Supprimer**.
 
-Pour naviguer vers la **boîte de dialogue My Add-ins** pour votre client Outlook, utilisez les dernières étapes répertoriées pour le chargement manuel [dans](#sideload-manually) les sections précédentes de cet article.
+Pour accéder à la boîte de dialogue Mes applications pour votre client Outlook, [](#sideload-manually) utilisez les dernières **étapes** répertoriées pour le chargement de version manuelle dans les sections précédentes de cet article.
 
-Pour supprimer un module d’ajout sideloaded de Outlook, utilisez les étapes précédemment décrites dans cet article pour trouver l’add-in dans la section **add-ins personnalisés** de la boîte de dialogue qui répertorie vos modules supplémentaires installés. Choisissez l’ellipsis `...` ( ) pour l’add-in puis **choisissez Supprimer** pour supprimer cet add-in spécifique. Fermez la boîte de dialogue.
+Pour supprimer un **add-in** chargé de Outlook, utilisez les étapes décrites précédemment dans cet article pour trouver le module dans la section Des applications personnalisées de la boîte de dialogue qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le module, puis choisissez Supprimer pour `...` supprimer ce dernier.  Fermez la boîte de dialogue.
