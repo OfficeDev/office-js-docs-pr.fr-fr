@@ -1,18 +1,18 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
-description: Découvrez comment configurer un add-in Office pour qu’il s’ouvre automatiquement à l’ouverture d’un document.
-ms.date: 07/07/2020
+description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
+ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 9c9d64594f98cc45c56b3251bf6750457bd5a37c
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
+ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839956"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "52639955"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
-Vous pouvez utiliser les commandes de votre application Office pour étendre l’interface utilisateur Office en ajoutant des boutons au ruban de l’application Office. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
+Vous pouvez utiliser des commandes de Office dans votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
 Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet des tâches, présentée dans l’ensemble des conditions AddInCommands 1.1, pour ouvrir automatiquement un volet des tâches lorsque votre scénario l’exige.
 
@@ -118,7 +118,7 @@ Le composant `webextension` comprend également une référence au store ou au c
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|L’ID de la ressource AppSource du complément (voir la remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|La version dans le catalogue AppSource (voir la remarque).|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
-|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d’administration Microsoft 365.|La version dans le manifeste de complément.
+|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le centre d Microsoft 365'administration.|La version dans le manifeste de complément.
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
 
 > [!NOTE]
@@ -143,11 +143,11 @@ Définir `visibility` sur « 1 » est un bon choix lorsque le complément et l
 > [!NOTE]
 > Si vous voulez distribuer votre complément avec le document, pour que les utilisateurs soient invités à l’installer, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’Open XML.
 
-Une méthode simple d’écriture du code XML consiste à exécuter d’abord votre complément, puis à [baliser le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, à enregistrer le document et à inspecter le code XML généré. Office détectera et fournira les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité [Kit de développement logiciel Open XML 2.5](https://www.microsoft.com/download/details.aspx?id=30425) pour générer le code C# pour ajouter par programme le balisage en fonction du XML vous générez.
+Un moyen simple d’écrire le XML consiste à d’abord exécuter votre add-in et baliser le document côté [client](#tag-the-document-on-the-client-side) pour écrire la valeur, puis enregistrer le document et inspecter le XML qui est généré. Office détecter et fournir les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité du [SDK Open XML](https://www.nuget.org/packages/Open-XML-SDK) pour générer du code C# pour ajouter par programme le code basé sur le code XML que vous générez.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Tester et vérifier l’ouverture des volets Office
 
-Vous pouvez déployer une version de test de votre application qui ouvre automatiquement un volet Des tâches à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365. L’exemple suivant montre la façon dont les compléments sont insérés à partir du catalogue de déploiement centralisé à l’aide de la version store d’EXCatalog.
+Vous pouvez déployer une version de test de votre application qui ouvre automatiquement un volet Des tâches à l’aide du déploiement centralisé via le centre d Microsoft 365'administration. L’exemple suivant montre la façon dont les compléments sont insérés à partir du catalogue de déploiement centralisé à l’aide de la version store d’EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">
@@ -159,9 +159,9 @@ Vous pouvez déployer une version de test de votre application qui ouvre automat
 </we:webextension>
 ```
 
-Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Microsoft 365 pour tester le déploiement centralisé et vérifier que votre add-in fonctionne comme prévu. Si vous n’avez pas encore d’abonnement Microsoft 365, vous pouvez obtenir un abonnement Microsoft 365 renouvelable gratuit de 90 jours en rejoignant le programme pour les développeurs [Microsoft 365.](https://developer.microsoft.com/office/dev-program)
+Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Microsoft 365 pour tester le déploiement centralisé et vérifier que votre add-in fonctionne comme prévu. Si vous n’avez pas encore d’abonnement Microsoft 365, vous pouvez obtenir un abonnement gratuit de 90 jours renouvelable Microsoft 365 en rejoignant le programme Microsoft 365 [développeur.](https://developer.microsoft.com/office/dev-program)
 
 ## <a name="see-also"></a>Voir aussi
 
 Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-Rejoignez le programme pour les développeurs [Microsoft 365.](/office/developer-program/office-365-developer-program)
+[Rejoignez le Microsoft 365 développeur.](/office/developer-program/office-365-developer-program)
