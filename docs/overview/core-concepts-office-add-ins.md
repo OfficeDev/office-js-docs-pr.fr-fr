@@ -1,22 +1,22 @@
 ---
 layout: LandingPage
 ms.topic: landing-page
-title: Concepts de base pour les compléments Office
-description: En savoir plus sur la plateforme de compléments Office.
-ms.date: 07/30/2020
+title: Vue d’ensemble du cycle de vie du développement
+description: Découvrez les événements de planification, de développement, de test et de publication du cycle de vie.
+ms.date: 05/25/2021
 localization_priority: Priority
-ms.openlocfilehash: f17171886133a7241838d089051b23394c38f8ee
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 4bd1e7e005c5905528196a547ba96ff786f8dbac
+ms.sourcegitcommit: a42ae8b804f944061c87bbd9d9f67990e4cf5e36
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292492"
+ms.lasthandoff: 05/28/2021
+ms.locfileid: "52697189"
 ---
-# <a name="core-concepts"></a>Concepts de base
+# <a name="development-lifecycle-overview"></a>Vue d’ensemble du cycle de vie du développement
 
 Tous les compléments Office sont basés sur la plateforme de compléments Office. Ils partagent un cadre commun par lequel certaines fonctionnalités peuvent être implémentées. Par conséquent, même si vous créez un complément pour Excel, Outlook ou une autre application Office, vous pouvez implémenter des fonctionnalités telles que les boîtes de dialogue, les commandes de complément, les volets de tâches et l’authentification unique (SSO).
 
-Pour les compléments que vous créez, vous devrez comprendre les concepts importants tels que la disponibilité des applications et des plateformes Office, les modèles de programmation de l’API JavaScript Office, la spécification des paramètres et fonctionnalités d’un complément dans le fichier manifeste, comment tester, déboguer et publier un complément et bien plus encore. Ces informations sont disponibles dans la section **Concepts de base** de la documentation. Consultez cette documentation avant d’explorer la documentation propre à l’application qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.yml)).
+Pour les compléments que vous créez, vous devrez comprendre les concepts importants tels que la disponibilité des applications et des plateformes Office, les modèles de programmation de l’API JavaScript Office, la spécification des paramètres et fonctionnalités d’un complément dans le fichier manifeste, comment tester, déboguer et publier un complément et bien plus encore. Consultez la documentation répertoriée dans le tableau suivant. Cela vous donne une bonne base pour la documentation spécifique à l’application qui correspond au complément que vous créez, par exemple [Excel](../excel/index.yml).
 
 |               |               |
 | ------------- | ------------- |
