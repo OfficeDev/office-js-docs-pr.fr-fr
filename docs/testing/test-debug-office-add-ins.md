@@ -1,34 +1,46 @@
 ---
 title: Test et débogage de compléments Office
 description: Découvrez comment tester et déboguer votre Complément Office.
-ms.date: 06/17/2020
+ms.date: 05/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 526204fe94d4c97ce7e1e0bc9ac2a212f69611d3
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: f794225d5ece20a430b967c8aa81ea165b573e52
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159247"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727926"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
-Cette section contient des recommandations sur les tests, le débogage et la résolution des problèmes avec les compléments Office.
+Cet article contient des recommandations sur les tests, le débogage et la résolution des problèmes avec les compléments Office.
 
-## <a name="sideload-an-office-add-in-for-testing"></a>Chargement de version test d’un complément Office
+## <a name="test-cross-platform-and-for-multiple-versions-of-office"></a>Tester sur plusieurs plateformes et pour plusieurs versions d’Office
 
-Vous pouvez utiliser le chargement de version test pour installer un complément Office sans avoir à le placer au préalable dans un catalogue de compléments. La procédure de chargement de version test d’un complément varie en fonction de la plateforme et, dans certains cas, du produit. Les articles suivants décrivent comment charger une version test de compléments Office sur une plateforme spécifique ou dans un produit spécifique :
+Les compléments Office s’exécutent sur les principales plateformes. Vous devez donc tester un complément sur toutes les plateformes sur lesquelles vos utilisateurs peuvent exécuter Office. Cela inclut généralement Office sur le web, Office sur Windows (abonnement et achat unique), Office sur Mac, Office sur iOS et (pour les compléments Outlook) Office sur Android. Toutefois, dans certaines situations, vous pouvez être sûr qu’aucun de vos utilisateurs ne travaillera sur certaines plateformes. Par exemple, si vous créez un complément pour une entreprise qui exige que ses utilisateurs utilisent des ordinateurs Windows et un abonnement Office, vous n’avez pas besoin de tester Office sur Mac ou Windows achat unique. 
 
-- [Chargement de version test des compléments Office sur Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+> [!NOTE]
+> Sur les ordinateurs Windows, la version de Windows et d’Office détermine le contrôle de navigateur utilisé par les compléments. Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
-- [Chargement de version test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
+> [!IMPORTANT]
+> Les compléments commercialisés via AppSource passent par un processus de validation qui inclut des tests sur toutes les plateformes. En outre, les compléments sont testés pour Office sur le web avec tous les principaux navigateurs modernes, y compris Microsoft Edge (WebView2 basé sur Chromium), Chrome et Safari. Par conséquent, vous devez effectuer des tests sur ces plateformes et navigateurs avant de les soumettre à AppSource. Pour plus d’informations sur la validation, consultez [Politiques de certification du marketplace commercial](/legal/marketplace/certification-policies), en particulier [section 1120.3](/legal/marketplace/certification-policies#11203-functionality)et la[Page de disponibilité et d’application de complément Office](../overview/office-add-in-availability.md). 
+>
+> AppSource n’utilise pas Internet Explorer ou la version héritée de Microsoft Edge (WebView1) pour tester les compléments dans Office sur le web. Toutefois, si un nombre important d’utilisateurs utilisent ces deux navigateurs pour ouvrir Office sur le web, vous devez les tester avec eux. Pour plus d’informations, consultez [Support Internet Explorer 11](../develop/support-ie-11.md) et [Résolution des problèmes Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md#troubleshooting-microsoft-edge-issues). Office prend toujours en charge ces navigateurs pour les compléments. Par conséquent, si vous pensez avoir rencontré un bogue dans la façon dont les compléments s’exécutent dans ces derniers, créez un problème pour le dépôt [office-js](https://github.com/OfficeDev/office-js/issues/new/choose) .
 
-- [Chargement de version test de compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+## <a name="sideload-an-office-add-in-for-testing"></a>Chargement de version test d’un complément Office
+
+Vous pouvez utiliser le chargement de version test pour installer un complément Office sans avoir à le placer au préalable dans un catalogue de compléments. La procédure de chargement de version test d’un complément varie en fonction de la plateforme et, dans certains cas, du produit. Les articles suivants décrivent comment charger une version test de compléments Office sur une plateforme spécifique ou dans un produit spécifique :
+
+- [Chargement de version test des compléments Office sur Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+
+- [Chargement de version test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
+
+- [Chargement de version test de compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
 - [Chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 ## <a name="debug-an-office-add-in"></a>Débogage d’un complément Office
 
-La procédure pour le débogage d’un complément Office varie également selon la plateforme. Chacun des articles suivants décrit comment déboguer des compléments Office sur une plateforme spécifique :
+La procédure pour le débogage d’un complément Office varie également selon la plateforme. Chacun des articles suivants décrit comment déboguer des compléments Office sur une plateforme spécifique :
 
 - [Attacher un débogueur à partir du volet Office (sur Windows)](attach-debugger-from-task-pane.md)
 
@@ -36,7 +48,7 @@ La procédure pour le débogage d’un complément Office varie également selon
 
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 
-- [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)
 
 - [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)
 

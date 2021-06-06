@@ -1,25 +1,27 @@
 ---
 title: Ajouter et supprimer des diapositives dans PowerPoint
 description: Découvrez comment ajouter et supprimer des diapositives et spécifier le maître et la mise en page des nouvelles diapositives.
-ms.date: 03/07/2021
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 5c1b9750acb905fd8e92484bb960c70ba39a7ca9
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 9a8613997fc52ad6a30576b38c517a9c992f0e1b
+ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613942"
+ms.lasthandoff: 06/05/2021
+ms.locfileid: "52779333"
 ---
-# <a name="add-and-delete-slides-in-powerpoint-preview"></a>Ajouter et supprimer des diapositives dans PowerPoint (aperçu)
+# <a name="add-and-delete-slides-in-powerpoint"></a>Ajouter et supprimer des diapositives dans PowerPoint
 
-Un add-in PowerPoint peut ajouter des diapositives à la présentation et éventuellement spécifier le maître des diapositives et la mise en page du maître utilisé pour la nouvelle diapositive. Le add-in peut également supprimer des diapositives.
+Un PowerPoint peut ajouter des diapositives à la présentation et éventuellement spécifier le maître des diapositives et la mise en page du maître utilisé pour la nouvelle diapositive. Le add-in peut également supprimer des diapositives.
 
 > [!IMPORTANT]
-> Les API d’ajout de diapositives sont en prévisualisation. Testez-les dans un environnement de développement ou de test, mais ne les ajoutez pas à un module de production. L’API *de suppression des* diapositives a été publiée.
+> Les API d’ajout de diapositives sont en [prévisualisation](../reference/requirement-sets/powerpoint-preview-apis.md) et ne sont pas disponibles pour les modules de production. L’API *de suppression des* diapositives a été publiée.
 
 Les API d’ajout de diapositives sont principalement utilisées dans les scénarios où les ID des formes de base et des mises en page des diapositives de la présentation sont connus au moment du codage ou se trouvent dans une source de données lors de l’runtime. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation le critère de sélection (par exemple, les noms ou les images des formes de base et des mises en page des diapositives) avec les ID des formes de base et des mises en page des diapositives. Les API peuvent également être utilisées dans les scénarios où l’utilisateur peut insérer des diapositives qui utilisent le maître des diapositives par défaut et la mise en page par défaut du maître, et dans les scénarios où l’utilisateur peut sélectionner une diapositive existante et en créer une nouvelle avec le même maître et la même mise en page de diapositives (mais pas le même contenu). Pour [plus d’informations à](#selecting-which-slide-master-and-layout-to-use) ce sujet, voir Sélection du maître des diapositives et de la mise en page à utiliser.
 
-## <a name="add-a-slide-with-slidecollectionadd"></a>Ajouter une diapositive avec SlideCollection.add
+## <a name="add-a-slide-with-slidecollectionadd-preview"></a>Ajouter une diapositive avec SlideCollection.add (aperçu)
+
+[!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
 Ajoutez des diapositives avec [la méthode SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) Voici un exemple simple dans lequel une diapositive qui utilise le maître des diapositives par défaut de la présentation et la première mise en page de ce maître est ajoutée. La méthode ajoute toujours de nouvelles diapositives à la fin de la présentation. Voici un exemple :
 
@@ -57,7 +59,7 @@ async function addSlide() {
 }
 ```
 
-Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’un curseur de diapositive ou d’une mise en page. Pour cette raison, vous ne pouvez utiliser le paramètre que lorsque vous connaissez les ID au moment du codage ou que votre application peut les découvrir lors de `AddSlideOptions` l’utilisation. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par son nom ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
+Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’un curseur de diapositive ou d’une mise en page. Pour cette raison, vous ne pouvez utiliser le paramètre que lorsque vous connaissez les ID au moment du codage ou que votre application peut les découvrir au moment de `AddSlideOptions` l’utilisation. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par son nom ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
 
 Par conséquent, le paramètre est principalement utilisé dans les scénarios dans lesquels le module est conçu pour fonctionner avec un ensemble spécifique de formes de base et de mises en page dont les ID sont `AddSlideOptions` connus. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (tel que le maître des diapositives et les noms ou images de mise en page) avec les ID ou les ID de création correspondants.
 
@@ -67,7 +69,7 @@ Si votre add-in peut être utilisé dans des scénarios où la nouvelle diaposit
 
 1. Créez une méthode pour obtenir l’index de la diapositive sélectionnée. Voici un exemple. Tenez compte des informations suivantes :
 
-    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes.
+    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes.
     - L’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` renvoie un tableau car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’en a sélectionné qu’une seule, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
     - La valeur de la diapositive est la valeur 1 que l’utilisateur voit en regard de la diapositive dans le volet de `index` miniatures.
@@ -91,7 +93,7 @@ Si votre add-in peut être utilisé dans des scénarios où la nouvelle diaposit
     }
     ```
 
-2. Appelez votre nouvelle fonction à [l’intérieur de PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) de la fonction principale qui ajoute la diapositive. Voici un exemple :
+2. Appelez votre nouvelle fonction à [l’PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) de la fonction principale qui ajoute la diapositive. Voici un exemple :
 
     ```javascript
     async function addSlideWithMatchingLayout() {

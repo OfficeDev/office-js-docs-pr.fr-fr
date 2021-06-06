@@ -4,14 +4,14 @@ description: Dans ce didacticiel, vous allez développer un complément Excel qu
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4eee9910c394238d4ce90cc629366b030f791144
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
+ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330016"
+ms.lasthandoff: 06/02/2021
+ms.locfileid: "52727940"
 ---
-# <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
+# <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
 Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui:
 
@@ -35,10 +35,10 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
-- **Sélectionnez un type de script :** `JavaScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-- **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `JavaScript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office](../images/yo-office-excel.png)
 
@@ -58,7 +58,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 3. Recherchez l’élément `<main>` et supprimez toutes les lignes qui apparaissent après la balise `<main>` d’ouverture et avant la balise `</main>` de fermeture.
 
-4. Ajoutez la balise suivante juste après la balise `<main>` d’ouverture :
+4. Ajoutez la balise suivante juste après la balise `<main>` d’ouverture :
 
     ```html
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
@@ -66,13 +66,13 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 5. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
-6. Supprimez toutes les références au bouton `run` et à la fonction `run()` en procédant comme suit :
+6. Supprimez toutes les références au bouton `run` et à la fonction `run()` en procédant comme suit :
 
     - Recherchez et supprimez la ligne `document.getElementById("run").onclick = run;`.
 
     - Recherchez et supprimez la fonction `run()` entière.
 
-7. Au sein de l’appel de méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
+7. Au sein de l’appel de méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
 
     - La première partie de ce code détermine si la version d' Excel de l'utilisateur prend en charge une version d'Excel.js qui inclut toutes les API que cette série de tutoriels utilisera. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l'interface utilisateur qui appellerait les API non prises en charge. Cela permettra à l'utilisateur de continuer à utiliser les parties du complément qui sont prises en charge par sa version d' Excel.
 
@@ -88,7 +88,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     document.getElementById("create-table").onclick = createTable;
     ```
 
-8. Ajoutez la fonction suivante à la fin du fichier. Remarque :
+8. Ajoutez la fonction suivante à la fin du fichier. Remarque :
 
     - Votre logique métier Excel.js est ajoutée à la fonction qui est transmise à `Excel.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
 
@@ -117,7 +117,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     }
     ```
 
-9. À l’intérieur de la fonction `createTable()`, remplacez `TODO1` par le code suivant. Remarque :
+9. À l’intérieur de la fonction `createTable()`, remplacez `TODO1` par le code suivant. Remarque :
 
     - Le code crée un tableau à l’aide de la méthode `add` de collection de tableau d’une feuille de calcul, qui existe toujours même si elle est vide. Il s’agit de la méthode standard de création d’objets Excel.js. Il n’existe aucune API pour le constructeur de classe API. De plus, vous n’utilisez jamais d’opérateur `new` pour créer un objet Excel. Au lieu de cela, vous l’ajoutez à un objet de la collection parent.
 
@@ -131,7 +131,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     expensesTable.name = "ExpensesTable";
     ```
 
-10. À l’intérieur de la fonction `createTable()`, remplacez `TODO2` par le code suivant. Remarque :
+10. À l’intérieur de la fonction `createTable()`, remplacez `TODO2` par le code suivant. Remarque :
 
     - Les valeurs de cellule d’une plage sont définies avec un tableau de tableaux.
 
@@ -152,12 +152,12 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     ]);
     ```
 
-11. À l’intérieur de la fonction `createTable()`, remplacez `TODO3` par le code suivant. Remarque :
+11. À l’intérieur de la fonction `createTable()`, remplacez `TODO3` par le code suivant. Remarque :
 
     - Le code recherche une référence à la colonne **Amount** en transmettant son index de base zéro à la méthode `getItemAt` de collection de colonnes du tableau.
 
         > [!NOTE]
-        > Les objets de collection Excel.js, tels que `TableCollection`, `WorksheetCollection` et `TableColumnCollection` ont une propriété `items` qui correspond à un tableau de types d’objet enfant, comme `Table` ou `Worksheet` ou `TableColumn` ; mais un objet `*Collection` n’est pas lui-même un tableau.
+        > Les objets de collection Excel.js, tels que `TableCollection`, `WorksheetCollection` et `TableColumnCollection` ont une propriété `items` qui correspond à un tableau de types d’objet enfant, comme `Table` ou `Worksheet` ou `TableColumn` ; mais un objet `*Collection` n’est pas lui-même un tableau.
 
     - Le code définit ensuite la plage de la colonne **Amount** sous la forme Euros à la deuxième décimale.
 
@@ -199,7 +199,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
         Pour utiliser votre complément, ouvrez un nouveau document dans Excel sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
     ![Capture d’écran du menu Accueil d’Excel avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-3b.png)
 
@@ -215,7 +215,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `create-table`, puis ajoutez la balise suivante après cette ligne :
+2. Recherchez l’élément `<button>` du bouton `create-table`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
@@ -223,13 +223,13 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 3. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-table`, puis ajoutez le code suivant après cette ligne :
+4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-table`, puis ajoutez le code suivant après cette ligne :
 
     ```js
     document.getElementById(&quot;filter-table").onclick = filterTable;
     ```
 
-5. Ajoutez la fonction suivante à la fin du fichier :
+5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
     function filterTable() {
@@ -249,7 +249,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     }
     ```
 
-6. À l’intérieur de la fonction `filterTable()`, remplacez `TODO1` par le code suivant. Remarque :
+6. À l’intérieur de la fonction `filterTable()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - Le code obtient tout d’abord une référence à la colonne à filtrer en transférant le nom de la colonne à la méthode `getItem`, au lieu de transmettre son index à la méthode `getItemAt` comme le fait la méthode `createTable`. Puisque les utilisateurs peuvent déplacer des colonnes de tableau, la colonne d’un index donné peut être modifiée après la création du tableau. Par conséquent, il est préférable d’utiliser le nom de la colonne pour obtenir une référence de la colonne. Dans le didacticiel précédent, nous avons utilisé la méthode `getItemAt` en toute sécurité, car nous l’avons utilisée dans la même méthode que celle qui crée le tableau, il n’y a donc aucune chance qu’un utilisateur ait déplacé la colonne.
 
@@ -266,7 +266,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `filter-table`, puis ajoutez la balise suivante après cette ligne :
+2. Recherchez l’élément `<button>` du bouton `filter-table`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
@@ -274,13 +274,13 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 3. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `filter-table`, puis ajoutez le code suivant après cette ligne :
+4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `filter-table`, puis ajoutez le code suivant après cette ligne :
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
     ```
 
-5. Ajoutez la fonction suivante à la fin du fichier :
+5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
     function sortTable() {
@@ -299,7 +299,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     }
     ```
 
-6. À l’intérieur de la fonction `sortTable()`, remplacez `TODO1` par le code suivant. Remarque :
+6. À l’intérieur de la fonction `sortTable()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - Le code crée un tableau d’objets `SortField` qui ne comporte qu’un seul membre puisque le complément ne trie que la colonne Merchant.
 
@@ -342,7 +342,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `sort-table`, puis ajoutez la balise suivante après cette ligne : 
+2. Recherchez l’élément `<button>` du bouton `sort-table`, puis ajoutez la balise suivante après cette ligne : 
 
     ```html
     <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
@@ -350,13 +350,13 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
 3. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `sort-table`, puis ajoutez le code suivant après cette ligne :
+4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `sort-table`, puis ajoutez le code suivant après cette ligne :
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
     ```
 
-5. Ajoutez la fonction suivante à la fin du fichier :
+5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
     function createChart() {
@@ -387,7 +387,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     var dataRange = expensesTable.getDataBodyRange();
     ```
 
-7. À l’intérieur de la fonction `createChart()`, remplacez `TODO2` par le code suivant. Notez les paramètres suivants :
+7. À l’intérieur de la fonction `createChart()`, remplacez `TODO2` par le code suivant. Notez les paramètres suivants :
 
    - Le premier paramètre transmis à la méthode `add` spécifie le type de graphique. Il en existe plusieurs dizaines de types.
 
@@ -399,11 +399,11 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-8. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
+8. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
 
    - Les paramètres de la méthode `setPosition` spécifient les cellules situées en haut à gauche et en bas à droite de la zone de feuille de calcul devant contenir le graphique. Excel peut ajuster des éléments, tels que la largeur de ligne pour que le graphique s’affiche correctement dans l’espace attribué.
 
-   - Une « série » est un ensemble de points de données dans une colonne du tableau. Étant donné qu’il n’existe qu’une seule colonne autre que de type chaîne dans le tableau, Excel déduit que la colonne est la seule colonne de points de données pour le graphique. Il interprète les autres colonnes comme des étiquettes de graphique. Par conséquent, il y aura simplement une série dans le graphique et un index 0. Il s’agit de celle à étiqueter avec « Valeur en &euro; ».
+   - Une « série » est un ensemble de points de données dans une colonne du tableau. Étant donné qu’il n’existe qu’une seule colonne autre que de type chaîne dans le tableau, Excel déduit que la colonne est la seule colonne de points de données pour le graphique. Il interprète les autres colonnes comme des étiquettes de graphique. Par conséquent, il y aura simplement une série dans le graphique et un index 0. Il s’agit de celle à étiqueter avec « Valeur en &euro; ».
 
     ```js
     chart.setPosition("A15", "F30");
@@ -437,7 +437,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `create-chart`, puis ajoutez la balise suivante après cette ligne :
+2. Recherchez l’élément `<button>` du bouton `create-chart`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
@@ -445,13 +445,13 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 3. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-chart`, puis ajoutez le code suivant après cette ligne :
+4. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-chart`, puis ajoutez le code suivant après cette ligne :
 
     ```js
     document.getElementById(&quot;freeze-header").onclick = freezeHeader;
     ```
 
-5. Ajoutez la fonction suivante à la fin du fichier :
+5. Ajoutez la fonction suivante à la fin du fichier :
 
     ```js
     function freezeHeader() {
@@ -470,7 +470,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
     }
     ```
 
-6. À l’intérieur de la fonction `freezeHeader()`, remplacez `TODO1` par le code suivant. Remarque :
+6. À l’intérieur de la fonction `freezeHeader()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - La collection `Worksheet.freezePanes` est un ensemble de volets de la feuille de calcul qui sont épinglés, c’est-à-dire figés, lorsque vous faites défiler la feuille de calcul.
 
@@ -527,19 +527,19 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     </Control>
     ```
 
-3. Dans le code XML que vous venez d’ajouter au fichier manifeste, remplacez `TODO1` par une chaîne qui attribue un ID unique au bouton au sein de ce fichier manifeste. Étant donné que notre bouton va activer ou désactiver la protection de la feuille de calcul, utilisez « ToggleProtection ». Lorsque vous avez terminé, l’étiquette d’ouverture de l’élément `Control` doit ressembler à ceci :
+3. Dans le code XML que vous venez d’ajouter au fichier manifeste, remplacez `TODO1` par une chaîne qui attribue un ID unique au bouton au sein de ce fichier manifeste. Étant donné que notre bouton va activer ou désactiver la protection de la feuille de calcul, utilisez « ToggleProtection ». Lorsque vous avez terminé, l’étiquette d’ouverture de l’élément `Control` doit ressembler à ceci :
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-4. Les trois `TODO`s suivantes définissent les ID de ressource ou `resid`s. Une ressource est une chaîne (d’une longueur maximale de 32 caractères). Vous allez créer ces trois chaînes lors d’une étape ultérieure. Pour l’instant, vous devez attribuer des ID aux ressources. L’étiquette du bouton doit indiquer « Toggle Protection », mais l’*ID* de cette chaîne doit être « ProtectionButtonLabel », donc l’élément `Label` doit ressembler à ceci :
+4. Les trois `TODO`s suivantes définissent les ID de ressource ou `resid`s. Une ressource est une chaîne (d’une longueur maximale de 32 caractères). Vous allez créer ces trois chaînes lors d’une étape ultérieure. Pour l’instant, vous devez attribuer des ID aux ressources. L’étiquette du bouton doit indiquer « Toggle Protection », mais l’*ID* de cette chaîne doit être « ProtectionButtonLabel », donc l’élément `Label` doit ressembler à ceci :
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
     ```
 
-5. L’élément `SuperTip` définit l’info-bulle du bouton. Le titre de l’info-bulle doit être identique à l’étiquette du bouton, nous utilisons donc le même ID de ressource : « ProtectionButtonLabel ». La description de l’info-bulle sera « Cliquez pour activer/désactiver la protection de la feuille de calcul ». Néanmoins, l’élément `resid` doit être « ProtectionButtonToolTip ». Lorsque vous avez terminé, l’élément `SuperTip` doit ressembler à ceci :
+5. L’élément `SuperTip` définit l’info-bulle du bouton. Le titre de l’info-bulle doit être identique à l’étiquette du bouton, nous utilisons donc le même ID de ressource : « ProtectionButtonLabel ». La description de l’info-bulle sera « Cliquez pour activer/désactiver la protection de la feuille de calcul ». Néanmoins, l’élément `resid` doit être « ProtectionButtonToolTip ». Lorsque vous avez terminé, l’élément `SuperTip` doit ressembler à ceci :
 
     ```xml
     <Supertip>
@@ -551,19 +551,19 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
    > [!NOTE]
    > Dans un complément de production, vous n’utiliseriez pas la même icône pour deux boutons différents, mais pour simplifier ce didacticiel, nous allons le faire. Par conséquent, le balisage `Icon` de notre nouvel élément `Control` est simplement une copie de l’élément `Icon` provenant de l’élément `Control` existant.
 
-6. Le type de l’élément `Action` se trouvant à l’intérieur de l’élément `Control` d’origine est défini sur `ShowTaskpane`, mais notre nouveau bouton ne va pas ouvrir un volet Office, il va exécuter une fonction personnalisée que vous allez créer à une étape ultérieure. Remplacez donc `TODO5` par `ExecuteFunction`, qui correspond au type d’action des boutons qui déclenchent des fonctions personnalisées. Létiquette d’ouverture de l’élément `Action` doit ressembler à ceci :
+6. Le type de l’élément `Action` se trouvant à l’intérieur de l’élément `Control` d’origine est défini sur `ShowTaskpane`, mais notre nouveau bouton ne va pas ouvrir un volet Office, il va exécuter une fonction personnalisée que vous allez créer à une étape ultérieure. Remplacez donc `TODO5` par `ExecuteFunction`, qui correspond au type d’action des boutons qui déclenchent des fonctions personnalisées. Létiquette d’ouverture de l’élément `Action` doit ressembler à ceci :
 
     ```xml
     <Action xsi:type="ExecuteFunction">
     ```
 
-7. L’élément `Action` d’origine possède des éléments enfants qui spécifient un ID de volet Office ainsi qu’une URL de la page qui doit être ouverte dans le volet Office. Toutefois, un élément `Action` de type `ExecuteFunction` comporte un élément enfant unique qui nomme la fonction que le contrôle exécute. Vous créerez cette fonction à une étape ultérieure, et la nommerez `toggleProtection`. Par conséquent, remplacez `TODO6` par le balisage suivant :
+7. L’élément `Action` d’origine possède des éléments enfants qui spécifient un ID de volet Office ainsi qu’une URL de la page qui doit être ouverte dans le volet Office. Toutefois, un élément `Action` de type `ExecuteFunction` comporte un élément enfant unique qui nomme la fonction que le contrôle exécute. Vous créerez cette fonction à une étape ultérieure, et la nommerez `toggleProtection`. Par conséquent, remplacez `TODO6` par le balisage suivant :
 
     ```xml
     <FunctionName>toggleProtection</FunctionName>
     ```
 
-    Le balisage `Control` complet doit à présent ressembler à ce qui suit :
+    Le balisage `Control` complet doit à présent ressembler à ce qui suit :
 
     ```xml
     <Control xsi:type="Button" id="ToggleProtection">
@@ -603,7 +603,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 
 1. Ouvrez le fichier **.\commands\commands.js**.
 
-2. Ajoutez la fonction suivante immédiatement après la fonction `action`. Notez que nous spécifions un paramètre `args` pour la fonction et que la toute dernière ligne de la fonction appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application cliente Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
+2. Ajoutez la fonction suivante immédiatement après la fonction `action`. Notez que nous spécifions un paramètre `args` pour la fonction et que la toute dernière ligne de la fonction appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application cliente Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
 
     ```js
     function toggleProtection(args) {
@@ -644,9 +644,9 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     }
     ```
 
-### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
+### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
 
-Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à présent, vous avez mis en file d’attente les commandes pour *écrire* dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()`, qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Toutefois, le code que vous avez ajouté dans la dernière étape appelle la `sheet.protection.protected property`. C’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `sheet` est uniquement un objet de proxy qui existe dans le script de votre volet Office. L’objet proxy ne connaît pas l’état réel de la protection du document. par conséquent, sa propriété `protection.protected` ne peut pas avoir de valeur réelle. Pour éviter une erreur d’exception, vous devez d’abord récupérer l’état de protection du document et l’utiliser pour déterminer la valeur de `sheet.protection.protected`. Ce processus de récupération comporte trois étapes :
+Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à présent, vous avez mis en file d’attente les commandes pour *écrire* dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()`, qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Toutefois, le code que vous avez ajouté dans la dernière étape appelle la `sheet.protection.protected property`. C’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `sheet` est uniquement un objet de proxy qui existe dans le script de votre volet Office. L’objet proxy ne connaît pas l’état réel de la protection du document. par conséquent, sa propriété `protection.protected` ne peut pas avoir de valeur réelle. Pour éviter une erreur d’exception, vous devez d’abord récupérer l’état de protection du document et l’utiliser pour déterminer la valeur de `sheet.protection.protected`. Ce processus de récupération comporte trois étapes :
 
    1. Mettez en file d’attente une commande de chargement (c’est-à-dire, fetch) des propriétés que votre code doit lire.
 
@@ -654,11 +654,11 @@ Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à prése
 
    3. Étant donné que la méthode `sync` est asynchrone, assurez-vous qu’elle est terminée avant que votre code appelle les propriétés qui ont été récupérées.
 
-Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*read*) des informations provenant du document Office.
+Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*read*) des informations provenant du document Office.
 
-1. À l’intérieur de la fonction `toggleProtection`, remplacez `TODO2` par le code suivant. Remarque :
+1. À l’intérieur de la fonction `toggleProtection`, remplacez `TODO2` par le code suivant. Remarque :
 
-   - Chaque objet Excel possède une méthode `load`. Vous spécifiez les propriétés de l’objet que vous voulez lire dans le paramètre en tant que chaîne de noms séparés par des virgules. Dans ce cas, la propriété que vous devez lire est une sous-propriété de la propriété `protection`. Pour référence la sous-propriété, procédez presque exactement de la même façon que vous le feriez à n’importe quel autre emplacement de votre code, sauf que vous devez utiliser une barre oblique (« / ») au lieu d’un point « . ».
+   - Chaque objet Excel possède une méthode `load`. Vous spécifiez les propriétés de l’objet que vous voulez lire dans le paramètre en tant que chaîne de noms séparés par des virgules. Dans ce cas, la propriété que vous devez lire est une sous-propriété de la propriété `protection`. Pour référence la sous-propriété, procédez presque exactement de la même façon que vous le feriez à n’importe quel autre emplacement de votre code, sauf que vous devez utiliser une barre oblique (« / ») au lieu d’un point « . ».
 
    - Pour être sûr que la logique de bouton bascule, qui lit `sheet.protection.protected`, ne s’exécute pas tant que la synchronisation (`sync`) n’est pas terminée et que l’élément `sheet.protection.protected` n’a pas été affecté à la valeur correcte récupérée à partir du document, elle sera déplacée (à l’étape suivante) dans une fonction `then` qui ne s’exécutera pas tant que la synchronisation (`sync`) ne sera pas terminée.
 
@@ -678,17 +678,17 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 3. Coupez la structurer `if ... else` dans la fonction `toggleProtection` et collez-la à la place de `TODO3`.
 
-4. Remplacez `TODO4` par le code suivant. Veuillez noter les informations suivantes :
+4. Remplacez `TODO4` par le code suivant. Veuillez noter les informations suivantes :
 
    - Le fait de transmettre la méthode `sync` à une fonction `then` permet de s’assurer qu’elle n’est pas exécutée tant que `sheet.protection.unprotect()` ou `sheet.protection.protect()` n’a pas été mis en file d’attente.
 
-   - La méthode `then` appelle n’importe quelle fonction qui lui est transmise, et vous ne souhaitez pas appeler `sync` deux fois, donc omettez les parenthèses « () » à la fin de `context.sync`.
+   - La méthode `then` appelle n’importe quelle fonction qui lui est transmise, et vous ne souhaitez pas appeler `sync` deux fois, donc omettez les parenthèses « () » à la fin de `context.sync`.
 
     ```js
     .then(context.sync);
     ```
 
-   Lorsque vous avez terminé, la fonction entière doit ressembler à ce qui suit :
+   Lorsque vous avez terminé, la fonction entière doit ressembler à ce qui suit :
 
     ```js
     function toggleProtection(args) {
@@ -722,16 +722,16 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. Fermez toutes les applications Office, y compris Excel.
+1. Fermez toutes les applications Office, y compris Excel.
 
 2. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier cache. Cela est nécessaire pour effacer complètement l’ancienne version du complément de l’application cliente.
 
-    - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+    - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
-    - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+    - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
       > [!NOTE]
-      > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
+      > Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier :
       >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` où `{host}` est l’application Office (par exemple, `Excel`)
       >  - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` où `{host}` est l’application Office (par exemple, `Excel`)
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
@@ -765,7 +765,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 ## <a name="open-a-dialog"></a>Ouvrir une boîte de dialogue
 
-Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogue dans votre complément, transmettre un message du processus de boîte de dialogue au processus de volet Office et fermer la boîte de dialogue. Les boîtes de dialogue des compléments Office sont *non modales* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office et avec la page hôte dans le volet des tâches.
+Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogue dans votre complément, transmettre un message du processus de boîte de dialogue au processus de volet Office et fermer la boîte de dialogue. Les boîtes de dialogue des compléments Office sont *non modales* : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office et avec la page hôte dans le volet des tâches.
 
 ### <a name="create-the-dialog-page"></a>Création de la page de boîte de dialogue
 
@@ -773,7 +773,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 2. Dans le dossier **./src/dialogs**, créez un fichier nommé **popup.html**.
 
-3. Ajoutez le balisage suivant au fichier **popup.html**. Remarque :
+3. Ajoutez le balisage suivant au fichier **popup.html**. Remarque :
 
    - La page contient un champ `<input>` dans lequel l’utilisateur doit entrer son nom et un bouton qui enverra ce nom au volet Office dans lequel il s’affiche.
 
@@ -806,9 +806,9 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 4. Dans le dossier **./src/dialogs**, créez un fichier nommé **popup.js**.
 
-5. Ajoutez le code suivant au fichier **popup.js**. Tenez compte des informations suivantes à propos de ce code :
+5. Ajoutez le code suivant au fichier **popup.js**. Tenez compte des informations suivantes à propos de ce code :
 
-   - *Toutes les pages appellent les API dans la bibliothèque Office.js doivent tout d’abord vérifier que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la méthode `Office.onReady()`. Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. Le code qui appelle `Office.onReady()` doit être exécuté avant tout appel à Office.js ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
+   - *Toutes les pages appellent les API dans la bibliothèque Office.js doivent tout d’abord vérifier que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la méthode `Office.onReady()`. Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. Le code qui appelle `Office.onReady()` doit être exécuté avant tout appel à Office.js ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
 
     ```js
     (function () {
@@ -826,13 +826,13 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
     }());
     ```
 
-6. Remplacez `TODO1` par le code suivant. Vous allez créer la fonction `sendStringToParentPage` à l’étape suivante.
+6. Remplacez `TODO1` par le code suivant. Vous allez créer la fonction `sendStringToParentPage` lors de l’étape suivante.
 
     ```js
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-7. Remplacez `TODO2` par le code suivant. La méthode `messageParent` transmet son paramètre à la page parent, qui est, dans ce cas, la page dans le volet Office. Le paramètre peut être une valeur booléenne ou une chaîne qui inclut tous les éléments qui peuvent être sérialisés en tant que chaîne, au format XML ou JSON.
+7. Remplacez `TODO2` par le code suivant. La méthode `messageParent` transmet son paramètre à la page parent, qui est, dans ce cas, la page dans le volet Office. Le paramètre peut être une chaîne qui inclut tous les éléments qui peuvent être sérialisés en tant que chaîne, au format XML ou JSON, ou tout type pouvant être converti en chaîne.
 
     ```js
     function sendStringToParentPage() {
@@ -842,7 +842,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
     ```
 
 > [!NOTE]
-> Le fichier **popup.html** et le fichier **popup.js** qu’il charge s’exécutent dans un processus Microsoft Edge ou Internet Explorer 11 entièrement séparé à partir du volet Office du complément. Si le **popup.js** était transpilé dans le même fichier **bundle.js** en tant que fichier **app.js**, le complément devrait charger deux copies du fichier **bundle.js**, ce qui irait à l’encontre de l’objectif de groupement. Par conséquent, ce complément ne transpile pas le fichier **popup.js** du tout.
+> Le fichier **popup.html** et le fichier **popup.js** qu’il charge s’exécutent dans un processus Microsoft Edge ou Internet Explorer 11 entièrement séparé à partir du volet Office du complément. Si le **popup.js** était transpilé dans le même fichier **bundle.js** en tant que fichier **app.js**, le complément devrait charger deux copies du fichier **bundle.js**, ce qui irait à l’encontre de l’objectif de groupement. Par conséquent, ce complément ne transpile pas le fichier **popup.js** du tout.
 
 ### <a name="update-webpack-config-settings"></a>Mettre à jour les paramètres de configuration webapck
 
@@ -854,7 +854,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     popup: "./src/dialogs/popup.js"
     ```
 
-    Lorsque c’est chose faite, le nouvel objet `entry` se présente comme suit :
+    Lorsque c’est chose faite, le nouvel objet `entry` se présente comme suit :
 
     ```js
     entry: {
@@ -875,7 +875,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     })
     ```
 
-    Lorsque c’est chose faite, la nouvelle matrice `plugins` se présente comme suit :
+    Lorsque c’est chose faite, la nouvelle matrice `plugins` se présente comme suit :
 
     ```js
     plugins: [
@@ -912,17 +912,17 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     npm run build
     ```
 
-### <a name="open-the-dialog-from-the-task-pane"></a>Ouverture de la boîte de dialogue à partir du volet Office
+### <a name="open-the-dialog-from-the-task-pane"></a>Ouverture de la boîte de dialogue à partir du volet Office
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
-2. Recherchez l’élément `<button>` du bouton `freeze-header`, puis ajoutez la balise suivante après cette ligne :
+2. Recherchez l’élément `<button>` du bouton `freeze-header`, puis ajoutez la balise suivante après cette ligne :
 
     ```html
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-3. La boîte de dialogue invitera l’utilisateur à saisir son nom et transmettra ce nom au volet Office. Le volet Office s’affichera dans une étiquette. Immédiatement après le `button` que vous venez d’ajouter, ajoutez le balisage suivant :
+3. La boîte de dialogue invitera l’utilisateur à saisir son nom et transmettra ce nom au volet Office. Le volet Office s’affichera dans une étiquette. Immédiatement après le `button` que vous venez d’ajouter, ajoutez le balisage suivant :
 
     ```html
     <label id="user-name"></label><br/><br/>
@@ -942,7 +942,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     var dialog = null;
     ```
 
-7. Ajoutez la fonction suivante à la fin du fichier (après la déclaration de `dialog`). Le plus important à remarquer à propos de ce code est ce qui ne s’y trouve *pas* : il n’y a aucun appel de `Excel.run`. Cela est dû au fait que l’API d’ouverture d’une boîte de dialogue est partagée par toutes les applications Office, elle fait donc partie de l’API commune JavaScript Office, pas de l’API propre à Excel.
+7. Ajoutez la fonction suivante à la fin du fichier (après la déclaration de `dialog`). Le plus important à remarquer à propos de ce code est ce qui ne s’y trouve *pas* : il n’y a aucun appel de `Excel.run`. Cela est dû au fait que l’API d’ouverture d’une boîte de dialogue est partagée par toutes les applications Office, elle fait donc partie de l’API commune JavaScript Office, pas de l’API propre à Excel.
 
     ```js
     function openDialog() {
@@ -950,7 +950,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     }
     ```
 
-8. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
+8. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
 
    - La méthode `displayDialogAsync` ouvre une boîte de dialogue au centre de l’écran.
 
@@ -969,7 +969,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Traitement du message à partir de la boîte de dialogue et fermeture de la boîte de dialogue
 
-1. Dans la fonction `openDialog` dans le fichier **./src/taskpane/taskpane.js**, remplacez `TODO2` par le code suivant. Remarque :
+1. Dans la fonction `openDialog` dans le fichier **./src/taskpane/taskpane.js**, remplacez `TODO2` par le code suivant. Remarque :
 
    - Le rappel est exécuté immédiatement après que la boîte de dialogue s’est ouverte correctement et avant que l’utilisateur a pris une quelconque action dans la boîte de dialogue.
 
@@ -1005,7 +1005,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 4. Lorsque la boîte de dialogue est ouverte, faites-la glisser et redimensionnez-la. Notez que vous pouvez interagir avec la feuille de calcul et appuyer sur d'autres boutons du volet des tâches, mais que vous ne pouvez pas lancer une deuxième boîte de dialogue à partir de la même page du volet des tâches.
 
-5. Dans la boîte de dialogue, entrez un nom et appuyez sur le bouton **OK**. Ce nom apparaît sur le volet Office et la boîte de dialogue se ferme.
+5. Dans la boîte de dialogue, entrez un nom et appuyez sur le bouton **OK**. Ce nom apparaît sur le volet Office et la boîte de dialogue se ferme.
 
 6. Si vous le souhaitez, vous pouvez commenter la ligne `dialog.close();` dans la fonction `processMessage`. Ensuite, répétez les étapes de cette section. La boîte de dialogue reste ouverte et vous pouvez modifier le nom. Vous pouvez la fermer manuellement en appuyant sur la croix (**X**) en haut à droite.
 
@@ -1013,13 +1013,13 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Ce didacticiel vous apprend à créer un complément Excel qui interagit avec des tableaux, des graphiques (chart), des feuilles de calcul et des boîtes de dialogue dans un classeur Excel. Pour en savoir plus sur le développement des complément Excel, passez à l’article suivant :
+Ce didacticiel vous apprend à créer un complément Excel qui interagit avec des tableaux, des graphiques (chart), des feuilles de calcul et des boîtes de dialogue dans un classeur Excel. Pour en savoir plus sur le développement des complément Excel, passez à l’article suivant :
 
 > [!div class="nextstepaction"]
 > [Présentation des compléments Excel](../excel/excel-add-ins-overview.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
