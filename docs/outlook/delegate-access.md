@@ -1,21 +1,21 @@
 ---
-title: Activer les scénarios d’accès délégué dans un add-in Outlook
+title: Activer les scénarios d’accès délégué dans un Outlook de données
 description: Décrit brièvement l’accès délégué et explique comment configurer la prise en charge des add-ins.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 598f931dbf3a4be8adf029838084ec0767bf6518
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 256c37087b10eaf9c8025e19a4990852f9550458
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234239"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783490"
 ---
-# <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un add-in Outlook
+# <a name="enable-delegate-access-scenarios-in-an-outlook-add-in"></a>Activer les scénarios d’accès délégué dans un Outlook de données
 
-Un propriétaire de boîte aux lettres peut utiliser la fonctionnalité d’accès délégué pour permettre à quelqu’un d’autre de [gérer son courrier et son calendrier.](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926) Cet article spécifie les autorisations déléguées que l’API JavaScript Office prend en charge et décrit comment activer les scénarios d’accès délégué dans votre application Outlook.
+Un propriétaire de boîte aux lettres peut utiliser la fonctionnalité d’accès délégué pour permettre à quelqu’un d’autre de [gérer son courrier et son calendrier.](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926) Cet article spécifie les autorisations déléguées que l’API JavaScript Office prend en charge et explique comment activer les scénarios d’accès délégué dans votre Outlook de gestion.
 
 > [!IMPORTANT]
-> L’accès délégué n’est pas disponible actuellement dans Outlook sur Android et iOS. En outre, cette fonctionnalité n’est pas disponible actuellement avec les boîtes aux lettres [partagées de](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) groupe dans Outlook sur le web. Cette fonctionnalité peut être rendue disponible à l’avenir.
+> L’accès délégué n’est actuellement pas disponible Outlook sur Android et iOS. En outre, cette fonctionnalité n’est pas disponible actuellement avec les boîtes aux lettres [partagées](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes) de groupe Outlook sur le web. Cette fonctionnalité peut être rendue disponible à l’avenir.
 >
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.8. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
@@ -25,7 +25,7 @@ Le tableau suivant décrit les autorisations déléguées que l’API JavaScript
 
 |Autorisation|Valeur|Description|
 |---|---:|---|
-|Lire|1 (000001)|Peut lire des éléments.|
+|Lecture|1 (000001)|Peut lire des éléments.|
 |Write|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut supprimer uniquement les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
@@ -41,7 +41,7 @@ Le tableau suivant décrit les autorisations déléguées que l’API JavaScript
 
 Les mises à jour d’un délégué vers la boîte aux lettres du propriétaire sont généralement synchronisées immédiatement entre les boîtes aux lettres.
 
-Toutefois, si des opérations REST ou services web Exchange (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons plutôt d’utiliser [l’objet CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter ce délai. Pour en savoir plus, consultez la [section des](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) propriétés personnalisées de l’article « Obtenir et définir des métadonnées dans un add-in Outlook ».
+Toutefois, si des opérations REST ou Exchange Web Services (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons plutôt d’utiliser [l’objet CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter ce délai. Pour en savoir plus, consultez la [section des](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) propriétés personnalisées de l’article « Obtenir et définir des métadonnées dans un Outlook de données ».
 
 > [!IMPORTANT]
 > Dans un scénario de délégué, vous ne pouvez pas utiliser EWS avec les jetons actuellement fournis par office.js API.
@@ -135,7 +135,7 @@ function performOperation() {
 ```
 
 > [!TIP]
-> En tant que délégué, vous pouvez utiliser REST pour obtenir le contenu d’un message Outlook joint à un élément Outlook ou à un [billet de groupe.](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)
+> En tant que délégué, vous pouvez utiliser REST pour obtenir le contenu d’un message Outlook joint à un élément Outlook ou un [billet de groupe.](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post)
 
 ## <a name="handle-calling-rest-on-shared-and-non-shared-items"></a>Gérer l’appel de REST sur les éléments partagés et non partagés
 
@@ -165,12 +165,12 @@ Votre add-in peut utiliser REST, mais pas EWS, et l’autorisation du module doi
 
 ### <a name="message-compose-mode"></a>Mode composition de message
 
-En mode composition de message, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getsharedpropertiesasync-options--callback-) n’est pas pris en charge dans Outlook sur le web ou Windows, sauf si les conditions suivantes sont remplies.
+En mode composition de message, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#getSharedPropertiesAsync_options__callback_) n’est pas pris en charge dans Outlook sur le web ou Windows à moins que les conditions suivantes ne soient remplies.
 
 1. Le propriétaire partage au moins un dossier de boîte aux lettres avec le délégué.
 1. Le délégué rédige un message dans le dossier partagé.
 
-    Exemples :
+    Exemples :
 
     - Le délégué répond ou envoie un message électronique dans le dossier partagé.
     - Le délégué enregistre un brouillon, puis le déplace de son propre dossier **Brouillons** vers le dossier partagé. Le délégué ouvre le brouillon à partir du dossier partagé, puis continue la composition.

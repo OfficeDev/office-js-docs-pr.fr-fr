@@ -1,14 +1,14 @@
 ---
 title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
-description: Liste des événements pour les objets JavaScript Excel. Cela inclut des informations sur l'utilisation des handlers d'événements et les modèles associés.
-ms.date: 04/23/2021
+description: Liste des événements pour Excel objets JavaScript. Cela inclut des informations sur l’utilisation des handlers d’événements et les modèles associés.
+ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7c4a00736ef7a39e6d34153b113f1f274a2d3708
-ms.sourcegitcommit: 78fb861afe7d7c3ee7fe3186150b3fed20994222
+ms.openlocfilehash: 50d9c4c2a15a955f0a96c70464fa0165625ea6f8
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/26/2021
-ms.locfileid: "52024310"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783504"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 
@@ -44,6 +44,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | Événement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
 | `onFiltered` | Se produit lorsqu’un filtre est appliqué à un objet. | [**Table**](/javascript/api/excel/excel.table#onfiltered), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered), [**Worksheet**](/javascript/api/excel/excel.worksheet#onfiltered), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
+| `onFormulaChanged` | Se produit lorsqu’une formule est modifiée. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormulaChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged) |
 
 ### <a name="event-triggers"></a>Déclencheurs d’événements
 
@@ -102,7 +103,7 @@ function handleChange(event)
 
 ## <a name="remove-an-event-handler"></a>Suppression d’un gestionnaire d’événements
 
-L’exemple de code suivant inscrit un gestionnaire d’événements pour l’événement `onSelectionChanged` dans la feuille de calcul **Sample** et définit la fonction `handleSelectionChange` qui est exécutée lorsqu’un événement se produit. Il définit également la fonction `remove()` pouvant être appelée par la suite pour supprimer ce gestionnaire d’événements. Notez que `RequestContext` l'utilisation pour créer le handler d'événements est nécessaire pour le supprimer. 
+L’exemple de code suivant inscrit un gestionnaire d’événements pour l’événement `onSelectionChanged` dans la feuille de calcul **Sample** et définit la fonction `handleSelectionChange` qui est exécutée lorsqu’un événement se produit. Il définit également la fonction `remove()` pouvant être appelée par la suite pour supprimer ce gestionnaire d’événements. Notez que `RequestContext` l’utilisation pour créer le handler d’événements est nécessaire pour le supprimer. 
 
 ```js
 var eventResult;

@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
-description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide de l’API JavaScript pour Excel.
-ms.date: 03/24/2020
+description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide Excel API JavaScript.
+ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 7ff1593ca66926de7ae3397defba7efbe97b1695
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
+ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652201"
+ms.lasthandoff: 06/06/2021
+ms.locfileid: "52783511"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -318,6 +318,53 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
+## <a name="detect-formula-changes-preview"></a>Détecter les modifications de formule (aperçu)
+
+> [!NOTE]
+> `Worksheet.onFormulaChanged`L’événement est actuellement disponible uniquement en prévisualisation publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+Votre add-in peut suivre les modifications apportées aux formules dans une feuille de calcul. Cela est utile lorsqu’une feuille de calcul est connectée à une base de données externe. Lorsque la formule change dans la feuille de calcul, l’événement dans ce scénario déclenche les mises à jour correspondantes dans la base de données externe.
+
+Pour détecter les modifications apportées aux formules, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour [l’événement onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) d’une feuille de calcul. Les handlers d’événements de l’événement reçoivent un `onFormulaChanged` [objet WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) lorsque l’événement se déclenche.
+
+> [!IMPORTANT]
+> `onFormulaChanged`L’événement détecte lorsqu’une formule elle-même change, et non la valeur de données résultant du calcul de la formule.
+
+L’exemple de code suivant montre comment inscrire le handler d’événements, utiliser l’objet pour récupérer le tableau formulaDetails de la formule modifiée, puis imprimer les détails sur la formule modifiée avec les `onFormulaChanged` `WorksheetFormulaChangedEventArgs` propriétés [FormulaChangedEventDetail.](/javascript/api/excel/excel.formulachangedeventdetail) [](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)
+
+> [!NOTE]
+> Cet exemple de code ne fonctionne qu’en cas de changement d’une seule formule.
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the formula changed event handler for this worksheet.
+    sheet.onFormulaChanged.add(formulaChangeHandler);
+
+    return context.sync();
+});
+
+function formulaChangeHandler(event) {
+    Excel.run(function (context) {
+        // Retrieve details about the formula change event.
+        // Note: This method assumes only a single formula is changed at a time. 
+        var cellAddress = event.formulaDetails[0].cellAddress;
+        var previousFormula = event.formulaDetails[0].previousFormula;
+        var source = event.source;
+    
+        // Print out the change event details.
+        console.log(
+          `The formula in cell ${cellAddress} changed. 
+          The previous formula was: ${previousFormula}. 
+          The source of the change was: ${source}.`
+        );         
+    });
+}
+```
+
 ## <a name="handle-sorting-events"></a>Gérer les événements de tri
 
 Les  événements `onColumnSorted` et `onRowSorted` indiquent quand les données d’une feuille de calcul sont triées. Ces événements sont connectés à des objets individuels `Worksheet` et aux classeurs `WorkbookCollection`. Il se déclenche si le tri est effectué par programme ou manuellement via l’interface utilisateur d’Excel.
@@ -386,7 +433,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > Cette section décrit comment rechercher des cellules et plages à l’aide des `Worksheet` fonctions de l’objet. Plus d’informations sur l’extraction de plage sont disponibles dans les articles spécifiques.
-> - Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul à l’aide de l’objet, voir Obtenir une plage à l’aide de `Range` [l’API JavaScript pour Excel.](excel-add-ins-ranges-get.md)
+> - Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul à l’aide de l’objet, voir Obtenir une plage à l’aide de `Range` [l Excel API JavaScript .](excel-add-ins-ranges-get.md)
 > - Pour obtenir des exemples qui montrent comment obtenir une plage dans un objet `Table`, reportez-vous à la rubrique [Utiliser des tableaux à l’aide de l’API JavaScript pour Excel](excel-add-ins-tables.md).
 > - Pour consulter des exemples qui montrent comment rechercher une grande plage pour plusieurs sous-plages basées sur les caractéristiques de cellule, voir [Travailler avec plusieurs plages simultanément dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
