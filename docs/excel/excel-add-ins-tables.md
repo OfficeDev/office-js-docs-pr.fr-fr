@@ -1,22 +1,22 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
-description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel.
-ms.date: 01/11/2021
+description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide Excel API JavaScript.
+ms.date: 06/07/2021
 localization_priority: Normal
-ms.openlocfilehash: bd060f4a1382e68a7135227f5662a9e4fe1cb7aa
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: a44a99e0ddc612342b292fd6e9d203799cde7b53
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839900"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853998"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(INTERFACE API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.tablecollection)
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(interface API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript](/javascript/api/excel/excel.tablecollection)pour Excel).
 
 ## <a name="create-a-table"></a>Créer un tableau
 
-L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application Excel dans [](../reference/requirement-sets/excel-api-requirement-sets.md) laquelle le code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
+L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample**. Le tableau comporte des en-têtes et contient quatre colonnes et sept lignes de données. Si l’application Excel dans laquelle le [](../reference/requirement-sets/excel-api-requirement-sets.md) code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 > [!NOTE]
 > Pour spécifier un nom pour une table, vous devez d’abord créer la table, puis définir sa propriété, comme `name` illustré dans l’exemple suivant.
@@ -56,13 +56,13 @@ Excel.run(function (context) {
 
 ## <a name="add-rows-to-a-table"></a>Ajouter des lignes dans un tableau
 
-L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **ExpensesTable** au sein de la feuille de calcul **Sample**. Les nouvelles lignes sont ajoutées à la fin du tableau. Si l’application Excel dans [](../reference/requirement-sets/excel-api-requirement-sets.md) laquelle le code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
+L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **ExpensesTable** au sein de la feuille de calcul **Sample**. Les nouvelles lignes sont ajoutées à la fin du tableau. Si l’application Excel dans laquelle le [](../reference/requirement-sets/excel-api-requirement-sets.md) code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 > [!NOTE]
 > La `index` propriété d’un [objet TableRow](/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection rows du tableau. Un objet ne contient pas de propriété qui peut être utilisée comme clé `TableRow` unique pour identifier la `id` ligne.
 
 > [!WARNING]
-> L’ajout de lignes à un tableau à partir d’un add-in de contenu entraîne une fuite de mémoire. Consultez [la #1415 GitHub](https://github.com/OfficeDev/office-js/issues/1415) pour obtenir l’état actuel et des informations supplémentaires. 
+> L’ajout de lignes à un tableau à partir d’un add-in de contenu entraîne une fuite de mémoire. Voir [GitHub problème #1415](https://github.com/OfficeDev/office-js/issues/1415) pour l’état actuel et des informations supplémentaires. 
 
 ```js
 Excel.run(function (context) {
@@ -101,7 +101,7 @@ Ces exemples montrent comment ajouter une colonne à un tableau. Le premier exem
 
 ### <a name="add-a-column-that-contains-static-values"></a>Ajouter une colonne qui contient des valeurs statiques
 
-L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée après les colonnes existantes du tableau et contient un en-tête (« Day of the Week ») ainsi que des données pour remplir les cellules de la colonne. Si l’application Excel dans [](../reference/requirement-sets/excel-api-requirement-sets.md) laquelle le code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
+L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée après les colonnes existantes du tableau et contient un en-tête (« Day of the Week ») ainsi que des données pour remplir les cellules de la colonne. Si l’application Excel dans laquelle le [](../reference/requirement-sets/excel-api-requirement-sets.md) code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ Excel.run(function (context) {
 
 ### <a name="add-a-column-that-contains-formulas"></a>Ajouter une colonne qui contient des formules
 
-L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée à la fin du tableau, contient un en-tête («Type of the Day ») et utilise une formule pour remplir chaque cellule de données dans la colonne. Si l’application Excel dans [](../reference/requirement-sets/excel-api-requirement-sets.md) laquelle le code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
+L’exemple de code suivant ajoute une nouvelle colonne à la table nommée **ExpensesTable** au sein de la feuille de calcul **Sample**. La nouvelle colonne est ajoutée à la fin du tableau, contient un en-tête («Type of the Day ») et utilise une formule pour remplir chaque cellule de données dans la colonne. Si l’application Excel dans laquelle le [](../reference/requirement-sets/excel-api-requirement-sets.md) code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -165,9 +165,36 @@ Excel.run(function (context) {
 
 ![Tableau avec une nouvelle colonne calculée dans Excel](../images/excel-tables-add-calculated-column.png)
 
+## <a name="resize-a-table-online-only"></a>Resize a table (online-only)
+
+> [!NOTE]
+> La `Table.resize` méthode est actuellement disponible uniquement dans ExcelApiOnline 1.1. Pour plus d’informations, voir Excel’ensemble de conditions requises de [l’API JavaScript en ligne uniquement.](../reference/requirement-sets/excel-api-online-requirement-set.md)
+
+Votre add-in peut resize un tableau sans ajouter de données au tableau ni modifier les valeurs des cellules. Pour re tailler un tableau, utilisez la [méthode Table.resize.](/javascript/api/excel/excel.table#resize_newRange_) L’exemple de code suivant montre comment reizer un tableau. Cet exemple de code utilise **ExpensesTable** de la [section](#create-a-table) Créer un tableau plus tôt dans cet article et définit la nouvelle plage du tableau sur **A1:D20**.
+
+```js
+Excel.run(function (context) {
+    // Retrieve the worksheet and a table on that worksheet.
+    var sheet = context.workbook.worksheets.getItem("Sample");
+    var expensesTable = sheet.tables.getItem("ExpensesTable");
+
+    // Resize the table.
+    expensesTable.resize("A1:D20");
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+> [!IMPORTANT]
+> La nouvelle plage du tableau doit chevaucher la plage d’origine et les en-têtes (ou le haut du tableau) doivent se trouver sur la même ligne.
+
+**Tableau après re resize** 
+
+![Tableau avec plusieurs lignes vides dans Excel](../images/excel-tables-resize.png)
+
 ## <a name="update-column-name"></a>Mettre à jour un nom de colonne
 
-L’exemple de code suivant remplace le nom de la première colonne du tableau par **Purchase date**. Si l’application Excel dans [](../reference/requirement-sets/excel-api-requirement-sets.md) laquelle le code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
+L’exemple de code suivant remplace le nom de la première colonne du tableau par **Purchase date**. Si l’application Excel dans laquelle le [](../reference/requirement-sets/excel-api-requirement-sets.md) code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -454,7 +481,7 @@ Excel.run(function (context) {
 
 ## <a name="import-json-data-into-a-table"></a>Importer des données JSON dans un tableau
 
-L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample** , puis remplit le tableau à l’aide d’un objet JSON qui définit les deux lignes de données. Si l’application Excel dans [](../reference/requirement-sets/excel-api-requirement-sets.md) laquelle le code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
+L’exemple de code suivant crée un tableau dans la feuille de calcul nommée **Sample** , puis remplit le tableau à l’aide d’un objet JSON qui définit les deux lignes de données. Si l’application Excel dans laquelle le [](../reference/requirement-sets/excel-api-requirement-sets.md) code est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 ```js
 Excel.run(function (context) {
@@ -497,7 +524,7 @@ Excel.run(function (context) {
 
 **Nouveau tableau**
 
-![Nouveau tableau à partir de données JSON importées dans Excel](../images/excel-tables-create-from-json.png)
+![Nouvelle table à partir de données JSON importées dans Excel](../images/excel-tables-create-from-json.png)
 
 ## <a name="see-also"></a>Voir aussi
 

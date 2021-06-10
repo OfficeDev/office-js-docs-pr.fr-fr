@@ -3,12 +3,12 @@ title: Utiliser les services Web Exchange (EWS) à partir d’un complément Out
 description: Fournit un exemple qui illustre comment un complément Outlook peut demander des informations à partir des Services Web Exchange.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: b86040f513f4bd368e964270ba3e94184022938f
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 16d20ca30f2860b8103257860a8619c1d51d8523
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839697"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853961"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Appeler des services Web à partir d’un complément Outlook
 
@@ -41,7 +41,7 @@ Pour utiliser la `makeEwsRequestAsync` méthode pour lancer une opération EWS, 
 
 - Données d’entrée facultatives pour cette méthode de rappel (en tant qu’argument  _userContext_)
 
-Lorsque la demande SOAP EWS est terminée, Outlook appelle la méthode de rappel avec un argument, qui est un [objet AsyncResult.](/javascript/api/office/office.asyncresult) La méthode de rappel peut accéder à deux propriétés de l’objet : la propriété, qui contient la réponse SOAP XML de l’opération `AsyncResult` EWS, et éventuellement la propriété, qui contient toutes les données transmises en tant que `value` `asyncContext` `userContext` paramètre. En règle générale, la méthode de rappel pare ensuite le XML dans la réponse SOAP pour obtenir des informations pertinentes et traite ces informations en conséquence.
+Une fois la demande SOAP EWS terminée, Outlook appelle la méthode de rappel avec un argument, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult). La méthode de rappel peut accéder à deux propriétés de l’objet : la propriété, qui contient la réponse SOAP XML de l’opération `AsyncResult` EWS, et éventuellement la propriété, qui contient toutes les données transmises en tant que `value` `asyncContext` `userContext` paramètre. En règle générale, la méthode de rappel analyse ensuite le code XML dans la réponse SOAP pour obtenir les informations pertinentes et traite ces informations comme il se doit.
 
 
 ## <a name="tips-for-parsing-ews-responses"></a>Conseils pour l’analyse des réponses EWS
@@ -49,7 +49,7 @@ Lorsque la demande SOAP EWS est terminée, Outlook appelle la méthode de rappel
 Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, notez les problèmes dépendant du navigateur suivants :
 
 
-- Spécifiez le préfixe d’un nom de balise lors de l’utilisation de la méthode DOM , pour inclure la prise en `getElementsByTagName` charge d’Internet Explorer.
+- Spécifiez le préfixe d’un nom de balise lors de l’utilisation de la méthode DOM, pour inclure la prise en `getElementsByTagName` charge d’Internet Explorer.
 
   `getElementsByTagName` se comporte différemment selon le type de navigateur. Par exemple, une réponse EWS peut contenir le XML suivant (formaté et abrégé à des fins d’affichage) :
 
@@ -93,7 +93,7 @@ Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, note
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant appelle `makeEwsRequestAsync` l’utilisation de [l’opération GetItem](/exchange/client-developer/web-service-reference/getitem-operation) pour obtenir l’objet d’un élément. Cet exemple inclut les trois fonctions suivantes :
+L’exemple suivant appelle `makeEwsRequestAsync` l’utilisation de [l’opération GetItem](/exchange/client-developer/web-service-reference/getitem-operation) pour obtenir l’objet d’un élément. Cet exemple comprend les trois fonctions suivantes :
 
 -  `getSubjectRequest`Prend un ID d’élément comme entrée et renvoie le XML de la demande SOAP à appeler &ndash; `GetItem` pour l’élément spécifié.
 
@@ -148,7 +148,7 @@ function callback(asyncResult)  {
 
 ## <a name="ews-operations-that-add-ins-support"></a>Opérations EWS prises en charge par les compléments
 
-Les add-ins Outlook peuvent accéder à un sous-ensemble d’opérations disponibles dans EWS via la `makeEwsRequestAsync` méthode. Si vous ne connaissez pas les opérations EWS et que vous ne savez pas comment utiliser la méthode pour accéder à une opération, commencez par un exemple de requête SOAP pour personnaliser votre `makeEwsRequestAsync` argument _de_ données.
+Outlook peuvent accéder à un sous-ensemble d’opérations disponibles dans EWS via la `makeEwsRequestAsync` méthode. Si vous ne connaissez pas les opérations EWS et que vous ne savez pas comment utiliser la méthode pour accéder à une opération, commencez par un exemple de requête SOAP pour personnaliser votre `makeEwsRequestAsync` argument _de_ données.
 
 La description suivante décrit comment utiliser la `makeEwsRequestAsync` méthode :
 
@@ -211,4 +211,4 @@ Votre add-in doit spécifier l’autorisation dans son manifeste de `ReadWriteMa
 Consultez la rubrique suivante pour créer des services principaux pour les compléments à l’aide de l’API Web ASP.NET :
 
 - [Créer un service web pour un complément Office à l’aide de l’API Web ASP.NET](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
-- [Principes fondamentaux de la création d’un service HTTP à l’aide de l’API Web ASP.NET](https://www.asp.net/web-api)
+- [Principes fondamentaux de la création d’un service HTTP à l’aide de l’API Web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/apis)

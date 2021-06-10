@@ -1,14 +1,14 @@
 ---
 title: Outlook conditions requises de l’API du module de prévisualisation du add-in
 description: Fonctionnalités et API actuellement en prévisualisation pour Outlook de recherche.
-ms.date: 05/17/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 98bf56c169967ad7c994d1793afa8678d31f6892
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c7ca92e6a30f3109baff5721ae4e9930ef23dc56
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591057"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52854010"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conditions requises de l’API du module de prévisualisation du add-in
 
@@ -20,7 +20,7 @@ Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des obje
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> Vous pourrez peut-être afficher un aperçu des fonctionnalités Outlook sur le web en configurant la version ciblée [sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) Cette page indique « Configurer l’accès en aperçu » pour les fonctionnalités applicables.
+> Vous pourrez peut-être afficher un aperçu des fonctionnalités Outlook sur le web en configurant la version ciblée [sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) « Configurer l’accès à l’aperçu » est indiqué sur cette page pour les fonctionnalités applicables.
 >
 > Pour d’autres fonctionnalités, vous pouvez demander l’accès aux bits d’aperçu pour Outlook sur le web à l’aide de votre compte Microsoft 365 en complétant et en envoyant ce [formulaire.](https://aka.ms/OWAPreview) « Demander l’accès en prévisualisation » est indiqué sur ces fonctionnalités.
 
@@ -30,7 +30,7 @@ L’ensemble de conditions requises de prévisualisation inclut toutes les fonct
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
 
-### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation de complément sur des éléments protégés par la Gestion des droits de l’information (IRM)
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation de compléments sur des éléments protégés par la Gestion des droits de l’information (IRM)
 
 Les add-ins peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, un administrateur client doit activer le droit d’utilisation en paramètres de stratégie personnalisée Autoriser l’accès par programme `OBJMODEL` dans Office.  Pour plus [d’informations, voir droits d’utilisation et descriptions.](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions)
 
@@ -73,6 +73,18 @@ Ajout d’une nouvelle propriété qui représente la sensibilité d’un rendez
 Ajout d’une nouvelle enum `AppointmentSensitivityType` qui représente les options de sensibilité disponibles sur un rendez-vous.
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
+
+<br>
+
+---
+
+---
+
+### <a name="event-based-activation"></a>Activation basée sur un événement
+
+Cette fonctionnalité a été publiée dans [l’ensemble de conditions requises 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). Toutefois, des événements supplémentaires sont désormais disponibles en prévisualisation. Pour plus d’informations, voir [Événements pris en charge.](../../../outlook/autolaunch.md#supported-events)
+
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
 
 <br>
 

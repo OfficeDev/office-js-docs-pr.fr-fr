@@ -1,15 +1,15 @@
 ---
 title: Utiliser les classeurs utilisant l’API JavaScript Excel
 description: Découvrez comment effectuer des tâches courantes avec des workbooks ou des fonctionnalités au niveau de l’application à l’aide Excel API JavaScript.
-ms.date: 06/01/2021
+ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 638384a1e08af182db042638c655d8d74354c637
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: 48ceb882a7beea3fa3ca08216f3ee1dd82ba4fa9
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779347"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853982"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -80,7 +80,7 @@ reader.readAsDataURL(myFile.files[0]);
 > La `Workbook.insertWorksheetsFromBase64` méthode est actuellement disponible uniquement en prévisualisation publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 > 
 
-L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode pour insérer des copies des feuilles de calcul du `insertWorksheetsFromBase64` workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, tout comme `Excel.createWorkbook` l’appel. 
+L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode pour insérer des copies des feuilles de calcul du `insertWorksheetsFromBase64` workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, comme `Excel.createWorkbook` l’appel. 
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
@@ -238,7 +238,7 @@ Un workbook a des paramètres de langue et de culture qui affectent l’affichag
 
 `Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être modifiés par le [biais Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être modifiés par le biais [Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
 
 L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 
@@ -342,6 +342,46 @@ L’API Excel vous permet également de désactiver les compléments calculs jus
 
 ```js
 context.application.suspendApiCalculationUntilNextSync();
+```
+
+## <a name="detect-workbook-activation-preview"></a>Détecter l’activation d’un workbook (aperçu)
+
+> [!NOTE]
+> `Workbook.onActivated`L’événement est actuellement disponible uniquement en prévisualisation publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
+> 
+
+Votre add-in peut détecter lorsqu’un workbook est activé. Un workbook devient *inactif* lorsque l’utilisateur bascule le focus vers un autre workbook, vers une autre application ou (dans Excel sur le Web) vers un autre onglet du navigateur web. Un workbook est *activé lorsque* l’utilisateur renvoie le focus au workbook. L’activation du workbook peut déclencher des fonctions de rappel dans votre complément, telles que l’actualisation des données du workbook.
+
+Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#onActivated) d’un workbook. Les handlers d’événements `onActivated` de l’événement reçoivent un [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
+
+> [!IMPORTANT]
+> `onActivated`L’événement ne détecte pas lorsqu’un workbook est ouvert. Cet événement détecte uniquement lorsqu’un utilisateur bascule le focus vers un workbook déjà ouvert.
+
+L’exemple de code suivant montre comment inscrire le handler d’événements et `onActivated` configurer une fonction de rappel.
+
+```js
+Excel.run(function (context) {
+    // Retrieve the workbook.
+    var workbook = context.workbook;
+
+    // Register the workbook activated event handler.
+    workbook.onActivated.add(workbookActivated);
+
+    return context.sync();
+});
+
+function workbookActivated(event) {
+    Excel.run(function (context) {
+        // Retrieve the workbook and load the name.
+        var workbook = context.workbook;
+        workbook.load("name");
+        
+        return context.sync().then(function () {
+            // Callback function for when the workbook is activated.
+            console.log(`The workbook ${workbook.name} was activated.`);
+        });
+    });
+}
 ```
 
 ## <a name="save-the-workbook"></a>Enregistrer le classeur
