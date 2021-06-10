@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: Découvrez comment créer un complément simple de volet des tâches Project à l’aide de l’API JavaScript pour Office.
-ms.date: 10/14/2020
+ms.date: 06/07/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: a7f9b00a9f2782e014f1060d59505d7e876a969e
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: eed545d6ebf2b705d8d8963a76a0ac3bca2e13f4
+ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132255"
+ms.lasthandoff: 06/09/2021
+ms.locfileid: "52853989"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -20,20 +20,20 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Project 2016 ou version ultérieure pour Windows
+- Project 2016 ou version ultérieure pour Windows
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
-- **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-- **Quelle application client Office voulez-vous prendre en charge ?** `Project`
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `Javascript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Project`
 
 ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-project.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -104,12 +104,12 @@ Office.context.document.getSelectedTaskAsync(
     Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre.
 
     ```command&nbsp;line
-    npm run dev server
+    npm run dev-server
     ```
 
 3. Dans Project, créez un plan de projet simple.
 
-4. Chargez votre complément dans Project en suivant les instructions fournies dans [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+4. Chargez votre complément dans Project en suivant les instructions fournies dans [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 5. Sélectionnez une seule tâche dans le projet.
 
@@ -119,7 +119,7 @@ Office.context.document.getSelectedTaskAsync(
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément du volet des tâches de Project ! Ensuite, découvrez les fonctionnalités d’un complément Project et explorez des scénarios plus courants.
+Félicitations, vous avez créé un complément de volet de tâches Project ! À présent, découvrez les fonctionnalités d’un complément Project et explorez des scénarios courants.
 
 > [!div class="nextstepaction"]
 > [Compléments Project](../project/project-add-ins.md)
