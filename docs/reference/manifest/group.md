@@ -1,14 +1,14 @@
 ---
 title: Élément Group dans le fichier manifeste
 description: Définit un groupe de contrôles d’interface utilisateur dans un onglet.
-ms.date: 01/29/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1bb3a4d65e954a54acb6e93f7c4d52e6b0845315
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 89ed16f7996ab06bd21e1ebaa71c959b11af2029
+ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173961"
+ms.lasthandoff: 06/11/2021
+ms.locfileid: "52893511"
 ---
 # <a name="group-element"></a>Élément Group
 
@@ -29,10 +29,10 @@ Obligatoire. Identificateur unique du groupe. Il s’agit d’une chaîne avec u
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [Label](#label)      | Oui |  Étiquette pour CustomTab ou group.  |
-|  [Icon](icon.md)      | Oui |  Image d’un groupe.  |
+|  [Icon](icon.md)      | Oui |  Image d’un groupe. Non pris en charge dans Outlook des modules. |
 |  [Contrôle](#control)    | Non |  Représente un objet Control. Peut être zéro ou plus.  |
-|  [OfficeControl](#officecontrol)  | Non | Représente l’un des contrôles Office intégrés. Peut être zéro ou plus. |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si le groupe doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés.  |
+|  [OfficeControl](#officecontrol)  | Non | Représente l’un des contrôles Office intégrés. Peut être zéro ou plus. Non pris en charge dans Outlook des modules.|
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si le groupe doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. Non pris en charge dans Outlook des modules. |
 
 ### <a name="label"></a>Label
 
@@ -40,7 +40,10 @@ Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus d
 
 ### <a name="icon"></a>Icône
 
-Obligatoire. Si un onglet contient un grand nombre de groupes et que la fenêtre de programme est re resserée, l’image spécifiée peut s’afficher à la place.
+Obligatoire. Si un onglet contient un grand nombre de groupes et que la fenêtre du programme est re resserée, l’image spécifiée peut s’afficher à la place.
+
+> [!NOTE]
+> Cet élément enfant n’est pas pris en charge dans Outlook de développement.
 
 ### <a name="control"></a>Contrôle
 
@@ -63,7 +66,10 @@ Facultatif, mais s’il n’est pas présent, il doit y avoir au moins **un Offi
 
 ### <a name="officecontrol"></a>OfficeControl
 
-Facultatif, mais s’il n’est pas présent, il doit y avoir au moins un **contrôle**. Inclure un ou plusieurs contrôles Office intégrés dans le groupe avec des `<OfficeControl>` éléments. `id`L’attribut spécifie l’ID du contrôle Office intégré. Pour trouver l’ID d’un contrôle, voir Rechercher les ID des contrôles et des groupes [de contrôles.](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) L’ordre  des contrôles **et OfficeControl** dans le manifeste est interchangeable et peut être entremêlé s’il existe plusieurs éléments, mais tous doivent se trouver sous l’élément **Icon.**
+Facultatif, mais s’il n’est pas présent, il doit y avoir au moins un **contrôle**. Incluez un ou plusieurs contrôles Office intégrés dans le groupe avec des `<OfficeControl>` éléments. L’attribut spécifie l’ID du contrôle Office `id` intégré. Pour trouver l’ID d’un contrôle, voir Rechercher les ID des contrôles et des groupes [de contrôles.](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) L’ordre  des contrôles **et OfficeControl** dans le manifeste est interchangeable et peut être entremêlé s’il existe plusieurs éléments, mais tous doivent se trouver sous l’élément **Icon.**
+
+> [!NOTE]
+> Cet élément enfant n’est pas pris en charge dans Outlook de développement.
 
 ```xml
 <Group id="contosoCustomTab.grp1">
@@ -83,7 +89,10 @@ Facultatif, mais s’il n’est pas présent, il doit y avoir au moins un **cont
 
 ### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
 
-Facultatif (booléen). Spécifie si  le groupe sera masqué sur les combinaisons d’applications et de plateformes qui prisent en charge une API qui installe un onglet contextuel personnalisé sur le ruban lors de l’utilisation. La valeur par défaut, si elle n’est pas présente, est `false` . S’il **est utilisé, OverriddenByRibbonApi doit** être le *premier* enfant de **Group**. Pour plus d’informations, [voir OverriddenByRibbonApi](overriddenbyribbonapi.md).
+Facultatif (booléen). Spécifie si  le groupe sera masqué sur les combinaisons d’applications et de plateformes qui supportent une API qui installe un onglet contextuel personnalisé sur le ruban lors de l’utilisation. La valeur par défaut, si elle n’est pas présente, est `false` . S’il **est utilisé, OverriddenByRibbonApi doit** être le *premier* enfant de **Group**. Pour plus d’informations, [voir OverriddenByRibbonApi](overriddenbyribbonapi.md).
+
+> [!NOTE]
+> Cet élément enfant n’est pas pris en charge dans Outlook de développement.
 
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
