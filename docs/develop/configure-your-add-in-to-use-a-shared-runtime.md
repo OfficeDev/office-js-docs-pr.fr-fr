@@ -1,15 +1,15 @@
 ---
-ms.date: 04/08/2021
+ms.date: 06/14/2021
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 localization_priority: Priority
-ms.openlocfilehash: d5f0a5b6d9053f23792012f1658d213a7972b970
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: ecde9a5564761b2dd902596f09db156332b5af4f
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652190"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961257"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -21,7 +21,7 @@ Vous pouvez configurer votre complément Office pour exécuter la totalité de s
 
 Si vous démarrez un nouveau projet, suivez ces étapes pour utiliser le [générateur Yeoman pour compléments Office](https://github.com/OfficeDev/generator-office) et créer le projet de complément Excel ou PowerPoint.
 
-Effectuez l'une des opérations suivantes :
+Effectuez l'une des opérations suivantes :
 
 - Pour créer un complément Excel avec fonctions personnalisées, exécutez la commande `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`.
 
@@ -30,6 +30,9 @@ Effectuez l'une des opérations suivantes :
 - Pour créer un complément PowerPoint, exécutez la commande `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true`.
 
 Le générateur crée le projet et installe les composants de nœud de la prise en charge.
+
+> [!NOTE]
+> Vous pouvez également utiliser les étapes décrites dans cet article pour mettre à jour un projet Visual Studio existant afin d’utiliser le runtime partagé. Toutefois, vous devrez peut-être mettre à jour les schémas XML pour le manifeste. Pour plus d’informations, consultez [Résoudre les erreurs de développement avec les compléments Office](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -40,11 +43,15 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 1. Si vous avez créé un complément Excel, mettez à jour la section des conditions préalables pour utiliser un [runtime partagé](../reference/requirement-sets/shared-runtime-requirement-sets.md) au lieu du runtime de fonction partagé. Le XML s’affiche comme suit.
 
     ```xml
+    <Hosts>
+      <Host Name="Workbook"/>
+    </Hosts>
     <Requirements>
-    <Sets DefaultMinVersion="1.1">
-      <Set Name="SharedRuntime" MinVersion="1.1"/>
-    </Sets>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
     </Requirements>
+    <DefaultSettings>
     ```
 
 1. Recherchez la section `<VersionOverrides>`, puis ajoutez l'exemple d'entrée suivante à la section `<Runtimes>`, juste dans la balise `<Host ...>`. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section ` <bt:Urls>` près du bas du fichier **manifest.xml**.
@@ -53,7 +60,6 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       ...
        <Runtimes>
          <Runtime resid="Taskpane.Url" lifetime="long" />
        </Runtimes>
@@ -134,7 +140,7 @@ Vous pouvez confirmer que vous utilisez correctement le runtime JavaScript parta
 1. Ouvrez le fichier **manifest.xml**.
 1. Recherchez la section `<Control xsi:type="Button" id="TaskpaneButton">`, puis modifiez le XML `<Action ...>` suivant.
 
-    de :
+    de :
 
     ```xml
     <Action xsi:type="ShowTaskpane">
@@ -143,7 +149,7 @@ Vous pouvez confirmer que vous utilisez correctement le runtime JavaScript parta
     </Action>
     ```
 
-    à :
+    à :
 
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -190,7 +196,7 @@ Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une dur
 ```
 
 > [!NOTE]
-> Si votre complément inclut l’élément `Runtimes` dans le manifeste (nécessaire pour une exécution partagée), il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
+> Si votre complément inclut l’élément `Runtimes` dans le manifeste (nécessaire pour une exécution partagée), il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
 ## <a name="about-the-shared-javascript-runtime"></a>À propos du runtime JavaScript partagé
 
@@ -200,23 +206,23 @@ Vous pouvez toutefois configurer votre complément Office pour partager un code 
 
 La configuration d’un runtime partagé permet les scénarios suivants.
 
-- Votre complément Office peut utiliser des fonctionnalités d’interface utilisateur supplémentaires :
+- Votre complément Office peut utiliser des fonctionnalités d’interface utilisateur supplémentaires :
   - [Ajouter des raccourcis clavier personnalisés à votre complément Office (préversion)](../design/keyboard-shortcuts.md)
   - [Créer des onglets contextuels personnalisés dans des compléments Office (préversion)](../design/contextual-tabs.md)
   - [Activer et désactiver des commandes de complément](../design/disable-add-in-commands.md)
   - [Exécuter un cote dans votre complément Office lors de l’ouverture du document](run-code-on-document-open.md)
   - [Afficher ou masquer le volet des tâches de votre complément Office](show-hide-add-in.md)
-- Pour les compléments Excel :
+- Pour les compléments Excel :
   - Les fonctions personnalisées bénéficieront d'une prise en charge complète de CORS.
   - Les fonctions personnalisées peuvent appeler les API Office.js pour lire les données d’un document feuille de calcul.
 
-Pour Office sur Windows, le runtime partagé requiert une instance de navigateur Microsoft Internet Explorer 11, comme expliqué dans [navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). De plus, les boutons affichés par votre complément sur le ruban s’exécutent dans le même runtime partagé. L’image ci-après présente l'exécution des fonctions personnalisées, de interface utilisateur du ruban et du code du volet des tâches dans le même runtime JavaScript.
+Pour Office sur Windows, le runtime partagé requiert une instance de navigateur Microsoft Internet Explorer 11, comme expliqué dans [navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). De plus, les boutons affichés par votre complément sur le ruban s’exécutent dans le même runtime partagé. L’image ci-après présente l'exécution des fonctions personnalisées, de interface utilisateur du ruban et du code du volet des tâches dans le même runtime JavaScript.
 
-![Diagramme d’une fonction personnalisée, d’un volet des tâches et des boutons de ruban s’exécutant tous dans un runtime partagé de navigateur Internet Explorer dans Excel](../images/custom-functions-in-browser-runtime.png)
+![Diagramme d’une fonction personnalisée, d’un volet des tâches et des boutons de ruban s’exécutant tous dans un runtime partagé de navigateur Internet Explorer dans Excel](../images/custom-functions-in-browser-runtime.png)
 
 ### <a name="debugging"></a>Débogage
 
-Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Visual Studio Code pour déboguer des fonctions personnalisées dans Excel sur Windows à cette date. Vous devez utiliser les outils de développement à la place. Pour plus d'informations, voir le [Débogage des compléments avec les outils de développement sur Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Visual Studio Code pour déboguer des fonctions personnalisées dans Excel sur Windows à cette date. Vous devez utiliser les outils de développement à la place. Pour plus d'informations, voir le [Débogage des compléments avec les outils de développement sur Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
 
 ### <a name="multiple-task-panes"></a>Multiples volets des tâches
 
@@ -234,4 +240,4 @@ Nous aimerions connaître votre avis concernant cette fonctionnalité. Si vous t
 - [Activer et désactiver des commandes de complément](../design/disable-add-in-commands.md)
 - [Exécuter un cote dans votre complément Office lors de l’ouverture du document](run-code-on-document-open.md)
 - [Afficher ou masquer le volet des tâches de votre complément Office](show-hide-add-in.md)
-- [Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
