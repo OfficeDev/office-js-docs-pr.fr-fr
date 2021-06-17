@@ -3,12 +3,12 @@ title: Publier votre complément à l’aide de Visual Studio
 description: Déploiement de votre projet web et création d’un package de votre complément à l’aide de Visual Studio 2019.
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 5c6b21c3712f396d382ab64fb1f756e84745962b
-ms.sourcegitcommit: 83f9a2fdff81ca421cd23feea103b9b60895cab4
+ms.openlocfilehash: 6d7f923f19c9627c099c3c7d6495e96786af2002
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "47431184"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961243"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Publier votre complément à l’aide de Visual Studio
 
@@ -23,10 +23,10 @@ Réalisez les étapes suivantes pour déployer votre projet Web à l'aide de Vis
 
 1. Depuis l’onglet **Build**, sélectionnez **Publier [nom de votre complément]**.
 
-2. Dans la fenêtre **Choisir une cible de publication **, sélectionnez une des options pour publier sur votre cible préférée. Chaque cible de publication nécessite que vous incluiez plus d'informations pour commencer, comme l'emplacement d'une machine virtuelle Azure ou d'un emplacement de dossier. Une fois que vous avez spécifié un emplacement de publication et renseigné toutes les informations requises, sélectionnez **Publier**
+2. Dans la fenêtre **Choisir une cible de publication**, sélectionnez une des options pour publier sur votre cible préférée. Chaque cible de publication nécessite que vous incluiez plus d'informations pour commencer, comme l'emplacement d'une machine virtuelle Azure ou d'un emplacement de dossier. Une fois que vous avez spécifié un emplacement de publication et renseigné toutes les informations requises, sélectionnez **Publier**
 
     > [!NOTE]
-    > Le choix d’une cible de publication indique le serveur sur lequel vous effectuez le déploiement, les informations d’identification nécessaires pour se connecter au serveur, les bases de données à déployer, ainsi que d’autres options de déploiement.
+    > La sélection d’une cible de publication spécifie le serveur sur qui vous déployez, les informations d’identification nécessaires à la connexion au serveur, les bases de données à déployer et d’autres options de déploiement.
 
 3. Pour plus d’informations sur les étapes de déploiement de chaque option cible de publication, voir [Premier aperçu du déploiement dans Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true).
 

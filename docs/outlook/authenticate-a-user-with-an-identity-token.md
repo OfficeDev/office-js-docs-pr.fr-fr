@@ -3,18 +3,17 @@ title: Authentifier un utilisateur avec un jeton identité dans un complément
 description: Découvrez comment utiliser le jeton d’identité fourni par un complément Outlook pour implémenter l’authentification unique SSO dans votre service.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 7936ec72bca0962eda999e8b0dc3a2b1c60ad7ca
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
+ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606531"
+ms.lasthandoff: 06/16/2021
+ms.locfileid: "52961271"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Authentifier un utilisateur avec un jeton d’identité pour Exchange
 
 Les jetons d’identité d’utilisateur Exchange sont un moyen pour vos compléments d'identifier leurs utilisateurs de manière unique.
- En établissant l’identité des utilisateurs, vous pouvez implémenter pour votre service principal un modèle d’authentification unique (SSO) qui permet aux utilisateurs de compléments Outlook de s’y connecter sans ouvrir de session.
- Pour plus d’informations sur l’utilisation de ce type de jeton, voir [Jeton d’identité d’utilisateur Exchange](authentication.md#exchange-user-identity-token). Dans cet article, nous allons examiner une méthode simple pour authentifier un utilisateur sur votre back end à l’aide d’un jeton d’identité Exchange.
+ En établissant l’identité de l’utilisateur, vous pouvez implémenter un schéma d’authentification unique (SSO) pour votre service back-end qui permet aux clients qui utilisent des applications Outlook de se connecter à votre service sans se connecter. Pour plus d’informations sur l’utilisation de ce type de jeton, voir [Jeton d’identité d’utilisateur Exchange](authentication.md#exchange-user-identity-token). Dans cet article, nous allons examiner une méthode simple pour authentifier un utilisateur sur votre back end à l’aide d’un jeton d’identité Exchange.
 
 
 > [!IMPORTANT]
