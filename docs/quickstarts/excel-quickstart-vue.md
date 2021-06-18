@@ -1,15 +1,15 @@
 ---
 title: Créer un complément de volet de tâches Excel à l’aide de Vue
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et de Vue pour Office.
-ms.date: 11/09/2020
+ms.date: 06/16/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 61fa374f9c1f628c50b12b6495afba2d89d02840
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cd709910c9e69478c953c03b5e17d5512e875d91
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132346"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007817"
 ---
 # <a name="build-an-excel-task-pane-add-in-using-vue"></a>Créer un complément de volet de tâches Excel à l’aide de Vue
 
@@ -34,7 +34,7 @@ Utilisez l’interface de ligne de commande Vue pour générer une nouvelle appl
 vue create my-add-in
 ```
 
-Ensuite, sélectionnez la présélection `default`. Si vous êtes invité à utiliser Yarn ou NPM comme package, vous pouvez choisir l’un ou l’autre.
+Sélectionnez ensuite la `Default` prédéfinie pour « Vue 3 » (vous pouvez choisir d’utiliser « Vue 2 » si vous préférez).
 
 ## <a name="generate-the-manifest-file"></a>Génération du fichier manifeste
 
@@ -46,7 +46,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     cd my-add-in
     ```
 
-2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément en exécutant la commande suivante :
+2. Utilisez le générateur Yeoman pour générer le fichier manifeste de votre complément en exécutant la commande suivante :
 
     ```command&nbsp;line
     yo office
@@ -55,11 +55,11 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     > [!NOTE]
     > Lorsque vous exécutez la commande `yo office`, il est possible que vous receviez des messages d’invite sur les règles de collecte de données de Yeoman et les outils CLI de complément Office. Utilisez les informations fournies pour répondre aux invites comme vous l’entendez. Si vous sélectionnez **Quitter** en réponse à la deuxième invite, vous devez réexécuter la commande `yo office` lorsque vous êtes prêt à créer votre projet de complément.
 
-    Lorsque vous y êtes invité, fournissez les informations suivantes pour créer votre projet de complément :
+    Lorsque vous y êtes invité, fournissez les informations suivantes pour créer votre projet de complément :
 
-    - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
+    - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
     ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées](../images/yo-office-manifest-only-vue.png)
 
@@ -72,7 +72,7 @@ Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un 
 
 [!include[HTTPS guidance](../includes/https-guidance.md)]
 
-1. Pour activer HTTPS pour votre application, créez un fichier `vue.config.js` dans le dossier racine du projet Vue avec le contenu suivant :
+1. Pour activer HTTPS pour votre application, créez un fichier `vue.config.js` dans le dossier racine du projet Vue avec le contenu suivant :
 
     ```js
     var fs = require("fs");
@@ -98,28 +98,24 @@ Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un 
 
 ## <a name="update-the-app"></a>Mettre à jour l’application
 
-1. Ouvrez le fichier `public/index.html` et ajoutez la balise `<script>` suivante juste avant la balise `</head>` :
+1. Ouvrez le fichier `public/index.html` et ajoutez la balise `<script>` suivante juste avant la balise `</head>` :
 
    ```html
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-2. Ouvrez `src/main.js` et remplacez le contenu par le code suivant :
+2. Ouvrez `src/main.js` et remplacez le contenu par le code suivant :
 
    ```js
-   import Vue from 'vue';
-   import App from './App.vue';
+   import { createApp } from 'vue'
+   import App from './App.vue'
 
-   Vue.config.productionTip = false;
-
-   window.Office.initialize = () => {
-     new Vue({
-       render: h => h(App)
-     }).$mount('#app');
-   };
+   window.Office.onReady(() => {
+       createApp(App).mount('#app');
+   });
    ```
 
-3. Ouvrez `src/App.vue` et remplacez le contenu du fichier par le code suivant :
+3. Ouvrez `src/App.vue` et remplacez le contenu du fichier par le code suivant :
 
    ```html
    <template>
@@ -202,30 +198,30 @@ Une fois que vous avez terminé les étapes de l’Assistant, celui-ci crée un 
 
 1. Suivez les instructions pour la plateforme que vous utiliserez pour exécuter votre complément et chargez une version test du complément dans Excel.
 
-   - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-   - Navigateur web : [Chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
-   - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+   - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+   - Navigateur web : [Chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+   - iPad et Mac : [Chargement de version test des compléments Office sur iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-   ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/excel-quickstart-addin-2a.png)
+   ![Capture d’écran du menu Accueil d’Excel, avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
+4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
    ![Capture d’écran d’Excel avec le volet Office Complément ouvert](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément de volet de tâches Excel à l’aide de Vue ! Ensuite, découvrez les fonctionnalités d’un complément Excel et créez-en un plus complexe en suivant le didacticiel sur les compléments Excel.
+Félicitations, vous avez créé un complément du volet Office Excel à l’aide de Vue ! Maintenant, apprenez-en davantage sur les fonctionnalités d’un complément Excel et créez un complément plus complexe en suivant le didacticiel sur les compléments Excel.
 
 > [!div class="nextstepaction"]
 > [Didacticiel sur les compléments Excel](../tutorials/excel-tutorial.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 * [Développement de compléments Office](../develop/develop-overview.md)
 * [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 * [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)

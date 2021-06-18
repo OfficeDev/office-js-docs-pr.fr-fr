@@ -1021,8 +1021,9 @@ items:
             href: outlook/autolaunch.md
           - name: Volet des tâches pouvant être épinglé
             href: outlook/pinnable-taskpane.md
-          - name: Accès délégué
+          - name: Dossiers et boîtes aux lettres partagés
             href: outlook/delegate-access.md
+            displayName: delegate access
           - name: Manifestes
             items:
               - name: Manifestes des compléments Outlook
