@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 04/20/2021
+ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 126323527d74553aa7fd7e0c8cf1e5e5d89471ff
-ms.sourcegitcommit: 691fa338029c9cbd9a7194d163f390c3321a0cd8
+ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
+ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2021
-ms.locfileid: "51959179"
+ms.lasthandoff: 06/18/2021
+ms.locfileid: "53007803"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -23,9 +23,9 @@ Pour en savoir plus sur les limites de la fonctionnalité d’envoi, consultez l
 
 ## <a name="supported-clients-and-platforms"></a>Clients et plateformes pris en charge
 
-Le tableau suivant présente les combinaisons client-serveur pris en charge pour la fonctionnalité d'envoi, y compris la mise à jour cumulative minimale requise, le cas échéant. Les combinaisons exclues ne sont pas pris en charge.
+Le tableau suivant présente les combinaisons client-serveur pris en charge pour la fonctionnalité d’envoi, y compris la mise à jour cumulative minimale requise, le cas échéant. Les combinaisons exclues ne sont pas pris en charge.
 
-| Client | Exchange Online | Exchange 2016 local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 local<br>(Mise à jour cumulative 1 ou ultérieure) |
+| Client | Exchange Online | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) |
 |---|:---:|:---:|:---:|
 |Windows :<br>version 1910 (build 12130.20272) ou version ultérieure|Oui|Oui|Oui|
 |Mac :<br>build 16.30 à 16.46|Oui|Non|Non|
@@ -34,10 +34,10 @@ Le tableau suivant présente les combinaisons client-serveur pris en charge pour
 |Navigateur web :<br>interface utilisateur Outlook classique|Non applicable|Oui|Oui|
 
 > [!NOTE]
-> La fonctionnalité d'envoi a été officiellement publiée dans l'ensemble de conditions requises 1.8 (pour plus d'informations, voir la prise en charge actuelle du serveur et du [client).](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l'ensemble de conditions requises.
+> La fonctionnalité d’envoi a été officiellement publiée dans l’ensemble de conditions requises 1.8 (pour plus d’informations, voir la prise en charge actuelle du serveur et du [client).](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
 
 > [!IMPORTANT]
-> Les applications qui utilisent la fonctionnalité d'envoi ne sont pas autorisées dans [AppSource.](https://appsource.microsoft.com)
+> Les applications qui utilisent la fonctionnalité d’envoi ne sont pas autorisées dans [AppSource.](https://appsource.microsoft.com)
 
 ## <a name="how-does-the-on-send-feature-work"></a>Comment marche la fonctionnalité d’envoi ?
 
@@ -47,10 +47,10 @@ Vous pouvez utiliser la fonctionnalité d’envoi pour créer un complément Ou
 - Vérifier que la ligne d’objet du message est remplie
 - Définir un destinataire prédéterminé
 
-La validation est effectuée côté client dans Outlook lorsque l'événement d'envoi est déclenché et que le module dispose de 5 minutes avant son heure d'attente. Si la validation échoue, l'envoi de l'élément est bloqué et un message d'erreur s'affiche dans une barre d'informations qui invite l'utilisateur à prendre des mesures.
+La validation est effectuée côté client dans Outlook lorsque l’événement d’envoi est déclenché et que le module a jusqu’à 5 minutes avant son heure d’attente. Si la validation échoue, l’envoi de l’élément est bloqué et un message d’erreur s’affiche dans une barre d’informations qui invite l’utilisateur à prendre des mesures.
 
 > [!NOTE]
-> Dans Outlook sur le web, lorsque la fonctionnalité d'envoi est déclenchée dans un message en cours de composition dans l'onglet du navigateur Outlook, l'élément est publié dans sa propre fenêtre de navigateur ou onglet afin de terminer la validation et d'autres traitements.
+> Dans Outlook sur le web, lorsque la fonctionnalité d’envoi est déclenchée dans un message en cours de composition dans l’onglet du navigateur Outlook, l’élément est publié dans sa propre fenêtre de navigateur ou onglet afin de terminer la validation et d’autres traitements.
 
 La capture d’écran suivante montre une barre d’informations invitant l’expéditeur à renseigner l’objet du message.
 
@@ -72,26 +72,19 @@ La capture d’écran suivante montre une barre d’informations informant l’e
 
 Les limites de la fonctionnalité d’envoi sont les suivantes.
 
-- **Fonctionnalité d'envoi à l'envoi** &ndash; si vous appelez le [corps. AppendOnSendAsync dans](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) le handler d'envoi, une erreur est renvoyée.
+- **Fonctionnalité d’envoi à l’envoi** &ndash; si vous appelez le [corps. AppendOnSendAsync dans](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) le handler d’envoi, une erreur est renvoyée.
 - **AppSource** &ndash; Vous ne pouvez pas publier de compléments Outlook qui utilisent la fonctionnalité d’envoi sur [AppSource](https://appsource.microsoft.com). car ils ne seront pas validés par AppSource. Les compléments qui utilisent la fonctionnalité d’envoi doivent être déployés par les administrateurs.
 - **Manifeste** &ndash; Le complément prend en charge un seul événement `ItemSend`. Si votre manifeste comprend plusieurs événements `ItemSend`, il ne sera pas validé.
 - **Performances**&ndash; : plusieurs allers-retours vers le serveur web hébergeant le complément peuvent nuire aux performances du complément. Imaginez alors ce qu’occasionnerait la création de compléments nécessitant plusieurs opérations de messagerie ou réunions.
 - **Envoyer plus tard** (Mac uniquement) &ndash; S’il y a des compléments d’envoi, la fonctionnalité **Envoyer plus tard** n’est pas disponible.
 
-En outre, il n'est pas recommandé d'appeler le handler d'événements d'envoi car la fermeture de l'élément doit se produire automatiquement une fois `item.close()` l'événement terminé.
+En outre, il n’est pas recommandé d’appeler le handler d’événements d’envoi car la fermeture de l’élément doit se produire automatiquement une fois `item.close()` l’événement terminé.
 
 ### <a name="mailbox-typemode-limitations"></a>Limites concernant le type ou le mode de boîte aux lettres
 
-La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux lettres utilisateur dans Outlook sur le web, sur Windows et sur Mac. La fonctionnalité n’est pas prise en charge pour les types et modes de boîte aux lettres suivants.
+La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux lettres utilisateur dans Outlook sur le web, sur Windows et sur Mac. Outre les situations dans lesquelles les compléments ne s’activent pas comme indiqué dans la section Éléments de boîte aux lettres disponibles pour les [compléments](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) de la page vue d’ensemble des compléments Outlook, la fonctionnalité n’est actuellement pas prise en charge en mode hors connexion.
 
-- Boîtes aux lettres partagées\*
-- Boîtes aux lettres de groupe
-- Mode hors connexion
-
-Outlook bloque l’envoi si la fonctionnalité d’envoi est activée pour ces scénarios de boîtes aux lettres. Toutefois, si un utilisateur répond à un e-mail dans une boîte aux lettres de groupe, le complément d’envoi n’est pas exécuté et le message est envoyé.
-
-> [!IMPORTANT]
-> \*La fonctionnalité d'envoi doit fonctionner sur des boîtes aux lettres ou des dossiers partagés si le add-in implémente également la prise en charge des scénarios d'accès [délégué.](delegate-access.md)
+Outlook n’autorise pas l’envoi si la fonctionnalité d’envoi est activée pour les scénarios de boîte aux lettres non pris en compte. Toutefois, dans les cas où Outlook ne s’activent pas, le add-in d’envoi ne s’exécute pas et le message est envoyé.
 
 ## <a name="multiple-on-send-add-ins"></a>Compléments d’envoi multiples
 
@@ -202,7 +195,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="web-browser---modern-outlook"></a>[Navigateur web – Outlook moderne](#tab/modern)
 
-Les compléments pour Outlook sur le web (moderne) qui utilisent la fonctionnalité d’envoi doivent s’exécuter pour tous les utilisateurs qui les ont installés. Toutefois, si les utilisateurs doivent exécuter des add-ins d'envoi pour répondre aux normes de conformité, la stratégie de boîte aux lettres doit avoir l'indicateur *OnSendAddinsEnabled* définie de sorte que la modification de l'élément n'est pas autorisée pendant le traitement des add-ins lors de `true` l'envoi.
+Les compléments pour Outlook sur le web (moderne) qui utilisent la fonctionnalité d’envoi doivent s’exécuter pour tous les utilisateurs qui les ont installés. Toutefois, si les utilisateurs doivent exécuter des add-ins d’envoi pour répondre aux normes de conformité, la stratégie de boîte aux lettres doit avoir l’indicateur *OnSendAddinsEnabled* définie de sorte que la modification de l’élément n’est pas autorisée pendant le traitement des add-ins lors de `true` l’envoi.
 
 Pour installer un nouveau complément, exécutez les cmdlets Exchange Online PowerShell suivantes.
 
@@ -217,11 +210,11 @@ New-App -OrganizationApp -FileData $Data -DefaultStateForUser Enabled
 > [!NOTE]
 > Pour découvrir comment utiliser PowerShell à distance afin de se connecter à Exchange Online, consultez la rubrique [Connexion à Exchange Online PowerShell](/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell).
 
-#### <a name="enable-the-on-send-flag"></a>Activer l'indicateur d'envoi
+#### <a name="enable-the-on-send-flag"></a>Activer l’indicateur d’envoi
 
-Les administrateurs peuvent appliquer la conformité à l'envoi en exécutant des cmdlets Exchange Online PowerShell.
+Les administrateurs peuvent appliquer la conformité à l’envoi en exécutant Exchange Online cmdlets PowerShell.
 
-Pour tous les utilisateurs, pour ne pas modifier pendant le traitement des add-ins d'envoi :
+Pour tous les utilisateurs, pour ne pas modifier pendant le traitement des add-ins d’envoi :
 
 1. Créez une stratégie de boîte aux lettres Outlook sur le web.
 
@@ -232,7 +225,7 @@ Pour tous les utilisateurs, pour ne pas modifier pendant le traitement des add-i
     > [!NOTE]
     > Les administrateurs peuvent utiliser une stratégie existante, mais la fonctionnalité d’envoi est uniquement prise en charge sur certains types de boîtes aux lettres. La fonctionnalité d’envoi est bloquée par défaut sur les boîtes aux lettres non prises en charge dans Outlook sur le web.
 
-2. Appliquer la conformité lors de l'envoi.
+2. Appliquer la conformité lors de l’envoi.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
@@ -244,9 +237,9 @@ Pour tous les utilisateurs, pour ne pas modifier pendant le traitement des add-i
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
-#### <a name="turn-on-the-on-send-flag-for-a-group-of-users"></a>Activer l'indicateur d'envoi pour un groupe d'utilisateurs
+#### <a name="turn-on-the-on-send-flag-for-a-group-of-users"></a>Activer l’indicateur d’envoi pour un groupe d’utilisateurs
 
-Pour appliquer la conformité à l'envoi pour un groupe spécifique d'utilisateurs, les étapes sont les suivantes : Dans cet exemple, un administrateur souhaite uniquement activer une stratégie de complément d’envoi Outlook sur le web dans un environnement réservé aux utilisateurs du service financier.
+Pour appliquer la conformité à l’envoi pour un groupe spécifique d’utilisateurs, les étapes sont les suivantes : Dans cet exemple, un administrateur souhaite uniquement activer une stratégie de complément d’envoi Outlook sur le web dans un environnement réservé aux utilisateurs du service financier.
 
 1. Créez une stratégie de boîte aux lettres Outlook sur le web pour le groupe.
 
@@ -257,7 +250,7 @@ Pour appliquer la conformité à l'envoi pour un groupe spécifique d'utilisateu
    > [!NOTE]
    > Les administrateurs peuvent utiliser une stratégie existante, mais la fonctionnalité d’envoi est uniquement prise en charge sur certains types de boîtes aux lettres (pour en savoir plus, consultez la section [Limites concernant le type de boîte aux lettres](#multiple-on-send-add-ins) plus haut dans cet article). La fonctionnalité d’envoi est bloquée par défaut sur les boîtes aux lettres non prises en charge dans Outlook sur le web.
 
-2. Appliquer la conformité lors de l'envoi.
+2. Appliquer la conformité lors de l’envoi.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
@@ -271,11 +264,11 @@ Pour appliquer la conformité à l'envoi pour un groupe spécifique d'utilisateu
    ```
 
 > [!NOTE]
-> vous devez attendre 60 minutes avant que la stratégie prenne effet. Sinon, redémarrez Internet Information Services (IIS). Lorsque la stratégie prend effet, la conformité à l'envoi est appliquée pour le groupe.
+> vous devez attendre 60 minutes avant que la stratégie prenne effet. Sinon, redémarrez Internet Information Services (IIS). Lorsque la stratégie prend effet, la conformité à l’envoi est appliquée pour le groupe.
 
-#### <a name="turn-off-the-on-send-flag"></a>Désactiver l'indicateur d'envoi
+#### <a name="turn-off-the-on-send-flag"></a>Désactiver l’indicateur d’envoi
 
-Pour désactiver l'application de la conformité à l'envoi pour un utilisateur, affectez une stratégie de boîte aux lettres Outlook sur le web dont l'indicateur n'est pas activé en exécutant les cmdlets suivantes. Dans cet exemple, la stratégie de boîte aux lettres est *ContosoCorpOWAPolicy*.
+Pour désactiver l’application de la conformité à l’envoi pour un utilisateur, affectez une stratégie de boîte aux lettres Outlook sur le web dont l’indicateur n’est pas activé en exécutant les cmdlets suivantes. Dans cet exemple, la stratégie de boîte aux lettres est *ContosoCorpOWAPolicy*.
 
 ```powershell
 Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
@@ -284,7 +277,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 > [!NOTE]
 > Pour en savoir plus sur l’utilisation de la cmdlet **Set-OwaMailboxPolicy** en vue de configurer des stratégies de boîte aux lettres Outlook sur le web existantes, consultez la rubrique [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).
 
-Pour désactiver l'application de la conformité à l'envoi pour tous les utilisateurs affectés à une stratégie de boîte aux lettres Outlook sur le web spécifique, exécutez les cmdlets suivantes.
+Pour désactiver l’application de la conformité à l’envoi pour tous les utilisateurs pour Outlook sur le web une stratégie de boîte aux lettres spécifique, exécutez les cmdlets suivantes.
 
 ```powershell
 Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
@@ -294,7 +287,7 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 Les compléments pour Outlook sur Windows qui utilisent la fonctionnalité d’envoi doivent s’exécuter pour tous les utilisateurs qui les ont installés. Toutefois, si les utilisateurs sont obligés d’exécuter le complément pour respecter les normes de conformité, la stratégie de groupe **Désactiver l’envoi lorsque les extensions Web ne peuvent pas être chargées** doit être **Activée** sur chaque ordinateur concerné.
 
-Pour définir des stratégies de boîte aux lettres, les administrateurs peuvent télécharger l'outil [Modèles](https://www.microsoft.com/download/details.aspx?id=49030) d'administration, puis accéder aux derniers modèles d'administration en exécutant l'Éditeur de stratégie de groupe local, **gpedit.msc**.
+Pour définir des stratégies de boîte aux lettres, les administrateurs peuvent télécharger l’outil [Modèles](https://www.microsoft.com/download/details.aspx?id=49030) d’administration, puis accéder aux derniers modèles d’administration en exécutant l’Éditeur de stratégie de groupe local, **gpedit.msc**.
 
 #### <a name="what-the-policy-does"></a>Rôle de la stratégie
 
@@ -302,15 +295,15 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la stratégie|Résultat|
 |---|---|
-|Désactivé|Les manifestes actuellement téléchargés des applications d'envoi (pas nécessairement les versions les plus récentes) s'exécutent sur les éléments de message ou de réunion envoyés. Il s'agit de l'état/comportement par défaut.|
-|Activé|Une fois que les derniers manifestes des applications d'envoi sont téléchargés à partir d'Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l'envoi est bloqué.|
+|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
+|Activé|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir de Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
 
 Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuvent activer la stratégie d’envoi en veillant à ce que le paramètre de la stratégie de groupe de l’utilisateur **Désactiver l'envoi lorsque les extensions Web ne sont pas chargées** soit **Activé**. Pour désactiver la stratégie pour un utilisateur, l’administrateur doit la paramétrer sur **Désactivé**. Pour gérer ce paramètre de stratégie, vous pouvez :
 
 1. Téléchargez l’[outil de modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030).
-1. Ouvrez l'Éditeur de stratégie de groupe local (**gpedit.msc**).
+1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
 1. Accédez à **Configuration utilisateur > modèles d’administration > Microsoft Outlook 2016 > Sécurité > Centre de gestion de la confidentialité**.
 1. Sélectionnez le paramètre **Désactiver l’envoi lorsque les extensions Web ne peuvent pas charger**.
 1. Ouvrir le lien pour modifier le paramètre de stratégie.
@@ -335,8 +328,8 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la clé|Résultat|
 |---|---|
-|false|Les manifestes actuellement téléchargés des applications d'envoi (pas nécessairement les versions les plus récentes) s'exécutent sur les éléments de message ou de réunion envoyés. Il s'agit de l'état/comportement par défaut.|
-|true|Une fois que les derniers manifestes des applications d'envoi sont téléchargés à partir d'Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l'envoi est bloqué et le **bouton** Envoyer est désactivé.|
+|false|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
+|true|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir de Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué et le **bouton** Envoyer est désactivé.|
 
 ---
 
@@ -365,16 +358,7 @@ Les compléments s’exécutent pendant l’événement d’envoi pour autoriser
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navigateur web (Outlook moderne), Windows, Mac
 
-Pour appliquer l’envoi, les administrateurs doivent s’assurer que la stratégie a été activée sur les deux boîtes aux lettres. Pour plus d’informations sur la prise en charge de l’accès délégué dans un complément, voir [Activer les scénarios d’accès délégué dans un complément Outlook](delegate-access.md).
-
-### <a name="group-1-is-a-modern-group-mailbox-and-user-mailbox-1-is-a-member-of-group-1"></a>Le Groupe 1 est une boîte aux lettres de groupe moderne et la Boîte aux lettres d’utilisateur 1 est membre du Groupe 1
-
-<br/>
-
-|Scénario|Stratégie d’envoi de la boîte aux lettres 1|Compléments d’envoi activés ?|Action de la boîte aux lettres 1|Résultat|Pris en charge ?|
-|:------------|:-------------------------|:-------------------|:---------|:----------|:-------------|
-|1|Activé|Oui|La Boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1.|Les compléments d’envoi s’exécutent pendant l’envoi.|Oui|
-|2|Activé|Oui|La boîte aux lettres 1 compose un nouveau message ou réunion pour le Groupe 1, dans la fenêtre du Groupe 1 dans Outlook sur le web.|Les compléments d’envoi ne s’exécutent pas pendant l’envoi.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 1.|
+Pour appliquer l’envoi, les administrateurs doivent s’assurer que la stratégie a été activée sur les deux boîtes aux lettres. Pour découvrir comment prendre en charge l’accès délégué dans un add-in, voir Activer les [dossiers partagés](delegate-access.md)et les scénarios de boîtes aux lettres partagées.
 
 ### <a name="user-mailbox-with-on-send-add-in-featurepolicy-enabled-add-ins-that-support-on-send-are-installed-and-enabled-and-offline-mode-is-enabled"></a>La fonctionnalité/stratégie d’envoi est activée sur la boîte aux lettres de l’utilisateur, les compléments qui prennent en charge cette fonctionnalité sont installés et activés et le mode hors connexion est activé
 
@@ -395,29 +379,29 @@ Les compléments d’envoi s’exécutent pendant l’envoi, si le serveur Excha
 > [!NOTE]
 > Sur Mac en mode hors connexion, le bouton **Envoyer** (ou le bouton **Envoyer mise à jour** pour les réunions existantes) est désactivé et une notification indique que l’organisation n’autorise pas l’envoi lorsque l’utilisateur est hors connexion.
 
-### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>L'utilisateur peut modifier l'élément pendant que les modules d'envoi y travaillent
+### <a name="user-can-edit-item-while-on-send-add-ins-are-working-on-it"></a>L’utilisateur peut modifier l’élément pendant que les modules d’envoi y travaillent
 
-Pendant que les modules d'envoi traitent un élément, l'utilisateur peut modifier l'élément en ajoutant, par exemple, du texte inapproprié ou des pièces jointes. Si vous souhaitez empêcher l'utilisateur de modifier l'élément pendant que votre application est en cours de traitement lors de l'envoi, vous pouvez implémenter une solution de contournement à l'aide d'une boîte de dialogue. Cette solution de contournement peut être utilisée dans Outlook sur le web (classique), Windows et Mac.
+Pendant que les modules d’envoi traitent un élément, l’utilisateur peut modifier l’élément en ajoutant, par exemple, du texte inapproprié ou des pièces jointes. Si vous souhaitez empêcher l’utilisateur de modifier l’élément pendant que votre application est en cours de traitement lors de l’envoi, vous pouvez implémenter une solution de contournement à l’aide d’une boîte de dialogue. Cette solution de contournement peut être utilisée dans Outlook sur le web (classique), Windows et Mac.
 
 > [!IMPORTANT]
-> Outlook sur le web moderne : pour empêcher l'utilisateur de modifier l'élément pendant que votre application est en cours de traitement lors de l'envoi, vous devez définir l'indicateur *OnSendAddinsEnabled* sur tel que décrit dans la section Installer les applications Outlook qui utilisent la section d'envoi plus tôt dans cet `true` article. [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
+> Outlook sur le web moderne : pour empêcher l’utilisateur de modifier l’élément pendant que votre add-in est en cours de traitement lors de l’envoi, vous devez définir l’indicateur *OnSendAddinsEnabled* comme décrit dans la section Installer des Outlook qui utilisent la section d’envoi plus tôt dans cet `true` article. [](outlook-on-send-addins.md?tabs=modern#install-outlook-add-ins-that-use-on-send)
 
-Dans votre handler d'envoi :
+Dans votre handler d’envoi :
 
 1. Appelez [displayDialogAsync pour ouvrir](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-) une boîte de dialogue afin que les clics de souris et les frappes soient désactivés.
 
     > [!IMPORTANT]
-    > Pour obtenir ce comportement dans Outlook sur le web classique, vous devez définir la propriété [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) dans le paramètre `true` `options` de `displayDialogAsync` l'appel.
+    > Pour obtenir ce comportement dans les Outlook sur le web classiques, vous devez définir la propriété [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) dans le paramètre `true` `options` de `displayDialogAsync` l’appel.
 
-1. Implémenter le traitement de l'élément.
-1. Fermez la boîte de dialogue. En outre, traitez ce qui se produit si l'utilisateur ferme la boîte de dialogue.
+1. Implémenter le traitement de l’élément.
+1. Fermez la boîte de dialogue. En outre, traitez ce qui se produit si l’utilisateur ferme la boîte de dialogue.
 
 ## <a name="code-examples"></a>Exemples de code
 
 Les exemples de code ci-dessous vous montrent comment créer un complément d’envoi simple. Pour télécharger l’exemple de code sur lequel se basent ces exemples, consultez l’article [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send).
 
 > [!TIP]
-> Si vous utilisez une boîte de dialogue avec l'événement d'envoi, veillez à fermer la boîte de dialogue avant de terminer l'événement.
+> Si vous utilisez une boîte de dialogue avec l’événement d’envoi, veillez à fermer la boîte de dialogue avant de terminer l’événement.
 
 ### <a name="manifest-version-override-and-event"></a>Manifeste, remplacement de version et événement
 
@@ -445,7 +429,7 @@ Dans le fichier manifeste `Contoso Message Body Checker.xml`, insérez le fichie
 ```
 
 > [!IMPORTANT]
-> Si vous utilisez Visual Studio 2019 pour développer votre add-in d'envoi, vous pouvez obtenir un avertissement de validation comme suit : « Il s'agit d'un xsi:type ' non valide http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events ». Pour contourner ce besoin, vous aurez besoin d'une version plus récente de MailAppVersionOverridesV1_1.xsd qui a été fournie en tant que gist GitHub dans un blog à propos de cet [avertissement](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
+> Si vous utilisez Visual Studio 2019 pour développer votre add-in d’envoi, vous pouvez obtenir un avertissement de validation comme suit : « Il s’agit d’un xsi:type ' non valide http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events ». Pour contourner ce besoin, vous aurez besoin d’une version plus récente de MailAppVersionOverridesV1_1.xsd qui a été fournie en tant que GitHub gist dans un [blog](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/)sur cet avertissement.
 
 Pour le fichier manifeste `Contoso Subject and CC Checker.xml`, l’exemple suivant montre le fichier de fonction et le nom de la fonction à appeler dans l’événement d’envoi du message.
 

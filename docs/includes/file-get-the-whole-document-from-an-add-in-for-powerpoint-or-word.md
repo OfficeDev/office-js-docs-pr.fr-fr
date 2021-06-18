@@ -6,11 +6,11 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
 
 - Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants :
 
-    - Fichier HTML (GetDoc_App.html) qui contient l’interface utilisateur, ainsi que des liens vers les fichiers JavaScript (y compris les fichiers office.js et .js propres à l’application) et les fichiers CSS (Cascading Style Sheet).
+  - Fichier HTML (GetDoc_App.html) qui contient l’interface utilisateur, ainsi que des liens vers les fichiers JavaScript (y compris les fichiers office.js et .js propres à l’application) et les fichiers CSS (Cascading Style Sheet).
 
-    - Un fichier JavaScript (GetDoc_App.js) qui contient la logique de programmation du complément.
+  - Un fichier JavaScript (GetDoc_App.js) qui contient la logique de programmation du complément.
 
-    - Un fichier CSS (Program.css) qui contient les styles et la mise en forme du complément.
+  - Un fichier CSS (Program.css) qui contient les styles et la mise en forme du complément.
 
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
 
@@ -18,7 +18,7 @@ Vous pouvez également créer un module pour PowerPoint à l’aide de [Visual S
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
 
-Avant de commencer à créer ce complément pour PowerPoint ou Word, vous devez savoir comment créer des Compléments Office et utiliser des requêtes HTTP. Cet article n’explique pas comment décoder du texte codé en Base64 à partir d’une requête HTTP sur un serveur web. 
+Avant de commencer à créer ce complément pour PowerPoint ou Word, vous devez savoir comment créer des Compléments Office et utiliser des requêtes HTTP. Cet article n’explique pas comment décoder du texte codé en Base64 à partir d’une requête HTTP sur un serveur web.
 
 ## <a name="create-the-manifest-for-the-add-in"></a>Créer le manifeste pour le complément
 
@@ -89,7 +89,7 @@ Utilisez la procédure suivante pour créer une interface utilisateur simple pou
 2. Enregistrez le fichier avec le nom GetDoc_App.html et un encodage UTF-8 sur un emplacement réseau ou sur un serveur web.
 
     > [!NOTE]
-    > Assurez-vous que les balises **head** du complément contiennent une balise **script** et un lien valide vers le fichier office.js. 
+    > Assurez-vous que les balises **head** du complément contiennent une balise **script** et un lien valide vers le fichier office.js.
 
     Nous allons utiliser des styles CSS pour donner au complément une apparence simple, moderne et professionnelle. Utilisez le code CSS suivant pour définir le style du complément.
 
@@ -144,7 +144,7 @@ Office.initialize = function (reason) {
 // Create a function for writing to the status div.
 function updateStatus(message) {
     var statusInfo = $('#status');
-    statusInfo.innerHTML += message + "<br/>";
+    statusInfo[0].innerHTML += message + "<br/>";
 }
 ```
 
