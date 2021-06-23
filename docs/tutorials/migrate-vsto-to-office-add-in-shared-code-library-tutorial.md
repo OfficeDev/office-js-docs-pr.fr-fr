@@ -2,16 +2,16 @@
 ms.date: 02/09/2021
 ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
-title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
+title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 localization_priority: Priority
-ms.openlocfilehash: 1645cdcc3c799ec09e98ae69dd4abd6e38b11880
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: aaf228d1e3ce33797165b1380b43d26ceffa1d8c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50238091"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076124"
 ---
-# <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
+# <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
 Les compléments de Visual Studio Tools pour Office (VSTO) sont idéaux pour étendre Office afin de fournir des solutions aux entreprises, la vôtre ou d’autres. Ils existent depuis longtemps et des milliers de solutions sont créées avec VSTO. Cependant, ils s’exécutent uniquement avec Office sur Windows. Vous ne pouvez pas exécuter des compléments VSTO sur les plateformes Mac, Online ou mobile.
 
@@ -27,9 +27,9 @@ Ce didacticiel vous guide dans la procédure d’identification et de partage d'
 
 Le diagramme suivant illustre le fonctionnement de la bibliothèque de codes partagés pour la migration. Le code commun est refactorisé dans une nouvelle bibliothèque de codes partagés. Le code peut demeurer écrit dans son langage d’origine, par exemple C# ou VB. Cela signifie que vous continuez à utiliser le code dans le complément VSTO existant en créant une référence de projet. Lorsque vous créez le complément Office, celui-ci utilise également la bibliothèque de codes partagés en y appelant les API REST.
 
-![Diagramme d'un complément VSTO et d'un complément Office utilisant une bibliothèque de codes partagés](../images/vsto-migration-shared-code-library.png)
+![Diagramme d'un complément VSTO et d'un complément Office utilisant une bibliothèque de codes partagés.](../images/vsto-migration-shared-code-library.png)
 
-Compétences et techniques décrites dans ce didacticiel :
+Compétences et techniques décrites dans ce didacticiel :
 
 - Créer une bibliothèque de classes partagées en refactorisant le code dans une bibliothèque de classes .NET.
 - Créez un wrapper API REST à l’aide de ASP.NET Core pour la bibliothèque de classes partagées.
@@ -37,10 +37,10 @@ Compétences et techniques décrites dans ce didacticiel :
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour la configuration de votre environnement de développement :
+Pour la configuration de votre environnement de développement :
 
-1. Installez [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
-2. Installez les charges de travail suivantes :
+1. Installez [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+2. Installez les charges de travail suivantes :
     - ASP.NET et le développement web
     - Développement multiplateforme .NET Core.
     - Développement Office/SharePoint
@@ -48,10 +48,10 @@ Pour la configuration de votre environnement de développement :
         - Visual Studio Tools pour Office (VSTO).
         - .NET Core 3.0 Runtime.
 
-Vous devez également disposer des éléments ci-après :
+Vous devez également disposer des éléments ci-après :
 
-- Un compte Microsoft 365. Vous pouvez rejoindre le [programme pour les développeurs Microsoft 365](https://aka.ms/devprogramsignup) qui offre un abonnement Microsoft 365 renouvelable de 90 jours qui inclut les applications Office.
-- Un locataire Microsoft Azure. Un abonnement d’évaluation peut être obtenu ici : [Microsoft Azure](https://account.windowsazure.com/SignUp).
+- Un compte Microsoft 365. Vous pouvez rejoindre le [programme pour les développeurs Microsoft 365](https://aka.ms/devprogramsignup) qui offre un abonnement Microsoft 365 renouvelable de 90 jours qui inclut les applications Office.
+- Un locataire Microsoft Azure. Un abonnement d’évaluation peut être obtenu ici : [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>Le composant VSTO d’analyseur de cellule
 
@@ -61,7 +61,7 @@ Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VS
 > L’exemple utilise C# , mais vous pouvez utiliser les techniques décrites dans ce didacticiel pour appliquer un complément VSTO écrit dans n’importe quel langage .NET.
 
 1. Téléchargez la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) vers un dossier de travail de votre ordinateur.
-1. Démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
+1. Démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
 1. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellule**, puis choisissez **Propriétés**.
 1. Sélectionnez la catégorie de **Signature** dans les propriétés.
@@ -70,7 +70,7 @@ Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VS
 
 Le complément est un volet de tâche personnalisé Office pour Excel. Vous pouvez sélectionner n’importe quelle cellule contenant un texte, puis choisissez le bouton **Afficher les Unicodes**. Dans la section **Résultat** , le complément affiche une liste de chaque caractère du texte, ainsi que leur nombre Unicode correspondant.
 
-![Capture d’écran du complément VSTO d’analyseur de cellule exécuté dans Excel avec le bouton Afficher Unicode et la section Résultat vide](../images/pnp-cell-analyzer-vsto-add-in.png)
+![Capture d’écran du complément VSTO d’analyseur de cellule exécuté dans Excel avec le bouton Afficher Unicode et la section Résultat vide.](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## <a name="analyze-types-of-code-in-the-vsto-add-in"></a>Analyser les types de code dans le complément VSTO
 
@@ -88,7 +88,7 @@ Le code communique avec le document par le biais d’objets .NET tels que `Micro
 
 La logique métier, les algorithmes, les fonctions d’assistance et autres codes similaires constituent souvent le cœur d’un complément VSTO. Ce code fonctionne indépendamment de l’interface utilisateur et du code de document pour effectuer une analyse, se connecter à un service principale, effectuer des calculs, etc. Il s’agit du code qui peut être partagé pour que vous n’ayez pas à le réécrire dans JavaScript.
 
-Examinez le complément VSTO. Dans le code suivant, chaque section est identifiée en tant que code de DOCUMENT, d’interface utilisateur ou d’ALGORITHME.
+Examinons le complément VSTO. Dans le code suivant, chaque section est identifiée en tant que code DOCUMENT, interface utilisateur ou ALGORITHME.
 
 ```csharp
 // *** UI CODE ***
@@ -139,7 +139,7 @@ foreach (char c in cellValue)
 
 Les compléments VSTO étant créés dans Visual Studio en tant que projets .NET, nous réutiliser .NET aussi souvent que possible pour simplifier les choses. La technique suivante consiste à créer une bibliothèque de classes et à refactoriser le code partagé dans cette bibliothèque.
 
-1. Si ce n'est pas encore fait, démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
+1. Si ce n'est pas encore fait, démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
 2. Cliquez avec le bouton droit sur la solution dans l’**Explorateur de solutions** et choisissez **Ajouter > Nouvelle solution**.
 3. Dans la **boîte de dialogue Ajouter un nouveau projet**, choisissez **Bibliothèque de classes (.NET Framework)**, puis sélectionnez **Suivant**.
     > [!NOTE]
@@ -188,7 +188,7 @@ Vous devez maintenant mettre à jour le complément VSTO pour utiliser la biblio
     }
     ```
 
-5. Mettez à jour la ligne de code sous le commentaire à lire `//Output the result` comme suit :
+5. Mettez à jour la ligne de code sous le commentaire à lire `//Output the result` comme suit :
 
     ```csharp
     //Output the result
@@ -203,7 +203,7 @@ Le complément VSTO peut utiliser directement la bibliothèque de classes partag
 
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellules**, puis choisissez **Ajouter un nouveau projet**.
 2. Dans la **boîte de dialogue Ajouter un nouveau projet**, choisissez **Application web ASP.NET Core**, puis sélectionnez **Suivant**.
-3. Dans la boîte de dialogue **Configurer votre nouveau projet**, définissez les champs suivants :
+3. Dans la boîte de dialogue **Configurer votre nouveau projet**, définissez les champs suivants :
     - Donnez un **Nom de projet** à **CellAnalyzerRESTAPI**.
     - Dans le champ **Emplacement**, conserver la valeur par défaut.
 4. Sélectionnez **Créer**.
@@ -231,7 +231,7 @@ Le complément VSTO peut utiliser directement la bibliothèque de classes partag
 
 14. Cliquez avec le bouton droit sur le projet **CellAnalyzerRESTAPI**, puis choisissez **Définir comme projet de démarrage**.
 15. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
-16. Un navigateur s’ouvre. Entrez l’URL suivante pour vérifier que l’API REST fonctionne : `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. Vous pouvez réutiliser le numéro de port à partir de l’URL dans le navigateur lancé par Visual Studio. Vous devriez voir une chaîne renvoyée avec des valeurs Unicode pour chaque caractère.
+16. Un navigateur s’ouvre. Entrez l’URL suivante pour vérifier que l’API REST fonctionne : `https://localhost:<ssl port number>/api/analyzeunicode?value=test`. Vous pouvez réutiliser le numéro de port à partir de l’URL dans le navigateur lancé par Visual Studio. Vous devriez voir une chaîne renvoyée avec des valeurs Unicode pour chaque caractère.
 
 ## <a name="create-the-office-add-in"></a>Créer le complément Office
 
@@ -239,7 +239,7 @@ Lorsque vous créez le complément Office, celui-ci appelle l'API REST. Mais vou
 
 ### <a name="save-the-ssl-port-number"></a>Enregistrer le numéro de port SSL
 
-1. Si ce n'est pas encore fait, démarrez Visual Studio 2019 et ouvrez la solution **\start\Cell-Analyzer.sln**.
+1. Si ce n'est pas encore fait, démarrez Visual Studio 2019 et ouvrez la solution **\start\Cell-Analyzer.sln**.
 2. Dans le projet **CellAnalyzerRESTAPI**, développez les **Propriétés** et ouvrez le fichier **launchSettings.json**.
 3. Recherchez la ligne de code contenant la valeur de **sslPort**, copiez le numéro de port et enregistrez-le quelque part.
 
@@ -249,17 +249,17 @@ Pour simplifier les choses, conservez tous les codes dans une seule solution. Aj
 
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur la solution **Analyseur de cellules**, puis choisissez **Ajouter > Nouveau projet**.
 2. Dans la **Boîte de dialogue Ajouter un nouveau projet**, choisissez **Complément web Excel**, puis sélectionnez **Suivant**.
-3. Dans la boîte de dialogue **Configurer votre nouveau projet**, définissez les champs suivants :
+3. Dans la boîte de dialogue **Configurer votre nouveau projet**, définissez les champs suivants :
     - Donnez un **Nom de projet** à **CellAnalyzerOfficeAddin**.
     - Gardez l'**Emplacement** à sa valeur par défaut.
     - Configurez **Framework** sur **4.7.2** ou une version ultérieure.
 4. Sélectionnez **Créer**.
 5. Dans la boîte de dialogue **Choisir le type de complément**, sélectionnez **Ajouter e nouvelles fonctionnalités dans Excel**, puis choisissez **Terminer**.
 
-Deux projets sont créés :
+Deux projets sont créés :
 
-- **CellAnalyzerOfficeAddin** : ce projet configure les fichiers XML du manifeste qui décrivent le complément pour qu’Office puisse le charger correctement. Il contient l’ID, le nom, la description et d’autres informations sur le complément.
-- **CellAnalyzerOfficeAddinWeb** : ce projet contient des ressources Web pour votre complément (par exemple, HTML, CSS et des scripts). Il configure également une instance IIS Express pour héberger votre complément en tant qu’application Web.
+- **CellAnalyzerOfficeAddin** : ce projet configure les fichiers XML du manifeste qui décrivent le complément pour qu’Office puisse le charger correctement. Il contient l’ID, le nom, la description et d’autres informations sur le complément.
+- **CellAnalyzerOfficeAddinWeb** : ce projet contient des ressources Web pour votre complément (par exemple, HTML, CSS et des scripts). Il configure également une instance IIS Express pour héberger votre complément en tant qu’application Web.
 
 ### <a name="add-ui-and-functionality-to-the-office-add-in"></a>Ajouter des interfaces utilisateur et des fonctionnalités au complément Office
 
@@ -336,7 +336,7 @@ La bibliothèque Office.js nécessite CORS pour les appels sortants, tels que ce
     > [!NOTE]
     > Enlevez le `/` qui se trouve à la fin de l’URL lorsque vous l’utilisez dans la méthode `builder.WithOrigins`Builder.WithOrigins.tr. Par exemple, il doit ressembler à `https://localhost:44000`. Dans le cas contraire, une erreur CORS se produira lors de l’exécution.
 
-6. Ajoutez le champs suivant à la classe `Startup` :
+6. Ajoutez le champs suivant à la classe `Startup` :
 
     ```csharp
     readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -348,7 +348,7 @@ La bibliothèque Office.js nécessite CORS pour les appels sortants, tels que ce
     app.UseCors(MyAllowSpecificOrigins);
     ```
 
-Lorsque vous avez terminé, votre classe `Startup` doit ressembler au code suivant (votre URL localhost peut être différente) :
+Lorsque vous avez terminé, votre classe `Startup` doit ressembler au code suivant (votre URL localhost peut être différente) :
 
 ```csharp
 public class Startup
@@ -432,9 +432,9 @@ Vous voulez enfin publier le projet API REST sur le cloud. Dans les étapes suiv
 
 Vous pouvez maintenant tester le service. Ouvrez un navigateur et entrez une URL qui accède directement au nouveau service. Par exemple, utilisez `https://<myappservice>.azurewebsites.net/api/analyzeunicode?value=test` où *myappservice* est le seul nom que vous avez créé pour le nouvel App Service.
 
-### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Utiliser Azure App Service à partir du complément Office
+### <a name="use-the-azure-app-service-from-the-office-add-in"></a>Utiliser Azure App Service à partir du complément Office
 
-La dernière étape consiste à mettre à jour le code dans le complément Office pour utiliser Azure App Service au lieu de localhost.
+La dernière étape consiste à mettre à jour le code dans le complément Office pour utiliser Azure App Service au lieu de localhost.
 
 1. Dans l'**Explorateur de solutions**, développez le projet **CellAnalyzerOfficeAddinWeb** et ouvrez le fichier **Home.js**.
 1. Modifiez la constante `url` afin d’utiliser l’URL d'Azure App Service, comme illustré dans la ligne de code suivante. Remplacez `<myappservice>` par le nom unique que vous avez créé pour le nouvel App Service.
@@ -445,13 +445,13 @@ La dernière étape consiste à mettre à jour le code dans le complément Offic
 
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du nœud supérieur sur la **Solution de l'analyseur de cellules**, puis choisissez **Configurer les projets de départ**.
 1. Dans la boîte de dialogue des **Pages de propriété de la solution de l'analyseur de cellules**, sélectionnez **Plusieurs projets de départ**.
-1. Activez l’action **Démarrer** pour chacun des projets suivants :
+1. Activez l’action **Démarrer** pour chacun des projets suivants :
     - CellAnalyzerOfficeAddinWeb
     - CellAnalyzerOfficeAddin
 1. Sélectionnez **OK**.
 1. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
 
-Excel exécute et charge une version test du complément Office. Pour vérifier que App Service fonctionne correctement, entrez une valeur de texte dans une cellule, puis choisissez **Afficher l'Unicode** dans le complément Office. Il doit appeler le service et afficher les valeurs Unicode pour les caractères de texte.
+Excel exécute et charge une version test du complément Office. Pour vérifier que App Service fonctionne correctement, entrez une valeur de texte dans une cellule, puis choisissez **Afficher l'Unicode** dans le complément Office. Il doit appeler le service et afficher les valeurs Unicode pour les caractères de texte.
 
 ## <a name="conclusion"></a>Conclusion
 

@@ -3,16 +3,16 @@ title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
 ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: c9d69b21be5cca0c37feb14f43649b55df532466
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: 922148130aa5384050813155819d2db4c75fe284
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173947"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076138"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
-Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
+Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
 
 Pour une vue d'ensemble du reportage, voir la vidéo [Ruban de l'application commandes complémentaires au sein du Bureau](https://channel9.msdn.com/events/Build/2016/P551).
 
@@ -22,13 +22,13 @@ Pour une vue d'ensemble du reportage, voir la vidéo [Ruban de l'application com
 > [!IMPORTANT]
 > Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
 
-*Figure 1. Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)*
+*Figure 1. Complément incluant des commandes en cours d’exécution dans Excel (version de bureau)*
 
-![Capture d’écran affichant les commandes de complément mises en évidence dans le ruban Excel](../images/add-in-commands-1.png)
+![Capture d’écran affichant les commandes de complément mises en évidence dans le ruban Excel.](../images/add-in-commands-1.png)
 
-*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel sur le web*
+*Figure 2. Complément incluant des commandes en cours d’exécution dans Excel sur le web*
 
-![Capture d’écran affichant des commandes de complément dans Excel sur le web](../images/add-in-commands-2.png)
+![Capture d’écran affichant des commandes de complément dans Excel sur le web.](../images/add-in-commands-2.png)
 
 ## <a name="command-capabilities"></a>Fonctionnalités de commande
 
@@ -61,7 +61,7 @@ Vous pouvez spécifier si la commande est activée ou désactivée lors du lance
 
 ### <a name="position-on-the-ribbon-preview"></a>Position sur le ruban (aperçu)
 
-Vous pouvez spécifier l’emplacement où s’affiche un onglet personnalisé sur le ruban de l’application Office, par exemple, « juste à droite de l’onglet Accueil ».
+Vous pouvez spécifier l’emplacement où s’affiche un onglet personnalisé sur le ruban de l’application Office, par exemple, « juste à droite de l’onglet Accueil ».
 
 > [!NOTE]
 > Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni dans tous les scénarios. Pour plus d’informations, voir [Positionner un onglet personnalisé sur le ruban](custom-tab-placement.md).
@@ -85,9 +85,9 @@ Vous pouvez spécifier qu’un onglet n’est visible que dans le ruban dans cer
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes, à l’exception des limitations spécifiées plus haut dans les sous-sections de [Fonctionnalités de commande](#command-capabilities).
 
 - Office on Windows (build 16.0.6769+, connecté à un abonnement Microsoft 365)
-- Office 2019 sur Windows
+- Office 2019 sur Windows
 - Office sur Mac (build 15.33+, connecté à un abonnement Microsoft 365)
-- Office 2019 sur Mac
+- Office 2019 sur Mac
 - Office sur le web
 
 > [!NOTE]
@@ -95,11 +95,11 @@ Les commandes de complément sont actuellement prises en charge sur les platefor
 
 ## <a name="debugging"></a>Débogage
 
-Pour déboguer une commande de complément, vous devez l’exécuter dans Office sur le web. Pour plus de détails, voir [Débogage de compléments dans Office sur le web](../testing/debug-add-ins-in-office-online.md).
+Pour déboguer une commande de complément, vous devez l’exécuter dans Office sur le web. Pour plus de détails, voir [Débogage de compléments dans Office sur le web](../testing/debug-add-ins-in-office-online.md).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Appliquez les meilleures pratiques suivantes lorsque vous développez des commandes de complément :
+Appliquez les meilleures pratiques suivantes lorsque vous développez des commandes de complément :
 
 - Utilisez les commandes pour représenter une action spécifique avec un résultat clair et précis pour les utilisateurs. Ne combinez pas plusieurs actions dans un seul bouton.
 - Proposez des actions détaillées permettant de réaliser plus efficacement des tâches courantes dans votre complément. Réduisez le nombre d’étapes nécessaires à la réalisation d’une action.
@@ -109,7 +109,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
   - Placez des commandes dans un onglet personnalisé si vous avez plus de six commandes de niveau supérieur.
   - Nommez votre groupe en fonction du nom de votre complément. Si vous avez plusieurs groupes, nommez chaque groupe en fonction de la fonctionnalité offerte par les commandes de ce groupe.
   - N’ajoutez pas de boutons superflus pour augmenter la valeur de votre complément.
-  - Ne positionnez pas un onglet personnalisé à gauche de l’onglet d’Accueil, ou ne lui donnez pas le focus par défaut lors de l’ouverture du document, sauf si votre complément est le principal mode d’interaction des utilisateurs avec le document. Donner une importance excessive à votre complément dérange et contrarie les utilisateurs et les administrateurs.
+  - Ne positionnez pas un onglet personnalisé à gauche de l’onglet Accueil, ou donnez-lui le focus par défaut lorsque le document s’ouvre, sauf si votre complément est la principale façon dont les utilisateurs interagissent avec le document. Donner une importance excessive à votre complément importune et gêne les utilisateurs et les administrateurs.
   - Si votre complément est le principal mode d’interaction des utilisateurs avec le document et que vous avez un onglet de ruban personnalisé, envisagez d’intégrer dans l’onglet les boutons de fonctions d’Office dont les utilisateurs ont fréquemment besoin.
   - Si la fonctionnalité fournie avec un onglet personnalisé ne doit être disponible que dans certains contextes, utilisez les [onglets contextuels personnalisés](contextual-tabs.md). Si vous utilisez des onglets contextuels personnalisés, veillez à implémenter une [expérience de secours pour les cas d’utilisation de votre complément sur des plateformes qui ne prennent pas en charge les onglets contextuels personnalisés](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
@@ -119,12 +119,12 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
 - Proposez une version de votre complément qui fonctionne aussi sur les applications Office qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner à la fois dans les applications sensibles aux commandes (avec des commandes) et non sensibles aux commandes (sous forme de volet de tâches).
 
-   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
+   *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
 
-   ![Capture d’écran comparant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016. Dans la version 2013, le volet Office doit contenir toutes les commandes, tandis que dans la version 2016, les commandes peuvent se trouver dans le ruban.](../images/office-task-pane-add-ins.png)
+   ![Capture d’écran comparant un complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016. Dans la version 2013, le volet Office doit contenir toutes les commandes, tandis que dans la version 2016, les commandes peuvent se trouver dans le ruban.](../images/office-task-pane-add-ins.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
+La meilleure façon de commencer à utiliser des commandes de complément consiste à consulter des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) sur GitHub.
 
 Pour plus d’informations sur la spécification des commandes de complément dans votre manifeste, reportez-vous à l’article expliquant comment [créer des commandes de complément dans votre manifeste](../develop/create-addin-commands.md) et au contenu de référence sur [VersionOverrides](../reference/manifest/versionoverrides.md).

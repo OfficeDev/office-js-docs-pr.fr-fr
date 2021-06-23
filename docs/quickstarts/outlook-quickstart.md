@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 06/10/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 59d04953822122a0b8c72502c2e3250da94dfd43
-ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
+ms.openlocfilehash: 75a2b4d5a3ec995971b6cca1e47c77572d274555
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2021
-ms.locfileid: "52893658"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076601"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -48,7 +48,7 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
     - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
-    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-outlook-1.png)
+    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-outlook-1.png)
 
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -110,16 +110,16 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 1. Sélectionnez l’onglet **Accueil** (ou l’onglet **Message** si vous avez ouvert le message dans une nouvelle fenêtre), puis sélectionnez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran illustrant la fenêtre d’un message dans Outlook avec le bouton du ruban du complément mis en évidence](../images/quick-start-button-1.png)
+    ![Capture d’écran illustrant la fenêtre d’un message dans Outlook avec le bouton du ruban du complément mis en évidence.](../images/quick-start-button-1.png)
 
     > [!NOTE]
     > Si le message d’erreur « Désolé... nous ne pouvons pas ouvrir ce complément à partir de localhost » s’affiche dans le volet Office, suivez les étapes décrites dans l’[article résolution des problèmes](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 1. Faites défiler vers le bas du volet Office et sélectionnez le lien **Exécuter** pour écrire l’objet du message dans le volet Office.
 
-    ![Capture d’écran illustrant le volet Office du complément avec le lien d’exécution mis en évidence](../images/quick-start-task-pane-2.png)
+    ![Capture d’écran illustrant le volet Office du complément avec le lien d’exécution mis en évidence.](../images/quick-start-task-pane-2.png)
 
-    ![Capture d’écran du volet Office du complément, affichant le sujet du message](../images/quick-start-task-pane-3.png)
+    ![Capture d’écran du volet Office du complément, affichant le sujet du message.](../images/quick-start-task-pane-3.png)
 
 ### <a name="next-steps"></a>Étapes suivantes
 
@@ -276,15 +276,15 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 
 1. Dans le message, recherchez les points de suspension du menu de dépassement de capacité contenant le bouton du complément.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec les points de suspension mis en surbrillance](../images/quick-start-button-owa-1.png)
+    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec les points de suspension mis en surbrillance.](../images/quick-start-button-owa-1.png)
 
 1. Dans le menu de dépassement de capacité, recherchez le bouton du complément.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec le bouton du complément mis en surbrillance](../images/quick-start-button-owa-2.png)
+    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec le bouton du complément mis en surbrillance.](../images/quick-start-button-owa-2.png)
 
 1. Cliquez sur le bouton pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du volet Office du complément dans Outlook sur le web, affichant les propriétés des messages](../images/quick-start-task-pane-owa-1.png)
+    ![Capture d’écran du volet Office du complément dans Outlook sur le web, affichant les propriétés des messages.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > Si le volet Office n’est pas chargé, essayez de l’ouvrir dans un navigateur sur le même ordinateur.

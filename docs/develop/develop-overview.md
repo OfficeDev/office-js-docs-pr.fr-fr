@@ -3,12 +3,12 @@ title: Développement de compléments Office
 description: Présentation du développement de compléments Office.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 0d19ec8203e7141b6667713786d790eb0a12bba2
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237888"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076117"
 ---
 # <a name="develop-office-add-ins"></a>Développement de compléments Office
 
@@ -23,7 +23,7 @@ Vous pouvez créer un complément Office à l’aide du générateur Yeoman pour
 
 ### <a name="yeoman-generator-for-office-add-ins"></a>Générateur Yeoman pour compléments Office
 
-Le[Générateur Yeoman pour les compléments Office](https://github.com/officedev/generator-office) peut être utilisé pour créer un projet de complément Office Node.js qui peut être géré à l’aide de Visual Studio Code ou de tout autre éditeur. Le générateur peut créer des compléments Office pour les éléments suivants :
+Le[Générateur Yeoman pour les compléments Office](https://github.com/officedev/generator-office) peut être utilisé pour créer un projet de complément Office Node.js qui peut être géré à l’aide de Visual Studio Code ou de tout autre éditeur. Le générateur peut créer des compléments Office pour les éléments suivants :
 
 - Excel
 - OneNote
@@ -35,7 +35,7 @@ Le[Générateur Yeoman pour les compléments Office](https://github.com/officede
 
 Vous pouvez choisir de créer le projet à l’aide de HTML, CSS et JavaScript, ou d’utiliser Angular ou React. Pour l’infrastructure de votre choix, vous pouvez également choisir entre JavaScript et Typescript . Pour en savoir plus sur la création de compléments avec le générateur Yeoman, consultez [Développez des compléments Office avec Visual Studio Code](../develop/develop-add-ins-vscode.md).
 
-### <a name="visual-studio"></a>Visual Studio
+### <a name="visual-studio"></a>Visual Studio
 
 Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Outlook, Word, et PowerPoint. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Pour en savoir plus sur la création de compléments avec Visual Studio, consultez [Développez des compléments Office avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
@@ -43,24 +43,24 @@ Visual Studio peut être utilisé pour créer des compléments Office pour Excel
 
 ## <a name="understanding-the-two-parts-of-an-office-add-in"></a>Comprendre les deux parties d’un complément Office
 
-Un complément Office est composé de deux parties :
+Un complément Office est composé de deux parties :
 
 - Le manifeste de complément est un fichier XML qui définit les paramètres et les fonctionnalités du complément.
 
 - L'application web qui définit l'interface utilisateur et les fonctionnalités des composants additionnels tels que les volets Office, les compléments de contenu et les boîtes de dialogue.
 
-L’application web utilise l’API JavaScript Office pour interagir avec le contenu du document Office dans lequel le complément est exécuté. Votre complément peut également effectuer d’autres actions que les applications web effectuent, comme appeler des services web externes, faciliter l’authentification des utilisateurs, et bien plus encore.
+L’application web utilise l’API JavaScript Office pour interagir avec le contenu du document Office dans lequel le complément est en cours d’exécution. Votre complément peut également effectuer d’autres opérations que les applications web effectuent généralement, comme appeler des services web externes, faciliter l’authentification des utilisateurs, etc.
 
 ### <a name="defining-an-add-ins-settings-and-capabilities"></a>Définir les paramètres et les fonctionnalités du complément
 
-Un manifeste de complément Office (fichier XML) définit les paramètres et les fonctionnalités du complément. Vous allez configurer le manifeste pour spécifier des éléments tels que :
+Un manifeste de complément Office (fichier XML) définit les paramètres et les fonctionnalités du complément. Vous allez configurer le manifeste pour spécifier des éléments tels que :
 
 - Métadonnées décrivant le complément (par exemple, ID, version, description, nom complet, paramètres régionaux par défaut).
 - Les applications Office dans lesquelles le complément s’exécute.
 - Autorisations nécessaires au complément.
 - La manière dont le complément est intégré à Office, y compris toute interface utilisateur personnalisée créée par le complément (par exemple, onglets personnalisés, boutons du ruban).
 - L’emplacement des images que le complément utilise pour la personnalisation et l'iconographie des commandes.
-- Dimensions du complément (par exemple, dimensions pour les compléments de contenu, la hauteur demandée pour des compléments Outlook).
+- Dimensions du complément (par exemple, dimensions pour les compléments de contenu, la hauteur demandée pour des compléments Outlook).
 - Règles qui spécifient le moment où le complément est activé dans le contexte d’un message ou d’un rendez-vous (pour les compléments Outlook uniquement).
 
 Si vous souhaitez en savoir plus sur le manifeste, veuillez consulter l’article sur le [manifeste XML de compléments Office](add-in-manifests.md).
@@ -87,7 +87,7 @@ Script Lab est un complément qui vous permet d’explorer l’API JavaScript Of
 
 La vidéo d’une minute suivante illustre Script Lab en action.
 
-[![Vidéo d’aperçu montrant l’exécution de Script Lab dans Excel, Word et PowerPoint](../images/screenshot-wide-youtube.png 'Vidéo de la version préliminaire de Script Lab')](https://aka.ms/scriptlabvideo)
+[![Vidéo d’aperçu montrant l’exécution de Script Lab dans Excel, Word et PowerPoint.](../images/screenshot-wide-youtube.png 'Vidéo de la version préliminaire de Script Lab.')](https://aka.ms/scriptlabvideo)
 
 Si vous souhaitez en savoir plus sur Script Lab, veuillez consulter[Axplorer les API Office JavaScript à l’aide d’un Script Lab](../overview/explore-with-script-lab.md).
 
@@ -101,13 +101,13 @@ Un complément Office peut étendre l'interface utilisateur d'Office à l’aide
 
 L’image suivante illustre la commande d’un complément dans le ruban, un volet Office à droite du document et une boîte de dialogue ou un complément de contenu sur le document.
 
-![Diagramme qui illustre les commandes de complément sur le ruban, un volet Office et un complément boîte de dialogue/contenu dans un document Office](../images/add-in-ui-elements.png)
+![Diagramme qui illustre les commandes de complément sur le ruban, un volet Office et un complément boîte de dialogue/contenu dans un document Office.](../images/add-in-ui-elements.png)
 
 Pour plus d’informations sur l’extension de l’interface utilisateur d’Office et la conception de l’expérience utilisateur du complément, consultez [Éléments d’interface utilisateur Office pour les compléments Office](../design/interface-elements.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Cet article décrit les différentes façons de créer des compléments Office, a mis en place les façons dont un complément peut développer l’interface utilisateur d’Office, décrit les ensembles API et présenté les scripts pratiques en tant qu’outil précieux pour l’exploration des API JavaScript Office et la fonctionnalité de complément prototypage. À présent que vous avez examiné les informations d’introduction, nous vous conseillons de continuer à suivre vos compléments Office dans les trajectoires suivantes.
+Cet article a décrit les différentes façons de créer des compléments Office, a présenté les façons dont un complément peut étendre l’interface utilisateur d’Office, décrit les ensembles d’API et a introduit Script Lab comme outil précieux pour explorer les API JavaScript Office et le prototypage des fonctionnalités de complément. Maintenant que vous avez exploré ces informations d’introduction, envisagez de poursuivre le parcours de vos compléments Office en suivant les chemins d’accès suivants.
 
 ### <a name="create-an-office-add-in"></a>Créer un complément Office
 
@@ -122,8 +122,8 @@ Pour en savoir plus sur le développement, le test et la publication de complém
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
 - [Publier des compléments Office](../publish/publish.md)

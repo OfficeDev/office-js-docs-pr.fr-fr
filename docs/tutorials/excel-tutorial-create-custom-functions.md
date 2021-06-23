@@ -4,18 +4,18 @@ description: Dans ce didacticiel, vous allez créer un complément Excel qui con
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: cec05135297bb2aa23c3c936a2481b69ed13891a
-ms.sourcegitcommit: 545888b08f57bb1babb05ccfd83b2b3286bdad5c
+ms.openlocfilehash: 50855deac928f9610ebc80aa52858259106a109c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "49789204"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076209"
 ---
-# <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
+# <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
 Les fonctions personnalisées vous permettent d’ajouter de nouvelles fonctions dans Excel en définissant ces fonctions dans JavaScript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`. Vous pouvez créer des fonctions personnalisées qui effectuent des tâches simples comme des calculs personnalisés ou des tâches plus complexes telles que la diffusion en continu des données en temps réel à partir du web dans une feuille de calcul.
 
-Dans ce didacticiel, vous allez :
+Dans ce didacticiel, vous allez :
 > [!div class="checklist"]
 > * Créer un complément de fonction personnalisée à l’aide la [Générateur Yeoman de compléments Office](https://www.npmjs.com/package/generator-office). 
 > * Utiliser une fonction personnalisée prédéfinie pour effectuer un calcul simple.
@@ -26,7 +26,7 @@ Dans ce didacticiel, vous allez :
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Microsoft 365) ou sur le web.
+* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Microsoft 365) ou sur le web.
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
@@ -34,11 +34,11 @@ Dans ce didacticiel, vous allez :
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
     
-    * **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
-    * **Sélectionnez un type de script :** `JavaScript`
-    * **Comment souhaitez-vous nommer votre complément ?** `starcount`
+    * **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
+    * **Sélectionnez un type de script :** `JavaScript`
+    * **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées](../images/starcountPrompt.png)
+    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.](../images/starcountPrompt.png)
     
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
@@ -81,7 +81,7 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 
 1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
 
-   ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence](../images/excel-cf-online-register-add-in-1.png)
+   ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence.](../images/excel-cf-online-register-add-in-1.png)
    
 2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
@@ -109,7 +109,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 1. Dans le projet **starcount**, recherchez le fichier **./src/functions/functions.js** et ouvrez-le dans votre éditeur de code. 
 
-2. Dans **function. js**, ajoutez le code suivant : 
+2. Dans **function. js**, ajoutez le code suivant : 
 
 ```JS
 /**
@@ -149,15 +149,15 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 1. Fermez Excel, puis rouvrez-le.
 
-2. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence](../images/select-insert.png)
+2. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence.](../images/select-insert.png)
 
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
-    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
+    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.](../images/list-starcount.png)
 
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance.](../images/excel-cf-online-register-add-in-1.png)
 
 2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
@@ -167,8 +167,8 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 ---
 
-<ol start="5">
-<li> Essayez la nouvelle fonction. Dans la cellule <strong>B1</strong>, tapez le texte <strong>=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")</strong>, puis appuyez sur Entrée. Le résultat dans la cellule <strong>B1</strong> doit correspondre au nombre d’étoiles actuellement attribuées au [référentiel GitHub Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
+<ol start="5&quot;>
+<li> Essayez la nouvelle fonction. Dans la cellule <strong>B1</strong>, tapez le texte <strong>=CONTOSO.GETSTARCOUNT(&quot;OfficeDev&quot;, &quot;Excel-Custom-Functions")</strong>, puis appuyez sur Entrée. Le résultat dans la cellule <strong>B1</strong> doit correspondre au nombre d’étoiles actuellement attribuées au [référentiel GitHub Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).</li>
 </ol>
 
 ## <a name="create-a-streaming-asynchronous-custom-function"></a>Créer une fonction personnalisée asynchrone de diffusion en continu
@@ -217,14 +217,14 @@ function clock(invocation) {
 
 1. Fermez Excel, puis rouvrez-le.
 
-2. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence](../images/select-insert.png)
+2. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence.](../images/select-insert.png)
 
 3. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
-    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments](../images/list-starcount.png)
+    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.](../images/list-starcount.png)
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance.](../images/excel-cf-online-register-add-in-1.png)
 
 2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
@@ -240,7 +240,7 @@ function clock(invocation) {
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Ensuite, vous pouvez modifier votre projet pour utiliser un runtime partagé, ce qui permet à votre fonction d’interagir plus facilement avec le volet de tâches. Suivez la procédure décrite dans cet article :
+Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Ensuite, vous pouvez modifier votre projet pour utiliser un runtime partagé, ce qui permet à votre fonction d’interagir plus facilement avec le volet de tâches. Suivez la procédure décrite dans cet article :
 
 > [!div class="nextstepaction"]
 > [Configurer votre complément pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

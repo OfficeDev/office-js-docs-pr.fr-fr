@@ -1,18 +1,18 @@
 ---
-title: Créer des compléments Outlook pour les formulaires de composition
+title: Créer des compléments Outlook pour les formulaires de composition
 description: Découvrez les scénarios et fonctionnalités des compléments Outlook pour les formulaires de composition.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 9156f2e1393c27eea359a6b63da47bc24a8a6828
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: b4863bd2f64aa2076a250d34c7ec6bed3dbc1c0a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234253"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077098"
 ---
-# <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
+# <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
 
-À partir de la version 1.1 du schéma pour les manifestes des Compléments Office et de la version 1.1 d’office.js, vous pouvez créer des compléments de composition, qui sont des compléments Outlook activés dans les formulaires de composition. Contrairement aux compléments de lecture (des compléments Outlook activés en mode lecture lorsqu’un utilisateur visualise un message ou un rendez-vous), les compléments de composition sont disponibles dans les scénarios utilisateur suivants :
+À partir de la version 1.1 du schéma pour les manifestes des Compléments Office et v1.1 Office.js, vous pouvez créer des compléments de composition, qui sont des compléments Outlook activés dans les formulaires de composition. Contrairement aux compléments de lecture (qui sont des compléments Outlook activés en mode lecture lorsqu’un utilisateur visualise un message ou un rendez-vous), les compléments de composition sont disponibles dans les scénarios suivants :
 
 - Composition d’un nouveau message, d’une demande de réunion ou d’un rendez-vous dans un formulaire de composition.
 
@@ -29,13 +29,13 @@ ms.locfileid: "50234253"
 
 - Transfert d’une demande de réunion ou d’un élément de réunion, ou réponse à une demande de réunion ou un élément de réunion.
 
-Dans chacun de ces scénarios de composition, tous les boutons de commande de complément sont affichés. Pour les compléments plus anciens qui n’implémentent pas les commandes de complément, les utilisateurs peuvent sélectionner **Compléments Office** dans le ruban pour ouvrir le volet de sélection des compléments, puis choisir et lancer un complément de composition.  La figure suivante présente les commandes de complément dans un formulaire de composition.
+Dans chacun de ces scénarios de composition, tous les boutons de commande de complément sont affichés. Pour les compléments plus anciens qui n’implémentent pas les commandes de complément, les utilisateurs peuvent sélectionner **Compléments Office** dans le ruban pour ouvrir le volet de sélection des compléments, puis choisir et lancer un complément de composition. La figure suivante présente les commandes de complément dans un formulaire de composition.
 
 ![Affiche un formulaire de composition Outlook avec les commandes de complément.](../images/compose-form-commands.png)
 
-La figure suivante présente le volet de sélection des compléments constitué de deux compléments de composition qui n’implémentent pas les commandes de complément, activés quand l’utilisateur compose une réponse instantanée dans Outlook.
+La figure suivante présente le volet de sélection des compléments constitué de deux compléments de composition qui n’implémentent pas les commandes de complément, activés quand l’utilisateur compose une réponse instantanée dans Outlook.
 
-![Application de messagerie de modèles activée pour l’élément composé](../images/templates-app-selection.png)
+![Application de messagerie de modèles activée pour l’élément composé.](../images/templates-app-selection.png)
 
 ## <a name="types-of-add-ins-available-in-compose-mode"></a>Types de complément disponibles en mode composition
 

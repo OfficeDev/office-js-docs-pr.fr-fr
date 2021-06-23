@@ -1,18 +1,18 @@
 ---
-title: Manifestes des compléments Outlook
+title: Manifestes des compléments Outlook
 description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: 0135db8b6ff2b9fbcb3b6370979d8013aa21155a
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839823"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076769"
 ---
-# <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
+# <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
-Un complément Outlook contient deux composants : le manifeste du complément XML et une page web, pris en charge par la bibliothèque JavaScript pour les compléments Office (office.js). Le manifeste décrit l’intégration du complément avec les clients Outlook. Voici un exemple.
+Un complément Outlook contient deux composants : le manifeste du complément XML et une page web, pris en charge par la bibliothèque JavaScript pour les compléments Office (office.js). Le manifeste décrit l’intégration du complément avec les clients Outlook. Voici un exemple.
 
  > [!NOTE]
  > Dans l’exemple suivant, toutes les valeurs d’URL commencent par «https://appdemo.contoso.com». Cette valeur est un espace réservé. Dans un manifeste valide réel, ces valeurs contiendraient des URL web HTTPS valides.
@@ -233,13 +233,13 @@ L’élément **VersionOverrides** dans le manifeste en est un exemple. Tous les
 
 Cette approche signifie que les développeurs ne doivent pas créer plusieurs manifestes individuels, mais plutôt conserver tous les éléments définis dans un fichier.
 
-Les versions actuelles du schéma sont les suivantes :
+Les versions actuelles du schéma sont les suivantes :
 
 
 |Version|Description|
 |:-----|:-----|
-|v1.0|Prend en charge la version 1.0 de l’API Office JavaScript. Pour les compléments Outlook, la prise en charge des formulaires de lecture est également incluse. |
-|v1.1|Prend en charge la version 1.1 de l’interface API Office JavaScript et **VersionOverrides**. Pour les compléments Outlook, la prise en charge des formulaires de composition est incluse.|
+|v1.0|Prend en charge la version 1.0 de l’API Office JavaScript. Pour les compléments Outlook, la prise en charge des formulaires de lecture est également incluse. |
+|v1.1|Prend en charge la version 1.1 de l’interface API Office JavaScript et **VersionOverrides**. Pour les compléments Outlook, la prise en charge des formulaires de composition est incluse.|
 |**VersionOverrides** 1.0|Prend en charge les versions ultérieures de l’API Office JavaScript. La prise en charge des commandes de complément est incluse.|
 |**VersionOverrides** 1.1|Prend en charge les versions ultérieures de l’interface API Office JavaScript. Les commandes de complément sont prises en charge, ainsi que de nouvelles fonctionnalités, telles que les [volets Office à épingler](pinnable-taskpane.md) et les compléments mobiles.|
 
@@ -250,7 +250,7 @@ Cet article porte sur les conditions requises pour la version 1.1 du manifeste. 
 
 ## <a name="root-element"></a>Élément racine
 
-L’élément racine du manifeste de complément Outlook est **OfficeApp**. Cet élément indique également l’espace de noms, la version de schéma et le type de complément par défaut. Placez tous les autres éléments du manifeste entre ses balises d’ouverture et de fermeture. Vous trouverez ci-dessous un exemple d’élément racine :
+L’élément racine du manifeste de complément Outlook est **OfficeApp**. Cet élément indique également l’espace de noms, la version de schéma et le type de complément par défaut. Placez tous les autres éléments du manifeste entre ses balises d’ouverture et de fermeture. Vous trouverez ci-dessous un exemple d’élément racine :
 
 
 ```XML
@@ -282,7 +282,7 @@ Pour plus d’informations sur cet élément, consultez [Créer des commandes co
 
 ## <a name="localization"></a>Localisation
 
-Certains aspects du complément doivent être localisés pour les différents paramètres régionaux, tels que le nom, la description et l’URL qui est chargée. Ces éléments peuvent être facilement localisés en spécifiant la valeur par défaut et les valeurs de remplacement locales dans l’élément **Resources** au sein de l’élément **VersionOverrides**. Pour remplacer une image, une URL et une chaîne, procédez comme suit :
+Certains aspects du complément doivent être localisés pour les différents paramètres régionaux, tels que le nom, la description et l’URL qui est chargée. Ces éléments peuvent être facilement localisés en spécifiant la valeur par défaut et les valeurs de remplacement locales dans l’élément **Resources** au sein de l’élément **VersionOverrides**. Pour remplacer une image, une URL et une chaîne, procédez comme suit :
 
 
 ```XML
@@ -330,11 +330,11 @@ Il existe une différence avec l’élément **Hosts** au sein de l’élément 
 
 ## <a name="requirements"></a>Configuration requise
 
-L’élément **Requirements** spécifie l’ensemble d’API disponible pour le complément. Pour un complément Outlook, l’ensemble de conditions requises doit être Mailbox et avoir la valeur 1.1 ou supérieure. Reportez-vous à la référence d’API pour connaître la dernière version de condition requise. Pour plus d’informations sur les ensembles de conditions requises, reportez-vous à la rubrique [API de complément Outlook](apis.md). 
+L’élément **Requirements** spécifie l’ensemble d’API disponible pour le complément. Pour un complément Outlook, l’ensemble de conditions requises doit être Mailbox et avoir la valeur 1.1 ou supérieure. Reportez-vous à la référence d’API pour connaître la dernière version de condition requise. Pour plus d’informations sur les ensembles de conditions requises, reportez-vous à la rubrique [API de complément Outlook](apis.md). 
 
 L’élément **Requirements** peut également apparaître dans l’élément **VersionOverrides**, ce qui permet au complément de spécifier d’autres conditions requises lorsqu’il est chargé dans des clients qui prennent en charge **VersionOverrides**.
 
-L’exemple suivant utilise l’attribut **DefaultMinVersion** de l’élément **Sets** pour exiger office.js version 1.1 ou ultérieure, et l’attribut **MinVersion** de l’élément **Set** pour exiger l’ensemble de conditions requises Mail box version 1.1.
+L’exemple suivant utilise l’attribut **DefaultMinVersion** de l’élément **Sets** pour exiger office.js version 1.1 ou ultérieure, et l’attribut **MinVersion** de l’élément **Set** pour exiger l’ensemble de conditions requises Mail box version 1.1.
 
 ```XML
 <OfficeApp>
@@ -350,7 +350,7 @@ L’exemple suivant utilise l’attribut **DefaultMinVersion** de l’élément 
 
 ## <a name="form-settings"></a>Paramètres de formulaire
 
-L’élément **FormSettings** est utilisé par les clients Outlook plus anciens, qui prennent en charge uniquement le schéma version 1.1 et non **VersionOverrides**. À l’aide de cet élément, les développeurs définissent la façon dont le complément s’affiche dans ces clients. Il existe deux parties : **ItemRead** et **ItemEdit**.**ItemRead** est utilisé pour spécifier la manière dont le complément apparaît lorsque l’utilisateur lit les messages et les rendez-vous. **ItemEdit** décrit comment le complément s’affiche lorsque l’utilisateur compose une réponse, un nouveau message, un nouveau rendez-vous ou modifie un rendez-vous dont il est l’organisateur.
+L’élément **FormSettings** est utilisé par les clients Outlook plus anciens, qui prennent en charge uniquement le schéma version 1.1 et non **VersionOverrides**. À l’aide de cet élément, les développeurs définissent la façon dont le complément s’affiche dans ces clients. Il existe deux parties : **ItemRead** et **ItemEdit**.**ItemRead** est utilisé pour spécifier la manière dont le complément apparaît lorsque l’utilisateur lit les messages et les rendez-vous. **ItemEdit** décrit comment le complément s’affiche lorsque l’utilisateur compose une réponse, un nouveau message, un nouveau rendez-vous ou modifie un rendez-vous dont il est l’organisateur.
 
 Ces paramètres sont directement liés aux règles d’activation dans l’élément **Rule**. Par exemple, si un complément spécifie qu’il doit apparaître sur un message lors de sa composition, un formulaire **ItemEdit** doit être spécifié.
 
@@ -388,9 +388,9 @@ Pour plus d’informations, voir [Spécifier les domaines que vous souhaitez ouv
 
 L’élément **Permissions** contient les autorisations requises pour le complément. Généralement, vous devez spécifier l’autorisation nécessaire minimale dont votre complément a besoin selon la méthode exacte que vous prévoyez d’utiliser. Par exemple, un complément de messagerie qui s’active dans les formulaires de composition et qui lit uniquement mais n’écrit pas dans les propriétés de l’élément comme [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), et qui n’appelle pas [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour accéder aux opérations liées aux services web Exchange doit spécifier l’autorisation **ReadItem**. Pour plus de détails sur les autorisations disponibles, reportez-vous à l’article [Présentation des autorisations de complément Outlook](understanding-outlook-add-in-permissions.md).
 
-**Modèle d’autorisations à 4 niveaux pour les compléments de messagerie**
+**Modèle d’autorisations à 4 niveaux pour les compléments de messagerie**
 
-![Modèle d’autorisations à 4 niveaux pour le schéma d’applications de messagerie v1.1](../images/add-in-permission-tiers.png)
+![Modèle d’autorisations à 4 niveaux pour le schéma d’applications de messagerie v1.1.](../images/add-in-permission-tiers.png)
 
 ```XML
 <OfficeApp>
@@ -420,24 +420,24 @@ Les règles d’activation peuvent être utilisées pour activer un complément 
 Pour plus de détails et des exemples de règles d’activation, voir [Règles d’activation pour les compléments Outlook](activation-rules.md).
 
 
-## <a name="next-steps-add-in-commands"></a>Prochaines étapes : commandes de complément
+## <a name="next-steps-add-in-commands"></a>Prochaines étapes : commandes de complément
 
-Une fois que vous avez défini un manifeste de base, définissez les commandes de complément pour votre complément. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
+Après avoir défini un manifeste de base, définissez des commandes pour votre complément. Les commandes de complément se présentent sous forme de bouton dans le ruban. Ainsi, les utilisateurs peuvent activer votre complément de façon simple et intuitive. Pour plus d’informations, voir [Commandes de complément pour Outlook](add-in-commands-for-outlook.md).
 
 Pour un exemple de complément qui définit les commandes de complément, voir [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 
-## <a name="next-steps-add-mobile-support"></a>Étapes suivantes : Ajouter la prise en charge mobile
+## <a name="next-steps-add-mobile-support"></a>Étapes suivantes : Ajouter la prise en charge mobile
 
-Les compléments peuvent éventuellement ajouter la prise en charge d’Outlook Mobile. Outlook Mobile prend en charge les commandes de complément de la même manière qu’Outlook sous Windows et Mac. Pour plus d’informations, voir la section [Ajouter la prise en charge des commandes de complément pour Outlook Mobile](add-mobile-support.md).
+Les compléments peuvent éventuellement ajouter la prise en charge d’Outlook Mobile. Outlook Mobile prend en charge les commandes de complément de la même manière qu’Outlook sous Windows et Mac. Pour plus d’informations, voir la section [Ajouter la prise en charge des commandes de complément pour Outlook Mobile](add-mobile-support.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Localisation des compléments Office](../develop/localization.md)
-- [Confidentialité, autorisations et sécurité pour les compléments Outlook](privacy-and-security.md)
-- [API de complément Outlook](apis.md)
-- [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
-- [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md)
+- [Confidentialité, autorisations et sécurité pour les compléments Outlook](privacy-and-security.md)
+- [API de complément Outlook](apis.md)
+- [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
+- [Référence de schéma pour les manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md)
 - [Concevoir vos compléments Office](../design/add-in-design.md)
 - [Présentation des autorisations de complément Outlook](understanding-outlook-add-in-permissions.md)
-- [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md)
+- [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md)

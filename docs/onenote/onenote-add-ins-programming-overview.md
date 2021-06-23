@@ -5,39 +5,39 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: e71535dce7892889a13e4546d8dd388f568ab5c4
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741119"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077112"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
-OneNote présente une API JavaScript pour les compléments OneNote sur le web. Vous pouvez créer des compléments de volet Office et de contenu, ainsi que des commandes de complément qui interagissent avec les objets OneNote et se connectent à des services web ou à d’autres ressources basées sur le web.
+OneNote présente une API JavaScript pour les compléments OneNote sur le web. Vous pouvez créer des compléments de volet de tâches et de contenu, ainsi que des commandes de complément qui interagissent avec les objets OneNote et se connectent à des services web ou à d’autres ressources basées sur le web.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="components-of-an-office-add-in"></a>Composants d’un complément Office
 
-Les compléments sont constitués de deux composants de base :
+Les compléments sont constitués de deux composants de base :
 
-- Une **application web** comportant une page web et les fichiers CSS, JavaScript ou autres requis. Ces fichiers sont hébergés sur un serveur web ou un service d’hébergement web, tel que Microsoft Azure. Dans OneNote sur le web, l’application web s’affiche dans un contrôle de navigateur ou un iFrame.
+- Une **application web** comportant une page web et les fichiers CSS, JavaScript ou autres requis. Ces fichiers sont hébergés sur un serveur web ou un service d’hébergement web, tel que Microsoft Azure. Dans OneNote sur le web, l’application web s’affiche dans un contrôle de navigateur ou un iFrame.
 
 - Un **manifeste XML** spécifiant l’URL de la page web du complément, ainsi que les conditions d’accès, les paramètres et fonctionnalités du complément. Ce fichier est stocké sur le client. Les compléments OneNote utilisent le même format de [manifeste](../develop/add-in-manifests.md) que les autres compléments Office.
 
 ### <a name="office-add-in--manifest--webpage"></a>Complément pour Office = manifeste + page web
 
-![Un complément Office se compose d’un manifeste et d’une page web](../images/onenote-add-in.png)
+![Le complément Office se compose d’un manifeste et d’une page web.](../images/onenote-add-in.png)
 
 ## <a name="using-the-javascript-api"></a>Utilisation de l’API JavaScript
 
 Les compléments utilisent le contexte d’exécution de l’application Office pour accéder à l’API JavaScript. L’API comporte deux couches:
 
 - Une **API spécifique à l’application** pour les opérations spécifiques de OneNote, accessible via l’objet`Application`Application.
-- Une**API commune** qui est partagée entre les applications Office, accessible via l’objet `Document`.
+- Une **API commune** qui est partagée entre les applications Office, accessible via l’objet `Document`.
 
-### <a name="accessing-the-application-specific-api-through-the-application-object"></a>Accès à l’API spécifique à l’application via l’objet*Application*
+### <a name="accessing-the-application-specific-api-through-the-application-object"></a>Accès à l’API spécifique à l’application via l’objet *Application*
 
 Utilisez l’objet`Application` pour accéder aux objets OneNote tels que **Notebook**, **Section** et **Page**. Grâce à l’API spécifique à l’application, vous pouvez exécuter des opérations par lot sur les objets proxy. Le flux de base ressemble à ceci:
 
@@ -52,7 +52,7 @@ Utilisez l’objet`Application` pour accéder aux objets OneNote tels que **Note
 
 4. Appelez la méthode `context.sync` pour exécuter toutes les commandes en attente dans l’ordre dans lequel elles ont été mises en file d’attente. Cela permet de synchroniser l’état entre votre script d’exécution et les objets réels, en récupérant les propriétés des objets OneNote chargés à utiliser dans vos scripts. Vous pouvez utiliser l’objet Promise renvoyé pour créer une chaîne avec les actions supplémentaires.
 
-Par exemple :
+Par exemple :
 
 ```js
 function getPagesInSection() {
@@ -92,13 +92,13 @@ Vous pouvez déterminer les objets et les opérations OneNote pris en charge dan
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par le complément. Pour en savoir plus sur les ensembles de conditions requises de l’API JavaScript pour OneNote, consultez [Ensembles de conditions requises de l’API JavaScript pour OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par le complément. Pour en savoir plus sur les ensembles de conditions requises de l’API JavaScript pour OneNote, consultez [Ensembles de conditions requises de l’API JavaScript pour OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
 
-### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet*Document*
+### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet *Document*
 
 Utilisez l’objet `Document` pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-).
 
-Par exemple :  
+Par exemple :  
 
 ```js
 function getSelectionFromPage() {
@@ -131,12 +131,12 @@ En règle générale, vous utilisez l’API commune pour effectuer une action qu
 ## <a name="onenote-object-model-diagram"></a>Diagramme du modèle objet OneNote 
 Le diagramme suivant représente ce qui est actuellement disponible dans l’API JavaScript de OneNote.
 
-  ![Diagramme du modèle objet OneNote](../images/onenote-om.png)
+  ![Diagramme de modèle objet OneNote.](../images/onenote-om.png)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Développement de compléments Office](../develop/develop-overview.md)
-- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Créer votre premier complément OneNote](../quickstarts/onenote-quickstart.md)
 - [Référence de l’API JavaScript de OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)
 - [Exemple de grille d’évaluation](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)

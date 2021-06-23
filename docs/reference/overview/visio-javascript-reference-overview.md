@@ -1,41 +1,41 @@
 ---
-title: Présentation des API JavaScript pour Visio
-description: Vue d’ensemble de l’API JavaScript pour Visio
+title: Présentation des API JavaScript pour Visio
+description: Vue d’ensemble de l’API JavaScript pour Visio
 ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 9d0abb5ddc93419f5acd38a8c0134941e15be48b
-ms.sourcegitcommit: fecad2afa7938d7178456c11ba52b558224813b4
+ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "49603791"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076440"
 ---
-# <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
+# <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 
-Vous pouvez utiliser les API JavaScript pour Visio pour incorporer des diagrammes Visio dans les pages SharePoint *classiques* de SharePoint Online. (cette fonctionnalité d’extensibilité n’est pas prise en charge sur des pages SharePoint ou SharePoint Framework locales.)
+Vous pouvez utiliser les API JavaScript pour Visio pour incorporer des diagrammes Visio dans les pages SharePoint *classiques* de SharePoint Online. (cette fonctionnalité d’extensibilité n’est pas prise en charge sur des pages SharePoint ou SharePoint Framework locales.)
 
-Les diagrammes Visio incorporés sont stockés dans une bibliothèque de documents SharePoint et sont affichés sur une page SharePoint. Pour incorporer un diagramme Visio, affichez-le dans un élément HTML`<iframe>`. Ensuite, vous pouvez utiliser les interfaces API JavaScript pour Visio pour programmer le diagramme incorporé.
+Les diagrammes Visio incorporés sont stockés dans une bibliothèque de documents SharePoint et sont affichés sur une page SharePoint. Pour incorporer un diagramme Visio, affichez-le dans un élément HTML`<iframe>`. Ensuite, vous pouvez utiliser les interfaces API JavaScript pour Visio pour programmer le diagramme incorporé.
 
-![Diagramme Visio dans un iframe sur la page SharePoint et composant WebPart de Script Editor.](../images/visio-api-block-diagram.png)
+![Diagramme Visio dans un iframe sur la page SharePoint et composant WebPart de Script Editor.](../images/visio-api-block-diagram.png)
 
-Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
+Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
 
 * interagir avec les éléments du diagramme Visio, tels que les pages et les formes ;
-* créer une marque de révision sur la zone du diagramme Visio ;
-* écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
+* créer une marque de révision sur la zone du diagramme Visio ;
+* écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
 * exposer les données du diagramme, tels que le texte de la forme, les données de forme et des liens hypertexte sur votre solution.
 
-Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio sur le web pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets `EmbeddedSession`, `RequestContext`, les objets de proxy JavaScript, ainsi que les méthodes `sync()`, `Visio.run()` et `load()`. Les exemples de code vous montrent comment appliquer ces concepts.
+Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio sur le web pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets `EmbeddedSession`, `RequestContext`, les objets de proxy JavaScript, ainsi que les méthodes `sync()`, `Visio.run()` et `load()`. Les exemples de code vous montrent comment appliquer ces concepts.
 
-## <a name="embeddedsession"></a>EmbeddedSession
+## <a name="embeddedsession&quot;></a>EmbeddedSession
 
 L’objet EmbeddedSession initialise la communication entre le cadre du développeur et le cadre de Visio dans le navigateur.
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+var session = new OfficeExtension.EmbeddedSession(url, { id: &quot;embed-iframe&quot;,container: document.getElementById(&quot;iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });
@@ -49,7 +49,7 @@ La méthode d’exécution utilise les objets session et RequestContext et renvo
 
 ## <a name="requestcontext"></a>RequestContext
 
-L’objet RequestContext facilite les demandes auprès de l’application Visio. Étant donné que le cadre du développeur et le client web Visio s’exécutent dans deux iframes différents, l’objet RequestContext (contexte dans l’exemple suivant) est nécessaire pour accéder à Visio et aux objets associés (par exemple, des pages et des formes) depuis le cadre du développeur.
+L’objet RequestContext facilite les demandes adressées à l’application Visio. Étant donné que le cadre du développeur et le client web Visio s’exécutent dans deux iframes différents, l’objet RequestContext (contexte dans l’exemple suivant) est nécessaire pour accéder à Visio et aux objets associés (par exemple, des pages et des formes) depuis le cadre du développeur.
 
 ```js
 function hideToolbars() {
@@ -94,7 +94,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 
 2. **loadOption** spécifie un objet qui décrit les propriétés select, expand, top et skip. Pour plus d’informations, reportez-vous aux [options](/javascript/api/office/officeextension.loadoption) de chargement d’objet.
 
-## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemple : impression du texte de toutes les formes de la page active
+## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemple : impression du texte de toutes les formes de la page active
 
 L’exemple suivant montre comment imprimer la valeur du texte de la forme d’un objet de formes de tableau.
 La méthode `Visio.run()` contient un lot d’instructions. Dans le cadre de ce traitement par lots, un objet de proxy faisant référence à des formes est créé dans le document actif.
@@ -135,7 +135,7 @@ Les erreurs sont renvoyées à l’aide d’un objet d’erreur qui se compose d
 
 ## <a name="get-started"></a>Prise en main
 
-Vous pouvez utiliser l’exemple de cette section pour commencer. Cet exemple montre comment programmer l’affichage du texte de la forme de la forme sélectionnée dans un diagramme Visio. Pour commencer, créez une page classique dans SharePoint Online ou modifiez une page existante. Ajoutez un composant WebPart Script Editor sur la page, puis copiez-collez le code suivant.
+Vous pouvez utiliser l’exemple de cette section pour commencer. Cet exemple montre comment programmer l’affichage du texte de la forme de la forme sélectionnée dans un diagramme Visio. Pour commencer, créez une page classique dans SharePoint Online ou modifiez une page existante. Ajoutez un composant WebPart Script Editor sur la page, puis copiez-collez le code suivant.
 
 ```js
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
@@ -197,12 +197,12 @@ function getSelectedShapeText() {
 </script>
 ```
 
-Après cela, vous n’avez plus besoin que de l’URL d’un diagramme Visio que vous voulez utiliser. Téléchargez simplement le diagramme Visio dans SharePoint Online et ouvrez-le dans Visio sur le web. À partir de là, ouvrez la boîte de dialogue Incorporer et utilisez l’URL à incorporer de l’exemple ci-dessus.
+Après cela, vous n’avez plus besoin que de l’URL d’un diagramme Visio que vous voulez utiliser. Téléchargez simplement le diagramme Visio dans SharePoint Online et ouvrez-le dans Visio sur le web. À partir de là, ouvrez la boîte de dialogue Incorporer et utilisez l’URL à incorporer de l’exemple ci-dessus.
 
-![Copiez l’URL du fichier Visio de la boîte de dialogue Incorporer](../images/Visio-embed-url.png)
+![Copiez l’URL du fichier Visio à partir de la boîte de dialogue Incorporer.](../images/Visio-embed-url.png)
 
 Si vous utilisez Visio sur le web en mode d’édition, ouvrez la boîte de dialogue Incorporer en sélectionnant **Fichier** > **Partager** > **Incorporer**. Si vous utilisez Visio sur le web en mode Affichage, ouvrez la boîte de dialogue Incorporer en sélectionnant « ... », puis **Incorporer**.
 
 ## <a name="visio-javascript-api-reference"></a>Référence de l’API JavaScript pour Visio
 
-Pour en savoir plus sur l’API JavaScript pour Visio, consultez la [documentation de référence de l’API JavaScript pour Visio](/javascript/api/visio).
+Pour en savoir plus sur l’API JavaScript pour Visio, consultez la [documentation de référence de l’API JavaScript pour Visio](/javascript/api/visio).

@@ -1,14 +1,14 @@
 ---
-title: Conception des compléments Outlook
+title: Conception des compléments Outlook
 description: Les instructions suivantes vous aideront à concevoir et à créer un complément attrayant, qui apportera le meilleur de votre application directement dans Outlook sur Windows, le web, iOS, Mac et Android.
 ms.date: 06/24/2019
 localization_priority: Priority
-ms.openlocfilehash: ed2ffe1b46ba4673dea531450a0452afa8de11c5
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: a669d2cf0a98ffa0ca7b7dfc3fcc5b71d291a0e0
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44606524"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077133"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Instructions de création d’un complément Outlook
 
@@ -40,7 +40,7 @@ Les instructions de haut niveau suivantes vous aideront à concevoir et à crée
 
 4. **Personnalisez votre complément à l’image de votre marque de manière judicieuse**
 
-   Nous apprécions les personnalisations et nous savons qu’il est important pour vous de procurer votre expérience unique aux utilisateurs. Cependant, nous pensons que la meilleure façon de garantir la réussite de votre complément est de créer une expérience intuitive qui incorpore subtilement les éléments de votre marque au lieu d’afficher des éléments de marque permanents ou obstruants qui empêchent les utilisateurs de naviguer dans votre système de manière fluide. 
+   Nous apprécions les personnalisations et nous savons qu’il est important pour vous de procurer votre expérience unique aux utilisateurs. Cependant, nous pensons que la meilleure façon de garantir la réussite de votre complément est de créer une expérience intuitive qui incorpore subtilement les éléments de votre marque au lieu d’afficher des éléments de marque permanents ou imposants qui empêchent les utilisateurs de naviguer dans votre système de manière fluide. 
     
    Vous pouvez par exemple intégrer votre marque en utilisant les couleurs, les icônes et le ton qui la définissent&mdash;tout en respectant les modèles privilégiés de la plateforme et les critères d’accessibilité. Efforcez-vous de toujours privilégier le contenu et la capacité à effectuer des tâches plutôt que de chercher à attirer l’attention sur votre marque. 
     
@@ -52,15 +52,15 @@ Les instructions de haut niveau suivantes vous aideront à concevoir et à crée
 > [!NOTE]
 > Tandis que les principes ci-dessus s’appliquent à l’ensemble des points de terminaison/plateformes, les modèles et les exemples suivants sont spécifiques des compléments mobiles sur la plateforme iOS.
 
-Pour vous aider à créer un complément bien conçu, nous proposons des [modèles](../design/ux-design-pattern-templates.md) pour les versions mobiles avec iOS fonctionnant dans l’environnement Outlook Mobile. Si vous utilisez ces modèles spécifiques, votre complément semblera natif de la plateforme iOS et d’Outlook Mobile. Ces modèles sont également décrits en détail ci-dessous. Bien que cette bibliothèque ne soit pas exhaustive, il s’agit du début de son développement et nous continuerons à l’enrichir à mesure que nous découvrirons des paradigmes que nos partenaires souhaitent inclure dans leurs compléments.  
+Pour vous aider à créer un complément bien conçu, nous proposons des [modèles](../design/ux-design-pattern-templates.md) pour les versions mobiles avec iOS fonctionnant dans l’environnement Outlook Mobile. Si vous utilisez ces modèles spécifiques, votre complément semblera natif de la plateforme iOS et d’Outlook Mobile. Ces modèles sont également décrits en détail ci-dessous. Bien que cette bibliothèque ne soit pas exhaustive, il s’agit du début de son développement et nous continuerons à l’enrichir à mesure que nous découvrirons des paradigmes que nos partenaires souhaitent inclure dans leurs compléments.  
 
 ### <a name="overview"></a>Vue d’ensemble
 
 Un complément type est constitué des éléments suivants.
 
-![Diagramme de modèles d’expérience utilisateur de base pour un volet de tâches sur iOS](../images/outlook-mobile-design-overview.png)
+![Diagramme de modèles d’expérience utilisateur de base pour un volet de tâches sur iOS.](../images/outlook-mobile-design-overview.png)
 
-![Diagramme de modèles d’expérience utilisateur de base pour un volet de tâches sur Android](../images/outlook-mobile-design-overview-android.jpg)
+![Diagramme de modèles d’expérience utilisateur de base pour un volet de tâches sur Android.](../images/outlook-mobile-design-overview-android.jpg)
 
 ### <a name="loading"></a>Chargement
 
@@ -68,11 +68,11 @@ Lorsqu’un utilisateur sélectionne votre complément, l’expérience utilisat
 
 **Exemple de chargement de pages sur iOS**
 
-![Exemples illustrant une barre de progression et un indicateur d’activité sur iOS](../images/outlook-mobile-design-loading.png)
+![Exemples illustrant une barre de progression et un indicateur d’activité sur iOS.](../images/outlook-mobile-design-loading.png)
 
 **Exemple de chargement de pages sur Android**
 
-![Exemples illustrant une barre de progression et un indicateur d’activité sur Android](../images/outlook-mobile-design-loading-android.jpg)
+![Exemples illustrant une barre de progression et un indicateur d’activité sur Android.](../images/outlook-mobile-design-loading-android.jpg)
 
 
 ### <a name="sign-insign-up"></a>Connexion/Inscription
@@ -81,11 +81,11 @@ Votre procédure de connexion (et d’inscription) doit être directe et simple.
 
 **Exemple de page de connexion et d’inscription sur iOS**
 
-![Exemples de pages de connexion et d’inscription sur iOS](../images/outlook-mobile-design-signin.png)
+![Exemples de pages pour se connecter et s’inscrire sur iOS.](../images/outlook-mobile-design-signin.png)
 
 **Exemple de page de connexion sur Android**
 
-![Exemples de page de connexion sur Android](../images/outlook-mobile-design-signin-android.png)
+![Exemples de page pour se connecter sur Android.](../images/outlook-mobile-design-signin-android.png)
 
 ### <a name="brand-bar"></a>Barre de marque
 
@@ -93,35 +93,35 @@ Le premier écran de votre complément doit inclure un élément de votre marque
 
 **Exemple de personnalisation sur iOS**
 
-![Exemples de barres de marque sur iOS](../images/outlook-mobile-design-branding.png)
+![Exemples de barres de marque sur iOS.](../images/outlook-mobile-design-branding.png)
 
 **Exemple de personnalisation sur Android**
 
-![Exemples de barres de marque sur Android](../images/outlook-mobile-design-branding-android.png)
+![Exemples de barres de marque sur Android.](../images/outlook-mobile-design-branding-android.png)
 
 ### <a name="margins"></a>Marges
 
-Les marges sur mobile doivent être définies sur 15 px (8 % de l’écran) pour chaque côté afin de s’aligner sur Outlook iOS et sur 16 px pour chaque côté afin de s’aligner sur Outlook Android.
+Les marges sur mobile doivent être définies sur 15 px (8 % de l’écran) pour chaque côté afin de s’aligner sur Outlook iOS et sur 16 px pour chaque côté afin de s’aligner sur Outlook Android.
 
-![Exemples de marges sur iOS](../images/outlook-mobile-design-margins.png)
+![Exemples de marges sur iOS.](../images/outlook-mobile-design-margins.png)
 
 ### <a name="typography"></a>Typographie
 
-La typographie est alignée sur Outlook iOS et doit être simple pour la lisibilité.
+La typographie est alignée sur Outlook iOS et doit être simple pour la lisibilité.
 
 **Typographie sur iOS**
 
-![Exemples de typographie pour iOS](../images/outlook-mobile-design-typography.png)
+![Exemples de typographie pour iOS.](../images/outlook-mobile-design-typography.png)
 
 **Typographie sur Android**
 
-![Exemples de typographie pour Android](../images/outlook-mobile-design-typography-android.png)
+![Exemples de typographie pour Android.](../images/outlook-mobile-design-typography-android.png)
 
 ### <a name="color-palette"></a>Palette de couleurs
 
-L’utilisation des couleurs est subtile dans Outlook iOS.  À des fins de cohérence, nous vous demandons d’utiliser les couleurs uniquement sur les actions et les erreurs, et que seule la barre de marque utilise une couleur unique.
+L’utilisation des couleurs est subtile dans Outlook iOS.  À des fins de cohérence, nous vous demandons d’utiliser les couleurs uniquement sur les actions et les erreurs, et que seule la barre de marque utilise une couleur unique.
 
-![Palette de couleurs pour iOS](../images/outlook-mobile-design-color-palette.png)
+![Palette de couleurs pour iOS.](../images/outlook-mobile-design-color-palette.png)
 
 ### <a name="cells"></a>Cellules
 
@@ -129,25 +129,25 @@ L’utilisation des couleurs est subtile dans Outlook iOS.  À des fins de coh�
 
 **Exemples de cellules sur iOS**
 
-![Types de cellules pour iOS](../images/outlook-mobile-design-cell-types.png)
+![Types de cellules pour iOS.](../images/outlook-mobile-design-cell-types.png)
 * * *
-![Cellules « Do » pour iOS](../images/outlook-mobile-design-cell-dos.png)
+![Cellules « Do » pour iOS.](../images/outlook-mobile-design-cell-dos.png)
 * * *
-![Cellules « Don’t » pour iOS](../images/outlook-mobile-design-cell-donts.png)
+![Cellules « Don’t » pour iOS.](../images/outlook-mobile-design-cell-donts.png)
 * * *
-![Cellules et entrées pour iOS](../images/outlook-mobile-design-cell-input.png)
+![Cellules et entrées pour iOS.](../images/outlook-mobile-design-cell-input.png)
 
 **Exemples de cellules sur Android**
 
-![Types de cellules pour Android](../images/outlook-mobile-design-cell-type-android.png)
+![Types de cellules pour Android.](../images/outlook-mobile-design-cell-type-android.png)
 * * *
-![Cellules « Do » pour Android](../images/outlook-mobile-design-cell-dos-android.png)
+![Cellules « Do » pour Android.](../images/outlook-mobile-design-cell-dos-android.png)
 * * *
-![Cellules « Don’t » pour Android](../images/outlook-mobile-design-cell-donts-android.png)
+![Cellules « Don’t » pour Android.](../images/outlook-mobile-design-cell-donts-android.png)
 * * *
-![Cellules et entrées pour Android, partie 1](../images/outlook-mobile-design-cell-input-1-android.png)
+![Cellules et entrées pour Android, partie 1.](../images/outlook-mobile-design-cell-input-1-android.png)
 
-![Cellules et entrées pour Android, partie 2](../images/outlook-mobile-design-cell-input-2-android.png)
+![Cellules et entrées pour Android, partie 2.](../images/outlook-mobile-design-cell-input-2-android.png)
 
 ### <a name="actions"></a>Actions
 
@@ -155,15 +155,15 @@ Même si votre application gère une multitude d’actions, réfléchissez aux p
 
 **Exemples d’actions sur iOS**
 
-![Actions et cellules dans iOS](../images/outlook-mobile-design-action-cells.png)
+![Actions et cellules dans iOS.](../images/outlook-mobile-design-action-cells.png)
 * * *
-![Actions « Do » pour iOS](../images/outlook-mobile-design-action-dos.png)
+![Actions « Do » pour iOS.](../images/outlook-mobile-design-action-dos.png)
 
 **Exemples d’actions sur Android**
 
-![Actions et cellules dans Android](../images/outlook-mobile-design-action-cells-android.png)
+![Actions et cellules dans Android.](../images/outlook-mobile-design-action-cells-android.png)
 * * *
-![Actions « Do » pour Android](../images/outlook-mobile-design-action-dos-android.png)
+![Actions « Do » pour Android.](../images/outlook-mobile-design-action-dos-android.png)
 
 ### <a name="buttons"></a>Boutons
 
@@ -171,11 +171,11 @@ Les boutons sont utilisés lorsqu’il existe d’autres éléments de l’expé
 
 **Exemples de boutons sur iOS**
 
-![Exemples de boutons pour iOS](../images/outlook-mobile-design-buttons.png)
+![Exemples de boutons pour iOS.](../images/outlook-mobile-design-buttons.png)
 
 **Exemples de boutons sur Android**
 
-![Exemples de boutons pour Android](../images/outlook-mobile-design-buttons-android.png)
+![Exemples de boutons pour Android.](../images/outlook-mobile-design-buttons-android.png)
 
 ### <a name="tabs"></a>Onglets
 
@@ -183,27 +183,27 @@ Les onglets peuvent contribuer à organiser le contenu.
 
 **Exemples d’onglets sur iOS**
 
-![Exemples d’onglets pour iOS](../images/outlook-mobile-design-tabs.png)
+![Exemples d’onglets pour iOS.](../images/outlook-mobile-design-tabs.png)
 
 **Exemples d’onglets sur Android**
 
-![Exemples d’onglets pour Android](../images/outlook-mobile-design-tabs-android.png)
+![Exemples d’onglets pour Android.](../images/outlook-mobile-design-tabs-android.png)
 
 ### <a name="icons"></a>Icônes
 
-Les icônes doivent respecter la conception Outlook iOS actuelle autant que possible. Utilisez la taille et la couleur standard.
+Les icônes doivent respecter la conception Outlook iOS actuelle autant que possible. Utilisez la taille et la couleur standard.
 
 **Exemples d’icônes sur iOS**
 
-![Exemples d’icônes pour iOS](../images/outlook-mobile-design-icons.png)
+![Exemples d’icônes pour iOS.](../images/outlook-mobile-design-icons.png)
 
 **Exemples d’icônes sur Android**
 
-![Exemples d’icônes pour Android](../images/outlook-mobile-design-icons-android.jpg)
+![Exemples d’icônes pour Android.](../images/outlook-mobile-design-icons-android.jpg)
 
 ## <a name="end-to-end-examples"></a>Exemples de bout en bout
 
-Pour le lancement de nos compléments Outlook Mobile v1, nous avons travaillé en étroite collaboration avec nos partenaires qui créaient des compléments. Pour présenter le potentiel de leurs compléments sur Outlook Mobile, notre concepteur a regroupé des flux de bout en bout pour chaque complément, en respectant nos instructions et en utilisant nos modèles.
+Pour le lancement de nos compléments Outlook Mobile v1, nous avons travaillé en étroite collaboration avec nos partenaires qui créaient des compléments. Pour présenter le potentiel de leurs compléments sur Outlook Mobile, notre concepteur a regroupé des flux de bout en bout pour chaque complément, en respectant nos instructions et en utilisant nos modèles.
 
 > [!IMPORTANT]
 > Ces exemples sont destinés à mettre en évidence la façon idéale de combiner interaction et conception visuelle pour un complément et peuvent ne pas correspondre aux ensembles de fonctionnalités exacts des compléments réels. 
@@ -212,44 +212,44 @@ Pour le lancement de nos compléments Outlook Mobile v1, nous avons travaillé 
 
 **Exemple de GIPHY sur iOS**
 
-![Conception de bout en bout pour le complément GIPHY sur iOS](../images/outlook-mobile-design-giphy.png)
+![Conception de bout en bout pour le complément GIPHY sur iOS.](../images/outlook-mobile-design-giphy.png)
 
 **Exemple de GIPHY sur Android**
 
-![Conception de bout en bout pour le complément GIPHY sur Android](../images/outlook-mobile-design-giphy-android.png)
+![Conception de bout en bout pour le complément GIPHY sur Android.](../images/outlook-mobile-design-giphy-android.png)
 
 ### <a name="nimble"></a>Nimble
 
 **Exemple de Nimble sur iOS**
 
-![Conception de bout en bout pour le complément Nimble sur iOS](../images/outlook-mobile-design-nimble.png)
+![Conception de bout en bout pour le complément Nimble sur iOS.](../images/outlook-mobile-design-nimble.png)
 
 **Exemple de Nimble sur Android**
 
-![Conception de bout en bout pour le complément Nimble sur Android](../images/outlook-mobile-design-nimble-android.png)
+![Conception de bout en bout pour le complément Nimble sur Android.](../images/outlook-mobile-design-nimble-android.png)
 
 ### <a name="trello"></a>Trello
 
 **Exemple de Trello sur iOS**
 
-![Conception de bout en bout pour le complément Trello partie 1 sur iOS](../images/outlook-mobile-design-trello-1.png)
+![Conception de bout en bout pour le complément Trello partie 1 sur iOS.](../images/outlook-mobile-design-trello-1.png)
 * * *
-![Conception de bout en bout pour le complément Trello partie 2 sur iOS](../images/outlook-mobile-design-trello-2.png)
+![Conception de bout en bout pour le complément Trello partie 2 sur iOS.](../images/outlook-mobile-design-trello-2.png)
 * * *
-![Conception de bout en bout pour le complément Trello partie 3 sur iOS](../images/outlook-mobile-design-trello-3.png)
+![Conception de bout en bout pour le complément Trello partie 3 sur iOS.](../images/outlook-mobile-design-trello-3.png)
 
 **Exemple de Trello sur Android**
 
-![Conception de bout en bout pour le complément Trello partie 1 sur Android](../images/outlook-mobile-design-trello-1-android.png)
+![Conception de bout en bout pour le complément Trello partie 1 sur Android.](../images/outlook-mobile-design-trello-1-android.png)
 * * *
-![Conception de bout en bout pour le complément Trello partie 2 sur Android](../images/outlook-mobile-design-trello-2-android.png)
+![Conception de bout en bout pour le complément Trello partie 2 sur Android.](../images/outlook-mobile-design-trello-2-android.png)
 
-### <a name="dynamics-crm"></a>Dynamics CRM
+### <a name="dynamics-crm"></a>Dynamics CRM
 
 **Exemple de Dynamics CRM sur iOS**
 
-![Conception de bout en bout pour le complément Dynamics CRM sur iOS](../images/outlook-mobile-design-crm.png)
+![Conception de bout en bout pour le complément Dynamics CRM sur iOS.](../images/outlook-mobile-design-crm.png)
 
 **Exemple de Dynamics CRM sur Android**
 
-![Conception de bout en bout pour le complément Dynamics CRM sur Android](../images/outlook-mobile-design-crm-android.png)
+![Conception de bout en bout pour le complément Dynamics CRM sur Android.](../images/outlook-mobile-design-crm-android.png)

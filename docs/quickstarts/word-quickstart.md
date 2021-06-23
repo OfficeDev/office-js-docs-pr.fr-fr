@@ -4,16 +4,16 @@ description: Découvrez comment créer un complément de volet des tâches Word 
 ms.date: 10/14/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: fe82515e0a2839ccb8669d1c590364049126d9de
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132325"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076867"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
-_S’applique à : Word 2016 ou version ultérieure sur Windows, et Word sur iPad et Mac_
+_S’applique à : Word 2016 ou version ultérieure sur Windows, et Word sur iPad et Mac_
 
 Cet article décrit comment créer un complément du volet des tâches de Word.
 
@@ -34,14 +34,14 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
-- **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-- **Quelle application client Office voulez-vous prendre en charge ?** `Word`
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `Javascript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-word.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -85,17 +85,17 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 
 3. Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.
 
-    ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence](../images/word-quickstart-addin-2b.png)
+    ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence.](../images/word-quickstart-addin-2b.png)
 
-4. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
+4. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
 
-    ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé](../images/word-quickstart-addin-1c.png)
+    ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé.](../images/word-quickstart-addin-1c.png)
 
 ### <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/word-tutorial.md).
+Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/word-tutorial.md).
 
-# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
+# <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
 ### <a name="prerequisites"></a>Conditions préalables
 
@@ -109,15 +109,15 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 3. Nommez votre projet et sélectionnez **Créer**.
 
-4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
+1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
 
     ```html
     <body>
@@ -297,27 +297,27 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! 
 
 ### <a name="try-it-out"></a>Essayez
 
-1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane**(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane**(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version Microsoft 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
+2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version Microsoft 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
 
-    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence](../images/word-quickstart-addin-0.png)
+    ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence.](../images/word-quickstart-addin-0.png)
 
 3. Dans le volet Office, choisissez l’un des boutons pour ajouter du texte réutilisable dans le document.
 
-    ![Capture d’écran de l’application Word avec le complément de texte réutilisable chargé.](../images/word-quickstart-addin-1b.png)
+    ![Capture d’écran de l’application Word avec le complément réutilisable chargé.](../images/word-quickstart-addin-1b.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
 ### <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément du volet des tâches de Word ! Ensuite, en savoir plus sur la [création de compléments avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
+Félicitations, vous avez créé un complément du volet des tâches de Word ! Ensuite, en savoir plus sur la [création de compléments avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
 - 

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément simple de volet des tâche
 ms.date: 10/14/2020
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: de0729a483057a61be3793e299995aa05d287441
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 761de3dc8f382a7b1b5a72704815f2d80af2566f
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132290"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076902"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -24,14 +24,14 @@ Cet article décrit comment créer un complément du volet Office de OneNote.
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
-- **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
-- **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
+- **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
+- **Sélectionnez un type de script :** `Javascript`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-onenote.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-onenote.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -98,7 +98,7 @@ try {
 
 3. Dans [OneNote sur le web](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
 
-4. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
+4. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
 
     - Si vous êtes connecté avec votre compte de consommateur, sélectionnez l’onglet **MES COMPLÉMENTS**, puis choisissez **Télécharger mon complément**.
 
@@ -114,18 +114,18 @@ try {
 
 7. Au bas du volet Office, sélectionnez le lien **Exécuter** pour définir le titre de la page et ajouter un plan au corps de celle-ci.
 
-    ![Capture d’écran illustrant le complément créé à partir de cette procédure : bouton Afficher le ruban du volet Office et le volet Office dans OneNote](../images/onenote-first-add-in-4.png)
+    ![Capture d’écran illustrant le complément créé à partir de cette procédure : bouton Afficher le ruban du volet Office et le volet Office dans OneNote.](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations ! Vous avez créé un complément du volet Office de OneNote ! Ensuite, vous allez étudier en détail les concepts fondamentaux de la création de compléments Excel.
+Félicitations, vous avez créé un complément de volet office OneNote ! Découvrez ensuite les concepts fondamentaux de la création de compléments OneNote.
 
 > [!div class="nextstepaction"]
 > [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../onenote/onenote-add-ins-programming-overview.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Vue d’ensemble de la programmation de l’API JavaScript de OneNote](../onenote/onenote-add-ins-programming-overview.md)
 - [Référence de l’API JavaScript de OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)

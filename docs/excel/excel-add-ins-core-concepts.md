@@ -4,36 +4,36 @@ description: Découvrez les types d’objets clés dans les API JavaScript Excel
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 50833deb4d996f577db9d3e40db21f1799e7f2f7
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650900"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075865"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Excel dans les compléments Office
 
-Cet article décrit comment utiliser l’[API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md) afin de créer des compléments pour Excel 2016 ou versions ultérieures. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
+Cet article décrit comment utiliser l’[API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md) afin de créer des compléments pour Excel 2016 ou versions ultérieures. Il présente les concepts fondamentaux de l’utilisation des API et fournit des conseils pour effectuer des tâches spécifiques, comme la lecture ou l’écriture d’une grande plage, la mise à jour de toutes les cellules d’une plage, et bien plus encore.
 
 > [!IMPORTANT]
 > Pour en savoir plus sur la nature asynchrone des API Excel et la manière dont elles fonctionnent avec le classeur, voir [Utilisation du modèle d’API spécifique à l’application](../develop/application-specific-api-model.md).  
 
 ## <a name="officejs-apis-for-excel"></a>API Office.js pour Excel
 
-Un complément Excel interagit avec des objets dans Excel en utilisant l’API Office JavaScript, qui inclut deux modèles d’objets JavaScript :
+Un complément Excel interagit avec des objets dans Excel en utilisant l’API Office JavaScript, qui inclut deux modèles d’objets JavaScript :
 
-* **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](../reference/overview/excel-add-ins-reference-overview.md) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore.
+* **API JavaScript pour Excel** : inclut dans Office 2016, l’[API JavaScript Excel](../reference/overview/excel-add-ins-reference-overview.md) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des feuilles de calcul, des plages, des tableaux, des graphiques et bien plus encore.
 
-* **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
+* **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
 
-Vous utiliserez probablement l’API JavaScript Excel pour développer la majorité des fonctionnalités des compléments destinés à Excel 2016 ou version ultérieure, vous utiliserez également des objets dans l’API commune. Par exemple :
+Vous utiliserez probablement l’API JavaScript Excel pour développer la majorité des fonctionnalités des compléments destinés à Excel 2016 ou version ultérieure, vous utiliserez également des objets dans l’API commune. Par exemple :
 
-* [Context](/javascript/api/office/office.context) :le `Context` représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté.
-* [Document](/javascript/api/office/office.document) : le `Document` fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté.
+* [Context](/javascript/api/office/office.context) :le `Context` représente l’environnement d’exécution du complément et permet d’accéder à des objets clés de l’API. Il se compose de détails sur la configuration du classeur comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode `requirements.isSetSupported()` que vous pouvez utiliser pour vérifier si l’ensemble de conditions requises spécifié est pris en charge par l’application Excel dans laquelle le complément est exécuté.
+* [Document](/javascript/api/office/office.document) : le `Document` fournit la méthode `getFileAsync()` que vous pouvez utiliser pour télécharger le fichier Excel dans lequel le complément est exécuté.
 
 L’image suivante illustre les situations dans lesquelles vous pouvez utiliser l’API JavaScript Excel ou les API communes.
 
-![Image des différences entre l’API Excel et les API communes](../images/excel-js-api-common-api.png)
+![Différences entre l’API JS Excel et les API courantes.](../images/excel-js-api-common-api.png)
 
 ## <a name="excel-specific-object-model"></a>Modèle d’objet spécifique à Excel
 
@@ -49,9 +49,9 @@ Pour comprendre les API Excel, vous devez connaître la manière dont les compos
 
 ### <a name="ranges"></a>Plages
 
-Une plage est un groupe de cellules contiguës dans le classeur. Les compléments utilisent généralement la notation de style A1 (par exemple : **B3** pour la cellule unique de la colonne **B** et de la ligne **3** ou **C2:F4** pour les cellules des colonnes **C** à **F** et des lignes **2** à **4**) pour définir les plages.
+Une plage est un groupe de cellules contiguës dans le classeur. Les compléments utilisent généralement la notation de style A1 (par exemple : **B3** pour la cellule unique de la colonne **B** et de la ligne **3** ou **C2:F4** pour les cellules des colonnes **C** à **F** et des lignes **2** à **4**) pour définir les plages.
 
-Les plages comportent trois propriétés principales : `values`, `formulas`et `format`. Ces propriétés obtiennent ou définissent les valeurs des cellules, les formules à évaluer et la mise en forme visuelle des cellules.
+Les plages comportent trois propriétés principales : `values`, `formulas`et `format`. Ces propriétés obtiennent ou définissent les valeurs des cellules, les formules à évaluer et la mise en forme visuelle des cellules.
 
 #### <a name="range-sample"></a>Exemple de plage
 
@@ -97,7 +97,7 @@ Excel.run(function (context) {
 });
 ```
 
-Cet exemple crée les données suivantes dans la feuille de calcul active :
+Cet exemple crée les données suivantes dans la feuille de calcul active :
 
 ![Un registre des ventes affiche des lignes de valeur, une colonne de formule et des en-têtes mis en forme.](../images/excel-overview-range-sample.png)
 
@@ -109,7 +109,7 @@ Les API JavaScript Excel peuvent créer et manipuler les structures de données 
 
 #### <a name="creating-a-table"></a>Création d’un tableau
 
-Créez des tableaux à l’aide des plages de données remplies. Les contrôles de mise en forme et du tableau (par exemple, les filtres) sont automatiquement appliqués à la plage.
+Créez des tableaux à l’aide de plages remplies de données. Les contrôles de mise en forme et du tableau (par exemple, les filtres) sont automatiquement appliqués à la plage.
 
 L’exemple suivant crée un tableau à l’aide des plages de l’exemple précédent.
 
@@ -121,7 +121,7 @@ Excel.run(function (context) {
 });
 ```
 
-L’exécution de cet exemple de code sur la feuille de calcul avec les données précédentes crée le tableau suivant :
+L’exécution de cet exemple de code sur la feuille de calcul avec les données précédentes crée le tableau suivant :
 
 ![Un tableau créée à partir du registre des ventes précédent.](../images/excel-overview-table-sample.png)
 
@@ -131,7 +131,7 @@ Pour plus d’informations, consultez [Travailler avec des tableaux l’aide de 
 
 Vous pouvez créer un graphique pour visualiser les données d’une plage. Les API prennent en charge des dizaines de variétés de graphiques, chacun pouvant être personnalisé selon vos besoins.
 
-L’exemple suivant crée un histogramme pour trois éléments et place celui-ci 100 pixels en dessous de la partie supérieure de la feuille de calcul.
+L’exemple suivant crée un histogramme pour trois éléments et place celui-ci 100 pixels en dessous de la partie supérieure de la feuille de calcul.
 
 ```js
 Excel.run(function (context) {
@@ -142,7 +142,7 @@ Excel.run(function (context) {
 });
 ```
 
-L’exécution de cet exemple sur la feuille de calcul avec le tableau précédent crée le graphique suivant :
+L’exécution de cet exemple sur la feuille de calcul avec le tableau précédent crée le graphique suivant :
 
 ![Histogramme montrant les quantités pour trois des articles présents dans le registre des ventes précédent.](../images/excel-overview-chart-sample.png)
 
