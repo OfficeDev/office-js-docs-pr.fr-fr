@@ -3,12 +3,12 @@ title: Débogage des compléments avec les outils de développement sur Windows�
 description: Débogage des compléments avec les outils de développement Microsoft Edge sur Windows 10
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 4888ef07f214611666b1c8d8de8dc5a467ca2db1
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 41e7f2c8efb6406948c30522b56424ed7f9aa400
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611231"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076531"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement sur Windows 10
 
@@ -66,7 +66,7 @@ Cet exemple utilise Word et un complément gratuit d’AppSource.
     
    Par exemple, sélectionnez **home.html**. 
     
-   ![Écran IEChooser, pointant sur le complément bulles](../images/choose-target-to-debug.png)
+   ![Écran IEChooser, pointant sur le module de bulles.](../images/choose-target-to-debug.png)
 
 4. Dans la fenêtre F12, sélectionnez le fichier à déboguer.
     
@@ -76,13 +76,13 @@ Cet exemple utilise Word et un complément gratuit d’AppSource.
     
    Pour définir le point d’arrêt dans **Home.js**, choisissez la ligne 144 située dans la fonction `textChanged`. Vous verrez un point rouge à gauche de la ligne et une ligne correspondante dans le volet Pile d’appels et Points d’arrêt (en bas à droite). Pour connaître d’autres façons de définir un point d’arrêt, consultez la rubrique [Inspecter le code JavaScript en cours d’exécution avec le débogueur](/previous-versions/windows/internet-explorer/ie-developer/samples/dn255007(v=vs.85)). 
     
-   ![Débogueur avec le point d’arrêt dans le fichier home.js](../images/debugger-home-js-02.png)
+   ![Débogger avec point d’arrêt home.js fichier.](../images/debugger-home-js-02.png)
 
 6. Exécutez votre complément pour déclencher le point d’arrêt.
     
    Dans Word, cliquez sur la zone de texte URL dans la partie supérieure du volet **QR4Office** et essayez de saisir du texte. Dans le débogueur, dans le volet **Pile d’appels et Points d’arrêt**, vous verrez que le point d’arrêt s’est déclenché et affiche différentes informations. Vous devrez peut-être actualiser le débogueur pour afficher les résultats.
     
-   ![Débogueur avec les résultats du point d’arrêt déclenché](../images/debugger-home-js-01.png)
+   ![Débogger avec les résultats du point d’arrêt déclenché.](../images/debugger-home-js-01.png)
 
 
 ## <a name="see-also"></a>Voir aussi

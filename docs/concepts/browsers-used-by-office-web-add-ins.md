@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 05/19/2021
+ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 07788c655d5c30527ac815ba2f3235cf504641f3
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 6347bbe6b02befeabf0fcd6f04545f6d543871c8
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727905"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076181"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -18,6 +18,14 @@ Le navigateur utilisé dépend de ce qui suit :
 
 - Système d’exploitation de l’ordinateur.
 - Si le add-in est en cours d’exécution Office sur le Web, Microsoft 365 ou sans abonnement Office 2013 ou ultérieure.
+
+> [!IMPORTANT]
+> **Internet Explorer toujours utilisé dans les Office de recherche**
+>
+> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris toutes les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans cet article. En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
+>
+> - AppSource ne teste plus les Office sur le Web l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
+> - [L Script Lab’outil cessera](../overview/explore-with-script-lab.md) de fonctionner dans Internet Explorer en 2021.
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
@@ -37,7 +45,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>1 Consultez</sup> la [page historique des](/officeupdates/update-history-office365-proplus-by-date) mises à jour et découvrez comment trouver votre version Office client [et](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) le canal de mise à jour pour plus d’informations.
 
-<sup>2</sup> Lorsque Microsoft Edge est utilisé, le Windows 10 Narrateur (parfois appelé « lecteur d’écran ») lit la balise dans la page qui s’ouvre dans le volet `<title>` Des tâches. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
+<sup>2</sup> Lorsque Microsoft Edge est utilisé, le Narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la balise dans la page qui s’ouvre dans le volet `<title>` Des tâches. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
 <sup>3</sup> Si votre application inclut l’élément dans le manifeste, elle n’utilisera `<Runtimes>` pas Microsoft Edge webview d’origine (EdgeHTML). Si les conditions d’utilisation Microsoft Edge avec WebView2 (basé sur Chromium web) sont remplies, le add-in utilise ce navigateur. Dans le cas contraire, il utilise Internet Explorer 11 quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
@@ -57,7 +65,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 ### <a name="service-workers-are-not-working"></a>Les employés de service ne fonctionnent pas
 
-Office Les modules de prise en charge des services ne sont pas utilisés lorsque l’Microsoft Edge WebView d’origine, [EdgeHTML,](https://en.wikipedia.org/wiki/EdgeHTML)est utilisée. Ils sont pris en charge avec [Chromium WebView2 edge basé sur Chromium.](/microsoft-edge/hosting/webview2)
+Office Les add-ins ne sont pas en charge par les travailleurs de service lorsque l’Microsoft Edge WebView d’origine, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), est utilisé. Ils sont pris en charge avec [Chromium WebView2 edge basé sur Chromium.](/microsoft-edge/hosting/webview2)
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 

@@ -1,18 +1,18 @@
 ---
 title: Instructions de conception de modèles de personnalisation pour les compléments Office
-description: Découvrez comment personnaliser votre complément Office tout en restant compatible avec la conception visuelle d’Office.
+description: Découvrez comment brander votre Office tout en restant compatible avec la conception visuelle de Office.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 9571b2771767a60f715ac7f3bc83a501907039d9
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: b42d3a722e4f8805e8c03d2e1a5db528a66f1202
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132087"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076370"
 ---
 # <a name="branding-patterns"></a>Modèles de personnalisation
 
-Ces modèles fournissent une visibilité de la marque et un contexte pour les utilisateurs de votre complément.
+Ces modèles offrent une visibilité de marque et un contexte aux utilisateurs de votre add-in.
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -30,10 +30,10 @@ Appliquer les modèles et les composants suivants le cas échéant pour permettr
 
 La barre de marque est un espace dans le pied de page où vous pouvez inclure le nom de la marque et le logo. Elle sert également de lien vers le site Web de votre marque et d’emplacement d’accès facultatif.
 
-![Barre de marque affichée dans le volet Office d’un complément d’une application de bureau Office](../images/add-in-brand-bar.png)
+![Barre de marque affichée dans le volet Des tâches d’un Office application de bureau.](../images/add-in-brand-bar.png)
 
 ## <a name="splash-screen"></a>Écran de démarrage
 
 Utilisez cet écran pour afficher votre personnalisation pendant que le complément est en cours de chargement ou lors de la transition entre les différents états de l’interface utilisateur.
 
-![Écran de démarrage de marque affiché dans le volet Office d’un complément d’une application de bureau Office](../images/add-in-splash-screen.png)
+![Écran de marque affiché dans le volet Des tâches d’un Office application de bureau.](../images/add-in-splash-screen.png)

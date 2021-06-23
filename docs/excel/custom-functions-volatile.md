@@ -1,14 +1,14 @@
 ---
 ms.date: 01/14/2020
-description: Apprenez à implémenter des fonctions personnalisées de diffusion en continu et volatiles.
+description: Découvrez comment implémenter des fonctions personnalisées de diffusion en continu volatiles et hors connexion.
 title: Valeurs volatiles dans les fonctions
 localization_priority: Normal
-ms.openlocfilehash: 0f530e9d67894ebbc13c8b8a13e6219571c96ff1
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071632"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075886"
 ---
 # <a name="volatile-values-in-functions"></a>Valeurs volatiles dans les fonctions
 
@@ -18,13 +18,13 @@ Les fonctions volatiles sont des fonctions dans lesquelles la valeur change chaq
 
 Excel contient plusieurs fonctions volatiles intégrées, comme `RAND` et `TODAY`. Pour obtenir la liste complète des fonctions volatiles d’Excel, reportez-vous à [Fonctions volatiles et non volatiles](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
-Les fonctions personnalisées vous permettent de créer vos propres fonctions volatiles, qui peuvent être utiles lors de la gestion des dates, des heures, des nombres aléatoires et de la modélisation. Par exemple, les [simulations Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) nécessitent la génération d’entrées aléatoires pour déterminer une solution optimale.
+Les fonctions personnalisées vous permettent de créer vos propres fonctions volatiles, ce qui peut être utile lors de la gestion des dates, des heures, des nombres aléatoires et de la modélisation. Par exemple, les [simulations montes nécessitent](https://en.wikipedia.org/wiki/Monte_Carlo_method) la génération d’entrées aléatoires pour déterminer une solution optimale.
 
-Si vous choisissez de générer automatiquement votre fichier JSON, déclarez une fonction volatile avec la balise de commentaire JSDoc `@volatile` . À partir de plus d’informations sur la génération automatique, consultez la rubrique [AutoGenerate JSON Metadata for Custom Functions](custom-functions-json-autogeneration.md).
+Si vous choisissez d’autogénérer votre fichier JSON, déclarez une fonction volatile avec la balise de commentaire JSDoc `@volatile` . Pour plus d’informations sur la génération automatique, voir [autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
-Voici un exemple de fonction personnalisée volatile qui simule le roulement d’un dés à six côtés.
+Voici un exemple de fonction personnalisée volatile qui simule le déploiement d’un dés à six côtés.
 
-![Image gif illustrant une fonction personnalisée renvoyant une valeur aléatoire pour simuler le roulement d’un dés à six côtés](../images/six-sided-die.gif)
+![GIF montrant une fonction personnalisée renvoyant une valeur aléatoire pour simuler le déploiement d’un dés à six côtés.](../images/six-sided-die.gif)
 
 ```JS
 /**
@@ -38,7 +38,7 @@ function roll6sided() {
 ```
 
 ## <a name="next-steps"></a>Étapes suivantes
-* En savoir plus sur les [Options des paramètres des fonctions personnalisées](custom-functions-parameter-options.md).
+* Découvrez les [options des paramètres de fonctions personnalisées.](custom-functions-parameter-options.md)
 
 ## <a name="see-also"></a>Voir aussi
 

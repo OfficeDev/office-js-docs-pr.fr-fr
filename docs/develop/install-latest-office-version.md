@@ -3,12 +3,12 @@ title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: df10d64d69b64283321bbad79aca7f7f6d482dd1
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: d72012e3c2e642c74d8573c4d9bb3b29a8fc0274
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093615"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076019"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
@@ -18,8 +18,8 @@ De nouvelles fonctionnalités de développeur, y compris celles en version d’�
 
 Pour s’inscrire afin d’obtenir les dernières versions d’Office, procédez comme suit :
 
-- Si vous êtes abonné à la famille Microsoft 365, personnel ou Université, consultez la rubrique [soyez un Office Insider](https://insider.office.com).
-- Si vous êtes un client Microsoft 365 apps pour les entreprises, voir [install the First release build for Microsoft 365 Apps for Business Customers](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead).
+- Si vous êtes abonné à Microsoft 365 Famille, Personnel ou Université, consultez l’article Office [Insider.](https://insider.office.com)
+- Si vous êtes un client Applications Microsoft 365 pour les PME, voir Installer la build [First Release pour Applications Microsoft 365 pour les PME clients.](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)
 - Si vous exécutez Office sur un Mac :
   - Démarrez une application Office.
   - Sélectionnez **Vérifier les mises à jour** dans le menu Aide.
@@ -39,7 +39,7 @@ Pour obtenir la dernière version d’Office, procédez comme suit :
 
 Une fois le processus d’installation terminé, les dernières applications d’Office sont installées. Pour vérifier que la dernière version est bien installée, accédez à **Fichier** > **Compte** à partir de n’importe quelle application Office. Sous Mises à jour Office, vous verrez la mention (Office Insiders) au-dessus du numéro de version.
 
-![Capture d’écran affichant les informations du produit avec la mention Office Insiders](../images/office-insiders-label.png)
+![Capture d’écran shows product information with the Office Insiders label.](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds Office minimum pour les ensembles de conditions requises pour l’API JavaScript pour Office
 

@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 89c8c7eb96d6b1cf6484133b52acbe7d0ccb5298
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 9f7ccd4cfaed5132debb7017caaf3b9da733850d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329995"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076356"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -16,7 +16,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 *Figure 1. Mise en page type pour les compléments de contenu*
 
-![Disposition type pour les applications de contenu dans une application Office de contenu](../images/overview-with-app-content.png)
+![Mise en page classique pour les applications de contenu dans une application Office de contenu.](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -25,7 +25,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 ## <a name="variants"></a>Variantes
 
-Les tailles de contenu des Excel et PowerPoint dans Office bureau et Microsoft 365 sont spécifiées par l’utilisateur.
+Les tailles des Excel de contenu PowerPoint dans Office bureau et Microsoft 365 sont spécifiées par l’utilisateur.
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
@@ -35,13 +35,13 @@ Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
 *Figure 2. Menu Caractéristique sur Windows*
 
-![Menu de personnalité de 12 x 32 pixels sur Windows bureau](../images/personality-menu-win.png)
+![Menu de personnalité de 12 x 32 pixels sur Windows bureau.](../images/personality-menu-win.png)
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace occupé à 34 x 32 pixels, comme illustré.
 
 *Figure 3. Menu Caractéristique sur Mac*
 
-![Menu de personnalité de 34 x 32 pixels sur le bureau Mac](../images/personality-menu-mac.png)
+![Menu de personnalité de 34 x 32 pixels sur le bureau Mac.](../images/personality-menu-mac.png)
 
 ## <a name="implementation"></a>Implémentation
 
@@ -56,6 +56,6 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 ## <a name="see-also"></a>Voir aussi
 
 - [Application cliente Office et disponibilité de la plateforme pour les compléments Office](../overview/office-add-in-availability.md)
-- [Fabric Core dans les Office de base](fabric-core.md)
+- [Cœur de fabric dans les modules](fabric-core.md)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
 - [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)

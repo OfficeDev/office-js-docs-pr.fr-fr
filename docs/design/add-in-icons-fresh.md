@@ -1,18 +1,18 @@
 ---
-title: Recommandations en matière d’icônes de style Office des produits
+title: Recommandations en matière d’icônes de style Office pour les modules
 description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: acf800824833d23bd6bfeff6872786f6c8c0e4b5
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: c03c0040d84c69fed1f0a9565bec3c1cabb8d0a5
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330044"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076510"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office des produits
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office pour les modules
 
-Les Office versions 2013 et 2013 (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, voir recommandations en matière d’icônes de style Monoline pour Office les [modules.](add-in-icons-monoline.md)
+Les Office versions 2013 et 2013 (sans abonnement) de Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, consultez les instructions relatives aux icônes de style Monoline pour Office [des modules.](add-in-icons-monoline.md)
 
 ## <a name="office-fresh-visual-style"></a>Office Style visuel à nouveau
 
@@ -60,7 +60,7 @@ Pour créer des commandes qui s’alignent sur l’interface utilisateur d’Off
 
 L’image suivante montre la disposition des éléments de base et modificateurs dans une icône Office.
 
-![Diagramme montrant un élément de base d’icône au centre avec un modificateur en bas à droite et un modificateur d’action dans le coin supérieur gauche](../images/icon-layouts.png)
+![Diagramme montrant un élément de base d’icône au centre avec un modificateur en bas à droite et un modificateur d’action dans le coin supérieur gauche.](../images/icon-layouts.png)
 
 - Éléments de base centraux dans le cadre de pixel avec remplissage vide tout autour.
 - Placez les modificateurs d’action dans le coin supérieur gauche.
@@ -89,7 +89,7 @@ Tous les modificateurs doivent avoir un cutout transparent de 1 px entre chaque 
 ## <a name="icon-colors"></a>Couleurs de l’icône
 
 > [!NOTE]
-> Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restitues avec l’interface utilisateur Fluent et la palette de couleurs est différente de la palette décrite dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
+> Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restitues avec Fluent’interface utilisateur et la palette de couleurs est différente de la palette décrite dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes sur l’utilisation des couleurs :
 
@@ -99,26 +99,26 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 
 |Nom de la couleur|RVB|Hex|Couleur|Catégorie|
 |:---|:---|:---|:---|:---|
-|Texte gris (80)|80, 80, 80|#505050| ![Gris 80 couleur pour le texte](../images/color-text-gray-80.png) |Texte|
-|Texte gris (95)|95, 95, 95|#5F5F5F| ![Gris 95 couleur pour le texte](../images/color-text-gray-95.png) |Texte|
-|Texte gris (105)|105, 105, 105|#696969| ![Gris 105 pour le texte](../images/color-text-gray-105.png) |Texte|
-|Gris foncé 32|128, 128, 128|#808080| ![Gris foncé pour 32 px et plus](../images/color-dark-gray-32.png) |32 px et supérieures|
-|Gris moyen 32|158, 158, 158|#9E9E9E| ![Gris moyen pour 32 px et plus](../images/color-medium-gray-32.png) |32 px et supérieures|
-|TOUT gris clair|179, 179, 179|#B3B3B3| ![Gris clair pour toutes les tailles d’image](../images/color-light-gray-all.png) |Toutes les tailles|
-|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins](../images/color-dark-gray-16.png) |16 px et au-dessous|
-|Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit](../images/color-medium-gray-16.png) |16 et moins|
-|Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus](../images/color-blue-32.png) |32 px et supérieures|
-|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins](../images/color-blue-16.png) |16 px et au-dessous|
-|TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image](../images/color-yellow-all.png) |Toutes les tailles|
-|Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus](../images/color-orange-32.png) |32 px et supérieures|
-|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins](../images/color-orange-16.png) |16 px et au-dessous|
-|TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image](../images/color-pink-all.png) |Toutes les tailles|
-|Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus](../images/color-green-32.png) |32 px et supérieures|
-|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins](../images/color-green-16.png) |16 px et au-dessous|
-|Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus](../images/color-red-32.png) |32 px et supérieures|
-|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins](../images/color-red-16.png) |16 px et au-dessous|
-|Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus](../images/color-purple-32.png) |32 px et supérieures|
-|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et moins](../images/color-purple-16.png) |16 px et au-dessous|
+|Texte gris (80)|80, 80, 80|#505050| ![Gris 80 pour le texte.](../images/color-text-gray-80.png) |Texte|
+|Texte gris (95)|95, 95, 95|#5F5F5F| ![Gris 95 pour le texte.](../images/color-text-gray-95.png) |Texte|
+|Texte gris (105)|105, 105, 105|#696969| ![Gris 105 pour le texte.](../images/color-text-gray-105.png) |Texte|
+|Gris foncé 32|128, 128, 128|#808080| ![Gris foncé pour 32 px et plus.](../images/color-dark-gray-32.png) |32 px et supérieures|
+|Gris moyen 32|158, 158, 158|#9E9E9E| ![Gris moyen pour 32 px et plus.](../images/color-medium-gray-32.png) |32 px et supérieures|
+|TOUT gris clair|179, 179, 179|#B3B3B3| ![Gris clair pour toutes les tailles d’image.](../images/color-light-gray-all.png) |Toutes les tailles|
+|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins.](../images/color-dark-gray-16.png) |16 px et inférieur|
+|Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit.](../images/color-medium-gray-16.png) |16 et moins|
+|Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus.](../images/color-blue-32.png) |32 px et supérieures|
+|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et inférieur|
+|TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
+|Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus.](../images/color-orange-32.png) |32 px et supérieures|
+|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et inférieur|
+|TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image.](../images/color-pink-all.png) |Toutes les tailles|
+|Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus.](../images/color-green-32.png) |32 px et supérieures|
+|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et inférieur|
+|Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus.](../images/color-red-32.png) |32 px et supérieures|
+|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et inférieur|
+|Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus.](../images/color-purple-32.png) |32 px et supérieures|
+|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et moins.](../images/color-purple-16.png) |16 px et inférieur|
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 

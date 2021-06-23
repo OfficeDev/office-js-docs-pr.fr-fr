@@ -3,12 +3,12 @@ title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: c2cfbc1019048bb02186521c2cb81ed832934a8d
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c9a01e05fa5bb0a0932da50b096fa2cb71cf3b34
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608956"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076776"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
@@ -64,7 +64,7 @@ Un utilisateur lance un complément contextuel par le biais du texte, une entit�
 
 **Exemple de texte avec l’entité (une adresse) en surbrillance**
 
-![Illustre l’entité en surbrillance dans un courrier](../images/outlook-detected-entity-highlight.png)
+![Affiche l’entité en surbrillant dans un e-mail.](../images/outlook-detected-entity-highlight.png)
     
 Lorsque plusieurs entités ou compléments contextuels sont présents dans un message, l’interaction avec l’utilisateur a lieu comme suit :
 
@@ -78,7 +78,7 @@ Un complément contextuel activé s’affiche sur une carte, qui est une fenêtr
 
 **Exemple d’un complément affiché sur une carte**
 
-![Indique une application contextuelle sur une carte](../images/outlook-detected-entity-card.png)
+![Affiche une application contextuelle dans une carte.](../images/outlook-detected-entity-card.png)
 
 Pour fermer la carte et quitter le complément, il suffit de cliquer n’importe où en dehors de la carte.
 

@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
-description: Découvrez comment résoudre les erreurs des utilisateurs dans les add-ins Office.
+description: Découvrez comment résoudre les erreurs de l’utilisateur dans Office des modules.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: e1cb5e0bb8005f04425a5ad9c7e807d10f054e35
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7762c81744aa484ee5c958e6c647c4ea7893efc9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49840091"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077203"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -69,7 +69,7 @@ Lorsqu’un utilisateur utilise un complément Office, il est invité à autoris
 
 « Les paramètres de sécurité de votre navigateur nous empêchent de créer une boîte de dialogue. Essayez d’utiliser un autre navigateur, ou configurez votre navigateur de sorte que [URL] et le domaine affiché dans la barre d’adresse se trouvent dans la même zone de sécurité. »
 
-![Capture d’écran du message d’erreur de la boîte de dialogue](../images/dialog-prevented.png)
+![Capture d’écran du message d’erreur de la boîte de dialogue.](../images/dialog-prevented.png)
 
 |**Navigateurs concernés**|**Plateformes concernées**|
 |:--------------------|:---------------------|
@@ -95,4 +95,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Résoudre les erreurs de développement avec les add-ins Office](troubleshoot-development-errors.md)
+- [Résoudre les erreurs de développement avec Office de recherche](troubleshoot-development-errors.md)

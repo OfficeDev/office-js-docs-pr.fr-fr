@@ -3,12 +3,12 @@ title: Compléments Outlook d’extension de module
 description: Créez des applications qui s’exécutent dans Outlook pour simplifier l’accès des utilisateurs aux outils d’informations professionnelles et de productivité sans quitter Outlook.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: ba25a10e0f6e8c8b3b14df7e98ff200e00717136
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 3a02e93375f1c0872790d050382a14bc2c324cef
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611644"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077084"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Compléments Outlook d’extension de module
 

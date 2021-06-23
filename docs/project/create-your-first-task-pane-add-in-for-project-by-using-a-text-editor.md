@@ -1,20 +1,20 @@
 ---
 title: Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
-description: Créez un complément de volet de tâches pour Project standard 2013, Project Professional 2013 ou des versions ultérieures à l’aide du générateur Yeoman pour les compléments Office.
+description: Créez un add-in de volet de tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour Office de recherche.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 4397ad2bd8e44d0962512c2a0905aa1f99a1d411
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: d7a627cceff18d908ab9905efc6c5c08c0cee7c1
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45159436"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076965"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
-Vous pouvez créer un complément de volet de tâches pour Project standard 2013, Project Professional 2013 ou des versions ultérieures à l’aide du générateur Yeoman pour les compléments Office. Cet article explique comment créer un complément simple qui utilise un manifeste XML pointant vers un fichier HTML sur un partage de fichiers. L’exemple de complément test du modèle objet de Project teste certaines fonctions JavaScript qui utilisent le modèle objet pour les compléments. Après avoir utilisé le **Centre** de gestion de la confidentialité dans Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le complément du volet Office à partir de l’onglet **projet** dans le ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
+Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Une fois  que vous avez utilisé le Centre de Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
 
-Project utilise le même schéma de manifeste de complément que d’autres clients Office utilisent et une grande partie de la même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
+Project utilise le même schéma de manifeste de Office que d’autres clients utilisent, et la plupart de la même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
 
 L’exemple de complément Test du modèle objet de Project peut obtenir le GUID d’une tâche et les propriétés de l’application et du projet actif. Si Project Professionnel 2013 ouvre un projet se trouvant dans une bibliothèque SharePoint, le complément peut afficher l’URL du projet. 
 
@@ -22,11 +22,11 @@ Le [téléchargement du kit de développement logiciel Project 2013](https://ww
 
 L’exemple JSOMCall.html utilise les fonctions JavaScript du fichier office.js et le fichier project-15.js qui sont inclus. Vous pouvez utiliser les fichiers de débogage correspondants (office.debug.js et project-15.debug.js) pour examiner les fonctions.
 
-Pour une introduction à l’utilisation de JavaScript dans les compléments Office, consultez [la rubrique Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md).
+Pour obtenir une présentation de l’utilisation de JavaScript dans Office de recherche, voir Présentation de [l’API JavaScript Office de l’interface utilisateur.](../develop/understanding-the-javascript-api-for-office.md)
 
 ## <a name="procedure-1-to-create-the-add-in-manifest-file"></a>Procédure 1. Pour créer le fichier de manifeste du complément
 
-Créez un fichier XML dans un répertoire local. Le fichier XML inclut l' `OfficeApp` élément et les éléments enfants, qui sont décrits dans le [manifeste XML des compléments Office](../develop/add-in-manifests.md). Par exemple, créez un fichier nommé JSOM_SimpleOMCalls.xml qui contient le code XML suivant (modifiez la valeur GUID de l' `Id` élément).
+Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément et les éléments enfants, qui sont décrits dans le manifeste XML des Office `OfficeApp` [des modules.](../develop/add-in-manifests.md) Par exemple, créez un fichier nommé JSOM_SimpleOMCalls.xml qui contient le XML suivant (modifiez la valeur GUID de `Id` l’élément).
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -63,17 +63,17 @@ Créez un fichier XML dans un répertoire local. Le fichier XML inclut l' `Offic
    </OfficeApp>
 ```
 
-Pour Project, l' `OfficeApp` élément doit inclure la `xsi:type="TaskPaneApp"` valeur de l’attribut. L' `Id` élément est un GUID. La `SourceLocation` valeur doit être un chemin d’accès de partage de fichiers ou une URL SharePoint pour le fichier source HTML de complément ou l’application Web qui s’exécute dans le volet de tâches. For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).
+Pour Project, `OfficeApp` l’élément doit inclure la valeur `xsi:type="TaskPaneApp"` d’attribut. `Id`L’élément est un GUID. La valeur doit être un chemin d’accès au partage de fichiers ou une URL SharePoint pour le fichier source HTML du add-in ou l’application web qui s’exécute dans le `SourceLocation` volet Des tâches. For an explanation of the other elements in manifest file, see [Task pane add-ins for Project](../project/project-add-ins.md).
 
 La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_SimpleOMCalls.xml spécifie pour le complément de test de Project. Les boutons qui sont spécifiés dans le fichier HTML appellent des fonctions JavaScript associées. Vous pouvez ajouter les fonctions JavaScript dans le fichier HTML ou les placer dans un fichier .js distinct.
 
 ## <a name="procedure-2-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procédure 2. Pour créer les fichiers sources du complément Test du modèle objet de Project
 
-1. Créez un fichier HTML avec un nom spécifié par l' `SourceLocation` élément dans le manifeste JSOM_SimpleOMCalls.xml. 
+1. Créez un fichier HTML avec un nom spécifié par `SourceLocation` l’élément dans JSOM_SimpleOMCalls.xml manifeste. 
 
-   Par exemple, créez le fichierJSOMCall.html dans le répertoire `C:\Project\AppSource`. Bien que vous puissiez utiliser un éditeur de texte simple pour créer les fichiers sources, il est plus facile d’utiliser un outil tel que Visual Studio code, qui fonctionne avec des types de documents spécifiques (par exemple, HTML et JavaScript) et dispose d’autres aides à la modification. Si vous n’avez pas déjà effectué l’exemple de recherche Bing décrit dans [Compléments volet des tâches pour Project](../project/project-add-ins.md), la procédure 3 explique comment créer le `\\ServerName\AppSource` partage de fichiers spécifié par le manifeste.
+   Par exemple, créez le fichierJSOMCall.html dans le répertoire `C:\Project\AppSource`. Bien que vous pouvez utiliser un éditeur de texte simple pour créer les fichiers sources, il est plus facile d’utiliser un outil tel que Visual Studio Code, qui fonctionne avec des types de documents spécifiques (tels que HTML et JavaScript) et qui dispose d’autres aides à la modification. Si vous n’avez pas déjà effectué l’exemple de recherche Bing décrit dans [Compléments volet des tâches pour Project](../project/project-add-ins.md), la procédure 3 explique comment créer le `\\ServerName\AppSource` partage de fichiers spécifié par le manifeste.
 
-   Le fichier JSOMCall.html utilise le fichier Common MicrosoftAjax.js pour les fonctionnalités AJAX et le fichier Office.js pour la fonctionnalité de complément dans les applications Office 2013.
+   Le fichier JSOMCall.html utilise le fichier MicrosoftAjax.js commun pour la fonctionnalité AJAX et le fichier Office.js pour la fonctionnalité de Office 2013.
 
     ```HTML
     <!DOCTYPE html>
@@ -98,7 +98,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     </html>
     ```
 
-   L' `textarea` élément spécifie une zone de texte qui affiche les résultats des fonctions JavaScript.
+   `textarea`L’élément spécifie une zone de texte qui affiche les résultats des fonctions JavaScript.
 
    > [!NOTE]
    > Pour garantir le bon fonctionnement de l’exemple Test du modèle objet de Project, copiez les fichiers suivants du téléchargement du kit de développement logiciel de Project 2013 dans le même répertoire que le fichier JSOMCall.html : Office.js, Project-15.js et MicrosoftAjax.js.
@@ -107,9 +107,9 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
 2. Créez un fichier JavaScript nommé JSOM_Sample.js dans le même répertoire que le fichier JSOMCall.html. 
 
-   Le code suivant obtient le contexte d’application et les informations de document en utilisant des fonctions dans le fichier Office.js. L' `text` objet est l’ID du `textarea` contrôle dans le fichier html.
+   Le code suivant obtient le contexte d’application et les informations de document en utilisant des fonctions dans le fichier Office.js. `text`L’objet est l’ID du `textarea` contrôle dans le fichier HTML.
 
-   La variable ** \_ projDoc** est initialisée avec un `ProjectDocument` objet. Le code inclut des fonctions simples de gestion des erreurs, ainsi `getContextValues` que la fonction qui obtient les propriétés du contexte de l’application et du contexte du document du projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md).
+   La **\_ variable projDoc** est initialisée avec un `ProjectDocument` objet. Le code inclut des fonctions de gestion des erreurs simples et la fonction qui obtient le contexte de l’application et les propriétés de `getContextValues` contexte de document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md).
 
 
     ```js
@@ -172,27 +172,27 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     }
     ```
 
-   Pour plus d’informations sur les fonctions du fichier Office.debug.js, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md). Par exemple, la `getDocumentUrl` fonction obtient l’URL ou le chemin d’accès au fichier du projet ouvert.
+   Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, voir Office [API JavaScript](../reference/javascript-api-for-office.md). Par exemple, la `getDocumentUrl` fonction obtient l’URL ou le chemin d’accès au fichier du projet ouvert.
 
 3. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
 
-   - Par exemple, `getSelectedDataAsync` est une fonction générale dans Office.js qui obtient du texte non mis en forme pour les données sélectionnées. Pour plus d’informations, voir [AsyncResult, objet](/javascript/api/office/office.asyncresult).
+   - Par exemple, est une fonction générale dans Office.js qui obtient du texte non `getSelectedDataAsync` formaté pour les données sélectionnées. Pour plus d’informations, voir [AsyncResult, objet](/javascript/api/office/office.asyncresult).
 
    - La `getSelectedTaskAsync` fonction dans Project-15.js obtient le GUID de la tâche sélectionnée. De même, la `getSelectedResourceAsync` fonction obtient le GUID de la ressource sélectionnée. Si vous appelez ces fonctions lorsqu’une tâche ou une ressource n’est pas sélectionnée, les fonctions produisent une erreur non définie.
 
-   - La `getTaskAsync` fonction obtient le nom de la tâche et les noms des ressources affectées. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, `getTaskAsync` obtient l’ID de la tâche dans la liste SharePoint ; sinon, l’ID de tâche SharePoint est 0.
+   - La `getTaskAsync` fonction obtient le nom de la tâche et les noms des ressources affectées. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, obtient l’ID de tâche dans la liste SharePoint ; sinon, l’ID SharePoint tâche est `getTaskAsync` 0.
 
      > [!NOTE]
-     > À des fins de démonstration, l’exemple de code comporte un bogue. Si `taskGuid` n’est pas défini, la `getTaskAsync` fonction est désactivée. Si vous obtenez un GUID de tâche valide, puis sélectionnez une autre tâche, la `getTaskAsync` fonction récupère les données de la tâche la plus récente qui a été gérée par la `getSelectedTaskAsync` fonction.
+     > À des fins de démonstration, l’exemple de code comporte un bogue. Si `taskGuid` elle n’est pas définie, la `getTaskAsync` fonction est désinserrable. Si vous obtenez un GUID de tâche valide, puis sélectionnez une autre tâche, la fonction obtient les données de la tâche la plus récente qui a été gérée `getTaskAsync` par la `getSelectedTaskAsync` fonction.
   
-   - `getTaskFields`, `getResourceFields` et `getProjectFields` sont des fonctions locales qui appellent `getTaskFieldAsync` , `getResourceFieldAsync` ou `getProjectFieldAsync` plusieurs fois, pour obtenir les champs spécifiés d’une tâche ou d’une ressource. Dans le fichier project-15.debug.js, l' `ProjectTaskFields` énumération et l' `ProjectResourceFields` énumération indiquent les champs pris en charge.
+   - `getTaskFields`, et sont des fonctions locales qui appellent , ou plusieurs fois pour obtenir les champs spécifiés `getResourceFields` `getProjectFields` `getTaskFieldAsync` d’une tâche ou `getResourceFieldAsync` `getProjectFieldAsync` d’une ressource. Dans le project-15.debug.js, l’éumération et l’éumération indiquent `ProjectTaskFields` quels champs sont pris en `ProjectResourceFields` charge.
 
-   - La `getSelectedViewAsync` fonction obtient le type d’affichage (défini dans l' `ProjectViewTypes` énumération dans project-15.debug.js) et le nom de la vue.
+   - La fonction obtient le type d’affichage (défini dans l'project-15.debug.js) et le nom `getSelectedViewAsync` `ProjectViewTypes` de l’affichage.
 
-   - Si le projet est synchronisé avec une liste de tâches SharePoint, la `getWSSUrlAsync` fonction obtient l’URL et le nom de la liste des tâches. Si le projet n’est pas synchronisé avec une liste de tâches SharePoint, la `getWSSUrlAsync` fonction Errors est désactivée.
+   - Si le projet est synchronisé avec une liste SharePoint tâches, la fonction obtient l’URL et le nom de `getWSSUrlAsync` la liste de tâches. Si le projet n’est pas synchronisé avec une liste SharePoint de tâches, la `getWSSUrlAsync` fonction se produit par erreur.
 
      > [!NOTE]
-     > Pour obtenir l’URL SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la `getProjectFieldAsync` fonction avec les `WSSUrl` `WSSList` constantes et dans l’énumération [ProjectProjectFields](/javascript/api/office/office.projectprojectfields) .
+     > Pour obtenir l’URL SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la fonction avec les constantes et les constantes dans l’énumération `getProjectFieldAsync` `WSSUrl` `WSSList` [ProjectProjectFields.](/javascript/api/office/office.projectprojectfields)
 
    Chacune des fonctions utilisées dans le code suivant inclut une fonction anonyme représentée par `function (asyncResult)` et qui est un rappel qui obtient le résultat asynchrone. Au lieu de fonctions anonymes, vous pouvez utiliser les fonctions nommées, qui peuvent améliorer la maintenabilité des compléments complexes.
 
@@ -549,9 +549,9 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     }
     ```
 
-4. Ajoutez des rappels et des fonctions du gestionnaire d’événements JavaScript pour enregistrer la sélection de tâches, la sélection de ressources et les gestionnaires d’événements de changement de sélection d’affichage, et pour annuler l’enregistrement de gestionnaires d’événements. La `manageEventHandlerAsync` fonction ajoute ou supprime le gestionnaire d’événements spécifié, en fonction du paramètre _operation_ . L’opération peut être `addHandlerAsync` ou `removeHandlerAsync` .
+4. Ajoutez des rappels et des fonctions du gestionnaire d’événements JavaScript pour enregistrer la sélection de tâches, la sélection de ressources et les gestionnaires d’événements de changement de sélection d’affichage, et pour annuler l’enregistrement de gestionnaires d’événements. La fonction ajoute ou supprime le handler d’événements `manageEventHandlerAsync` spécifié, en fonction du paramètre _d’opération._ L’opération peut être `addHandlerAsync` ou `removeHandlerAsync` .
 
-   Les `manageTaskEventHandler` `manageResourceEventHandler` fonctions, et `manageViewEventHandler` peuvent ajouter ou supprimer un gestionnaire d’événements, comme spécifié par le paramètre _docMethod_ .
+   Les fonctions et les fonctions peuvent ajouter ou supprimer un handler d’événements, comme spécifié par `manageTaskEventHandler` `manageResourceEventHandler` le paramètre `manageViewEventHandler` _docMethod._
 
     ```js
     // Task selection changed event handler.
@@ -625,7 +625,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     }
     ```
 
-5. Pour le corps du document HTML, ajoutez des boutons qui appellent les fonctions JavaScript pour le test. Par exemple, dans l' `div` élément de l’API JSOM commune, ajoutez un bouton d’entrée qui appelle la `getSelectedDataAsync` fonction General.
+5. Pour le corps du document HTML, ajoutez des boutons qui appellent les fonctions JavaScript pour le test. Par exemple, dans `div` l’élément de l’API JSOM commune, ajoutez un bouton d’entrée qui appelle la fonction `getSelectedDataAsync` générale.
 
     ```HTML
     <body>
@@ -640,7 +640,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
         <!--  more code . . .  -->
     ```
 
-6. Ajoutez une `div` section avec des boutons pour les fonctions de tâches spécifiques d’un projet et pour l' `TaskSelectionChanged` événement.
+6. Ajoutez une section avec des boutons pour les fonctions `div` de tâche spécifiques au projet et pour l’événement. `TaskSelectionChanged`
 
     ```HTML
     <div id="ProjectSpecificTask">
@@ -656,7 +656,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     </div>
     ```
 
-7. Ajouter `div` des sections avec des boutons pour les méthodes et les événements de ressource, les méthodes d’affichage, les événements, les propriétés de projet et les propriétés de contexte
+7. Ajouter des sections avec des boutons pour les méthodes et événements de ressource, les méthodes et événements d’affichage, les `div` propriétés de projet et les propriétés de contexte
 
     ```HTML
     <div id="ResourceMethods">
@@ -688,7 +688,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     </div>
     ```
 
-8. Pour mettre en forme les éléments Button, ajoutez un `style` élément CSS. Par exemple, ajoutez ce qui suit en tant qu’enfant de l' `head` élément.
+8. Pour mettre en forme les éléments du bouton, ajoutez un élément `style` CSS. Par exemple, ajoutez ce qui suit en tant qu’enfant de `head` l’élément.
 
     ```HTML
     <style type="text/css">
@@ -723,44 +723,44 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
 
 4. Dans la boîte de dialogue **Centre de gestion de la confidentialité**, dans le volet gauche, choisissez **Catalogues de compléments approuvés**.
 
-5. Si vous avez déjà ajouté le `\\ServerName\AppManifests` chemin d’accès au complément Bing Search, ignorez cette étape. Dans le cas contraire, dans le volet **catalogues de compléments approuvés** , ajoutez le `\\ServerName\AppManifests` chemin d’accès dans la zone de texte **URL du catalogue** , choisissez **Ajouter un catalogue**, activez le partage réseau comme source par défaut (voir figure 1), puis choisissez **OK**.
+5. Si vous avez déjà ajouté le chemin `\\ServerName\AppManifests` d’accès du Bing de recherche, ignorez cette étape. Sinon, dans le volet **Catalogues** de produits de confiance, ajoutez le chemin d’accès dans la zone de texte Url du catalogue, choisissez Ajouter un catalogue, activez le partage réseau comme source par défaut `\\ServerName\AppManifests` (voir figure  1), puis choisissez **OK**. 
 
    *Figure 1. Ajout d’un partage de fichiers réseau pour des manifestes de complément*
 
-   ![Ajout d’un partage de fichiers réseau pour des manifestes d’application](../images/pj15-create-simple-agave-manage-catalogs.png)
+   ![Ajout d’un partage de fichiers réseau pour les manifestes d’application.](../images/pj15-create-simple-agave-manage-catalogs.png)
 
 6. Après que vous avez ajouté de nouveaux compléments ou modifié le code source, redémarrez Project. Dans le ruban **PROJECT**, choisissez le menu déroulant **Compléments Office**, puis choisissez **Afficher tout**. Dans la boîte de dialogue **Insérer un complément**, choisissez **DOSSIER PARTAGÉ** (voir la figure 2), sélectionnez **Test du modèle objet de Project**, puis choisissez **Insérer**. Le complément Test du modèle objet de Project démarre dans un volet Office.
 
    *Figure 2. Démarrage du complément Test du modèle objet Project qui se trouve sur un partage de fichiers*
 
-   ![Insertion d’une application](../images/pj15-create-simple-agave-start-agave-app.png)
+   ![Insertion d’une application.](../images/pj15-create-simple-agave-start-agave-app.png)
 
 7. Dans Project, créez et enregistrez un projet simple comportant au moins deux tâches. Par exemple, créez les tâches nommées T1, T2 et un jalon nomméM1, puis définissez des durées et des prédécesseurs de tâches similaires à ceux de la figure 3. Choisissez l’onglet **PROJECT** sur le ruban, sélectionnez toute la ligne pour la tâche T2, puis cliquez sur le bouton **getSelectedDataAsync** dans le volet Office. La figure 3 montre les données qui sont sélectionnées dans la zone de texte du complément **Test du modèle objet de Project**.
 
    *Figure 3. Utilisation du complément Test du modèle objet Project*
 
-   ![Utilisation de l’application Test du modèle objet Project](../images/pj15-create-simple-agave-project-om-test.png)
+   ![Utilisation de l’Project test du om.](../images/pj15-create-simple-agave-project-om-test.png)
 
-8. Sélectionnez la cellule dans la colonne **Durée** de la première tâche, puis cliquez sur le bouton **getSelectedDataAsync** dans le complément **Test du modèle objet de Project**. La `getSelectedDataAsync` fonction définit la valeur de la zone de texte à afficher `2 days` . 
+8. Sélectionnez la cellule dans la colonne **Durée** de la première tâche, puis cliquez sur le bouton **getSelectedDataAsync** dans le complément **Test du modèle objet de Project**. La `getSelectedDataAsync` fonction définit la valeur de zone de texte à `2 days` afficher. 
 
-9. Sélectionnez les trois cellules **Durée** pour les trois tâches. La `getSelectedDataAsync` fonction renvoie des valeurs de texte séparées par des points-virgules pour les cellules sélectionnées dans des lignes différentes, par exemple `2 days;4 days;0 days` .
+9. Sélectionnez les trois cellules **Durée** pour les trois tâches. La fonction renvoie des valeurs de texte séparées par des points-virgules pour les cellules sélectionnées dans différentes `getSelectedDataAsync` lignes, par exemple, `2 days;4 days;0 days` .
 
-   La `getSelectedDataAsync` fonction renvoie des valeurs de texte séparées par des virgules pour les cellules sélectionnées dans une ligne. Par exemple, dans la figure 3, la ligne entière correspondant à la tâche T2 est sélectionnée. Lorsque vous choisissez `getSelectedDataAsync` , la zone de texte affiche les éléments suivants :`,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
+   La fonction renvoie des valeurs de texte séparées `getSelectedDataAsync` par des virgules pour les cellules sélectionnées dans une ligne. Par exemple, dans la figure 3, la ligne entière correspondant à la tâche T2 est sélectionnée. Lorsque vous `getSelectedDataAsync` choisissez, la zone de texte affiche les exemples suivants :  `,Auto Scheduled,T2,4 days,Thu 6/14/12,Tue 6/19/12,1,,<NA>`
 
    La colonne **Indicateurs** et la colonne **Noms des ressources** sont toutes deux vides, le tableau de texte affiche donc des valeurs vides pour ces colonnes. La valeur `<NA>` correspond à la cellule **Ajouter une nouvelle colonne**.
 
-10. Sélectionnez une cellule dans la ligne de la tâche T2, ou toute la ligne pour la tâche T2, puis choisissez **getSelectedTaskAsync**. La zone de texte affiche la valeur GUID de la tâche, par exemple  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project stocke cette valeur dans la `taskGuid` variable globale du complément **test du modèle objet Project** .
+10. Sélectionnez une cellule dans la ligne de la tâche T2, ou toute la ligne pour la tâche T2, puis choisissez **getSelectedTaskAsync**. La zone de texte affiche la valeur GUID de la tâche, par exemple  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project stocke cette valeur dans la variable globale du Project `taskGuid` **test du** om.
 
-11. Sélectionnez `getTaskAsync` . Si la `taskGuid` variable contient le GUID de la tâche T2, la zone de texte affiche les informations de la tâche. La valeur **ResourceNames** est vide.
+11. Sélectionnez `getTaskAsync` . Si la variable contient le GUID de la tâche T2, la zone de texte `taskGuid` affiche les informations de la tâche. La valeur **ResourceNames** est vide.
 
-    Créez deux ressources locales R1 andR2, affectez-les à la tâche T2 à 50% chacune, puis choisissez de nouveau **getTaskAsync** . Les résultats qui apparaissent dans la zone de texte incluent des informations sur les ressources. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, les résultats incluent également l’ID de tâche SharePoint.
+    Créez deux ressources locales R1 etR2, affectez-les à la tâche T2 à 50 % chacune, puis choisissez de nouveau **getTaskAsync.** Les résultats qui apparaissent dans la zone de texte incluent des informations sur les ressources. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, les résultats incluent également l’ID de tâche SharePoint.
 
     - Nom de la tâche : `T2`
     - GUID : `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`
     - Identifiant de WSS : `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-12. Sélectionnez le bouton **obtenir les champs de tâche** . La fonction `getTaskFields` appelle la `getTaskfieldAsync` fonction plusieurs fois pour le nom de la tâche, l’index, la date de début, la durée, la priorité et les remarques sur les tâches.
+12. Sélectionnez le **bouton Obtenir les champs de** tâche. La fonction appelle la fonction plusieurs fois pour le nom de la tâche, l’index, la date de début, la durée, la priorité `getTaskFields` et les notes de `getTaskfieldAsync` tâche.
 
     - Nom : `T2`
     - Identifiant : `2`
@@ -777,14 +777,14 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
     > [!NOTE]
     > Si Project Professionnel est installé sur un ordinateur Windows Server, pour réenregistrer le projet dans SharePoint, vous pouvez utiliser le **Gestionnaire de serveur** afin d’ajouter la fonctionnalité **Expérience utilisateur**.
 
-    Si le projet est un projet local, ou si vous utilisez Project professionnel pour ouvrir un projet géré par Project Server, la `getWSSUrlAsync` méthode affiche une erreur non définie.
+    Si le projet est un projet local ou si vous utilisez Project Professionnel pour ouvrir un projet géré par Project Server, la méthode affiche une erreur `getWSSUrlAsync` non définie.
 
     - URL SharePoint : `http://ServerName`
     - Nom de la liste : `Test task list`
 
-14. Sélectionnez le bouton **Ajouter** dans la section **événement TaskSelectionChanged** , qui appelle la `manageTaskEventHandler` fonction pour enregistrer un événement de modification de sélection de tâche et renvoie `In onComplete function for addHandlerAsync Status: succeeded` dans la zone de texte. Sélectionnez une autre tâche ; la zone de texte affiche `In task selection changed event handler`, qui représente la sortie de la fonction de rappel pour l’événement de changement de sélection de tâche. Cliquez sur le bouton **Supprimer** pour annuler l’enregistrement du gestionnaire d’événements.
+14. Sélectionnez **le bouton** Ajouter dans la section Événement **TaskSelectionChanged,** qui appelle la fonction pour inscrire un événement de modification de sélection de tâche et renvoie dans la zone de `manageTaskEventHandler` `In onComplete function for addHandlerAsync Status: succeeded` texte. Sélectionnez une autre tâche ; la zone de texte affiche `In task selection changed event handler`, qui représente la sortie de la fonction de rappel pour l’événement de changement de sélection de tâche. Cliquez sur le bouton **Supprimer** pour annuler l’enregistrement du gestionnaire d’événements.
 
-15. Pour utiliser des méthodes de ressources, sélectionnez d’abord un affichage tel que **Tableau des ressources**, **Utilisation des ressources** ou **Formulaire ressource**, puis sélectionnez une ressource dans cet affichage. Choisissez **getSelectedResourceAsync** pour initialiser la variable **resourceGuid** , puis choisissez **obtenir les champs de ressources** à appeler `getResourceFieldAsync` plusieurs fois pour les propriétés de la ressource. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection de ressources.
+15. Pour utiliser des méthodes de ressources, sélectionnez d’abord un affichage tel que **Tableau des ressources**, **Utilisation des ressources** ou **Formulaire ressource**, puis sélectionnez une ressource dans cet affichage. Choose **getSelectedResourceAsync** to initialize the **resourceGuid** variable, and then choose **Get Resource Fields** to call multiple times for the resource `getResourceFieldAsync` properties. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection de ressources.
 
     - Nom de la ressource : `R1`
     - Coût : `$800.00`
@@ -793,12 +793,12 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
     - Travail réel : `0h`
     - Unités : `100%`
 
-16. Sélectionnez **getSelectedViewAsync** pour afficher le type et le nom de l’affichage actif. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection d’affichage. Par exemple, si **formulaire de ressource** est l’affichage actif, la `getSelectedViewAsync` fonction affiche ce qui suit dans la zone de texte :
+16. Sélectionnez **getSelectedViewAsync** pour afficher le type et le nom de l’affichage actif. Vous pouvez également ajouter ou supprimer le gestionnaire d’événements de changement de sélection d’affichage. Par exemple, si **formulaire ressource** est l’affichage actif, la fonction affiche ce qui suit dans la zone de `getSelectedViewAsync` texte :
 
     - Type d’affichage : `6`
     - Nom : `Resource Form`
 
-17. Sélectionnez **obtenir les champs de projet** pour appeler la `getProjectFieldAsync` fonction plusieurs fois pour différentes propriétés du projet actif. Si le projet est ouvert à partir de Project Web App, la `getProjectFieldAsync` fonction peut obtenir l’URL de l’instance Project Web App.
+17. Sélectionnez **Obtenir Project champs pour** appeler la fonction plusieurs fois pour différentes `getProjectFieldAsync` propriétés du projet actif. Si le projet est ouvert à partir Project Web App, la fonction peut `getProjectFieldAsync` obtenir l’URL de l Project Web App instance.
 
     - GUID du projet : `9845922E-DAB4-E111-8AF3-00155D3BA208`
     - Début : `Tue 6/12/12`
@@ -808,14 +808,14 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
     - Position du symbole : `0`
     - URL Project Web App : `http://servername/pwa`
   
-18. Sélectionnez le bouton **obtenir les valeurs de contexte** pour obtenir les propriétés du document et de l’application dans laquelle le complément est en cours d’exécution, en obtenant les propriétés de l’objet **Office.Context.document** et de l' `Office.context.application` objet. Par exemple, si le fichier Project1.mpp se trouve sur le bureau de l’ordinateur local, l’URL du document est  `C:\Users\UserAlias\Desktop\Project1.mpp`. Si le fichier .mpp se trouve dans une bibliothèque SharePoint, la valeur est l’URL du document. Si vous utilisez Project Professionnel 2013 pour ouvrir un projet nommé Project1 à partir de Project Web App, l’URL du document est  `<>\Project1`.
+18. Sélectionnez  le bouton Obtenir les valeurs de contexte pour obtenir les propriétés du document et de l’application dans laquelle le module est en cours d’exécution, en obtenant les propriétés de l’objet **Office.Context.document** et de `Office.context.application` l’objet. Par exemple, si le fichier Project1.mpp se trouve sur le bureau de l’ordinateur local, l’URL du document est  `C:\Users\UserAlias\Desktop\Project1.mpp`. Si le fichier .mpp se trouve dans une bibliothèque SharePoint, la valeur est l’URL du document. Si vous utilisez Project Professionnel 2013 pour ouvrir un projet nommé Project1 à partir de Project Web App, l’URL du document est  `<>\Project1`.
 
     - URL du document : `<>\Project1`
     - Mode de document : `readWrite`
     - Langue de l’application : `en-US`
     - Langue d’affichage : `en-US`
 
-19. Vous pouvez actualiser le complément après avoir édité le code source en fermant et en redémarrant Project. Dans le ruban **Project**, la liste déroulante ** Compléments Office** contient la liste des compléments récemment utilisés.
+19. Vous pouvez actualiser le complément après avoir édité le code source en fermant et en redémarrant Project. Dans le ruban **Project**, la liste déroulante **Compléments Office** contient la liste des compléments récemment utilisés.
 
 ## <a name="example"></a>Exemple
 
@@ -903,9 +903,9 @@ Le kit de développement logiciel Project 2013 contient le code complet du fich
 
 ## <a name="robust-programming"></a>Programmation fiable
 
-Le complément **test du modèle objet de Project** est un exemple qui illustre l’utilisation de certaines fonctions JavaScript pour Project 2013 dans les fichiers Project-15.js et Office.js. L’exemple est destiné uniquement à des fins de test et n’inclut pas de contrôles d’erreur fiables. Par exemple, si vous ne sélectionnez pas de ressource et exécutez la `getSelectedResourceAsync` fonction, la `resourceGuid` variable n’est pas initialisée et les appels pour `getResourceFieldAsync` renvoyer une erreur. Pour un complément de production, vous devez vérifier l’absence d’erreurs spécifiques et ignorer les résultats, masquer la fonctionnalité qui ne s’applique pas ou avertir l’utilisateur de choisir une vue et d’effectuer une sélection valide avant d’utiliser une fonction.
+Le **Project test du** modèle modèle d’Project est un exemple qui illustre l’utilisation de certaines fonctions JavaScript pour Project 2013 dans les fichiers Project-15.js et Office.js. L’exemple est destiné uniquement à des fins de test et n’inclut pas de contrôles d’erreur fiables. Par exemple, si vous ne sélectionnez pas une ressource et exécutez la fonction, la variable n’est pas initialisée et appelle pour `getSelectedResourceAsync` `resourceGuid` `getResourceFieldAsync` renvoyer une erreur. Pour un complément de production, vous devez vérifier l’absence d’erreurs spécifiques et ignorer les résultats, masquer la fonctionnalité qui ne s’applique pas ou avertir l’utilisateur de choisir une vue et d’effectuer une sélection valide avant d’utiliser une fonction.
 
-Pour un exemple simple, la sortie d’erreur dans le code suivant inclut la `actionMessage` variable qui spécifie l’action à effectuer pour éviter une erreur dans la `getSelectedResourceAsync` fonction.
+Pour un exemple simple, la sortie d’erreur dans le code suivant inclut la th variable qui spécifie l’action à prendre pour éviter une erreur  `actionMessage` dans la `getSelectedResourceAsync` fonction.
 
 ```js
 function logError(errorText) {
@@ -936,7 +936,7 @@ function getSelectedResourceAsync() {
 
 L’exemple **HelloProject_OData** dans le téléchargement de Project 2013 SDK inclut le fichier SurfaceErrors.js qui utilise la bibliothèque JQuery pour afficher un message d’erreur contextuel. Figure 4 affiche le message d’erreur dans une notification d’annonce .
 
-Le code suivant dans le fichier SurfaceErrors.js inclut la `throwError` fonction th qui crée un `Toast` objet.
+Le code suivant dans le fichier SurfaceErrors.js inclut la th  `throwError` fonction qui crée un `Toast` objet.
 
 ```js
 /*
@@ -1046,7 +1046,7 @@ var Toast = {
 }
 ```
 
-Pour utiliser la `throwError` fonction, incluez la bibliothèque jQuery et le script SurfaceErrors.js dans le fichier JSOMCall.html, puis ajoutez un appel à `throwError` dans d’autres fonctions JavaScript telles que `logMethodError` .
+Pour utiliser la fonction, incluez la bibliothèque JQuery et le script SurfaceErrors.js dans le fichier JSOMCall.html, puis ajoutez un appel à d’autres fonctions `throwError` `throwError` JavaScript telles que `logMethodError` .
 
 > [!NOTE]
 > Avant de déployer le complément, remplacez la référence à office.js et celle à jQuery par la référence au réseau de distribution de contenu. Cette dernière permet d’accéder à la version la plus récente et d’obtenir de meilleures performances.
@@ -1089,13 +1089,13 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 
 *Figure 4. Les fonctions incluses dans le fichier SurfaceErrors.js peuvent afficher une notification « toast »*
 
-![Utilisation des routines SurfaceError pour afficher une erreur](../images/pj15-create-simple-agave-surface-error.png)
+![Utilisation des routines SurfaceError pour afficher une erreur.](../images/pj15-create-simple-agave-surface-error.png)
 
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Compléments du volet Office pour Project](../project/project-add-ins.md)
 - [Présentation de l’API JavaScript pour compléments](../develop/understanding-the-javascript-api-for-office.md)
-- [Compléments d’API JavaScript pour Office](../reference/javascript-api-for-office.md)
+- [Office JavaScript API Add-ins](../reference/javascript-api-for-office.md)
 - [Informations de référence sur le schéma des manifestes des applications pour Office (version 1.1)](../develop/add-in-manifests.md)
 - [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)

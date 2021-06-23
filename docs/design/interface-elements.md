@@ -1,14 +1,14 @@
 ---
 title: Éléments d’interface utilisateur Office pour les compléments Office
-description: Obtenez une vue d’ensemble des différents types d’éléments d’interface utilisateur dans un complément Office.
+description: Obtenez une vue d’ensemble des différents types d’éléments d’interface utilisateur dans un Office’interface utilisateur.
 ms.date: 12/24/2019
 localization_priority: Normal
-ms.openlocfilehash: 3e5ff84cb0d8417d6fab5ec6a39575ce7ff74e23
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 5d0a1576d850f2291c28e6bb39554cbb0403f50b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132045"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076328"
 ---
 # <a name="office-ui-elements-for-office-add-ins"></a>Éléments d’interface utilisateur Office pour les compléments Office
 
@@ -16,11 +16,11 @@ Vous pouvez utiliser plusieurs types d’éléments d’interface utilisateur po
 
 L’image suivante montre les types d’éléments d’interface utilisateur d’Office que vous pouvez créer.
 
-![Diagramme illustrant des commandes de complément dans le ruban, un volet de tâches et un complément de boîte de dialogue/contenu dans un document Office](../images/add-in-ui-elements.png)
+![Diagramme montrant les commandes de module dans le ruban, un volet Des tâches et une boîte de dialogue/un module de contenu dans Office document.](../images/add-in-ui-elements.png)
 
 ## <a name="add-in-commands"></a>Commandes de complément
 
-Utilisez les [commandes de complément](add-in-commands.md) pour ajouter des points d’entrée à votre complément dans le ruban de l’application Office. Les commandes démarrent les actions dans votre complément en exécutant du code JavaScript ou en lançant un conteneur HTML. Vous pouvez créer deux types de commandes de complément.
+Utilisez [les commandes de add-in](add-in-commands.md) pour ajouter des points d’entrée à votre application Office ruban. Les commandes démarrent les actions dans votre complément en exécutant du code JavaScript ou en lançant un conteneur HTML. Vous pouvez créer deux types de commandes de complément.
 
 |Type de commande|Description|
 |:---------------|:--------------|

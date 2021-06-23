@@ -1,19 +1,19 @@
 ---
-title: Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment utiliser l’API JavaScript excel pour définir et obtenir des valeurs de plage, du texte ou des formules.
+title: Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript
+description: Découvrez comment utiliser l’API JavaScript Excel pour définir et obtenir des valeurs de plage, du texte ou des formules.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ad6e58c6e9fe3246d23d6ef1dd298fc6c18167a2
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652833"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075746"
 ---
-# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide de l’API JavaScript pour Excel
+# <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript
 
-Cet article fournit des exemples de code qui définissent et obtiennent des valeurs de plage, du texte ou des formules avec l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit des exemples de code qui définissent et obtiennent des valeurs de plage, du texte ou des formules avec Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -39,11 +39,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-value-is-updated"></a>Données avant la mise à jour de la valeur de la cellule
 
-![Données dans Excel avant la mise à jour de la valeur de la cellule](../images/excel-ranges-set-start.png)
+![Données dans Excel avant la mise à jour de la valeur de la cellule.](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-value-is-updated"></a>Données après la mise à jour de la valeur de la cellule
 
-![Données dans Excel après la mise à jour de la valeur de la cellule](../images/excel-ranges-set-cell-value.png)
+![Données dans Excel une fois la valeur de la cellule mise à jour.](../images/excel-ranges-set-cell-value.png)
 
 ### <a name="set-values-for-a-range-of-cells"></a>Définir des valeurs pour une plage de cellules
 
@@ -67,11 +67,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-values-are-updated"></a>Données avant la mise à jour des valeurs des cellules
 
-![Données dans Excel avant la mise à jour des valeurs des cellules](../images/excel-ranges-set-start.png)
+![Données dans Excel avant la mise à jour des valeurs des cellules.](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>Données après la mise à jour des valeurs des cellules
 
-![Données dans Excel après la mise à jour des valeurs des cellules](../images/excel-ranges-set-cell-values.png)
+![Données dans les Excel après la mise à jour des valeurs des cellules.](../images/excel-ranges-set-cell-values.png)
 
 ### <a name="set-formula-for-a-single-cell"></a>Définir la formule d’une cellule unique
 
@@ -91,11 +91,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formula-is-set"></a>Données avant la définition de la formule de la cellule
 
-![Données dans Excel avant la définition de la formule de la cellule](../images/excel-ranges-start-set-formula.png)
+![Données dans les Excel la formule de la cellule est définie.](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formula-is-set"></a>Données après la définition de la formule de la cellule
 
-![Données dans Excel après la définition de la formule de la cellule](../images/excel-ranges-set-formula.png)
+![Données dans les Excel une fois la formule de cellule définie.](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>Définir des formules pour une plage de cellules
 
@@ -122,11 +122,11 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-formulas-are-set"></a>Données avant la définition des formules des cellules
 
-![Données dans Excel avant la définition des formules des cellules](../images/excel-ranges-start-set-formula.png)
+![Données dans Excel avant la mise en place des formules de cellule.](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formulas-are-set"></a>Données après la définition des formules des cellules
 
-![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
+![Données dans les Excel une fois que les formules de cellule sont définies.](../images/excel-ranges-set-formulas.png)
 
 ## <a name="get-values-text-or-formulas"></a>Obtenir des valeurs, du texte ou des formules
 
@@ -151,7 +151,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
 
-![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
+![Données dans les Excel une fois que les formules de cellule sont définies.](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangevalues-as-logged-to-the-console-by-the-code-sample-above"></a>range.values (comme consigné dans la console par l’exemple de code ci-dessus)
 
@@ -209,7 +209,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
 
-![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
+![Données dans les Excel une fois que les formules de cellule sont définies.](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangetext-as-logged-to-the-console-by-the-code-sample-above"></a>range.text (comme consigné dans la console par l’exemple de code ci-dessus)
 
@@ -267,7 +267,7 @@ Excel.run(function (context) {
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
 
-![Données dans Excel après la définition des formules des cellules](../images/excel-ranges-set-formulas.png)
+![Données dans les Excel une fois que les formules de cellule sont définies.](../images/excel-ranges-set-formulas.png)
 
 #### <a name="rangeformulas-as-logged-to-the-console-by-the-code-sample-above"></a>range.formulas (comme consigné dans la console par l’exemple de code ci-dessus)
 
@@ -309,6 +309,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
-- [Définir et obtenir des plages à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-set-get.md)
-- [Définir le format de plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-set-format.md)
+- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Définir et obtenir des plages à l’aide de Excel API JavaScript](excel-add-ins-ranges-set-get.md)
+- [Définir le format de plage à l’aide Excel API JavaScript](excel-add-ins-ranges-set-format.md)

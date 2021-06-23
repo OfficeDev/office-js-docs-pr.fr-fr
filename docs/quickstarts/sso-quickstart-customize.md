@@ -1,15 +1,15 @@
 ---
 title: Personnaliser votre complément compatible avec l’authentification unique Node.js
-description: En savoir plus sur la personnalisation du module de personnalisation de LSO que vous avez créé avec le générateur Yeoman.
+description: En savoir plus sur la personnalisation du module de personnalisation de l’oD SSO que vous avez créé avec le générateur Yeoman.
 ms.date: 02/01/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 174df5e58e794b94b02025bd90a65f5ae8e26d44
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: af83571a5ed48b3e1261ea4ccebbe25f61e75d66
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234169"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076853"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
@@ -18,11 +18,11 @@ ms.locfileid: "50234169"
 
 Le [](sso-quickstart.md) démarrage rapide de l' cesso crée un add-in ssO qui obtient les informations de profil de l’utilisateur et les écrit dans le document ou le message. Dans cet article, vous allez passer en revue le processus de mise à jour du add-in que vous avez créé avec le générateur Yeoman dans le démarrage rapide de l’eoso, pour ajouter de nouvelles fonctionnalités qui nécessitent différentes autorisations.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
-- Un add-in Office que vous avez créé en suivant les instructions du démarrage rapide de [l' cesso.](sso-quickstart.md)
+- Un Office que vous avez créé en suivant les instructions du démarrage rapide de [l' cesso.](sso-quickstart.md)
 
-- Au moins quelques fichiers et dossiers stockés sur OneDrive Entreprise dans votre abonnement Microsoft 365.
+- Au moins quelques fichiers et dossiers stockés sur OneDrive Entreprise votre abonnement Microsoft 365 abonnement.
 
 - [Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))
 
@@ -33,23 +33,23 @@ Le [](sso-quickstart.md) démarrage rapide de l' cesso crée un add-in ssO qui o
 Commençons par un examen rapide du projet de add-in que vous avez précédemment créé avec le [générateur Yeoman.](sso-quickstart.md)
 
 > [!NOTE]
-> À des endroits où cet article fait référence à des fichiers de script à l’aide de l’extension de fichier **.js,** supposez plutôt l’extension de fichier **.ts** si votre projet a été créé avec TypeScript.
+> À des endroits où cet article fait référence à des fichiers de script utilisant **.js'extension** de fichier, supposez plutôt l’extension de fichier **.ts** si votre projet a été créé avec TypeScript.
 
 [!include[project structure for an SSO-enabled add-in created with the Yeoman generator](../includes/sso-yeoman-project-structure.md)]
 
 ## <a name="add-new-functionality"></a>Ajouter de nouvelles fonctionnalités
 
-Le add-in que vous avez créé avec le démarrage rapide de l' cesso utilise Microsoft Graph pour obtenir les informations de profil de l’utilisateur et écrit ces informations dans le document ou le message. Nous allons modifier la fonctionnalité du add-in de telle façon qu’il obtient les noms des 10 principaux fichiers et dossiers du OneDrive Entreprise de l’utilisateur et écrit ces informations dans le document ou le message. L’activation de cette nouvelle fonctionnalité nécessite la mise à jour des autorisations d’application dans Azure et la mise à jour du code dans le projet de add-in.
+Le add-in que vous avez créé avec le démarrage rapide de l' cesso utilise Microsoft Graph pour obtenir les informations de profil de l’utilisateur et écrit ces informations dans le document ou le message. Nous allons modifier la fonctionnalité du module complémentaire de telle façon qu’il obtient les noms des 10 principaux fichiers et dossiers du OneDrive Entreprise de l’utilisateur et écrit ces informations dans le document ou le message. L’activation de cette nouvelle fonctionnalité nécessite la mise à jour des autorisations d’application dans Azure et la mise à jour du code dans le projet de add-in.
 
 ### <a name="update-app-permissions-in-azure"></a>Mettre à jour les autorisations d’application dans Azure
 
-Pour que le module puisse lire correctement le contenu de OneDrive Entreprise de l’utilisateur, ses informations d’inscription d’application dans Azure doivent être mises à jour avec les autorisations appropriées. Pour accorder à l’application **l’autorisation Files.Read.All** et révoquer l’autorisation **User.Read,** qui n’est plus nécessaire, complétez les étapes suivantes.
+Pour que le module puisse lire correctement le contenu du OneDrive Entreprise de l’utilisateur, ses informations d’inscription d’application dans Azure doivent être mises à jour avec les autorisations appropriées. Pour accorder à l’application **l’autorisation Files.Read.All** et révoquer l’autorisation **User.Read,** qui n’est plus nécessaire, complétez les étapes suivantes.
 
-1. Accédez au [portail Azure et](https://ms.portal.azure.com/#home) **connectez-vous à l’aide** de vos informations d’identification d’administrateur Microsoft 365.
+1. Accédez au [portail Azure et](https://ms.portal.azure.com/#home) **connectez-vous à l’aide de vos informations d Microsoft 365'administrateur.**
 
 2. Accédez à la page **Inscriptions des applications.**
     > [!TIP]
-    > Pour ce faire, vous  pouvez choisir la vignette Inscriptions de l’application sur la page d’accueil Azure ou à l’aide de la zone de recherche de la page d’accueil pour rechercher et choisir les inscriptions **d’applications.**
+    > Pour ce faire, vous  pouvez choisir la vignette Inscriptions de l’application sur la page d’accueil Azure ou à l’aide de la zone de recherche de la page d’accueil pour rechercher et choisir les inscriptions **d’application.**
 
 3. Dans la page **Inscriptions de l’application,** choisissez l’application que vous avez créée lors du démarrage rapide.
     > [!TIP]
@@ -57,7 +57,7 @@ Pour que le module puisse lire correctement le contenu de OneDrive Entreprise de
 
 4. Dans la page vue d’ensemble  de l’application, choisissez les **autorisations d’API** sous le titre Gérer sur le côté gauche de la page.
 
-5. Dans la **ligne User.Read** de la table d’autorisations, choisissez les sélections, puis sélectionnez Révoquer le consentement de l’administrateur dans le menu qui s’affiche. 
+5. Dans la **ligne User.Read** de la table des autorisations, choisissez les sélections, puis sélectionnez Révoquer le consentement de l’administrateur dans le menu qui s’affiche. 
 
 6. Sélectionnez **le bouton Oui,** supprimer en réponse à l’invite qui s’affiche.
 
@@ -67,7 +67,7 @@ Pour que le module puisse lire correctement le contenu de OneDrive Entreprise de
 
 9. Cliquez sur le bouton **Ajouter une autorisation**.
 
-10. Dans le panneau qui s’ouvre, **choisissez Microsoft Graph,** puis les **autorisations déléguées.**
+10. Dans le panneau qui s’ouvre, **choisissez Microsoft Graph** puis les **autorisations déléguées.**
 
 11. Dans le panneau **Demander des autorisations d’API** :
 
@@ -83,7 +83,7 @@ Pour que le module puisse lire correctement le contenu de OneDrive Entreprise de
 
 Pour permettre au add-in de lire le contenu du OneDrive Entreprise de l’utilisateur, vous devez :
 
-- Mettez à jour le code qui fait référence à l’URL, aux paramètres et à l’étendue d’accès requis de Microsoft Graph.
+- Mettez à jour le code qui fait référence à l Graph URL, aux paramètres et à l’étendue d’accès requis de Microsoft.
 
 - Mettez à jour le code qui définit l’interface utilisateur du volet Des tâches, afin qu’il décrive avec précision les nouvelles fonctionnalités.
 
@@ -93,7 +93,7 @@ Les étapes suivantes décrivent ces mises à jour.
 
 ### <a name="changes-required-for-any-type-of-add-in"></a>Modifications requises pour n’importe quel type de add-in
 
-Pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft Graph et mettre à jour l’interface utilisateur du volet Des tâches, complétez les étapes suivantes pour votre application. Ces étapes sont les mêmes, quelle que soit l’application Office ciblée par votre application.
+Pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft Graph et mettre à jour l’interface utilisateur du volet Des tâches, complétez les étapes suivantes pour votre application. Ces étapes sont les mêmes, quelle que soit Office application cible de votre application.
 
 1. Dans **le ./. Fichier ENV** :
 
@@ -157,18 +157,18 @@ Pour modifier l’URL, les paramètres et l’étendue d’accès de Microsoft G
 
 7. Mettez à jour le code qui analyse la réponse de Microsoft Graph et l’écrit dans le document ou le message, en suivant les instructions de la section qui correspond à votre type de add-in :
 
-    - [Modifications requises pour un add-in Excel (JavaScript)](#changes-required-for-an-excel-add-in-javascript)
-    - [Modifications requises pour un add-in Excel (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
-    - [Modifications requises pour un add-in Outlook (JavaScript)](#changes-required-for-an-outlook-add-in-javascript)
-    - [Modifications requises pour un add-in Outlook (TypeScript)](#changes-required-for-an-outlook-add-in-typescript)
-    - [Modifications requises pour un add-in PowerPoint (JavaScript)](#changes-required-for-a-powerpoint-add-in-javascript)
-    - [Modifications requises pour un add-in PowerPoint (TypeScript)](#changes-required-for-a-powerpoint-add-in-typescript)
+    - [Modifications requises pour un Excel de recherche (JavaScript)](#changes-required-for-an-excel-add-in-javascript)
+    - [Modifications requises pour un Excel de recherche (TypeScript)](#changes-required-for-an-excel-add-in-typescript)
+    - [Modifications requises pour un Outlook de recherche (JavaScript)](#changes-required-for-an-outlook-add-in-javascript)
+    - [Modifications requises pour un Outlook de recherche (TypeScript)](#changes-required-for-an-outlook-add-in-typescript)
+    - [Modifications requises pour un PowerPoint de recherche (JavaScript)](#changes-required-for-a-powerpoint-add-in-javascript)
+    - [Modifications requises pour un PowerPoint de recherche (TypeScript)](#changes-required-for-a-powerpoint-add-in-typescript)
     - [Modifications requises pour un add-in Word (JavaScript)](#changes-required-for-a-word-add-in-javascript)
     - [Modifications requises pour un add-in Word (TypeScript)](#changes-required-for-a-word-add-in-typescript)
 
-### <a name="changes-required-for-an-excel-add-in-javascript"></a>Modifications requises pour un add-in Excel (JavaScript)
+### <a name="changes-required-for-an-excel-add-in-javascript"></a>Modifications requises pour un Excel de recherche (JavaScript)
 
-Si votre add-in est un add-in Excel créé avec JavaScript, a apporté les modifications suivantes dans **./src/helpers/documentHelper.js**:
+Si votre add-in est un Excel créé avec JavaScript, a apporté les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez `writeDataToOfficeDocument` la fonction et remplacez-la par la fonction suivante :
 
@@ -233,9 +233,9 @@ Si votre add-in est un add-in Excel créé avec JavaScript, a apporté les modif
 
 Une fois ces modifications apportées, passez directement à la [section](#try-it-out) Essayer de cet article pour tester votre add-in mis à jour.
 
-### <a name="changes-required-for-an-excel-add-in-typescript"></a>Modifications requises pour un add-in Excel (TypeScript)
+### <a name="changes-required-for-an-excel-add-in-typescript"></a>Modifications requises pour un Excel de recherche (TypeScript)
 
-Si votre add-in est un module excel créé avec TypeScript, ouvrez **./src/taskpane/taskpane.ts,** recherchez la fonction et remplacez-la par la fonction suivante `writeDataToOfficeDocument` :
+Si votre add-in est un Excel créé avec TypeScript, ouvrez **./src/taskpane/taskpane.ts,** recherchez la fonction et remplacez-la par la fonction suivante `writeDataToOfficeDocument` :
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): Promise<any> {
@@ -269,9 +269,9 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications apportées, passez directement à la [section](#try-it-out) Essayer de cet article pour tester votre add-in mis à jour.
 
-### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Modifications requises pour un add-in Outlook (JavaScript)
+### <a name="changes-required-for-an-outlook-add-in-javascript"></a>Modifications requises pour un Outlook de recherche (JavaScript)
 
-Si votre add-in est un add-in Outlook créé avec JavaScript, a apporté les modifications suivantes dans **./src/helpers/documentHelper.js**:
+Si votre add-in est un Outlook créé avec JavaScript, a apporté les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez `writeDataToOfficeDocument` la fonction et remplacez-la par la fonction suivante :
 
@@ -331,9 +331,9 @@ Si votre add-in est un add-in Outlook créé avec JavaScript, a apporté les mod
 
 Une fois ces modifications apportées, passez directement à la [section](#try-it-out) Essayer de cet article pour tester votre add-in mis à jour.
 
-### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Modifications requises pour un add-in Outlook (TypeScript)
+### <a name="changes-required-for-an-outlook-add-in-typescript"></a>Modifications requises pour un Outlook de recherche (TypeScript)
 
-Si votre add-in est un add-in Outlook qui a été créé avec TypeScript, ouvrez **./src/taskpane/taskpane.ts**, recherchez la fonction et remplacez-la par la fonction suivante `writeDataToOfficeDocument` :
+Si votre add-in est un Outlook créé avec TypeScript, ouvrez **./src/taskpane/taskpane.ts,** recherchez la fonction et remplacez-la par la fonction suivante `writeDataToOfficeDocument` :
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -362,9 +362,9 @@ export function writeDataToOfficeDocument(result: Object): void {
 
 Une fois ces modifications apportées, passez directement à la [section](#try-it-out) Essayer de cet article pour tester votre add-in mis à jour.
 
-### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>Modifications requises pour un add-in PowerPoint (JavaScript)
+### <a name="changes-required-for-a-powerpoint-add-in-javascript"></a>Modifications requises pour un PowerPoint de recherche (JavaScript)
 
-Si votre add-in est un add-in PowerPoint créé avec JavaScript, a apporté les modifications suivantes dans **./src/helpers/documentHelper.js**:
+Si votre add-in est un PowerPoint qui a été créé avec JavaScript, a apporté les modifications suivantes dans **./src/helpers/documentHelper.js**:
 
 1. Recherchez `writeDataToOfficeDocument` la fonction et remplacez-la par la fonction suivante :
 
@@ -430,9 +430,9 @@ Si votre add-in est un add-in PowerPoint créé avec JavaScript, a apporté les 
 
 Une fois ces modifications apportées, passez directement à la [section](#try-it-out) Essayer de cet article pour tester votre add-in mis à jour.
 
-### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>Modifications requises pour un add-in PowerPoint (TypeScript)
+### <a name="changes-required-for-a-powerpoint-add-in-typescript"></a>Modifications requises pour un PowerPoint de recherche (TypeScript)
 
-Si votre add-in est un add-in PowerPoint qui a été créé avec TypeScript, ouvrez **./src/taskpane/taskpane.ts**, recherchez la fonction et remplacez-la par la fonction suivante `writeDataToOfficeDocument` :
+Si votre add-in est un PowerPoint créé avec TypeScript, ouvrez **./src/taskpane/taskpane.ts,** recherchez la fonction et remplacez-la par la fonction suivante `writeDataToOfficeDocument` :
 
 ```typescript
 export function writeDataToOfficeDocument(result: Object): void {
@@ -565,9 +565,9 @@ export function writeDataToOfficeDocument(result: Object): Promise<any> {
 
 Une fois ces modifications apportées, continuez à la [section](#try-it-out) Essayer de cet article pour tester votre add-in mis à jour.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
-Si votre compl?ment est un compl?ment Excel, Word ou PowerPoint, compl?ez les étapes de la section suivante pour l’essayer. Si votre compl?ment est un compl?ment Outlook, compl?ez les étapes dans la section [Outlook.](#outlook)
+Si votre add-in est un Excel, Word ou PowerPoint, complétez les étapes de la section suivante pour l’essayer. Si votre add-in est un Outlook, complétez les étapes de la section [Outlook](#outlook) à la place.
 
 ### <a name="excel-word-and-powerpoint"></a>Excel, Word et PowerPoint
 
@@ -582,24 +582,24 @@ Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
     npm start
     ```
 
-2. Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (c’est-à-dire, Excel, Word ou PowerPoint), assurez-vous que vous êtes connecté avec un utilisateur membre [](sso-quickstart.md#configure-sso) de la même organisation Microsoft 365 que le compte d’administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’ouvrez-vous pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
+2. Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (par exemple, Excel, Word ou PowerPoint), assurez-vous que vous êtes connecté avec un utilisateur membre de la même organisation Microsoft 365 [](sso-quickstart.md#configure-sso) que le compte d’administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’ouvrez-vous pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique. 
 
 3. Dans l’application client Office, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. L’image ci-après illustre ce bouton dans Excel.
 
-    ![Screenshot showing highlighted add-in button in Excel ribbon](../images/excel-quickstart-addin-3b.png)
+    ![Screenshot showing highlighted add-in button in Excel ribbon.](../images/excel-quickstart-addin-3b.png)
 
-4. En bas du volet Des tâches, sélectionnez le bouton Lire **mon OneDrive** Entreprise pour lancer le processus d’pertinence.
+4. En bas du volet Des tâches, sélectionnez le bouton **Lire mon OneDrive Entreprise** pour lancer le processus d' cesso.
 
 5. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Microsoft 365 (professionnel ou scolaire). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
-    ![Capture d’écran montrant la boîte de dialogue des autorisations demandées avec le bouton Accepter mis en évidence](../images/sso-permissions-request.png)
+    ![Capture d’écran montrant la boîte de dialogue autorisations demandées avec le bouton Accepter mis en évidence.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.
 
-6. Le add-in lit les données du OneDrive Entreprise de l’utilisateur et écrit les noms des 10 principaux fichiers et dossiers dans le document. L’image suivante montre un exemple de noms de fichiers et de dossiers écrits dans une feuille de calcul Excel.
+6. Le add-in lit les données du OneDrive Entreprise de l’utilisateur et écrit les noms des 10 principaux fichiers et dossiers dans le document. L’image suivante montre un exemple de noms de fichiers et de dossiers écrits dans Excel feuille de calcul.
 
-    ![Capture d’écran montrant les informations OneDrive Entreprise dans la feuille de calcul Excel](../images/sso-onedrive-info-excel.png)
+    ![Screenshot showing OneDrive Entreprise information in Excel worksheet.](../images/sso-onedrive-info-excel.png)
 
 ### <a name="outlook"></a>Outlook
 
@@ -614,26 +614,26 @@ Pour tester un complément Outlook, procédez comme suit.
     npm start
     ```
 
-2. Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation Microsoft 365 que le compte d’administrateur Microsoft 365 que celui que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’oD [SSO](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.
+2. Assurez-vous que vous êtes connecté à Outlook avec un utilisateur membre de la même organisation Microsoft 365 que le compte d’administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’oD [DSO](sso-quickstart.md#configure-sso) pour l’application. Cette opération permet d’établir les conditions appropriées pour la réussite de l’authentification unique.
 
 3. Rédigez un nouveau message dans Outlook.
 
 4. Dans la fenêtre de composition du message, choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet du complément.
 
-    ![Capture d’écran illustrant la fenêtre Outlook Composer un message et le bouton du ruban du complément mis en évidence](../images/outlook-sso-ribbon-button.png)
+    ![Screenshot showing highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
 
-5. En bas du volet Des tâches, sélectionnez le bouton Lire **mon OneDrive** Entreprise pour lancer le processus d’pertinence.
+5. En bas du volet Des tâches, sélectionnez le bouton **Lire mon OneDrive Entreprise** pour lancer le processus d' cesso.
 
 6. Si une boîte de dialogue s’affiche pour demander des autorisations pour le compte du complément, cela signifie que l’authentification unique n’est pas prise en charge pour votre scénario et que le complément est plutôt repassé à une autre méthode d’authentification des utilisateurs. Cela peut se produire lorsque l’administrateur client n’a pas accordé le consentement du complément pour accéder à Microsoft Graph, ou lorsque l’utilisateur n’est pas connecté à Office à l’aide d’un compte Microsoft valide ou d’un compte Microsoft 365 (professionnel ou scolaire). Sélectionnez le bouton **Accepter** dans la fenêtre de boîte de dialogue pour continuer.
 
-    ![Capture d’écran de la boîte de dialogue des autorisations demandées avec le bouton Accepter mis en évidence](../images/sso-permissions-request.png)
+    ![Capture d’écran de la boîte de dialogue Autorisations demandées avec le bouton Accepter mis en évidence.](../images/sso-permissions-request.png)
 
     > [!NOTE]
     > Une fois qu’un utilisateur a accepté cette demande d’autorisation, il n’est plus invité à le faire à l’avenir.
 
 7. Le add-in lit les données du OneDrive Entreprise de l’utilisateur et écrit les noms des 10 principaux fichiers et dossiers dans le corps du message électronique.
 
-    ![Capture d’écran montrant les informations OneDrive Entreprise dans la fenêtre composer un message Outlook](../images/sso-onedrive-info-outlook.png)
+    ![Screenshot showing OneDrive Entreprise information in Outlook compose message window.](../images/sso-onedrive-info-outlook.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

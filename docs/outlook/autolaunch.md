@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d9bfee1825bcdf175cc263888700b539024ee717
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853954"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076790"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -22,7 +22,7 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 
 ## <a name="supported-events"></a>Événements pris en charge
 
-Actuellement, les événements suivants sont pris en charge sur le web et sur Windows.
+Pour l’instant, les événements suivants sont pris en charge sur le web et sur Windows.
 
 |Événement|Description|Minimum<br>ensemble de conditions requises|
 |---|---|---|
@@ -37,7 +37,7 @@ Actuellement, les événements suivants sont pris en charge sur le web et sur Wi
 |`OnInfoBarDismissClicked`|Lors du rejet d’une notification lors de la composition d’un élément de message ou de rendez-vous. Seul le add-in qui a ajouté la notification sera averti.|Aperçu|
 
 > [!IMPORTANT]
-> Les événements toujours en prévisualisation sont disponibles uniquement avec un abonnement Microsoft 365 dans Outlook sur le web et sur Windows. Pour plus d’informations, voir [La prévisualisation](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
+> Les événements toujours en prévisualisation sont disponibles uniquement avec un abonnement Microsoft 365 dans Outlook sur le web et Windows. Pour plus d’informations, voir [La prévisualisation](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
 
 ### <a name="how-to-preview"></a>Comment prévisualiser
 
@@ -45,7 +45,7 @@ Nous vous invitons à tester les événements maintenant en prévisualisation ! 
 
 Pour afficher un aperçu de ces événements :
 
-- Pour Outlook sur le web :
+- Par Outlook sur le web :
   - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur Windows :
@@ -54,7 +54,7 @@ Pour afficher un aperçu de ces événements :
     1. Créez la clé de `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` Registre.
     1. Ajoutez une entrée nommée `EnableBetaAPIsInJavaScript` et définissez la valeur sur `1` . L’image suivante indique à quoi doit ressembler le registre.
 
-        ![Capture d’écran de l’éditeur du Registre avec une valeur de clé de Registre EnableBetaAPIsInJavaScript](../images/outlook-beta-registry-key.png)
+        ![Capture d’écran de l’éditeur du Registre avec une valeur de clé de Registre EnableBetaAPIsInJavaScript.](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -230,7 +230,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 > [!IMPORTANT]
 > Windows : actuellement, les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
 
@@ -243,14 +243,14 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur le web, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur le web avec l’objet de la composition](../images/outlook-web-autolaunch-1.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur le web avec l’objet de la composition.](../images/outlook-web-autolaunch-1.png)
 
 1. Dans Outlook sur Windows, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet de la composition](../images/outlook-win-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet définie sur composition.](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > Si vous exécutez votre add-in à partir de l’host local et que vous voyez l’erreur « Désolé, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
+    > Si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
     >
     > 1. Fermez Outlook.
     > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
@@ -266,8 +266,8 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [supprimez le add-in,](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) puis chargez-le de nouveau.
-- Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows, ou actualisez l’onglet du navigateur Outlook sur le web.
+- Si vous avez mis à jour le manifeste, [supprimez-le, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau.
+- Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
 Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer](debug-autolaunch.md)votre complément basé sur Outlook événement.
 
@@ -275,9 +275,9 @@ La journalisation runtime est également disponible pour cette fonctionnalité s
 
 ## <a name="deploy-to-users"></a>Déployer pour les utilisateurs
 
-Vous pouvez déployer des add-ins basés sur des événements en téléchargeant le manifeste via Microsoft 365 centre d’administration. Dans le portail d’administration, **développez la** section Paramètres dans le volet de navigation, puis sélectionnez **Applications intégrées.** Dans la page **Applications intégrées,** sélectionnez l Télécharger **d’applications personnalisées.**
+Vous pouvez déployer des add-ins basés sur des événements en chargeant le manifeste via le Centre d’administration Microsoft 365. Dans le portail d’administration, **développez la** section Paramètres dans le volet de navigation, puis sélectionnez **Applications intégrées.** Dans la page **Applications intégrées,** sélectionnez l Télécharger **d’applications personnalisées.**
 
-![Capture d’écran de la page Applications intégrées dans le Centre d’administration Microsoft 365, y compris l’action Télécharger applications personnalisées](../images/outlook-deploy-event-based-add-ins.png)
+![Capture d’écran de la page Applications intégrées sur le Centre d’administration Microsoft 365, y compris l’action Télécharger d’applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
 
 Magasins AppSource et inclients : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur des événements devrait être disponible prochainement.
 
@@ -316,4 +316,4 @@ Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne 
 
 - [Manifestes de complément Outlook](manifests.md)
 - [Comment déboguer des add-ins basés sur des événements](debug-autolaunch.md)
-- Exemple PnP : utiliser [Outlook’activation](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature) basée sur un événement pour définir la signature
+- Exemple PnP : utiliser Outlook activation basée sur un événement [pour définir la signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)

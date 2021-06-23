@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: acb26255778a57d89b6654e7bf6e3fdc71b67d8d
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727912"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076103"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -30,7 +30,7 @@ Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’u
 
 L’image suivante montre un exemple de boîte de dialogue.
 
-![Capture d’écran montrant la boîte de dialogue avec 3 options de personnalisation affichées devant Word](../images/auth-o-dialog-open.png)
+![Capture d’écran montrant la boîte de dialogue avec 3 options de personnalisation affichées devant Word.](../images/auth-o-dialog-open.png)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre *n’est* pasmodale : un utilisateur peut continuer à interagir à la fois avec le document dans l’application Office et avec la page dans le volet Des tâches, s’il en existe un.
 
@@ -252,7 +252,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement avec la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
+Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement à l’auprès de la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
 
 ```javascript
 Office.onReady()

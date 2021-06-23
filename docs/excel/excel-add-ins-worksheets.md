@@ -3,12 +3,12 @@ title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Ex
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide Excel API JavaScript.
 ms.date: 06/03/2021
 localization_priority: Normal
-ms.openlocfilehash: eeec79f1474857ec72f00a269cb1cb81e55b2ca9
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783511"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075550"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -326,7 +326,7 @@ function onWorksheetChanged(eventArgs) {
 
 Votre add-in peut suivre les modifications apportées aux formules dans une feuille de calcul. Cela est utile lorsqu’une feuille de calcul est connectée à une base de données externe. Lorsque la formule change dans la feuille de calcul, l’événement dans ce scénario déclenche les mises à jour correspondantes dans la base de données externe.
 
-Pour détecter les modifications apportées aux formules, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour [l’événement onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) d’une feuille de calcul. Les handlers d’événements de l’événement reçoivent un `onFormulaChanged` [objet WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) lorsque l’événement se déclenche.
+Pour détecter les modifications apportées aux formules, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour [l’événement onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) d’une feuille de calcul. Les handlers d’événements `onFormulaChanged` de l’événement reçoivent un objet [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) lorsque l’événement se déclenche.
 
 > [!IMPORTANT]
 > `onFormulaChanged`L’événement détecte lorsqu’une formule elle-même change, et non la valeur de données résultant du calcul de la formule.
@@ -334,7 +334,7 @@ Pour détecter les modifications apportées aux formules, inscrivez un [handler]
 L’exemple de code suivant montre comment inscrire le handler d’événements, utiliser l’objet pour récupérer le tableau formulaDetails de la formule modifiée, puis imprimer les détails sur la formule modifiée avec les `onFormulaChanged` `WorksheetFormulaChangedEventArgs` propriétés [FormulaChangedEventDetail.](/javascript/api/excel/excel.formulachangedeventdetail) [](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)
 
 > [!NOTE]
-> Cet exemple de code ne fonctionne qu’en cas de changement d’une seule formule.
+> Cet exemple de code fonctionne uniquement lorsqu’une seule formule est modifiée.
 
 ```js
 Excel.run(function (context) {
@@ -376,7 +376,7 @@ Les événements `onColumnSorted` et `onRowSorted` fournissent leurs rappels ave
 
 Les images suivantes montrent les plages retournées par la propriété `address` pour les événements de tri. Voici d’abord les exemples de données avant le tri :
 
-![Données d’un tableau dans Excel avant le tri](../images/excel-sort-event-before.png)
+![Les données de tableau Excel avant d’être triées.](../images/excel-sort-event-before.png)
 
 Si un tri de haut en bas est effectué sur «**Q1**» (valeurs dans «**B**»), les lignes en surbrillance suivantes sont renvoyées par `WorksheetRowSortedEventArgs.address`:
 

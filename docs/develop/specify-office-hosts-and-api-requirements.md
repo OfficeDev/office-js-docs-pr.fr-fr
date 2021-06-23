@@ -3,12 +3,12 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 07f2505dcfb16bf7000dca01a6d600aac9a63fa0
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: dad4a562c523291d7af3c975c89111fab410220c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253353"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075963"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -31,8 +31,8 @@ Le tableau suivant répertorie les concepts principaux décrits dans cet article
 |:-----|:-----|
 |Office application, Office application cliente|Application Office utilisée pour exécuter votre complément. Par exemple, Word, Excel, etc.|
 |Plateforme|L’endroit Office’application s’exécute, par exemple dans un navigateur ou sur une iPad.|
-|Ensemble de conditions requises|Groupe nommé de membres d’API associés. Les add-ins utilisent des ensembles de conditions requises pour déterminer si l’application Office prend en charge les membres d’API utilisés par votre application. Il est plus facile de tester la prise en charge d’un ensemble de conditions requises, plutôt que la prise en charge de membres individuels d’API. La prise en charge de l’ensemble de conditions requises varie selon Office’application et la version de l’Office application. <br >Les ensembles de conditions requises sont spécifiés dans le fichier manifeste. Lorsque vous spécifiez des ensembles de conditions requises dans le manifeste, vous définissez le niveau minimal de prise en charge de l’API que l’application Office doit fournir pour exécuter votre application. Office applications qui ne supportent pas les ensembles de conditions <span class="ui">requises spécifiés</span>dans le manifeste ne peuvent pas exécuter votre application et votre application ne s’affichera pas dans Mes applications. Cela limite l’endroit où votre add-in est disponible. Dans le code utilisant les vérifications à l’exécution. Pour obtenir la liste complète des ensembles de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](../reference/requirement-sets/office-add-in-requirement-sets.md).|
-|Vérification à l’exécution|Test effectué au moment de l’exécution pour déterminer si l’application Office exécutant votre application prend en charge les ensembles de conditions requises ou les méthodes utilisées par votre application. Pour effectuer une vérification à l’runtime, vous utilisez une instruction **if** avec la méthode, les ensembles de conditions requises ou les noms de méthodes qui ne font pas partie `isSetSupported` d’un ensemble de conditions requises. Les vérifications à l’exécution permettent de veiller à ce que votre complément atteigne le plus grand nombre possible de clients. Contrairement aux ensembles de conditions requises, les vérifications à l’runtime ne spécifient pas le niveau minimal de prise en charge de l’API que l’application Office doit fournir pour l’exécuter. À la place, vous utilisez **l’instruction if** pour déterminer si un membre d’API est pris en charge. Si c’est le cas, vous pouvez fournir des fonctionnalités supplémentaires dans votre complément. Votre complément s’affiche toujours dans **Mes compléments** quand vous effectuez des vérifications à l’exécution.|
+|Ensemble de conditions requises|Groupe nommé de membres d’API associés. Les add-ins utilisent des ensembles de conditions requises pour déterminer si l’application Office prend en charge les membres d’API utilisés par votre application. Il est plus facile de tester la prise en charge d’un ensemble de conditions requises, plutôt que la prise en charge de membres individuels d’API. La prise en charge de l’ensemble de conditions requises varie selon Office’application et la version de l’Office’application. <br >Les ensembles de conditions requises sont spécifiés dans le fichier manifeste. Lorsque vous spécifiez des ensembles de conditions requises dans le manifeste, vous définissez le niveau minimal de prise en charge de l’API que l’application Office doit fournir pour exécuter votre application. Office applications qui ne supportent pas les ensembles de conditions <span class="ui">requises spécifiés</span>dans le manifeste ne peuvent pas exécuter votre application et votre application ne s’affichera pas dans Mes applications. Cela limite l’endroit où votre add-in est disponible. Dans le code utilisant les vérifications à l’exécution. Pour obtenir la liste complète des ensembles de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](../reference/requirement-sets/office-add-in-requirement-sets.md).|
+|Vérification à l’exécution|Test effectué au moment de l’exécution pour déterminer si l’application Office exécutant votre application prend en charge les ensembles de conditions requises ou les méthodes utilisées par votre application. Pour effectuer une vérification à l’runtime, vous utilisez une instruction **if** avec la méthode, les ensembles de conditions requises ou les noms de méthodes qui ne font pas partie `isSetSupported` d’un ensemble de conditions requises. Les vérifications à l’exécution permettent de veiller à ce que votre complément atteigne le plus grand nombre possible de clients. Contrairement aux ensembles de conditions requises, les vérifications à l’runtime ne spécifient pas le niveau minimal de prise en charge de l’API que l’application Office doit fournir pour que votre application s’exécute. À la place, vous utilisez **l’instruction if** pour déterminer si un membre d’API est pris en charge. Si c’est le cas, vous pouvez fournir des fonctionnalités supplémentaires dans votre complément. Votre complément s’affiche toujours dans **Mes compléments** quand vous effectuez des vérifications à l’exécution.|
 
 ## <a name="before-you-begin"></a>Avant de commencer
 
@@ -58,7 +58,7 @@ Si vous utilisez des vérifications à l’exécution, référencez la version l
 
 Lorsque vous spécifiez Office d’api, plusieurs facteurs sont à prendre en compte. Le diagramme suivant montre comment choisir la technique à utiliser dans votre complément.
 
-![Choisissez la meilleure option pour votre add-in lors de la spécification d Office applications ou d’API requises](../images/options-for-office-hosts.png)
+![Choisissez la meilleure option pour votre add-in lors de la spécification de Office applications ou d’API requises.](../images/options-for-office-hosts.png)
 
 - Si votre add-in s’exécute dans Office application, définissez `Hosts` l’élément dans le manifeste. Pour plus d’informations, consultez [Définition de l’élément Hosts](#set-the-hosts-element).
 
@@ -84,14 +84,14 @@ Par exemple, l’exemple suivant et la déclaration spécifient que le module de
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Base de données      | applications web Access                                | Volet de tâches              |
 | Document      | Word sur le web, Windows, Mac, iPad            | Volet de tâches              |
-| Boîte aux lettres       | Outlook sur le web, Windows, Mac, Android, iOS | Courrier Outlook                   |
+| Boîte aux lettres       | Outlook sur le web, Windows, Mac, Android, iOS | Courrier                   |
 | Bloc-notes      | OneNote sur le web                             | Volet De tâches, Contenu     |
 | Présentation  | PowerPoint sur le web, Windows, Mac, iPad      | Volet De tâches, Contenu     |
 | Project       | Project sur Windows                             | Volet de tâches              |
 | Classeur      | Excel sur le Web, Windows, Mac, iPad           | Volet De tâches, Contenu     |
 
 > [!NOTE]
-> `Name`L’attribut spécifie l’Office application cliente qui peut exécuter votre application. Office applications sont pris en charge sur différentes plateformes et s’exécutent sur des ordinateurs de bureau, des navigateurs web, des tablettes et des appareils mobiles. Vous ne pouvez pas indiquer quelle plateforme peut être utilisée pour exécuter votre complément. Par exemple, si vous spécifiez , les deux Outlook sur le web et sur Windows peuvent être utilisées pour `Mailbox` exécuter votre application.
+> `Name`L’attribut spécifie l’Office application cliente qui peut exécuter votre application. Office applications sont pris en charge sur différentes plateformes et s’exécutent sur des ordinateurs de bureau, des navigateurs web, des tablettes et des appareils mobiles. Vous ne pouvez pas indiquer quelle plateforme peut être utilisée pour exécuter votre complément. Par exemple, si vous spécifiez , les deux Outlook sur le web et sur Windows peuvent être utilisés pour `Mailbox` exécuter votre add-in.
 
 > [!IMPORTANT]
 > Nous ne vous recommandons plus de créer et d’utiliser les bases de données et les applications web Access dans SharePoint. Nous vous recommandons plutôt d’utiliser [Microsoft PowerApps](https://powerapps.microsoft.com/) pour créer des solutions professionnelles sans code pour des appareils mobiles et web.
@@ -149,7 +149,7 @@ if (Office.context.requirements.isSetSupported(RequirementSetName, MinimumVersio
 - _MinimumVersion_ (facultatif) est une chaîne qui spécifie la version minimale de l’ensemble de conditions requises que l’application Office doit prendre en charge pour que le code de l’instruction s’exécute `if` (par exemple, «**1,9**»).
 
 > [!WARNING]
-> Lors de l’appel de la méthode, la valeur du paramètre `isSetSupported` `MinimumVersion` (si spécifié) doit être une chaîne. En effet, l’analyseur syntaxique JavaScript ne peut pas différencier les valeurs numériques, telles que 1.1 et 1.10, mais le peut pour les valeurs chaîne, telles que « 1.1 » et « 1.10 ».
+> Lors de l’appel de la méthode, la valeur `isSetSupported` du `MinimumVersion` paramètre (si spécifié) doit être une chaîne. En effet, l’analyseur syntaxique JavaScript ne peut pas différencier les valeurs numériques, telles que 1.1 et 1.10, mais le peut pour les valeurs chaîne, telles que « 1.1 » et « 1.10 ».
 > La surcharge `number` est déconseillée.
 
 À `isSetSupported` utiliser avec `RequirementSetName` l’application Office comme suit.

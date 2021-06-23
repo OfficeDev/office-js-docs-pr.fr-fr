@@ -1,14 +1,14 @@
 ---
-title: Raccourcis clavier personnalisés dans les Office des modules
+title: Raccourcis clavier personnalisés dans Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: c419731eec5c4707b04dd1e1e07d62aa3b0458a8
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: f550190aa6cc68824b97dc3b592e92db50adcaac
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779340"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076314"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -27,7 +27,7 @@ Il existe trois étapes pour ajouter des raccourcis clavier à un add-in :
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Deux petites modifications sont à apporter au manifeste. L’une consiste à permettre au add-in d’utiliser un runtime partagé et l’autre consiste à pointer vers un fichier au format JSON où vous avez défini les raccourcis clavier.
+Deux petites modifications sont à apporter au manifeste. L’une consiste à permettre au add-in d’utiliser un runtime partagé et l’autre à pointer vers un fichier au format JSON où vous avez défini les raccourcis clavier.
 
 ### <a name="configure-the-add-in-to-use-a-shared-runtime"></a>Configurer le add-in pour utiliser un runtime partagé
 
@@ -35,7 +35,7 @@ L’ajout de raccourcis clavier personnalisés nécessite que votre add-in utili
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Lier le fichier de mappage au manifeste
 
-Juste *en dessous* (pas à l’intérieur) de l’élément dans le `<VersionOverrides>` manifeste, ajoutez un élément [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez l’attribut sur l’URL complète d’un fichier JSON dans votre projet que `Url` vous créerez à une étape ultérieure.
+Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, ajoutez un élément `<VersionOverrides>` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez l’attribut sur l’URL complète d’un fichier JSON dans votre projet que `Url` vous créerez à une étape ultérieure.
 
 ```xml
     ...
@@ -139,9 +139,9 @@ La suite des étapes précédentes permet à votre add-in de faire tourner la vi
 
 Utilisez les instructions suivantes lors de la spécification des objets dans le tableau de la `actions` shortcuts.jssuivantes :
 
-- Les noms des `id` propriétés `name` sont obligatoires.
+- Les noms des `id` propriétés `name` et sont obligatoires.
 - La `id` propriété est utilisée pour identifier de manière unique l’action à appeler à l’aide d’un raccourci clavier.
-- La `name` propriété doit être une chaîne conviviale décrivant l’action. Il doit s’agit d’une combinaison des caractères A - Z, a - z, 0 - 9 et des signes de ponctuation « - », « _ » et « + ».
+- La `name` propriété doit être une chaîne conviviale décrivant l’action. Il doit s’agit d’une combinaison des caractères A - Z, a - z, 0 - 9, et des signes de ponctuation « - », « _ » et « + ».
 - La propriété `type` est facultative. Actuellement, `ExecuteFunction` seul le type est pris en charge.
 
 Voici un exemple :
@@ -172,9 +172,9 @@ Utilisez les instructions suivantes lors de la spécification des objets dans le
 - La propriété peut être n’importe quelle combinaison des caractères `default` A - Z, -z, 0 - 9 et les signes de ponctuation « - », « _ » et « + ». (Par convention, les lettres majuscules ne sont pas utilisées dans ces propriétés.)
 - La propriété doit contenir le nom d’au moins une touche de `default` modification (Alt, Ctrl, Shift) et une seule autre touche. 
 - Shift ne peut pas être utilisé comme seule touche de modification. Combinez Shift avec Alt ou Ctrl.
-- Pour les Mac, nous prise en charge également la touche Modificateur de commande.
-- Pour les Mac, Alt est mappée sur la touche Option. Pour Windows, La commande est mappée sur la touche Ctrl.
-- Lorsque deux caractères sont liés à la même touche physique dans un clavier standard, ils sont synonymes dans la propriété ; par exemple, Alt+a et Alt+A sont les mêmes raccourcis, c’est le cas de `default` Ctrl+- et Ctrl+ car « - » et « _ » sont la même touche \_ physique.
+- Pour les Mac, nous pris en charge également la touche Modificateur de commande.
+- Pour les Mac, Alt est mappé à la touche Option. Pour Windows, La commande est mappée sur la touche Ctrl.
+- Lorsque deux caractères sont liés à la même touche physique dans un clavier standard, ils sont synonymes dans la propriété ; par exemple, Alt+a et Alt+A sont le même raccourci, tout comme `default` Ctrl+- et Ctrl+ car « - » et « _ » sont la même touche \_ physique.
 - Le caractère « + » indique que les touches de chaque côté de celui-ci sont entrées simultanément.
 
 Voici un exemple :
@@ -199,7 +199,7 @@ Voici un exemple :
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Les touches d’accès, également appelées raccourcis de touches séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H,** ne sont pas pris en charge dans les Office.
+> Les touches d’accès, également appelées raccourcis de touche séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H,** ne sont pas pris en charge dans les Office.
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>Éviter les combinaisons de touches en cours d’utilisation par d’autres modules
 
@@ -207,24 +207,24 @@ De nombreux raccourcis clavier sont déjà utilisés par les Office. Évitez d�
 
 En cas de conflit, l’utilisateur voit une boîte de dialogue la première fois qu’il tente d’utiliser un raccourci clavier en conflit, notez que le nom de l’action qui s’affiche dans cette boîte de dialogue est la propriété de l’objet action dans le `name` `shortcuts.json` fichier.
 
-![Illustration montrant un conflit modal avec deux actions différentes pour un seul raccourci](../images/add-in-shortcut-conflict-modal.png)
+![Illustration montrant un conflit modal avec deux actions différentes pour un seul raccourci.](../images/add-in-shortcut-conflict-modal.png)
 
 L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences,  il peut appeler la commande Réinitialiser  les préférences de raccourci des Office dans la zone de recherche Rechercher. L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle :
 
-![Zone de recherche Rechercher dans Excel l’action de réinitialisation Office des préférences de raccourci de l’utilisateur](../images/add-in-reset-shortcuts-action.png)
+![La zone de recherche Rechercher dans Excel affiche la réinitialisation Office’action de préférence de raccourci de l’ajout.](../images/add-in-reset-shortcuts-action.png)
 
-Pour une expérience utilisateur de qualité, nous vous recommandons de minimiser les conflits Excel avec ces bonnes pratiques :
+Pour une expérience utilisateur de qualité, nous vous recommandons de minimiser les conflits avec Excel avec ces bonnes pratiques :
 
 - Utilisez uniquement les raccourcis clavier avec le modèle suivant : **Ctrl+Shift+Alt+* x***, où *x* est une autre touche.
 - Si vous avez besoin de raccourcis clavier, consultez la liste des [raccourcis](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)clavier Excel et évitez d’en utiliser un dans votre module.
 - Lorsque le focus du clavier se trouve à l’intérieur de l’interface utilisateur du module, **Ctrl+Espace et** **Ctrl+Shift+F10** ne fonctionnent pas, car il s’agit de raccourcis d’accessibilité essentiels.
-- Sur un ordinateur Windows ou Mac, si la commande « Réinitialiser les préférences de raccourci des macros de Office » n’est pas disponible dans le menu de recherche, l’utilisateur peut ajouter manuellement la commande au ruban en personnalisant le ruban par le biais du menu contexté.
+- Sur un ordinateur Windows ou Mac, si la commande « Réinitialiser les préférences de raccourci des macros de Office » n’est pas disponible dans le menu de recherche, l’utilisateur peut ajouter manuellement la commande au ruban en personnalisant le ruban via le menu contexté.
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>Personnaliser les raccourcis clavier par plateforme
 
 Il est possible de personnaliser les raccourcis pour qu’ils soient spécifiques à la plateforme. Voici un exemple de l’objet qui personnalise les raccourcis pour chacune des `shortcuts` plateformes suivantes : `windows` , , `mac` `web` . Notez que vous devez toujours avoir une touche `default` de raccourci pour chaque raccourci.
 
-Dans l’exemple suivant, la clé est la clé de retour pour toute `default` plateforme qui n’est pas spécifiée. La seule plateforme non spécifiée est Windows, donc la `default` clé s’applique uniquement aux Windows.
+Dans l’exemple suivant, la clé est la clé de retour pour toute `default` plateforme qui n’est pas spécifiée. La seule plateforme non spécifiée est Windows, donc la clé `default` s’applique uniquement aux Windows.
 
 ```json
     "shortcuts": [

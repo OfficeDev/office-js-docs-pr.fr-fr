@@ -1,14 +1,14 @@
 ---
-title: Publier un complément à l’aide de Visual Studio code et Azure
-description: Comment publier un complément à l’aide de Visual Studio code et d’Azure Active Directory
+title: Publier un add-in à l’aide Visual Studio Code azure
+description: Comment publier un add-in à l’aide Visual Studio Code et Azure Active Directory
 ms.date: 08/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 3552e4eebacc84fc2b8e37782c97b4e03e96e508
-ms.sourcegitcommit: 7faa0932b953a4983a80af70f49d116c3236d81a
+ms.openlocfilehash: ab8daf3dfb87c809cd812da45246ce2d5ca9e743
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "46845509"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076937"
 ---
 # <a name="publish-an-add-in-developed-with-visual-studio-code"></a>Publier un complément développé avec Visual Studio Code
 
@@ -21,24 +21,24 @@ Cet article explique comment un complément Office que vous avez créé à l’a
 
 Un complément Office comprend une application Web et un fichier manifeste. L’application Web définit l’interface utilisateur et les fonctionnalités du complément, tandis que le manifeste spécifie l’emplacement de l’application Web et définit les paramètres et fonctionnalités du complément.
 
-Pendant que vous développez, vous pouvez exécuter le complément sur votre serveur Web local ( `localhost` ). Lorsque vous êtes prêt à le publier pour permettre à d’autres utilisateurs d’y accéder, vous devez déployer l’application Web et mettre à jour le manifeste pour spécifier l’URL de l’application déployée.
+Pendant le développement, vous pouvez exécuter le add-in sur votre serveur web local ( `localhost` ). Lorsque vous êtes prêt à la publier pour que d’autres utilisateurs y accèdent, vous devez déployer l’application web et mettre à jour le manifeste pour spécifier l’URL de l’application déployée.
 
-Lorsque votre complément fonctionne comme vous le souhaitez, vous pouvez le publier directement par le biais de Visual Studio code à l’aide de l’extension de stockage Azure.
+Lorsque votre add-in fonctionne comme vous le souhaitez, vous pouvez le publier directement Visual Studio Code l’aide de l stockage Azure extension.
 
-## <a name="using-visual-studio-code-to-publish"></a>Utilisation de Visual Studio code pour publier
+## <a name="using-visual-studio-code-to-publish"></a>Utilisation de Visual Studio Code pour publier
 
 >[!NOTE]
 > Ces étapes fonctionnent uniquement pour les projets créés avec le générateur Yeoman.
 
-1. Ouvrez votre projet à partir de son dossier racine dans Visual Studio code (VS code).
-2. À partir de l’affichage extensions dans le code VS, recherchez l’extension de stockage Azure et installez-la.
-3. Une fois installé, une icône Azure est ajoutée à la barre d’activité. Sélectionnez-le pour accéder à l’extension. Si votre barre d’activité est masquée, vous ne pourrez pas accéder à l’extension. Affichez la barre d’activité en sélectionnant **afficher > apparence > afficher la barre d’activité**.
-4. Lorsque vous êtes dans l’extension, connectez-vous à votre compte Azure en sélectionnant **se connecter à Azure**. Vous pouvez également créer un compte Azure si vous n’en avez pas encore en sélectionnant **créer un compte Azure gratuit**. Suivez les étapes décrites pour configurer votre compte.
-5. Une fois que vous êtes connecté à votre compte Azure, les comptes de stockage Azure s’affichent dans l’extension. Si vous n’avez pas encore de compte de stockage, vous devez en créer un à l’aide de l’option **créer un nouveau compte de stockage** . Nommez votre compte de stockage un nom unique au format global, en utilisant uniquement « a-z » et « 0-9 ». Notez que, par défaut, cela crée un compte de stockage et un groupe de ressources portant le même nom. Il place automatiquement le compte de stockage dans l’ouest des États-Unis. Cela peut être ajusté en ligne via [votre compte Azure](https://portal.azure.com/).
-6. Sélectionnez un compte de stockage et maintenez-le enfoncé (clic droit), en sélectionnant **configurer le site Web statique**. Vous serez invité à entrer le nom du document d’index et le nom du document 404. Remplacez le nom par défaut du document d’index par `index.html` **`taskpane.html`** . Vous pouvez également modifier le nom du document 404, mais vous n’êtes pas obligé de le faire.
-7. Sélectionnez une nouvelle fois (cliquez avec le bouton droit) sur votre stockage, en sélectionnant **Parcourir le site Web statique**. Dans la fenêtre du navigateur qui s’ouvre, copiez l’URL du site Web.
-8. Dans le code VS, ouvrez le fichier manifeste de votre projet ( `manifest.xml` ) et modifiez toute référence à votre URL localhost (telle que `https://localhost:3000` ) à l’URL que vous avez copiée. Ce point de terminaison est l’URL du site Web statique pour le compte de stockage que vous venez de créer. Enregistrez les modifications apportées à votre fichier manifeste.
-9. Ouvrez une invite de ligne de commande et accédez au répertoire racine de votre projet de complément. Exécutez ensuite la commande suivante pour préparer tous les fichiers pour le déploiement de production.
+1. Ouvrez votre projet à partir de son dossier racine dans Visual Studio Code (VS Code).
+2. Dans la vue Extensions de VS Code, recherchez l’extension stockage Azure et installez-la.
+3. Une fois installée, une icône Azure est ajoutée à la barre d’activité. Sélectionnez-le pour accéder à l’extension. Si votre barre d’activité est masquée, vous ne pourrez pas accéder à l’extension. Affichez la barre d’activité en **sélectionnant Afficher > l'> Afficher la barre d’activité.**
+4. Dans l’extension, connectez-vous à votre compte Azure en sélectionnant **Se connectez à Azure.** Vous pouvez également créer un compte Azure si vous n’en avez pas déjà un en sélectionnant **Créer un compte Azure gratuit.** Suivez les étapes fournies pour configurer votre compte.
+5. Une fois que vous vous êtes inscrit à votre compte Azure, vos comptes de stockage Azure apparaissent dans l’extension. Si vous n’avez pas encore de compte de stockage, vous devez en créer un à l’aide de l’option Créer un compte **de** stockage. Nommez votre compte de stockage un nom global unique, en utilisant uniquement « a-z » et « 0-9 ». Notez que, par défaut, cela crée un compte de stockage et un groupe de ressources du même nom. Il place automatiquement le compte de stockage dans l’Ouest des États-Unis. Cela peut être ajusté en ligne via [votre compte Azure.](https://portal.azure.com/)
+6. Sélectionnez et maintenez (cliquez avec le bouton droit) votre compte de stockage, en sélectionnant **Configurer le site web statique.** Vous serez invité à entrer le nom du document d’index et le nom du document 404. Modifiez le nom du document d’index de la valeur par `index.html` défaut à **`taskpane.html`** . Vous pouvez également décider de modifier le nom du document 404, mais ce n’est pas obligatoire.
+7. Sélectionnez et maintenez (cliquez avec le bouton droit) votre stockage à nouveau, cette fois en choisissant Parcourir le site **web statique.** Dans la fenêtre du navigateur qui s’ouvre, copiez l’URL du site web.
+8. Dans VS Code, ouvrez le fichier manifeste de votre projet () et modifiez toute référence à votre `manifest.xml` URL localhost (par exemple) à l’URL que vous avez `https://localhost:3000` copiée. Ce point de terminaison est l’URL du site web statique de votre compte de stockage nouvellement créé. Enregistrez les modifications apportées à votre fichier manifeste.
+9. Ouvrez une invite de ligne de commande et accédez au répertoire racine de votre projet de add-in. Exécutez ensuite la commande suivante pour préparer tous les fichiers au déploiement de production.
 
     ```command&nbsp;line
     npm run build
@@ -46,11 +46,11 @@ Lorsque votre complément fonctionne comme vous le souhaitez, vous pouvez le pub
 
     Une fois la build terminée, le dossier **dist** dans le répertoire racine de votre projet de complément contient les fichiers que vous allez déployer dans les étapes suivantes.
 
-10. Pour déployer, sélectionnez l’Explorateur de fichiers, sélectionnez et maintenez (clic droit) votre dossier **dist** , puis choisissez **déployer vers un site Web statique**. Lorsque vous y êtes invité, sélectionnez le compte de stockage que vous avez créé précédemment.
+10. Pour déployer, sélectionnez l’Explorateur de fichiers, sélectionnez et maintenez (cliquez avec le bouton droit) votre dossier **dist,** puis choisissez **Déployer sur le site web statique.** Lorsque vous y êtes invité, sélectionnez le compte de stockage que vous avez créé précédemment.
 
-![Déploiement sur un site Web statique](../images/deploy-to-static-website.png)
+![Déploiement sur un site web statique.](../images/deploy-to-static-website.png)
 
-11. Lorsque le déploiement est terminé, un message **de navigation sur le site Web** s’affiche, que vous pouvez sélectionner pour ouvrir le point de terminaison principal du code d’application déployé.
+11. Une fois le déploiement terminé, un message Parcourir vers le **site web** s’affiche et vous pouvez choisir d’ouvrir le point de terminaison principal du code de l’application déployée.
 
 ## <a name="see-also"></a>Voir aussi
 

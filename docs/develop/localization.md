@@ -1,24 +1,24 @@
 ---
 title: Localisation des compléments Office
-description: Utilisez l’API JavaScript office pour déterminer un paramètre local et afficher des chaînes basées sur les paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
+description: Utilisez l’API JavaScript Office pour déterminer un paramètre local et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 8125bd55ce1d9dfe8e80bc4d80230555ec649787
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: f5d9d3cf01df8156c319b78222ed6c2d8ce09ca3
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505275"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076005"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
-Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript office pour déterminer un paramètre local et afficher des chaînes basées sur les paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
+Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript Office pour déterminer des paramètres régionaux et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Utiliser l’API JavaScript pour déterminer les chaînes propres aux paramètres régionaux
 
-L’API JavaScript office fournit deux propriétés qui assurent l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application Office et les données :
+L Office API JavaScript fournit deux propriétés qui assurent l’affichage ou l’interprétation de valeurs cohérentes avec les paramètres régionaux de l’application Office données :
 
-- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l’application Office. L’exemple suivant vérifie si l’application Office utilise les paramètres régionaux en-US ou fr-FR et affiche un message d’accueil spécifique aux paramètres régionaux.
+- [Context.displayLanguage][displayLanguage] spécifie les paramètres régionaux (ou la langue) de l’interface utilisateur de l Office application. L’exemple suivant vérifie si l’application Office utilise les paramètres régionaux en-US ou fr-FR et affiche un message d’accueil spécifique aux paramètres régionaux.
 
     ```js
     function sayHelloWithDisplayLanguage() {
@@ -48,7 +48,7 @@ L’API JavaScript office fournit deux propriétés qui assurent l’affichage o
 ## <a name="control-localization-from-the-manifest"></a>Contrôler la localisation à partir du manifeste
 
 
-Chaque complément Office indique un élément [DefaultLocale] élément et un paramètre régional dans son manifeste. Par défaut, la plateforme de l’Application Office et les applications clientes Office appliquent les valeurs des éléments [Description,] [DisplayName,] [IconUrl,] [HighResolutionIconUrl]et [SourceLocation] à tous les paramètres régionaux. Vous pouvez éventuellement prendre en charge des valeurs spécifiques pour les paramètres régionaux spécifiques, en spécifiant un élément enfant [Override] pour chaque paramètre régional supplémentaire, pour chacun des cinq éléments. La valeur de l’élément [DefaultLocale] et de l’attribut `Locale` de l’élément [Override] est spécifiée en fonction de la norme [RFC 3066] relative aux balises pour l’identification des langues (« Tags for the Identification of Languages »). Le tableau 1 décrit la prise en charge de localisation de ces éléments.
+Chaque complément Office indique un élément [DefaultLocale] élément et un paramètre régional dans son manifeste. Par défaut, la plateforme du Office et les applications clientes Office appliquent les valeurs des éléments [Description,] [DisplayName,] [IconUrl,] [HighResolutionIconUrl]et [SourceLocation] à tous les paramètres régionaux. Vous pouvez éventuellement prendre en charge des valeurs spécifiques pour les paramètres régionaux spécifiques, en spécifiant un élément enfant [Override] pour chaque paramètre régional supplémentaire, pour chacun des cinq éléments. La valeur de l’élément [DefaultLocale] et de l’attribut `Locale` de l’élément [Override] est spécifiée en fonction de la norme [RFC 3066] relative aux balises pour l’identification des langues (« Tags for the Identification of Languages »). Le tableau 1 décrit la prise en charge de localisation de ces éléments.
 
 *Tableau 1. Prise en charge de localisation*
 
@@ -81,7 +81,7 @@ Par exemple, un complément Office peut spécifier [DefaultLocale] en tant que `
 ```
 
 > [!NOTE]
-> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons `de` d’applications et de plateformes clientes Office.
+> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons Office `de` applications et plateformes clientes.
 
 Cela signifie que le complément adopte le paramètre régional `en-us` par défaut. Les utilisateurs voient le nom d’affichage « Video player » pour tous les paramètres régionaux, sauf si le paramètre régional de l’ordinateur client est `fr-fr`, auquel cas ils verront le nom d’affichage « Lecteur vidéo ».
 
@@ -152,7 +152,7 @@ Les utilisateurs de chaque paramètre régional que vous spécifiez peuvent acc�
 
 ## <a name="localize-extended-overrides"></a>Localiser les substitutions étendues
 
-Certaines fonctionnalités d’extensibilité des add-ins Office, telles que les raccourcis clavier, sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module. Cette section suppose que vous êtes familiarisé avec les substitutions étendues. Voir [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
+Certaines fonctionnalités d’extensibilité des modules de Office, telles que les raccourcis clavier, sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module. Cette section suppose que vous êtes familiarisé avec les substitutions étendues. Voir [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
 
 Utilisez `ResourceUrl` l’attribut de [l’élément ExtendedOverrides](../reference/manifest/extendedoverrides.md) pour pointer Office vers un fichier de ressources localisées. Voici un exemple.
 
@@ -165,7 +165,7 @@ Utilisez `ResourceUrl` l’attribut de [l’élément ExtendedOverrides](../refe
 </OfficeApp>
 ```
 
-Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaînes. Chaînes de noms de jetons dans le fichier de ressources. Voici un exemple qui affecte un raccourci clavier à une fonction (définie ailleurs) qui affiche le volet Des tâches du module. Remarque à propos de ce markup :
+Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaînes. Chaînes de noms de jetons dans le fichier de ressources. Voici un exemple qui affecte un raccourci clavier à une fonction (définie ailleurs) qui affiche le volet Des tâches du module. Notez ce markup :
 
 - L’exemple n’est pas tout à fait valide. (Nous y ajoutons une propriété supplémentaire obligatoire ci-dessous.)
 - Les jetons doivent avoir le format **${resource.*nom de ressource*}**.
@@ -190,7 +190,7 @@ Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaîn
 }
 ```
 
-Le fichier de ressources, qui est également au format JSON, possède une propriété de niveau supérieur divisée en sous-propriétés par `resources` paramètres régionaux. Pour chaque paramètre local, une chaîne est affectée à chaque jeton utilisé dans le fichier de remplacements étendu. Voici un exemple qui possède des chaînes pour `en-us` et `fr-fr` . Dans cet exemple, le raccourci clavier est le même dans les deux paramètres régionaux, mais ce n’est pas toujours le cas, en particulier lorsque vous localisez des paramètres régionaux dont l’alphabet ou le système d’écriture est différent, et par conséquent un autre clavier.
+Le fichier de ressources, également au format JSON, possède une propriété de niveau supérieur divisée en sous-propriétés par `resources` paramètres régionaux. Pour chaque paramètre local, une chaîne est affectée à chaque jeton utilisé dans le fichier de remplacements étendu. Voici un exemple qui possède des chaînes pour `en-us` et `fr-fr` . Dans cet exemple, le raccourci clavier est le même dans les deux paramètres régionaux, mais ce n’est pas toujours le cas, en particulier lorsque vous localisez des paramètres régionaux dont l’alphabet ou le système d’écriture est différent, et par conséquent un autre clavier.
 
 ```json
 {
@@ -215,7 +215,7 @@ Le fichier de ressources, qui est également au format JSON, possède une propri
 }
 ```
 
-Il n’existe `default` aucune propriété dans le fichier qui soit un homologue aux `en-us` `fr-fr` sections et aux sections. En effet, les chaînes par défaut, qui sont utilisées lorsque les paramètres régionaux de l’application hôte Office ne correspondent à aucune des propriétés *ll-cc* dans le fichier de ressources, doivent être définies dans le fichier de remplacements étendu *lui-même.* La définition des chaînes par défaut directement dans le fichier de remplacements étendu garantit qu’Office ne télécharge pas le fichier de ressources lorsque les paramètres régionaux de l’application Office sont les paramètres régionaux par défaut du application (comme spécifié dans le manifeste). Voici une version corrigée de l’exemple précédent d’un fichier de remplacements étendu qui utilise des jetons de ressource.
+Il n’existe `default` aucune propriété dans le fichier qui soit un homologue aux `en-us` `fr-fr` sections et aux sections. En effet, les chaînes par défaut, qui sont utilisées lorsque les paramètres régionaux de l’application hôte Office ne correspondent à aucune des propriétés *ll-cc* dans le fichier de ressources, doivent être définies dans le fichier de remplacements étendu *lui-même.* La définition des chaînes par défaut directement dans le fichier de remplacements étendu garantit que Office ne télécharge pas le fichier de ressources lorsque les paramètres régionaux de l’application Office sont les paramètres régionaux par défaut du module (comme spécifié dans le manifeste). Voici une version corrigée de l’exemple précédent d’un fichier de remplacements étendu qui utilise des jetons de ressource.
 
 ```json
 {
@@ -249,9 +249,9 @@ Il n’existe `default` aucune propriété dans le fichier qui soit un homologue
 
 ## <a name="match-datetime-format-with-client-locale"></a>Mettre en correspondance le format de date/heure avec le paramètre régional du client
 
-Vous pouvez obtenir les paramètres régionaux de l’interface utilisateur de l’application cliente Office à l’aide de la **[propriété displayLanguage.]** Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application Office. Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application hôte. Au moment de l’utilisation, votre add-in peut utiliser le fichier de ressources et faire correspondre le format de date/heure approprié aux paramètres régionaux obtenus à partir de la **[propriété displayLanguage.]**
+Vous pouvez obtenir les paramètres régionaux de l’interface utilisateur de l’application Office client à l’aide de la **[propriété displayLanguage.]** Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l Office application. Vous pouvez ensuite afficher les valeurs de date et d’heure dans un format cohérent avec les paramètres régionaux actuels de l’application hôte. Au moment de l’utilisation, votre add-in peut utiliser le fichier de ressources et faire correspondre le format de date/heure approprié aux paramètres régionaux obtenus à partir de la **[propriété displayLanguage.]**
 
-Vous pouvez obtenir les paramètres régionaux des données de l’application cliente Office à l’aide de la [propriété contentLanguage.] Vous pouvez obtenir les paramètres régionaux des données de l’application d’hébergement en utilisant la propriété contentLanguage. En fonction de cette valeur, vous pouvez correctement interpréter ou afficher des chaînes de date/heure.
+Vous pouvez obtenir les paramètres régionaux des données de l’application Office client à l’aide de la [propriété contentLanguage.] Vous pouvez obtenir les paramètres régionaux des données de l’application d’hébergement en utilisant la propriété contentLanguage. En fonction de cette valeur, vous pouvez correctement interpréter ou afficher des chaînes de date/heure.
 
 
 ## <a name="use-ajax-for-globalization-and-localization"></a>Utiliser Ajax pour l’internationalisation et la localisation
@@ -273,7 +273,7 @@ Cette section inclut des exemples expliquant comment localiser la description, l
 
 ### <a name="configure-office-to-use-additional-languages-for-display-or-editing"></a>Configurer Office pour utiliser des langues supplémentaires pour l’affichage ou l’édition
 
-Pour exécuter l’exemple de code fourni, configurez Office sur votre ordinateur pour utiliser des langues supplémentaires afin que vous pouvez tester votre complément en changeant la langue utilisée pour l’affichage dans les menus et les commandes, pour la modification et la preuve, ou les deux.
+Pour exécuter l’exemple de code fourni, configurez Office sur votre ordinateur pour utiliser des langues supplémentaires afin de pouvoir tester votre complément en changeant la langue utilisée pour l’affichage dans les menus et les commandes, pour la modification et la mise en preuve, ou les deux.
 
 Vous pouvez utiliser un module linguistique Office pour installer une autre langue. Pour plus d’informations sur les Modules linguistiques et où les obtenir, voir [Pack d’accessoires linguistiques pour Office](https://support.microsoft.com/office/82ee1236-0f9a-45ee-9c72-05b026ee809f).
 
@@ -281,10 +281,10 @@ Après avoir installé le Pack d’accessoires linguistiques, vous pouvez config
 
 ### <a name="create-an-office-add-in-project"></a>Créer un projet de complément Office
 
-Vous devez créer un projet de Visual Studio Office 2019.
+Vous devez créer un projet de Visual Studio 2019 Office de recherche.
 
 > [!NOTE]
-> Si vous n’avez pas installé Visual Studio 2019, consultez la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2019, utilisez le programme [d’installation Visual Studio](/visualstudio/install/modify-visual-studio/) pour vous assurer que la charge de travail de développement Office/SharePoint est installée.
+> Si vous n’avez pas installé Visual Studio 2019, consultez la [page Visual Studio IDE](https://visualstudio.microsoft.com/vs/) pour obtenir des instructions de téléchargement. Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint. Si vous avez déjà installé Visual Studio 2019, [](/visualstudio/install/modify-visual-studio/) utilisez la Visual Studio Installer pour vous assurer que la charge de travail de développement Office/SharePoint est installée.
 
 1. Choisissez **Créer un nouveau projet**.
 
@@ -478,7 +478,7 @@ Remplacez le code du fichier Home.js par le code suivant. Le code montre comment
 
 ### <a name="test-your-localized-add-in"></a>Tester votre complément localisé
 
-Pour tester votre application localisée, modifiez la langue utilisée pour l’affichage ou la modification dans l’application Office, puis exécutez votre application.
+Pour tester votre application localisée, modifiez la langue utilisée pour l’affichage ou la modification dans l’application Office puis exécutez votre application.
 
 Pour changer la langue utilisée pour l’affichage ou l’édition dans votre complément :
 
@@ -486,7 +486,7 @@ Pour changer la langue utilisée pour l’affichage ou l’édition dans votre c
 
     *Figure 2. Options de langue dans la boîte de dialogue Options Word*
 
-    ![Boîte de dialogue Options Word](../images/office15-app-how-to-localize-fig04.png)
+    ![Boîte de dialogue Options Word.](../images/office15-app-how-to-localize-fig04.png)
 
 2. Sous **Choisir la langue d’affichage**, sélectionnez la langue que vous souhaitez afficher, par exemple espagnol, puis sélectionnez la flèche vers le haut pour déplacer la langue Espagnol en première position dans la liste. Vous pouvez également modifier la langue utilisée pour la modification, sous Choisir les **langues** d’édition, choisissez la langue que vous souhaitez utiliser pour la modification, par exemple, l’espagnol, puis choisissez Définir par **défaut.**
 
@@ -501,7 +501,7 @@ Une fois l’exécution en cours d’exécution, les chaînes de l’interface u
 
 Le complément de volet de tâches est chargé dans Word 2013 et les chaînes de l’interface utilisateur du complément changent pour correspondre à la langue utilisée par l’application hôte, comme indiqué dans la figure suivante.
 
-![Application avec le texte de l’interface utilisateur localisé](../images/office15-app-how-to-localize-fig05.png)
+![Application avec texte de l’interface utilisateur localisé](../images/office15-app-how-to-localize-fig05.png)
 
 ## <a name="see-also"></a>Voir aussi
 

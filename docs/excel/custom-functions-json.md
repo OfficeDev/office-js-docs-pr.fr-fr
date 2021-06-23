@@ -1,39 +1,39 @@
 ---
 ms.date: 12/22/2020
-description: Définissez des métadonnées JSON pour les fonctions personnalisées dans Excel et associez vos ID de fonction et propriétés de nom.
+description: Définissez les métadonnées JSON pour les fonctions personnalisées Excel et associez votre ID de fonction et vos propriétés de nom.
 title: Créer manuellement des métadonnées JSON pour les fonctions personnalisées dans Excel
 localization_priority: Normal
-ms.openlocfilehash: 80a71c640caacbd865b0dd253f03258a64c9b1bf
-ms.sourcegitcommit: 48b9c3b63668b2a53ce73f92ce124ca07c5ca68c
+ms.openlocfilehash: 514eacba5045d160eb6f3d4823adbd8c2f45292a
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "49735549"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075900"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Créer manuellement des métadonnées JSON pour les fonctions personnalisées
 
-Comme décrit dans l’article [vue d’ensemble des fonctions personnalisées](custom-functions-overview.md) , un projet de fonctions personnalisées doit inclure un fichier de métadonnées JSON et un fichier script (JavaScript ou machine à écriture) pour enregistrer une fonction, le rendant ainsi disponible. Les fonctions personnalisées sont inscrites lorsque l’utilisateur exécute le complément pour la première fois et après qu’il est disponible pour le même utilisateur dans tous les classeurs.
+Comme décrit dans l’article de vue d’ensemble des fonctions [personnalisées,](custom-functions-overview.md) un projet de fonctions personnalisées doit inclure à la fois un fichier de métadonnées JSON et un fichier de script (JavaScript ou TypeScript) pour inscrire une fonction, ce qui le rend disponible pour utilisation. Les fonctions personnalisées sont enregistrées lorsque l’utilisateur exécute le add-in pour la première fois et après cela sont disponibles pour le même utilisateur dans tous les workbooks.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Nous vous recommandons d’utiliser la génération automatique JSON lorsque cela est possible au lieu de créer votre propre fichier JSON. La génération automatique est moins sujette aux erreurs de l’utilisateur et les fichiers générés par la génération de `yo office` modèles automatiques incluent déjà cela. Pour plus d’informations sur les balises JSDoc et le processus de génération automatique JSON, voir [génération automatique de métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md).
+Nous vous recommandons d’utiliser la génération automatique JSON lorsque cela est possible au lieu de créer votre propre fichier JSON. La génération automatique est moins sujette aux erreurs de l’utilisateur et les fichiers `yo office` échafaudés l’incluent déjà. Pour plus d’informations sur les balises JSDoc et le processus de génération automatique JSON, voir métadonnées JSON de génération automatique [pour les fonctions personnalisées](custom-functions-json-autogeneration.md).
 
-Toutefois, vous pouvez créer un projet de fonctions personnalisées à partir de zéro. Ce processus nécessite d’effectuer les opérations suivantes :
+Toutefois, vous pouvez créer un projet de fonctions personnalisées à partir de zéro. Ce processus nécessite que vous :
 
 - Écrivez votre fichier JSON.
 - Vérifiez que votre fichier manifeste est connecté à votre fichier JSON.
-- Associez les fonctions `id` et les `name` Propriétés dans le fichier de script pour enregistrer vos fonctions.
+- Associez les propriétés et les fonctions de vos fonctions dans `id` le fichier de script afin `name` d’inscrire vos fonctions.
 
-L’image suivante explique les différences entre l’utilisation `yo office` de fichiers de structure et l’écriture de JSON à partir de zéro.
+L’image suivante explique les différences entre l’utilisation de fichiers de la `yo office` échafaudage et l’écriture de JSON à partir de zéro.
 
-![Image des différences entre l’utilisation de yo Office et l’écriture de votre propre JSON](../images/custom-functions-json.png)
+![Image des différences entre l’utilisation de Yo Office et l’écriture de votre propre JSON.](../images/custom-functions-json.png)
 
 > [!NOTE]
-> N’oubliez pas de connecter votre manifeste au fichier JSON que vous créez, via la `<Resources>` section de votre fichier manifeste XML si vous n’utilisez pas le `yo office` Générateur.
+> N’oubliez pas de connecter votre manifeste au fichier JSON que vous créez, via la section de votre fichier manifeste XML si vous `<Resources>` n’utilisez pas le `yo office` générateur.
 
-## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>Création de métadonnées et connexion au manifeste
+## <a name="authoring-metadata-and-connecting-to-the-manifest"></a>Créer des métadonnées et se connecter au manifeste
 
-Créez un fichier JSON dans votre projet et fournissez-y tous les détails sur vos fonctions, telles que les paramètres de la fonction. Consultez l' [exemple de métadonnées suivant](#json-metadata-example) et [la référence de métadonnées](#metadata-reference) pour obtenir la liste complète des propriétés de fonction.
+Créez un fichier JSON dans votre projet et fournissez tous les détails sur vos fonctions, telles que les paramètres de la fonction. Consultez [l’exemple de métadonnées suivant](#json-metadata-example) [et la référence des métadonnées](#metadata-reference) pour obtenir la liste complète des propriétés de la fonction.
 
 Assurez-vous que votre fichier manifeste XML fait référence à votre fichier JSON dans la `<Resources>` section, comme dans l’exemple suivant.
 
@@ -134,9 +134,9 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 ```
 
 > [!NOTE]
-> Un exemple de fichier JSON complet est disponible dans l’historique de validation du référentiel [OfficeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) github. Lorsque le projet a été ajusté pour générer automatiquement JSON, un échantillon complet de JSON manuscrit est uniquement disponible dans les versions précédentes du projet.
+> Un exemple complet de fichier JSON est disponible dans [officeDev/Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions/blob/77760adb1dcc53469183049bea08196734dbc114/config/customfunctions.json) GitHub’historique de validation du référentiel. Comme le projet a été ajusté pour générer automatiquement JSON, un échantillon complet de JSON manuscrit n’est disponible que dans les versions précédentes du projet.
 
-## <a name="metadata-reference"></a>Référence de métadonnées
+## <a name="metadata-reference"></a>Référence des métadonnées
 
 ### <a name="functions"></a>fonctions
 
@@ -147,9 +147,9 @@ La propriété `functions` est un tableau d’objets de fonction personnalisés.
 | `description` | string    | Non       | Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit**.                                                            |
 | `helpUrl`     | string    | Non       | URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Oui      | Un ID unique pour la fonction. Cet ID peut contenir uniquement des points et caractères alphanumériques et ne doit pas être modifié une fois défini.                                            |
-| `name`        | string    | Oui      | Nom de la fonction que voient les utilisateurs finaux dans Excel. Dans Excel, le nom de cette fonction est préfixé par l’espace de noms des fonctions personnalisées qui est spécifié dans le fichier manifeste XML. |
+| `name`        | string    | Oui      | Nom de la fonction que voient les utilisateurs finaux dans Excel. Dans Excel, le nom de cette fonction est précédé de l’espace de noms des fonctions personnalisées spécifié dans le fichier manifeste XML. |
 | `options`     | object    | Non       | Vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Reportez-vous aux [options](#options) pour plus d’informations.                                                          |
-| `parameters`  | tableau     | Oui      | Tableau qui définit les paramètres d’entrée de la fonction. Pour plus d’informations, consultez la rubrique [paramètres](#parameters) .                                                                             |
+| `parameters`  | tableau     | Oui      | Tableau qui définit les paramètres d’entrée de la fonction. Pour plus [d’informations,](#parameters) voir les paramètres.                                                                             |
 | `result`      | objet    | Oui      | Objet qui définit le type d’informations renvoyées par la fonction. Reportez-vous au [résultat](#result) pour plus d’informations.                                                                 |
 
 ### <a name="options"></a>options
@@ -158,11 +158,11 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 
 | Propriété          | Type de données | Obligatoire                               | Description |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
-| `cancelable`      | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, Excel appelle le gestionnaire `CancelableInvocation` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Les fonctions annulables sont généralement utilisées uniquement pour les fonctions asynchrones qui renvoient un seul résultat et doivent gérer l’annulation d’une demande de données. Une fonction ne peut pas utiliser `stream` les `cancelable` Propriétés et. |
-| `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` votre fonction personnalisée peut accéder à l’adresse de la cellule qui l’a appelée. La `address` propriété du [paramètre invocation](custom-functions-parameter-options.md#invocation-parameter) contient l’adresse de la cellule qui a appelé votre fonction personnalisée. Une fonction ne peut pas utiliser `stream` les `requiresAddress` Propriétés et. |
-| `requiresParameterAddresses` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` votre fonction personnalisée peut accéder aux adresses des paramètres d’entrée de la fonction. Cette propriété doit être utilisée en combinaison avec la `dimensionality` propriété de l’objet [result](#result) et `dimensionality` doit être définie sur `matrix` . Pour plus d’informations, reportez-vous à [la rubrique détecter l’adresse d’un paramètre](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) . |
-| `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `StreamingInvocation.setResult`. Pour plus d’informations, consultez [la rubrique créer une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` , la fonction recalcule chaque fois qu’Excel recalcule, et non uniquement lorsque les valeurs dépendantes de la formule ont été modifiées. Une fonction ne peut pas utiliser `stream` les `volatile` Propriétés et. Si les `stream` `volatile` Propriétés et sont toutes les deux définies sur `true` , la propriété volatile sera ignorée. |
+| `cancelable`      | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, Excel appelle le gestionnaire `CancelableInvocation` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Les fonctions annulables sont généralement utilisées uniquement pour les fonctions asynchrones qui retournent un résultat unique et qui doivent gérer l’annulation d’une demande de données. Une fonction ne peut pas utiliser les `stream` propriétés et les `cancelable` propriétés. |
+| `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` , votre fonction personnalisée peut accéder à l’adresse de la cellule qui l’a appelé. La `address` propriété du paramètre [d’appel](custom-functions-parameter-options.md#invocation-parameter) contient l’adresse de la cellule qui a appelé votre fonction personnalisée. Une fonction ne peut pas utiliser les `stream` propriétés et les `requiresAddress` propriétés. |
+| `requiresParameterAddresses` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` , votre fonction personnalisée peut accéder aux adresses des paramètres d’entrée de la fonction. Cette propriété doit être utilisée en association avec la propriété de l’objet de résultat et doit `dimensionality` être définie sur [](#result) `dimensionality` `matrix` . Pour [plus d’informations, voir Détecter l’adresse d’un](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) paramètre. |
+| `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `StreamingInvocation.setResult`. Pour plus d’informations, [voir Faire une fonction de diffusion en continu.](custom-functions-web-reqs.md#make-a-streaming-function) |
+| `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si , la fonction recalcule chaque fois que Excel recalcule, et non uniquement lorsque les valeurs dépendantes de la `true` formule ont changé. Une fonction ne peut pas utiliser les `stream` propriétés et les `volatile` propriétés. Si les `stream` `volatile` propriétés et les propriétés sont définies sur , la propriété `true` volatile est ignorée. |
 
 ### <a name="parameters"></a>paramètres
 
@@ -170,12 +170,12 @@ La propriété `parameters` est un tableau d’objets paramètre. Le tableau sui
 
 |  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
-|  `description`  |  string  |  Non |  Description du paramètre. Elle s’affiche dans IntelliSense d’Excel.  |
-|  `dimensionality`  |  string  |  Non  |  Doit être `scalar` (une valeur non-tableau) ou `matrix` (un tableau à deux dimensions).  |
-|  `name`  |  string  |  Oui  |  Le nom du paramètre. Ce nom s’affiche dans IntelliSense d’Excel.  |
-|  `type`  |  string  |  Non  |  Type de données du paramètre. Peut être `boolean` , `number` , `string` ou `any` , qui vous permet d’utiliser n’importe lequel des trois types précédents. Si cette propriété n’est pas spécifiée, le type de données est défini par défaut sur `any` . |
+|  `description`  |  string  |  Non |  Description du paramètre. Elle s’affiche dans Excel’IntelliSense.  |
+|  `dimensionality`  |  string  |  Non  |  Doit être `scalar` (une valeur autre qu’un tableau) ou (un tableau `matrix` à 2 dimensions).  |
+|  `name`  |  string  |  Oui  |  Le nom du paramètre. Ce nom s’affiche dans Excel’IntelliSense.  |
+|  `type`  |  string  |  Non  |  Type de données du paramètre. Peut être , ou , qui vous permet d’utiliser l’un des trois `boolean` `number` types `string` `any` précédents. Si cette propriété n’est pas spécifiée, le type de données est par défaut `any` . |
 |  `optional`  | boolean | Non | Si la valeur est `true`, le paramètre est facultatif. |
-|`repeating`| boolean | Non | Si `true` , les paramètres sont renseignés à partir d’un tableau spécifié. Notez que les fonctions de tous les paramètres répétitifs sont considérées comme des paramètres facultatifs par définition.  |
+|`repeating`| boolean | Non | Si `true` , les paramètres sont remplis à partir d’un tableau spécifié. Notez que, par définition, tous les paramètres exexionnels sont considérés comme des paramètres facultatifs.  |
 
 ### <a name="result"></a>résultat
 
@@ -183,12 +183,12 @@ L’objet `result` définit le type des informations renvoyées par la fonction.
 
 | Propriété         | Type de données | Obligatoire | Description                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
-| `dimensionality` | string    | Non       | Doit être `scalar` (une valeur non-tableau) ou `matrix` (un tableau à deux dimensions). |
-| `type` | string    | Non       | Type de données du résultat. Peut être `boolean` , `number` , `string` ou `any` (ce qui vous permet d’utiliser n’importe lequel des trois types précédents). Si cette propriété n’est pas spécifiée, le type de données est défini par défaut sur `any` . |
+| `dimensionality` | string    | Non       | Doit être `scalar` (une valeur autre qu’un tableau) ou (un tableau `matrix` à 2 dimensions). |
+| `type` | string    | Non       | Type de données du résultat. Peut être , ou (ce qui vous permet d’utiliser l’un des trois `boolean` `number` types `string` `any` précédents). Si cette propriété n’est pas spécifiée, le type de données est par défaut `any` . |
 
 ## <a name="associating-function-names-with-json-metadata"></a>Mappage des noms de fonction aux métadonnées JSON
 
-Pour qu’une fonction fonctionne correctement, vous devez associer la propriété de la fonction `id` à l’implémentation JavaScript. Assurez-vous qu’il existe une association, sinon la fonction ne sera pas enregistrée et n’est pas utilisable dans Excel. L’exemple de code suivant montre comment effectuer l’Association à l’aide de la `CustomFunctions.associate()` méthode. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est **AJOUTER**.
+Pour qu’une fonction fonctionne correctement, vous devez associer la propriété de la fonction `id` à l’implémentation JavaScript. Assurez-vous qu’il existe une association, sinon la fonction ne sera pas enregistrée et ne peut pas être Excel. L’exemple de code suivant montre comment faire en sorte que l’association utilise la `CustomFunctions.associate()` méthode. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est **AJOUTER**.
 
 ```js
 /**
@@ -205,7 +205,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Le code JSON suivant illustre les métadonnées JSON associées au code JavaScript de fonction personnalisée précédent.
+Le code JSON suivant présente les métadonnées JSON associées au code JavaScript de la fonction personnalisée précédente.
 
 ```json
 {
@@ -242,9 +242,9 @@ N’oubliez pas les meilleures pratiques suivantes lors de la création de fonct
 
 - Ne modifiez pas la valeur d’une`id` propriété dans le fichier de métadonnées JSON après qu’elle ait été mappée à un nom de fonction JavaScript correspondante. Vous pouvez modifier le nom de fonction que voient les utilisateurs finaux dans Excel en mettant à jour la `name` propriété dans le fichier de métadonnées JSON, mais vous ne devez jamais changer la valeur d’une `id` propriété après qu’elle a été établie.
 
-- Dans le fichier JavaScript, spécifiez une association de fonctions personnalisées à l’aide de `CustomFunctions.associate` after each.
+- Dans le fichier JavaScript, spécifiez une association de fonction personnalisée à l’aide `CustomFunctions.associate` d’après chaque fonction.
 
-L’exemple suivant montre les métadonnées JSON qui correspondent aux fonctions définies dans l’exemple de code JavaScript précédent. Les `id` valeurs de la `name` propriété et sont en majuscules, ce qui est recommandé lors de la description de vos fonctions personnalisées. Vous n’avez besoin d’ajouter ce JSON que si vous préparez votre propre fichier JSON manuellement et non à l’aide de la génération automatique. Pour plus d’informations sur la génération automatique, voir génération automatique [de métadonnées JSON pour les fonctions personnalisées](custom-functions-json-autogeneration.md).
+L’exemple suivant montre les métadonnées JSON qui correspondent aux fonctions définies dans l’exemple de code JavaScript précédent. Les valeurs de propriété et les valeurs sont en minuscules, ce qui est une meilleure pratique lorsque vous `id` `name` décrivez vos fonctions personnalisées. Vous devez ajouter ce JSON uniquement si vous préparez manuellement votre propre fichier JSON sans utiliser la génération automatique. Pour plus d’informations sur la génération automatique, voir [autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 ```json
 {
@@ -266,7 +266,7 @@ L’exemple suivant montre les métadonnées JSON qui correspondent aux fonction
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Découvrez les [meilleures pratiques de dénomination de votre fonction](custom-functions-naming.md) ou Découvrez comment [localiser votre fonction](custom-functions-localize.md) à l’aide de la méthode JSON manuscrite décrite précédemment.
+Découvrez les [meilleures pratiques pour nommer](custom-functions-naming.md) votre [](custom-functions-localize.md) fonction ou découvrir comment la localiser à l’aide de la méthode JSON manuscrite précédemment décrite.
 
 ## <a name="see-also"></a>Voir aussi
 

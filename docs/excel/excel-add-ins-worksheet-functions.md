@@ -1,14 +1,14 @@
 ---
 title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment appeler des fonctions de feuille de calcul Excel intégrées telles que `VLOOKUP` et `SUM` à l’aide de l’API JavaScript pour Excel.
+description: Découvrez comment appeler des fonctions de feuille de Excel intégrées, telles que l’API JavaScript Excel et à `VLOOKUP` `SUM` l’aide de cette fonction.
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 3dd7ae24e27b3a3147265a0bcf539ae23af03fc3
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: a72fe01341295fccfee168132d8a252cd22a8332
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408683"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075711"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
@@ -19,7 +19,7 @@ Cet article explique comment appeler les fonctions de feuille de calcul Excel in
 
 ## <a name="calling-a-worksheet-function"></a>Appel d’une fonction de feuille de calcul
 
-L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La `value` propriété de l' `FunctionResult` objet renvoyé par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. Comme le montre cet exemple, vous devez `load` la `value` propriété de l’objet avant de pouvoir le `FunctionResult` lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console.
+L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété de l’objet renvoyé par une fonction de feuille de calcul contient le `value` résultat de la fonction `FunctionResult` spécifiée. Comme le montre cet exemple, vous devez `load` la `value` propriété de `FunctionResult` l’objet avant de pouvoir le lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console.
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -37,7 +37,7 @@ return context.sync()
 
 L’image suivante montre un tableau dans une feuille de calcul Excel contenant des données de ventes pour divers types d’outils sur une période de trois mois. Chaque numéro de la table représente le nombre d’unités vendues pour un outil spécifique lors d’un mois donné. Les exemples suivant expliquent comment appliquer des fonctions de feuille de calcul intégrées à ces données.
 
-![Capture d’écran de données de ventes dans Excel pour les catégories Hammer (Marteau), Wrench (Clé) et Saw (Scie) en novembre, décembre et janvier](../images/worksheet-functions-chaining-results.jpg)
+![Capture d’écran des données de ventes Excel données pour hammer, Wrench et Saw en novembre, décembre et janvier.](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
 
@@ -126,7 +126,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/BITOR-function-f6ead5c8-5b98-4c9e-9053-8ad5234919b2" target="_blank">Fonction BITOR</a> | Renvoie une opération OR au niveau du bit de deux nombres |
 | <a href="https://support.office.com/article/BITRSHIFT-function-274d6996-f42c-4743-abdb-4ff95351222c" target="_blank">Fonction BITRSHIFT</a> | Renvoie un nombre décalé vers la droite de total_décalage bits |
 | <a href="https://support.office.com/article/BITXOR-function-c81306a1-03f9-4e89-85ac-b86c3cba10e4" target="_blank">Fonction BITXOR</a> | Renvoie une opération Exclusive Or au niveau du bit de deux nombres |
-| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">Encastre. MATH, fonctions d’ECMA_CEILING</a> | Arrondit un nombre à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
+| <a href="https://support.microsoft.com/office/80f95d2f-b499-4eee-9f16-f795a8e306c8" target="_blank">CEILING. MATH, ECMA_CEILING fonctions</a> | Arrondit un nombre à l’entier ou au multiple supérieur le plus proche de l’argument de précision |
 | <a href="https://support.office.com/article/CEILINGPRECISE-function-f366a774-527a-4c92-ba49-af0a196e66cb" target="_blank">Fonction CEILING.PRECISE</a> | Arrondit un nombre à l’entier ou au multiple le plus proche de l’argument de précision. Quel que soit le signe du nombre, le nombre est arrondi à l’unité supérieure. |
 | <a href="https://support.office.com/article/CHAR-function-bbd249c8-b36e-4a91-8017-1c133f9b837a" target="_blank">Fonction CHAR</a> | Renvoie le caractère spécifié par le code numérique |
 | <a href="https://support.office.com/article/CHISQDIST-function-8486b05e-5c05-4942-a9ea-f6b341518732" target="_blank">Fonction CHISQ.DIST</a> | Renvoie la fonction de densité de probabilité bêta cumulative |
@@ -185,7 +185,7 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 | <a href="https://support.office.com/article/DISC-function-71fce9f3-3f05-4acf-a5a3-eac6ef4daa53" target="_blank">Fonction DISC</a> | Renvoie le taux d’escompte d’un titre |
 | <a href="https://support.microsoft.com/office/f4e8209d-8958-4c3d-a1ee-6351665d41c2" target="_blank">Fonction DMAX</a> | Renvoie la valeur maximale des entrées de base de données sélectionnées |
 | <a href="https://support.microsoft.com/office/4ae6f1d9-1f26-40f1-a783-6dc3680192a3" target="_blank">Fonction DMIN</a> | Renvoie la valeur minimale des entrées de base de données sélectionnées |
-| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">DOLLAR, fonctions USDollar,</a> | Convertit un nombre en texte en utilisant le format monétaire $ (dollar) |
+| <a href="https://support.microsoft.com/office/a6cd05d9-9740-4ad3-a469-8109d18ff611" target="_blank">Fonctions DOLLAR, USDOLLAR</a> | Convertit un nombre en texte en utilisant le format monétaire $ (dollar) |
 | <a href="https://support.office.com/article/DOLLARDE-function-db85aab0-1677-428a-9dfd-a38476693427" target="_blank">Fonction DOLLARDE</a> | Convertit un prix en dollars, exprimé sous forme de fraction, en un prix en dollars exprimé sous forme de nombre décimal |
 | <a href="https://support.office.com/article/DOLLARFR-function-0835d163-3023-4a33-9824-3042c5d4f495" target="_blank">Fonction DOLLARFR</a> | Convertit un prix en dollars, exprimé sous forme de nombre décimal, en un prix en dollars exprimé sous forme de fraction |
 | <a href="https://support.office.com/article/DPRODUCT-function-4f96b13e-d49c-47a7-b769-22f6d017cb31" target="_blank">Fonction DPRODUCT</a> | Multiplie les valeurs d’un champ particulier dans des enregistrements correspondant aux critères d’une base de données |
@@ -445,6 +445,6 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Classe de fonctions (interface API JavaScript pour Excel)](/javascript/api/excel/excel.functions)
-- [Objet de fonctions Workbook (interface API JavaScript pour Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
+- [Classe Functions (interface API JavaScript pour Excel)](/javascript/api/excel/excel.functions)
+- [Objet Workbook Functions (interface API JavaScript pour Excel)](/javascript/api/excel/excel.workbook#functions)

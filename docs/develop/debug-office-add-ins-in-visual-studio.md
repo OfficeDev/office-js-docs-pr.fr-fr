@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 12/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 2466c314345d1bf6dbfa38bc6f6508b4386fa633
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: d325c25e6a9fe219334a6e2503718603f9e85c9c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961208"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076524"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -129,7 +129,7 @@ Si votre application n’est pas visible dans le document qui s’affiche dans l
 
 1. Dans Excel, PowerPoint ou Word, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.
 
-    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted](../images/excel-cf-register-add-in-1b.png)
+    ![Screenshot showing Insert ribbon in Excel on Windows with the My Add-ins arrow highlighted.](../images/excel-cf-register-add-in-1b.png)
 
 2. Dans la liste des compléments disponibles, recherchez la section **Compléments développeur** et sélectionnez votre complément pour effectuer cette opération.
 

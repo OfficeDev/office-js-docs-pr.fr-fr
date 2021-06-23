@@ -3,12 +3,12 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a731ee6c44c8559f6448e0f4705652dc14c42d74
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 9c56160fdfeb2df2e78ee8a9db8750841d043d87
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007803"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077035"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -30,8 +30,8 @@ Le tableau suivant présente les combinaisons client-serveur pris en charge pour
 |Windows :<br>version 1910 (build 12130.20272) ou version ultérieure|Oui|Oui|Oui|
 |Mac :<br>build 16.30 à 16.46|Oui|Non|Non|
 |Mac :<br>build 16.47 ou ultérieure|Oui|Oui|Oui|
-|Navigateur web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|
-|Navigateur web :<br>interface utilisateur Outlook classique|Non applicable|Oui|Oui|
+|Navigateur Web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|
+|Navigateur Web :<br>interface utilisateur Outlook classique|Non applicable|Oui|Oui|
 
 > [!NOTE]
 > La fonctionnalité d’envoi a été officiellement publiée dans l’ensemble de conditions requises 1.8 (pour plus d’informations, voir la prise en charge actuelle du serveur et du [client).](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
@@ -56,7 +56,7 @@ La capture d’écran suivante montre une barre d’informations invitant l’ex
 
 <br/>
 
-![Capture d’écran qui montre un message d’erreur invitant l’utilisateur à renseigner l’objet du message](../images/block-on-send-subject-cc-inforbar.png)
+![Capture d’écran montrant un message d’erreur qui invite l’utilisateur à entrer une ligne d’objet manquante.](../images/block-on-send-subject-cc-inforbar.png)
 
 <br/>
 
@@ -66,7 +66,7 @@ La capture d’écran suivante montre une barre d’informations informant l’e
 
 <br/>
 
-![Capture d’écran qui montre un message d’erreur indiquant que des mots bloqués ont été trouvés](../images/block-on-send-body.png)
+![Capture d’écran montrant un message d’erreur indiquant à l’utilisateur que des mots bloqués ont été trouvés.](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>Limites
 

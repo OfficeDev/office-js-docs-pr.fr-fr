@@ -1,19 +1,19 @@
 ---
 title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
-description: Exemples de code illustrant les tâches de graphique à l’aide de l’API JavaScript pour Excel.
+description: Exemples de code montrant les tâches graphiques à l’aide Excel API JavaScript.
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: 3cd5008e4a71001607911ffd89da26d8b31d9377
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
+ms.openlocfilehash: e164384f70e644637d8928a124415ff007c8b475
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408585"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075893"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel.
-Pour obtenir la liste complète des propriétés et des méthodes `Chart` `ChartCollection` prises en charge par les objets et, voir [Chart (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chart) et [Chart collection, objet (interface API JavaScript pour Excel)](/javascript/api/excel/excel.chartcollection).
+Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Chart` propriétés, voir Chart Object `ChartCollection` [(Interface API JavaScript](/javascript/api/excel/excel.chart) pour Excel) et [Chart Collection Object (interface API JavaScript](/javascript/api/excel/excel.chartcollection)pour Excel).
 
 ## <a name="create-a-chart"></a>Création d’un graphique
 
@@ -37,7 +37,7 @@ Excel.run(function (context) {
 
 **Nouveau graphique en courbes**
 
-![Nouveau graphique en courbes dans Excel](../images/excel-charts-create-line.png)
+![Nouveau graphique en Excel.](../images/excel-charts-create-line.png)
 
 
 ## <a name="add-a-data-series-to-a-chart"></a>Ajouter une série de données à un graphique
@@ -59,11 +59,11 @@ Excel.run(function (context) {
 
 **Graphique avant l’ajout de la série de données 2016**
 
-![Graphique dans Excel avant l’ajout de la série de données 2016](../images/excel-charts-data-series-before.png)
+![Graphique dans Excel séries de données 2016 ajoutées.](../images/excel-charts-data-series-before.png)
 
 **Graphique après l’ajout de la série de données 2016**
 
-![Graphique dans Excel après l’ajout de la série de données 2016](../images/excel-charts-data-series-after.png)
+![Graphique dans Excel suite à l’ajout d’une série de données 2016.](../images/excel-charts-data-series-after.png)
 
 ## <a name="set-chart-title"></a>Définir le titre du graphique
 
@@ -82,7 +82,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition du titre**
 
-![Graphique avec un titre dans Excel](../images/excel-charts-title-set.png)
+![Graphique avec titre en Excel.](../images/excel-charts-title-set.png)
 
 ## <a name="set-properties-of-an-axis-in-a-chart"></a>Définir les propriétés d’un axe d’un graphique
 
@@ -105,7 +105,7 @@ Excel.run(function (context) {
 
 **Graphique après la définition de l’axe des abscisses**
 
-![Graphique avec un titre d’axe dans Excel](../images/excel-charts-axis-title-set.png)
+![Graphique avec le titre de l’axe Excel.](../images/excel-charts-axis-title-set.png)
 
 ### <a name="set-axis-display-unit"></a>Définir l’unité d’affichage de l’axe
 
@@ -124,11 +124,11 @@ Excel.run(function (context) {
 
 **Graphique après la définition de l’unité d’affichage de l’axe des ordonnées**
 
-![Graphique avec l’unité d’affichage de l’axe dans Excel](../images/excel-charts-axis-display-unit-set.png)
+![Graphique avec unité d’affichage d’axe Excel.](../images/excel-charts-axis-display-unit-set.png)
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Définir la visibilité du quadrillage dans un graphique
 
-L’exemple de code suivant masque le quadrillage principal de l’axe des ordonnées du premier graphique de la feuille de calcul. Vous pouvez afficher le quadrillage principal de l’axe des ordonnées du graphique, en définissant `chart.axes.valueAxis.majorGridlines.visible` sur `true` .
+L’exemple de code suivant masque le quadrillage principal de l’axe des ordonnées du premier graphique de la feuille de calcul. Vous pouvez afficher le quadrillage principal de l’axe des valeurs du graphique, en le réglage `chart.axes.valueAxis.majorGridlines.visible` sur `true` .
 
 ```js
 Excel.run(function (context) {
@@ -143,7 +143,7 @@ Excel.run(function (context) {
 
 **Graphique avec du quadrillage masqué**
 
-![Graphique avec du quadrillage masqué dans Excel](../images/excel-charts-gridlines-removed.png)
+![Graphique avec quadrillage masqué dans Excel.](../images/excel-charts-gridlines-removed.png)
 
 ## <a name="chart-trendlines"></a>Courbes de tendance de graphiques
 
@@ -165,11 +165,11 @@ Excel.run(function (context) {
 
 **Graphique avec courbe de tendance de moyenne mobile**
 
-![Graphique avec courbe de tendance de moyenne mobile dans Excel](../images/excel-charts-create-trendline.png)
+![Graphique avec courbe de tendance moyenne mobile Excel.](../images/excel-charts-create-trendline.png)
 
 ### <a name="update-a-trendline"></a>Mettre à jour une courbe de tendance
 
-L’exemple de code suivant définit la courbe de tendance sur `Linear` le type de la première série du premier graphique de la feuille de calcul nommée **Sample**.
+L’exemple de code suivant définit la courbe de tendance à taper pour la première série du premier graphique de la feuille de calcul `Linear` nommée **Sample**.
 
 ```js
 Excel.run(function (context) {
@@ -186,7 +186,7 @@ Excel.run(function (context) {
 
 **Graphique avec une courbe de tendance linéaire**
 
-![Graphique avec une courbe de tendance linéaire dans Excel](../images/excel-charts-trendline-linear.png)
+![Graphique avec courbe de tendance linéaire Excel.](../images/excel-charts-trendline-linear.png)
 
 ## <a name="export-a-chart-as-an-image"></a>Exporter un graphique sous forme d’image
 
@@ -211,10 +211,10 @@ getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode):
 
 Ces paramètres déterminent la taille de l’image. Les images sont toujours mises à l’échelle proportionnellement. Les paramètres de largeur et de hauteur appliquent des limites supérieures ou inférieures à l’image mise à l’échelle. `ImageFittingMode` contient trois valeurs avec les comportements suivants :
 
-- `Fill`: La hauteur ou la largeur minimale de l’image est la hauteur ou la largeur spécifiée (selon la valeur atteinte en premier lors de la mise à l’échelle de l’image). Il s’agit du comportement par défaut lorsqu’aucun mode d’ajustement n’est spécifié.
-- `Fit`: La hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (selon la valeur atteinte en premier lors de la mise à l’échelle de l’image).
-- `FitAndCenter`: La hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (selon la valeur atteinte en premier lors de la mise à l’échelle de l’image). L’image générée est centrée par rapport à l’autre dimension.
+- `Fill`: la hauteur ou la largeur minimale de l’image est la hauteur ou la largeur spécifiée (selon ce qui est atteint en premier lors de la mise à l’échelle de l’image). Il s’agit du comportement par défaut lorsqu’aucun mode d’ajustement n’est spécifié.
+- `Fit`: la hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (selon ce qui est atteint en premier lors de la mise à l’échelle de l’image).
+- `FitAndCenter`: la hauteur ou la largeur maximale de l’image est la hauteur ou la largeur spécifiée (selon ce qui est atteint en premier lors de la mise à l’échelle de l’image). L’image générée est centrée par rapport à l’autre dimension.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)

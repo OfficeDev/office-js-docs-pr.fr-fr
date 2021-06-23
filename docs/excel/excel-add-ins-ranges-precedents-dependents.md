@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour récupér
 ms.date: 06/03/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78fa4fb070ede85d139425a9d59ba1224785a605
-ms.sourcegitcommit: 17b5a076375bc5dc3f91d3602daeb7535d67745d
+ms.openlocfilehash: 6021e383f02ca0de15210638b991dfe8b109ab63
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/06/2021
-ms.locfileid: "52783522"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075795"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obtenir des antécédents et des dépendances de formule à l’aide Excel API JavaScript
 
@@ -17,7 +17,7 @@ Excel formules font souvent référence à d’autres cellules. Ces références
 
 Une cellule peut avoir une cellule précédente et cette cellule peut avoir ses propres cellules précédentes. Un « précédent direct » est le premier groupe de cellules précédent dans cette séquence, similaire au concept de parents dans une relation parent-enfant. Un « dépendant direct » est le premier groupe dépendant de cellules dans une séquence, semblable aux enfants d’une relation parent-enfant. Les cellules qui font référence à d’autres cellules d’un workbook, mais dont la relation n’est pas une relation parent-enfant, ne sont pas des dépendants directs ou des antécédents directs.
 
-Cet article fournit des exemples de code qui récupèrent les antécédents directs et les dépendances directes des formules à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en charge, voir `Range` [Range Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.range)
+Cet article fournit des exemples de code qui récupèrent les antécédents directs et les dépendances directes des formules à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` [Range Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.range)
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>Obtenir les antécédents directs d’une formule
 
@@ -25,7 +25,7 @@ Recherchez les cellules précédentes directes d’une formule [avec Range.getDi
 
 La capture d’écran suivante montre le résultat de la sélection du bouton Suivi **des antécédents** dans Excel’interface utilisateur. Ce bouton dessine une flèche entre les cellules précédentes et la cellule sélectionnée. La cellule sélectionnée, **E3,** contient la formule « =C3 * D3 », c’est pourquoi **C3** et **D3** sont des cellules précédentes. Contrairement au bouton Excel’interface utilisateur, `getDirectPrecedents` la méthode ne dessine pas de flèches.
 
-![Cellules précédentes de suivi des flèches dans l Excel’interface utilisateur](../images/excel-ranges-trace-precedents.png)
+![Cellules précédentes de suivi des flèches dans Excel’interface utilisateur.](../images/excel-ranges-trace-precedents.png)
 
 > [!IMPORTANT]
 > La `getDirectPrecedents` méthode ne peut pas récupérer les cellules précédentes dans les workbooks.
@@ -64,7 +64,7 @@ Recherchez les cellules dépendantes directes d’une formule [avec Range.getDir
 
 La capture d’écran suivante montre le résultat de la sélection du bouton **Dépendants** du suivi dans Excel’interface utilisateur. Ce bouton dessine une flèche entre les cellules dépendantes et la cellule sélectionnée. La cellule sélectionnée, **D3,** a la cellule **E3** comme dépendant. **E3** contient la formule « =C3 * D3 ». Contrairement au bouton Excel’interface utilisateur, `getDirectDependents` la méthode ne dessine pas de flèches.
 
-![Cellules dépendantes du suivi des flèches dans l Excel’interface utilisateur](../images/excel-ranges-trace-dependents.png)
+![Cellules dépendantes du suivi des flèches dans Excel’interface utilisateur.](../images/excel-ranges-trace-dependents.png)
 
 > [!IMPORTANT]
 > La `getDirectDependents` méthode ne peut pas récupérer les cellules dépendantes dans les workbooks.

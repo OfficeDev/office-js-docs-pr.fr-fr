@@ -3,12 +3,12 @@ ms.date: 03/15/2021
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 4d960d642c3efd2f6f9745587b6cb0ef42ce0a86
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: 61959387dc3475997581233bc220f20394e8f6fb
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836822"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075879"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -16,7 +16,7 @@ L’une des façon dont les fonctions personnalisées améliorent la puissance d
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-![Image GIF d'une fonction personnalisée diffusant le temps en continu à partir d'une API](../images/custom-functions-web-api.gif)
+![GIF d’une fonction personnalisée qui diffuse l’heure à partir d’une API.](../images/custom-functions-web-api.gif)
 
 ## <a name="functions-that-return-data-from-external-sources"></a>Fonctions qui retournent des données provenant de sources externes
 

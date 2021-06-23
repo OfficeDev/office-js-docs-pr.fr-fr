@@ -3,24 +3,24 @@ title: Comparer Outlook prise en charge des Outlook sur Mac
 description: Découvrez comment la prise en charge des Outlook sur Mac se compare à d’Outlook clients.
 ms.date: 05/20/2021
 localization_priority: Normal
-ms.openlocfilehash: e53f3525e2db1db5c568a1e415bf30a379f58d72
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 963577f7e5286137a2735d4c067e4391588117b9
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590462"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076783"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparer Outlook prise en charge des Outlook sur Mac avec d’autres clients Outlook client
 
-Vous pouvez créer et exécuter un Outlook de la même manière dans Outlook sur Mac que dans les autres clients, y compris Outlook sur le web, Windows, iOS et Android, sans personnaliser le JavaScript pour chaque client. Les mêmes appels du add-in vers l’API JavaScript Office fonctionnent généralement de la même manière, à l’exception des domaines décrits dans le tableau suivant.
+Vous pouvez créer et exécuter un Outlook de la même manière dans Outlook sur Mac que dans les autres clients, notamment Outlook sur le web, Windows, iOS et Android, sans personnaliser le JavaScript pour chaque client. Les mêmes appels du add-in vers l’API JavaScript Office fonctionnent généralement de la même manière, à l’exception des domaines décrits dans le tableau suivant.
 
 Pour plus d'informations, voir [Déployer et installer des compléments Outlook à des fins de test](testing-and-tips.md).
 
 Pour plus d’informations sur la nouvelle prise en charge de l’interface utilisateur, voir la prise en charge des Outlook [sur la nouvelle interface utilisateur Mac.](#add-in-support-in-outlook-on-new-mac-ui-preview)
 
-| Domaine | Outlook sur le web, les Windows et les appareils mobiles | Outlook sur Mac |
+| Domaine | Outlook sur le web, Windows et appareils mobiles | Outlook sur Mac |
 |:-----|:-----|:-----|
-| Versions d’office.js et du schéma de manifeste des Compléments Office pris en charge | Toutes les API dans Office.js et le schéma version 1.1. | Toutes les API dans Office.js et le schéma version 1.1.<br><br>**REMARQUE**: dans Outlook Mac, seule la build 16.35.308 ou ultérieure prend en charge l’enregistrement d’une réunion. Sinon, la `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745). |
+| Versions d’office.js et du schéma de manifeste des Compléments Office pris en charge | Toutes les API dans Office.js et le schéma version 1.1. | Toutes les API dans Office.js et le schéma version 1.1.<br><br>**REMARQUE**: dans Outlook mac, seule la build 16.35.308 ou ultérieure prend en charge l’enregistrement d’une réunion. Sinon, la `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745). |
 | Instances d’une série de rendez-vous périodiques | <ul><li>Peut obtenir l’ID d’élément et d’autres propriétés d’un rendez-vous principal ou d’une instance de rendez-vous d’une série périodique.</li><li>peut utiliser [mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour afficher une instance ou le masque d’une série périodique.</li></ul> | <ul><li>Peut obtenir l’ID d’élément et d’autres propriétés du rendez-vous principal, mais pas ceux d’une instance d’une série périodique.</li><li>Peut afficher le rendez-vous principal d’une série périodique. Sans l’ID d’élément, ne peut pas afficher une instance d’une série périodique.</li></ul> |
 | Type de destinataire d’un participant de rendez-vous | Peut utiliser [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#recipienttype) pour identifier le type de destinataire d’un participant. | `EmailAddressDetails.recipientType` Renvoie `undefined` pour les participants à un rendez-vous. |
 | Chaîne de version de l’application cliente | Le format de la chaîne de version renvoyée par [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) dépend du type réel de client. Par exemple :<ul><li>Outlook sur Windows :`15.0.4454.1002`</li><li>Outlook sur le web :`15.0.918.2`</li></ul> |Exemple de chaîne de version renvoyée par `Diagnostics.hostVersion` le Outlook sur Mac :`15.0 (140325)` |
@@ -43,8 +43,8 @@ Vous pouvez déterminer la version de l’interface utilisateur sur laquelle vou
 
 **Interface utilisateur actuelle**
 
-![Interface utilisateur actuelle sur Mac](../images/outlook-on-mac-classic.png)
+![Interface utilisateur actuelle sur Mac.](../images/outlook-on-mac-classic.png)
 
 **Nouvelle interface utilisateur (aperçu)**
 
-![Nouvelle interface utilisateur en prévisualisation sur Mac](../images/outlook-on-mac-new.png)
+![Nouvelle interface utilisateur en prévisualisation sur Mac.](../images/outlook-on-mac-new.png)

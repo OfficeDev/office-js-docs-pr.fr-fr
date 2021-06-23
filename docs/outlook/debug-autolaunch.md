@@ -4,16 +4,16 @@ description: Découvrez comment déboguer votre complément Outlook qui impléme
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: d7621a7407db3b8e773d1534beb6c881f7b48558
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555268"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077091"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Déboguer votre Outlook d’événement (prévisualisation)
 
-Cet article fournit des instructions de débogage lorsque vous implémentez l’activation basée sur des [événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur des événements est actuellement en prévisualisation.
+Cet article fournit des conseils sur le débogage lorsque vous implémentez l’activation basée sur des [événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur des événements est actuellement en prévisualisation.
 
 > [!IMPORTANT]
 > Cette fonctionnalité de débogage est uniquement prise en charge pour la prévisualisation dans Outlook sur Windows avec un abonnement Microsoft 365'abonnement. Pour plus d’informations, voir la section [Débogage d’aperçu](#preview-debugging-for-the-event-based-activation-feature) pour la fonctionnalité d’activation basée sur des événements dans cet article.
@@ -52,7 +52,7 @@ Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minima
 1. Démarrez Outlook bureau (ou redémarrez Outlook s’il est déjà ouvert).
 1. Rédigez un nouveau message ou rendez-vous. Vous devriez voir la boîte de dialogue suivante. *N’interagissez* pas encore avec la boîte de dialogue.
 
-    ![Capture d’écran de la boîte de dialogue Debug Event-based handler](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Capture d’écran de la boîte de dialogue Debug Event-based handler.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>Configurer Visual Studio Code
 
@@ -78,18 +78,18 @@ Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minima
     }
     ```
 
-### <a name="other"></a>Autre
+### <a name="other"></a>Autres
 
 1. Créez un dossier appelé **Débogage** (éventuellement dans votre **dossier Bureau).**
 1. Ouvrez Visual Studio Code.
 1. Accédez **à Dossier**  >  **d’ouverture de** fichier, accédez au dossier que vous avez créé, puis **sélectionnez Sélectionner un dossier.**
 1. Dans la barre d’activité, sélectionnez **l’élément Débogage** (Ctrl+Shift+D).
 
-    ![Capture d’écran de l’icône Débogage dans la barre d’activité](../images/vs-code-debug.png)
+    ![Capture d’écran de l’icône Déboguer dans la barre d’activité.](../images/vs-code-debug.png)
 
 1. Sélectionnez **créer une launch.jssur le lien de** fichier.
 
-    ![Capture d’écran du lien pour créer une launch.jsfichier dans Visual Studio Code](../images/vs-code-create-launch.json.png)
+    ![Capture d’écran du lien pour créer une launch.jsfichier dans Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. Dans la **dropdown Sélectionner un** environnement, **sélectionnez Edge : Lancer** pour créer une launch.jsfichier.
 1. Ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
@@ -118,16 +118,16 @@ Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minima
 
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
-1. Placez les points d’arrêt bundle.js l’endroit où vous souhaitez que le débogger s’arrête.
+1. Placez les points d’arrêt bundle.js où vous souhaitez que le débogger s’arrête.
 1. Dans la **dropdown DEBUG,** sélectionnez le nom **Débogage** direct, puis sélectionnez **Exécuter**.
 
-    ![Capture d’écran de la sélection du débogage direct à partir des options de configuration dans la Visual Studio Code de débogage](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Capture d’écran de la sélection du débogage direct à partir des options de configuration dans la Visual Studio Code de débogage.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Debug
 
 1. Après avoir confirmé que le déboguer est attaché, revenir  à Outlook, puis dans la boîte de dialogue de débogage basée sur l’événement, choisissez **OK** .
 
-1. Vous pouvez désormais atteindre vos points d’arrêt dans Visual Studio Code, ce qui vous permet de déboguer votre code d’activation basé sur des événements.
+1. Vous pouvez maintenant atteindre vos points d’arrêt dans Visual Studio Code, ce qui vous permet de déboguer votre code d’activation basé sur des événements.
 
 ## <a name="stop-debugging"></a>Arrêter le débogage
 

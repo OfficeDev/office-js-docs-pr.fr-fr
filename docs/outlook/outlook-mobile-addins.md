@@ -1,33 +1,33 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
-description: Les add-ins Outlook Mobile sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
+description: Outlook pour appareils mobiles sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les comptes Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 586a473e1036e8480f395da49011f540d87e1b5f
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270706"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076734"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
 Les compléments fonctionnent désormais sur Outlook Mobile, avec les mêmes API que celles disponibles pour d’autres points de terminaison Outlook. Si vous avez déjà créé un complément pour Outlook, il est facile de le faire fonctionner sur Outlook Mobile.
 
-Les add-ins Outlook Mobile sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
+Outlook pour appareils mobiles sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les comptes Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
 
 **Exemple de volet Office dans Outlook sur iOS**
 
-![Capture d’écran d’un volet Office dans Outlook sur iOS](../images/outlook-mobile-addin-taskpane.png)
+![Capture d’écran d’un volet Des tâches Outlook sur iOS.](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
 **Exemple de volet Office dans Outlook sur Android**
 
-![Capture d’écran d’un volet Office dans Outlook sur Android](../images/outlook-mobile-addin-taskpane-android.png)
+![Capture d’écran d’un volet Des tâches Outlook sur Android.](../images/outlook-mobile-addin-taskpane-android.png)
 
 > [!IMPORTANT]
-> Les applications ne fonctionnent pas dans la version moderne d’Outlook dans un navigateur mobile. Pour plus d’informations, [consultez Outlook sur votre navigateur mobile](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)en cours de mise à niveau.
+> Les applications ne fonctionnent pas dans la version moderne de Outlook dans un navigateur mobile. Pour plus d’informations, [voir Outlook sur votre navigateur mobile est en cours de mise à niveau.](https://techcommunity.microsoft.com/t5/outlook-blog/outlook-on-your-mobile-browser-is-being-upgraded/ba-p/1125816)
 
 ## <a name="whats-different-on-mobile"></a>Qu’est-ce qui est différent sur mobile ?
 
@@ -35,7 +35,7 @@ Les add-ins Outlook Mobile sont pris en charge sur tous les comptes d’entrepri
   - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
   - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface.](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) Pour plus [d’informations sur](online-meeting.md) ce scénario, consultez l’article Créer un application mobile Outlook pour un fournisseur de réunion en ligne.
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Pour plus [d’informations sur](online-meeting.md) ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
 
 - L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 
@@ -55,13 +55,13 @@ Voici quelques exemples de scénarios pertinents dans Outlook Mobile.
 
 **Exemple d’interaction utilisateur pour créer une carte Trello à partir d’un message électronique sur iOS**
 
-![Image GIF animée montrant l’interaction d’un utilisateur avec un complément Outlook Mobile sur iOS](../images/outlook-mobile-addin-interaction.gif)
+![Gif animé montrant l’interaction utilisateur avec un Outlook mobile sur iOS.](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
 **Exemple d’interaction utilisateur pour créer une carte Trello à partir d’un message électronique sur Android**
 
-![Image GIF animée montrant l’interaction d’un utilisateur avec un complément Outlook Mobile sur Android](../images/outlook-mobile-addin-interaction-android.gif)
+![Gif animé montrant l’interaction utilisateur avec un Outlook mobile sur Android.](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Test de vos compléments sur mobile
 

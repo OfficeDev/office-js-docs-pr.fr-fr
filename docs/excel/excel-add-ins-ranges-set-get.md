@@ -1,19 +1,19 @@
 ---
-title: Définir et obtenir la plage sélectionnée à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment utiliser l’API JavaScript excel pour définir et obtenir des plages à l’aide de l’API JavaScript pour Excel.
+title: Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
+description: Découvrez comment utiliser l’API JavaScript Excel pour définir et obtenir des plages à l’aide de l Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 06b6219924f0667ecef57d608cb417a76ef8031d
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 0bd4a4f4bcf40e7899ee429cdc631a43ba176077
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652817"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075774"
 ---
-# <a name="set-and-get-ranges-using-the-excel-javascript-api"></a>Définir et obtenir des plages à l’aide de l’API JavaScript pour Excel
+# <a name="set-and-get-ranges-using-the-excel-javascript-api"></a>Définir et obtenir des plages à l’aide de Excel API JavaScript
 
-Cet article fournit des exemples de code qui définissent et obtiennent des plages avec l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit des exemples de code qui définissent et obtiennent des plages avec Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -34,7 +34,7 @@ Excel.run(function (context) {
 
 ### <a name="selected-range-b2e6"></a>Plage sélectionnée  B2:E6
 
-![Plage sélectionnée dans Excel](../images/excel-ranges-set-selection.png)
+![Plage sélectionnée en Excel.](../images/excel-ranges-set-selection.png)
 
 ## <a name="get-the-selected-range"></a>Obtenir la plage sélectionnée
 
@@ -55,6 +55,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
-- [Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-set-get-values.md)
-- [Définir le format de plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-set-format.md)
+- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript](excel-add-ins-ranges-set-get-values.md)
+- [Définir le format de plage à l’aide Excel API JavaScript](excel-add-ins-ranges-set-format.md)

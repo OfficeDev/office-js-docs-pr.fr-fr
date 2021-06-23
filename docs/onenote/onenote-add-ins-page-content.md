@@ -1,20 +1,20 @@
 ---
 title: Utiliser du contenu de page OneNote
-description: Découvrez comment utiliser le contenu de la page OneNote à l’aide de l’API JavaScript.
+description: Découvrez comment utiliser le contenu OneNote page à l’aide de l’API JavaScript.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 319ec8a6a92bf6bf58fac9c3c2d22987bc027414
-ms.sourcegitcommit: fa4e81fcf41b1c39d5516edf078f3ffdbd4a3997
+ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2020
-ms.locfileid: "42720938"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076818"
 ---
 # <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote
 
 Dans l’API JavaScript des compléments OneNote, le contenu de page est représenté par le modèle objet suivant.
 
-  ![Diagramme du modèle objet de page OneNote](../images/one-note-om-page.png)
+  ![OneNote modèle objet page.](../images/one-note-om-page.png)
 
 - Un objet Page contient une collection d’objets PageContent.
 - Un objet PageContent contient un type de contenu de Outline, Image ou Other.
