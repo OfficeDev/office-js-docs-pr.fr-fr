@@ -3,12 +3,12 @@ title: Vue d’ensemble de l’authentification et de l’autorisation dans les 
 description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: e9450408a1cdead8593cc901796c7156a4b415cd
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 2ed1678d347de5725752e22a00a1def6f8f7d66b
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961222"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075984"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -21,9 +21,9 @@ Vous avez le choix entre deux méthodes pour effectuer l’authentification et l
 - **La connexion unique Office sur (SSO)**: Un système qui permet à la connexion Office d’un utilisateur de fonctionner également comme connexion au complément. Si vous le souhaitez, le complément peut également utiliser les informations d’identification Office de l’utilisateur pour autoriser le complément à accéder à Microsoft Graph. (Les sources non-Microsoft ne sont pas accessibles par ce biais.)
 - **Authentification et autorisation des applications web avec Azure Active Directory** : il ne s’agit pas d’une nouveauté, ni d’un comportement spécial. C’est la manière dont les compléments Office (et les autres applications web) authentifiait les utilisateurs et autorisait les applications avant l’arrivée d’un système d’authentification unique pour Office et elle reste utilisée dans les scénarios où l’authentification unique d’Office est impossible. Il existe également des scénarios dans lesquels vous voulez que vos utilisateurs se connectent à votre complément séparément, même lorsque l’authentification unique est disponible. Par exemple, si vous voulez qu’ils aient la possibilité de se connecter au complément avec un ID différent de celui avec lequel ils sont actuellement connectés à Office.
 
-Cet organigramme montre les décisions que vous devez prendre en tant que développeur de compléments. Découvrez les détails dans cet article.
+L'organigramme suivant vous montre les décisions que vous devez prendre en tant que développeur de modules complémentaires. Les détails sont présentés plus loin dans cet article.
 
-![Image illustrant un organigramme des décisions pour activer l’authentification et l’autorisation dans les compléments Office](../images/authflowchart.png)
+![Une image montrant un organigramme de décision pour activer l'authentification et l'autorisation dans les compléments Office.](../images/authflowchart.png)
 
 ## <a name="user-authentication-without-sso"></a>Authentification utilisateur sans authentification unique
 
