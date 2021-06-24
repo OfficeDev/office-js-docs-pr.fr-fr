@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 05/17/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 967bc0590d6cf1f513352c4a5c22eeb5205c2cbe
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 49cfcfee075ba01f077162cef415ed58211b95f6
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591995"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077210"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -121,11 +121,11 @@ Les compléments sont pris en charge dans Outlook sur les plateformes suivantes.
 >
 > **moderne**
 >
-> ![capture d’écran partielle de la barre d’outils Outlook moderne](../../images/outlook-on-the-web-new-toolbar.png)
+> ![Capture d'écran partielle de la barre d'outils moderne d' Outlook.](../../images/outlook-on-the-web-new-toolbar.png)
 >
 > **classique**
 >
-> ![capture d’écran partielle de la barre d’outils Outlook classique](../../images/outlook-on-the-web-classic-toolbar.png)
+> ![Capture d’écran partielle de la barre d’outils Outlook classique.](../../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="using-preview-apis"></a>Utilisation des API de préversion
 

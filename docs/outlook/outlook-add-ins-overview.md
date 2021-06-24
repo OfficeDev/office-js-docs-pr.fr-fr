@@ -4,12 +4,12 @@ description: Les compléments Outlook sont des intégrations conçues par des ti
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: f0c1dbdd1cf9909310b629188d4f3d3d5de6b6bb
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007810"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076755"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -33,13 +33,13 @@ Les points d’extension correspondent à la manière dont les compléments sont
 
     **Complément avec boutons de commande dans le ruban**
 
-    ![Forme sans interface utilisateur de commande de complément](../images/uiless-command-shape.png)
+    ![Complément de commande Forme sans interface utilisateur.](../images/uiless-command-shape.png)
 
 - Les compléments peuvent désactiver les correspondances d’expressions régulières ou des entités détectées dans les messages et les rendez-vous. Pour plus d’informations, voir [Compléments Outlook contextuels](contextual-outlook-add-ins.md).
 
     **Complément contextuel pour une entité en surbrillance (adresse)**
 
-    ![Présente une application contextuelle dans une carte](../images/outlook-detected-entity-card.png)
+    ![Montre une application contextuelle dans une carte.](../images/outlook-detected-entity-card.png)
 
 ## <a name="mailbox-items-available-to-add-ins"></a>Éléments de boîtes aux lettres disponibles pour les compléments
 
