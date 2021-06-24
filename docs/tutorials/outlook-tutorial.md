@@ -1,21 +1,21 @@
 ---
-title: 'Didacticiel : créer un complément de composition de message Outlook'
+title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
 ms.date: 05/12/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 1114c7b106cdc6d66e370b9d168ac87fda068a24
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 4939d6a57cd7aaf529d8507ba535e32a55eeb237
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329925"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076131"
 ---
-# <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
+# <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
 Ce didacticiel vous apprend à créer un complément Outlook qui peut être utilisé pour dans le mode composer un message pour insérer du contenu dans le corps d’un message.
 
-Dans ce didacticiel, vous allez :
+Dans ce didacticiel, vous allez :
 
 > [!div class="checklist"]
 >
@@ -106,11 +106,11 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
     - **Sélectionnez un type de script** - `JavaScript`
 
-    - **Comment souhaitez-vous nommer votre complément ?** - `Git the gist`
+    - **Comment souhaitez-vous nommer votre complément ?** - `Git the gist`
 
-    - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
+    - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
-    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yeoman-prompts-2.png)
+    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yeoman-prompts-2.png)
 
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -169,11 +169,11 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
 
 1. Dans Outlook, ouvrez un message existant et sélectionnez le bouton **Afficher le volet Office**. Si tout est configuré correctement, le volet des tâches va s’ouvrir et afficher la page d’accueil du complément.
 
-    ![Capture d’écran du bouton « Afficher le volet Office » et de la git volet Office ajouté par l’échantillon](../images/button-and-pane.png)
+    ![Capture d’écran du bouton « Afficher le volet Office » et de la git volet Office ajouté par l’échantillon.](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>Définir des boutons
 
-À présent que vous avez vérifié que le complément base fonctionne, vous pouvez le personnaliser pour ajouter davantage de fonctionnalités. Par défaut, le manifeste définit uniquement les boutons de la fenêtre de lecture de message. Nous allons mettre à jour le manifeste pour supprimer les boutons de la fenêtre de lecture de message et définir deux nouveaux boutons pour la fenêtre composer un message :
+À présent que vous avez vérifié que le complément base fonctionne, vous pouvez le personnaliser pour ajouter davantage de fonctionnalités. Par défaut, le manifeste définit uniquement les boutons de la fenêtre de lecture de message. Nous allons mettre à jour le manifeste pour supprimer les boutons de la fenêtre de lecture de message et définir deux nouveaux boutons pour la fenêtre composer un message :
 
 - **Insérer un gist**: bouton qui ouvre un le volet des tâches
 
@@ -287,13 +287,13 @@ Le code précédent fait référence à des étiquettes, des info-bulles et des 
 
 Une fois le complément réinstallé, vous pouvez vérifier qu’il a été correctement installé en consultant les commandes **Insérer gist** et **Insérer gist par défaut** dans le fenêtre de composition du message. Notez que rien ne se produit si vous sélectionnez un des ces éléments, car vous n’avez pas encore terminé de générer ce complément.
 
-- Si vous exécutez ce complément dans Outlook 2016 ou versions ultérieures sur Windows, vous devriez voir deux nouveaux boutons dans le ruban de la fenêtre de composition d’un message : **Insérer gist** et **Insérer gist par défaut**.
+- Si vous exécutez ce complément dans Outlook 2016 ou versions ultérieures sur Windows, vous devriez voir deux nouveaux boutons dans le ruban de la fenêtre de composition d’un message : **Insérer gist** et **Insérer gist par défaut**.
 
-    ![Capture d’écran du menu de dépassement de ruban dans Outlook sur Windows avec les boutons du complément mis en évidence](../images/add-in-buttons-in-windows.png)
+    ![Capture d’écran du menu de dépassement de ruban dans Outlook sur Windows avec les boutons du complément mis en évidence.](../images/add-in-buttons-in-windows.png)
 
 - Si vous exécutez ce complément dans Outlook sur le web, vous devriez voir apparaître un nouveau bouton en bas de la fenêtre de composition d’un message. Sélectionnez ce bouton pour afficher les options **Insérer gist** et **Insérer gist par défaut**.
 
-    ![Capture d’écran du formulaire composer message dans Outlook sur le web avec le bouton complément et menu contextuel mis en évidence](../images/add-in-buttons-in-owa.png)
+    ![Capture d’écran du formulaire composer message dans Outlook sur le web avec le bouton complément et menu contextuel mis en évidence.](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>Mettre en œuvre une expérience de première exécution
 
@@ -524,7 +524,7 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
     dialog: "./src/settings/dialog.js"
     ```
 
-    Lorsque c’est chose faite, le nouvel objet `entry` se présente comme suit :
+    Lorsque c’est chose faite, le nouvel objet `entry` se présente comme suit :
 
     ```js
     entry: {
@@ -544,7 +544,7 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
     },
     ```
 
-    Lorsque c’est chose faite, l’objet `new CopyWebpackPlugin` se présente comme suit :
+    Lorsque c’est chose faite, l’objet `new CopyWebpackPlugin` se présente comme suit :
 
     ```js
       new CopyWebpackPlugin({
@@ -581,7 +581,7 @@ Enfin, ouvrez le fichier **webpack.config.js** situé dans le répertoire racine
     })
     ```
 
-    Lorsque c’est chose faite, la nouvelle matrice `plugins` se présente comme suit :
+    Lorsque c’est chose faite, la nouvelle matrice `plugins` se présente comme suit :
 
     ```js
     plugins: [
@@ -944,16 +944,16 @@ Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite 
 
 1. Dans la fenêtre composer un message, sélectionnez le bouton **Insérer gist par défaut**. Vous devriez voir une boîte de dialogue dans laquelle vous pouvez configurer le complément, en commençant par l’invite de définition de votre nom d’utilisateur GitHub.
 
-    ![Capture d’écran de l’invite de la boîte de dialogue permettant de configurer le complément](../images/addin-prompt-configure.png)
+    ![Capture d’écran de l’invite de la boîte de dialogue permettant de configurer le complément.](../images/addin-prompt-configure.png)
 
 1. Dans la boîte de dialogue Paramètres, entrez votre nom d’utilisateur GitHub, puis soit **Onglet** soit cliquez ailleurs dans la boîte de dialogue pour faire apparaître l’événement `change`, qui devrait charger votre liste de gists publiques. Sélectionnez un gist par défaut, puis cliquez sur **Terminer**.
 
-    ![Capture d’écran de la boîte de dialogue des paramètres du complément](../images/addin-settings.png)
+    ![Capture d’écran de la boîte de dialogue des paramètres du complément.](../images/addin-settings.png)
 
 1. Cliquez de nouveau sur le bouton **Insérer un gist par défaut**. Cette fois, le contenu du gist est inséré dans le corps du courrier électronique.
 
    > [!NOTE]
-   > Outlook sur Windows : pour récupérer les paramètres les plus récents, vous devrez peut-être fermer et rouvrir la fenêtre de composition d’un message.
+   > Outlook sur Windows : pour récupérer les paramètres les plus récents, vous devrez peut-être fermer et rouvrir la fenêtre de composition d’un message.
 
 ## <a name="implement-a-task-pane"></a>Implémentation d’un volet de tâches
 
@@ -1307,11 +1307,11 @@ Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite 
 
 1. Dans le volet des tâches, sélectionnez le gist **Hello World Html**, puis sélectionnez **insérer** pour insérer ce gist dans le corps du message.
 
-![Capture d’écran du volet Office Complément et du contenu du gist sélectionné qui s’affiche dans le corps du message](../images/addin-taskpane.png)
+![Capture d’écran du volet Office Complément et du contenu du gist sélectionné qui s’affiche dans le corps du message.](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Ce didacticiel vous a appris à créer un complément Outlook qui peut être utilisé pour dans le mode composer un message pour insérer du contenu dans le corps d’un message. Pour en savoir plus sur le développement des compléments Outlook, passez à l’article suivant :
+Ce didacticiel vous a appris à créer un complément Outlook qui peut être utilisé pour dans le mode composer un message pour insérer du contenu dans le corps d’un message. Pour en savoir plus sur le développement des compléments Outlook, passez à l’article suivant :
 
 > [!div class="nextstepaction"]
-> [API de complément Outlook](../outlook/apis.md)
+> [API de complément Outlook](../outlook/apis.md)
