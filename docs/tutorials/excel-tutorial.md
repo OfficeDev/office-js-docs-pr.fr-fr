@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez développer un complément Excel qu
 ms.date: 05/12/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: f23cbf86288590722649ce28639d15b34f3e14f1
-ms.sourcegitcommit: 0d3bf72f8ddd1b287bf95f832b7ecb9d9fa62a24
+ms.openlocfilehash: f169499e343d2fc7fac89f407b78717536add4fc
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2021
-ms.locfileid: "52727940"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53077238"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -40,7 +40,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office](../images/yo-office-excel.png)
+![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office.](../images/yo-office-excel.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -201,11 +201,11 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du menu Accueil d’Excel avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-3b.png)
+    ![Capture d’écran du menu Accueil d’Excel avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-3b.png)
 
 3. Dans le volet Office, sélectionnez le bouton **Créer un tableau**.
 
-    ![Capture d’écran d’Excel, affichant le volet Office Complément avec le bouton créer un tableau, et un tableau dans la feuille de calcul rempli avec les données de date, de commerçant, de catégorie et de montant](../images/excel-tutorial-create-table-2.png)
+    ![Capture d’écran d’Excel, montrant un volet office de complément avec un bouton Créer un tableau et un tableau dans la feuille de calcul rempli de données Date, Commerçant, Catégorie et Montant.](../images/excel-tutorial-create-table-2.png)
 
 ## <a name="filter-and-sort-a-table&quot;></a>Filtrer et trier un tableau
 
@@ -332,7 +332,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 4. Choisissez le bouton **Filtrer le tableau** et le bouton **Trier le tableau** dans n’importe quel ordre.
 
-    ![Capture d’écran d’Excel, avec les boutons Filtrer le tableau et Trier le tableau mis en évidence dans le volet Office Complément](../images/excel-tutorial-filter-and-sort-table-2.png)
+    ![Capture d’écran d’Excel, avec les boutons Filtrer le tableau et Trier le tableau mis en évidence dans le volet Office Complément.](../images/excel-tutorial-filter-and-sort-table-2.png)
 
 ## <a name="create-a-chart"></a>Création d’un graphique (chart)
 
@@ -427,7 +427,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
 4. Sélectionnez le bouton **Créer un graphique**. Un graphique est créé dans lequel seules les données provenant des lignes filtrées sont incluses. Les étiquettes sur les points de données en bas sont organisées selon l’ordre de tri du graphique, à savoir les noms de marchand par ordre alphabétique inversé.
 
-    ![Capture d’écran d’Excel avec un bouton créer un graphique visible dans le volet Office Complément, et un graphique dans la feuille de calcul affichant les données de dépenses de courses et d’éducation](../images/excel-tutorial-create-chart-2.png)
+    ![Capture d’écran d’Excel, avec un bouton Créer un graphique visible dans le volet Office du complément et un graphique dans la feuille de calcul affichant les données de dépenses d’alimentation et d’éducation.](../images/excel-tutorial-create-chart-2.png)
 
 ## <a name="freeze-a-table-header&quot;></a>Figer un en-tête de tableau
 
@@ -497,7 +497,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 6. Faites suffisamment défiler la feuille de calcul vers le bas pour voir que l’en-tête du tableau est toujours visible dans la partie supérieure même lorsque les lignes du haut sont masquées.
 
-    ![Capture d’écran illustrant une feuille de calcul Excel avec un en-tête de tableau figé](../images/excel-tutorial-freeze-header-2.png)
+    ![Capture d’écran illustrant une feuille de calcul Excel avec un en-tête de tableau figé.](../images/excel-tutorial-freeze-header-2.png)
 
 ## <a name="protect-a-worksheet"></a>Protéger une feuille de calcul
 
@@ -1009,7 +1009,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 6. Si vous le souhaitez, vous pouvez commenter la ligne `dialog.close();` dans la fonction `processMessage`. Ensuite, répétez les étapes de cette section. La boîte de dialogue reste ouverte et vous pouvez modifier le nom. Vous pouvez la fermer manuellement en appuyant sur la croix (**X**) en haut à droite.
 
-    ![Capture d’écran d’Excel, avec un bouton de boîte de dialogue Ouvrir visible dans le volet Office Complément, et une boîte de dialogue affichée sur la feuille de calcul](../images/excel-tutorial-dialog-open-2.png)
+    ![Capture d’écran d’Excel, avec un bouton Ouvrir la boîte de dialogue visible dans le volet Office du complément et une boîte de dialogue affichée sur la feuille de calcul.](../images/excel-tutorial-dialog-open-2.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

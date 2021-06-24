@@ -3,12 +3,12 @@ title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: 598d6e055b72d517d4a6bcfb90e3968b466e3aa0
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 1f4d8faf1ee691f515b47d712812e0ae7cabdf5c
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294009"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076804"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -17,34 +17,34 @@ Les commandes de complément Outlook permettent d’initier des actions de compl
 > [!NOTE]
 > Les commandes complémentaires sont disponibles uniquement dans Outlook 2013 ou plus récent sur Windows, Outlook 2016 ou plus récent sur Mac, Outlook sur iOS, Outlook sur Android, Outlook sur le web pour Exchange 2016 ou plus récent, et Outlook sur le web pour Microsoft 365 et Outlook.com.
 >
-> Pour qu’Outlook 2013 prenne en charge les commandes de complément, trois mises à jour doivent être installées :
+> Pour qu’Outlook 2013 prenne en charge les commandes de complément, trois mises à jour doivent être installées :
 > - [Mise à jour de sécurité pour Outlook du 8 mars 2016](https://support.microsoft.com/kb/3114829)
 > - [Mise à jour de sécurité pour Office du 8 mars 2016 (KB3114816)](https://support.microsoft.com/help/3114816/march-8,-2016,-update-for-office-2013-kb3114816)
 > - [Mise à jour de sécurité pour Office du 8 mars 2016 (KB3114828)](https://support.microsoft.com/help/3114828/march-8,-2016,-update-for-office-2013-kb3114828)
 >
-> La prise en charge des commandes de complément dans Exchange 2016 nécessite la [mise à jour cumulative 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016).
+> La prise en charge des commandes de complément dans Exchange 2016 nécessite la [mise à jour cumulative 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016).
 
 Les commandes de complément sont uniquement disponibles pour les compléments qui n’utilisent pas les règles [ItemHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](activation-rules.md) pour limiter les types d’éléments sur lesquels elles s’activent. Toutefois, les [compléments contextuels](contextual-outlook-add-ins.md) peuvent présenter diverses commandes selon que l’élément actuellement sélectionné est un message ou un rendez-vous, et peuvent apparaître dans des scénarios de lecture ou de composition. L’utilisation des commandes de complément constitue une [meilleure pratique](../concepts/add-in-development-best-practices.md).
 
 ## <a name="creating-the-add-in-command"></a>Création d’une commande de complément
 
-Les commandes de complément sont déclarées dans le manifeste de complément dans l’[élément VersionOverrides](../reference/manifest/versionoverrides.md). Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge `VersionOverrides`, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
+Les commandes de complément sont déclarées dans le manifeste de complément dans l’[élément VersionOverrides](../reference/manifest/versionoverrides.md). Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge `VersionOverrides`, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
 
 Les entrées de manifeste `VersionOverrides` spécifient plusieurs éléments pour le complément, notamment l’application, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
 
 Lorsqu’un complément doit fournir des mises à jour d’état, telles que des indicateurs de progression ou des messages d’erreur, il doit le faire via les [API de notification](/javascript/api/outlook/office.notificationmessages). Le traitement pour les notifications doit également être défini dans un fichier HTML distinct qui est spécifié dans le nœud `FunctionFile` du manifeste.
 
-Les développeurs doivent définir des icônes pour toutes les tailles requises afin que les commandes de complément s’ajustent parfaitement avec le ruban. Les tailles d’icône requises sont 80 x 80 pixels, 32 x 32 pixels, 16 x 16 pixels pour les versions de bureau et 48 x 48 pixels, 32 x 32 pixels et 25 x 25 pixels pour les versions mobiles.
+Les développeurs doivent définir des icônes pour toutes les tailles requises afin que les commandes de complément s’ajustent parfaitement avec le ruban. Les tailles d’icône requises sont 80 x 80 pixels, 32 x 32 pixels, 16 x 16 pixels pour les versions de bureau et 48 x 48 pixels, 32 x 32 pixels et 25 x 25 pixels pour les versions mobiles.
 
-## <a name="how-do-add-in-commands-appear"></a>Comment les commandes de complément apparaissent-elles ?
+## <a name="how-do-add-in-commands-appear"></a>Comment les commandes de complément apparaissent-elles ?
 
-Une commande de complément apparaît dans le ruban, comme un bouton. Lorsqu’un utilisateur installe un complément, ses commandes apparaissent dans l’interface utilisateur sous la forme d’un groupe de boutons. Le groupe peut apparaître dans l’onglet par défaut du ruban ou dans un onglet personnalisé. Pour les messages, il apparaît par défaut dans l’onglet **Accueil** ou **Message**. Pour le calendrier, il apparaît par défaut dans l’onglet **Réunion**, **Occurrence de réunion**, **Série de réunions** ou **Rendez-vous**. Pour les extensions de module, il apparaît par défaut dans un onglet personnalisé. Dans l’onglet par défaut, chaque complément peut avoir un groupe Ruban incluant 6 commandes maximum. Dans les onglets personnalisés, le complément peut avoir jusqu’à 10 groupes, avec 6 commandes chacun. Les compléments sont limités à un seul onglet personnalisé.
+Une commande de complément apparaît dans le ruban, comme un bouton. Lorsqu’un utilisateur installe un complément, ses commandes apparaissent dans l’interface utilisateur sous la forme d’un groupe de boutons. Le groupe peut apparaître dans l’onglet par défaut du ruban ou dans un onglet personnalisé. Pour les messages, il apparaît par défaut dans l’onglet **Accueil** ou **Message**. Pour le calendrier, il apparaît par défaut dans l’onglet **Réunion**, **Occurrence de réunion**, **Série de réunions** ou **Rendez-vous**. Pour les extensions de module, il apparaît par défaut dans un onglet personnalisé. Dans l’onglet par défaut, chaque complément peut avoir un groupe Ruban incluant 6 commandes maximum. Dans les onglets personnalisés, le complément peut avoir jusqu’à 10 groupes, avec 6 commandes chacun. Les compléments sont limités à un seul onglet personnalisé.
 
 Au fur et à mesure du ruban, les commandes de complément s’affichent dans le menu de dépassement de capacité. Les commandes de complément pour un complément sont généralement regroupées.
 
-![Boutons de commande du complément sur le ruban](../images/commands-normal.png)
+![Boutons de commande des modules complémentaires sur le ruban.](../images/commands-normal.png)
 
-![Boutons de commande du complément sur le ruban et le menu de dépassement de capacité](../images/commands-collapsed.png)
+![Boutons de commande des modules complémentaires sur le ruban et dans le menu déroulant.](../images/commands-collapsed.png)
 
 Lorsqu’une commande de complément est ajoutée à un complément, le nom du complément est supprimé de la barre d’application. Seul le bouton de commande du complément dans le ruban est conservé.
 
@@ -52,13 +52,13 @@ Lorsqu’une commande de complément est ajoutée à un complément, le nom du c
 
 Dans Outlook sur le web, le nom du complément s’affiche dans un menu de dépassement de capacité. Si le complément inclut plusieurs commandes de complément, vous pouvez développer le menu du complément pour afficher le groupe de boutons portant le nom du complément.
 
-![Menu de dépassement de capacité dans lequel se trouvent les boutons de commande du complément](../images/commands-overflow-menu-web.png)
+![Menu de débordement où se trouvent les boutons de commande du module d'extension.](../images/commands-overflow-menu-web.png)
 
-![Menu de dépassement de capacité affichant les boutons de commande du complément](../images/commands-overflow-menu-expand-web.png)
+![Menu de débordement affichant les boutons de commande des modules complémentaires.](../images/commands-overflow-menu-expand-web.png)
 
-## <a name="what-ux-shapes-exist-for-add-in-commands"></a>Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
+## <a name="what-ux-shapes-exist-for-add-in-commands"></a>Quelles formes d’expérience utilisateur existent pour les commandes de complément ?
 
-La forme d’expérience utilisateur d’une commande de complément inclut un onglet de ruban dans l’application Office qui contient des boutons permettant d’effectuer diverses actions. Actuellement, trois formes d’expérience utilisateur sont prises en charge :
+La forme d’expérience utilisateur d’une commande de complément inclut un onglet de ruban dans l’application Office qui contient des boutons permettant d’effectuer diverses actions. Actuellement, trois formes d’expérience utilisateur sont prises en charge :
 
 - Un bouton qui exécute une fonction JavaScript
 - Un bouton qui lance un volet Office
@@ -70,15 +70,15 @@ Utilisez un bouton de commande de complément qui exécute une fonction JavaScri
 
 Dans les extensions de module, le bouton de commande de complément peut exécuter les fonctions JavaScript qui interagissent avec le contenu de l’interface utilisateur principale.
 
-![Bouton exécutant une fonction sur le ruban Outlook.](../images/commands-uiless-button-1.png)
+![Bouton exécutant une fonction sur le ruban Outlook.](../images/commands-uiless-button-1.png)
 
 ### <a name="launching-a-task-pane"></a>Lancement d’un volet Office
 
-Utilisez un bouton de commande de complément pour lancer un volet Office pour les scénarios dans lesquels l’utilisateur doit interagir avec un complément pour une durée plus longue. Par exemple, le complément nécessite des modifications de paramètres ou la saisie de données dans de nombreux champs.
+Utilisez un bouton de commande de complément pour lancer un volet Office pour les scénarios dans lesquels l’utilisateur doit interagir avec un complément pour une durée plus longue. Par exemple, le complément nécessite des modifications de paramètres ou la saisie de données dans de nombreux champs.
 
-La largeur par défaut du volet de tâche vertical est de 320 px. Celui-ci peut être redimensionné à la fois dans l’explorateur Outlook et dans l’inspecteur. Le volet peut redimensionner le volet de tâche et l’affichage Liste de façon identique.
+La largeur par défaut du volet de tâche vertical est de 320 px. Celui-ci peut être redimensionné à la fois dans l’explorateur Outlook et dans l’inspecteur. Le volet peut redimensionner le volet de tâche et l’affichage Liste de façon identique.
 
-![Bouton permettant d’ouvrir un volet Office sur le ruban Outlook.](../images/commands-task-pane-button-1.png)
+![Bouton permettant d’ouvrir un volet Office sur le ruban Outlook.](../images/commands-task-pane-button-1.png)
 
 <br/>
 
@@ -88,13 +88,13 @@ Si l’utilisateur sélectionne une autre commande de complément qui ouvre un v
 
 ### <a name="drop-down-menu"></a>Menu déroulant
 
-Une commande de complément de menu déroulant définit une liste statique de boutons. Les boutons dans le menu peuvent correspondre à n’importe quelle combinaison de boutons qui exécutent une fonction ou qui ouvrent un volet Office. Les sous-menus ne sont pas pris en charge.
+Une commande de complément de menu déroulant définit une liste statique de boutons. Les boutons dans le menu peuvent correspondre à n’importe quelle combinaison de boutons qui exécutent une fonction ou qui ouvrent un volet Office. Les sous-menus ne sont pas pris en charge.
 
 ![Bouton permettant de développer un menu sur le ruban Outlook.](../images/commands-menu-button-1.png)
 
-## <a name="where-do-add-in-commands-appear-in-the-ui"></a>Où les commandes de complément apparaissent-elles dans l’interface utilisateur ?
+## <a name="where-do-add-in-commands-appear-in-the-ui"></a>Où les commandes de complément apparaissent-elles dans l’interface utilisateur ?
 
-Les commandes de complément sont prises en charge pour quatre scénarios :
+Les commandes de complément sont prises en charge pour quatre scénarios :
 
 ### <a name="reading-a-message"></a>Lecture d’un message
 
