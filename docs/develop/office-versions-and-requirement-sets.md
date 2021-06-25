@@ -3,27 +3,27 @@ title: Versions d’Office et ensembles de conditions requises
 description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 2fd1393271d50be66dd2bbc2bb8cbb251ae6efbc
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237664"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53075991"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
-Il existe de nombreuses versions d’Office sur plusieurs plateformes ; celles-ci ne prennent pas forcément en charge toutes les API dans l’interface API JavaScript pour Office (Office.js). Vous n’avez pas toujours le contrôle sur la version d’Office que vos utilisateurs ont installée.  Pour gérer cette situation, nous fournissons un système nommé ensembles de conditions requises pour vous aider à déterminer si une application Office prend en charge les fonctionnalités dont vous avez besoin dans votre complément Office. 
+Il existe de nombreuses versions d’Office sur plusieurs plateformes ; celles-ci ne prennent pas forcément en charge toutes les API dans l’interface API JavaScript pour Office (Office.js). Vous n’avez pas toujours le contrôle sur la version d’Office que vos utilisateurs ont installée.  Pour gérer cette situation, nous fournissons un système nommé ensembles de conditions requises pour vous aider à déterminer si une application Office prend en charge les fonctionnalités dont vous avez besoin dans votre complément Office. 
 
 > [!NOTE]
 > - Office s’exécute sur plusieurs plateformes, y compris sur Windows, dans un navigateur, un Mac et un iPad.
-> - Parmi les applications Office, voici quelques exemples de produits Office : Excel, Word, PowerPoint, Outlook, OneNote et autres.  
-> - Un ensemble de conditions requises est un groupe nommé de membres d’API, par exemple : `ExcelApi 1.5`, `WordApi 1.3`, et ainsi de suite.  
+> - Parmi les applications Office, voici quelques exemples de produits Office : Excel, Word, PowerPoint, Outlook, OneNote et autres.  
+> - Un ensemble de conditions requises est un groupe nommé de membres d’API, par exemple : `ExcelApi 1.5`, `WordApi 1.3`, et ainsi de suite.  
 
 ## <a name="how-to-check-your-office-version"></a>Vérification de votre version d’Office
 
-Pour identifier la version d’Office que vous utilisez, à partir d’une application Office, sélectionnez le menu **Fichier**, puis sélectionnez **Compte**. La version d’Office s’affiche dans la section **Informations sur le produit**. Par exemple, la capture d’écran suivante indique la version 1802 d’Office (build 9026.1000) :
+Pour identifier la version d’Office que vous utilisez, à partir d’une application Office, sélectionnez le menu **Fichier**, puis sélectionnez **Compte**. La version d’Office s’affiche dans la section **Informations sur le produit**. Par exemple, la capture d’écran suivante indique la version 1802 d’Office (build 9026.1000) :
 
-![Vérification de votre version d’Office](../images/office-version.png)
+![Vérifier la version de votre Office.](../images/office-version.png)
 
 ## <a name="office-requirement-sets-availability"></a>Disponibilité des ensembles de conditions requises Office
 
@@ -33,7 +33,7 @@ Certaines applications Office ont leurs propres ensembles de conditions requises
 
 Par ailleurs, d’autres fonctionnalités telles que les commandes de complément (extensibilité du ruban) et la possibilité de lancer des boîtes de dialogue (API de boîte de dialogue) ont été ajoutées à l’API commune. Les commandes de complément et les ensembles de conditions requises d’API de boîte de dialogue sont des exemples d’ensembles de conditions requises d’API que les différentes applications Office ont en commun.
 
-Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’application Office sur laquelle le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’application Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux applications :
+Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’application Office sur laquelle le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’application Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux applications :
 
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Ensembles de conditions requises de l’API JavaScript pour Word](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -41,14 +41,14 @@ Un complément peut utiliser uniquement des API dans les ensembles de conditions
 - [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Présentation de l’ensemble de conditions requises pour les API Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
 
-Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quelle application Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants :
+Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quelle application Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants :
 
 - [Ensembles de conditions requises communes pour Office](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Ensembles de conditions requises concernant les commandes de complément](../reference/requirement-sets/add-in-commands-requirement-sets.md)
 - [Ensembles de conditions requises de l’API de boîte de dialogue](../reference/requirement-sets/dialog-api-requirement-sets.md)
 - [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md)
 
-Le numéro de version d’un ensemble de conditions requises, par exemple « 1.1 » dans `ExcelApi 1.1`, est défini par rapport à l’application Office. Le numéro de version d’un ensemble donné de conditions requises (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js, ni aux ensembles de conditions requises pour d’autres applications Office (comme Word, Outlook, etc.).  Les ensembles de conditions requises pour les différentes applications Office sont publiés à des rythmes différents. Par exemple, `ExcelApi 1.5` a été publié avant l’ensemble de conditions requises `WordApi 1.3`.
+Le numéro de version d’un ensemble de conditions requises, par exemple « 1.1 » dans `ExcelApi 1.1`, est défini par rapport à l’application Office. Le numéro de version d’un ensemble donné de conditions requises (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js, ni aux ensembles de conditions requises pour d’autres applications Office (comme Word, Outlook, etc.).  Les ensembles de conditions requises pour les différentes applications Office sont publiés à des rythmes différents. Par exemple, `ExcelApi 1.5` a été publié avant l’ensemble de conditions requises `WordApi 1.3`.
 
 
 L’API JavaScript pour la bibliothèque Office (Office.js) inclut tous les ensembles de conditions requises actuellement disponibles. Alors qu’il existe des ensembles de conditions requises `ExcelApi 1.3` et `WordApi 1.3`, il n’existe pas d’ensemble de conditions requises `Office.js 1.3`. La dernière version d’Office.js est gérée comme un point de terminaison Office unique remis via le réseau de distribution de contenu (CDN). Pour plus d’informations sur le CDN Office.js, notamment sur la gestion des versions et de la compatibilité avec les anciennes versions, reportez-vous à l’article [Présentation de l’API Interface JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md).

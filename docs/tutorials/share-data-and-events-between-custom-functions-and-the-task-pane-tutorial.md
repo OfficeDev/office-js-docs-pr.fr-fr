@@ -1,17 +1,17 @@
 ---
-title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
+title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
 ms.date: 08/13/2020
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0def8178a06231a866bbb87573f936314ac064f1
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 22839da7299e906246e784213895e7df75f504c7
+ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49131779"
+ms.lasthandoff: 06/23/2021
+ms.locfileid: "53076825"
 ---
-# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
+# <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
 Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé. Vous pouvez ainsi partager des données globales ou envoyer des événements entre le volet des tâches et les fonctions personnalisées.
 
@@ -21,23 +21,23 @@ Ce didacticiel part du principe que vous avez l’habitude d’utiliser le gén�
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites avec les réponses suivantes :
+Utilisez le générateur Yeoman pour créer un projet de complément Excel. Exécutez la commande suivante, puis répondez aux invites avec les réponses suivantes :
 
 ```command line
 yo office
 ```
 
-- Choose a project type (Choisissez un type de projet) : **projet de complément Fonctions personnalisées Excel**
-- Choose a script type (Choisissez un type de script) :  **JavaScript**
-- Comment voulez-vous nommer votre complément ? **Mon complément Office**
+- Choose a project type (Choisissez un type de projet) : **projet de complément Fonctions personnalisées Excel**
+- Choose a script type (Choisissez un type de script) :  **JavaScript**
+- What do you want to name your add-in? (Comment souhaitez-vous nommer votre complément ?)  **My Office Add-in**
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande](../images/yo-office-excel-project.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-excel-project.png)
 
 Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-1. Démarrez Visual Studio Code et ouvrez le projet **My Office Add-in**.
+1. Démarrez Visual Studio Code et ouvrez le projet **My Office Add-in**.
 2. Ouvrez le fichier **manifest.xml**.
 3. Recherchez la section `<VersionOverrides>`, puis ajoutez l'exemple d'entrée suivante à la section `<Runtimes>`. La durée de vie doit être **longue** afin que les fonctions personnalisées puissent continuer de fonctionner même quand le volet Office est fermé.
 
@@ -52,7 +52,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
    ```
 
 > [!NOTE]
-> Si votre complément inclut l’élément `Runtimes` dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
+> Si votre complément inclut l’élément `Runtimes` dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
 4. Dans l’élément `<Page>`, remplacez l’emplacement de la source **Functions.Page.Url** par **ContosoAddin.Url**.
 
@@ -107,7 +107,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 ### <a name="create-custom-functions-to-get-or-store-shared-state"></a>Créer des fonctions personnalisées pour obtenir ou stocker l’état partagé
 
 1. Dans Visual Studio Code, ouvrez le fichier **src/functions/functions.js**.
-2. Sur la ligne 1, tout en haut, insérez le code suivant. Cette opération initialise une variable globale nommée **sharedState**.
+2. Sur la ligne 1, tout en haut, insérez le code suivant. Cette opération initialise une variable globale nommée **sharedState**.
 
    ```js
    window.sharedState = "empty";
