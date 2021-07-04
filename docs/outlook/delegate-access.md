@@ -1,14 +1,14 @@
 ---
 title: Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 description: Explique comment configurer la prise en charge de la prise en charge des dossiers partagés (c’est-à-dire. accès délégué) et boîtes aux lettres partagées.
-ms.date: 06/17/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 5d7fb712b8f814184c2a444c32416d35fb1da49c
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 70578f2c78a9dd88efc9ba70d5599a13e121df53
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007768"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290711"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
@@ -40,7 +40,7 @@ Une fonctionnalité Exchange Server appelée « mappage automatique » est mise 
 
 #### <a name="shared-folders"></a>Dossiers partagés
 
-Le propriétaire de la boîte aux lettres doit [d’abord fournir l’accès à un délégué](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) en mettant à jour les autorisations du dossier de boîte aux lettres. Le délégué doit ensuite suivre les instructions décrites dans la section « Ajouter la boîte aux lettres d’une autre personne à votre liste de dossiers dans Application Web Outlook » de l’article Accéder à la boîte aux lettres [d’une](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081)autre personne.
+Le propriétaire de la boîte aux lettres doit [d’abord fournir l’accès à un délégué](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) en mettant à jour les autorisations du dossier de boîte aux lettres. Le délégué doit ensuite suivre les instructions décrites dans la section « Ajouter la boîte aux lettres d’une autre personne à votre liste de dossiers dans Outlook Web App » de l’article Accéder à la boîte aux lettres [d’une](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081)autre personne.
 
 #### <a name="shared-mailboxes-preview"></a>Boîtes aux lettres partagées (aperçu)
 
@@ -216,6 +216,10 @@ Le message se trouve maintenant dans un contexte partagé et les modules qui la 
 ### <a name="rest-and-ews"></a>REST et EWS
 
 Votre application peut utiliser REST et son autorisation doit être définie pour activer l’accès REST à la boîte aux lettres du propriétaire ou à la boîte aux lettres partagée, le `ReadWriteMailbox` cas échéant. EWS n’est pas pris en charge.
+
+### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>Boîte aux lettres utilisateur ou partagée masquée dans une liste d’adresses
+
+Si un administrateur a caché un utilisateur ou une adresse de boîte aux lettres partagée à partir d’une liste d’adresses telle que la liste d’adresses globale ,les éléments de courrier affectés ouverts dans le rapport de boîte aux lettres sont `Office.context.mailbox.item` null. Par exemple, si l’utilisateur ouvre un élément de courrier dans une boîte aux lettres partagée qui est masquée dans la liste d’adresses gal, représentant cet élément de `Office.context.mailbox.item` courrier est null.
 
 ## <a name="see-also"></a>Voir aussi
 

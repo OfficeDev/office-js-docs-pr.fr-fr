@@ -1,18 +1,18 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide Excel API JavaScript.
-ms.date: 06/07/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 480eda98c1828d11de7c3aa227468ebc408dae2c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075802"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290788"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(interface API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript](/javascript/api/excel/excel.tablecollection)pour Excel).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(interface API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript](/javascript/api/excel/excel.tablecollection)pour Excel).
 
 ## <a name="create-a-table"></a>Créer un tableau
 
@@ -165,10 +165,7 @@ Excel.run(function (context) {
 
 ![Tableau avec une nouvelle colonne calculée dans Excel.](../images/excel-tables-add-calculated-column.png)
 
-## <a name="resize-a-table-online-only"></a>Resize a table (online-only)
-
-> [!NOTE]
-> La `Table.resize` méthode est actuellement disponible uniquement dans ExcelApiOnline 1.1. Pour plus d’informations, voir Excel’ensemble de conditions requises de [l’API JavaScript en ligne uniquement.](../reference/requirement-sets/excel-api-online-requirement-set.md)
+## <a name="resize-a-table"></a>Resize a table
 
 Votre add-in peut resize un tableau sans ajouter de données au tableau ni modifier les valeurs des cellules. Pour re tailler un tableau, utilisez la [méthode Table.resize.](/javascript/api/excel/excel.table#resize_newRange_) L’exemple de code suivant montre comment reizer un tableau. Cet exemple de code utilise **ExpensesTable** de la [section](#create-a-table) Créer un tableau plus tôt dans cet article et définit la nouvelle plage du tableau sur **A1:D20**.
 
@@ -186,7 +183,7 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> La nouvelle plage du tableau doit chevaucher la plage d’origine et les en-têtes (ou le haut du tableau) doivent se trouver sur la même ligne.
+> La nouvelle plage du tableau doit chevaucher la plage d’origine et les en-têtes (ou le haut du tableau) doivent se trouver dans la même ligne.
 
 **Tableau après re resize** 
 

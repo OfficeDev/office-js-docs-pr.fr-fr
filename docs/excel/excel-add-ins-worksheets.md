@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide Excel API JavaScript.
-ms.date: 06/03/2021
+ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9e181ec800eccb938fa152bb28772b11961c7a40
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075550"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290732"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -318,11 +318,7 @@ function onWorksheetChanged(eventArgs) {
 }
 ```
 
-## <a name="detect-formula-changes-preview"></a>Détecter les modifications de formule (aperçu)
-
-> [!NOTE]
-> `Worksheet.onFormulaChanged`L’événement est actuellement disponible uniquement en prévisualisation publique. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-> 
+## <a name="detect-formula-changes"></a>Détecter les modifications de formule
 
 Votre add-in peut suivre les modifications apportées aux formules dans une feuille de calcul. Cela est utile lorsqu’une feuille de calcul est connectée à une base de données externe. Lorsque la formule change dans la feuille de calcul, l’événement dans ce scénario déclenche les mises à jour correspondantes dans la base de données externe.
 
@@ -334,7 +330,7 @@ Pour détecter les modifications apportées aux formules, inscrivez un [handler]
 L’exemple de code suivant montre comment inscrire le handler d’événements, utiliser l’objet pour récupérer le tableau formulaDetails de la formule modifiée, puis imprimer les détails sur la formule modifiée avec les `onFormulaChanged` `WorksheetFormulaChangedEventArgs` propriétés [FormulaChangedEventDetail.](/javascript/api/excel/excel.formulachangedeventdetail) [](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)
 
 > [!NOTE]
-> Cet exemple de code fonctionne uniquement lorsqu’une seule formule est modifiée.
+> Cet exemple de code ne fonctionne qu’en cas de changement d’une seule formule.
 
 ```js
 Excel.run(function (context) {

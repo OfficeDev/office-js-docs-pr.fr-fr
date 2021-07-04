@@ -1,15 +1,15 @@
 ---
 title: Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
 description: Découvrez comment utiliser l’API JavaScript Excel pour définir et obtenir la plage sélectionnée à l’aide de Excel API JavaScript.
-ms.date: 06/22/2021
+ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9e4c31f165b39d45fac342cb85577ef737105472
-ms.sourcegitcommit: ebb4a22a0bdeb5623c72b9494ebbce3909d0c90c
+ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
+ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "53126726"
+ms.lasthandoff: 07/03/2021
+ms.locfileid: "53290781"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
 
@@ -52,10 +52,7 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
-## <a name="select-the-edge-of-a-used-range-online-only"></a>Sélectionner le bord d’une plage utilisée (en ligne uniquement)
-
-> [!NOTE]
-> Les `Range.getRangeEdge` méthodes et les méthodes sont actuellement disponibles uniquement dans `Range.getExtendedRange` ExcelApiOnline 1.1. Pour plus d’informations, voir Excel’ensemble de conditions requises de [l’API JavaScript en ligne uniquement.](../reference/requirement-sets/excel-api-online-requirement-set.md)
+## <a name="select-the-edge-of-a-used-range"></a>Sélectionner le bord d’une plage utilisée
 
 Les méthodes [Range.getRangeEdge](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_) et [Range.getExtendedRange](/javascript/api/excel/excel.range#getExtendedRange_directionString__activeCell_) vous permet de répliquer le comportement des raccourcis de sélection du clavier, en sélectionnant le bord de la plage utilisée en fonction de la plage actuellement sélectionnée. Pour en savoir plus sur les plages utilisées, voir [Obtenir une plage utilisée.](excel-add-ins-ranges-get.md#get-used-range)
 
@@ -144,6 +141,6 @@ La capture d’écran suivante montre le même tableau que la capture d’écran
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript](excel-add-ins-ranges-set-get-values.md)
 - [Définir le format de plage à l’aide Excel API JavaScript](excel-add-ins-ranges-set-format.md)
