@@ -576,6 +576,9 @@ items:
               - name: Ensemble de conditions requises pour ExcelApi en ligne uniquement
                 href: reference/requirement-sets/excel-api-online-requirement-set.md
                 displayName: Excel
+              - name: Ensemble de pré-requise ExcelApi 1.13
+                href: reference/requirement-sets/excel-api-1-13-requirement-set.md
+                displayName: Excel
               - name: Ensemble de conditions requises ExcelApi 1.12
                 href: reference/requirement-sets/excel-api-1-12-requirement-set.md
                 displayName: Excel
