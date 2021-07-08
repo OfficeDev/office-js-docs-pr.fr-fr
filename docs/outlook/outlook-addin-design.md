@@ -1,14 +1,14 @@
 ---
 title: Conception des compléments Outlook
 description: Les instructions suivantes vous aideront à concevoir et à créer un complément attrayant, qui apportera le meilleur de votre application directement dans Outlook sur Windows, le web, iOS, Mac et Android.
-ms.date: 06/24/2019
+ms.date: 07/05/2021
 localization_priority: Priority
-ms.openlocfilehash: a669d2cf0a98ffa0ca7b7dfc3fcc5b71d291a0e0
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 35ff407fae14654b3b6aa3d543e30524d4a1a5d0
+ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077133"
+ms.lasthandoff: 07/07/2021
+ms.locfileid: "53315154"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Instructions de création d’un complément Outlook
 
@@ -30,13 +30,13 @@ Les instructions de haut niveau suivantes vous aideront à concevoir et à crée
 
    Votre complément doit être conçu à l’aide de schémas natifs de la plateforme sur laquelle Outlook s’exécute. Pour ce faire, veillez à respecter et implémenter les instructions d’interaction et visuelles définies par chaque plateforme. Outlook possède ses propres instructions et celles-ci doivent également être prises en compte. Un complément bien conçu sera une combinaison appropriée de votre expérience, de la plateforme et d’Outlook.
 
-   Cela ne signifie pas que votre complément devra être différent visuellement lorsqu’il est exécuté sur Outlook sur iOS et Outlook sur Android. Nous vous recommandons de vous référer à [Framework7](https://framework7.io/) comme une option pour vous aider dans les styles.
+   Cela ne signifie pas que votre complément devra être différent visuellement lorsqu’il est exécuté sur Outlook sur iOS et Outlook sur Android. Nous vous recommandons de vous référer à [Fluent UI](https://developer.microsoft.com/fluentui#/) comme une option pour vous aider dans les styles.
 
 3. **Faites en sorte que votre complément soit agréable à utiliser jusque dans les moindres détails**
 
    Les gens apprécient les produits qui sont attrayants sur le plan fonctionnel et visuel. Vous pouvez contribuer à garantir le succès de votre complément en créant une expérience où vous avez tenu soigneusement compte de chaque interaction et détail visuel. Les étapes nécessaires à l’exécution d’une tâche doivent être claires et pertinentes. Dans l’idéal, aucune action ne doit exiger plus d’un clic ou deux. 
    
-   Un utilisateur ne doit pas sortir du contexte pertinent pour effectuer une action. Un utilisateur doit pouvoir accéder à votre complément et en sortir facilement pour revenir à ce qu’il faisait avant. Un complément n’est pas destiné à être un emplacement où l’utilisateur passe beaucoup de temps&mdash;il doit s’agir d’une amélioration de nos fonctionnalités principales. Si votre complément est développé correctement, il nous aidera à augmenter la productivité des utilisateurs, ce qui constitue un de nos objectifs.
+   Un utilisateur ne doit pas sortir du contexte pertinent pour effectuer une action. Un utilisateur doit pouvoir facilement accéder à votre complément et en sortir pour revenir à ce qu’il faisait avant. Un complément n’est pas destiné à être un emplacement où l’utilisateur passe beaucoup de temps&mdash;il doit s’agir d’une amélioration de nos fonctionnalités principales. Si votre complément est développé correctement, il nous aidera à augmenter la productivité des utilisateurs, ce qui constitue un de nos objectifs.
 
 4. **Personnalisez votre complément à l’image de votre marque de manière judicieuse**
 
