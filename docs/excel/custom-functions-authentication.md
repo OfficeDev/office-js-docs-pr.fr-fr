@@ -1,14 +1,14 @@
 ---
 ms.date: 05/17/2020
-description: Authentifier les utilisateurs à l’aide de fonctions personnalisées dans Excel qui n’utilisent pas le volet Des tâches.
+description: Authentifier les utilisateurs à l’aide de fonctions Excel qui n’utilisent pas le volet Des tâches.
 title: Authentification pour les fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: bca3cd422330b6499e18c31ef8d7da6def81b546
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839858"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349699"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>Authentification pour les fonctions personnalisées sans interface utilisateur
 
@@ -35,7 +35,7 @@ Si un jeton n’existe pas, vous devez utiliser l’API de boîte de dialogue po
 
 Le diagramme suivant décrit ce processus de base. La ligne en pointillés indique que les fonctions personnalisées sans interface utilisateur et le volet Des tâches de votre add-in font tous deux partie de votre module, bien qu’elles utilisent des runtimes distincts.
 
-1. Vous émettrez un appel de fonction personnalisée sans interface utilisateur à partir d’une cellule d’un workbook Excel.
+1. Vous émettrez un appel de fonction personnalisée sans interface utilisateur à partir d’une cellule d’Excel de travail.
 2. La fonction personnalisée sans interface utilisateur permet de transmettre vos informations d’identification `Dialog` utilisateur à un site web.
 3. Ce site web renvoie ensuite un jeton d’accès à la fonction personnalisée sans interface utilisateur.
 4. Votre fonction personnalisée sans interface utilisateur définit ensuite ce jeton d’accès sur `storage` le .
@@ -88,9 +88,9 @@ function receiveTokenFromCustomFunction() {
 
 Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe aucun modèle ou méthode particulier que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées sans interface utilisateur. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](../develop/auth-external-add-ins.md).  
 
-Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées :  
+Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées :
 
-- `localStorage`: les fonctions personnalisées sans interface utilisateur n’ont pas accès à l’objet global et, par conséquent, n’ont pas accès aux `window` données stockées dans `localStorage` .
+- `localStorage`: les fonctions personnalisées sans interface utilisateur n’ont pas accès à l’objet global et, par conséquent, n’ont pas accès aux données `window` stockées dans `localStorage` .
 - `Office.context.document.settings`: Cet emplacement n’est pas sécurisé et les informations peuvent être extraites par toute personne utilisant le complément.
 
 ## <a name="dialog-box-api-example"></a>Exemple d’API de boîte de dialogue
@@ -146,5 +146,5 @@ Découvrez comment [déboguer des](custom-functions-debugging.md)fonctions perso
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Runtime pour les fonctions personnalisées Excel sans interface utilisateur](custom-functions-runtime.md)
+* [Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur](custom-functions-runtime.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

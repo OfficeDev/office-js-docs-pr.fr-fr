@@ -4,19 +4,19 @@ description: En savoir plus sur les ensembles Office d’API communes.
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 959f03bf41496c1506087c2851efad336cdec676
-ms.sourcegitcommit: 8fbc7c7eb47875bf022e402b13858695a8536ec5
+ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2021
-ms.locfileid: "52253346"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350203"
 ---
 # <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
-Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés des membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par un complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
-> Vous recherchez les ensembles *de conditions requises* de l’API spécifiques à l’application ? Reportez-vous aux ensembles de conditions requises des API suivants :
+> Vous recherchez les ensembles *de conditions requises* de l’API spécifiques à l’application ? Consultez les ensembles de conditions requises de l’API suivants.
 >
 > - [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md) (ExcelApi)
 > - [Ensembles de conditions requises de l’API JavaScript pour Word](word-api-requirement-sets.md) (WordApi)
@@ -36,7 +36,7 @@ Les sections suivantes listent les ensembles de conditions requises d’API comm
 
 ### <a name="activeview"></a>ActiveView
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac|Document.getActiveViewAsync|
 
@@ -50,7 +50,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="bindingevents"></a>BindingEvents
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Binding.addHandlerAsync<br>Binding.removeHandlerAsync|
 
@@ -58,7 +58,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="compressedfile"></a>CompressedFile
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel 2016 et ultérieures sur Windows<br>Excel sur le web<br>Excel 2016 et ultérieures sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format Office Open XML (OOXML) sous la forme d’un tableau d’octets<br>(Office.FileType.Compressed) lorsque vous utilisez la méthode Document.getFileAsync.|
 
@@ -66,7 +66,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="customxmlparts"></a>CustomXmlParts
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getTextAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setTextAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 
@@ -74,7 +74,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="dialogapi"></a>DialogApi
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Consultez la rubrique [Ensembles de conditions requises de l’API de boîte de dialogue](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
 
@@ -82,7 +82,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="documentevents"></a>DocumentEvents
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 
@@ -90,7 +90,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="file"></a>File
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 
@@ -98,7 +98,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="htmlcoercion"></a>HtmlCoercion
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | OneNote sur le web<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type au format HTML (Office.CoercionType.Html) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -106,7 +106,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="identityapi"></a>IdentityAPI
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Consultez la rubrique [Ensembles de conditions requises de l’API d’identité](identity-api-requirement-sets.md). | Auth.getAccessToken |
 
@@ -114,7 +114,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="imagecoercion"></a>ImageCoercion
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Voir [Ensembles de conditions requises de coercition d’image](image-coercion-requirement-sets.md). | Méthode Document.setSelectedDataAsync|
 
@@ -122,7 +122,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="mailbox"></a>Boîte aux lettres
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 |Outlook sur Windows<br>Outlook sur le web<br>Outlook sur Android<br>Outlook sur Mac<br>Outlook sur iOS|Voir [Présentation de l’ensemble de conditions requises pour les API Outlook](outlook-api-requirement-sets.md).|
 
@@ -130,7 +130,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="matrixbindings"></a>MatrixBindings
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word sur Windows<br>Word sur le web<br>Word sur iPad<br>Word sur Mac|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -138,7 +138,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="matrixcoercion"></a>MatrixCoercion
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type sur la structure de données (Office.CoercionType.Matrix) « matrice » (tableau de tableaux) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -146,7 +146,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="ooxmlcoercion"></a>OoxmlCoercion
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type au format Open Office XML (OOXML) (Office.CoercionType.Ooxml) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -162,7 +162,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="partialtablebindings"></a>PartialTableBindings
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Applications web Access||
 
@@ -170,7 +170,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="pdffile"></a>PdfFile
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web|Prend en charge la sortie au format PDF (Office.FileType.Pdf)<br>lorsque vous utilisez la méthode Document.getFileAsync.|
 
@@ -178,15 +178,15 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="ribbonapi"></a>RibbonApi
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Voir [ensembles de conditions requises de l’API du ruban.](ribbon-api-requirement-sets.md) | Office.ribbon.requestUpdate |
 
 ---
 
-### <a name="selection"></a>Selection
+### <a name="selection"></a>Sélection
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Project sur Windows<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Document.getSelectedDataAsync<br>Document.setSelectedDataAsync|
 
@@ -194,7 +194,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="settings"></a>Paramètres
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Settings.get<br>Settings.remove<br>Settings.saveAsync<br>Settings.set|
 
@@ -202,7 +202,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="sharedruntime"></a>SharedRuntime
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Voir [ensembles de conditions requises pour le runtime partagé.](shared-runtime-requirement-sets.md) | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
@@ -210,7 +210,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="tablebindings"></a>TableBindings
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.addColumnsAsync<br>Binding.addRowsAsync<br>Binding.deleteAllDataValuesAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -218,7 +218,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="tablecoercion"></a>TableCoercion
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Applications web Access<br>Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type sur la structure de données « tableau » (Office.CoercionType.Table) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -226,7 +226,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="textbindings"></a>TextBindings
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>Excel sur Mac<br>Word 2013 ou version ultérieure et Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Bindings.addFromNamedItemAsync<br>Bindings.addFromSelectionAsync<br>Bindings.getAllAsync<br>Bindings.getByIdAsync<br>Bindings.releaseByIdAsync<br>Binding.getDataAsync<br>Binding.setDataAsync|
 
@@ -234,7 +234,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="textcoercion"></a>TextCoercion
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Excel sur Windows<br>Excel sur le web<br>Excel sur iPad<br>OneNote sur le web<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Project sur Windows<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge du forçage de type au format texte (Office.CoercionType.Text) lors de la lecture et de l’écriture de données à l’aide des méthodes Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync ou Binding.setDataAsync.|
 
@@ -242,7 +242,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ### <a name="textfile"></a>TextFile
 
-|**Applications Office**|**Méthodes dans l’ensemble**|
+|**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prise en charge de sortie au format texte (Office.FileType.Text) lors de l’utilisation de la méthode Document.getFileAsync.|
 

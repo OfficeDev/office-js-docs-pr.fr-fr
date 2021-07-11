@@ -4,16 +4,16 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour supprimer
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 859214d36bdf66a284304ba1d5f7f2d642b718cb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075767"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349482"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>Supprimer les doublons à l’aide Excel API JavaScript
 
-Cet article fournit un exemple de code qui supprime les entrées en double dans une plage à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit un exemple de code qui supprime les entrées en double dans une plage à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="remove-rows-with-duplicate-entries"></a>Supprimer des lignes avec des entrées en double
 
@@ -21,7 +21,7 @@ La [méthode Range.removeDuplicates](/javascript/api/excel/excel.range#removedup
 
 `removeDuplicates`prend un `number[]` représentant les indices de la colonne qui sont vérifiés pour les doublons. Ce tableau est à base zéro et lié à la rangée, et non à la feuille de calcul. La méthode prend également un paramètre booléen qui spécifie si la première ligne est un en-tête. Lorsque **true**, la rangée du dessus est ignorée lorsque les doublons sont pris en considération. La méthode renvoie un objet qui spécifie le nombre de lignes supprimées et le nombre de lignes `removeDuplicates` `RemoveDuplicatesResult` uniques restantes.
 
-Lorsque vous utilisez la méthode `removeDuplicates` d’une plage, gardez les données suivantes à l’esprit :
+Lorsque vous utilisez la méthode `removeDuplicates` d’une plage, gardez ce qui suit à l’esprit.
 
 - `removeDuplicates`considère les valeurs de cellule, et non les résultats de la fonction. Si deux fonctions différentes évaluent le même résultat, les valeurs de la cellule ne sont pas considérées comme doublons.
 - Les cellules vides ne sont pas ignorées par`removeDuplicates`. La valeur d’une cellule vide est traitée comme toute autre valeur. Cela signifie que les rangées vides contenues au sein de la plage seront incluses dans le `RemoveDuplicatesResult`.
@@ -54,6 +54,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Couper, copier et coller des plages à l’aide de l Excel API JavaScript](excel-add-ins-ranges-cut-copy-paste.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

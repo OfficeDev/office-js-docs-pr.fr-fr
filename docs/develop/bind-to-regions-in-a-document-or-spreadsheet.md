@@ -3,16 +3,16 @@ title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: f57124a22bcc859b4fba1795faa64140cab947d9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c9a658653c562de446f3b8e5f1ea192ddfcf3b21
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076468"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350000"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
-L’accès aux données basées sur une liaison permet aux compléments de contenu et du volet Office d’accéder de façon cohérente à une zone particulière d’un document ou d’une feuille de calcul au moyen d’un identificateur. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la zone associée du document ou de la feuille de calcul. La création de liaisons apporte la valeur ajoutée suivante à votre complément :
+L’accès aux données basées sur une liaison permet aux compléments de contenu et du volet Office d’accéder de façon cohérente à une zone particulière d’un document ou d’une feuille de calcul au moyen d’un identificateur. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la région associée du document ou de la feuille de calcul. La création de liaisons fournit la valeur suivante à votre add-in.
 
 - Elle permet l’accès aux structures de données communes sur les applications Office prises en charge, telles que : tableaux, plages ou texte (série contiguë de caractères).
 - Elle permet les opérations de lecture/écriture sans exiger que l’utilisateur effectue une sélection.
@@ -38,7 +38,7 @@ Il existe [trois types de liaisons][Office. BindingType] que vous spécifiez ave
 
     Tout tableau Excel ou Word peut être la base d’une liaison de tableau. Une fois que vous établissez une liaison de tableau, chaque nouvelle ligne ou colonne qu’un utilisateur ajoute au tableau est automatiquement incluse dans la liaison.
 
-Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « addFrom » de l’objet, vous pouvez travailler avec les données et propriétés de la liaison à l’aide des méthodes de `Bindings` l’objet correspondant : [MatrixBinding], [TableBinding]ou [TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l’objet `Binding` qui vous permettent d’interagir avec les données liées.
+Après la création d’une liaison à l’aide de l’une des trois méthodes « addFrom » de l’objet, vous pouvez utiliser les données et propriétés de la liaison à l’aide des méthodes de `Bindings` l’objet correspondant : [MatrixBinding,] [TableBinding]ou [TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l’objet `Binding` qui vous permettent d’interagir avec les données liées.
 
 > [!NOTE]
 > **Quand devez-vous utiliser une liaison de matrice ou une liaison de tableau ?** Lorsque les données tabulaires avec lesquelles vous travaillez contiennent une ligne de total, vous devez utiliser une liaison de matrice si le script de votre complément doit accéder aux valeurs figurant dans la ligne de total ou détecter que la sélection de l’utilisateur figure dans la ligne de total. Si vous établissez une liaison de tableau pour des données tabulaires qui contiennent une ligne de total, la propriété [TableBinding.rowCount] et les propriétés `rowCount` et `startRow` de l’objet [BindingSelectionChangedEventArgs] dans les gestionnaires d’événements ne reflèteront pas la ligne de total dans leurs valeurs. Pour contourner cette limitation, vous devez établir une liaison de matrice pour travailler avec la ligne de total.
@@ -93,7 +93,7 @@ Dans cet exemple, le type de liaison spécifié est « Text ». Cela signifie qu
 
 Le deuxième paramètre est un objet qui contient l’ID de la nouvelle liaison créée. Si un ID n’est pas spécifié, un ID est généré automatiquement.
 
-La fonction anonyme transmise dans la fonction en tant que _troisième_ paramètre de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
+La fonction anonyme passée dans la fonction en tant que _troisième_ paramètre de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
 
 La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
@@ -154,7 +154,7 @@ function write(message){
 }
 ```
 
-**Pour Word,** le paramètre de la méthode `itemName` [addFromNamedItemAsync] fait référence à la propriété `Title` d’un `Rich Text` contrôle de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
+**Pour Word**, le paramètre de la méthode `itemName` [addFromNamedItemAsync] fait référence à la propriété `Title` d’un `Rich Text` contrôle de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
 
 Par défaut, aucune valeur n’est affectée à un contrôle `Title*` de contenu. Pour affecter un nom significatif dans l’interface utilisateur de Word, après l’insertion d’un contrôle de contenu **Texte enrichi** à partir du groupe **Contrôles** sur l’onglet **Développeur** du ruban, utilisez la commande **Propriétés** du groupe **Contrôles** pour afficher la boîte de dialogue **Propriétés du contrôle de contenu**. Définissez ensuite la propriété du contrôle de contenu sur le nom que `Title` vous souhaitez référencer à partir de votre code.
 
@@ -198,7 +198,7 @@ function write(message){
 }
 ```
 
-La fonction anonyme qui est passée dans la fonction en tant que paramètre est `callback` exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, qui contient `asyncResult` un tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
+La fonction anonyme qui est passée dans la fonction en tant que paramètre est `callback` exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, qui contient un `asyncResult` tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obtention d’une liaison par ID en utilisant la méthode getByIdAsync de l’objet Bindings
 
@@ -303,7 +303,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 `myBinding` est une variable qui contient une liaison de texte existante dans le document.
 
-Dans l’exemple, le premier paramètre est la valeur à définir sur `myBinding` . Comme il s’agit d’une liaison de texte, la valeur est de type `string`. Différents types de liaisons acceptent divers types de données.
+Dans l’exemple, le premier paramètre est la valeur à définir `myBinding` sur . Comme il s’agit d’une liaison de texte, la valeur est de type `string`. Différents types de liaisons acceptent divers types de données.
 
 La fonction anonyme qui est passée dans la fonction est un rappel qui est exécuté lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult` qui contient l’état du résultat.
 

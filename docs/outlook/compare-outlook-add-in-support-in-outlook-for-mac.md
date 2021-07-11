@@ -3,12 +3,12 @@ title: Comparer Outlook prise en charge des Outlook sur Mac
 description: Découvrez comment la prise en charge des Outlook sur Mac se compare à d’Outlook clients.
 ms.date: 07/01/2021
 localization_priority: Normal
-ms.openlocfilehash: c9cd1e8d438ba820e588a26c6a78ac6e70bc89c8
-ms.sourcegitcommit: d01d6db7050ac2dfc6d4135e1fd1974137f7a6f7
+ms.openlocfilehash: f6d7b7758e89978b5a2dc8fc98783babf250c3f6
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/02/2021
-ms.locfileid: "53275580"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348992"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparer Outlook prise en charge des Outlook sur Mac avec d’autres clients Outlook client
 
@@ -27,11 +27,11 @@ Pour plus d’informations sur la nouvelle prise en charge de l’interface util
 | Propriétés personnalisées d’un élément | Si le réseau tombe en panne, un complément peut toujours accéder aux propriétés personnalisées mises en cache. | Comme Outlook mac ne met pas en cache les propriétés personnalisées, si le réseau est en panne, les macros ne pourront pas y accéder. |
 | Détails des pièces jointes | Le type de contenu et les noms des pièces jointes dans un [objet AttachmentDetails](/javascript/api/outlook/office.attachmentdetails) dépendent du type de client :<ul><li>Exemple JSON de `AttachmentDetails.contentType`: `"contentType": "image/x-png"`. </li><li>`AttachmentDetails.name` ne contient aucune extension de nom de fichier. Par exemple, si la pièce jointe est un message dont l’objet est « RE: Summer activity », l’objet JSON qui représente le nom de la pièce jointe serait `"name": "RE: Summer activity"`.</li></ul> | <ul><li>Exemple JSON de `AttachmentDetails.contentType`: `"contentType" "image/png"`</li><li>`AttachmentDetails.name` inclut toujours une extension de nom de fichier. Les pièces jointes qui sont des éléments de messagerie ont une extension .eml et les rendez-vous ont une extension .ics. Par exemple, si une pièce jointe est un message électronique dont l’objet est « RE: Summer activity », l’objet JSON qui représente le nom de pièce jointe sera `"name": "RE: Summer activity.eml"`<p>**REMARQUE** : si un fichier est joint par programmation (par exemple, par le biais d’un complément) sans extension, `AttachmentDetails.name` ne contient pas l’extension dans le nom de fichier.</p></li></ul> |
 | Chaîne représentant le fuseau horaire dans les propriétés `dateTimeCreated` et `dateTimeModified` |Par exemple : `Thu Mar 13 2014 14:09:11 GMT+0800 (China Standard Time)` | Par exemple : `Thu Mar 13 2014 14:09:11 GMT+0800 (CST)` |
-| Précision horaire de `dateTimeCreated` et `dateTimeModified` | Si un complément utilise le code suivant, la précision est de l’ordre de la milliseconde :<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| La précision peut seulement atteindre une seconde. |
+| Précision horaire de `dateTimeCreated` et `dateTimeModified` | Si un complément utilise le code suivant, la précision est de l’ordre de la milliseconde.<br/>`JSON.stringify(Office.context.mailbox.item, null, 4);`| La précision peut seulement atteindre une seconde. |
 
 ## <a name="add-in-support-in-outlook-on-new-mac-ui-preview"></a>Prise en charge des Outlook sur la nouvelle interface utilisateur Mac (prévisualisation)
 
-Outlook sont désormais pris en charge sur la nouvelle interface utilisateur Mac (prévisualisation), jusqu’à l’ensemble de conditions requises 1.8. Toutefois, les ensembles de conditions requises et les fonctionnalités suivants ne **sont pas encore** pris en charge.
+Outlook sont désormais pris en charge sur la nouvelle interface utilisateur Mac (prévisualisation), jusqu’à l’ensemble de conditions requises 1.8. Toutefois, les ensembles de conditions requises et les fonctionnalités suivants **ne sont pas encore** pris en charge.
 
 - Ensembles de conditions requises de l’API 1.9 et 1.10
 

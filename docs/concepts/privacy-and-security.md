@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects liés à la confidentialité et à la sécurité de la plateforme de Office de l’utilisateur.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: de33e0031a8deef8632cb82baaf3ac9aa2e95c90
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076188"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349153"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -54,7 +54,7 @@ Le runtime des compléments Office gère les communications entre processus, la
 
 ### <a name="web-clients"></a>Clients web
 
-Dans les clients web pris en charge, les Office sont hébergés dans un **iFrame** qui s’exécute à l’aide de l’attribut **bac à sable** HTML5. Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les applications dans Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client **web,** le runtime des applications Office et l’API JavaScript pour Office) qui sont requis pour les prendre en charge.
+Dans les clients web pris en charge, les Office sont hébergés dans un **iFrame** qui s’exécute à l’aide de l’attribut **bac à sable** HTML5. Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les applications dans Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client web, **l’iframe,** le runtime des applications Office et l’API JavaScript pour Office) qui sont requis pour les prendre en charge.
 
 *Figure 3. Infrastructure prenant en charge les compléments Office dans les clients web Office*
 
@@ -72,7 +72,7 @@ Vous pouvez rendre vos compléments Office accessibles au public en les publian
 
 ## <a name="optional-connected-experiences"></a>Expériences connectées facultatives
 
-Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les Office, l’impact de la désactivation du paramètre Expériences connectées facultatives est que les utilisateurs ne peuvent plus accéder aux Office Store via ces clients.  Toutefois, certains add-ins Microsoft considérés comme essentiels ou critiques pour l’entreprise, et les add-ins déployés par l’administrateur informatique d’une organisation via un déploiement [centralisé](../publish/centralized-deployment.md) restent disponibles. En outre, les compléments et le Store restent disponibles Outlook sur le web, quel que soit l’état du paramètre.
+Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les Office, l’impact de la désactivation du paramètre Expériences connectées facultatives est que les utilisateurs ne peuvent plus accéder aux modules ou au Office Store via ces clients.  Toutefois, certains de ces derniers sont considérés comme essentiels ou critiques pour l’entreprise, et les modules déployés par l’administrateur informatique d’une organisation via un déploiement [centralisé](../publish/centralized-deployment.md) restent disponibles. En outre, les compléments et le Store restent disponibles Outlook sur le web, quel que soit l’état du paramètre.
 
 Pour plus d’informations Outlook comportement spécifique, voir Confidentialité, autorisations et sécurité [pour Outlook des modules.](../outlook/privacy-and-security.md#optional-connected-experiences)
 
@@ -97,7 +97,7 @@ La plateforme du add-in répond aux préoccupations des utilisateurs finaux en m
 
 - Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un add-in qu’il n’a pas utilisé auparavant, l’application cliente Office invite l’utilisateur à accorder l’autorisation au module de l’exécuter dans le document. Dans un environnement organisationnel, l’application Office client demande également à l’utilisateur si le document provient d’une source externe.
 
-- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les add-ins de contenu et du volet De tâches, les  utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers  >    >    >  **Paramètres**  >  Cataloguesde produits de confiance). Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les modules de contenu et de volet de tâches, les utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers   >    >    >  **Paramètres** Catalogues de produits de  >  **confiance).** Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
 - La conception de la plateforme de l’outil de recherche fournit la sécurité et les performances aux utilisateurs finaux des manières suivantes.
 
@@ -160,7 +160,7 @@ Comme Office sont des pages web qui s’exécutent dans un contrôle de navigate
 
 Une façon de contourner cette limitation consiste à utiliser JSON/P : fournissez un proxy pour le service web en incluant une balise de **script** avec un attribut **src** qui pointe vers un script hébergé sur un autre domaine. Vous pouvez créer au moyen d’un programme les balises **script**, en créant dynamiquement l’URL vers laquelle pointer l’attribut **src**, et en passant les paramètres à l’URL via les paramètres de requêtes de l’URI. Les fournisseurs de services web créent et hébergent du code JavaScript sur des URL spécifiques et renvoient des scripts différents selon les paramètres de requête URI. Ces scripts s’exécutent ensuite là où ils sont insérés et fonctionnent comme prévu.
 
-§LTA Ci-dessous figure un exemple de JSON/P dans l’exemple de complément Outlook. 
+§LTA Ci-dessous figure un exemple de JSON/P dans l’exemple de complément Outlook.
 
 ```js
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
@@ -194,7 +194,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
-- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
+- Utilisez la méthode [toStaticHTML](https://developer.mozilla.org/docs/Web/HTML/Reference) pour supprimer les éléments et attributs HTML dynamiques des entrées des utilisateurs avant de les transmettre à **innerHTML**.
 
 - Utilisez la fonction [encodeURIComponent](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuricomponent) ou [encodeURI](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/encodeuri) pour encoder le texte qui représente une URL ayant pour origine ou contenant une entrée utilisateur.
 
@@ -202,7 +202,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 ### <a name="tips-to-prevent-clickjacking"></a>Conseils pour éviter les « détournements de clic »
 
-Étant donné que les Office complémentaires sont restituer dans un iFrame lors de l’exécution dans un [](https://en.wikipedia.org/wiki/Clickjacking) navigateur avec des applications clientes Office, utilisez les conseils suivants pour minimiser le risque de détournement de clic : technique utilisée par les pirates informatiques pour empêcher les utilisateurs de révéler des informations confidentielles.
+Étant donné que les Office complémentaires sont restituer dans un iframe lors de l’exécution dans un [](https://en.wikipedia.org/wiki/Clickjacking) navigateur avec des applications clientes Office, utilisez les conseils suivants pour minimiser le risque de détournement de clic : technique utilisée par les pirates informatiques pour empêcher les utilisateurs de révéler des informations confidentielles.
 
 Tout d’abord, identifiez les actions sensibles que votre complément est en mesure d’effectuer, notamment celles qu’un utilisateur non autorisé pourrait utiliser à des fins malveillantes, comme effectuer une opération financière ou publier des données sensibles. Par exemple, votre complément peut permettre à l’utilisateur d’envoyer un paiement à un destinataire qu’il a lui-même défini.
 
@@ -274,4 +274,4 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 - [Stratégie d’origine identique Partie 1 : Interdiction de regarder](/archive/blogs/ieinternals/same-origin-policy-part-1-no-peeking)
 - [Stratégie d’origine identique pour JavaScript](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy)
 - [Mode de protection d’Internet Explorer](https://support.microsoft.com/help/2761180/apps-for-office-don-t-start-if-you-disable-protected-mode-for-the-restricted-sites-zone-in-internet-explorer)
-- [Contrôles de confidentialité pour Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)
+- [Contrôles de confidentialité pour Microsoft 365 Apps](/deployoffice/privacy/overview-privacy-controls)

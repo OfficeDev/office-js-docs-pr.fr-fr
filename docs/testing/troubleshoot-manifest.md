@@ -3,12 +3,12 @@ title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un Office à l’aide du schéma XML et d’autres outils.
 ms.date: 09/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 8ac543719011339b3f22a6fb77f01c0e9ed6d930
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 66127652a9abd00a3d1cb2e92a8a780b0c029327
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075536"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348621"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -19,13 +19,13 @@ Vous souhaitez peut-être valider le fichier manifeste de votre complément pour
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Valider votre manifeste avec le générateur Yeoman pour les compléments Office
 
-Si vous avez utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet :
+Si vous avez utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet.
 
 ```command&nbsp;line
 npm run validate
 ```
 
-![Image GIF animée qui montre le validateur Office Yo exécuté sur la ligne de commande et générant des résultats qui indiquent validation transmise.](../images/yo-office-validator.gif)
+![Image GIF animée qui montre le validateur Office Yo exécuté sur la ligne de commande et générant des résultats qui indiquent Validation Passed.](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).
@@ -36,20 +36,20 @@ Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Offi
 
 1. Installez [Node.js](https://nodejs.org/download/).
 
-2. Ouvrez une invite de commandes et installez le validateur avec la commande suivante.
+1. Ouvrez une invite de commandes et installez le validateur avec la commande suivante.
 
     ```command&nbsp;line
     npm install -g office-addin-manifest
     ```
 
-3. Exécutez la commande suivante *dans le répertoire racine de votre projet.*
+1. Exécutez la commande suivante *dans le répertoire racine de votre projet.*
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > Si cette commande n’est pas disponible ou ne fonctionne pas, exécutez la commande suivante à la place pour forcer l’utilisation de la dernière version de l’outil de manifeste du addin Office (en remplaçant par le nom du fichier manifeste) : `MANIFEST_FILE`
+    > Si cette commande n’est pas disponible ou ne fonctionne pas, exécutez la commande suivante à la place pour forcer l’utilisation de la dernière version de l’outil de manifeste du addin office (en remplaçant par le nom du fichier `MANIFEST_FILE` manifeste).
     >
     > ```command&nbsp;line
     > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
@@ -63,8 +63,8 @@ Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définitio
 
 1. Installez [tar](https://www.gnu.org/software/tar/) et [libxml](http://xmlsoft.org/FAQ.html), si vous ne l’avez pas déjà fait.
 
-2. Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.
-    
+1. Exécutez la commande suivante. Remplacez `XSD_FILE` par le chemin d’accès au fichier XSD manifeste et `XML_FILE` par le chemin d’accès au fichier XML manifeste.
+
     ```command&nbsp;line
     xmllint --noout --schema XSD_FILE XML_FILE
     ```

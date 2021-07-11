@@ -3,12 +3,12 @@ title: Débogage de compléments dans Office sur le web
 description: Découvrez comment utiliser Office sur le web pour tester et déboguer vos compléments.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: f7ef3fa3d6389629e28b428b9bdbe3b128896b1f
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 1ec844af555ab55d7592a9d764c6173ea9780016
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094490"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350181"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Débogage de compléments dans Office sur le web
 
@@ -18,12 +18,12 @@ Vous pouvez créer et déboguer des compléments sur un ordinateur n’exécutan
 
 Mise en route :
 
-- Obtenir un compte de développeur Microsoft 365 si vous n’en avez pas ou n’avez pas accès à un site SharePoint.
+- Obtenez un Microsoft 365 développeur si vous n’en avez pas déjà un ou si vous avez accès à un site SharePoint web.
 
   > [!NOTE]
-  > Pour obtenir un abonnement gratuit à 90 jours renouvelable Microsoft 365, participez à notre [programme de développement microsoft 365](https://developer.microsoft.com/office/dev-program). Consultez la [documentation relative au programme pour les développeurs microsoft 365](/office/developer-program/office-365-developer-program) pour obtenir des instructions détaillées sur la façon de rejoindre le programme de développement Microsoft 365 et de configurer votre abonnement.
+  > Pour obtenir un abonnement gratuit de 90 jours renouvelable Microsoft 365 développeur, rejoignez [notre programme Microsoft 365 développeur.](https://developer.microsoft.com/office/dev-program) Consultez [la documentation du](/office/developer-program/office-365-developer-program) Microsoft 365 développeur pour obtenir des instructions détaillées sur la façon de rejoindre le programme Microsoft 365 développeur et de configurer votre abonnement.
 
-- Configurez un catalogue d’applications sur SharePoint Online. Un catalogue d’applications est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour les compléments Office. Si vous disposez de votre propre site SharePoint, vous pouvez configurer une bibliothèque de documents de catalogue d’applications. Pour plus d’informations, reportez-vous [à publier des compléments de contenu et du volet Office dans un catalogue d’applications sur SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
+- Configurer un catalogue d’applications sur SharePoint Online. Un catalogue d’applications est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour Office des applications. Si vous avez votre propre site SharePoint, vous pouvez configurer une bibliothèque de documents de catalogue d’applications. Pour plus d’informations, voir [Publier des](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)applications de contenu et du volet Des tâches dans un catalogue d’applications SharePoint .
 
 
 ## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Débogage de compléments à partir d’Excel ou de Word sur le web
@@ -43,7 +43,7 @@ Pour déboguer votre complément à l’aide d’Office sur le web, procédez co
 
 3. Téléchargez le manifeste dans la bibliothèque de compléments Office du catalogue d’applications sur SharePoint.
 
-4. Lancez Excel ou Word sur le Web à partir du lanceur d’applications dans Microsoft 365, puis ouvrez un nouveau document.
+4. Lancez Excel ou Word sur le web à partir du lanceur d’applications Microsoft 365 et ouvrez un nouveau document.
 
 5. Sur l’onglet Insérer, sélectionnez **Mes compléments** ou **Compléments Office** pour insérer votre complément et le tester dans l’application.
 
@@ -51,7 +51,7 @@ Pour déboguer votre complément à l’aide d’Office sur le web, procédez co
 
 ## <a name="potential-issues"></a>Problèmes potentiels
 
-Voici certains problèmes que vous pouvez rencontrer lorsque vous effectuez des opérations de débogage :
+Voici quelques problèmes que vous pouvez rencontrer lors du débogage.
 
 - Certaines erreurs JavaScript peuvent provenir d’Office sur le web.
 

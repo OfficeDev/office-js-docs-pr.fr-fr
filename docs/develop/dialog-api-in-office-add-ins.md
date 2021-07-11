@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 01/28/2021
 localization_priority: Normal
-ms.openlocfilehash: 210b12f826e0d0d360163ee7663d6afca740a24d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 878bdeaa6752e37f8d3c67f32b42e2a5a7b962cb
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076103"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349916"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -40,7 +40,7 @@ Les API JavaScript Office incluent un objet [Dialog](/javascript/api/office/offi
 
 Pour ouvrir une boîte de dialogue, généralement une page dans un volet des tâches, votre code appelle la méthode [displayDialogAsync](/javascript/api/office/office.ui) et lui transmet l’URL de la ressource que vous voulez ouvrir. La page sur laquelle cette méthode est appelée est connue sous le nom de « page hôte ». Par exemple, si vous appelez cette méthode dans le script sur index.html d'un volet de tâches, la page index.html correspond à la page hôte de la boîte de dialogue ouverte par la méthode.
 
-La ressource ouverte dans la boîte de dialogue correspond généralement à une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple :
+La ressource ouverte dans la boîte de dialogue correspond généralement à une page, mais ce peut être une méthode du contrôleur dans une application MVC, un itinéraire, une méthode de service web ou toute autre ressource. Dans cet article, les termes « page » ou « site web » font référence à la ressource dans la boîte de dialogue. Le code suivant est un exemple simple.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
@@ -55,7 +55,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 
 Une fois que la première page (ou toute autre ressource) est chargée, un utilisateur peut utiliser des liens ou une autre interface utilisateur pour accéder à n’importe quel site web (ou n’importe quelle autre ressource) qui utilise le protocole HTTPS. Vous pouvez également concevoir la première page de façon à ce que l’utilisateur soit immédiatement redirigé vers un autre site.
 
-Par défaut, la boîte de dialogue occupera 80 % de la hauteur et de la largeur de l’écran de l’appareil, mais vous pouvez définir des pourcentages différents en transmettant un objet de configuration à la méthode, comme indiqué dans l’exemple suivant :
+Par défaut, la boîte de dialogue occupera 80 % de la hauteur et de la largeur de l’écran de l’appareil, mais vous pouvez définir des pourcentages différents en transmettant un objet de configuration à la méthode, comme indiqué dans l’exemple suivant.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20});
@@ -70,7 +70,7 @@ Définissez les deux valeurs sur 100 % pour bénéficier d’une réelle d’ex
 
 ### <a name="take-advantage-of-a-performance-option-in-office-on-the-web"></a>Tirer parti d’une option de performances dans Office sur le web
 
-La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office sur le web, la boîte de dialogue s’ouvre sous la forme d’un iframe flottant et non d’une fenêtre indépendante ; elle s’ouvre ainsi plus rapidement. Voici un exemple :
+La propriété `displayInIframe` est une propriété supplémentaire dans l’objet de configuration que vous pouvez transmettre à `displayDialogAsync`. Lorsque cette propriété est définie sur `true` et que le complément est en cours d’exécution dans un document ouvert dans Office sur le web, la boîte de dialogue s’ouvre sous la forme d’un iframe flottant et non d’une fenêtre indépendante ; elle s’ouvre ainsi plus rapidement. Voici un exemple.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true});
@@ -88,7 +88,7 @@ La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet O
 - la page active dans la boîte de dialogue se trouve dans le même domaine que la page hôte ;
 - La Office’API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque d’API JavaScript Office, le script de la page doit affecter une méthode à la propriété, bien qu’il puisse s’agit `Office.initialize` d’une méthode vide. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
-Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple :
+Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
 
 ```js
 if (loginSuccess) {
@@ -109,7 +109,7 @@ if (loginSuccess) {
 }
 ```
 
-La page hôte doit être configurée de façon à recevoir le message. Pour ce faire, ajoutez un paramètre de rappel à l’appel d’origine de `displayDialogAsync`. Le rappel attribue un gestionnaire à l’événement `DialogMessageReceived`. Voici un exemple :
+La page hôte doit être configurée de façon à recevoir le message. Pour ce faire, ajoutez un paramètre de rappel à l’appel d’origine de `displayDialogAsync`. Le rappel attribue un gestionnaire à l’événement `DialogMessageReceived`. Voici un exemple.
 
 ```js
 var dialog;
@@ -127,7 +127,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 > - `processMessage` est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.
 > - La variable `dialog` est déclarée avec une portée plus large que le rappel, car elle est également référencée dans `processMessage`.
 
-Voici un exemple simple de gestionnaire pour l’événement `DialogMessageReceived` :
+Voici un exemple simple de gestionnaire pour l’événement `DialogMessageReceived`.
 
 ```js
 function processMessage(arg) {
@@ -155,7 +155,7 @@ function processMessage(arg) {
 
 Pour voir un exemple de complément qui utilise ces techniques, consultez la rubrique relative à l’[exemple d’API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-Si le complément a besoin d’ouvrir une autre page du volet Office après avoir reçu le message, vous pouvez utiliser la méthode `window.location.replace` (ou `window.location.href`) en tant que dernière ligne du gestionnaire. Voici un exemple :
+Si le complément a besoin d’ouvrir une autre page du volet Office après avoir reçu le message, vous pouvez utiliser la méthode `window.location.replace` (ou `window.location.href`) en tant que dernière ligne du gestionnaire. Voici un exemple.
 
 ```js
 function processMessage(arg) {
@@ -170,7 +170,7 @@ Pour voir un exemple de complément qui effectue ce type d’action, consultez l
 
 ### <a name="conditional-messaging"></a>Messagerie conditionnelle
 
-Étant donné que vous pouvez envoyer plusieurs appels `messageParent` à partir de la boîte de dialogue, mais que vous n’avez qu’un seul gestionnaire dans la page hôte pour l’événement `DialogMessageReceived`, le gestionnaire doit utiliser la logique conditionnelle pour distinguer les différents messages. Par exemple, si la boîte de dialogue invite un utilisateur à se connecter à un fournisseur d’identité tel qu’un compte Microsoft ou Google, elle envoie le profil de l’utilisateur en tant que message. Si l’authentification échoue, la boîte de dialogue envoie des informations sur l’erreur à la page hôte, comme dans l’exemple suivant :
+Étant donné que vous pouvez envoyer plusieurs appels `messageParent` à partir de la boîte de dialogue, mais que vous n’avez qu’un seul gestionnaire dans la page hôte pour l’événement `DialogMessageReceived`, le gestionnaire doit utiliser la logique conditionnelle pour distinguer les différents messages. Par exemple, si la boîte de dialogue invite un utilisateur à se connecter à un fournisseur d’identité tel qu’un compte Microsoft ou Google, elle envoie le profil de l’utilisateur en tant que message. Si l’authentification échoue, la boîte de dialogue envoie des informations d’erreur à la page hôte, comme dans l’exemple suivant.
 
 ```js
 if (loginSuccess) {
@@ -216,7 +216,7 @@ Votre add-in peut envoyer des messages à partir de la [page hôte](dialog-api-i
 
 ### <a name="use-messagechild-from-the-host-page"></a>Utilisation `messageChild()` à partir de la page hôte
 
-Lorsque vous appelez l’API Office boîte de dialogue pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être affectée à une variable dont l’étendue est supérieure à celle de la méthode [displayDialogAsync,](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) car l’objet sera référencé par d’autres méthodes. Voici un exemple :
+Lorsque vous appelez l’API Office boîte de dialogue pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être affectée à une variable dont l’étendue est supérieure à celle de la méthode [displayDialogAsync,](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) car l’objet sera référencé par d’autres méthodes. Voici un exemple.
 
 ```javascript
 var dialog;
@@ -272,7 +272,7 @@ function onMessageFromParent(event) {
 }
 ```
 
-Il est préférable de vérifier que votre handler est correctement enregistré. Vous pouvez le faire en passant un rappel à la `addHandlerAsync` méthode. Cette tentative s’exécute lorsque la tentative d’inscription du handler est terminée. Utilisez le handler pour enregistrer ou afficher une erreur si le handler n’a pas été enregistré avec succès. Voici un exemple. Notez `reportError` qu’il s’agit d’une fonction, qui n’est pas définie ici, qui enregistre ou affiche l’erreur.
+Il est préférable de vérifier que votre handler est correctement enregistré. Vous pouvez le faire en passant un rappel à la `addHandlerAsync` méthode. Cela s’exécute lorsque la tentative d’inscription du handler est terminée. Utilisez le handler pour enregistrer ou afficher une erreur si le handler n’a pas été enregistré avec succès. Voici un exemple. Notez `reportError` qu’il s’agit d’une fonction, qui n’est pas définie ici, qui enregistre ou affiche l’erreur.
 
 ```javascript
 Office.onReady()
@@ -292,7 +292,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Messagerie conditionnelle d’une page parent à une boîte de dialogue
 
-Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
+Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
 
 > [!NOTE]
 > Dans certains cas, l’API, qui fait partie de l’ensemble de conditions `messageChild` [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte.](parent-to-dialog.md)
@@ -302,7 +302,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ## <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 
-Vous pouvez implémenter un bouton de fermeture dans la boîte de dialogue. Pour ce faire, le gestionnaire d’événements Click du bouton doit utiliser `messageParent` pour indiquer à la page hôte que vous avez cliqué sur le bouton. Voici un exemple :
+Vous pouvez implémenter un bouton de fermeture dans la boîte de dialogue. Pour ce faire, le gestionnaire d'événements Click du bouton doit utiliser `messageParent` pour indiquer à la page hôte que vous avez cliqué sur le bouton. Voici un exemple.
 
 ```js
 function closeButtonClick() {

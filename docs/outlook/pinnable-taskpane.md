@@ -3,12 +3,12 @@ title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 39af3a532d553835b02709301c998a78dc9958bb
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: 57a17a90fe565adb3ffb9d23e3b169bc83be2735
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093867"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348880"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 
@@ -17,13 +17,15 @@ La commande de forme UX [taskpane](add-in-commands-for-outlook.md#launching-a-ta
 Toutefois, par défaut, si un utilisateur a un complément de volet Office ouvert pour un message dans le volet de lecture et sélectionne un nouveau message, le volet Office est automatiquement fermé. Pour un complément très sollicité, l’utilisateur peut préférer conserver ce volet ouvert, supprimant ainsi le besoin de réactiver le complément sur chaque message. Avec les volets Office épinglables, votre complément peut donner à l’utilisateur cette option.
 
 > [!NOTE]
-> Bien que la fonctionnalité des volets des tâches épinglables ait été introduite dans l' [ensemble de conditions requises 1,5](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), elle est actuellement uniquement disponible pour les abonnés Microsoft 365 à l’aide des éléments suivants.
-> - Outlook 2016 ou version ultérieure sur Windows (Build 7668,2000 ou version ultérieure pour les utilisateurs des canaux actifs ou Office Insider, générer 7900. xxxx ou une version ultérieure pour les utilisateurs des canaux différés)
-> - Outlook 2016 ou version ultérieure sur Mac (version 16.13.503 ou ultérieure)
+> Bien que la fonctionnalité des volets des tâches épinglables soit une nouveauté de l’ensemble de conditions requises [1.5,](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)elle n’est actuellement disponible que pour les abonnés Microsoft 365 utilisant ce qui suit :
+>
+> - Outlook 2016 ou version ultérieure sur Windows (build 7668.2000 ou ultérieure pour les utilisateurs des canaux Insider actuels ou Office, build 7900.xxxx ou version ultérieure pour les utilisateurs dans les canaux différés)
+> - Outlook 2016 version ultérieure sur Mac (version 16.13.503 ou ultérieure)
 > - Outlook moderne sur le web
 
 > [!IMPORTANT]
-> Les volets des tâches pouvant être épinglés ne sont pas disponibles pour les éléments suivants.
+> Les volets Des tâches épinglables ne sont pas disponibles pour les tâches suivantes :
+>
 > - Rendez-vous/réunions
 > - Outlook.com
 

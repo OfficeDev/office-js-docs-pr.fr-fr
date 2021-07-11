@@ -3,12 +3,12 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: Découvrez comment coordonner visuellement les thèmes tels que les polices et les couleurs à appliquer aux présentations, documents, feuilles de calcul et e-mails.
 ms.date: 10/14/2019
 localization_priority: Normal
-ms.openlocfilehash: 337e3e235b49944e36dc6e9cdabaa3f036d8c7e1
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 481056d60f0455d0b6f7c6ac477fce1bb323b5a2
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076986"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348432"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
@@ -44,7 +44,7 @@ Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le  g
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Couleurs et polices de thème de l’interface utilisateur Office
 
-Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, vous utilisez le **compte** de Office le thème (à partir de  >    >   n’importe Office application).
+Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, vous utilisez le compte de Office le thème (à partir de  >    >   n’importe Office application).
 
 ![Office de thème.](../images/office15-app-office-theme-picker.png)
 
@@ -151,9 +151,9 @@ Pour effectuer cette opération dans Visual Studio, procédez comme suit.
 
 3. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
-4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-5. Dans les pages HTML qui implémentent l’interface utilisateur de votre complément, telles que Home.html dans le modèle par défaut, ajoutez la balise `<link>` suivante à l’intérieur de la balise `<head>` qui référence le fichier OfficeThemes.css :
+5. Dans les pages HTML qui implémentent l’interface utilisateur de votre application, telles que Home.html dans le modèle par défaut, ajoutez la balise suivante à l’intérieur de la balise qui fait référence au fichier `<link>` `<head>` OfficeThemes.css.
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />

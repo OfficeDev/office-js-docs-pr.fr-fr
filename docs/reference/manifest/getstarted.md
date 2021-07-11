@@ -1,22 +1,22 @@
 ---
 title: Élément GetStarted dans le fichier manifeste
-description: Fournit des informations utilisées par la légende qui apparaît lorsque le complément est installé dans Word, Excel, PowerPoint et OneNote.
+description: Fournit des informations utilisées par la callout qui s’affiche lorsque le add-in est installé dans Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 0ad6196dc45e4ea06c2b43ac5da66a560ab0b899
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771413"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348684"
 ---
 # <a name="getstarted-element"></a>Élément GetStarted
 
-Fournit des informations utilisées par la légende qui apparaît lorsque le complément est installé dans Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [DesktopFormFactor](desktopformfactor.md).
+Fournit des informations utilisées par la callout qui s’affiche lorsque le add-in est installé dans Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [DesktopFormFactor](desktopformfactor.md).
 
 ## <a name="child-elements"></a>Éléments enfants
 
-| Élément                       | Obligatoire | Description                                        |
+| Élément                       | Requis | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Titre](#title)               | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément     |
 | [Description](#description)   | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
@@ -24,22 +24,22 @@ Fournit des informations utilisées par la légende qui apparaît lorsque le com
 
 ### <a name="title"></a>Titre 
 
-Obligatoire. Le titre est utilisé pour la partie supérieure de la légende. L’attribut **RESID** fait référence à un ID valide dans l’élément **ShortStrings** dans la section [Resources](resources.md) et ne peut pas contenir plus de 32 caractères.
+Obligatoire. Le titre est utilisé pour la partie supérieure de la légende. **L’attribut resid** fait référence à un ID valide dans l’élément **ShortStrings** de la section [Resources](resources.md) et ne peut pas avoir plus de 32 caractères.
 
 ### <a name="description"></a>Description
 
-Obligatoire. Description/Contenu du corps de la légende. L’attribut **RESID** fait référence à un ID valide dans l’élément **LongStrings** dans la section [Resources](resources.md) et ne peut pas contenir plus de 32 caractères.
+Obligatoire. Description/Contenu du corps de la légende. **L’attribut resid** fait référence à un ID valide dans l’élément **LongStrings** de la section [Resources](resources.md) et ne peut pas être plus de 32 caractères.
 
 ### <a name="learnmoreurl"></a>LearnMoreUrl
 
-Obligatoire. URL vers une page dans laquelle l’utilisateur peut obtenir des informations sur votre complément. L’attribut **RESID** fait référence à un ID valide dans l’élément **URLs** de la section [Resources](resources.md) et ne peut pas contenir plus de 32 caractères.
+Obligatoire. URL vers une page dans laquelle l’utilisateur peut obtenir des informations sur votre complément. **L’attribut resid** fait référence à un ID valide dans l’élément **Urls** de la section [Resources](resources.md) et ne peut pas avoir plus de 32 caractères.
 
 > [!NOTE]
 > **LearnMoreUrl** n’est pas actuellement restitué dans les clients Word, Excel ou PowerPoint. Nous vous recommandons d’ajouter cette URL pour tous les clients afin que l’URL soit restituée lorsqu’elle est disponible. 
 
 ## <a name="see-also"></a>Voir aussi
 
-Les exemples de code suivants utilisent l’élément **GetStarted** :
+Les exemples de code suivants utilisent **l’élément GetStarted.**
 
 * [Complément web Excel pour manipuler la mise en forme de tableau et de graphique](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
 * [Complément Word JavaScript SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)

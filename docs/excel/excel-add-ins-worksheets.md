@@ -3,12 +3,12 @@ title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Ex
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide Excel API JavaScript.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 0923bfe4b0880b572c4df6d0b8ed360ca46cee76
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: a8a7da6ce01f8c0cc82c8ab9c764b032027f585c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290732"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349412"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -330,7 +330,7 @@ Pour détecter les modifications apportées aux formules, inscrivez un [handler]
 L’exemple de code suivant montre comment inscrire le handler d’événements, utiliser l’objet pour récupérer le tableau formulaDetails de la formule modifiée, puis imprimer les détails sur la formule modifiée avec les `onFormulaChanged` `WorksheetFormulaChangedEventArgs` propriétés [FormulaChangedEventDetail.](/javascript/api/excel/excel.formulachangedeventdetail) [](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)
 
 > [!NOTE]
-> Cet exemple de code ne fonctionne qu’en cas de changement d’une seule formule.
+> Cet exemple de code fonctionne uniquement lorsqu’une seule formule est modifiée.
 
 ```js
 Excel.run(function (context) {
@@ -374,11 +374,11 @@ Les images suivantes montrent les plages retournées par la propriété `address
 
 ![Les données de tableau Excel avant d’être triées.](../images/excel-sort-event-before.png)
 
-Si un tri de haut en bas est effectué sur «**Q1**» (valeurs dans «**B**»), les lignes en surbrillance suivantes sont renvoyées par `WorksheetRowSortedEventArgs.address`:
+Si un tri de haut en bas est effectué sur «**Q1**» (les valeurs dans «**B**») les lignes mises en surbrill plan suivantes sont renvoyées par `WorksheetRowSortedEventArgs.address` .
 
 ![Données d’un tableau dans Excel après un tri de haut en bas. Les lignes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-row.png)
 
-Si un tri de gauche à droite est effectué sur «**Quinces**» (valeurs dans «**4**») sur les données d’origine, les colonnes en surbrillance suivantes sont renvoyées par `WorksheetColumnsSortedEventArgs.address` :
+Si un tri de gauche à droite est effectué sur «**Quinces**» (les valeurs de «**4**») sur les données d’origine, les colonnes mises en surbrillance suivantes sont renvoyées par `WorksheetColumnsSortedEventArgs.address` .
 
 ![Données d’un tableau dans Excel après un tri de gauche à droite. Les colonnes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-column.png)
 
@@ -435,7 +435,7 @@ Excel.run(function (context) {
 
 ## <a name="filter-data"></a>Filtrer les données
 
-Un [filtre automatique](/javascript/api/excel/excel.autofilter) applique des filtres de données sur une plage de cellules dans la feuille de calcul. Cela a été créé avec `Worksheet.autoFilter.apply`, qui comporte les paramètres suivants:
+Un [filtre automatique](/javascript/api/excel/excel.autofilter) applique des filtres de données sur une plage de cellules dans la feuille de calcul. Il est créé avec `Worksheet.autoFilter.apply` , qui a les paramètres suivants.
 
 - `range`: La plage à laquelle le filtre est appliqué, spécifiée sous la forme d’un`Range` objet ou d’une chaîne.
 - `columnIndex`: L’index de colonne de base zéro par rapport à laquelle les critères de filtre sont évaluées.

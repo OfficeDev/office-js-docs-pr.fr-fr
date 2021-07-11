@@ -1,24 +1,24 @@
 ---
-title: Résolution des problèmes de l’outil de dépannage des add-ins Excel
-description: Découvrez comment résoudre les erreurs de développement dans les add-ins Excel.
+title: Résolution des problèmes Excel des modules
+description: Découvrez comment résoudre les erreurs de développement dans les Excel de développement.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0efc8b4d25d9d748975146e187104972e4ad58a9
-ms.sourcegitcommit: 1cdf5728102424a46998e1527508b4e7f9f74a4c
+ms.openlocfilehash: cb622a1805be7bec61168ab37a41709a57075788
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "50270727"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349440"
 ---
-# <a name="troubleshooting-excel-add-ins"></a>Résolution des problèmes de l’outil de dépannage des add-ins Excel
+# <a name="troubleshooting-excel-add-ins"></a>Résolution des problèmes Excel des modules
 
-Cet article traite des problèmes de résolution des problèmes propres à Excel. Utilisez l’outil de commentaires en bas de la page pour suggérer d’autres problèmes qui peuvent être ajoutés à l’article.
+Cet article traite des problèmes de résolution propres aux Excel. Utilisez l’outil de commentaires en bas de la page pour suggérer d’autres problèmes qui peuvent être ajoutés à l’article.
 
 ## <a name="api-limitations-when-the-active-workbook-switches"></a>Limitations de l’API lorsque le workbook actif bascule
 
-Les add-ins pour Excel sont destinés à fonctionner sur un seul et même workbook à la fois. Des erreurs peuvent survenir lorsqu’un workbook distinct de celui qui exécute le add-in prend le focus. Cela se produit uniquement lorsque des méthodes particulières sont en cours d’appel lorsque le focus change.
+Les Excel sont destinés à fonctionner sur un seul et même workbook à la fois. Des erreurs peuvent survenir lorsqu’un workbook distinct de celui qui exécute le add-in prend le focus. Cela se produit uniquement lorsque des méthodes particulières sont en cours d’appel lorsque le focus change.
 
-Les API suivantes sont affectées par ce commutateur de workbook :
+Les API suivantes sont affectées par ce commutateur de workbook.
 
 |sur les API JavaScript pour Excel | Erreur lancée |
 |--|--|
@@ -40,17 +40,17 @@ Les API suivantes sont affectées par ce commutateur de workbook :
 | `WorksheetFreezePanes.unfreeze` | GeneralException |
 
 > [!NOTE]
-> Cela s’applique uniquement à plusieurs workbooks Excel ouverts sur Windows ou Mac.
+> Cela s’applique uniquement à plusieurs Excel de travail ouverts sur Windows ou Mac.
 
 ## <a name="coauthoring"></a>Co-édition
 
-Voir [Co-auteur dans les add-ins Excel](co-authoring-in-excel-add-ins.md) pour les modèles à utiliser avec des événements dans un environnement de co-auteur. L’article traite également des conflits potentiels de fusion lors de l’utilisation de certaines API, telles que [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
+Voir [Co-auteur dans Excel pour](co-authoring-in-excel-add-ins.md) les modèles à utiliser avec des événements dans un environnement de co-auteur. L’article traite également des conflits potentiels de fusion lors de l’utilisation de certaines API, telles que [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
 
 ## <a name="known-issues"></a>Problèmes connus
 
 ### <a name="binding-events-return-temporary-binding-obects"></a>Les événements de liaison retournent `Binding` desobects temporaires
 
-[BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) et [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) retournent tous deux un objet temporaire qui contient l’ID de l’objet qui a élevé l’événement. `Binding` `Binding` Utilisez cet ID avec `BindingCollection.getItem(id)` pour récupérer `Binding` l’objet qui a levé l’événement.
+[BindingDataChangedEventArgs.binding](/javascript/api/excel/excel.bindingdatachangedeventargs#binding) et [BindingSelectionChangedEventArgs.binding](/javascript/api/excel/excel.bindingselectionchangedeventargs#binding) retournent tous deux un objet temporaire qui contient l’ID de l’objet qui a élevé l’événement. `Binding` `Binding` Utilisez cet ID pour `BindingCollection.getItem(id)` récupérer `Binding` l’objet qui a levé l’événement.
 
 L’exemple de code suivant montre comment utiliser cet ID de liaison temporaire pour récupérer l’objet `Binding` associé. Dans l’exemple, un listener d’événement est affecté à une liaison. L’écouteur appelle `getBindingId` la méthode lorsque `onDataChanged` l’événement est déclenché. La `getBindingId` méthode utilise l’ID de l’objet temporaire pour récupérer `Binding` `Binding` l’objet qui a levé l’événement.
 
@@ -84,11 +84,11 @@ function getBindingId(eventArgs) {
 
 ### <a name="cell-format-usestandardheight-and-usestandardwidth-issues"></a>Format des `useStandardHeight` cellules `useStandardWidth` et problèmes
 
-La [propriété useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) de ne fonctionne pas `CellPropertiesFormat` correctement dans Excel sur le web. En raison d’un problème dans l’interface utilisateur d’Excel sur le web, la définition de la propriété pour calculer la hauteur de manière `useStandardHeight` `true` imprécise sur cette plateforme. Par exemple, une hauteur standard de **14** est modifiée à **14,25** dans Excel sur le web.
+La [propriété useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) de ne fonctionne pas correctement dans `CellPropertiesFormat` Excel sur le Web. En raison d’un problème dans l Excel sur le Web’interface utilisateur, la définition de la propriété pour calculer la hauteur de manière `useStandardHeight` `true` imprécise sur cette plateforme. Par exemple, une hauteur standard de **14** est modifiée à **14,25** Excel sur le Web.
 
 Sur toutes les plateformes, les propriétés [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#useStandardHeight) et [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#useStandardWidth) sont uniquement destinées `CellPropertiesFormat` à être définies sur `true` . La définition de ces `false` propriétés n’a aucun effet. 
 
-### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>Méthode `getImage` Range non pris en cas de non-traitement dans Excel pour Mac
+### <a name="range-getimage-method-unsupported-on-excel-for-mac"></a>Méthode `getImage` Range non pris en Excel pour Mac
 
 La méthode [Range getImage](/javascript/api/excel/excel.range#getImage__) n’est actuellement pas prise en charge dans Excel pour Mac. Consultez [la #235 OfficeDev/office-js](https://github.com/OfficeDev/office-js/issues/235) pour l’état actuel.
 
@@ -98,5 +98,5 @@ Les [méthodes Worksheet.getRange(address)](/javascript/api/excel/excel.workshee
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Résoudre les erreurs de développement avec les add-ins Office](../testing/troubleshoot-development-errors.md)
+- [Résoudre les erreurs de développement avec Office de recherche](../testing/troubleshoot-development-errors.md)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)

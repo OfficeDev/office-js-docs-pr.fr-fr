@@ -4,12 +4,12 @@ description: Les compléments Outlook sont des intégrations conçues par des ti
 ms.date: 06/15/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 3fb6c47d0dc2b41ecf657ea4d453c2ffcb8a8902
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6a490e78b524e84d53461838b8a2d5a15be031bd
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076755"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348922"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -27,7 +27,7 @@ Les éléments Outlook qui prennent en charge les compléments incluent notammen
 
 ## <a name="extension-points"></a>Points d’extension
 
-Les points d’extension correspondent à la manière dont les compléments sont intégrés à Outlook. Voici les méthodes possibles :
+Les points d’extension correspondent à la manière dont les compléments sont intégrés à Outlook. Voici les méthodes possibles.
 
 - Les compléments peuvent indiquer des boutons qui apparaissent dans les surfaces de commande dans les messages et les rendez-vous. Pour plus d’informations, voir [Commandes de complément pour Outlook](add-in-commands-for-outlook.md).
 

@@ -3,12 +3,12 @@ title: Extraire des chaînes d’entités d’un élément Outlook
 description: Découvrez comment extraire des chaînes d’entités d’un élément Outlook dans un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: b15ad23427f79a333ae8ae9d342acdf28e6d010c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 987ba7626acb95bd5090e2f2350f71ecc8701e59
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608942"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348971"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extraire des chaînes d’entité d’un élément Outlook
 
@@ -205,7 +205,7 @@ Les sections suivantes expliquent comment l’exemple suivant (le fichier defaul
 
 ## <a name="extracting-entities-upon-initialization"></a>Extraction d’entités lors de l’initialisation
 
-Lors de l’événement [Office.initialize](/javascript/api/office#office-initialize-reason-), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie la variable globale `_MyEntities` tableau d’instances des entités prises en charge. Le code JavaScript associé est présenté ci-dessous.
+Lors de l’événement [Office.initialize](/javascript/api/office#office-initialize-reason-), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie à la variable globale un tableau `_MyEntities` d’instances d’entités pris en charge. Le code JavaScript associé est présenté ci-dessous.
 
 
 ```js
@@ -258,7 +258,7 @@ function myGetAddresses()
 ## <a name="extracting-contact-information"></a>Extraction d’informations de contact
 
 
-Lorsque l’utilisateur clique sur le bouton **Obtenir des informations de contact**, le gestionnaire d’événements `myGetContacts` obtient un tableau de contacts avec leurs informations à partir de la propriété [contacts](/javascript/api/outlook/office.entities#contacts) de l’objet `_MyEntities`, si des contacts ont été extraits. Chaque contact extrait est stocké sous la forme d’un objet [Contact](/javascript/api/outlook/office.contact) dans le tableau. `myGetContacts` obtient d’autres données sur le contact. Notez que le contexte détermine si Outlook peut extraire un contact à partir d’un élément &mdash; Il doit exister une signature à la fin d’un message électronique ou au moins une partie des informations suivantes à proximité du contact :
+Lorsque l’utilisateur  clique sur le bouton Obtenir les informations de contact, le handler d’événements obtient un tableau de contacts avec leurs informations à partir de la propriété contacts de l’objet, si des contacts ont été `myGetContacts` [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` extraits. Chaque contact extrait est stocké en tant [qu’objet Contact](/javascript/api/outlook/office.contact) dans le tableau. `myGetContacts` obtient des données supplémentaires sur chaque contact. Notez que le contexte détermine si Outlook peut extraire un contact d’un élément d’une signature à la fin d’un message électronique, ou au moins certaines des informations suivantes doivent exister à proximité du &mdash; contact.
 
 
 - La chaîne représentant le nom du contact à partir de la propriété [Contact.personName](/javascript/api/outlook/office.contact#personname).
@@ -373,7 +373,7 @@ Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de réuni
 
 
  > [!NOTE]
- > Seuls les messages mais pas les rendez-vous prennent en charge le `MeetingSuggestion` type d’entité.
+ > Seuls les messages, mais pas les rendez-vous, ne peuvent prendre `MeetingSuggestion` en charge le type d’entité.
 
 Chaque suggestion de réunion extraite est stockée sous la forme d’un objet [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) dans le tableau. `myGetMeetingSuggestions` obtient d’autres données sur chaque suggestion de réunion :
 

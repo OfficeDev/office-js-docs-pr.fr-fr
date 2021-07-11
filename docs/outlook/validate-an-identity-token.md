@@ -3,18 +3,18 @@ title: Valider un jeton d’identité de complément Outlook
 description: Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6ad5f99093530528ec83cfc7a6e3a2571e0df491
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: ba499fa2ece03a326eabb1a48bb19e33c3feea94
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45094105"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348838"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
 Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu. Les jetons d’identité d’utilisateur Exchange sont des jetons Web JSON (JWT). Les étapes nécessaires pour valider un jeton JWT sont décrites dans le document [RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt).
 
-Nous vous suggérons d’utiliser un processus en quatre étapes pour valider le jeton d’identité et obtenir l’identificateur unique de l’utilisateur. Dans un premier temps, extrayez le jeton JWT (JSON Web Token) à partir d’une chaîne d’URL encodée au format base64. Dans un deuxième temps, assurez-vous que le jeton est bien formé, c’est-à-dire qu’il est adapté à votre complément Outlook, qu’il n’a pas expiré et que vous pouvez extraire une URL valide pour le document de métadonnées d’authentification. Dans un troisième temps, récupérez le document de métadonnées d’authentification sur le serveur Exchange et validez la signature jointe au jeton d’identité. Enfin, calculez un identificateur unique pour l’utilisateur en concaténant l’ID Exchange de l’utilisateur avec l’URL du document de métadonnées d’authentification.
+Nous vous suggérons d’utiliser un processus en quatre étapes pour valider le jeton d’identité et obtenir l’identificateur unique de l’utilisateur. Dans un premier temps, extrayez le jeton JWT (JSON Web Token) à partir d’une chaîne d’URL encodée au format base64. Dans un deuxième temps, assurez-vous que le jeton est bien formé, c’est-à-dire qu’il est adapté à votre complément Outlook, qu’il n’a pas expiré et que vous pouvez extraire une URL valide pour le document de métadonnées d’authentification. Dans un troisième temps, récupérez le document de métadonnées d’authentification sur le serveur Exchange et validez la signature jointe au jeton d’identité. Enfin, calculez un identificateur unique pour l’utilisateur en concatenant l’ID Exchange de l’utilisateur avec l’URL du document de métadonnées d’authentification.
 
 ## <a name="extract-the-json-web-token"></a>Extraction du jeton Web JSON
 
@@ -32,22 +32,22 @@ Une fois les trois composants décodés, vous pouvez poursuivre avec la validati
 
 ## <a name="validate-token-contents"></a>Validation du contenu du jeton
 
-Pour valider le contenu du jeton, vous devez vérifier ce qui suit.
+Pour valider le contenu du jeton, vous devez vérifier les éléments suivants :
 
-- Vérifiez l’en-tête et assurez-vous que :
-    - `typ`la revendication est définie sur `JWT` .
-    - `alg`la revendication est définie sur `RS256` .
-    - `x5t`la revendication est présente.
+- Vérifiez l’en-tête et vérifiez que :
+  - `typ` est définie sur `JWT` .
+  - `alg` est définie sur `RS256` .
+  - `x5t` est présente.
 
-- Vérifiez la charge utile et assurez-vous que :
-    - `amurl`la revendication dans le `appctx` est définie sur l’emplacement d’un fichier manifeste de clés de signature de jeton autorisé. Par exemple, la valeur attendue `amurl` pour Microsoft 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1 . Pour plus d’informations, reportez-vous [à la section](#verify-the-domain) suivante.
-    - L’heure actuelle est comprise entre les heures spécifiées dans les `nbf` `exp` revendications et. La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
-    - `aud`claim est l’URL attendue pour votre complément.
-    - `version`la revendication à l’intérieur de la `appctx` revendication est définie sur `ExIdTok.V1` .
+- Vérifiez la charge utile et vérifiez que :
+  - `amurl` est définie sur l’emplacement d’un fichier manifeste de clé de signature de jetons `appctx` autorisé. Par exemple, la valeur `amurl` attendue pour Microsoft 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1 . Voir la section suivante [Vérifier le domaine pour](#verify-the-domain) plus d’informations.
+  - L’heure actuelle se trouve entre les heures spécifiées dans les `nbf` `exp` revendications. La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
+  - `aud` est l’URL attendue pour votre add-in.
+  - `version` à `appctx` l’intérieur de la revendication est définie sur `ExIdTok.V1` .
 
 ### <a name="verify-the-domain"></a>Vérifier le domaine
 
-Lors de l’implémentation de la logique de vérification décrite précédemment dans cette section, vous devez également exiger que le domaine de la `amurl` revendication corresponde au domaine de découverte automatique de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique. Pour en savoir plus, vous pouvez commencer à utiliser la [découverte automatique pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+Lorsque vous implémentez la logique de vérification décrite précédemment dans cette section, vous devez également exiger que le domaine de la revendication corresponde au domaine de découverte automatique `amurl` de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique. Pour en savoir plus, vous pouvez commencer par la découverte automatique [pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
 
 ## <a name="validate-the-identity-token-signature"></a>Validation de la signature du jeton d’identité
 
@@ -102,14 +102,14 @@ Une fois que vous avez trouvé la bonne clé publique, vérifiez la signature. L
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>Calculer l’ID unique d’un compte Exchange
 
-Vous pouvez créer un identificateur unique pour un compte Exchange en concaténant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange pour le compte. Lorsque vous avez cet identificateur unique, vous pouvez l’utiliser pour créer un système de connexion unique (SSO) pour le service Web de votre complément Outlook. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, consultez la section [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
+Vous pouvez créer un identificateur unique pour un compte Exchange en concatenant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange du compte. Lorsque vous avez cet identificateur unique, vous pouvez l’utiliser pour créer un système de connexion unique (SSO) pour le service Web de votre complément Outlook. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, consultez la section [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="use-a-library-to-validate-the-token"></a>Utiliser une bibliothèque pour valider le jeton
 
-Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft fournit la `System.IdentityModel.Tokens.Jwt` bibliothèque qui peut être utilisée pour valider les jetons d’identité d’utilisateur Exchange.
+Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft fournit la bibliothèque qui peut être utilisée pour valider les `System.IdentityModel.Tokens.Jwt` jetons Exchange’identité de l’utilisateur.
 
 > [!IMPORTANT]
-> Nous ne recommandons plus l’API managée des services Web Exchange, car le Microsoft.Exchange.WebServices.Auth.dll, bien que toujours disponible, est désormais obsolète et s’appuie sur des bibliothèques non prises en charge, telles que Microsoft.IdentityModel.Extensions.dll.
+> Nous ne recommandons plus l’API gérée des services web Exchange, car la Microsoft.Exchange.WebServices.Auth.dll, bien que toujours disponible, est désormais obsolète et s’appuie sur des bibliothèques non pris en charge telles que Microsoft.IdentityModel.Extensions.dll.
 
 ### <a name="systemidentitymodeltokensjwt"></a>System.IdentityModel.Tokens.Jwt
 

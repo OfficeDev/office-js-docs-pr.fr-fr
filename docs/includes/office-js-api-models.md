@@ -1,6 +1,6 @@
 L’API JavaScript pour Office inclut deux modèles distincts :
 
-- Les API **propres à l’application** fournissent des objets fortement typés qui peuvent être utilisés pour interagir avec des objets natifs d’une application Office spécifique. Par exemple, vous pouvez utiliser les API JavaScript pour Excel pour accéder à des feuilles de calcul, plages, tableaux, graphiques, etc. Les API propres à l’application sont actuellement disponibles pour les applications Office suivantes :
+- Les API **propres à l’application** fournissent des objets fortement typés qui peuvent être utilisés pour interagir avec des objets natifs d’une application Office spécifique. Par exemple, vous pouvez utiliser les API JavaScript pour Excel pour accéder à des feuilles de calcul, plages, tableaux, graphiques, etc. Les API spécifiques à l’application sont actuellement disponibles pour les applications Office suivantes.
 
     - [Excel](../reference/overview/excel-add-ins-reference-overview.md)
     - [OneNote](../reference/overview/onenote-add-ins-javascript-reference.md)

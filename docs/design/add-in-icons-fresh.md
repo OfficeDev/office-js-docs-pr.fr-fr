@@ -1,18 +1,18 @@
 ---
-title: Recommandations en matière d’icônes de style Office pour les modules
+title: Recommandations en matière d’icônes de style Office des produits
 description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: c03c0040d84c69fed1f0a9565bec3c1cabb8d0a5
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e7a06ec25f82215a402bc5eb7fc74fa39430e227
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076510"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349314"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office pour les modules
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office des produits
 
-Les Office versions 2013 et 2013 (sans abonnement) de Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, consultez les instructions relatives aux icônes de style Monoline pour Office [des modules.](add-in-icons-monoline.md)
+Les Office versions 2013 et 2013 (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, consultez les instructions relatives aux icônes de style Monoline pour Office [des modules.](add-in-icons-monoline.md)
 
 ## <a name="office-fresh-visual-style"></a>Office Style visuel à nouveau
 
@@ -34,7 +34,7 @@ Suivez ces instructions lorsque vous créez vos icônes :
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Configuration requise et recommandations sur la taille des icônes
 
-Les icônes du bureau Office sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Voici les tailles prises en charge - trois sont obligatoires :
+Les icônes du bureau Office sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Les tailles suivantes sont les suivantes : trois sont requises.
 
 - 16 px (obligatoire)
 - 20 px
@@ -91,7 +91,7 @@ Tous les modificateurs doivent avoir un cutout transparent de 1 px entre chaque 
 > [!NOTE]
 > Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restitues avec Fluent’interface utilisateur et la palette de couleurs est différente de la palette décrite dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
 
-Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes sur l’utilisation des couleurs :
+Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes à l’utilisation de la couleur.
 
 - Utilisez la couleur pour véhiculer une signification plutôt que pour embellir. Elle doit mettre en surbrillance ou mettre en évidence une action, un état ou un élément qui différencie explicitement le repère.
 - Si possible, n’utilisez qu’une seule couleur supplémentaire au-delà du gris. Limitez les couleurs supplémentaires à deux au maximum.
@@ -109,20 +109,20 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 |Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit.](../images/color-medium-gray-16.png) |16 et moins|
 |Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus.](../images/color-blue-32.png) |32 px et supérieures|
 |Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et inférieur|
-|TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
+|TOUT jaune|234, 194, 130|#EAC282| ![Jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
 |Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus.](../images/color-orange-32.png) |32 px et supérieures|
 |Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et inférieur|
 |TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image.](../images/color-pink-all.png) |Toutes les tailles|
 |Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus.](../images/color-green-32.png) |32 px et supérieures|
 |Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et inférieur|
 |Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus.](../images/color-red-32.png) |32 px et supérieures|
-|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et inférieur|
+|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et au-dessous|
 |Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus.](../images/color-purple-32.png) |32 px et supérieures|
-|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et moins.](../images/color-purple-16.png) |16 px et inférieur|
+|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et moins.](../images/color-purple-16.png) |16 px et au-dessous|
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 
-Les icônes Office sont conçues pour un rendu correct en mode de contraste élevé. Les éléments de premier plan sont bien différenciés des arrière-plans pour optimiser la lisibilité et permettre le recoloriage. En modes de contraste élevé, Office recolorie tous les pixels de votre icône avec une valeur rouge, verte ou bleue inférieure à 190 en noir plein. Tous les autres pixels sont blancs. Autrement dit, chaque canal RVB est évalué lorsque les valeurs 0-189 sont noires et les valeurs 190-255 sont blanches. D’autres thèmes à contraste élevé recolorient à l’aide du même seuil de valeur 190 mais avec des règles différentes. Par exemple, le thème blanc à contraste élevé recolorie tous les pixels supérieurs à 190 en opaque, mais tous les autres pixels en transparent. Appliquez les instructions suivantes pour optimiser la lisibilité dans les paramètres de contraste élevé :
+Les icônes Office sont conçues pour un rendu correct en mode de contraste élevé. Les éléments de premier plan sont bien différenciés des arrière-plans pour optimiser la lisibilité et permettre le recoloriage. En modes de contraste élevé, Office recolorie tous les pixels de votre icône avec une valeur rouge, verte ou bleue inférieure à 190 en noir plein. Tous les autres pixels sont blancs. Autrement dit, chaque canal RVB est évalué lorsque les valeurs 0-189 sont noires et les valeurs 190-255 sont blanches. D’autres thèmes à contraste élevé recolorient à l’aide du même seuil de valeur 190 mais avec des règles différentes. Par exemple, le thème blanc à contraste élevé recolorie tous les pixels supérieurs à 190 en opaque, mais tous les autres pixels en transparent. Appliquez les instructions suivantes pour optimiser la lisibilité dans les paramètres à contraste élevé.
 
 - Essayez de différencier les éléments de premier plan et d’arrière-plan par rapport au seuil de valeur 190.
 - Suivez les styles visuels des icônes Office.

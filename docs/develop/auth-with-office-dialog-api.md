@@ -3,12 +3,12 @@ title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
 ms.date: 09/24/2020
 localization_priority: Priority
-ms.openlocfilehash: 669eedd3439698a37bebe2a83b3c2a8381cdb4d6
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 85576c50c69332e16c0636586461392021b2e2a4
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076230"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350049"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
@@ -17,7 +17,7 @@ De nombreuses autorités d’identité, également appelées service d’émissi
 > [!NOTE]
 > Cet article part du principe que vous êtes familiarisé(e) avec [Utiliser l’API de boîte de dialogue Office](dialog-api-in-office-add-ins.md) dans vos compléments Office.
 
-La boîte de dialogue ouverte avec cette API présente les caractéristiques suivantes :
+La boîte de dialogue ouverte avec cette API présente les caractéristiques suivantes.
 
 - C'est [non modal](https://en.wikipedia.org/wiki/Dialog_box).
 - Il s’agit d’une instance de navigateur totalement distincte du volet de tâches, ce qui signifie :

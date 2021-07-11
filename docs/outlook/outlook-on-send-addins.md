@@ -3,12 +3,12 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 06/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 0723edafeefba7e423e15b912ce1628dfd299e93
-ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+ms.openlocfilehash: 80047f4c8056bafa62d467f1e69dd334d168486a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "53205010"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348474"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -294,7 +294,7 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la stratégie|Résultat|
 |---|---|
-|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
+|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit du statut/comportement par défaut.|
 |Activé|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir de Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
@@ -350,9 +350,9 @@ Les compléments s’exécutent pendant l’événement d’envoi pour autoriser
 
 |Scénario|Fonctionnalité d’envoi (Boîte aux lettres 1)|Fonctionnalité d’envoi (Boîte aux lettres 2)|Session web Outlook (classique)|Résultat|Pris en charge ?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1 |Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|2 |Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|3 |Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
+|1|Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|2|Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|3|Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
 |4 |Activé|Désactivé|Nouvelle session|Aucun complément d’envoi ne s’exécute ; un message ou un élément de réunion est envoyé.|Pris en charge.|
 
 #### <a name="web-browser-modern-outlook-windows-mac"></a>Navigateur web (Outlook moderne), Windows, Mac
@@ -517,7 +517,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
 }
 ```
 
-Voici les paramètres pour la méthode `addAsync` :
+Voici les paramètres de la `addAsync` méthode.
 
 - `NoSend` &ndash; : chaîne correspondant à une clé spécifiée par un développeur pour référencer un message de notification. Vous pouvez l’utiliser pour modifier ce message ultérieurement. La clé ne peut pas avoir plus de 32 caractères.
 - `type`&ndash; : l’une des propriétés du paramètre d’objet JSON. Représente le type d’un message ; les types correspondent aux valeurs de l’énumération [Office.MailboxEnums.ItemNotificationMessageType](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype). Les valeurs possibles sont Indicateur de progression, Message d’information ou Message d’erreur. Dans cet exemple, `type` est un message d’erreur.  

@@ -3,25 +3,25 @@ title: Autoriser des services externes dans votre complément Office
 description: Autorisation d’accès à des sources de données non-Microsoft comme Google, Facebook, LinkedIn, SalesForce et GitHub à l’aide d’OAuth 2.0, du code d’autorisation et des flux implicites.
 ms.date: 08/07/2019
 localization_priority: Normal
-ms.openlocfilehash: fd180e11106e7e1e2f20f539746535c4310ad81e
-ms.sourcegitcommit: 7ef14753dce598a5804dad8802df7aaafe046da7
+ms.openlocfilehash: e58aba29563a3bcf173a4f76d7e3788b79f09049
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "45093741"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350056"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
 
-Les services en ligne populaires, y compris Microsoft 365, Google, Facebook, LinkedIn, SalesForce et GitHub, permettent aux développeurs de donner aux utilisateurs l’accès à leurs comptes dans d’autres applications. Cela vous permet d’inclure ces services dans votre complément Office.
+Les services en ligne populaires, notamment Microsoft 365, Google, Facebook, LinkedIn, SalesForce et GitHub, donnent aux développeurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office.
 
 > [!NOTE]
-> Le reste de cet article concerne l’accès aux services non-Microsoft. Pour plus d’informations sur l’accès à Microsoft Graph (y compris Microsoft 365), voir [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) and [Access to Microsoft Graph with SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+> Le reste de cet article concerne l’accès aux services non-Microsoft. Pour plus d’informations sur l’accès à Microsoft Graph (y compris Microsoft 365), consultez l’accès à [Microsoft Graph](overview-authn-authz.md#access-to-microsoft-graph-with-sso) avec l' luiso et l’accès à Microsoft Graph sans [SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
 
 L’infrastructure standard dans le secteur permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
 
 L’une des idées fondamentales d’OAuth est qu’une application peut être un [principal de sécurité](/windows/security/identity-protection/access-control/security-principals) en elle-même, de la même façon qu’un utilisateur ou un groupe, avec sa propre identité et son ensemble d’autorisations. Le plus souvent, quand l’utilisateur exécute une action dans le complément Office ayant besoin du service en ligne, le complément envoie une demande au service portant sur un ensemble spécifique d’autorisations pour le compte de l’utilisateur. Le service invite ensuite l’utilisateur à octroyer ces autorisations au complément. Une fois que les autorisations sont accordées, le service envoie un petit *jeton d’accès* codé au complément. Le complément peut utiliser le service en incluant le jeton dans toutes ses demandes aux API du service. Toutefois, le complément agit uniquement dans la limite des autorisations que l’utilisateur lui a accordées. En outre, le jeton expire après un certain délai.
 
-Plusieurs modèles OAuth, appelés *flux* ou *types d’accès accordé*, sont conçus pour différents scénarios. Les deux modèles suivants sont les plus couramment implémentés :
+Plusieurs modèles OAuth, appelés *flux* ou *types d’accès accordé*, sont conçus pour différents scénarios. Les deux modèles suivants sont les plus couramment implémentés.
 
 - **Flux implicite** : la communication entre le complément et le service en ligne est mise en œuvre avec JavaScript côté client. Ce flux est couramment utilisé dans les applications à page unique (SPA).
 - **Flux de code d’autorisation** : la communication est effectuée de *serveur à serveur* entre l’application web de votre complément et le service en ligne. Par conséquent, elle est mise en œuvre avec du code côté serveur.

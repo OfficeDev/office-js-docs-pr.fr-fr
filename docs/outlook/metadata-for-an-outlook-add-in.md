@@ -3,12 +3,12 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: a06936892d9f2cdb7d83bc0c5097dfd2bdea0156
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: c438aa538d47b31aa60f47a1f871822e9c73a9c9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839781"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348908"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
@@ -44,7 +44,7 @@ Voici un exemple de structure, en supposant qu’il y a trois paramètres d’it
 
 ### <a name="loading-roaming-settings"></a>Chargement des paramètres d’itinérance
 
-Un complément de messagerie charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](/javascript/api/office#office-initialize-reason-). L’exemple de code JavaScript suivant montre comment charger des paramètres d’itinérance existants et obtenir la valeur de 2 paramètres, **customerName** et **customerBalance** :
+Un complément de messagerie charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](/javascript/api/office#office-initialize-reason-). L’exemple de code JavaScript suivant montre comment charger les paramètres d’itinérance existants et obtenir les valeurs de 2 paramètres, **customerName** et **customerBalance**.
 
 
 ```js
@@ -114,7 +114,7 @@ Vous pouvez spécifier les données propres à un élément dans la boîte aux l
 
 Comme pour les paramètres d’itinérance, les modifications apportées aux propriétés personnalisées sont stockées dans des copies en mémoire des propriétés de la session Outlook en cours. Pour vous assurer que les propriétés personnalisées seront disponibles dans la prochaine session, utilisez [CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-).
 
-Ces propriétés personnalisées spécifiques à un élément et spécifiques au add-in sont accessibles uniquement à l’aide de `CustomProperties` l’objet. Ces propriétés sont différentes des propriétés [UserProperties](/office/vba/api/Outlook.UserProperties) personnalisées basées sur MAPI dans le modèle objet Outlook et des propriétés étendues dans les services web Exchange (EWS). Vous ne pouvez pas accéder directement `CustomProperties` à l’aide du modèle objet Outlook, EWS ou REST. Pour découvrir comment accéder à l’aide d’EWS ou rest, voir la section Obtenir des propriétés personnalisées à l’aide `CustomProperties` [d’EWS ou REST](#get-custom-properties-using-ews-or-rest).
+Ces propriétés personnalisées spécifiques à un élément et spécifiques au add-in sont accessibles uniquement à l’aide de `CustomProperties` l’objet. Ces propriétés sont différentes des propriétés [UserProperties](/office/vba/api/Outlook.UserProperties) personnalisées basées sur MAPI dans le modèle objet Outlook et des propriétés étendues dans Exchange Web Services (EWS). Vous ne pouvez pas accéder directement `CustomProperties` à l’aide Outlook modèle objet, EWS ou REST. Pour savoir comment accéder à l’aide d’EWS ou rest, voir la section Obtenir des propriétés personnalisées à l’aide `CustomProperties` [d’EWS ou REST](#get-custom-properties-using-ews-or-rest).
 
 ### <a name="using-custom-properties"></a>Utilisation de propriétés personnalisées
 
@@ -130,7 +130,7 @@ Avant de pouvoir utiliser les propriétés personnalisées, vous devez les charg
 
 L’exemple suivant illustre un ensemble simplifié des méthodes pour un complément Outlook qui utilise des propriétés personnalisées. Vous pouvez utiliser cet exemple comme point de départ pour votre complément qui utilise des propriétés personnalisées.
 
-Cet exemple inclut les méthodes suivantes :
+Cet exemple inclut les méthodes suivantes.
 
 
 - [Office.initialize](/javascript/api/office#office-initialize-reason-) -- Initialise le complément et charge le conteneur de propriétés personnalisées depuis le serveur Exchange.

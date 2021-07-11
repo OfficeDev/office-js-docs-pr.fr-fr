@@ -1,10 +1,10 @@
-Un complément Office comprend une application Web et un fichier manifeste. L’application Web définit l’interface utilisateur et les fonctionnalités du complément, tandis que le manifeste spécifie l’emplacement de l’application Web et définit les paramètres et fonctionnalités du complément. 
+Un complément Office se compose d’une application web et d’un fichier manifeste. L’application web définit l’interface utilisateur et les fonctionnalités du complément, tandis que le manifeste spécifie l’emplacement de l’application web et définit les paramètres et les fonctionnalités du complément. 
 
 Lorsque vous développez votre complément, vous pouvez l’exécuter sur votre serveur Web local (`localhost`), mais lorsque vous êtes prêt à le publier pour permettre à d’autres utilisateurs d’y accéder, vous devez déployer l’application Web sur un serveur Web ou un service d’hébergement Web (par exemple, Microsoft Azure), puis mettre à jour le manifeste pour spécifier l’URL de l’application déployée. 
 
-Lorsque votre complément fonctionne comme vous le souhaitez et que vous êtes prêt à le publier pour permettre à d’autres utilisateurs d’y accéder, procédez comme suit :
+Lorsque votre complément fonctionne comme vous le souhaitez et que vous êtes prêt à le publier pour que d’autres utilisateurs y accèdent, effectuez les étapes suivantes.
 
-1. À partir de la ligne de commande, dans le répertoire racine de votre projet de complément, exécutez la commande suivante pour préparer tous les fichiers pour le déploiement en production : 
+1. À partir de la ligne de commande, dans le répertoire racine de votre projet de complément, exécutez la commande suivante pour préparer tous les fichiers pour le déploiement de production.
 
     ```command&nbsp;line
     npm run build

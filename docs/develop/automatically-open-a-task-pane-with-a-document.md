@@ -3,16 +3,16 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 05/24/2021
 localization_priority: Normal
-ms.openlocfilehash: c8e5f25019084439bf4ecade1602d5fc87b9d49e
-ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
+ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "52639955"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350021"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
-Vous pouvez utiliser des commandes de Office dans votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
+Vous pouvez utiliser les commandes de votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
 Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet des tâches, présentée dans l’ensemble des conditions AddInCommands 1.1, pour ouvrir automatiquement un volet des tâches lorsque votre scénario l’exige.
 
@@ -34,7 +34,7 @@ La fonctionnalité d’ouverture automatique est maintenant <!-- in **developer 
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionnalité d’ouverture automatique :
+Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionnalité d’ouverture automatique.
 
 - Utilisez la fonctionnalité d’ouverture automatique quand elle vous aide à rendre vos utilisateurs de complément plus efficaces, comme dans les cas suivants :
   - Lorsque le document a besoin du complément pour fonctionner correctement. Par exemple, une feuille de calcul qui contient des valeurs de stock régulièrement actualisées par un complément. Le complément doit s’ouvrir automatiquement lorsque la feuille de calcul est ouverte pour maintenir les valeurs à jour.
@@ -118,7 +118,7 @@ Le composant `webextension` comprend également une référence au store ou au c
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|L’ID de la ressource AppSource du complément (voir la remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|La version dans le catalogue AppSource (voir la remarque).|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
-|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le centre d Microsoft 365'administration.|La version dans le manifeste de complément.
+|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d’administration Microsoft 365.|La version dans le manifeste de complément.
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
 
 > [!NOTE]
@@ -147,7 +147,7 @@ Un moyen simple d’écrire le XML consiste à d’abord exécuter votre add-in 
 
 ## <a name="test-and-verify-opening-task-panes"></a>Tester et vérifier l’ouverture des volets Office
 
-Vous pouvez déployer une version de test de votre application qui ouvre automatiquement un volet Des tâches à l’aide du déploiement centralisé via le centre d Microsoft 365'administration. L’exemple suivant montre la façon dont les compléments sont insérés à partir du catalogue de déploiement centralisé à l’aide de la version store d’EXCatalog.
+Vous pouvez déployer une version de test de votre application qui ouvre automatiquement un volet Des tâches à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365. L’exemple suivant montre la façon dont les compléments sont insérés à partir du catalogue de déploiement centralisé à l’aide de la version store d’EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">

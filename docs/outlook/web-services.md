@@ -3,12 +3,12 @@ title: Utiliser les services Web Exchange (EWS) à partir d’un complément Out
 description: Fournit un exemple qui illustre comment un complément Outlook peut demander des informations à partir des Services Web Exchange.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 16d20ca30f2860b8103257860a8619c1d51d8523
-ms.sourcegitcommit: 5a151d4df81e5640363774406d0f329d6a0d3db8
+ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/09/2021
-ms.locfileid: "52853961"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348453"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Appeler des services Web à partir d’un complément Outlook
 
@@ -46,12 +46,12 @@ Une fois la demande SOAP EWS terminée, Outlook appelle la méthode de rappel av
 
 ## <a name="tips-for-parsing-ews-responses"></a>Conseils pour l’analyse des réponses EWS
 
-Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, notez les problèmes dépendant du navigateur suivants :
+Lors de l’utilisation d’une réponse SOAP à partir d’une opération EWS, notez les problèmes suivants dépendant du navigateur.
 
 
 - Spécifiez le préfixe d’un nom de balise lors de l’utilisation de la méthode DOM, pour inclure la prise en `getElementsByTagName` charge d’Internet Explorer.
 
-  `getElementsByTagName` se comporte différemment selon le type de navigateur. Par exemple, une réponse EWS peut contenir le XML suivant (formaté et abrégé à des fins d’affichage) :
+  `getElementsByTagName` se comporte différemment selon le type de navigateur. Par exemple, une réponse EWS peut contenir le XML suivant (formaté et abrégé à des fins d’affichage).
 
    ```XML
         <t:ExtendedProperty><t:ExtendedFieldURI PropertySetId="00000000-0000-0000-0000-000000000000" 
@@ -62,7 +62,7 @@ Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, note
         }</t:Value></t:ExtendedProperty>
    ```
 
-   Le code, comme dans les exemples suivants, fonctionne sur un navigateur tel que Chrome pour obtenir le code XML entouré par les `ExtendedProperty` balises :
+   Le code, comme dans les exemples suivants, fonctionne sur un navigateur tel que Chrome pour obtenir le code XML entouré par les `ExtendedProperty` balises.
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -72,7 +72,7 @@ Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, note
             });
    ```
 
-   Sur Internet Explorer, vous devez inclure le préfixe `t:` du nom de balise, comme indiqué ci-dessous :
+   Sur Internet Explorer, vous devez inclure le `t:` préfixe du nom de la balise, comme suit.
 
    ```js
         var mailbox = Office.context.mailbox;
@@ -82,7 +82,7 @@ Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, note
             });
    ```
 
-- Utilisez la propriété DOM pour obtenir le contenu d’une balise dans une réponse `textContent` EWS, comme illustré ci-dessous :
+- Utilisez la propriété DOM pour obtenir le contenu d’une balise dans une réponse `textContent` EWS, comme suit.
 
    ```js
       content = $.parseJSON(value.textContent);
@@ -93,13 +93,13 @@ Lors de l’analyse d’une réponse SOAP à partir d’une opération EWS, note
 
 ## <a name="example"></a>Exemple
 
-L’exemple suivant appelle `makeEwsRequestAsync` l’utilisation de [l’opération GetItem](/exchange/client-developer/web-service-reference/getitem-operation) pour obtenir l’objet d’un élément. Cet exemple comprend les trois fonctions suivantes :
+L’exemple suivant appelle `makeEwsRequestAsync` l’utilisation de [l’opération GetItem](/exchange/client-developer/web-service-reference/getitem-operation) pour obtenir l’objet d’un élément. Cet exemple inclut les trois fonctions suivantes.
 
--  `getSubjectRequest`Prend un ID d’élément comme entrée et renvoie le XML de la demande SOAP à appeler &ndash; `GetItem` pour l’élément spécifié.
+- `getSubjectRequest`Prend un ID d’élément comme entrée et renvoie le XML de la demande SOAP à appeler &ndash; `GetItem` pour l’élément spécifié.
 
--  `sendRequest`Appels pour obtenir la demande SOAP pour l’élément sélectionné, puis passe la demande SOAP et la méthode de rappel, pour obtenir l’objet de &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` l’élément spécifié.
+- `sendRequest`Appels pour obtenir la demande SOAP pour l’élément sélectionné, puis passe la demande SOAP et la méthode de rappel, pour obtenir l’objet de &ndash;  `getSubjectRequest` `callback` `makeEwsRequestAsync` l’élément spécifié.
 
--  `callback` &ndash; Traite la réponse SOAP qui comprend l’objet et d’autres informations sur l’élément spécifié.
+- `callback` &ndash; Traite la réponse SOAP qui comprend l’objet et d’autres informations sur l’élément spécifié.
 
 
 ```js
@@ -150,17 +150,17 @@ function callback(asyncResult)  {
 
 Outlook peuvent accéder à un sous-ensemble d’opérations disponibles dans EWS via la `makeEwsRequestAsync` méthode. Si vous ne connaissez pas les opérations EWS et que vous ne savez pas comment utiliser la méthode pour accéder à une opération, commencez par un exemple de requête SOAP pour personnaliser votre `makeEwsRequestAsync` argument _de_ données.
 
-La description suivante décrit comment utiliser la `makeEwsRequestAsync` méthode :
+L’exemple suivant décrit comment utiliser la `makeEwsRequestAsync` méthode.
 
 1. Dans le XML, remplacez les ID d’éléments et les attributs d’opération EWS par les valeurs appropriées.
 
-2. Incluez la requête SOAP en tant qu’argument pour le  _paramètre de_ données de `makeEwsRequestAsync` .
+1. Incluez la requête SOAP en tant qu’argument pour le  _paramètre de_ données de `makeEwsRequestAsync` .
 
-3. Spécifiez une méthode de rappel et un `makeEwsRequestAsync` appel.
+1. Spécifiez une méthode de rappel et un `makeEwsRequestAsync` appel.
 
-4. Dans la méthode de rappel, vérifiez les résultats de l’opération dans la réponse SOAP.
+1. Dans la méthode de rappel, vérifiez les résultats de l’opération dans la réponse SOAP.
 
-5. Utilisez les résultats de l’opération EWS en fonction de vos besoins.
+1. Utilisez les résultats de l’opération EWS en fonction de vos besoins.
 
 Le tableau suivant répertorie les opérations EWS prises en charge par les compléments. Pour afficher des exemples de demandes et réponses SOAP, choisissez le lien correspondant à chaque opération. Pour plus d’informations sur les opérations EWS, voir [Opérations EWS dans Exchange](/exchange/client-developer/web-service-reference/ews-operations-in-exchange).
 
@@ -208,7 +208,7 @@ Votre add-in doit spécifier l’autorisation dans son manifeste de `ReadWriteMa
 - [Référence EWS pour Exchange](/exchange/client-developer/web-service-reference/ews-reference-for-exchange)
 - [Applications de messagerie pour Outlook et EWS dans Exchange](/exchange/client-developer/exchange-web-services/mail-apps-for-outlook-and-ews-in-exchange)
 
-Consultez la rubrique suivante pour créer des services principaux pour les compléments à l’aide de l’API Web ASP.NET :
+Consultez les conseils suivants pour créer des services back-end pour les API Web ASP.NET.
 
 - [Créer un service web pour un complément Office à l’aide de l’API Web ASP.NET](/archive/blogs/officeapps/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api)
 - [Principes fondamentaux de la création d’un service HTTP à l’aide de l’API Web ASP.NET](https://dotnet.microsoft.com/apps/aspnet/apis)

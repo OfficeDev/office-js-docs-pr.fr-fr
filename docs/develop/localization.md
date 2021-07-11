@@ -3,16 +3,16 @@ title: Localisation des compléments Office
 description: Utilisez l’API JavaScript Office pour déterminer un paramètre local et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: f5d9d3cf01df8156c319b78222ed6c2d8ce09ca3
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b49d64f2c9391539ac2d5929ebff2a4ecc08b630
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076005"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349825"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
-Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript Office pour déterminer des paramètres régionaux et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
+Vous pouvez librement implémenter n’importe quel schéma de localisation convenant à votre Complément Office. L’API JavaScript et le schéma du manifeste de la plateforme Compléments Office offrent quelques choix. Vous pouvez utiliser l’API JavaScript Office pour déterminer un paramètre local et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données. Vous pouvez utiliser le manifeste pour spécifier l’emplacement des fichiers et les informations descriptives propres à un paramètre régional. Sinon, vous pouvez utiliser un script Microsoft Ajax pour prendre en charge l’internationalisation et la localisation.
 
 ## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Utiliser l’API JavaScript pour déterminer les chaînes propres aux paramètres régionaux
 
@@ -81,7 +81,7 @@ Par exemple, un complément Office peut spécifier [DefaultLocale] en tant que `
 ```
 
 > [!NOTE]
-> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons Office `de` applications et plateformes clientes.
+> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons d’applications et `de` de plateformes Office clientes.
 
 Cela signifie que le complément adopte le paramètre régional `en-us` par défaut. Les utilisateurs voient le nom d’affichage « Video player » pour tous les paramètres régionaux, sauf si le paramètre régional de l’ordinateur client est `fr-fr`, auquel cas ils verront le nom d’affichage « Lecteur vidéo ».
 
@@ -165,7 +165,7 @@ Utilisez `ResourceUrl` l’attribut de [l’élément ExtendedOverrides](../refe
 </OfficeApp>
 ```
 
-Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaînes. Chaînes de noms de jetons dans le fichier de ressources. Voici un exemple qui affecte un raccourci clavier à une fonction (définie ailleurs) qui affiche le volet Des tâches du module. Notez ce markup :
+Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaînes. Chaînes de noms de jetons dans le fichier de ressources. Voici un exemple qui affecte un raccourci clavier à une fonction (définie ailleurs) qui affiche le volet Des tâches du module. Remarque à propos de ce markup :
 
 - L’exemple n’est pas tout à fait valide. (Nous y ajoutons une propriété supplémentaire obligatoire ci-dessous.)
 - Les jetons doivent avoir le format **${resource.*nom de ressource*}**.
@@ -215,7 +215,7 @@ Le fichier de ressources, également au format JSON, possède une propriété de
 }
 ```
 
-Il n’existe `default` aucune propriété dans le fichier qui soit un homologue aux `en-us` `fr-fr` sections et aux sections. En effet, les chaînes par défaut, qui sont utilisées lorsque les paramètres régionaux de l’application hôte Office ne correspondent à aucune des propriétés *ll-cc* dans le fichier de ressources, doivent être définies dans le fichier de remplacements étendu *lui-même.* La définition des chaînes par défaut directement dans le fichier de remplacements étendu garantit que Office ne télécharge pas le fichier de ressources lorsque les paramètres régionaux de l’application Office sont les paramètres régionaux par défaut du module (comme spécifié dans le manifeste). Voici une version corrigée de l’exemple précédent d’un fichier de remplacements étendu qui utilise des jetons de ressource.
+Il `default` n’existe aucune propriété dans le fichier qui soit un homologue aux `en-us` `fr-fr` sections et aux sections. En effet, les chaînes par défaut, qui sont utilisées lorsque les paramètres régionaux de l’application hôte Office ne correspondent à aucune des propriétés *ll-cc* dans le fichier de ressources, doivent être définies dans le fichier de remplacements étendu *lui-même.* La définition des chaînes par défaut directement dans le fichier de remplacements étendu garantit que Office ne télécharge pas le fichier de ressources lorsque les paramètres régionaux de l’application Office sont les paramètres régionaux par défaut du module (comme spécifié dans le manifeste). Voici une version corrigée de l’exemple précédent d’un fichier de remplacements étendu qui utilise des jetons de ressource.
 
 ```json
 {
@@ -292,7 +292,7 @@ Vous devez créer un projet de Visual Studio 2019 Office de recherche.
 
 3. Nommez votre projet **WorldReadyAddIn** et sélectionnez **Créer.**
 
-4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
 
 ### <a name="localize-the-text-used-in-your-add-in"></a>Localiser le texte utilisé dans votre complément
@@ -307,7 +307,7 @@ Pour localiser le nom d’affichage et la description du complément
 
 1. Dans l’**Explorateur de solutions**, développez **WorldReadyAddIn**, **WorldReadyAddInManifest**, puis choisissez **WorldReadyAddIn.xml**.
 
-2. Dans WorldReadyAppManifest.xml, remplacez les éléments [DisplayName] et [Description] par le bloc de code suivant :
+2. Dans WorldReadyAddInManifest.xml, remplacez les éléments [DisplayName] et [Description] par le bloc de code suivant.
 
     > [!NOTE]
     > Vous pouvez remplacer les chaînes localisées en espagnol utilisées dans cet exemple pour les éléments [DisplayName] et [Description] par les chaînes localisées en une autre langue.

@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 7f0edd10495badd50da3fa8d4b8c9b4495df6252
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f2f160b01971385abc22f7dce63f807e90fbe7d3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076951"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348376"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -54,7 +54,7 @@ La bibliothèque JavaScript pour les compléments Project comprend des extension
 
 Pour créer un complément, vous pouvez utiliser un éditeur de texte simple afin de créer une page web HTML avec les fichiers JavaScript associés, les fichiers CSS et les requêtes REST. Outre une page HTML ou une application web, le complément nécessite un fichier manifeste XML pour la configuration. Project peut utiliser un fichier manifeste qui inclut un attribut **type** spécifié comme **TaskPaneExtension**. Le fichier manifeste peut être utilisé par plusieurs applications clientes Office 2013, ou vous pouvez créer un fichier manifeste spécifique pour Project 2013. Pour plus d’informations, voir la section  _Notions fondamentales de développement_ dans [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
-Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants:
+Lorsque vous installez le Kit de développement logiciel (SDK) de Project 2013, le sous-répertoire `\Samples\Apps\` inclut les exemples de compléments suivants.
 
 - **Bing Search :**  le fichier manifeste BingSearch.xml pointe vers la page de recherche Bing pour les périphériques mobiles. Comme l’application web Bing existe déjà sur Internet, le complément de recherche Bing n’utilise pas d’autres fichiers de code source ou le modèle objet de complément pour Project.
 
@@ -98,7 +98,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
     </OfficeApp>
     ```
 
-- Les éléments suivants sont requis dans le manifeste du complément :
+- Les éléments suivants sont requis dans le manifeste du complément.
   - Dans l’élément **OfficeApp**, l’attribut `xsi:type="TaskPaneApp"` spécifie que le complément est de type volet Office.
   - L’élément **Id** est un UUID et doit être unique.
   - L’élément **Version** indique la version du complément. L’élément **ProviderName** correspond au nom de l’entreprise ou du développeur qui fournit le complément. L’élément **DefaultLocale** spécifie les paramètres régionaux par défaut pour les chaînes du manifeste.
@@ -190,7 +190,7 @@ Dans la procédure 2, le complément Bing Search est installé sur l’ordinateu
 
 ## <a name="distributing-project-add-ins"></a>Distribution de compléments Project
 
-Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue d’applications dans une bibliothèque SharePoint ou dans AppSource. Pour plus d’informations, voir [Publier votre complément Office](../publish/publish.md).
+Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue d’applications dans une bibliothèque SharePoint ou dans AppSource. Pour plus d’informations, reportez-vous à [Publier votre complément Office](../publish/publish.md).
 
 ## <a name="see-also"></a>Voir aussi
 

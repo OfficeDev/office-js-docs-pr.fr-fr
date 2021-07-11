@@ -1,18 +1,18 @@
 ---
 title: Référencement de la bibliothèque de l’API JavaScript Office
-description: Découvrez comment référencer la bibliothèque de l’API JavaScript office et les définitions de type dans votre application.
+description: Découvrez comment référencer la bibliothèque Office’API JavaScript et les définitions de type dans votre application.
 ms.date: 02/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 346a34c0cbc31b5e569a5106dcd2bc01593b114a
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 04f97412c07cb39f5b2f753c3ce14e56e87c3de5
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505191"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349755"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Référencement de la bibliothèque de l’API JavaScript Office
 
-La [bibliothèque de l’API JavaScript](../reference/javascript-api-for-office.md) pour Office fournit les API que votre application peut utiliser pour interagir avec l’application Office. Le moyen le plus simple de référencer la bibliothèque consiste à utiliser le réseau de distribution de contenu (CDN) en ajoutant la balise suivante dans la `<script>` section de votre page HTML `<head>` :  
+La [Office’API JavaScript](../reference/javascript-api-for-office.md) fournit les API que votre application peut utiliser pour interagir avec l’application Office web. Le moyen le plus simple de référencer la bibliothèque consiste à utiliser le réseau de distribution de contenu (CDN) en ajoutant la balise suivante dans la `<script>` section de votre page `<head>` HTML.
 
 ```html
 <head>
@@ -21,14 +21,14 @@ La [bibliothèque de l’API JavaScript](../reference/javascript-api-for-office.
 </head>
 ```
 
-Cela permet de télécharger et de mettre en cache les fichiers de l’API JavaScript pour Office lors du premier chargement de votre application pour vous assurer qu’elle utilise l’implémentation la plus à jour de Office.js et de ses fichiers associés pour la version spécifiée.
+Cela permet de télécharger et de mettre en cache les fichiers de l’API JavaScript Office la première fois que votre application se charge pour s’assurer qu’elle utilise l’implémentation la plus à jour de Office.js et de ses fichiers associés pour la version spécifiée.
 
 > [!IMPORTANT]
-> Vous devez référencer l’API JavaScript Office à partir de la section de la page pour vous assurer que l’API est entièrement initialisée avant les `<head>` éléments body.
+> Vous devez référencer l’API JavaScript Office à partir de la section de la page pour vous assurer que l’API est entièrement initialisée avant les éléments `<head>` body.
 
 ## <a name="api-versioning-and-backward-compatibility"></a>Gestion des versions d’API et compatibilité avec les versions antérieures
 
-Dans l’extrait de code HTML précédent, la partie avant de l’URL du CDN spécifie la dernière version incrémentielle dans la version 1 de `/1/` `office.js` Office.js. Étant donné que l’API JavaScript Pour Office maintient la compatibilité ascendante, la dernière version continuera à prendre en charge les membres d’API qui ont été introduits précédemment dans la version 1. Si vous devez mettre à niveau un projet existant, voir Mettre à jour la version de votre API JavaScript Office et des fichiers [de schéma de manifeste.](update-your-javascript-api-for-office-and-manifest-schema-version.md) 
+Dans l’extrait de code HTML précédent, l’URL avant de l’CDN spécifie la dernière version incrémentielle dans la version 1 de `/1/` `office.js` Office.js. Étant donné que Office API JavaScript maintient la compatibilité ascendante, la dernière version continuera à prendre en charge les membres d’API qui ont été introduits précédemment dans la version 1. Si vous avez besoin de mettre à niveau un projet existant, voir Mettre à jour la version de votre API JavaScript Office fichiers de schéma de manifeste et de [l’API JavaScript.](update-your-javascript-api-for-office-and-manifest-schema-version.md) 
 
 Si vous envisagez de publier votre complément Office à partir d’AppSource, vous devez utiliser cette référence au CDN. Les références locales sont adaptées uniquement au développement interne et au débogage des scénarios.
 

@@ -1,14 +1,14 @@
 ---
 title: Utiliser la boîte de dialogue Office pour lire une vidéo
-description: Découvrez comment ouvrir et lire une vidéo dans la boîte Office dialogue
+description: Découvrez comment ouvrir et lire une vidéo dans la boîte de dialogue Office de lecture
 ms.date: 01/29/2020
 localization_priority: Normal
-ms.openlocfilehash: bc69827164f2e5a2fed03239566ff814db0397b9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2519b2f105503a0479eee07d885a1543f5455343
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076068"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349881"
 ---
 # <a name="use-the-office-dialog-box-to-show-a-video"></a>Utiliser la boîte Office dialogue pour afficher une vidéo
 
@@ -19,7 +19,7 @@ Cet article explique comment lire une vidéo dans une boîte de dialogue Office 
 
 Pour lire une vidéo dans une boîte de dialogue avec l’API Office boîte de dialogue, suivez les étapes suivantes :
 
-1. Créez une page contenant un iframe et aucun autre contenu. La page doit se trouver dans le même domaine que la page hôte. Pour un rappel de ce qu’est une page hôte, voir Ouvrir une boîte de [dialogue à partir d’une page hôte.](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) Dans `src` l’attribut de l’iframe, pointer vers l’URL d’une vidéo en ligne. Le protocole de l’URL de la vidéo doit être HTTPS. Dans cet article, nous appellerons cette page « video.dialogbox.html ». Voici un exemple de marques de révision :
+1. Créez une page contenant un iframe et aucun autre contenu. La page doit se trouver dans le même domaine que la page hôte. Pour un rappel de ce qu’est une page hôte, voir Ouvrir une boîte de [dialogue à partir d’une page hôte.](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) Dans `src` l’attribut de l’iframe, pointer vers l’URL d’une vidéo en ligne. Le protocole de l’URL de la vidéo doit être HTTPS. Dans cet article, nous appellerons cette page « video.dialogbox.html ». Voici un exemple de marques de révision.
 
     ```HTML
     <iframe class="ms-firstrun-video__player"  width="640" height="360"

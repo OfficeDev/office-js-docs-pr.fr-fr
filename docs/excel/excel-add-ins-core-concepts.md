@@ -4,12 +4,12 @@ description: Découvrez les types d’objets clés dans les API JavaScript Excel
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 1cef1775711ebdb66d2e8f6513602906d9c5a2d2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075865"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349559"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Excel dans les compléments Office
 
@@ -97,7 +97,7 @@ Excel.run(function (context) {
 });
 ```
 
-Cet exemple crée les données suivantes dans la feuille de calcul active :
+Cet exemple crée les données suivantes dans la feuille de calcul active.
 
 ![Un registre des ventes affiche des lignes de valeur, une colonne de formule et des en-têtes mis en forme.](../images/excel-overview-range-sample.png)
 
@@ -121,7 +121,7 @@ Excel.run(function (context) {
 });
 ```
 
-L’exécution de cet exemple de code sur la feuille de calcul avec les données précédentes crée le tableau suivant :
+L’exécution de cet exemple de code sur la feuille de calcul avec les données précédentes crée le tableau suivant.
 
 ![Un tableau créée à partir du registre des ventes précédent.](../images/excel-overview-table-sample.png)
 
@@ -142,7 +142,7 @@ Excel.run(function (context) {
 });
 ```
 
-L’exécution de cet exemple sur la feuille de calcul avec le tableau précédent crée le graphique suivant :
+L’exécution de cet exemple sur la feuille de calcul avec le tableau précédent crée le graphique suivant.
 
 ![Histogramme montrant les quantités pour trois des articles présents dans le registre des ventes précédent.](../images/excel-overview-chart-sample.png)
 

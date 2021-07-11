@@ -13,21 +13,21 @@ Nous vous remercions de l’intérêt que vous portez à notre documentation.
 
 Voici quelques façons de contribuer à cette documentation :
 
-* Pour apporter de petites modifications à un article, [contribuez à l’aide de GitHub](#contribute-using-github).
+* Pour apporter de petites modifications à un article, [contribuez à l’aide GitHub](#contribute-using-github).
 * Pour apporter des modifications importantes ou des modifications qui impliquent du code, [contribuez à l’aide de Git](#contribute-using-git).
-* Signalez les bogues de **documentation** en allant à la section Commentaires au bas de l’article concerné, puis en sélectionnant Cette **page** pour créer un problème GitHub. Si ce n’est pas disponible, créez un problème directement sur [GitHub.](https://github.com/OfficeDev/office-js-docs-pr/issues)
-* Demander une nouvelle documentation avec [des problèmes GitHub.](https://github.com/OfficeDev/office-js-docs-pr/issues)
+* Signalez les bogues de **documentation** en allant à la section Commentaires au bas de l’article concerné, puis en sélectionnant Cette **page** pour créer un GitHub problème. Si ce n’est pas disponible, créez un problème directement sur [GitHub](https://github.com/OfficeDev/office-js-docs-pr/issues).
+* Demandez une nouvelle documentation avec [GitHub problèmes.](https://github.com/OfficeDev/office-js-docs-pr/issues)
 
 ## <a name="contribute-using-github"></a>Contribuer à l’aide de GitHub
 
-Utilisez GitHub pour contribuer à cette documentation sans avoir à cloner le référentiel sur votre bureau. Il s’agit du moyen le plus simple de créer une demande de tirage dans ce référentiel. Utilisez cette méthode pour apporter une modification mineure qui n’implique pas de modifications de code.
+Utilisez GitHub pour contribuer à cette documentation sans avoir à cloner le repo sur votre bureau. Il s’agit du moyen le plus simple de créer une demande de tirage dans ce référentiel. Utilisez cette méthode pour apporter une modification mineure qui n’implique pas de modifications de code.
 
 **Remarque**: l’utilisation de cette méthode vous permet de contribuer à un article à la fois.
 
-### <a name="to-contribute-using-github"></a>Pour contribuer à l’utilisation de GitHub
+### <a name="to-contribute-using-github"></a>Pour contribuer à l’utilisation GitHub
 
-1. Recherchez l’article à utiliser sur GitHub.
-2. Une fois que vous êtes sur l’article dans GitHub, connectez-vous à GitHub (obtenez un compte gratuit [rejoindre GitHub](https://github.com/join)).
+1. Recherchez l’article sur GitHub.
+2. Une fois que vous êtes sur l’article GitHub, connectez-vous à GitHub (obtenez un compte gratuit [rejoindre GitHub](https://github.com/join)).
 3. Choisissez **l’icône de crayon** (modifiez le fichier dans votre bifurcation de ce projet) et a apporté vos modifications dans la **fenêtre<>modifier le** fichier.
 4. Faites défiler vers le bas et entrez une description.
 5. Choose **Propose file change** Create pull > **request**.
@@ -46,27 +46,27 @@ Utilisez Git pour apporter des modifications importantes, telles que :
 
 ### <a name="to-contribute-using-git"></a>Pour contribuer à l’aide de Git
 
-1. Si vous n’avez pas de compte GitHub, définissez-en un sur [GitHub.](https://github.com/join)
+1. Si vous n’avez pas de compte GitHub, définissez-en un sur [GitHub](https://github.com/join).
 2. Une fois que vous avez un compte, installez Git sur votre ordinateur. Suivez les étapes du [didacticiel Configurer Git.]
-3. Pour envoyer une demande de pull à l’aide de Git, suivez les étapes dans [Utiliser GitHub, Git et ce référentiel.](#use-github-git-and-this-repository)
-4. Vous serez invité à signer le contrat de licence du collaborateur si vous êtes :
+3. Pour envoyer une requête de pull à l’aide de Git, suivez les étapes de [l’GitHub, Git et ce référentiel.](#use-github-git-and-this-repository)
+4. Vous serez invité à signer le contrat de licence du collaborateur si vous :
 
     * Membre du groupe Microsoft Open Technologies.
     * Collaborateur qui ne travaille pas pour Microsoft.
 
 En tant que membre de la communauté, vous devez signer le contrat de licence de contribution (CLA) avant de pouvoir contribuer à des soumissions importantes à un projet. Vous ne devez remplir et envoyer la documentation qu’une seule fois. Lisez attentivement le document. Il faudra peut-être que votre employeur signe le document.
 
-La signature du CLA ne vous accorde pas le droit de valider dans le référentiel principal, mais cela signifie que les équipes de développement Office et de publication de contenu pour les développeurs Office pourront examiner et approuver vos contributions. Vous êtes crédité pour vos soumissions.
+La signature du CLA ne vous accorde pas le droit de valider dans le référentiel principal, mais cela signifie que les équipes de publication de contenu du développeur Office et du développeur Office pourront examiner et approuver vos contributions. Vous êtes crédité pour vos soumissions.
 
 Les demandes de pull sont généralement examinées dans les 10 jours ou moins.
 
 ## <a name="use-github-git-and-this-repository"></a>Utilisation de GitHub, de Git et du référentiel
 
-**Remarque**: la plupart des informations de cette section sont disponibles dans les articles [d’aide GitHub.]  Si vous êtes familiarisé avec Git et GitHub, passez à la **section** Contribuer et modifiez le contenu pour connaître les spécificités du flux de code/contenu de ce référentiel.
+**Remarque**: la plupart des informations de cette section sont disponibles dans [GitHub’aide.]  Si vous connaissez Git et GitHub, passez à la **section** Contribuer et modifiez le contenu pour connaître les spécificités du flux de code/contenu de ce référentiel.
 
 ### <a name="to-set-up-your-fork-of-the-repository"></a>Pour configurer votre bifurcation du référentiel
 
-1. Configurez un compte GitHub pour pouvoir contribuer à ce projet. Si vous ne l’avez pas fait, allez sur [GitHub](https://github.com/join) et faites-le maintenant.
+1. Configurez un compte GitHub pour pouvoir contribuer à ce projet. Si vous ne l’avez pas fait, [GitHub](https://github.com/join) et faites-le maintenant.
 2. Installez Git sur votre ordinateur. Suivez les étapes du [didacticiel Configurer Git.]
 3. Créez votre propre bifurcation du référentiel. Pour ce faire, en haut de la page, choisissez le **bouton Bifurcation.**
 4. Copiez votre bifurcation sur votre ordinateur. Pour ce faire, ouvrez Git Bash. À l’invite de commandes, entrez les informations suivantes :
@@ -96,13 +96,13 @@ Pour rendre le processus de contribution aussi transparent que possible, suivez 
 
 * Un nouvel article.
 * Modifications orthographiques et grammaticales.
-* Application d’une seule modification de mise en forme sur un grand ensemble d’articles (par exemple, application d’un nouveau pied de copyright).
+* Application d’une modification de mise en forme unique sur un grand ensemble d’articles (par exemple, application d’un nouveau pied de copyright).
 
 #### <a name="to-create-a-new-branch"></a>Pour créer une branche
 
 1. Ouvrez Git Bash.
 2. À l’invite de commandes Git Bash, tapez `git pull upstream master:<new branch name>` . Cela crée une nouvelle branche localement qui est copiée à partir de la dernière branche maître OfficeDev.
-3. À l’invite de commandes Git Bash, tapez `git push origin <new branch name>` . Cela avertit GitHub de la nouvelle branche. La nouvelle branche doit maintenant apparaître dans votre bifurcation du référentiel de GitHub.
+3. À l’invite de commandes Git Bash, tapez `git push origin <new branch name>` . Cette alerte GitHub la nouvelle branche. La nouvelle branche doit maintenant apparaître dans votre bifurcation du référentiel de GitHub.
 4. À l’invite de commandes Git Bash, `git checkout <new branch name>` tapez pour basculer vers votre nouvelle branche.
 
 #### <a name="add-new-content-or-edit-existing-content"></a>Ajout de nouveau contenu ou modification de contenu existant
@@ -111,7 +111,7 @@ Vous accédez au référentiel sur votre ordinateur à l’aide de l’Explorate
 
 Pour modifier des fichiers, ouvrez-les dans un éditeur de votre choix et modifiez-les. Pour créer un fichier, utilisez l’éditeur de votre choix et enregistrez le nouveau fichier à l’emplacement approprié dans votre copie locale du référentiel. Tout en travaillant, enregistrez fréquemment votre travail.
 
-Les fichiers qu’ils contiennent sont une copie de travail de la nouvelle branche que `C:\Users\<yourusername>\<repo name>` vous avez créée dans votre référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, entrez les commandes suivantes dans GitBash :
+Les fichiers `C:\Users\<yourusername>\<repo name>` qu’ils contiennent sont une copie de travail de la nouvelle branche que vous avez créée dans votre référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, tapez les commandes suivantes dans GitBash.
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
@@ -140,15 +140,15 @@ L’un des administrateurs de site traitera votre demande de pull. Votre requêt
 
 #### <a name="create-a-new-branch-after-merge"></a>Créer une branche après fusion
 
-Une fois qu’une branche a été fusionnée (c’est-à-dire que votre demande de pull est acceptée), ne continuez pas à travailler dans cette branche locale. Cela peut entraîner des conflits de fusion si vous envoyez une autre demande de pull. Pour faire une autre mise à jour, créez une nouvelle branche locale à partir de la branche fusionnée en amont correctement, puis supprimez votre branche locale initiale.
+Une fois qu’une branche a été fusionnée (c’est-à-dire que votre demande de pull est acceptée), ne continuez pas à travailler dans cette branche locale. Cela peut entraîner des conflits de fusion si vous envoyez une autre demande de pull. Pour faire une autre mise à jour, créez une nouvelle branche locale à partir de la branche fusionnée en amont, puis supprimez votre branche locale initiale.
 
-Par exemple, si votre branche X locale a été fusionnée avec succès dans la branche maître OfficeDev/microsoft-graph-docs et que vous souhaitez apporter des mises à jour supplémentaires au contenu qui a été fusionné. Créez une branche locale, X2, à partir de la branche maître OfficeDev/microsoft-graph-docs. Pour ce faire, ouvrez GitBash et exécutez les commandes suivantes :
+Par exemple, si votre branche X locale a été fusionnée avec succès dans la branche maître OfficeDev/microsoft-graph-docs et que vous souhaitez apporter des mises à jour supplémentaires au contenu qui a été fusionné. Créez une branche locale, X2, à partir de la branche maître OfficeDev/microsoft-graph-docs. Pour ce faire, ouvrez GitBash et exécutez les commandes suivantes.
 
     cd microsoft-graph-docs
     git pull upstream master:X2
     git push origin X2
 
-Vous avez maintenant des copies locales (dans une nouvelle branche locale) du travail que vous avez soumis dans la branche X. La branche X2 contient également tout le travail que d’autres rédacteurs ont fusionné. Ainsi, si votre travail dépend du travail d’autres personnes (par exemple, des images partagées), il est disponible dans la nouvelle branche. Vous pouvez vérifier que votre travail précédent (et celui d’autres personnes) se trouve dans la branche en vérifiant la nouvelle succursale...
+Vous avez maintenant des copies locales (dans une nouvelle branche locale) du travail que vous avez soumis dans la branche X. La branche X2 contient également tout le travail que d’autres rédacteurs ont fusionné. Ainsi, si votre travail dépend du travail d’autres personnes (par exemple, des images partagées), il est disponible dans la nouvelle branche. Vous pouvez vérifier que votre travail précédent (et celui d’autres personnes) se trouve dans la branche en vérifiant la nouvelle branche...
 
     git checkout X2
 
@@ -186,11 +186,11 @@ En tant que membre de la communauté, **vous devez signer le Contrat de licence 
 
 ### <a name="what-happens-with-my-contributions"></a>Que se passe-t-il avec mes contributions ?
 
-Lorsque vous soumettez vos modifications, via une demande de pull, notre équipe est avertie et examine votre demande de pull. Vous recevrez des notifications concernant votre demande de pull à partir de GitHub ; Vous pouvez également être averti par une personne de notre équipe si nous avons besoin d’informations supplémentaires. Si votre requête de pull est approuvée, nous allons mettre à jour la documentation. Nous nous réservons le droit de modifier votre soumission pour des raisons juridiques, de style, de clarté ou d’autres problèmes.
+Lorsque vous soumettez vos modifications, via une demande de pull, notre équipe est avertie et examine votre demande de pull. Vous recevrez des notifications concernant votre demande de pull de GitHub ; Vous pouvez également être averti par une personne de notre équipe si nous avons besoin d’informations supplémentaires. Si votre requête de pull est approuvée, nous allons mettre à jour la documentation. Nous nous réservons le droit de modifier votre soumission pour des raisons juridiques, de style, de clarté ou d’autres problèmes.
 
-### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>Puis-je devenir un approuveur pour les demandes de pull GitHub de ce référentiel ?
+### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>Puis-je devenir un approuveur pour les demandes de GitHub de ce référentiel ?
 
-Actuellement, nous ne permettons pas aux collaborateurs externes d’approuver les demandes de pull dans ce référentiel.
+Actuellement, nous ne permettons pas aux contributeurs externes d’approuver les demandes de pull dans ce référentiel.
 
 ### <a name="how-soon-will-i-get-a-response-about-my-change-request"></a>À combien de temps vais-je obtenir une réponse concernant ma demande de modification ?
 
@@ -200,7 +200,7 @@ Les demandes de pull sont généralement examinées dans les 10 jours ou moins.
 ## <a name="more-resources"></a>Plus de ressources
 
 * Pour en savoir plus sur Markdown, allez sur le site du créateur Markdown [« Fireball ».]
-* Pour en savoir plus sur l’utilisation de Git et GitHub, consultez d’abord l’aide [de GitHub.]
+* Pour en savoir plus sur l’utilisation de Git et GitHub, consultez d’abord [l’aide GitHub.]
 
 [GitHub Home]: http://github.com
 [Aide de GitHub]: http://help.github.com/

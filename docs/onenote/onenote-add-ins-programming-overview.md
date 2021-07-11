@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ada302e971eac9dd3deb626e422fdf054315ea1a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077112"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348600"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -22,7 +22,7 @@ OneNote présente une API JavaScript pour les compléments OneNote sur le web. V
 
 Les compléments sont constitués de deux composants de base :
 
-- Une **application web** comportant une page web et les fichiers CSS, JavaScript ou autres requis. Ces fichiers sont hébergés sur un serveur web ou un service d’hébergement web, tel que Microsoft Azure. Dans OneNote sur le web, l’application web s’affiche dans un contrôle de navigateur ou un iFrame.
+- Une **application web** composée d’une page web et de tous les fichiers JavaScript, CSS ou autres requis. Ces fichiers sont hébergés sur un serveur web ou un service d’hébergement web, tel que Microsoft Azure. Dans OneNote sur le web, l’application web s’affiche dans un contrôle de navigateur ou un iframe.
 
 - Un **manifeste XML** spécifiant l’URL de la page web du complément, ainsi que les conditions d’accès, les paramètres et fonctionnalités du complément. Ce fichier est stocké sur le client. Les compléments OneNote utilisent le même format de [manifeste](../develop/add-in-manifests.md) que les autres compléments Office.
 
@@ -115,7 +115,7 @@ function getSelectionFromPage() {
 }
 ```
 
-Les compléments OneNote prennent en charge uniquement les API communes suivantes:
+Les compléments OneNote prennent en charge uniquement les API communes suivantes.
 
 | API | Commentaires |
 |:------|:------|
@@ -128,7 +128,7 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API spécifique à l’application. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
-## <a name="onenote-object-model-diagram"></a>Diagramme du modèle objet OneNote 
+## <a name="onenote-object-model-diagram"></a>Diagramme du modèle objet OneNote
 Le diagramme suivant représente ce qui est actuellement disponible dans l’API JavaScript de OneNote.
 
   ![Diagramme de modèle objet OneNote.](../images/onenote-om.png)

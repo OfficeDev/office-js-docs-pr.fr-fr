@@ -1,24 +1,24 @@
 ---
 title: Résolution des problèmes d’activation de complément contextuel Outlook
-description: Si votre complément ne s’active pas comme prévu, vous devez rechercher dans les zones suivantes les raisons possibles.
+description: Raisons possibles pour lesquelles votre add-in ne s’active pas comme prévu.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9d2224ddcd9049252394935ab8a6519b4fd494a9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076685"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348866"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
-Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection du complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
+Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection de complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Est-ce que la boîte aux lettres utilisateur se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
 En premier lieu, assurez-vous que le compte de messagerie utilisateur que vous employez pour le test se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013. Si vous utilisez des fonctionnalités spécifiques ultérieures à Exchange 2013, assurez-vous que le compte utilisateur se trouve sur une version appropriée d’Exchange.
 
-Vous pouvez vérifier la version d’Exchange 2013 en adoptant l’une des approches suivantes :
+Vous pouvez vérifier la version de Exchange 2013 en utilisant l’une des approches suivantes.
 
 - Renseignez-vous auprès de votre administrateur Exchange Server.
 
@@ -26,7 +26,7 @@ Vous pouvez vérifier la version d’Exchange 2013 en adoptant l’une des appr
 
 - Vous pouvez également utiliser la propriété [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) pour vérifier la version. Dans Outlook sur le web et sur appareils mobiles, cette propriété renvoie la version du serveur Exchange Server.
 
-- Si vous pouvez tester le complément sur Outlook, servez-vous de cette technique de débogage simple, qui fait appel au modèle objet Outlook et à Visual Basic Editor :
+- Si vous pouvez tester le Outlook, vous pouvez utiliser la technique de débogage simple suivante qui utilise le modèle objet Outlook et Visual Basic Editor.
 
     1. Tout d’abord, assurez-vous que les macros sont activées pour Outlook. Choisissez **Fichier**, **Options**, **Centre de gestion de la confidentialité**, **Paramètres du Centre de gestion de la confidentialité**, **Paramètres des macros**. Assurez-vous que l’option **Notifications pour toutes les macros** est sélectionnée dans le Centre de gestion de la confidentialité. Vous devez également avoir sélectionné **Activer les macros** au cours du démarrage d’Outlook.
 
@@ -58,7 +58,7 @@ N’importe lequel des clients riches Outlook peut désactiver un complément po
 > [!NOTE]
 > Seuls les clients riches Outlook surveillent l’utilisation des ressources. Toutefois, la désactivation d’un complément dans un client riche Outlook entraîne également la désactivation du complément dans Outlook sur le web et sur appareils mobiles.
 
-Utilisez l’une des approches suivantes pour vérifier si un complément est désactivé :
+Utilisez l’une des approches suivantes pour vérifier si un add-in est désactivé.
 
 - Dans Outlook sur le web, connectez-vous directement au compte de messagerie, choisissez l’icône Paramètres, puis choisissez **Gérer les compléments** afin d’accéder au Centre d’administration Exchange, où vous pouvez vérifier si le complément est activé.
 
@@ -81,7 +81,7 @@ Si votre complément est un complément de composition et qu’il est censé êt
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 
-Ce scénario s’applique uniquement à Outlook sur Windows. Normalement, quand vous installez un complément Outlook pour une boîte aux lettres, le serveur Exchange copie le manifeste du complément de l’emplacement que vous indiquez vers la boîte aux lettres située sur ce serveur Exchange. Chaque fois qu’Outlook démarre, il lit l’ensemble des manifestes installés pour cette boîte aux lettres dans un cache temporaire situé à l’emplacement suivant :
+Ce scénario s’applique uniquement aux Outlook sur Windows. Normalement, quand vous installez un complément Outlook pour une boîte aux lettres, le serveur Exchange copie le manifeste du complément de l’emplacement que vous indiquez vers la boîte aux lettres située sur ce serveur Exchange. Chaque fois Outlook, il lit tous les manifestes installés pour cette boîte aux lettres dans un cache temporaire à l’emplacement suivant.
 
 ```text
 %LocalAppData%\Microsoft\Office\16.0\WEF
@@ -110,20 +110,20 @@ La procédure suivante décrit les détails.
 
 1. Redémarrez Outlook, puis vérifiez si Outlook active désormais le complément.
 
-1. Si Outlook n’active pas le complément, vérifiez si Outlook dispose d’une copie correctement mise en cache du manifeste du complément. Regardez dans le chemin d’accès suivant :
+1. Si Outlook n’active pas le complément, vérifiez si Outlook dispose d’une copie correctement mise en cache du manifeste du complément. Regardez sous le chemin d’accès suivant.
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF
     ```
 
-    Vous trouverez le manifeste dans le sous-dossier suivant :
+    Vous pouvez trouver le manifeste dans le sous-foldeur suivant.
 
     ```text
     \<insert your guid>\<insert base 64 hash>\Manifests\<ManifestID>_<ManifestVersion>
     ```
 
     > [!NOTE]
-    > Voici un exemple d’un chemin d’accès à un manifeste installé pour une boîte aux lettres de l’utilisateur John :
+    > Voici un exemple de chemin d’accès à un manifeste installé pour une boîte aux lettres pour l’utilisateur John.
     >
     > ```text
     > C:\Users\john\appdata\Local\Microsoft\Office\16.0\WEF\{8D8445A4-80E4-4D6B-B7AC-D4E6AF594E73}\GoRshCWa7vW8+jhKmyiDhA==\Manifests\b3d7d9d5-6f57-437d-9830-94e2aaccef16_1.2
@@ -139,7 +139,7 @@ La procédure suivante décrit les détails.
 
     1. Recherchez un événement relativement récent pour lequel l’ID d’événement est égal à 63, ce qui correspond au téléchargement par Outlook d’un manifeste auprès d’un serveur Exchange Server.
 
-    1. Si Outlook a réussi à lire un manifeste, l’événement journalisé doit présenter la description suivante :
+    1. Si Outlook lire un manifeste, l’événement journalisé doit avoir la description suivante.
 
         ```text
         The Exchange web service request GetAppManifests succeeded.
@@ -147,7 +147,7 @@ La procédure suivante décrit les détails.
 
         Ignorez ensuite le reste de cette section, puis examinez les autres raisons possibles à la suite de cette section.
 
-1. Si vous ne voyez pas d’événement réussi, fermez Outlook et supprimez tous les manifestes du chemin d’accès suivant :
+1. Si vous ne voyez pas d’événement réussi, fermez Outlook et supprimez tous les manifestes dans le chemin d’accès suivant.
 
     ```text
     %LocalAppData%\Microsoft\Office\16.0\WEF\<insert your guid>\<insert base 64 hash>\Manifests\
@@ -189,7 +189,7 @@ Testez minutieusement l’expression régulière. Si elle renvoie des résultats
 
 ## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>Si vous utilisez une règle ItemIs, ItemHasAttachment ou ItemHasRegularExpressionMatch, avez-vous vérifié la propriété de l’élément connexe ?
 
-Si vous utilisez une règle d’activation **ItemHasRegularExpressionMatch**, vérifiez si la valeur de l’attribut **PropertyName** correspond à ce que vous attendez pour l’élément sélectionné. Voici quelques conseils qui vous permettront de déboguer les propriétés correspondantes :
+Si vous utilisez une règle d’activation **ItemHasRegularExpressionMatch**, vérifiez si la valeur de l’attribut **PropertyName** correspond à ce que vous attendez pour l’élément sélectionné. Voici quelques conseils pour déboguer les propriétés correspondantes.
 
 - Si l’élément sélectionné est un message et que vous spécifiez **BodyAsHTML** dans l’attribut **PropertyName**, ouvrez le message, puis choisissez **Afficher la source** afin de vérifier le corps du message dans la représentation HTML de cet élément.
 
@@ -237,7 +237,7 @@ Après avoir vérifié la valeur de propriété, vous pouvez utiliser un outil d
 
 ## <a name="does-outlook-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>Est-Outlook appliquer toutes les expressions régulières à la partie du corps de l’élément comme prévu ?
 
-Cette section s’applique à toutes les règles d’activation qui utilisent des expressions régulières ; en particulier, celles appliquées au corps d’élément, qui peut être volumineux et demander plus de temps pour l’évaluation des correspondances. Vous devez savoir que même si la propriété d’élément dont dépend une règle d’activation a la valeur que vous attendez, Outlook peut ne pas être en mesure d’évaluer toutes les expressions régulières sur l’ensemble de la valeur de la propriété d’élément. Pour fournir des performances raisonnables et contrôler l’utilisation excessive des ressources par un complément de lecture, Outlook observe les limites suivantes concernant le traitement des expressions régulières dans les règles d’activation au moment de l’exécution :
+Cette section s’applique à toutes les règles d’activation qui utilisent des expressions régulières ; en particulier, celles appliquées au corps d’élément, qui peut être volumineux et demander plus de temps pour l’évaluation des correspondances. Vous devez savoir que même si la propriété d’élément dont dépend une règle d’activation a la valeur que vous attendez, Outlook peut ne pas être en mesure d’évaluer toutes les expressions régulières sur l’ensemble de la valeur de la propriété d’élément. Pour fournir des performances raisonnables et contrôler l’utilisation excessive des ressources par un complément de lecture, Outlook observe les limites suivantes concernant le traitement des expressions régulières dans les règles d’activation au moment de l’exécution.
 
 - Taille du corps d’élément évalué : il existe des limites à la partie d’un corps d’élément sur laquelle Outlook une expression régulière. Ces limites dépendent de la Outlook client, du facteur de forme et du format du corps de l’élément. Consultez les détails du tableau 2 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 

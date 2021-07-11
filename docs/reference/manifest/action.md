@@ -1,14 +1,14 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
-ms.date: 02/12/2021
+ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6be1430800dea27dbd9bf78607161d88e475c145
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505408"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348698"
 ---
 # <a name="action-element"></a>Élément Action
 
@@ -26,8 +26,8 @@ Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contr�
 |:-----|:-----|
 |  [FunctionName](#functionname) |    Spécifie le nom de la fonction à exécuter. |
 |  [SourceLocation](#sourcelocation) |    Spécifie l’emplacement du fichier source pour cette action. |
-|  [TaskpaneId](#taskpaneid) | Spécifie l’ID du conteneur de volet des tâches.|
-|  [Title](#title) | Indique le titre personnalisé du volet Office.|
+|  [TaskpaneId](#taskpaneid) | Spécifie l’ID du conteneur de volet des tâches. Non pris en charge dans Outlook des modules.|
+|  [Title](#title) | Indique le titre personnalisé du volet Office. Non pris en charge dans Outlook des modules.|
 |  [SupportsPinning](#supportspinning) | Indique qu’un volet des tâches prend en charge l’épinglage, ce qui conserve le volet des tâches ouvert lorsque l’utilisateur modifie la sélection.|
 
 ## <a name="xsitype"></a>xsi:type
@@ -106,7 +106,10 @@ Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneI
 
 Élément facultatif quand **xsi:type** est « ShowTaskpane ». Indique le titre personnalisé du volet Office pour cette action.
 
-L’exemple suivant illustre une action qui utilise **l’élément Title.** Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
+> [!NOTE]
+> Cet élément enfant n’est pas pris en charge dans Outlook de développement.
+
+L’exemple suivant montre une action qui utilise **l’élément Title.** Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -134,9 +137,9 @@ L’exemple suivant illustre une action qui utilise **l’élément Title.** Not
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Bien que l’élément a été introduit dans l’ensemble de conditions requises 1.5, il est actuellement uniquement pris en charge pour les abonnés `SupportsPinning` Microsoft 365 à l’aide des éléments suivants. [](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
+> Bien que l’élément a été introduit dans l’ensemble de conditions requises `SupportsPinning` [1.5,](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)il est actuellement uniquement pris en charge pour les abonnés Microsoft 365 utilisant les éléments suivants :
 >
-> - Outlook 2016 ou une ultérieure sur Windows (build 7628.1000 ou ultérieure)
+> - Outlook 2016 ou une Windows (build 7628.1000 ou ultérieure)
 > - Outlook 2016 ou une ultérieure sur Mac (build 16.13.503 ou ultérieure)
 > - Outlook moderne sur le web
 

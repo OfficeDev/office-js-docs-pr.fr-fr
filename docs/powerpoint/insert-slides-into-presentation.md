@@ -1,18 +1,18 @@
 ---
-title: Insérer des diapositives dans une présentation PowerPoint
+title: Insérer des diapositives dans une présentation PowerPoint présentation
 description: Découvrez comment insérer des diapositives d’une présentation dans une autre.
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: 810a398c336c6715cac138840ed8524cff6c0dac
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.openlocfilehash: 9b106e8940e7b0f19678e0467d8e900ffecd9438
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613912"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348782"
 ---
-# <a name="insert-slides-in-a-powerpoint-presentation"></a>Insérer des diapositives dans une présentation PowerPoint
+# <a name="insert-slides-in-a-powerpoint-presentation"></a>Insérer des diapositives dans une présentation PowerPoint présentation
 
-Un add-in PowerPoint peut insérer des diapositives d’une présentation dans la présentation actuelle à l’aide de la bibliothèque JavaScript propre à l’application De PowerPoint. Vous pouvez contrôler si les diapositives insérées conservent la mise en forme de la présentation source ou la mise en forme de la présentation cible.
+Un PowerPoint peut insérer des diapositives d’une présentation dans la présentation actuelle à l’aide PowerPoint bibliothèque JavaScript propre à l’application. Vous pouvez contrôler si les diapositives insérées conservent la mise en forme de la présentation source ou la mise en forme de la présentation cible.
 
 Les API d’insertion de diapositives sont principalement utilisées dans les scénarios de modèles de présentation : il existe un petit nombre de présentations connues qui servent de pools de diapositives qui peuvent être insérées par le module. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation le critère de sélection (par exemple, titres ou images) avec les ID de diapositive. Les API peuvent également être utilisées dans des scénarios où l’utilisateur peut insérer des diapositives  à partir de n’importe quelle présentation arbitraire, mais dans ce scénario, l’utilisateur est effectivement limité à l’insertion de toutes les diapositives de la présentation source. Pour [plus d’informations à](#selecting-which-slides-to-insert) ce sujet, voir Sélection des diapositives à insérer.
 
@@ -36,12 +36,12 @@ Il existe plusieurs façons de convertir un fichier en base64. Le langage de pro
     </section>
     ```
 
-    Ce markup ajoute l’interface utilisateur dans la capture d’écran suivante à la page :
+    Ce markup ajoute l’interface utilisateur dans la capture d’écran suivante à la page.
 
-    ![Capture d’écran montrant un contrôle d’entrée de type de fichier HTML précédé d’une phrase d’instructions indiquant « Sélectionner une présentation PowerPoint à partir de laquelle insérer des diapositives ». Le contrôle se compose d’un bouton étiqueté « Choisir un fichier » suivi de la phrase « Aucun fichier choisi ».](../images/powerpoint-html-file-input-control.png)
+    ![Screenshot showing an HTML file type input control preceded by an instructional sentence reading « Select a PowerPoint presentation from which to insert slides ». Le contrôle se compose d’un bouton étiqueté « Choisir un fichier » suivi de la phrase « Aucun fichier choisi ».](../images/powerpoint-html-file-input-control.png)
 
     > [!NOTE]
-    > Il existe de nombreuses autres façons d’obtenir un fichier PowerPoint. Par exemple, si le fichier est stocké sur OneDrive ou SharePoint, vous pouvez utiliser Microsoft Graph pour le télécharger. Pour plus d’informations, voir [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and Access Files with Microsoft [Graph](/learn/modules/msgraph-access-file-data/).
+    > Il existe de nombreuses autres façons d’obtenir un PowerPoint de données. Par exemple, si le fichier est stocké sur OneDrive ou SharePoint, vous pouvez utiliser Microsoft Graph pour le télécharger. Pour plus d’informations, voir [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and Access Files with Microsoft [Graph](/learn/modules/msgraph-access-file-data/).
 
 2. Ajoutez le code suivant au code JavaScript du add-in pour affecter une fonction à l’événement du contrôle `change` d’entrée. (Vous créez la `storeFileAsBase64` fonction à l’étape suivante.)
 
@@ -49,10 +49,10 @@ Il existe plusieurs façons de convertir un fichier en base64. Le langage de pro
     $("#file").change(storeFileAsBase64);
     ```
 
-3. Ajoutez le code suivant. Notez les informations suivantes concernant ce code :
+3. Ajoutez le code suivant. Notez les points suivants concernant ce code.
 
     - La `reader.readAsDataURL` méthode convertit le fichier en base64 et le stocke dans la `reader.result` propriété. Une fois la méthode terminée, elle déclenche le `onload` handler d’événements.
-    - Le handler d’événements coupe les métadonnées du fichier codé et stocke la chaîne codée `onload` dans une variable globale.
+    - Le handler d’événements coupe les métadonnées du fichier encodé et stocke la chaîne codée `onload` dans une variable globale.
     - La chaîne codée en base 64 est stockée globalement, car elle sera lue par une autre fonction que vous créerez à une étape ultérieure.
 
     ```javascript
@@ -75,7 +75,7 @@ Il existe plusieurs façons de convertir un fichier en base64. Le langage de pro
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>Insérer des diapositives avec insertSlidesFromBase64
 
-Votre add-in insère des diapositives d’une autre présentation PowerPoint dans la présentation actuelle à l’aide de la méthode [Presentation.insertSlidesFromBase64.](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) Voici un exemple simple dans lequel toutes les diapositives de la présentation source sont insérées au début de la présentation en cours et les diapositives insérées conservent la mise en forme du fichier source. Notez qu’il s’agit d’une variable globale qui contient une version codée `chosenFileBase64` en base 64 d’un fichier de présentation PowerPoint.
+Votre add-in insère des diapositives d’une autre PowerPoint dans la présentation actuelle à l’aide de la méthode [Presentation.insertSlidesFromBase64.](/javascript/api/powerpoint/powerpoint.presentation#insertslidesfrombase64-base64file--options-) Voici un exemple simple dans lequel toutes les diapositives de la présentation source sont insérées au début de la présentation en cours et les diapositives insérées conservent la mise en forme du fichier source. Notez qu’il s’agit d’une variable globale qui contient une version codée `chosenFileBase64` en base 64 d’PowerPoint de présentation.
 
 ```javascript
 async function insertAllSlides() {
@@ -88,7 +88,7 @@ async function insertAllSlides() {
 
 Vous pouvez contrôler certains aspects du résultat d’insertion, y compris l’endroit où les diapositives sont insérées et si elles obtiennent la mise en forme source ou cible, en passant un objet [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) en tant que deuxième paramètre à `insertSlidesFromBase64` . Voici un exemple. Tenez compte du code suivant :
 
-- Il existe deux valeurs possibles pour la propriété `formatting` : « UseDestinationTheme » et « KeepSourceFormatting ». Si vous le souhaitez, vous pouvez utiliser `InsertSlideFormatting` l’enum (par exemple, `PowerPoint.InsertSlideFormatting.useDestinationTheme` ).
+- Il existe deux valeurs possibles pour la propriété `formatting` : « UseDestinationTheme » et « KeepSourceFormatting ». Si vous le souhaitez, vous pouvez utiliser l’enum `InsertSlideFormatting` (par exemple, `PowerPoint.InsertSlideFormatting.useDestinationTheme` ).
 - La fonction insère les diapositives de la présentation source immédiatement après la diapositive spécifiée par la `targetSlideId` propriété. La valeur de cette propriété est une chaîne de l’une des trois formes possibles : ***nnn*#**, * *#* mmmmmmmmmmm*** ou **_nnn_ #* mmmmmmmmm***, où *nnn* est l’ID de la diapositive (généralement 3 chiffres) et *mmmmmmmmm est* l’ID de création de la diapositive (généralement 9 chiffres). Voici quelques exemples `267#763315295` : `267#` , et `#763315295` .
 
 ```javascript
@@ -108,7 +108,7 @@ async function insertSlidesDestinationFormatting() {
 
 Bien entendu, vous ne connaissez généralement pas au moment du codage l’ID ou l’ID de création de la diapositive cible. Plus souvent, un add-in demande aux utilisateurs de sélectionner la diapositive cible. Les étapes suivantes montrent comment obtenir l’ID ***nnn*#** de la diapositive actuellement sélectionnée et l’utiliser comme diapositive cible.
 
-1. Créez une fonction qui obtient l’ID de la diapositive actuellement sélectionnée à l’aide de la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes. Voici un exemple. Notez que l’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir Wrap Common-APIs dans les fonctions [de renvoi de promesse.](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
+1. Créez une fonction qui obtient l’ID de la diapositive actuellement sélectionnée à l’aide de la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes. Voici un exemple. Notez que l’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir Wrap Common-APIs dans les fonctions de [renvoi de promesse.](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
 
  
     ```javascript
@@ -170,6 +170,6 @@ async function insertAfterSelectedSlide() {
 > [!NOTE]
 > Les diapositives sont insérées dans le même ordre relatif dans lequel elles apparaissent dans la présentation source, quel que soit l’ordre dans lequel elles apparaissent dans le tableau.
 
-Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’une diapositive dans la présentation source. Pour cette raison, vous ne pouvez utiliser la propriété que si vous connaissez les ID source au moment du codage ou que votre application peut les récupérer lors de l’utilisation à partir d’une source de `sourceSlideIds` données. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID de diapositive, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par titre ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
+Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’une diapositive dans la présentation source. Pour cette raison, vous ne pouvez utiliser la propriété que lorsque vous connaissez les ID source au moment du codage ou que votre application peut les récupérer au moment de l’utilisation à partir d’une source de `sourceSlideIds` données. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID de diapositive, vous devez également permettre à l’utilisateur de sélectionner des diapositives, par titre ou par image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
 
 Par conséquent, la propriété est principalement utilisée dans les scénarios de modèles de présentation : le add-in est conçu pour fonctionner avec un ensemble spécifique de présentations qui servent de pools de diapositives qui peuvent être `sourceSlideIds` insérées. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (comme des titres ou des images) avec des ID de diapositive ou de création de diapositives qui ont été créés à partir de l’ensemble de présentations sources possibles.

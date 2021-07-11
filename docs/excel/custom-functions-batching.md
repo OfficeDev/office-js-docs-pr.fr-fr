@@ -3,12 +3,12 @@ ms.date: 07/10/2019
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 localization_priority: Normal
-ms.openlocfilehash: 2ad9532fab26ff3ec8289a8892d518ab2570c6d6
-ms.sourcegitcommit: d372de1a25dbad983fa9872c6af19a916f63f317
+ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/30/2021
-ms.locfileid: "53204996"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349650"
 ---
 # <a name="batching-custom-function-calls-for-a-remote-service"></a>Le traitement par lots de fonctions personnalisées nécessite un service à distance
 
@@ -152,7 +152,7 @@ function _makeRemoteRequest() {
 
 ### <a name="modify-_makeremoterequest-for-your-own-solution"></a>Modifier `_makeRemoteRequest` pour votre propre solution
 
-La fonction `_makeRemoteRequest` appelle `_fetchFromRemoteService` qui, comme vous le verrez plus tard, est simplement une imitation représentant le service à distance. Cela facilite l’étude et l’exécution du code dans cet article. Mais si vous voulez utiliser ce code pour un vrai service à distance, vous devez effectuer les modifications suivantes :
+La fonction `_makeRemoteRequest` appelle `_fetchFromRemoteService` qui, comme vous le verrez plus tard, est simplement une imitation représentant le service à distance. Cela facilite l’étude et l’exécution du code dans cet article. Toutefois, lorsque vous souhaitez utiliser ce code pour un service distant réel, vous devez apporter les modifications suivantes.
 
 - Déterminez la manière dont vous souhaitez sérialiser les opérations de traitement par lots sur le réseau. Par exemple, vous souhaiterez peut-être placer le tableau dans un corps JSON.
 - Au lieu d’appeler `_fetchFromRemoteService`, vous devez passer le véritable appel réseau au service à distance en transmettant le traitement par lots des opérations.
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>Modifier `_fetchFromRemoteService` pour votre service à distance en direct
 
-Pour modifier la fonction `_fetchFromRemoteService` de manière à l’exécuter dans votre service à distance en direct, apportez les modifications suivantes :
+Pour modifier la fonction à exécuter dans votre service distant en `_fetchFromRemoteService` direct, a effectuer les modifications suivantes.
 
 - Selon votre plateforme serveur (Node.js ou autres), mappez l’appel du réseau client à cette fonction.
 - Supprimez la fonction `pause`, qui reproduit la latence du réseau dans le cadre de l’imitation.

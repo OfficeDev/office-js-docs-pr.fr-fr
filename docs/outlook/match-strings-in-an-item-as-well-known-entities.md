@@ -3,12 +3,12 @@ title: Faire correspondre les chaînes en tant qu’entités connues dans un com
 description: À l’Office’API JavaScript, vous pouvez obtenir des chaînes qui correspondent à des entités connues spécifiques pour un traitement ultérieur.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 14faef13050572e8fb85cb8bae7226664bc65a7f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077077"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348495"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues
 
@@ -54,7 +54,7 @@ La figure suivante décrit comment Exchange Server et Outlook prennent en charg
 
 Pour extraire les entités de votre code JavaScript ou pour activer votre complément à partir de l’existence de certaines entités connues, assurez-vous que vous avez demandé les autorisations appropriées dans le manifeste du complément.
 
-La spécification de l’autorisation restreinte par défaut permet à votre add-in d’extraire `Address` le `MeetingSuggestion` , ou `TaskSuggestion` l’entité. Pour extraire les autres entités, spécifiez les autorisations de lecture d’élément, de lecture/écriture d’élément ou de lecture/écriture de boîte aux lettres. Pour le faire dans le fichier manifeste, utilisez l’élément [Permissions](../reference/manifest/permissions.md) et spécifiez l’autorisation appropriée &mdash;**Restricted**, **ReadItem**, **ReadWriteItem**, ou **ReadWriteMailbox**&mdash;, comme dans l’exemple suivant :
+La spécification de l’autorisation restreinte par défaut permet à votre add-in d’extraire `Address` le `MeetingSuggestion` , ou `TaskSuggestion` l’entité. Pour extraire les autres entités, spécifiez les autorisations de lecture d’élément, de lecture/écriture d’élément ou de lecture/écriture de boîte aux lettres. Pour ce faire dans le manifeste, utilisez l’élément [Permissions](../reference/manifest/permissions.md) et spécifiez l’autorisation appropriée &mdash; **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox** comme dans l’exemple &mdash; suivant.
 
 ```xml
 <Permissions>ReadItem</Permissions>
@@ -132,7 +132,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 
 ## <a name="tips-for-using-well-known-entities"></a>Conseils d’utilisation des entités connues
 
-Si vous utilisez des entités connues dans votre complément, vous devez connaître certaines informations et limites. Les éléments suivants s’appliquent tant que votre application est activée lorsque l’utilisateur lit un élément qui contient des correspondances d’entités connues, que vous utilisiez ou non une `ItemHasKnownEntity` règle :
+Si vous utilisez des entités connues dans votre complément, vous devez connaître certaines informations et limites. L’exemple suivant s’applique tant que votre application est activée lorsque l’utilisateur lit un élément qui contient des correspondances d’entités connues, que vous utilisiez ou non une `ItemHasKnownEntity` règle.
 
 
 - Vous pouvez extraire des chaînes qui sont des entités connues uniquement si les chaînes sont en anglais.
@@ -147,13 +147,13 @@ Si vous utilisez des entités connues dans votre complément, vous devez connaî
     
 - Vous ne pouvez pas extraire des entités à partir d’éléments dans le dossier Éléments envoyés.
     
-En outre, les dispositions suivantes s’appliquent si vous utilisez une règle [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule), et cela peut avoir une incidence sur les scénarios pour lesquels vous souhaiteriez que votre complément soit activé :
+En outre, les éléments suivants s’appliquent si vous utilisez une règle [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) et peuvent affecter les scénarios dans lequel vous vous attendriez à ce que votre complément soit activé autrement.
 
-- Lorsque vous utilisez la règle, attendez Outlook des chaînes d’entité en anglais uniquement, quels que soient les paramètres régionaux par défaut `ItemHasKnownEntity` spécifiés dans le manifeste.
+- Lors de l’utilisation de la règle, Outlook des chaînes d’entité en anglais uniquement, quels que soient les paramètres régionaux par défaut spécifiés `ItemHasKnownEntity` dans le manifeste.
     
 - Lorsque votre application est en cours d’exécution sur un client riche Outlook, attendez-vous à ce que Outlook applique la règle au premier mégaoctet du corps de l’élément et non au reste du corps au-dessus de cette `ItemHasKnownEntity` limite.
     
-- Vous ne pouvez pas utiliser une règle pour activer un `ItemHasKnownEntity` add-in pour les éléments du dossier Éléments envoyés.
+- Vous ne pouvez pas utiliser une règle pour activer un add-in pour les éléments du `ItemHasKnownEntity` dossier Éléments envoyés.
     
 
 ## <a name="see-also"></a>Voir aussi

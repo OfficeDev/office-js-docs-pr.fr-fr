@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton identité dans un complément
 description: Découvrez comment utiliser le jeton d’identité fourni par un complément Outlook pour implémenter l’authentification unique SSO dans votre service.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: fac68065aed491d920c573cac644e17af89892ca
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 839c3db2658ac4f16b965ee399df391ddcfd0385
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961271"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348537"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Authentifier un utilisateur avec un jeton d’identité pour Exchange
 
@@ -27,7 +27,7 @@ La première étape concerne votre complément qui doit obtenir du serveur le je
 
 Le serveur principal DOIT valider le jeton avant de l’accepter. Il s’agit d’une étape importante pour garantir que le jeton a été émis par le serveur Exchange de l’utilisateur. Pour plus d’informations sur la validation des jetons d’identité d’utilisateur Exchange, reportez-vous à l’article [Valider un jeton d’identité Exchange](validate-an-identity-token.md).
 
-Une fois validée et décodée, la charge utile du jeton ressemble à ce qui suit.
+Une fois validée et décodée, la charge utile du jeton ressemble à ce qui suit :
 
 ```json
 { 

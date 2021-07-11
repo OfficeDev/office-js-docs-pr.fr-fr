@@ -3,12 +3,12 @@ title: Utiliser du contenu de page OneNote
 description: Découvrez comment utiliser le contenu OneNote page à l’aide de l’API JavaScript.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 9c4744f1121bbc5e28783940a946727275b806f2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f506617bfdbc97e94f8fb16930dfc2a935385d5f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076818"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349048"
 ---
 # <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote
 
@@ -21,7 +21,7 @@ Dans l’API JavaScript des compléments OneNote, le contenu de page est représ
 - Un objet Outline contient une collection d’objets Paragraph.
 - Un objet Paragraph contient un type de contenu RichText, Image, Table ou Other.
 
-Pour créer une page OneNote vide, utilisez l’une des méthodes suivantes :
+Pour créer une page OneNote vide, utilisez l’une des méthodes suivantes.
 
 - [Section.addPage](/javascript/api/onenote/onenote.section#addpage-title-)
 - [Page.insertPageAsSibling](/javascript/api/onenote/onenote.section#insertsectionassibling-location--title-)
@@ -36,7 +36,7 @@ Le contenu et la structure d’une page OneNote sont représentés par du code H
 
 ## <a name="supported-html"></a>HTML pris en charge
 
-L’API JavaScript des compléments OneNote prend en charge le code HTML suivant pour créer et mettre à jour du contenu de page :
+L OneNote API JavaScript de votre application prend en charge le code HTML suivant pour la création et la mise à jour de contenu de page.
 
 - `<html>`, `<body>`, `<div>`, `<span>`, `<br/>`
 - `<p>`

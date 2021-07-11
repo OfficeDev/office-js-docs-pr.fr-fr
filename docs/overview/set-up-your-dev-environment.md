@@ -1,43 +1,43 @@
 ---
 title: Configuration de votre environnement de développement
-description: Configurer votre environnement de développement pour créer des add-ins Office.
+description: Configurer votre environnement de développement pour créer des Office de développement.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 1dd0cc6bb035a0274e36fe9916dcd2481bdf0b39
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: 330b2d250cb3069eb09a3589a20e87421f387ed1
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234127"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348803"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
-Ce guide vous aide à configurer des outils pour vous aider à créer des add-ins Office en suivant nos démarrages rapides ou didacticiels. Vous devez installer les outils à partir de la liste ci-dessous. Si vous avez déjà installé ces éléments, vous êtes prêt à commencer un démarrage rapide, tel que ce démarrage rapide [Excel React.](../quickstarts/excel-quickstart-react.md)
+Ce guide vous aide à configurer des outils pour créer des Office en suivant nos démarrages rapides ou didacticiels. Vous devez installer les outils à partir de la liste ci-dessous. Si vous avez déjà installé ces éléments, vous êtes prêt à commencer un démarrage rapide, tel que [celui-ci Excel React démarrage rapide.](../quickstarts/excel-quickstart-react.md)
 
 - Node.js
 - npm
-- Un compte Microsoft 365 qui inclut la version d’abonnement d’Office
+- Un Microsoft 365 qui inclut la version d’abonnement de Office
 - Éditeur de code de votre choix
 
-Ce guide suppose que vous savez utiliser un outil de ligne de commande. 
+Ce guide suppose que vous savez utiliser un outil de ligne de commande.
 
 ## <a name="install-nodejs"></a>Installer Node.js.
 
-Node.js est un runtime JavaScript dont vous aurez besoin pour développer des add-ins Office modernes.
+Node.js est un runtime JavaScript dont vous aurez besoin pour développer des Office modernes.
 
 Installez Node.js en [téléchargeant la dernière version recommandée à partir de leur site web.](https://nodejs.org) Suivez les instructions d’installation de votre système d’exploitation.
 
 ## <a name="install-npm"></a>Installer npm
 
-npm est un registre logiciel open source à partir duquel télécharger les packages utilisés dans le développement de applications Office.
+npm est un registre logiciel open source à partir duquel télécharger les packages utilisés dans le développement de Office de développement.
 
-Pour installer npm, exécutez la commande suivante dans la ligne de commande :
+Pour installer npm, exécutez la commande suivante dans la ligne de commande.
 
 ```command&nbsp;line
     npm install npm -g
 ```
 
-Pour vérifier si npm est déjà installé et voir la version installée, exécutez la commande suivante dans la ligne de commande :
+Pour vérifier si npm est déjà installé et voir la version installée, exécutez la commande suivante dans la ligne de commande.
 
 ```command&nbsp;line
 npm -v
@@ -47,11 +47,11 @@ Vous pouvez utiliser un gestionnaire de version Node pour vous permettre de basc
 
 ## <a name="get-microsoft-365"></a>Obtenir Microsoft 365
 
-Si vous n’avez pas encore de compte Microsoft 365, vous pouvez obtenir un abonnement Microsoft 365 renouvelable gratuit de 90 jours qui inclut toutes les applications Office en rejoignant le programme pour les développeurs [Microsoft 365.](https://developer.microsoft.com/office/dev-program)
+Si vous n’avez pas encore de compte Microsoft 365, vous pouvez obtenir un abonnement Microsoft 365 renouvelable gratuit de 90 jours qui inclut toutes les applications Office en rejoignant le programme Microsoft 365 [développeur.](https://developer.microsoft.com/office/dev-program)
 
 ## <a name="install-a-code-editor"></a>Installer un éditeur de code
 
-Vous pouvez utiliser n’importe quel éditeur de code ou IDE qui prend en charge le développement côté client pour créer votre composant WebPart, par exemple :
+Vous pouvez utiliser n’importe quel éditeur de code ou IDE qui prend en charge le développement côté client pour créer votre composant WebPart, par exemple :
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Atom](https://atom.io)
@@ -59,7 +59,7 @@ Vous pouvez utiliser n’importe quel éditeur de code ou IDE qui prend en charg
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Essayez de créer votre propre add-in ou utilisez Script Lab pour essayer des exemples intégrés.
+Essayez de créer votre propre Script Lab utiliser pour essayer des exemples intégrés.
 
 ### <a name="create-an-office-add-in"></a>Créer un complément Office
 
@@ -76,4 +76,4 @@ Explorez la bibliothèque d’exemples intégrés dans [Script Lab](explore-with
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
 - [Publier des compléments Office](../publish/publish.md)
-- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

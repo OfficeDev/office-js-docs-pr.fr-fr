@@ -3,16 +3,16 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 04/10/2020
 localization_priority: Normal
-ms.openlocfilehash: 90f3f9b4e22c446713f7503d6372e0b7a13bf9ee
-ms.sourcegitcommit: 3123b9819c5225ee45a5312f64be79e46cbd0e3c
+ms.openlocfilehash: f653f43228c7667bc6848d4f0a6d2e9fd1768964
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "50043868"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349006"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
-L’utilisation des commandes de macros dans Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations)](#code-considerations)que dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
+L’utilisation des commandes de Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations)](#code-considerations)que dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 
 ## <a name="updating-the-manifest"></a>Mise à jour du manifeste
 
@@ -72,7 +72,7 @@ La conception d’un complément pour mobile implique certaines considérations 
 
 La méthode [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
 
-L’ensemble de conditions requises de boîte aux lettres 1.5 a introduit une nouvelle version [d’Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST, ainsi qu’une nouvelle propriété [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
+L’ensemble de conditions requises de la boîte aux lettres 1.5 a introduit une nouvelle version de [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST, ainsi qu’une nouvelle propriété [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
 
 ### <a name="pinch-zoom"></a>Pincer pour zoomer
 
@@ -84,28 +84,28 @@ Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et e
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 
-Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus [d’informations](online-meeting.md) sur cette exception, consultez l’article Créer un application outlook mobile pour un fournisseur de réunion en ligne.
+Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus [d’informations sur cette exception,](online-meeting.md) consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
 
 ### <a name="unsupported-apis"></a>API non prises en charge
 
-Les API introduites dans l’ensemble de conditions requises 1.6 ou ultérieure ne sont pas pris en charge par Outlook Mobile. Les API suivantes des ensembles de conditions requises antérieures ne sont pas non plus pris en charge.
+Les API introduites dans l’ensemble de conditions requises 1.6 ou ultérieure ne sont pas Outlook Mobile. Les API suivantes des ensembles de conditions requises antérieures ne sont pas non plus pris en charge.
 
-  - [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
-  - [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
-  - [Office.context.mailbox.convertToEwsId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [Office.context.mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [Office.context.mailbox.displayMessageForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-  - [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-  - [Office.context.mailbox.item.displayReplyAllForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [Office.context.mailbox.item.displayReplyForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [Office.context.mailbox.item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [Office.context.mailbox.item.getEntitiesByType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [Office.context.mailbox.item.getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-  - [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
+- [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
+- [Office.context.mailbox.convertToEwsId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+- [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+- [Office.context.mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+- [Office.context.mailbox.displayMessageForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+- [Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+- [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
+- [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
+- [Office.context.mailbox.item.displayReplyAllForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.mailbox.item.displayReplyForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.mailbox.item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.mailbox.item.getEntitiesByType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.mailbox.item.getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
 ## <a name="see-also"></a>Voir aussi
 

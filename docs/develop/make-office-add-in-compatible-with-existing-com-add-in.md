@@ -3,16 +3,16 @@ title: Rendre votre complément Office compatible avec un complément COM exista
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e2ab1bb1eda548ff8e0923b8fbccfa9e007a6a0c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075998"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349804"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
-Si vous avez un compl?ment COM existant, vous pouvez créer des fonctionnalités équivalentes dans votre compl?ment Office, permettant ainsi votre solution de s’exécuter sur d’autres plateformes telles que Office sur le Web ou Mac. Dans certains cas, votre Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le compl?ment COM correspondant. Dans ces situations, votre compl?ment COM peut fournir une meilleure expérience utilisateur sur Windows que l’interface Office compl?ments peut fournir.
+Si vous avez un compl?ment COM existant, vous pouvez créer des fonctionnalités équivalentes dans votre Compl?ment Office, ce qui permet à votre solution de s’exécuter sur d’autres plateformes telles que Office sur le Web ou Mac. Dans certains cas, votre Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le compl?ment COM correspondant. Dans ces situations, votre compl?ment COM peut fournir une meilleure expérience utilisateur sur Windows que l’interface Office compl?ments peut fournir.
 
 Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?ment COM équivalent est déjà install sur l’ordinateur d’un utilisateur, Office sur Windows exécute le compl?ment COM au lieu du compl?ment Office. Le add-in COM est appelé « équivalent », car Office passe en toute transparence entre le compl?ment COM et le compl?ment Office en fonction de celui qui est install ? l’ordinateur d’un utilisateur.
 
@@ -21,7 +21,7 @@ Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?men
 >
 > - Excel, Word et PowerPoint sur le web
 > - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
-> - Excel, Word et PowerPoint mac (version 13.329 ou ultérieure)
+> - Excel, Word et PowerPoint sur Mac (version 13.329 ou ultérieure)
 > - Outlook sur Windows (version 2102 ou ultérieure)
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Spécifier un compl?ment COM équivalent
@@ -57,7 +57,7 @@ L’exemple suivant montre la partie du manifeste qui spécifie un compl?ment CO
 
 Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?ment COM/VSTO, identifiez le compl?ment COM équivalent dans la stratégie de groupe **Deactiver** les compl?ments web Outlook dont le compl?ment COM ou VSTO équivalent est install s en configurant sur l’ordinateur de l’utilisateur. Ensuite, Outlook sur Windows utilisera le compl?ment COM au lieu du compl?ment web, s’ils sont tous deux install s.
 
-1. Téléchargez le dernier [outil Modèles d’administration,](https://www.microsoft.com/download/details.aspx?id=49030)en vous important des instructions d’installation **de l’outil.**
+1. Téléchargez la dernière [version de l’outil Modèles d’administration,](https://www.microsoft.com/download/details.aspx?id=49030)en vous important des **instructions d’installation de l’outil.**
 1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
 1. Accédez **aux**  >  **modèles d’administration** de configuration utilisateur   >  **Microsoft Outlook 2016**  >  **divers.**
 1. Sélectionnez le paramètre Désactiver Outlook de sites web dont l’équivalent **COM ou VSTO est installé.**
@@ -70,7 +70,7 @@ Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?
 
 ## <a name="equivalent-behavior-for-users"></a>Comportement équivalent pour les utilisateurs
 
-Lorsqu’un compl?ment [COM](#specify-an-equivalent-com-add-in)équivalent est spécifié, Office sur Windows n’affiche pas l’interface utilisateur de votre compl?ment Office si le compl?ment COM ex quis est install . Office masque uniquement les boutons du ruban du Office et n’empêche pas l’installation. Par conséquent, votre Office’interface utilisateur s’affiche toujours aux emplacements suivants dans l’interface utilisateur :
+Lorsqu’un module com équivalent est [spécifié,](#specify-an-equivalent-com-add-in)Office sur Windows n’affiche pas l’interface utilisateur de votre Office si le module com équivalent est installé. Office masque uniquement les boutons du ruban du Office et n’empêche pas l’installation. Par conséquent, votre Office’interface utilisateur apparaîtra toujours aux emplacements suivants dans l’interface utilisateur.
 
 - Sous **Mes modules**
 - En tant qu’entrée dans le gestionnaire du ruban (Excel, Word et PowerPoint uniquement)
@@ -85,7 +85,7 @@ Les scénarios suivants décrivent ce qui se produit en fonction de la façon do
 Si un utilisateur acquiert le Office à partir d’AppSource et que le module com équivalent est déjà installé, Office :
 
 1. Installez le Office’installation.
-2. Masquez l’Office’interface utilisateur du add-in dans le ruban.
+2. Masquez l Office’interface utilisateur du module de module dans le ruban.
 3. Affichez un appel pour l’utilisateur qui pointe sur le bouton du ruban du compl?ment COM.
 
 ### <a name="centralized-deployment-of-office-add-in"></a>Déploiement centralisé du Office de bureau
@@ -93,7 +93,7 @@ Si un utilisateur acquiert le Office à partir d’AppSource et que le module co
 Si un administrateur déploie le add-in Office sur son client à l’aide d’un déploiement centralisé et que le module com équivalent est déjà installé, l’utilisateur doit redémarrer Office avant de voir les modifications. Une fois Office redémarrage, il :
 
 1. Installez le Office’installation.
-2. Masquez l’Office’interface utilisateur du add-in dans le ruban.
+2. Masquez l Office’interface utilisateur du module de module dans le ruban.
 3. Affichez un appel pour l’utilisateur qui pointe sur le bouton du ruban du compl?ment COM.
 
 ### <a name="document-shared-with-embedded-office-add-in"></a>Document partagé avec un Office incorporé
@@ -102,7 +102,7 @@ Si un utilisateur a installé le compl?ment COM, puis obtient un document partag
 
 1. Invitez l’utilisateur à faire confiance au Office de contenu.
 2. S’il est approuvé, Office le module de mise en Office s’installe.
-3. Masquez l’Office’interface utilisateur du add-in dans le ruban.
+3. Masquez l Office’interface utilisateur du module de module dans le ruban.
 
 ## <a name="other-com-add-in-behavior"></a>Autre comportement des autres compl?ments COM
 

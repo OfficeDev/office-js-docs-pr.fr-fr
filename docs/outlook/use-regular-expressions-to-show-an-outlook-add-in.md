@@ -3,16 +3,16 @@ title: Utiliser les règles d’activation d’expression régulière afin d’a
 description: Découvrez comment utiliser les règles d’activation d’expression régulière pour les compléments contextuels Outlook.
 ms.date: 07/28/2020
 localization_priority: Normal
-ms.openlocfilehash: 4a5507b410ed729f76c3efa0119e87c6a6dbc71a
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: d334ba6b2e0f044fc8d876cd6edd218743ccb390
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292474"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348852"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
-Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios dans lesquels Outlook n’active pas de compléments, par exemple, des éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
+Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios dans Outlook n’active pas les modules, par exemple, les éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
 
 Vous pouvez spécifier une expression régulière dans le cadre d’une règle [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ou [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) dans le manifeste XML du complément. Les règles sont spécifiées dans un point d’extension [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity).
 
@@ -44,7 +44,7 @@ Une règle `ItemHasRegularExpressionMatch` est utile dans le contrôle de l’ac
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Meilleures pratiques pour l’utilisation d’expressions régulières dans les règles
 
-Prêtez une attention particulière aux éléments suivants lorsque vous utilisez des expressions régulières :
+Prêtez une attention particulière aux questions suivantes lorsque vous utilisez des expressions régulières.
 
 - Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour le corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour essayer d’obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.
 - Le corps en texte brut renvoyé sur un navigateur peut être légèrement différent sur un autre. Si vous utilisez une règle `ItemHasRegularExpressionMatch` avec `BodyAsPlaintext` comme attribut `PropertyName`, testez votre expression régulière sur tous les navigateurs pris en charge par votre complément.
@@ -53,7 +53,7 @@ Prêtez une attention particulière aux éléments suivants lorsque vous utilise
 
 - Le corps HTML d’un élément est légèrement différent entre un client riche Outlook et Outlook sur le web ou Outlook Mobile. Définissez attentivement vos expressions régulières.
 
-- Selon le client Outlook, le type de périphérique ou la propriété auquel une expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chacun des clients que vous devez connaître lors de la conception d’expressions régulières en tant que règles d’activation. Pour plus d’informations, consultez la rubrique [limites pour l’activation et l’API JavaScript pour les compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) .
+- Selon le client Outlook, le type d’appareil ou la propriété sur qui une expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chacun des clients que vous devez connaître lors de la conception d’expressions régulières en tant que règles d’activation. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 ### <a name="examples"></a>Exemples
 
@@ -124,7 +124,7 @@ La règle `ItemHasKnownEntity` suivante active le complément chaque fois qu’u
 
 ## <a name="using-regular-expression-results-in-code"></a>Utilisation des résultats d’expressions régulières dans le code
 
-Vous pouvez obtenir des correspondances avec une expression régulière en utilisant les méthodes suivantes sur l’élément actif :
+Vous pouvez obtenir des correspondances avec une expression régulière en utilisant les méthodes suivantes sur l’élément actuel.
 
 - [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) renvoie les correspondances dans l’élément actuel pour toutes les expressions régulières spécifiées dans les règles `ItemHasRegularExpressionMatch` et `ItemHasKnownEntity` du complément.
 

@@ -1,32 +1,32 @@
 ---
 title: Ajouter et supprimer des pièces jointes dans un complément Outlook
-description: Vous pouvez utiliser différentes API de pièce jointe pour gérer les fichiers ou les éléments Outlook joints à l’élément que l’utilisateur compose.
+description: Vous pouvez utiliser différentes API de pièce jointe pour gérer les fichiers ou Outlook éléments joints à l’élément que l’utilisateur compose.
 ms.date: 02/24/2021
 localization_priority: Normal
-ms.openlocfilehash: da426813e865f5607ec3e2c65252e8a406d889e2
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505499"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348586"
 ---
-# <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition dans Outlook
+# <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition Outlook
 
-L’API JavaScript pour Office fournit plusieurs API que vous pouvez utiliser pour gérer les pièces jointes d’un élément lorsque l’utilisateur compose.
+L Office API JavaScript fournit plusieurs API que vous pouvez utiliser pour gérer les pièces jointes d’un élément lorsque l’utilisateur compose.
 
-## <a name="attach-a-file-or-outlook-item"></a>Joindre un fichier ou un élément Outlook
+## <a name="attach-a-file-or-outlook-item"></a>Joindre un fichier ou un Outlook’élément
 
-Vous pouvez joindre un fichier ou un élément Outlook à un formulaire de composition à l’aide de la méthode appropriée pour le type de pièce jointe.
+Vous pouvez joindre un fichier ou un Outlook à un formulaire de composition à l’aide de la méthode appropriée pour le type de pièce jointe.
 
 - [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): joindre un fichier
 - [addFileAttachmentFromBase64Async](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): joindre un fichier à l’aide de sa chaîne base64
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): joindre un élément Outlook
+- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods): joindre un Outlook’élément
 
 Il s’agit de méthodes asynchrones, ce qui signifie que l’exécution peut continuer sans attendre la fin de l’action. Selon l’emplacement d’origine et la taille de la pièce jointe ajoutée, l’appel asynchrone peut prendre un certain temps.
 
 S’il existe des tâches qui dépendent de l’action à effectuer, vous devez les réaliser dans une méthode de rappel. Cette méthode de rappel est facultative et est invoquée lorsque le chargement de la pièce jointe est terminé. La méthode de rappel utilise un objet [AsyncResult](/javascript/api/office/office.asyncresult) comme paramètre de sortie qui indique les statuts, erreurs et valeurs renvoyés par l’ajout de la pièce jointe. Si le rappel requiert des paramètres supplémentaires, vous pouvez les spécifier dans le paramètre facultatif `options.asyncContext`. L’élément `options.asyncContext` peut appartenir à n’importe quel type prévu par votre méthode de rappel.
 
-Par exemple, vous pouvez définir `options.asyncContext` comme un objet JSON qui contient au moins une paire clé-valeur. Vous pouvez trouver plus d’exemples sur le passage de paramètres facultatifs à des méthodes asynchrones dans la plateforme des Compléments Office dans [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods). L’exemple suivant montre comment utiliser le paramètre asyncContext`asyncContext` pour passer 2 arguments à une méthode de rappel :
+Par exemple, vous pouvez définir en `options.asyncContext` tant qu’objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de Office Add-ins en [programmation asynchrone dans les](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)Office de développement. L’exemple suivant montre comment utiliser le paramètre `asyncContext` pour passer 2 arguments à une méthode de rappel.
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};
@@ -37,7 +37,7 @@ Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon
 Vous pouvez vérifier la réussite ou l’échec d’un appel de méthode asynchrone dans la méthode de rappel à l’aide des propriétés `status` et `error` de l’objet `AsyncResult`. Si l’ajout de pièce jointe aboutit, vous pouvez utiliser la propriété `AsyncResult.value` pour obtenir l’ID de la pièce jointe. Il s’agit d’un nombre entier que vous pouvez ensuite utiliser pour supprimer la pièce jointe.
 
 > [!NOTE]
-> L’ID de pièce jointe n’est valide que dans la même session et il n’est pas garanti qu’il soit map enfant à la même pièce jointe entre les sessions. Les exemples de fin d’une session sont les suivants : lorsque l’utilisateur ferme le module, ou si l’utilisateur commence à composer dans un formulaire inline, puis ouvre le formulaire en ligne pour continuer dans une fenêtre distincte.
+> L’ID de pièce jointe n’est valide que dans la même session et il n’est pas garanti qu’il soit map marqué sur la même pièce jointe entre les sessions. Les exemples de fin d’une session sont les suivants : lorsque l’utilisateur ferme le module, ou si l’utilisateur commence à composer dans un formulaire inline, puis ouvre le formulaire en ligne pour continuer dans une fenêtre distincte.
 
 ### <a name="attach-a-file"></a>Joindre un fichier
 
@@ -79,9 +79,9 @@ function write(message){
 }
 ```
 
-### <a name="attach-an-outlook-item"></a>Joindre un élément Outlook
+### <a name="attach-an-outlook-item"></a>Joindre un Outlook’élément
 
-Vous pouvez joindre un élément Outlook (par exemple, un e-mail, un calendrier ou un élément de contact) à un message ou un rendez-vous dans un formulaire de composition en spécifiant l’ID des services web Exchange (EWS) de l’élément et en utilisant la `addItemAttachmentAsync` méthode. Vous pouvez obtenir l’ID EWS d’un élément de messagerie, de calendrier, de contact ou de tâche dans la boîte aux lettres de l’utilisateur à l’aide de la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) et en accédant à l’opération EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). La propriété [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) fournit également l’ID EWS d’un élément existant dans un formulaire de lecture.
+Vous pouvez joindre un élément Outlook (par exemple, un e-mail, un calendrier ou un élément de contact) à un message ou un rendez-vous dans un formulaire de composition en spécifiant l’ID Exchange Web Services (EWS) de l’élément et en utilisant la `addItemAttachmentAsync` méthode. Vous pouvez obtenir l’ID EWS d’un élément de messagerie, de calendrier, de contact ou de tâche dans la boîte aux lettres de l’utilisateur à l’aide de la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) et en accédant à l’opération EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). La propriété [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) fournit également l’ID EWS d’un élément existant dans un formulaire de lecture.
 
 La fonction JavaScript suivante, étend le premier exemple ci-dessus et ajoute un élément en tant que pièce jointe au message électronique ou au rendez-vous en `addItemAttachment` cours de composition. La fonction prend comme argument l’ID EWS de l’élément qui doit être joint. Si l’attachement réussit, il obtient l’ID de pièce jointe pour un traitement ultérieur, y compris la suppression de cette pièce jointe dans la même session.
 
@@ -112,7 +112,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> Vous pouvez utiliser un module de composition pour joindre une instance d’un rendez-vous périodique dans Outlook sur le web ou sur des appareils mobiles. Toutefois, dans un client de bureau Outlook de prise en charge, la tentative d’attachement d’une instance entraînerait l’attachement de la série périodique (le rendez-vous parent).
+> Vous pouvez utiliser un module de composition pour joindre une instance d’un rendez-vous périodique Outlook sur le web ou sur des appareils mobiles. Toutefois, dans une prise en charge Outlook client de bureau, la tentative d’attachement d’une instance entraînerait l’attachement de la série périodique (le rendez-vous parent).
 
 ## <a name="get-attachments"></a>Obtention de pièces jointes
 

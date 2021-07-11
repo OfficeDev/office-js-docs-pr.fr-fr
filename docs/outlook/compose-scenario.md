@@ -3,23 +3,23 @@ title: Créer des compléments Outlook pour les formulaires de composition
 description: Découvrez les scénarios et fonctionnalités des compléments Outlook pour les formulaires de composition.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: b4863bd2f64aa2076a250d34c7ec6bed3dbc1c0a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077098"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348530"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
 
-À partir de la version 1.1 du schéma pour les manifestes des Compléments Office et v1.1 Office.js, vous pouvez créer des compléments de composition, qui sont des compléments Outlook activés dans les formulaires de composition. Contrairement aux compléments de lecture (qui sont des compléments Outlook activés en mode lecture lorsqu’un utilisateur visualise un message ou un rendez-vous), les compléments de composition sont disponibles dans les scénarios suivants :
+À partir de la version 1.1 du schéma pour les manifestes des Compléments Office et v1.1 Office.js, vous pouvez créer des compléments de composition, qui sont des compléments Outlook activés dans les formulaires de composition. Contrairement aux compléments de lecture (qui sont des compléments Outlook activés en mode lecture lorsqu’un utilisateur visualise un message ou un rendez-vous), les compléments de composition sont disponibles dans les scénarios suivants.
 
 - Composition d’un nouveau message, d’une demande de réunion ou d’un rendez-vous dans un formulaire de composition.
 
 - Affichage ou modification d’un rendez-vous existant, ou d’un élément de réunion dans lequel l’utilisateur est l’organisateur.
-    
+
    > [!NOTE]
-   > Si l’utilisateur a recours à la version RTM d’Outlook 2013 et d’Exchange 2013 et qu’il affiche un élément de réunion organisé par l’utilisateur, l’utilisateur peut rechercher les compléments de lecture disponibles. À partir de la version d’Office 2013 SP1, une modification a été apportée. Dans le même scénario, seuls les compléments de composition peuvent être activés et être disponibles.
+   > Si l’utilisateur utilise la version RTM d’Outlook 2013 et d’Exchange 2013 et qu’il affiche un élément de réunion organisé par l’utilisateur, l’utilisateur peut rechercher les compléments de lecture disponibles. À partir de la version d’Office 2013 SP1, une modification a été apportée. Dans le même scénario, seuls les compléments de composition peuvent être activés et être disponibles.
 
 - Composition d’un message de réponse inline ou réponse à un message dans un formulaire de composition individuel.
 

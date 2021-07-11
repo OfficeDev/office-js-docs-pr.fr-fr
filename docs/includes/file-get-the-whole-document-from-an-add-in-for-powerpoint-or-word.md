@@ -2,9 +2,9 @@ Vous pouvez créer un Complément Office pour permettre l’envoi ou la publicat
 
 ## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Éléments requis pour créer un complément pour PowerPoint ou Word
 
-Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le complément du volet Office, vous devez créer les fichiers suivants :
+Dans cet article, vous utilisez un éditeur de texte pour créer le complément du volet Office pour PowerPoint ou Word. Pour créer le add-in du volet Des tâches, vous devez créer les fichiers suivants.
 
-- Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants :
+- Sur un dossier réseau partagé ou sur un serveur web, vous avez besoin des fichiers suivants.
 
   - Fichier HTML (GetDoc_App.html) qui contient l’interface utilisateur, ainsi que des liens vers les fichiers JavaScript (y compris les fichiers office.js et .js propres à l’application) et les fichiers CSS (Cascading Style Sheet).
 
@@ -184,7 +184,7 @@ function sendFile() {
 ```
 
 La fonction locale `getSlice` appelle la méthode pour récupérer une section de `File.getSliceAsync` `File` l’objet. La `getSliceAsync` méthode renvoie un objet de la collection de `Slice` tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres fonctions dans l’INTERFACE API JavaScript pour Office, la méthode prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel `getSliceAsync` de méthode.
-ion appelle la méthode `getSlice` **File.getSliceAsync** pour récupérer une tranche de **l’objet** File. La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme les autres fonctions de l’API JavaScript Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de méthode.
+ion `getSlice` appelle la **méthode File.getSliceAsync** pour récupérer une tranche de **l’objet** File. La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme les autres fonctions de l’API JavaScript Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de méthode.
 
 `Slice`L’objet vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la méthode, la taille de l’objet `getFileAsync` est de `Slice` 4 Mo. `Slice`L’objet expose trois propriétés : [taille,](/javascript/api/office/office.slice#size) [données](/javascript/api/office/office.slice#data)et [index](/javascript/api/office/office.slice#index). La `size` propriété obtient la taille, en octets, de la tranche. La propriété obtient un nombre integer qui représente la position de la tranche `index` dans la collection de tranches.
 

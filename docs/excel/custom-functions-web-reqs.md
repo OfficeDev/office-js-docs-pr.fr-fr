@@ -3,16 +3,16 @@ ms.date: 03/15/2021
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 61959387dc3475997581233bc220f20394e8f6fb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075879"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349597"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
-L’une des façon dont les fonctions personnalisées améliorent la puissance d’Excel est qu’elles reçoivent des données en provenance d’emplacements autres que le classeur, par exemple, le web ou un serveur (via WebSockets). Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
+L’une des façon dont les fonctions personnalisées améliorent la puissance d’Excel est qu’elles reçoivent des données en provenance d’emplacements autres que le classeur, par exemple, le web ou un serveur (via WebSockets). Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -104,7 +104,7 @@ Pour déclarer une fonction de diffusion en continu, vous pouvez utiliser :
 - `@streaming`Balise.
 - Paramètre `CustomFunctions.StreamingInvocation` d’appel.
 
-L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat chaque seconde. Tenez compte des informations suivantes à propos de ce code :
+L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat chaque seconde. Notez les points suivants concernant ce code.
 
 - Excel affiche chaque nouvelle valeur automatiquement à l’aide de la méthode `setResult`.
 - Le deuxième paramètre d’entrée, l’invocation, n’est pas visible aux utilisateurs finaux dans Excel lorsqu’ils sélectionnent la fonction à partir du menu de saisie semi-automatique.
@@ -133,7 +133,7 @@ function increment(incrementBy, invocation) {
 
 ## <a name="canceling-a-function"></a>Annulation d’une fonction
 
-Excel annule l’exécution d’une fonction dans les situations suivantes :
+Excel l’exécution d’une fonction dans les situations suivantes.
 
 - L’utilisateur modifie ou supprime une cellule qui fait référence à la fonction.
 - Un des arguments (entrées) de la fonction est modifié. Dans ce cas, un appel de nouvelle fonction est déclenché en plus de l’annulation.

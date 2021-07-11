@@ -1,28 +1,28 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
-description: Découvrez comment convertir un projet de add-in Office dans Visual Studio pour utiliser TypeScript.
+description: Découvrez comment convertir un projet de Office dans Visual Studio pour utiliser TypeScript.
 ms.date: 09/01/2020
 localization_priority: Normal
-ms.openlocfilehash: 2134727a6065a1236dca313721d7721657e9a677
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 2932c94052735436ce1357966832528679e6900d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839963"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349979"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. Cet article décrit ce processus de conversion pour un complément Excel. Vous pouvez utiliser le même processus pour convertir les autres types de projet de complément Office de JavaScript au format TypeScript dans Visual Studio.
 
 > [!IMPORTANT]
-> Cet article décrit  les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière secondaire automatiquement dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le mot clé et non avec `var` `let` un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code. 
+> Cet article décrit  les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière secondaire dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le mot clé et non avec `var` `let` un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code. 
 
 > [!NOTE]
 > Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
 
     > [!TIP]
     > Si vous avez déjà installé Visual Studio 2019, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads).
@@ -65,12 +65,12 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
 
     ```TypeScript
     Office.initialize = function (reason) {
-        // add the following line
+        // Add the following line.
         (window as any).Promise = OfficeExtension.Promise;
         ...
     ```
 
-7. Dans **Home.ts**, recherchez la fonction `displaySelectedCells`, remplacez-la entièrement par le code suivant et enregistrez le fichier :
+7. Dans **Home.ts,** recherchez la fonction, remplacez la fonction entière par le `displaySelectedCells` code suivant, puis enregistrez le fichier.
 
     ```TypeScript
     function displaySelectedCells() {

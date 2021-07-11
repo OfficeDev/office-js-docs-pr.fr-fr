@@ -3,12 +3,12 @@ title: Programmation asynchrone dans des compléments Office
 description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans Office’applications.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 42cf2d8e1b0d5185866a55152517683031da3b3d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ee7bac02cbf1e03754dde53a0d64a94231fdc266
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076265"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350070"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -22,7 +22,7 @@ Le diagramme suivant illustre le flux d’exécution d’un appel à une méthod
 
 *Figure 1. Flux d’exécution de programmation asynchrone*
 
-![Diagramme montrant l’interaction de l’exécution de la commande au fil du temps avec l’utilisateur, la page du add-in et le serveur d’applications web hébergeant le module.](../images/office-addins-asynchronous-programming-flow.png)
+![Diagramme montrant l’interaction d’exécution de commande au fil du temps avec l’utilisateur, la page de la application et le serveur d’applications web hébergeant le module.](../images/office-addins-asynchronous-programming-flow.png)
 
 La prise en charge de cette conception asynchrone dans les clients riches et les clients web fait partie des objectifs de conception « écriture unique-exécution multiplateforme » du modèle de développement des Compléments Office. Par exemple, vous pouvez créer un complément de contenu ou du volet de tâches avec une seule base de code qui sera exécutée sur Excel 2013 et Excel sur le web.
 
@@ -165,7 +165,7 @@ function write(message){
 
 #### <a name="using-named-functions-for-nested-callbacks"></a>Utilisation de fonctions nommées pour des rappels imbriqués
 
-Dans des implémentations complexes, il peut être utile d’utiliser des fonctions nommées pour garantir une meilleure lisibilité, simplicité de gestion et possibilité de réutilisation du code. Dans l’exemple suivant, les deux fonctions anonymes de l’exemple de la section précédente ont été réécrites en tant que fonctions nommées `deleteAllData` et `showResult` . Ces fonctions nommées sont ensuite passées dans les méthodes et en tant que `getByIdAsync` `deleteAllDataValuesAsync` rappels par nom.
+Dans des implémentations complexes, il peut être utile d’utiliser des fonctions nommées pour garantir une meilleure lisibilité, simplicité de gestion et possibilité de réutilisation du code. Dans l’exemple suivant, les deux fonctions anonymes de l’exemple de la section précédente ont été réécrites en tant que fonctions nommées `deleteAllData` et `showResult` . Ces fonctions nommées sont ensuite passées dans les méthodes et dans les `getByIdAsync` `deleteAllDataValuesAsync` rappels par nom.
 
 ```js
 Office.context.document.bindings.getByIdAsync('myBinding', deleteAllData);
@@ -347,7 +347,7 @@ Dans les deux exemples de paramètres facultatifs, le paramètre de rappel est s
 
 Les méthodes d’API communes (Outlook API) ne retournent pas [de promesses.](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) Par conséquent, vous ne pouvez pas utiliser [await](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/await) pour suspendre l’exécution tant que l’opération asynchrone n’est pas terminée. Si vous avez `await` besoin d’un comportement, vous pouvez encapsuler l’appel de méthode dans une promesse créée explicitement. 
 
-Le modèle de base consiste à créer une méthode asynchrone qui renvoie un objet Promise  immédiatement et résout cet objet Promise lorsque la méthode interne est terminée ou rejette l’objet en cas d’échec de la méthode.  Voici un exemple simple
+Le modèle de base consiste à créer une méthode asynchrone qui renvoie un objet Promise  immédiatement et résout cet objet Promise une fois la méthode interne terminée, ou rejette l’objet en cas d’échec de la méthode.  Voici un exemple simple.
 
 ```javascript
 function getDocumentFilePath() {

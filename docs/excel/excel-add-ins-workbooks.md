@@ -4,12 +4,12 @@ description: Découvrez comment effectuer des tâches courantes avec des workboo
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6a32ad5e50e23868d0c079697411366f3f68af17
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290753"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349426"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -234,7 +234,7 @@ Un workbook a des paramètres de langue et de culture qui affectent l’affichag
 
 `Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être modifiés par le [biais Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être modifiés par le biais [Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
 
 L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 
@@ -314,8 +314,7 @@ Excel.run(async (context) => {
 
 ### <a name="set-calculation-mode"></a>Définir le mode de calcul
 
-Par défaut, Excel recalcule les résultats d’une formule chaque fois qu’une cellule référencée est modifiée. Le performances de votre complément peuvent profiter de l’ajustement de ce comportement de calcul. L’objet Application a une `calculationMode` propriété de type `CalculationMode`. Peut être défini à l'aide des valeurs suivantes :
-
+Par défaut, Excel recalcule les résultats d’une formule chaque fois qu’une cellule référencée est modifiée. Le performances de votre complément peuvent profiter de l’ajustement de ce comportement de calcul. L’objet Application a une `calculationMode` propriété de type `CalculationMode`. Elle peut être définie sur les valeurs suivantes.
 
 - `automatic`: Le comportement de recalcul par défaut dans lequel Excel calcule les résultats d’une nouvelle formule chaque fois que les données pertinentes sont modifiées.
 - `automaticExceptTables`: Identique `automatic`, sauf que les modifications apportées à des valeurs dans les tableaux sont ignorées.
@@ -323,7 +322,7 @@ Par défaut, Excel recalcule les résultats d’une formule chaque fois qu’une
 
 ### <a name="set-calculation-type"></a>Définir le type de calcul
 
-L’objet [Application](/javascript/api/excel/excel.application) fournit une méthode pour forcer un nouveau calcul immédiat. `Application.calculate(calculationType)` démarre un recalcul manuel basé sur la valeur `calculationType`. Les valeurs suivantes peuvent être utilisées :
+L’objet [Application](/javascript/api/excel/excel.application) fournit une méthode pour forcer un nouveau calcul immédiat. `Application.calculate(calculationType)` démarre un recalcul manuel basé sur la valeur `calculationType`. Les valeurs suivantes peuvent être spécifiées.
 
 - `full`: Recalculer toutes les formules dans tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
 - `fullRebuild`: Revérifier les formules dépendantes, puis recalculer toutes les formules de tous les classeurs ouverts, qu’elles aient changé depuis le dernier recalcul ou non.
@@ -344,7 +343,7 @@ context.application.suspendApiCalculationUntilNextSync();
 
 Votre add-in peut détecter lorsqu’un workbook est activé. Un workbook devient *inactif* lorsque l’utilisateur bascule le focus vers un autre workbook, vers une autre application ou (dans Excel sur le Web) vers un autre onglet du navigateur web. Un workbook est *activé lorsque* l’utilisateur renvoie le focus au workbook. L’activation du workbook peut déclencher des fonctions de rappel dans votre complément, telles que l’actualisation des données du workbook.
 
-Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#onActivated) d’un workbook. Les handlers d’événements de l’événement reçoivent un `onActivated` [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
+Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#onActivated) d’un workbook. Les handlers d’événements `onActivated` de l’événement reçoivent un [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
 
 > [!IMPORTANT]
 > `onActivated`L’événement ne détecte pas lorsqu’un workbook est ouvert. Cet événement détecte uniquement lorsqu’un utilisateur bascule le focus vers un workbook déjà ouvert.
@@ -378,7 +377,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>Enregistrer le classeur
 
-`Workbook.save` enregistre le classeur dans un espace de stockage permanent. La méthode `save` accepte un paramètre `saveBehavior` unique et facultatif qui peut être l’une des valeurs suivantes :
+`Workbook.save` enregistre le classeur dans un espace de stockage permanent. La `save` méthode prend un seul paramètre facultatif qui peut être `saveBehavior` l’une des valeurs suivantes.
 
 - `Excel.SaveBehavior.save` (par défaut) : le fichier est enregistré sans inviter l’utilisateur à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier n’a pas été enregistré précédemment, il est enregistré dans l’emplacement par défaut. Si le fichier a été enregistré précédemment, il est enregistré au même emplacement.
 - `Excel.SaveBehavior.prompt` : si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier a été enregistré précédemment, il est enregistré dans le même emplacement et l’utilisateur ne reçoit pas d’invite.
@@ -392,7 +391,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>Fermer le classeur
 
-`Workbook.close` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La méthode `close` accepte un paramètre `closeBehavior` unique et facultatif qui peut être l’une des valeurs suivantes :
+`Workbook.close` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La `close` méthode prend un seul paramètre facultatif qui peut être `closeBehavior` l’une des valeurs suivantes.
 
 - `Excel.CloseBehavior.save` (par défaut) : le fichier est enregistré avant d’être fermé. Si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement.
 - `Excel.CloseBehavior.skipSave` : le fichier est fermé immédiatement, sans enregistrer. Les modifications non enregistrées sont perdues.

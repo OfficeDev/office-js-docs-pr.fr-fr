@@ -3,12 +3,12 @@ title: Élémznr VersionOverrides dans le fichier manifest
 description: Documentation de référence de l’élément VersionOverrides pour Office fichiers manifeste (XML) des add-ins.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0a70ded82b4603b1ac70698947a4710a4a44b5b6
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555149"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348656"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -23,7 +23,7 @@ ms.locfileid: "52555149"
 
 ### <a name="namespace-values"></a>Valeurs des espaces de noms
 
-La liste suivante répertorie la valeur requise de la valeur **xmlns** en fonction de la valeur **xsi:type** de l’élément `<OfficeApp>` parent.
+La liste suivante répertorie la valeur requise de la **valeur xmlns** en fonction de la valeur **xsi:type** de l’élément `<OfficeApp>` parent.
 
 - **TaskPaneApp prend** en charge uniquement la version 1.0 de VersionOverrides, et les **xmlns** doivent être `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
 - **ContentApp** prend en charge uniquement la version 1.0 de VersionOverrides, et les **xmlns** doivent être `http://schemas.microsoft.com/office/contentappversionoverrides` .
@@ -78,7 +78,7 @@ Un manifeste peut implémenter plusieurs versions de l’élément `VersionOverr
 
 Pour mettre en œuvre plusieurs versions, l’élément `VersionOverrides` de la nouvelle version doit être un enfant de l’élément `VersionOverrides` de l’ancienne version. L’élément enfant `VersionOverrides` n’hérite pas des valeurs du parent.
 
-Pour mettre en œuvre à la fois les schémas VersionOverrides v1.0 et v1.1, le manifeste devrait ressembler à l’exemple suivant :
+Pour implémenter les schémas VersionOverrides v1.0 et v1.1, le manifeste ressemblerait à l’exemple suivant.
 
 ```xml
 <OfficeApp ... xsi:type="MailApp">

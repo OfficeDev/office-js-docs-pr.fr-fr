@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 06/08/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 07790ee84693596f4873bc04d53c1e76c3825b4d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076790"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349013"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -45,7 +45,7 @@ Nous vous invitons à tester les événements maintenant en prévisualisation ! 
 
 Pour afficher un aperçu de ces événements :
 
-- Par Outlook sur le web :
+- Pour Outlook sur le web :
   - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur Windows :
@@ -180,7 +180,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes de Outlook de votre Outlook, consultez la Outlook [des manifestes de modules.](manifests.md)
+> Pour en savoir plus sur les manifestes de Outlook des Outlook, consultez la Outlook [des manifestes de ces derniers.](manifests.md)
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
@@ -247,14 +247,14 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur Windows, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet définie sur composition.](../images/outlook-win-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet de la composition.](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > Si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
+    > Si vous exécutez votre add-in à partir de l’host local et que vous voyez l’erreur « Désolé, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
     >
     > 1. Fermez Outlook.
     > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
-    > 1. Exécutez la commande suivante.
+    > 1. Exécutez la commande suivante :
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
@@ -266,7 +266,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [supprimez-le, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau.
+- Si vous avez mis à jour le manifeste, [supprimez le add-in,](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) puis chargez-le de nouveau.
 - Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
 Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer](debug-autolaunch.md)votre complément basé sur Outlook événement.
@@ -286,7 +286,7 @@ Magasins AppSource et inclients : la possibilité de déployer des compléments 
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur des événements
 
-Les handlers d’événements de lancement de modules sont censés être de courte durée, légers et aussi peu invasifs que possible. Après l’activation, votre complément prendra un délai d’environ 300 secondes, durée maximale autorisée pour l’exécution de compléments basés sur des événements. Pour signaler que votre add-in a terminé le traitement d’un événement de lancement, nous vous recommandons d’avoir le handler associé qui appelle la `event.completed` méthode. (Notez que le code inclus après `event.completed` l’instruction n’est pas garanti pour s’exécuter.) Chaque fois qu’un événement géré par votre add-in est déclenché, celui-ci est réactivé et exécute le handler d’événements associé, et la fenêtre d’délai est réinitialisée. Le add-in se termine à l’issue de son utilisation, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
+Les handlers d’événements de lancement de modules sont censés être de courte durée, légers et aussi peu invasifs que possible. Après l’activation, votre complément prendra un délai d’environ 300 secondes, durée maximale autorisée pour l’exécution de compléments basés sur des événements. Pour signaler que votre add-in a terminé le traitement d’un événement de lancement, nous vous recommandons d’avoir le handler associé qui appelle la `event.completed` méthode. (Notez que le code inclus après `event.completed` l’instruction n’est pas garanti pour s’exécuter.) Chaque fois qu’un événement géré par votre add-in est déclenché, celui-ci est réactivé et exécute le handler d’événements associé, et la fenêtre d’délai est réinitialisée. Le add-in se termine une fois qu’il n’est plus à son terme, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
 
 Si l’utilisateur a plusieurs add-ins abonnés au même événement, la plateforme Outlook lance les modules dans un ordre particulier. Actuellement, seuls cinq add-ins basés sur des événements peuvent être activement en cours d’exécution.
 
@@ -294,7 +294,7 @@ L’utilisateur peut basculer ou naviguer à partir de l’élément de messager
 
 Les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements dans Windows client.
 
-Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir des add-ins basés sur des événements. Les API bloquées sont les suivantes :
+Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne sont pas autorisées à partir des add-ins basés sur des événements. Les API bloquées sont les suivantes.
 
 - Sous `OfficeRuntime.auth` :
   - `getAccessToken`(Windows uniquement)
@@ -316,4 +316,6 @@ Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne 
 
 - [Manifestes de complément Outlook](manifests.md)
 - [Comment déboguer des add-ins basés sur des événements](debug-autolaunch.md)
-- Exemple PnP : utiliser Outlook activation basée sur un événement [pour définir la signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+- Exemples PnP :
+  - [Utiliser Outlook’activation basée sur un événement pour définir la signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
+  - [Utiliser Outlook’activation basée sur un événement pour baliser des destinataires externes](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

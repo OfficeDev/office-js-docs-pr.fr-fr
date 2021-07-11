@@ -1,16 +1,16 @@
 ---
 ms.date: 04/12/2021
 description: Découvrez comment déboguer vos Excel personnalisées qui n’utilisent pas de volet de tâches.
-title: Débogage des fonctions personnalisées sans interface utilisateur
+title: Débogage de fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: a692f376cb5c874fa4d510d3459469d803e643f7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e0e2b7bf49836a9b88de9ceaa21a66a454e6f05a
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075935"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349643"
 ---
-# <a name="ui-less-custom-functions-debugging"></a>Débogage des fonctions personnalisées sans interface utilisateur
+# <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
 
 Cet article traite du  débogage uniquement pour les fonctions personnalisées qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur (fonctions personnalisées sans interface utilisateur). 
 
@@ -48,13 +48,13 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 
 1. Ouvrez le dossier de projet racine de vos fonctions personnalisées [dans VS Code](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. Cela surveillera et reconstruira les modifications apportées aux fichiers.
-3. Choisissez **Terminal > exécuter la tâche** et tapez ou sélectionnez Serveur **dev.**
+3. Choose **Terminal > Run Task** and type or select **Dev Server**.
 
 ### <a name="start-the-vs-code-debugger"></a>Démarrer le débo VS Code débompeur
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 5. Dans le menu déroulant Exécuter, choisissez **Excel bureau (fonctions personnalisées).**
-6. Sélectionnez **F5** (ou **exécutez -> démarrer** le débogage à partir du menu) pour commencer le débogage. Un nouveau Excel de travail s’ouvre avec votre add-in déjà chargé et prêt à l’emploi.
+6. Sélectionnez **F5** (ou **exécutez -> démarrer le** débogage à partir du menu) pour commencer le débogage. Un nouveau Excel de travail s’ouvre avec votre add-in déjà chargé et prêt à l’emploi.
 
 ### <a name="start-debugging"></a>Démarrer le débogage
 
@@ -62,24 +62,24 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 2. [Définissez un point d’arrêt](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) dans le code source de la fonction personnalisée.
 3. Dans le Excel, entrez une formule qui utilise votre fonction personnalisée.
 
-À ce stade, l’exécution s’arrête sur la ligne de code où vous définissez le point d’arrêt. Vous pouvez désormais vous servir de votre code, définir des montres et utiliser VS Code fonctionnalités de débogage dont vous avez besoin.
+À ce stade, l’exécution s’arrête sur la ligne de code où vous définissez le point d’arrêt. Vous pouvez désormais vous servir de votre code, de définir des montres et d’utiliser VS Code fonctionnalités de débogage dont vous avez besoin.
 
 ## <a name="use-the-vs-code-debugger-for-excel-in-microsoft-edge"></a>Utilisez le débo VS Code débogger pour Excel dans Microsoft Edge
 
-Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans interface utilisateur Excel sur le Microsoft Edge navigateur. Pour utiliser VS Code avec Microsoft Edge, vous devez installer le débogger pour [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
+Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans interface utilisateur Excel sur le navigateur Microsoft Edge utilisateur. Pour utiliser VS Code avec Microsoft Edge, vous devez installer le débogger pour [Microsoft Edge](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-edge) extension.
 
 ### <a name="run-your-add-in-from-vs-code"></a>Exécuter votre VS Code
 
 1. Ouvrez le dossier de projet racine de vos fonctions personnalisées [dans VS Code](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. Cela surveillera et reconstruira les modifications apportées aux fichiers.
-3. Choisissez **Terminal > exécuter la tâche** et tapez ou sélectionnez Serveur **dev.**
+3. Choose **Terminal > Run Task** and type or select **Dev Server**.
 
 ### <a name="start-the-vs-code-debugger"></a>Démarrer le débo VS Code débompeur
 
 4. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 5. Dans les options de débogage, **choisissez Office Online (Edge Chromium).**
 6. Ouvrez Excel dans le navigateur Microsoft Edge et créez un nouveau workbook.
-7. Choisissez **Partager** dans le ruban et copiez le lien de l’URL de ce nouveau workbook.
+7. Choisissez **Partager** dans le ruban et copiez le lien pour l’URL de ce nouveau workbook.
 8. Sélectionnez **F5** (ou **exécutez > démarrer** le débogage à partir du menu) pour commencer le débogage. Une invite s’affiche, qui demande l’URL de votre document.
 9. Collez l’URL de votre workbook et appuyez sur Entrée.
 
@@ -102,13 +102,13 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 
 ## <a name="use-the-browser-developer-tools-to-debug-custom-functions-in-excel-on-the-web"></a>Utiliser les outils de développement du navigateur pour déboguer des fonctions personnalisées dans Excel sur le Web
 
-Vous pouvez utiliser les outils de développement du navigateur pour déboguer des fonctions personnalisées sans interface utilisateur dans Excel sur le Web. Les étapes suivantes fonctionnent pour Windows macOS.
+Vous pouvez utiliser les outils de développement du navigateur pour déboguer des fonctions personnalisées sans interface utilisateur dans Excel sur le Web. Les étapes suivantes fonctionnent pour Windows et macOS.
 
 ### <a name="run-your-add-in-from-visual-studio-code"></a>Exécuter votre Visual Studio Code
 
 1. Ouvrez le dossier de projet racine de vos fonctions personnalisées [dans Visual Studio Code (VS Code)](https://code.visualstudio.com/).
 2. Choose **Terminal > Run Task** and type or select **Watch**. Cela surveillera et reconstruira les modifications apportées aux fichiers.
-3. Choisissez **Terminal > exécuter la tâche** et tapez ou sélectionnez Serveur **dev.**
+3. Choose **Terminal > Run Task** and type or select **Dev Server**.
 
 ### <a name="sideload-your-add-in"></a>Charger une version test de votre complément
 
@@ -141,16 +141,16 @@ Si vous n’utilisez pas VS Code, vous pouvez utiliser la ligne de commande (par
 1. À partir de la ligne de commande, `npm run watch` exécutez la commande pour observer et reconstruire lorsque des modifications de code se produisent.
 2. Ouvrez une deuxième fenêtre de ligne de commande (la première sera bloquée lors de l’exécution de l’observation).)
 
-3. Si vous souhaitez démarrer votre application dans la version de bureau de Excel, exécutez la commande suivante:
-    
+3. Si vous souhaitez démarrer votre application dans la version de bureau de Excel, exécutez la commande suivante.
+
     `npm run start:desktop`
-    
-    Ou si vous préférez démarrer votre Excel sur le Web exécutez la commande suivante
-    
+
+    Ou si vous préférez démarrer votre Excel sur le Web, exécutez la commande suivante.
+
     `npm run start:web`
-    
+
     Par Excel sur le Web vous devez également recharger votre module. Suivez les étapes du chargement de version de version sideload de votre [add-in](#sideload-your-add-in) pour le chargement de version de votre module. Ensuite, continuez jusqu’à la section suivante pour démarrer le débogage.
-    
+
 4. Ouvrez les outils de développement dans le navigateur. Pour Chrome et la plupart des navigateurs F12 ouvrent les outils de développement.
 5. Dans les outils de développement, ouvrez votre fichier de script de code source (**functions.js** ou **functions.ts**). Votre code de fonctions personnalisées peut se trouver à la fin du fichier.
 6. Dans le code source de la fonction personnalisée, appliquez un point d’arrêt en sélectionnant une ligne de code.

@@ -3,12 +3,12 @@ title: Gérer l’état et les paramètres d’un Outlook de gestion
 description: Découvrez comment faire persister l’état et les paramètres d’un Outlook un autre.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 69c22ab912d5099c42d6c69b364465a585cba1d4
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 8f43c7f105dc68c879f175beabcabb49715a75aa
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592009"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348502"
 ---
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’état et les paramètres d’un Outlook de gestion
 
@@ -84,7 +84,7 @@ Un complément Outlook qui utilise ces fonctions récupère toutes les propriét
 var property = _customProps.get("propertyName");
 ```
 
-Cet exemple inclut les fonctions suivantes :
+Cet exemple inclut les fonctions suivantes.
 
 |**Nom de la fonction**|**Description**|
 |:-----|:-----|
@@ -151,7 +151,7 @@ Le tableau suivant récapitule le comportement des propriétés personnalisées 
 Pour gérer la situation sur les Windows :
 
 1. Recherchez les propriétés existantes lors de l’initialisation de votre add-in, et conservez-les ou déséchantez-les selon vos besoins.
-1. Lorsque vous définirez des propriétés personnalisées, incluez une propriété supplémentaire pour indiquer si les propriétés personnalisées ont été ajoutées lors de la lecture du message ou par mode lecture du complément. Cela vous aidera à différencier si la propriété a été créée au cours de la composition ou héritée du parent.
+1. Lorsque vous définirez des propriétés personnalisées, incluez une propriété supplémentaire pour indiquer si les propriétés personnalisées ont été ajoutées lors de la lecture du message ou par mode lecture du complément. Cela vous permettra de différencier si la propriété a été créée au cours de la composition ou héritée du parent.
 1. Pour vérifier si l’utilisateur envoie un e-mail ou répond, vous pouvez utiliser [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#getComposeTypeAsync_options__callback_) (disponible à partir de l’ensemble de conditions requises 1.10).
 
 ## <a name="see-also"></a>Voir aussi

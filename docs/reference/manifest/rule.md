@@ -1,25 +1,25 @@
 ---
 title: Élément Rule dans le fichier manifeste
-description: L’élément rule spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
+description: L’élément Rule spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
 ms.date: 05/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 79b97f2e442e9d8ce59d17467161b5b9b7a7252d
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 60882a5e36a63832cf81eab9320b113a420b84a3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641430"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348670"
 ---
 # <a name="rule-element"></a>Élément Rule
 
-Spécifie les règles d’activation qui doivent être évaluées pour ce complément de messagerie contextuel.
+Spécifie les règles d’activation à évaluer pour ce complément de messagerie contextuel.
 
-**Type de complément :** Courrier (contextuel)
+**Type de add-in :** Courrier (contextuel)
 
 ## <a name="contained-in"></a>Contenu dans
 
 - [OfficeApp](officeapp.md)
-- [ExtensionPoint](extensionpoint.md) ([**CustomPane** (déconseillé)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), [**DetectedEntity**](extensionpoint.md#detectedentity))
+- [ExtensionPoint](extensionpoint.md) ([**CustomPane** (deprecated)](https://developer.microsoft.com/outlook/blogs/make-your-add-ins-available-in-the-office-ribbon/), [**DetectedEntity**](extensionpoint.md#detectedentity))
 
 ## <a name="attributes"></a>Attributs
 
@@ -27,7 +27,7 @@ Spécifie les règles d’activation qui doivent être évaluées pour ce compl�
 |:-----|:-----|:-----|
 | **xsi:type** | Oui | Type de règle en cours de définition. |
 
-Le type de règle peut correspondre à l’une des valeurs suivantes.
+Le type de règle peut être l’un des suivants :
 
 - [ItemIs](#itemis-rule)
 - [ItemHasAttachment](#itemhasattachment-rule)

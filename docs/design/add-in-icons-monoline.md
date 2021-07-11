@@ -3,16 +3,16 @@ title: Instructions relatives aux icônes de style monoligne pour Office de rech
 description: Recommandations en matière d’utilisation d’icônes de style Monoline dans Office des modules.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: b576cdf8d1816fa052bfdc30fac0950baf95700d
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076496"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349342"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monoligne pour Office de recherche
 
-L’iconographie de style monoligne est utilisée dans Office applications. Si vous préférez que vos icônes correspondent au style Fresh de Office 2013+ sans abonnement, consultez les instructions relatives aux icônes de style Fresh pour Office [de produits.](add-in-icons-fresh.md)
+L’iconographie de style monoligne est utilisée dans Office applications. Si vous préférez que vos icônes correspondent au style Fresh de Office 2013+ sans abonnement, consultez les instructions relatives aux [icônes](add-in-icons-fresh.md)de style Fresh pour les Office.
 
 ## <a name="office-monoline-visual-style"></a>Office Style visuel monoligne
 
@@ -30,7 +30,7 @@ Les instructions suivantes sont pour les développeurs tiers qui souhaitent cré
 #### <a name="conveying-meaning"></a>Transmission d’une signification
 
 - Utilisez des éléments descriptifs tels qu’une page pour représenter un document ou une enveloppe pour représenter le courrier électronique.
-- Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier électronique est toujours représenté par une enveloppe, et non par un cachet.
+- Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier est toujours représenté par une enveloppe, et non par un cachet.
 - Utilisez une métaphore principale pendant le développement de concepts.
 
 #### <a name="reduction-of-elements"></a>Réduction des éléments
@@ -79,7 +79,7 @@ Voici un exemple de mise en page d’icône avec un modificateur.
 
 ### <a name="construction"></a>Construction
 
-#### <a name="element-placement"></a>Placement de l’élément
+#### <a name="element-placement"></a>Placement des éléments
 
 Les éléments de base sont placés au centre de l’icône dans le remplissage. Si elle ne peut pas être parfaitement centrée, la base doit se placer en haut à droite. Dans l’exemple suivant, l’icône est parfaitement centrée.
 
@@ -103,7 +103,7 @@ Chaque icône de taille possède une quantité spécifiée de remplissage autour
 
 #### <a name="line-weights"></a>Poids des lignes
 
-La monoligne est un style en courbes et en contours. Selon la taille que vous produisez, l’icône doit utiliser les poids de ligne suivants.
+Le monoligne est un style en courbes et en contours. Selon la taille que vous produisez, l’icône doit utiliser les poids de ligne suivants.
 
 |Taille de l’icône :|16px|20px|24px|32px|40px|48px|64px|80 px|96 px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
@@ -158,13 +158,13 @@ La palette de couleurs a été conçue pour simplifier et accessibilité. Il con
 
 #### <a name="how-to-use-color"></a>Comment utiliser la couleur
 
-Dans la palette de couleurs Monoline, toutes les couleurs ont des variantes Autonome, Plan et Remplissage. En règle générale, les éléments sont construits avec un remplissage et une bordure. Les couleurs sont appliquées dans l’un des modèles suivants :
+Dans la palette de couleurs Monoline, toutes les couleurs ont des variantes Autonome, Plan et Remplissage. En règle générale, les éléments sont construits avec un remplissage et une bordure. Les couleurs sont appliquées dans l’un des motifs suivants.
 
 - Couleur autonome uniquement pour les objets sans remplissage.
 - La bordure utilise la couleur Plan et le remplissage utilise la couleur Remplissage.
 - La bordure utilise la couleur autonome et le remplissage utilise la couleur de remplissage d’arrière-plan.
 
-Voici des exemples d’utilisation de la couleur.
+Voici des exemples d’utilisation de couleur.
 
 ![Compilation de trois icônes avec une couleur dans une bordure ou un remplissage ou les deux.](../images/monolineicon28.png)
 
@@ -195,7 +195,7 @@ Utilisez **un gris moyen** pour le « contenu » intérieur, tel que les lignes 
 
 #### <a name="text-lines"></a>Lignes de texte
 
-Lorsque des lignes de texte sont dans un « conteneur » (par exemple, du texte sur un document), utilisez un gris moyen. Les lignes de texte qui ne sont pas dans un conteneur doivent **être gris foncé**.
+Lorsque des lignes de texte sont dans un « conteneur » (par exemple, du texte sur un document), utilisez un gris moyen. Les lignes de texte qui ne sont pas dans un conteneur doivent être **en gris foncé.**
 
 ### <a name="text"></a>Texte
 

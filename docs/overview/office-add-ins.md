@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 956e19a14cca1559c828265b2212c410f10b916b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 36b14386816e34d474266cad32ea9a0a66d681d7
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076657"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348859"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
@@ -30,7 +30,7 @@ Les compléments COM ou VSTO sont des solutions d’intégration à Office anté
 
 ![Les raisons d’utiliser les compléments Office : multiplateforme, déploiement centralisé, accès facile via AppSource et basées sur des technologies web standard.](../images/why.png)
 
-Les compléments Office offrent les avantages suivants par rapport aux compléments créés à l’aide de VBA, COM ou VSTO :
+Les compléments Office offrent les avantages suivants par rapport aux compléments créés à l’aide de VBA, COM ou VSTO.
 
 - Prise en charge sur plusieurs plateformes. Les compléments Office s’exécutent sur Office sur le web, Windows, Mac et iPad.
 
@@ -64,19 +64,19 @@ Le complément Office le plus simple est composé d’une page HTML statique qui
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Extension des clients Office et interaction avec ces clients
 
-Les compléments Office offrent les possibilités suivantes dans une application cliente Office :
+Les compléments Office offrent les possibilités suivantes dans une application cliente Office.
 
--  Étendre les fonctionnalités (toutes les applications Office)
+- Étendre les fonctionnalités (toutes les applications Office)
 
--  Créer de nouveaux objets (Excel ou PowerPoint)
+- Créer de nouveaux objets (Excel ou PowerPoint)
  
 ### <a name="extend-office-functionality"></a>Étendre les fonctionnalités d’Office
 
 Vous pouvez ajouter de nouvelles fonctionnalités aux applications Office via les éléments d’interface suivants :  
 
--  Commandes de menu et boutons de ruban personnalisées (collectivement appelés « commandes de complément »)
+- Commandes de menu et boutons de ruban personnalisées (collectivement appelés « commandes de complément »)
 
--  Volets Office à insérer
+- Volets Office à insérer
 
 Les éléments d’interface personnalisés et les volets Office sont définis dans le manifeste du complément.  
 
@@ -98,7 +98,7 @@ Vous pouvez utiliser des volets Office en plus des commandes de complément pour
 
 ### <a name="extend-outlook-functionality"></a>Extension des fonctionnalités Outlook
 
-Les add-ins Outlook peuvent étendre le ruban des applications Office et s'afficher contextuellement à côté d'un élément Outlook lorsque vous le visualisez ou le composez. Ils peuvent fonctionner avec un message électronique, une demande de réunion, une réponse à une réunion, l'annulation d'une réunion ou un rendez-vous lorsqu'un utilisateur consulte un élément reçu ou répond ou crée un nouvel élément. 
+Les add-ins Outlook peuvent étendre le ruban des applications Office et s'afficher contextuellement à côté d'un élément Outlook lorsque vous le visualisez ou le composez. Ils peuvent fonctionner avec un message électronique, une demande de réunion, une réponse à une réunion, l'annulation d'une réunion ou un rendez-vous lorsqu'un utilisateur consulte un élément reçu ou répond ou crée un nouvel élément.
 
 Les compléments Outlook peuvent accéder aux informations contextuelles de l’élément, comme l’adresse ou l’ID de suivi, puis utiliser ces données pour accéder à des informations complémentaires sur le serveur et à partir des services web de façon à enrichir l’expérience utilisateur. Dans la plupart des cas, un complément Outlook s’exécute sans modification dans l’application Outlook afin d’offrir aux utilisateurs une expérience transparente sur le bureau, le web, les tablettes et les appareils mobiles.
 

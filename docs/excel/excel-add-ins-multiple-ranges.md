@@ -1,14 +1,14 @@
 ---
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
-description: Découvrez comment la bibliothèque JavaScript Excel permet à votre add-in d’effectuer des opérations et de définir des propriétés simultanément sur plusieurs plages.
+description: Découvrez comment la Excel JavaScript permet à votre add-in d’effectuer des opérations et de définir des propriétés simultanément sur plusieurs plages.
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 2999cd26d3258cf310766fbd590805535cd644f9
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650890"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349496"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 
@@ -75,7 +75,7 @@ Quelques exemples :
 
 ### <a name="rangearea-specific-properties-and-methods"></a>Méthodes et propriétés propres à une langue RangeArea
 
-Le `RangeAreas` type possède des propriétés et des méthodes qui ne sont pas sur l’`Range`objet. Ce qui est une sélection de certains d’entre eux :
+Le `RangeAreas` type possède des propriétés et des méthodes qui ne sont pas sur l’`Range`objet. Voici une sélection d’entre eux.
 
 - `areas`: A`RangeCollection` objet qui contient toutes les plages représentées par l’ `RangeAreas`objet. L’`RangeCollection`objet est également nouveau et est semblable à d’autres objets de collection de sites Excel. Il possède une`items`propriété est une matrice d’`Range` objets représentant les plages.
 - `areaCount`: Le nombre total de plages dans le`RangeAreas`.
@@ -128,7 +128,7 @@ Lors de l’appel de la méthode `getSpecialCells` ou `getSpecialCellsOrNullObje
 
 ## <a name="read-properties-of-rangeareas"></a>Lire les propriétés de RangeAreas
 
-La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car une propriété donnée peut avoir des valeurs différentes pour des plages différentes au sein du`RangeAreas`. La règle générales est que si une valeur consistante *peut* être renvoyée, elle sera renvoyée. Par exemple, dans le code suivant, le code RGB pour rose (`#FFC0CB`) et`true`sera connecté à la console car les deux plages dans l’objet`RangeAreas` dispose d’un remplissage rose et les deux sont des colonnes entières.
+La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car une propriété donnée peut avoir des valeurs différentes pour des plages différentes au sein du`RangeAreas`. La règle générales est que si une valeur consistante *peut* être renvoyée, elle sera renvoyée. Par exemple, dans le code suivant, le code RVB pour rose ( ) et sera enregistré dans la console car les deux plages de l’objet ont un remplissage rose et les deux sont des `#FFC0CB` `true` colonnes `RangeAreas` entières.
 
 ```js
 Excel.run(function (context) {
@@ -180,4 +180,4 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Lire ou écrire dans une grande plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-large.md)
+- [Lire ou écrire dans une grande plage à l’aide de l Excel API JavaScript](excel-add-ins-ranges-large.md)

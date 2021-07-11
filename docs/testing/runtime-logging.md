@@ -3,12 +3,12 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 09/23/2020
 localization_priority: Normal
-ms.openlocfilehash: 3e9a78e6a2f82eca612712f54ac8a700e6d02701
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6fcd1dd077dd6b3204d154e35e4c968ba9585a54
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076412"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348642"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
@@ -84,14 +84,14 @@ L’image suivante indique à quoi doit ressembler le registre. Pour désactiver
 
     `<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution. `<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.
 
-    Définissez `<bundle id>` cette propriété sur l’une des valeurs suivantes pour activer la journalisation runtime pour l’application correspondante :
+    Définissez `<bundle id>` cette propriété sur l’une des valeurs suivantes pour activer la journalisation runtime pour l’application correspondante.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-L’exemple suivant montre comment activer la journalisation de l’exécution pour Word, puis ouvrir le fichier journal :
+L’exemple suivant active la journalisation runtime pour Word, puis ouvre le fichier journal.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -107,7 +107,7 @@ Pour désactiver la journalisation de l’exécution, utilisez la commande `defa
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-L’exemple suivant désactive la journalisation de l’exécution pour Word :
+L’exemple suivant désactivera la journalisation runtime pour Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile

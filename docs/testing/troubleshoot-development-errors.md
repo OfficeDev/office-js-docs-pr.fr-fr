@@ -1,14 +1,14 @@
 ---
 title: Résoudre les erreurs de développement avec Office de recherche
-description: Découvrez comment résoudre les erreurs de développement dans les Office de développement.
+description: Découvrez comment résoudre les erreurs de développement dans Office des modules.
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 7fe52ff225a2e95147e2af045b40defb162522f7
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 8f0ceaf13041fa27c4e9e279646e979f132913b3
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961278"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349275"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résoudre les erreurs de développement avec Office de recherche
 
@@ -29,11 +29,12 @@ Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` et s
 [!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
 
 #### <a name="for-ios"></a>Pour iOS :
+
 Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>Les modifications apportées aux fichiers statiques, tels que JavaScript, HTML et CSS ne sont pas prises en compte.
 
-Le navigateur web met peut-être le contenu de ces fichiers en cache. Pour éviter cela, vous pouvez désactiver la mise en cache côté client lors du développement. Les spécifications dépendent du serveur utilisé. Dans la plupart des cas, elle implique l’ajout d’en-têtes aux réponses HTTP. Nous vous recommandons d’exécuter les actions suivantes :
+Le navigateur web met peut-être le contenu de ces fichiers en cache. Pour éviter cela, vous pouvez désactiver la mise en cache côté client lors du développement. Les spécifications dépendent du serveur utilisé. Dans la plupart des cas, elle implique l’ajout d’en-têtes aux réponses HTTP. Nous vous suggérons l’ensemble suivant.
 
 - Cache-Control : « privé, aucun cache, aucun magasin »
 - Pragma : « aucun cache »
@@ -67,7 +68,7 @@ myChart.id = "5";
 
 ## <a name="getting-error-this-add-in-is-no-longer-available"></a>Obtention d’une erreur : « Ce module n’est plus disponible »
 
-Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres causes, n’hésitez pas à nous en faire part avec l’outil de commentaires en bas de la page.
+Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres causes, indiquez-nous l’outil de commentaires en bas de la page.
 
 - Si vous utilisez Visual Studio, il se peut qu’il y a un problème avec le chargement de version secondaire. Fermez toutes les instances de l’hôte Office et des Visual Studio. Redémarrez Visual Studio puis réessayez d’appuyer sur F5.
 - Le manifeste du add-in a été supprimé de son emplacement de déploiement, tel qu’un déploiement centralisé, un catalogue SharePoint ou un partage réseau.
@@ -82,7 +83,7 @@ Voir [Résolution des problèmes Microsoft Edge problèmes.](../concepts/browser
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel de l’équipe de sécurité envoie des erreurs, mais pas de manière cohérente
 
-Pour [les causes possibles Excel résoudre les](../excel/excel-add-ins-troubleshooting.md) problèmes.
+Pour [plus d’Excel,](../excel/excel-add-ins-troubleshooting.md) voir Résoudre les problèmes.
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erreurs de validation de schéma de manifeste dans Visual Studio projets
 
@@ -101,7 +102,7 @@ Si cela se produit, vous pouvez mettre à jour les fichiers XSD Visual Studio au
 
 ### <a name="update-the-xsd-files"></a>Mettre à jour les fichiers XSD
 
-1. Ouvrez le fichier XSD que vous souhaitez mettre à jour dans un éditeur de texte. Le nom de schéma de l’erreur de validation correspond au nom de fichier XSD. Par exemple, **ouvrez TaskPaneAppVersionOverridesV1_0.xsd**.
+1. Ouvrez le fichier XSD que vous souhaitez mettre à jour dans un éditeur de texte. Le nom de schéma de l’erreur de validation correspond au nom du fichier XSD. Par exemple, **ouvrez TaskPaneAppVersionOverridesV1_0.xsd**.
 1. Recherchez le schéma mis à jour à [l’emplacement [MS-APPENDIXMXML]: Appendix A: Full XML Schema](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8). Par exemple, TaskPaneAppVersionOverridesV1_0 est au [schéma taskpaneappversionoverrides](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40).
 1. Copiez le texte dans votre éditeur de texte.
 1. Enregistrez le fichier XSD mis à jour.

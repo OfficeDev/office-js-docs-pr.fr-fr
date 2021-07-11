@@ -3,12 +3,12 @@ title: Ajouter et supprimer des diapositives dans PowerPoint
 description: Découvrez comment ajouter et supprimer des diapositives et spécifier le maître et la mise en page des nouvelles diapositives.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9a8613997fc52ad6a30576b38c517a9c992f0e1b
-ms.sourcegitcommit: ba4fb7087b9841d38bb46a99a63e88df49514a4d
+ms.openlocfilehash: fd1f3c805483050776cc5b71c9e7a9fb61610b07
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2021
-ms.locfileid: "52779333"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348411"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Ajouter et supprimer des diapositives dans PowerPoint
 
@@ -23,7 +23,7 @@ Les API d’ajout de diapositives sont principalement utilisées dans les scéna
 
 [!INCLUDE [Information about using preview APIs](../includes/using-preview-apis-host.md)]
 
-Ajoutez des diapositives avec [la méthode SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) Voici un exemple simple dans lequel une diapositive qui utilise le maître des diapositives par défaut de la présentation et la première mise en page de ce maître est ajoutée. La méthode ajoute toujours de nouvelles diapositives à la fin de la présentation. Voici un exemple :
+Ajoutez des diapositives avec [la méthode SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) Voici un exemple simple dans lequel une diapositive qui utilise le maître des diapositives par défaut de la présentation et la première mise en page de ce maître est ajoutée. La méthode ajoute toujours de nouvelles diapositives à la fin de la présentation. Voici un exemple.
 
 ```javascript
 async function addSlide() {
@@ -37,7 +37,7 @@ async function addSlide() {
 
 ### <a name="selecting-which-slide-master-and-layout-to-use"></a>Sélection du maître des diapositives et de la mise en page à utiliser
 
-Utilisez le [paramètre AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) pour contrôler le maître des diapositives qui est utilisé pour la nouvelle diapositive et la mise en page dans le master. Voici un exemple. Tenez compte des informations suivantes :
+Utilisez le [paramètre AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) pour contrôler le maître des diapositives qui est utilisé pour la nouvelle diapositive et la mise en page dans le master. Voici un exemple. Notez les points suivants concernant ce code.
 
 - Vous pouvez inclure l’une ou l’autre des propriétés de l’objet ou les `AddSlideOptions` deux.
 - Si les deux propriétés sont utilisées, la disposition spécifiée doit appartenir à la forme de base spécifiée ou une erreur est lancée.
@@ -59,17 +59,17 @@ async function addSlide() {
 }
 ```
 
-Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’un curseur de diapositive ou d’une mise en page. Pour cette raison, vous ne pouvez utiliser le paramètre que lorsque vous connaissez les ID au moment du codage ou que votre application peut les découvrir au moment de `AddSlideOptions` l’utilisation. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par son nom ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
+Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’un curseur de diapositive ou d’une mise en page. Pour cette raison, vous ne pouvez utiliser le paramètre que lorsque vous connaissez les ID au moment du codage ou que votre application peut les découvrir lors de `AddSlideOptions` l’utilisation. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par son nom ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
 
 Par conséquent, le paramètre est principalement utilisé dans les scénarios dans lesquels le module est conçu pour fonctionner avec un ensemble spécifique de formes de base et de mises en page dont les ID sont `AddSlideOptions` connus. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (tel que le maître des diapositives et les noms ou images de mise en page) avec les ID ou les ID de création correspondants.
 
 #### <a name="have-the-user-choose-a-matching-slide"></a>Faire en cas de choix d’une diapositive correspondante par l’utilisateur
 
-Si votre add-in peut être utilisé dans des scénarios où la nouvelle diapositive doit  utiliser la même combinaison de formes de base et de mise en page que celle utilisée par une diapositive existante, votre add-in peut (1) invite l’utilisateur à sélectionner une diapositive et (2) lit les ID du maître et de la mise en page des diapositives. Les étapes suivantes montrent comment lire les ID et ajouter une diapositive avec une forme de base et une mise en page correspondantes.
+Si votre add-in peut être utilisé dans des scénarios où la nouvelle diapositive doit  utiliser la même combinaison de formes de base et de mise en page que celle utilisée par une diapositive existante, votre add-in peut (1) invite l’utilisateur à sélectionner une diapositive et (2) lit les ID du maître et de la mise en page des diapositives. Les étapes suivantes montrent comment lire les ID et ajouter une diapositive avec une forme de base et une disposition correspondantes.
 
 1. Créez une méthode pour obtenir l’index de la diapositive sélectionnée. Voici un exemple. Tenez compte des informations suivantes :
 
-    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes.
+    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes.
     - L’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` renvoie un tableau car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’en a sélectionné qu’une seule, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
     - La valeur de la diapositive est la valeur 1 que l’utilisateur voit en regard de la diapositive dans le volet de `index` miniatures.
@@ -93,7 +93,7 @@ Si votre add-in peut être utilisé dans des scénarios où la nouvelle diaposit
     }
     ```
 
-2. Appelez votre nouvelle fonction à [l’PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) de la fonction principale qui ajoute la diapositive. Voici un exemple :
+2. Appelez votre nouvelle fonction à [l’intérieur PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) de la fonction principale qui ajoute la diapositive. Voici un exemple.
 
     ```javascript
     async function addSlideWithMatchingLayout() {
@@ -120,7 +120,7 @@ Si votre add-in peut être utilisé dans des scénarios où la nouvelle diaposit
 
 ## <a name="delete-slides"></a>Supprimer des diapositives
 
-Supprimez une diapositive en obtenant une référence à l’objet [Slide](/javascript/api/powerpoint/powerpoint.slide) qui représente la diapositive et appelez la `Slide.delete` méthode. Voici un exemple dans lequel la quatrième diapositive est supprimée :
+Supprimez une diapositive en obtenant une référence à l’objet [Slide](/javascript/api/powerpoint/powerpoint.slide) qui représente la diapositive et appelez la `Slide.delete` méthode. Voici un exemple dans lequel la quatrième diapositive est supprimée.
 
 ```javascript
 async function deleteSlide() {

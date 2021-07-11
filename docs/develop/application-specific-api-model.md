@@ -3,12 +3,12 @@ title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: fb25201174dcd97b40ccf6be69b238951103db07
-ms.sourcegitcommit: c6308cf245ac1bc66a876eaa0a7bb4a2492991ac
-ms.translationtype: HT
+ms.openlocfilehash: 5cf1d088dfa883e5df9eaba25e395857cfce9f5c
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "47408599"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53350063"
 ---
 # <a name="using-the-application-specific-api-model"></a>Utilisation du modèle de l’API propre à l’application
 
@@ -169,7 +169,7 @@ N’oubliez pas que certaines des propriétés sous un objet peuvent avoir le m�
 Si vous appelez la méthode `load()` sur un objet (ou une collection) sans spécifier de paramètres, toutes les propriétés scalaires de l’objet ou les objets de la collection sont chargées. Le chargement des données inutiles ralentit votre complément. Vous devez toujours spécifier explicitement les propriétés à charger.
 
 > [!IMPORTANT]
-> La quantité de données renvoyées par une `load`instruction sans paramètre peut dépasser les limites de taille du service. Pour réduire les risques pesant sur les compléments plus anciens, certaines propriétés ne sont pas renvoyées par `load` sans en faire la demande explicite. Les propriétés suivantes sont exclues des opérations de chargement suivantes :
+> La quantité de données renvoyées par une `load`instruction sans paramètre peut dépasser les limites de taille du service. Pour réduire les risques pesant sur les compléments plus anciens, certaines propriétés ne sont pas renvoyées par `load` sans en faire la demande explicite. Les propriétés suivantes sont exclues de ces opérations de chargement.
 >
 > * `Excel.Range.numberFormatCategories`
 

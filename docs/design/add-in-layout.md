@@ -1,29 +1,29 @@
 ---
 title: Instructions de disposition pour les compléments Office
-description: Obtenez des instructions sur la disposition d’un volet de tâches ou d’une boîte de dialogue dans un Office de tâches.
+description: Obtenez des instructions sur la disposition d’un volet de tâches ou d’une boîte de dialogue dans Office de recherche.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 1eea665028abc90b2361edae45e81bc85481a429
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: c004171333ee3ded54a36efe227fcd1714935a59
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330009"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349363"
 ---
 # <a name="layout"></a>Disposition
 
 Chaque conteneur HTML incorporé dans Office aura une disposition. Ces dispositions sont les écrans principaux de votre complément. Dans ces dispositions, vous créerez des expériences qui permettent aux clients de lancer des actions, de modifier des paramètres, d’afficher, de faire défiler ou de parcourir du contenu. Concevez votre complément avec une disposition cohérente à travers les écrans afin de garantir la continuité de l’expérience. Si vous avez un site web existant que vos clients utilisent souvent, envisagez de réutiliser les dispositions de vos pages web existantes. Adaptez-les pour qu’elles s’intègrent harmonieusement dans des conteneurs HTML Office.
 
-Pour des recommandations sur la disposition, voir [Volet des tâches](task-pane-add-ins.md), [Contenu](content-add-ins.md) et [Boîte de dialogue](dialog-boxes.md). Pour plus d’informations sur la façon d’assembler des [React](using-office-ui-fabric-react.md)d’interface utilisateur Fluent ou [Office UI Fabric JS](fabric-core.md), des composants dans des dispositions courantes et des flux d’expérience utilisateur, voir modèles de modèles de conception d’expérience [utilisateur.](ux-design-pattern-templates.md)
+Pour des recommandations sur la disposition, voir [Volet des tâches](task-pane-add-ins.md), [Contenu](content-add-ins.md) et [Boîte de dialogue](dialog-boxes.md). Pour plus d’informations sur l’assemblage de [Fluent React](using-office-ui-fabric-react.md)d’interface utilisateur ou de [Office UI Fabric JS](fabric-core.md), des composants dans des dispositions courantes et des flux d’expérience utilisateur, voir modèles de conception d’expérience [utilisateur.](ux-design-pattern-templates.md)
 
-Appliquez les recommandations générales suivantes pour les dispositions :
+Appliquez les instructions générales suivantes pour les dispositions.
 
-*   Évitez les marges étroites ou larges sur vos conteneurs HTML. 20 pixels est une grande valeur par défaut.
-*   Alignez les éléments intentionnellement. Les retraits supplémentaires et les nouveaux points d’alignement doivent aider la hiérarchie visuelle.
-*   Les interfaces Office se trouvent sur une grille 4px. Essayez de conserver votre marge intérieure entre les éléments à des multiples de 4.
-*   Une interface surchargée peut être source de confusion et ne pas être utilisée facilement avec les interactions tactiles.
-*   Vérifiez que les dispositions sont cohérentes entre les écrans. Les modifications de disposition inattendues ressemblent à des bogues visuels qui contribuent à un manque de confiance en votre solution.
-*   Suivez les modèles de disposition courants. Les conventions permettent aux utilisateurs de comprendre comment utiliser une interface.
-*   Évitez les éléments redondants comme la personnalisation ou les commandes.
-*   Consolidez les contrôles et les affichages pour éviter une utilisation excessive de la souris.
-*   Créez des expériences réactives qui s’adaptent aux hauteurs et largeurs du conteneur HTML.
+- Évitez les marges étroites ou larges sur vos conteneurs HTML. 20 pixels est une grande valeur par défaut.
+- Alignez les éléments intentionnellement. Les retraits supplémentaires et les nouveaux points d’alignement doivent aider la hiérarchie visuelle.
+- Les interfaces Office se trouvent sur une grille 4px. Essayez de conserver votre marge intérieure entre les éléments à des multiples de 4.
+- Une interface surchargée peut être source de confusion et ne pas être utilisée facilement avec les interactions tactiles.
+- Vérifiez que les dispositions sont cohérentes entre les écrans. Les modifications de disposition inattendues ressemblent à des bogues visuels qui contribuent à un manque de confiance en votre solution.
+- Suivez les modèles de disposition courants. Les conventions permettent aux utilisateurs de comprendre comment utiliser une interface.
+- Évitez les éléments redondants comme la personnalisation ou les commandes.
+- Consolidez les contrôles et les affichages pour éviter une utilisation excessive de la souris.
+- Créez des expériences réactives qui s’adaptent aux hauteurs et largeurs du conteneur HTML.

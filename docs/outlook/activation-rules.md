@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: a5fc107c27feb5b0535727a42b4d56d21f7dcbc4
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076811"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349020"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -22,16 +22,17 @@ La figure suivante illustre les compléments Outlook activés dans la barre des
 ## <a name="specify-activation-rules-in-a-manifest"></a>Spécifier des règles d’activation dans un manifeste
 
 
-Pour que Outlook activer un complément pour des conditions spécifiques, spécifiez des règles d’activation dans le manifeste du complément à l’aide de l’un des éléments `Rule` suivants :
+Pour que Outlook activer un complément pour des conditions spécifiques, spécifiez des règles d’activation dans le manifeste du complément à l’aide de l’un des éléments `Rule` suivants.
 
 - [Élément de règle (MailApp complexType)](../reference/manifest/rule.md) : spécifie une règle individuelle.
 - [Élément de règle (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) : combine plusieurs règles à l’aide d’opérations logiques.
-    
+
 
  > [!NOTE]
  > `Rule`L’élément que vous utilisez pour spécifier une règle individuelle est du type complexe [Rule](../reference/manifest/rule.md) abstrait. Chacun des types de règles suivants étend ce `Rule` type complexe abstrait. Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
  > 
- > Par exemple, la règle suivante définit une règle [ItemIs](../reference/manifest/rule.md#itemis-rule) :`<Rule xsi:type="ItemIs" ItemType="Message" />`
+ > Par exemple, la règle suivante définit une [règle ItemIs.](../reference/manifest/rule.md#itemis-rule)
+ > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
  > `FormType`L’attribut s’applique aux règles d’activation dans le manifeste v1.1, mais n’est pas défini dans `VersionOverrides` la v1.0. Il ne peut donc pas être utilisé lorsque [itemIs](../reference/manifest/rule.md#itemis-rule) est utilisé dans `VersionOverrides` le nœud.
 
@@ -57,8 +58,8 @@ Spécifiez l’un des types d’éléments suivants dans `ItemType` l’attribut
 
 |**Value**|**Description**|
 |:-----|:-----|
-|**Rendez-vous**|Spécifie un élément dans le calendrier Outlook. Par exemple, un élément de réunion auquel une réponse a été donnée et auquel un organisateur et des participants sont associés, ou un rendez-vous auquel n’est associé aucun organisateur ou participant et qui constitue un simple élément de calendrier.Cela correspond à la classe de message IPM.Appointment dans Outlook.|
-|**Message**|Spécifie l’un des éléments suivants, généralement reçus dans la boîte de réception : <ul><li><p>Message électronique. Cela correspond à la classe de message IPM.Note dans Outlook.</p></li><li><p>Demande de réunion, réponse à une demande de réunion ou annulation d’une réunion. Cela correspond aux classes de message suivantes dans Outlook :</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
+|**Rendez-vous**|Spécifie un élément dans le calendrier Outlook. Par exemple, un élément de réunion auquel une réponse a été donnée et auquel un organisateur et des participants sont associés, ou un rendez-vous auquel n’est associé aucun organisateur ou participant et qui constitue un simple élément de calendrier. Cela correspond à la classe de message IPM.Appointment dans Outlook.|
+|**Message**|Spécifie l’un des éléments suivants reçus dans la boîte de réception. <ul><li><p>Message électronique. Cela correspond à la classe de message IPM.Note dans Outlook.</p></li><li><p>Demande de réunion, réponse à une demande de réunion ou annulation d’une réunion. Cela correspond aux classes de message suivantes dans Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
 L’attribut permet de spécifier le mode (lecture ou composition) dans lequel le `FormType` module doit être activé.
 
@@ -72,7 +73,7 @@ Vous pouvez éventuellement utiliser l’attribut pour spécifier la classe de m
 
 Pour plus d’informations sur les classes de message, reportez-vous à la rubrique [Types d’éléments et classes de messages](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes).
 
-L’exemple suivant illustre une règle **ItemIs** permettant aux utilisateurs d’afficher le complément dans la barre de compléments Outlook lorsqu’ils lisent un message :
+L’exemple suivant est une règle **ItemIs** qui permet aux utilisateurs de voir le add-in dans la barre de Outlook lorsque l’utilisateur lit un message.
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -102,7 +103,7 @@ Le `ItemHasAttachment` type complexe définit une règle qui vérifie si l’él
 
 Avant qu’un élément ne soit mis à la disposition d’un complément, le serveur l’examine pour déterminer si l’objet ou le corps contient du texte susceptible de correspondre à l’une des entités connues. Si l’une de ces entités est trouvée, elle est placée dans une collection d’entités connues accessibles à l’aide de la ou de la `getEntities` `getEntitiesByType` méthode de cet élément.
 
-Vous pouvez spécifier une règle à l’aide de celle qui affiche votre add-in lorsqu’une entité du type spécifié `ItemHasKnownEntity` est présente dans l’élément. Vous pouvez spécifier les entités connues suivantes dans `EntityType` l’attribut d’une `ItemHasKnownEntity` règle :
+Vous pouvez spécifier une règle à l’aide de celle qui affiche votre add-in lorsqu’une entité du type spécifié `ItemHasKnownEntity` est présente dans l’élément. Vous pouvez spécifier les entités connues suivantes dans `EntityType` l’attribut d’une `ItemHasKnownEntity` règle.
 
 - Address
 - Contact
@@ -111,8 +112,8 @@ Vous pouvez spécifier une règle à l’aide de celle qui affiche votre add-in 
 - PhoneNumber
 - TaskSuggestion
 - URL
-    
-Vous pouvez éventuellement inclure une expression régulière dans l’attribut afin que votre add-in s’affiche uniquement lorsqu’une entité correspond à `RegularExpression` l’expression régulière présente. Pour obtenir des correspondances avec des expressions régulières spécifiées dans les règles, vous pouvez utiliser la ou la méthode pour l’élément `ItemHasKnownEntity` `getRegExMatches` Outlook actuellement `getFilteredEntitiesByName` sélectionné.
+
+Vous pouvez éventuellement inclure une expression régulière dans l’attribut afin que votre add-in ne s’affiche qu’en présence d’une entité qui correspond à `RegularExpression` l’expression régulière. Pour obtenir des correspondances avec des expressions régulières spécifiées dans les règles, vous pouvez utiliser la ou la méthode pour `ItemHasKnownEntity` `getRegExMatches` l’élément Outlook actuellement `getFilteredEntitiesByName` sélectionné.
 
 L’exemple suivant montre une collection d’éléments qui montrent le add-in lorsque l’une des entités connues spécifiées est présente `Rule` dans le message.
 
@@ -182,7 +183,7 @@ L’exemple suivant illustre l’activation du complément lorsque l’utilisate
 ## <a name="limits-for-rules-and-regular-expressions"></a>Limites pour les règles et les expressions régulières
 
 
-Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant indique les limites générales pour les expressions régulières et les règles, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
+Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant présente des limites générales pour les expressions régulières et les règles, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
 
 <br/>
 

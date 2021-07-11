@@ -3,12 +3,12 @@ title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
 ms.date: 01/29/2021
 localization_priority: Priority
-ms.openlocfilehash: 922148130aa5384050813155819d2db4c75fe284
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1f34a6335949a4cbd2a0f58cdefa12426414770e
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076138"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349181"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -99,7 +99,7 @@ Pour déboguer une commande de complément, vous devez l’exécuter dans Office
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Appliquez les meilleures pratiques suivantes lorsque vous développez des commandes de complément :
+Appliquez les meilleures pratiques suivantes lorsque vous développez des commandes de complément.
 
 - Utilisez les commandes pour représenter une action spécifique avec un résultat clair et précis pour les utilisateurs. Ne combinez pas plusieurs actions dans un seul bouton.
 - Proposez des actions détaillées permettant de réaliser plus efficacement des tâches courantes dans votre complément. Réduisez le nombre d’étapes nécessaires à la réalisation d’une action.

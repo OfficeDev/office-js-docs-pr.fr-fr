@@ -3,12 +3,12 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: Découvrez comment résoudre les erreurs de l’utilisateur dans Office des modules.
 ms.date: 09/08/2020
 localization_priority: Normal
-ms.openlocfilehash: 7762c81744aa484ee5c958e6c647c4ea7893efc9
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: dc186e942d129d4a7ae1ce2a326d0e5a0e1629e1
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077203"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348628"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -32,9 +32,9 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>Lors de l’installation d’un complément, le message « Erreur lors du chargement du complément » s’affiche dans la barre d’état
 
 1. Fermez Office.
-2. Vérifiez que le manifeste est valide.
-3. Redémarrez le complément.
-4. Réinstallez le complément.
+1. Vérifiez que le manifeste est valide.
+1. Redémarrez le complément.
+1. Réinstallez le complément.
 
 Vous pouvez également nous adresser des commentaires : si vous utilisez Excel sur Windows ou Mac, vous pouvez adresser un commentaire à l’équipe chargée de l’extensibilité d’Office directement à partir d’Excel. Pour ce faire, sélectionnez **Fichier** | **Commentaires** | **Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournit les journaux nécessaires pour comprendre le problème.
 
@@ -44,28 +44,28 @@ Si un complément Outlook s’exécutant sous Windows et [à l’aide d’Inter
 
 
 - Go to Tools > **Internet Options**  >  **Advanced**.
-    
+
 - Sous **Parcourir**, décochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
-    
+
 Nous vous recommandons de décocher ces paramètres uniquement pour résoudre le problème. Si vous ne les réactivez pas, vous recevrez des invites. Une fois que le problème est résolu, recochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
 
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>Le complément ne s’active pas dans Office 2013
 
-Le complément ne s’active pas lorsque l’utilisateur effectue les étapes suivantes :
+Si le add-in ne s’active pas lorsque l’utilisateur effectue les étapes suivantes.
 
 
 1. connexion à son compte Microsoft dans Office 2013 ;
-    
-2. activation de la vérification à deux étapes pour son compte Microsoft ;
-    
-3. vérification de son identité après invitation lorsqu’il tente d’insérer un complément.
-    
+
+1. activation de la vérification à deux étapes pour son compte Microsoft ;
+
+1. vérification de son identité après invitation lorsqu’il tente d’insérer un complément.
+
 Pour résoudre ce problème, vérifiez que les dernières mises à jour Office sont installées ou téléchargez la [mise à jour pour Office 2013](https://support.microsoft.com/kb/2986156/).
 
 ## <a name="add-in-dialog-box-cannot-be-displayed"></a>La boîte de dialogue des compléments ne s’affiche pas
 
-Lorsqu’un utilisateur utilise un complément Office, il est invité à autoriser l’affichage d’une boîte de dialogue. L’utilisateur choisit **Autoriser** et le message d’erreur suivant apparaît :
+Lorsqu’un utilisateur utilise un complément Office, il est invité à autoriser l’affichage d’une boîte de dialogue. L’utilisateur choisit **Autoriser** et le message d’erreur suivant se produit.
 
 « Les paramètres de sécurité de votre navigateur nous empêchent de créer une boîte de dialogue. Essayez d’utiliser un autre navigateur, ou configurez votre navigateur de sorte que [URL] et le domaine affiché dans la barre d’adresse se trouvent dans la même zone de sécurité. »
 
@@ -83,9 +83,9 @@ Pour résoudre le problème, les utilisateurs finals et les administrateurs peuv
 Pour ajouter une URL à votre liste de sites de confiance :
 
 1. Dans **Panneau de configuration,** accédez à **Options Internet** > **Sécurité**.
-2. Sélectionnez la zone **Sites de confiance**, puis choisissez **Sites**.
-3. Entrez l’URL qui apparaît dans le message d’erreur, puis choisissez **Ajouter**.
-4. Essayez d’utiliser le complément à nouveau. Si le problème persiste, vérifiez les paramètres pour les autres zones de sécurité et assurez-vous que le domaine du complément se trouve dans la même zone que l’URL qui s’affiche dans la barre d’adresse de l’application Office.
+1. Sélectionnez la zone **Sites de confiance**, puis choisissez **Sites**.
+1. Entrez l’URL qui apparaît dans le message d’erreur, puis choisissez **Ajouter**.
+1. Essayez d’utiliser le complément à nouveau. Si le problème persiste, vérifiez les paramètres pour les autres zones de sécurité et assurez-vous que le domaine du complément se trouve dans la même zone que l’URL qui s’affiche dans la barre d’adresse de l’application Office.
 
 Ce problème se produit lorsque l’API de la boîte de dialogue est utilisée en mode contextuel. Pour éviter ce problème, utilisez l’indicateur [displayInFrame](/javascript/api/office/office.ui). Cela nécessite que votre page prenne en charge l’affichage dans un iframe. L’exemple suivant montre comment utiliser l’indicateur.
 
