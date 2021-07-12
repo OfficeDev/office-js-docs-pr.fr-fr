@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Visual Studio
 description: Comment développer un complément Office à l’aide de Visual Studio.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: cfa7adb3f8d19fcc5784a13291b7ad624919f2e7
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 5d7495709f729fb06a87ad5ca443b1712f6c3e49
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48741105"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349930"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 
@@ -17,9 +17,9 @@ Cet article explique comment utiliser Visual Studio pour développer votre compl
 > [!NOTE]
 > À la place de Visual Studio, vous pouvez choisir d’utiliser le générateur Yeoman pour compléments Office et le code VS afin de créer un complément. Pour en savoir plus sur cette option, voir [Création d’un complément Office](../develop/develop-overview.md)#creating-an-office-add-in).
 
-## <a name="create-the-add-in-project-using-visual-studio"></a>Créer un projet de complément Office à l’aide de Visual Studio
+## <a name="create-the-add-in-project-using-visual-studio"></a>Créer un projet de complément Office à l’aide de Visual Studio
 
-Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Outlook, Word et PowerPoint. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Pour créer un complément Office avec Visual Studio, suivez les instructions dans le démarrage rapide qui correspond au complément que vous souhaitez créer :
+Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Outlook, Word et PowerPoint. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Pour créer un complément Office avec Visual Studio, suivez les instructions dans le démarrage rapide qui correspond au complément que vous souhaitez créer :
 
 - [Démarrage rapide Excel](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
 - [Démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=visualstudio)
@@ -43,9 +43,9 @@ Les méthodes de test, de débogage et de résolution des problèmes liés aux c
 
 ## <a name="publish-the-add-in"></a>Publier le complément
 
-Un complément Office comprend une application Web et un fichier manifeste. L’application Web définit l’interface utilisateur et les fonctionnalités du complément, tandis que le manifeste spécifie l’emplacement de l’application Web et définit les paramètres et fonctionnalités du complément.
+Un complément Office se compose d’une application et d’un fichier manifeste. L’application Web définit l’interface utilisateur et les fonctionnalités du complément, tandis que le manifeste spécifie l’emplacement de l’application Web et définit les paramètres et fonctionnalités du complément.
 
-Lorsque vous développez votre complément dans Visual Studio, celui-ci est exécuté sur votre serveur web local (`localhost`). Lorsque votre complément fonctionne comme vous le souhaitez et que vous êtes prêt à le publier pour permettre à d’autres utilisateurs d’y accéder, vous devez procéder comme suit :
+Lorsque vous développez votre complément dans Visual Studio, celui-ci est exécuté sur votre serveur web local (`localhost`). Lorsque votre complément fonctionne comme vous le souhaitez et que vous êtes prêt à le publier pour permettre à d’autres utilisateurs d’y accéder, vous devrez réaliser les étapes suivantes.
 
 1. Déployer l’application web sur un serveur web ou un service d’hébergement web (par exemple, Microsoft Azure).
 2. Mettre à jour le manifeste pour préciser l’URL de l’application déployée. 
@@ -57,4 +57,4 @@ Lorsque vous développez votre complément dans Visual Studio, celui-ci est exé
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concevoir des compléments Office](../design/add-in-design.md)
 - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
-- [Publish Office Add-ins](../publish/publish.md)
+- [Publier des compléments Office](../publish/publish.md)

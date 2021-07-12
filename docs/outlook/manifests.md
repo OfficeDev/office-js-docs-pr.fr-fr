@@ -3,12 +3,12 @@ title: Manifestes des compléments Outlook
 description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
 ms.date: 05/27/2020
 localization_priority: Priority
-ms.openlocfilehash: f113a5d8f92ee80ed635283e9e5544bd4b9ce7cd
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 1d1f5c010586364bbbcc474cd4fcb8efa3efee1d
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076769"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53348936"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
@@ -250,7 +250,7 @@ Cet article porte sur les conditions requises pour la version 1.1 du manifeste. 
 
 ## <a name="root-element"></a>Élément racine
 
-L’élément racine du manifeste de complément Outlook est **OfficeApp**. Cet élément indique également l’espace de noms, la version de schéma et le type de complément par défaut. Placez tous les autres éléments du manifeste entre ses balises d’ouverture et de fermeture. Vous trouverez ci-dessous un exemple d’élément racine :
+L’élément racine du manifeste de complément Outlook est **OfficeApp**. Cet élément indique également l’espace de noms, la version de schéma et le type de complément par défaut. Placez tous les autres éléments du manifeste entre ses balises d’ouverture et de fermeture. Vous trouverez ci-dessous un exemple d’élément racine.
 
 
 ```XML
@@ -282,7 +282,7 @@ Pour plus d’informations sur cet élément, consultez [Créer des commandes co
 
 ## <a name="localization"></a>Localisation
 
-Certains aspects du complément doivent être localisés pour les différents paramètres régionaux, tels que le nom, la description et l’URL qui est chargée. Ces éléments peuvent être facilement localisés en spécifiant la valeur par défaut et les valeurs de remplacement locales dans l’élément **Resources** au sein de l’élément **VersionOverrides**. Pour remplacer une image, une URL et une chaîne, procédez comme suit :
+Certains aspects du complément doivent être localisés pour les différents paramètres régionaux, tels que le nom, la description et l’URL qui est chargée. Ces éléments peuvent être facilement localisés en spécifiant la valeur par défaut et les valeurs de remplacement locales dans l’élément **Resources** au sein de l’élément **VersionOverrides**. Pour remplacer une image, une URL et une chaîne, procédez comme suit.
 
 
 ```XML
@@ -314,7 +314,7 @@ La référence de schéma contient des informations complètes sur les élément
 
 ## <a name="hosts"></a>Hôtes
 
-Les compléments Outlook spécifient l’élément **Hosts** comme ci-dessous.
+Les compléments Outlook spécifient l’élément **Hosts** comme ci-dessous :
 
 ```XML
 <OfficeApp>
@@ -360,7 +360,7 @@ Pour plus d’informations, voir Schema reference for Office Add-ins manifests (
 
 Le domaine de la page de démarrage du complément que vous spécifiez dans l’élément **SourceLocation** est le domaine par défaut pour le complément. Si vous n’utilisez pas les éléments **AppDomains** et **AppDomain** et que votre complément tente d’accéder à un autre domaine, le navigateur ouvre une nouvelle fenêtre en dehors du panneau de complément. Afin que le complément puisse accéder à un autre domaine dans le volet de complément, ajoutez un élément **AppDomains** et incluez chaque domaine supplémentaire dans son propre sous-élément **AppDomain** dans le manifeste de complément.
 
-L’exemple suivant spécifie le domaine  `https://www.contoso2.com` comme second domaine auquel le complément peut accéder à l’intérieur du volet du complément :
+L’exemple suivant spécifie le domaine  `https://www.contoso2.com` comme second domaine auquel le complément peut accéder à l’intérieur du volet du complément.
 
 ```XML
 <OfficeApp>

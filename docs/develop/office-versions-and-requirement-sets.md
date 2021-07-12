@@ -3,12 +3,12 @@ title: Versions d’Office et ensembles de conditions requises
 description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript.
 ms.date: 02/09/2021
 localization_priority: Priority
-ms.openlocfilehash: 65db7bf6e8670e389cfaf5e557b365d960376569
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c0248164beb4fa7899ddc3925652474197b1aedf
+ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075991"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "53349783"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -21,7 +21,7 @@ Il existe de nombreuses versions d’Office sur plusieurs plateformes ; celles-c
 
 ## <a name="how-to-check-your-office-version"></a>Vérification de votre version d’Office
 
-Pour identifier la version d’Office que vous utilisez, à partir d’une application Office, sélectionnez le menu **Fichier**, puis sélectionnez **Compte**. La version d’Office s’affiche dans la section **Informations sur le produit**. Par exemple, la capture d’écran suivante indique la version 1802 d’Office (build 9026.1000) :
+Pour identifier la version d’Office que vous utilisez, à partir d’une application Office, sélectionnez le menu **Fichier**, puis sélectionnez **Compte**. La version d’Office s’affiche dans la section **Informations sur le produit**. Par exemple, la capture d’écran suivante indique la version 1802 d’Office (build 9026.1000).
 
 ![Vérifier la version de votre Office.](../images/office-version.png)
 
@@ -33,7 +33,7 @@ Certaines applications Office ont leurs propres ensembles de conditions requises
 
 Par ailleurs, d’autres fonctionnalités telles que les commandes de complément (extensibilité du ruban) et la possibilité de lancer des boîtes de dialogue (API de boîte de dialogue) ont été ajoutées à l’API commune. Les commandes de complément et les ensembles de conditions requises d’API de boîte de dialogue sont des exemples d’ensembles de conditions requises d’API que les différentes applications Office ont en commun.
 
-Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’application Office sur laquelle le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’application Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux applications :
+Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’application Office sur laquelle le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’application Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux applications.
 
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](../reference/requirement-sets/excel-api-requirement-sets.md) (ExcelApi)
 - [Ensembles de conditions requises de l’API JavaScript pour Word](../reference/requirement-sets/word-api-requirement-sets.md) (WordApi)
@@ -41,7 +41,7 @@ Un complément peut utiliser uniquement des API dans les ensembles de conditions
 - [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](../reference/requirement-sets/powerpoint-api-requirement-sets.md) (PowerPointApi)
 - [Présentation de l’ensemble de conditions requises pour les API Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md) (Mailbox)
 
-Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quelle application Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants :
+Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quelle application Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants.
 
 - [Ensembles de conditions requises communes pour Office](../reference/requirement-sets/office-add-in-requirement-sets.md)
 - [Ensembles de conditions requises concernant les commandes de complément](../reference/requirement-sets/add-in-commands-requirement-sets.md)
