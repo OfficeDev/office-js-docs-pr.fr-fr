@@ -1,15 +1,15 @@
 ---
 title: Excel Ensemble de conditions requises de l’API JavaScript 1.13
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.13.
-ms.date: 07/02/2021
+ms.date: 07/09/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bfd9c23beda64565b44f16845e046fa1a2358d41
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 422cc8da19ac901de68cdfa59d7ab9670858de6f
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290810"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418698"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>Nouveautés de l Excel API JavaScript 1.13
 
@@ -17,10 +17,10 @@ ExcelApi 1.13 a ajouté une méthode pour insérer des feuilles de calcul dans u
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
-| Événements de changement de formule | Suivre les modifications apportées aux formules, y compris la source et le type d’événement à l’origine d’une modification. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
-| Dépendants des formules | Recherchez les cellules dépendantes directes d’une formule. | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
-| Insérer des feuilles de calcul | Insérez des feuilles de calcul à partir d’un autre workbook dans le workbook actuel sous la forme d’une chaîne codée en Base64. | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
-| PivotLayout de tableau croisé dynamique | Développement de la classe PivotLayout, y compris la nouvelle prise en charge du texte de alt et de la gestion des cellules vides. | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
+| [Événements de changement de formule](../../excel/excel-add-ins-worksheets.md#detect-formula-changes) | Suivre les modifications apportées aux formules, y compris la source et le type d’événement à l’origine d’une modification. | [Worksheet.onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged)|
+| [Dépendants des formules](../../excel/excel-add-ins-ranges-precedents-dependents.md#get-the-direct-dependents-of-a-formula) | Recherchez les cellules dépendantes directes d’une formule. | [Range.getDirectDependents](/javascript/api/excel/excel.range#getDirectDependents__) |
+| [Insérer des feuilles de calcul](../../excel//excel-add-ins-workbooks.md#insert-a-copy-of-an-existing-workbook-into-the-current-one) | Insérez des feuilles de calcul à partir d’un autre workbook dans le workbook actuel sous la forme d’une chaîne codée en Base64. | [Workbook.insertWorksheetsFromBase64](/javascript/api/excel/excel.workbook#insertWorksheetsFromBase64_base64File__options_) |
+| [PivotLayout de tableau croisé dynamique](../../excel/excel-add-ins-pivottables.md#other-pivotlayout-functions) | Développement de la classe PivotLayout, y compris la nouvelle prise en charge du texte de alt et de la gestion des cellules vides. | [PivotLayout](/javascript/api/excel/excel.pivotlayout) |
 
 ## <a name="api-list"></a>Liste des API
 

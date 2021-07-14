@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ff1dc8da523d752d616981a570b4c83d9f1a423d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ccad56343d30983e6d76c6473945d3b8bc28c8a0
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349013"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418705"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -22,7 +22,7 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 
 ## <a name="supported-events"></a>Événements pris en charge
 
-Pour l’instant, les événements suivants sont pris en charge sur le web et sur Windows.
+Actuellement, les événements suivants sont pris en charge sur le web et sur Windows.
 
 |Événement|Description|Minimum<br>ensemble de conditions requises|
 |---|---|---|
@@ -45,7 +45,7 @@ Nous vous invitons à tester les événements maintenant en prévisualisation ! 
 
 Pour afficher un aperçu de ces événements :
 
-- Pour Outlook sur le web :
+- Par Outlook sur le web :
   - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur Windows :
@@ -311,6 +311,16 @@ Certaines Office.js API qui modifient ou modifient l’interface utilisateur ne 
 - Sous `Office.context.ui` :
   - `displayDialogAsync`
   - `messageParent`
+
+### <a name="requesting-external-data"></a>Demande de données externes
+
+Vous pouvez demander des données externes à l’aide d’une API telle que [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)une API web standard qui émettre des demandes HTTP pour interagir avec les serveurs.
+
+N’ignorez pas que vous devez utiliser des mesures de sécurité supplémentaires lors de la génération de XmlHttpRequests, nécessitant une stratégie [d’origine](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) identique et [un CORS](https://www.w3.org/TR/cors/)simple.
+
+Une implémentation CORS simple ne peut pas utiliser de cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un `Content-Type` en-tête dans CORS simple, à condition que le type de contenu `application/x-www-form-urlencoded` soit , ou `text/plain` `multipart/form-data` .
+
+La prise en charge complète de CORS sera bientôt disponible.
 
 ## <a name="see-also"></a>Voir aussi
 

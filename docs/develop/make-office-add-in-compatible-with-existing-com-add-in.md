@@ -1,28 +1,25 @@
 ---
 title: Rendre votre complément Office compatible avec un complément COM existant
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
-ms.date: 03/09/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c475189ec19cbb0de1a070f6c529db3c59a093d8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 85e5d8cc06aa599862c92b59a26c744f28ca2d22
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349804"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418684"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
-Si vous avez un compl?ment COM existant, vous pouvez créer des fonctionnalités équivalentes dans votre Compl?ment Office, ce qui permet à votre solution de s’exécuter sur d’autres plateformes telles que Office sur le Web ou Mac. Dans certains cas, votre Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le compl?ment COM correspondant. Dans ces situations, votre compl?ment COM peut fournir une meilleure expérience utilisateur sur Windows que l’interface Office compl?ments peut fournir.
+Si vous avez un compl?ment COM existant, vous pouvez créer des fonctionnalités équivalentes dans votre compl?ment Office, permettant ainsi votre solution de s’exécuter sur d’autres plateformes telles que Office sur le Web ou Mac. Dans certains cas, votre Office peut ne pas être en mesure de fournir toutes les fonctionnalités disponibles dans le compl?ment COM correspondant. Dans ces situations, votre compl?ment COM peut fournir une meilleure expérience utilisateur sur Windows que l’interface Office compl?ments peut fournir.
 
 Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?ment COM équivalent est déjà install sur l’ordinateur d’un utilisateur, Office sur Windows exécute le compl?ment COM au lieu du compl?ment Office. Le add-in COM est appelé « équivalent », car Office passe en toute transparence entre le compl?ment COM et le compl?ment Office en fonction de celui qui est install ? l’ordinateur d’un utilisateur.
 
 > [!NOTE]
-> Cette fonctionnalité est prise en charge par les plateformes suivantes, lorsqu’elles sont connectées à Microsoft 365 abonnement.
+> Cette fonctionnalité est prise en charge par la plateforme et les applications suivantes, lorsqu’elles sont connectées à Microsoft 365 abonnement. Les add-ins COM ne peuvent pas être installés sur une autre plateforme. Ainsi, sur ces plateformes, l’élément manifeste qui est abordé plus loin dans cet article, `EquivalentAddins` est ignoré.
 >
-> - Excel, Word et PowerPoint sur le web
 > - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
-> - Excel, Word et PowerPoint sur Mac (version 13.329 ou ultérieure)
-> - Outlook sur Windows (version 2102 ou ultérieure)
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Spécifier un compl?ment COM équivalent
 
@@ -70,7 +67,7 @@ Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?
 
 ## <a name="equivalent-behavior-for-users"></a>Comportement équivalent pour les utilisateurs
 
-Lorsqu’un module com équivalent est [spécifié,](#specify-an-equivalent-com-add-in)Office sur Windows n’affiche pas l’interface utilisateur de votre Office si le module com équivalent est installé. Office masque uniquement les boutons du ruban du Office et n’empêche pas l’installation. Par conséquent, votre Office’interface utilisateur apparaîtra toujours aux emplacements suivants dans l’interface utilisateur.
+Lorsqu’un compl?ment [COM](#specify-an-equivalent-com-add-in)équivalent est spécifié, Office sur Windows n’affiche pas l’interface utilisateur de votre compl?ment Office si le compl?ment COM ex quis est install . Office masque uniquement les boutons du ruban du Office et n’empêche pas l’installation. Par conséquent, votre Office’interface utilisateur apparaîtra toujours aux emplacements suivants dans l’interface utilisateur.
 
 - Sous **Mes modules**
 - En tant qu’entrée dans le gestionnaire du ruban (Excel, Word et PowerPoint uniquement)
@@ -116,7 +113,7 @@ Une fois que vous avez spécifié un Office COM équivalent pour votre Office, O
 
 Le VSTO COM/Outlook doit être connecté pour que le module web correspondant soit désactivé.
 
-Si le VSTO COM/VSTO est alors déconnecté au cours d’une session Outlook suivante, le compl?ment web restera probablement désactivé jusqu’au redémarrage de Outlook'
+Si le VSTO COM/VSTO est alors déconnecté lors d’une session Outlook suivante, le compl?ment web restera probablement désactivé jusqu’au redémarrage de Outlook'
 
 ## <a name="see-also"></a>Voir aussi
 
