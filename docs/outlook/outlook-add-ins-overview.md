@@ -1,15 +1,15 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 06/15/2021
+ms.date: 07/13/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 6a490e78b524e84d53461838b8a2d5a15be031bd
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: c39928fd59379eac1552e80bbaccb54f460c8357
+ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348922"
+ms.lasthandoff: 07/14/2021
+ms.locfileid: "53418691"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -65,6 +65,8 @@ Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un 
   > \* La prise en charge des scénarios d’accès délégué (par exemple, les dossiers partagés à partir de la boîte aux lettres d’un autre utilisateur) a été introduite dans [ensemble de conditions requises 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). La prise en charge des boîtes aux lettres partagées est désormais disponible en préversion. Pour plus d’informations, consultez [Activer les dossiers partagés et les scénarios de boîte aux lettres partagées](delegate-access.md).
 
 - utilise un formulaire personnalisé.
+
+- Créé via [Simple MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5). Simple MAPI est utilisé lorsqu'un utilisateur d'Office crée ou envoie un courriel à partir d'une application Office sur Windows pendant qu'Outlook est fermé. Par exemple, un utilisateur peut créer un courrier Outlook tout en travaillant dans Word, ce qui déclenche une fenêtre de composition Outlook sans lancer l’application Outlook complète. Toutefois, si Outlook est déjà en cours d’exécution lorsque l’utilisateur crée l’e-mail à partir de Word, ce n’est pas un scénario Simple MAPI. Les compléments Outlook fonctionnent donc dans le formulaire de composition tant que d’autres exigences d’activation sont remplies.
 
 En général, Outlook peut activer des compléments sous forme de lecture pour les éléments dans le dossier Éléments envoyés, à l'exception des compléments qui s’activent en fonction des correspondances de chaînes d'entités connues. Pour plus d'informations sur les raisons de ce problème, reportez-vous à la rubrique "Prise en charge pour les entités connues" dans [Faire correspondre des chaînes dans un élément Outlook en tant qu'entités connues](match-strings-in-an-item-as-well-known-entities.md).
 
