@@ -1021,7 +1021,15 @@ items:
           - name: Ajouter à l'envoi
             href: outlook/append-on-send.md
           - name: Activation basée sur un événement
-            href: outlook/autolaunch.md
+            items:
+              - name: Procédure pas à pas
+                href: outlook/autolaunch.md
+                displayName: event-based activation
+              - name: Débogage de l’activation basée sur un événement
+                href: outlook/debug-autolaunch.md
+              - name: Options AppSource
+                href: outlook/autolaunch-store-options.md
+                displayName: event-based activation
           - name: Volet des tâches pouvant être épinglé
             href: outlook/pinnable-taskpane.md
           - name: Dossiers et boîtes aux lettres partagés
