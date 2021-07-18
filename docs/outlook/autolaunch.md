@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ccad56343d30983e6d76c6473945d3b8bc28c8a0
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 1856f78b7e6d49952d2eebf521894d6a988402a0
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418705"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455529"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -22,7 +22,7 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 
 ## <a name="supported-events"></a>Événements pris en charge
 
-Actuellement, les événements suivants sont pris en charge sur le web et sur Windows.
+Pour l’instant, les événements suivants sont pris en charge sur le web et sur Windows.
 
 |Événement|Description|Minimum<br>ensemble de conditions requises|
 |---|---|---|
@@ -239,7 +239,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     ```
 
     > [!NOTE]
-    > Si votre application [n’a](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pas été automatiquement chargé de manière test, suivez les instructions du chargement de version test des Outlook pour tester le chargement de version test du Outlook.
+    > Si votre application [n’a](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pas été automatiquement rechargée de manière test, suivez les instructions du chargement de version test des Outlook pour tester le chargement de version test du Outlook.
 
 1. Dans Outlook sur le web, créez un message.
 
@@ -247,10 +247,10 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur Windows, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet de la composition.](../images/outlook-win-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet définie sur composition.](../images/outlook-win-autolaunch.png)
 
     > [!NOTE]
-    > Si vous exécutez votre add-in à partir de l’host local et que vous voyez l’erreur « Désolé, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
+    > Si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
     >
     > 1. Fermez Outlook.
     > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
@@ -266,7 +266,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [supprimez le add-in,](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) puis chargez-le de nouveau.
+- Si vous avez mis à jour le manifeste, [supprimez-le, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau.
 - Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
 Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer](debug-autolaunch.md)votre complément basé sur Outlook événement.
@@ -326,6 +326,7 @@ La prise en charge complète de CORS sera bientôt disponible.
 
 - [Manifestes de complément Outlook](manifests.md)
 - [Comment déboguer des add-ins basés sur des événements](debug-autolaunch.md)
+- [Options de liste AppSource pour votre Outlook d’événements](autolaunch-store-options.md)
 - Exemples PnP :
   - [Utiliser Outlook’activation basée sur un événement pour définir la signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
   - [Utiliser Outlook’activation basée sur un événement pour baliser des destinataires externes](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)

@@ -2,14 +2,14 @@
 title: Créer un Outlook mobile pour un fournisseur de réunion en ligne
 description: Explique comment configurer un Outlook mobile pour un fournisseur de services de réunion en ligne.
 ms.topic: article
-ms.date: 02/12/2021
+ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 7f65ef7a1b87a989063b6cb23e6e608e6b3bbefc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f0f9b69c2b8b515df3829ca3ba0714393df79fd1
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077063"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455501"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un Outlook mobile pour un fournisseur de réunion en ligne
 
@@ -207,17 +207,17 @@ Dans cette section, découvrez comment votre script de add-in peut mettre à jou
 
 ## <a name="testing-and-validation"></a>Test et validation
 
-Suivez les instructions habituelles [pour tester et valider votre add-in.](testing-and-tips.md) Après [le chargement de](sideload-outlook-add-ins-for-testing.md) version Outlook sur le web, Windows ou Mac, redémarrez Outlook sur votre appareil mobile Android. (Android est le seul client pris en charge pour le moment.) Ensuite, sur un nouvel écran de réunion, vérifiez que le Microsoft Teams ou Skype bascule est remplacé par le vôtre.
+Suivez les instructions habituelles [pour tester et valider votre add-in.](testing-and-tips.md) Après [le chargement de](sideload-outlook-add-ins-for-testing.md) version Outlook sur le web, Windows ou Mac, redémarrez Outlook sur votre appareil mobile Android ou iOS. Ensuite, sur un nouvel écran de réunion, vérifiez que le Microsoft Teams ou Skype bascule est remplacé par le vôtre.
 
 ### <a name="create-meeting-ui"></a>Créer une interface utilisateur de réunion
 
-En tant qu’organisateur de réunion, vous devriez voir des écrans semblables aux trois images suivantes lorsque vous créez une réunion.
+En tant qu’organisateur de réunion, vous devez voir des écrans semblables aux trois images suivantes lorsque vous créez une réunion.
 
 [![Écran créer une réunion sur Android - Contoso bascule.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Écran Créer une réunion sur Android : chargement du basculement Contoso.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Écran créer une réunion sur Android - Contoso bascule.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Rejoindre l’interface utilisateur de réunion
 
-En tant que participant à la réunion, vous devez voir un écran semblable à l’image suivante lorsque vous affichez la réunion.
+En tant que participant à la réunion, vous devez voir un écran semblable à l’image suivante lorsque vous visualisez la réunion.
 
 [![Capture d’écran de l’écran participer à une réunion sur Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
@@ -231,7 +231,7 @@ Si vous souhaitez inscrire le modèle de réunion en ligne pour votre service, v
 1. Go to the **Feedback** section at the end of this article.
 1. Appuyez sur **le lien Cette page.**
 1. Définissez **le titre** du nouveau problème sur « Enregistrer le modèle de réunion en ligne pour mon service », en remplaçant par votre nom de `my-service` service.
-1. Dans le corps du problème, remplacez la chaîne « [Entrez vos commentaires ici] » par la chaîne que vous avez définie dans la variable ou une variable similaire de la section Implémenter l’ajout de détails de réunion en ligne plus haut dans cet `newBody` article. [](#implement-adding-online-meeting-details)
+1. Dans le corps du problème, remplacez la chaîne « [Entrez les commentaires ici] » par la chaîne que vous avez définie dans la variable ou une variable similaire de la section Implémenter l’ajout de détails de réunion en ligne plus haut dans cet `newBody` article. [](#implement-adding-online-meeting-details)
 1. Cliquez **sur Envoyer un nouveau problème.**
 
 ![Capture d’écran du nouveau GitHub’écran de problème avec l’exemple de contenu Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
@@ -261,6 +261,7 @@ Plusieurs restrictions s’appliquent.
 - Seuls les add-ins installés par l’administrateur apparaissent sur l’écran de composition de la réunion, remplaçant l’option Teams ou Skype par défaut. Les add-ins installés par l’utilisateur ne s’activent pas.
 - L’icône du add-in doit être en échelles de gris à l’aide de code hexas ou de son équivalent `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
 - Une seule commande sans interface utilisateur est prise en charge en mode Organisateur de rendez-vous (composition).
+- Le add-in doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’une minute. Toutefois, tout temps passé dans une boîte de dialogue où le module a été ouvert pour authentification, etc. est exclu du délai d’attente.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,18 +1,18 @@
 ---
 title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
-ms.date: 05/12/2021
+ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 90db6d010fb76be027df639cc67e62a548cd784a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
+ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349230"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53456228"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
-Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui est affiché dans la ligne d’onglet lorsqu’un événement spécifié se produit dans le document Office document. Par exemple, **l’onglet Création** de table qui apparaît sur le Excel lorsqu’un tableau est sélectionné. Vous pouvez inclure des onglets contextuels personnalisés dans votre Office et spécifier quand ils sont visibles ou masqués en créant des handlers d’événements qui modifient la visibilité. (Toutefois, les onglets contextuels personnalisés ne répondent pas aux changements de focus.)
+Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui est affiché dans la ligne d’onglet lorsqu’un événement spécifié se produit dans le document Office document. Par exemple, **l’onglet Création** de table qui apparaît sur le ruban Excel lors de la sélection d’un tableau. Vous incluez des onglets contextuels personnalisés dans votre Office et spécifiez quand ils sont visibles ou masqués en créant des handlers d’événements qui modifient la visibilité. (Toutefois, les onglets contextuels personnalisés ne répondent pas aux changements de focus.)
 
 > [!NOTE]
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
@@ -26,7 +26,7 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 > - Excel sur le web
 
 > [!NOTE]
-> Les onglets contextuels personnalisés fonctionnent uniquement sur les plateformes qui supportent les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et sur la façon de les utiliser, voir Spécifier Office [applications et les conditions requises de l’API.](../develop/specify-office-hosts-and-api-requirements.md)
+> Les onglets contextuels personnalisés fonctionnent uniquement sur les plateformes qui supportent les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et sur leur utilisation, voir Spécifier Office [applications et les exigences d’API.](../develop/specify-office-hosts-and-api-requirements.md)
 >
 > - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
@@ -35,11 +35,11 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportement des onglets contextuels personnalisés
 
-L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets Office contextuels. Voici les principes de base pour l’emplacement des onglets contextuels personnalisés.
+L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets Office contextuels intégrés. Voici les principes de base pour l’emplacement des onglets contextuels personnalisés.
 
 - Lorsqu’un onglet contextuel personnalisé est visible, il apparaît à l’extrémité droite du ruban.
 - Si un ou plusieurs onglets contextuels intégrés et un ou plusieurs onglets contextuels personnalisés des modules sont visibles en même temps, les onglets contextuels personnalisés sont toujours à droite de tous les onglets contextuels intégrés.
-- Si votre add-in possède plusieurs onglets contextuels et qu’il existe des contextes dans lesquels plusieurs onglets sont visibles, ils apparaissent dans l’ordre dans lequel ils sont définis dans votre module. (Le sens est identique à celui de la langue Office ; c’est-à-dire de gauche à droite dans les langues de gauche à droite, mais de droite à gauche dans les langues de droite à gauche.) Pour [plus d’informations sur](#define-the-groups-and-controls-that-appear-on-the-tab) leur définition, voir Définir les groupes et les contrôles qui apparaissent sous l’onglet.
+- Si votre add-in possède plusieurs onglets contextuels et qu’il existe des contextes dans lesquels plusieurs onglets sont visibles, ils apparaissent dans l’ordre dans lequel ils sont définis dans votre add-in. (Le sens est identique à celui de la langue Office ; c’est-à-dire de gauche à droite dans les langues de gauche à droite, mais de droite à gauche dans les langues de droite à gauche.) Pour [plus d’informations sur](#define-the-groups-and-controls-that-appear-on-the-tab) leur définition, voir Définir les groupes et les contrôles qui apparaissent sous l’onglet.
 - Si plusieurs d’entre eux ont un onglet contextuel visible dans un contexte spécifique, ils apparaissent dans l’ordre dans lequel les modules ont été lancés.
 - Contrairement *aux* onglets principaux personnalisés, les onglets contextuels personnalisés ne sont pas ajoutés Office le ruban de l’application. Ils sont présents uniquement dans Office documents sur lesquels votre module est en cours d’exécution.
 
@@ -96,7 +96,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
 
 1. Ajoutez ce qui suit en tant que seul membre du `tabs` tableau. À propos de ce markup, notez :
 
-    - La propriété `id` est requise. Utilisez un bref ID descriptif unique parmi tous les onglets contextuels de votre add-in.
+    - La propriété `id` est requise. Utilisez un bref ID descriptif unique parmi tous les onglets contextuels de votre module.
     - La propriété `label` est requise. Il s’agit d’une chaîne conviviale qui sert d’étiquette à l’onglet contextuel.
     - La propriété `groups` est requise. Il définit les groupes de contrôles qui apparaîtront sous l’onglet. Elle doit avoir au moins un *membre et pas plus de 20*. (Il existe également des limites au nombre de contrôles que vous pouvez avoir sur un onglet contextuel personnalisé et qui limitent également le nombre de groupes que vous avez. Pour plus d’informations, voir l’étape suivante.)
 
@@ -311,7 +311,7 @@ async function showDataTab() {
 
 Le handler pour masquer l’onglet est presque identique, sauf qu’il définit à `visible` nouveau la propriété sur `false` .
 
-La Office JavaScript fournit également plusieurs interfaces (types) pour faciliter la construction de `RibbonUpdateData` l’objet. Voici la fonction dans TypeScript qui utilise `showDataTab` ces types.
+La Office JavaScript fournit également plusieurs interfaces (types) pour faciliter la construction de `RibbonUpdateData` l’objet. Voici la fonction `showDataTab` dans TypeScript qui utilise ces types.
 
 ```typescript
 const showDataTab = async () => {
@@ -323,7 +323,7 @@ const showDataTab = async () => {
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer la visibilité de l’onglet et l’état activé d’un bouton en même temps
 
-La méthode est également utilisée pour activer ou désactiver l’état d’un bouton personnalisé sur un onglet contextuel personnalisé ou un `requestUpdate` onglet principal personnalisé. Pour plus d’informations à ce sujet, voir [Enable and Disable Add-in Commands](disable-add-in-commands.md). Il peut y avoir des scénarios dans lesquels vous souhaitez modifier la visibilité d’un onglet et l’état activé d’un bouton en même temps. Vous pouvez le faire avec un seul appel de `requestUpdate` . Voici un exemple dans lequel un bouton d’un onglet principal est activé en même temps qu’un onglet contextuel est rendu visible.
+La méthode est également utilisée pour activer ou désactiver l’état d’un bouton personnalisé sur un onglet contextuel personnalisé ou un `requestUpdate` onglet principal personnalisé. Pour plus d’informations à ce sujet, voir [Enable and Disable Add-in Commands](disable-add-in-commands.md). Il peut y avoir des scénarios dans lesquels vous souhaitez modifier la visibilité d’un onglet et l’état activé d’un bouton en même temps. Vous le faites avec un seul appel de `requestUpdate` . Voici un exemple dans lequel un bouton d’un onglet principal est activé en même temps qu’un onglet contextuel est rendu visible.
 
 ```javascript
 function myContextChanges() {
@@ -378,9 +378,101 @@ function myContextChanges() {
 }
 ```
 
-## <a name="localizing-the-json-blob"></a>Localisation de l’objet blob JSON
+## <a name="open-a-task-pane-from-contextual-tabs"></a>Ouvrir un volet Des tâches à partir d’onglets contextuels
 
-Le blob JSON passé à n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés est localisée (ce qui est décrit lors de la localisation du contrôle à partir du `requestCreateControls` [manifeste).](../develop/localization.md#control-localization-from-the-manifest) Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser `switch` une instruction qui teste la propriété [Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Voici un exemple.
+Pour ouvrir votre volet Des tâches à partir d’un bouton d’un onglet contextuel personnalisé, créez une action dans le JSON avec une `type` des `ShowTaskpane` touches . Définissez ensuite un bouton dont `actionId` la propriété est définie sur la valeur de `id` l’action. Cela ouvre le volet Des tâches par défaut spécifié par `<Runtime>` l’élément dans votre manifeste.
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+Pour ouvrir un volet De tâches qui n’est pas le volet Des tâches par défaut, spécifiez une `sourceLocation` propriété dans la définition de l’action. Dans l’exemple suivant, un deuxième volet Des tâches est ouvert à partir d’un autre bouton.
+
+> [!IMPORTANT]
+>
+> - `sourceLocation`Lorsqu’une valeur est spécifiée pour l’action, le volet Des tâches *n’utilise* pas le runtime partagé. Il s’exécute dans un nouveau runtime JavaScript.
+> - Un seul volet De tâches ne peut pas utiliser le runtime partagé, de sorte qu’une seule action de type ne peut `ShowTaskpane` pas omettre la `sourceLocation` propriété.
+
+```json
+`{
+  "actions": [
+    {
+      "id": "openChartsTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Charts",
+      "supportPinning": false
+    },
+    {
+      "id": "openTablesTaskpane",
+      "type": "ShowTaskpane",
+      "title": "Work with Tables",
+      "supportPinning": false
+      "sourceLocation": "https://MyDomain.com/myPage.html"
+    }
+  ],
+  "tabs": [
+    {
+      // some tab properties omitted
+      "groups": [
+        {
+          // some group properties omitted
+          "controls": [
+            {
+                "type": "Button",
+                "id": "CtxBt112",
+                "actionId": "openChartsTaskpane",
+                "enabled": false,
+                "label": "Open Charts Taskpane",
+                // some control properties omitted
+            },
+            {
+                "type": "Button",
+                "id": "CtxBt113",
+                "actionId": "openTablesTaskpane",
+                "enabled": false,
+                "label": "Open Tables Taskpane",
+                // some control properties omitted
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}`
+```
+
+## <a name="localize-the-json-text"></a>Localiser le texte JSON
+
+Le blob JSON passé à n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés est localisée (ce qui est décrit lors de la localisation du contrôle à partir du `requestCreateControls` [manifeste).](../develop/localization.md#control-localization-from-the-manifest) Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser `switch` une instruction qui teste la [Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Voici un exemple.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -440,7 +532,7 @@ Certaines combinaisons de plateforme, Office application et de Office build ne s
 
 Il existe un élément manifeste, [OverriddenByRibbonApi,](../reference/manifest/overriddenbyribbonapi.md)conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés. 
 
-La stratégie la plus simple pour l’utilisation de cet élément est que vous définissez dans le manifeste un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés *non* contextuels) qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` ajoutez en tant que premier élément enfant de [CustomTab](../reference/manifest/customtab.md). L’effet de cette utilisation est le suivant :
+La stratégie la plus simple pour utiliser cet élément est que vous définissez  dans le manifeste un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés nontexte) qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` ajoutez en tant que premier élément enfant de [CustomTab](../reference/manifest/customtab.md). L’effet de cette utilisation est le suivant :
 
 - Si le add-in s’exécute sur une application et une plateforme qui prend en charge les onglets contextuels personnalisés, l’onglet principal personnalisé n’apparaît pas sur le ruban. Au lieu de cela, l’onglet contextuel personnalisé est créé lorsque le add-in appelle la `requestCreateControls` méthode.
 - Si le add-in *s’exécute* sur une application ou une plateforme qui ne prend pas en charge, l’onglet principal personnalisé `requestCreateControls` apparaît sur le ruban.
@@ -469,7 +561,7 @@ Voici un exemple de cette stratégie simple.
 </OfficeApp>
 ```
 
-Cette stratégie simple utilise un onglet principal personnalisé qui met en miroir un onglet contextuel personnalisé avec ses groupes et ses contrôles enfants, mais vous pouvez utiliser une stratégie plus complexe. L’élément peut également être ajouté en tant que (premier) élément enfant aux éléments Group et Control (type de bouton et type de `<OverriddenByRibbonApi>` [menu)](../reference/manifest/control.md#menu-dropdown-button-controls)et éléments de [](../reference/manifest/group.md) [](../reference/manifest/control.md) [](../reference/manifest/control.md#button-control) `<Item>` menu. Cela vous permet de distribuer les groupes et les contrôles qui apparaîtraient dans l’onglet contextuel entre différents groupes, boutons et menus dans différents onglets principaux personnalisés. Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal personnalisé uniquement lorsque les onglets contextuels personnalisés ne sont pas pris en charge. Toutefois, le groupe parent et l’onglet principal personnalisé apparaissent, que les onglets contextuels personnalisés soient pris en charge ou non.
+Cette stratégie simple utilise un onglet principal personnalisé qui met en miroir un onglet contextuel personnalisé avec ses groupes et contrôles enfants, mais vous pouvez utiliser une stratégie plus complexe. L’élément peut également être ajouté en tant que (le premier) élément enfant aux éléments Group et Control (type de bouton et type de `<OverriddenByRibbonApi>` [menu)](../reference/manifest/control.md#menu-dropdown-button-controls)et [](../reference/manifest/group.md) [](../reference/manifest/control.md) aux éléments de [](../reference/manifest/control.md#button-control) `<Item>` menu. Cela vous permet de distribuer les groupes et les contrôles qui apparaîtraient dans l’onglet contextuel entre différents groupes, boutons et menus dans différents onglets principaux personnalisés. Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal personnalisé uniquement lorsque les onglets contextuels personnalisés ne sont pas pris en charge. Toutefois, le groupe parent et l’onglet principal personnalisé apparaissent, que les onglets contextuels personnalisés soient pris en charge ou non.
 
 ```xml
 <OfficeApp ...>
