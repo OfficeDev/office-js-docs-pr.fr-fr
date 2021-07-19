@@ -1,15 +1,15 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 07/13/2021
+ms.date: 07/14/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c39928fd59379eac1552e80bbaccb54f460c8357
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 0d9dd51627cd797351e4e43957375b7a493b2b57
+ms.sourcegitcommit: 30a861ece18255e342725e31c47f01960b854532
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418691"
+ms.lasthandoff: 07/16/2021
+ms.locfileid: "53455487"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -59,7 +59,7 @@ Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un 
 
 - un fichier .msg ou .eml ouvert à partir du système de fichiers ;
 
-- Dans une [boîte aux lettres de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), dans une boîte aux lettres partagée\*, dans la boîte aux lettres d’un autre utilisateur\*, dans une boîte aux lettres d’archivage ou dans un dossier public.
+- Dans une [boîte aux lettres de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), dans une boîte aux lettres partagée\*, dans la boîte aux lettres d’un autre utilisateur\*, dans une [boîte aux lettres d’archivage](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), ou dans un dossier public.
 
   > [!IMPORTANT]
   > \* La prise en charge des scénarios d’accès délégué (par exemple, les dossiers partagés à partir de la boîte aux lettres d’un autre utilisateur) a été introduite dans [ensemble de conditions requises 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). La prise en charge des boîtes aux lettres partagées est désormais disponible en préversion. Pour plus d’informations, consultez [Activer les dossiers partagés et les scénarios de boîte aux lettres partagées](delegate-access.md).
