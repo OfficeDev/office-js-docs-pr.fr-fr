@@ -3,12 +3,12 @@ title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 6347bbe6b02befeabf0fcd6f04545f6d543871c8
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076181"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536024"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -29,14 +29,14 @@ Le navigateur utilisé dépend de ce qui suit :
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|SYSTÈME D’EXPLOITATION|Version d’Office|Edge WebView2 (Chromium basé sur) installé ?|Navigateur|
+|SYSTÈME D’EXPLOITATION|Version d’Office|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.|
 |Mac|indifférent|Non applicable|Safari|
 |iOS|indifférent|Non applicable|Safari|
 |Android|indifférent|Non applicable|Chrome|
 |Windows 7, 8.1, 10 | non-abonnement Office 2013 ou ultérieure|Peu importe|Internet Explorer 11|
-|Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
+|Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Peu importe|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _ET_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3 avec</sup> WebView d’origine (EdgeHTML)|
@@ -69,7 +69,7 @@ Office Les add-ins ne sont pas en charge par les travailleurs de service lorsque
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 
-Par défaut, les barres de défilement dans Microsoft Edge sont masquées jusqu’au moment où elles sont survolées. Pour vous assurer que la barre de défilement est toujours visible, les styles CSS qui s’appliquent à l’`<body>`élément des pages dans le volet des tâches doivent inclure la propriété [-ms-overflow-style](https://developer.mozilla.org/docs/Archive/Web/CSS/-ms-overflow-style) et la valeur `scrollbar` doit être attribuée.
+Par défaut, les barres de défilement dans Microsoft Edge sont masquées jusqu’au moment où elles sont survolées. Pour vous assurer que la barre de défilement est toujours visible, les styles CSS qui s’appliquent à l’`<body>`élément des pages dans le volet des tâches doivent inclure la propriété [-ms-overflow-style](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions) et la valeur `scrollbar` doit être attribuée.
 
 ### <a name="when-debugging-with-the-microsoft-edge-devtools-the-add-in-crashes-or-reloads"></a>Lorsque vous déboguez avec Microsoft Edge DevTools, le complément se bloque ou se recharge
 

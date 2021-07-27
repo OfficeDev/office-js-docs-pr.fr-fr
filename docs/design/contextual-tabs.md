@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: a8eaffe0402601ee11a063d0df5670ff208be4fd
-ms.sourcegitcommit: b20041962a7f921a8c40eb9ae55bc6992450b243
+ms.openlocfilehash: bdb620c6f91e1337cbaacd2648b661bd6dcb8913
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2021
-ms.locfileid: "53456228"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535994"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
@@ -18,6 +18,8 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
 >
 > - [Concepts basiques pour les commandes de complément](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
 > Les onglets contextuels personnalisés sont actuellement uniquement pris en charge sur Excel et uniquement sur ces plateformes et builds :
@@ -35,7 +37,7 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportement des onglets contextuels personnalisés
 
-L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets Office contextuels intégrés. Voici les principes de base pour l’emplacement des onglets contextuels personnalisés.
+L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets Office contextuels. Voici les principes de base pour l’emplacement des onglets contextuels personnalisés.
 
 - Lorsqu’un onglet contextuel personnalisé est visible, il apparaît à l’extrémité droite du ruban.
 - Si un ou plusieurs onglets contextuels intégrés et un ou plusieurs onglets contextuels personnalisés des modules sont visibles en même temps, les onglets contextuels personnalisés sont toujours à droite de tous les onglets contextuels intégrés.
@@ -101,7 +103,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
     - La propriété `groups` est requise. Il définit les groupes de contrôles qui apparaîtront sous l’onglet. Elle doit avoir au moins un *membre et pas plus de 20*. (Il existe également des limites au nombre de contrôles que vous pouvez avoir sur un onglet contextuel personnalisé et qui limitent également le nombre de groupes que vous avez. Pour plus d’informations, voir l’étape suivante.)
 
     > [!NOTE]
-    > L’objet tabulation peut également avoir une propriété facultative qui spécifie si l’onglet est visible immédiatement au démarrage `visible` du module. Étant donné que les onglets contextuels sont normalement masqués jusqu’à ce qu’un événement utilisateur déclenche leur visibilité (par exemple, lorsque l’utilisateur sélectionne une entité d’un type dans le document), la propriété se présente par défaut lorsqu’elle n’est pas `visible` `false` présente. Dans une section ultérieure, nous montrons comment définir la propriété en réponse `true` à un événement.
+    > L’objet tabulation peut également avoir une propriété facultative qui spécifie si l’onglet est visible immédiatement au démarrage `visible` du module. Dans la mesure où les onglets contextuels sont normalement masqués jusqu’à ce qu’un événement utilisateur déclenche leur visibilité (par exemple, l’utilisateur sélectionnant une entité d’un type dans le document), la propriété se présente par défaut lorsqu’elle n’est pas `visible` `false` présente. Dans une section ultérieure, nous montrons comment définir la propriété en `true` réponse à un événement.
 
     ```json
     {
@@ -122,7 +124,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
     - La valeur de la propriété est un tableau d’objets qui spécifient les boutons et `controls` les menus du groupe. Il doit y en avoir au moins un.
 
     > [!IMPORTANT]
-    > *Le nombre total de contrôles sur l’onglet entier ne peut pas être supérieur à 20.* Par exemple, vous pouvez avoir 3 groupes avec 6 contrôles chacun et un quatrième groupe avec 2 contrôles, mais vous ne pouvez pas avoir 4 groupes avec 6 contrôles chacun.  
+    > *Le nombre total de contrôles sous l’onglet entier ne peut pas être supérieur à 20.* Par exemple, vous pouvez avoir 3 groupes avec 6 contrôles chacun et un quatrième groupe avec 2 contrôles, mais vous ne pouvez pas avoir 4 groupes avec 6 contrôles chacun.  
 
     ```json
     {
@@ -253,7 +255,7 @@ Voici l’exemple complet du blob JSON.
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Inscrire l’onglet contextuel Office avec requestCreateControls
 
-L’onglet contextuel est inscrit auprès Office en appelant [Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Cette tâche est généralement effectuée dans la fonction affectée à la méthode ou `Office.initialize` avec `Office.onReady` celle-ci. Pour plus d’informations sur ces méthodes et l’initialisation du Office, voir [Initialiser votre Office.](../develop/initialize-add-in.md) Vous pouvez toutefois appeler la méthode à tout moment après l’initialisation.
+L’onglet contextuel est inscrit auprès Office en appelant [la méthode Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Cette tâche est généralement effectuée dans la fonction affectée à la méthode ou `Office.initialize` avec `Office.onReady` celle-ci. Pour plus d’informations sur ces méthodes et l’initialisation du Office, voir [Initialiser votre Office.](../develop/initialize-add-in.md) Vous pouvez toutefois appeler la méthode à tout moment après l’initialisation.
 
 > [!IMPORTANT]
 > La `requestCreateControls` méthode ne peut être appelée qu’une seule fois dans une session donnée d’un add-in. Une erreur est lancée si elle est appelée à nouveau.
@@ -291,7 +293,7 @@ Office.onReady(async () => {
 });
 ```
 
-Ensuite, définissez les handlers. Voici un exemple simple d’une erreur, mais voir Gestion de l’erreur `showDataTab` [HostRestartNeeded](#handle-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
+Ensuite, définissez les handlers. Voici un exemple simple d’une erreur `showDataTab` [HostRestartNeeded](#handle-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
 
 - Office effectue un contrôle lorsqu’il met à jour l’état du ruban. La [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-) met en file d’attente une demande de mise à jour. La méthode résout l’objet dès qu’il a mis la demande en file d’attente, et non lorsque `Promise` le ruban est réellement mis à jour.
 - Le paramètre de la méthode est un objet `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie l’onglet par son ID exactement comme spécifié dans le *JSON* et (2) spécifie la visibilité de l’onglet.
@@ -415,7 +417,7 @@ Pour ouvrir votre volet Des tâches à partir d’un bouton d’un onglet contex
 }`
 ```
 
-Pour ouvrir un volet De tâches qui n’est pas le volet Des tâches par défaut, spécifiez une `sourceLocation` propriété dans la définition de l’action. Dans l’exemple suivant, un deuxième volet Des tâches est ouvert à partir d’un autre bouton.
+Pour ouvrir un volet de tâches qui n’est pas le volet Des tâches par défaut, spécifiez une `sourceLocation` propriété dans la définition de l’action. Dans l’exemple suivant, un deuxième volet Des tâches est ouvert à partir d’un autre bouton.
 
 > [!IMPORTANT]
 >
@@ -472,7 +474,7 @@ Pour ouvrir un volet De tâches qui n’est pas le volet Des tâches par défaut
 
 ## <a name="localize-the-json-text"></a>Localiser le texte JSON
 
-Le blob JSON passé à n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés est localisée (ce qui est décrit lors de la localisation du contrôle à partir du `requestCreateControls` [manifeste).](../develop/localization.md#control-localization-from-the-manifest) Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser `switch` une instruction qui teste la [Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Voici un exemple.
+Le blob JSON passé à n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés est localisée (ce qui est décrit lors de la localisation du contrôle à partir du `requestCreateControls` [manifeste).](../develop/localization.md#control-localization-from-the-manifest) Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser `switch` une instruction qui teste la propriété [Office.context.displayLanguage.](/javascript/api/office/office.context#displayLanguage) Voici un exemple.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {

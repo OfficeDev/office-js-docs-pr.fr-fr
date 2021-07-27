@@ -1,14 +1,14 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 04/30/2021
+ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 2a2816990a7f21a4238a9f8332537bf904fa4cb2
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d11b5c188da971f18969ff0abe9787021fad6bf1
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349223"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536010"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -20,6 +20,8 @@ Vous pouvez également spécifier si la commande est activée ou désactivée lo
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
 >
 > - [Concepts basiques pour les commandes de complément](add-in-commands.md)
+
+[!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 ## <a name="office-application-and-platform-support-only"></a>Office prise en charge des applications et des plateformes uniquement
 
@@ -76,7 +78,7 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
-1. Créez [un objet RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande, ainsi que son groupe parent et l’onglet, par leur ID comme déclaré dans le manifeste ; et (2) spécifie l’état activé ou désactivé de la commande.
+1. Créez [un objet RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande, ainsi que son groupe parent et l’onglet, par leurs ID déclarés dans le manifeste ; et (2) spécifie l’état activé ou désactivé de la commande.
 2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-).
 
 Voici un exemple simple. Notez que « MyButton », « OfficeAddinTab1 » et « CustomGroup111 » sont copiés à partir du manifeste.

@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
-ms.date: 01/28/2021
+ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 878bdeaa6752e37f8d3c67f32b42e2a5a7b962cb
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a8f3b6425dceaccbb50a56bfb7e05aafe061967d
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349916"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53535975"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -47,6 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+> 
 > - L’URL utilise le protocole HTTP **S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
 > - Le domaine de la boîte de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](../reference/manifest/functionfile.md) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
 
@@ -83,10 +84,10 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envoi d’informations à la page hôte à partir de la boîte de dialogue
 
-La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Office, sauf si :
-
-- la page active dans la boîte de dialogue se trouve dans le même domaine que la page hôte ;
-- La Office’API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque d’API JavaScript Office, le script de la page doit affecter une méthode à la propriété, bien qu’il puisse s’agit `Office.initialize` d’une méthode vide. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
+> [!NOTE]
+>
+> - Pour plus de clarté, dans cette section, nous appelons le message cible de la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez la messagerie entre domaines [pour le runtime d’hôte.](#cross-domain-messaging-to-the-host-runtime)
+> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque Office API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit affecter une méthode à la propriété ou `Office.initialize` à l’appel. `Office.onReady` Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
 Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
 
@@ -97,7 +98,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
-> - La fonction `messageParent` peut uniquement être appelée sur une page ayant le même domaine (y compris les mêmes protocole et port) que la page hôte.
+>
 > - La `messageParent` fonction est l’une *des* deux seules API JS Office qui peuvent être appelées dans la boîte de dialogue.
 > - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported` . Pour plus d’informations à ce sujet, voir Spécifier les Office [applications et les api requises.](specify-office-hosts-and-api-requirements.md) Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans Outlook 2016'achat à prix seul (c’est-à-dire, la version MSI).
 
@@ -122,6 +123,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 ```
 
 > [!NOTE]
+>
 > - Office transmet un objet [AsyncResult](/javascript/api/office/office.asyncresult) au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la [Gestion des erreurs et des événements](dialog-handle-errors-events.md).
 > - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](/javascript/api/office/office.dialog), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
 > - `processMessage` est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.
@@ -137,6 +139,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - Office transmet l’objet `arg` au gestionnaire. Sa `message` propriété est la chaîne envoyée par l’appel de la boîte de `messageParent` dialogue. Dans cet exemple, il s’agit d’une représentation sous la chaîne du profil d’un utilisateur à partir d’un service tel qu’un compte Microsoft ou Google, de sorte qu’il est désérialisé à un objet avec `JSON.parse` .
 > - L’implémentation `showUserName` n’est pas visible. Elle peut afficher un message de bienvenue personnalisé dans le volet Office.
 
@@ -150,6 +153,7 @@ function processMessage(arg) {
 ```
 
 > [!NOTE]
+>
 > - L’objet `dialog` doit être le même que celui renvoyé par l’appel de `displayDialogAsync`.
 > - L’appel de `dialog.close` indique à Office de fermer immédiatement la boîte de dialogue.
 
@@ -187,6 +191,7 @@ if (loginSuccess) {
 ```
 
 > [!NOTE]
+>
 > - La variable `loginSuccess` serait initialisée en lisant la réponse HTTP à partir du fournisseur d’identité.
 > - L’implémentation des fonctions `getProfile` et `getError` n’est pas affichée. Chacune obtient des données à partir d’un paramètre de requête ou du corps de la réponse HTTP.
 > - Des objets anonymes de différents types sont envoyés selon que la connexion a réussi ou non. Tous deux ont une propriété `messageType`, mais un a une propriété `profile` et l’autre une propriété `error`.
@@ -209,6 +214,39 @@ function processMessage(arg) {
 
 > [!NOTE]
 > L'implémentation `showNotification` n'est pas montrée dans l'exemple de code fourni par cet article. Pour un exemple d'implémentation de cette fonction dans votre complément, voir [Exemple d'API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
+
+### <a name="cross-domain-messaging-to-the-host-runtime"></a>Messagerie entre domaines à l’runtime hôte
+
+La boîte de dialogue peut être éloigné du domaine du add-in ou du runtime JavaScript parent (soit dans un volet Des tâches, soit dans un runtime sans interface utilisateur qui héberge un fichier de fonction) peut être éloigné du domaine du add-in après l’ouverture de la boîte de dialogue. Si l’un de ces événements s’est produit, un appel échouera, sauf si votre code spécifie le domaine `messageParent` du runtime parent. Pour ce faire, ajoutez [un paramètre DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageParent` . Cet objet possède une `targetOrigin` propriété qui spécifie le domaine auquel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que la boîte de dialogue héberge actuellement.
+
+> [!NOTE]
+> `messageParent`L’utilisation pour envoyer un message entre domaines nécessite l’ensemble de conditions [requises Dialog Origin 1.1](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+
+Voici un exemple d’utilisation `messageParent` pour envoyer un message entre domaines.
+
+```js
+Office.context.ui.messageParent("Some message", { targetOrigin: "https://target.domain.com" });
+```
+
+> [!NOTE]
+> Le `DialogMessageOptions` paramètre a été publié environ le 19 juillet 2021. Pendant environ 30 jours après cette date, en Office sur le Web, la première fois que le paramètre est appelé et que le parent est un domaine différent de celui de la boîte de dialogue, l’utilisateur est invité à approuver l’envoi de données au domaine `messageParent` `DialogMessageOptions` cible. Si l’utilisateur approuve, la réponse de l’utilisateur est mise en cache pendant 24 heures. L’utilisateur n’est pas invité à nouveau pendant cette période lorsqu’il est appelé `messageParent` avec le même domaine cible.
+
+Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
+
+```js
+Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
+```
+
+> [!TIP]
+> Le `DialogMessageOptions` paramètre a été ajouté à la méthode en tant que paramètre obligatoire au milieu de `messageParent` l’année 2021. Les anciens add-ins qui envoient un message entre domaines avec la méthode ne fonctionnent plus tant qu’ils n’ont pas été mis à jour pour utiliser le nouveau paramètre. En attendant, sur Office pour *Windows* uniquement, les utilisateurs et les administrateurs système peuvent activer ces modules en spécifiant le ou les domaines de confiance avec un paramètre de Registre **:HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. La méthode la plus simple consiste à créer un fichier avec une extension, à l’enregistrer sur l’ordinateur Windows, puis à double-cliquer dessus pour `.reg` l’exécuter. Voici un exemple du contenu d’un tel fichier.
+>
+> ```
+> Windows Registry Editor Version 5.00
+> 
+> [HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains]
+> "My trusted domain"="https://www.MyTrustedDomain.com"
+> "Another trusted domain"="https://another.trusted.domain.com"
+> ```
 
 ## <a name="pass-information-to-the-dialog-box"></a>Transmission d’informations à la boîte de dialogue
 
@@ -252,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement à l’auprès de la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
+Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement avec la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
 
 ```javascript
 Office.onReady()
@@ -266,8 +304,8 @@ Office.onReady()
 Ensuite, définissez `onMessageFromParent` le handler. Le code suivant poursuit l’exemple de la section précédente. Notez Office passe un argument au handler et que la propriété de l’objet argument contient la chaîne de `message` la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue afin qu’il corresponde au nouveau nom de feuille de calcul.
 
 ```javascript
-function onMessageFromParent(event) {
-    var messageFromParent = JSON.parse(event.message);
+function onMessageFromParent(arg) {
+    var messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -292,13 +330,50 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Messagerie conditionnelle d’une page parent à une boîte de dialogue
 
-Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
+Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
 
 > [!NOTE]
 > Dans certains cas, l’API, qui fait partie de l’ensemble de conditions `messageChild` [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte.](parent-to-dialog.md)
 
 > [!IMPORTANT]
 > L’ensemble de conditions [requises DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) ne peut pas être spécifié dans la `<Requirements>` section d’un manifeste de add-in. Vous devez vérifier la prise en charge de DialogApi 1.2 lors de l’runtime à l’aide de la méthode [isSetSupported.](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) La prise en charge des exigences de manifeste est en cours de développement.
+
+### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Messagerie entre domaines à l’runtime de la boîte de dialogue
+
+La boîte de dialogue peut être éloigné du domaine du add-in ou du runtime JavaScript parent (soit dans un volet Des tâches, soit dans un runtime sans interface utilisateur qui héberge un fichier de fonction) peut être éloigné du domaine du add-in après l’ouverture de la boîte de dialogue. Si l’un de ces événements s’est produit, un appel échouera, sauf si votre code spécifie le domaine `messageChild` du runtime de la boîte de dialogue. Pour ce faire, ajoutez [un paramètre DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild` . Cet objet possède une `targetOrigin` propriété qui spécifie le domaine auquel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que le runtime parent héberge actuellement. 
+
+> [!NOTE]
+> `messageChild`L’utilisation pour envoyer un message entre domaines nécessite l’ensemble de conditions [requises Dialog Origin 1.1](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+
+Voici un exemple d’utilisation `messageChild` pour envoyer un message entre domaines.
+
+```js
+dialog.messageChild(messageToDialog, { targetOrigin: "https://target.domain.com" });
+```
+
+Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* *envoyé* à n’importe quel domaine. Voici un exemple.
+
+```js
+dialog.messageChild(messageToDialog, { targetOrigin: "*" });
+```
+
+Le runtime JavaScript qui héberge la boîte de dialogue ne peut pas accéder à la section du manifeste pour s’assurer que le domaine à partir duquel le message provient est approuvé, une alternative a donc été `<AppDomains>` fournie.  L’objet transmis au handler contient le domaine actuellement hébergé dans la boîte `DialogParentMessageReceived` de dialogue en tant que `origin` propriété. Votre code doit utiliser le handler pour vérifier que le message vient d’un domaine approuvé. Voici un exemple.
+
+```javascript
+function onMessageFromParent(arg) {
+    if (arg.origin === "https://some.trusted.domain.com") {
+        // process message
+    } else {
+        dialog.close();
+        showNotification("Messages from " + arg.origin + " are not accepted.");
+    }
+}
+```
+
+Par exemple, votre code peut utiliser les méthodes [Office.onReady ou Office.initialize](initialize-add-in.md) pour stocker un tableau de domaines de confiance dans une variable globale. La `arg.origin` propriété peut ensuite être vérifiée par rapport à cette liste dans le handler.
+
+> [!TIP]
+> Le `DialogMessageOptions` paramètre a été ajouté à la méthode en tant que paramètre obligatoire au milieu de `messageChild` l’année 2021. Les anciens add-ins qui envoient un message entre domaines avec la méthode ne fonctionnent plus tant qu’ils n’ont pas été mis à jour pour utiliser le nouveau paramètre. En attendant, sur Office pour *Windows* uniquement, les utilisateurs et les administrateurs système peuvent permettre à ces modules de continuer à fonctionner en spécifiant le ou les domaines de confiance avec un paramètre de Registre. Pour plus **d’informations,** consultez le conseil sous Messagerie entre domaines à [l’runtime de](#cross-domain-messaging-to-the-host-runtime) l’hôte.
 
 ## <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 

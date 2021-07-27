@@ -335,6 +335,8 @@ items:
                 href: reference/requirement-sets/add-in-commands-requirement-sets.md
               - name: Ensembles de conditions requises de l’API de dialogue
                 href: reference/requirement-sets/dialog-api-requirement-sets.md
+              - name: Ensembles de conditions requises d’origine de boîte de dialogue
+                href: reference/requirement-sets/dialog-origin-requirement-sets.md
               - name: Ensembles de conditions requises de l’API d’identité
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: Ensembles de conditions requises de coercition d’image

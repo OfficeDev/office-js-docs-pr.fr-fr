@@ -1,14 +1,14 @@
 ---
 title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
-ms.date: 09/24/2020
+ms.date: 07/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 85576c50c69332e16c0636586461392021b2e2a4
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 270a6214c9dbb268a19a1aee3e08c07da693ab87
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350049"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536052"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
@@ -25,9 +25,9 @@ La boîte de dialogue ouverte avec cette API présente les caractéristiques sui
   - Il n’existe pas d’environnement d’exécution partagé dans le volet des tâches.
   - Il ne partage pas le même espace de stockage de session (la propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) que le volet Office.
 - La première page ouverte dans la boîte de dialogue doit être hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port, le cas échéant.
-- La boîte de dialogue peut renvoyer les informations au volet des tâches à l’aide de la méthode [messageParent](/javascript/api/office/office.ui#messageparent-message-), mais cette méthode ne peut être appelée que depuis une page hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port.
+- La boîte de dialogue peut renvoyer des informations au volet Office à l’aide de la méthode [messageParent](/javascript/api/office/office.ui#messageparent-message-) . (Nous vous recommandons d’appeler cette méthode uniquement à partir d’une page hébergée dans le même domaine que le volet Office, y compris le protocole, les sous-domaines et le port. Sinon, il existe des complications dans la façon dont vous appelez la méthode et traitez le message. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
 
-Lorsque la boîte de dialogue n’est pas un IFRAME (qui est la valeur par défaut), elle peut ouvrir la page de connexion d’un fournisseur d’identité. Comme vous le verrez dans la section ci-dessous, les caractéristiques de la boîte de dialogue Office ont une incidence sur la manière dont vous utilisez les bibliothèques d’authentification ou d’autorisation telles que MSAL et Passport.
+Lorsque la boîte de dialogue n’est pas un iframe (ce qui n’est pas le cas par défaut), elle peut ouvrir la page de connexion d’un fournisseur d’identité. Comme vous le verrez dans la section ci-dessous, les caractéristiques de la boîte de dialogue Office ont une incidence sur la manière dont vous utilisez les bibliothèques d’authentification ou d’autorisation telles que MSAL et Passport.
 
 > [!NOTE]
 > Vous pouvez configurer la boîte de dialogue pour qu’elle s’ouvre dans un IFRAME flottant : vous pouvez simplement transmettre l’ `displayInIframe: true`option dans l’appel à`displayDialogAsync`. Ne le faites *pas* lorsque vous utilisez l’API de boîte de dialogue Office pour la connexion.
@@ -39,7 +39,7 @@ Voici un flux d’authentification simple et standard. Les détails sont répert
 ![Diagramme montrant la relation entre le volet des tâches et les processus de navigation des boîtes de dialogue.](../images/taskpane-dialog-processes.gif)
 
 1. La première page qui s’ouvre dans la boîte de dialogue est une page (ou toute autre ressource) qui est hébergée dans le domaine du complément ; autrement dit, le même domaine que la fenêtre du volet des tâches. Cette page peut avoir une IU simple indiquant « Veuillez patienter, nous allons vous rediriger vers la page sur laquelle vous pouvez vous connecter à *NOM DU FOURNISSEUR* ». Le code dans cette page construit l’URL de la page de connexion du fournisseur d’identité en utilisant les informations transmises à la boîte de dialogue, comme décrit dans [Transmission d’informations à la boîte de dialogue](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) ou est codée en dur dans un fichier de configuration du complément, tel qu’un fichier web.config.
-2. La fenêtre de la boîte de dialogue redirige alors l’utilisateur vers la page de connexion. L’URL inclut un paramètre de requête qui indique au fournisseur d’identité de rediriger la fenêtre de la boîte de dialogue une fois que l’utilisateur s’est connecté à une page spécifique. Dans cet article, nous appellerons cette page **redirectPage.html**. *Il doit s’agir d’une page se trouvant dans le même domaine que la fenêtre hôte*, afin que les résultats de la tentative de connexion puissent être transférés au volet des tâches avec un appel de`messageParent`.
+2. La fenêtre de la boîte de dialogue redirige alors l’utilisateur vers la page de connexion. L’URL inclut un paramètre de requête qui indique au fournisseur d’identité de rediriger la fenêtre de la boîte de dialogue une fois que l’utilisateur s’est connecté à une page spécifique. Dans cet article, nous appellerons cette page **redirectPage.html**. *Nous recommandons que ce soit une page dans le même domaine que la fenêtre hôte*. Sur cette page, les résultats de la tentative de connexion peuvent être passés au volet Office avec un appel de `messageParent`.
 3. Le service du fournisseur d’identité traite la requête GET entrante à partir de la fenêtre de la boîte de dialogue. Si l’utilisateur est déjà connecté, il redirige immédiatement la fenêtre vers **redirectPage.html** et inclut les données utilisateur sous la forme d’un paramètre de requête. Si l’utilisateur n’est pas encore connecté, la page de connexion du fournisseur apparaît dans la fenêtre et l’utilisateur se connecte. Pour la plupart des fournisseurs, si l’utilisateur ne parvient pas à se connecter, le fournisseur affiche une page d’erreur dans la fenêtre de la boîte de dialogue et ne redirige pas vers **redirectPage.html**. L’utilisateur doit fermer la fenêtre en sélectionnant le **X** dans le coin. Si l’utilisateur se connecte avec succès, la fenêtre de la boîte de dialogue est redirigée vers **redirectPage.html** et les données utilisateur sont incluses sous la forme d’un paramètre de requête.
 4. Lorsque la page **redirectPage.html** s’ouvre, elle appelle`messageParent` pour indiquer le succès ou l’échec au volet des tâches et éventuellement indiquer également des données utilisateur ou des données d’erreur. Les autres messages possibles incluent le passage d’un jeton d’accès ou le volet des tâches dans lequel le jeton est stocké.
 5. L’événement `DialogMessageReceived` se déclenche dans le volet des tâches, et son gestionnaire ferme la fenêtre de la boîte de dialogue et effectue éventuellement d’autres traitements du message.

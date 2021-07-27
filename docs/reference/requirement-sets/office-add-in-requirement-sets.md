@@ -1,19 +1,19 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
-description: En savoir plus sur les ensembles Office d’API communes.
+description: En savoir plus sur les ensembles Office conditions requises d’API communes.
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 4ebf00ef0be4007f6cb29fdf049f9df2152ac626
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
+ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350203"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "53536045"
 ---
 # <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
-Les ensembles de conditions requises sont des groupes nommés des membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par un complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
 > Vous recherchez les ensembles *de conditions requises* de l’API spécifiques à l’application ? Consultez les ensembles de conditions requises de l’API suivants.
@@ -77,6 +77,14 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Consultez la rubrique [Ensembles de conditions requises de l’API de boîte de dialogue](dialog-api-requirement-sets.md). | UI.messageParent<br>UI.displayDialogAsync<br>UI.closeContainer<br>UI.Dialog |
+
+---
+
+### <a name="dialogorigin"></a>DialogOrigin
+
+|**Applications Office**|**Méthodes dans l’ensemble**|
+|:-----|:-----|
+| Voir [ensembles de conditions requises d’origine de la boîte de dialogue.](dialog-origin-requirement-sets.md) | Prise en charge entre domaines pour :<br>UI.messageParent<br>Interface utilisateur. Dialog.messageChild |
 
 ---
 
@@ -275,4 +283,4 @@ Les méthodes suivantes dans l Office API JavaScript ne font pas partie d’un e
 
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
 - [Spécifier les exigences en matière d’applications Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
+- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
