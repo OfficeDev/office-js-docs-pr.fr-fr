@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 06/18/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2555025cdd350da433eb499faae7e70f3956725f
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1a6d1a6b0c1443b4c90fc38042a268c40c50de4c
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536024"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661123"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -29,7 +29,7 @@ Le navigateur utilisé dépend de ce qui suit :
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|SYSTÈME D’EXPLOITATION|Version d’Office|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
+|SYSTÈME D’EXPLOITATION|Version d’Office|Edge WebView2 (Chromium basé sur) installé ?|Navigateur|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.|
 |Mac|indifférent|Non applicable|Safari|
@@ -49,7 +49,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>3</sup> Si votre application inclut l’élément dans le manifeste, elle n’utilisera `<Runtimes>` pas Microsoft Edge webview d’origine (EdgeHTML). Si les conditions d’utilisation Microsoft Edge avec WebView2 (basé sur Chromium web) sont remplies, le add-in utilise ce navigateur. Dans le cas contraire, il utilise Internet Explorer 11 quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
-<sup>4</sup> Le contrôle WebView2 intégrable doit être installé en plus de l’installation de Microsoft Edge pour que Office puisse l’incorporer. Pour l’installer, [voir Microsoft Edge WebView2 / Incorporer du contenu web... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> Le contrôle WebView2 intégrable doit être installé afin que Office puisse l’incorporer et qu’il ne soit pas installé automatiquement avec Edge. Il est installé avec Microsoft 365, version 2101 ou ultérieure. Si vous avez une version antérieure de Microsoft 365, utilisez les instructions d’installation du contrôle sur [Microsoft Edge WebView2 /Embed web content ... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si l’un des utilisateurs de votre add-in dispose de plateformes qui utilisent Internet Explorer 11, vous disposez de deux options pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou une ultérieure :

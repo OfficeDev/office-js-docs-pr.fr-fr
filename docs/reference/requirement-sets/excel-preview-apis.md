@@ -1,15 +1,15 @@
 ---
 title: Version d’évaluation API JavaScript Excel
 description: Détails sur les API JavaScript Excel à venir.
-ms.date: 07/02/2021
+ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 39d526f194e1d9e818b8513058d2b414e0bf9673
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 4bceda6229270332ed7624b693913e47a065a066
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290795"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661277"
 ---
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
@@ -21,22 +21,34 @@ Le tableau suivant fournit un résumé concis des API, tandis que le tableau de 
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
+| Tables de données de graphique | Contrôler l’apparence, la mise en forme et la visibilité des tables de données sur les graphiques. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
 | Tâches de document | Transformez les commentaires en tâches affectées aux utilisateurs. | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | Identités | Gérer les identités des utilisateurs, y compris le nom d’affichage et l’adresse e-mail. | [Identity](/javascript/api/excel/excel.identity), [IdentityCollection](/javascript/api/excel/excel.identitycollection), [IdentityEntity](/javascript/api/excel/excel.identityentity) |
 | Types de données liées | Ajoute la prise en charge des types de données connectés Excel à partir de sources externes. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
-| Workbooks liés | Gérez les liens entre les workbooks, notamment la prise en charge de l’actualisation et de la rupture des liens de ces derniers. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
+| Workbooks liés | Gérer les liens entre les workbooks, y compris la prise en charge de l’actualisation et de la rupture des liens de ces derniers. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | Styles de tableau | Permet de contrôler la police, la bordure, la couleur de remplissage et d’autres aspects des styles de tableau. | [Tableau](/javascript/api/excel/excel.table), [Tableau croisé dynamique](/javascript/api/excel/excel.pivottable), [Slicer](/javascript/api/excel/excel.slicer) |
+| Requêtes | Récupérer les attributs de requête tels que le nom, la date d’actualisation et le nombre de requêtes. | [Query](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript](/javascript/api/excel?view=excel-js-preview&preserve-view=true)Excel.
+Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript Excel.](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
-|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearcolumncriteria-columnindex-)|Efface les critères de filtre du filtre automatique.|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteshiftdirection)|Représente la direction (par exemple, vers le haut ou vers la gauche) vers le haut ou vers la gauche que les cellules restantes déplacent lorsqu’une ou plusieurs cellules sont supprimées.|
 ||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertshiftdirection)|Représente la direction (par exemple, vers le bas ou vers la droite) que les cellules existantes déplacent lorsqu’une ou plusieurs nouvelles cellules sont insérées.|
-|[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Affecte la tâche liée au commentaire à l’utilisateur donné en tant que personne assignée.|
+|[Graphique](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getdatatable--)|Obtient la table de données du graphique.|
+||[getDataTableOrNullObject()](/javascript/api/excel/excel.chart#getdatatableornullobject--)|Obtient la table de données du graphique.|
+|[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|Représente le format d’un tableau de données de graphique, qui inclut le format de remplissage, de police et de bordure.|
+||[showHorizontalBorder](/javascript/api/excel/excel.chartdatatable#showhorizontalborder)|Spécifie s’il faut afficher la bordure horizontale de la table de données.|
+||[showLegendKey](/javascript/api/excel/excel.chartdatatable#showlegendkey)|Spécifie s’il faut afficher le legendkey de la table de données.|
+||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showoutlineborder)|Spécifie s’il faut afficher la bordure plan de la table de données.|
+||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showverticalborder)|Spécifie s’il faut afficher la bordure verticale de la table de données.|
+||[visible](/javascript/api/excel/excel.chartdatatable#visible)|Spécifie s’il faut afficher la table de données du graphique.|
+|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[border](/javascript/api/excel/excel.chartdatatableformat#border)|Représente le format de bordure du tableau de données de graphique, qui inclut la couleur, le style de trait et l’pondération.|
+||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|Représente le format de remplissage d’un objet, qui comprend des informations de mise en forme d’arrière-plan.|
+||[police](/javascript/api/excel/excel.chartdatatableformat#font)|Représente les attributs de police (tels que le nom de la police, la taille de police et la couleur) de l’objet actuel.|
+|[Commentaire](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assigntask-assignee-)|Affecte la tâche liée au commentaire à l’utilisateur donné en tant que personne assignée.|
 ||[getTask()](/javascript/api/excel/excel.comment#gettask--)|Obtient la tâche associée à ce commentaire.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#gettaskornullobject--)|Obtient la tâche associée à ce commentaire.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getitemornullobject-commentid-)|Obtient un commentaire à partir de la collection de sites en fonction de son ID.|
@@ -125,6 +137,15 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotstyle)|Style appliqué au tableau croisé dynamique.|
 ||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setstyle-style-)|Définit le style appliqué au tableau croisé dynamique.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getfirstornullobject--)|Obtient le premier tableau croisé dynamique de la collection.|
+|[Query](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|Obtient le message d’erreur de requête à partir de la dernière actualisation de la requête.|
+||[loadedTo](/javascript/api/excel/excel.query#loadedto)|Obtient le type d’objet de requête « chargé vers ».|
+||[loadedToDataModel](/javascript/api/excel/excel.query#loadedtodatamodel)|Spécifie si la requête a été chargée dans le modèle de données.|
+||[name](/javascript/api/excel/excel.query#name)|Obtient le nom de la requête.|
+||[refreshDate](/javascript/api/excel/excel.query#refreshdate)|Obtient la date et l’heure de la dernière actualisation de la requête.|
+||[rowsLoadedCount](/javascript/api/excel/excel.query#rowsloadedcount)|Obtient le nombre de lignes qui ont été chargées lors de la dernière actualisation de la requête.|
+|[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#getcount--)|Obtient le nombre de requêtes dans le manuel.|
+||[getItem(key: string)](/javascript/api/excel/excel.querycollection#getitem-key-)|Obtient une requête de la collection en fonction de son nom.|
+||[items](/javascript/api/excel/excel.querycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getdependents--)|Renvoie un objet qui représente la plage contenant tous les dépendants d’une cellule dans la même feuille de calcul ou `WorkbookRangeAreas` dans plusieurs feuilles de calcul.|
 ||[getPrecedents()](/javascript/api/excel/excel.range#getprecedents--)|Renvoie un objet qui représente la plage contenant tous les antécédents d’une cellule dans la même feuille de calcul ou `WorkbookRangeAreas` dans plusieurs feuilles de calcul.|
 |[RefreshModeChangedEventArgs](/javascript/api/excel/excel.refreshmodechangedeventargs)|[refreshMode](/javascript/api/excel/excel.refreshmodechangedeventargs#refreshmode)|Mode d’actualisation du type de données liées.|
@@ -136,13 +157,14 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 ||[source](/javascript/api/excel/excel.refreshrequestcompletedeventargs#source)|Obtient la source de l’événement.|
 ||[type](/javascript/api/excel/excel.refreshrequestcompletedeventargs#type)|Obtient le type de l’événement.|
 ||[avertissements](/javascript/api/excel/excel.refreshrequestcompletedeventargs#warnings)|Tableau qui contient les avertissements générés à partir de la demande d’actualisation.|
+|[Forme](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayname)|Obtient le nom complet de la forme.|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addsvg-xml-)|Crée un graphique de fichiers SVG (SVG) à partir d’une chaîne XML et il est ajouté à la feuille de calcul.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#getitemornullobject-key-)|Obtient une forme à l’aide de son nom ou de son ID.|
 |[Segment](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameinformula)|Représente le nom du segment utilisé dans la formule.|
 ||[slicerStyle](/javascript/api/excel/excel.slicer#slicerstyle)|Style appliqué au slicer.|
 ||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setstyle-style-)|Définit le style appliqué au slicer.|
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#getitemornullobject-name-)|Obtient un style par nom.|
-|[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Modifie le tableau pour utiliser le style de tableau par défaut.|
+|[Tableau](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearstyle--)|Modifie le tableau pour utiliser le style de tableau par défaut.|
 ||[onFiltered](/javascript/api/excel/excel.table#onfiltered)|Se produit lorsqu’un filtre est appliqué à une table spécifique.|
 ||[tableStyle](/javascript/api/excel/excel.table#tablestyle)|Style appliqué au tableau.|
 ||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setstyle-style-)|Définit le style appliqué au tableau.|
@@ -150,10 +172,13 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableid)|Obtient l’ID du tableau dans lequel le filtre est appliqué.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtient le type de l’événement.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetid)|Obtient l’ID de la feuille de calcul qui contient le tableau.|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleterows-rows-)|Supprimez plusieurs lignes d’un tableau.|
+||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleterowsat-index--count-)|Supprimez un nombre spécifié de lignes d’un tableau, en commençant à un index donné.|
 |[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getitemornullobject-key-)|Obtient un tableau à l’aide de son nom ou de son ID.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Renvoie une collection de types de données liées qui font partie du manuel.|
+|[Classeur](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkeddatatypes)|Renvoie une collection de types de données liées qui font partie du manuel.|
 ||[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedworkbooks)|Renvoie une collection de workbooks liés.|
-||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches qui sont présentes dans le workbook.|
+||[requêtes](/javascript/api/excel/excel.workbook#queries)|Renvoie une collection de requêtes Power Query qui font partie du manuel.|
+||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches présentes dans le manuel.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showpivotfieldlist)|Spécifie si le volet liste des champs du tableau croisé dynamique est affiché au niveau du workbook.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904datesystem)|True si le classeur utilise le calendrier depuis 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onfiltered)|Se produit lorsqu’un filtre est appliqué sur une feuille de calcul spécifique.|

@@ -1,14 +1,14 @@
 ---
 title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
-ms.date: 04/10/2020
+ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: f653f43228c7667bc6848d4f0a6d2e9fd1768964
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 48cfb10d8e20df20436e836abbd58648e8e3a0a8
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349006"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661242"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -84,7 +84,7 @@ Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et e
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 
-Actuellement, les compléments dans Outlook Mobile ne prennent en charge l’activation que lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus [d’informations sur cette exception,](online-meeting.md) consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
+Actuellement, les compléments dans Outlook Mobile ne peuvent être activés que lors de la lecture de messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus d’informations sur cette exception (y compris les API disponibles), reportez-vous à Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](online-meeting.md#available-apis)
 
 ### <a name="unsupported-apis"></a>API non prises en charge
 
