@@ -1,15 +1,15 @@
 ---
-ms.date: 06/14/2021
+ms.date: 07/27/2021
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 localization_priority: Priority
-ms.openlocfilehash: 9874d0fef2dc4966f106d1d88e4e897469300c0b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 9e24545bac2b2aaad58c2441ed0a5741c78c053d
+ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076216"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53661140"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -216,9 +216,9 @@ La configuration d’un runtime partagé permet les scénarios suivants.
   - Les fonctions personnalisées bénéficieront d'une prise en charge complète de CORS.
   - Les fonctions personnalisées peuvent appeler les API Office.js pour lire les données d’un document feuille de calcul.
 
-Pour Office sur Windows, le runtime partagé requiert une instance de navigateur Microsoft Internet Explorer 11, comme expliqué dans [navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). De plus, les boutons affichés par votre complément sur le ruban s’exécutent dans le même runtime partagé. L’image ci-après présente l'exécution des fonctions personnalisées, de interface utilisateur du ruban et du code du volet des tâches dans le même runtime JavaScript.
+Pour Office sur Windows, le runtime partagé utilise Microsoft Edge avec WebView2 (basé sur Chromium) si les conditions de son utilisation sont remplies comme expliqué dans [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). Sinon, il utilise Internet Explorer 11. De plus, tous les boutons affichés par votre complément sur le ruban s’exécutent dans le même runtime partagé. L’image ci-après présente l'exécution des fonctions personnalisées, de interface utilisateur du ruban et du code du volet des tâches dans le même runtime JavaScript.
 
-![Diagramme d'une fonction personnalisée, d'un volet de tâches et de boutons de ruban, tous exécutés dans un temps d'exécution partagé du navigateur IE dans Excel.](../images/custom-functions-in-browser-runtime.png)
+![Diagramme d’une fonction personnalisée, du volet des tâches et des boutons du ruban qui s’exécutent tous dans un runtime de navigateur partagé dans Excel.](../images/custom-functions-in-browser-runtime.png)
 
 ### <a name="debugging"></a>Débogage
 
