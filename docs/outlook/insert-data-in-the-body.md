@@ -3,18 +3,18 @@ title: Insérer des données dans le corps dans un complément Outlook
 description: Découvrez comment insérer des données dans le corps d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e875619520ee309dec97b2db60ed49c29b2a463
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: c2370de0a60521196f048e15a1eee9302ddba2ef
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293869"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671785"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
-Vous pouvez utiliser les méthodes asynchrones ([Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-), [Body.getTypeAsync](/javascript/api/outlook/office.Body#gettypeasync-options--callback-), [Body.prependAsync](/javascript/api/outlook/office.Body#prependasync-data--options--callback-), [Body.setAsync](/javascript/api/outlook/office.Body#setasync-data--options--callback-) et [Body.setSelectedDataAsync](/javascript/api/outlook/office.Body#setselecteddataasync-data--options--callback-)) pour obtenir le type de corps et insérer des données dans le corps d’un élément de rendez-vous ou de message en cours de composition par l’utilisateur. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement défini le manifeste du complément afin qu’Outlook active le complément dans les formulaires de composition, comme décrit dans la rubrique [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md).
+Vous pouvez utiliser les méthodes asynchrones ([Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_), [Body.getTypeAsync](/javascript/api/outlook/office.body#getTypeAsync_options__callback_), [Body.prependAsync](/javascript/api/outlook/office.body#prependAsync_data__options__callback_), [Body.setAsync](/javascript/api/outlook/office.body#setAsync_data__options__callback_) et [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#setSelectedDataAsync_data__options__callback_)) pour obtenir le type de corps et insérer des données dans le corps d’un élément de rendez-vous ou de message en cours de composition par l’utilisateur. Ces méthodes asynchrones sont disponibles uniquement pour les compléments de composition. Pour utiliser ces méthodes, assurez-vous que vous avez correctement défini le manifeste du complément afin qu’Outlook active le complément dans les formulaires de composition, comme décrit dans la rubrique [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md).
 
-Dans Outlook, un utilisateur peut créer un message au format texte, HTML ou RTF (Rich Text Format) et il peut créer un rendez-vous au format HTML. Avant l’insertion, vous devez toujours vérifier d’abord le format d’élément pris en charge en appelant **getTypeAsync**, car vous devrez peut-être effectuer des étapes supplémentaires. La valeur renvoyée par **getTypeAsync** dépend du format d’élément d’origine, ainsi que de la prise en charge du système d’exploitation de l’appareil et de l’application à modifier au format html (1). Définissez ensuite le paramètre  _coercionType_ de **prependAsync** ou **setSelectedDataAsync** en conséquence (2) pour insérer les données, comme indiqué dans le tableau suivant. Si vous ne spécifiez pas d’argument, **prependAsync** et **setSelectedDataAsync** supposent que les données à insérer sont au format texte.
+Dans Outlook, un utilisateur peut créer un message au format texte, HTML ou RTF, ainsi qu’un rendez-vous au format HTML. Avant l’insertion, vous devez toujours vérifier le format d’élément pris en charge en appelant **getTypeAsync,** car vous devrez peut-être prendre des mesures supplémentaires. La valeur que **getTypeAsync** renvoie dépend du format d’élément d’origine, ainsi que de la prise en charge du système d’exploitation de l’appareil et de l’application pour la modification au format HTML (1). Définissez ensuite le paramètre  _coercionType_ de **prependAsync** ou **setSelectedDataAsync** en conséquence (2) pour insérer les données, tel qu’illustré dans le tableau ci-dessous. Si vous n’indiquez aucun argument, **prependAsync** et **setSelectedDataAsync** supposent que les données à insérer sont au format texte.
 
 <br/>
 
@@ -25,11 +25,11 @@ Dans Outlook, un utilisateur peut créer un message au format texte, HTML ou RTF
 |Texte|HTML|Texte/HTML|
 |HTML|HTML |HTML|
 
-1.  Sur les tablettes et les smartphones, **getTypeAsync** renvoie **Office. MailboxEnums. BodyType. Text** si le système d’exploitation ou l’application ne prend pas en charge la modification d’un élément qui a été initialement créé au format HTML au format html.
+1.  Sur les tablettes et les smartphones, **getTypeAsync** renvoie **Office. MailboxEnums.BodyType.Text** si le système d’exploitation ou l’application ne prend pas en charge la modification d’un élément, qui a été créé à l’origine au format HTML, au format HTML.
 
-2.  Si vos données à insérer sont au format HTML et que **getTypeAsync** renvoie un type de texte pour cet élément, réorganisez vos données en tant que texte et insérez-le avec **Office. MailboxEnums. BodyType. Text** en tant que _coercionType_. Si vous insérez simplement les données HTML avec un type de forçage de texte, l’application affiche les balises HTML sous forme de texte. Si vous tentez d’insérer les données HTML avec **Office.MailboxEnums.BodyType.Html** en tant que _coercionType_, vous obtiendrez une erreur.
+2.  Si vos données à insérer sont au format HTML et **que getTypeAsync** renvoie un type de texte pour cet élément, réorganisez vos données sous forme de texte et insérez-les **Office. MailboxEnums.BodyType.Text** en tant _que coercionType_. Si vous insérez simplement les données HTML avec un type de contrainte de texte, l’application affiche les balises HTML sous forme de texte. Si vous tentez d’insérer les données HTML **avecOffice.MailboxEnums.BodyType.Html** en tant que _coercionType,_ vous obtenez une erreur.
 
-En plus de  _coercionType_, comme pour la plupart des méthodes asynchrones dans l’API JavaScript pour Office, **getTypeAsync**, **prependAsync** et **setSelectedDataAsync** prennent d’autres paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, consultez la rubrique [passing Optional Parameters to Asynchronous Methods](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) in [Asynchronous Programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
+En plus de _coercionType_, comme avec la plupart des méthodes asynchrones dans l’API JavaScript Office, **getTypeAsync**, **prependAsync** et **setSelectedDataAsync** prennent d’autres paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>Insertion de données à l’emplacement du curseur

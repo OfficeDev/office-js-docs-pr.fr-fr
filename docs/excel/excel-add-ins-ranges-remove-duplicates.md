@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour supprimer
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e3c1ddf45f50e87ccc77044b1425e6f021756f60
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 03ef1c15f214fcbd6a81d0b4f557e9816175d3b7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349482"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671132"
 ---
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>Supprimer les doublons à l’aide Excel API JavaScript
 
@@ -17,7 +17,7 @@ Cet article fournit un exemple de code qui supprime les entrées en double dans 
 
 ## <a name="remove-rows-with-duplicate-entries"></a>Supprimer des lignes avec des entrées en double
 
-La [méthode Range.removeDuplicates](/javascript/api/excel/excel.range#removeduplicates-columns--includesheader-) supprime les lignes avec des entrées en double dans les colonnes spécifiées. La méthode passe par chaque ligne de la plage, de l’index à la valeur la plus faible à l’index à valeur la plus élevée de la plage (du haut vers le bas). Une rangée est supprimée si une valeur dans sa/ses colonne(s) spécifiée(s) apparue(s) plus tôt dans la plage. Les rangées de la plage en-dessous de la rangée supprimée sont déplacées. `removeDuplicates` n’affecte pas la position des cellules en dehors de la rangée.
+La [méthode Range.removeDuplicates](/javascript/api/excel/excel.range#removeDuplicates_columns__includesHeader_) supprime les lignes avec des entrées en double dans les colonnes spécifiées. La méthode passe par chaque ligne de la plage, de l’index à la valeur la plus faible à l’index à valeur la plus élevée de la plage (du haut vers le bas). Une rangée est supprimée si une valeur dans sa/ses colonne(s) spécifiée(s) apparue(s) plus tôt dans la plage. Les rangées de la plage en-dessous de la rangée supprimée sont déplacées. `removeDuplicates` n’affecte pas la position des cellules en dehors de la rangée.
 
 `removeDuplicates`prend un `number[]` représentant les indices de la colonne qui sont vérifiés pour les doublons. Ce tableau est à base zéro et lié à la rangée, et non à la feuille de calcul. La méthode prend également un paramètre booléen qui spécifie si la première ligne est un en-tête. Lorsque **true**, la rangée du dessus est ignorée lorsque les doublons sont pris en considération. La méthode renvoie un objet qui spécifie le nombre de lignes supprimées et le nombre de lignes `removeDuplicates` `RemoveDuplicatesResult` uniques restantes.
 

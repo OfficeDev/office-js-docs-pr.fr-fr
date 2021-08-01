@@ -3,12 +3,12 @@ title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: c9a658653c562de446f3b8e5f1ea192ddfcf3b21
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 213118f6acba1ee7aaabca7b4e524b9a3f75dd49
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350000"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671365"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -93,7 +93,7 @@ Dans cet exemple, le type de liaison spécifié est « Text ». Cela signifie qu
 
 Le deuxième paramètre est un objet qui contient l’ID de la nouvelle liaison créée. Si un ID n’est pas spécifié, un ID est généré automatiquement.
 
-La fonction anonyme passée dans la fonction en tant que _troisième_ paramètre de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
+La fonction anonyme transmise dans la fonction en tant que _troisième_ paramètre de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
 
 La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
@@ -154,7 +154,7 @@ function write(message){
 }
 ```
 
-**Pour Word**, le paramètre de la méthode `itemName` [addFromNamedItemAsync] fait référence à la propriété `Title` d’un `Rich Text` contrôle de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
+**Pour Word,** le paramètre de la méthode `itemName` [addFromNamedItemAsync] fait référence à la propriété `Title` d’un `Rich Text` contrôle de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
 
 Par défaut, aucune valeur n’est affectée à un contrôle `Title*` de contenu. Pour affecter un nom significatif dans l’interface utilisateur de Word, après l’insertion d’un contrôle de contenu **Texte enrichi** à partir du groupe **Contrôles** sur l’onglet **Développeur** du ruban, utilisez la commande **Propriétés** du groupe **Contrôles** pour afficher la boîte de dialogue **Propriétés du contrôle de contenu**. Définissez ensuite la propriété du contrôle de contenu sur le nom que `Title` vous souhaitez référencer à partir de votre code.
 
@@ -350,7 +350,7 @@ function removeEventHandlerFromBinding() {
 ```
 
 > [!IMPORTANT]
-> Si le paramètre de _handler_ facultatif est omis lors de l’appel de la méthode [removeHandlerAsync,] tous les handlers d’événements pour le paramètre spécifié `eventType` sont supprimés.
+> Si le paramètre _de handler_ facultatif est omis lors de l’appel de la méthode [removeHandlerAsync,] tous les handlers d’événements pour le paramètre spécifié `eventType` sont supprimés.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -362,19 +362,19 @@ function removeEventHandlerFromBinding() {
 [MatrixBinding]:         /javascript/api/office/office.matrixbinding
 [TableBinding]:          /javascript/api/office/office.tablebinding
 [TextBinding]:           /javascript/api/office/office.textbinding
-[getDataAsync]:          /javascript/api/office/Office.Binding#getdataasync-options--callback-
-[setDataAsync]:          /javascript/api/office/Office.Binding#setdataasync-data--options--callback-
+[getDataAsync]:          /javascript/api/office/office.binding#getDataAsync_options__callback_
+[setDataAsync]:          /javascript/api/office/office.binding#setDataAsync_data__options__callback_
 [SelectionChanged]:      /javascript/api/office/office.bindingselectionchangedeventargs
-[addHandlerAsync]:       /javascript/api/office/Office.Binding#addhandlerasync-eventtype--handler--options--callback-
-[removeHandlerAsync]:    /javascript/api/office/Office.Binding#removehandlerasync-eventtype--options--callback-
+[addHandlerAsync]:       /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
+[removeHandlerAsync]:    /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
 
 [Bindings]:              /javascript/api/office/office.bindings
-[getByIdAsync]:          /javascript/api/office/office.bindings#getbyidasync-id--options--callback- 
-[getAllAsync]:           /javascript/api/office/office.bindings#getallasync-options--callback-
-[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-
-[addFromSelectionAsync]: /javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-
-[addFromPromptAsync]:    /javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-
-[releaseByIdAsync]:      /javascript/api/office/office.bindings#releasebyidasync-id--options--callback-
+[getByIdAsync]:          /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
+[getAllAsync]:           /javascript/api/office/office.bindings#getAllAsync_options__callback_
+[addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
+[addFromSelectionAsync]: /javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_
+[addFromPromptAsync]:    /javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_
+[releaseByIdAsync]:      /javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_
 
 [AsyncResult]:          /javascript/api/office/office.asyncresult
 [Office.BindingType]:   /javascript/api/office/office.bindingtype

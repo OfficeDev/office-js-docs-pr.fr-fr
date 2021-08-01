@@ -3,12 +3,12 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 06/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 80047f4c8056bafa62d467f1e69dd334d168486a
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa39a934c0678f2ac3f59c08b488486dd8396c6c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348474"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671827"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -71,7 +71,7 @@ La capture d’écran suivante montre une barre d’informations informant l’e
 
 Les limites de la fonctionnalité d’envoi sont les suivantes.
 
-- **Fonctionnalité d’envoi à l’envoi** &ndash; si vous appelez le [corps. AppendOnSendAsync dans](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendonsendasync-data--options--callback-) le handler d’envoi, une erreur est renvoyée.
+- **Fonctionnalité d’envoi à l’envoi** &ndash; si vous appelez le [corps. AppendOnSendAsync dans](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) le handler d’envoi, une erreur est renvoyée.
 - **AppSource** &ndash; Vous ne pouvez pas publier de compléments Outlook qui utilisent la fonctionnalité d’envoi sur [AppSource](https://appsource.microsoft.com). car ils ne seront pas validés par AppSource. Les compléments qui utilisent la fonctionnalité d’envoi doivent être déployés par les administrateurs.
 - **Manifeste** &ndash; Le complément prend en charge un seul événement `ItemSend`. Si votre manifeste comprend plusieurs événements `ItemSend`, il ne sera pas validé.
 - **Performances**&ndash; : plusieurs allers-retours vers le serveur web hébergeant le complément peuvent nuire aux performances du complément. Imaginez alors ce qu’occasionnerait la création de compléments nécessitant plusieurs opérations de messagerie ou réunions.
@@ -294,7 +294,7 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 |État de la stratégie|Résultat|
 |---|---|
-|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit du statut/comportement par défaut.|
+|Désactivé|Les manifestes actuellement téléchargés des applications d’envoi (pas nécessairement les versions les plus récentes) s’exécutent sur les éléments de message ou de réunion envoyés. Il s’agit de l’état/comportement par défaut.|
 |Activé|Une fois que les derniers manifestes des modules d’envoi sont téléchargés à partir de Exchange, ils sont exécutés sur les éléments de message ou de réunion envoyés. Sinon, l’envoi est bloqué.|
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
@@ -387,10 +387,10 @@ Pendant que les modules d’envoi traitent un élément, l’utilisateur peut mo
 
 Dans votre handler d’envoi :
 
-1. Appelez [displayDialogAsync pour ouvrir](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displaydialogasync-startaddress--options--callback-) une boîte de dialogue afin que les clics de souris et les frappes soient désactivés.
+1. Appelez [displayDialogAsync pour ouvrir](/javascript/api/office/office.ui?view=outlook-js-preview&preserve-view=true#displayDialogAsync_startAddress__options__callback_) une boîte de dialogue afin que les clics de souris et les frappes soient désactivés.
 
     > [!IMPORTANT]
-    > Pour obtenir ce comportement dans les Outlook sur le web classiques, vous devez définir la propriété [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayiniframe) dans le paramètre `true` `options` de `displayDialogAsync` l’appel.
+    > Pour obtenir ce comportement dans les Outlook sur le web classiques, vous devez définir la propriété [displayInIframe](/javascript/api/office/office.dialogoptions?view=outlook-js-preview&preserve-view=true#displayInIframe) dans le paramètre `true` `options` de `displayDialogAsync` l’appel.
 
 1. Implémenter le traitement de l’élément.
 1. Fermez la boîte de dialogue. En outre, traitez ce qui se produit si l’utilisateur ferme la boîte de dialogue.
@@ -487,7 +487,7 @@ function validateBody(event) {
 Le corps actuel de la fonction `validateBody` s’affiche dans le format spécifié (HTML) et transmet l’objet « event » `ItemSend` auquel le code souhaite accéder avec la méthode du rappel. En plus de la méthode `getAsync`, l’objet `Body` fournit également une méthode `setAsync` utile pour remplacer le corps du message par le texte spécifié.
 
 > [!NOTE]
-> Pour en savoir plus, consultez les articles relatifs à l’objet [Event](/javascript/api/office/office.addincommands.event) et à la méthode [Body.getAsync](/javascript/api/outlook/office.Body#getasync-coerciontype--options--callback-).
+> Pour en savoir plus, consultez les articles relatifs à l’objet [Event](/javascript/api/office/office.addincommands.event) et à la méthode [Body.getAsync](/javascript/api/outlook/office.body#getAsync_coercionType__options__callback_).
   
 
 ### <a name="notificationmessages-object-and-eventcompleted-method"></a>Objet `NotificationMessages` et méthode `event.completed`

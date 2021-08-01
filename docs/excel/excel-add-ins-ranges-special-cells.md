@@ -1,23 +1,23 @@
 ---
-title: Rechercher des cellules spéciales dans une plage à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment utiliser l’API JavaScript excel pour rechercher des cellules spéciales, telles que des cellules avec des formules, des erreurs ou des nombres.
+title: Rechercher des cellules spéciales dans une plage à l’aide de Excel API JavaScript
+description: Découvrez comment utiliser l’API JavaScript Excel pour rechercher des cellules spéciales, telles que des cellules avec des formules, des erreurs ou des nombres.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6504873bcd8ab50bd4c03fe4f54b71d0bd920c5b
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: 00bc87a350cc31eb17d579298d79bfde41d03d35
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652824"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671125"
 ---
-# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Rechercher des cellules spéciales dans une plage à l’aide de l’API JavaScript pour Excel
+# <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Rechercher des cellules spéciales dans une plage à l’aide de Excel API JavaScript
 
-Cet article fournit des exemples de code qui recherchent des cellules spéciales dans une plage à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit des exemples de code qui recherchent des cellules spéciales dans une plage à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="find-ranges-with-special-cells"></a>Rechercher des plages avec des cellules spéciales
 
-Les méthodes [Range.getSpecialCells](/javascript/api/excel/excel.range#getspecialcells-celltype--cellvaluetype-) et [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getspecialcellsornullobject-celltype--cellvaluetype-) recherchent des plages en fonction des caractéristiques de leurs cellules et des types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
+Les méthodes [Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_) et [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_) recherchent des plages en fonction des caractéristiques de leurs cellules et des types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -124,6 +124,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
-- [Rechercher une chaîne à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-string-match.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
+- [Rechercher une chaîne à l’aide de Excel API JavaScript](excel-add-ins-ranges-string-match.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

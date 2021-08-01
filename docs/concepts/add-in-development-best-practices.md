@@ -3,12 +3,12 @@ title: Meilleures pratiques en matière de développement de compléments Offic
 description: Appliquez les meilleures pratiques lors du développement pour créer des Office de développement.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 06b7f74692edbba1bc0ecdde723c4a661e830970
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330079"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671309"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -76,7 +76,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ### <a name="optimize-for-touch"></a>Optimisation de la fonction tactile
 
-- Utilisez la [propriété Context.touchEnabled](/javascript/api/office/office.context#touchenabled) pour détecter si l’application Office sur lequel votre application s’exécute est tactile.
+- Utilisez la [propriété Context.touchEnabled](/javascript/api/office/office.context#touchEnabled) pour détecter si l’application Office sur lequel votre application s’exécute est tactile.
 
   > [!NOTE]
   > Cette propriété n’est pas prise en charge dans Outlook.
@@ -90,7 +90,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 - Testez votre complément sur un véritable appareil en utilisant le [chargement de version test](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Si vous utilisez l’interface utilisateur [Fluent React](../design/using-office-ui-fabric-react.md) pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
+> Si vous utilisez des [Fluent’interface](../design/using-office-ui-fabric-react.md) utilisateur React pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
 
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Optimisation et contrôle des performances du complément
@@ -140,5 +140,5 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

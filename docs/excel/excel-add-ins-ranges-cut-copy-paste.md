@@ -4,12 +4,12 @@ description: Découvrez comment couper, copier et coller des plages à l’aide 
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 2112702110b72e0020ed72090ce495abb3ff5366
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a61ac967f267dfe3820e6972939d336e16ddd8b1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075823"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671174"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Couper, copier et coller des plages à l’aide de l Excel API JavaScript
 
@@ -19,7 +19,7 @@ Cet article fournit des exemples de code qui coupent, copient et collent des pla
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-La [méthode Range.copyFrom](/javascript/api/excel/excel.range#copyfrom-sourcerange--copytype--skipblanks--transpose-) réplique les **actions** **Copier** et coller de l’interface Excel’utilisateur. La destination est `Range` l’objet `copyFrom` qui est appelé. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
+La [méthode Range.copyFrom](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_) réplique les **actions** **Copier** et coller de l’interface Excel’utilisateur. La destination est `Range` l’objet `copyFrom` qui est appelé. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
 
 L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage commençant en **G1** (ce qui aboutit à un collage dans la plage **G1:K1**).
 
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>Couper et coller (déplacer) des cellules
 
-La [méthode Range.moveTo](/javascript/api/excel/excel.range#moveto-destinationrange-) déplace les cellules vers un nouvel emplacement dans le workbook. Ce comportement de déplacement de cellule fonctionne [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) de la même manière  que lorsque les cellules sont déplacées en faisant glisser la bordure de la plage ou lors de l’action Couper **et** coller. La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement spécifié en tant que `destinationRange` paramètre.
+La [méthode Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) déplace les cellules vers un nouvel emplacement dans le workbook. Ce comportement de déplacement de cellule fonctionne [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) de la même manière  que lorsque les cellules sont déplacées en faisant glisser la bordure de la plage ou lors de l’action Couper **et** coller. La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement spécifié en tant que `destinationRange` paramètre.
 
 L’exemple de code suivant déplace une plage avec la `Range.moveTo` méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue pour englober le contenu source.
 
@@ -98,6 +98,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Supprimer les doublons à l’aide Excel API JavaScript](excel-add-ins-ranges-remove-duplicates.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

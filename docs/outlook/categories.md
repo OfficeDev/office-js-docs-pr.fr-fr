@@ -3,30 +3,30 @@ title: Obtenir et définir des catégories
 description: Comment gérer les catégories sur la boîte aux lettres et l’élément
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: d4589571de47218741308c01caec0166d72919d8
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: f9f46d689166983083b33fb92da78469470e4d7d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608977"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671841"
 ---
 # <a name="get-and-set-categories"></a>Obtenir et définir des catégories
 
-Dans Outlook, un utilisateur peut appliquer des catégories à des messages et à des rendez-vous afin d’organiser les données de leurs boîtes aux lettres. L’utilisateur définit la liste principale des catégories codées en couleur pour sa boîte aux lettres, puis il peut appliquer une ou plusieurs de ces catégories à un message ou à un élément de rendez-vous. Chaque [catégorie](/javascript/api/outlook/office.categorydetails) de la liste principale est représentée par le nom et la [couleur](/javascript/api/outlook/office.mailboxenums.categorycolor) spécifiés par l’utilisateur. Vous pouvez utiliser l’API JavaScript pour Office pour gérer la liste principale des catégories dans la boîte aux lettres et les catégories appliquées à un élément.
+Dans Outlook, un utilisateur peut appliquer des catégories aux messages et aux rendez-vous pour organiser ses données de boîte aux lettres. L’utilisateur définit la liste principale des catégories codées en couleur pour sa boîte aux lettres, puis peut appliquer une ou plusieurs de ces catégories à n’importe quel élément de message ou de rendez-vous. Chaque [catégorie](/javascript/api/outlook/office.categorydetails) de la liste principale est représentée par le nom et la [couleur](/javascript/api/outlook/office.mailboxenums.categorycolor) spécifiés par l’utilisateur. Vous pouvez utiliser l’API JavaScript Office pour gérer la liste principale des catégories sur la boîte aux lettres et les catégories appliquées à un élément.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1,8. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.8. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="manage-categories-in-the-master-list"></a>Gérer les catégories dans la liste principale
 
-Seules les catégories dans la liste principale de votre boîte aux lettres peuvent être appliquées à un message ou un rendez-vous. Vous pouvez utiliser l’API pour ajouter, obtenir et supprimer des catégories principales.
+Seules les catégories de la liste principale de votre boîte aux lettres peuvent être appliquées à un message ou à un rendez-vous. Vous pouvez utiliser l’API pour ajouter, obtenir et supprimer des catégories maîtres.
 
 > [!IMPORTANT]
-> Pour que le complément gère la liste principale des catégories, vous devez définir le `Permissions` nœud dans le manifeste sur `ReadWriteMailbox` .
+> Pour que le add-in gère la liste principale des catégories, vous devez définir le nœud `Permissions` dans le manifeste sur `ReadWriteMailbox` .
 
 ### <a name="add-master-categories"></a>Ajouter des catégories principales
 
-L’exemple suivant montre comment ajouter une catégorie nommée « urgent ! » à la liste principale en appelant [addAsync](/javascript/api/outlook/office.mastercategories#addasync-categories--options--callback-) sur [Mailbox. masterCategories](/javascript/api/outlook/office.mailbox#mastercategories).
+L’exemple suivant montre comment ajouter une catégorie nommée « Urgent! » à la liste principale en appelant [addAsync](/javascript/api/outlook/office.mastercategories#addAsync_categories__options__callback_) sur [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories).
 
 ```js
 var masterCategoriesToAdd = [
@@ -45,9 +45,9 @@ Office.context.mailbox.masterCategories.addAsync(masterCategoriesToAdd, function
 });
 ```
 
-### <a name="get-master-categories"></a>Obtenir des catégories de formes de base
+### <a name="get-master-categories"></a>Obtenir les catégories principales
 
-L’exemple suivant montre comment obtenir la liste des catégories en appelant [getAsync](/javascript/api/outlook/office.mastercategories#getasync-options--callback-) sur [Mailbox. masterCategories](/javascript/api/outlook/office.mailbox#mastercategories).
+L’exemple suivant montre comment obtenir la liste des catégories en appelant [getAsync](/javascript/api/outlook/office.mastercategories#getAsync_options__callback_) sur [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories).
 
 ```js
 Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
@@ -63,9 +63,9 @@ Office.context.mailbox.masterCategories.getAsync(function (asyncResult) {
 });
 ```
 
-### <a name="remove-master-categories"></a>Supprimer des catégories de formes de base
+### <a name="remove-master-categories"></a>Supprimer des catégories principales
 
-L’exemple suivant montre comment supprimer la catégorie nommée « urgent ! » à partir de la liste principale en appelant [removeAsync](/javascript/api/outlook/office.mastercategories#removeasync-categories--options--callback-) sur [Mailbox. masterCategories](/javascript/api/outlook/office.mailbox#mastercategories).
+L’exemple suivant montre comment supprimer la catégorie nommée « Urgent! » à partir de la liste principale en appelant [removeAsync](/javascript/api/outlook/office.mastercategories#removeAsync_categories__options__callback_) sur [mailbox.masterCategories](/javascript/api/outlook/office.mailbox#masterCategories).
 
 ```js
 var masterCategoriesToRemove = ["Urgent!"];
@@ -81,16 +81,16 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 
 ## <a name="manage-categories-on-a-message-or-appointment"></a>Gérer les catégories d’un message ou d’un rendez-vous
 
-Vous pouvez utiliser l’API pour ajouter, obtenir et supprimer des catégories pour un message ou un élément de rendez-vous.
+Vous pouvez utiliser l’API pour ajouter, obtenir et supprimer des catégories pour un élément de message ou de rendez-vous.
 
 > [!IMPORTANT]
-> Seules les catégories dans la liste principale de votre boîte aux lettres peuvent être appliquées à un message ou un rendez-vous. Pour plus d’informations, reportez-vous à la section précédente [gérer les catégories dans la liste principale](#manage-categories-in-the-master-list) .
+> Seules les catégories de la liste principale de votre boîte aux lettres peuvent être appliquées à un message ou à un rendez-vous. Pour plus d’informations, voir la section Précédente Gérer les catégories dans la [liste principale.](#manage-categories-in-the-master-list)
 >
-> Dans Outlook sur le Web, vous ne pouvez pas utiliser l’API pour gérer les catégories d’un message en mode lecture.
+> Dans Outlook sur le web, vous ne pouvez pas utiliser l’API pour gérer les catégories d’un message en mode lecture.
 
 ### <a name="add-categories-to-an-item"></a>Ajouter des catégories à un élément
 
-L’exemple suivant montre comment appliquer la catégorie nommée « urgent ! » à l’élément actuel en appelant [addAsync](/javascript/api/outlook/office.categories#addasync-categories--options--callback-) `item.categories` .
+L’exemple suivant montre comment appliquer la catégorie nommée « Urgent! » à l’élément actuel en appelant [addAsync](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) sur `item.categories` .
 
 ```js
 var categoriesToAdd = ["Urgent!"];
@@ -106,7 +106,7 @@ Office.context.mailbox.item.categories.addAsync(categoriesToAdd, function (async
 
 ### <a name="get-an-items-categories"></a>Obtenir les catégories d’un élément
 
-L’exemple suivant montre comment obtenir les catégories appliquées à l’élément actuel en appelant [getAsync](/javascript/api/outlook/office.categories#getasync-options--callback-) `item.categories` .
+L’exemple suivant montre comment obtenir les catégories appliquées à l’élément actuel en appelant [getAsync](/javascript/api/outlook/office.categories#getAsync_options__callback_) sur `item.categories` .
 
 ```js
 Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
@@ -124,7 +124,7 @@ Office.context.mailbox.item.categories.getAsync(function (asyncResult) {
 
 ### <a name="remove-categories-from-an-item"></a>Supprimer des catégories d’un élément
 
-L’exemple suivant montre comment supprimer la catégorie nommée « urgent ! » à partir de l’élément actuel en appelant [removeAsync](/javascript/api/outlook/office.categories#removeasync-categories--options--callback-) `item.categories` .
+L’exemple suivant montre comment supprimer la catégorie nommée « Urgent! » à partir de l’élément actuel en [appelant removeAsync](/javascript/api/outlook/office.categories#removeAsync_categories__options__callback_) on `item.categories` .
 
 ```js
 var categoriesToRemove = ["Urgent!"];
@@ -140,5 +140,5 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Autorisations Outlook](understanding-outlook-add-in-permissions.md)
-- [Élément permissions dans le manifeste](../reference/manifest/permissions.md)
+- [Outlook autorisations](understanding-outlook-add-in-permissions.md)
+- [Élément Permissions dans le manifeste](../reference/manifest/permissions.md)

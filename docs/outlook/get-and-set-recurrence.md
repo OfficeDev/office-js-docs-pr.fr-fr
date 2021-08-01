@@ -3,19 +3,19 @@ title: Obtenir et définir la récurrence dans un complément Outlook
 description: Cette rubrique vous explique comment utiliser l’API JavaScript Office pour obtenir et définir différentes propriétés de récurrence d’un élément dans un complément Outlook.
 ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 0b179725677f071fe2ae7baf1c719add5ccd8aa7
-ms.sourcegitcommit: e9f23a2857b90a7c17e3152292b548a13a90aa33
+ms.openlocfilehash: 47f805dff855cec4e6a6cfd2792a86179fac48f9
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "46803743"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53670313"
 ---
 # <a name="get-and-set-recurrence"></a>Obtenir et définir la récurrence
 
-Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript pour Office pour gérer les périodicités d’une série de rendez-vous dans votre complément.
+Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript Office pour gérer les modèles de récurrence d’une série de rendez-vous dans votre application.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1,7. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.7. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="available-recurrence-patterns"></a>Modèles de récurrence disponibles
 
@@ -27,9 +27,9 @@ Pour configurer la récurrence, vous devez combiner les [types de récurrence](/
 |---|---|---|
 |`daily`|-&nbsp;[`interval`][interval link]|Un rendez-vous se produit tous les *intervalle* jours. Exemple : Un rendez-vous se produit tous les **_2_** jours.|
 |`weekday`|Aucun.|Un rendez-vous se produit tous les jours de la semaine.|
-|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois. Exemple : Un rendez-vous se produit tous les **_5_** du mois**_4_**.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque mois*intervalle*. Exemple : Un rendez-vous se produit tous les **_jeudis_** **_3_** tous les **_2_** mois.|
-|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|Un rendez-vous se produit chaque *jours*toutes les *intervalle*semaines. Exemple : Un rendez-vous se produit chaque **_mardi_ and _jeudi_** toutes les **_2_** semaines.|
-|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_7_** du mois**_septembre_** tous les **_4_** ans.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque*mois* tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_1er_** **_jeudi_** du mois**_Septembre_** tous les **_2_** ans.|
+|`monthly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois. Exemple : Un rendez-vous se produit tous les **_5_** du mois **_4_**.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque mois *intervalle*. Exemple : Un rendez-vous se produit tous les **_jeudis_** **_3_** tous les **_2_** mois.|
+|`weekly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`days`][days link]|Un rendez-vous se produit chaque *jours* toutes les *intervalle* semaines. Exemple : Un rendez-vous se produit chaque **_mardi_ and _jeudi_** toutes les **_2_** semaines.|
+|`yearly`|-&nbsp;[`interval`][interval link]<br/>-&nbsp;[`dayOfMonth`][dayOfMonth link]<br/>-&nbsp;[`dayOfWeek`][dayOfWeek link]<br/>-&nbsp;[`weekNumber`][weekNumber link]<br/>-&nbsp;[`month`][month link]|- Un rendez-vous a lieu le *dayOfMonth* de chaque *intervalle* mois tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_7_** du mois **_septembre_** tous les **_4_** ans.<br/><br/>- Un rendez-vous a lieu le *dayOfWeek* de la semaine *weekNumber* de chaque *mois* tous les *intervalle* ans. Exemple : Un rendez-vous se produit tous les **_1er_** **_jeudi_** du mois **_Septembre_** tous les **_2_** ans.|
 
 > [!NOTE]
 > Vous pouvez également utiliser la [ `firstDayOfWeek` ][firstDayOfWeek link] `weekly` propriété avec le  type de récurrence. Le jour spécifié commencera la liste des jours affichés dans la boîte de dialogue Récurrence.
@@ -42,16 +42,16 @@ Comment vous accédez à la récurrence et ce que vous pouvez en faire dépend d
 
 |État de rendez-vous|La récurrence est-elle modifiable ?|La récurrence est-elle visible ?|
 |---|---|---|
-|Organisateur de rendez-vous - séries composer|Oui ([`setAsync`][setAsync link])|Oui ([`getAsync`][getAsync link])|
-|Organisateur de rendez-vous - instance composer|Non (`setAsync` renvoie une erreur)|Oui ([`getAsync`][getAsync link])|
-|Participant rendez-vous - séries lire|Non (`setAsync` non disponible)|Oui ([`item.recurrence`][item.recurrence link])|
-|Participant rendez-vous - instance lire|Non (`setAsync` non disponible)|Oui ([`item.recurrence`][item.recurrence link])|
-|Demande de réunion - série lire|Non (`setAsync` non disponible)|Oui ([`item.recurrence`][item.recurrence link])|
-|Demande de réunion - instance lire|Non (`setAsync` non disponible)|Oui ([`item.recurrence`][item.recurrence link])|
+|Organisateur de rendez-vous - séries composer|Oui ( [`setAsync`][setAsync link] )|Oui ( [`getAsync`][getAsync link] )|
+|Organisateur de rendez-vous - instance composer|Non (`setAsync` renvoie une erreur)|Oui ( [`getAsync`][getAsync link] )|
+|Participant rendez-vous - séries lire|Non (`setAsync` non disponible)|Oui ( [`item.recurrence`][item.recurrence link] )|
+|Participant rendez-vous - instance lire|Non (`setAsync` non disponible)|Oui ( [`item.recurrence`][item.recurrence link] )|
+|Demande de réunion - série lire|Non (`setAsync` non disponible)|Oui ( [`item.recurrence`][item.recurrence link] )|
+|Demande de réunion - instance lire|Non (`setAsync` non disponible)|Oui ( [`item.recurrence`][item.recurrence link] )|
 
 ## <a name="set-recurrence-as-the-organizer"></a>Configurer la récurrence en tant qu’organisateur
 
-Tout comme le modèle de récurrence, vous devez également déterminer les dates de début et de fin et heures de vos séries de rendez-vous. L' [`SeriesTime`][SeriesTime link] objet est utilisé pour gérer ces informations.
+Tout comme le modèle de récurrence, vous devez également déterminer les dates de début et de fin et heures de vos séries de rendez-vous. [`SeriesTime`][SeriesTime link]L’objet est utilisé pour gérer ces informations.
 
 L’organisateur de rendez-vous peut spécifier la récurrence pour une série de rendez-vous dans le mode Composer uniquement. Dans l’exemple suivant, la série de rendez-vous est définie comme se produisant de 10 h 30 à 11 h 00 PST chaque mardi et jeudi dans la période du 2 novembre 2019 au 2 décembre 2019.
 
@@ -76,9 +76,9 @@ function callback(asyncResult)
 }
 ```
 
-## <a name="change-recurrence-as-the-organizer"></a>Modifier la périodicité en tant qu’organisateur
+## <a name="change-recurrence-as-the-organizer"></a>Modifier la récurrence en tant qu’organisateur
 
-Dans l’exemple suivant, en mode composition, l’organisateur de rendez-vous obtient l’objet de récurrence d’une série de rendez-vous en fonction de la série ou d’une instance de cette série, puis définit une nouvelle durée de périodicité.
+Dans l’exemple suivant, en mode composition, l’organisateur de rendez-vous obtient l’objet de récurrence d’une série de rendez-vous en fonction de la série ou d’une instance de cette série, puis définit une nouvelle durée de récurrence.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -121,7 +121,7 @@ function callback(asyncResult){
 L’exemple suivant montre les résultats de l’appel `getAsync` qui récupère la récurrence d’une série.
 
 > [!NOTE]
-> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les [`SeriesTime`][SeriesTime link] méthodes pour obtenir les propriétés de date et d’heure de périodicité.
+> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les [`SeriesTime`][SeriesTime link] méthodes pour obtenir les propriétés de date et d’heure de récurrence.
 
 ```json
 {
@@ -158,7 +158,7 @@ function outputRecurrence(item) {
 L’exemple suivant montre la valeur de la `item.recurrence` propriété pour une série de rendez-vous.
 
 > [!NOTE]
-> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les [`SeriesTime`][SeriesTime link] méthodes pour obtenir les propriétés de date et d’heure de périodicité.
+> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les [`SeriesTime`][SeriesTime link] méthodes pour obtenir les propriétés de date et d’heure de récurrence.
 
 ```json
 {
@@ -200,16 +200,16 @@ var recurrenceType = recurrence.recurrenceType;
 
 [Événement RecurrenceChanged](/javascript/api/office/office.eventtype)
 
-[getAsync link]: /javascript/api/outlook/office.recurrence#getasync-options--callback-
+[getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
 [item.recurrence link]: ../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties
-[setAsync link]: /javascript/api/outlook/office.recurrence#setasync-recurrencepattern--options--callback-
+[setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
-[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayofmonth
-[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayofweek
+[dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth
+[dayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#dayOfWeek
 [days link]: /javascript/api/outlook/office.recurrenceproperties#days
-[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstdayofweek
+[firstDayOfWeek link]: /javascript/api/outlook/office.recurrenceproperties#firstDayOfWeek
 [interval link]: /javascript/api/outlook/office.recurrenceproperties#interval
 [month link]: /javascript/api/outlook/office.recurrenceproperties#month
-[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weeknumber
+[weekNumber link]: /javascript/api/outlook/office.recurrenceproperties#weekNumber
 
 [SeriesTime link]: /javascript/api/outlook/office.seriestime

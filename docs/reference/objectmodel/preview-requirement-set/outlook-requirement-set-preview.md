@@ -3,12 +3,12 @@ title: Outlook conditions requises de l’API du module de prévisualisation du 
 description: Fonctionnalités et API actuellement en prévisualisation pour Outlook de recherche.
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: f9d8afc2b4347a8fb13f8ab98a163fb63968123f
-ms.sourcegitcommit: 0bf0e076f705af29193abe3dba98cbfcce17b24f
+ms.openlocfilehash: 79ae0f200743607ee762feebd34dc0e4d192048a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2021
-ms.locfileid: "53007761"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671911"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conditions requises de l’API du module de prévisualisation du add-in
 
@@ -108,7 +108,7 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 ### <a name="office-theme"></a>Thème Office
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officetheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
 
 Ajout de la possibilité d’obtenir un thème Office.
 
@@ -148,7 +148,7 @@ Ajout d’une nouvelle propriété pour gérer les données de session d’un é
 
 ### <a name="shared-mailboxes"></a>Boîtes aux lettres partagées
 
-La prise en charge des fonctionnalités pour les dossiers partagés (autrement dit, l’accès délégué) a été publiée dans l’ensemble de conditions [requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). Toutefois, la prise en charge des boîtes aux lettres partagées est désormais disponible en prévisualisation. Pour plus d’informations, voir [Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées.](../../../outlook/delegate-access.md)
+La prise en charge des fonctionnalités pour les dossiers partagés (autrement dit, l’accès délégué) a été publiée dans l’ensemble de conditions [requises 1.8](../requirement-set-1.8/outlook-requirement-set-1.8.md). Toutefois, la prise en charge des boîtes aux lettres partagées est désormais disponible en prévisualisation. Pour plus d’informations, consultez [Activer les dossiers partagés et les scénarios de boîte aux lettres partagées](../../../outlook/delegate-access.md).
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
 

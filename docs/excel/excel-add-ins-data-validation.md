@@ -3,12 +3,12 @@ title: Ajout de validation des données à des plages Excel
 description: Découvrez comment les EXCEL JavaScript permettent à votre add-in d’ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: e1f5729e6e85ff8af92968c2ad65c19e655106e2
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349524"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671160"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
@@ -210,7 +210,7 @@ Pour plus d’informations, voir [DataValidationPrompt](/javascript/api/excel/ex
 
 ## <a name="remove-data-validation-from-a-range"></a>Supprimer la validation des données d’une plage
 
-Pour supprimer la validation des données d’une plage, appelez la méthode [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear--).
+Pour supprimer la validation des données d’une plage, appelez la méthode [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__).
 
 ```js
 myrange.dataValidation.clear()

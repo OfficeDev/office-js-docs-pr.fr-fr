@@ -3,12 +3,12 @@ title: Extraire des chaînes d’entités d’un élément Outlook
 description: Découvrez comment extraire des chaînes d’entités d’un élément Outlook dans un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 987ba7626acb95bd5090e2f2350f71ecc8701e59
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d266795e3794cfa293d073dafc1ca714644faa5b
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348971"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671111"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extraire des chaînes d’entité d’un élément Outlook
 
@@ -205,7 +205,7 @@ Les sections suivantes expliquent comment l’exemple suivant (le fichier defaul
 
 ## <a name="extracting-entities-upon-initialization"></a>Extraction d’entités lors de l’initialisation
 
-Lors de l’événement [Office.initialize](/javascript/api/office#office-initialize-reason-), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie à la variable globale un tableau `_MyEntities` d’instances d’entités pris en charge. Le code JavaScript associé est présenté ci-dessous.
+Lors de l’événement [Office.initialize](/javascript/api/office#Office_initialize_reason_), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie à la variable globale un tableau `_MyEntities` d’instances d’entités pris en charge. Le code JavaScript associé est présenté ci-dessous.
 
 
 ```js
@@ -261,17 +261,17 @@ function myGetAddresses()
 Lorsque l’utilisateur  clique sur le bouton Obtenir les informations de contact, le handler d’événements obtient un tableau de contacts avec leurs informations à partir de la propriété contacts de l’objet, si des contacts ont été `myGetContacts` [](/javascript/api/outlook/office.entities#contacts) `_MyEntities` extraits. Chaque contact extrait est stocké en tant [qu’objet Contact](/javascript/api/outlook/office.contact) dans le tableau. `myGetContacts` obtient des données supplémentaires sur chaque contact. Notez que le contexte détermine si Outlook peut extraire un contact d’un élément d’une signature à la fin d’un message électronique, ou au moins certaines des informations suivantes doivent exister à proximité du &mdash; contact.
 
 
-- La chaîne représentant le nom du contact à partir de la propriété [Contact.personName](/javascript/api/outlook/office.contact#personname).
+- La chaîne représentant le nom du contact à partir de la propriété [Contact.personName](/javascript/api/outlook/office.contact#personName).
 
-- La chaîne représentant le nom de l’entreprise associée au contact à partir de la propriété [Contact.businessName](/javascript/api/outlook/office.contact#businessname).
+- La chaîne représentant le nom de l’entreprise associée au contact à partir de la propriété [Contact.businessName](/javascript/api/outlook/office.contact#businessName).
 
-- Le tableau des numéros de téléphone associés au contact à partir de la propriété [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phonenumbers). Chaque numéro de téléphone est représenté par un objet [PhoneNumber](/javascript/api/outlook/office.phonenumber).
+- Le tableau des numéros de téléphone associés au contact à partir de la propriété [Contact.phoneNumbers](/javascript/api/outlook/office.contact#phoneNumbers). Chaque numéro de téléphone est représenté par un objet [PhoneNumber](/javascript/api/outlook/office.phonenumber).
 
-- Pour chaque membre **PhoneNumber** dans le tableau des numéros de téléphone, la chaîne représentant le numéro de téléphone à partir de la propriété [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring).
+- Pour chaque membre **PhoneNumber** dans le tableau des numéros de téléphone, la chaîne représentant le numéro de téléphone à partir de la propriété [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString).
 
 - Le tableau des URL associées au contact à partir de la propriété [Contact.urls](/javascript/api/outlook/office.contact#urls). Chaque URL est représentée sous la forme d’une chaîne dans un membre de tableau.
 
-- Le tableau des adresses électroniques associées au contact à partir de la propriété [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailaddresses). Chaque adresse électronique est représentée sous la forme d’une chaîne dans un membre de tableau.
+- Le tableau des adresses électroniques associées au contact à partir de la propriété [Contact.emailAddresses](/javascript/api/outlook/office.contact#emailAddresses). Chaque adresse électronique est représentée sous la forme d’une chaîne dans un membre de tableau.
 
 - Le tableau des adresses postales associées au contact à partir de la propriété [Contact.addresses](/javascript/api/outlook/office.contact#addresses). Chaque adresse postale est représentée sous la forme d’une chaîne dans un membre de tableau.
 
@@ -346,7 +346,7 @@ function myGetContacts()
 ## <a name="extracting-email-addresses"></a>Extraction des adresses électroniques
 
 
-Lorsque l’utilisateur clique sur le bouton **Obtenir des adresses électroniques**, le gestionnaire d’événements `myGetEmailAddresses` obtient un tableau d’adresses électroniques SMTP à partir de la propriété [emailAddresses](/javascript/api/outlook/office.entities#emailaddresses) de l’objet `_MyEntities`, si des adresses ont été extraites. Chaque adresse électronique extraite est stockée sous la forme d’une chaîne dans le tableau. `myGetEmailAddresses` forme une chaîne HTML locale dans `htmlText` pour afficher la liste des adresses électroniques extraites. Le code JavaScript associé est présenté ci-dessous.
+Lorsque l’utilisateur clique sur le bouton **Obtenir des adresses électroniques**, le gestionnaire d’événements `myGetEmailAddresses` obtient un tableau d’adresses électroniques SMTP à partir de la propriété [emailAddresses](/javascript/api/outlook/office.entities#emailAddresses) de l’objet `_MyEntities`, si des adresses ont été extraites. Chaque adresse électronique extraite est stockée sous la forme d’une chaîne dans le tableau. `myGetEmailAddresses` forme une chaîne HTML locale dans `htmlText` pour afficher la liste des adresses électroniques extraites. Le code JavaScript associé est présenté ci-dessous.
 
 
 ```js
@@ -369,7 +369,7 @@ function myGetEmailAddresses() {
 ## <a name="extracting-meeting-suggestions"></a>Extraction de suggestions de réunion
 
 
-Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de réunion**, le gestionnaire d’événements `myGetMeetingSuggestions` obtient un tableau de suggestions de réunion à partir de la propriété [meetingSuggestions](/javascript/api/outlook/office.entities#meetingsuggestions) de l’objet `_MyEntities`, si des suggestions ont été extraites.
+Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de réunion**, le gestionnaire d’événements `myGetMeetingSuggestions` obtient un tableau de suggestions de réunion à partir de la propriété [meetingSuggestions](/javascript/api/outlook/office.entities#meetingSuggestions) de l’objet `_MyEntities`, si des suggestions ont été extraites.
 
 
  > [!NOTE]
@@ -378,13 +378,13 @@ Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de réuni
 Chaque suggestion de réunion extraite est stockée sous la forme d’un objet [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) dans le tableau. `myGetMeetingSuggestions` obtient d’autres données sur chaque suggestion de réunion :
 
 
-- La chaîne identifiée comme suggestion de réunion à partir de la propriété [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingstring).
+- La chaîne identifiée comme suggestion de réunion à partir de la propriété [MeetingSuggestion.meetingString](/javascript/api/outlook/office.meetingsuggestion#meetingString).
 
 - Le tableau des participants de la réunion à partir de la propriété [MeetingSuggestion.attendees](/javascript/api/outlook/office.meetingsuggestion#attendees). Chaque participant est représenté par un objet [EmailUser](/javascript/api/outlook/office.emailuser).
 
-- Le nom de chaque participant à partir de la propriété [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname).
+- Le nom de chaque participant à partir de la propriété [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName).
 
-- L’adresse SMTP de chaque participant à partir de la propriété [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress).
+- L’adresse SMTP de chaque participant à partir de la propriété [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress).
 
 - La chaîne représentant l’emplacement de la suggestion de réunion à partir de la propriété [MeetingSuggestion.location](/javascript/api/outlook/office.meetingsuggestion#location).
 
@@ -455,14 +455,14 @@ function myGetMeetingSuggestions() {
 ## <a name="extracting-phone-numbers"></a>Extraction de numéros de téléphone
 
 
-Lorsque l’utilisateur clique sur le bouton **Obtenir des numéros de téléphone**, le gestionnaire d’événements `myGetPhoneNumbers` obtient un tableau de numéros de téléphone à partir de la propriété [phoneNumbers](/javascript/api/outlook/office.entities#phonenumbers) de l’objet `_MyEntities`, si des numéros de téléphone ont été extraits. Chaque numéro de téléphone extrait est stocké sous la forme d’un objet [PhoneNumber](/javascript/api/outlook/office.phonenumber) dans le tableau. `myGetPhoneNumbers` obtient d’autres données sur chaque numéro de téléphone :
+Lorsque l’utilisateur clique sur le bouton **Obtenir des numéros de téléphone**, le gestionnaire d’événements `myGetPhoneNumbers` obtient un tableau de numéros de téléphone à partir de la propriété [phoneNumbers](/javascript/api/outlook/office.entities#phoneNumbers) de l’objet `_MyEntities`, si des numéros de téléphone ont été extraits. Chaque numéro de téléphone extrait est stocké sous la forme d’un objet [PhoneNumber](/javascript/api/outlook/office.phonenumber) dans le tableau. `myGetPhoneNumbers` obtient d’autres données sur chaque numéro de téléphone :
 
 
 - La chaîne représentant le type de numéro de téléphone (par exemple, numéro de téléphone du domicile) à partir de la propriété [PhoneNumber.type](/javascript/api/outlook/office.phonenumber#type).
 
-- La chaîne représentant le numéro de téléphone réel à partir de la propriété [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phonestring).
+- La chaîne représentant le numéro de téléphone réel à partir de la propriété [PhoneNumber.phoneString](/javascript/api/outlook/office.phonenumber#phoneString).
 
-- La chaîne qui a été initialement identifiée comme le numéro de téléphone à partir de la propriété [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalphonestring).
+- La chaîne qui a été initialement identifiée comme le numéro de téléphone à partir de la propriété [PhoneNumber.originalPhoneString](/javascript/api/outlook/office.phonenumber#originalPhoneString).
 
 `myGetPhoneNumbers` forme une chaîne HTML locale dans `htmlText` pour afficher les données pour chacun des numéros de téléphone. Le code JavaScript associé est présenté ci-dessous.
 
@@ -506,16 +506,16 @@ function myGetPhoneNumbers()
 ## <a name="extracting-task-suggestions"></a>Extraction de suggestions de tâches
 
 
-Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de tâches**, le gestionnaire d’événements `myGetTaskSuggestions` obtient un tableau de suggestions de tâches à partir de la propriété [taskSuggestions](/javascript/api/outlook/office.entities#tasksuggestions) de l’objet `_MyEntities`, si des suggestions ont été extraites. Chaque suggestion de tâche extraite est stockée sous la forme d’un objet [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) dans le tableau. `myGetTaskSuggestions` obtient d’autres données sur chaque suggestion de tâche :
+Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de tâches**, le gestionnaire d’événements `myGetTaskSuggestions` obtient un tableau de suggestions de tâches à partir de la propriété [taskSuggestions](/javascript/api/outlook/office.entities#taskSuggestions) de l’objet `_MyEntities`, si des suggestions ont été extraites. Chaque suggestion de tâche extraite est stockée sous la forme d’un objet [TaskSuggestion](/javascript/api/outlook/office.tasksuggestion) dans le tableau. `myGetTaskSuggestions` obtient d’autres données sur chaque suggestion de tâche :
 
 
-- La chaîne qui a été initialement identifiée comme une suggestion de tâche à partir de la propriété [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskstring).
+- La chaîne qui a été initialement identifiée comme une suggestion de tâche à partir de la propriété [TaskSuggestion.taskString](/javascript/api/outlook/office.tasksuggestion#taskString).
 
 - Le tableau des cessionnaires de tâches à partir de la propriété [TaskSuggestion.assignees](/javascript/api/outlook/office.tasksuggestion#assignees). Chaque cessionnaire est représenté par un objet [EmailUser](/javascript/api/outlook/office.emailuser).
 
-- Le nom de chaque cessionnaire à partir de la propriété [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayname).
+- Le nom de chaque cessionnaire à partir de la propriété [EmailUser.displayName](/javascript/api/outlook/office.emailuser#displayName).
 
-- L’adresse SMTP de chaque cessionnaire à partir de la propriété [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailaddress).
+- L’adresse SMTP de chaque cessionnaire à partir de la propriété [EmailUser.emailAddress](/javascript/api/outlook/office.emailuser#emailAddress).
 
 `myGetTaskSuggestions` forme une chaîne HTML locale dans `htmlText` pour afficher les données pour chaque suggestion de tâche. Le code JavaScript associé est présenté ci-dessous.
 

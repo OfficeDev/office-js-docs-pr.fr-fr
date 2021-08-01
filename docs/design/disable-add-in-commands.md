@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: d11b5c188da971f18969ff0abe9787021fad6bf1
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 1836d84a387afbef415dddd305adcb4eb7687552
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536010"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671407"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -34,7 +34,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 Les API d’activer/désactiver appartiennent à [l’ensemble de conditions requises RibbonApi 1.1.](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 
 > [!NOTE]
-> L’ensemble de conditions **requises RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste, vous ne pouvez donc pas le spécifier dans la section du `<Requirements>` manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et uniquement si*, cet appel renvoie, votre code peut appeler les API `true` d’activer/désactiver. Si l’appel de retour , alors toutes les commandes de `isSetSupported` `false` add-in personnalisées sont activées en tout temps. Vous devez concevoir votre application de production et toutes les instructions dans l’application pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et d’exemples d’utilisation, voir Spécifier Office applications et les conditions requises de l’API, en particulier utiliser les vérifications à l’runtime `isSetSupported` dans votre code [JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) [](../develop/specify-office-hosts-and-api-requirements.md). (La section [Définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au Ruban 1.1.)
+> L’ensemble de conditions requises **RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste, vous ne pouvez donc pas le spécifier dans la section du `<Requirements>` manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')` . Si, *et uniquement si*, cet appel renvoie, votre code peut appeler les API `true` d’activer/désactiver. Si l’appel de retour , alors toutes les commandes de `isSetSupported` `false` add-in personnalisées sont activées en tout temps. Vous devez concevoir votre application de production et toutes les instructions dans l’application pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et d’exemples d’utilisation, voir Spécifier Office applications et les conditions requises de l’API, en particulier utiliser les vérifications à l’runtime `isSetSupported` dans votre code [JavaScript](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) [](../develop/specify-office-hosts-and-api-requirements.md). (La section [Définir l’élément Requirements dans le manifeste](../develop/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest) de cet article ne s’applique pas au Ruban 1.1.)
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
@@ -79,7 +79,7 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
 1. Créez [un objet RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande, ainsi que son groupe parent et l’onglet, par leurs ID déclarés dans le manifeste ; et (2) spécifie l’état activé ou désactivé de la commande.
-2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestupdate-input-).
+2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_).
 
 Voici un exemple simple. Notez que « MyButton », « OfficeAddinTab1 » et « CustomGroup111 » sont copiés à partir du manifeste.
 

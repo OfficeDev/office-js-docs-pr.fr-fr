@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour récupér
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: bf92400af00df42ac245b9a2d3ff5e72512b5722
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: f114cc274358216cffaa55015e09afa38fa4e959
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290774"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671477"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obtenir des antécédents et des dépendances de formule à l’aide Excel API JavaScript
 
@@ -21,7 +21,7 @@ Cet article fournit des exemples de code qui récupèrent des antécédents dire
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>Obtenir les antécédents directs d’une formule
 
-Recherchez les cellules précédentes directes d’une formule [avec Range.getDirectPrecedents](/javascript/api/excel/excel.range#getdirectprecedents--). `Range.getDirectPrecedents` renvoie un `WorkbookRangeAreas` objet. Cet objet contient les adresses de tous les précédents directs du manuel. Il possède un objet `RangeAreas` distinct pour chaque feuille de calcul contenant au moins un précédent de formule. Pour plus d’informations sur l’utilisation de l’objet, voir Work `RangeAreas` [with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
+Recherchez les cellules précédentes directes d’une formule [avec Range.getDirectPrecedents](/javascript/api/excel/excel.range#getDirectPrecedents__). `Range.getDirectPrecedents` renvoie un `WorkbookRangeAreas` objet. Cet objet contient les adresses de tous les précédents directs du manuel. Il possède un objet `RangeAreas` distinct pour chaque feuille de calcul contenant au moins un précédent de formule. Pour plus d’informations sur l’utilisation de l’objet, voir Work `RangeAreas` [with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md).
 
 La capture d’écran suivante montre le résultat de la sélection du bouton **Suivi des antécédents** dans Excel’interface utilisateur. Ce bouton dessine une flèche entre les cellules précédentes et la cellule sélectionnée. La cellule sélectionnée, **E3,** contient la formule « =C3 * D3 », c’est pourquoi **C3** et **D3** sont des cellules précédentes. Contrairement au bouton Excel’interface utilisateur, `getDirectPrecedents` la méthode ne dessine pas de flèches.
 

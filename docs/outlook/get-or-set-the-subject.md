@@ -3,16 +3,16 @@ title: Obtenir ou définir l’objet dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’objet d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: 3dda0ad519bdb2c3fc49b71f27e6f1d8a2aefcac
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 048aa079adf3fda5d5f4a85bfcadd3b671ce865a
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609139"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671799"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
-L’API JavaScript pour Office fournit des méthodes asynchrones ([Subject. getAsync](/javascript/api/outlook/office.Subject#getasync-options--callback-) et [Subject. setAsync](/javascript/api/outlook/office.Subject#setasync-subject--options--callback-)) pour obtenir et définir l’objet d’un rendez-vous ou d’un message que l’utilisateur compose. Ces méthodes asynchrones ne sont disponibles que pour les compléments de composition. Pour utiliser ces méthodes, vérifiez que vous avez correctement configuré le manifeste de complément pour Outlook afin d’activer le complément dans les formulaires de composition.
+L’API JavaScript Office fournit des méthodes asynchrones ([subject.getAsync](/javascript/api/outlook/office.Subject#getAsync_options__callback_) et [subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)) pour obtenir et définir l’objet d’un rendez-vous ou d’un message que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour composer des add-ins. Pour utiliser ces méthodes, assurez-vous que vous avez correctement installé le manifeste du Outlook pour activer le module dans les formulaires de composition.
 
 La propriété **subject** est disponible pour un accès en lecture dans les formulaires de lecture et de composition des rendez-vous et des messages. Dans un formulaire de lecture, vous pouvez accéder à la propriété directement à partir de l’objet parent, comme dans l’exemple suivant :
 
@@ -28,7 +28,7 @@ item.subject.getAsync
 
 La propriété **subject** est disponible pour l’accès en écriture uniquement dans les formulaires de composition, pas dans les formulaires de lecture.
 
-Comme pour la plupart des méthodes asynchrones dans l’API JavaScript pour Office, **getAsync** et **setAsync** prennent des paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir la section « Passage de paramètres facultatifs à des méthodes asynchrones » dans la rubrique [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md).
+Comme avec la plupart des méthodes asynchrones dans l’API JavaScript Office, **getAsync** et **setAsync** prennent des paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir la section « Passage de paramètres facultatifs à des méthodes asynchrones » dans la rubrique [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="get-the-subject"></a>Obtention de l’objet

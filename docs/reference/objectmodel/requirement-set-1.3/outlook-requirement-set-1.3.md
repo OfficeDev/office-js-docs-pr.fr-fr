@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.3
 description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.3.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 03d1a3d74dfad9aa2db0a39f3318d41ef5ab7af6
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 85924d181ee494a8caa5e18a5bcf53c3f116ee3e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52591036"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671897"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Ensemble de conditions requises de l’API du complément Outlook 1.3
 
@@ -29,8 +29,8 @@ L’ensemble de conditions requises 1.3 inclut toutes les fonctionnalités de l�
 
 ### <a name="change-log"></a>Journal des modifications
 
-- Ajout de la méthode [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getasync-coerciontype--options--callback-) : Renvoie le corps actif dans un format spécifié.
-- Ajout de la méthode [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setasync-data--options--callback-) : Remplace l’ensemble du corps avec le texte spécifié.
+- Ajout de la méthode [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_) : Renvoie le corps actif dans un format spécifié.
+- Ajout de la méthode [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_) : Remplace l’ensemble du corps avec le texte spécifié.
 - Ajout de l’objet [Event](/javascript/api/office/office.addincommands.event) : transmis comme paramètre aux fonctions de commande sans IU dans un complément Outlook. Utilisé pour signaler la fin du traitement de l’événement.
 - Ajout de la méthode [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods) : Ferme l’élément en cours qui est composé.
 - Ajout de la méthode [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods) : Enregistre un élément de manière asynchrone.

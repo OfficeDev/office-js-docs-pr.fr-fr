@@ -3,12 +3,12 @@ title: Optimisation des performances API JavaScript Excel
 description: Optimisez Excel de votre application à l’aide de l’API JavaScript.
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: 5313bb3fe25d165e49cc0508e81d58294db48798
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0379eecddf54877d863ec057a8193347fa3091f8
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349384"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671582"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -66,7 +66,7 @@ Excel.run(async function(ctx) {
 })
 ```
 
-Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, le fait de renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
+Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
 
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
@@ -107,7 +107,7 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> Vous pouvez convertir un objet de Tableau en objet de Plage à l’aide de la méthode[Table.convertToRange()](/javascript/api/excel/excel.table#converttorange--).
+> Vous pouvez convertir un objet de Tableau en objet de Plage à l’aide de la méthode[Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__).
 
 ## <a name="see-also"></a>Voir aussi
 

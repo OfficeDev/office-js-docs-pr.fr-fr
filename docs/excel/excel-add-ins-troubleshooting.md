@@ -3,12 +3,12 @@ title: Résolution des problèmes Excel des modules
 description: Découvrez comment résoudre les erreurs de développement dans les Excel de développement.
 ms.date: 02/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cb622a1805be7bec61168ab37a41709a57075788
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349440"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671463"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>Résolution des problèmes Excel des modules
 
@@ -44,7 +44,7 @@ Les API suivantes sont affectées par ce commutateur de workbook.
 
 ## <a name="coauthoring"></a>Co-édition
 
-Voir [Co-auteur dans Excel pour](co-authoring-in-excel-add-ins.md) les modèles à utiliser avec des événements dans un environnement de co-auteur. L’article traite également des conflits potentiels de fusion lors de l’utilisation de certaines API, telles que [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add-index--values-) .
+Voir [Co-auteur dans Excel pour](co-authoring-in-excel-add-ins.md) les modèles à utiliser avec des événements dans un environnement de co-auteur. L’article traite également des conflits potentiels de fusion lors de l’utilisation de certaines API, telles que [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) .
 
 ## <a name="known-issues"></a>Problèmes connus
 
@@ -99,4 +99,4 @@ Les [méthodes Worksheet.getRange(address)](/javascript/api/excel/excel.workshee
 ## <a name="see-also"></a>Voir aussi
 
 - [Résoudre les erreurs de développement avec Office de recherche](../testing/troubleshoot-development-errors.md)
-- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)

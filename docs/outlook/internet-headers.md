@@ -1,46 +1,46 @@
 ---
 title: Obtenir et définir des en-têtes Internet
-description: Comment obtenir et définir des en-têtes Internet sur un message dans un complément Outlook.
+description: Comment obtenir et définir des en-têtes Internet sur un message dans un Outlook de recherche.
 ms.date: 04/28/2020
 localization_priority: Normal
-ms.openlocfilehash: a05ba86eebd8dc01c8368b61e39d1de1d90f9efa
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 9e88af7c8fa996fe3b6164ce1fc04b6d77b048f2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609082"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671323"
 ---
-# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obtenir et définir des en-têtes Internet sur un message dans un complément Outlook
+# <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obtenir et définir des en-têtes Internet sur un message dans un Outlook de recherche
 
-## <a name="background"></a>Arrière-plan
+## <a name="background"></a>Contexte
 
-Une exigence courante dans le développement des compléments Outlook est le stockage des propriétés personnalisées associées à un complément à différents niveaux. À l’actuelle, les propriétés personnalisées sont stockées au niveau de l’élément ou de la boîte aux lettres.
+Une exigence courante dans Outlook développement de add-ins consiste à stocker les propriétés personnalisées associées à un add-in à différents niveaux. Actuellement, les propriétés personnalisées sont stockées au niveau de l’élément ou de la boîte aux lettres.
 
-- Niveau de l’élément : pour les propriétés qui s’appliquent à un élément spécifique, utilisez l’objet [CustomProperties](/javascript/api/outlook/office.customproperties) . Par exemple, stockez un code client associé à la personne qui a envoyé le message électronique.
-- Niveau de la boîte aux lettres : pour les propriétés qui s’appliquent à tous les éléments de courrier dans la boîte aux lettres de l’utilisateur, utilisez l’objet [RoamingSettings](/javascript/api/outlook/office.roamingsettings) . Par exemple, stockez la préférence d’un utilisateur pour afficher la température dans une mise à l’horizontale particulière.
+- Niveau d’élément : pour les propriétés qui s’appliquent à un élément spécifique, utilisez [l’objet CustomProperties.](/javascript/api/outlook/office.customproperties) Par exemple, stockez un code client associé à la personne qui a envoyé le courrier électronique.
+- Niveau de boîte aux lettres : pour les propriétés qui s’appliquent à tous les éléments de messagerie de la boîte aux lettres de l’utilisateur, utilisez [l’objet RoamingSettings.](/javascript/api/outlook/office.roamingsettings) Par exemple, stockez les préférences d’un utilisateur pour afficher la température dans une échelle particulière.
 
-Les deux types de propriétés ne sont pas conservés après que l’élément a quitté le serveur Exchange, de sorte que les destinataires du courrier électronique ne peuvent pas obtenir les propriétés définies sur l’élément. Par conséquent, les développeurs ne peuvent pas accéder à ces paramètres ou à d’autres propriétés MIME pour permettre de meilleurs scénarios de lecture.
+Les deux types de propriétés ne sont pas conservés après que l’élément a quitté le serveur Exchange afin que les destinataires de courrier ne peuvent pas obtenir de propriétés définies sur l’élément. Par conséquent, les développeurs ne peuvent pas accéder à ces paramètres ou à d’autres propriétés MIME pour permettre de meilleurs scénarios de lecture.
 
-Bien qu’il existe un moyen de définir les en-têtes Internet par le biais de demandes EWS, dans certains scénarios, la demande EWS ne fonctionnera pas. Par exemple, en mode composition sur le bureau Outlook, l’ID d’élément n’est pas synchronisé  `saveAsync`   en mode mis en cache.
+Bien qu’il soit possible de définir les en-têtes Internet par le biais de demandes EWS, dans certains scénarios, l’utilisation d’une demande EWS ne fonctionne pas. Par exemple, en mode composition Outlook bureau, l’ID d’élément n’est pas synchronisé en  `saveAsync`   mode mis en cache.
 
 > [!TIP]
-> Pour en savoir plus sur l’utilisation de ces options, consultez la rubrique [obtenir et définir des métadonnées de complément pour un complément Outlook](metadata-for-an-outlook-add-in.md) .
+> Voir [Obtenir et définir des métadonnées](metadata-for-an-outlook-add-in.md) de Outlook pour en savoir plus sur l’utilisation de ces options.
 
-## <a name="purpose-of-the-internet-headers-api"></a>Objectif de l’API des en-têtes Internet
+## <a name="purpose-of-the-internet-headers-api"></a>Objectif de l’API d’en-têtes Internet
 
-Introduit dans l' [ensemble de conditions requises 1,8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), les API d’en-têtes Internet permettent aux développeurs d’effectuer les opérations suivantes :
+Introduites dans [l’ensemble de conditions requises 1.8,](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)les API d’en-têtes Internet permettent aux développeurs de :
 
-- Informations de marquage sur un courrier électronique qui persistent une fois qu’il a quitté Exchange sur tous les clients.
-- Lire les informations d’un e-mail qui persistent après que le courrier électronique a quitté Exchange sur tous les clients dans les scénarios de lecture de messagerie.
-- Accéder à l’intégralité de l’en-tête MIME du courrier électronique.
+- Marquez les informations d’un e-mail qui persistent après son Exchange tous les clients.
+- Lire les informations d’un e-mail qui ont persisté après qu’il a été laissé Exchange tous les clients dans les scénarios de lecture de courrier électronique.
+- Accéder à l’intégralité de l’en-tête MIME de l’e-mail.
 
-![Diagramme des en-têtes Internet. Text : l’utilisateur 1 envoie des courriers électroniques. Le complément gère les en-têtes Internet personnalisés pendant que l’utilisateur compose le courrier électronique. L’utilisateur 2 reçoit le courrier électronique. Le complément obtient les en-têtes Internet du courrier électronique reçu, puis analyse et utilise des en-têtes personnalisés.](../images/outlook-internet-headers.png)
+![Diagramme des en-têtes Internet. Texte : l’utilisateur 1 envoie un e-mail. Le add-in gère les en-têtes Internet personnalisés pendant que l’utilisateur compose des messages électroniques. L’utilisateur 2 reçoit le message électronique. Le add-in obtient les en-têtes Internet provenant du courrier électronique reçu, puis il parcourt et utilise des en-têtes personnalisés.](../images/outlook-internet-headers.png)
 
 ## <a name="set-internet-headers-while-composing-a-message"></a>Définir des en-têtes Internet lors de la composition d’un message
 
-Essayez d’utiliser la propriété [Item. internetHeaders](/javascript/api/outlook/office.messagecompose#internetheaders) pour gérer les en-têtes Internet personnalisés que vous placez sur le message en cours en mode composition.
+Essayez d’utiliser [la propriété item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) pour gérer les en-têtes Internet personnalisés que vous placez sur le message actuel en mode Composition.
 
-### <a name="set-get-and-remove-custom-headers-example"></a>Exemple de définition, d’obtention et de suppression d’en-têtes personnalisés
+### <a name="set-get-and-remove-custom-headers-example"></a>Exemple de définir, d’obtenir et de supprimer des en-têtes personnalisés
 
 L’exemple suivant montre comment définir, obtenir et supprimer des en-têtes personnalisés.
 
@@ -107,11 +107,11 @@ Selected headers: {"x-preferred-fruit":"orange","x-preferred-vegetable":"broccol
 
 ## <a name="get-internet-headers-while-reading-a-message"></a>Obtenir des en-têtes Internet lors de la lecture d’un message
 
-Essayez d’appeler [Item. getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getallinternetheadersasync-options--callback-) pour obtenir les en-têtes Internet sur le message actif en mode lecture.
+Essayez [d’appeler item.getAllInternetHeadersAsync](/javascript/api/outlook/office.messageread#getAllInternetHeadersAsync_options__callback_) pour obtenir des en-têtes Internet sur le message actuel en mode lecture.
 
-### <a name="get-sender-preferences-from-current-mime-headers-example"></a>Obtenir les préférences de l’expéditeur à partir des en-têtes MIME actuels-exemple
+### <a name="get-sender-preferences-from-current-mime-headers-example"></a>Obtenir les préférences de l’expéditeur à partir de l’exemple d’en-têtes MIME actuels
 
-En vous appuyant sur l’exemple de la section précédente, le code suivant montre comment obtenir les préférences de l’expéditeur à partir des en-têtes MIME de l’e-mail actuel.
+En s’axant sur l’exemple de la section précédente, le code suivant montre comment obtenir les préférences de l’expéditeur à partir des en-têtes MIME de l’e-mail actuel.
 
 ```js
 Office.context.mailbox.item.getAllInternetHeadersAsync(getCallback);
@@ -132,16 +132,16 @@ Sender's preferred vegetable: broccoli
 ```
 
 > [!IMPORTANT]
-> Cet exemple fonctionne pour des cas simples. Pour une extraction plus complexe des informations (par exemple, des en-têtes à plusieurs instances ou des valeurs pliées, comme décrit dans la [norme RFC 2822](https://tools.ietf.org/html/rfc2822)), essayez d’utiliser une bibliothèque d’analyse MIME appropriée.
+> Cet exemple fonctionne pour des cas simples. Pour une récupération d’informations plus complexe (par exemple, des en-têtes à instances multiples ou des valeurs pliées comme décrit dans [la RFC 2822),](https://tools.ietf.org/html/rfc2822)essayez d’utiliser une bibliothèque d’assinage MIME appropriée.
 
 ## <a name="recommended-practices"></a>Pratiques recommandées
 
-Actuellement, les en-têtes Internet sont une ressource finie sur la boîte aux lettres d’un utilisateur. Lorsque le quota est épuisé, vous ne pouvez plus créer d’en-têtes Internet supplémentaires sur cette boîte aux lettres, ce qui peut entraîner un comportement inattendu de la part des clients qui dépendent de cette fonctionnalité.
+Actuellement, les en-têtes Internet sont une ressource finie sur la boîte aux lettres d’un utilisateur. Lorsque le quota est épuisé, vous ne pouvez plus créer d’en-têtes Internet sur cette boîte aux lettres, ce qui peut entraîner un comportement inattendu de la part des clients qui s’en appuient pour fonctionner.
 
-Appliquez les instructions suivantes lorsque vous créez des en-têtes Internet dans votre complément.
+Appliquez les instructions suivantes lorsque vous créez des en-têtes Internet dans votre application.
 
 - Créez le nombre minimal d’en-têtes requis.
-- Les en-têtes de nom afin que vous puissiez réutiliser et mettre à jour leurs valeurs ultérieurement. En tant que telle, évitez les en-têtes de nom de manière variable (par exemple, en fonction de l’entrée utilisateur, de l’horodatage, etc.).
+- Nommez les en-têtes afin de pouvoir réutiliser et mettre à jour leurs valeurs ultérieurement. En tant que tel, évitez d’nommer les en-têtes de manière variable (par exemple, en fonction de l’entrée utilisateur, de l’timestamp, etc.).
 
 ## <a name="see-also"></a>Voir aussi
 

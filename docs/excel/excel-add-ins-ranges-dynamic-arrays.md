@@ -1,23 +1,23 @@
 ---
-title: Gérer les tableaux dynamiques et la plage qui se débordent à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment gérer les tableaux dynamiques et la plage qui se débordent avec l’API JavaScript pour Excel.
+title: Gérer les tableaux dynamiques et la plage qui se débordent à l’aide de Excel API JavaScript
+description: Découvrez comment gérer les tableaux dynamiques et la plage qui se débordent avec l Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: c224fc336791440911519a6d24aee6c208d90c9e
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: af94900ecea0091729de5a22b01ba83490519cfa
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652856"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671146"
 ---
-# <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>Gérer les tableaux dynamiques et les débordements à l’aide de l’API JavaScript pour Excel
+# <a name="handle-dynamic-arrays-and-spilling-using-the-excel-javascript-api"></a>Gérer les tableaux dynamiques et les débordements à l’aide Excel API JavaScript
 
-Cet article fournit un exemple de code qui gère les tableaux dynamiques et les étendues à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit un exemple de code qui gère les tableaux dynamiques et les étendues à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="dynamic-arrays"></a>Tableaux dynamiques
 
-Certaines formules Excel retournent [des tableaux dynamiques.](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531) Ceux-ci remplissent les valeurs de plusieurs cellules en dehors de la cellule d’origine de la formule. Cette valeur de dépassement est appelée « débordement ». Votre add-in peut trouver la plage utilisée pour un débordement avec la [méthode Range.getSpillingToRange.](/javascript/api/excel/excel.range#getspillingtorange--) Il existe également [une version *OrNullObject](..//develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
+Certaines Excel formules de retour [dynamiques](https://support.microsoft.com/office/dynamic-array-formulas-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531). Ceux-ci remplissent les valeurs de plusieurs cellules en dehors de la cellule d’origine de la formule. Cette valeur de dépassement est appelée « débordement ». Votre add-in peut trouver la plage utilisée pour un débordement avec la [méthode Range.getSpillingToRange.](/javascript/api/excel/excel.range#getSpillingToRange__) Il existe également [une version *OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject` .
 
 L’exemple suivant montre une formule de base qui copie le contenu d’une plage dans une cellule, qui se renverse dans les cellules voisines. Le add-in enregistre ensuite la plage qui contient le débordement.
 
@@ -43,10 +43,10 @@ Excel.run(function (context) {
 
 ## <a name="range-spilling"></a>Étendue de plage
 
-Recherchez la cellule responsable du débordement dans une cellule donnée à l’aide de la [méthode Range.getSpillParent.](/javascript/api/excel/excel.range#getspillparent--) Notez que `getSpillParent` fonctionne uniquement lorsque l’objet de plage est une seule cellule. L’appel sur une plage avec plusieurs cellules entraîne une erreur en cours de thrown (ou une plage `getSpillParent` null renvoyée pour `Range.getSpillParentOrNullObject` ).
+Recherchez la cellule responsable du débordement dans une cellule donnée à l’aide de la [méthode Range.getSpillParent.](/javascript/api/excel/excel.range#getSpillParent__) Notez que `getSpillParent` fonctionne uniquement lorsque l’objet de plage est une seule cellule. L’appel sur une plage avec plusieurs cellules entraîne une erreur en cours de thrown (ou une plage `getSpillParent` null renvoyée pour `Range.getSpillParentOrNullObject` ).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

@@ -4,12 +4,12 @@ description: Découvrez comment effectuer des tâches courantes avec des workboo
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 78cdf57ce6ecce3e9e3e40188b3325cdf15ab265
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b80ef801955b5d4dd229794a24ff1f97a1f38d4e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349426"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671118"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -52,7 +52,7 @@ Excel.createWorkbook();
 
 La `createWorkbook` méthode peut également créer une copie d’un classeur existant. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .xlsx. Le classeur résultant sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .xlsx valide.
 
-Vous pouvez obtenir le classez actuel de votre add-in sous la forme d’une chaîne codée en base 64 à l’aide du [slicing de fichier.](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
+Vous pouvez obtenir le classez actuel de votre add-in sous la forme d’une chaîne codée en base 64 à l’aide du [slicing de fichier.](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -234,7 +234,7 @@ Un workbook a des paramètres de langue et de culture qui affectent l’affichag
 
 `Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être modifiés par le biais [Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être modifiés par le [biais Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
 
 L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 
@@ -343,7 +343,7 @@ context.application.suspendApiCalculationUntilNextSync();
 
 Votre add-in peut détecter lorsqu’un workbook est activé. Un workbook devient *inactif* lorsque l’utilisateur bascule le focus vers un autre workbook, vers une autre application ou (dans Excel sur le Web) vers un autre onglet du navigateur web. Un workbook est *activé lorsque* l’utilisateur renvoie le focus au workbook. L’activation du workbook peut déclencher des fonctions de rappel dans votre complément, telles que l’actualisation des données du workbook.
 
-Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#onActivated) d’un workbook. Les handlers d’événements `onActivated` de l’événement reçoivent un [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
+Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#onActivated) d’un workbook. Les handlers d’événements de l’événement reçoivent un `onActivated` [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
 
 > [!IMPORTANT]
 > `onActivated`L’événement ne détecte pas lorsqu’un workbook est ouvert. Cet événement détecte uniquement lorsqu’un utilisateur bascule le focus vers un workbook déjà ouvert.

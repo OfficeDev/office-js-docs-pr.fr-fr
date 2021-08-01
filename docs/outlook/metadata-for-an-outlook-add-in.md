@@ -3,12 +3,12 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: c438aa538d47b31aa60f47a1f871822e9c73a9c9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ceed27cc5c0d479ac67a0497e78e971498365e6f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348908"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671771"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
@@ -44,7 +44,7 @@ Voici un exemple de structure, en supposant qu’il y a trois paramètres d’it
 
 ### <a name="loading-roaming-settings"></a>Chargement des paramètres d’itinérance
 
-Un complément de messagerie charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](/javascript/api/office#office-initialize-reason-). L’exemple de code JavaScript suivant montre comment charger les paramètres d’itinérance existants et obtenir les valeurs de 2 paramètres, **customerName** et **customerBalance**.
+Un complément de messagerie charge généralement les paramètres d’itinérance dans le gestionnaire d’événements [Office.initialize](/javascript/api/office#Office_initialize_reason_). L’exemple de code JavaScript suivant montre comment charger les paramètres d’itinérance existants et obtenir les valeurs de 2 paramètres, **customerName** et **customerBalance**.
 
 
 ```js
@@ -67,7 +67,7 @@ Office.initialize = function () {
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>Création ou affectation d’un paramètre d’itinérance
 
-Pour faire suite à l’exemple précédent, la fonction JavaScript suivante, `setAddInSetting`, montre comment utiliser la méthode [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) pour définir un paramètre nommé `cookie` avec la date du jour, et conserver les données en utilisant la méthode [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveasync-callback-) pour réenregistrer tous les paramètres d’itinérance sur le serveur.
+Pour faire suite à l’exemple précédent, la fonction JavaScript suivante, `setAddInSetting`, montre comment utiliser la méthode [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) pour définir un paramètre nommé `cookie` avec la date du jour, et conserver les données en utilisant la méthode [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveAsync_callback_) pour réenregistrer tous les paramètres d’itinérance sur le serveur.
 
 La méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre `set` à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code transmet une méthode de rappel, à « When the asynchronous call finishes » (Lorsque l’appel asynchrone se termine), est appelée à l’aide d’un `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
 
@@ -92,7 +92,7 @@ function saveMyAddInSettingsCallback(asyncResult) {
 
 ### <a name="removing-a-roaming-setting"></a>Suppression d’un paramètre d’itinérance
 
-Toujours dans le prolongement des exemples précédents, la fonction JavaScript suivante,  `removeAddInSetting`, illustre l’utilisation de la méthode [RoamingSettings.remove](/javascript/api/outlook/office.RoamingSettings#remove-name-) pour supprimer le paramètre `cookie` et réenregistrer tous les paramètres d’itinérance sur le serveur Exchange.
+Toujours dans le prolongement des exemples précédents, la fonction JavaScript suivante,  `removeAddInSetting`, illustre l’utilisation de la méthode [RoamingSettings.remove](/javascript/api/outlook/office.RoamingSettings#remove_name_) pour supprimer le paramètre `cookie` et réenregistrer tous les paramètres d’itinérance sur le serveur Exchange.
 
 
 ```js
@@ -112,13 +112,13 @@ function removeAddInSetting()
 
 Vous pouvez spécifier les données propres à un élément dans la boîte aux lettres de l’utilisateur à l’aide de l’objet [CustomProperties](/javascript/api/outlook/office.CustomProperties). Par exemple, votre complément de messagerie peut catégoriser certains messages et noter la catégorie à l’aide d’une propriété personnalisée`messageCategory`. Si votre complément de messagerie crée des rendez-vous à partir de suggestions de réunion dans un message, vous pouvez utiliser une propriété personnalisée pour suivre chacun de ces rendez-vous. Cela garantit que si l’utilisateur ouvre à nouveau le message, votre complément de messagerie ne propose pas de créer le rendez-vous une seconde fois.
 
-Comme pour les paramètres d’itinérance, les modifications apportées aux propriétés personnalisées sont stockées dans des copies en mémoire des propriétés de la session Outlook en cours. Pour vous assurer que les propriétés personnalisées seront disponibles dans la prochaine session, utilisez [CustomProperties.saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-).
+Comme pour les paramètres d’itinérance, les modifications apportées aux propriétés personnalisées sont stockées dans des copies en mémoire des propriétés de la session Outlook en cours. Pour vous assurer que les propriétés personnalisées seront disponibles dans la prochaine session, utilisez [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_).
 
 Ces propriétés personnalisées spécifiques à un élément et spécifiques au add-in sont accessibles uniquement à l’aide de `CustomProperties` l’objet. Ces propriétés sont différentes des propriétés [UserProperties](/office/vba/api/Outlook.UserProperties) personnalisées basées sur MAPI dans le modèle objet Outlook et des propriétés étendues dans Exchange Web Services (EWS). Vous ne pouvez pas accéder directement `CustomProperties` à l’aide Outlook modèle objet, EWS ou REST. Pour savoir comment accéder à l’aide d’EWS ou rest, voir la section Obtenir des propriétés personnalisées à l’aide `CustomProperties` [d’EWS ou REST](#get-custom-properties-using-ews-or-rest).
 
 ### <a name="using-custom-properties"></a>Utilisation de propriétés personnalisées
 
-Avant de pouvoir utiliser les propriétés personnalisées, vous devez les charger en appelant la méthode [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Après avoir créé le conteneur de propriétés, vous pouvez utiliser les méthodes [Définir](/javascript/api/outlook/office.CustomProperties#set-name--value-) et [Obtenir](/javascript/api/outlook/office.CustomProperties) pour ajouter et récupérer des propriétés personnalisées. Vous devez utiliser la méthode[saveAsync](/javascript/api/outlook/office.CustomProperties#saveasync-callback--asynccontext-) pour enregistrer les modifications que vous apportez au conteneur de propriétés.
+Avant de pouvoir utiliser les propriétés personnalisées, vous devez les charger en appelant la méthode [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Après avoir créé le conteneur de propriétés, vous pouvez utiliser les méthodes [Définir](/javascript/api/outlook/office.customproperties#set_name__value_) et [Obtenir](/javascript/api/outlook/office.customproperties) pour ajouter et récupérer des propriétés personnalisées. Vous devez utiliser la méthode[saveAsync](/javascript/api/outlook/office.customproperties#saveAsync_callback__asyncContext_) pour enregistrer les modifications que vous apportez au conteneur de propriétés.
 
 
  > [!NOTE]
@@ -133,7 +133,7 @@ L’exemple suivant illustre un ensemble simplifié des méthodes pour un compl�
 Cet exemple inclut les méthodes suivantes.
 
 
-- [Office.initialize](/javascript/api/office#office-initialize-reason-) -- Initialise le complément et charge le conteneur de propriétés personnalisées depuis le serveur Exchange.
+- [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- Initialise le complément et charge le conteneur de propriétés personnalisées depuis le serveur Exchange.
 
 - **customPropsCallback** -- Obtient le conteneur de propriétés personnalisées qui est renvoyé depuis le serveur et l’enregistre pour une utilisation ultérieure.
 

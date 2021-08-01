@@ -3,12 +3,12 @@ title: Outlook conditions requises de l’API du add-in 1.10
 description: Ensemble de conditions requises 1.10 pour Outlook API de votre application.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: f5fda91c4105d56dcf9d20d570e48851c8b6dfeb
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52592036"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671260"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conditions requises de l’API du add-in 1.10
 
@@ -26,9 +26,9 @@ L’ensemble de conditions requises 1.10 inclut toutes les fonctionnalités de l
 - Ajout du [point d’extension LaunchEvent](../../manifest/extensionpoint.md#launchevent): ajoute un nouveau type d’ExtensionPoint pris en charge. Il configure la fonctionnalité d’activation basée sur des événements.
 - Ajout de [l’élément de manifeste LaunchEvents](../../manifest/launchevents.md): ajoute un élément manifeste pour prendre en charge la configuration de la fonctionnalité d’activation basée sur les événements.
 - Élément [manifeste Runtimes modifié](../../manifest/runtimes.md): ajoute Outlook prise en charge. Il fait référence aux fichiers HTML et JavaScript nécessaires pour la fonctionnalité d’activation basée sur des événements.
-- Ajout [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setsignatureasync-data--options--callback-): ajoute une nouvelle fonction à `Body` l’objet. Il ajoute ou remplace la signature dans le corps de l’élément en mode Composition.
+- Ajout [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body?view=outlook-js-1.10&preserve-view=true#setSignatureAsync_data__options__callback_): ajoute une nouvelle fonction à `Body` l’objet. Il ajoute ou remplace la signature dans le corps de l’élément en mode Composition.
 - Ajout de [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction qui désactive la signature du client pour la boîte aux lettres d’envoi en mode composition.
-- Ajout [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getcomposetypeasync-options--callback-): ajoute une nouvelle fonction qui obtient le type de composition d’un message en mode composition.
+- Ajout [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): ajoute une nouvelle fonction qui obtient le type de composition d’un message en mode composition.
 - Ajout de [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction qui vérifie si la signature du client est activée sur l’élément en mode composition.
 - Ajout [Office. MailboxEnums.ActionType :](/javascript/api/outlook/office.mailboxenums.actiontype)ajoute une nouvelle enum. Il représente le type d’action personnalisée dans un message de notification.
 - Ajout [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): ajoute une nouvelle enum disponible en mode Composition.

@@ -3,12 +3,12 @@ title: Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 description: Liste des événements pour Excel objets JavaScript. Cela inclut des informations sur l’utilisation des handlers d’événements et les modèles associés.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: c3e1e2c1a0393316166eda6b695d04fbb9876ffd
-ms.sourcegitcommit: aa73ec6367eaf74399fbf8d6b7776d77895e9982
+ms.openlocfilehash: 596d8738b4c4953a937825e6c7294b2478ae59f7
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2021
-ms.locfileid: "53290767"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671491"
 ---
 # <a name="work-with-events-using-the-excel-javascript-api"></a>Utilisation d’événements à l’aide de l’API JavaScript pour Excel
 
@@ -20,23 +20,23 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Événement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
-| `onActivated` | Se produit lorsqu’un objet est activé. | [**Chart**](/javascript/api/excel/excel.chart#onactivated), [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onactivated), [**Shape**](/javascript/api/excel/excel.shape#onactivated), [**Worksheet**](/javascript/api/excel/excel.worksheet#onactivated), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onactivated) |
+| `onActivated` | Se produit lorsqu’un objet est activé. | [**Chart**](/javascript/api/excel/excel.chart#onActivated), [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onActivated), [**Shape**](/javascript/api/excel/excel.shape#onActivated), [**Worksheet**](/javascript/api/excel/excel.worksheet#onActivated), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onActivated) |
 | `onActivated` | Se produit lorsqu’un workbook est activé. | [**Classeur**](/javascript/api/excel/excel.workbook#onActivated) |
-| `onAdded` | Se produit lorsqu’un objet est ajouté à la collection. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onadded), [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onadded), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onadded), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onadded) |
-| `onAutoSaveSettingChanged` | Se produit lorsque le paramètre de `autoSave` est modifié dans le classeur. | [**Classeur**](/javascript/api/excel/excel.workbook#onautosavesettingchanged) |
-| `onCalculated` | Se produit lorsqu’une feuille de calcul a terminé un calcul (ou que toutes les feuilles de calcul de la collection ont terminé). | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncalculated), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncalculated) |
-| `onChanged` | Se produit lorsque les données de cellules individuelles ou de commentaires ont changé. | [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onchanged), [**Table**](/javascript/api/excel/excel.table#onchanged), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onchanged), [**Worksheet**](/javascript/api/excel/excel.worksheet#onchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onchanged) |
-| `onColumnSorted` | Se produit lorsqu’une ou plusieurs colonnes ont été triées. Ce problème se produit en raison de l’opération de tri de gauche à droite. | [**Worksheet**](/javascript/api/excel/excel.worksheet#oncolumnsorted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#oncolumnsorted) |
-| `onDataChanged` | Se produit lors de la modification des données ou de la mise en forme dans la liaison. | [**Binding**](/javascript/api/excel/excel.binding#ondatachanged) |
-| `onDeactivated` | Se produit lorsqu’un objet est désactivé. | [**Chart**](/javascript/api/excel/excel.chart#ondeactivated), [**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeactivated), [**Shape**](/javascript/api/excel/excel.shape#ondeactivated), [**Worksheet**](/javascript/api/excel/excel.worksheet#ondeactivated), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeactivated) |
-| `onDeleted` | Se produit lorsqu’un objet est supprimé de la collection. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#ondeleted), [**CommentCollection**](/javascript/api/excel/excel.commentcollection#ondeleted), [**TableCollection**](/javascript/api/excel/excel.tablecollection#ondeleted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#ondeleted) |
-| `onFormatChanged` | Se produit lorsque le format est modifié sur une feuille de calcul. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onformatchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onformatchanged) |
+| `onAdded` | Se produit lorsqu’un objet est ajouté à la collection. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onAdded), [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onAdded), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onAdded), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onAdded) |
+| `onAutoSaveSettingChanged` | Se produit lorsque le paramètre de `autoSave` est modifié dans le classeur. | [**Classeur**](/javascript/api/excel/excel.workbook#onAutoSaveSettingChanged) |
+| `onCalculated` | Se produit lorsqu’une feuille de calcul a terminé un calcul (ou que toutes les feuilles de calcul de la collection ont terminé). | [**Worksheet**](/javascript/api/excel/excel.worksheet#onCalculated), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onCalculated) |
+| `onChanged` | Se produit lorsque les données de cellules individuelles ou de commentaires ont changé. | [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onChanged), [**Table**](/javascript/api/excel/excel.table#onChanged), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onChanged), [**Worksheet**](/javascript/api/excel/excel.worksheet#onChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onChanged) |
+| `onColumnSorted` | Se produit lorsqu’une ou plusieurs colonnes ont été triées. Ce problème se produit en raison de l’opération de tri de gauche à droite. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onColumnSorted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onColumnSorted) |
+| `onDataChanged` | Se produit lors de la modification des données ou de la mise en forme dans la liaison. | [**Binding**](/javascript/api/excel/excel.binding#onDataChanged) |
+| `onDeactivated` | Se produit lorsqu’un objet est désactivé. | [**Chart**](/javascript/api/excel/excel.chart#onDeactivated), [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onDeactivated), [**Shape**](/javascript/api/excel/excel.shape#onDeactivated), [**Worksheet**](/javascript/api/excel/excel.worksheet#onDeactivated), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onDeactivated) |
+| `onDeleted` | Se produit lorsqu’un objet est supprimé de la collection. | [**ChartCollection**](/javascript/api/excel/excel.chartcollection#onDeleted), [**CommentCollection**](/javascript/api/excel/excel.commentcollection#onDeleted), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onDeleted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onDeleted) |
+| `onFormatChanged` | Se produit lorsque le format est modifié sur une feuille de calcul. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormatChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormatChanged) |
 | `onFormulaChanged` | Se produit lorsqu’une formule est modifiée. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onFormulaChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFormulaChanged) |
-| `onRowSorted` | Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit en raison d’une opération de tri de haut en bas. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowsorted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowsorted) |
-| `onSelectionChanged` | Se produit lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Binding**](/javascript/api/excel/excel.binding#onselectionchanged), [**Table**](/javascript/api/excel/excel.table#onselectionchanged), [**Workbook**](/javascript/api/excel/excel.workbook#onselectionchanged), [**Worksheet**](/javascript/api/excel/excel.worksheet#onselectionchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onselectionchanged) |
-| `onRowHiddenChanged` | Se produit lorsque l’état de ligne masquée change sur une feuille de calcul spécifique. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onrowhiddenchanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onrowhiddenchanged) |
-| `onSettingsChanged` | Se produit lorsque les paramètres dans le document sont modifiés. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onsettingschanged) |
-| `onSingleClicked` | Se produit lorsque l’opération clic gauche/tape se produit dans la feuille de calcul. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onsingleclicked), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onsingleclicked) |
+| `onRowSorted` | Se produit lorsqu’une ou plusieurs lignes ont été triées. Cela se produit en raison d’une opération de tri de haut en bas. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onRowSorted), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onRowSorted) |
+| `onSelectionChanged` | Se produit lorsque la cellule active ou la plage sélectionnée est modifiée. | [**Binding**](/javascript/api/excel/excel.binding#onSelectionChanged), [**Table**](/javascript/api/excel/excel.table#onSelectionChanged), [**Workbook**](/javascript/api/excel/excel.workbook#onSelectionChanged), [**Worksheet**](/javascript/api/excel/excel.worksheet#onSelectionChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onSelectionChanged) |
+| `onRowHiddenChanged` | Se produit lorsque l’état de ligne masquée change sur une feuille de calcul spécifique. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onRowHiddenChanged), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onRowHiddenChanged) |
+| `onSettingsChanged` | Se produit lorsque les paramètres dans le document sont modifiés. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#onSettingsChanged) |
+| `onSingleClicked` | Se produit lorsque l’opération clic gauche/tape se produit dans la feuille de calcul. | [**Worksheet**](/javascript/api/excel/excel.worksheet#onSingleClicked), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onSingleClicked) |
 
 ### <a name="events-in-preview"></a>Événements en préversion
 
@@ -45,7 +45,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 
 | Événement | Description | Objets pris en charge |
 |:---------------|:-------------|:-----------|
-| `onFiltered` | Se produit lorsqu’un filtre est appliqué à un objet. | [**Table**](/javascript/api/excel/excel.table#onfiltered), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onfiltered), [**Worksheet**](/javascript/api/excel/excel.worksheet#onfiltered), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onfiltered) |
+| `onFiltered` | Se produit lorsqu’un filtre est appliqué à un objet. | [**Table**](/javascript/api/excel/excel.table#onFiltered), [**TableCollection**](/javascript/api/excel/excel.tablecollection#onFiltered), [**Worksheet**](/javascript/api/excel/excel.worksheet#onFiltered), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#onFiltered) |
 
 ### <a name="event-triggers"></a>Déclencheurs d’événements
 

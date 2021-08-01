@@ -3,12 +3,12 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 07/16/2021
 localization_priority: Normal
-ms.openlocfilehash: 48cfb10d8e20df20436e836abbd58648e8e3a0a8
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 270042d61077ae28abee79db024243bfbd5b6dc2
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661242"
+ms.locfileid: "53671848"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -80,7 +80,7 @@ Par défaut les utilisateurs peuvent utiliser le mouvement pincer pour zoomer su
 
 ### <a name="close-task-panes"></a>Fermeture des volets Office
 
-Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et exigent par défaut que l’utilisateur les ferme pour revenir au message. Envisagez d’utiliser la méthode [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closecontainer--) pour fermer le volet Office lorsque votre scénario est terminé.
+Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et exigent par défaut que l’utilisateur les ferme pour revenir au message. Envisagez d’utiliser la méthode [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) pour fermer le volet Office lorsque votre scénario est terminé.
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 

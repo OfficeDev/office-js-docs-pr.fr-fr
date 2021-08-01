@@ -3,12 +3,12 @@ title: Localisation des compléments Office
 description: Utilisez l’API JavaScript Office pour déterminer un paramètre local et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: b49d64f2c9391539ac2d5929ebff2a4ecc08b630
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 009a413426b5971e89b2a7a1aa2c233300e25529
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349825"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671230"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -81,7 +81,7 @@ Par exemple, un complément Office peut spécifier [DefaultLocale] en tant que `
 ```
 
 > [!NOTE]
-> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons d’applications et `de` de plateformes Office clientes.
+> Si vous devez localiser plusieurs domaines au sein d’une famille de langues, comme `de-de` et `de-at`, nous vous recommandons d’utiliser des éléments `Override` distincts pour chaque domaine. L’utilisation du seul nom de langue, dans ce cas, n’est pas prise en charge sur toutes les combinaisons Office `de` applications et plateformes clientes.
 
 Cela signifie que le complément adopte le paramètre régional `en-us` par défaut. Les utilisateurs voient le nom d’affichage « Video player » pour tous les paramètres régionaux, sauf si le paramètre régional de l’ordinateur client est `fr-fr`, auquel cas ils verront le nom d’affichage « Lecteur vidéo ».
 
@@ -165,7 +165,7 @@ Utilisez `ResourceUrl` l’attribut de [l’élément ExtendedOverrides](../refe
 </OfficeApp>
 ```
 
-Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaînes. Chaînes de noms de jetons dans le fichier de ressources. Voici un exemple qui affecte un raccourci clavier à une fonction (définie ailleurs) qui affiche le volet Des tâches du module. Remarque à propos de ce markup :
+Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaînes. Chaînes de noms de jetons dans le fichier de ressources. Voici un exemple qui affecte un raccourci clavier à une fonction (définie ailleurs) qui affiche le volet Des tâches du module. Notez ce markup :
 
 - L’exemple n’est pas tout à fait valide. (Nous y ajoutons une propriété supplémentaire obligatoire ci-dessous.)
 - Les jetons doivent avoir le format **${resource.*nom de ressource*}**.
@@ -190,7 +190,7 @@ Le fichier de remplacements étendu utilise ensuite des jetons au lieu de chaîn
 }
 ```
 
-Le fichier de ressources, également au format JSON, possède une propriété de niveau supérieur divisée en sous-propriétés par `resources` paramètres régionaux. Pour chaque paramètre local, une chaîne est affectée à chaque jeton utilisé dans le fichier de remplacements étendu. Voici un exemple qui possède des chaînes pour `en-us` et `fr-fr` . Dans cet exemple, le raccourci clavier est le même dans les deux paramètres régionaux, mais ce n’est pas toujours le cas, en particulier lorsque vous localisez des paramètres régionaux dont l’alphabet ou le système d’écriture est différent, et par conséquent un autre clavier.
+Le fichier de ressources, qui est également au format JSON, possède une propriété de niveau supérieur divisée en sous-propriétés par `resources` paramètres régionaux. Pour chaque paramètre local, une chaîne est affectée à chaque jeton utilisé dans le fichier de remplacements étendu. Voici un exemple qui possède des chaînes pour `en-us` et `fr-fr` . Dans cet exemple, le raccourci clavier est le même dans les deux paramètres régionaux, mais ce n’est pas toujours le cas, en particulier lorsque vous localisez des paramètres régionaux dont l’alphabet ou le système d’écriture est différent, et par conséquent un autre clavier.
 
 ```json
 {
@@ -215,7 +215,7 @@ Le fichier de ressources, également au format JSON, possède une propriété de
 }
 ```
 
-Il `default` n’existe aucune propriété dans le fichier qui soit un homologue aux `en-us` `fr-fr` sections et aux sections. En effet, les chaînes par défaut, qui sont utilisées lorsque les paramètres régionaux de l’application hôte Office ne correspondent à aucune des propriétés *ll-cc* dans le fichier de ressources, doivent être définies dans le fichier de remplacements étendu *lui-même.* La définition des chaînes par défaut directement dans le fichier de remplacements étendu garantit que Office ne télécharge pas le fichier de ressources lorsque les paramètres régionaux de l’application Office sont les paramètres régionaux par défaut du module (comme spécifié dans le manifeste). Voici une version corrigée de l’exemple précédent d’un fichier de remplacements étendu qui utilise des jetons de ressource.
+Il n’existe `default` aucune propriété dans le fichier qui soit un homologue aux `en-us` `fr-fr` sections et aux sections. En effet, les chaînes par défaut, qui sont utilisées lorsque les paramètres régionaux de l’application hôte Office ne correspondent à aucune des propriétés *ll-cc* dans le fichier de ressources, doivent être définies dans le fichier de remplacements étendu *lui-même.* La définition des chaînes par défaut directement dans le fichier de remplacements étendu garantit que Office ne télécharge pas le fichier de ressources lorsque les paramètres régionaux de l’application Office sont les paramètres régionaux par défaut du module (comme spécifié dans le manifeste). Voici une version corrigée de l’exemple précédent d’un fichier de remplacements étendu qui utilise des jetons de ressource.
 
 ```json
 {
@@ -519,6 +519,6 @@ Le complément de volet de tâches est chargé dans Word 2013 et les chaînes d
 [DesktopSettings]:       ../reference/manifest/desktopsettings.md
 [TabletSettings]:        ../reference/manifest/tabletsettings.md
 [PhoneSettings]:         ../reference/manifest/phonesettings.md
-[displayLanguage]:       /javascript/api/office/office.context#displaylanguage
-[contentLanguage]:       /javascript/api/office/office.context#contentlanguage
+[displayLanguage]:       /javascript/api/office/office.context#displayLanguage
+[contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

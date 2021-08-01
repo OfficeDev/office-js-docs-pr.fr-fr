@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans les Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 06/02/2021
 localization_priority: Normal
-ms.openlocfilehash: de8ce0d89dca6745cba96ac9a5ea946d50d41de4
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349253"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671400"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -35,7 +35,7 @@ L’ajout de raccourcis clavier personnalisés nécessite que votre add-in utili
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Lier le fichier de mappage au manifeste
 
-Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, ajoutez un élément `<VersionOverrides>` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez l’attribut sur l’URL complète d’un fichier JSON dans votre projet que vous `Url` créerez à une étape ultérieure.
+Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, ajoutez un élément `<VersionOverrides>` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez l’attribut sur l’URL complète d’un fichier JSON dans votre projet que `Url` vous créerez à une étape ultérieure.
 
 ```xml
     ...
@@ -86,7 +86,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     > [!NOTE]
     > Vous pouvez utiliser « CONTROL » à la place de « Ctrl » tout au long de cet article.
 
-    Dans une étape ultérieure, les actions seront elles-mêmes mappées aux fonctions que vous écrivez. Dans cet exemple, vous masquez ultérieurement SHOWTASKPANE à une fonction qui appelle la méthode et HIDETASKPANE à une fonction qui `Office.addin.showAsTaskpane` appelle la `Office.addin.hide` méthode.
+    Dans une étape ultérieure, les actions seront elles-mêmes mappées sur les fonctions que vous écrivez. Dans cet exemple, vous masquez ultérieurement SHOWTASKPANE à une fonction qui appelle la méthode et HIDETASKPANE à une fonction qui `Office.addin.showAsTaskpane` appelle la `Office.addin.hide` méthode.
 
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>Créer un mappage des actions à leurs fonctions
 
@@ -103,7 +103,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     ```
 
 1. Pour continuer l’exemple, `'SHOWTASKPANE'` utilisez-le comme premier paramètre.
-1. Pour le corps de la fonction, utilisez la [méthode Office.addin.showTaskpane](/javascript/api/office/office.addin#showastaskpane--) pour ouvrir le volet Des tâches du module. Lorsque vous avez terminé, le code doit ressembler à ce qui suit :
+1. Pour le corps de la fonction, utilisez la [méthode Office.addin.showTaskpane](/javascript/api/office/office.addin#showAsTaskpane__) pour ouvrir le volet Des tâches du module. Lorsque vous avez terminé, le code doit ressembler à ce qui suit :
 
     ```javascript
     Office.actions.associate('SHOWTASKPANE', function () {
@@ -117,7 +117,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     });
     ```
 
-1. Ajoutez un deuxième appel de fonction pour maque l’action à une `Office.actions.associate` fonction qui appelle `HIDETASKPANE` [Office.addin.hide](/javascript/api/office/office.addin#hide--). Voici un exemple.
+1. Ajoutez un deuxième appel de fonction pour maque l’action à une `Office.actions.associate` fonction qui appelle `HIDETASKPANE` [Office.addin.hide](/javascript/api/office/office.addin#hide__). Voici un exemple.
 
     ```javascript
     Office.actions.associate('HIDETASKPANE', function () {
@@ -139,9 +139,9 @@ La suite des étapes précédentes permet à votre add-in de faire tourner la vi
 
 Utilisez les instructions suivantes lors de la spécification des objets dans le tableau de la `actions` shortcuts.jssur.
 
-- Les noms des `id` propriétés `name` sont obligatoires.
+- Les noms des `id` propriétés `name` et sont obligatoires.
 - La `id` propriété est utilisée pour identifier de manière unique l’action à appeler à l’aide d’un raccourci clavier.
-- La `name` propriété doit être une chaîne conviviale décrivant l’action. Il doit s’agit d’une combinaison des caractères A - Z, a - z, 0 - 9, et des signes de ponctuation « - », « _ » et « + ».
+- La `name` propriété doit être une chaîne conviviale décrivant l’action. Il doit s’agit d’une combinaison des caractères A - Z, a - z, 0 - 9 et des signes de ponctuation « - », « _ » et « + ».
 - La propriété `type` est facultative. Actuellement, `ExecuteFunction` seul le type est pris en charge.
 
 Voici un exemple.
@@ -172,9 +172,9 @@ Utilisez les instructions suivantes lors de la spécification des objets dans le
 - La propriété peut être n’importe quelle combinaison des caractères `default` A - Z, -z, 0 - 9 et les signes de ponctuation « - », « _ » et « + ». (Par convention, les lettres majuscules ne sont pas utilisées dans ces propriétés.)
 - La propriété doit contenir le nom d’au moins une touche de `default` modification (Alt, Ctrl, Shift) et une seule autre touche. 
 - Shift ne peut pas être utilisé comme seule touche de modification. Combinez Shift avec Alt ou Ctrl.
-- Pour les Mac, nous pris en charge également la touche Modificateur de commande.
+- Pour les Mac, nous prise en charge également la touche Modificateur de commande.
 - Pour les Mac, Alt est mappée sur la touche Option. Pour Windows, Command est mappée sur la touche Ctrl.
-- Lorsque deux caractères sont liés à la même touche physique dans un clavier standard, ils sont synonymes dans la propriété ; par exemple, Alt+a et Alt+A sont le même raccourci, tout comme `default` Ctrl+- et Ctrl+ car « - » et « _ » sont la même touche \_ physique.
+- Lorsque deux caractères sont liés à la même touche physique dans un clavier standard, ils sont synonymes dans la propriété ; par exemple, Alt+a et Alt+A sont les mêmes raccourcis, c’est le cas de `default` Ctrl+- et Ctrl+ car « - » et « _ » sont la même touche \_ physique.
 - Le caractère « + » indique que les touches de chaque côté de celui-ci sont entrées simultanément.
 
 Voici un exemple.
@@ -199,7 +199,7 @@ Voici un exemple.
 The complete schema for the shortcuts JSON is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Les touches d’accès, également appelées raccourcis de touches séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H,** ne sont pas pris en charge dans les Office.
+> Les touches d’accès, également appelées raccourcis de touche séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H,** ne sont pas pris en charge dans les Office.
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>Éviter les combinaisons de touches en cours d’utilisation par d’autres modules
 
@@ -209,9 +209,9 @@ En cas de conflit, l’utilisateur voit une boîte de dialogue la première fois
 
 ![Illustration montrant un conflit modal avec deux actions différentes pour un seul raccourci.](../images/add-in-shortcut-conflict-modal.png)
 
-L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences,  il peut appeler la commande Réinitialiser les préférences de raccourci des Office dans la zone de recherche **Rechercher.** L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle :
+L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences,  il peut appeler la commande Réinitialiser  les préférences de raccourci des Office dans la zone de recherche Rechercher. L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle :
 
-![La zone de recherche Rechercher dans Excel affiche la réinitialisation Office’action de préférence de raccourci de l’ajout.](../images/add-in-reset-shortcuts-action.png)
+![La zone de recherche Rechercher dans Excel affiche la réinitialisation Office l’action de préférence de raccourci de l’ajout.](../images/add-in-reset-shortcuts-action.png)
 
 Pour une expérience utilisateur de qualité, nous vous recommandons de minimiser les conflits Excel avec ces bonnes pratiques :
 
@@ -224,7 +224,7 @@ Pour une expérience utilisateur de qualité, nous vous recommandons de minimise
 
 Il est possible de personnaliser les raccourcis pour qu’ils soient spécifiques à la plateforme. Voici un exemple de l’objet qui personnalise les raccourcis pour chacune des `shortcuts` plateformes suivantes : `windows` , , `mac` `web` . Notez que vous devez toujours avoir une touche `default` de raccourci pour chaque raccourci.
 
-Dans l’exemple suivant, la clé est la clé de retour pour toute `default` plateforme qui n’est pas spécifiée. La seule plateforme non spécifiée est Windows, donc la `default` clé s’applique uniquement aux Windows.
+Dans l’exemple suivant, la clé est la clé de retour pour toute `default` plateforme qui n’est pas spécifiée. La seule plateforme non spécifiée est Windows, donc la clé `default` s’applique uniquement aux Windows.
 
 ```json
     "shortcuts": [
@@ -251,7 +251,7 @@ Dans l’exemple suivant, la clé est la clé de retour pour toute `default` pla
 
 Si votre add-in prend en charge plusieurs paramètres régionaux, vous devez trouver la propriété des `name` objets d’action. En outre, si l’un des paramètres régionaux que le add-in prend en charge a des alphabets ou des systèmes d’écriture différents, et par conséquent différents claviers, vous devrez peut-être également trouver les raccourcis. Pour plus d’informations sur la façon de trouver les raccourcis clavier JSON, voir [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
 
-## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Raccourcis du navigateur qui ne peuvent pas être préférés
+## <a name="browser-shortcuts-that-cannot-be-overridden"></a>Raccourcis de navigateur qui ne peuvent pas être préférés
 
 Lorsque vous utilisez des raccourcis clavier personnalisés sur le web, certains raccourcis clavier utilisés par le navigateur ne peuvent pas être préférés par les modules. Cette liste est un travail en cours. Si vous découvrez d’autres combinaisons qui ne peuvent pas être overridées, faites-le nous savoir à l’aide de l’outil de commentaires en bas de cette page.
 

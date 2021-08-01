@@ -3,12 +3,12 @@ title: Limites des ressources et optimisation des performances pour les complém
 description: Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.
 ms.date: 07/29/2020
 localization_priority: Normal
-ms.openlocfilehash: d19e171bb9dc84335631ed66d153541141ce3377
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349118"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671274"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -49,7 +49,7 @@ Outre les règles relatives au cœur de l’UC, à la mémoire et à la fiabilit
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé, et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que les Outlook sur le web et les appareils mobiles.
+- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que sur Outlook sur le web appareils mobiles et mobiles.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
@@ -62,7 +62,7 @@ Si vous construisez un Excel, n’ignorez pas les limitations de taille suivante
 
 Si vous pensez que l’entrée utilisateur dépasse ces limites, veillez à vérifier les données avant `context.sync()` d’appeler. Fractionner l’opération en plus petites parties selon les besoins. N’oubliez pas d’appeler chaque sous-opération pour éviter que ces `context.sync()` opérations ne soient à nouveau rassemblées par lots.
 
-Ces limitations sont généralement dépassées par de grandes plages. Votre add-in peut être en mesure d’utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour de manière stratégique les cellules d’une plage plus large. Pour [plus d’informations,](../excel/excel-add-ins-multiple-ranges.md) voir Travailler avec plusieurs plages simultanément dans Excel de recherche.
+Ces limitations sont généralement dépassées par de grandes plages. Votre add-in peut être en mesure d’utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour de manière stratégique des cellules dans une plage plus étendue. Pour [plus d’informations,](../excel/excel-add-ins-multiple-ranges.md) voir Travailler avec plusieurs plages simultanément dans Excel de recherche.
 
 ### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
 
@@ -113,20 +113,20 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 ### <a name="performance-improvements-with-the-application-specific-apis"></a>Améliorations des performances avec les API propres à l’application
 
-Les conseils de performances dans l’utilisation du modèle [d’API](../develop/application-specific-api-model.md) propre à l’application fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
+Les conseils de performances dans l’utilisation du modèle API propre à [l’application](../develop/application-specific-api-model.md) fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
 
 - [Chargez uniquement les propriétés nécessaires.](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended)
 - [Réduisez le nombre d’appels sync().](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls) Pour [plus d’informations sur](correlated-objects-pattern.md) la gestion des appels dans votre code, évitez d’utiliser la méthode context.sync en `sync` boucle.
 - [Réduisez le nombre d’objets proxy créés.](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created) Vous pouvez également désister les objets proxy, comme décrit dans la section suivante.
 
-#### <a name="untrack-unneeded-proxy-objects"></a>Untrack unneed proxy objects
+#### <a name="untrack-unneeded-proxy-objects"></a>Untrack unneeded proxy objects
 
 [Les objets proxy sont persistants](../develop/application-specific-api-model.md#proxy-objects) en mémoire `RequestContext.sync()` jusqu’à ce qu’ils soient appelés. Les opérations par lots volumineux peuvent générer un grand nombre d’objets proxy qui sont uniquement utiles une fois pour le complément et peuvent être publiés à partir de la mémoire avant l’exécution du lot.
 
 La `untrack()` méthode libère l’objet de la mémoire. Cette méthode est implémentée sur de nombreux objets proxy d’API propres à l’application. L’appel après la fin de votre ajout avec l’objet devrait produire un avantage de performances perceptible lors de l’utilisation d’un grand nombre `untrack()` d’objets proxy.
 
 > [!NOTE]
-> `Range.untrack()` est un raccourci pour [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove-object-). N’importe quel objet proxy peut être non suivi en le supprimant de la liste d’objets suivis dans le contexte.
+> `Range.untrack()` est un raccourci pour [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_). N’importe quel objet proxy peut être non suivi en le supprimant de la liste d’objets suivis dans le contexte.
 
 L’exemple Excel code suivant remplit une plage sélectionnée avec des données, une cellule à la fois. Une fois que la valeur est ajoutée à la cellule, la plage représentant cette cellule est non suivie. Exécuter tout d’abord ce code avec une plage sélectionnée de 10 000 à 20 000 cellules, avec la `cell.untrack()` ligne et puis sans. Vous devez remarquer que le code est exécuté plus rapidement avec la `cell.untrack()` ligne que sans elle. Vous pouvez également remarquer un temps de réponse plus rapide par la suite, étant donné que l’étape de nettoyage prend moins de temps.
 

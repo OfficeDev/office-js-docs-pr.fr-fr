@@ -3,12 +3,12 @@ title: Autoriser la connexion à Microsoft Graph avec l’authentification uniqu
 description: Découvrez comment les utilisateurs d’un Office peuvent utiliser l' sign-on unique (SSO) pour extraire des données de Microsoft Graph.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 054f58cf4b89d6c11cf6e7beb831eafc4a075bad
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076482"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671372"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
@@ -16,7 +16,7 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bu
 
 > [!NOTE]
 > La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="add-in-architecture-for-sso-and-microsoft-graph"></a>Architecture de complément pour l’authentification unique et Microsoft Graph
 
@@ -30,7 +30,7 @@ Le diagramme suivant montre comment fonctionne le processus de connexion et l’
 
 ![Diagramme montrant le processus DSO.](../images/sso-access-to-microsoft-graph.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cela indique à l’application cliente Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, il est appelé **jeton d’accès bootstrap**, car il est remplacé par un deuxième jeton plus loin dans le processus. Pour consulter un exemple de jeton d’accès bootstrap décodé, voir [Exemple jeton d’accès](sso-in-office-add-ins.md#example-access-token).)
+1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Cela indique à l’application cliente Office qu’elle doit obtenir un jeton d’accès au complément. (Ci-après, il est appelé **jeton d’accès bootstrap**, car il est remplacé par un deuxième jeton plus loin dans le processus. Pour consulter un exemple de jeton d’accès bootstrap décodé, voir [Exemple jeton d’accès](sso-in-office-add-ins.md#example-access-token).)
 2. Si l’utilisateur n’est pas connecté, l’application cliente Office ouvre une fenêtre contextuelle pour qu’il se connecte.
 3. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
 4. L Office application cliente demande le jeton d’accès **bootstrap** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
@@ -76,4 +76,4 @@ Votre code peut et doit gérer cette erreur en revenir à un autre système d’
 En tant que meilleure pratique, passez toujours aux moments où votre application sera distribuée dans AppSource et nécessite des étendues Graph `forMSGraphAccess` `getAccessToken` Microsoft.
 
 > [!TIP]
-> Si vous développez un Outlook qui utilise l' luiso et que vous  chargez une version test, Office retourne toujours l’erreur 13012 lorsqu’il est passé, même si le consentement de l’administrateur a été `forMSGraphAccess` `getAccessToken` accordé. Pour cette raison, vous devez commenter `forMSGraphAccess` l’option lors du développement **d’un** Outlook de développement. N’oubliez pas de désafcommenter l’option lorsque vous déployez pour la production. La fausse version 13012 se produit uniquement lorsque vous chargez une version de version Outlook.
+> Si vous développez un Outlook qui utilise l' luiso et que vous  chargez une version test, Office retournera toujours l’erreur 13012 une fois passé, même si le consentement de l’administrateur a été `forMSGraphAccess` `getAccessToken` accordé. Pour cette raison, vous devez commenter `forMSGraphAccess` l’option lors du développement **d’un** Outlook de développement. N’oubliez pas de désafcommenter l’option lorsque vous déployez pour la production. La fausse version 13012 se produit uniquement lorsque vous chargez une version de version Outlook.

@@ -3,12 +3,12 @@ title: Modèle d’objet d’API JavaScript courant
 description: En savoir plus sur le modèle Office’objet API courant JavaScript
 ms.date: 04/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 059bffe8743b14a305b0a72a3aa161f380098e95
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 513ee6070ab9b54f4ea31fc0efaea9b40bf153b1
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349797"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671202"
 ---
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
@@ -24,7 +24,7 @@ Lorsqu’un complément est [initialisé](initialize-add-in.md), il peut interag
 
 Par exemple, dans les compléments de contenu ou du volet Office, vous pouvez utiliser la propriété document de l’objet Context pour accéder aux propriétés et aux méthodes de l’objet Document afin d’interagir avec le contenu de documents Word, de feuilles de calcul Excel ou de planifications Project. De même, dans les compléments Outlook, vous pouvez utiliser la propriété mailbox de l’objet Context pour accéder aux méthodes et aux propriétés de l’objet Mailbox afin d’interagir avec le contenu des messages, des demandes de réunion ou des rendez-vous.
 
-L’objet **Context** permet également d’accéder aux propriétés [contentLanguage](/javascript/api/office/office.context#contentlanguage) et [displayLanguage](/javascript/api/office/office.context#displaylanguage) qui vous permet de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application Office. La propriété [roamingSettings](/javascript/api/office/office.context#roamingsettings) vous permet d’accéder aux membres de l’objet [RoamingSettings](/javascript/api/office/office.context#roamingsettings) qui stocke les paramètres spécifiques à votre complément pour les boîtes aux lettres individuelles des utilisateurs. Enfin, l’objet **Context** fournit une propriété [ui](/javascript/api/office/office.context#ui) qui permet à votre complément d’ouvrir des boîtes de dialogue contextuelles.
+L’objet **Context** permet également d’accéder aux propriétés [contentLanguage](/javascript/api/office/office.context#contentLanguage) et [displayLanguage](/javascript/api/office/office.context#displayLanguage) qui vous permet de déterminer les paramètres régionaux (langue) utilisés dans le document ou l’élément, ou par l’application Office. La propriété [roamingSettings](/javascript/api/office/office.context#roamingSettings) vous permet d’accéder aux membres de l’objet [RoamingSettings](/javascript/api/office/office.context#roamingSettings) qui stocke les paramètres spécifiques à votre complément pour les boîtes aux lettres individuelles des utilisateurs. Enfin, l’objet **Context** fournit une propriété [ui](/javascript/api/office/office.context#ui) qui permet à votre complément d’ouvrir des boîtes de dialogue contextuelles.
 
 
 ## <a name="document-object"></a>Objet Document
@@ -43,7 +43,7 @@ Pour permettre l’interaction avec les données de document dans Excel, PowerPo
 
 - Paramètres ou état de complément persistant par complément dans le document.
 
-Vous pouvez également utiliser `Document` l’objet pour interagir avec les données de Project documents. La fonctionnalité propre à Project de l’API est documentée dans la classe abstraite [ProjectDocument](/javascript/api/office/office.document) des membres. Pour plus d’informations sur la création de compléments du volet Office pour Project, voir [Compléments du volet Office pour Project](../project/project-add-ins.md).
+Vous pouvez également utiliser `Document` l’objet pour interagir avec les données dans Project documents. La fonctionnalité propre à Project de l’API est documentée dans la classe abstraite [ProjectDocument](/javascript/api/office/office.document) des membres. Pour plus d’informations sur la création de compléments du volet Office pour Project, voir [Compléments du volet Office pour Project](../project/project-add-ins.md).
 
 Toutes ces formes d’accès aux données commencent par une instance de l’objet `Document` abstrait.
 
@@ -88,7 +88,7 @@ Les méthodes d’accès aux données sur les objets Binding et Binding peuvent 
 
 
 > [!TIP]
-> **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si vous avez besoin que vos données tabulaires s’développent dynamiquement lorsque des lignes et des colonnes sont ajoutées et que vous devez utiliser des en-têtes de tableau, vous devez utiliser le type de données de table (en spécifiant le paramètre _coercionType_ d’une méthode d’accès aux données objet ou en tant que ou `Document` `Binding` `"table"` `Office.CoercionType.Table` ). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter de lignes et de colonnes et que vos données ne nécessitent pas de fonctionnalité d’en-tête, vous devez utiliser le type de données de matrice (en spécifiant le paramètre  _coercionType_ de la méthode d’accès aux données en tant que ou ), ce qui fournit un modèle plus simple d’interaction avec les `"matrix"` `Office.CoercionType.Matrix` données.
+> **Quand devez-vous utiliser la matrice ou le paramètre coercionType de tableau pour accéder aux données ?** Si vous avez besoin que vos données tabulaires s’développent dynamiquement lorsque des lignes et des colonnes sont ajoutées et que vous devez utiliser des en-têtes de tableau, vous devez utiliser le type de données de table (en spécifiant le paramètre _coercionType_ d’une méthode d’accès aux données objet ou en tant que ou `Document` `Binding` `"table"` `Office.CoercionType.Table` ). L’ajout de lignes et de colonnes au sein de la structure de données est pris en charge dans les données de tableau et de matrice, mais l’ajout de lignes et de colonnes à la fin est pris en charge uniquement pour les données de tableau. Si vous ne prévoyez pas d’ajouter des lignes et des colonnes et que vos données ne nécessitent pas de fonctionnalité d’en-tête, vous devez utiliser le type de données de matrice (en spécifiant le paramètre  _coercionType_ de la méthode d’accès aux données en tant que ou ), ce qui fournit un modèle plus simple d’interaction avec les `"matrix"` `Office.CoercionType.Matrix` données.
 
 Si les données sont d’un type qui ne peut pas être forcé vers le type spécifié, la propriété [AsyncResult.status](/javascript/api/office/office.asyncresult#status) du rappel renvoie `"failed"`. Par ailleurs, vous pouvez utiliser la propriété [AsyncResult.error](/javascript/api/office/office.asyncresult#error) pour accéder à un objet [Error](/javascript/api/office/office.error) incluant des informations sur la raison de l’échec de l’appel de la méthode.
 
@@ -104,7 +104,7 @@ Pour obtenir des exemples de code montrant comment effectuer des tâches avec le
 ## <a name="working-with-bindings-using-the-bindings-and-binding-objects"></a>Utilisation des liaisons à l’aide des objets Bindings et Binding
 
 
-L’accès aux données basé sur les liaisons permet aux compléments de contenu et du volet Office d’accéder de manière cohérente à une région particulière d’un document ou d’une feuille de calcul par l’intermédiaire d’un identificateur associé à une liaison. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-) ou [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-). Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la région associée du document ou de la feuille de calcul. La création de liaisons fournit la valeur suivante à votre add-in.
+L’accès aux données basé sur les liaisons permet aux compléments de contenu et du volet Office d’accéder de manière cohérente à une région particulière d’un document ou d’une feuille de calcul par l’intermédiaire d’un identificateur associé à une liaison. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_), [addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_) ou [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_). Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la région associée du document ou de la feuille de calcul. La création de liaisons fournit la valeur suivante à votre add-in.
 
 
 - Elle permet l’accès aux structures de données communes sur les applications Office prises en charge, telles que : tableaux, plages ou texte (série contiguë de caractères).
@@ -115,7 +115,7 @@ L’accès aux données basé sur les liaisons permet aux compléments de conten
 
 L’établissement d’une liaison vous permet également de vous abonner aux données et aux événements de changement de sélection qui sont concernés par cette région particulière du document ou de la feuille de calcul. Cela signifie que le complément est seulement notifié des changements qui surviennent dans la région délimitée, par opposition aux changements généraux affectant l’ensemble du document ou de la feuille de calcul.
 
-L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#getallasync-options--callback-) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getbyidasync-id--options--callback-) ou [Office.select](/javascript/api/office). Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de l’objet : `Bindings` [addFromSelectionAsync](/javascript/api/office/office.bindings#addfromselectionasync-bindingtype--options--callback-), [addFromPromptAsync](/javascript/api/office/office.bindings#addfrompromptasync-bindingtype--options--callback-), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addfromnameditemasync-itemname--bindingtype--options--callback-)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releasebyidasync-id--options--callback-).
+L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#getAllAsync_options__callback_) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#getByIdAsync_id__options__callback_) ou [Office.select](/javascript/api/office). Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de l’objet : `Bindings` [addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_), [addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_), [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_)ou [releaseByIdAsync](/javascript/api/office/office.bindings#releaseByIdAsync_id__options__callback_).
 
 Il existe trois types de liaisons que vous spécifiez avec le paramètre  _bindingType_ lorsque vous créez une liaison avec `addFromSelectionAsync` la ou les méthodes `addFromPromptAsync` `addFromNamedItemAsync` :
 
@@ -129,7 +129,7 @@ Il existe trois types de liaisons que vous spécifiez avec le paramètre  _bindi
 
 <br/>
 
-Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « add » de l’objet, vous pouvez travailler avec les données et propriétés de la liaison à l’aide des méthodes de `Bindings` l’objet correspondant : [MatrixBinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding)ou [TextBinding](/javascript/api/office/office.textbinding). Ces trois objets héritent des méthodes [getDataAsync](/javascript/api/office/office.binding#getdataasync-options--callback-) et [setDataAsync](/javascript/api/office/office.binding#setdataasync-data--options--callback-) de l’objet qui vous permettent d’interagir avec les données `Binding` liées.
+Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « add » de l’objet, vous pouvez travailler avec les données et propriétés de la liaison à l’aide des méthodes de `Bindings` l’objet correspondant : [MatrixBinding](/javascript/api/office/office.matrixbinding), [TableBinding](/javascript/api/office/office.tablebinding)ou [TextBinding](/javascript/api/office/office.textbinding). Ces trois objets héritent des méthodes [getDataAsync](/javascript/api/office/office.binding#getDataAsync_options__callback_) et [setDataAsync](/javascript/api/office/office.binding#setDataAsync_data__options__callback_) de l’objet qui vous permettent d’interagir avec les données `Binding` liées.
 
 Pour obtenir des exemples de code qui montrent comment effectuer des tâches avec les liaisons, voir [Liaisons de régions dans un document ou une feuille de calcul](bind-to-regions-in-a-document-or-spreadsheet.md).
 
@@ -139,7 +139,7 @@ Pour obtenir des exemples de code qui montrent comment effectuer des tâches ave
 
  **S’applique à :** compléments du volet Office pour Word
 
-Les objets [CustomXmlParts](/javascript/api/office/office.customxmlparts) et [CustomXmlPart](/javascript/api/office/office.customxmlpart) de l’API donnent accès à des parties XML personnalisées dans les documents Word, qui permettent une manipulation orientée XML du contenu du document. Pour obtenir des démonstrations de l’utilisation des composants et des objets, voir l’exemple de `CustomXmlParts` `CustomXmlPart` code [Word-add-in-Work-with-custom-XML-parts.](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)
+Les objets [CustomXmlParts](/javascript/api/office/office.customxmlparts) et [CustomXmlPart](/javascript/api/office/office.customxmlpart) de l’API donnent accès à des parties XML personnalisées dans les documents Word, qui permettent une manipulation orientée XML du contenu du document. Pour des démonstrations de l’utilisation des objets et des éléments, voir l’exemple de `CustomXmlParts` `CustomXmlPart` code [Word-add-in-Work-with-custom-XML-parts.](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts)
 
 
 ## <a name="working-with-the-entire-document-using-the-getfileasync-method"></a>Utilisation de l’intégralité du document à l’aide de la méthode getFileAsync
@@ -147,7 +147,7 @@ Les objets [CustomXmlParts](/javascript/api/office/office.customxmlparts) et [Cu
 
  **S’applique à :** compléments du volet Office pour Word et PowerPoint
 
-La méthode [Document.getFileAsync](/javascript/api/office/office.document#getfileasync-filetype--options--callback-) et les membres des objets [File](/javascript/api/office/office.file) et [Slice](/javascript/api/office/office.slice) fournissent les fonctionnalités permettant d’obtenir l’intégralité des fichiers Word et PowerPoint sous forme de sections (blocs) de 4 Mo maximum à la fois. Pour plus d’informations, reportez-vous à la rubrique [Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
+La méthode [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) et les membres des objets [File](/javascript/api/office/office.file) et [Slice](/javascript/api/office/office.slice) fournissent les fonctionnalités permettant d’obtenir l’intégralité des fichiers Word et PowerPoint sous forme de sections (blocs) de 4 Mo maximum à la fois. Pour plus d’informations, reportez-vous à la rubrique [Obtention de l’intégralité d’un document pour un complément pour PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
 
 ## <a name="mailbox-object"></a>Objet Mailbox

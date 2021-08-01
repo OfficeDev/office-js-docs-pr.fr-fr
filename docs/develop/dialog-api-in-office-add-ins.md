@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 07/19/2021
 localization_priority: Normal
-ms.openlocfilehash: a8f3b6425dceaccbb50a56bfb7e05aafe061967d
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 46fa02281c9e13241496c617cad9738a71102370
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53535975"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671351"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -26,7 +26,7 @@ Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’u
 - héberger une vidéo qui serait trop petite si elle était limitée à un volet Office.
 
 > [!NOTE]
-> Comme des éléments d’interface utilisateur qui se chevauchent peuvent gêner des utilisateurs, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office à moins que votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour obtenir un exemple de volet De tâches à onglets, voir l’exemple Excel de [salestracker JavaScript pour le](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) module de développement.
+> Comme des éléments d’interface utilisateur qui se chevauchent peuvent gêner des utilisateurs, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office à moins que votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour obtenir un exemple de volet De tâches à onglets, voir l’exemple Excel de [salestracker JavaScript pour le](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) module de développement javascript.
 
 L’image suivante montre un exemple de boîte de dialogue.
 
@@ -86,10 +86,10 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 
 > [!NOTE]
 >
-> - Pour plus de clarté, dans cette section, nous appelons le message cible de la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez la messagerie entre domaines [pour le runtime d’hôte.](#cross-domain-messaging-to-the-host-runtime)
-> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque Office API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit affecter une méthode à la propriété ou `Office.initialize` à l’appel. `Office.onReady` Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
+> - Pour plus de clarté, dans cette section, nous appelons le message cible de la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez la messagerie entre domaines [à l’runtime hôte.](#cross-domain-messaging-to-the-host-runtime)
+> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque Office API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit affecter une méthode à la propriété ou `Office.initialize` `Office.onReady` appeler. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
-Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageparent-message-) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
+Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
 
 ```js
 if (loginSuccess) {
@@ -231,7 +231,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "https://target.
 > [!NOTE]
 > Le `DialogMessageOptions` paramètre a été publié environ le 19 juillet 2021. Pendant environ 30 jours après cette date, en Office sur le Web, la première fois que le paramètre est appelé et que le parent est un domaine différent de celui de la boîte de dialogue, l’utilisateur est invité à approuver l’envoi de données au domaine `messageParent` `DialogMessageOptions` cible. Si l’utilisateur approuve, la réponse de l’utilisateur est mise en cache pendant 24 heures. L’utilisateur n’est pas invité à nouveau pendant cette période lorsqu’il est appelé `messageParent` avec le même domaine cible.
 
-Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
+Si le message n’inclut pas de données sensibles, vous pouvez définir sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
 
 ```js
 Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
@@ -250,11 +250,11 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 
 ## <a name="pass-information-to-the-dialog-box"></a>Transmission d’informations à la boîte de dialogue
 
-Votre add-in peut envoyer des messages à partir de la [page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) vers une boîte de dialogue à l’aide [de Dialog.messageChild](/javascript/api/office/office.dialog#messagechild-message-).
+Votre add-in peut envoyer des messages à partir de la [page hôte](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page) vers une boîte de dialogue à l’aide [de Dialog.messageChild](/javascript/api/office/office.dialog#messageChild_message__messageOptions_).
 
 ### <a name="use-messagechild-from-the-host-page"></a>Utilisation `messageChild()` à partir de la page hôte
 
-Lorsque vous appelez l’API Office boîte de dialogue pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être affectée à une variable dont l’étendue est supérieure à celle de la méthode [displayDialogAsync,](/javascript/api/office/office.ui#displaydialogasync-startaddress--callback-) car l’objet sera référencé par d’autres méthodes. Voici un exemple.
+Lorsque vous appelez l’API Office boîte de dialogue pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être affectée à une variable dont l’étendue est supérieure à celle de la méthode [displayDialogAsync,](/javascript/api/office/office.ui#displayDialogAsync_startAddress__callback_) car l’objet sera référencé par d’autres méthodes. Voici un exemple.
 
 ```javascript
 var dialog;
@@ -273,7 +273,7 @@ function processMessage(arg) {
 }
 ```
 
-Cet objet possède une méthode messageChild qui envoie toute chaîne, y compris les données `Dialog` stringified, [](/javascript/api/office/office.dialog#messagechild-message-) à la boîte de dialogue. Cela lève un événement `DialogParentMessageReceived` dans la boîte de dialogue. Votre code doit gérer cet événement, comme illustré dans la section suivante.
+Cet objet possède une méthode messageChild qui envoie toute chaîne, y compris les données `Dialog` stringified, [](/javascript/api/office/office.dialog#messageChild_message__messageOptions_) à la boîte de dialogue. Cela lève un événement `DialogParentMessageReceived` dans la boîte de dialogue. Votre code doit gérer cet événement, comme illustré dans la section suivante.
 
 Envisagez un scénario dans lequel l’interface utilisateur de la boîte de dialogue est liée à la feuille de calcul active et à sa position par rapport aux autres feuilles de calcul. Dans l’exemple suivant, `sheetPropertiesChanged` Excel propriétés de feuille de calcul à la boîte de dialogue. Dans ce cas, la feuille de calcul actuelle est nommée « My Sheet » et il s’agit de la deuxième feuille du workbook. Les données sont encapsulées dans un objet et stringified afin de pouvoir être transmises à `messageChild` .
 
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement avec la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addhandlerasync-eventtype--handler--options--callback-) Cette méthode est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
+Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement à l’auprès de la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) Cette méthode est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
 
 ```javascript
 Office.onReady()
@@ -330,7 +330,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Messagerie conditionnelle d’une page parent à une boîte de dialogue
 
-Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
+Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
 
 > [!NOTE]
 > Dans certains cas, l’API, qui fait partie de l’ensemble de conditions `messageChild` [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte.](parent-to-dialog.md)
@@ -351,7 +351,7 @@ Voici un exemple d’utilisation `messageChild` pour envoyer un message entre do
 dialog.messageChild(messageToDialog, { targetOrigin: "https://target.domain.com" });
 ```
 
-Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* *envoyé* à n’importe quel domaine. Voici un exemple.
+Si le message n’inclut pas de données sensibles, vous pouvez définir sur « », ce qui permet d’être `targetOrigin` \* *envoyé* à n’importe quel domaine. Voici un exemple.
 
 ```js
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
@@ -373,7 +373,7 @@ function onMessageFromParent(arg) {
 Par exemple, votre code peut utiliser les méthodes [Office.onReady ou Office.initialize](initialize-add-in.md) pour stocker un tableau de domaines de confiance dans une variable globale. La `arg.origin` propriété peut ensuite être vérifiée par rapport à cette liste dans le handler.
 
 > [!TIP]
-> Le `DialogMessageOptions` paramètre a été ajouté à la méthode en tant que paramètre obligatoire au milieu de `messageChild` l’année 2021. Les anciens add-ins qui envoient un message entre domaines avec la méthode ne fonctionnent plus tant qu’ils n’ont pas été mis à jour pour utiliser le nouveau paramètre. En attendant, sur Office pour *Windows* uniquement, les utilisateurs et les administrateurs système peuvent permettre à ces modules de continuer à fonctionner en spécifiant le ou les domaines de confiance avec un paramètre de Registre. Pour plus **d’informations,** consultez le conseil sous Messagerie entre domaines à [l’runtime de](#cross-domain-messaging-to-the-host-runtime) l’hôte.
+> Le `DialogMessageOptions` paramètre a été ajouté à la méthode en tant que paramètre obligatoire au milieu de `messageChild` l’année 2021. Les anciens add-ins qui envoient un message entre domaines avec la méthode ne fonctionnent plus tant qu’ils n’ont pas été mis à jour pour utiliser le nouveau paramètre. En attendant, sur Office pour *Windows* uniquement, les utilisateurs et les administrateurs système peuvent activer ces modules en spécifiant le ou les domaines de confiance avec un paramètre de Registre. Pour plus **d’informations,** consultez le conseil sous Messagerie entre domaines à [l’runtime de](#cross-domain-messaging-to-the-host-runtime) l’hôte.
 
 ## <a name="closing-the-dialog-box"></a>Fermeture de la boîte de dialogue
 

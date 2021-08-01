@@ -3,16 +3,16 @@ title: Résolution des problèmes d’activation de complément contextuel Outlo
 description: Raisons possibles pour lesquelles votre add-in ne s’active pas comme prévu.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: d3a9abcdf1cd9db4104b389208f829f4b648c6e7
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 7999bac00e2d3b1b7ecb3f58e6d70a247500982e
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348866"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671680"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
-Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection de complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
+Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection du complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Est-ce que la boîte aux lettres utilisateur se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
@@ -24,7 +24,7 @@ Vous pouvez vérifier la version de Exchange 2013 en utilisant l’une des appro
 
 - Si vous testez le complément sur Outlook sur le web ou sur appareils mobiles, dans un débogueur de script (par exemple le débogueur JScript disponible avec Internet Explorer), recherchez l’attribut **src** de la balise **script** qui spécifie l’emplacement à partir duquel les scripts sont chargés. Le chemin d’accès doit contenir une sous-chaîne **owa/15.0.516.x/owa2/...**, où **15.0.516.x** représente la version du serveur Exchange Server (par exemple **15.0.516.2**).
 
-- Vous pouvez également utiliser la propriété [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostversion) pour vérifier la version. Dans Outlook sur le web et sur appareils mobiles, cette propriété renvoie la version du serveur Exchange Server.
+- Vous pouvez également utiliser la propriété [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) pour vérifier la version. Dans Outlook sur le web et sur appareils mobiles, cette propriété renvoie la version du serveur Exchange Server.
 
 - Si vous pouvez tester le Outlook, vous pouvez utiliser la technique de débogage simple suivante qui utilise le modèle objet Outlook et Visual Basic Editor.
 

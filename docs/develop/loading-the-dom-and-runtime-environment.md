@@ -3,12 +3,12 @@ title: Chargement du DOM et de l’environnement d’exécution
 description: Chargez le DOM et Office’environnement d’runtime des add-ins.
 ms.date: 04/20/2021
 localization_priority: Normal
-ms.openlocfilehash: 0cfdcf3750d9c0a3dd21667729da59dbfedf61c8
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 76322de3d830747a825b0934993f8801daf8a9ae
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349839"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671526"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -32,7 +32,7 @@ Les événements suivants se produisent lors du démarrage d’un module de cont
 
 4. Le contrôle de navigateur charge le DOM et le corps HTML, puis appelle le responsable de l’événement `window.onload` pour l’événement.
 
-5. L’application cliente Office charge l’environnement d’utilisation, qui télécharge et met en cache les fichiers de bibliothèque d’API JavaScript Office à partir du serveur de réseau de distribution de contenu (CDN), puis appelle le responsable des événements du module pour [l’événement d’initialisation](/javascript/api/office#office-initialize-reason-) de l’objet [Office,](/javascript/api/office) si un handler lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady` , voir [Initialiser votre add-in](initialize-add-in.md).
+5. L’application cliente Office charge l’environnement d’utilisation, qui télécharge et met en cache les fichiers de bibliothèque d’API JavaScript Office à partir du serveur de réseau de distribution de contenu (CDN), puis appelle le responsable des événements du module pour [l’événement d’initialisation](/javascript/api/office#Office_initialize_reason_) de l’objet [Office,](/javascript/api/office) si un handler lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady` , voir [Initialiser votre add-in](initialize-add-in.md).
 
 6. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
 
@@ -43,7 +43,7 @@ La figure suivante illustre le flux des événements impliqués au démarrage d�
 
 ![Flow d’événements au démarrage Outlook de votre module.](../images/outlook15-loading-dom-agave-runtime.png)
 
-Les événements suivants se produisent lorsqu’un Outlook de démarrage.
+Les événements suivants se produisent lorsqu’un Outlook démarre.
 
 1. Lorsqu’Outlook démarre, il lit les manifestes XML pour les compléments Outlook qui ont été installés pour le compte de messagerie de l’utilisateur.
 
@@ -55,7 +55,7 @@ Les événements suivants se produisent lorsqu’un Outlook de démarrage.
 
 5. Le contrôle de navigateur charge le DOM et le corps HTML, puis appelle le responsable de l’événement `onload` pour l’événement.
 
-6. Outlook charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](/javascript/api/office#office-initialize-reason-) de l’objet [Office](/javascript/api/office) du complément si un gestionnaire lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady` , voir [Initialiser votre add-in](initialize-add-in.md).
+6. Outlook charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](/javascript/api/office#Office_initialize_reason_) de l’objet [Office](/javascript/api/office) du complément si un gestionnaire lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady` , voir [Initialiser votre add-in](initialize-add-in.md).
 
 7. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
 

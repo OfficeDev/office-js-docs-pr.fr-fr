@@ -3,12 +3,12 @@ title: Travailler simultanément avec plusieurs plages dans des compléments Exc
 description: Découvrez comment la Excel JavaScript permet à votre add-in d’effectuer des opérations et de définir des propriétés simultanément sur plusieurs plages.
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 729b687b14beaeb74b329974bcca48dfd78bc11e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349496"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671153"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 
@@ -79,7 +79,7 @@ Le `RangeAreas` type possède des propriétés et des méthodes qui ne sont pas 
 
 - `areas`: A`RangeCollection` objet qui contient toutes les plages représentées par l’ `RangeAreas`objet. L’`RangeCollection`objet est également nouveau et est semblable à d’autres objets de collection de sites Excel. Il possède une`items`propriété est une matrice d’`Range` objets représentant les plages.
 - `areaCount`: Le nombre total de plages dans le`RangeAreas`.
-- `getOffsetRangeAreas`: Fonctionne comme[Range.getOffsetRange](/javascript/api/excel/excel.range#getoffsetrange-rowoffset--columnoffset-), sauf qu’une `RangeAreas` est renvoyée et il contient des plages sont en décalage avec des plages du fichier d’origine`RangeAreas`.
+- `getOffsetRangeAreas`: Fonctionne comme[Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_), sauf qu’une `RangeAreas` est renvoyée et il contient des plages sont en décalage avec des plages du fichier d’origine`RangeAreas`.
 
 ## <a name="create-rangeareas"></a>Créer l’objet RangeAreas
 
