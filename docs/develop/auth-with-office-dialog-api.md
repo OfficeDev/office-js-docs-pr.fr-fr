@@ -3,12 +3,12 @@ title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
 ms.date: 07/19/2021
 localization_priority: Priority
-ms.openlocfilehash: 270a6214c9dbb268a19a1aee3e08c07da693ab87
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 706e4f50cea0ae15ff6b7b0f12e18821d18f768d
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536052"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671379"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
@@ -25,7 +25,7 @@ La boîte de dialogue ouverte avec cette API présente les caractéristiques sui
   - Il n’existe pas d’environnement d’exécution partagé dans le volet des tâches.
   - Il ne partage pas le même espace de stockage de session (la propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) que le volet Office.
 - La première page ouverte dans la boîte de dialogue doit être hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port, le cas échéant.
-- La boîte de dialogue peut renvoyer des informations au volet Office à l’aide de la méthode [messageParent](/javascript/api/office/office.ui#messageparent-message-) . (Nous vous recommandons d’appeler cette méthode uniquement à partir d’une page hébergée dans le même domaine que le volet Office, y compris le protocole, les sous-domaines et le port. Sinon, il existe des complications dans la façon dont vous appelez la méthode et traitez le message. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
+- La boîte de dialogue peut renvoyer des informations au volet Office à l’aide de la méthode [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) . (Nous vous recommandons d’appeler cette méthode uniquement à partir d’une page hébergée dans le même domaine que le volet Office, y compris le protocole, les sous-domaines et le port. Sinon, il existe des complications dans la façon dont vous appelez la méthode et traitez le message. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).)
 
 Lorsque la boîte de dialogue n’est pas un iframe (ce qui n’est pas le cas par défaut), elle peut ouvrir la page de connexion d’un fournisseur d’identité. Comme vous le verrez dans la section ci-dessous, les caractéristiques de la boîte de dialogue Office ont une incidence sur la manière dont vous utilisez les bibliothèques d’authentification ou d’autorisation telles que MSAL et Passport.
 

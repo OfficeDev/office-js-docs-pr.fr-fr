@@ -3,12 +3,12 @@ title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte courant Microsoft personnel, professionnel ou scolaire.
 ms.date: 07/30/2020
 localization_priority: Priority
-ms.openlocfilehash: f56b1b30d018f507e537909f1b75c37e189327a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349734"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671498"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Activer la connexion unique pour des compléments Office
 
@@ -31,7 +31,7 @@ Le diagramme suivant illustre le mode de fonctionnement du processus d’authent
 
 ![Un diagramme illustrant le processus d’authentification unique.](../images/sso-overview-diagram.png)
 
-1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-). Cela indique à l’application cliente Office qu’elle doit obtenir un jeton d’accès au complément. Voir [Exemple de token](#example-access-token).
+1. Dans le complément, JavaScript appelle une nouvelle API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Cela indique à l’application cliente Office qu’elle doit obtenir un jeton d’accès au complément. Voir [Exemple de token](#example-access-token).
 2. Si l’utilisateur n’est pas connecté, l’application cliente Office ouvre une fenêtre contextuelle pour qu’il se connecte.
 3. Si c’est la première fois que l’utilisateur actuel utilise votre complément, il est invité à donner son consentement.
 4. L’application cliente Office demande le **jeton de complément** au point de terminaison Azure AD v2.0 pour l’utilisateur actuel.
@@ -95,7 +95,7 @@ Voici un exemple de marques de révision.
 
 Ajoutez un code JavaScript pour le complément à :
 
-- Appelez [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getaccesstoken-options-).
+- Appelez [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_).
 
 - Analyser le jeton d’accès ou le transmettre au code côté serveur du complément.
 

@@ -3,12 +3,12 @@ title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 ms.date: 06/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 108dc918fcea956b8349d4e2c53c0e8dd06cbeca
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bbf8654654691fb7c62898d0d4521b3a11e15112
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077105"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671456"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
@@ -50,7 +50,7 @@ Les jetons d’identité d’utilisateur Exchange permettent à votre complémen
 - quand le complément doit accéder à un service non-Microsoft que vous contrôlez ;
 - En tant qu’authentification de secours quand le complément est exécuté sur une version d’Office qui ne prend pas en charge SSO.
 
-Votre complément peut appeler la méthode [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getuseridentitytokenasync-callback--usercontext-) pour obtenir des jetons d’identité d’utilisateur Exchange. Pour plus d’informations sur l’utilisation de ces jetons, voir [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
+Votre complément peut appeler la méthode [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) pour obtenir des jetons d’identité d’utilisateur Exchange. Pour plus d’informations sur l’utilisation de ces jetons, voir [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>Jetons d’accès obtenus via les flux OAuth2
 
@@ -58,7 +58,7 @@ Les compléments peuvent également accéder à des services tiers qui prennent 
 
 - doit accéder à un service tiers en dehors de votre contrôle.
 
-Grâce à cette méthode, votre complément invite l’utilisateur à se connecter au service à l’aide de la méthode [displayDialogAsync](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) pour initialiser le flux OAuth2 ou à l’aide de la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) pour le flux implicite OAuth2.
+Grâce à cette méthode, votre complément invite l’utilisateur à se connecter au service à l’aide de la méthode [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) pour initialiser le flux OAuth2 ou à l’aide de la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) pour le flux implicite OAuth2.
 
 ## <a name="callback-tokens"></a>Jetons de rappel
 
