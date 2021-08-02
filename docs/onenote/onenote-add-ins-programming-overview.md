@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: dcfeab909bfda54a4ed5b9a748e0f8a7e7d58bb9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348600"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671589"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -96,7 +96,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet *Document*
 
-Utilisez l’objet `Document` pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) et [setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-).
+Utilisez l’objet `Document` pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) et [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_).
 
 Par exemple :  
 
@@ -119,10 +119,10 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 
 | API | Commentaires |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) | Office.CoercionType.Text`Office.CoercionType.Text` et Office.CoercionType.Matrix`Office.CoercionType.Matrix` uniquement |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setselecteddataasync-data--options--callback-) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement | 
-| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get-name-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set-name--value-) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | Office.CoercionType.Text`Office.CoercionType.Text` et Office.CoercionType.Matrix`Office.CoercionType.Matrix` uniquement |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement | 
+| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get_name_) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set_name__value_) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API spécifique à l’application. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).
