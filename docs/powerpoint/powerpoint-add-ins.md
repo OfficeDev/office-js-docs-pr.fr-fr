@@ -5,16 +5,16 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 476f8f34bc47d85842d5b31f8a0298bf2d5d7b18
-ms.sourcegitcommit: 42e6cfe51d99d4f3f05a3245829d764b28c46bbb
+ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "48740839"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671701"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
-Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur. Vous pouvez créer deux types de commandes de complément PowerPoint:
+Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur toutes les plateformes, y compris Windows, iPad, Mac et dans un navigateur. Vous pouvez créer deux types de complément PowerPoint :
 
 - Utilisez des **compléments de contenu** pour ajouter du contenu HTML5 dynamique à vos présentations. Par exemple, consultez le complément [Diagrammes LucidChart pour PowerPoint](https://appsource.microsoft.com/product/office/wa104380117), qui vous permet d’injecter un diagramme interactif de LucidChart dans votre support de présentation.
 
@@ -22,7 +22,7 @@ Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions at
 
 ## <a name="powerpoint-add-in-scenarios"></a>Scénarios de complément PowerPoint
 
-Les exemples de code figurant dans l’article vous présentent certaines tâches de base en matière de développement de compléments de contenu pour PowerPoint. Notez également ce qui suit:
+Les exemples de code figurant dans l’article vous présentent certaines tâches de base en matière de développement de compléments de contenu pour PowerPoint. Veuillez noter ce qui suit :
 
 - Pour afficher des informations, ces exemples dépendent de la fonction`app.showNotification`, qui est incluse dans les modèles de projet de compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devrez remplacer la fonction`showNotification`par votre propre code.
 
@@ -39,9 +39,9 @@ Si vous créez un complément de contenu, vous devrez obtenir la vue active de l
 
 Collez le code suivant:
 
-- La fonction`getActiveFileView` appelle la méthode [Document.getActiveViewAsync](/javascript/api/office/office.document#getactiveviewasync-options--callback-) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama**ou**Mode Lecture**).
+- La fonction`getActiveFileView` appelle la méthode [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
 
-- La fonction`registerActiveViewChanged`appelle la méthode [addHandlerAsync](/javascript/api/office/office.document#addhandlerasync-eventtype--handler--options--callback-) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document).
+- La fonction`registerActiveViewChanged`appelle la méthode [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document).
 
 
 ```js
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
-Dans l’exemple de code suivant, la fonction`getSelectedRange` appelle la méthode[Document.getSelectedDataAsync](/javascript/api/office/office.document#getselecteddataasync-coerciontype--options--callback-) pour obtenir l’objet JSON renvoyé par`asyncResult.value`, qui contient un tableau nommé `slides`. La matrice`slides`contient les IDs, les titres et les indexes de plage sélectionnées de diapositives (ou de la diapositive active si plusieurs diapositives ne sont pas sélectionnées). Elle enregistre également l’id de la première diapositive dans la plage sélectionnée à une variable globale.
+Dans l’exemple de code suivant, la fonction`getSelectedRange` appelle la méthode[Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) pour obtenir l’objet JSON renvoyé par`asyncResult.value`, qui contient un tableau nommé `slides`. La matrice`slides`contient les IDs, les titres et les indexes de plage sélectionnées de diapositives (ou de la diapositive active si plusieurs diapositives ne sont pas sélectionnées). Elle enregistre également l’id de la première diapositive dans la plage sélectionnée à une variable globale.
 
 ```js
 function getSelectedRange() {
@@ -109,7 +109,7 @@ function getSelectedRange() {
 }
 ```
 
-Dans l’exemple de code suivant la fonction`goToFirstSlide`appelle la méthode[Document.goToByIdAsync](/javascript/api/office/office.document#gotobyidasync-id--gototype--options--callback-)pour accéder à la première diapositive qui a été identifiée par la fonction`getSelectedRange`illustrée précédemment.
+Dans l’exemple de code suivant la fonction`goToFirstSlide`appelle la méthode[Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_)pour accéder à la première diapositive qui a été identifiée par la fonction`getSelectedRange`illustrée précédemment.
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +148,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obtenir l’URL de la présentation
 
-La fonction`getFileUrl` appelle la méthode [Document.getFileProperties](/javascript/api/office/office.document#getfilepropertiesasync-options--callback-) pour obtenir l’URL du fichier de présentation.
+La fonction`getFileUrl` appelle la méthode [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) pour obtenir l’URL du fichier de présentation.
 
 ```js
 function getFileUrl() {
@@ -194,7 +194,7 @@ reader.readAsDataURL(myFile.files[0]);
 ## <a name="see-also"></a>Voir aussi
 
 - [Développement de compléments Office](../develop/develop-overview.md)
-- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 - [Exemples de code PowerPoint](https://developer.microsoft.com/office/gallery/?filterBy=Samples,PowerPoint)
 - [Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

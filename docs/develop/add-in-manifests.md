@@ -1,20 +1,20 @@
 ---
-title: Manifeste XML des compléments Office
+title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 03/18/2020
 localization_priority: Priority
-ms.openlocfilehash: e664893445ed6d9ee9a7adf23f3b3b189df8634e
-ms.sourcegitcommit: d28392721958555d6edea48cea000470bd27fcf7
+ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
+ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "49839998"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "53671393"
 ---
-# <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
+# <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
 Le fichier manifeste XML d’un complément Office la manière dont votre complément doit être activé lorsqu’un utilisateur final l’installe et l’utilise avec des documents et des applications Office.
 
-Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office d’effectuer les opérations suivantes :
+Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office d’effectuer les opérations suivantes :
 
 * Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
 
@@ -22,11 +22,11 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 * Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
 
-* Spécifier les dimensions par défaut demandées pour des compléments de contenu, et la hauteur demandée pour des compléments Outlook.
+* Spécifier les dimensions par défaut demandées pour des compléments de contenu, et la hauteur demandée pour des compléments Outlook.
 
 * Déclarer les autorisations que le Complément Office nécessite, par exemple la lecture du document ou l’écriture dans celui-ci.
 
-* Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
+* Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -65,7 +65,7 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 | [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
 | [Hosts*][]                                                                                   |    X    |     X     |         |
 
-_\*Ajouté dans le schéma de manifeste du complément Office version 1.1._
+_\*Ajouté dans le schéma de manifeste du complément Office version 1.1._
 
 _\*\* SupportUrl n’est obligatoire que pour les compléments distribués via AppSource._
 
@@ -101,7 +101,7 @@ _\*\* SupportUrl n’est obligatoire que pour les compléments distribués via A
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
-Tous les URI des images, tels que ceux utilisés pour les [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
+Tous les URI des images, tels que ceux utilisés pour les [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
 
 Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -115,17 +115,17 @@ Utilisez uniquement l’élément [AppDomains](../reference/manifest/appdomains.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Quand vous exécutez Office sur le web, votre volet Office peut accéder à n’importe quelle URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application Office.
+Lors de l’exécution d’Office sur le web, votre volet des tâches peut naviguer vers des URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application Office.
 
-Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](../reference/manifest/appdomains.md) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
+Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](../reference/manifest/appdomains.md) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
 
 > [!NOTE]
-> Il existe deux exceptions à ce comportement :
+> Il existe deux exceptions à ce comportement :
 >
-> - Il s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
-> - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displaydialogasync-startaddress--options--callback-), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
+> - Cela s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
+> - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
 
-L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, y compris dans le bureau Office.
+L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, même dans la version de bureau Office.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -152,9 +152,9 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 
 Votre complément peut effectuer des appels d’API Office.js à partir du domaine référencé dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste. Si votre complément comporte d’autres IFrames qui nécessitent un accès aux API Office.js, ajoutez le domaine de cette URL source à la liste spécifiée dans l’élément [AppDomains](../reference/manifest/appdomains.md) du fichier manifeste. Si un IFrame associé à une source qui ne figure pas dans la liste `AppDomains` tente d’effectuer un appel d’API Office.js, le complément reçoit une [erreur d’autorisation refusée](../reference/javascript-api-for-office-error-codes.md).
 
-## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemples et schémas de fichier XML manifeste version 1.1
+## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemples et schémas de fichier XML manifeste version 1.1
 
-Les sections suivantes présentent des exemples de fichiers manifeste XML version 1.1 pour des compléments de contenu, de volet Office et Outlook.
+Les sections suivantes présentent des exemples de fichiers manifeste XML version 1.1 pour des compléments de contenu, de volet Office et Outlook.
 
 # <a name="task-pane"></a>[Volet Office](#tab/tabid-1)
 
