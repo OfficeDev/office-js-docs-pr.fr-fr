@@ -1,14 +1,14 @@
 ---
 title: Règles de style de visualisation de données pour les compléments Office
 description: Obtenez quelques bonnes pratiques pour visualiser des données dans un Office de recherche.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: aebd0ea8731d099615141e203cc03b2972128c9a
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076349"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773635"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
@@ -24,18 +24,18 @@ Les visualisations de données partagent une infrastructure générale et des é
 
 ### <a name="chart-titles"></a>Titres de graphique
 
-Suivez ces instructions pour les titres de graphique :
+Suivez ces instructions pour les titres de graphique.
 
 - Faites en sorte que vos titres de graphique soient lisibles. Positionnez-les pour créer une hiérarchie visuelle claire par rapport au reste du graphique.
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
-- Incorporez [la Fluent de type](https://developer.microsoft.com/fluentui#/styles/web/typography) d’interface utilisateur pour rendre vos graphiques cohérents avec Office’interface utilisateur, qui utilise Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
+- Incorporez la [Fluent de type](https://developer.microsoft.com/fluentui#/styles/web/typography) d’interface utilisateur pour rendre vos graphiques cohérents avec Office’interface utilisateur, qui utilise Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
 
 ### <a name="axis-labels"></a>Étiquettes d’axe
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez l’interface Fluent, voir la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez l’interface Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -55,11 +55,11 @@ Pour des recommandations sur l’utilisation des couleurs dans les visualisation
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez l’interface Fluent, voir la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez l’interface Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 
-![Visualisation des données du graphique en lignes avec quadrillage.](../images/data-visualization.png)
+![Visualisation des données d’un graphique en lignes avec un quadrillage.](../images/data-visualization.png)
 
 ### <a name="legends"></a>Légendes
 
@@ -69,7 +69,6 @@ Ajoutez des légendes si nécessaire pour :
 - Présenter des modifications d’échelle ou de valeur
 
 Assurez-vous que vos légendes améliorent l’encre de données et ne rivalisent pas avec elle. Placez les légendes :
-
 
 - Alignées à gauche, au-dessus de la zone de traçage par défaut, si tous les éléments de légende tiennent au-dessus du graphique.
 - Dans la partie supérieure droite de la zone de traçage, si tous les éléments de légende ne tiennent pas au-dessus du graphique et ajoutez une zone de texte déroulante, si nécessaire.

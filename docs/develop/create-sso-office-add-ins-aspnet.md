@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: Guide pas à pas sur la création (ou la conversion) d’un Office add-in avec un système ASP.NET backend pour utiliser l' sign-on unique (SSO).
-ms.date: 06/15/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: c5c23445b6a4fec5f4be620ce9a4878f3aa69922
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5052856d5f29241c5e25669c8b6451b73aef5ec5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349972"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773887"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -35,7 +35,7 @@ Cet article vous explique tout au long du processus d’activation de l' sign-on
 Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](https://github.com/officedev/office-add-in-aspnet-sso).
 
 > [!NOTE]
-> Il existe deux versions de l’échantillon :
+> Il existe deux versions de l’exemple.
 >
 > * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
 > * La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
@@ -90,7 +90,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
     * `08e18876-6177-487e-b8b5-cf950c1e598c` (Office sur le web)
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
 
-    Pour chaque ID, procédez comme suit :
+    Pour chaque ID, prenez les mesures suivantes.
 
     a. Sélectionnez le bouton **Ajouter une application client** puis, dans le volet qui s’ouvre, définissez l’ID Client pour le GUID respectif et cochez la case pour `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -121,7 +121,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 1. De **retour** dans l’Explorateur de solutions, sélectionnez (ne cliquez pas avec le bouton droit) le **projet Office-Add-in-ASPNET-SSO-WebAPI.** Le volet **Propriétés** s’ouvre. Assurez-vous que **SSL activé** est **Vrai**. Vérifiez que l’**URL SSL** est `http://localhost:44355/`.
 
-1. Dans « web.config », utilisez les valeurs que vous avez copiées dans le version précédente. Configurez les **Ida:ClientID** et **Ida:Audience** à votre **ID d’application (client)**, puis configurez **Ida:Password** sur votre code secret client. Définissez également **ida:Domain** `http://localhost:44355` sur (aucune barre oblique « / » à la fin). 
+1. Dans « web.config », utilisez les valeurs que vous avez copiées dans le version précédente. Configurez les **Ida:ClientID** et **Ida:Audience** à votre **ID d’application (client)**, puis configurez **Ida:Password** sur votre code secret client. Définissez également **ida:Domain** `http://localhost:44355` sur (aucune barre oblique « / » à la fin).
 
     > [!NOTE]
     > L’ID d’application **(client)** est la valeur « audience » lorsque d’autres applications, telles que l’application cliente Office (par exemple, PowerPoint, Word, Excel), recherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
@@ -150,7 +150,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 ### <a name="setup-for-single-tenant"></a>Configuration d’un seul locataire
 
-Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement » pour **TYPES DE COMPTES PRIS EN CHARGE** lorsque vous avez enregistré le complément, vous devez suivre ces étapes de configuration supplémentaires :
+Si vous avez choisi « Comptes dans cet annuaire d’organisation uniquement » pour LES **TYPES** DE COMPTES PRIS EN CHARGE lorsque vous avez inscrit le complément, vous devez suivre ces étapes de configuration supplémentaires.
 
 1. Revenez au portail Azure et ouvrez le volet **vue d’ensemble** de l’inscription du complément. Copiez l’**ID de répertoire (client)**.
 
@@ -160,7 +160,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
 ## <a name="code-the-client-side"></a>Code côté client
 
-1. Ouvrez le fichier HomeES6.js dans le dossier **Scripts**. Il contient déjà du code :
+1. Ouvrez le fichier HomeES6.js dans le dossier **Scripts**. Il y a déjà du code.
 
     * Un polyfill qui affecte l’objet Office. promesse à l’objet fenêtre globale pour que le complément puisse s’exécuter lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).)
     * Une affectation à la méthode `Office.initialize` qui affecte elle-même un gestionnaire à l’événement ClickButton `getGraphAccessTokenButton`.
@@ -168,7 +168,8 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     * Une méthode `logErrors` qui consigne dans la console les erreurs qui ne sont pas destinées à l’utilisateur final.
     * Code qui implémente le système d’autorisation de repli que le complément utilisera dans les scénarios où l’authentification unique n’est pas prise en charge ou a provoqué une erreur.
 
-1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Notez les points suivants concernant ce code.
+1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte du code suivant :
+
 
     * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `retryGetAccessToken` permet de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir.
     * La fonction `getGraphData` est définie avec le mot clé ES6 `async`. L’utilisation de la syntaxe ES6 simplifie l’utilisation de l’API d’authentification unique dans les compléments Office. Il s’agit du seul fichier dans la solution qui utilise une syntaxe non prise en charge par Internet Explorer. Nous plaçons « ES6 » dans le nom du fichier comme rappel. La solution utilise le transpondeur tsc pour transpiler ce fichier en ES5, afin que le complément puisse être exécuté lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Consultez le fichier tsconfig.json dans la racine du projet.)
@@ -207,7 +208,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
     * `getAccessToken` indique à Office d’obtenir un jeton de démarrage à partir d’Azure AD et de revenir au complément.
     * `allowSignInPrompt` indique à Office d’inviter l’utilisateur à se connecter si l’utilisateur n’est pas encore connecté à Office.
-    * `allowConsentPrompt`indique Office à l’utilisateur de donner son consentement pour permettre au add-in d’accéder au profil AAD de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte ne *permet pas* à l’utilisateur d’autoriser les étendues Graph Microsoft.)
+    * `allowConsentPrompt`indique Office à l’utilisateur de donner son consentement pour permettre au add-in d’accéder au profil AAD de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte *n’autorise pas* l’utilisateur à consentir à des étendues Graph Microsoft.)
     * `forMSGraphAccess` indique à Office que le complément envisage de permuter le jeton d'amorçage d’un jeton d’accès à Microsoft Graph (au lieu d’utiliser simplement le jeton d'amorçage comme jeton ID utilisateur). La configuration de cette option permet à Office d’annuler le processus d’acquisition d’un jeton d'amorçage (et de renvoyer le code d’erreur 13012) si l’administrateur du locataire de l’utilisateur n’a pas accordé le consentement du complément. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours. Si l’utilisateur n’est pas utilisé et que l’administrateur n’a pas donné son consentement, le jeton d’a bootstrap est renvoyé, mais la tentative de l’échanger avec le flux « de la part de » entraînerait une `forMSGraphAccess` erreur. Par conséquent, l’option `forMSGraphAccess` permet au complément de brancher rapidement vers le système de secours.
     * Vous créez la fonction `getData` dans une étape ultérieure.
     * Le paramètre `/api/values` est l’URL d’un contrôleur côté serveur qui transforme l’échange de jeton et utilise le jeton d’accès qu’il renvoie pour appeler Microsoft Graph.
@@ -423,9 +424,9 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     }
     ```
 
-1. Remplacez le `TODO 1` par ce qui suit. Tenez compte des informations suivantes :
+1. Remplacez le `TODO 1` par ce qui suit. Tenez compte du code suivant :
 
-    * Le code indique à OWIN de s’assurer que l’audience spécifiée dans le jeton d’a bootstrap provenant de l’application Office doit correspondre à la valeur spécifiée dans le web.config.
+    * Le code demande à OWIN de s’assurer que l’audience spécifiée dans le jeton d’a bootstrap provenant de l’application Office doit correspondre à la valeur spécifiée dans le web.config.
     * Les comptes Microsoft ont un GUID d’émetteur différent de n’importe quel GUID de client d’organisation. Ainsi, pour prendre en charge les deux types de comptes, nous ne validons pas l’émetteur.
     * Si vous le paramètre, OWIN enregistre le jeton d’approvisionnement brut à partir de `SaveSigninToken` `true` l Office’application. Le complément en a besoin pour obtenir un jeton d’accès à Microsoft Graph avec le flux « de la part de ».
     * Les étendues ne sont pas validées par l’intergiciel OWIN. Les étendues du jeton d’amorçage, qui doivent inclure `access_as_user`, sont validées dans le contrôleur.
@@ -439,7 +440,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     };
     ```
 
-1. Remplacez `TODO 2` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO 2` par ce qui suit. Tenez compte du code suivant :
 
     * La méthode `UseOAuthBearerAuthentication` est appelée au lieu de la méthode `UseWindowsAzureActiveDirectoryBearerAuthentication` plus courante, car cette dernière n’est pas compatible avec le point de terminaison Azure AD V2.
     * L’URL transmise à la méthode est l’endroit où l’intermédiaire OWIN obtient des instructions pour obtenir la clé dont il a besoin pour vérifier la signature sur le jeton d’a bootstrap reçu de l’application Office. Le segment d’autorité de l’URL provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
@@ -511,7 +512,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
     * Votre application ne joue plus le rôle d’une ressource (ou d’une audience) à laquelle l’Office et l’utilisateur ont besoin d’accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
     * À partir de MSAL.NET 3. x. x, le `bootstrapContext` est simplement le jeton d’amorçage.
     * L’autorité provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
-    * MSAL lève une erreur si votre code demande, ce qui est uniquement utilisé lorsque l’application cliente Office obtient le jeton pour `profile` l’application web de votre application. Seul `Files.Read.All` est demandé explicitement.
+    * MSAL lève une erreur si votre code demande , qui est vraiment utilisé uniquement lorsque l’application cliente Office obtient le jeton à `profile` l’application web de votre application web de votre application. Seul `Files.Read.All` est demandé explicitement.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -606,7 +607,7 @@ Si vous avez choisi « Comptes dans ce répertoire d’organisation uniquement�
 
 1. Appuyez sur la touche F5.
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez **Afficher le complément** dans le groupe **ASP.NET SSO** pour ouvrir le complément du panneau des tâches.
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 Éducation ou de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont affichés dans le volet Des tâches. Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichier et de dossier apparaissent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 Éducation ou de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont affichés dans le volet Des tâches. Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichiers et de dossiers apparaissent.
 
 ### <a name="testing-the-fallback-path"></a>Test du chemin d’accès de retour
 
@@ -620,7 +621,7 @@ Pour tester le chemin d’autorisation de retour, forcez l’échec du chemin d�
     }
     ```
 
-1. Ensuite, ajoutez la ligne suivante en haut du bloc dans cette même méthode, juste `try` au-dessus de l’appel à `getAccessToken` .
+1. Ensuite, ajoutez la ligne suivante en haut du bloc dans cette même `try` méthode, juste au-dessus de l’appel à `getAccessToken` .
 
     ```javascript
     throw new MockSSOError("13003");
@@ -630,4 +631,4 @@ Pour tester le chemin d’autorisation de retour, forcez l’échec du chemin d�
 
 Comme tous les Office web, lorsque vous êtes prêt à passer à un serveur intermédiaire ou de production, vous devez mettre à jour le domaine dans le manifeste avec le `localhost:44355` nouveau domaine. De même, vous devez mettre à jour le domaine dans web.config fichier.
 
-Étant donné que le domaine apparaît dans l’inscription AAD, vous devez mettre à jour cette inscription pour utiliser le nouveau domaine à la place de l’endroit `localhost:44355` où il apparaît.
+Étant donné que le domaine apparaît dans l’inscription AAD, vous devez mettre à jour cette inscription pour utiliser le nouveau domaine à la place de l’endroit où `localhost:44355` il apparaît.

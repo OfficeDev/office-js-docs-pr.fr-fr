@@ -1,14 +1,14 @@
 ---
 title: Raccourcis clavier personnalisés dans les Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
-ms.date: 06/02/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 75a7de576368e85436b4d97a4561d609b654642e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: fa675e9ddc607feabbea0f79456e0775666b8d96
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671400"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773530"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -19,7 +19,7 @@ Les raccourcis clavier, également appelés combinaisons de touches, permettent 
 > [!NOTE]
 > Pour commencer avec une version de travail d’un add-in avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple [Excel raccourcis clavier.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre add-in, poursuivez avec cet article.
 
-Il existe trois étapes pour ajouter des raccourcis clavier à un add-in :
+Il existe trois étapes pour ajouter des raccourcis clavier à un add-in.
 
 1. [Configurez le manifeste du add-in.](#configure-the-manifest)
 1. [Créez ou modifiez le fichier JSON](#create-or-edit-the-shortcuts-json-file) de raccourcis pour définir des actions et leurs raccourcis clavier.
@@ -48,8 +48,7 @@ Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, a
 
 Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès au fichier correspond à l’emplacement que vous avez spécifié pour l’attribut de l’élément `Url` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Ce fichier décrit vos raccourcis clavier et les actions qu’ils appelleront.
 
-1. Le fichier JSON se trouve à l’intérieur de deux tableaux. Le tableau d’actions contient des objets qui définissent les actions à appeler et le tableau de raccourcis contient des objets qui maient des combinaisons de touches sur des actions. Voici un exemple :
-
+1. Le fichier JSON se trouve à l’intérieur de deux tableaux. Le tableau d’actions contient des objets qui définissent les actions à appeler et le tableau de raccourcis contient des objets qui maient des combinaisons de touches sur des actions. Voici un exemple.
     ```json
     {
         "actions": [
@@ -170,7 +169,7 @@ Utilisez les instructions suivantes lors de la spécification des objets dans le
 - Les noms des `action` propriétés `key` et sont `default` obligatoires.
 - La valeur de la propriété est une chaîne et doit correspondre à l’une `action` des `id` propriétés de l’objet action.
 - La propriété peut être n’importe quelle combinaison des caractères `default` A - Z, -z, 0 - 9 et les signes de ponctuation « - », « _ » et « + ». (Par convention, les lettres majuscules ne sont pas utilisées dans ces propriétés.)
-- La propriété doit contenir le nom d’au moins une touche de `default` modification (Alt, Ctrl, Shift) et une seule autre touche. 
+- La propriété doit contenir le nom d’au moins une touche de `default` modification (Alt, Ctrl, Shift) et une seule autre touche.
 - Shift ne peut pas être utilisé comme seule touche de modification. Combinez Shift avec Alt ou Ctrl.
 - Pour les Mac, nous prise en charge également la touche Modificateur de commande.
 - Pour les Mac, Alt est mappée sur la touche Option. Pour Windows, Command est mappée sur la touche Ctrl.
@@ -209,11 +208,11 @@ En cas de conflit, l’utilisateur voit une boîte de dialogue la première fois
 
 ![Illustration montrant un conflit modal avec deux actions différentes pour un seul raccourci.](../images/add-in-shortcut-conflict-modal.png)
 
-L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences,  il peut appeler la commande Réinitialiser  les préférences de raccourci des Office dans la zone de recherche Rechercher. L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle :
+L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences,  il peut appeler la commande Réinitialiser  les préférences de raccourci des Office dans la zone de recherche Rechercher. L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle.
 
 ![La zone de recherche Rechercher dans Excel affiche la réinitialisation Office l’action de préférence de raccourci de l’ajout.](../images/add-in-reset-shortcuts-action.png)
 
-Pour une expérience utilisateur de qualité, nous vous recommandons de minimiser les conflits Excel avec ces bonnes pratiques :
+Pour une expérience utilisateur de qualité, nous vous recommandons de minimiser les conflits Excel avec ces bonnes pratiques.
 
 - Utilisez uniquement les raccourcis clavier avec le modèle suivant : **Ctrl+Shift+Alt+* x***, où *x* est une autre touche.
 - Si vous avez besoin de raccourcis clavier, consultez la liste des [raccourcis](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)clavier Excel et évitez d’en utiliser dans votre module.

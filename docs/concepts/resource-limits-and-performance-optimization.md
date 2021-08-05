@@ -1,14 +1,14 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.
-ms.date: 07/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 750f10880249a9c9a8720f870f4bc5ea4e576e8e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 27c5acf98bb43d53b165ad268b3800373888d335
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671274"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773215"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -71,9 +71,9 @@ Si un application de contenu ou du volet Des tâches dépasse les seuils précé
 - Redémarrer le complément.
 - Annuler les alertes supplémentaires de dépassement de seuil. Dans l’idéal, l’utilisateur devrait supprimer le complément du document. La poursuite de l’exécution du complément risquerait d’entraîner des problèmes supplémentaires au niveau des performances et de la stabilité.  
 
-## <a name="verifying-resource-usage-issues-in-the-telemetry-log"></a>Vérification des problèmes d’utilisation des ressources dans le journal de télémétrie
+## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>Vérifier les problèmes d’utilisation des ressources dans le Journal de télémétrie
 
-Office propose un journal de télémétrie qui tient à jour un enregistrement de certains événements (chargement, ouverture, fermeture et erreurs) des solutions Office qui s’exécutent sur l’ordinateur local, notamment les problèmes d’utilisation des ressources dans une Complément Office. Si le journal de télémétrie est configuré, vous pouvez utiliser Excel pour l’ouvrir à partir de l’emplacement par défaut suivant sur votre disque local :
+Office propose un journal de télémétrie qui tient à jour un enregistrement de certains événements (chargement, ouverture, fermeture et erreurs) des solutions Office qui s’exécutent sur l’ordinateur local, notamment les problèmes d’utilisation des ressources dans une Complément Office. Si le Journal de télémétrie est installé, vous pouvez utiliser Excel pour ouvrir le Journal de télémétrie à l’emplacement par défaut suivant sur votre lecteur local.
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 

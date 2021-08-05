@@ -1,18 +1,18 @@
 ---
-title: Fabric Core dans les Office de base
+title: Cœur de fabric dans les modules
 description: Obtenez une vue d’ensemble de l’utilisation de Fabric Core et des composants de l’interface utilisateur fabric dans Office des composants.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e93efaea55841cc3bb6fa79ea1d1bbcaa76a4d05
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330199"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773607"
 ---
-# <a name="fabric-core-in-office-add-ins"></a>Fabric Core dans les Office de base
+# <a name="fabric-core-in-office-add-ins"></a>Cœur de fabric dans les modules
 
-Fabric Core est une collection open source de classes CSS et de mixins SASS conçus pour être utilisés dans des React *Office* non utilisés. Fabric Core contient des éléments de base du langage de conception de l’interface utilisateur Fluent, tels que les icônes, les couleurs, les polices et les grilles. Fabric Core est indépendant de l’infrastructure, il peut donc être utilisé avec n’importe quelle application à page unique ou n’importe quelle infrastructure d’interface utilisateur web côté serveur. (Il est appelé « Fabric Core » au lieu de « Fluent Core » pour des raisons historiques.)
+Fabric Core est une collection open source de classes CSS et de mixins SASS conçus pour être utilisés dans des React *Office* non utilisés. Fabric Core contient des éléments de base du Fluent de conception de l’interface utilisateur, tels que les icônes, les couleurs, les polices et les grilles. Fabric Core est indépendant de l’infrastructure, il peut donc être utilisé avec n’importe quelle application à page unique ou n’importe quelle infrastructure d’interface utilisateur web côté serveur. (Il est appelé « Fabric Core » au lieu de « Fluent Core » pour des raisons historiques.)
 
 Si l’interface utilisateur de votre React n’est pas basée sur React, vous pouvez également utiliser un ensemble de composants React non utilisés. Voir [Utiliser Office composants JS UI Fabric.](#use-office-ui-fabric-js-components)
 
@@ -20,8 +20,6 @@ Si l’interface utilisateur de votre React n’est pas basée sur React, vous p
 > Cet article décrit l’utilisation de Fabric Core dans le contexte de Office des modules. Mais il est également utilisé dans un large éventail d’applications Microsoft 365 et d’extensions. Pour plus d’informations, [voir Fabric Core](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) et le repo open source Office [UI Fabric Core](https://github.com/OfficeDev/office-ui-fabric-core).
 
 ## <a name="use-fabric-core-icons-fonts-colors"></a>Utiliser Fabric Core : icônes, polices, couleurs
-
-Pour commencer à utiliser Fabric Core:
 
 1. Ajoutez la référence CDN au code HTML sur votre page.  
 
@@ -37,7 +35,7 @@ Pour commencer à utiliser Fabric Core:
     <i class="ms-Icon ms-font-xl ms-Icon--Table ms-fontColor-themePrimary"></i>
     ```
 
-    Pour obtenir des instructions plus détaillées, voir [Icônes de l’interface utilisateur Fluent.](https://developer.microsoft.com/fluentui#/styles/web/icons) Pour trouver d’autres icônes disponibles dans Fabric Core, utilisez la fonctionnalité de recherche sur cette page. Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`.
+    Pour obtenir des instructions plus détaillées, [voir Fluent’interface utilisateur.](https://developer.microsoft.com/fluentui#/styles/web/icons) Pour trouver d’autres icônes disponibles dans Fabric Core, utilisez la fonctionnalité de recherche sur cette page. Lorsque vous trouvez une icône à utiliser dans votre complément, veillez à précéder le nom de l’icône de `ms-Icon--`.
 
     Pour plus d’informations sur les tailles de police et les couleurs disponibles dans Fabric Core, voir [Typographie](https://developer.microsoft.com/fluentui#/styles/web/typography) et la table des matières **Couleurs** dans [Colors](https://developer.microsoft.com/fluentui#/styles/web/colors).
 

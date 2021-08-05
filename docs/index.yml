@@ -85,9 +85,9 @@ conceptualContent:
         - url: publish/publish.md
           itemType: deploy
           text: Explorer les options de déploiement
-        - url: publish/centralized-deployment.md
+        - url: /microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps
           itemType: deploy
-          text: En savoir plus sur le déploiement centralisé
+          text: Tester et déployer des Microsoft 365 Apps par des partenaires dans le portail applications intégrées
     - title: Publier
       links:
         - url: /office/dev/store

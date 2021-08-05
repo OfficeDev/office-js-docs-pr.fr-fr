@@ -1,18 +1,18 @@
 ---
 title: Recommandations en matière d’icônes de style Office des produits
 description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e7a06ec25f82215a402bc5eb7fc74fa39430e227
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0c50adcea8091ae2f6fbc941d4b5359babd7274c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349314"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773236"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office des produits
 
-Les Office versions 2013 et 2013 (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, consultez les instructions relatives aux icônes de style Monoline pour Office [des modules.](add-in-icons-monoline.md)
+Les Office versions 2013 et 2013 (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, voir recommandations en matière d’icônes de style Monoline pour Office les [modules.](add-in-icons-monoline.md)
 
 ## <a name="office-fresh-visual-style"></a>Office Style visuel à nouveau
 
@@ -20,7 +20,7 @@ Les icônes Fresh incluent uniquement les éléments de communication essentiels
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Suivez ces instructions lorsque vous créez vos icônes :
+Suivez ces instructions lorsque vous créez vos icônes.
 
 |À faire|À ne pas faire|
 |:---|:---|
@@ -105,16 +105,16 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 |Gris foncé 32|128, 128, 128|#808080| ![Gris foncé pour 32 px et plus.](../images/color-dark-gray-32.png) |32 px et supérieures|
 |Gris moyen 32|158, 158, 158|#9E9E9E| ![Gris moyen pour 32 px et plus.](../images/color-medium-gray-32.png) |32 px et supérieures|
 |TOUT gris clair|179, 179, 179|#B3B3B3| ![Gris clair pour toutes les tailles d’image.](../images/color-light-gray-all.png) |Toutes les tailles|
-|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins.](../images/color-dark-gray-16.png) |16 px et inférieur|
+|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins.](../images/color-dark-gray-16.png) |16 px et au-dessous|
 |Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit.](../images/color-medium-gray-16.png) |16 et moins|
 |Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus.](../images/color-blue-32.png) |32 px et supérieures|
-|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et inférieur|
+|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et au-dessous|
 |TOUT jaune|234, 194, 130|#EAC282| ![Jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
 |Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus.](../images/color-orange-32.png) |32 px et supérieures|
-|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et inférieur|
+|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et au-dessous|
 |TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image.](../images/color-pink-all.png) |Toutes les tailles|
 |Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus.](../images/color-green-32.png) |32 px et supérieures|
-|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et inférieur|
+|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et au-dessous|
 |Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus.](../images/color-red-32.png) |32 px et supérieures|
 |Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et au-dessous|
 |Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus.](../images/color-purple-32.png) |32 px et supérieures|

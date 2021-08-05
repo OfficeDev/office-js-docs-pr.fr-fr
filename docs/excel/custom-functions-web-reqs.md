@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: Demander, flux de données et annuler la diffusion en continu de données externes à votre classeur avec des fonctions personnalisées dans Excel
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: 60f09b791b13d34a4a7f307bb9677c9fcc72ee97
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349597"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773355"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -51,8 +51,8 @@ function webRequest() {
 }
 ```
 
->[!NOTE]
->L’utilisation de `Fetch` permet d’éviter les rappels imbriqués et peut être préférable à XHR dans certains cas.
+> [!NOTE]
+> L’utilisation de `Fetch` permet d’éviter les rappels imbriqués et peut être préférable à XHR dans certains cas.
 
 ### <a name="xhr-example"></a>Exemple avec XHR
 
@@ -131,7 +131,7 @@ function increment(incrementBy, invocation) {
 }
 ```
 
-## <a name="canceling-a-function"></a>Annulation d’une fonction
+## <a name="cancel-a-function"></a>Annuler une fonction
 
 Excel l’exécution d’une fonction dans les situations suivantes.
 
@@ -143,7 +143,7 @@ Vous pouvez également définir une valeur de diffusion en continu par défaut p
 
 Notez qu’il existe également une catégorie de fonctions appelée fonctions annulables, qui ne sont _pas_ liées à des fonctions de diffusion en continu. Seules les fonctions personnalisées asynchrones qui retournent une valeur sont annulables. Les fonctions annulables permettent de mettre fin à une requête web au milieu d’une demande, en utilisant une commande [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) pour décider de l’action à effectuer lors de l’annulation. Déclarez une fonction annulable à l’aide de la balise `@cancelable`.
 
-### <a name="using-an-invocation-parameter"></a>Utilisation d’un paramètre d’appel
+### <a name="use-an-invocation-parameter"></a>Utiliser un paramètre d’appel
 
 Par défaut, le paramètre `invocation` est le dernier de toute fonction personnalisée. Le paramètre donne un contexte sur la cellule (par exemple, son adresse et son contenu) et vous permet `invocation` d’utiliser et `setResult` des `onCanceled` méthodes. Ces méthodes définissent l’action d’une fonction quand elle diffuse (`setResult`) ou est annulée (`onCanceled`).
 

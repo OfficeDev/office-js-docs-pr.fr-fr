@@ -1,14 +1,14 @@
 ---
 title: Autoriser la connexion à Microsoft Graph avec l’authentification unique
 description: Découvrez comment les utilisateurs d’un Office peuvent utiliser l' sign-on unique (SSO) pour extraire des données de Microsoft Graph.
-ms.date: 02/09/2021
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: a7a0b179d2038fb9e8e70ea073278303bf2ac6cb
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e8e2946b6e6bc1cd49d18453065b52758d099a25
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671372"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773922"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
@@ -67,7 +67,7 @@ Pour obtenir des exemples de scénarios et procédures détaillées, consultez l
 
 ## <a name="distributing-sso-enabled-add-ins-in-microsoft-appsource"></a>Distribution de modules ssO dans Microsoft AppSource
 
-Lorsqu’un administrateur Microsoft 365 acquiert un add-in à partir [d’AppSource,](https://appsource.microsoft.com)il peut le redistribuer par un déploiement [centralisé](../publish/centralized-deployment.md) et accorder l’autorisation à l’administrateur d’accéder aux étendues Graph Microsoft. Toutefois, il est également possible pour l’utilisateur final d’acquérir le add-in directement à partir d’AppSource, auquel cas l’utilisateur doit donner son consentement au module. Cela peut créer un problème de performances potentiel pour lequel nous avons fourni une solution.
+Lorsqu’un administrateur Microsoft 365 acquiert un add-in à partir d’AppSource, il peut le redistribuer via les applications intégrées et accorder l’autorisation d’administrateur au add-in pour accéder aux étendues microsoft Graph. [](https://appsource.microsoft.com) [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) Toutefois, il est également possible pour l’utilisateur final d’acquérir le add-in directement à partir d’AppSource, auquel cas l’utilisateur doit donner son consentement au module. Cela peut créer un problème de performances potentiel pour lequel nous avons fourni une solution.
 
 Si votre code passe l’option dans l’appel de , par exemple, Office peut demander à l’utilisateur son consentement si Azure AD signale à Office que ce consentement `allowConsentPrompt` n’a pas encore été accordé au module. `getAccessToken` `OfficeRuntime.auth.getAccessToken( { allowConsentPrompt: true } );` Toutefois, pour des raisons de sécurité, Office peut uniquement invite l’utilisateur à consentir à l’étendue Azure `profile` AD. *Office pas être invité à consentir* à des étendues Graph Microsoft, pas même `User.Read` . Cela signifie que si l’utilisateur donne son consentement à l’invite, Office renvoyer un jeton d’a bootstrap. Toutefois, la tentative d’échange du jeton d’a bootstrap contre un jeton d’accès à Microsoft Graph échouera avec l’erreur AADSTS65001, ce qui signifie que le consentement (aux étendues Microsoft Graph) n’a pas été accordé.
 

@@ -1,14 +1,14 @@
 ---
 title: Rendre votre complément Office compatible avec un complément COM existant
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
-ms.date: 07/08/2021
+ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 85e5d8cc06aa599862c92b59a26c744f28ca2d22
-ms.sourcegitcommit: 95fc1fc8a0dbe8fc94f0ea647836b51cc7f8601d
+ms.openlocfilehash: 616da7b722a8e7645d801aec211d9579a880f93e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2021
-ms.locfileid: "53418684"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774265"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
@@ -20,13 +20,17 @@ Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?men
 > Cette fonctionnalité est prise en charge par la plateforme et les applications suivantes, lorsqu’elles sont connectées à Microsoft 365 abonnement. Les add-ins COM ne peuvent pas être installés sur une autre plateforme. Ainsi, sur ces plateformes, l’élément manifeste qui est abordé plus loin dans cet article, `EquivalentAddins` est ignoré.
 >
 > - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
+> - Outlook sur Windows (version 2102 ou ultérieure) par rapport à une version Exchange serveur pris en charge
+>   - Exchange Online
+>   - Exchange cumulative 2019 10 ou version ultérieure ([KB5003612](https://support.microsoft.com/topic/cumulative-update-10-for-exchange-server-2019-kb5003612-b1434cad-3fbc-4dc3-844d-82568e8d4344))
+>   - Exchange cumulative 2016 21 ou version ultérieure ([KB5003611](https://support.microsoft.com/topic/cumulative-update-21-for-exchange-server-2016-kb5003611-b7ba1656-abba-4a0b-9be9-dac45095d969))
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Spécifier un compl?ment COM équivalent
 
 ### <a name="manifest"></a>Manifeste
 
 > [!IMPORTANT]
-> S’applique Excel, PowerPoint et Word. Outlook prise en charge sera bientôt disponible.
+> S’applique Excel, Outlook, PowerPoint et Word.
 
 Pour activer la compatibilité entre votre Office et votre compl?ment COM, identifiez [](add-in-manifests.md) le compl?ment COM équivalent dans le manifeste de votre Office compl?ment. Ensuite, Office sur Windows utilisera le compl?ment COM au lieu du compl?ment Office, s’ils sont tous les deux install s.
 
@@ -45,7 +49,7 @@ L’exemple suivant montre la partie du manifeste qui spécifie un compl?ment CO
 ```
 
 > [!TIP]
-> Pour plus d’informations sur le module complémentaire COM et la compatibilité XLL UDF, voir Rendre vos fonctions personnalisées compatibles avec les fonctions [XLL définies par l’utilisateur.](../excel/make-custom-functions-compatible-with-xll-udf.md)
+> Pour plus d’informations sur le module complémentaire COM et la compatibilité XLL UDF, voir Rendre vos fonctions personnalisées compatibles avec les fonctions [XLL définies par l’utilisateur.](../excel/make-custom-functions-compatible-with-xll-udf.md) Non applicable pour les Outlook.
 
 ### <a name="group-policy"></a>Stratégie de groupe
 

@@ -1,14 +1,14 @@
 ---
-ms.date: 03/15/2021
+ms.date: 07/08/2021
 description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: e31059de78e9daedc31c9b0a8605b5352fd0ed94
-ms.sourcegitcommit: 7482ab6bc258d98acb9ba9b35c7dd3b5cc5bed21
+ms.openlocfilehash: b4ae61ab46de7dadb9280e731d65715adaf64630
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "51178047"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774167"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
@@ -20,7 +20,7 @@ Ajoutez la balise `@customfunction` dans les commentaires du code d’une foncti
 
 Vous pouvez fournir les types de paramètres de la fonction en utilisant la balise[@param](#param)dans JavaScript, ou en précisant le [type de fonction](https://www.typescriptlang.org/docs/handbook/functions.html) dans TypeScript. Si vous voulez en savoir plus, veuillez consulter les sections relatives à la balise[@param](#param) et aux sections[types](#types).
 
-### <a name="adding-a-description-to-a-function"></a>Ajout d’une description à une fonction
+### <a name="add-a-description-to-a-function"></a>Ajouter une description à une fonction
 
 La description s’affiche pour l’utilisateur sous forme de texte d’aide lorsqu’il a besoin d’aide pour comprendre le rôle de votre fonction personnalisée. La description ne nécessite aucune balise spécifique. Il vous suffit d’entrer une brève description dans le commentaire JSDoc. En général, la description est placée au début de la section commentaires JSDoc, mais elle fonctionnera peu importe son emplacement.
 
@@ -36,10 +36,9 @@ Dans cet exemple, la phrase «calcule le volume d’une sphère.» est la descri
  */
 ```
 
-
 ## <a name="jsdoc-tags"></a>Balises JSDoc
 
-Les balises JSDoc suivantes sont pris en charge dans les fonctions personnalisées Excel.
+Les balises JSDoc suivantes sont pris en charge Excel fonctions personnalisées.
 
 * [@ annulable](#cancelable)
 * [@fonctionpersonnalisée](#customfunction)nom id
@@ -69,7 +68,7 @@ Une fonction ne peut pas contenir les deux balises `@cancelable` et `@streaming`
 
 Syntaxe: @fonctionpersonnalisée _id_ _nom_
 
-Cette balise indique que la fonction JavaScript/TypeScript est une fonction excel personnalisée. Il est nécessaire de créer des métadonnées pour la fonction personnalisée.
+Cette balise indique que la fonction JavaScript/TypeScript est une Excel personnalisée. Il est nécessaire de créer des métadonnées pour la fonction personnalisée.
 
 Voici un exemple de cette balise.
 
@@ -120,7 +119,7 @@ Dans l’exemple suivant, INC correspond à l’`id` de la fonction, tandis que 
 
 ### <a name="description"></a>description
 
-Une description s’affiche pour les utilisateurs dans Excel à mesure qu’ils entrent dans la fonction et spécifie ce que fait la fonction. Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction.
+Une description apparaît aux utilisateurs Excel à mesure qu’ils entrent dans la fonction et spécifie ce que fait la fonction. Une description ne nécessite aucune balise spécifique. Ajoutez une description à une fonction personnalisée en ajoutant une expression pour décrire le rôle de la fonction dans le commentaire JSDoc. Par défaut, le texte non balisé dans la section commentaire JSDoc est la description de la fonction.
 
 Dans l’exemple suivant, la phrase « A function that adds two numbers » (« Une fonction qui ajoute deux nombres ») est la description de la fonction personnalisée dont la propriété ID est `ADD`.
 
@@ -161,9 +160,7 @@ Syntaxe JavaScript : @param {type} nom _description_
 * `name` spécifie le paramètre à @param balise s’applique. Elle est obligatoire.
 * `description`fournit la description qui s’affiche dans Excel pour le paramètre de la fonction. Elle est facultative.
 
-Pour désigner un paramètre de fonction personnalisée comme étant facultatif :
-
-* Placez les crochets autour du nom du paramètre. Par exemple : `@param {string} [text] Optional text`.
+Pour indiquer qu’un paramètre de fonction personnalisée est facultatif, placez des crochets autour du nom du paramètre. Par exemple, `@param {string} [text] Optional text`.
 
 > [!NOTE]
 > La valeur par défaut pour les paramètres facultatifs est `null`.

@@ -1,14 +1,14 @@
 ---
 title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
-ms.date: 06/20/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 213118f6acba1ee7aaabca7b4e524b9a3f75dd49
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671365"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773901"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -24,7 +24,7 @@ L’objet [Bindings] expose une méthode [getAllAsync] qui donne accès à toute
 
 ## <a name="binding-types"></a>Types de liaison
 
-Il existe [trois types de liaisons][Office. BindingType] que vous spécifiez avec le paramètre _bindingType_ lorsque vous créez une liaison avec les méthodes [addFromSelectionAsync], [addFromPromptAsync] ou [addFromNamedItemAsync] :
+Il existe [trois types de liaisons][Office. BindingType] que vous spécifiez avec le paramètre _bindingType_ lorsque vous créez une liaison avec les méthodes [addFromSelectionAsync], [addFromPromptAsync] ou [addFromNamedItemAsync.]
 
 1. **[Liaison de texte][TextBinding]** - Établit une liaison à une zone du document qui est représentée en tant que texte.
 
@@ -243,7 +243,6 @@ function write(message){
 }
 ```
 
-
 > [!NOTE]
 > Si la promesse de méthode renvoie correctement un objet Binding, cet objet expose uniquement les quatre méthodes suivantes de l’objet : `select` [getDataAsync], [setDataAsync], [addHandlerAsync]et [removeHandlerAsync]. [] Si la promesse ne peut pas renvoyer un objet Binding, le rappel peut être utilisé pour accéder à un objet `onError` .error [asyncResult]pour obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet [Binding] renvoyée par la méthode, utilisez plutôt la méthode `select` [getByIdAsync] à l’aide de la propriété [Document.bindings] et de Bindings.[ méthode getByIdAsync] pour récupérer [l’objet Binding.]
 
@@ -285,7 +284,7 @@ function write(message){
 }
 ```
 
-`myBinding` est une variable qui contient une liaison de texte existante dans le document. Vous pouvez également utiliser [Office.select] pour accéder à la liaison avec son identifiant et commencer à appeler la méthode [getDataAsync] de la manière suivante : 
+`myBinding` est une variable qui contient une liaison de texte existante dans le document. Vous pouvez également utiliser [Office.select] pour accéder à la liaison avec son identifiant et commencer à appeler la méthode [getDataAsync] de la manière suivante :
 
 ```js
 Office.select("bindings#myBindingID").getDataAsync

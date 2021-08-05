@@ -3,12 +3,12 @@ title: Insérer des données dans le corps dans un complément Outlook
 description: Découvrez comment insérer des données dans le corps d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: c2370de0a60521196f048e15a1eee9302ddba2ef
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671785"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773131"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -29,7 +29,7 @@ Dans Outlook, un utilisateur peut créer un message au format texte, HTML ou RTF
 
 2.  Si vos données à insérer sont au format HTML et **que getTypeAsync** renvoie un type de texte pour cet élément, réorganisez vos données sous forme de texte et insérez-les **Office. MailboxEnums.BodyType.Text** en tant _que coercionType_. Si vous insérez simplement les données HTML avec un type de contrainte de texte, l’application affiche les balises HTML sous forme de texte. Si vous tentez d’insérer les données HTML **avecOffice.MailboxEnums.BodyType.Html** en tant que _coercionType,_ vous obtenez une erreur.
 
-En plus de _coercionType_, comme avec la plupart des méthodes asynchrones dans l’API JavaScript Office, **getTypeAsync**, **prependAsync** et **setSelectedDataAsync** prennent d’autres paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md).
+En plus de _coercionType_, comme avec la plupart des méthodes asynchrones dans l’API JavaScript Office, **getTypeAsync**, **prependAsync** et **setSelectedDataAsync** prennent d’autres paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md).
 
 
 ## <a name="insert-data-at-the-current-cursor-position"></a>Insertion de données à l’emplacement du curseur

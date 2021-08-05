@@ -1,14 +1,14 @@
 ---
-ms.date: 09/25/2020
+ms.date: 07/08/2021
 description: Comprendre Excel fonctions personnalisées qui n’utilisent pas de volet de tâches et leur runtime JavaScript spécifique.
 title: Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: aa2cf2632ddf9eb1ad1eb202b031ee2ca686af01
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349622"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774181"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
 
@@ -20,7 +20,7 @@ Les fonctions personnalisées qui n’utilisent pas de volet de tâches (fonctio
 
 Ce runtime JavaScript permet d’accéder aux API de l’espace de noms qui peuvent être utilisées par les fonctions personnalisées sans interface utilisateur et le volet Des tâches pour stocker `OfficeRuntime` des données.
 
-## <a name="requesting-external-data"></a>Demande de données externes
+## <a name="request-external-data"></a>Demander des données externes
 
 Dans une fonction personnalisée sans interface utilisateur, vous pouvez demander des données externes à l’aide d’une API telle que [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou en utilisant [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)une API web standard qui émettre des demandes HTTP pour interagir avec les serveurs.
 
@@ -28,7 +28,7 @@ N’ignorez pas que les fonctions sans interface utilisateur doivent utiliser de
 
 Une implémentation CORS simple ne peut pas utiliser de cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un `Content-Type` en-tête dans CORS simple, à condition que le type de contenu `application/x-www-form-urlencoded` soit , ou `text/plain` `multipart/form-data` .
 
-## <a name="storing-and-accessing-data"></a>Accès aux données et stockage
+## <a name="store-and-access-data"></a>Stocker et accéder aux données
 
 Dans une fonction personnalisée sans interface utilisateur, vous pouvez stocker et accéder aux données à l’aide de `OfficeRuntime.storage` l’objet. `Storage` est un système de stockage persistant, non chiffré et à valeur clé qui fournit une alternative à [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé par des fonctions personnalisées sans interface utilisateur. `Storage` offre 10 Mo de données par domaine. Les domaines peuvent être partagés par plusieurs modules.
 
@@ -68,7 +68,8 @@ function StoreValue(key, value) {
 
 Si votre add-in utilise uniquement des fonctions personnalisées sans interface utilisateur, notez que vous ne pouvez pas accéder au modèle DOM (Document Object Model) avec des fonctions personnalisées sans interface utilisateur ou utiliser des bibliothèques telles que jQuery qui reposent sur le DOM.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
+
 Découvrez comment [déboguer des](custom-functions-debugging.md)fonctions personnalisées sans interface utilisateur.
 
 ## <a name="see-also"></a>Voir aussi

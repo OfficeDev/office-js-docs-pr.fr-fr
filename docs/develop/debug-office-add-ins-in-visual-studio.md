@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
-ms.date: 12/31/2019
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 2b260ab83c513419cb32bbe3f02900e3fc4f4b41
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349937"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773817"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -31,7 +31,7 @@ Avant de commencer le débogage, examinez les propriétés de chaque projet pour
 
 ### <a name="add-in-project-properties"></a>Propriétés du projet de complément
 
-Ouvrir la fenêtre **Propriétés** pour le projet complément pour examiner les propriétés du projet :
+Ouvrez **la fenêtre Propriétés** du projet de add-in pour passer en revue les propriétés du projet.
 
 1. Dans **l’Explorateur de solutions**, choisissez le projet de complément (*pas* le projet d’application web).
 
@@ -57,7 +57,7 @@ Le tableau suivant décrit les propriétés du projet de complément.
 
 ### <a name="web-application-project-properties"></a>Propriétés du projet application Web
 
-Ouvrir la fenêtre **Propriétés** pour le projet complément web pour examiner les propriétés du projet :
+Ouvrez la **fenêtre Propriétés** du projet d’application web pour passer en revue les propriétés du projet.
 
 1. Dans **l’Explorateur de** solutions, choisissez le projet d’application web.
 
@@ -139,7 +139,7 @@ Si votre application n’est pas visible dans le document qui s’affiche dans l
 
 5. Lorsque des points d’arrêt sont marqués dans Visual Studio, parcourez le code si besoin.
 
-Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre add-in sans avoir à fermer l’application Office et redémarrer le projet. Une fois que vous avez enregistrez les modifications apportées à votre code, rechargez simplement le Office application. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis **Recharger**.
+Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre add-in sans avoir à fermer l’application Office et redémarrer le projet. Après avoir enregistrer les modifications apportées à votre code, rechargez simplement le Office application. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis **Recharger**.
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>Déboguer le code d’un complément Outlook
 

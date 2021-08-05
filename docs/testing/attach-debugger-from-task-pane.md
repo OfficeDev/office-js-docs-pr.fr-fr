@@ -1,14 +1,14 @@
 ---
 title: Attacher un débogueur à partir du volet Office
 description: Découvrez comment attacher un débogger à partir du volet Des tâches
-ms.date: 06/17/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f5a63e9912e2a7d8ac400fc9abba116abfedbbeb
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077196"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774314"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
@@ -17,19 +17,19 @@ Dans Office 2016 pour Windows, version 77xx.xxxx ou ultérieure, vous pouvez a
 Pour lancer l’outil **Attacher le débogueur**, cliquez sur le coin supérieur droit du volet Office pour activer le menu **Caractéristique** (comme illustré dans le cercle rouge dans l’image suivante).
 
 > [!NOTE]
-> - Actuellement, le seul débogueur pris en charge est [Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la [mise à jour 3](/previous-versions/mt752379(v=vs.140)) ou une mise à jour ultérieure. Si vous n’avez pas installé Visual Studio, la  sélection de l’option Attacher le débogger n’entraîne aucune action.
+> - Actuellement, le seul outil de débogger pris en charge [est Visual Studio 2015](https://www.visualstudio.com/downloads/) avec la mise à jour [3](/previous-versions/mt752379(v=vs.140)) ou ultérieure. Si vous n’avez pas installé Visual Studio, la  sélection de l’option Attacher le débogger n’entraîne aucune action.
 > - Vous ne pouvez déboguer JavaScript côté client qu’à l’aide de l’outil **Attacher le débogueur**. Pour déboguer du code côté serveur, comme avec un serveur Node.js, vous disposez de nombreuses options. Pour plus d’informations sur le débogage avec Visual Studio Code, reportez-vous à la rubrique sur le [débogage de Node.js dans VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging). Si vous n’utilisez pas Visual Studio Code, recherchez « déboguer Node.js » ou « déboguer {nom de serveur} ».
 
 ![Capture d’écran du menu Attacher le débogger.](../images/attach-debugger.png)
 
-Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialogue **Débogueur juste-à-temps Visual Studio**, comme illustré dans l’image suivante. 
+Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialogue **Débogueur juste-à-temps Visual Studio**, comme illustré dans l’image suivante.
 
 ![Capture d’Visual Studio boîte de dialogue Débogger JIT.](../images/visual-studio-debugger.png)
 
 Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de solutions**.   Vous pouvez définir des points d’arrêt à la ligne de code que vous souhaitez déboguer dans Visual Studio.
 
 > [!NOTE]
-> Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Vérifiez que votre complément de volet Office est ouvert dans Office, puis procédez comme suit :
+> Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Assurez-vous que votre add-in du volet Des tâches est ouvert Office, puis suivez ces étapes.
 >
 > 1. Dans Visual Studio, choisissez **DÉBOGUER** > **Attacher au processus**.
 > 2. Dans **Processus disponibles**, choisissez *soit* tous les processus `Iexplore.exe`disponibles, *soit* tous les processus `MicrosoftEdge*.exe` disponible selon que [votre complément utilise Internet Explorer ou Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), puis cliquez sur le bouton **Joindre**.

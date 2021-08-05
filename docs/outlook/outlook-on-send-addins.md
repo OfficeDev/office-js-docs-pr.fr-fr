@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 06/16/2021
+ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: fa39a934c0678f2ac3f59c08b488486dd8396c6c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671827"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774363"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -42,9 +42,9 @@ Le tableau suivant présente les combinaisons client-serveur pris en charge pour
 
 Vous pouvez utiliser la fonctionnalité d’envoi pour créer un complément Outlook qui intègre l’événement synchrone `ItemSend`. Cet événement détecte le moment où l’utilisateur clique sur le bouton **Envoyer**(ou le bouton **Envoyer mise à jour** pour les réunions existantes) et peut servir à bloquer l’envoi de l’élément s’il n’est pas validé. Par exemple, quand un utilisateur déclenche un événement d’envoi de message, un complément Outlook qui utilise la fonctionnalité d’envoi peut :
 
-- Lire et valider le contenu du message
-- Vérifier que la ligne d’objet du message est remplie
-- Définir un destinataire prédéterminé
+- Lire et valider le contenu du message électronique.
+- Vérifiez que le message inclut une ligne d’objet.
+- Définissez un destinataire prédéterminé.
 
 La validation est effectuée côté client dans Outlook lorsque l’événement d’envoi est déclenché et que le module a jusqu’à 5 minutes avant son heure d’attente. Si la validation échoue, l’envoi de l’élément est bloqué et un message d’erreur s’affiche dans une barre d’informations qui invite l’utilisateur à prendre des mesures.
 
@@ -53,17 +53,9 @@ La validation est effectuée côté client dans Outlook lorsque l’événement 
 
 La capture d’écran suivante montre une barre d’informations invitant l’expéditeur à renseigner l’objet du message.
 
-<br/>
-
 ![Capture d’écran montrant un message d’erreur qui invite l’utilisateur à entrer une ligne d’objet manquante.](../images/block-on-send-subject-cc-inforbar.png)
 
-<br/>
-
-<br/>
-
 La capture d’écran suivante montre une barre d’informations informant l’expéditeur que des mots bloqués ont été trouvés.
-
-<br/>
 
 ![Capture d’écran montrant un message d’erreur indiquant à l’utilisateur que des mots bloqués ont été trouvés.](../images/block-on-send-body.png)
 
@@ -71,7 +63,7 @@ La capture d’écran suivante montre une barre d’informations informant l’e
 
 Les limites de la fonctionnalité d’envoi sont les suivantes.
 
-- **Fonctionnalité d’envoi à l’envoi** &ndash; si vous appelez le [corps. AppendOnSendAsync dans](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) le handler d’envoi, une erreur est renvoyée.
+- **Fonctionnalité d’envoi** à l’envoi Si vous appelez &ndash; [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#appendOnSendAsync_data__options__callback_) dans le handler d’envoi, une erreur est renvoyée.
 - **AppSource** &ndash; Vous ne pouvez pas publier de compléments Outlook qui utilisent la fonctionnalité d’envoi sur [AppSource](https://appsource.microsoft.com). car ils ne seront pas validés par AppSource. Les compléments qui utilisent la fonctionnalité d’envoi doivent être déployés par les administrateurs.
 - **Manifeste** &ndash; Le complément prend en charge un seul événement `ItemSend`. Si votre manifeste comprend plusieurs événements `ItemSend`, il ne sera pas validé.
 - **Performances**&ndash; : plusieurs allers-retours vers le serveur web hébergeant le complément peuvent nuire aux performances du complément. Imaginez alors ce qu’occasionnerait la création de compléments nécessitant plusieurs opérations de messagerie ou réunions.
@@ -81,9 +73,11 @@ En outre, il n’est pas recommandé d’appeler le handler d’événements d�
 
 ### <a name="mailbox-typemode-limitations"></a>Limites concernant le type ou le mode de boîte aux lettres
 
-La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux lettres utilisateur dans Outlook sur le web, sur Windows et sur Mac. Outre les situations dans lesquelles les compléments ne s’activent pas comme indiqué dans la section Éléments de boîte aux lettres disponibles pour les [compléments](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) de la page vue d’ensemble des compléments Outlook, la fonctionnalité n’est actuellement pas prise en charge en mode hors connexion.
+La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux lettres utilisateur dans Outlook sur le web, sur Windows et sur Mac. Outre les situations dans lesquelles les compléments ne s’activent pas comme indiqué dans la section Éléments de boîte aux lettres disponibles pour les compléments de la page de vue d’ensemble des [compléments](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) Outlook, la fonctionnalité n’est actuellement pas prise en charge pour le mode hors connexion lorsque ce mode est disponible.
 
-Outlook n’autorise pas l’envoi si la fonctionnalité d’envoi est activée pour les scénarios de boîte aux lettres non pris en compte. Toutefois, dans les cas où Outlook ne s’activent pas, le add-in d’envoi ne s’exécute pas et le message est envoyé.
+Dans les cas où Outlook ne s’activent pas, le module d’envoi ne s’exécute pas et le message est envoyé.
+
+Toutefois, si la fonctionnalité d’envoi est activée et disponible, mais que le scénario de boîte aux lettres n’est pas pris en Outlook' n’autorise pas l’envoi.
 
 ## <a name="multiple-on-send-add-ins"></a>Compléments d’envoi multiples
 
@@ -284,13 +278,16 @@ Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSen
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-Les compléments pour Outlook sur Windows qui utilisent la fonctionnalité d’envoi doivent s’exécuter pour tous les utilisateurs qui les ont installés. Toutefois, si les utilisateurs sont obligés d’exécuter le complément pour respecter les normes de conformité, la stratégie de groupe **Désactiver l’envoi lorsque les extensions Web ne peuvent pas être chargées** doit être **Activée** sur chaque ordinateur concerné.
+Les compléments pour Outlook sur Windows qui utilisent la fonctionnalité d’envoi doivent s’exécuter pour tous les utilisateurs qui les ont installés. Toutefois, si les utilisateurs doivent exécuter le module pour répondre aux normes de conformité, la stratégie de  groupe Bloquer **l’envoi** lorsque les applications web ne peuvent pas se charger doit être définie sur Activé sur chaque ordinateur applicable.
 
 Pour définir des stratégies de boîte aux lettres, les administrateurs peuvent télécharger l’outil [Modèles](https://www.microsoft.com/download/details.aspx?id=49030) d’administration, puis accéder aux derniers modèles d’administration en exécutant l’Éditeur de stratégie de groupe local, **gpedit.msc**.
 
+> [!NOTE]
+> Dans les versions antérieures de l’outil Modèles d’administration, le nom de la stratégie était Disable send lorsque les **extensions web ne peuvent pas se charger.** Remplacez ce nom dans les étapes ultérieures si nécessaire.
+
 #### <a name="what-the-policy-does"></a>Rôle de la stratégie
 
-Pour des raisons de conformité, il se peut que les administrateurs doivent s’assurer que les utilisateurs ne peuvent pas envoyer de d’éléments message ou réunion tant que la dernière mise à jour du complément n’est pas disponible. Les administrateurs doivent activer la stratégie de groupe **Désactiver l’envoi lorsque les extensions Web ne peuvent pas être chargées**, de sorte que tous les compléments sont mis à jour à partir d’Exchange et disponibles pour vérifier que chaque élément message ou réunion respecte les règles et réglementations attendues lors de l’envoi.
+Pour des raisons de conformité, il se peut que les administrateurs doivent s’assurer que les utilisateurs ne peuvent pas envoyer de d’éléments message ou réunion tant que la dernière mise à jour du complément n’est pas disponible. Les administrateurs doivent activer la stratégie de groupe Bloquer **l’envoi** lorsque les applications web ne peuvent pas être chargés afin que tous les modules soient mis à jour à partir de Exchange et disponibles pour vérifier que chaque message ou élément de réunion répond aux règles et réglementations attendues lors de l’envoi.
 
 |État de la stratégie|Résultat|
 |---|---|
@@ -299,14 +296,14 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 
 #### <a name="manage-the-on-send-policy"></a>Gérer la stratégie d’envoi
 
-Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuvent activer la stratégie d’envoi en veillant à ce que le paramètre de la stratégie de groupe de l’utilisateur **Désactiver l'envoi lorsque les extensions Web ne sont pas chargées** soit **Activé**. Pour désactiver la stratégie pour un utilisateur, l’administrateur doit la paramétrer sur **Désactivé**. Pour gérer ce paramètre de stratégie, vous pouvez :
+Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuvent activer la stratégie **d’envoi** en s’assurant que le paramètre de stratégie de groupe Bloquer l’envoi lorsque les applications web ne peuvent pas être chargés est **activé.** Pour désactiver la stratégie pour un utilisateur, l’administrateur doit la paramétrer sur **Désactivé**. Pour gérer ce paramètre de stratégie, vous pouvez :
 
 1. Téléchargez l’[outil de modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
-1. Accédez à **Configuration utilisateur > modèles d’administration > Microsoft Outlook 2016 > Sécurité > Centre de gestion de la confidentialité**.
-1. Sélectionnez le paramètre **Désactiver l’envoi lorsque les extensions Web ne peuvent pas charger**.
+1. Accédez aux  >  **modèles d’administration** de configuration utilisateur   >  **Microsoft Outlook 2016**  >  **Security**  >  **Trust Center**.
+1. Sélectionnez **le paramètre Bloquer l’envoi** lorsque les applications web ne peuvent pas charger le paramètre.
 1. Ouvrir le lien pour modifier le paramètre de stratégie.
-1. Dans la fenêtre de dialogue **Désactiver l’envoi lorsque les extensions Web ne peuvent pas charger**, sélectionnez **Activée** ou **Désactivée**, puis sélectionnez **OK** ou **Appliquer** pour appliquer la mise à jour.
+1. Dans la fenêtre Bloquer l’envoi lorsque les **add-ins**  web ne peuvent pas charger la boîte de dialogue, sélectionnez Activé ou Désactivé selon le cas, puis **sélectionnez OK** ou **Appliquer** pour mettre la mise à jour en vigueur. 
 
 ### <a name="mac"></a>[Mac](#tab/unix)
 
@@ -338,7 +335,7 @@ Voici tous les scénarios pris en charge et non pour les compléments qui utilis
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>La fonctionnalité d’envoi est activée sur la boîte aux lettres de l’utilisateur, mais aucun complément n’est installé.
 
-Dans ce scénario, l’utilisateur peut envoyer des éléments message ou réunion sans l’exécution des compléments.
+Dans ce scénario, l’utilisateur sera en mesure d’envoyer des messages et des éléments de réunion sans exécuter de modules.
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-and-add-ins-that-supports-on-send-are-installed-and-enabled"></a>La fonctionnalité d’envoi est activée sur la boîte aux lettres de l’utilisateur et les compléments qui prennent en charge cette fonctionnalité sont installés et activés
 
@@ -447,8 +444,6 @@ Pour le fichier manifeste `Contoso Subject and CC Checker.xml`, l’exemple suiv
 </Hosts>
 ```
 
-<br/>
-
 L’API d’envoi nécessite `VersionOverrides v1_1`. L’exemple vous montre comment ajouter le nœud `VersionOverrides` dans votre manifeste.
 
 ```xml
@@ -462,6 +457,7 @@ L’API d’envoi nécessite `VersionOverrides v1_1`. L’exemple vous montre co
 
 > [!NOTE]
 > Pour plus d’informations, voir les commandes suivantes :
+>
 > - [Manifestes de complément Outlook](manifests.md)
 > - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
 

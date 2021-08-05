@@ -3,12 +3,12 @@ title: Instructions relatives aux icônes de style monoligne pour Office de rech
 description: Recommandations en matière d’utilisation d’icônes de style Monoline dans Office des modules.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: a59574f1f49ccb8b7b6fd485d08f83e39d760a48
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349342"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773278"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monoligne pour Office de recherche
 
@@ -27,7 +27,7 @@ Les instructions suivantes sont pour les développeurs tiers qui souhaitent cré
 - Inspired by Windows icon style.
 - Accessible à tous les utilisateurs.
 
-#### <a name="conveying-meaning"></a>Transmission d’une signification
+#### <a name="convey-meaning"></a>Transmettre une signification
 
 - Utilisez des éléments descriptifs tels qu’une page pour représenter un document ou une enveloppe pour représenter le courrier électronique.
 - Utilisez le même élément pour représenter le même concept, c’est-à-dire que le courrier est toujours représenté par une enveloppe, et non par un cachet.
@@ -56,7 +56,7 @@ Monoline est un style minimal. Tout utilise une couleur plate, ce qui signifie q
 
 ### <a name="sizes"></a>Tailles
 
-Nous vous recommandons de produire chaque icône de toutes ces tailles pour prendre en charge les appareils à hautes dimensions. Les *tailles absolument requises* sont de 16 px, 20 px et 32 px, car il s’s’il s’tt de la taille 100 %.
+Nous vous recommandons de produire chaque icône de toutes ces tailles pour prendre en charge les appareils à hautes dimensions. Les tailles *absolument requises* sont de 16 px, 20 px et 32 px, car il s’s’il s’tt de la taille 100 %.
 
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
@@ -73,7 +73,7 @@ Voici un exemple de mise en page d’icône avec un modificateur.
 
 - **Base**: concept principal représenté par l’icône. Il s’agit généralement du seul élément visuel nécessaire à l’icône, mais le concept principal peut parfois être amélioré avec un élément secondaire, un modificateur.
 
-- **Modificateur** Tout élément qui superpose la base ; autrement dit, un modificateur qui représente généralement une action ou un état. Il modifie l’élément de base en agissant en tant qu’ajout, modification ou descripteur.
+- **Modificateur** Tout élément qui superpose la base ; autrement dit, un modificateur qui représente généralement une action ou un état. Il modifie l’élément de base en agissant comme un ajout, une modification ou un descripteur.
 
 ![Diagramme de la grille avec zones de base et de modificateur appelées.](../images/monolineicon3.png)
 
@@ -116,9 +116,9 @@ Lorsqu’un élément d’icône est placé au-dessus d’un autre élément, un
 
 La taille de l’intervalle doit être identique à la largeur de trait utilisée sur cette taille. Si vous faites une icône de 16 px, la largeur de l’intervalle est de 1 px et s’il s’agit d’une icône de 48 px, l’écart doit être de 2 px. L’exemple suivant montre une icône de 32 px avec un intervalle de 1 px entre le modificateur et la base sous-jacente.
 
-![Icône 32 px avec un intervalle de 1 px entre le modificateur et la base sous-jacente.](../images/monolineicon25.png)
+![Icône de 32 px avec un intervalle de 1 px entre le modificateur et la base sous-jacente.](../images/monolineicon25.png)
 
-Dans certains cas, l’écart peut être augmenté de 1/2 px si le modificateur possède un bord diagonal ou courbé et que l’intervalle standard ne fournit pas une séparation suffisante. Cela affectera probablement uniquement les icônes ayant une pondération de trait de 1 px : 16 px, 20 px, 24 px et 32 px.
+Dans certains cas, l’écart peut être augmenté de 1/2 px si le modificateur possède un bord diagonal ou courbé et que l’intervalle standard ne fournit pas une séparation suffisante. Cela affectera probablement uniquement les icônes avec une pondération de trait de 1 px : 16 px, 20 px, 24 px et 32 px.
 
 #### <a name="background-fills"></a>Remplissages d’arrière-plan
 
@@ -132,7 +132,7 @@ Les icônes suivantes n’ont pas de remplissage. (L’icône d’engrenage est 
 
 ##### <a name="best-practices-for-fills"></a>Meilleures pratiques en matière de remplissages
 
-###### <a name="dos"></a>À faire :
+###### <a name="dos"></a>À faire
 
 - Remplissez tout élément qui a une limite définie et qui aurait naturellement un remplissage.
 - Utilisez une forme distincte pour créer le remplissage d’arrière-plan.
@@ -140,7 +140,7 @@ Les icônes suivantes n’ont pas de remplissage. (L’icône d’engrenage est 
 - Conservez la séparation des pixels entre les éléments qui se chevauchent.
 - Remplissage entre plusieurs objets.
 
-###### <a name="donts"></a>À ne pas faire :
+###### <a name="donts"></a>À ne pas faire
 
 - Ne remplissez pas les objets qui ne seraient pas naturellement remplis ; par exemple, un paperclip.
 - Ne pas remplir les crochets.
@@ -170,7 +170,7 @@ Voici des exemples d’utilisation de couleur.
 
 La situation la plus courante est qu’un élément utilise le gris foncé autonome avec remplissage d’arrière-plan.
 
-Lors de l’utilisation d’un remplissage coloré, il doit toujours être avec sa couleur de plan correspondante. Par exemple, le remplissage bleu ne doit être utilisé qu’avec le contour bleu. Mais il existe deux exceptions à cette règle générale :
+Lors de l’utilisation d’un remplissage coloré, il doit toujours être avec sa couleur de plan correspondante. Par exemple, le remplissage bleu ne doit être utilisé qu’avec le contour bleu. Mais il existe deux exceptions à cette règle générale.
 
 - Le remplissage d’arrière-plan peut être utilisé avec n’importe quelle couleur autonome.
 - Le remplissage gris clair peut être utilisé avec deux couleurs plan différentes : gris foncé ou gris moyen.

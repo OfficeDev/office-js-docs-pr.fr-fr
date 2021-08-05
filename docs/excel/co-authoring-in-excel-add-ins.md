@@ -1,14 +1,14 @@
 ---
 title: Co-création dans des macros complémentaires Excel
 description: Apprenez à co-Excel un OneDrive, OneDrive Entreprise ou SharePoint Online.
-ms.date: 07/23/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6901df106f9b70bc0265d78757ec7416380fc76c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6923b003417e78432975fa78fb5423b055bd02bf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671484"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774160"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
@@ -48,7 +48,7 @@ Comme indiqué précédemment, dans certains scénarios, le déclenchement d’�
 
 Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le handler d’événement de l’événement affiche l’interface utilisateur, les utilisateurs voient une interface utilisateur qui n’est pas liée aux modifications qu’ils utilisaient dans le classeur, ce qui a pour effet de rendre l’expérience utilisateur `BindingDataChanged` médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
 
-## <a name="avoiding-table-row-coauthoring-conflicts"></a>Éviter les conflits de co-auteur de lignes de tableau
+## <a name="avoid-table-row-coauthoring-conflicts"></a>Éviter les conflits de co-auteur de lignes de tableau
 
 Il s’agit d’un problème connu : les appels à l’API peuvent provoquer des [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) conflits de co-édition. Nous vous déconseillons d’utiliser cette API si vous prévoyez d’exécuter votre application pendant que d’autres utilisateurs modifient le workbook du module (en particulier, s’ils modifient le tableau ou une plage sous le tableau). Les instructions suivantes doivent vous aider à éviter les problèmes avec la méthode (et éviter le déclenchement de la barre jaune Excel affiche qui demande aux utilisateurs `TableRowCollection.add` d’actualiser).
 

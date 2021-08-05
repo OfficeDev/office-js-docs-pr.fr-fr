@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
-description: En savoir plus sur les exigences de client et de serveur dont un utilisateur final a besoin pour exécuter Office de recherche.
-ms.date: 03/18/2020
+description: Découvrez les exigences en matière de client et de serveur dont un utilisateur final a besoin pour exécuter des Office de recherche.
+ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 2aa5b2ffadffb86052ea55e06b1c0c49742543e6
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: f432eab8404b210bbe2bc2734f81873e80bc6397
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349132"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773229"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -29,7 +29,7 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 > [!TIP]
 > lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
-Pour les applications clientes de contenu et de volet de tâches, dans les applications clientes Office pris en charge [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un catalogue d’applications sur SharePoint pour télécharger le fichier manifeste XML du module, ou vous devez déployer le module à l’aide du déploiement [centralisé.](../publish/centralized-deployment.md)
+Pour les applications clientes de contenu et du volet Des tâches, dans les applications clientes Office pris en charge (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un catalogue d’applications sur SharePoint pour télécharger le fichier manifeste XML du module, ou vous devez déployer le module à l’aide des applications [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) intégrées. [](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
 
 Pour tester et exécuter un Outlook, le compte de messagerie Outlook de l’utilisateur doit résider sur Exchange 2013 ou une ultérieure, qui est disponible via Microsoft 365, Exchange Online ou via une installation sur site. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
 
@@ -78,7 +78,7 @@ L’installation du logiciel suivant est nécessaire pour tester et exécuter le
 |:-----|:-----|:-----|:-----|:-----|
 |Outlook sur Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Application native pour Android, navigateur non applicable|
 |Outlook sur iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Application native pour iOS, navigateur non applicable|
-|Outlook sur le web|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Microsoft 365, Exchange Online, ou en local sur Exchange Server 2013 ou ultérieure|Safari|
+|Outlook sur le web|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Microsoft 365, Exchange Online ou en local sur Exchange Server 2013 ou ultérieure|Safari|
 
 > [!NOTE]
 > Les applications natives OWA pour Android, OWA pour iPad et OWA pour iPhone ont été [supprimées](https://support.office.com/article/Microsoft-OWA-mobile-apps-are-being-retired-076ec122-4576-4900-bc26-937f84d25a4b) et ne sont plus requises ou disponibles pour les tests des compléments Outlook.

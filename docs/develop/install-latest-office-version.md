@@ -1,22 +1,20 @@
 ---
 title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
-ms.date: 07/07/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d72012e3c2e642c74d8573c4d9bb3b29a8fc0274
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 76ca1a91ff30d1310ddbfc38d7a2ced682d2b47e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076019"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773768"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
 De nouvelles fonctionnalités de développeur, y compris celles en version d’évaluation, sont mises à la disposition des abonnés qui souhaitent obtenir les dernières versions d’Office.
 
-## <a name="opt-in-to-getting-the-latest-builds"></a>Inscription pour l’obtention des versions les plus récentes
-
-Pour s’inscrire afin d’obtenir les dernières versions d’Office, procédez comme suit :
+## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>Optez pour obtenir les dernières builds de Office
 
 - Si vous êtes abonné à Microsoft 365 Famille, Personnel ou Université, consultez l’article Office [Insider.](https://insider.office.com)
 - Si vous êtes un client Applications Microsoft 365 pour les PME, voir Installer la build [First Release pour Applications Microsoft 365 pour les PME clients.](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)
@@ -25,9 +23,7 @@ Pour s’inscrire afin d’obtenir les dernières versions d’Office, procédez
   - Sélectionnez **Vérifier les mises à jour** dans le menu Aide.
   - Dans la zone Mise à jour automatique Microsoft (AutoUpdate), cochez la case pour participer au programme Office Insider.
 
-## <a name="get-the-latest-build"></a>Obtention de la dernière version
-
-Pour obtenir la dernière version d’Office, procédez comme suit :
+## <a name="get-the-latest-build-of-office"></a>Obtenir la dernière version de Office
 
 1. Télécharger [l’outil Déploiement d’Office](https://www.microsoft.com/download/details.aspx?id=49117).
 2. Exécutez l’outil. Cette opération extrait les deux fichiers suivants : Setup.exe et configuration.xml.
@@ -42,8 +38,6 @@ Une fois le processus d’installation terminé, les dernières applications d�
 ![Capture d’écran shows product information with the Office Insiders label.](../images/office-insiders-label.png)
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds Office minimum pour les ensembles de conditions requises pour l’API JavaScript pour Office
-
-Pour plus d’informations sur les versions minimum des produits pour chaque plate-forme pour les ensembles de conditions requises pour les API, voir les rubriques suivantes :
 
 - [Ensembles de conditions requises de l’API JavaScript pour Excel](../reference/requirement-sets/excel-api-requirement-sets.md)
 - [Ensembles de conditions requises de l’API JavaScript pour OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md)

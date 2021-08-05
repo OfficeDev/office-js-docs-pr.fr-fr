@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7b4fe01b58fcb9a8fa03b1e1d728bb1a2bf0e19c
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4d92b5b7249540ada274bb0aa310cf894a7be6bc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349958"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773866"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -40,10 +40,11 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 1. Clonez ou téléchargez le référentiel sur [Complément Office NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso).
 
     > [!NOTE]
-    > Il existe trois versions de l’échantillon :  
+    > Il existe trois versions de l’échantillon :
+    >
     > * Le **dossier Begin** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
     > * La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version terminée, suivez simplement les instructions de cet article, mais remplacez « Commencer » par « Terminé » et ignorez les sections Code côté **client** et **Code** côté serveur.
-    > * La version **SSOAutoSetup** est un exemple complet qui permet d’automatiser la plupart des étapes d’inscription du complément avec Azure AD et sa configuration. Utilisez cette version si vous voulez rapidement afficher un complément opérationnel avec SSO. Suivez simplement les étapes décrites dans le fichier Lisez-moi du dossier. Nous vous recommandons, à un certain point, de suivre les étapes d’inscription et de configuration manuelles décrites dans cet article pour mieux comprendre la relation entre Azure AD et un complément. 
+    > * La version **SSOAutoSetup** est un exemple complet qui permet d’automatiser la plupart des étapes d’inscription du complément avec Azure AD et sa configuration. Utilisez cette version si vous voulez rapidement afficher un complément opérationnel avec SSO. Suivez simplement les étapes décrites dans le fichier Lisez-moi du dossier. Nous vous recommandons, à un certain point, de suivre les étapes d’inscription et de configuration manuelles décrites dans cet article pour mieux comprendre la relation entre Azure AD et un complément.
 
 1. Ouvrez une invite de commandes dans le **dossier Begin.**
 
@@ -61,7 +62,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
     * Définissez le **Nom** sur `Office-Add-in-NodeJS-SSO`.
     * Définissez les **Types de comptes pris en charge** à **Comptes dans un annuaire organisationnel et les comptes personnels Microsoft (par ex. Skype, Xbox et Outlook.com)**.
-    * Définissez le type d’application **sur Web,** puis définissez **l’URI de redirection** sur ` https://localhost:44355/dialog.html` .
+    * Définissez le type d’application **sur Web,** puis définissez **l’URI de redirection** sur `https://localhost:44355/dialog.html` .
     * Choisissez **Inscrire**.
 
 1. Sur la page **Office-Add-in-NodeJS-SSO**, copiez et enregistrez les valeurs pour l’**ID de l’application (client)** et l’**ID de répertoire (client)**. Vous utiliserez les deux plus tard.
@@ -105,7 +106,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     - `08e18876-6177-487e-b8b5-cf950c1e598c` (Office sur le web)
     - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
 
-    Pour chaque ID, procédez comme suit :
+    Pour chaque ID, prenez les mesures suivantes.
 
     a. Sélectionnez le bouton **Ajouter une application client** puis, dans le volet qui s’ouvre, définissez l’ID Client pour le GUID respectif et cochez la case pour `api://localhost:44355/$App ID GUID$/access_as_user`.
 
@@ -152,10 +153,10 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     </WebApplicationInfo>
     ```
 
-1. Remplacez l’espace réservé « $application_GUID here$ » *aux deux endroits* du balisage par l’ID d’application que vous avez copiée lorsque vous avez inscrit votre complément. Les « $ » ne faisant pas partie de l’ID, vous ne devez pas les inclure. Il s’agit du même ID que celui utilisé pour les CLIENT_ID et audience dans le . Fichier ENV.
+1. Remplacez l’espace réservé « $application_GUID here$ » *aux deux endroits* du balisage par l’ID d’application que vous avez copiée lorsque vous avez inscrit votre complément. Les « $ » ne faisant pas partie de l’ID, vous ne devez pas les inclure. Il s’agit du même ID que celui que vous avez utilisé pour les CLIENT_ID et audience dans le . Fichier ENV.
 
-    > [!NOTE]
-    > La valeur de la **ressource** est l’**URI de l’ID d’application** que vous avez défini lors de l’inscription du complément. La section **Étendues** est utilisée uniquement pour générer une boîte de dialogue de consentement si le complément est vendu via AppSource.
+   > [!NOTE]
+   > La valeur de la **ressource** est l’**URI de l’ID d’application** que vous avez défini lors de l’inscription du complément. La section **Étendues** est utilisée uniquement pour générer une boîte de dialogue de consentement si le complément est vendu via AppSource.
 
 ## <a name="code-the-client-side"></a>Code du côté client
 
@@ -163,8 +164,8 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Ouvrez le fichier `public\javascripts\ssoAuthES6.js` dans votre éditeur de code. Il possède déjà du code qui garantit que les promesses sont prises en charge, même dans Internet Explorer 11, et un appel `Office.onReady` pour attribuer un gestionnaire au bouton unique du complément.
 
-    > [!NOTE]
-    > Comme leur nom l’indique, ssoAuthES6.js utilise la syntaxe JavaScript ES6, car l’utilisation de `async` et de `await` illustre le mieux la simplicité de l’API SSO. Lorsque le serveur localhost est démarré, ce fichier est transpilé vers la syntaxe ES5 pour que l’exemple s’exécute dans Internet Explorer 11. 
+   > [!NOTE]
+   > Comme leur nom l’indique, ssoAuthES6.js utilise la syntaxe JavaScript ES6, car l’utilisation de `async` et de `await` illustre le mieux la simplicité de l’API SSO. Lorsque le serveur localhost est démarré, ce fichier est transpilé vers la syntaxe ES5 pour que l’exemple s’exécute dans Internet Explorer 11.
 
 1. Ajoutez le code suivant sous la méthode Office.onReady.
 
@@ -193,12 +194,12 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO 1` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO 1` par le code suivant. À propos de ce code, notez les informations suivantes :
 
     - `OfficeRuntime.auth.getAccessToken` commande à Office d’obtenir un jeton de démarrage à partir d’Azure AD. Un jeton d’amorçage est semblable à un jeton d’ID, mais il possède une `scp` propriété (étendue) ayant la valeur `access-as-user`. Ce type de jeton peut être échangé par une application Web pour un jeton d’accès à Microsoft Graph.
     - La définition de l’option sur True signifie que si aucun utilisateur n’est actuellement Office, Office ouvre une invite de signature `allowSignInPrompt` pop-up.
     - La définition de l’option sur true signifie que si l’utilisateur n’a pas accepté de laisser le add-in accéder au profil AAD de l’utilisateur, Office ouvre une invite de `allowConsentPrompt` consentement. (L’invite permet uniquement à l’utilisateur de consentir au profil AAD de l’utilisateur, et non aux étendues Graph Microsoft.)
-    - La définition de l’option sur true signale Office que le add-in a l’intention d’utiliser le jeton d’a bootstrap pour obtenir un jeton d’accès à Microsoft Graph, au lieu de simplement l’utiliser comme jeton `forMSGraphAccess` d’ID. Si l’administrateur du client n’a pas accordé l’autorisation d’accès au complément dans Microsoft Graph, `OfficeRuntime.auth.getAccessToken` renvoie l’erreur **13012**. Le complément peut répondre en rétablissant un autre système d’autorisation, ce qui est nécessaire car Office peut uniquement inviter pour accepter le profil Azure AD de l’utilisateur, et non les étendues Microsoft Graph. Le système d’autorisation de base exige que  l’utilisateur se connecte à nouveau et l’utilisateur peut être invité à consentir aux étendues Graph Microsoft. Par conséquent, l’option `forMSGraphAccess` permet de s’assurer que le complément ne fera pas d’échange de jetons échouant en raison d’une absence d’autorisation. (ayant reçu votre consentement de la part de l’administrateur lors d’une étape précédente, ce scénario ne se produira pas pour ce complément. Mais l’option est tout de même incluse ici pour illustrer les pratiques recommandées.)
+    - La définition de l’option sur true indique à Office que le add-in a l’intention d’utiliser le jeton d’a bootstrap pour obtenir un jeton d’accès à Microsoft Graph, au lieu de simplement l’utiliser comme jeton `forMSGraphAccess` d’ID. Si l’administrateur du client n’a pas accordé l’autorisation d’accès au complément dans Microsoft Graph, `OfficeRuntime.auth.getAccessToken` renvoie l’erreur **13012**. Le complément peut répondre en rétablissant un autre système d’autorisation, ce qui est nécessaire car Office peut uniquement inviter pour accepter le profil Azure AD de l’utilisateur, et non les étendues Microsoft Graph. Le système d’autorisation de base exige que  l’utilisateur se connecte à nouveau et l’utilisateur peut être invité à consentir aux étendues Graph Microsoft. Par conséquent, l’option `forMSGraphAccess` permet de s’assurer que le complément ne fera pas d’échange de jetons échouant en raison d’une absence d’autorisation. (ayant reçu votre consentement de la part de l’administrateur lors d’une étape précédente, ce scénario ne se produira pas pour ce complément. Mais l’option est tout de même incluse ici pour illustrer les pratiques recommandées.)
 
     ```javascript
     let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
@@ -332,6 +333,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Dans de rares cas, le jeton de démarrage qu’Office a mis en cache n’a pas expiré lorsqu’il est validé par Office, mais arrive à expiration au moment où il atteint Azure AD pour l’échange. Azure AD enverra une réponse incluant l’erreur **AADSTS500133**. Dans ce cas, le complément doit simplement appeler `getGraphData` de manière récursive. Le jeton de démarrage mis en cache étant arrivé à expiration, Office en reçoit un nouveau à partir d’Azure AD. Par exemple, `TODO 8` remplacez-le par ce qui suit :
 
+
     ```javascript
     if (exchangeResponse.error_description.indexOf("AADSTS500133") !== -1)
     {
@@ -348,7 +350,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 1. Modifiez la structure `if` dans la méthode `handleAADErrors` de façon à ce qu’elle :
 
     - Incrémente le compteur juste avant qu’il n’appelle `getGraphData`.
-    - Vérifie que `getGraphData` n’a pas déjà été appelé une deuxième fois. 
+    - Vérifie que `getGraphData` n’a pas déjà été appelé une deuxième fois.
 
     La version finale de la structure `if` doit donc ressembler à ceci :
 
@@ -398,7 +400,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. Remplacez `TODO 10` par ce qui suit. Tenez compte du code suivant : 
+1. Remplacez `TODO 10` par ce qui suit. Tenez compte du code suivant :
 
     - Cet objet est le paramètre de la méthode `$.ajax`.
     - Le `/getuserdata` est une route Express sur le serveur du complément que vous créez au cours d’une étape ultérieure. Elle appellera un point de terminaison Microsoft Graph et inclura le jeton d’accès dans son appel. 
@@ -414,7 +416,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO11` par ce qui suit. Tenez compte du code suivant :
 
-    - Le `writeFileNamesToOfficeDocument` insère les données de Graph dans le document Office. Il est défini dans le fichier `public\javascripts\document.js`. 
+    - Le `writeFileNamesToOfficeDocument` insère les données de Graph dans le document Office. Il est défini dans le fichier `public\javascripts\document.js`.
     - Si `writeFileNamesToOfficeDocument` renvoie une erreur, il commence par « Impossible d’ajouter des noms de fichiers au document ».
 
     ```javascript
@@ -460,11 +462,11 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     } 
     ```
 
-1. Remplacez `TODO 13` par le code suivant. Tenez compte des informations suivantes : 
+1. Remplacez `TODO 13` par le code suivant. À propos de ce code, notez les informations suivantes :
 
-    - Il s’agit du début d’un long `else` bloc, mais la fermeture `}` n’est pas encore terminée car vous y ajouterez d’autres codes. 
+    - Il s’agit du début d’un long `else` bloc, mais la fermeture `}` n’est pas encore terminée car vous y ajouterez d’autres codes.
     - La chaîne de `authorization` est « Porteur » suivi du jeton de démarrage, de sorte que la première ligne du bloc `else` attribue le jeton à la `jwt`. (« JWT » signifie « jeton Web JSON »).
-    - Les deux valeurs `process.env.*` sont les constantes que vous avez attribuées lors de la configuration du complément. 
+    - Les deux valeurs `process.env.*` sont les constantes que vous avez attribuées lors de la configuration du complément.
     - Le paramètre de formulaire `requested_token_use` est paramétré sur « On_behalt_of ». Cette option indique à Azure AD que le complément demande un jeton d’accès à Microsoft Graph à l’aide du flux On-Behalf-Of. Azure répond en validant que le jeton de démarrage, affecté au paramètre de formulaire `assertion`, a une propriété `scp` configurée sur `access-as-user`.
     - Le paramètre de formulaire `scope` est défini sur « Files.Read.All », qui est la seule étendue Microsoft Graph dont le complément a besoin.
 
@@ -481,9 +483,9 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         };
     ```
 
-1. Remplacez `TODO 14` par le code suivant, qui termine le bloc `else`. Tenez compte du code suivant :
+1. Remplacez `TODO 14` par le code suivant, qui termine le bloc `else`. À propos de ce code, notez les informations suivantes :
 
-    - Le `tenant` const est défini sur « commun », car vous avez configuré le complément en tant que multiclient lorsque vous l’avez inscrit avec Azure AD, en particulier lorsque vous configurez **types de compte pris en charge** pour **les comptes de n’importe quel annuaire d’organisation et les comptes Microsoft personnels (par exemple, Skype, Xbox, Outlook.com)**. Si, à la place, vous aviez choisi de prendre en charge uniquement les comptes dans la même location Microsoft 365 que celle dans laquelle le module est inscrit, alors dans ce code le GUID du client est `tenant` sélectionné. 
+    - Le `tenant` const est défini sur « commun », car vous avez configuré le complément en tant que multiclient lorsque vous l’avez inscrit avec Azure AD, en particulier lorsque vous configurez **types de compte pris en charge** pour **les comptes de n’importe quel annuaire d’organisation et les comptes Microsoft personnels (par exemple, Skype, Xbox, Outlook.com)**. Si, à la place, vous aviez choisi de prendre en charge uniquement les comptes dans la même location de Microsoft 365 où le add-in est inscrit, alors dans ce code serait définie sur le GUID du `tenant` client. 
     - Si la requête POST ne génère pas d’erreur, la réponse d’Azure AD est convertie en JSON et envoyée au client. Cet objet JSON possède une propriété `access_token` à laquelle Azure AD a attribué un jeton d’accès à Microsoft Graph.
 
     ```javascript
@@ -565,15 +567,15 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Assurez-vous d’avoir des fichiers dans votre espace OneDrive afin de pouvoir vérifier les résultats.
 
-1. Ouvrez une invite de commandes dans la racine du dossier `\Begin`. 
+1. Ouvrez une invite de commandes dans la racine du dossier `\Begin`.
 
-1. Exécutez la commande `npm start`. 
+1. Exécutez la commande `npm start`.
 
 1. Vous devez charger une version du complément dans une application Office (Excel, Word ou PowerPoint) pour le tester. Les instructions sont fonction de votre plateforme. Vous trouverez des liens vers des instructions sur [Charger une version du complément Office pour le tester](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez le bouton **Afficher le complément** dans le groupe **Node.js SSO** pour ouvrir le complément du panneau des tâches.
 
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un Microsoft 365 Éducation ou un compte de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont insérés dans le document. (La première fois, cela peut prendre jusqu’à 15 secondes.) Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichiers et de dossiers apparaissent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un Microsoft 365 Éducation ou un compte de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont insérés dans le document. (La première fois, cela peut prendre jusqu’à 15 secondes.) Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichier et de dossier apparaissent.
 
 > [!NOTE]
 > Si vous étiez précédemment connecté à Office avec un ID différent et si certaines applications précédemment ouvertes Office le sont toujours, Office ne changera pas systématiquement votre identifiant même si cela semble être le cas. Dans ce cas, l’appel vers Microsoft Graph peut échouer ou des données de l’ID précédent peuvent être renvoyées. Afin d’éviter ce problème, veillez à *fermer toutes les autres applications Office* avant de cliquer sur **Obtenir des noms de fichiers OneDrive**.

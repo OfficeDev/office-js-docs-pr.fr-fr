@@ -1,14 +1,14 @@
 ---
 title: Interface utilisateur Fluent - Comment faire pour les modules add-in Office ?
 description: Découvrez comment utiliser les Fluent’interface utilisateur React dans Office de l’interface utilisateur.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a71c1a0de64d99a9e52c4ca2a7a948b9c33eb9ed
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076300"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773537"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Utiliser Fluent’interface utilisateur React dans les Office de l’interface utilisateur
 
@@ -17,7 +17,7 @@ Fluent La React d’interface utilisateur est l’infrastructure frontale JavaSc
 > [!NOTE]
 > Cet article décrit l’utilisation des Fluent’interface utilisateur React dans le contexte de Office de l’interface utilisateur. Mais il est également utilisé dans un large éventail d’applications Microsoft 365 et d’extensions. Pour plus d’informations, [voir Fluent’interface](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) utilisateur React et le repo open source [Fluent UI Web](https://github.com/microsoft/fluentui).
 
-Cet article explique comment créer un module qui est créé à l’React et qui utilise Fluent’interface utilisateur React composants.
+Cet article explique comment créer un add-in qui est créé à l’React et qui utilise Fluent’interface utilisateur React composants.
 
 ## <a name="create-an-add-in-project"></a>Création d’un projet de complément
 
@@ -36,9 +36,9 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d’écran montrant les invites et réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word-react.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word-react.png)
 
-Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
@@ -133,7 +133,7 @@ Ce code effectue les opérations suivantes :
 
 ## <a name="add-the-react-component-to-your-add-in"></a>Ajoutez le composant React à votre complément
 
-Ajoutez le composant `ButtonPrimaryExample` à votre complément en ouvrant **src\components\App.tsx** et en effectuant les opérations suivantes :
+Ajoutez le composant à votre application en ouvrant `ButtonPrimaryExample` **src\components\App.tsx** et en effectuant les étapes suivantes.
 
 1. Ajoutez l’instruction importation suivante pour référencer `ButtonPrimaryExample` dans **Button.tsx**.
 

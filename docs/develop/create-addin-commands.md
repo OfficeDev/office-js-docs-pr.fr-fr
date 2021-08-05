@@ -1,14 +1,14 @@
 ---
 title: Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 05/12/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44d1ab5e650aedd416ed255b8c84d9d8c2551e65
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 461e58e63be73619d46cd0552467187b7eab5071
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52329953"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773894"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
@@ -18,7 +18,7 @@ Utilisez **[VersionOverrides](../reference/manifest/versionoverrides.md)** dans 
 - ajouter des boutons ou une liste déroulante de boutons sur le ruban ;
 - ajouter des options de menu individuelles (pouvant chacune contenir des sous-menus) à des menus contextuels spécifiques ;
 - exécuter des actions lorsque vous avez choisi une commande de complément. Vous pouvez effectuer les opérations suivantes :
-  - afficher des compléments de volet de tâches avec lesquels les utilisateurs peuvent interagir. À l’intérieur de votre application du volet Des tâches, vous pouvez afficher du code HTML qui utilise l’interface utilisateur Fluent pour créer une interface utilisateur personnalisée.
+  - afficher des compléments de volet de tâches avec lesquels les utilisateurs peuvent interagir. À l’intérieur de votre application du volet Des tâches, vous pouvez afficher du code HTML qui utilise Fluent’interface utilisateur pour créer une interface utilisateur personnalisée.
 
      *ou*
 
@@ -203,7 +203,7 @@ Le code suivant montre comment implémenter la fonction utilisée par **Function
 
 ## <a name="step-6-add-extensionpoint-elements"></a>Etape 6 : ajouter des éléments ExtensionPoint
 
-L’élément **ExtensionPoint** définit où les commandes de complément doivent apparaître dans l’interface utilisateur Office. Vous pouvez définir les éléments **ExtensionPoint** avec ces valeurs **xsi:type** :
+**L’élément ExtensionPoint** définit l’endroit où les commandes de Office utilisateur doivent apparaître. Vous pouvez définir **des éléments ExtensionPoint** avec ces **valeurs xsi:type.**
 
 - **PrimaryCommandSurface**, qui fait référence au ruban dans Office.
 
@@ -419,7 +419,7 @@ L’exemple suivant montre un exemple de l’utilisation de l’élément **Ress
 </Resources>
 ```
 
-|Resource|Description|
+|Ressource|Description|
 |:-----|:-----|
 |**Images**/ **Image** <br/> | Fournit l’URL HTTPS d’un fichier image. Chaque image doit définir les trois tailles d’image obligatoires : <br/>  16 x 16 <br/>  32 x 32 <br/>  80 × 80 <br/>  Les tailles d’image suivantes sont également prises en charge, mais ne sont pas obligatoires : <br/>  20 × 20 <br/>  24 × 24 <br/>  40 × 40 <br/>  48 × 48 <br/>  64 x 64 <br/> |
 |**URL**/ **Url** <br/> |Indique un emplacement d’URL HTTPS. Une URL peut comporter 2 048 caractères au maximum.  <br/> |

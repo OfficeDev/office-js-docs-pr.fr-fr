@@ -3,12 +3,12 @@ title: Ajout de validation des données à des plages Excel
 description: Découvrez comment les EXCEL JavaScript permettent à votre add-in d’ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a6a92aeae309912eff2ecebb2897a6a64a3e9966
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2579473800a20ba864b42b8a18b8023dff826c5e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671160"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774153"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
@@ -45,7 +45,7 @@ Les trois premières propriétés `DataValidationRule` (c'est-à-dire les types 
 
 Voici un exemple de création d’une règle de validation. Notez les points suivants concernant ce code.
 
-- Le `operator` est l’opérateur binaire « GreaterThan ». Chaque fois que vous utilisez un opérateur binaire, la valeur que l’utilisateur essaie d’entrer dans la cellule est l’opérande gauche et la valeur spécifiée dans `formula1` est l’opérande droite. Par conséquent cette règle indique qu’uniquement les nombres entiers supérieurs à 0 sont valides. 
+- Le `operator` est l’opérateur binaire « GreaterThan ». Chaque fois que vous utilisez un opérateur binaire, la valeur que l’utilisateur essaie d’entrer dans la cellule est l’opérande gauche et la valeur spécifiée dans `formula1` est l’opérande droite. Par conséquent cette règle indique qu’uniquement les nombres entiers supérieurs à 0 sont valides.
 - Le `formula1` est un nombre codé en dur. Lors de la création du code, si vous ne savez pas quelle valeur indiquer, vous pouvez également utiliser une formule Excel (comme chaîne) pour la valeur. Par exemple, « = A3 » et « = SUM(A4,B5) » peuvent également être des valeurs de `formula1`.
 
 ```js
@@ -114,7 +114,7 @@ Excel.run(function (context) {
 Utilisez la propriété `list` dans l’objet `DataValidationRule` pour spécifier que les seules valeurs valides sont celles d’une liste de remise. Voici un exemple. Notez les points suivants concernant ce code.
 
 - Il part du principe qu’il existe une feuille de calcul nommée « Noms » et que les valeurs dans la plage « A1:A3 » sont des noms.
-- La propriété `source` indique la liste des valeurs valides. L’argument de chaîne fait référence à une plage de cellules contenant les noms. Vous pouvez également affecter une liste délimitée par des virgules ; par exemple : « Sue, Ricky, Florence ». 
+- La propriété `source` indique la liste des valeurs valides. L’argument de chaîne fait référence à une plage de cellules contenant les noms. Vous pouvez également affecter une liste délimitée par des virgules ; par exemple : « Sue, Ricky, Florence ».
 - La propriété `inCellDropDown` indique si un contrôle de liste déroulante s’affiche dans la cellule lorsque l’utilisateur la sélectionne. Si elle est définie sur `true`, alors la flèche déroulante s’affiche avec la liste des valeurs de `source`.
 
 ```js

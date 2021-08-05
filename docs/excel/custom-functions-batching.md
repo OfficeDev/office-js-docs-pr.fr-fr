@@ -1,16 +1,16 @@
 ---
-ms.date: 07/10/2019
+ms.date: 07/08/2021
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 localization_priority: Normal
-ms.openlocfilehash: 0729e06df5f6e26f9726e1de0dcdaac0f101b18d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fa02a88646ca373a463aefaa51076c35c3df08cf
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349650"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774174"
 ---
-# <a name="batching-custom-function-calls-for-a-remote-service"></a>Le traitement par lots de fonctions personnalisées nécessite un service à distance
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>Traitement par lots d’appels de fonction personnalisée pour un service distant
 
 Si vos fonctions personnalisées appellent un service à distance, vous pouvez utiliser un modèle le traitement par lots pour réduire le nombre d’appels réseau au service à distance. Pour réduire les boucles réseau, traitez par lots tous les appels en un seul appel du service web. Cette procédure est idéale lorsque la feuille de calcul est recalculée.
 
@@ -216,6 +216,7 @@ Pour modifier la fonction à exécuter dans votre service distant en `_fetchFrom
 - Placez le code dans le service à distance.
 
 ## <a name="next-steps"></a>Étapes suivantes
+
 Découvrez [les différents paramètres](custom-functions-parameter-options.md) que vous pouvez utiliser dans vos fonctions personnalisées. Ou parcourez les concepts de base d’un [appel web via une fonction personnalisée](custom-functions-web-reqs.md).
 
 ## <a name="see-also"></a>Voir aussi

@@ -3,18 +3,18 @@ title: Ouvrez Excel à partir de votre page web et incorporez votre Office de re
 description: Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 18f40b0030f4132a413a879e8b3419af49984b45
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349377"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773138"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche
 
 :::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image du Excel sur votre page web ouvrant un nouveau document Excel avec votre application incorporée et à l’ouverture automatique.":::
 
-Étendez votre application web SaaS afin que vos clients peuvent ouvrir leurs données à partir d’une page web directement Microsoft Excel. Un scénario courant est que les clients vont travailler avec des données dans votre application web. Ensuite, ils souhaiteront copier les données dans un Excel document. Par exemple, ils peuvent effectuer des analyses supplémentaires à l’aide de Excel. En règle générale, le client doit exporter les données dans un fichier, tel qu’un fichier .csv, puis importer ces données dans Excel. Ils doivent également ajouter manuellement votre Office au document.
+Étendez votre application web SaaS afin que vos clients peuvent ouvrir leurs données directement à partir d’une page web Microsoft Excel. Un scénario courant est que les clients vont travailler avec des données dans votre application web. Ensuite, ils souhaiteront copier les données dans un document Excel document. Par exemple, ils peuvent effectuer des analyses supplémentaires à l’aide de Excel. En règle générale, le client doit exporter les données dans un fichier, tel qu’un fichier .csv, puis importer ces données dans Excel. Ils doivent également ajouter manuellement votre Office au document.
 
 Réduisez le nombre d’étapes en un seul clic sur votre page web qui génère et ouvre Excel document. Vous pouvez également incorporer votre Office dans le document et l’afficher à l’ouverture du document. Cela garantit que le client a toujours accès aux fonctionnalités de votre application. Lorsque le document s’ouvre, les données que le client a sélectionnées et votre Office est déjà disponible pour qu’il continue de fonctionner.
 
@@ -31,12 +31,12 @@ Tout d’abord, nous allons apprendre à créer un document Excel à partir d’
 
 ### <a name="how-the-sample-works"></a>Fonctionnement de l’exemple
 
-L’exemple de code utilise le SDK OOXML pour incorporer le Script Lab dans le document Excel que vous choisissez. Les informations suivantes sont issues de la section [ **à propos du code**](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) dans le fichier Lisez-moi.
+L’exemple de code utilise le SDK OOXML pour incorporer le Script Lab dans le document Excel que vous choisissez. Les informations suivantes sont issues de la section à propos [ **du code**](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) dans le fichier Lisez-moi.
 
 Le fichier **Home.aspx.cs**:
 
 - Fournit les handlers d’événements de bouton et la manipulation de base de l’interface utilisateur.
-- Utilise des techniques ASP.NET standard pour télécharger le fichier.
+- Utilise des techniques ASP.NET standard pour charger et télécharger le fichier.
 - Utilise l’extension de nom de fichier du fichier téléchargé (xlsx, docx ou pptx) pour déterminer le type de fichier. Cette étape doit être effectuée au départ, car le SDK Open XML possède généralement des API distinctes pour chaque type de fichier.
 - Appels dans **OOXMLHelper** pour valider le fichier et appels dans **le AddInEmbedder** pour incorporer des Script Lab dans le fichier et définir pour s’ouvrir automatiquement.
 
@@ -61,7 +61,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 - La **valeur** du Store est « en-US » dans la section culture Microsoft AppSource Script Lab.
 - La **valeur d’ID** est l’ID d’actif Microsoft AppSource Script Lab.
 
-Si vous souhaitez ouvrir automatiquement un add-in à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
+Si vous souhaitez ouvrir automatiquement un module de partage de fichiers à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
 
 La **valeur StoreType** est « FileSystem ».
 
@@ -102,7 +102,7 @@ Nous vous recommandons de télécharger de nouveaux documents vers OneDrive si v
 
 1. Suivez les étapes de création et d’ouverture d’un exemple de code de démarrage rapide qui [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) interagit avec Office services.
 1. À **l’étape 1 : choisissez la langue ou la** plateforme, choisissez ASP.NET **MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
-1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir **un ID d’application et un secret**.
+1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir un ID d’application et un **secret**.
 1. Connectez-vous à Microsoft 365 compte.  
 1. Dans la page **Web Veuillez enregistrer votre** secret d’application, enregistrez-la dans un emplacement de fichier où vous pourrez l’extraire et l’utiliser ultérieurement.
 1. Choose **Got it, take me back to the quick start**.
@@ -114,7 +114,8 @@ Nous vous recommandons de télécharger de nouveaux documents vers OneDrive si v
 
 ### <a name="upload-a-file-to-onedrive"></a>Télécharger fichier à OneDrive
 
-1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019 et ouvrez **PrivateSettings.config** fichier.
+1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019 et ouvrez **le fichierPrivateSettings.config** graphique.
+
 1. Ajoutez une nouvelle **étendue Files.ReadWrite** à la clé   **ida:AppScopes** afin qu’elle ressemble au code suivant.
 
     ```xml
@@ -181,7 +182,7 @@ L’exemple modifie un document Excel existant. Un scénario plus courant consis
 
 ### <a name="read-custom-properties-when-your-add-in-starts"></a>Lire les propriétés personnalisées au démarrage de votre add-in
 
-L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel l’aide du SDK OOXML. Script Lab lit l’ID d’extrait de code du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
+L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel l’aide du SDK OOXML. Script Lab lit l’ID de l’extrait de code à partir du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
 
 ### <a name="initialize-the-excel-document-with-data"></a>Initialiser le document Excel avec des données
 
@@ -200,7 +201,7 @@ Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .
 
 ### <a name="use-single-sign-on"></a>Utiliser l' sign-on unique
 
-Pour simplifier l’authentification, nous recommandons que votre application implémente l’authentification unique. Pour plus d’informations, [voir Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
+Pour simplifier l’authentification, nous vous recommandons d’implémenter l’authentification unique. Pour plus d’informations, [voir Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md)
 
 ## <a name="see-also"></a>Voir aussi
 

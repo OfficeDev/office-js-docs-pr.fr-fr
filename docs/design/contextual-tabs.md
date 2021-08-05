@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
 ms.date: 07/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 8696a9a7815b39ddd0100b70f7f9eaa94b1f4a89
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5f8b2a6810a7457d3f9c44f236c42e5d24efa040
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671533"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774020"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
@@ -22,7 +22,7 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 [!INCLUDE [Animation of contextual tabs and enabling buttons](../includes/animation-contextual-tabs-enable-button.md)]
 
 > [!IMPORTANT]
-> Les onglets contextuels personnalisés sont actuellement uniquement pris en charge sur Excel et uniquement sur ces plateformes et builds :
+> Les onglets contextuels personnalisés sont actuellement uniquement pris en charge sur Excel et uniquement sur ces plateformes et builds.
 >
 > - Excel sur Windows (abonnement Microsoft 365 uniquement) : version 2102 (build 13801.20294) ou ultérieure.
 > - Excel sur le web
@@ -66,7 +66,6 @@ Contrairement aux onglets principaux personnalisés, qui sont définis avec du X
 > La structure des propriétés et sous-propriétés de l’objet blob JSON (et les noms clés) est à peu près parallèle à la structure de l’élément [CustomTab](../reference/manifest/customtab.md) et de ses éléments descendants dans le manifeste XML.
 
 Nous allons créer un exemple d’objet blob JSON d’onglets contextuels pas à pas. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Si vous travaillez dans Visual Studio Code, vous pouvez utiliser ce fichier pour obtenir IntelliSense et valider votre JSON. Pour plus d’informations, voir [Modification de JSON avec Visual Studio Code - Schémas et paramètres JSON.](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
-
 
 1. Commencez par créer une chaîne JSON avec deux propriétés de tableau `actions` nommées et `tabs` . Le tableau est une spécification de toutes les fonctions qui peuvent être exécutées par des `actions` contrôles sous l’onglet contextuel. Le `tabs` tableau définit un ou plusieurs onglets contextuels, *jusqu’à un maximum de 20*.
 
@@ -163,12 +162,12 @@ Nous allons créer un exemple d’objet blob JSON d’onglets contextuels pas à
 
     - Toutes les propriétés, à l’exception `enabled` de , sont obligatoires.
     - `type` spécifie le type de contrôle. Les valeurs peuvent être « Button », « Menu » ou « MobileButton ».
-    - `id` peut prendre jusqu’à 125 caractères. 
+    - `id` peut prendre jusqu’à 125 caractères.
     - `actionId` doit être l’ID d’une action définie dans le `actions` tableau. (Voir l’étape 1 de cette section.)
     - `label` est une chaîne conviviale qui sert d’étiquette au bouton.
     - `superTip` représente une forme enrichie d’info-conseil. Les `title` propriétés et les `description` propriétés sont requises.
     - `icon` spécifie les icônes du bouton. Les remarques précédentes sur l’icône de groupe s’appliquent également ici.
-    - `enabled` (facultatif) indique si le bouton est activé au démarrage de l’onglet contextuel. La valeur par défaut, si elle n’est pas présente, est `true` . 
+    - `enabled` (facultatif) indique si le bouton est activé au démarrage de l’onglet contextuel. La valeur par défaut, si elle n’est pas présente, est `true` .
 
     ```json
     {
@@ -193,7 +192,7 @@ Nous allons créer un exemple d’objet blob JSON d’onglets contextuels pas à
         ]
     }
     ```
- 
+
 Voici l’exemple complet du blob JSON.
 
 ```json
@@ -532,7 +531,7 @@ Certaines combinaisons de plateforme, Office application et de Office build ne s
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>Utiliser des onglets ou des contrôles nontexte
 
-Il existe un élément manifeste, [OverriddenByRibbonApi,](../reference/manifest/overriddenbyribbonapi.md)conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés. 
+Il existe un élément manifeste, [OverriddenByRibbonApi,](../reference/manifest/overriddenbyribbonapi.md)conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés.
 
 La stratégie la plus simple pour l’utilisation de cet élément est que vous définissez dans le manifeste un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés *non* contextuels) qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` ajoutez en tant que premier élément enfant de [CustomTab](../reference/manifest/customtab.md). L’effet de cette utilisation est le suivant :
 

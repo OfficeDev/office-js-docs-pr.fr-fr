@@ -49,7 +49,7 @@ Utilisez Git pour apporter des modifications importantes, telles que :
 1. Si vous n’avez pas de compte GitHub, définissez-en un sur [GitHub](https://github.com/join).
 2. Une fois que vous avez un compte, installez Git sur votre ordinateur. Suivez les étapes du [didacticiel Configurer Git.]
 3. Pour envoyer une requête de pull à l’aide de Git, suivez les étapes de [l’GitHub, Git et ce référentiel.](#use-github-git-and-this-repository)
-4. Vous serez invité à signer le contrat de licence du collaborateur si vous :
+4. Vous serez invité à signer le contrat de licence du collaborateur si vous êtes :
 
     * Membre du groupe Microsoft Open Technologies.
     * Collaborateur qui ne travaille pas pour Microsoft.
@@ -73,7 +73,7 @@ Les demandes de pull sont généralement examinées dans les 10 jours ou moins.
 
         git clone https://github.com/<your user name>/<repo name>.git
 
-    Créez ensuite une référence vers le référentiel racine en entrant les commandes suivantes :
+    Ensuite, créez une référence au référentiel racine en entrant ces commandes.
 
         cd <repo name>
         git remote add upstream https://github.com/OfficeDev/<repo name>.git
@@ -96,7 +96,7 @@ Pour rendre le processus de contribution aussi transparent que possible, suivez 
 
 * Un nouvel article.
 * Modifications orthographiques et grammaticales.
-* Application d’une modification de mise en forme unique sur un grand ensemble d’articles (par exemple, application d’un nouveau pied de copyright).
+* Application d’une seule modification de mise en forme sur un grand ensemble d’articles (par exemple, application d’un nouveau pied de copyright).
 
 #### <a name="to-create-a-new-branch"></a>Pour créer une branche
 
@@ -111,7 +111,7 @@ Vous accédez au référentiel sur votre ordinateur à l’aide de l’Explorate
 
 Pour modifier des fichiers, ouvrez-les dans un éditeur de votre choix et modifiez-les. Pour créer un fichier, utilisez l’éditeur de votre choix et enregistrez le nouveau fichier à l’emplacement approprié dans votre copie locale du référentiel. Tout en travaillant, enregistrez fréquemment votre travail.
 
-Les fichiers `C:\Users\<yourusername>\<repo name>` qu’ils contiennent sont une copie de travail de la nouvelle branche que vous avez créée dans votre référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, tapez les commandes suivantes dans GitBash.
+Les fichiers qu’ils contiennent sont une copie de travail de la nouvelle branche que `C:\Users\<yourusername>\<repo name>` vous avez créée dans votre référentiel local. Si vous effectuez des modifications dans ce dossier, le référentiel local ne sera pas altéré tant que vous ne validez pas les modifications. Pour valider une modification dans le référentiel local, tapez les commandes suivantes dans GitBash.
 
     git add .
     git commit -v -a -m "<Describe the changes made in this commit>"
@@ -140,7 +140,7 @@ L’un des administrateurs de site traitera votre demande de pull. Votre requêt
 
 #### <a name="create-a-new-branch-after-merge"></a>Créer une branche après fusion
 
-Une fois qu’une branche a été fusionnée (c’est-à-dire que votre demande de pull est acceptée), ne continuez pas à travailler dans cette branche locale. Cela peut entraîner des conflits de fusion si vous envoyez une autre demande de pull. Pour faire une autre mise à jour, créez une nouvelle branche locale à partir de la branche fusionnée en amont, puis supprimez votre branche locale initiale.
+Une fois qu’une branche a été fusionnée (c’est-à-dire que votre demande de pull est acceptée), ne continuez pas à travailler dans cette branche locale. Cela peut entraîner des conflits de fusion si vous envoyez une autre demande de pull. Pour faire une autre mise à jour, créez une nouvelle branche locale à partir de la branche fusionnée en amont correctement, puis supprimez votre branche locale initiale.
 
 Par exemple, si votre branche X locale a été fusionnée avec succès dans la branche maître OfficeDev/microsoft-graph-docs et que vous souhaitez apporter des mises à jour supplémentaires au contenu qui a été fusionné. Créez une branche locale, X2, à partir de la branche maître OfficeDev/microsoft-graph-docs. Pour ce faire, ouvrez GitBash et exécutez les commandes suivantes.
 
@@ -148,7 +148,7 @@ Par exemple, si votre branche X locale a été fusionnée avec succès dans la b
     git pull upstream master:X2
     git push origin X2
 
-Vous avez maintenant des copies locales (dans une nouvelle branche locale) du travail que vous avez soumis dans la branche X. La branche X2 contient également tout le travail que d’autres rédacteurs ont fusionné. Ainsi, si votre travail dépend du travail d’autres personnes (par exemple, des images partagées), il est disponible dans la nouvelle branche. Vous pouvez vérifier que votre travail précédent (et celui d’autres personnes) se trouve dans la branche en vérifiant la nouvelle branche...
+Vous avez maintenant des copies locales (dans une nouvelle branche locale) du travail que vous avez soumis dans la branche X. La branche X2 contient également tout le travail que d’autres rédacteurs ont fusionné. Ainsi, si votre travail dépend du travail d’autres personnes (par exemple, des images partagées), il est disponible dans la nouvelle branche. Vous pouvez vérifier que votre travail précédent (et celui d’autres personnes) se trouve dans la branche en vérifiant la nouvelle succursale...
 
     git checkout X2
 
@@ -190,7 +190,7 @@ Lorsque vous soumettez vos modifications, via une demande de pull, notre équipe
 
 ### <a name="can-i-become-an-approver-for-this-repositorys-github-pull-requests"></a>Puis-je devenir un approuveur pour les demandes de GitHub de ce référentiel ?
 
-Actuellement, nous ne permettons pas aux contributeurs externes d’approuver les demandes de pull dans ce référentiel.
+Actuellement, nous ne permettons pas aux collaborateurs externes d’approuver les demandes de pull dans ce référentiel.
 
 ### <a name="how-soon-will-i-get-a-response-about-my-change-request"></a>À combien de temps vais-je obtenir une réponse concernant ma demande de modification ?
 

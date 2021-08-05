@@ -1,14 +1,14 @@
 ---
 title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Vous pouvez utiliser différentes API de pièce jointe pour gérer les fichiers ou Outlook éléments joints à l’élément que l’utilisateur compose.
-ms.date: 02/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0ba142bb1e8fb5f324d2bb6460bc8325a4800d2d
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 87076965d600cbbcfe88d6711ea3acfb2b3c1fdd
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348586"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774454"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition Outlook
 
@@ -26,7 +26,7 @@ Il s’agit de méthodes asynchrones, ce qui signifie que l’exécution peut co
 
 S’il existe des tâches qui dépendent de l’action à effectuer, vous devez les réaliser dans une méthode de rappel. Cette méthode de rappel est facultative et est invoquée lorsque le chargement de la pièce jointe est terminé. La méthode de rappel utilise un objet [AsyncResult](/javascript/api/office/office.asyncresult) comme paramètre de sortie qui indique les statuts, erreurs et valeurs renvoyés par l’ajout de la pièce jointe. Si le rappel requiert des paramètres supplémentaires, vous pouvez les spécifier dans le paramètre facultatif `options.asyncContext`. L’élément `options.asyncContext` peut appartenir à n’importe quel type prévu par votre méthode de rappel.
 
-Par exemple, vous pouvez définir en `options.asyncContext` tant qu’objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de Office Add-ins en [programmation asynchrone dans les](../develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods)Office de développement. L’exemple suivant montre comment utiliser le paramètre `asyncContext` pour passer 2 arguments à une méthode de rappel.
+Par exemple, vous pouvez définir en `options.asyncContext` tant qu’objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de Office Add-ins en [programmation asynchrone dans Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). L’exemple suivant montre comment utiliser le paramètre `asyncContext` pour passer 2 arguments à une méthode de rappel.
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};
@@ -37,7 +37,7 @@ Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon
 Vous pouvez vérifier la réussite ou l’échec d’un appel de méthode asynchrone dans la méthode de rappel à l’aide des propriétés `status` et `error` de l’objet `AsyncResult`. Si l’ajout de pièce jointe aboutit, vous pouvez utiliser la propriété `AsyncResult.value` pour obtenir l’ID de la pièce jointe. Il s’agit d’un nombre entier que vous pouvez ensuite utiliser pour supprimer la pièce jointe.
 
 > [!NOTE]
-> L’ID de pièce jointe n’est valide que dans la même session et il n’est pas garanti qu’il soit map marqué sur la même pièce jointe entre les sessions. Les exemples de fin d’une session sont les suivants : lorsque l’utilisateur ferme le module, ou si l’utilisateur commence à composer dans un formulaire inline, puis ouvre le formulaire en ligne pour continuer dans une fenêtre distincte.
+> L’ID de pièce jointe n’est valide que dans la même session et il n’est pas garanti qu’il soit map enfant à la même pièce jointe entre les sessions. Les exemples de fin d’une session sont les suivants : lorsque l’utilisateur ferme le module, ou si l’utilisateur commence à composer dans un formulaire inline, puis ouvre le formulaire en ligne pour continuer dans une fenêtre distincte.
 
 ### <a name="attach-a-file"></a>Joindre un fichier
 
@@ -112,7 +112,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> Vous pouvez utiliser un module de composition pour joindre une instance d’un rendez-vous périodique Outlook sur le web ou sur des appareils mobiles. Toutefois, dans une prise en charge Outlook client de bureau, la tentative d’attachement d’une instance entraînerait l’attachement de la série périodique (le rendez-vous parent).
+> Vous pouvez utiliser un module de composition pour joindre une instance d’un rendez-vous Outlook sur le web ou sur des appareils mobiles. Toutefois, dans une prise en charge Outlook client de bureau, la tentative d’attachement d’une instance entraînerait l’attachement de la série périodique (le rendez-vous parent).
 
 ## <a name="get-attachments"></a>Obtention de pièces jointes
 

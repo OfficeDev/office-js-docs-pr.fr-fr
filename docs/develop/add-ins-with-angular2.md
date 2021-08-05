@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office avec Angular
 description: Utilisez Angular pour créer un Office en tant qu’application à page unique.
-ms.date: 05/03/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e12f3e2d4733613fb542cf2be4e0ff6648ab8475
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350084"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773502"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -76,7 +76,7 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="using-the-office-dialog-api-with-angular"></a>Utilisation de l’API de boîte de dialogue Office avec Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>Utiliser l’API Office boîte de dialogue avec Angular
 
 L’API de boîte de dialogue du complément Office permet à votre complément d’ouvrir une page dans une boîte de dialogue non modale dans laquelle vous pouvez échanger des informations avec la page principale, qui se trouve généralement dans un volet Office.
 
@@ -102,19 +102,19 @@ export class MyComponent {
 }
 ```
 
-## <a name="using-observable"></a>Utilisation d’un élément Observable
+## <a name="use-observable"></a>Utiliser observable
 
 Angular utilise RxJS (Reactive Extensions for JavaScript), et RxJS présente les objets `Observable` et `Observer` pour implémenter le traitement asynchrone. Cette section fournit une brève introduction à l’utilisation de `Observables` ; pour plus d’informations, consultez la documentation [RxJS](https://rxjs-dev.firebaseapp.com/) officielle.
 
 Un `Observable` est semblable à un objet `Promise` d’une certaine façon - il est renvoyé immédiatement à partir d’un appel asynchrone, mais il ne peut être résolu qu’après un certain délai. Toutefois, bien qu’une `Promise` soit une valeur unique (qui peut être un objet de tableau), un `Observable` est un tableau d’objets (éventuellement avec un seul membre). Cela permet d’appeler les [méthodes de tableaux](https://www.w3schools.com/jsref/jsref_obj_array.asp), telles que `concat`, `map` et `filter`, sur des objets `Observable`.
 
-### <a name="pushing-instead-of-pulling"></a>Poussée au lieu d’extraction
+### <a name="push-instead-of-pull"></a>Push au lieu de tirer
 
 Votre code « pousse » les objets `Promise` en les affectant aux variables, mais les objets `Observable` « poussent » leurs valeurs vers les objets qui *s’abonnent* à l’objet `Observable`. Les abonnés sont des objets `Observer`. L’avantage de l’architecture Push est que les nouveaux membres peuvent être ajoutés au tableau `Observable` au fil du temps. Lorsqu’un nouveau membre est ajouté, tous les objets `Observer` qui s’abonnent à `Observable` reçoivent une notification.
 
 L’`Observer` est configuré pour traiter chaque nouvel objet (appelé l’objet « suivant ») avec une fonction. (Il est également configuré pour répondre à une erreur et à une notification d’achèvement. Consultez la section suivante pour obtenir un exemple.) Pour cette raison, les objets `Observable` peuvent être utilisés dans un plus large éventail de scénarios que les objets `Promise`. Par exemple, en plus de retourner un `Observable` à partir d’un appel AJAX, de la façon dont vous pouvez retourner une `Promise`, un `Observable` peut être renvoyé à partir d’un gestionnaire d’événements, tel que le gestionnaire d’événements « modifié » pour une zone de texte. Chaque fois qu’un utilisateur saisit du texte dans la zone, tous les objets `Observer` abonnés réagissent immédiatement en utilisant le dernier texte et/ou l’état actuel de l’application en tant qu’entrée.
 
-### <a name="waiting-until-all-asynchronous-calls-have-completed"></a>Attendre jusqu'à ce que tous les appels asynchrones soient terminés
+### <a name="wait-until-all-asynchronous-calls-have-completed"></a>Attendre que tous les appels asynchrones soient terminés
 
 Lorsque vous voulez vous assurer qu’un rappel ne s’exécute que lorsque tous les membres d’un ensemble d’objets `Promise` sont résolus, utilisez la méthode `Promise.all()`.
 

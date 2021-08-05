@@ -1,14 +1,14 @@
 ---
 title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des meilleures pratiques pour l’API Office dialogue, telles que les meilleures pratiques pour une application mono-page (SPA)
-ms.date: 07/19/2021
+ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c994625a662b2eed31f139819f4a1d7cf8418c6a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671216"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773761"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -35,13 +35,13 @@ Cet article fournit des règles, des gotchas et des meilleures pratiques pour l�
 
 Comme des éléments d’interface utilisateur qui se chevauchent peuvent gêner des utilisateurs, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office à moins que votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour obtenir un exemple de volet De tâches à onglets, voir l’exemple Excel de [salestracker JavaScript pour le](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) module de développement javascript.
 
-### <a name="designing-a-dialog-box-ui"></a>Conception d’une interface utilisateur de boîte de dialogue
+### <a name="design-a-dialog-box-ui"></a>Concevoir une interface utilisateur de boîte de dialogue
 
 Pour obtenir les meilleures pratiques en matière de conception de boîte de dialogue, voir Boîtes de dialogue [dans Office des applications.](../design/dialog-boxes.md)
 
-### <a name="handling-pop-up-blockers-with-office-on-the-web"></a>Gestion des bloqueurs de fenêtres publicitaires avec Office sur le web
+### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>Gérer les bloqueurs de fenêtres Office sur le Web
 
-Toute tentative d’affichage d’une boîte de dialogue lors de l’Office sur le Web peut entraîner le blocage de la boîte de dialogue par le bloqueur de fenêtres d’affichage du navigateur. Office sur le Web a une fonctionnalité qui permet aux boîtes de dialogue de votre add-in d’être une exception au bloqueur de fenêtres pop-up du navigateur. Lorsque votre code appelle la méthode, Office sur le Web ouvre une invite `displayDialogAsync` semblable à la suivante.
+Toute tentative d’affichage d’une boîte de dialogue lors de l’Office sur le Web peut entraîner le blocage de la boîte de dialogue par le bloqueur de fenêtres d’affichage du navigateur. Si cela se produit, Office sur le Web ouvre une invite semblable à celle-ci.
 
 ![Capture d’écran montrant l’invite avec une brève description et les boutons Autoriser et Ignorer qu’un add-in peut générer pour éviter les bloqueurs de fenêtres pop-up dans le navigateur](../images/dialog-prompt-before-open.png)
 
@@ -53,7 +53,7 @@ Si, pour une raison quelconque, vous souhaitez désactiver cette fonctionnalité
 
 Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. Il est appended après vos paramètres de requête personnalisés, le cas cas. Elle n’est pas appendée aux URL suivantes vers qui la boîte de dialogue navigue. Microsoft peut modifier le contenu de cette valeur ou le supprimer complètement, de sorte que votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue (autrement dit, la [propriété Window.sessionStorage).](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
 
-### <a name="opening-another-dialog-immediately-after-closing-one"></a>Ouverture d’une autre boîte de dialogue immédiatement après la fermeture d’une boîte de dialogue
+### <a name="open-another-dialog-immediately-after-closing-one"></a>Ouvrir une autre boîte de dialogue immédiatement après en avoir fermé une
 
 Comme plusieurs boîtes de dialogue ne peuvent pas être ouvertes à partir d’une page hôte donnée, votre code doit appeler [Dialog.close](/javascript/api/office/office.dialog#close__) dans une boîte de dialogue ouverte avant d’appeler l’ouverture `displayDialogAsync` d’une autre boîte de dialogue. La `close` méthode est asynchrone. Pour cette raison, si vous appelez immédiatement après un appel de , il se peut que la première boîte de dialogue ne soit pas complètement fermée Office `displayDialogAsync` tente d’ouvrir `close` la seconde. Si cela se produit, Office renvoyer une erreur [12007](dialog-handle-errors-events.md#12007) : « L’opération a échoué car ce module a déjà une boîte de dialogue active. »
 
@@ -119,7 +119,7 @@ function openFirstDialog() {
 Si votre application utilise le routage côté client, comme le font généralement les applications mono-page, vous avez la possibilité de transmettre l’URL d’un itinéraire à la méthode [displayDialogAsync](/javascript/api/office/office.ui) au lieu de l’URL d’une page HTML distincte. *Nous vous déconseillons de le faire pour les raisons ci-dessous.*
 
 > [!NOTE]
-> Cet article n’est pas pertinent pour *le* routage côté serveur, comme dans une application web express.
+> Cet article n’est pas pertinent pour le *routage* côté serveur, comme dans une application web express.
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Problèmes avec les SSA et l’API Office boîte de dialogue de gestion
 

@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects liés à la confidentialité et à la sécurité de la plateforme de Office de l’utilisateur.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: fd2fbecf8af8b0e76073735ba21c140214948363
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0ff3e77dcbd9f51ee4ac3c1b5d923a2db2bfbc05
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349153"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773271"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -72,7 +72,7 @@ Vous pouvez rendre vos compléments Office accessibles au public en les publian
 
 ## <a name="optional-connected-experiences"></a>Expériences connectées facultatives
 
-Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les Office, l’impact de la désactivation du paramètre Expériences connectées facultatives est que les utilisateurs ne peuvent plus accéder aux modules ou au Office Store via ces clients.  Toutefois, certains de ces derniers sont considérés comme essentiels ou critiques pour l’entreprise, et les modules déployés par l’administrateur informatique d’une organisation via un déploiement [centralisé](../publish/centralized-deployment.md) restent disponibles. En outre, les compléments et le Store restent disponibles Outlook sur le web, quel que soit l’état du paramètre.
+Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les Office, l’impact de la désactivation du paramètre Expériences connectées facultatives est que les utilisateurs ne peuvent plus accéder aux modules ou au Office Store via ces clients.  Toutefois, certains add-ins Microsoft considérés comme essentiels ou critiques pour l’entreprise, et les add-ins déployés par l’administrateur informatique d’une organisation via un déploiement [centralisé](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) restent disponibles. En outre, les compléments et le Store restent disponibles Outlook sur le web, quel que soit l’état du paramètre.
 
 Pour plus d’informations Outlook comportement spécifique, voir Confidentialité, autorisations et sécurité [pour Outlook des modules.](../outlook/privacy-and-security.md#optional-connected-experiences)
 
@@ -87,7 +87,7 @@ Cette section décrit la protection offerte par la plateforme des compléments 
 Les compléments Office sont créés à l’aide de technologies web qui sont exécutées dans un contrôle de navigateur ou un composant **iframe**. C’est la raison pour laquelle l’utilisation de compléments est semblable à la navigation sur les sites web, que ce soit sur Internet ou sur l’intranet. Les compléments peuvent être externes à une organisation (si le complément est acquis à partir d’AppSource) ou internes (si le complément est acquis à partir d’un catalogue de compléments Exchange Server, d’un catalogue d’applications SharePoint ou d’un partage de fichiers sur le réseau d’une organisation). Les compléments ont un accès limité au réseau et la plupart d’entre eux peuvent effectuer des opérations de lecture ou d’écriture dans le document ou l’élément de messagerie actif. La plateforme du complément applique certaines contraintes avant qu’un utilisateur ou un administrateur installe ou démarre ce complément. Mais, comme pour tout modèle d’extensibilité, les utilisateurs doivent faire preuve de prudence avant de lancer un complément inconnu.
 
 > [!NOTE]
-> Les utilisateurs peuvent voir une invite de sécurité pour faire confiance au domaine la première fois qu’un module est chargé. Cela se produit si l’hôte de domaine du Exchange est en dehors du domaine local ou Office Online Server.
+> Les utilisateurs peuvent voir une invite de sécurité pour faire confiance au domaine la première fois qu’un module est chargé. Cela se produit si l’hôte de domaine du add-in se trouve en dehors du domaine Exchange local ou Office Online Server.
 
 La plateforme du add-in répond aux préoccupations des utilisateurs finaux en matière de confidentialité des manières suivantes.
 
@@ -99,7 +99,7 @@ La plateforme du add-in répond aux préoccupations des utilisateurs finaux en m
 
 - Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les modules de contenu et de volet de tâches, les utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers   >    >    >  **Paramètres** Catalogues de produits de  >  **confiance).** Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
-- La conception de la plateforme de l’outil de recherche fournit la sécurité et les performances aux utilisateurs finaux des manières suivantes.
+- La conception de la plateforme de l’outil de recherche fournit aux utilisateurs finaux une sécurité et des performances des manières suivantes.
 
   - Un Office s’exécute dans un contrôle de navigateur web hébergé dans un environnement d’runtime de Office application cliente. Cette conception assure à la fois la sécurité et l’isolation des performances de l’application cliente.
 
@@ -190,7 +190,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
     Pour plus d’informations sur les différences entre **innerText** et **textContent**, voir [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Pour plus d’informations sur la compatibilité DOM entre les navigateurs les plus répandus, voir les instructions relatives à la [compatibilité DOM W3C - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Si vous devez utiliser **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne contient pas de contenu malveillant avant de le transmettre à **innerHTML**. Pour plus d’informations et un exemple d’utilisation sûre **de innerHTML,** voir [la propriété innerHTML.](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+- Si vous devez utiliser **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne contient pas de contenu malveillant avant de le transmettre à **innerHTML**. Pour plus d’informations et un exemple d’utilisation sûre de **innerHTML,** voir [la propriété innerHTML.](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
@@ -230,7 +230,7 @@ Les développeurs doivent également prendre note des pratiques de sécurité su
 
   Pour s’assurer que les applications ne livrent pas de contenu à l’aide du protocole HTTP, lors du  test de ces derniers, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans les **options Internet** du Panneau de configuration et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
 
-  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez ce qui suit  dans **Options Internet**: sous l’onglet Sécurité, sélectionnez la  zone **Internet,** sélectionnez Le niveau **personnalisé,** faites défiler pour rechercher Afficher le contenu **mixte,** puis sélectionnez Invite si elle n’est pas déjà sélectionnée.
+  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez ce qui suit  dans **Options Internet**: sous l’onglet Sécurité, sélectionnez la zone **Internet,** sélectionnez Niveau **personnalisé,** faites défiler pour rechercher Afficher le contenu mixte **et** sélectionnez **Invite** si elle n’est pas déjà sélectionnée.
 
   - Assurez-vous que l’option **Avertir en cas de changement entre mode sécurisé et non sécurisé** est sélectionnée sur l’onglet **Avancé** de la boîte de dialogue **Options Internet**.
 

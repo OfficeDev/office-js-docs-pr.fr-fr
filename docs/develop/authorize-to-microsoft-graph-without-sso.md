@@ -1,14 +1,14 @@
 ---
 title: Autoriser la connexion à Microsoft Graph sans authentification unique
 description: Découvrir l'autorisation de connexion à Microsoft Graph sans authentification unique
-ms.date: 01/29/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: ec8279f4112936692f0859fee2a1cc766c0b4342
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: c16af84bf63ead9acb81cf92be0a14ab92a6def3
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350042"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773929"
 ---
 # <a name="authorize-to-microsoft-graph-without-sso"></a>Autoriser la connexion à Microsoft Graph sans authentification unique
 

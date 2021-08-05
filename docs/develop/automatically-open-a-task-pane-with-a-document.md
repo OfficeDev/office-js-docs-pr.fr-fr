@@ -1,21 +1,20 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
-ms.date: 05/24/2021
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 7801e9797de5b8f45315484a7b7a3fd5289f35a9
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350021"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773908"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser les commandes de votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
 Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet des tâches, présentée dans l’ensemble des conditions AddInCommands 1.1, pour ouvrir automatiquement un volet des tâches lorsque votre scénario l’exige.
-
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
@@ -30,7 +29,6 @@ La fonctionnalité d’ouverture automatique est maintenant <!-- in **developer 
 |**Produits**|**Plateformes**|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plateformes prises en charge pour tous les produits :<ul><li>Office pour bureau Windows. Build 16.0.8121.1000+</li><li>Office sur Mac. Build 15.34.17051500+</li><li>Office sur le web</li></ul>|
-
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -48,9 +46,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionna
 
 - N’utilisez pas cette fonctionnalité pour épingler plusieurs volets de tâches. Vous pouvez uniquement définir l’ouverture automatique d’un volet de votre complément avec un document.  
 
-## <a name="implementation"></a>Implémentation
-
-Pour implémenter la fonctionnalité d’ouverture automatique, procédez comme suit :
+## <a name="implement-the-autoopen-feature"></a>Implémenter la fonctionnalité d’ouverture automatique
 
 - Spécifiez le volet des tâches à ouvrir automatiquement.
 - Ajoutez des balises au document pour ouvrir automatiquement le volet des tâches.
@@ -75,7 +71,6 @@ L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTa
 
 Vous pouvez baliser le document pour déclencher la fonctionnalité d’ouverture automatique de deux façons possibles. Choisissez l’alternative qui convient le mieux à votre scénario.  
 
-
 #### <a name="tag-the-document-on-the-client-side"></a>Baliser le document côté client
 
 Utilisez la méthode Office.js [settings.set](/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** sur **true**, comme illustré dans l’exemple suivant.
@@ -91,7 +86,7 @@ Utilisez cette méthode si vous devez baliser le document dans le cadre de vos i
 
 Vous pouvez utiliser Open XML pour créer ou modifier un document et ajouter le balisage Open Office XML approprié afin de déclencher la fonctionnalité d’ouverture automatique. Pour obtenir un exemple montrant comment procéder, voir [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
 
-Ajoutez deux composants Open XML dans le document :
+Ajoutez deux parties Open XML au document.
 
 - Un composant `webextension`
 - Un composant `taskpane`

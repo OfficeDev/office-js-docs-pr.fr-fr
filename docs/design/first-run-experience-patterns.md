@@ -1,14 +1,14 @@
 ---
 title: Modèles de première expérience d’utilisation des complément Office
 description: Découvrez les meilleures pratiques pour concevoir des expériences de première Office des modules.
-ms.date: 06/26/2018
+ms.date: 07/08/2018
 localization_priority: Normal
-ms.openlocfilehash: d020a281aca10805ba8fd1176403f3788f6d716c
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076342"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774006"
 ---
 # <a name="first-run-experience-patterns"></a>Modèles de première expérience d’utilisation
 
@@ -16,7 +16,7 @@ Une première expérience d’utilisation (FRE) correspond à l’introduction d
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-Suivez ces meilleures pratiques lors de la personnalisation de la première expérience d’utilisation :
+Suivez ces meilleures pratiques lors de la création de votre première expérience d’expérience d’entreprise.
 
 |À faire|À ne pas faire|
 |:------|:------|
@@ -34,7 +34,7 @@ Le carrousel présente aux utilisateurs une série de fonctionnalités ou d’in
 
 *Figure 1. Autoriser les utilisateurs à faire avancer ou ignorer les pages de début du flux carrousel*
 
-![Illustration montrant l’étape 1 d’un carrousel lors de la première utilisation d’un volet Office’application de bureau. Dans cet exemple, une action « Ignorer » est incluse dans le haut à droite du volet Des tâches.](../images/add-in-FRE-step-1.png)
+![Illustration montrant l’étape 1 d’un carrousel lors de la première expérience d’utilisation d’Office volet Des tâches de l’application de bureau. Dans cet exemple, une action « Ignorer » est incluse dans le haut à droite du volet Des tâches.](../images/add-in-FRE-step-1.png)
 
 *Figure 2. Réduire le nombre d’écrans carrousels uniquement à ce qui est nécessaire pour communiquer efficacement votre message*
 
@@ -48,15 +48,15 @@ Le carrousel présente aux utilisateurs une série de fonctionnalités ou d’in
 
 La mise en place de la valeur communique la proposition de valeur de votre complément en faisant appel au positionnement de votre logo, à une proposition de valeur clairement déclarée, à une présentation ou un résumé des fonctionnalités et à une fonctionnalité claire d’appel à l’action.
 
-*Figure 4. Un lieu de valeur avec logo, proposition de valeur claire, résumé des fonctionnalités et appel à l’action*
+*Figure 4. Un lieu de valeur avec logo, proposition de valeur claire, synthèse de fonctionnalité et appel à l’action*
 
-![Illustration montrant une valeur de mise en place dans l’expérience de première utilisation d’un Office d’application de bureau. Dans cet exemple, le volet Des tâches affiche le logo du module, une description du module et un bouton pour commencer.](../images/add-in-FRE-value.png)
+![Illustration montrant une mise en place de valeur dans l’expérience de première utilisation d’Office du volet Des tâches de l’application de bureau. Dans cet exemple, le volet Des tâches affiche le logo du module, une description du module et un bouton pour commencer.](../images/add-in-FRE-value.png)
 
 ### <a name="video-placemat"></a>Mise en place vidéo
 
 La mise en place vidéo montre une vidéo aux utilisateurs avant qu’ils ne commencent à utiliser votre complément.
 
-*Figure 5. Première séquence de placemat vidéo - L’écran contient une image fixe de la vidéo avec un bouton lire et effacer le bouton d’appel à l’action*
+*Figure 5. Première séquence de placemat vidéo : l’écran contient une image fixe de la vidéo avec un bouton lire et un bouton d’appel à l’action en clair*
 
 ![Illustration montrant une mise en place vidéo lors de la première expérience d’utilisation d’Office volet Des tâches de l’application de bureau.](../images/add-in-FRE-video.png)
 

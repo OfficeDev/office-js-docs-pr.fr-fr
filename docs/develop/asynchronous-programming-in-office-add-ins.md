@@ -1,14 +1,14 @@
 ---
 title: Programmation asynchrone dans des compléments Office
 description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans Office’applications.
-ms.date: 09/08/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1663f15d1b9f4191fc1f0c21f0532b5e23fdade6
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671386"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773943"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -26,7 +26,7 @@ Le diagramme suivant illustre le flux d’exécution d’un appel à une méthod
 
 La prise en charge de cette conception asynchrone dans les clients riches et les clients web fait partie des objectifs de conception « écriture unique-exécution multiplateforme » du modèle de développement des Compléments Office. Par exemple, vous pouvez créer un complément de contenu ou du volet de tâches avec une seule base de code qui sera exécutée sur Excel 2013 et Excel sur le web.
 
-## <a name="writing-the-callback-function-for-an-async-method"></a>Écriture de la fonction de rappel pour une méthode « Async »
+## <a name="write-the-callback-function-for-an-async-method"></a>Écrire la fonction de rappel pour une méthode « Async »
 
 La fonction de rappel que  vous passez en tant qu’argument de rappel à une méthode « Async » doit déclarer un seul paramètre que le runtime du add-in utilisera pour fournir l’accès à un objet [AsyncResult](/javascript/api/office/office.asyncresult) lors de l’exécution de la fonction de rappel. Vous pouvez écrire:
 
@@ -36,7 +36,7 @@ La fonction de rappel que  vous passez en tant qu’argument de rappel à une m�
 
 Une fonction anonyme est utile si vous envisagez de n’utiliser son code qu’une fois : comme elle n’a pas de nom, vous ne pouvez pas y faire référence dans une autre partie du code. Une fonction nommée est utile si vous voulez réutiliser la fonction de rappel pour plusieurs méthodes « Async ».
 
-### <a name="writing-an-anonymous-callback-function"></a>Écriture d’une fonction de rappel anonyme
+### <a name="write-an-anonymous-callback-function"></a>Écrire une fonction de rappel anonyme
 
 La fonction de rappel anonyme suivante déclare un seul paramètre nommé qui récupère les données de la propriété `result` [AsyncResult.value](/javascript/api/office/office.asyncresult#value) lors du retour du rappel.
 
@@ -69,7 +69,7 @@ Vous pouvez également utiliser le paramètre de votre fonction de rappel pour a
 
 Pour plus d’informations sur l’utilisation de la méthode, voir Lire et écrire des données dans la sélection active dans `getSelectedDataAsync` un document ou une feuille de [calcul.](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md) 
 
-### <a name="writing-a-named-callback-function"></a>Écriture d’une fonction de rappel nommée
+### <a name="write-a-named-callback-function"></a>Écrire une fonction de rappel nommée
 
 Vous pouvez également écrire une fonction nommée et  passer son nom au paramètre de rappel d’une méthode « Async ». Par exemple, l’exemple précédent peut être réécrit pour passer une fonction nommée `writeDataCallback` en tant que paramètre _callback_ comme suit.
 
@@ -101,7 +101,7 @@ Pour obtenir une description de ce qui est renvoyé à la propriété pour une m
 
 ## <a name="asynchronous-programming-patterns"></a>Modèles de programmation asynchrone
 
-L Office API JavaScript prend en charge deux types de modèles de programmation asynchrone :
+L Office API JavaScript prend en charge deux types de modèles de programmation asynchrone.
 
 - Utilisation des rappels imbriqués
 - Utilisation du modèle des promesses
@@ -142,7 +142,7 @@ Ce modèle de rappel imbrique de base peut être utilisé pour toutes les métho
 
 Les sections suivantes montrent comment utiliser des fonctions anonymes ou nommées pour des rappels imbriqués dans des méthodes asynchrones.
 
-#### <a name="using-anonymous-functions-for-nested-callbacks"></a>Utilisation des fonctions anonymes pour des rappels imbriqués
+#### <a name="use-anonymous-functions-for-nested-callbacks"></a>Utiliser des fonctions anonymes pour les rappels imbrmbrés
 
 Dans l’exemple suivant, deux fonctions anonymes sont déclarées en ligne et transmises dans les méthodes et dans les `getByIdAsync` `getDataAsync` rappels imbrmbrés. Comme les fonctions sont très simples, l’objet de l’implémentation est évident.
 
@@ -163,7 +163,7 @@ function write(message){
 }
 ```
 
-#### <a name="using-named-functions-for-nested-callbacks"></a>Utilisation de fonctions nommées pour des rappels imbriqués
+#### <a name="use-named-functions-for-nested-callbacks"></a>Utiliser des fonctions nommées pour les rappels imbrmbrés
 
 Dans des implémentations complexes, il peut être utile d’utiliser des fonctions nommées pour garantir une meilleure lisibilité, simplicité de gestion et possibilité de réutilisation du code. Dans l’exemple suivant, les deux fonctions anonymes de l’exemple de la section précédente ont été réécrites en tant que fonctions nommées `deleteAllData` et `showResult` . Ces fonctions nommées sont ensuite passées dans les méthodes et dans les `getByIdAsync` `deleteAllDataValuesAsync` rappels par nom.
 
@@ -194,7 +194,7 @@ Plutôt que de transmettre une fonction de rappel et d’attendre le renvoi de l
 
 L Office API JavaScript fournit la [méthode Office.select](/javascript/api/office#Office_select_expression__callback_) pour prendre en charge le modèle de promesses permettant d’utiliser des objets de liaison existants. L’objet promise renvoyé à la méthode prend en charge uniquement les quatre méthodes accessibles directement à partir de l’objet Binding : `Office.select` [getDataAsync](/javascript/api/office/office.binding#getDataAsync_options__callback_), [setDataAsync](/javascript/api/office/office.binding#setDataAsync_data__options__callback_), [addHandlerAsync](/javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_)et [removeHandlerAsync](/javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_). [](/javascript/api/office/office.binding)
 
-Le modèle des promesses à utiliser avec les liaisons se présente comme suit :
+Le modèle de promesses pour l’travail avec les liaisons prend cette forme.
 
 **Office.select(**_selectorExpression_, _onError_**).** _BindingObjectAsyncMethod_
 
@@ -232,9 +232,9 @@ function addBindingDataChangedEventHandler() {
 > [!IMPORTANT]
 > La `Binding` promesse d’objet renvoyée par la méthode permet d’accéder uniquement `Office.select` aux quatre méthodes de `Binding` l’objet. Si vous devez accéder à l’un des autres membres de l’objet, vous devez utiliser la propriété et ou les méthodes `Binding` `Document.bindings` pour récupérer `Bindings.getByIdAsync` `Bindings.getAllAsync` `Binding` l’objet. Par exemple, si vous devez accéder à l’une des propriétés de l’objet (la ou les propriétés), ou si vous devez accéder aux propriétés des objets `Binding` `document` `id` `type` [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding,](/javascript/api/office/office.tablebinding) `getByIdAsync` `getAllAsync` vous devez utiliser la ou les méthodes pour récupérer un `Binding` objet.
 
-## <a name="passing-optional-parameters-to-asynchronous-methods"></a>Passage de paramètres facultatifs à des méthodes asynchrones
+## <a name="pass-optional-parameters-to-asynchronous-methods"></a>Passer des paramètres facultatifs à des méthodes asynchrones
 
-La syntaxe courante pour toutes les méthodes « Async » suit ce modèle :
+La syntaxe courante pour toutes les méthodes « Async » suit ce modèle.
 
  _AsyncMethod_ `(`_RequiredParameters_`, [`_OptionalParameters_`],`_CallbackFunction_`);`
 
@@ -242,7 +242,7 @@ Toutes les méthodes asynchrones prennent en charge des paramètres facultatifs,
 
 Vous pouvez créer l’objet JSON qui contient des paramètres facultatifs en ligne, ou en créant un objet et en le passant en tant que `options` _paramètre d’options._
 
-### <a name="passing-optional-parameters-inline"></a>Passage de paramètres facultatifs incorporés
+### <a name="pass-optional-parameters-inline"></a>Transmettre les paramètres facultatifs en ligne
 
 Par exemple, la syntaxe pour appeler la méthode [Document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) avec des paramètres facultatifs incorporés se présente comme ceci :
 
@@ -273,7 +273,7 @@ function write(message){
 > [!NOTE]
 > Vous pouvez spécifier des paramètres facultatifs dans l’objet JSON dans n’importe quel ordre dans la mesure où leurs noms sont correctement spécifiés.
 
-### <a name="passing-optional-parameters-in-an-options-object"></a>Passage de paramètres facultatifs dans un objet options
+### <a name="pass-optional-parameters-in-an-options-object"></a>Passer des paramètres facultatifs dans un objet Options
 
 Vous pouvez également créer un objet nommé qui spécifie les paramètres facultatifs séparément de l’appel de méthode, puis passer l’objet en tant `options` `options` qu’argument _options._
 

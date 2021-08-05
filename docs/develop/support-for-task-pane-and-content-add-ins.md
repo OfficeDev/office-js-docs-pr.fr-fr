@@ -1,14 +1,14 @@
 ---
 title: Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 description: Utilisez l Office API JavaScript pour créer un volet De tâches dans Office 2013.
-ms.date: 02/27/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fc22e1f438285d47c397d64a4dd28718fb5c8035
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 356880c0f4bb4377f2d5997217f26f51dd95f845
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671167"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773362"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
@@ -32,14 +32,12 @@ Vous pouvez utiliser [l’API JavaScript Office pour](../reference/javascript-ap
 
     - L’objet [Settings](/javascript/api/office/office.settings) pour enregistrer des données personnalisées, telles que des préférences utilisateur et l’état du complément.
 
-
 > [!IMPORTANT]
 > Certains des membres d’API ne sont pas pris en charge dans toutes les applications Office pouvant héberger des compléments de contenu et du volet Office. Pour déterminer les membres pris en charge, voir les ressources suivantes :
 
 Pour obtenir un résumé de Office prise en charge de l’API JavaScript dans Office applications clientes, voir [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md).
 
-
-## <a name="reading-and-writing-to-an-active-selection"></a>Reading and writing to an active selection
+## <a name="read-and-write-to-an-active-selection-in-a-document-spreadsheet-or-presentation"></a>Lire et écrire dans une sélection active dans un document, une feuille de calcul ou une présentation
 
 Vous pouvez lire ou écrire dans la sélection en cours de l’utilisateur dans un document, une feuille de calcul ou une présentation. Selon l’application Office de votre application, vous pouvez spécifier le type de structure de données à lire ou à écrire en tant que paramètre dans les méthodes [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) et [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) de l’objet [Document.](/javascript/api/office/office.document) Par exemple, vous pouvez indiquer n’importe quel type de données (HTML, données tabulaires, Office Open XML ou texte) pour Word, des données texte et tabulaires pour Excel et des données texte pour PowerPoint et Project. Vous pouvez également créer des gestionnaires d’événements pour détecter les modifications apportées à la sélection de l’utilisateur. L’exemple suivant obtient les données de la sélection en tant que texte à l’aide de `getSelectedDataAsync` la méthode.
 
@@ -62,18 +60,15 @@ function write(message){
 
 ```
 
-For more details and examples, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
+Pour plus d’informations et d’exemples, reportez-vous à l’article [Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
-
-## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>Binding to a region in a document or spreadsheet
+## <a name="bind-to-a-region-in-a-document-or-spreadsheet"></a>Liaison à une région dans un document ou une feuille de calcul
 
 Vous pouvez utiliser les méthodes et les méthodes pour lire ou écrire dans la sélection actuelle de l’utilisateur dans un document, une feuille de calcul `getSelectedDataAsync` `setSelectedDataAsync` ou une présentation.  Toutefois, si vous souhaitez accéder à la même région dans un document via des sessions d’exécution de votre complément sans demander à l’utilisateur d’effectuer une sélection, vous devez d’abord établir une liaison avec cette région. Avec une liaison, vous pouvez également vous abonner à des données et à des événements de modification de sélection, uniquement pour la région liée.
 
 Vous pouvez ajouter une liaison à l’aide des méthodes [addFromNamedItemAsync](/javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_), [addFromPromptAsync](/javascript/api/office/office.bindings#addFromPromptAsync_bindingType__options__callback_) ou [addFromSelectionAsync](/javascript/api/office/office.bindings#addFromSelectionAsync_bindingType__options__callback_) de l’objet [Bindings](/javascript/api/office/office.bindings).
 
 Voici un exemple qui ajoute une liaison au texte actuellement sélectionné dans un document, à l’aide de la `Bindings.addFromSelectionAsync` méthode.
-
-
 
 ```js
 Office.context.document.bindings.addFromSelectionAsync(
@@ -92,19 +87,17 @@ function write(message){
 }
 ```
 
-For more details and examples, see [Bind to regions in a document or spreadsheet](bind-to-regions-in-a-document-or-spreadsheet.md).
+Pour plus d’informations et d’exemples, reportez-vous à l’article [Liaisons de régions dans un document ou une feuille de calcul](bind-to-regions-in-a-document-or-spreadsheet.md).
 
-
-## <a name="getting-entire-documents"></a>Getting entire documents
+## <a name="get-entire-documents"></a>Obtenir des documents entiers
 
 Si votre complément du volet Office s’exécute dans PowerPoint ou Word, vous pouvez utiliser les méthodes [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_), [File.getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_) et [File.closeAsync](/javascript/api/office/office.file#closeAsync_callback_) pour obtenir la totalité d’une présentation ou d’un document.
 
 Lorsque vous `Document.getFileAsync` appelez, vous obtenez une copie du document dans un [objet](/javascript/api/office/office.file) File. `File`L’objet permet d’accéder au document en « blocs » représentés par des [objets Slice.](/javascript/api/office/office.slice) Lorsque vous appelez , vous pouvez spécifier le type de fichier (texte ou format XML Open Office compressé) et la taille des `getFileAsync` tranches (jusqu’à 4 Mo). Pour accéder au contenu de l’objet, vous appelez ensuite qui renvoie les données brutes `File` `File.getSliceAsync` dans la propriété [Slice.data.](/javascript/api/office/office.slice#data) Si vous avez spécifié un format compressé, vous obtiendrez les données du fichier sous la forme d’un tableau d’octets. Si vous transférez le fichier à un service web, vous pouvez transformer les données brutes compressées dans une chaîne codée en Base64 avant l’envoi. Enfin, lorsque vous avez terminé d’obtenir des tranches du fichier, utilisez `File.closeAsync` la méthode pour fermer le document.
 
-For more details, see how to [get the whole document from an add-in for PowerPoint or Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
+Pour plus d’informations, reportez-vous à l’article expliquant comment [obtenir l’intégralité d’un document à partir d’un complément pour PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
-
-## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Reading and writing custom XML parts of a Word document
+## <a name="read-and-write-custom-xml-parts-of-a-word-document"></a>Lire et écrire des parties XML personnalisées d’un document Word
 
 Grâce aux contrôles de contenu et au format de fichier Office Open XML, vous pouvez ajouter des parties XML personnalisées à un document Word et lier des éléments dans les parties XML aux contrôles de contenu de ce document. Lorsque vous ouvrez le document, Word lit et remplit automatiquement les contrôles de contenu liés avec les données des parties XML personnalisées. Les utilisateurs peuvent également écrire des données dans les contrôles de contenu. Lorsqu’ils enregistrent le document, les données des contrôles sont alors enregistrées dans les parties XML liées. Si votre complément du volet Office s’exécute dans Word, vous pouvez utiliser la propriété [Document.customXmlParts](/javascript/api/office/office.document#customXmlParts), ainsi que les objets [CustomXmlParts](/javascript/api/office/office.customxmlparts), [CustomXmlPart](/javascript/api/office/office.customxmlpart) et [CustomXmlNode](/javascript/api/office/office.customxmlnode) pour lire et écrire des données de manière dynamique dans le document.
 
@@ -116,16 +109,11 @@ Pour ajouter une nouvelle partie XML personnalisée à un document, utilisez la 
 
 Pour obtenir des informations détaillées sur l’utilisation de parties XML personnalisées avec un complément du volet Office, voir [Création de meilleurs compléments pour Word avec Office Open XML](../word/create-better-add-ins-for-word-with-office-open-xml.md).
 
-
 ## <a name="persisting-add-in-settings"></a>Persistance des paramètres de complément
-
 
 Vous devez souvent enregistrer les données personnalisées pour votre complément, telles que les préférences d’un utilisateur ou l’état du complément, et accéder à ces données lors de la prochaine ouverture du complément. Vous pouvez utiliser des techniques de programmation web courantes pour enregistrer les données, comme les cookies de navigateur ou le stockage web HTML 5. Si votre complément est également exécuté dans Excel, PowerPoint ou Word, vous pouvez également utiliser les méthodes de l’objet [Settings](/javascript/api/office/office.settings). Les données créées avec l’objet sont stockées dans la feuille de calcul, la présentation ou le document avec qui le module a été inséré et `Settings` enregistré. Ces données sont disponibles seulement pour le complément qui les a créées.
 
 Pour éviter les allers-retours vers le serveur où le document est stocké, les données créées avec l’objet sont gérées en mémoire au moment `Settings` de l’exécuter. Les données de paramètres enregistrées précédemment sont chargées en mémoire lors de l’initialisation du complément et les modifications apportées à ces données sont uniquement enregistrées dans le document quand vous appelez la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_). En interne, les données sont stockées dans un objet JSON sérialisé en tant que paires nom/valeur. Vous pouvez utiliser les méthodes [get](/javascript/api/office/office.settings#get_name_), [set](/javascript/api/office/office.settings#set_name__value_) et [remove](/javascript/api/office/office.settings#remove_name_) de l’objet **Settings** pour lire, écrire et supprimer des éléments dans la copie en mémoire des données. La ligne de code suivante explique comment créer un paramètre nommé `themeColor` et définir sa valeur sur « green ».
-
-
-
 
 ```js
 Office.context.document.settings.set('themeColor', 'green');
@@ -135,18 +123,15 @@ Office.context.document.settings.set('themeColor', 'green');
 
 Pour plus d’informations sur l’utilisation de données personnalisées à l’aide des méthodes de l’objet, voir Persistance de l’état et `Settings` [des paramètres du module.](persisting-add-in-state-and-settings.md)
 
-
-## <a name="reading-properties-of-a-project-document"></a>Lecture des propriétés d’un document de projet
+## <a name="read-properties-of-a-project-document"></a>Lire les propriétés d’un document de projet
 
 Si votre complément de volet Office s’exécute dans Project, vous pouvez lire les données de certains champs, ressources et champs de tâche du projet actif. Pour ce faire, vous utilisez les méthodes et les événements de l’objet [ProjectDocument,](/javascript/api/office/office.document) qui étend l’objet pour fournir des fonctionnalités Project `Document` spécifiques.
 
 Pour des exemples de lecture de données Project, voir [Créer votre premier complément du volet Office pour Projet 2013 à l’aide d’un éditeur de texte](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
-
 ## <a name="permissions-model-and-governance"></a>Modèle d’autorisations et gouvernance
 
 Votre add-in utilise l’élément dans son manifeste pour demander l’autorisation d’accéder au niveau de fonctionnalité dont il a besoin à partir de l Office `Permissions` API JavaScript. Par exemple, si votre add-in nécessite un accès en lecture/écriture au document, son manifeste doit spécifier comme valeur de texte `ReadWriteDocument` dans son `Permissions` élément. Étant donné que les autorisations ont pour objectif de protéger la vie privée et la sécurité de l’utilisateur, en tant que meilleures pratiques, nous vous recommandons de demander le niveau d’autorisation minimal requis pour ses fonctionnalités. L’exemple suivant illustre la demande de l’autorisation **ReadDocument** dans le manifeste d’un complément du volet Office.
-
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -161,7 +146,6 @@ Votre add-in utilise l’élément dans son manifeste pour demander l’autorisa
 ```
 
 Pour plus d’informations, voir [Demande d’autorisations pour l’utilisation de l’API dans les modules complémentaires.](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-
 
 ## <a name="see-also"></a>Voir aussi
 
