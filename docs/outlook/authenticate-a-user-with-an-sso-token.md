@@ -1,29 +1,29 @@
 ---
 title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
-ms.date: 08/20/2020
+ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e0925979d26f6b3145658d71b1edaf30431e0c7e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: cf0deef6cf9ea7d4e29d8ab7c3c5a7e79f70d9ec
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293981"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774405"
 ---
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un complément Outlook
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook’authentification unique
 
 L’authentification unique (SSO) permet à votre complément d’authentifier les utilisateurs en toute transparence (et éventuellement d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview)).
 
-Grâce à cette méthode, votre complément peut obtenir un jeton d’accès inclus dans l’API principale de votre serveur. Le complément l’utilise comme un jeton du porteur dans l’en-tête `Authorization` pour authentifier un rappel de votre API. Si vous le souhaitez, vous pouvez également obtenir votre code côté serveur. Pour ce faire, procédez comme suit :
+Grâce à cette méthode, votre complément peut obtenir un jeton d’accès inclus dans l’API principale de votre serveur. Le complément l’utilise comme un jeton du porteur dans l’en-tête `Authorization` pour authentifier un rappel de votre API. Si vous le souhaitez, vous pouvez également avoir votre code côté serveur.
 
-- renseigner le flux De la part de pour obtenir un jeton d’accès inclus dans l’API Microsoft Graph ;
+- renseigner le flux De la part de pour obtenir un jeton d’accès inclus dans l’API Microsoft Graph ;
 - utiliser les informations d’identité dans le jeton pour établir l’identité de l’utilisateur et s’authentifier à vos services principaux.
 
 Pour une vue d’ensemble de l’authentification unique dans les compléments Office, reportez-vous à [Activer l’authentification unique pour des compléments Office ](../develop/sso-in-office-add-ins.md) et [Autorisation de l’accès à Microsoft Graph dans votre complément Office](../develop/authorize-to-microsoft-graph.md).
 
-## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans votre location Microsoft 365
+## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans Microsoft 365 location
 
-Pour utiliser l’authentification unique (SSO) avec un complément Outlook, vous devez activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Pour utiliser l’authentification Outlook un autre, vous devez activer l’authentification moderne pour Microsoft 365 location. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Inscription de votre complément
 
@@ -31,7 +31,7 @@ Pour utiliser l’authentification unique, votre complément Outlook devra avoir
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>Consentement fourni pendant le chargement indépendant d’un complément
 
-Lorsque vous développez un complément, vous devez fournir un consentement à l’avance. Pour plus d’informations, consultez [la rubrique accorder le consentement de l’administrateur au complément](../develop/grant-admin-consent-to-an-add-in.md).
+Lorsque vous développez un add-in, vous devez fournir votre consentement à l’avance. Pour plus d’informations, voir [Accorder le consentement de l’administrateur au module complémentaire.](../develop/grant-admin-consent-to-an-add-in.md)
 
 ## <a name="update-the-add-in-manifest"></a>Mise à jour du manifeste de complément
 
@@ -50,6 +50,6 @@ Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jet
 
 ## <a name="see-also"></a>Voir aussi
 
-- Pour obtenir un exemple de complément Outlook qui utilise le jeton SSO pour accéder à l’API Microsoft Graph, consultez la rubrique relative à l' [authentification unique du complément Outlook](https://github.com/OfficeDev/Outlook-Add-in-SSO).
+- Pour obtenir un exemple Outlook qui utilise le jeton ssO pour accéder à l’API Microsoft Graph, voir Outlook [SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)du Outlook.
 - [Référence d’API SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [Ensemble d’exigences IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)

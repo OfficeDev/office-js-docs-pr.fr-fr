@@ -1,15 +1,15 @@
 ---
 title: Personnaliser votre complément compatible avec l’authentification unique Node.js
-description: En savoir plus sur la personnalisation du module de personnalisation de LSO que vous avez créé avec le générateur Yeoman.
-ms.date: 02/01/2021
+description: En savoir plus sur la personnalisation du module de personnalisation de l’oD SSO que vous avez créé avec le générateur Yeoman.
+ms.date: 08/04/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 7ec55e849031878b0ee6c19cfd82332bee5f77a5
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 71d2cb81aa5b10ef69cbbeacc5c1e071f115fa91
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348334"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774419"
 ---
 # <a name="customize-your-nodejs-sso-enabled-add-in"></a>Personnaliser votre complément compatible avec l’authentification unique Node.js
 
@@ -18,7 +18,7 @@ ms.locfileid: "53348334"
 
 Le [](sso-quickstart.md) démarrage rapide de l' cesso crée un add-in sso qui obtient les informations de profil de l’utilisateur et les écrit dans le document ou le message. Dans cet article, vous allez passer en revue le processus de mise à jour du add-in que vous avez créé avec le générateur Yeoman dans le démarrage rapide de l’eoso, pour ajouter de nouvelles fonctionnalités qui nécessitent différentes autorisations.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
 - Un Office que vous avez créé en suivant les instructions du démarrage rapide de [l' cesso.](sso-quickstart.md)
 
@@ -43,7 +43,7 @@ Le add-in que vous avez créé avec le démarrage rapide de l' cesso utilise Mic
 
 ### <a name="update-app-permissions-in-azure"></a>Mettre à jour les autorisations d’application dans Azure
 
-Pour que le module puisse lire correctement le contenu du OneDrive Entreprise de l’utilisateur, ses informations d’inscription d’application dans Azure doivent être mises à jour avec les autorisations appropriées. Pour accorder à l’application **l’autorisation Files.Read.All** et révoquer l’autorisation **User.Read,** qui n’est plus nécessaire, complétez les étapes suivantes.
+Pour que le module puisse lire correctement le contenu du OneDrive Entreprise de l’utilisateur, ses informations d’inscription d’application dans Azure doivent être mises à jour avec les autorisations appropriées. Pour accorder à l’application l’autorisation **Files.Read.All** et révoquer l’autorisation **User.Read,** qui n’est plus nécessaire, vous pouvez effectuer les étapes suivantes.
 
 1. Accédez au [portail Azure et](https://ms.portal.azure.com/#home) **connectez-vous à l’aide de vos informations d Microsoft 365'administrateur.**
 
@@ -57,7 +57,7 @@ Pour que le module puisse lire correctement le contenu du OneDrive Entreprise de
 
 4. Dans la page vue d’ensemble de l’application, choisissez les **autorisations d’API** sous le titre **Gérer** sur le côté gauche de la page.
 
-5. Dans la **ligne User.Read** de la table d’autorisations, choisissez les sélections, puis sélectionnez Révoquer le consentement de l’administrateur dans le menu qui s’affiche. 
+5. Dans la **ligne User.Read** de la table des autorisations, choisissez les sélections, puis sélectionnez Révoquer le consentement de l’administrateur dans le menu qui s’affiche. 
 
 6. Sélectionnez **le bouton Oui,** supprimer en réponse à l’invite qui s’affiche.
 
@@ -635,9 +635,9 @@ Pour tester un complément Outlook, procédez comme suit.
 
     ![Screenshot showing OneDrive Entreprise information in Outlook compose message window.](../images/sso-onedrive-info-outlook.png)
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
 
-Félicitations, vous avez personnalisé avec succès la fonctionnalité du module de personnalisation de l’oDS que vous avez créée avec le générateur Yeoman dans le démarrage rapide de l’personnalisation [SSO.](sso-quickstart.md) Pour en savoir plus sur les étapes de configuration de l’authentification unique effectuées automatiquement par le générateur Yeoman et le code facilitant le processus d’authentification unique, veuillez consultez le didacticiel [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).
+Félicitations, vous avez personnalisé avec succès la fonctionnalité du add-in ssO que vous avez créé avec le générateur Yeoman dans le démarrage rapide de l’personnalisation [SSO.](sso-quickstart.md) Pour en savoir plus sur les étapes de configuration de l’authentification unique effectuées automatiquement par le générateur Yeoman et le code facilitant le processus d’authentification unique, veuillez consultez le didacticiel [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).
 
 ## <a name="see-also"></a>Consultez aussi
 
