@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 1/19/2021
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 09abf03c5e345c61a4e98226930d79120c95949b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6f1ce6d14d1a9840011294028db3c7db5faa2e83
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076636"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774447"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -176,7 +176,7 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Dans l’**explorateur de solutions**, accédez au projet de complément **ExcelWebAddIn1**, puis ouvrez le répertoire **ExcelWebAddIn1Manifest**. Ce répertoire contient votre fichier manifeste, **ExcelWebAddIn1.xml**. Un fichier manifeste XML définit les paramètres et les fonctionnalités du complément. Consultez la section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) précédente pour plus d’informations sur les deux projets créés par votre solution Visual Studio. 
+1. Dans l’**explorateur de solutions**, accédez au projet de complément **ExcelWebAddIn1**, puis ouvrez le répertoire **ExcelWebAddIn1Manifest**. Ce répertoire contient votre fichier manifeste, **ExcelWebAddIn1.xml**. Un fichier manifeste XML définit les paramètres et les fonctionnalités du complément. Consultez la section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) précédente pour plus d’informations sur les deux projets créés par votre solution Visual Studio.
 
 2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
@@ -202,13 +202,13 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
 2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du menu Accueil d’Excel, avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-2a.png)
+    ![Capture d’écran du menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-2a.png)
 
 3. Sélectionnez une plage de cellules dans la feuille de calcul.
 
 4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
-    ![Capture d’écran d’Excel avec le volet Office Complément ouvert.](../images/excel-quickstart-addin-2c.png)
+    ![Capture d’écran d’ Excel avec le volet Office Complément ouvert.](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
@@ -220,8 +220,8 @@ Félicitations, vous avez créé un complément de volet de tâches Excel ! Ensu
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Développement de compléments Office](../develop/develop-overview.md)
-* [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
-* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
+- [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
