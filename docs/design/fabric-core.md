@@ -3,12 +3,12 @@ title: Cœur de fabric dans les modules
 description: Obtenez une vue d’ensemble de l’utilisation de Fabric Core et des composants de l’interface utilisateur fabric dans Office des composants.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2e7c1fa2bff177deecb113c7d3afc346f277e5480a588152911118d1b36bc05f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773607"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081866"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Cœur de fabric dans les modules
 

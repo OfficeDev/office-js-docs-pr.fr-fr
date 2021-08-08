@@ -1,18 +1,18 @@
 ---
 title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
-ms.date: 05/20/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 59d758ae977c60fce36e788265081bc72b12faef
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661130"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773089"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
-Dans le cadre du processus de développement d’un complément Outlook, vous devrez probablement déployer et installer de façon itérative le complément pour le tester, ce qui implique les étapes suivantes.
+Dans le cadre du processus de développement d’un complément Outlook, vous serez probablement amené à déployer et à installer le complément de manière itérative à des fins de test, ce qui implique les étapes suivantes.
 
 1. Création d’un fichier manifeste qui décrit le complément.
 1. Déploiement du ou des fichiers de l’interface utilisateur du complément sur un serveur web.
@@ -24,7 +24,7 @@ Dans le cadre du processus de développement d’un complément Outlook, vous de
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>Création d’un fichier manifeste pour le complément
 
-Chaque complément est décrit par un manifeste XML, un document qui fournit au serveur des informations sur le complément, décrit le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier local ou sur un serveur, à condition que le complément soit accessible par le serveur Exchange de la boîte aux lettres avec laquelle vous procédez aux tests. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, voir [Manifestes des compléments Outlook](manifests.md).
+Chaque complément est décrit par un manifeste XML, un document qui fournit au serveur des informations sur le complément, décrit le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier ou un serveur local, tant que l’emplacement est accessible par le serveur Exchange de la boîte aux lettres que vous testez. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, voir [Manifestes des compléments Outlook](manifests.md).
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Déploiement d’un complément sur un serveur web
 
@@ -64,7 +64,7 @@ New-App -URL:"http://<fully-qualified URL">
 
 L’URL complète est l’emplacement du fichier de manifeste de complément que vous avez préparé pour votre complément.
 
-Vous pouvez utiliser les cmdlets PowerShell supplémentaires suivantes pour gérer les compléments pour une boîte aux lettres.
+Utilisez les applets de commande PowerShell supplémentaires suivantes pour gérer les compléments d’une boîte aux lettres.
 
 - `Get-App` : répertorie les compléments activés pour une boîte aux lettres.
 - `Set-App` : active ou désactive un complément sur une boîte aux lettres.
@@ -74,9 +74,9 @@ Vous pouvez utiliser les cmdlets PowerShell supplémentaires suivantes pour gér
 
 Le choix des versions du client Outlook à tester dépend de vos besoins en matière de développement.
 
-- Si vous développez un complément pour une utilisation privée ou uniquement pour les membres de votre organisation, il est important de tester les versions d’Outlook que votre entreprise utilise. Gardez à l’esprit que certains utilisateurs peuvent utiliser Outlook sur le web. Par conséquent, vous devez également tester les versions des navigateurs standard utilisés au sein de votre entreprise.
+- Si vous développez un complément pour une utilisation privée ou uniquement pour les membres de votre organisation, il est important de tester les versions d’Outlook utilisées par votre entreprise. N’oubliez pas que certains utilisateurs peuvent utiliser Outlook sur le web. Il est donc également important de tester les versions de navigateur standard de votre entreprise.
 
-- Si vous développez un complément pour [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises tel que spécifié dans les [Stratégies de certification de la Place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut notamment :
+- Si vous développez un complément à répertorier dans [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises comme spécifié dans les [stratégies de certification de la place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut les opérations suivantes :
   - la dernière et avant-dernière version d’Outlook sur Windows ;
   - la dernière version d’Outlook sur Mac ;
   - la dernière version d’Outlook sur iOS et Android (si votre complément [prend en charge le facteur de forme pour mobile](add-mobile-support.md)) ;

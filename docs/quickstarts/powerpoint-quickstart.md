@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément de volet de tâches PowerPoint
 description: Découvrez comment créer un complément de volet des tâches PowerPoint simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 03cba67307fa12dca111d3fcecb6a4a0173f77f1
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f68dcf96231f18c43d5f1a28fcc536f0f39521a5
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076923"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773705"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -37,7 +37,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `PowerPoint`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-powerpoint.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-powerpoint.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -66,6 +66,12 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
     > ```command&nbsp;line
     > npm run dev-server
     > ```
+
+    - Installez les dépendances de votre complément dans le répertoire racine de votre projet.
+
+        ```command&nbsp;line
+        npm install
+        ```
 
     - Pour tester votre complément dans PowerPoint, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir PowerPoint avec votre complément chargé.
 

@@ -1,14 +1,14 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 01/29/2021
+ms.date: 07/27/2021
 localization_priority: Priority
-ms.openlocfilehash: 1f34a6335949a4cbd2a0f58cdefa12426414770e
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 4ee2e53a1d2a74a2663a372aeb080c5f32da1bde
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349181"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773208"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -17,7 +17,7 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 Pour une vue d'ensemble du reportage, voir la vidéo [Ruban de l'application commandes complémentaires au sein du Bureau](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> Les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via le [déploiement centralisé](../publish/centralized-deployment.md) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser le [chargement de version test](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.
+> les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via les [applications intégrées](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser le [chargement indépendant](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.
 
 > [!IMPORTANT]
 > Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
@@ -93,7 +93,7 @@ Les commandes de complément sont actuellement prises en charge sur les platefor
 > [!NOTE]
 > Pour plus d’informations sur la prise en charge dans Outlook, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
 
-## <a name="debugging"></a>Débogage
+## <a name="debug"></a>Débogage
 
 Pour déboguer une commande de complément, vous devez l’exécuter dans Office sur le web. Pour plus de détails, voir [Débogage de compléments dans Office sur le web](../testing/debug-add-ins-in-office-online.md).
 
@@ -117,7 +117,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous développez des comman
   > Les compléments qui occupent trop d’espace peuvent ne pas obtenir la [validation d’AppSource](/legal/marketplace/certification-policies).
 
 - Pour toutes les icônes, suivez les [règles de conception d’icône](add-in-icons.md).
-- Proposez une version de votre complément qui fonctionne aussi sur les applications Office qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner à la fois dans les applications sensibles aux commandes (avec des commandes) et non sensibles aux commandes (sous forme de volet de tâches).
+- Fournissez une version de votre complément qui fonctionne également sur les applications Office qui ne prennent pas en charge les commandes. Un seul manifeste de complément peut fonctionner dans des applications qui prennent en charge les commandes (avec des commandes) et qui ne prennent pas en charge les commandes (en tant que volet Office).
 
    *Figure 3. Complément du volet Office dans Office 2013 et le même complément utilisant des commandes de complément dans Office 2016*
 

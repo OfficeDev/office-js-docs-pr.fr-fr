@@ -3,12 +3,12 @@ title: Conditions particulières pour les compléments sur iPad
 description: Découvrez quelques conditions requises pour créer un Office qui s’exécute sur une iPad.
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 04ee1a4bea8b9f27189bf67368f883cd3b91ab3e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f494cfbb85b6e59b9f26a2b00917e07f44623f1d094656ca104fb85d0faeb2af
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671358"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080960"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>Conditions particulières pour les compléments sur iPad
 
@@ -44,7 +44,7 @@ Appliquez les meilleures pratiques suivantes pour le développement de iPad.
 
 -  **Développez et déboguer le add-in sur Windows mac et chargez-le sur une iPad.**
 
-    Vous ne pouvez pas développer le add-in directement sur un iPad, mais vous pouvez le développer et le déboguer sur un ordinateur Windows ou Mac et le recharger de manière test sur un iPad. Étant donné qu’un add-in qui s’exécute dans Office sur iOS ou Mac prend en charge les mêmes API qu’un module de Office sur Windows, le code de votre module doit s’exécuter de la même manière sur ces plateformes. Pour plus d’informations, voir Tester et déboguer [des](../testing/test-debug-office-add-ins.md) Office et chargement de version test des Office sur iPad et Mac pour les [tests.](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
+    Vous ne pouvez pas développer le add-in directement sur un iPad, mais vous pouvez le développer et le déboguer sur un ordinateur Windows ou Mac et le recharger de manière test sur un iPad. Étant donné qu’un add-in qui s’exécute dans Office sur iOS ou Mac prend en charge les mêmes API qu’un module de Office sur Windows, le code de votre add-in doit s’exécuter de la même manière sur ces plateformes. Pour plus d’informations, voir Tester et déboguer [des](../testing/test-debug-office-add-ins.md) Office et chargement de version test des Office sur iPad et Mac pour les [tests.](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
 
 -  **Précisez les conditions de fonctionnement de l’API dans le manifeste de votre complément ou avec des vérifications à l’exécution.**
 

@@ -1,14 +1,14 @@
 ---
 title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
-ms.date: 03/18/2020
+ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: 7975d05f37d0318bb016c82cc5a7428f56d7fc30
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671393"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773516"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -18,7 +18,7 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 * Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
 
-* Précisez les images utilisées pour l'image de marque du complément et l'iconographie utilisée pour [commandes complémentaires][] dans le ruban d'application de l'Office.
+* Spécifiez les images utilisées pour personnaliser le complément et la syntaxe utilisés pour [commandes de complément][] dans le ruban de l’application Office.
 
 * Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
 
@@ -38,7 +38,6 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 
 > [!NOTE]
 > Il existe également un ordre obligatoire d’apparition des éléments au sein de leur élément parent. Pour plus d’informations, reportez-vous à la rubrique [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md).
-
 
 ### <a name="required-elements-by-office-add-in-type"></a>Éléments requis par type de complément Office
 
@@ -101,7 +100,7 @@ _\*\* SupportUrl n’est obligatoire que pour les compléments distribués via A
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
-Tous les URI des images, tels que ceux utilisés pour les [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
+Tous les URI d’image, tels que ceux utilisés pour [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
 
 Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
@@ -120,7 +119,7 @@ Lors de l’exécution d’Office sur le web, votre volet des tâches peut navig
 Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](../reference/manifest/appdomains.md) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
 
 > [!NOTE]
-> Il existe deux exceptions à ce comportement :
+> Il existe deux exceptions à ce comportement.
 >
 > - Cela s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
 > - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
@@ -496,7 +495,7 @@ Pour plus d’informations sur la validation d’un manifeste par rapport à la 
 ## <a name="see-also"></a>Voir aussi
 
 * [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md)
-* [Création de commandes de complément dans votre manifeste][commandes de complément]
+* [Créer des commandes de complément dans votre manifeste] [create-addin-commands.md]
 * [Spécifier les exigences en matière d’applications Office et de l’API](specify-office-hosts-and-api-requirements.md)
 * [Localisation des compléments Office](localization.md)
 * [Référence de schéma pour les manifestes des compléments Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
@@ -504,5 +503,3 @@ Pour plus d’informations sur la validation d’un manifeste par rapport à la 
 * [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
 * [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 * [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md)
-
-[commandes de complément]: create-addin-commands.md

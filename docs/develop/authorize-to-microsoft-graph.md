@@ -3,12 +3,12 @@ title: Autoriser la connexion à Microsoft Graph avec l’authentification uniqu
 description: Découvrez comment les utilisateurs d’un Office peuvent utiliser l' sign-on unique (SSO) pour extraire des données de Microsoft Graph.
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: e8e2946b6e6bc1cd49d18453065b52758d099a25
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: a4302d05d796b53f6db602dcd12f8c03469fc240927b2bc326ffa9f07a5d8954
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773922"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081234"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
@@ -76,4 +76,4 @@ Votre code peut et doit gérer cette erreur en revenir à un autre système d’
 En tant que meilleure pratique, passez toujours aux moments où votre application sera distribuée dans AppSource et nécessite des étendues Graph `forMSGraphAccess` `getAccessToken` Microsoft.
 
 > [!TIP]
-> Si vous développez un Outlook qui utilise l' luiso et que vous  chargez une version test, Office retournera toujours l’erreur 13012 une fois passé, même si le consentement de l’administrateur a été `forMSGraphAccess` `getAccessToken` accordé. Pour cette raison, vous devez commenter `forMSGraphAccess` l’option lors du développement **d’un** Outlook de développement. N’oubliez pas de désafcommenter l’option lorsque vous déployez pour la production. La fausse version 13012 se produit uniquement lorsque vous chargez une version de version Outlook.
+> Si vous développez un Outlook qui utilise l' luiso et que vous  chargez une version test, Office retourne toujours l’erreur 13012 lorsqu’il est passé, même si le consentement de l’administrateur a été `forMSGraphAccess` `getAccessToken` accordé. Pour cette raison, vous devez commenter `forMSGraphAccess` l’option lors du développement **d’un** Outlook de développement. N’oubliez pas de désafcommenter l’option lorsque vous déployez pour la production. La fausse version 13012 se produit uniquement lorsque vous chargez une version de version Outlook.

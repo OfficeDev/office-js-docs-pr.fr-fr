@@ -3,12 +3,12 @@ title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des meilleures pratiques pour l’API Office dialogue, telles que les meilleures pratiques pour une application mono-page (SPA)
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ace62bb3e023381f6cebc34c2226d33b6f84287beaf4ec7b5d5e77ddeabc3c9e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773761"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080810"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -27,7 +27,7 @@ Cet article fournit des règles, des gotchas et des meilleures pratiques pour l�
 - Seules deux Office API peuvent être appelées dans la boîte de dialogue :
   - Fonction [messageParent.](/javascript/api/office/office.ui#messageParent_message__messageOptions_)
   - `Office.context.requirements.isSetSupported`(Pour plus d’informations, voir Spécifier les Office [applications et les conditions requises de l’API.)](specify-office-hosts-and-api-requirements.md)
-- La [fonction messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) doit généralement être appelée à partir d’une page dans le même domaine que le module lui-même, mais cela n’est pas obligatoire. Pour plus d’informations, consultez la messagerie entre domaines [à l’runtime hôte.](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime)
+- La [fonction messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) doit généralement être appelée à partir d’une page dans le même domaine que le module lui-même, mais cela n’est pas obligatoire. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -123,13 +123,13 @@ Si votre application utilise le routage côté client, comme le font généralem
 
 #### <a name="problems-with-spas-and-the-office-dialog-api"></a>Problèmes avec les SSA et l’API Office boîte de dialogue de gestion
 
-La Office boîte de dialogue se trouve dans une nouvelle fenêtre avec sa propre instance du moteur JavaScript, et par conséquent son propre contexte d’exécution complet. Si vous passez un itinéraire, votre page de base et tout son code d’initialisation et de mise en route s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique télécharge et lance une deuxième instance de votre application dans la fenêtre box, ce qui va partiellement à l’emploi d’une SPA. En outre, le code qui modifie des variables dans la fenêtre de boîte de dialogue ne modifie pas la version du volet Des tâches des mêmes variables. De même, la fenêtre de boîte de dialogue possède son propre stockage de session (propriété [Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) qui n’est pas accessible à partir du code dans le volet Des tâches. La boîte de dialogue et la page hôte sur laquelle a été appelée ressemblent `displayDialogAsync` deux clients différents à votre serveur. (Pour un rappel de ce qu’est une page hôte, voir Ouvrir une boîte de dialogue [à partir d’une page hôte.)](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)
+La Office boîte de dialogue se trouve dans une nouvelle fenêtre avec sa propre instance du moteur JavaScript, et par conséquent son propre contexte d’exécution complet. Si vous passez un itinéraire, votre page de base et tout son code d’initialisation et de mise en route s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique télécharge et lance une deuxième instance de votre application dans la fenêtre box, ce qui va partiellement à l’emploi d’une SPA. En outre, le code qui modifie des variables dans la fenêtre de boîte de dialogue ne modifie pas la version du volet Des tâches des mêmes variables. De même, la fenêtre de la boîte de dialogue possède son propre stockage de session (propriété [Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) qui n’est pas accessible à partir du code dans le volet Des tâches. La boîte de dialogue et la page hôte sur laquelle a été appelée ressemblent `displayDialogAsync` deux clients différents à votre serveur. (Pour un rappel de ce qu’est une page hôte, voir Ouvrir une boîte de dialogue [à partir d’une page hôte.)](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page)
 
 Par exemple, si vous avez transmis un itinéraire à la méthode, vous n’ariez pas vraiment de SPA ; vous ariez deux `displayDialogAsync` *instances de la même SPA*. En outre, une grande partie du code dans l’instance du volet Des tâches ne sera jamais utilisée dans cette instance et la plus grande partie du code dans l’instance de la boîte de dialogue ne sera jamais utilisée dans cette instance. Ce serait comme avoir deux SPAs dans le même lot.
 
 #### <a name="microsoft-recommendations"></a>Recommandations de Microsoft
 
-Au lieu de transmettre un itinéraire côté client à la méthode, nous vous recommandons d’adopter l’une des `displayDialogAsync` méthodes suivantes :
+Au lieu de transmettre un itinéraire côté client à la méthode, nous vous recommandons d’adopter l’une des méthodes `displayDialogAsync` suivantes :
 
 * Si le code que vous souhaitez exécuter dans la boîte de dialogue est suffisamment complexe, créez explicitement deux spa différents . autrement dit, avoir deux spas dans des dossiers différents du même domaine. Une SPA s’exécute dans la boîte de dialogue et l’autre dans la page hôte de la boîte de dialogue où `displayDialogAsync` elle a été appelée. 
 * Dans la plupart des scénarios, seule une logique simple est nécessaire dans la boîte de dialogue. Dans ce cas, votre projet sera considérablement simplifié en hébergeant une page HTML unique, avec javaScript incorporé ou référencé, dans le domaine de votre SPA. Passez l’URL de la page à la méthode`displayDialogAsync`. Cela signifie que vous déviez de l’idée littérale d’une application à page unique ; vous n’avez pas vraiment une seule instance d’une SPA lorsque vous utilisez l’API Office dialogue.

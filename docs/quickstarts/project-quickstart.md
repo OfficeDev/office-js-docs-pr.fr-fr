@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: Découvrez comment créer un complément simple de volet des tâches Project à l’aide de l’API JavaScript pour Office.
-ms.date: 06/07/2021
+ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 3589572c022e4fe3dc75cd25e5d378a3dab0c8b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 43ad1218324e0399a93fe120450ceb75dd0bac43
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076573"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773075"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -96,7 +96,13 @@ Office.context.document.getSelectedTaskAsync(
     cd "My Office Add-in"
     ```
 
-2. Démarrez le serveur web local.
+1. Installez les dépendances de votre projet.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Démarrez le serveur web local.
 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
@@ -107,13 +113,13 @@ Office.context.document.getSelectedTaskAsync(
     npm run dev-server
     ```
 
-3. Dans Project, créez un plan de projet simple.
+1. Dans Project, créez un plan de projet simple.
 
-4. Chargez votre complément dans Project en suivant les instructions fournies dans [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
+1. Chargez votre complément dans Project en suivant les instructions fournies dans [Chargement de versions test de compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
-5. Sélectionnez une seule tâche dans le projet.
+1. Sélectionnez une seule tâche dans le projet.
 
-6. Au bas du volet des tâches, sélectionnez le lien **Exécuter** pour renommer la tâche sélectionnée et ajouter des notes à la tâche sélectionnée.
+1. Au bas du volet des tâches, sélectionnez le lien **Exécuter** pour renommer la tâche sélectionnée et ajouter des notes à la tâche sélectionnée.
 
     ![Capture d'écran de l'application Project avec le complément du volet des tâches chargé.](../images/project-quickstart-addin-1.png)
 

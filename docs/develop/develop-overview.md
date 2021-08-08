@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office
 description: Présentation du développement de compléments Office.
-ms.date: 10/14/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 03a693e29f5aa52156a2ebfc7b6ed782323bb2b7
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b2fa3e630fbcfb013f4458f7b8f9f564d0fed3f1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076117"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773796"
 ---
 # <a name="develop-office-add-ins"></a>Développement de compléments Office
 
@@ -17,7 +17,7 @@ ms.locfileid: "53076117"
 
 Tous les compléments Office sont basés sur la plateforme de compléments Office. Pour les compléments que vous créez, vous devrez comprendre les concepts importants tels que la disponibilité de l’application et de la plateforme, les modèles de programmation de l’API JavaScript Office, la spécification des paramètres et fonctionnalités d’un complément dans le fichier manifeste, la conception de l’interface utilisateur et de l’expérience utilisateur et bien plus encore. Les concepts principaux de développement tels que ceux-ci sont abordés dans la section **Cycle de vie de développement** > **Développer** de la documentation. Consultez les informations ci-dessous avant d’explorer la documentation propre à l’application qui correspond au complément que vous créez (par exemple, [Excel](../excel/index.yml)).
 
-## <a name="creating-an-office-add-in"></a>Création d’un complément Office
+## <a name="create-an-office-add-in"></a>Créer un complément Office
 
 Vous pouvez créer un complément Office à l’aide du générateur Yeoman pour les compléments Office ou de Visual Studio.
 
@@ -41,9 +41,9 @@ Visual Studio peut être utilisé pour créer des compléments Office pour Excel
 
 [!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
 
-## <a name="understanding-the-two-parts-of-an-office-add-in"></a>Comprendre les deux parties d’un complément Office
+## <a name="understand-the-two-parts-of-an-office-add-in"></a>Comprendre les deux parties d’un complément Office
 
-Un complément Office est composé de deux parties :
+Un complément Office se compose de deux parties.
 
 - Le manifeste de complément est un fichier XML qui définit les paramètres et les fonctionnalités du complément.
 
@@ -51,7 +51,7 @@ Un complément Office est composé de deux parties :
 
 L’application web utilise l’API JavaScript Office pour interagir avec le contenu du document Office dans lequel le complément est en cours d’exécution. Votre complément peut également effectuer d’autres opérations que les applications web effectuent généralement, comme appeler des services web externes, faciliter l’authentification des utilisateurs, etc.
 
-### <a name="defining-an-add-ins-settings-and-capabilities"></a>Définir les paramètres et les fonctionnalités du complément
+### <a name="define-an-add-ins-settings-and-capabilities"></a>Définir les paramètres et les fonctionnalités d’un complément
 
 Un manifeste de complément Office (fichier XML) définit les paramètres et les fonctionnalités du complément. Vous allez configurer le manifeste pour spécifier des éléments tels que :
 
@@ -65,11 +65,11 @@ Un manifeste de complément Office (fichier XML) définit les paramètres et les
 
 Si vous souhaitez en savoir plus sur le manifeste, veuillez consulter l’article sur le [manifeste XML de compléments Office](add-in-manifests.md).
 
-### <a name="interacting-with-content-in-an-office-document"></a>Interaction avec le contenu d’un document Office
+### <a name="interact-with-content-in-an-office-document"></a>Interagir avec du contenu dans un document Office
 
 Un complément Office peut utiliser l’API JavaScript Office pour interagir avec le contenu du document Office dans lequel le complément est exécuté.
 
-#### <a name="accessing-the-office-javascript-api-library"></a>Accès à la bibliothèque de l’API JavaScript Office
+#### <a name="access-the-office-javascript-api-library"></a>Accéder à la bibliothèque d’API JavaScript Office
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 
@@ -81,7 +81,7 @@ Un complément Office peut utiliser l’API JavaScript Office pour interagir ave
 
 [!include[information about the Office JS API requirement sets](../includes/office-js-requirement-sets.md)]
 
-#### <a name="exploring-apis-with-script-lab"></a>Exploration des API avec Script Lab
+#### <a name="explore-apis-with-script-lab"></a>Explorer les API avec Script Lab
 
 Script Lab est un complément qui vous permet d’explorer l’API JavaScript Office et d’exécuter des extraits de code lorsque vous travaillez dans un programme Office tel qu’Excel ou Word. Il est disponible gratuitement via [AppSource](https://appsource.microsoft.com/product/office/WA104380862), il s’agit d’un outil utile pour inclure votre kit de ressources de développement pendant que vous projetez et vérifiez les fonctionnalités de votre complément. Dans Script Lab, vous pouvez accéder à une bibliothèque d'exemples intégrés pour essayer rapidement des API ou même utiliser un exemple comme point de départ pour votre propre code.
 
@@ -91,7 +91,7 @@ La vidéo d’une minute suivante illustre Script Lab en action.
 
 Si vous souhaitez en savoir plus sur Script Lab, veuillez consulter[Axplorer les API Office JavaScript à l’aide d’un Script Lab](../overview/explore-with-script-lab.md).
 
-## <a name="extending-the-office-ui"></a>Extension de l’interface utilisateur Office
+## <a name="extend-the-office-ui"></a>Étendre l’interface utilisateur d’Office
 
 Un complément Office peut étendre l'interface utilisateur d'Office à l’aide de commandes de complément et de conteneurs HTML tels que les volets de tâches, les compléments de contenu ou les boîtes de dialogue.
 

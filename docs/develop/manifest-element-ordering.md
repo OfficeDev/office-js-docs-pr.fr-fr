@@ -3,12 +3,12 @@ title: Comment trouver l’ordre approprié d’éléments manifeste
 description: Découvrez comment trouver l’ordre correct dans lequel placer les éléments enfants dans un élément parent.
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 2ee80167a76861209e814dc6c272720feb3a9cf1
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: e435add4b47984880ba4dc0d17f8a81c04af6ba7e9c2d499296a5679f15ef029
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173912"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080427"
 ---
 # <a name="how-to-find-the-proper-order-of-manifest-elements"></a>Comment trouver l’ordre approprié d’éléments manifeste
 
@@ -19,7 +19,7 @@ Le classement requis est spécifié dans les fichiers XSD dans le dossier [sché
 Par exemple, dans l’`<OfficeApp>`élément, le `<Id>`,`<Version>` ,`<ProviderName>` doit apparaître dans cet ordre. Si un élément `<AlternateId>` est ajouté, il doit être compris entre l’élément `<Id>` et `<Version>`. Votre manifeste ne sera pas valide et votre complément ne sera pas chargé, si un élément n’est pas dans l’ordre.
 
 > [!NOTE]
-> Le [validateur dans office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) utilise le même message d’erreur lorsqu’un élément est hors de l’ordre que lorsqu’un élément se trouve sous le mauvais parent. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
+> Le [validateur dans office-addin-manifest](../testing/troubleshoot-manifest.md#validate-your-manifest-with-office-addin-manifest) utilise le même message d’erreur lorsqu’un élément est hors de l’ordre que lorsqu’un élément est sous le mauvais parent. L’erreur indique que l’élément enfant n’est pas un enfant valide de l’élément parent. Si vous recevez un message d’erreur mais que la documentation de référence pour l’élément enfant indique qu’elle *est* valide pour le parent, alors le problème est probablement que l’enfant a été placé dans l’ordre incorrect.
 
 Les sections suivantes montrent les éléments de manifeste dans l’ordre dans lequel ils doivent apparaître. Il existe des différences selon que `type` l’attribut de `<OfficeApp>` l’élément est , ou `TaskPaneApp` `ContentApp` `MailApp` . Pour éviter que ces sections ne deviennent trop complexes, l’élément hautement complexe est `<VersionOverrides>` décomposé en sections distinctes.
 
@@ -110,7 +110,7 @@ Les sections suivantes montrent les éléments de manifeste dans l’ordre dans 
     <VersionOverrides>*
 ```
 
-\*Voir l’ordre des éléments de l’élément De messagerie dans [VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) et l’ordre des éléments de la messagerie dans [VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments enfants de VersionOverrides.
+\*Voir l’ordre des éléments du add-in de messagerie dans [VersionOverrides Ver. 1.0](#mail-add-in-element-ordering-within-versionoverrides-ver-10) et l’ordre des éléments de la messagerie dans [VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments enfants de VersionOverrides.
 
 ## <a name="basic-content-add-in-element-ordering"></a>Ordre des éléments de contenu de base des éléments
 
@@ -395,7 +395,7 @@ Les sections suivantes montrent les éléments de manifeste dans l’ordre dans 
     <VersionOverrides>*
 ```
 
-\* Une versionOverrides avec la valeur, au lieu de , peut être imbriée à la fin `type` `VersionOverridesV1_1` de `VersionOverridesV1_0` l’extérieur VersionOverrides. Voir l’ordre des éléments de la messagerie dans [VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) pour l’ordre des éléments dans `VersionOverridesV1_1` .
+\* Une versionOverrides avec la valeur, au lieu de , peut être imbriée à la fin `type` `VersionOverridesV1_1` de `VersionOverridesV1_0` l’extérieur VersionOverrides. Voir [Mail add-in element ordering within VersionOverrides Ver. 1.1](#mail-add-in-element-ordering-within-versionoverrides-ver-11) for the ordering of elements in `VersionOverridesV1_1` .
 
 ## <a name="mail-add-in-element-ordering-within-versionoverrides-ver-11"></a>Ordre des éléments du add-in de messagerie dans VersionOverrides Ver. 1.1
 
@@ -512,5 +512,5 @@ Les sections suivantes montrent les éléments de manifeste dans l’ordre dans 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence pour les manifestes des add-ins Office (v1.1)](../develop/add-in-manifests.md)
+- [Référence pour Office des manifestes de modules (v1.1)](../develop/add-in-manifests.md)
 - [Définitions de schéma officiel](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)

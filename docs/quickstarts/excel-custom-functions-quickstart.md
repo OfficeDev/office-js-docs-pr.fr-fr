@@ -1,15 +1,15 @@
 ---
-ms.date: 11/09/2020
+ms.date: 08/04/2021
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 0b0e42149e771978026db3eb84594bd172d09459
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b3c6df07fdbd4e23341bef26a96413263aa2de63
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076629"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773376"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -20,8 +20,8 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Microsoft 365) ou Excel sur le web.
-* Les fonctions personnalisées d’Excel sont prises en charge dans Office sur Mac (connecté à un abonnement Office 365). Une mise à jour de ce didacticiel est bientôt prévue.
+- Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Microsoft 365) ou Excel sur le web.
+- Les fonctions personnalisées d’Excel sont prises en charge dans Office sur Mac (connecté à un abonnement Office 365). Une mise à jour de ce didacticiel est bientôt prévue.
 
 >[!NOTE]
 >Les fonctions personnalisées d’Excel ne sont pas prises en charge dans Office 2019 (achat unique).
@@ -40,13 +40,19 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
-2. Le générateur Yeoman vous fournit des instructions dans votre ligne de commande sur la procédure à suivre pour le projet, mais ignorez-les et continuez de suivre nos instructions. Accédez au dossier racine du projet.
+1. Le générateur Yeoman vous fournit des instructions dans votre ligne de commande sur la procédure à suivre pour le projet, mais ignorez-les et continuez de suivre nos instructions. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
     cd starcount
     ```
 
-3. Créez le projet. 
+1. Installer les dépendances.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Créez le projet.
 
     ```command&nbsp;line
     npm run build
@@ -55,7 +61,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-4. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, même si ce n’est pas obligatoire. Vous pouvez continuer à exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
+1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, même si ce n’est pas obligatoire. Vous pouvez continuer à exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
 # <a name="excel-on-windows"></a>[Excel sur Windows](#tab/excel-windows)
 
@@ -78,12 +84,12 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
 
    ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence.](../images/excel-cf-online-register-add-in-1.png)
-   
-2. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
-3. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
+1. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
-4. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
+1. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
+
+1. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
 ---
 
@@ -91,11 +97,11 @@ Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau 
 
 Le projet de fonctions personnalisées que vous avez crées en utilisant le générateur Yeoman contient certaines fonctions personnalisées prédéfinies, définies dans le fichier **./src/functions/functions.js**. Le fichier **./manifest.xml** dans le répertoire racine du projet indique que toutes les fonctions personnalisées appartiennent à l’ `CONTOSO` espace de noms.
 
-Dans votre classeur Excel, essayez de reproduire la`ADD` fonction personnalisée en complétant les étapes suivantes :
+Dans votre classeur Excel, essayez la fonction personnalisée `ADD` en effectuant les étapes suivantes.
 
 1. Sélectionner une cellule, puis taper `=CONTOSO` Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans l’espace de noms `CONTOSO`.
 
-2. Exécutez la`CONTOSO.ADD` fonction, en utilisant les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
+1. Exécutez la`CONTOSO.ADD` fonction, en utilisant les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
 
 Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés comme paramètres d’entrée. La saisie de`=CONTOSO.ADD(10,200)` doit générer le résultat **210** dans la cellule une fois que vous appuyez sur ENTRÉE.
 
@@ -104,11 +110,10 @@ Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez
 Félicitations, vous avez créé une fonction personnalisée dans un complément Excel ! Ensuite, créez un complément plus complexe avec la fonctionnalité de diffusion de données en continu. Le lien suivant vous guide tout au long des étapes suivantes dans le complément Excel avec le didacticiel de fonctions personnalisées.
 
 > [!div class="nextstepaction"]
-> [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web
-)
+> [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble des fonctions personnalisées](../excel/custom-functions-overview.md)
-* [Métadonnées fonctions personnalisées](../excel/custom-functions-json.md)
-* [Exécution de fonctions personnalisées Excel](../excel/custom-functions-runtime.md)
+- [Vue d’ensemble des fonctions personnalisées](../excel/custom-functions-overview.md)
+- [Métadonnées fonctions personnalisées](../excel/custom-functions-json.md)
+- [Exécution de fonctions personnalisées Excel](../excel/custom-functions-runtime.md)

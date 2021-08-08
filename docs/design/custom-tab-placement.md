@@ -1,30 +1,30 @@
 ---
 title: Positionner un onglet personnalisé sur le ruban
-description: Découvrez comment contrôler l’endroit où un onglet personnalisé apparaît sur le ruban Office et s’il a le focus par défaut.
+description: Découvrez comment contrôler l’endroit où un onglet personnalisé apparaît sur Office ruban et s’il a le focus par défaut.
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: 6718a69191d1d84d96512c01b2544094ce276ab6
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 98b90ad6a8a89cf739dfdc0fff8068235a75e34d7304032c87011476620a483a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505205"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082114"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>Positionner un onglet personnalisé sur le ruban
 
-Vous pouvez spécifier l’endroit où vous souhaitez que l’onglet personnalisé de votre add-in apparaisse sur le ruban de l’application Office à l’aide de la marque dans le manifeste du module.
+Vous pouvez spécifier l’endroit où vous souhaitez que l’onglet personnalisé de votre application de Office apparaisse sur le ruban de l’application Office à l’aide de la marque dans le manifeste du module.
 
 > [!NOTE]
-> Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour les [commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
+> Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour [les commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
 
 > [!IMPORTANT]
 >
-> - La fonctionnalité de l’application et le markup décrits dans cet article sont disponibles uniquement *dans PowerPoint sur le web.*
+> - La fonctionnalité et le markup du add-in décrits dans cet article sont disponibles *uniquement dans PowerPoint sur le web*.
 > - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui supportent l’ensemble de conditions **requises AddinCommands 1.3**. Voir [Comportement sur les plateformes non](#behavior-on-unsupported-platforms) pris en cas de problème ci-dessous.
 
 Spécifiez l’endroit où vous souhaitez qu’un onglet personnalisé apparaisse en identifiant l’onglet Office intégré que vous souhaitez qu’il soit à côté et en spécifiant s’il doit se trouver à gauche ou à droite de l’onglet intégré. Faites ces spécifications en incluant un [élément InsertBefore](../reference/manifest/customtab.md#insertbefore) (gauche) ou [InsertAfter](../reference/manifest/customtab.md#insertafter) (à droite) dans l’élément [CustomTab](../reference/manifest/customtab.md) du manifeste de votre add-in. (Vous ne pouvez pas avoir les deux éléments.)
 
-Dans l’exemple suivant, l’onglet personnalisé est configuré pour apparaître juste *après* **l’onglet** Révision. Notez que la valeur de `<InsertAfter>` l’élément est l’ID de l’onglet Office intégré. 
+Dans l’exemple suivant, l’onglet personnalisé est configuré pour apparaître juste *après* **l’onglet** Révision. Notez que la valeur de l’élément est l’ID de l’onglet `<InsertAfter>` Office intégré. 
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -43,12 +43,12 @@ Gardez les points suivants à l’esprit.
 - Les  `<InsertBefore>` éléments et les éléments sont  `<InsertAfter>` facultatifs. Si vous n’utilisez ni l’un ni l’autre, votre onglet personnalisé apparaîtra comme onglet le plus à droite du ruban.
 - Les  `<InsertBefore>` éléments et les éléments  `<InsertAfter>` s’excluent mutuellement. Vous ne pouvez pas utiliser les deux.
 - Si l’utilisateur installe plusieurs modules dont l’onglet personnalisé est configuré  au même endroit, par exemple après l’onglet Révision, l’onglet du dernier module installé se trouve à cet endroit. Les onglets des add-ins précédemment installés sont déplacés d’un endroit à l’autre. Par exemple, l’utilisateur installe les add-ins A, B et C dans cet  ordre et tous sont configurés pour insérer un onglet après l’onglet Révision, puis les onglets apparaissent dans cet ordre : **Review**, **AddinCTab**, **AddinBTab**, **AddinATab**.
-- Les utilisateurs peuvent personnaliser le ruban dans l’application Office. Par exemple, un utilisateur peut déplacer ou masquer l’onglet de votre add-in. Vous ne pouvez pas l’empêcher ou détecter qu’il s’est produit.
-- Si un utilisateur déplace l’un des onglets intégrés, Office interprète les éléments et les éléments en termes d’emplacement par défaut de `<InsertBefore>` `<InsertAfter>` *l’onglet intégré.* Par exemple, si l’utilisateur déplace l’onglet Révision à l’extrémité droite du ruban, Office interprète le marques de révision dans l’exemple ci-dessus comme « placer l’onglet personnalisé à droite de l’endroit où se trouve l’onglet Révision par défaut ». ** 
+- Les utilisateurs peuvent personnaliser le ruban dans l Office’application. Par exemple, un utilisateur peut déplacer ou masquer l’onglet de votre add-in. Vous ne pouvez pas l’empêcher ou détecter qu’il s’est produit.
+- Si un utilisateur déplace l’un des onglets intégrés, Office interprète les éléments et les éléments en termes d’emplacement par défaut de `<InsertBefore>` `<InsertAfter>` l’onglet *intégré.* Par exemple, si l’utilisateur déplace l’onglet Révision à l’extrémité droite du ruban, Office interprète le marques de révision dans l’exemple ci-dessus comme « placer l’onglet personnalisé à droite de l’endroit où se trouve l’onglet Révision par défaut ». ** 
 
 ## <a name="specifying-which-tab-has-focus-when-the-document-opens"></a>Spécification de l’onglet qui a le focus à l’ouverture du document
 
-Office met toujours le focus par défaut sur l’onglet qui se trouve immédiatement à droite de **l’onglet** Fichier. Par défaut, il s’agit de **l’onglet** Accueil. Si vous configurez votre onglet  personnalisé pour qu’il se place avant l’onglet Accueil, avec , votre onglet personnalisé aura le focus à l’ouverture `<InsertBefore>TabHome</InsertBefore>` du document.
+Office permet toujours d’avoir le focus par défaut sur l’onglet qui se trouve immédiatement à droite de **l’onglet** Fichier. Par défaut, il s’agit de **l’onglet** Accueil. Si vous configurez votre onglet  personnalisé pour qu’il se place avant l’onglet Accueil, avec , votre onglet personnalisé aura le focus à l’ouverture `<InsertBefore>TabHome</InsertBefore>` du document.
 
 > [!IMPORTANT]
 > Donner une importance excessive à votre complément dérange et contrarie les utilisateurs et les administrateurs. Ne positionnez pas  un onglet personnalisé avant l’onglet Accueil, sauf si votre module est le principal moyen pour les utilisateurs d’interagir avec le document.

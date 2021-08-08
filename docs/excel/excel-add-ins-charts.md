@@ -3,17 +3,17 @@ title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: Exemples de code montrant les tâches graphiques à l’aide Excel API JavaScript.
 ms.date: 07/17/2019
 localization_priority: Normal
-ms.openlocfilehash: a7199aae31e917b0609a47cc69b5e52279d43b24
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8e3445a60514321461409b20710848ec7a51852e4f19d44b643721b4b860affd
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349573"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079344"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel.
-Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Chart` propriétés, voir Chart Object `ChartCollection` [(Interface API JavaScript](/javascript/api/excel/excel.chart) pour Excel) et [Chart Collection Object (interface API JavaScript](/javascript/api/excel/excel.chartcollection)pour Excel).
+Pour obtenir la liste complète des propriétés et des méthodes qui sont prise en charge par les objets et les `Chart` propriétés, voir Chart Object `ChartCollection` [(interface API JavaScript](/javascript/api/excel/excel.chart) pour Excel) et [Chart Collection Object (interface API JavaScript](/javascript/api/excel/excel.chartcollection)pour Excel).
 
 ## <a name="create-a-chart"></a>Création d’un graphique
 

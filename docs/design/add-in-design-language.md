@@ -3,12 +3,12 @@ title: Langage de création d’un complément Office
 description: Découvrez comment faire en sorte que votre Office soit visuellement compatible avec Office.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 4374eaad1e660728a347d19a012d345b642755af
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 45ef812c83b094d548b120493717f6af6e9fb2f36bf0d9c2144b6b1517e658e9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330058"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082652"
 ---
 # <a name="office-add-in-design-language"></a>Langage de création d’un complément Office
 
@@ -22,7 +22,7 @@ Le langage de création d’Office est un système visuel clair et simple qui ga
 - Définitions d’animation
 - Composants courants
 
-[L’interface utilisateur Fluent](../design/add-in-design.md) est l’infrastructure frontale officielle pour la création avec Office langage de conception. L’utilisation de l’interface utilisateur Fluent est facultative, mais il s’agit du moyen le plus rapide pour vous assurer que vos modules sont une extension naturelle des Office. Tirez parti de l’interface utilisateur Fluent pour concevoir et créer des compléments qui complètent Office.
+[Fluent’interface utilisateur](../design/add-in-design.md) est l’infrastructure frontale officielle pour la création avec Office langage de conception. L Fluent’interface utilisateur est facultative, mais il s’agit du moyen le plus rapide pour vous assurer que vos Office. Tirez parti de Fluent’interface utilisateur pour concevoir et créer des compléments qui complètent Office.
 
 De nombreux compléments d’Office sont associés à une marque préexistante. Vous pouvez conserver une marque forte et son langage de composant ou visuel dans votre complément. Recherchez les opportunités pour conserver votre propre langage visuel lors de l’intégration avec Office. Pensez à des moyens de remplacer les couleurs Office, la typographie, les icônes ou d’autres éléments stylistiques par des éléments de votre marque. Pensez à des moyens de suivre des dispositions de complément ou des modèles de conception de l’expérience utilisateur courants tout en insérant des contrôles et des composants que vos clients connaissent.
 

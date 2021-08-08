@@ -3,12 +3,12 @@ title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: cd8d9386fa9f154d611926add12e21f545e36351
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: bea2bf43d5d10a39e36cee679bf03790ca683126d915609e6a746176ff18da6c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076303"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081732"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
 

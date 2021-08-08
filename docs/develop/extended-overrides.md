@@ -3,34 +3,34 @@ title: Utilisation des substitutions étendues du manifeste
 description: Découvrez comment configurer des fonctionnalités d’extensibilité avec des substitutions étendues du manifeste.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 4eb8936e8a01b81a3883f848446d20ebf4ecf863
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 09ced571f4b7d72a3479984582a8f58a0cb440bb2a3e62afe3f90329f2cd1be3
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505569"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080669"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>Utilisation des substitutions étendues du manifeste
 
-Certaines fonctionnalités d’extensibilité des add-ins Office sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module.
+Certaines fonctionnalités d’extensibilité des Office Sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module.
 
 > [!NOTE]
-> Cet article part du principe que vous êtes familiarisé avec les manifestes de add-in Office et leur rôle dans les add-ins. Veuillez lire [le manifeste XML des add-ins Office,](add-in-manifests.md)si ce n’est pas le cas récemment.
+> Cet article suppose que vous êtes familiarisé avec les manifestes de Office et leur rôle dans les add-ins. Veuillez lire Office manifeste XML des [add-ins,](add-in-manifests.md)si ce n’est pas le cas récemment.
 
 Le tableau suivant spécifie les fonctionnalités d’extensibilité qui nécessitent une substitution étendue, ainsi que des liens vers la documentation de la fonctionnalité.
 
 | Fonctionnalité | Instructions de développement |
 | :----- | :----- |
-| Raccourcis clavier | [Ajouter des raccourcis clavier personnalisés à vos add-ins Office](../design/keyboard-shortcuts.md) |
+| Raccourcis clavier | [Ajouter des raccourcis clavier personnalisés à vos Office de commande](../design/keyboard-shortcuts.md) |
 
 Le schéma qui définit le format JSON est [un schéma de manifeste étendu.](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json)
 
 > [!TIP]
 > Cet article est quelque peu abstrait. Envisagez de lire l’un des articles du tableau pour clarifier les concepts.
 
-## <a name="tell-office-where-to-find-the-json-file"></a>Indiquer à Office où trouver le fichier JSON
+## <a name="tell-office-where-to-find-the-json-file"></a>Indiquer Office où trouver le fichier JSON
 
-Utilisez le manifeste pour indiquer à Office où trouver le fichier JSON. Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, ajoutez un élément `<VersionOverrides>` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez `Url` l’attribut sur l’URL complète d’un fichier JSON. Voici un exemple de l’élément le plus `<ExtendedOverrides>` simple possible.
+Utilisez le manifeste pour indiquer Office où trouver le fichier JSON. Juste *en dessous* (pas à l’intérieur) de l’élément dans le manifeste, ajoutez un élément `<VersionOverrides>` [ExtendedOverrides.](../reference/manifest/extendedoverrides.md) Définissez `Url` l’attribut sur l’URL complète d’un fichier JSON. Voici un exemple de l’élément le plus `<ExtendedOverrides>` simple possible.
 
 ```xml
     ...

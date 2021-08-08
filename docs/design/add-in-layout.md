@@ -3,12 +3,12 @@ title: Instructions de disposition pour les compléments Office
 description: Obtenez des instructions sur la disposition d’un volet de tâches ou d’une boîte de dialogue dans un Office de tâches.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 14c788613fe3ac11436c32c5b7457f379b4a72fe
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 6adecff7194c95b1bd0b1f9018070b9165e2d4e414ecd0b615dec5ef6d6895da
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773194"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082320"
 ---
 # <a name="layout"></a>Disposition
 

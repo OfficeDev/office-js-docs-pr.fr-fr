@@ -3,12 +3,12 @@ title: Développer votre Office pour qu’il fonctionne avec itp lors de l’uti
 description: Utilisation des modules itp et Office de données lors de l’utilisation de cookies tiers
 ms.date: 07/8/2021
 localization_priority: Normal
-ms.openlocfilehash: 6a9452f24cb1cbd76c4f6cc3f39fab1f9310ec97
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0a638f699e7b596bba30dcd12ec57d6da209a4a6a89ad987ef3fcbb8532e5f8c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773474"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080518"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Développer votre Office pour qu’il fonctionne avec itp lors de l’utilisation de cookies tiers
 

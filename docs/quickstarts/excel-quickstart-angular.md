@@ -1,17 +1,17 @@
 ---
-title: Créer un complément de volet de tâches Excel à l’aide d’Angular
+title: Utiliser Angular pour créer un complément de volet Office Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et d’Angular pour Office.
-ms.date: 11/09/2020
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: d843a74b3542df8dbc462ae2876179de7b42a2d2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 433c78a00604b29b93c3a774b5f21416075f5ff1
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076930"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774335"
 ---
-# <a name="build-an-excel-task-pane-add-in-using-angular"></a>Créer un complément de volet de tâches Excel à l’aide d’Angular
+# <a name="use-angular-to-build-an-excel-task-pane-add-in"></a>Utiliser Angular pour créer un complément de volet Office Excel
 
 Cet article décrit le processus de création d’un complément de volet de tâches Excel à l’aide d’Angular et de l’API JavaScript pour Excel.
 
@@ -37,9 +37,9 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ## <a name="explore-the-project"></a>Explorer le projet
 
-Le projet de complément que vous avez créé à l’aide du générateur Yeoman contient un exemple de code pour un complément de volet de tâches très simple. Pour explorer les composants clés de votre projet de complément, ouvrez le projet dans votre éditeur de code et passez en revue les fichiers répertoriés ci-dessous. Lorsque vous êtes prêt à tester votre complément, passez à la section suivante.
+Le projet de complément que vous avez créé avec le générateur Yeoman contient un exemple de code pour un complément de volet Office de base. Pour explorer les composants clés de votre projet de complément, ouvrez le projet dans votre éditeur de code et passez en revue les fichiers répertoriés ci-dessous. Lorsque vous êtes prêt à tester votre complément, passez à la section suivante.
 
-- Le fichier **manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
+- Le fichier **manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément. Pour en savoir plus sur le fichier **manifest.xml**, consultez [manifeste XML des compléments Office](../develop/add-in-manifests.md).
 - Le fichier **./src/taskpane/app/app.component.html** contient les balises HTML du volet Office.
 - Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
 - Le fichier **./src/taskpane/app/app.component.ts** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet Office et Excel.
@@ -52,15 +52,15 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)] 
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-3. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+1. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du menu Accueil d’Excel, avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-3b.png)
+    ![Capture d’écran du menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-3b.png)
 
-4. Sélectionnez une plage de cellules dans la feuille de calcul.
+1. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
+1. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
 
     ![Capture d’écran d’Excel, avec le volet Office du complément ouvert et le bouton Exécuter mis en surbrillance dans ce volet.](../images/excel-quickstart-addin-3c.png)
 
@@ -73,8 +73,8 @@ Félicitations, vous avez créé un complément du volet Office Excel à l’aid
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-* [Développement de compléments Office](../develop/develop-overview.md)
-* [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
-* [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
-* [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
+- [Développement de compléments Office](../develop/develop-overview.md)
+- [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
+- [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
+- [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)

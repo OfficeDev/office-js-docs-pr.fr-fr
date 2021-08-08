@@ -3,12 +3,12 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: Recommandations sur la façon de résoudre les problèmes liés à l' sign-on unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: daddd5e1565fa870755b2368aba031b5768987a4
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1587f747ab3128904d4b287581f6f909f3fdb216ec03a711b30d994ca696eb03
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773740"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079958"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
@@ -129,7 +129,7 @@ Dans certaines configurations d’identité dans AAD et Microsoft 365, il est po
 
 Votre code doit tester cette propriété `claims`. En fonction de l’architecture de votre complément, vous pouvez le tester côté client, ou le tester sur le serveur et le relayer sur le client. Il vous faut ces informations dans le client, car Office gère l’authentification des compléments SSO. Si vous le relayez côté serveur, le message adressé au client peut être une erreur (telle que `500 Server Error` ou `401 Unauthorized`) ou se trouver dans le corps d’une réponse de succès (telle que `200 OK`). Dans les deux cas, le rappel (réussite ou échec) de l’appel AJAX de votre code côté client à l’API web de votre complément devra tester cette réponse.
 
-Quelle que soit votre architecture, si la valeur des revendications a été envoyée à partir d’AAD, votre code doit rappeler et transmettre `getAccessToken` l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
+Quelle que soit votre architecture, si la valeur de revendications a été envoyée à partir d’AAD, votre code doit rappeler et transmettre `getAccessToken` l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
 
 ### <a name="consent-missing-errors"></a>Erreurs de consentement manquant
 

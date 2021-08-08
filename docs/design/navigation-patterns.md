@@ -1,14 +1,14 @@
 ---
 title: Modèles de navigation pour les compléments Office
-description: Découvrez les meilleures pratiques pour l’utilisation des barres de commandes, des barres d’onglets et des boutons de retour, pour concevoir la navigation d’un complément Office.
+description: Découvrez les meilleures pratiques d’utilisation des barres de commandes, des barres de tabulation et des boutons arrière pour concevoir la navigation d’un Office de commande.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 3bb350ede78bef684899f26e4818eba440677541
-ms.sourcegitcommit: ceb8dd66f3fb9c963fce8446c2f6c65ead56fbc1
+ms.openlocfilehash: 42f217d240f1c66c69ad94d59f501a73e6d9a85d1dc24e94b5bb5307a808a6eb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "49132031"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081742"
 ---
 # <a name="navigation-patterns"></a>Modèles de navigation
 
@@ -23,18 +23,18 @@ Les principales fonctionnalités d’un complément sont accessibles via les typ
 
 ## <a name="command-bar"></a>Barre de commandes
 
-La barre de commandes est une surface dans le volet Office qui héberge des commandes qui fonctionnent sur le contenu de la fenêtre, du panneau ou de la région parent qu’elle contient. Exemples de fonctionnalités facultatives : point d’accès au menu « hamburger », recherche et commandes sur le côté.
+CommandBar est une surface du volet Des tâches qui héberge les commandes qui opèrent sur le contenu de la fenêtre, du panneau ou de la région parente qu’il se trouve au-dessus. Exemples de fonctionnalités facultatives : point d’accès au menu « hamburger », recherche et commandes sur le côté.
 
-![Illustration d’une barre de commandes dans un volet Office d’une application de bureau Office. Cet exemple montre comment afficher une barre de commandes immédiatement sous le nom du complément, qui comprend un menu hamburger et une recherche.](../images/add-in-command-bar.png)
+![Illustration montrant une barre de commandes dans un volet Office’application de bureau. Cet exemple montre une barre de commandes juste en dessous du nom du module qui inclut un menu hamburger et une recherche.](../images/add-in-command-bar.png)
 
 ## <a name="tab-bar"></a>Barre d’onglets
 
-La barre d’onglets affiche la navigation à l’aide de boutons avec du texte et des icônes verticalement empilés. Utiliser la barre d’onglets pour permettre la navigation à l’aide des onglets avec des titres courts et explicites.
+La barre d’onglets affiche la navigation à l’aide de boutons avec du texte et des icônes empilés verticalement. Utiliser la barre d’onglets pour permettre la navigation à l’aide des onglets avec des titres courts et explicites.
 
-![Illustration d’une barre d’onglets dans le volet Office d’une application de bureau Office. Cet exemple montre une barre d’onglets immédiatement sous le nom du complément avec les onglets « Accueil », « paramètres », « favoris » et « compte ».](../images/add-in-tab-bar.png)
+![Illustration montrant une barre d’onglets dans Office volet Des tâches de l’application de bureau. Cet exemple montre une barre d’onglets immédiatement en dessous du nom du module avec les onglets « Accueil », « Paramètres », « Favoris » et « Compte ».](../images/add-in-tab-bar.png)
 
 ## <a name="back-button"></a>Bouton Précédent
 
-Le bouton précédent permet aux utilisateurs de récupérer à partir d’une action de navigation d’exploration. Ce modèle permet de vous assurer que les utilisateurs suivent une série d’étapes ordonnées.
+Le bouton Retour permet aux utilisateurs de récupérer à partir d’une action de navigation d’accès vers le bas. Ce modèle permet de vous assurer que les utilisateurs suivent une série d’étapes ordonnées.
 
-![Illustration illustrant un bouton retour dans le volet Office d’une application de bureau Office. Cet exemple montre un bouton précédent immédiatement sous le nom du complément, dans la partie supérieure gauche.](../images/add-in-back-button.png)
+![Illustration montrant un bouton Retour dans un volet Office’application de bureau. Cet exemple montre un bouton Retour juste en dessous du nom du module, en haut à gauche.](../images/add-in-back-button.png)

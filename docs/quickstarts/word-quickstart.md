@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: cbd10af6f1d811790e537b8d8a0ad509adae37e2
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: e236ba45bdb41e70dcd99ced88d761ff381d91cc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076867"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774412"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -39,7 +39,7 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -57,7 +57,13 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
     cd "My Office Add-in"
     ```
 
-2. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
+1. Installez les dépendances de votre projet.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
@@ -83,11 +89,11 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
         Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.
+1. Dans Word, ouvrez un nouveau document, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** du ruban pour ouvrir le volet des tâches du complément.
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet Office mis en évidence.](../images/word-quickstart-addin-2b.png)
 
-4. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
+1. En bas du volet Office, sélectionnez le lien **Exécuter** pour ajouter le texte en police de couleur bleue « Hello World » au document.
 
     ![Capture d’écran de l’application Word avec le complément du volet des tâches chargé.](../images/word-quickstart-addin-1c.png)
 
@@ -321,5 +327,5 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! E
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Présentation des compléments Word](../word/word-add-ins-programming-overview.md)
 - 
-  [Exemples de code pour les compléments Word](https://developer.microsoft.com/en-us/office/gallery/?filterBy=Samples,Word)
+  [Exemples de code pour les compléments Word](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
 - [Référence d’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md)

@@ -3,12 +3,12 @@ title: Interface utilisateur Fluent - Comment faire pour les modules add-in Offi
 description: Découvrez comment utiliser les Fluent’interface utilisateur React dans Office de l’interface utilisateur.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1137fd2465af6c09a42a14babe8ca2898e864c743cfd73e0263ad39ff085bf3f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773537"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081565"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Utiliser Fluent’interface utilisateur React dans les Office de l’interface utilisateur
 
@@ -36,9 +36,9 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word-react.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word-react.png)
 
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
 [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 

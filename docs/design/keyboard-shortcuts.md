@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans les Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fa675e9ddc607feabbea0f79456e0775666b8d96
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0e622820dbf1c582188d038fc532236154b7ec7389a8e14b0ce0e982a6f67a8a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773530"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081755"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -172,7 +172,7 @@ Utilisez les instructions suivantes lors de la spécification des objets dans le
 - La propriété doit contenir le nom d’au moins une touche de `default` modification (Alt, Ctrl, Shift) et une seule autre touche.
 - Shift ne peut pas être utilisé comme seule touche de modification. Combinez Shift avec Alt ou Ctrl.
 - Pour les Mac, nous prise en charge également la touche Modificateur de commande.
-- Pour les Mac, Alt est mappée sur la touche Option. Pour Windows, Command est mappée sur la touche Ctrl.
+- Pour les Mac, Alt est mappée sur la touche Option. Pour Windows, La commande est mappée sur la touche Ctrl.
 - Lorsque deux caractères sont liés à la même touche physique dans un clavier standard, ils sont synonymes dans la propriété ; par exemple, Alt+a et Alt+A sont les mêmes raccourcis, c’est le cas de `default` Ctrl+- et Ctrl+ car « - » et « _ » sont la même touche \_ physique.
 - Le caractère « + » indique que les touches de chaque côté de celui-ci sont entrées simultanément.
 
@@ -217,7 +217,7 @@ Pour une expérience utilisateur de qualité, nous vous recommandons de minimise
 - Utilisez uniquement les raccourcis clavier avec le modèle suivant : **Ctrl+Shift+Alt+* x***, où *x* est une autre touche.
 - Si vous avez besoin de raccourcis clavier, consultez la liste des [raccourcis](https://support.microsoft.com/office/keyboard-shortcuts-in-excel-1798d9d5-842a-42b8-9c99-9b7213f0040f)clavier Excel et évitez d’en utiliser dans votre module.
 - Lorsque le focus du clavier se trouve à l’intérieur de l’interface utilisateur du module, **Ctrl+Espace et** **Ctrl+Shift+F10** ne fonctionnent pas, car il s’agit de raccourcis d’accessibilité essentiels.
-- Sur un ordinateur Windows ou Mac, si la commande « Réinitialiser les préférences de raccourci des macros de Office » n’est pas disponible dans le menu de recherche, l’utilisateur peut ajouter manuellement la commande au ruban en personnalisant le ruban par le biais du menu contexté.
+- Sur un ordinateur Windows ou Mac, si la commande « Réinitialiser les préférences de raccourci des macros de Office » n’est pas disponible dans le menu de recherche, l’utilisateur peut ajouter manuellement la commande au ruban en personnalisant le ruban via le menu contexté.
 
 ## <a name="customize-the-keyboard-shortcuts-per-platform"></a>Personnaliser les raccourcis clavier par plateforme
 

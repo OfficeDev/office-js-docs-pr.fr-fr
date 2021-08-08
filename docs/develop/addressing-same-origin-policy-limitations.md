@@ -1,14 +1,14 @@
 ---
 title: Résolutions des limites de stratégie d’origine identique dans les compléments Office
-description: Découvrez comment prendre en compte les limites de stratégie de même origine avec JSONP, CORS, IFRAMEs et autres techniques.
+description: Découvrez comment prendre en charge les limitations de stratégie d’origine identique avec JSONP, CORS, IFRAMES et d’autres techniques.
 ms.date: 10/17/2019
 localization_priority: Normal
-ms.openlocfilehash: e50292c30d77856c896f892c930038c1e19d7af7
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: e6d0925499d7b6675d91978361fc59fe715b313f1f3c118e8a2b9cb425d8bd9a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293337"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081412"
 ---
 # <a name="addressing-same-origin-policy-limitations-in-office-add-ins"></a>Résolutions des limites de stratégie d’origine identique dans les compléments Office
 

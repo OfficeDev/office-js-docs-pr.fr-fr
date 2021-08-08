@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 6759d35e9460c4e72bad8cca187b0b429c140487
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8c1330b4739929f0c7d4a2b3fda16ea38ad76fd7
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671195"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774195"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -41,7 +41,7 @@ Pour authentifier l'utilisateur à l'aide de l’authentification unique, votre 
 
 Une fois que votre code a extrait la revendication souhaitée du jeton, il utilise cette valeur pour rechercher l’utilisateur dans une table des utilisateurs ou une base de données des utilisateurs. Utilisez la base de données pour stocker les informations relatives aux utilisateurs, comme les préférences utilisateur ou l’état du compte utilisateur. Étant donné que vous utilisez l’authentification unique, vos utilisateurs ne se connectent pas séparément à votre complément. vous n’avez donc pas besoin de stocker de mot de passe pour l’utilisateur.
 
-Avant de commencer l’implémentation de l’authentification des utilisateurs avec l’authentification unique, assurez-vous que vous êtes familiarisé avec l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md). Notez également les exemples suivants :
+Avant de commencer à implémenter l’authentification utilisateur avec l’authentification unique, veillez à bien connaître l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md). Notez également les exemples suivants.
 
 - [Complément Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
 - [Complément Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
@@ -54,17 +54,17 @@ Pour utiliser l’authentification unique afin d'accéder à Microsoft Graph, vo
 
 Une fois que votre code a obtenu le jeton, il l’utilise dans le flux **On Behalf Of** pour obtenir un deuxième jeton : un jeton d’accès à Microsoft Graph.
 
-Avant de commencer l’implémentation de l’authentification unique Office, assurez-vous de bien vous familiariser avec les deux articles suivants :
+Avant de commencer à implémenter l’authentification unique Office, assurez-vous que vous connaissez bien ces deux articles.
 
 - [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md)
 - [Autoriser la connexion à Microsoft Graph avec l’authentification unique](authorize-to-microsoft-graph.md)
 
-Vous devez également lire au moins l’un des articles de procédure de procédure mentionnés ici. Même si vous ne suivez pas la procédure, celle-ci contient des informations utiles sur la façon dont vous implémentez l’authentification unique Office et le flux **On Behalf Of**. 
+Vous devez également lire au moins l’un des articles de procédure de procédure mentionnés ici. Même si vous ne suivez pas la procédure, celle-ci contient des informations utiles sur la façon dont vous implémentez l’authentification unique Office et le flux **On Behalf Of**.
 
 - [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
 - [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
 
-Notez également les exemples suivants :
+Notez également les exemples suivants.
 
 - [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
 - [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)

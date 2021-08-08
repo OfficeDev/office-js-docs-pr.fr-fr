@@ -3,12 +3,12 @@ title: Modèles de première expérience d’utilisation des complément Office
 description: Découvrez les meilleures pratiques pour concevoir des expériences de première Office des modules.
 ms.date: 07/08/2018
 localization_priority: Normal
-ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e631611c11a36265bc997f12b8875056575f048ec3fecb6bfe9929abe4db1938
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774006"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081854"
 ---
 # <a name="first-run-experience-patterns"></a>Modèles de première expérience d’utilisation
 
@@ -50,7 +50,7 @@ La mise en place de la valeur communique la proposition de valeur de votre compl
 
 *Figure 4. Un lieu de valeur avec logo, proposition de valeur claire, synthèse de fonctionnalité et appel à l’action*
 
-![Illustration montrant une mise en place de valeur dans l’expérience de première utilisation d’Office du volet Des tâches de l’application de bureau. Dans cet exemple, le volet Des tâches affiche le logo du module, une description du module et un bouton pour commencer.](../images/add-in-FRE-value.png)
+![Illustration montrant une valeur de mise en place dans l’expérience de première utilisation d’un Office d’application de bureau. Dans cet exemple, le volet Des tâches affiche le logo du module, une description du module et un bouton pour commencer.](../images/add-in-FRE-value.png)
 
 ### <a name="video-placemat"></a>Mise en place vidéo
 

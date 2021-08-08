@@ -3,12 +3,12 @@ title: Autoriser des services externes dans votre complément Office
 description: Autorisation d’accès à des sources de données non-Microsoft comme Google, Facebook, LinkedIn, SalesForce et GitHub à l’aide d’OAuth 2.0, du code d’autorisation et des flux implicites.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4927837caf96268421cfbc79ce3859b9dc4043f9
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 761a61c03a67c3dc582556deff89fe918ebe2d597c4c239fac7e55976e4fbf0c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773936"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081357"
 ---
 # <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
 

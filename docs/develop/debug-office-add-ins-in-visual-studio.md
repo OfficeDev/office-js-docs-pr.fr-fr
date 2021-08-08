@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 5164829d3d66ee05d1fa21bf4a4ccfdc00b719ed0a5b6ce247044f9c2760fb45
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773817"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57081003"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -139,7 +139,7 @@ Si votre application n’est pas visible dans le document qui s’affiche dans l
 
 5. Lorsque des points d’arrêt sont marqués dans Visual Studio, parcourez le code si besoin.
 
-Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre add-in sans avoir à fermer l’application Office et redémarrer le projet. Après avoir enregistrer les modifications apportées à votre code, rechargez simplement le Office application. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis **Recharger**.
+Vous pouvez modifier votre code et passer en revue les effets de ces modifications dans votre application sans avoir à fermer l’application Office redémarrer le projet. Après avoir enregistrer les modifications apportées à votre code, rechargez simplement le Office application. Par exemple, rechargez un complément de volet de tâches en choisissant le coin supérieur droit du volet Office pour activer la [menu personnalisé](../design/task-pane-add-ins.md#personality-menu), puis **Recharger**.
 
 ## <a name="debug-the-code-for-an-outlook-add-in"></a>Déboguer le code d’un complément Outlook
 

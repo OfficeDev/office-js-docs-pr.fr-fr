@@ -3,12 +3,12 @@ title: Rendre votre complément Office compatible avec un complément COM exista
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
 ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 616da7b722a8e7645d801aec211d9579a880f93e
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 498f1715462edb7f9c79be7738337dc7433fe403a2e0aa76eae81b4516af9caa
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774265"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080470"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
@@ -58,7 +58,7 @@ L’exemple suivant montre la partie du manifeste qui spécifie un compl?ment CO
 
 Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?ment COM/VSTO, identifiez le compl?ment COM équivalent dans la stratégie de groupe **Deactiver** les compl?ments web Outlook dont le compl?ment COM ou VSTO équivalent est install s en configurant sur l’ordinateur de l’utilisateur. Ensuite, Outlook sur Windows utilisera le compl?ment COM au lieu du compl?ment web, s’ils sont tous deux install s.
 
-1. Téléchargez la dernière [version de l’outil Modèles d’administration,](https://www.microsoft.com/download/details.aspx?id=49030)en vous important des **instructions d’installation de l’outil.**
+1. Téléchargez le dernier [outil Modèles d’administration,](https://www.microsoft.com/download/details.aspx?id=49030)en vous important des instructions d’installation **de l’outil.**
 1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
 1. Accédez **aux**  >  **modèles d’administration** de configuration utilisateur   >  **Microsoft Outlook 2016**  >  **divers.**
 1. Sélectionnez le paramètre Désactiver Outlook de sites web dont l’équivalent **COM ou VSTO est installé.**
@@ -74,7 +74,7 @@ Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?
 Lorsqu’un compl?ment [COM](#specify-an-equivalent-com-add-in)équivalent est spécifié, Office sur Windows n’affiche pas l’interface utilisateur de votre compl?ment Office si le compl?ment COM ex quis est install . Office masque uniquement les boutons du ruban du Office et n’empêche pas l’installation. Par conséquent, votre Office’interface utilisateur apparaîtra toujours aux emplacements suivants dans l’interface utilisateur.
 
 - Sous **Mes modules**
-- En tant qu’entrée dans le gestionnaire du ruban (Excel, Word et PowerPoint uniquement)
+- En tant qu’entrée dans le Gestionnaire du ruban (Excel, Word et PowerPoint uniquement)
 
 > [!NOTE]
 > La spécification d’un module com équivalent dans le manifeste n’a aucun effet sur les autres plateformes telles que Office sur le Web ou Mac.

@@ -3,12 +3,12 @@ title: Conservation de l’état et des paramètres des compléments
 description: Apprenez à faire persister des données dans Office applications web de recherche de contenu s’exécutant dans l’environnement sans état d’un contrôle de navigateur.
 ms.date: 03/23/2021
 localization_priority: Normal
-ms.openlocfilehash: a1730826fafb840bc6ae69c5c1e95c54ccc0f2f7
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5b2a7d59340a0126fe270334c560ba5fbf1f1739ef6f119a2cef754a06321699
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671519"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080280"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-Pour récupérer une partie XML personnalisée, vous utilisez la méthode [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_), mais l’identifiant correspond à un GUID généré lorsque la partie XML est créée. Vous ne pouvez donc pas connaître l’identifiant lors du codage. Pour cette raison, il est recommandé de stocker immédiatement l’identifiant de la partie XML en tant que paramètre et de lui donner une clé facilement mémorisable lorsque vous créez une partie XML. L’exemple de méthode suivant montre comment procéder. (Mais consultez les sections précédentes de cet article pour plus d’informations et les meilleures pratiques concernant l’utilisation de paramètres personnalisés.)
+Pour récupérer une partie XML personnalisée, vous utilisez la méthode [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_), mais l’identifiant correspond à un GUID généré lorsque la partie XML est créée. Vous ne pouvez donc pas connaître l’identifiant lors du codage. Pour cette raison, il est recommandé de stocker immédiatement l’identifiant de la partie XML en tant que paramètre et de lui donner une clé facilement mémorisable lorsque vous créez une partie XML. L’exemple de méthode suivant montre comment procéder. (Mais consultez les sections précédentes de cet article pour plus d’informations et les meilleures pratiques en matière d’utilisation des paramètres personnalisés.)
 
  ```js
 function createCustomXmlPartAndStoreId() {

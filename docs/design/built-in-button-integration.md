@@ -1,32 +1,32 @@
 ---
 title: Intégrer des boutons Office intégrés dans des onglets et des groupes de contrôles personnalisés
-description: Découvrez comment inclure des boutons Office intégrés dans vos groupes de commandes et onglets personnalisés sur le ruban Office.
+description: Découvrez comment inclure des boutons de Office intégrés dans vos groupes de commandes et onglets personnalisés sur Office ruban.
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: 8d4e8f39313551d001669b948b146250114f3e06
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: a32b2831bdbd9a260acd7f2c09b6a6c2d8ff5789807ac6e6e1e1073a0953fc18
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505254"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082145"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>Intégrer des boutons Office intégrés dans des onglets et des groupes de contrôles personnalisés
 
-Vous pouvez insérer des boutons Office intégrés dans vos groupes de contrôles personnalisés sur le ruban Office à l’aide de la marque dans le manifeste du module. (Vous ne pouvez pas insérer vos commandes de add-in personnalisées dans un groupe Office intégré.) Vous pouvez également insérer des groupes de contrôles Office intégrés entiers dans vos onglets de ruban personnalisés.
+Vous pouvez insérer des boutons de Office intégrés dans vos groupes de contrôles personnalisés sur le ruban Office à l’aide de la marque dans le manifeste du module. (Vous ne pouvez pas insérer vos commandes de Office personnalisées.) Vous pouvez également insérer des groupes de contrôles Office intégrés dans vos onglets de ruban personnalisés.
 
 > [!NOTE]
-> Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour les [commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
+> Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour [les commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
 
 > [!IMPORTANT]
 >
-> - La fonctionnalité de l’application et le markup décrits dans cet article sont disponibles uniquement *dans PowerPoint sur le web.*
+> - La fonctionnalité et le markup du add-in décrits dans cet article sont disponibles *uniquement dans PowerPoint sur le web*.
 > - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui supportent l’ensemble de conditions **requises AddinCommands 1.3**. Consultez la section [Comportement sur les plateformes](#behavior-on-unsupported-platforms)non pris en place.
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>Insérer un groupe de contrôles intégré dans un onglet personnalisé
 
-Pour insérer un groupe de contrôles Office intégré dans un onglet, ajoutez un élément [OfficeGroup](../reference/manifest/customtab.md#officegroup) en tant qu’élément enfant dans l’élément `<CustomTab>` parent. `id`L’attribut de l’élément est définie sur l’ID `<OfficeGroup>` du groupe intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles.](#find-the-ids-of-controls-and-control-groups)
+Pour insérer un groupe de contrôles Office dans un onglet, ajoutez un élément [OfficeGroup](../reference/manifest/customtab.md#officegroup) en tant qu’élément enfant dans l’élément `<CustomTab>` parent. `id`L’attribut de l’élément est définie sur `<OfficeGroup>` l’ID du groupe intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles.](#find-the-ids-of-controls-and-control-groups)
 
-L’exemple de marques de commande suivant ajoute le groupe de contrôles Office Paragraph à un onglet personnalisé et le place pour qu’il apparaisse juste après un groupe personnalisé.
+L’exemple de marques de Office ajoute le groupe de contrôles Paragraph à un onglet personnalisé et le positionnait pour qu’il apparaisse juste après un groupe personnalisé.
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -42,9 +42,9 @@ L’exemple de marques de commande suivant ajoute le groupe de contrôles Office
 
 ## <a name="insert-a-built-in-control-into-a-custom-group"></a>Insérer un contrôle intégré dans un groupe personnalisé
 
-Pour insérer un contrôle Office intégré dans un groupe personnalisé, ajoutez un élément [OfficeControl](../reference/manifest/group.md#officecontrol) en tant qu’élément enfant dans l’élément `<Group>` parent. `id`L’attribut de `<OfficeControl>` l’élément est définie sur l’ID du contrôle intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles.](#find-the-ids-of-controls-and-control-groups)
+Pour insérer un contrôle Office dans un groupe personnalisé, ajoutez un élément [OfficeControl](../reference/manifest/group.md#officecontrol) en tant qu’élément enfant dans l’élément `<Group>` parent. `id`L’attribut de `<OfficeControl>` l’élément est définie sur l’ID du contrôle intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles.](#find-the-ids-of-controls-and-control-groups)
 
-L’exemple de marques de commande suivant ajoute le contrôle Exposant Office à un groupe personnalisé et le place pour qu’il apparaisse juste après un bouton personnalisé.
+L’exemple de marques de Office suivant ajoute le contrôle Superscript à un groupe personnalisé et le place pour qu’il apparaisse juste après un bouton personnalisé.
 
 ```xml
 <ExtensionPoint xsi:type="ContosoRibbonTab">
@@ -68,11 +68,11 @@ L’exemple de marques de commande suivant ajoute le contrôle Exposant Office �
 ```
 
 > [!NOTE]
-> Les utilisateurs peuvent personnaliser le ruban dans l’application Office. Toutes les personnalisations utilisateur remplaceront vos paramètres de manifeste. Par exemple, un utilisateur peut supprimer un bouton de n’importe quel groupe et supprimer n’importe quel groupe d’un onglet.
+> Les utilisateurs peuvent personnaliser le ruban dans l Office’application. Toutes les personnalisations utilisateur remplaceront vos paramètres de manifeste. Par exemple, un utilisateur peut supprimer un bouton de n’importe quel groupe et supprimer n’importe quel groupe d’un onglet.
 
 ## <a name="find-the-ids-of-controls-and-control-groups"></a>Rechercher les ID des contrôles et des groupes de contrôles
 
-Les ID des contrôles et des groupes de contrôles pris en charge se contiennent dans les fichiers des [ID](https://github.com/OfficeDev/office-control-ids)de contrôle Office de repo. Suivez les instructions du fichier ReadMe de ce dépôt.
+Les ID des contrôles et des groupes de contrôles pris en charge sont dans les fichiers du [Office de contrôle.](https://github.com/OfficeDev/office-control-ids) Suivez les instructions du fichier ReadMe de ce dépôt.
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportement sur les plateformes non pris en place
 

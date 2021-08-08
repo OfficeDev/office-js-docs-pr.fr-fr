@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 06/10/2021
+ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
-ms.openlocfilehash: 75a2b4d5a3ec995971b6cca1e47c77572d274555
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c435fe78255513fb50001e99cfeb476959aafb28
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076601"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774426"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -27,7 +27,7 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
 - [Node.js](https://nodejs.org/) (la dernière version [LTS](https://nodejs.org/about/releases))
 
-- La dernière version de[Yeoman](https://github.com/yeoman/yo) et de [Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante à partir de l’invite de commande :
+- La dernière version de[Yeoman](https://github.com/yeoman/yo) et du [Générateur Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante via l’invite de commande.
 
     ```command&nbsp;line
     npm install -g yo generator-office
@@ -58,6 +58,12 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
     ```command&nbsp;line
     cd "My Office Add-in"
+    ```
+
+1. Installez les dépendances de votre projet.
+
+     ```command&nbsp;line
+    npm install
     ```
 
 ### <a name="explore-the-project"></a>Explorer le projet

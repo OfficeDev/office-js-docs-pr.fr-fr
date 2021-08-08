@@ -1,17 +1,16 @@
 ---
 title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte courant Microsoft personnel, professionnel ou scolaire.
-ms.date: 07/30/2020
+ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: a776b434f42428cfc65b23a67f9ba6518028f677
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f24cfb2bb9fa90f566a2730d7a289371084a2abc
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671498"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773747"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Activer la connexion unique pour des compléments Office
-
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou Microsoft 365 Éducation. Vous pouvez en tirer parti et utiliser l’authentification unique (SSO) pour autoriser l’utilisateur à accéder à votre complément sans qu’il doive se connecter une deuxième fois.
 
@@ -22,8 +21,6 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bu
 Si vous travaillez avec un complément **Outlook**, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Vous ne devez *pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Autoriser des services externes dans votre complément Office](auth-external-add-ins.md). Concernant *Outlook*, il existe un système de secours recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](../outlook/implement-sso-in-outlook-add-in.md). Pour consulter des exemples d’utilisation d’Azure Active Directory comme système de secours, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
-
-
 
 ## <a name="how-sso-works-at-runtime"></a>Mode de fonctionnement de l’authentification unique SSO en cours d’exécution
 
@@ -63,7 +60,7 @@ Pour plus de d?tails sur ce processus, voir [Enregistrer un compl?ment Office qu
 
 ### <a name="configure-the-add-in"></a>Configurer le complément
 
-Ajoutez un nouveau balisage au manifeste du complément :
+Ajoutez un nouveau balisage au manifeste du complément.
 
 - **WebApplicationInfo**: le parent des éléments suivants.
 - **Id** - ID du client du compl?ment : il  s'agit d'un ID d'application que vous obtenez lors de l'enregistrement du compl?ment. Voir[Enregistrer un complément Office utilisant une SSO (authentification unique) avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
@@ -103,7 +100,6 @@ Voici un exemple simple d’un appel à`getAccessToken`.
 
 > [!NOTE]
 > Cet exemple ne pr?sente explicitement qu'un seul type d'erreur. Pour des exemples de traitement des erreurs plus élaborés, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
-
 
 ```js
 async function getGraphData() {

@@ -1,26 +1,26 @@
 ---
 ms.date: 05/11/2020
-description: Renvoyer plusieurs résultats à partir de votre fonction personnalisée dans un complément Office Excel.
+description: Renvoyer plusieurs résultats à partir de votre fonction personnalisée dans un Office Excel de recherche.
 title: Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 localization_priority: Normal
-ms.openlocfilehash: e25965277fbbe1c39007f79f401bf62b25760488
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 1ae808a7bc77d7dad2f7764d6b0065fa2aa91cd7eab27bd7c8697a3d87731153
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609649"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079684"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 
-Vous pouvez renvoyer plusieurs résultats à partir de votre fonction personnalisée qui sera renvoyée aux cellules voisines. Ce comportement est appelé infiltration. Lorsque votre fonction personnalisée renvoie un tableau de résultats, il s’agit d’une formule matricielle dynamique. Pour plus d’informations sur les formules de tableau dynamique dans Excel, voir [tableaux dynamiques et comportement de tableau propagé](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531).
+Vous pouvez renvoyer plusieurs résultats à partir de votre fonction personnalisée qui sera renvoyée aux cellules voisines. Ce comportement est appelé débordement. Lorsque votre fonction personnalisée renvoie un tableau de résultats, elle est appelée formule de tableau dynamique. Pour plus d’informations sur les formules de tableau dynamique dans Excel, voir [Tableaux dynamiques et comportement de tableau déversé.](https://support.office.com/article/dynamic-arrays-and-spilled-array-behavior-205c6b06-03ba-4151-89a1-87a7eb36e531)
 
-L’image suivante montre comment la `SORT` fonction descend en cellules voisines. Votre fonction personnalisée peut également renvoyer plusieurs résultats de la manière suivante.
+L’image suivante montre comment la `SORT` fonction se renverse dans les cellules voisines. Votre fonction personnalisée peut également renvoyer plusieurs résultats comme celui-ci.
 
-![Capture d’écran de la fonction « Trier » affichant plusieurs résultats en plusieurs cellules.](../images/dynamic-array-spill.png)
+![Capture d’écran de la fonction « SORT » affichant plusieurs résultats dans plusieurs cellules.](../images/dynamic-array-spill.png)
 
-Pour créer une fonction personnalisée qui est une formule matricielle dynamique, elle doit renvoyer un tableau à deux dimensions de valeurs. Si les résultats sont détourés en cellules voisines qui contiennent déjà des valeurs, la formule affiche une `#SPILL!` erreur.
+Pour créer une fonction personnalisée qui est une formule de tableau dynamique, elle doit renvoyer un tableau à deux dimensions de valeurs. Si les résultats s’affichent dans des cellules voisines qui ont déjà des valeurs, la formule affiche une `#SPILL!` erreur.
 
-L’exemple suivant montre comment retourner un tableau dynamique qui se renverse vers le bas.
+L’exemple suivant montre comment renvoyer un tableau dynamique qui se déverse vers le bas.
 
 ```javascript
 /**
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-L’exemple suivant montre comment renvoyer un tableau dynamique qui se remet à la droite. 
+L’exemple suivant montre comment renvoyer un tableau dynamique qui se déborde à droite. 
 
 ```javascript
 /**
@@ -46,7 +46,7 @@ function spillRight() {
 }
 ```
 
-L’exemple suivant montre comment retourner un tableau dynamique qui renverse les deux à la fois.
+L’exemple suivant montre comment renvoyer un tableau dynamique qui se déborde à la fois vers le bas et la droite.
 
 ```javascript
 /**
@@ -65,5 +65,5 @@ function spillRectangle() {
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Tableaux dynamiques et comportement de tableau renversé](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
-- [Options pour les fonctions personnalisées Excel](custom-functions-parameter-options.md)
+- [Tableaux dynamiques et comportement de tableau déversé](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
+- [Options pour Excel fonctions personnalisées](custom-functions-parameter-options.md)

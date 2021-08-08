@@ -3,12 +3,12 @@ title: Prise en charge d’Internet Explorer 11
 description: Découvrez comment prendre en charge Internet Explorer 11 et ES5 Javascript dans votre add-in.
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: 3677b12d265cb70d2c048e91fc32ff5f9619908b
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 02ee813774a13e1c85c1d66c8c90a33666979944643a8eca9544ca04cfae3363
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075907"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079970"
 ---
 # <a name="support-internet-explorer-11"></a>Prise en charge d’Internet Explorer 11
 
@@ -27,7 +27,7 @@ Si vous envisagez de commercialiser votre application via AppSource ou si vous p
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les médias, l’enregistrement et l’emplacement. Si votre add-in doit prendre en charge Internet Explorer 11, vous ne pouvez pas utiliser ces fonctionnalités.
 
-Internet Explorer 11 ne prend pas en charge les versions JavaScript ultérieures à ES5. Si vous souhaitez utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou ultérieure, ou TypeScript, vous disposez de deux options comme décrit dans cet article. Vous pouvez également combiner ces deux techniques.
+Internet Explorer 11 ne prend pas en charge les versions JavaScript ultérieures à ES5. Si vous souhaitez utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou ultérieure, ou TypeScript, vous disposez de deux options, comme décrit dans cet article. Vous pouvez également combiner ces deux techniques.
 
 ## <a name="use-a-transpiler"></a>Utiliser un transpiler
 
@@ -38,10 +38,10 @@ Il existe deux transpilers populaires. Les deux peuvent fonctionner avec des fic
 - [élie](https://babeljs.io/)
 - [tsc](https://www.typescriptlang.org/index.html)
 
-Consultez la documentation de l’un d’eux pour plus d’informations sur l’installation et la configuration du transpiler dans votre projet de add-in. Nous vous recommandons d’utiliser un task runner, tel que [Grunt](https://gruntjs.com/) ou [WebPack,](https://webpack.js.org/) pour automatiser la transpilation. Pour obtenir un exemple de add-in qui utilise tsc, voir Office [de microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/auth/Office-Add-in-Microsoft-Graph-React). Pour obtenir un exemple qui utilise l’utilisation de la bibliothèque d’applications, voir [Offline Stockage Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/Excel.OfflineStorageAddin).
+Consultez la documentation de l’un d’eux pour plus d’informations sur l’installation et la configuration du transpiler dans votre projet de add-in. Nous vous recommandons d’utiliser un task runner, tel que [Grunt](https://gruntjs.com/) ou [WebPack,](https://webpack.js.org/) pour automatiser la transpilation. Pour obtenir un exemple de add-in qui utilise tsc, voir Office [de microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/auth/Office-Add-in-Microsoft-Graph-React). Pour obtenir un exemple qui utilise la bibliothèque d’applications, voir [Offline Stockage Add-in](https://github.com/OfficeDev/PnP-OfficeAddins/tree/3ce0e1b74152dbbe8306a091696bc4455c04c0a1/Samples/Excel.OfflineStorageAddin).
 
 > [!NOTE]
-> Si vous utilisez Visual Studio (pas Visual Studio Code), tsc est probablement plus simple à utiliser. Vous pouvez installer la prise en charge avec un package nuget. Pour plus d’informations, [voir JavaScript et TypeScript dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019). Pour utiliser l’outil Visual Studio, créez un script de build ou utilisez l’Explorateur de séquenceur de tâches dans Visual Studio avec des outils tels que l’outil [WebPack Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ou [NPM Task Runner.](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner)
+> Si vous utilisez Visual Studio (pas Visual Studio Code), tsc est probablement plus simple à utiliser. Vous pouvez installer la prise en charge avec un package nuget. Pour plus d’informations, [voir JavaScript et TypeScript dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019). Pour utiliser l’outil Visual Studio, créez un script de build ou utilisez l’Explorateur de séquences de tâches dans Visual Studio avec des outils tels que l’outil [WebPack Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ou [NPM Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner).
 
 ## <a name="use-a-polyfill"></a>Utiliser un polyfill
 

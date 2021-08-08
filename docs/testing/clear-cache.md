@@ -1,20 +1,23 @@
 ---
 title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
-ms.date: 05/22/2020
+ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 3ead54f3479fdc912f916705fe84645f16392784
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 8ae2408b2dbf36a0e5ebbdd863b8ddb49717a144
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350196"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53773068"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
 Vous pouvez supprimer un complément que vous avez précédemment chargé sur Windows, Mac ou iOS en vidant le cache Office sur votre ordinateur.
 
 En outre, si vous apportez des modifications au manifeste de votre complément (par exemple, vous mettez à jour le nom des fichiers d’icônes ou de texte de commandes du complément), videz le cache Office, puis rechargez le complément à l’aide d’un manifeste mis à jour. Cette action permettra à Office d’afficher le complément tel que décrit par le manifeste mis à jour.
+
+> [!NOTE]
+> Pour supprimer un complément chargé de manière indépendante d’Excel, OneNote, PowerPoint ou Word sur le web, consultez [Charger une version test des compléments Office dans Office sur le web à des fins de test : Supprimer un complément chargé de manière indépendante](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 

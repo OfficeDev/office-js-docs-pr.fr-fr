@@ -3,12 +3,12 @@ title: Conception de lignes directrices relatives à l’authentification pour l
 ms.date: 02/09/2021
 description: Découvrez comment concevoir visuellement une page d' sign-on ou d’inscription dans un Office de recherche.
 localization_priority: Normal
-ms.openlocfilehash: bc047e6b001b7a491aa8117ba1b5901716ca1555
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6550628555dcc2c7a11cccc17b00824169137d34df72ec51f8e0962f56c9a54e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076384"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082289"
 ---
 # <a name="authentication-patterns"></a>Modèles d’authentification
 
@@ -23,7 +23,7 @@ Des compléments peuvent exiger que des utilisateurs se connectent ou s’inscri
 |Utilisez des libellés de boutons clairs décrivant des tâches spécifiques telles que « Se connecter » ou « Créer un compte ». |Utilisez des étiquettes de boutons vagues telles que « Soumettre » ou « Commencer » pour guider les utilisateurs tout au long des flux d’authentification.|
 |Utilisez une boîte de dialogue pour attirer l’attention des utilisateurs sur les formulaires d’authentification. |Enrichissez votre volet des tâches avec une première expérience d’exécution et des formulaires d’authentification.|
 |Trouvez de petites efficacités dans le flux, comme la focalisation automatique sur des zones de saisie. |Ajoutez des étapes superflues à l’interaction, telles que l’obligation pour les utilisateurs de cliquer dans des champs de formulaire.|
-|Fournissez un moyen pour les utilisateurs de se signer et de se réauthentifier. |Obligez les utilisateurs à se désinstaller pour changer d’identité.|
+|Fournissez un moyen pour les utilisateurs de se ré-authentifier et de se réauthentifier. |Obligez les utilisateurs à se désinstaller pour changer d’identité.|
 
 ## <a name="authentication-flow"></a>Flux d’authentification
 
@@ -49,9 +49,9 @@ Des compléments peuvent exiger que des utilisateurs se connectent ou s’inscri
 ## <a name="single-sign-on-authentication-flow"></a>Flux d’authentification Sign-On unique
 
 > [!NOTE]
-> L’API d' sign-on unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l' sign-on unique, voir ensembles de conditions [requises IdentityAPI.](../reference/requirement-sets/identity-api-requirement-sets.md) Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d' sign-on unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l' sign-on unique, voir ensembles de conditions [requises IdentityAPI.](../reference/requirement-sets/identity-api-requirement-sets.md) Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Utilisez l' sign-on unique pour une expérience utilisateur plus fluide. L’identité de l’utilisateur Office (un compte Microsoft ou une identité Microsoft 365) est utilisée pour se connecter à votre module. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
+Utilisez l' sign-on unique pour une expérience plus fluide pour l’utilisateur final. L’identité de l’utilisateur Office (un compte Microsoft ou une identité Microsoft 365) est utilisée pour se connecter à votre module. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
 
 1. Lors de l’installation d’un add-in, un utilisateur voit une fenêtre de consentement semblable à celle qui suit :
 

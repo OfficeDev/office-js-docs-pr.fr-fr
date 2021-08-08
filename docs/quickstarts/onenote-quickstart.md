@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: Découvrez comment créer un complément simple de volet des tâches OneNote simple à l’aide de l’API JavaScript pour Office.
-ms.date: 10/14/2020
+ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: 761de3dc8f382a7b1b5a72704815f2d80af2566f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 5ccd3b3fdb1853b151f0acbcc57dfdf2dd608dea
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076902"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774433"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -29,7 +29,7 @@ Cet article décrit comment créer un complément du volet Office de OneNote.
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-onenote.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-onenote.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -78,7 +78,13 @@ try {
     cd "My Office Add-in"
     ```
 
-2. Démarrez le serveur web local et chargez indépendamment votre complément.
+1. Installez les dépendances de votre projet.
+
+     ```command&nbsp;line
+    npm install
+    ```
+
+1. Démarrez le serveur web local et chargez indépendamment votre complément.
 
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
@@ -96,9 +102,9 @@ try {
     npm run start:web
     ```
 
-3. Dans [OneNote sur le web](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
+1. Dans [OneNote sur le web](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
 
-4. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
+1. Choisissez **Insertion > Compléments Office** pour ouvrir la boîte de dialogue Compléments Office.
 
     - Si vous êtes connecté avec votre compte de consommateur, sélectionnez l’onglet **MES COMPLÉMENTS**, puis choisissez **Télécharger mon complément**.
 
@@ -106,13 +112,13 @@ try {
 
     L’image suivante montre l’onglet **MES COMPLÉMENTS** pour les blocs-notes de consommateurs.
 
-    <img alt="Screenshot of the Office Add-ins dialog showing the MY ADD-INS tab" src="../images/onenote-office-add-ins-dialog.png" width="500">
+    ![Capture d’écran de la boîte de dialogue Compléments Office affichant l’onglet MES COMPLÉMENTS.](../images/onenote-office-add-ins-dialog.png)
 
-5. Dans la boîte de dialogue Télécharger le complément, accédez à **manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**.
+1. Dans la boîte de dialogue Télécharger le complément, accédez à **manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**.
 
-6. Dans l’onglet **Accueil**, choisissez le bouton **Afficher le volet de tâches** du ruban. Le volet Office du complément s’ouvre dans un iFrame à côté de la page OneNote.
+1. Dans l’onglet **Accueil**, choisissez le bouton **Afficher le volet de tâches** du ruban. Le volet Office du complément s’ouvre dans un iFrame à côté de la page OneNote.
 
-7. Au bas du volet Office, sélectionnez le lien **Exécuter** pour définir le titre de la page et ajouter un plan au corps de celle-ci.
+1. Au bas du volet Office, sélectionnez le lien **Exécuter** pour définir le titre de la page et ajouter un plan au corps de celle-ci.
 
     ![Capture d’écran illustrant le complément créé à partir de cette procédure : bouton Afficher le ruban du volet Office et le volet Office dans OneNote.](../images/onenote-first-add-in-4.png)
 

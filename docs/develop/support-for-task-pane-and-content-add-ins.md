@@ -3,12 +3,12 @@ title: Prise en charge de l’API JavaScript pour Office pour les compléments d
 description: Utilisez l Office API JavaScript pour créer un volet De tâches dans Office 2013.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 356880c0f4bb4377f2d5997217f26f51dd95f845
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 644bc1f0759d381de412cb276a1535d2251abb0a6a0be78b45d9cc0a245758c7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773362"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079994"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
@@ -93,7 +93,7 @@ Pour plus d’informations et d’exemples, reportez-vous à l’article [Liaiso
 
 Si votre complément du volet Office s’exécute dans PowerPoint ou Word, vous pouvez utiliser les méthodes [Document.getFileAsync](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_), [File.getSliceAsync](/javascript/api/office/office.file#getSliceAsync_sliceIndex__callback_) et [File.closeAsync](/javascript/api/office/office.file#closeAsync_callback_) pour obtenir la totalité d’une présentation ou d’un document.
 
-Lorsque vous `Document.getFileAsync` appelez, vous obtenez une copie du document dans un [objet](/javascript/api/office/office.file) File. `File`L’objet permet d’accéder au document en « blocs » représentés par des [objets Slice.](/javascript/api/office/office.slice) Lorsque vous appelez , vous pouvez spécifier le type de fichier (texte ou format XML Open Office compressé) et la taille des `getFileAsync` tranches (jusqu’à 4 Mo). Pour accéder au contenu de l’objet, vous appelez ensuite qui renvoie les données brutes `File` `File.getSliceAsync` dans la propriété [Slice.data.](/javascript/api/office/office.slice#data) Si vous avez spécifié un format compressé, vous obtiendrez les données du fichier sous la forme d’un tableau d’octets. Si vous transférez le fichier à un service web, vous pouvez transformer les données brutes compressées dans une chaîne codée en Base64 avant l’envoi. Enfin, lorsque vous avez terminé d’obtenir des tranches du fichier, utilisez `File.closeAsync` la méthode pour fermer le document.
+Lorsque vous `Document.getFileAsync` appelez, vous obtenez une copie du document dans un [objet](/javascript/api/office/office.file) File. `File`L’objet permet d’accéder au document en « blocs » représentés en tant [qu’objets Slice.](/javascript/api/office/office.slice) Lorsque vous appelez , vous pouvez spécifier le type de fichier (texte ou format XML Open Office compressé) et la taille des `getFileAsync` tranches (jusqu’à 4 Mo). Pour accéder au contenu de l’objet, vous appelez ensuite qui renvoie les données brutes `File` `File.getSliceAsync` dans la propriété [Slice.data.](/javascript/api/office/office.slice#data) Si vous avez spécifié un format compressé, vous obtiendrez les données du fichier sous la forme d’un tableau d’octets. Si vous transférez le fichier à un service web, vous pouvez transformer les données brutes compressées dans une chaîne codée en Base64 avant l’envoi. Enfin, lorsque vous avez terminé d’obtenir des tranches du fichier, utilisez `File.closeAsync` la méthode pour fermer le document.
 
 Pour plus d’informations, reportez-vous à l’article expliquant comment [obtenir l’intégralité d’un document à partir d’un complément pour PowerPoint ou Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
 
@@ -119,7 +119,7 @@ Pour éviter les allers-retours vers le serveur où le document est stocké, les
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
-Étant donné que les données de paramètres créées ou supprimées avec les méthodes agissent sur une copie en mémoire des données, vous devez appeler pour faire persister les modifications apportées aux données de paramètres dans le document sur le document avec qui votre `set` `remove` `saveAsync` add-in travaille.
+Étant donné que les données de paramètres créées ou supprimées avec les méthodes agissent sur une copie en mémoire des données, vous devez appeler pour faire persister les modifications apportées aux données de paramètres dans le document sur le document avec qui votre module est en cours `set` `remove` `saveAsync` d’utilisation.
 
 Pour plus d’informations sur l’utilisation de données personnalisées à l’aide des méthodes de l’objet, voir Persistance de l’état et `Settings` [des paramètres du module.](persisting-add-in-state-and-settings.md)
 
@@ -145,7 +145,7 @@ Votre add-in utilise l’élément dans son manifeste pour demander l’autorisa
 
 ```
 
-Pour plus d’informations, voir [Demande d’autorisations pour l’utilisation de l’API dans les modules complémentaires.](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+Pour plus d’informations, voir [Demande d’autorisations pour l’utilisation d’API dans les modules complémentaires.](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 
 ## <a name="see-also"></a>Voir aussi
 

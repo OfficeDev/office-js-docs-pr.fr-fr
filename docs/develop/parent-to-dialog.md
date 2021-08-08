@@ -3,12 +3,12 @@ title: Autres méthodes de transmission de messages à une boîte de dialogue à
 description: Découvrez les solutions de contournement à utiliser lorsque la méthode messageChild n’est pas prise en charge.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: d664178a804b206e02634326cc27699fc6ceb0f7
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1dd603a144aa14a1456b15a67ffd2563028dfc333561e853f518dde1af06f899
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773383"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080292"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>Autres méthodes de transmission de messages à une boîte de dialogue à partir de sa page hôte
 

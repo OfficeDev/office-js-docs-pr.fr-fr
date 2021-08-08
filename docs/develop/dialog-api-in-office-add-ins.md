@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 07/22/2021
 localization_priority: Normal
-ms.openlocfilehash: cf806434fa5357fec554639f161fa0780b884e9a
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 6108051b9fd229804bb8c6a3ac25bb036ab072f03bc649139338361d0cc2ba89
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773775"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080876"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -85,7 +85,7 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 
 > [!NOTE]
 >
-> - Pour plus de clarté, dans cette section, nous appelons le message cible de la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez la messagerie entre domaines [à l’runtime hôte.](#cross-domain-messaging-to-the-host-runtime)
+> - Pour plus de clarté, dans cette section, nous appelons le message cible de la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](#cross-domain-messaging-to-the-host-runtime).
 > - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque Office API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit initialiser le module. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
 Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
