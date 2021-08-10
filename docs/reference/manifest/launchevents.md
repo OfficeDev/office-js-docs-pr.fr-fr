@@ -3,12 +3,12 @@ title: LaunchEvents dans le fichier manifeste
 description: L’élément LaunchEvents configure votre add-in pour qu’il s’active en fonction des événements pris en charge.
 ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 16d721ca6d9402d2bd5d19787707e146358044f0
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: c6714c4f52bdc1ed9d7a75a42100df8d3fe046c504575295880ff614fe4a447f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590915"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089746"
 ---
 # <a name="launchevents-element"></a>Élément LaunchEvents
 
@@ -35,7 +35,7 @@ Configure votre add-in pour qu’il s’active en fonction des événements pris
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 | [LaunchEvent](launchevent.md) | Oui |  Mapz l’événement pris en charge à sa fonction dans le fichier JavaScript pour l’activation du complément. |
 

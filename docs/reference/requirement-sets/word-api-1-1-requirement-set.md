@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1.1
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 80914cd0804600e7987408ce3a3de8a94e6fec29
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: c7b1adfa1af76f9994ced793dfddcf457cf733858fd27ba0ef763a67c35611c2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671596"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092452"
 ---
 # <a name="whats-new-in-word-javascript-api-11"></a>Nouveautés de l’API JavaScript 1.1 pour Word
 

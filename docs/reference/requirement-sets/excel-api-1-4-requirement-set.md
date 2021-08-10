@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.4.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: be71d1e0c063bd3902bf57ba8f2024ae5a78ff1d
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: f1201b15c1f4e09e064afa7301d68d1f6ce54e05f2b202e3bec2dbb7179e2db1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671722"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088999"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Nouveautés de l’API JavaScript 1.4 pour Excel
 
@@ -21,7 +21,7 @@ Nouvelles propriétés :
 
 * `comment`
 * `scope` - Éléments d’étendue de feuille de calcul ou de feuille de calcul.
-* `worksheet` - Renvoie la feuille de calcul dans laquelle l’élément nommé est étendue.
+* `worksheet` - Renvoie la feuille de calcul sur laquelle porte l’élément nommé.
 
 Nouvelles méthodes :
 
@@ -40,7 +40,7 @@ Les API incluent l’accès à l’entrée de paramètre via la clé et l’ajou
 * Ajoutez une colonne de tableau à la fin du tableau.
 * Ajoutez plusieurs lignes à un tableau à la fois.
 * `range.getColumnsAfter(count: number)` et `range.getColumnsBefore(count: number)` pour obtenir un certain nombre de colonnes à droite/gauche de l’objet de plage actuel.
-* Méthodes [ \* et propriétés OrNullObject](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): cette fonctionnalité permet d’obtenir un objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet `isNullObject` renvoyé est true. Cela permet aux développeurs de vérifier si un objet existe sans avoir à le gérer par le biais de la gestion des exceptions. Une `*OrNullObject` méthode est disponible sur la plupart des objets de collection.
+* Méthodes [ \* et propriétés OrNullObject](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): cette fonctionnalité permet d’obtenir un objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet `isNullObject` renvoyé aura la valeur true. Cela permet aux développeurs de vérifier si un objet existe sans avoir à le gérer par le biais de la gestion des exceptions. Une `*OrNullObject` méthode est disponible sur la plupart des objets de collection.
 
 ```js
 worksheet.getItemOrNullObject("itemName")

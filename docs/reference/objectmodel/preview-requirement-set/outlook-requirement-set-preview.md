@@ -3,12 +3,12 @@ title: Outlook conditions requises de l’API du module de prévisualisation du 
 description: Fonctionnalités et API actuellement en prévisualisation pour Outlook de recherche.
 ms.date: 06/15/2021
 localization_priority: Normal
-ms.openlocfilehash: 79ae0f200743607ee762feebd34dc0e4d192048a
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 58f27010372bef495ece16e3c9fb5cf4a8a7e78b1c3e7880485367ec6f954f63
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671911"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091391"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conditions requises de l’API du module de prévisualisation du add-in
 

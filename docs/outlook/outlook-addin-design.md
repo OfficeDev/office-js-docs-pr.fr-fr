@@ -3,12 +3,12 @@ title: Conception des compléments Outlook
 description: Les instructions suivantes vous aideront à concevoir et à créer un complément attrayant, qui apportera le meilleur de votre application directement dans Outlook sur Windows, le web, iOS, Mac et Android.
 ms.date: 07/05/2021
 localization_priority: Priority
-ms.openlocfilehash: 35ff407fae14654b3b6aa3d543e30524d4a1a5d0
-ms.sourcegitcommit: 488b26b29c7534e3bbc862b688ed2319cc028f71
+ms.openlocfilehash: 63dbeaee2c5718af656b5865cb016cb0ec72f53b5af2ab9e992c406f8dd84efc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/07/2021
-ms.locfileid: "53315154"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090223"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Instructions de création d’un complément Outlook
 

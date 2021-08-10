@@ -1,26 +1,26 @@
 ---
-title: Authorization, élément dans le fichier manifeste
-description: Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
+title: Élément Authorizations dans le fichier manifeste
+description: Spécifie les ressources externes à qui l’application web du add-in a besoin d’autorisation et les autorisations requises.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: 675585f99fc6261a2145219d553f02b9f9abded3
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 068e6753e2e8e947e5e6e3c0885e7cd006165660862a37346eea114abb81a9b8
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608753"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092500"
 ---
-# <a name="authorizations-element"></a>Authorizations, élément
+# <a name="authorizations-element"></a>Élément Authorizations
 
-Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
+Spécifie les ressources externes à qui l’application web du add-in a besoin d’autorisation et les autorisations requises.
 
-**Authorizations** est un élément enfant de l’élément [WebApplicationInfo](webapplicationinfo.md) dans le manifeste.
+**Authorizations est** un élément enfant de [l’élément WebApplicationInfo](webapplicationinfo.md) dans le manifeste.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [Autorisation](authorization.md)                |  Oui     |   Identifie une ressource externe dont l’application Web du complément a besoin d’autorisation, ainsi que les étendues (autorisations) dont elle a besoin. |
+|  [Autorisation](authorization.md)                |  Oui     |   Identifie une ressource externe à qui l’application web du add-in a besoin d’une autorisation, ainsi que les étendues (autorisations) dont elle a besoin. |
 
 ## <a name="example"></a>Exemple
 

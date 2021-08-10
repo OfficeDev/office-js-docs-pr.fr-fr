@@ -4,16 +4,16 @@ description: Découvrez comment déboguer votre complément Outlook qui impléme
 ms.topic: article
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: d96ab13ada1135d17feef7597c6427cf56d75872cefdf43f0e24fb8da2274ce1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077091"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090814"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Déboguer votre Outlook d’événement (prévisualisation)
 
-Cet article fournit des conseils sur le débogage lorsque vous implémentez l’activation basée sur des [événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur des événements est actuellement en prévisualisation.
+Cet article fournit des instructions de débogage lorsque vous implémentez l’activation basée sur des [événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur des événements est actuellement en prévisualisation.
 
 > [!IMPORTANT]
 > Cette fonctionnalité de débogage est uniquement prise en charge pour la prévisualisation dans Outlook sur Windows avec un abonnement Microsoft 365'abonnement. Pour plus d’informations, voir la section [Débogage d’aperçu](#preview-debugging-for-the-event-based-activation-feature) pour la fonctionnalité d’activation basée sur des événements dans cet article.
@@ -118,16 +118,16 @@ Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minima
 
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
-1. Placez les points d’arrêt bundle.js où vous souhaitez que le débogger s’arrête.
+1. Placez les points d’arrêt bundle.js l’endroit où vous souhaitez que le débogger s’arrête.
 1. Dans la **dropdown DEBUG,** sélectionnez le nom **Débogage** direct, puis sélectionnez **Exécuter**.
 
     ![Capture d’écran de la sélection du débogage direct à partir des options de configuration dans la Visual Studio Code de débogage.](../images/outlook-win-autolaunch-debug-vsc.png)
 
-## <a name="debug"></a>Debug
+## <a name="debug"></a>Débogage
 
 1. Après avoir confirmé que le déboguer est attaché, revenir  à Outlook, puis dans la boîte de dialogue de débogage basée sur l’événement, choisissez **OK** .
 
-1. Vous pouvez maintenant atteindre vos points d’arrêt dans Visual Studio Code, ce qui vous permet de déboguer votre code d’activation basé sur des événements.
+1. Vous pouvez désormais atteindre vos points d’arrêt dans Visual Studio Code, ce qui vous permet de déboguer votre code d’activation basé sur des événements.
 
 ## <a name="stop-debugging"></a>Arrêter le débogage
 

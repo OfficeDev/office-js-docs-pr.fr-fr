@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c4abde797ac25b049e3d77acad59f7e2263005aa
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 145ce76f0e50baca7f9538fefc40362084fd1994f6b4cbd6c446a0ef2a4f5bac
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075543"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086554"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -53,7 +53,7 @@ Les interfaces API JavaScript pour Word permettent à votre application d’acc�
 
 ## <a name="javascript-apis-for-word"></a>APIs JavaScript pour Word
 
-Vous pouvez utiliser les deux ensembles d’APIs JavaScript pour interagir avec les objets et les métadonnées d’un document Word. Le premier groupe est l’[API commune](/javascript/api/office), qui a été introduit dans Office 2013. La plupart des objets dans l’API commune peuvent être utilisés dans des compléments hébergés par deux clients Office ou plus. Cette API utilise largement les rappels.
+Vous pouvez utiliser deux ensembles d’API JavaScript pour interagir avec les objets et les métadonnées dans un document Word. La première est l’[API commune](/javascript/api/office), qui a été introduite dans Office 2013. La plupart des objets de l’API Commune peuvent être utilisés dans des compléments hébergés par au moins deux clients Office. Cette API utilise beaucoup les rappels.
 
 Le deuxième est l’[API JavaScript pour Word](/javascript/api/word) qui est un [modèle d’API spécifique à l’application](../develop/application-specific-api-model.md) introduit avec Word 2016. Il s’agit d’un modèle objet fortement typé qui vous permet de créer des compléments Word destinés à Word 2016 sur Mac et Windows. Ce modèle objet utilise les promesses et fournit un accès aux objets Word, tels que le [corps](/javascript/api/word/word.body), les [contrôles de contenu](/javascript/api/word/word.contentcontrol), les [images incorporées](/javascript/api/word/word.inlinepicture) et les [paragraphes](/javascript/api/word/word.paragraph). L’API JavaScript pour Word inclut des définitions TypeScript et des fichiers vsdoc pour vous permettre d’obtenir des conseils concernant votre code dans votre environnement de développement intégré (IDE).
 

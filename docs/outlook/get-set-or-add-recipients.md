@@ -3,12 +3,12 @@ title: Obtenir ou modifier des destinataires dans un complément Outlook
 description: Découvrez comment obtenir, définir ou ajouter des destinataires d’un message ou un rendez-vous dans un complément Outlook.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 9a98fbc78e98cbaaf99c60625dd7f6a725c57c0f
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 53db46485fd49498357d77c4a9742b601175219d1f01c5e403a92a5088f488a9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773082"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091403"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -161,7 +161,7 @@ Lorsque vous appelez , fournissez un tableau comme argument d’entrée pour le 
     
 - Tableau `EmailAddressDetails` d’objets, semblable à celui renvoyé par la `getAsync` méthode.
     
-Vous pouvez éventuellement fournir une méthode de rappel comme argument d’entrée à la méthode, pour vous assurer que tout code qui dépend de la définition des destinataires ne s’exécute que lorsque cela `setAsync` se produit. Vous pouvez également fournir des arguments à la méthode de rappel à l’aide du paramètre facultatif _asyncContext_. Si vous utilisez une méthode de rappel, vous pouvez accéder à un  paramètre  de sortie _asyncResult_ et utiliser les propriétés d’état et d’erreur de l’objet paramètre pour vérifier l’état et les messages d’erreur de l’appel `AsyncResult` asynchrone.
+Vous pouvez éventuellement fournir une méthode de rappel en tant qu’argument d’entrée à la méthode, pour vous assurer que tout code qui dépend de la définition des destinataires ne s’exécute que lorsque cela `setAsync` se produit. Vous pouvez également fournir des arguments à la méthode de rappel à l’aide du paramètre facultatif _asyncContext_. Si vous utilisez une méthode de rappel, vous pouvez accéder à un  paramètre  de sortie _asyncResult_ et utiliser les propriétés d’état et d’erreur de l’objet paramètre pour vérifier l’état et les messages d’erreur de l’appel `AsyncResult` asynchrone.
 
 
 

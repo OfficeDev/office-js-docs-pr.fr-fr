@@ -3,12 +3,12 @@ title: Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec C
 description: Découvrez comment déboguer un complément Office qui utilise Microsoft Edge WebView2 (avec Chromium) à l’aide du débogueur pour l’extension Microsoft Edge dans VS Code.
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: 3a79c9f02aba91d29b3af15a5a3c9113079bc197
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 0fc2cee39553521fef490ab33e08c2b11c8ec9c37d4787e408647f72c30df3b7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773642"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090658"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Déboguer un complément à l’aide de Microsoft Edge WebView2
 

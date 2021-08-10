@@ -1,18 +1,18 @@
 ---
 title: Élément Method dans le fichier manifeste
-description: L’élément Method spécifie une méthode individuelle de l’API JavaScript Office requise pour l’activation de vos compléments Office.
+description: L’élément Method spécifie une méthode individuelle à partir de l’API JavaScript Office dont vos Office de développement ont besoin pour s’activer.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 0e3e74a73a3422a7789e82d6f0e7a516bd795ca8
-ms.sourcegitcommit: cc6886b47c84ac37a3c957ff85dd0ed526ca5e43
+ms.openlocfilehash: 811cd84e1ad2aade8b7042eefa822eee6b2ab200a8fa1b71c9fe5fc34874ec66
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "46641324"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089727"
 ---
 # <a name="method-element"></a>Élément Method
 
-Spécifie une méthode individuelle de l’API JavaScript Office requise pour l’activation de votre complément Office.
+Spécifie une méthode individuelle à partir de l’API JavaScript Office que votre Office nécessite pour s’activer.
 
 **Type de complément :** Application de contenu et de volet Office
 
@@ -34,7 +34,7 @@ Spécifie une méthode individuelle de l’API JavaScript Office requise pour l�
 
 ## <a name="remarks"></a>Remarques
 
-Les `Methods` `Method` éléments et ne sont pas pris en charge par les compléments de messagerie. Pour plus d’informations sur les ensembles de conditions requises, voir [versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les éléments et les éléments ne sont pas pris en charge par `Methods` `Method` les modules de messagerie. Pour plus d’informations sur les ensembles de conditions requises, [voir Office versions et les ensembles de conditions requises.](../../develop/office-versions-and-requirement-sets.md)
 
 > [!IMPORTANT]
-> Étant donné qu’il n’existe aucun moyen de spécifier la version minimale requise pour les différentes méthodes, afin de vous assurer qu’une méthode est disponible lors de l’exécution, vous devez également utiliser une instruction **if** lorsque vous appelez cette méthode dans le script de votre complément. Pour plus d’informations sur la façon de procéder, consultez [la rubrique Understanding the Office JavaScript API](../../develop/understanding-the-javascript-api-for-office.md).
+> Étant donné qu’il n’existe aucun moyen de spécifier la version minimale requise pour les différentes méthodes, afin de vous assurer qu’une méthode est disponible lors de l’exécution, vous devez également utiliser une instruction **if** lorsque vous appelez cette méthode dans le script de votre complément. Pour plus d’informations sur la façon de le faire, voir [Understanding the Office JavaScript API](../../develop/understanding-the-javascript-api-for-office.md).

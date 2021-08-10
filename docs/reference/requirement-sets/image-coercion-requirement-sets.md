@@ -1,19 +1,19 @@
 ---
 title: Ensembles de conditions requises de coercition d’image
-description: Prise en charge des ensembles de conditions requises pour le foragage d’image avec Office pour les Excel, PowerPoint et Word.
+description: Prise en charge des ensembles de conditions requises pour le foragage d’image avec Office des Excel, PowerPoint et Word.
 ms.date: 02/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 35fed16003fe217e6f1f53d8c790cf78547308cf
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: d605a8ac5d36825ffdfa9648578f7d252340325e1021c7663667778f4427ef6a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671617"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090646"
 ---
 # <a name="image-coercion-requirement-sets"></a>Ensembles de conditions requises de coercition d’image
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 

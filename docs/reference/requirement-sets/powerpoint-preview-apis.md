@@ -4,12 +4,12 @@ description: Détails sur les API JavaScript PowerPoint à venir.
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5569a732dce2db1da5b6fb29169c87e65222afb50b55c7b1930a7c20e138c5c9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671603"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092619"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint API d’aperçu JavaScript
 
@@ -33,10 +33,10 @@ Le tableau suivant répertorie les POWERPOINT JavaScript actuellement en prévis
 |[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)|[layoutId](/javascript/api/powerpoint/powerpoint.addslideoptions#layoutId)|Spécifie l’ID d’une mise en page des diapositives à utiliser pour la nouvelle diapositive.|
 ||[slideMasterId](/javascript/api/powerpoint/powerpoint.addslideoptions#slideMasterId)|Spécifie l’ID d’un curseur de diapositive à utiliser pour la nouvelle diapositive.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[slideMasters](/javascript/api/powerpoint/powerpoint.presentation#slideMasters)|Renvoie la collection `SlideMaster` d’objets qui se retrouvent dans la présentation.|
-||[étiquettes](/javascript/api/powerpoint/powerpoint.presentation#tags)|Renvoie une collection de balises attachées à la présentation.|
+||[balises](/javascript/api/powerpoint/powerpoint.presentation#tags)|Renvoie une collection de balises attachées à la présentation.|
 |[Forme](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#delete__)|Supprime la forme de la collection de formes.|
 ||[id](/javascript/api/powerpoint/powerpoint.shape#id)|Obtient l’ID unique de la forme.|
-||[étiquettes](/javascript/api/powerpoint/powerpoint.shape#tags)|Renvoie une collection de balises dans la forme.|
+||[balises](/javascript/api/powerpoint/powerpoint.shape#tags)|Renvoie une collection de balises dans la forme.|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.shapecollection#getCount__)|Obtient le nombre de formes dans la collection.|
 ||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.shapecollection#getItem_key_)|Obtient une forme à l’aide de son ID unique.|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.shapecollection#getItemAt_index_)|Obtient une forme à l’aide de son index de base zéro dans la collection.|
@@ -45,7 +45,7 @@ Le tableau suivant répertorie les POWERPOINT JavaScript actuellement en prévis
 |[Slide](/javascript/api/powerpoint/powerpoint.slide)|[disposition](/javascript/api/powerpoint/powerpoint.slide#layout)|Obtient la mise en page de la diapositive.|
 ||[Formes](/javascript/api/powerpoint/powerpoint.slide#shapes)|Renvoie une collection de formes dans la diapositive.|
 ||[slideMaster](/javascript/api/powerpoint/powerpoint.slide#slideMaster)|Obtient `SlideMaster` l’objet qui représente le contenu par défaut de la diapositive.|
-||[étiquettes](/javascript/api/powerpoint/powerpoint.slide#tags)|Renvoie une collection de balises dans la diapositive.|
+||[balises](/javascript/api/powerpoint/powerpoint.slide#tags)|Renvoie une collection de balises dans la diapositive.|
 |[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[add(options?: PowerPoint. AddSlideOptions)](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_)|Ajoute une nouvelle diapositive à la fin de la collection.|
 |[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)|[id](/javascript/api/powerpoint/powerpoint.slidelayout#id)|Obtient l’ID unique de la mise en page des diapositives.|
 ||[name](/javascript/api/powerpoint/powerpoint.slidelayout#name)|Obtient le nom de la mise en page des diapositives.|

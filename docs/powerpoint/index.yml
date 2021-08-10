@@ -1,6 +1,6 @@
 ### YamlMime:Landing
 title: Documentation sur les compléments PowerPoint
-summary: Avec les PowerPoint, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans PowerPoint sur plusieurs plateformes, notamment sur le web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
+summary: Avec les PowerPoint, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer une solution qui peut s’exécuter dans PowerPoint sur plusieurs plateformes, y compris sur le web, Windows, Mac et iPad. Découvrez comment créer, tester, déboguer et publier des compléments PowerPoint.
 metadata:
   title: Documentation sur les compléments PowerPoint
   description: Ressources pour découvrir les compléments PowerPoint.
@@ -8,12 +8,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 4fdc2e9da42cdaa7aafe954383c1c1c48bb404ce
-  ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+  ms.openlocfilehash: 7734dc007d3e76cb04829e26a58794a6b800a9f372352e6ec2c9ab22cd7b2593
+  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 05/19/2021
-  ms.locfileid: "52555170"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "57090175"
 landingContent:
 - title: À propos PowerPoint des modules
   linkLists:

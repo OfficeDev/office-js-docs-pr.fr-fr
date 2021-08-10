@@ -3,12 +3,12 @@ title: Élément Icon dans le fichier manifeste
 description: Définit les éléments Image pour les contrôles de bouton ou de menu.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 1adfbcd154091fcae49966f0c1f7d0b9cc968ed3
-ms.sourcegitcommit: 0bff0411d8cfefd4bb00c189643358e6fb1df95e
+ms.openlocfilehash: d153ca4ef162b8790b48a37a911ccd6b11c2632160bd02e09a34b2ea4f14daf6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/07/2021
-ms.locfileid: "51604623"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093020"
 ---
 # <a name="icon-element"></a>Icon, élément
 

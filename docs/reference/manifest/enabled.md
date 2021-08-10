@@ -1,22 +1,22 @@
 ---
 title: Élément Enabled dans le fichier manifeste
-description: Découvrez comment spécifier qu’une commande de complément est désactivée au lancement du complément.
+description: Découvrez comment spécifier qu’une commande de add-in est désactivée au lancement du module.
 ms.date: 01/04/2021
 localization_priority: Normal
-ms.openlocfilehash: be18767638af6f2be6352cea46739f6a01b7dd45
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 54d28839a274ff41bab0b1e2cdd2d169e76c5815095950dec67ce2564eade601
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771388"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093904"
 ---
 # <a name="enabled-element"></a>Élément Enabled
 
-Indique si un [bouton](control.md#button-control) ou un contrôle de [menu](control.md#menu-dropdown-button-controls) est activé au lancement du complément. L’élément **Enabled** est un élément enfant de [Control](control.md). Si ce paramètre est omis, la valeur par défaut est `true` .
+Spécifie si un [contrôle Bouton](control.md#button-control) ou [Menu](control.md#menu-dropdown-button-controls) est activé au lancement du module. **L’élément Enabled** est un élément enfant de [Control](control.md). S’il est omis, la valeur par défaut est `true` .
 
-Cet élément est valide uniquement dans Excel ; autrement dit, lorsque l' `Name` attribut de l’élément [hôte](host.md) est « classeur ».
+Cet élément n’est valide que dans Excel ; autrement dit, lorsque `Name` l’attribut de l’élément [Host](host.md) est « Workbook ».
 
-Le contrôle parent peut également être activé et désactivé par programme. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](../../design/disable-add-in-commands.md).
+Le contrôle parent peut également être activé et désactivé par programmation. Pour plus d’informations, reportez-vous aux [Commandes Activé et Désactivé pour les compléments](../../design/disable-add-in-commands.md).
 
 ## <a name="example"></a>Exemple
 

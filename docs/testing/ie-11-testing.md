@@ -3,12 +3,12 @@ title: Test d’Internet Explorer 11
 description: Testez votre Office sur Internet Explorer 11.
 ms.date: 06/18/2021
 localization_priority: Normal
-ms.openlocfilehash: fa9550884a24feffdd750171f3a7e08648f9432f
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 8579a37f1ea48d511010b8c55cfe9fad5aa6b41acee85b1da426e25083287655
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076405"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090127"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre Office sur Internet Explorer 11
 
@@ -55,7 +55,7 @@ Ces instructions supposent que vous avez déjà installé un projet Office Yo. S
     ```
 
 > [!TIP]
-> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1 et 10, ainsi que différentes versions de Office. Pour plus d’informations, voir [Navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office et comment revenir à une version antérieure de [Office](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841).
+> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1 et 10, ainsi que différentes versions de Office. Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### <a name="command-options"></a>Options de commande
 
@@ -68,6 +68,6 @@ La `office-addin-dev-settings webview` commande peut également prendre un certa
 ## <a name="see-also"></a>Voir aussi
 
 * [Test et débogage de compléments Office](test-debug-office-add-ins.md)
-* [Chargement de la version test des compléments Office](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+* [Chargement de la version test des compléments Office](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 * [Débogage des compléments avec les outils de développement sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 * [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md)

@@ -3,12 +3,12 @@ title: Débogage des compléments avec les outils de développement sur Windows�
 description: Débogage des compléments avec les outils de développement Microsoft Edge sur Windows 10
 ms.date: 12/16/2019
 localization_priority: Normal
-ms.openlocfilehash: 41e7f2c8efb6406948c30522b56424ed7f9aa400
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: ab6f6a59d83f3fab472c85810524ab3e03e9a9655485862dc3e6f3aeb03db910
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076531"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090730"
 ---
 # <a name="debug-add-ins-using-developer-tools-on-windows-10"></a>Débogage des compléments avec les outils de développement sur Windows 10
 

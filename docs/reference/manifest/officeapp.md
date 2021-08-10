@@ -1,14 +1,14 @@
 ---
 title: Élément OfficeApp dans le fichier manifeste
-description: L’élément OfficeApp est l’élément racine d’un manifeste de complément Office.
+description: L’élément OfficeApp est l’élément racine d’Office manifeste de l’add-in.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: c5786343173d0e130df4b786f28a8689d573b6ca
-ms.sourcegitcommit: ca66ff7462bfdf4ed7ae04f43d1388c24de63bf9
+ms.openlocfilehash: 39ab9285720f7a9a7b5eede1cd5883e2d42602f9be86b7fe756713e0b98e9218
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "48996318"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089042"
 ---
 # <a name="officeapp-element"></a>OfficeApp, élément
 
@@ -33,7 +33,7 @@ ms.locfileid: "48996318"
 
 ## <a name="must-contain"></a>Doit contenir
 
-|Élément|Contenu|Courrier|TaskPane|
+|Élément|Contenu|Courrier Outlook|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Id](id.md)|x|x|x|
 |[Version](version.md)|x|x|x|
@@ -48,7 +48,7 @@ ms.locfileid: "48996318"
 
 ## <a name="can-contain"></a>Peut contenir
 
-|Élément|Contenu|Courrier|TaskPane|
+|Élément|Contenu|Courrier Outlook|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[AlternateId](alternateid.md)|x|x|x|
 |[IconUrl](iconurl.md)|x|x|x|

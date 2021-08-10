@@ -1,14 +1,14 @@
 ---
 title: Élément Supertip dans le fichier manifest
-description: L’élément SuperTip définit une info-bulle riche (titre et Description).
+description: L’élément Supertip définit une boîte à outils enrichie (titre et description).
 ms.date: 05/07/2019
 localization_priority: Normal
-ms.openlocfilehash: 5e8b3850d99f6791726b1b2f0545c5fb4b52c554
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: 79120cc72aa4804eaaa2330d9298f6521a13552d325d9134814581402ace8210
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771297"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093259"
 ---
 # <a name="supertip"></a>Supertip
 
@@ -19,18 +19,18 @@ Définit une info-bulle enrichie (titre et description). Il est utilisé par les
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 | [Titre](#title) | Oui | Texte de l’info-bulle. |
-| [Description](#description) | Oui | Description de l’info-bulle.<br>**Remarque**: (Outlook) seuls les clients Windows et Mac sont pris en charge. |
+| [Description](#description) | Oui | Description de l’info-bulle.<br>**Remarque**: (Outlook) Seuls les clients Windows mac sont pris en charge. |
 
 ### <a name="title"></a>Titre
 
-Obligatoire. Texte de la propriété SuperTip. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **ShortStrings** de l’élément [Resources](resources.md) .
+Obligatoire. Texte de la propriété SuperTip. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** dans l’élément [Resources.](resources.md)
 
 ### <a name="description"></a>Description
 
-Obligatoire. Description de l’info-bulle. L’attribut **RESID** ne peut pas contenir plus de 32 caractères et doit être défini sur la valeur de l’attribut **ID** d’un élément **String** dans l’élément **LongStrings** de l’élément [Resources](resources.md) .
+Obligatoire. Description de l’info-bulle. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **LongStrings** dans l’élément [Resources.](resources.md)
 
 > [!NOTE]
-> Pour Outlook, seuls les clients Windows et Mac prennent en charge l’élément **Description** .
+> Par Outlook, seuls Windows clients Mac et les clients Mac supportent **l’élément Description.**
 
 ## <a name="example"></a>Exemple
 

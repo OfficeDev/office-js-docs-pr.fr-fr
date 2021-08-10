@@ -1,19 +1,19 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
-description: En savoir plus sur les ensembles Office conditions requises d’API communes.
+description: En savoir plus sur les ensembles Office d’API communes.
 ms.date: 04/28/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 458369ad693afeedb760eda3238191c44bedc5e9
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: d62f71905f892f6abd700fb78d21eb75c3fb4271f1370eb6b10a60326d52eafb
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536045"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093247"
 ---
 # <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
 > Vous recherchez les ensembles *de conditions requises* de l’API spécifiques à l’application ? Consultez les ensembles de conditions requises de l’API suivants.
@@ -96,7 +96,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ---
 
-### <a name="file"></a>File
+### <a name="file"></a>Fichier
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|

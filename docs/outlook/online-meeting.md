@@ -4,12 +4,12 @@ description: Explique comment configurer un Outlook mobile pour un fournisseur d
 ms.topic: article
 ms.date: 07/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 34574809e2b874217113e42043b3bde7ef0dd8ba
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 8a8546bbbaf051d0f270aaee1a7222e8cc5dd8e7ccce6f21a48c92e79a4359c4
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671316"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091783"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un Outlook mobile pour un fournisseur de réunion en ligne
 
@@ -231,7 +231,7 @@ Si vous souhaitez inscrire le modèle de réunion en ligne pour votre service, v
 1. Go to the **Feedback** section at the end of this article.
 1. Appuyez sur **le lien Cette page.**
 1. Définissez **le titre** du nouveau problème sur « Enregistrer le modèle de réunion en ligne pour mon service », en remplaçant par le nom de votre `my-service` service.
-1. Dans le corps du problème, remplacez la chaîne « [Entrez les commentaires ici] » par la chaîne que vous avez définie dans la variable ou une variable similaire de la section Implémenter l’ajout de détails de réunion en ligne plus haut dans cet `newBody` article. [](#implement-adding-online-meeting-details)
+1. Dans le corps du problème, remplacez la chaîne « [Entrez vos commentaires ici] » par la chaîne que vous avez définie dans la variable ou une variable similaire de la section Implémenter l’ajout de détails de réunion en ligne plus haut dans cet `newBody` article. [](#implement-adding-online-meeting-details)
 1. Cliquez **sur Envoyer un nouveau problème.**
 
 ![Capture d’écran du nouveau GitHub’écran de problème avec l’exemple de contenu Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
@@ -261,7 +261,7 @@ Plusieurs restrictions s’appliquent.
 - Seuls les add-ins installés par l’administrateur apparaissent sur l’écran de composition de la réunion, remplaçant l’option Teams ou Skype par défaut. Les add-ins installés par l’utilisateur ne s’activent pas.
 - L’icône du add-in doit être en échelles de gris à l’aide de code hexas ou de son équivalent `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
 - Une seule commande sans interface utilisateur est prise en charge en mode Organisateur de rendez-vous (composition).
-- Le add-in doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’une minute. Toutefois, tout temps passé dans une boîte de dialogue où le add-in a été ouvert pour authentification, etc. est exclu du délai d’attente.
+- Le add-in doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’une minute. Toutefois, tout temps passé dans une boîte de dialogue où le module a été ouvert pour authentification, etc. est exclu du délai d’attente.
 
 ## <a name="see-also"></a>Voir aussi
 

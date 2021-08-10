@@ -3,19 +3,19 @@ title: Élément Event dans le fichier manifeste
 description: Définit un gestionnaire d’événements dans un complément.
 ms.date: 05/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 3d8e94c10bed214dd976b3048e11328f10f99325
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 486236f2c2dc19f835e06bad027b4fca33809fb257ba6f6d455add66ab5b5ce0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44611546"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093295"
 ---
 # <a name="event-element"></a>Élément Event
 
 Définit un gestionnaire d’événements dans un complément.
 
 > [!NOTE]
-> Pour plus d’informations sur la prise en charge et l’utilisation, consultez la rubrique relative à la [fonctionnalité d’envoi pour les compléments Outlook](../../outlook/outlook-on-send-addins.md).
+> Pour plus d’informations sur la prise en charge et l’utilisation, voir La fonctionnalité [d’envoi pour Outlook des applications.](../../outlook/outlook-on-send-addins.md)
 
 ## <a name="attributes"></a>Attributs
 

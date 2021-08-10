@@ -8,18 +8,18 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/29/2021
   localization_priority: Priority
-  ms.openlocfilehash: 6e1b833b9f58c26e6a5ee85103d231ea75284064
-  ms.sourcegitcommit: a0624ef0d847fdbd6d83f27d1f9c69daf636ac38
+  ms.openlocfilehash: 90b40568affbf7895bda15fb73345676be118f6f0830805dcedcbf3decccae83
+  ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 03/30/2021
-  ms.locfileid: "51435311"
+  ms.lasthandoff: 08/07/2021
+  ms.locfileid: "57088930"
 landingContent:
-- title: À propos des add-ins Excel
+- title: À propos Excel des modules
   linkLists:
   - linkListType: overview
     links:
-    - text: Que sont les add-ins Excel ?
+    - text: Que sont Excel des modules ?
       url: excel-add-ins-overview.md
   - linkListType: quickstart
     links:
@@ -29,15 +29,15 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Utiliser l’API JavaScript pour Excel pour interagir avec les objets et le contenu du workbook
+    - text: Utiliser l’API JavaScript Excel pour interagir avec les objets et le contenu du workbook
       url: ../reference/overview/excel-add-ins-reference-overview.md
     - text: Ajouter des fonctions personnalisées à Excel
       url: custom-functions-overview.md
-    - text: Tester et déboguer un add-in Excel
+    - text: Tester et déboguer un Excel de test
       url: ../testing/test-debug-office-add-ins.md
-    - text: Déployer et publier un add-in Excel
+    - text: Déployer et publier un Excel de publication
       url: ../publish/publish.md
-- title: Concepts clés des add-ins Office
+- title: Concepts clés Office des add-ins
   linkLists:
   - linkListType: overview
     links:

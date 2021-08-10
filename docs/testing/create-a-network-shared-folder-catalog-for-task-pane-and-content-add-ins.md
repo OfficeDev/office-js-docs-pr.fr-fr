@@ -1,14 +1,14 @@
 ---
 title: Chargement de Office pour les tester à partir d’un partage réseau
-description: Découvrez comment recharger une version test d Office pour le test à partir d’un partage réseau
+description: Découvrez comment chargement de version test d’un Office pour le test à partir d’un partage réseau
 ms.date: 06/02/2020
 localization_priority: Normal
-ms.openlocfilehash: 9a44c14669bf0a8fa842e931fc1b12601f73043b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 93d791b544a1debe62512f12cc3a5e8b3022d89f8003b77dc1e3afc9c73bc627
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348306"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093880"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de Office pour les tester à partir d’un partage réseau
 
@@ -131,7 +131,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Vous pouvez trouver plus d’informations sur la façon de Windows cache dans l’article Effacer [le cache Office cache.](clear-cache.md#clear-the-office-cache-on-windows)
+Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Vous pouvez trouver des détails sur la façon de effacer le cache sur Windows dans l’article Effacer [le cache Office cache.](clear-cache.md#clear-the-office-cache-on-windows)
 
 ## <a name="see-also"></a>Voir aussi
 

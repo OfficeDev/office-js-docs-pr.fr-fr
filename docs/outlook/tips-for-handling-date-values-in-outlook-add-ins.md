@@ -1,14 +1,14 @@
 ---
 title: Gestion des valeurs de date dans les compléments Outlook
-description: L Office API JavaScript utilise l’objet Date JavaScript pour la plupart du stockage et de la récupération des dates et heures.
+description: L Office API JavaScript utilise l’objet Date JavaScript pour la majeure partie du stockage et de la récupération des dates et heures.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 8d244c7a4f7009a634fc2354e62cee0ad175cffd
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 46be9e7e3c952d08addcf8ef761a259f8c0d1d84c1bc3b0bb61cbb40c07ce35b
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671820"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093319"
 ---
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>Conseils pour la gestion des valeurs de date dans les compléments Outlook
 
@@ -93,12 +93,12 @@ document.write ("The item was created at " + myLocalDictionaryDate["hours"] +
     ":" + myLocalDictionaryDate["minutes"]);)
 ```
 
-Notez qu’il s’agit de la différence entre un client Outlook riche et des appareils `convertToLocalClientTime` Outlook sur le web ou mobiles :
+Notez qu’il s’agit de la différence entre un client Outlook riche et des Outlook sur le web `convertToLocalClientTime` ou mobiles :
 
 
 - Si elle détecte que l’application actuelle est un client riche, la méthode convertit la représentation en représentation de dictionnaire dans le même fuseau horaire de l’ordinateur client, en accord avec le reste de l’interface utilisateur `convertToLocalClientTime` `Date` du client enrichi.
     
-- Si elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit la représentation UTC correcte au format de dictionnaire dans le fuseau horaire du CENTRE D’EAC, cohérente avec le reste de l’interface utilisateur Outlook sur le web ou des appareils `convertToLocalClientTime` `Date` mobiles.
+- Si elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit la représentation UTC correcte au format de dictionnaire dans le fuseau horaire du CENTRE D’EAC, en accord avec le reste de l’interface utilisateur Outlook sur le web ou des appareils `convertToLocalClientTime` `Date` mobiles.
     
 
 ### <a name="scenario-b-displaying-start-and-end-dates-in-a-new-appointment-form"></a>Scénario B : affichage des dates de début et de fin dans un formulaire de nouveau rendez-vous
@@ -115,12 +115,12 @@ var myUTCCorrectEndDate = Office.context.mailbox.convertToUtcClientTime(myLocalD
 
 Les valeurs qui en résultent, `myUTCCorrectStartDate` et `myUTCCorrectEndDate`, sont au format UTC. Passez ensuite ces objets en tant qu’arguments pour les paramètres Début et Fin de la méthode pour `Date` afficher le nouveau formulaire de   `Mailbox.displayNewAppointmentForm` rendez-vous.
 
-Notez qu’il s’agit de la différence entre un client Outlook riche et des appareils `convertToUtcClientTime` Outlook sur le web ou mobiles :
+Notez qu’il s’agit de la différence entre un client Outlook riche et des Outlook sur le web `convertToUtcClientTime` ou mobiles :
 
 
-- Si `convertToUtcClientTime` elle détecte que l’application actuelle est Outlook client riche, la méthode convertit simplement la représentation de dictionnaire en `Date` objet. Cet `Date` objet est correct UTC, comme prévu par `displayNewAppointmentForm` .
+- Si `convertToUtcClientTime` elle détecte que l’application actuelle est Outlook client riche, la méthode convertit simplement la représentation de dictionnaire en `Date` objet. Cet `Date` objet est au UTC correct, comme prévu par `displayNewAppointmentForm` .
     
-- Si elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit le format de dictionnaire des valeurs de date et d’heure exprimées dans le fuseau horaire EAC en `convertToUtcClientTime` `Date` objet. Cet `Date` objet est correct UTC, comme prévu par `displayNewAppointmentForm` .
+- Si elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit le format de dictionnaire des valeurs de date et d’heure exprimées dans le fuseau horaire EAC en `convertToUtcClientTime` `Date` objet. Cet `Date` objet est au UTC correct, comme prévu par `displayNewAppointmentForm` .
     
 ## <a name="see-also"></a>Voir aussi
 

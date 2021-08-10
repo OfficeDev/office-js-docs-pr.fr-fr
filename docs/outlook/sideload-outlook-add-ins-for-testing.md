@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 ms.date: 05/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6c50a6966915d0aa87d27b1768b0e67e5e8c6d8867c3e0148166f6abfdcd92e0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077028"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57093378"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
@@ -27,7 +27,7 @@ Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://g
 
 1. Si votre manifeste ne contient pas d’erreurs et que le chemin d’accès est valide, votre application est désormais rechargée de côté et disponible à la fois sur votre bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
 
-## <a name="sideload-manually"></a>Chargement de version de version manuelle
+## <a name="sideload-manually"></a>Chargement manuel d’une version de version
 
 Bien que nous recommandions vivement le chargement d’une version de version secondaire automatiquement par le biais de la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de version antérieure d’un Outlook basé sur le client Outlook.
 
@@ -88,7 +88,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 #### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
 
-1. Ouvrez Outlook 2016 ou ultérieurement sur Windows ou Mac.
+1. Ouvrez Outlook 2016 ou ultérieur sur Windows mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
@@ -105,7 +105,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. S’il existe des onglets en haut de la boîte de dialogue, **assurez-vous** que l’onglet Des applications est sélectionné. Choose **My add-ins**.
 
-    ![Outlook 2016 dans la boîte de dialogue Du store avec mes applications sélectionnées.](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016 dans la boîte de dialogue Du store avec Mes applications sélectionnée.](../images/outlook-sideload-store-select-add-ins.png)
 
 1. Recherchez la section **Compléments personnalisés** en bas de la boîte de dialogue. Sélectionnez le lien **Ajouter un complément personnalisé**, puis sélectionnez **Ajouter à partir d’un fichier**.
 
@@ -119,7 +119,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. Sélectionnez **le** menu Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations.** Outlook ouvre la version web dans un navigateur.
 
-1. Suivez les étapes de la section Chargement de version de [version](#outlook-on-the-web) Outlook sur le web en fonction de votre version de Outlook sur le web.
+1. Suivez les étapes de la section [Sideload d’un Outlook sur le web](#outlook-on-the-web) en fonction de votre version de Outlook sur le web.
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
@@ -127,4 +127,4 @@ Sur toutes les versions de Outlook, la clé de la suppression  d’un module de 
 
 Pour accéder à la boîte de dialogue Mes applications pour votre client Outlook, [](#sideload-manually) utilisez les dernières **étapes** répertoriées pour le chargement de version manuelle dans les sections précédentes de cet article.
 
-Pour supprimer un **add-in** chargé de Outlook, utilisez les étapes décrites précédemment dans cet article pour rechercher le module dans la section Des applications personnalisées de la boîte de dialogue répertoriant vos applications installées. Choisissez les ellipses ( ) pour le module, puis choisissez Supprimer pour `...` supprimer ce dernier.  Fermez la boîte de dialogue.
+Pour supprimer un **add-in** chargé de Outlook, utilisez les étapes décrites précédemment dans cet article pour trouver le module dans la section Des applications personnalisées de la boîte de dialogue qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le module, puis choisissez Supprimer pour `...` supprimer ce dernier.  Fermez la boîte de dialogue.

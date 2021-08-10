@@ -3,16 +3,16 @@ title: Complément Microsoft Office Extension de débogueur pour Visual Studio C
 description: Utilisez l’extension Visual Studio Code de Microsoft Office déboguer votre Office de débogage.
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 3daedb48bdec5a17dfc220f049a8e2cdc86ac398
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d027e5937fa3a58623ce9e798fc683e5459e73b8b72606c0a006e465c9c1360c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349286"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57088466"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
-L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre Office Par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article](./debug-desktop-using-edge-chromium.md)
+L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre application Office par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article](./debug-desktop-using-edge-chromium.md)
 
 Ce mode de débogage est dynamique, ce qui vous permet de définir des points d’arrêt pendant l’exécution du code. Vous pouvez voir les modifications dans votre code immédiatement lorsque le déboguer est attaché, tout cela sans perdre votre session de débogage. Vos modifications de code sont également persistantes, afin que vous pouvez voir les résultats de plusieurs modifications apportées à votre code. L’image suivante illustre cette extension en action.
 
@@ -22,7 +22,7 @@ Ce mode de débogage est dynamique, ce qui vous permet de définir des points d�
 
 - [Visual Studio Code](https://code.visualstudio.com/) (doit être exécuté en tant qu’administrateur)
 - [Node.js (version 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 Ces instructions supposent que vous avez de l’expérience en utilisant la ligne de commande, que vous comprenez javaScript de base et que vous avez créé un projet de Office avant d’utiliser le générateur Yo Office. Si vous ne l’avez pas encore fait, envisagez de consulter l’un de nos didacticiels, comme Excel Office [didacticiel sur le add-in.](../tutorials/excel-tutorial.md)
@@ -73,7 +73,7 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
 
 1. Revenir à Visual Studio Code et choisissez **Afficher >** déboguer ou entrez **Ctrl + Shift + D** pour basculer en mode débogage.
 
-1. Dans les options de débogage, sélectionnez **Attacher aux Office de travail.** Sélectionnez **F5** ou **choisissez Déboguer -> démarrer le** débogage à partir du menu pour commencer le débogage.
+1. Dans les options de débogage, sélectionnez Attacher aux Office de **travail.** Sélectionnez **F5** ou **choisissez Déboguer -> démarrer le** débogage à partir du menu pour commencer le débogage.
 
 1. Définissez un point d’arrêt dans le fichier du volet Des tâches de votre projet. Vous pouvez définir des points d’arrêt Visual Studio Code en pointant à côté d’une ligne de code et en sélectionnant le cercle rouge qui s’affiche.
 
@@ -87,4 +87,4 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
 
 - [Débogage des compléments avec les outils de développement sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 
-- [Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)](debug-desktop-using-edge-chromium.md)
+- [Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)](debug-desktop-using-edge-chromium.md)

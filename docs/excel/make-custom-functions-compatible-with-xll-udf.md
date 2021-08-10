@@ -3,19 +3,19 @@ title: Étendre des fonctions personnalisées avec des fonctions XLL définies p
 description: Activer la compatibilité avec Excel fonctions XLL définies par l’utilisateur qui ont des fonctionnalités équivalentes à vos fonctions personnalisées
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 33c7ee9309196d627520b37a02d5a1bca44cb767
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: b7a2330f7a875c894f371138034314ae99bb0e9393a45c6e8572a97a084fe94e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349391"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089312"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
-Si vous avez des XL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un add-in Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes telles que en ligne ou sur un Mac. Toutefois, les Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XL. Selon les fonctionnalités que votre solution utilise, la XLL peut offrir une meilleure expérience que les fonctions personnalisées du Excel dans Excel sur Windows.
+Si vous avez des XL Excel existantes, vous pouvez créer des fonctions personnalisées équivalentes dans un module Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes telles que en ligne ou sur un Mac. Toutefois, les Excel ne disposent pas de toutes les fonctionnalités disponibles dans les XL. Selon les fonctionnalités que votre solution utilise, la XLL peut offrir une meilleure expérience que les fonctions personnalisées du Excel dans Excel sur Windows.
 
 > [!NOTE]
-> La compatibilité des modules UDF et du Microsoft 365 COM est prise en charge par les plateformes suivantes.
+> La compatibilité des UDF et des Microsoft 365 COM est prise en charge par les plateformes suivantes.
 >
 > - Excel sur le web
 > - Excel sur Windows (version 1904 ou ultérieure)
@@ -27,7 +27,7 @@ Si vous avez des XL Excel existantes, vous pouvez créer des fonctions personnal
 
 Pour activer la compatibilité avec un XLL existant, identifiez le XLL équivalent dans le manifeste de votre Excel de données. Excel utilisera ensuite les fonctions XLL au lieu de vos fonctions personnalisées de Excel lors de l’exécution sur Windows.
 
-Pour définir le XLL équivalent pour vos fonctions personnalisées, spécifiez le `FileName` XLL. Lorsque l’utilisateur ouvre un workbook avec des fonctions du XLL, Excel convertit les fonctions en fonctions compatibles. Le workbook utilise ensuite le XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre macro Excel lorsqu’il est ouvert en ligne ou sur un Mac.
+Pour définir le XLL équivalent pour vos fonctions personnalisées, spécifiez `FileName` le XLL. Lorsque l’utilisateur ouvre un workbook avec des fonctions du XLL, Excel convertit les fonctions en fonctions compatibles. Le workbook utilise ensuite le XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre Excel lorsqu’il est ouvert en ligne ou sur un Mac.
 
 L’exemple suivant montre comment spécifier un add-in COM et un XLL comme équivalent. Souvent, vous spécifiez les deux. Pour plus d’complétance, cet exemple montre les deux en contexte. Ils sont identifiés par `ProgId` leur `FileName` et, respectivement. `EquivalentAddins`L’élément doit être placé immédiatement avant la balise de `VersionOverrides` fermeture. Pour plus d’informations sur la compatibilité des applications COM, voir Rendre votre Office compatible avec un compl?ment [COM existant.](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 
@@ -67,7 +67,7 @@ Le tableau suivant compare les fonctionnalités entre les fonctions XLL définie
 | **Fonctions volatiles** | Oui | Oui | Oui |
 | **Prise en charge du recalcul multi-thread** | Oui | Oui | Oui |
 | **Comportement du calcul** | Aucune interface utilisateur. Excel ne répond pas pendant le calcul. | Les utilisateurs voient #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs voient #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
-| **Ensembles de conditions requises** | S/O | CustomFunctions 1.1 et les ultérieures | CustomFunctions 1.1 et les ultérieures |
+| **Ensembles de conditions requises** | N/A | CustomFunctions 1.1 et les ultérieures | CustomFunctions 1.1 et les ultérieures |
 
 ## <a name="see-also"></a>Voir aussi
 

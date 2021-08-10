@@ -3,12 +3,12 @@ title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1ec2623ad5dbb07677735b7bcb1e39612e56984c
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: fe4b0b0cbc4e9c455225cb4ad3d80e081589eeaedcd5efc18f1df31624515a1a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348698"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089862"
 ---
 # <a name="action-element"></a>Élément Action
 
@@ -109,7 +109,7 @@ Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneI
 > [!NOTE]
 > Cet élément enfant n’est pas pris en charge dans Outlook de développement.
 
-L’exemple suivant montre une action qui utilise **l’élément Title.** Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
+L’exemple suivant illustre une action qui utilise **l’élément Title.** Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
 
 ```xml
 <Action xsi:type="ShowTaskpane">

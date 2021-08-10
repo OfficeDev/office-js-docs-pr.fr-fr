@@ -3,12 +3,12 @@ title: Runtimes dans le fichier manifeste
 description: L’élément Runtimes spécifie le runtime de votre add-in.
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
-ms.sourcegitcommit: 693d364616b42eea66977eef47530adabc51a40f
+ms.openlocfilehash: e5ec70449d3984671d507131ac8d4fc0f7617cdcda1ad8f99b4f4bf52773aded
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2021
-ms.locfileid: "52555296"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57091627"
 ---
 # <a name="runtimes-element"></a>Élément Runtimes
 
@@ -35,7 +35,7 @@ Spécifie le runtime de votre add-in. Enfant de [`<Host>`](host.md) l’élémen
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 | [Runtime](runtime.md) | Oui |  Runtime de votre add-in. **Important**: pour le moment, vous ne pouvez définir qu’un `<Runtime>` seul élément. |
 

@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office sur iPad et Mac
 description: Testez votre Office sur iPad Mac en chargeant une version test.
 ms.date: 09/02/2020
 localization_priority: Normal
-ms.openlocfilehash: b3d7d7fa3ee69e849c112c888b66fa9deed23d88
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: b5de4fcf11fd05f945be99206a43879fa6205bd7b5074f1aa542528adc7a5772
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076202"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57089641"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
@@ -38,7 +38,7 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 ## <a name="sideload-an-add-in-on-excel-or-word-on-ipad-using-itunes"></a>Chargement d’une version de version Excel ou Word sur iPad à l’aide d’iTunes
 
-1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez le iPad à votre ordinateur pour la première fois, vous êtes invité à utiliser **l’outil Trust This Computer ?**. Sélectionnez **Confiance** pour continuer.
+1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez le iPad à votre ordinateur pour la première fois, vous êtes invité à utiliser **l’outil Trust This Computer ?** Sélectionnez **Confiance** pour continuer.
 
 2. Dans iTunes, sélectionnez l’icône **iPad** en dessous de la barre de menu.
 
@@ -61,7 +61,7 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 > [!IMPORTANT]
 > Avec l’introduction de macOS Android, Apple a abandonné [iTunes](https://support.apple.com/HT210200) sur Mac et les fonctionnalités intégrées requises pour télécharger une version de version de chargement d’applications dans **Finder**.
 
-1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez le iPad à votre ordinateur pour la première fois, vous êtes invité à utiliser **l’outil Trust This Computer ?**. Sélectionnez **Confiance** pour continuer. Vous pouvez également être invité à savoir s’il s’agit d’iPad ou si vous en restétiez un.
+1. Utilisez un câble de synchronisation pour connecter votre iPad à votre ordinateur. Si vous connectez le iPad à votre ordinateur pour la première fois, vous êtes invité à utiliser **l’outil Trust This Computer ?** Sélectionnez **Confiance** pour continuer. Vous pouvez également vous faire demander s’il s’agit d’une nouvelle iPad ou si vous en restétiez une.
 
 2. Dans Rechercher, sous **Emplacements,** sélectionnez **l’icône iPad** sous la barre de menus.
 
@@ -107,7 +107,7 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Vous pouvez supprimer un add-in précédemment chargé de nouveau en effasant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon de effacer le cache pour chaque plateforme et application, voir l’article Effacer [le cache Office cache.](clear-cache.md)
+Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon de effacer le cache pour chaque plateforme et application, voir l’article Effacer [le cache Office cache.](clear-cache.md)
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,12 +3,12 @@ title: Présentation du jeton d’identité Exchange dans un complément Outlook
 description: Découvrez le contenu d’un jeton d’identité d’utilisateur Exchange généré à partir d’un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: dee8416660386c25a55caa42b6e5ee8685ee8852
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: c46765f7e7c27309c33428132f022b35d36acf0ce30089775ecd4ae23960ca17
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44609089"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57090670"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Présentation du jeton d’identité Exchange
 

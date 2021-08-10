@@ -3,12 +3,12 @@ title: Élément FunctionFile dans le fichier manifest
 description: Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: f31a1bc7a561305a89f5388102a4985aaa31fe37
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 66277ab148690b37fbdcd60cf49b10a0fc1b9422c187c6bc213b0cd91a999dfd
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348299"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57092323"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 
@@ -81,4 +81,4 @@ function writeText(event) {
 ```
 
 > [!IMPORTANT]
-> L’appel `event.completed` aux signaux que vous avez géré l’événement avec succès. Lorsqu’une fonction est appelée à plusieurs reprises, par exemple lorsque l’utilisateur clique plusieurs fois sur une même commande de complément, tous les événements sont automatiquement mis en file d’attente. Le premier événement s’exécute automatiquement, tandis que les autres événements restent dans la file d’attente. Lorsque votre fonction appelle, l’appel mis en file `event.completed` d’attente suivant à cette fonction s’exécute. Vous devez appeler `event.completed` ; sinon, votre fonction ne s’exécutera pas.
+> L’appel `event.completed` aux signaux que vous avez correctement géré l’événement. Lorsqu’une fonction est appelée à plusieurs reprises, par exemple lorsque l’utilisateur clique plusieurs fois sur une même commande de complément, tous les événements sont automatiquement mis en file d’attente. Le premier événement s’exécute automatiquement, tandis que les autres événements restent dans la file d’attente. Lorsque votre fonction appelle, l’appel mis en file `event.completed` d’attente suivant à cette fonction s’exécute. Vous devez appeler `event.completed` ; sinon, votre fonction ne s’exécutera pas.
