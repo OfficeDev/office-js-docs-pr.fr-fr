@@ -3,12 +3,12 @@ title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
 ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: 8f84be1f2dcc43d795026fcd28dc3860c5e07a1e
-ms.sourcegitcommit: 0d9fcdc2aeb160ff475fbe817425279267c7ff31
+ms.openlocfilehash: 6d76c38521f03adc3c38e6e9a72d1d5b6cda6c6a359b4aa2ba87799f81ae932f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2021
-ms.locfileid: "52590924"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097430"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -264,7 +264,7 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-Ce point d’extension place un basculement approprié en mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
+Ce point d’extension place un basculement adapté au mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
 
 > [!NOTE]
 > Ce point d’extension est uniquement pris en charge sur Android et iOS avec Microsoft 365 abonnement.

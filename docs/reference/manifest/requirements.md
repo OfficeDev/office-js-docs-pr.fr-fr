@@ -1,18 +1,18 @@
 ---
 title: Élément Requirements dans le fichier manifest
-description: L’élément Requirements spécifie l’ensemble de conditions requises minimum et les méthodes nécessaires à l’activation de votre complément Office.
+description: L’élément Requirements spécifie l’ensemble minimal de conditions requises et les méthodes dont votre Office a besoin pour s’activer.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 319ddc59901c524ed1cee580a81cff749ad570db
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 3020037b48e3f759acf6a7e2758bb8c1fd2dd36429e0b21613e22fca33cacc1a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292271"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098104"
 ---
 # <a name="requirements-element"></a>Élément Requirements
 
-Spécifie l’ensemble minimal des conditions requises de l’API JavaScript pour Office ([ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) et/ou méthodes) que votre complément Office doit activer.
+Spécifie l’ensemble minimal d’Office de l’API JavaScript[(ensembles](../../develop/office-versions-and-requirement-sets.md#specify-office-applications-and-requirement-sets) de conditions requises et/ou méthodes) que votre Office doit activer.
 
 **Type de complément :** application de contenu, de volet Office, de messagerie
 
@@ -30,7 +30,7 @@ Spécifie l’ensemble minimal des conditions requises de l’API JavaScript pou
 
 ## <a name="can-contain"></a>Peut contenir
 
-|Élément|Contenu|Courrier|TaskPane|
+|Élément|Contenu|Courrier Outlook|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Ensembles](sets.md)|x|x|x|
 |[Méthodes](methods.md)|x||x|

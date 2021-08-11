@@ -4,12 +4,12 @@ description: Utiliser le générateur Yeoman pour créer un complément Office N
 ms.date: 11/03/2020
 ms.prod: non-product-specific
 localization_priority: Priority
-ms.openlocfilehash: 2baed2ef4aaca3539d1d41d1fb2ea985337fda25
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: c4264c644e064787819705c8cd63bed6243b6eddfde24e21730b8938846a89b7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076559"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097502"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise la connexion unique
 
@@ -24,7 +24,7 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
 
 - [Node.js](https://nodejs.org) (la dernière version [LTS](https://nodejs.org/about/releases))
 
-- La dernière version de[Yeoman](https://github.com/yeoman/yo) et de [Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante à partir de l’invite de commande :
+- La dernière version de[Yeoman](https://github.com/yeoman/yo) et du [Générateur Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante via l’invite de commande.
 
     ```command&nbsp;line
     npm install -g yo generator-office

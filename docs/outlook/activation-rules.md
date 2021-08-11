@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 609bb915c98b1213c4d20733a7b00681740bdce1e182e237dbde9253e8b06104
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349020"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096938"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -61,7 +61,7 @@ Spécifiez l’un des types d’éléments suivants dans `ItemType` l’attribut
 |**Rendez-vous**|Spécifie un élément dans le calendrier Outlook. Par exemple, un élément de réunion auquel une réponse a été donnée et auquel un organisateur et des participants sont associés, ou un rendez-vous auquel n’est associé aucun organisateur ou participant et qui constitue un simple élément de calendrier. Cela correspond à la classe de message IPM.Appointment dans Outlook.|
 |**Message**|Spécifie l’un des éléments suivants reçus dans la boîte de réception. <ul><li><p>Message électronique. Cela correspond à la classe de message IPM.Note dans Outlook.</p></li><li><p>Demande de réunion, réponse à une demande de réunion ou annulation d’une réunion. Cela correspond aux classes de message suivantes dans Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
-L’attribut permet de spécifier le mode (lecture ou composition) dans lequel le `FormType` module doit être activé.
+`FormType`L’attribut est utilisé pour spécifier le mode (lecture ou composition) dans lequel le module doit être activé.
 
 
  > [!NOTE]

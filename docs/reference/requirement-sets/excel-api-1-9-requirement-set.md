@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.9.
 ms.date: 04/01/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 41f6eb2dd329a2ab82981cb3ee8e11a784e23591
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: eb917ed75049f965178075f57e8d0e9e7630bc9081019763e7812b221a00f67c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671883"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098288"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Nouveautés de l Excel API JavaScript 1.9
 
@@ -29,7 +29,7 @@ Plus de 500 nouvelles API Excel ont été ajoutés avec l’ensemble de conditio
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.9. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.9 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.9](/javascript/api/excel?view=excel-js-1.9&preserve-view=true)ou version antérieure.
+Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.9. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.9 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.9](/javascript/api/excel?view=excel-js-1.9&preserve-view=true)ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -39,8 +39,8 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[suspendScreenUpdatingUntilNextSync()](/javascript/api/excel/excel.application#suspendScreenUpdatingUntilNextSync__)|Suspend la mise à jour de l’écran jusqu’à ce que le `context.sync()` suivant soit appelé.|
 |[AutoFilter](/javascript/api/excel/excel.autofilter)|[Appliquer (plage : plage \| chaîne, columnIndex ? : nombre, critères ? : Excel.FilterCriteria)](/javascript/api/excel/excel.autofilter#apply_range__columnIndex__criteria_)|Applique le filtre automatique à une plage.|
 ||[clearCriteria()](/javascript/api/excel/excel.autofilter#clearCriteria__)|Efface les critères de filtre du filtre automatique.|
-||[getRange()](/javascript/api/excel/excel.autofilter#getRange__)|Renvoie `Range` l’objet qui représente la plage à laquelle le filtre automatique s’applique.|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getRangeOrNullObject__)|Renvoie `Range` l’objet qui représente la plage à laquelle le filtre automatique s’applique.|
+||[getRange()](/javascript/api/excel/excel.autofilter#getRange__)|Renvoie l’objet qui représente la plage à laquelle le filtre automatique `Range` s’applique.|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.autofilter#getRangeOrNullObject__)|Renvoie l’objet qui représente la plage à laquelle le filtre automatique `Range` s’applique.|
 ||[criteria](/javascript/api/excel/excel.autofilter#criteria)|Tableau qui conserve tous les critères de filtre dans une plage filtrée.|
 ||[enabled](/javascript/api/excel/excel.autofilter#enabled)|Spécifie si le filtre automatique est activé.|
 ||[isDataFiltered](/javascript/api/excel/excel.autofilter#isDataFiltered)|Spécifie si le filtre automatique a des critères de filtre.|
@@ -111,7 +111,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[ChartBoxwhiskerOptions](/javascript/api/excel/excel.chartboxwhiskeroptions)|[quartileCalculation](/javascript/api/excel/excel.chartboxwhiskeroptions#quartileCalculation)|Spécifie si le type de calcul du quartile d’un graphique de zone et de zone.|
 ||[showInnerPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showInnerPoints)|Spécifie si les points internes sont affichés dans une zone et un graphique de zone.|
 ||[showMeanLine](/javascript/api/excel/excel.chartboxwhiskeroptions#showMeanLine)|Spécifie si la ligne moyenne est affichée dans une zone et un graphique de zone.|
-||[showMeanMarker](/javascript/api/excel/excel.chartboxwhiskeroptions#showMeanMarker)|Spécifie si la marque moyenne est affichée dans une zone et un graphique de zone.|
+||[showMeanMarker](/javascript/api/excel/excel.chartboxwhiskeroptions#showMeanMarker)|Spécifie si la marque moyenne est affichée dans un graphique zone et de zone.|
 ||[showOutlierPoints](/javascript/api/excel/excel.chartboxwhiskeroptions#showOutlierPoints)|Spécifie si les points aberrants sont affichés dans un graphique zone et valeur.|
 |[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabel#linkNumberFormat)|Spécifie si le format numérique est lié aux cellules (de sorte que le format numérique change dans les étiquettes lorsqu’il change dans les cellules).|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[linkNumberFormat](/javascript/api/excel/excel.chartdatalabels#linkNumberFormat)|Spécifie si le format numérique est lié aux cellules.|
@@ -156,7 +156,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[getRanges()](/javascript/api/excel/excel.conditionalformat#getRanges__)|Renvoie la , comprenant une ou plusieurs plages rectangulaires, à laquelle le format conditionnel `RangeAreas` est appliqué.|
 |[DataValidation](/javascript/api/excel/excel.datavalidation)|[getInvalidCells()](/javascript/api/excel/excel.datavalidation#getInvalidCells__)|Renvoie un `RangeAreas` objet, comprenant une ou plusieurs plages rectangulaires, avec des valeurs de cellule non valides.|
 ||[getInvalidCellsOrNullObject()](/javascript/api/excel/excel.datavalidation#getInvalidCellsOrNullObject__)|Renvoie un `RangeAreas` objet, comprenant une ou plusieurs plages rectangulaires, avec des valeurs de cellule non valides.|
-|[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[subField](/javascript/api/excel/excel.filtercriteria#subField)|Propriété utilisée par le filtre pour faire un filtre enrichi sur les valeurs enrichies.|
+|[FilterCriteria](/javascript/api/excel/excel.filtercriteria)|[subField](/javascript/api/excel/excel.filtercriteria#subField)|Propriété utilisée par le filtre pour faire un filtre enrichi sur des valeurs enrichies.|
 |[GeometricShape](/javascript/api/excel/excel.geometricshape)|[id](/javascript/api/excel/excel.geometricshape#id)|Représente l’identificateur de forme.|
 ||[shape](/javascript/api/excel/excel.geometricshape#shape)|Renvoie `Shape` l’objet de la forme géométrique.|
 |[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getCount()](/javascript/api/excel/excel.groupshapecollection#getCount__)|Renvoie le nombre de formes dans le groupe de la forme.|
@@ -257,7 +257,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[setAutosortOnCell(cell: Range \| string, sortby: Excel.SortBy)](/javascript/api/excel/excel.pivotlayout#setAutoSortOnCell_cell__sortBy_)|Définit le tableau croisé dynamique pour trier automatiquement à l’aide de la cellule spécifiée pour sélectionner automatiquement tous les critères et contexte nécessaires.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[enableDataValueEditing](/javascript/api/excel/excel.pivottable#enableDataValueEditing)|Spécifie si le tableau croisé dynamique permet à l’utilisateur de modifier des valeurs dans le corps des données.|
 ||[useCustomSortLists](/javascript/api/excel/excel.pivottable#useCustomSortLists)|Spécifie si le tableau croisé dynamique utilise des listes personnalisées lors du tri.|
-|[Range](/javascript/api/excel/excel.range)|[autoFill(destinationRange?: Range \| string, autoFillType?: Excel. AutoFillType)](/javascript/api/excel/excel.range#autoFill_destinationRange__autoFillType_)|Remplit les plages de la plage actuelle à la plage de destination à l’aide de la logique de remplissage automatique spécifiée.|
+|[Range](/javascript/api/excel/excel.range)|[autoFill(destinationRange?: Range \| string, autoFillType?: Excel. AutoFillType)](/javascript/api/excel/excel.range#autoFill_destinationRange__autoFillType_)|Remplit la plage actuelle à la plage de destination à l’aide de la logique de remplissage automatique spécifiée.|
 ||[convertDataTypeToText()](/javascript/api/excel/excel.range#convertDataTypeToText__)|Convertit en texte les cellules de plage avec des types de données.|
 ||[convertToLinkedDataType(serviceID: number, languageCulture: string)](/javascript/api/excel/excel.range#convertToLinkedDataType_serviceID__languageCulture_)|Convertit les cellules de la plage en types de données liés dans la feuille de calcul.|
 ||[copyFrom(sourceRange: Range \| RangeAreas \| string, copyType?: Excel.RangeCopyType, skipBlanks?: boolean, transpose?: boolean)](/javascript/api/excel/excel.range#copyFrom_sourceRange__copyType__skipBlanks__transpose_)|Copie les données de cellule ou la mise en forme de la plage source ou `RangeAreas` de la plage actuelle.|
@@ -407,7 +407,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[shape](/javascript/api/excel/excel.shapegroup#shape)|Renvoie `Shape` l’objet associé au groupe.|
 ||[Formes](/javascript/api/excel/excel.shapegroup#shapes)|Renvoie la collection `Shape` d’objets.|
 ||[ungroup()](/javascript/api/excel/excel.shapegroup#ungroup__)|Dissocie toutes les formes groupées dans la forme spécifiée.|
-|[ShapeLineFormat](/javascript/api/excel/excel.shapelineformat)|[color](/javascript/api/excel/excel.shapelineformat#color)|Représente la couleur de trait au format HTML, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+|[ShapeLineFormat](/javascript/api/excel/excel.shapelineformat)|[color](/javascript/api/excel/excel.shapelineformat#color)|Représente la couleur de trait au format HTML, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[dashStyle](/javascript/api/excel/excel.shapelineformat#dashStyle)|Représente le style de trait de la forme.|
 ||[style](/javascript/api/excel/excel.shapelineformat#style)|Représente le style de trait de la forme.|
 ||[Transparency](/javascript/api/excel/excel.shapelineformat#transparency)|Renvoie ou définit le degré de transparence du remplissage spécifié sous la forme d’une valeur comprise entre 0,0 (opaque) et 1,0 (transparent).|
@@ -418,7 +418,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[getItemAt(index: number)](/javascript/api/excel/excel.stylecollection#getItemAt_index_)|Obtient une forme en fonction de sa position dans la collection.|
 |[Table](/javascript/api/excel/excel.table)|[autoFilter](/javascript/api/excel/excel.table#autoFilter)|Représente `AutoFilter` l’objet du tableau.|
 |[TableAddedEventArgs](/javascript/api/excel/excel.tableaddedeventargs)|[source](/javascript/api/excel/excel.tableaddedeventargs#source)|Obtient la source de l’événement.|
-||[tableId](/javascript/api/excel/excel.tableaddedeventargs#tableId)|Obtient l’ID de la table qui est ajoutée.|
+||[tableId](/javascript/api/excel/excel.tableaddedeventargs#tableId)|Obtient l’ID du tableau qui est ajouté.|
 ||[type](/javascript/api/excel/excel.tableaddedeventargs#type)|Obtient le type de l’événement.|
 ||[worksheetId](/javascript/api/excel/excel.tableaddedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul dans laquelle le tableau est ajouté.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[Détails](/javascript/api/excel/excel.tablechangedeventargs#details)|Obtient les informations sur les détails des changements.|
@@ -462,7 +462,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[previouslySaved](/javascript/api/excel/excel.workbook#previouslySaved)|Spécifie si le manuel a déjà été enregistré localement ou en ligne.|
 ||[usePrecisionAsDisplayed](/javascript/api/excel/excel.workbook#usePrecisionAsDisplayed)|True si les calculs réalisés dans ce classeur utiliseront uniquement la précision des nombres tels qu’ils sont affichés. |
 |[WorkbookAutoSaveSettingChangedEventArgs](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs)|[type](/javascript/api/excel/excel.workbookautosavesettingchangedeventargs#type)|Obtient le type de l’événement.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enableCalculation)|Détermine si Excel recalculer la feuille de calcul si nécessaire.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[enableCalculation](/javascript/api/excel/excel.worksheet#enableCalculation)|Détermine si Excel devez recalculer la feuille de calcul si nécessaire.|
 ||[findAll(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findAll_text__criteria_)|Recherche toutes les occurrences de la chaîne donnée en fonction des critères spécifiés et les renvoie en tant qu’objet, comprenant une ou `RangeAreas` plusieurs plages rectangulaires.|
 ||[findAllOrNullObject(text: string, criteria: Excel.WorksheetSearchCriteria)](/javascript/api/excel/excel.worksheet#findAllOrNullObject_text__criteria_)|Recherche toutes les occurrences de la chaîne donnée en fonction des critères spécifiés et les renvoie en tant qu’objet, comprenant une ou `RangeAreas` plusieurs plages rectangulaires.|
 ||[getRanges(address?: string)](/javascript/api/excel/excel.worksheet#getRanges_address_)|Obtient `RangeAreas` l’objet, qui représente un ou plusieurs blocs de plages rectangulaires, spécifiés par l’adresse ou le nom.|

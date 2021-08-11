@@ -3,12 +3,12 @@ title: 'Office.context.mailbox : ensemble de conditions requises d’aperçu'
 description: Outlook Version de l’ensemble de conditions requises de l’API de boîte aux lettres du modèle objet Mailbox.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 2765a782b33e6ffd3ef4d99b1ec70195498e6962
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: e99e731c20759a5822ef55cec0dd94d674076259f906d73c485125fd6b155f43
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671575"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096507"
 ---
 # <a name="mailbox-preview-requirement-set"></a>boîte aux lettres (ensemble de conditions requises d’aperçu)
 

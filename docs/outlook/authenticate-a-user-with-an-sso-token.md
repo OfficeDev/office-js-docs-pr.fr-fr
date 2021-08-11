@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: cf0deef6cf9ea7d4e29d8ab7c3c5a7e79f70d9ec
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: c35c30339362ddbd6e408499c15d50f0bdc0851c09cda553c92b0ae5cb72c7de
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774405"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098422"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook’authentification unique
 
@@ -23,7 +23,7 @@ Pour une vue d’ensemble de l’authentification unique dans les compléments O
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans Microsoft 365 location
 
-Pour utiliser l’authentification Outlook un autre, vous devez activer l’authentification moderne pour Microsoft 365 location. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Pour utiliser l’authentification Outlook un Outlook, vous devez activer l’authentification moderne pour le Microsoft 365 location. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Inscription de votre complément
 
@@ -50,6 +50,6 @@ Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jet
 
 ## <a name="see-also"></a>Voir aussi
 
-- Pour obtenir un exemple Outlook qui utilise le jeton ssO pour accéder à l’API Microsoft Graph, voir Outlook [SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)du Outlook.
+- Pour obtenir un exemple Outlook qui utilise le jeton sso pour accéder à l’API Microsoft Graph, voir Outlook [SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)du Outlook.
 - [Référence d’API SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [Ensemble d’exigences IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)

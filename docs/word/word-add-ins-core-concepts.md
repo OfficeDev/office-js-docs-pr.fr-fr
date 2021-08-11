@@ -3,12 +3,12 @@ title: Modèle d’objet JavaScript Word dans les compléments Office
 description: Découvrez les classes les plus importantes dans le modèle objet JavaScript spécifique à Word.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: 43ca88e7899e2ff11748dc91d5c8a5059d8bb559
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: faa461807f2317e6270d92153b065b32766129f7038aad3bad7332a2fadd94e7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53077231"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098032"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Word dans les compléments Office
 

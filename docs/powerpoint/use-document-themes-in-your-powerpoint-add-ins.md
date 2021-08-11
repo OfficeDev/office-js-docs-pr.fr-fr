@@ -3,12 +3,12 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: Découvrez comment coordonner visuellement les thèmes tels que les polices et les couleurs à appliquer aux présentations, documents, feuilles de calcul et e-mails.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: e01f8d9181d9667e9a38a34dcfca0201bef1ae71
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 4493517fbaf5307ae0c9e0195944397c2ab766f8154f26095f764e1499d1f218
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774062"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096092"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
@@ -214,7 +214,7 @@ Lors de l’exécution de PowerPoint avec **Fichier** > **Compte** > **Thème Of
 
 Si vous modifiez la valeur de **Thème Office** en la définissant sur **Gris foncé**, les polices et couleurs spécifiées avec des classes OfficeThemes.css seront mises à jour dynamiquement et seront restituées comme suit.
 
-![Volet De tâches avec Office gris foncé.](../images/office15-app-task-pane-theme-dark-gray.png)
+![Volet Des tâches avec Office gris foncé.](../images/office15-app-task-pane-theme-dark-gray.png)
 
 ## <a name="officethemecss-classes"></a>Classes OfficeTheme.css
 

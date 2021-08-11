@@ -3,12 +3,12 @@ title: Élément Group dans le fichier manifeste
 description: Définit un groupe de contrôles d’interface utilisateur dans un onglet.
 ms.date: 06/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 89ed16f7996ab06bd21e1ebaa71c959b11af2029
-ms.sourcegitcommit: ab3d38f2829e83f624bf43c49c0d267166552eec
+ms.openlocfilehash: 236746d6f6ae5e04612aade7e7d29564b064f384d65b6c0be582117faf6cecf6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2021
-ms.locfileid: "52893511"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098747"
 ---
 # <a name="group-element"></a>Élément Group
 
@@ -40,7 +40,7 @@ Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus d
 
 ### <a name="icon"></a>Icône
 
-Obligatoire. Si un onglet contient un grand nombre de groupes et que la fenêtre du programme est re resserée, l’image spécifiée peut s’afficher à la place.
+Obligatoire. Si un onglet contient un grand nombre de groupes et que la fenêtre du programme est resserée, l’image spécifiée peut s’afficher à la place.
 
 > [!NOTE]
 > Cet élément enfant n’est pas pris en charge dans Outlook de développement.
@@ -89,7 +89,7 @@ Facultatif, mais s’il n’est pas présent, il doit y avoir au moins un **cont
 
 ### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
 
-Facultatif (booléen). Spécifie si  le groupe sera masqué sur les combinaisons d’applications et de plateformes qui supportent une API qui installe un onglet contextuel personnalisé sur le ruban lors de l’utilisation. La valeur par défaut, si elle n’est pas présente, est `false` . S’il **est utilisé, OverriddenByRibbonApi doit** être le *premier* enfant de **Group**. Pour plus d’informations, [voir OverriddenByRibbonApi](overriddenbyribbonapi.md).
+Facultatif (booléen). Spécifie si  le groupe sera masqué sur les combinaisons d’applications et de plateformes qui la prise en charge d’une API qui installe un onglet contextuel personnalisé sur le ruban lors de l’utilisation. La valeur par défaut, si elle n’est pas présente, est `false` . S’il **est utilisé, OverriddenByRibbonApi doit** être le *premier* enfant de **Group**. Pour plus d’informations, [voir OverriddenByRibbonApi](overriddenbyribbonapi.md).
 
 > [!NOTE]
 > Cet élément enfant n’est pas pris en charge dans Outlook de développement.

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Word 
 ms.date: 08/04/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: e236ba45bdb41e70dcd99ced88d761ff381d91cc
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 5d3cd3b68249ba7545645725926615214651f6c04defd43120629fdcb9fe8b27
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774412"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096830"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -39,7 +39,7 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 

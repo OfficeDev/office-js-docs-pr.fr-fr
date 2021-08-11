@@ -4,12 +4,12 @@ description: Informations sur la configuration requise pour le complément Offic
 ms.date: 05/05/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 816bb49c165d41e5a29b71bb8df422c353087bab
-ms.sourcegitcommit: 132f5082f5bf9500dad0a2eaf89d924c823e575d
+ms.openlocfilehash: 7edead1b1683eca1fd00e92c12043974933864c0ff0efda202c9fcb78f45f249
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/07/2021
-ms.locfileid: "52266095"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098675"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
@@ -24,7 +24,7 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript de Word preview API](word-preview-apis.md).
 
-|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
+|  Ensemble de conditions requises  |   Office pour Windows\*<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
 |:-----|-----|:-----|:-----|:-----|
 | [Aperçu](word-preview-apis.md) | Veuillez utiliser la dernière version d’Office pour tester la préversion API (vous devrez peut-être rejoindre la [programme Office Insider](https://insider.office.com)) |
 | [WordApi 1.3](word-api-1-3-requirement-set.md) | Version 1612 (Build 7668.1000) ou version ultérieure| Mars 2017, 2.22 ou version ultérieure | Mars 2017, 15.32 ou version ultérieure| Mars 2017 |
@@ -48,4 +48,4 @@ Pour plus d’informations sur les versions et les numéros de build d’Office,
 - [Documentation référence de l’API JavaScript pour Word](/javascript/api/word)
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
 - [Spécifier les exigences en matière d’applications Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
+- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)

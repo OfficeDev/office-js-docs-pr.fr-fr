@@ -3,12 +3,12 @@ title: Élément Host dans le fichier manifeste
 description: Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
 ms.date: 11/05/2019
 localization_priority: Normal
-ms.openlocfilehash: 45d4ed42946038699be235ff3912c071a92ff226
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 5237984e4557f7242bea33c66d636304febfdc22bf57ff928256dc125752eeec
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348327"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096376"
 ---
 # <a name="host-element"></a>Élément Host
 
@@ -63,7 +63,7 @@ Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d�
 
 ### <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
 |  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** Cet élément est uniquement pris en charge dans Outlook sur iOS et Android. |

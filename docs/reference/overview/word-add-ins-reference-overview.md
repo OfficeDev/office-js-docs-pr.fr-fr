@@ -1,33 +1,33 @@
 ---
-title: Présentation des APIs JavaScript pour Word
+title: Présentation des APIs JavaScript pour Word
 description: Présentation de l’API JavaScript pour Word.
-ms.date: 07/28/2020
+ms.date: 09/04/2020
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: a3bc6e1bc19fdc149506301068969366fb141e52
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 22c3c63494fd389dd2cd77501a129b38cc55b2232551b106ca73fe809ca4cfe7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47293624"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098978"
 ---
-# <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
+# <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
-Un complément Word interagit avec des objets dans Word via l’API JavaScript pour Office, qui inclut deux modèles objet JavaScript :
+Un complément Word interagit avec des objets dans Word via l’API JavaScript pour Office, qui inclut deux modèles objet JavaScript :
 
-* **API JavaScript pour Word** : Ce sont les [applications propres aux API](../../develop/application-specific-api-model.md)dans Word. Inclut dans Office 2016, l’[API JavaScript pour Word](/javascript/api/word) fournit des objets fortement typés que vous pouvez utiliser pour accéder à des objets et à des métadonnées dans un document Word.
+*  **Word JavaScript API** : il s'agit des [API spécifiques à l'application](../../develop/application-specific-api-model.md)pour Word. Introduite avec Office 2016, l'API JavaScript [Word fournit des objets fortement typés que vous pouvez utiliser pour accéder](/javascript/api/word) aux objets et aux métadonnées d'un document Word.
 
-* **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
+* **API communes** : incluses dans Office 2013, les [API communes](/javascript/api/office) peuvent être utilisées pour accéder à des fonctionnalités telles qu’une interface utilisateur, des boîtes de dialogue et des paramètres du client, qui sont communes à plusieurs types d’applications Office.
 
-Cette section de la documentation traite de l’API JavaScript pour Word, que vous allez utiliser pour développer la majorité des fonctionnalités des compléments utilisés dans Word sur le web ou dans Word 2016 ou versions ultérieures. Pour plus d’informations sur les API communes, voir le [Modèle objet des API JavaScript communes](../../develop/office-javascript-api-object-model.md).
+Cette section de la documentation se concentre sur l'API JavaScript de Word, que vous utiliserez pour développer la majorité des fonctionnalités des compléments qui ciblent Word sur le Web ou Word 2016 ou une version ultérieure. Pour plus d'informations sur l'API commune, voir [Modèle d'objet de l'API JavaScript commune](../../develop/office-javascript-api-object-model.md).
 
 ## <a name="learn-programming-concepts"></a>Découvrir les concepts de programmation
 
-Pour plus d’informations sur les concepts de programmation essentiels, voir [Concepts fondamentaux de programmation avec l’API JavaScript pour Word](../../word/word-add-ins-core-concepts.md).
+Voir [Modèle d’objet JavaScript Excel dans les compléments Office](../../word/word-add-ins-core-concepts.md) pour plus d’informations sur les concepts importants du modèle d’objet.
 
 ## <a name="learn-about-api-capabilities"></a>En savoir plus sur les fonctionnalités des API
 
-Reportez-vous aux autres articles présents dans cette section de la documentation pour découvrir comment [obtenir l’ensemble d’un document à partir d’un complément](../../word/get-the-whole-document-from-an-add-in-for-word.md), [utiliser les options de recherche pour trouver du texte dans votre complément Word](../../word/search-option-guidance.md), etc. Reportez-vous à la table des matières pour obtenir la liste complète des articles disponibles.
+Reportez-vous aux autres articles présents dans cette section de la documentation pour découvrir comment [obtenir l’ensemble d’un document à partir d’un complément](../../word/get-the-whole-document-from-an-add-in-for-word.md), [utiliser les options de recherche pour trouver du texte dans votre complément Word](../../word/search-option-guidance.md), etc.
 
 Pour apprendre à utiliser l’API JavaScript pour Word afin d’accéder à des objets dans Word, suivez le [didacticiel sur les compléments Word](../../tutorials/word-tutorial.md).
 

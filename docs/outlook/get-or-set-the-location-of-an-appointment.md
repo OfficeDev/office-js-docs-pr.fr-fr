@@ -3,12 +3,12 @@ title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5557820cb1549bf0d24b5ff68d268c4f02d3fd36fa3bab344595adadbb31c3e1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671834"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098343"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 

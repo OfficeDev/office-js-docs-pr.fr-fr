@@ -1,26 +1,26 @@
 ---
-title: Implémenter l’ajout à l’envoi dans votre application Outlook
-description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre application Outlook.
+title: Implémenter l’ajout à l’envoi dans votre Outlook de messagerie
+description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre Outlook de messagerie.
 ms.topic: article
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 8b69fbbaef1d0f060f0675fe5c4948a70d935b7a
-ms.sourcegitcommit: fefc279b85e37463413b6b0e84c880d9ed5d7ac3
+ms.openlocfilehash: c590c26f9c7f092702efe91dd4debea911af38fc165a0806435f10ed1192180f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/12/2021
-ms.locfileid: "50234288"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095570"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter l’ajout à l’envoi dans votre application Outlook
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter l’ajout à l’envoi dans votre Outlook de messagerie
 
-À la fin de cette walkthrough, vous aurez un add-in Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
+À la fin de cette walkthrough, vous aurez un Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
 
 > [!NOTE]
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Terminez [le démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de compl?ment avec le générateur Yeoman pour les compl?ments Office.
+[Complétez Outlook démarrage](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rapide qui crée un projet de compl?ment avec le générateur Yeoman pour Office compl?ments.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -120,14 +120,14 @@ Pour ce scénario, au lieu d’exécuter la fonction sur le bouton Effectuer une
     ```
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes pour les add-ins Outlook, consultez les [manifestes de ces derniers.](manifests.md)
+> Pour en savoir plus sur les manifestes de Outlook de votre Outlook, consultez la Outlook [des manifestes de modules.](manifests.md)
 
 ## <a name="implement-append-on-send-handling"></a>Implémenter la gestion de l’envoi
 
 Ensuite, implémentez l’application sur l’événement d’envoi.
 
 > [!IMPORTANT]
-> Si votre application implémente également la gestion des [événements `ItemSend` ](outlook-on-send-addins.md)d’envoi à l’aide de , l’appel dans le handler d’envoi renvoie une erreur, car ce `AppendOnSendAsync` scénario n’est pas pris en charge.
+> Si votre add-in implémente également la gestion des [événements `ItemSend` ](outlook-on-send-addins.md)d’envoi à l’aide de , l’appel dans le handler d’envoi renvoie une erreur, car ce scénario `AppendOnSendAsync` n’est pas pris en charge.
 
 Pour ce scénario, vous allez implémenter l’application d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur l’envoie.
 
@@ -179,7 +179,7 @@ Pour ce scénario, vous allez implémenter l’application d’une clause d’ex
 
 1. Envoyez le message, puis  ouvrez-le à partir de votre boîte de réception ou dossier Éléments envoyés pour afficher la clause d’exclusion de responsabilité. 
 
-    ![Capture d’écran d’un exemple de message avec la clause d’exclusion de responsabilité à l’envoi dans Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
+    ![Capture d’écran d’un exemple de message avec la clause d’exclusion de responsabilité à l’envoi Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>Voir aussi
 

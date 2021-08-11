@@ -1,15 +1,15 @@
 ---
 title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
-ms.date: 08/13/2020
+ms.date: 08/04/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 402534b55c1ff186dc5123407fc470c42ee2b253
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: de27ff675e8ef757e0b4b7c95a74a061e9cadee586ae6b7134b68c16184fdf9c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350224"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098543"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -146,7 +146,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
 ### <a name="create-task-pane-controls-to-work-with-global-data"></a>Créer des contrôles du volet Office pour utiliser des données globales
 
 1. Ouvrez le fichier **src/taskpane/taskpane.html**.
-2. Ajoutez l'élément de script suivant juste avant l’élément `</head>`.
+2. Ajoutez l’élément de script suivant juste avant l’élément de fermeture `</head>`.
 
    ```html
    <script src="functions.js"></script>
@@ -183,18 +183,19 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
    </div>
    ```
 
-4. Avant l’élément `<body>`, ajoutez le code suivant. Ce code gère les événements de clic de bouton quand l’utilisateur souhaite stocker ou obtenir des données globales.
+4. Avant l’élément de fermeture`</body>`, ajoutez le script suivant. Ce code gère les événements de clic de bouton quand l’utilisateur souhaite stocker ou obtenir des données globales.
 
    ```js
    <script>
    function storeSharedValue() {
-   let sharedValue = document.getElementById('storeBox').value;
-   window.sharedState = sharedValue;
+     let sharedValue = document.getElementById('storeBox').value;
+     window.sharedState = sharedValue;
    }
 
    function getSharedValue() {
-   document.getElementById('getBox').value = window.sharedState;
-   }</script>
+     document.getElementById('getBox').value = window.sharedState;
+   }
+   </script>
    ```
 
 5. Enregistrez le fichier.

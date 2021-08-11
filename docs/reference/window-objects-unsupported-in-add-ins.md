@@ -1,24 +1,24 @@
 ---
-title: Objets Window non pris en charge dans les compléments Office
-description: Cet article spécifie certains objets d’exécution de fenêtre qui ne fonctionnent pas dans les compléments Office.
+title: Objets Window non pris en Office des modules
+description: Cet article spécifie certains des objets runtime de fenêtre qui ne fonctionnent pas dans les Office de fenêtre.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: d2560748841bd1e2a7708b25a8e51133563d1534
-ms.sourcegitcommit: 472b81642e9eb5fb2a55cd98a7b0826d37eb7f73
+ms.openlocfilehash: 654e8e311069a616e2d8859a4f63b19d299609982fa68449b5529df489816cbf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "45160502"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097382"
 ---
-# <a name="window-objects-that-are-unsupported-in-office-add-ins"></a>Objets Window non pris en charge dans les compléments Office
+# <a name="window-objects-that-are-unsupported-in-office-add-ins"></a>Objets Window non pris en Office des modules
 
-Pour certaines versions de Windows et d’Office, les compléments s’exécutent dans le runtime Internet Explorer 11. (Pour plus d’informations, consultez la rubrique [navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).) Certaines propriétés ou sous-propriétés de l' `window` objet global ne sont pas prises en charge dans Internet Explorer 11. Ces propriétés sont désactivées dans les compléments pour garantir que votre complément offre une expérience cohérente pour tous les utilisateurs, quel que soit le navigateur utilisé par le complément. Cela permet également de charger correctement AngularJS.
+Pour certaines versions de Windows et Office, les modules sont exécutés dans un runtime Internet Explorer 11. (Pour plus d’informations, voir [Browsers used by Office Add-ins.)](../concepts/browsers-used-by-office-web-add-ins.md) Certaines propriétés ou sous-propriétés de l’objet global ne sont pas pris en `window` charge dans Internet Explorer 11. Ces propriétés sont désactivées dans les add-ins pour garantir une expérience cohérente à tous les utilisateurs, quel que soit le navigateur utilisé par le add-in. Cela permet également à AngularJS de se charger correctement.
 
-Voici une liste des propriétés désactivées. La liste est une tâche en cours. Si vous découvrez `window` d’autres propriétés qui ne fonctionnent pas dans des compléments, utilisez l’outil de commentaires ci-dessous pour nous les informer.
+Voici une liste des propriétés désactivées. La liste est un travail en cours. Si vous découvrez des propriétés supplémentaires qui ne fonctionnent pas dans les compléments, utilisez l’outil de commentaires `window` ci-dessous pour nous en faire part.
 
 - `window.history.pushState`
 - `window.history.replaceState`
 
-## <a name="see-also"></a>Consultez également
+## <a name="see-also"></a>Voir aussi
 
 - [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md)

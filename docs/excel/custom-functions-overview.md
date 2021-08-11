@@ -1,16 +1,16 @@
 ---
-ms.date: 01/08/2020
 description: Créez une fonction personnalisée Excel pour votre Complément Office.
 title: Créer des fonctions personnalisées dans Excel
+ms.date: 07/08/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 804895f3e10cac849dc20b67625e4f30164eb41d
-ms.sourcegitcommit: ccc0a86d099ab4f5ef3d482e4ae447c3f9b818a3
+ms.openlocfilehash: 99211ed1debbff5274b257d91bb5a3612609d9d4
+ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "50237671"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "53774202"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -20,7 +20,7 @@ Les fonctions personnalisées permettent aux développeurs d’ajouter de nouvel
 
 L’image animée suivante montre votre classeur appelant une fonction que vous avez créée avec JavaScript ou Typescript. Dans cet exemple, la fonction personnalisée `=MYFUNCTION.SPHEREVOLUME` calcule le volume d’une sphère.
 
-<img alt="animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet" src="../images/SphereVolumeNew.gif" />
+![Image animée montrant un utilisateur final insérant la fonction personnalisée MYFUNCTION.SPHEREVOLUME dans une cellule d’une feuille de calcul Excel.](../images/SphereVolumeNew.gif)
 
 Le code suivant définit la fonction personnalisée `=MYFUNCTION.SPHEREVOLUME`.
 
@@ -36,13 +36,13 @@ function sphereVolume(radius) {
 ```
 
 > [!TIP]
-> Si votre complément de fonction personnalisée utilise un volet Office ou un bouton du ruban, outre l’exécution du code de fonction personnalisée, vous devez configurer un runtime JavaScript partagé. Pour plus d’information, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+> Si votre complément de fonction personnalisée utilise un volet Office ou un bouton du ruban, outre l’exécution du code de fonction personnalisée, vous devez configurer un runtime JavaScript partagé. Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Comment une fonction personnalisée est définie dans le code
 
-Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément de fonctions personnalisées Excel, il crée des fichiers qui contrôlent totalement vos fonctions, et volet des tâches. Nous allons vous concentrer sur les fichiers importants pour les fonctions personnalisées :
+Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément de fonctions personnalisées Excel, il crée des fichiers qui contrôlent totalement vos fonctions, et volet des tâches. Nous allons nous concentrer sur les fichiers qui sont importants pour les fonctions personnalisées.
 
-| File | Format de fichier | Description |
+| Fichier | Format de fichier | Description |
 |------|-------------|-------------|
 | **./src/functions/functions.js**<br/>ou<br/>**./src/functions/functions.ts** | JavaScript<br/>ou<br/>TypeScript | Contient le code qui définit les fonctions personnalisées. |
 | **./src/functions/functions.html** | HTML | Fournit une référence&lt;script&gt; au fichier JavaScript qui définit les fonctions personnalisées. |
@@ -70,7 +70,7 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
-Le fichier manifeste XML pour un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet que le générateur de bureau Yo crée) effectue plusieurs opérations :
+Le fichier manifeste XML d’un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet créé par le générateur Yo Office) effectue plusieurs opérations.
 
 - Définit l’espace de noms pour vos fonctions personnalisées. Un espace de noms s’ajoute à vos fonctions personnalisées pour aider les clients à identifier vos fonctions dans le cadre de votre complément.
 - Utilise les éléments `<ExtensionPoint>` et `<Resources>` qui sont propres à un manifeste de fonctions personnalisées. Ces éléments contiennent les informations relatives aux emplacements des fichiers JavaScript, JSON et HTML.
@@ -84,18 +84,19 @@ Pour afficher un manifeste de travail complet à partir d’un exemple de compl�
 
 ## <a name="coauthoring"></a>Co-édition
 
-Excel sur le web et sur Windows connecté à un abonnement Microsoft 365 vous permettent de co-éditer dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue coauteur est invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
+Excel sur le web et sur Windows connecté à un abonnement Microsoft 365 vous permettent de co-éditer dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue coauteur est invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Vous voulez essayer les fonctions personnalisées ? Consultez la documentation sur le [démarrage rapide de fonction personnalisée](../quickstarts/excel-custom-functions-quickstart.md) ou le [didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
+Vous voulez essayer les fonctions personnalisées ? Consultez la documentation sur le [démarrage rapide de fonction personnalisée](../quickstarts/excel-custom-functions-quickstart.md) ou le [didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
 
 Un autre moyen simple d’essayer des fonctions personnalisées consiste à utiliser [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), un complément qui vous permet d’expérimenter des fonctions personnalisées directement dans Excel. Vous pouvez essayer de créer votre propre fonction personnalisée ou utiliser les exemples fournis.
 
-## <a name="see-also"></a>Voir aussi 
-* [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+## <a name="see-also"></a>Voir aussi
+
+* [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
 * [Ensembles de besoins de fonctions personnalisées](custom-functions-requirement-sets.md)
 * [Règles de noms des fonctions personnalisées](custom-functions-naming.md)
 * [Rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md)

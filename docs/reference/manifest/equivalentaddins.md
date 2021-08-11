@@ -3,12 +3,12 @@ title: Élément EquivalentAddins dans le fichier manifeste
 description: Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: cce316ceac2b6c79a0f7ea1378411b864923cada
-ms.sourcegitcommit: c0c61fe84f3c5de88bd7eac29120056bb1224fc8
+ms.openlocfilehash: b1a3eed0003a2798019ea6879a5d5c6b4ed3d6fc49b4efb45eaaf2006e9f7160
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/17/2021
-ms.locfileid: "50836829"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096519"
 ---
 # <a name="equivalentaddins-element"></a>Élément EquivalentAddins
 

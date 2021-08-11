@@ -1,31 +1,31 @@
 ---
 title: Élément ExtendedPermissions dans le fichier manifeste
-description: Définit la collection d’autorisations étendues dont le complément a besoin pour accéder aux API ou fonctionnalités associées.
+description: Définit la collection d’autorisations étendues dont le add-in a besoin pour accéder aux API ou fonctionnalités associées.
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
-ms.sourcegitcommit: 4e7c74ad67ea8bf6b47d65b2fde54a967090f65b
+ms.openlocfilehash: c3f021adfcc2f3a4ba7b7d7aeeb52f3213d92788d401130abbc92618930d09fe
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "48626441"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097894"
 ---
 # <a name="extendedpermissions-element"></a>Élément ExtendedPermissions
 
-Définit la collection d’autorisations étendues dont le complément a besoin pour accéder aux API ou fonctionnalités associées. L' `ExtendedPermissions` élément est un élément enfant de [VersionOverrides](versionoverrides.md).
+Définit la collection d’autorisations étendues dont le add-in a besoin pour accéder aux API ou fonctionnalités associées. `ExtendedPermissions`L’élément est un élément enfant de [VersionOverrides](versionoverrides.md).
 
 > [!IMPORTANT]
-> La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1,9. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----:|:-----|
-|  [ExtendedPermission](extendedpermission.md)    |  Non   | Définit une autorisation étendue dont le complément a besoin pour accéder à l’API ou à la fonctionnalité associée. |
+|  [ExtendedPermission](extendedpermission.md)    |  Non   | Définit une autorisation étendue nécessaire pour que le add-in accède à l’API ou à la fonctionnalité associée. |
 
-## <a name="extendedpermissions-example"></a>`ExtendedPermissions` tels
+## <a name="extendedpermissions-example"></a>`ExtendedPermissions` exemple
 
-Voici un exemple de l' `ExtendedPermissions` élément.
+Voici un exemple de `ExtendedPermissions` l’élément.
 
 ```XML
 ...

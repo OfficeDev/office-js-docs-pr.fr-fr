@@ -3,12 +3,12 @@ title: Élément Tokens dans le fichier manifeste
 description: Spécifie les jetons ou les caractères génériques qui peuvent être utilisés avec des modèles d’URL dans le manifeste.
 ms.date: 11/06/2020
 localization_priority: Normal
-ms.openlocfilehash: 8680b985068c44e93f601a2b24e2f28899eb483d
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: 5d42abab46ecc6e7ab465144f061d26da52c0eb3e2623acd8a8a2912ecc13312
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505324"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095785"
 ---
 # <a name="tokens-element"></a>Élément Tokens
 
@@ -28,7 +28,7 @@ Définit les jetons qui peuvent être utilisés dans les URL de modèle. Pour pl
 
 ## <a name="must-contain"></a>Doit contenir
 
-|Élément|Contenu|Courrier|TaskPane|
+|Élément|Contenu|Courrier Outlook|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Jeton](token.md)|||x|
 

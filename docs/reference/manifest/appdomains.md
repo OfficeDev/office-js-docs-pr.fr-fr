@@ -1,18 +1,18 @@
 ---
 title: Élément AppDomains dans le fichier manifeste
-description: Répertorie tous les domaines en plus du domaine spécifié dans l' `SourceLocation` élément que votre complément Office utilisera et doit être approuvé par Office.
+description: Répertorie tous les domaines en plus du domaine spécifié dans l’élément que votre complément Office utilisera et doit être approuvé par `SourceLocation` Office.
 ms.date: 06/12/2020
 localization_priority: Normal
-ms.openlocfilehash: 751e4ad2ffa5fd50739a855fad48964473b154f1
-ms.sourcegitcommit: 9eed5201a3ef556f77ba3b6790f007358188d57d
+ms.openlocfilehash: 55401d62e88cc1f2d67d13de0997a40db7a3f6b0c2f8997aa1b976962c8c797f
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "44778654"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096531"
 ---
 # <a name="appdomains-element"></a>AppDomains, élément
 
-Répertorie tous les domaines, en plus du domaine spécifié dans l' `SourceLocation` élément, que votre complément Office utilisera et qui doit être approuvé par Office. Cela permet aux pages des domaines d’effectuer des appels à Office.js API depuis des IFrames dans le complément et présente d’autres effets. Pour chaque domaine supplémentaire, indiquez un élément **AppDomain**.
+Répertorie tous les domaines, en plus du domaine spécifié dans l’élément, que votre complément Office utilisera et qui doivent être `SourceLocation` Office. Cela permet aux pages des domaines d’effectuer des appels à Office.js API à partir d’IFrames au sein du module et a d’autres effets. Pour chaque domaine supplémentaire, indiquez un élément **AppDomain**.
 
  **Type de complément :** Application de contenu, de volet Office, de messagerie
 
@@ -26,7 +26,7 @@ Répertorie tous les domaines, en plus du domaine spécifié dans l' `SourceLoca
 ```
 
 > [!IMPORTANT]
-> Il existe des restrictions quant à ce qui peut être la valeur d’un élément **AppDomain** . Pour plus d’informations, consultez la rubrique [AppDomain](appdomain.md).
+> Il existe des restrictions sur ce qui peut être la valeur d’un **élément AppDomain.** Pour plus d’informations, [voir AppDomain](appdomain.md).
 
 ## <a name="contained-in"></a>Contenu dans
 

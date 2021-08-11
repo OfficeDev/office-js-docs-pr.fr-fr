@@ -3,12 +3,12 @@ title: Élément SourceLocation pour les fonctions personnalisées dans le fichi
 description: Définit l’emplacement d’une ressource requise par les éléments Script ou Page utilisés par les fonctions personnalisées dans Excel.
 ms.date: 08/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 6001673f1954a4af2de66ff7611069c3fb402a13
-ms.sourcegitcommit: 2f75a37de349251bc0e0fc402c5ae6dc5c3b8b08
+ms.openlocfilehash: b18a340d4dd4403b1e5fd2c7d8868a820eef5a241ac3d666926d8f2cb49fcc09
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "49771381"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098300"
 ---
 # <a name="sourcelocation-element-custom-functions"></a>Élément SourceLocation (fonctions personnalisées)
 
@@ -18,7 +18,7 @@ Définit l’emplacement d’une ressource requise par les éléments Script ou 
 
 | Attribut | Obligatoire | Description                                                                          |
 |-----------|----------|--------------------------------------------------------------------------------------|
-| resid     | Oui      | Nom d’une ressource d’URL définie dans la section &lt;Ressources&gt; du manifeste. Il ne peut pas comporter plus de 32 caractères. |
+| resid     | Oui      | Nom d’une ressource d’URL définie dans la section &lt;Ressources&gt; du manifeste. Ne peut pas faire plus de 32 caractères. |
 
 ## <a name="child-elements"></a>Éléments enfants
 

@@ -3,16 +3,16 @@ title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
 ms.date: 02/21/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e38747f484eabac26e2e9e846e562ec54510326
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: d063045acfad3dee16c676733ddb5494761b66270345d701d36e7e8a6db16c6a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505492"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095393"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
-Pour utiliser des API dans votre complément Outlook, vous devez spécifier l’emplacement de la bibliothèque Office.js, l’ensemble des conditions requises, le schéma et les autorisations. Vous utiliserez principalement les API JavaScript Office exposées via l’objet [Mailbox.](#mailbox-object)
+Pour utiliser des API dans votre complément Outlook, vous devez spécifier l’emplacement de la bibliothèque Office.js, l’ensemble des conditions requises, le schéma et les autorisations. Vous utiliserez principalement les API JavaScript Office par le biais de l’objet [Mailbox.](#mailbox-object)
 
 ## <a name="officejs-library"></a>Bibliothèque Office.js
 
@@ -26,7 +26,7 @@ Référencez le CDN dans une `<script>`balise`<head>` de la page web (fichier .h
 L’ajout de nouvelles API ne modifie pas l’URL vers Office.js. La version de l’URL sera modifiée uniquement si un comportement d’API existant est interrompu.
 
 > [!IMPORTANT]
-> Lorsque vous développez un add-in pour une application cliente Office, référencez l’API JavaScript Office à partir de l’intérieur de `<head>` la section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body.
+> Lors du développement d’un application Office client, référencez l’API JavaScript Office à l’intérieur de la `<head>` section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body.
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
@@ -64,7 +64,7 @@ Votre complément requiert les autorisations appropriées pour utiliser les API 
 | **Lecture/Écriture** | En plus des autorisations indiquées dans **Read item**, il autorise :<ul><li>l’accès total à l’API du complément Outlook, à l’exception de `makeEwsRequestAsync`</li><li>la définition des propriétés de l’élément</li></ul> |
 | **Lire/écrire dans la boîte aux lettres** | En plus des autorisations indiquées dans **Read/write**, il autorise :<ul><li>la création, la lecture, l’écriture d’éléments et de dossiers</li><li>l’envoi d’éléments</li><li>l’appel de [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
 
-En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, voir Confidentialité et sécurité pour [les add-ins Office.](../concepts/privacy-and-security.md)
+En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, voir Confidentialité et [sécurité pour les Office de sécurité.](../concepts/privacy-and-security.md)
 
 ## <a name="mailbox-object"></a>Objet Mailbox
 

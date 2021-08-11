@@ -3,20 +3,20 @@ title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
 ms.date: 01/14/2021
 localization_priority: Normal
-ms.openlocfilehash: db59ce44d2ed6f120503701479b705f13727130b
-ms.sourcegitcommit: ecb24e32b32deb3e43daecd8d534e140460e0328
+ms.openlocfilehash: b572893e93c747e155f643e99c0a3a67c323e5e6e12be9fa996adefc5de47780
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2021
-ms.locfileid: "52639962"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095175"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
-Vous pouvez obtenir les pièces jointes d’un Outlook de deux façons, mais l’option que vous utilisez dépend de votre scénario.
+Vous pouvez obtenir les pièces jointes d’un Outlook de deux manières, mais l’option que vous utilisez dépend de votre scénario.
 
 1. Envoyez les informations de pièce jointe à votre service distant.
 
-    Votre application peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
+    Votre add-in peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
 
 1. Utilisez [l’API getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge [: AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 

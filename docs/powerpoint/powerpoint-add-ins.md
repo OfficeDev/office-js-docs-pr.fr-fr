@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 106f11da21d994534219399829dca37e16bd2fe5
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 47bc41f9ffed538440d635a49a83ecd7ab11df6cd12ec5eee04bc7b524ed72cf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671701"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094739"
 ---
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
@@ -18,13 +18,13 @@ Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions at
 
 - Utilisez des **compléments de contenu** pour ajouter du contenu HTML5 dynamique à vos présentations. Par exemple, consultez le complément [Diagrammes LucidChart pour PowerPoint](https://appsource.microsoft.com/product/office/wa104380117), qui vous permet d’injecter un diagramme interactif de LucidChart dans votre support de présentation.
 
-- Utilisez des **compléments de volet Office** pour faire apparaître des informations de référence ou insérer des données dans la diapositive via un service. Par exemple, consultez le complément [Stock Photos gratuit Pexels](https://appsource.microsoft.com/product/office/wa104379997), qui vous permet d’ajouter des photos professionnelles à votre présentation.
+- Utilisez les **compléments du volet des tâches** pour entrer des informations de référence ou insérer des données dans la présentation via un service. Par exemple, consultez le complément [Pexels - Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997) , que vous pouvez utiliser pour ajouter des photos professionnelles à votre présentation.
 
 ## <a name="powerpoint-add-in-scenarios"></a>Scénarios de complément PowerPoint
 
 Les exemples de code figurant dans l’article vous présentent certaines tâches de base en matière de développement de compléments de contenu pour PowerPoint. Veuillez noter ce qui suit :
 
-- Pour afficher des informations, ces exemples dépendent de la fonction`app.showNotification`, qui est incluse dans les modèles de projet de compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devrez remplacer la fonction`showNotification`par votre propre code.
+- Pour afficher des informations, ces exemples utilisent la fonction `app.showNotification` , qui est incluse dans les modèles de projet des compléments Office Visual Studio. Si vous n’utilisez pas Visual Studio pour développer votre complément, vous devez remplacer la fonction `showNotification` par votre propre code.
 
 - Plusieurs de ces exemples dépendent également de l’objet`Globals` qui est déclaré en dehors de la portée de ces fonctions: `var Globals = {activeViewHandler:0, firstSlideId:0};`
 
@@ -35,7 +35,7 @@ Les exemples de code figurant dans l’article vous présentent certaines tâche
 Si vous créez un complément de contenu, vous devrez obtenir la vue active de la présentation et gérer`ActiveViewChanged`l’événement ActiveViewChanged dans le cadre de votre`Office.Initialize`gestionnaire.
 
 > [!NOTE]
-> Dans PowerPoint sur le web, l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document) ne se déclenche jamais, car le mode Diaporama est considéré comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué ci-dessous.
+> Dans PowerPoint sur le web, l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document) ne se déclenche jamais, car le mode Diaporama est traité comme une nouvelle session. Dans ce cas, le complément doit extraire la vue active lors du chargement, comme indiqué dans l’exemple de code suivant.
 
 Collez le code suivant:
 
@@ -90,7 +90,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
-Dans l’exemple de code suivant, la fonction`getSelectedRange` appelle la méthode[Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) pour obtenir l’objet JSON renvoyé par`asyncResult.value`, qui contient un tableau nommé `slides`. La matrice`slides`contient les IDs, les titres et les indexes de plage sélectionnées de diapositives (ou de la diapositive active si plusieurs diapositives ne sont pas sélectionnées). Elle enregistre également l’id de la première diapositive dans la plage sélectionnée à une variable globale.
+Dans l’exemple de code suivant, la fonction `getSelectedRange` appelle la méthode [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) pour obtenir l’objet JSON retourné par `asyncResult.value`, qui contient un tableau nommé `slides`. Le tableau `slides` contient les ID, titres et index de la plage sélectionnée de diapositives (ou de la diapositive active, si plusieurs diapositives ne sont pas sélectionnées). Il enregistre également l’ID de la première diapositive de la plage sélectionnée dans une variable globale.
 
 ```js
 function getSelectedRange() {

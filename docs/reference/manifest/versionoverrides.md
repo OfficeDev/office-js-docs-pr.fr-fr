@@ -1,14 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
-description: Documentation de référence de l’élément VersionOverrides pour Office fichiers manifeste (XML) des add-ins.
+description: Documentation de référence de l’élément VersionOverrides Office fichiers manifeste (XML) des modules.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 0db20a5245ea83a48e5ffbf3381613acdd4d2714de79402714b8010e84bb652d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348656"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096358"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -36,7 +36,7 @@ La liste suivante répertorie la valeur requise de la **valeur xmlns** en foncti
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Requis  |  Description  |
+|  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Description**    |  Non   |  Décrit le complément. Cela remplace l’élément `Description` dans une partie parent du manifeste. Le texte de la description est contenu dans un élément enfant de l’élément **LongString** contenu dans l’élément [Resources](resources.md). L’attribut de l’élément Description ne peut pas être plus de 32 caractères et est définie sur la valeur de l’attribut de l’élément qui `resid` contient le  `id` `String` texte.|
 |  **Configuration requise**  |  Non   |  Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cela remplace l’élément `Requirements` dans la partie parent du manifeste.|

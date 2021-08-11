@@ -3,12 +3,12 @@ title: Insérer des diapositives dans une présentation PowerPoint présentation
 description: Découvrez comment insérer des diapositives d’une présentation dans une autre.
 ms.date: 03/07/2021
 localization_priority: Normal
-ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 73e618696dab66565d4d4da1ccf98689166d81ab613b90b5abafd5093651b4b9
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671764"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57094679"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>Insérer des diapositives dans une présentation PowerPoint présentation
 
@@ -25,7 +25,7 @@ Il existe deux étapes pour insérer des diapositives d’une présentation dans
 
 Il existe plusieurs façons de convertir un fichier en base64. Le langage de programmation et la bibliothèque que vous utilisez, et s’il faut les convertir côté serveur ou côté client, sont déterminés par votre scénario. Le plus souvent, vous allez faire la conversion dans JavaScript côté client à l’aide d’un [objet FileReader.](https://developer.mozilla.org/docs/Web/API/FileReader) L’exemple suivant illustre cette pratique.
 
-1. Commencez par obtenir une référence au fichier PowerPoint source. Dans cet exemple, nous allons utiliser un contrôle de type pour demander à `<input>` l’utilisateur de choisir un `file` fichier. Ajoutez le markup suivant à la page du add-in.
+1. Commencez par obtenir une référence au fichier PowerPoint source. Dans cet exemple, nous allons utiliser un contrôle de type pour demander à `<input>` l’utilisateur de choisir un `file` fichier. Ajoutez le marques de texte suivants à la page du module.
 
     ```html
     <section>
@@ -49,7 +49,7 @@ Il existe plusieurs façons de convertir un fichier en base64. Le langage de pro
     $("#file").change(storeFileAsBase64);
     ```
 
-3. Ajoutez le code suivant. Notez les points suivants concernant ce code.
+3. Ajoutez le code suivant. Notez ce qui suit à propos de ce code.
 
     - La `reader.readAsDataURL` méthode convertit le fichier en base64 et le stocke dans la `reader.result` propriété. Une fois la méthode terminée, elle déclenche le `onload` handler d’événements.
     - Le handler d’événements coupe les métadonnées du fichier codé et stocke la chaîne codée `onload` dans une variable globale.
@@ -108,7 +108,7 @@ async function insertSlidesDestinationFormatting() {
 
 Bien entendu, vous ne connaissez généralement pas au moment du codage l’ID ou l’ID de création de la diapositive cible. Plus souvent, un add-in demande aux utilisateurs de sélectionner la diapositive cible. Les étapes suivantes montrent comment obtenir l’ID ***nnn*#** de la diapositive actuellement sélectionnée et l’utiliser comme diapositive cible.
 
-1. Créez une fonction qui obtient l’ID de la diapositive actuellement sélectionnée à l’aide de la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes. Voici un exemple. Notez que l’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir Wrap Common-APIs dans les fonctions [de renvoi de promesse.](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
+1. Créez une fonction qui obtient l’ID de la diapositive actuellement sélectionnée à l’aide de la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes. Voici un exemple. Notez que l’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir Wrap Common-APIs dans les fonctions de [renvoi de promesse.](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
 
  
     ```javascript
@@ -170,6 +170,6 @@ async function insertAfterSelectedSlide() {
 > [!NOTE]
 > Les diapositives sont insérées dans le même ordre relatif dans lequel elles apparaissent dans la présentation source, quel que soit l’ordre dans lequel elles apparaissent dans le tableau.
 
-Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’une diapositive dans la présentation source. Pour cette raison, vous ne pouvez utiliser la propriété que si vous connaissez les ID source au moment du codage ou que votre application peut les récupérer lors de l’utilisation à partir d’une source de `sourceSlideIds` données. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID de diapositive, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par titre ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
+Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’une diapositive dans la présentation source. Pour cette raison, vous ne pouvez utiliser la propriété que si vous connaissez les ID source au moment du codage ou que votre application peut les récupérer lors de l’utilisation à partir d’une source de `sourceSlideIds` données. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID de diapositive, vous devez également permettre à l’utilisateur de sélectionner des diapositives, par titre ou par image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
 
 Par conséquent, la propriété est principalement utilisée dans les scénarios de modèles de présentation : le add-in est conçu pour fonctionner avec un ensemble spécifique de présentations qui servent de pools de diapositives qui peuvent être `sourceSlideIds` insérées. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (comme des titres ou des images) avec des ID de diapositive ou de création de diapositives qui ont été créés à partir de l’ensemble de présentations sources possibles.

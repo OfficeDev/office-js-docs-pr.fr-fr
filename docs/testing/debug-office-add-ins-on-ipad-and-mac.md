@@ -3,12 +3,12 @@ title: Déboguer des compléments Office sur un Mac
 description: Découvrez comment utiliser un Mac pour déboguer des Office des macros.
 ms.date: 10/16/2020
 localization_priority: Normal
-ms.openlocfilehash: 98473e7c37b9ef5ee34d35f91688ccef65ac7d78
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 83afe3baffa690b70fb0e511a78ec6e2f0d5b0c4946a056c554f6d928ea44b4e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53350133"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57095961"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Déboguer des compléments Office sur un Mac
 
@@ -18,7 +18,7 @@ ms.locfileid: "53350133"
 
 Si votre complément affiche une interface utilisateur dans un volet des tâches ou dans un complément de contenu, vous pouvez déboguer un complément Office à l’aide de avec l’inspecteur web Safari.
 
-Pour pouvoir déboguer des Office sur Mac, vous devez avoir Mac OS High Sierra et Mac Office version 16.9.1 (build 18012504) ou version ultérieure. Si vous n’avez pas de build Office Mac, vous pouvez en obtenir une en rejoignant le programme [Microsoft 365 développeur.](https://developer.microsoft.com/office/dev-program)
+Pour pouvoir déboguer des Office sur Mac, vous devez avoir Mac OS High Sierra et Mac Office version 16.9.1 (build 18012504) ou une version ultérieure. Si vous n’avez pas de build Office Mac, vous pouvez en obtenir une en rejoignant le programme [Microsoft 365 développeur.](https://developer.microsoft.com/office/dev-program)
 
 Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAddinDeveloperExtras` pour l’application Office pertinente comme suit :
 

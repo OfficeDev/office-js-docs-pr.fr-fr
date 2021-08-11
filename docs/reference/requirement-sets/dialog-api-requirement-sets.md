@@ -4,16 +4,16 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 07/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a5e0855cf6e7b7c9c3157fe24bed3610a26992ed
-ms.sourcegitcommit: f46e4aeb9c31f674380dd804fd72957998b3a532
+ms.openlocfilehash: 3c5aea3fecc6b48a830e48cf7739e93ef16dab6bacee1338b94774911a06ef5d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "53536038"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57098942"
 ---
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de dialogue
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de dialogue, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
@@ -32,7 +32,7 @@ L’ensemble de conditions requises DialogApi 1.2 est pris en charge dans le can
 |:-----|:-----|:-----|
 |Canal actuel | 2005 ou supérieure | 12827.20160 ou supérieur|
 |Canal Entreprise mensuel | 2004 ou supérieure | 12730.20430 ou supérieur|
-|Canal d’entreprise semi-annuel | 2002 ou supérieure | 12527.20720 ou supérieur|
+|Canal Entreprise semestriel | 2002 ou supérieure | 12527.20720 ou supérieur|
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

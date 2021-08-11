@@ -3,12 +3,12 @@ title: Office.context.mailbox - ensemble de conditions requises 1.3
 description: Outlook Ensemble de conditions requises de l’API de boîte aux lettres version 1.3 du modèle objet Mailbox.
 ms.date: 03/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 258e629e556bf7e2bdc6e8f076f9def3c053052c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 603d2a28b2f38bc2ecb86eb4ae6f91baf1550b2a219c473206d69eadc0dc5c9c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53670306"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57097184"
 ---
 # <a name="mailbox-requirement-set-13"></a>boîte aux lettres (ensemble de conditions requises 1.3)
 

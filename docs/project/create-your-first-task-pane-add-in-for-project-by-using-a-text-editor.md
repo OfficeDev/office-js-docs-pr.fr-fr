@@ -1,20 +1,20 @@
 ---
 title: Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
-description: Créez un add-in de volet de tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office de recherche.
+description: Créez un add-in de volet de tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour Office de recherche.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: c1de70bec62c4080306c985a319601c506270f2b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: ff43d8a93eab3bf66414341c584e69ea78b2d9450f3dc7e9846d36430ff35ccc
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348418"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57096615"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
-Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Une fois  que vous avez utilisé le Centre de Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
+Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Après avoir  utilisé le Centre de confiance dans Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
 
-Project utilise le même schéma de manifeste de Office que d’autres clients utilisent, et la plupart de la même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
+Project utilise le même schéma de manifeste de Office et la plupart de la même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
 
 L’exemple de complément Test du modèle objet de Project peut obtenir le GUID d’une tâche et les propriétés de l’application et du projet actif. Si Project Professionnel 2013 ouvre un projet se trouvant dans une bibliothèque SharePoint, le complément peut afficher l’URL du projet. 
 
@@ -187,7 +187,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
   
    - `getTaskFields`, et sont des fonctions locales qui appellent , ou plusieurs fois pour obtenir les champs spécifiés `getResourceFields` `getProjectFields` `getTaskFieldAsync` d’une tâche ou `getResourceFieldAsync` `getProjectFieldAsync` d’une ressource. Dans le project-15.debug.js, l’éumération et l’éumération indiquent `ProjectTaskFields` quels champs sont pris en `ProjectResourceFields` charge.
 
-   - La `getSelectedViewAsync` fonction obtient le type d’affichage (défini dans l'project-15.debug.js) et le nom de `ProjectViewTypes` l’affichage.
+   - La fonction obtient le type d’affichage (défini dans l'project-15.debug.js) et le nom `getSelectedViewAsync` `ProjectViewTypes` de l’affichage.
 
    - Si le projet est synchronisé avec une liste SharePoint tâches, la fonction obtient l’URL et le nom de `getWSSUrlAsync` la liste de tâches. Si le projet n’est pas synchronisé avec une liste SharePoint de tâches, la `getWSSUrlAsync` fonction se produit par erreur.
 
@@ -749,7 +749,7 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
 
    La colonne **Indicateurs** et la colonne **Noms des ressources** sont toutes deux vides, le tableau de texte affiche donc des valeurs vides pour ces colonnes. La valeur `<NA>` correspond à la cellule **Ajouter une nouvelle colonne**.
 
-1. Sélectionnez une cellule dans la ligne de la tâche T2, ou toute la ligne pour la tâche T2, puis choisissez **getSelectedTaskAsync**. La zone de texte affiche la valeur GUID de la tâche, par exemple  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project stocke cette valeur dans la variable globale du Project `taskGuid` **test du** om.
+1. Sélectionnez une cellule dans la ligne de la tâche T2, ou toute la ligne pour la tâche T2, puis choisissez **getSelectedTaskAsync**. La zone de texte affiche la valeur GUID de la tâche, par exemple  `{25D3E03B-9A7D-E111-92FC-00155D3BA208}`. Project stocke cette valeur dans la variable globale du Project test du `taskGuid` om. 
 
 1. Sélectionnez `getTaskAsync` . Si la variable contient le GUID de la tâche T2, la zone de texte `taskGuid` affiche les informations de la tâche. La valeur **ResourceNames** est vide.
 
