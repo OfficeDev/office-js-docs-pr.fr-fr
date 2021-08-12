@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Power
 ms.date: 08/04/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: b64a1f9554513e1b301c7989ee57f89734131433efc1d886265427affd9d8e82
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e7d4f77cf8e680d8846f8847c74df85e64f8ac85d1b3c4e92b4888361429f013
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095138"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845669"
 ---
 # <a name="build-your-first-powerpoint-task-pane-add-in"></a>Créer votre premier complément de volet de tâches PowerPoint
 
@@ -37,7 +37,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `PowerPoint`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-powerpoint.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-powerpoint.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -66,12 +66,6 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
     > ```command&nbsp;line
     > npm run dev-server
     > ```
-
-    - Installez les dépendances de votre complément dans le répertoire racine de votre projet.
-
-        ```command&nbsp;line
-        npm install
-        ```
 
     - Pour tester votre complément dans PowerPoint, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir PowerPoint avec votre complément chargé.
 

@@ -11,12 +11,6 @@ Pour démarrer le serveur web local et charger indépendamment votre complément
 > npm run dev-server
 > ```
 
-- Installez les dépendances de votre complément dans le répertoire racine de votre projet.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 - Pour tester votre complément dans Excel, exécutez la commande suivante dans le répertoire racine de votre projet. Cela a pour effet de démarrer le serveur web local (s’il n’est pas déjà en cours d’exécution) et d’ouvrir Excel avec votre complément chargé.
 
     ```command&nbsp;line

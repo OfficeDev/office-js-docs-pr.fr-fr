@@ -4,12 +4,12 @@ description: Développement de fonctions personnalisées dans le Guide de démar
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 4c185453a644765cd9081f1c7df49afac1657854694764eb1144dd19b8ad7667
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6c463c494bf3175309226d72d0ca95417a3889b392a4f43035cd5d50263d8fbf
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095162"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845605"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -46,20 +46,11 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     cd starcount
     ```
 
-1. Installer les dépendances.
-
-     ```command&nbsp;line
-    npm install
-    ```
-
 1. Créez le projet.
 
     ```command&nbsp;line
     npm run build
     ```
-
-    > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
 1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, même si ce n’est pas obligatoire. Vous pouvez continuer à exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
@@ -71,6 +62,9 @@ Pour tester votre complément dans Excel sur Windows, exécutez la commande suiv
 npm run start:desktop
 ```
 
+> [!NOTE]
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start`, acceptez d’installer le certificat fourni par le générateur Yeoman.
+    
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
 Pour tester votre complément dans Excel sur le web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
@@ -78,6 +72,9 @@ Pour tester votre complément dans Excel sur le web, exécutez la commande suiva
 ```command&nbsp;line
 npm run start:web
 ```
+
+> [!NOTE]
+> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
 Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur un navigateur. Dans ce classeur, procédez comme suit pour charger une version test de votre complément.
 

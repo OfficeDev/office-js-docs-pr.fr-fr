@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 07/08/2020
 localization_priority: Priority
-ms.openlocfilehash: aac1133c36eda13f4bf806331d2ebee5114e7ee1
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 2294c68ec246055704df990e50a77094deeb0c8e610dd54f95c767bc7ef918d6
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773516"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845598"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -18,7 +18,7 @@ Un fichier de manifeste XML basé sur ce schéma permet à un Complément Office
 
 * Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
 
-* Spécifiez les images utilisées pour personnaliser le complément et la syntaxe utilisés pour [commandes de complément][] dans le ruban de l’application Office.
+* Précisez les images utilisées pour l'image de marque du complément et l'iconographie utilisée pour [commandes complémentaires](create-addin-commands.md) dans le ruban d'application de l'Office.
 
 * Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
 
@@ -100,7 +100,7 @@ _\*\* SupportUrl n’est obligatoire que pour les compléments distribués via A
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
-Tous les URI d’image, tels que ceux utilisés pour [commandes de complément][], doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
+Tous les URI des images, tels que ceux utilisés pour les [commandes de complément](create-addin-commands.md), doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
 
 Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 

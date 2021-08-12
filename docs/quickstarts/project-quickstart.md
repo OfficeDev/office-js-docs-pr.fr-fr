@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément simple de volet des tâche
 ms.date: 08/04/2021
 ms.prod: project
 localization_priority: Priority
-ms.openlocfilehash: 8cada7195d61b26867beeff87fc95ac2b2864c911b07a53540f1934fbaddc420
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e135a4df75d1da02fd542d004b939c750099528cd9f5a32f932f1295958cc8f0
+ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089427"
+ms.lasthandoff: 08/11/2021
+ms.locfileid: "57845633"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -31,7 +31,7 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -94,12 +94,6 @@ Office.context.document.getSelectedTaskAsync(
 
     ```command&nbsp;line
     cd "My Office Add-in"
-    ```
-
-1. Installez les dépendances de votre projet.
-
-     ```command&nbsp;line
-    npm install
     ```
 
 1. Démarrez le serveur web local.
