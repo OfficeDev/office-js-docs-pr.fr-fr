@@ -3,12 +3,12 @@ title: Attacher un débogueur à partir du volet Office
 description: Découvrez comment attacher un débogger à partir du volet Des tâches
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 930c5db7a9e1a0499a759d70e0bc94e64c5b7ae5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 3efe02f2683990a8f4d802bff5040ba9e007c5c91574bba274f4c26b9a5b8683
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774314"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086674"
 ---
 # <a name="attach-a-debugger-from-the-task-pane"></a>Attacher un débogueur à partir du volet Office
 
@@ -29,7 +29,7 @@ Sélectionnez **Attacher le débogueur**. Cette action ouvre la boîte de dialog
 Dans Visual Studio, les fichiers de code s’affichent dans **l’Explorateur de solutions**.   Vous pouvez définir des points d’arrêt à la ligne de code que vous souhaitez déboguer dans Visual Studio.
 
 > [!NOTE]
-> Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Assurez-vous que votre add-in du volet Des tâches est ouvert Office, puis suivez ces étapes.
+> Si vous ne voyez pas le menu Personnalité, vous pouvez déboguer votre complément à l’aide de Visual Studio. Assurez-vous que votre add-in du volet Des tâches est ouvert dans Office, puis suivez ces étapes.
 >
 > 1. Dans Visual Studio, choisissez **DÉBOGUER** > **Attacher au processus**.
 > 2. Dans **Processus disponibles**, choisissez *soit* tous les processus `Iexplore.exe`disponibles, *soit* tous les processus `MicrosoftEdge*.exe` disponible selon que [votre complément utilise Internet Explorer ou Microsoft Edge](../concepts/browsers-used-by-office-web-add-ins.md), puis cliquez sur le bouton **Joindre**.

@@ -4,16 +4,16 @@ description: Découvrez comment grouper des lignes ou des colonnes d’une plage
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 87cbe9293dd0f4a30bf0ac717d1c80a3cd514c3c
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 5e5ba5e5d539d4391b65a792d05ae2f0d2ff49fc63725bc3681cb9015873bb45
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671139"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084054"
 ---
-# <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Plages de groupe pour un plan à l’aide de l Excel API JavaScript
+# <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Plages de groupe pour un plan à l’aide de Excel API JavaScript
 
-Cet article fournit un exemple de code qui montre comment grouper des plages pour un plan à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit un exemple de code qui montre comment grouper des plages pour un plan à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>Grouper des lignes ou des colonnes d’une plage pour un plan
 

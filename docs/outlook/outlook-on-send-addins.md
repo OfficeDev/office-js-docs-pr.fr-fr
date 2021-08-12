@@ -3,12 +3,12 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: dad3309239237ac48f3c7cccf13f67d78504da91cb5f43c24543da0851a58420
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774363"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085825"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -73,7 +73,7 @@ En outre, il n’est pas recommandé d’appeler le handler d’événements d�
 
 ### <a name="mailbox-typemode-limitations"></a>Limites concernant le type ou le mode de boîte aux lettres
 
-La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux lettres utilisateur dans Outlook sur le web, sur Windows et sur Mac. Outre les situations dans lesquelles les compléments ne s’activent pas comme indiqué dans la section Éléments de boîte aux lettres disponibles pour les compléments de la page de vue d’ensemble des [compléments](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) Outlook, la fonctionnalité n’est actuellement pas prise en charge pour le mode hors connexion lorsque ce mode est disponible.
+La fonctionnalité d’envoi est uniquement prise en charge pour les boîtes aux lettres utilisateur dans Outlook sur le web, sur Windows et sur Mac. Outre les situations dans lesquelles les compléments ne s’activent pas comme indiqué dans la section Éléments de boîte aux lettres disponibles pour les compléments de la page vue d’ensemble des [compléments](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) Outlook, la fonctionnalité n’est actuellement pas prise en charge pour le mode hors connexion lorsque ce mode est disponible.
 
 Dans les cas où Outlook ne s’activent pas, le module d’envoi ne s’exécute pas et le message est envoyé.
 
@@ -301,7 +301,7 @@ Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuv
 1. Téléchargez l’[outil de modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
 1. Accédez aux  >  **modèles d’administration** de configuration utilisateur   >  **Microsoft Outlook 2016**  >  **Security**  >  **Trust Center**.
-1. Sélectionnez **le paramètre Bloquer l’envoi** lorsque les applications web ne peuvent pas charger le paramètre.
+1. Sélectionnez **le paramètre Bloquer l’envoi lorsque** les applications web ne peuvent pas charger le paramètre.
 1. Ouvrir le lien pour modifier le paramètre de stratégie.
 1. Dans la fenêtre Bloquer l’envoi lorsque les **add-ins**  web ne peuvent pas charger la boîte de dialogue, sélectionnez Activé ou Désactivé selon le cas, puis **sélectionnez OK** ou **Appliquer** pour mettre la mise à jour en vigueur. 
 

@@ -4,12 +4,12 @@ description: Découvrez comment effacer ou supprimer des plages à l’aide de l
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: a1bd99db3aa9af3903552d9cefc6ec6d21701136
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 0e3e2fee4172f37a2d591d881136ac0da9439b732c5327dc7191613e595d67ab
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075830"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084742"
 ---
 # <a name="clear-or-delete-ranges-using-the-excel-javascript-api"></a>Effacer ou supprimer des plages à l’aide de Excel API JavaScript
 
@@ -61,11 +61,11 @@ Excel.run(function (context) {
 
 ### <a name="data-after-range-is-deleted"></a>Données après la suppression d’une plage
 
-![Données dans Excel une fois la plage supprimée.](../images/excel-ranges-after-delete.png)
+![Données dans Excel après la suppression de la plage.](../images/excel-ranges-after-delete.png)
 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Définir et obtenir des plages à l’aide de Excel API JavaScript](excel-add-ins-ranges-set-get.md)
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)

@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 01/08/2021
 ms.prod: powerpoint
 localization_priority: Priority
-ms.openlocfilehash: 8ab5ad7067ed29b161935cfd2716a02ca261c55b
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 2d56ce833f62432847b4d6d47d31b11b940d1dfe1af646838a9cd3480fa25a15
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671708"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086182"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Séries de conditions requises de l’API JavaScript pour PowerPoint
 
@@ -19,7 +19,7 @@ Le tableau suivant répertorie les ensembles de conditions requises pour PowerPo
 
 |  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Version 2011 (build 13426.20184) ou version ultérieure| Pas encore<br>Pris en charge | 16.43 ou version ultérieure | Octobre 2020 |
+| [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Version 2011 (build 13426.20184) ou version ultérieure| Pas encore<br>Pris en charge | 16.43 ou version ultérieure | Octobre 2020 |
 | [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Version 1810 (Build 11001.20074) ou version ultérieure | 2.17 ou version ultérieure | 16.19 ou version ultérieure | Octobre 2018 |
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office

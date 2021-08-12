@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects liés à la confidentialité et à la sécurité de la plateforme de Office de l’utilisateur.
 ms.date: 03/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 0ff3e77dcbd9f51ee4ac3c1b5d923a2db2bfbc05
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: c3cde56ce1bedc76afb967a449b3d29ce61e1fecd8fe7b2774a7c69278a61688
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773271"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083238"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -99,7 +99,7 @@ La plateforme du add-in répond aux préoccupations des utilisateurs finaux en m
 
 - Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les modules de contenu et de volet de tâches, les utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers   >    >    >  **Paramètres** Catalogues de produits de  >  **confiance).** Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
-- La conception de la plateforme de l’outil de recherche fournit aux utilisateurs finaux une sécurité et des performances des manières suivantes.
+- La conception de la plateforme de l’outil de recherche fournit la sécurité et les performances aux utilisateurs finaux des manières suivantes.
 
   - Un Office s’exécute dans un contrôle de navigateur web hébergé dans un environnement d’runtime de Office application cliente. Cette conception assure à la fois la sécurité et l’isolation des performances de l’application cliente.
 

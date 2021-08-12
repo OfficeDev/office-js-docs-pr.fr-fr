@@ -1,14 +1,14 @@
 ---
 title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel JavaScript
-description: Découvrez la mise en forme conditionnelle dans le contexte des add-ins JavaScript pour Excel.
+description: Découvrez la mise en forme conditionnelle dans le contexte des Excel javaScript.
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 5736923ac3c4623342d9a77bd58d5682a551a2a6
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: f2470431e54a45b847461179c94a9621387f5a427aaf4fe48e4fe7125074d273
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51650911"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084778"
 ---
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 

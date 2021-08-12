@@ -3,12 +3,12 @@ title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de 
 description: Découvrez comment appeler des fonctions de feuille de Excel intégrées, telles que l’API JavaScript Excel et à `VLOOKUP` `SUM` l’aide de cette fonction.
 ms.date: 12/19/2019
 localization_priority: Normal
-ms.openlocfilehash: a72fe01341295fccfee168132d8a252cd22a8332
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: f98dd8f20bf4bb28521ac3915db9411ab6a2d4f9849c39111398bca902def589
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075711"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087063"
 ---
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
@@ -37,7 +37,7 @@ return context.sync()
 
 L’image suivante montre un tableau dans une feuille de calcul Excel contenant des données de ventes pour divers types d’outils sur une période de trois mois. Chaque numéro de la table représente le nombre d’unités vendues pour un outil spécifique lors d’un mois donné. Les exemples suivant expliquent comment appliquer des fonctions de feuille de calcul intégrées à ces données.
 
-![Capture d’écran des données de ventes Excel données pour hammer, Wrench et Saw en novembre, décembre et janvier.](../images/worksheet-functions-chaining-results.jpg)
+![Capture d’écran des données de ventes Excel données pour Hammer, Wrench et Saw en novembre, décembre et janvier.](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
 

@@ -48,7 +48,7 @@ Utilisez Git pour apporter des modifications importantes, telles que :
 
 1. Si vous n’avez pas de compte GitHub, définissez-en un sur [GitHub](https://github.com/join).
 2. Une fois que vous avez un compte, installez Git sur votre ordinateur. Suivez les étapes du [didacticiel Configurer Git.]
-3. Pour envoyer une requête de pull à l’aide de Git, suivez les étapes de [l’GitHub, Git et ce référentiel.](#use-github-git-and-this-repository)
+3. Pour envoyer une requête de pull à l’aide de Git, suivez les étapes dans [Utiliser GitHub, Git et ce référentiel.](#use-github-git-and-this-repository)
 4. Vous serez invité à signer le contrat de licence du collaborateur si vous êtes :
 
     * Membre du groupe Microsoft Open Technologies.
@@ -107,7 +107,7 @@ Pour rendre le processus de contribution aussi transparent que possible, suivez 
 
 #### <a name="add-new-content-or-edit-existing-content"></a>Ajout de nouveau contenu ou modification de contenu existant
 
-Vous accédez au référentiel sur votre ordinateur à l’aide de l’Explorateur de fichiers. Les fichiers du référentiel sont dans `C:\Users\<yourusername>\<repo name>` .
+Vous accédez au référentiel sur votre ordinateur à l’aide de l’Explorateur de fichiers. Les fichiers de référentiel sont dans `C:\Users\<yourusername>\<repo name>` .
 
 Pour modifier des fichiers, ouvrez-les dans un éditeur de votre choix et modifiez-les. Pour créer un fichier, utilisez l’éditeur de votre choix et enregistrez le nouveau fichier à l’emplacement approprié dans votre copie locale du référentiel. Tout en travaillant, enregistrez fréquemment votre travail.
 

@@ -1,14 +1,14 @@
 ---
 title: Instructions d’accessibilité pour les compléments Office
-description: Découvrez comment faire en sorte que votre complément Office soit accessible à tous les utilisateurs.
+description: Découvrez comment rendre votre Office de service accessible à tous les utilisateurs.
 ms.date: 09/24/2018
 localization_priority: Normal
-ms.openlocfilehash: 889563af8ab5f7bbcd4037eedb42933369a92cf2
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: e9531bfcf4ffb1bca178563785a31fdc3b9e21e1544fb74e2495b8e1c51de9c2
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44607991"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082743"
 ---
 # <a name="accessibility-guidelines"></a>Conseils sur l’accessibilité
 

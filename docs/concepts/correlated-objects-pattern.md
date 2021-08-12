@@ -3,12 +3,12 @@ title: Éviter d’utiliser la méthode context.sync dans des boucles
 description: Découvrez comment utiliser la boucle fractionée et les modèles d’objets corrélés pour éviter d’appeler context.sync dans une boucle.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 549713e4ea32b791acc10befe3f4ab86455434784f6ffc449258899cba2d9e21
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773250"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083250"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Éviter d’utiliser la méthode context.sync dans des boucles
 
@@ -99,7 +99,7 @@ Word.run(async (context) => {
 });
 ```
 
-Dans ce scénario, pour éviter d’avoir une boucle en boucle, vous devez utiliser un modèle que `context.sync` nous appelons le **modèle de boucle fractionner.** Voyons un exemple concret du modèle avant d’en obtenir une description formelle. Voici comment le modèle de boucle fractionner peut être appliqué à l’extrait de code précédent. Notez les points suivants concernant ce code.
+Dans ce scénario, pour éviter d’avoir une boucle en boucle, vous devez utiliser un modèle que `context.sync` nous appelons le **modèle de boucle fractionner.** Voyons un exemple concret du modèle avant d’en obtenir une description formelle. Voici comment le modèle de boucle fractionner peut être appliqué à l’extrait de code précédent. Notez ce qui suit à propos de ce code.
 
 - Il existe maintenant deux boucles qui `context.sync` s’entrent entre elles, il n’y a donc aucune boucle `context.sync` à l’intérieur de l’une ou l’autre.
 - La première boucle par itérera les éléments de l’objet de collection et charge la propriété comme la boucle d’origine, mais la première boucle ne peut pas journaliser le texte du paragraphe, car elle ne contient plus de valeur pour remplir la propriété de l’objet `text` `context.sync` `text` `paragraph` proxy. Au lieu de cela, il ajoute `paragraph` l’objet à un tableau.
@@ -168,7 +168,7 @@ Word.run(async (context) => {
 });
 ```
 
-Dans le code précédent, il y a une boucle externe et une boucle interne. Chacun d’eux contient un `context.sync` . Selon le tout premier extrait de code de cet article, vous verrez probablement que la boucle interne peut simplement être déplacée après la `context.sync` boucle interne. Toutefois, cela laisserait le code `context.sync` avec un (deux d’entre eux en fait) dans la boucle externe. Le code suivant montre comment supprimer `context.sync` des boucles. Nous abordons le code ci-dessous.
+Dans le code précédent, il existe une boucle externe et une boucle interne. Chacun d’eux contient un `context.sync` . Selon le tout premier extrait de code de cet article, vous verrez probablement que la boucle interne peut simplement être déplacée après la `context.sync` boucle interne. Toutefois, cela laisserait le code `context.sync` avec un (deux d’entre eux en fait) dans la boucle externe. Le code suivant montre comment supprimer `context.sync` des boucles. Nous abordons le code ci-dessous.
 
 ```javascript
 Word.run(async (context) => {

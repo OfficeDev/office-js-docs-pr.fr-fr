@@ -1,18 +1,18 @@
 ---
 title: Élément AlternateId dans le fichier manifeste
-description: Spécifie l’ID de substitution de votre complément Office tel qu’il a été émis par AppSource.
+description: Spécifie l’autre ID de votre Office comme émis par AppSource.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 122b18564d0473fee65412563ad48c98ce48544c
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 7ebe065658bd30a65c18e7827b85cc562e533d4f30529f93fdbcb850a9a267f0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608781"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085793"
 ---
 # <a name="alternateid-element"></a>AlternateId, élément
 
-Spécifie l’ID de substitution de votre complément Office tel qu’il a été émis par AppSource.
+Spécifie l’autre ID de votre Office comme émis par AppSource.
 
 **Type de complément :** application de contenu, de volet Office, de messagerie
 
@@ -28,5 +28,5 @@ Spécifie l’ID de substitution de votre complément Office tel qu’il a été
 
 ## <a name="remarks"></a>Remarques
 
-Vous ne créez pas cette valeur vous-même ; elle est attribuée à votre complément lorsque vous l’envoyez à AppSource.
+Vous ne créez pas cette valeur vous-même ; il est affecté à votre add-in lorsque vous le soumettez à AppSource.
 

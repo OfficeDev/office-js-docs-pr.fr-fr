@@ -1,19 +1,19 @@
 ---
-title: Rechercher une chaîne à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment trouver une chaîne dans une plage à l’aide de l’API JavaScript pour Excel.
+title: Rechercher une chaîne à l’aide de Excel API JavaScript
+description: Découvrez comment trouver une chaîne dans une plage à l’aide de l Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 9b649bb249cd24d7578bc4f8285e5d0a23d0e4cd
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: efd2671781a8ce8d3e8aeda88f87abb3ad5058a35878f28f47f50305cff1b038
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652821"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087397"
 ---
-# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Rechercher une chaîne dans une plage à l’aide de l’API JavaScript pour Excel
+# <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Rechercher une chaîne dans une plage à l’aide de Excel API JavaScript
 
-Cet article fournit un exemple de code qui trouve une chaîne dans une plage à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit un exemple de code qui trouve une chaîne dans une plage à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -47,5 +47,5 @@ Lorsque la méthode `find` est appelée sur une plage représentant une cellule 
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
-- [Rechercher des cellules spéciales dans une plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-special-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
+- [Rechercher des cellules spéciales dans une plage à l’aide de Excel API JavaScript](excel-add-ins-ranges-special-cells.md)

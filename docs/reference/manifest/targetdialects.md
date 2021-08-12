@@ -1,14 +1,14 @@
 ---
 title: Élément TargetDialects dans le fichier manifeste
-description: L’élément TargetDialects définit les langues régionales prises en charge par ce dictionnaire.
+description: L’élément TargetDialects définit les langues régionales pris en charge par ce dictionnaire.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 6b9bd160d7639c40f10abd4a56f6b4b3f2bb332a
-ms.sourcegitcommit: be23b68eb661015508797333915b44381dd29bdb
+ms.openlocfilehash: 5af763939e9c3a32f8f54812b729e0cf600dba86b07851398cf832b67570cd90
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "44608690"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085898"
 ---
 # <a name="targetdialects-element"></a>Élément TargetDialects
 

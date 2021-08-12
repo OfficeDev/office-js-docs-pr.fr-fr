@@ -1,19 +1,19 @@
 ---
-title: Utiliser des dates à l’aide de l’API JavaScript pour Excel
-description: Utilisez le Moment-MSDate plug-in avec l’API JavaScript pour Excel pour utiliser les dates.
+title: Utiliser des dates à l’aide de Excel API JavaScript
+description: Utilisez le plug-in Moment-MSDate avec l’API JavaScript Excel pour travailler avec les dates.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d3f59e5daad042541bd933fb4e644d40f27a6e5e
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652852"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084730"
 ---
-# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Utiliser des dates à l’aide de l’API JavaScript pour Excel et Moment-MSDate plug-in
+# <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Utiliser des dates à l’aide Excel API JavaScript et Moment-MSDate plug-in
 
-Cet article fournit des exemples de code qui montrent comment utiliser des dates à l’aide de l’API JavaScript pour Excel et du [plug-in Moment-MSDate.](https://www.npmjs.com/package/moment-msdate) Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la [classe Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit des exemples de code qui montrent comment utiliser des dates à l’aide de l’API JavaScript Excel et du [plug-in Moment-MSDate.](https://www.npmjs.com/package/moment-msdate) Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en charge, voir `Range` [la Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -68,6 +68,6 @@ Votre add-in doit mettre en forme les plages pour afficher les dates sous une fo
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

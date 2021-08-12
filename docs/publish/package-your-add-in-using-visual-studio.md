@@ -3,12 +3,12 @@ title: Publier votre complément à l’aide de Visual Studio
 description: Déploiement de votre projet web et création d’un package de votre complément à l’aide de Visual Studio 2019.
 ms.date: 12/02/2019
 localization_priority: Normal
-ms.openlocfilehash: 6d7f923f19c9627c099c3c7d6495e96786af2002
-ms.sourcegitcommit: 4fa952f78be30d339ceda3bd957deb07056ca806
+ms.openlocfilehash: 7ae9d3289f04d9f3ab969112e9371de51489997e5dc319d0726b94fd5a5e92cd
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/16/2021
-ms.locfileid: "52961243"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086230"
 ---
 # <a name="publish-your-add-in-using-visual-studio"></a>Publier votre complément à l’aide de Visual Studio
 

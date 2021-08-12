@@ -1,21 +1,21 @@
 ---
-title: Lire ou écrire dans une plage non limite à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment utiliser l’API JavaScript pour Excel pour lire ou écrire dans une plage non limite.
+title: Lire ou écrire dans une plage non limite à l’aide de l Excel API JavaScript
+description: Découvrez comment utiliser l’API JavaScript Excel pour lire ou écrire dans une plage non limite.
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f7be2efc3e069ea3451088608ca5255a632ef863
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: e9df563c9bac688e0806f5280139da8faa5b94870d4d32a852c919cd7fd03ad0
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652820"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087650"
 ---
-# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Lire ou écrire dans une plage non limite à l’aide de l’API JavaScript pour Excel
+# <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Lire ou écrire dans une plage non limite à l’aide de l Excel API JavaScript
 
-Cet article explique comment lire et écrire dans une plage non limite avec l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article explique comment lire et écrire dans une plage non limite à l’Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
-Une adresse de plage non limite est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
+Une adresse de plage non limite est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
 
 - Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
 - Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
@@ -37,6 +37,6 @@ range.values = 'Due Date';
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
-- [Lire ou écrire dans une grande plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-large.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
+- [Lire ou écrire dans une grande plage à l’aide de l Excel API JavaScript](excel-add-ins-ranges-large.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

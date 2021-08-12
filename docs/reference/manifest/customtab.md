@@ -3,12 +3,12 @@ title: Élément CustomTab dans le fichier manifest
 description: Sur le ruban, indiquez l’onglet et le groupe où placer leurs commandes de complément.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: d74859d1326d29517b5a8226a86f901322957933
-ms.sourcegitcommit: 4805454f7fc6c64368a35d014e24075faf3e7557
+ms.openlocfilehash: de6233966abea4de423f255bda3c9e6e38ff5037c760c90cae7c8a1c7ca6ab2e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "50173926"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085052"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -19,17 +19,17 @@ Sur les onglets personnalisés, le add-in peut avoir des groupes personnalisés 
 **L’attribut id** doit être unique dans le manifeste.
 
 > [!IMPORTANT]
-> Dans Outlook sur Mac, l’élément n’est pas disponible, vous devez `CustomTab` donc utiliser [OfficeTab](officetab.md) à la place.
+> Dans Outlook Mac, l’élément n’est pas disponible, vous devez `CustomTab` donc utiliser [OfficeTab](officetab.md) à la place.
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  [Group](group.md)      | Non |  Définit un groupe de commandes.  |
-|  [OfficeGroup](#officegroup)      | Non |  Représente un groupe de contrôles Office intégré. **Important**: non disponible dans Outlook. |
+|  [OfficeGroup](#officegroup)      | Non |  Représente un groupe de contrôle Office intégré. **Important**: non disponible dans Outlook. |
 |  [Label](#label-tab)      | Oui |  Étiquette pour CustomTab ou Group.  |
-|  [InsertAfter](#insertafter)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office intégré spécifié. **Important**: Non disponible dans Outlook. |
-|  [InsertBefore](#insertbefore)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office intégré spécifié. **Important**: Non disponible dans Outlook. |
+|  [InsertAfter](#insertafter)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. **Important**: Non disponible dans Outlook. |
+|  [InsertBefore](#insertbefore)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. **Important**: Non disponible dans Outlook. |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si l’onglet personnalisé doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. **Important**: non disponible dans Outlook. |
 
 ### <a name="group"></a>Groupe
@@ -38,7 +38,7 @@ Facultatif, mais s’il n’est pas présent, il doit y avoir au moins **un él�
 
 ### <a name="officegroup"></a>OfficeGroup
 
-Facultatif, mais s’il n’est pas présent, il doit y avoir au moins un **élément Group.** Représente un groupe de contrôles Office intégré. **L’attribut id** spécifie l’ID du groupe Office intégré. Pour trouver l’ID d’un groupe intégré, voir Rechercher les ID des contrôles et des [groupes de contrôles.](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) L’ordre de **groupe** et **d’OfficeGroup** dans le manifeste doit être l’ordre dans le cas où vous souhaitez qu’ils apparaissent sous l’onglet personnalisé. Ils peuvent être entremêlés s’il existe plusieurs éléments, mais tous doivent se trouver au-dessus de **l’élément Label.**
+Facultatif, mais s’il n’est pas présent, il doit y avoir au moins un **élément Group.** Représente un groupe de contrôle Office intégré. **L’attribut id** spécifie l’ID du groupe Office intégré. Pour trouver l’ID d’un groupe intégré, voir Rechercher les ID des contrôles et des [groupes de contrôles.](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) L’ordre de **groupe** et **d’OfficeGroup** dans le manifeste doit être l’ordre dans le cas où vous souhaitez qu’ils apparaissent sous l’onglet personnalisé. Ils peuvent être entremêlés s’il existe plusieurs éléments, mais tous doivent se trouver au-dessus de **l’élément Label.**
 
 > [!IMPORTANT]
 > `OfficeGroup`L’élément n’est pas disponible dans Outlook.
@@ -49,14 +49,14 @@ Obligatoire. Étiquette de l’onglet personnalisé. **L’attribut resid** ne p
 
 ### <a name="insertafter"></a>InsertAfter
 
-Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office intégré spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas **avoir à la fois InsertAfter** et **InsertBefore**.
+Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
 
 > [!IMPORTANT]
 > `InsertAfter`L’élément n’est pas disponible dans Outlook.
 
 ### <a name="insertbefore"></a>InsertBefore
 
-Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office intégré spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas **avoir à la fois InsertAfter** et **InsertBefore**.
+Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
 
 > [!IMPORTANT]
 > `InsertBefore`L’élément n’est pas disponible dans Outlook.

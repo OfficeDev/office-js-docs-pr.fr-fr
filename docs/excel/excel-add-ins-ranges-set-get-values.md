@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour définir 
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: fccf4325fb3e2473e10719efb6d5336cb87d8abcedfaa6a4f80f8e07eb2b05b6
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53075746"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085389"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript
 
@@ -67,7 +67,7 @@ Excel.run(function (context) {
 
 #### <a name="data-before-cell-values-are-updated"></a>Données avant la mise à jour des valeurs des cellules
 
-![Données dans Excel avant la mise à jour des valeurs des cellules.](../images/excel-ranges-set-start.png)
+![Données dans les Excel avant la mise à jour des valeurs des cellules.](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>Données après la mise à jour des valeurs des cellules
 
@@ -309,6 +309,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Définir et obtenir des plages à l’aide de Excel API JavaScript](excel-add-ins-ranges-set-get.md)
 - [Définir le format de plage à l’aide Excel API JavaScript](excel-add-ins-ranges-set-format.md)

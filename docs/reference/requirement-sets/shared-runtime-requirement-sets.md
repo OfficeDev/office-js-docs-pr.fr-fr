@@ -1,27 +1,27 @@
 ---
 title: Ensembles de conditions requises pour l’runtime partagé
-description: Spécifie les plateformes et les applications Office qui prisent en charge les API SharedRuntime.
+description: Spécifie les plateformes et les applications Office qui la prise en charge des API SharedRuntime.
 ms.date: 04/08/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d5b931c5bda65f5907684c2f957e15c6fdacd1668d410dc3db96ca614f426892
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652222"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084898"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’runtime partagé
 
 Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-Les parties d’un add-in Office qui exécutent du code JavaScript, telles que les volets Office, les fichiers de fonctions lancés à partir de commandes de module et les fonctions personnalisées Excel, peuvent partager un runtime JavaScript unique. Cela permet à tous les composants de partager un ensemble de variables globales, de partager un ensemble de bibliothèques chargées et de communiquer entre eux sans avoir à passer de messages via un stockage persistant. Pour plus d’informations, voir Configurer votre add-in Office pour utiliser un [runtime JavaScript partagé.](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+Les parties d’un Office qui exécutent du code JavaScript, telles que les volets des tâches, les fichiers de fonctions lancés à partir de commandes de Excel et les fonctions personnalisées de Excel, peuvent partager un runtime JavaScript unique. Cela permet à tous les composants de partager un ensemble de variables globales, de partager un ensemble de bibliothèques chargées et de communiquer entre eux sans avoir à passer de messages via un stockage persistant. Pour plus d’informations, voir Configurer votre Office pour utiliser un [runtime JavaScript partagé.](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 
-Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime 1.1, les applications clientes Office qui le supportent, ainsi que les numéros de build ou de version de l’application Office.
+Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime 1.1, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  |  Office 2013 (ou une ultérieure) sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  | Office Online Server |
+|  Ensemble de conditions requises  |  Office 2013 (ou ultérieure) sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | S/O | Version 2002 (build 12527.20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
+| SharedRuntime 1.1  | N/A | Version 2002 (build 12527.20092) ou version ultérieure | N/A | 16.35 ou version ultérieure | Février 2020 | N/A |
 
 > [!IMPORTANT]
 > L’ensemble de conditions requises du runtime JavaScript partagé est disponible uniquement sur les plateformes suivantes.
@@ -47,4 +47,4 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 - [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
 - [Spécifier les exigences en matière d’applications Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
+- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)

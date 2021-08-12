@@ -3,12 +3,12 @@ title: Créer des compléments Outlook pour des formulaires de lecture
 description: Les compléments de lecture sont des compléments Outlook qui sont activés dans le volet de lecture ou l’inspecteur de lecture dans Outlook.
 ms.date: 03/19/2021
 localization_priority: Priority
-ms.openlocfilehash: f84c0d5252f2cf728397965d9414df2ee5070444
-ms.sourcegitcommit: ee9e92a968e4ad23f1e371f00d4888e4203ab772
+ms.openlocfilehash: 6a3e3853f386ef685123a6cde393fc4e748134f102211df301853ec3f941c934
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/23/2021
-ms.locfileid: "53076692"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086254"
 ---
 # <a name="create-outlook-add-ins-for-read-forms"></a>Créer des compléments Outlook pour des formulaires de lecture
 

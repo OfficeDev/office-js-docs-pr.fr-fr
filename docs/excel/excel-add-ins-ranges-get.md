@@ -1,19 +1,19 @@
 ---
-title: Obtenir une plage à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment récupérer une plage à l’aide de l’API JavaScript pour Excel.
+title: Obtenir une plage à l’aide de Excel API JavaScript
+description: Découvrez comment récupérer une plage à l’aide de l Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 6aa9bb00bc9d24aeee5f1fef9e8d1531525e9d1f
-ms.sourcegitcommit: 54fef33bfc7d18a35b3159310bbd8b1c8312f845
+ms.openlocfilehash: d48d69a45e964db2d5797e2f0927f776795bcca0365f0ccef245fcd3682a3a72
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/09/2021
-ms.locfileid: "51652848"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084718"
 ---
-# <a name="get-a-range-using-the-excel-javascript-api"></a>Obtenir une plage à l’aide de l’API JavaScript pour Excel
+# <a name="get-a-range-using-the-excel-javascript-api"></a>Obtenir une plage à l’aide de Excel API JavaScript
 
-Cet article fournit des exemples qui montrent différentes façons d’obtenir une plage dans une feuille de calcul à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` la classe [Excel.Range.](/javascript/api/excel/excel.range)
+Cet article fournit des exemples qui montrent différentes façons d’obtenir une plage dans une feuille de calcul à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -88,5 +88,5 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
-- [Insérer une plage à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-insert.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
+- [Insérer une plage à l’aide de Excel API JavaScript](excel-add-ins-ranges-insert.md)

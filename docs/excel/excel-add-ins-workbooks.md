@@ -4,12 +4,12 @@ description: Découvrez comment effectuer des tâches courantes avec des workboo
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b80ef801955b5d4dd229794a24ff1f97a1f38d4e
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 17802627fd5b9d23f2aa0a128e9ca8bda945c20ba63d2c5c3cc5960d4c8dfc20
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671118"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086170"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -83,9 +83,9 @@ insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOp
 ```
 
 > [!IMPORTANT]
-> La `insertWorksheetsFromBase64` méthode est prise en charge Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le Web cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le Web. 
+> La `insertWorksheetsFromBase64` méthode est prise en charge pour Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le Web cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le Web. 
 
-L’exemple de code suivant montre comment insérer des feuilles de calcul à partir d’un autre workbook dans le workbook actuel. Cet exemple de code traite d’abord un fichier de classer avec un objet et extrait une chaîne codée en base 64, puis il insère cette chaîne codée en base 64 dans le classez en [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul nommée **Sheet1**. Notez qu’il est transmis en tant que paramètre pour la `[]` [propriété InsertWorksheetOptions.sheetNamesToInsert.](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) Cela signifie que toutes les feuilles de calcul du workbook cible sont insérées dans le manuel en cours.
+L’exemple de code suivant montre comment insérer des feuilles de calcul à partir d’un autre workbook dans le workbook actuel. Cet exemple de code traite d’abord un fichier de classer avec un objet et extrait une chaîne codée en base 64, puis il insère cette chaîne codée en base 64 dans le classez en [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul nommée **Sheet1**. Notez qu’il est transmis en tant que paramètre pour la `[]` [propriété InsertWorksheetOptions.sheetNamesToInsert.](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) Cela signifie que toutes les feuilles de calcul du manuel cible sont insérées dans le manuel en cours.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -234,7 +234,7 @@ Un workbook a des paramètres de langue et de culture qui affectent l’affichag
 
 `Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être modifiés par le [biais Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être modifiés par le biais [Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
 
 L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 

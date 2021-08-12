@@ -3,12 +3,12 @@ title: Codes d'erreur de l'API commune de l'Office
 description: Cet article documente les messages d’erreur que vous pouvez rencontrer lors de l’utilisation Office API commune.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: e6371476c3e40f1619f4fb703c8b684b38667682
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 58ebd7a2c447ee288ec3ed709db043a9df22249def8056cc6792ac90fe351e5c
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348712"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57085076"
 ---
 # <a name="office-common-api-error-codes"></a>Codes d'erreur de l'API commune de l'Office
 
@@ -57,7 +57,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |4000|Une erreur s’est produite lors de la lecture des paramètres|Le nom de paramètre spécifié n’existe pas.|Un nom de paramètre non existant est fourni.|
 |4001|Une erreur s’est produite lors de l’enregistrement des paramètres|Les paramètres n’ont pas pu être enregistrés.|Les paramètres n’ont pas pu être enregistrés.|
 |4002|Une erreur relative à des paramètres périmés s’est produite|Les paramètres n’ont pas pu être enregistrés car ils sont périmés.|Les paramètres sont périmés et le développeur a indiqué de ne pas les remplacer.|
-|5000|Une erreur relative à des paramètres périmés s’est produite|L’opération n’est pas prise en charge.|L’opération n’est pas prise en charge dans l’application Office actuelle. Par exemple, `document.getSelectionAsync` est appelée à partir Outlook.|
+|5000|Une erreur relative à des paramètres périmés s’est produite|L’opération n’est pas prise en charge.|L’opération n’est pas prise en charge dans l’application Office actuelle. Par exemple, `document.getSelectionAsync` est appelé à partir de Outlook.|
 |5001|Erreur interne|Une erreur interne s’est produite.|Fait référence à une condition d’erreur interne qui peut survenir pour l’une des raisons suivantes.<br/><table><tr><td>Un complément utilisé par un autre utilisateur partageant le classeur a créé une liaison quasiment au même moment et votre complément doit recommencer le processus de liaison.</tr></td><tr><td>Une erreur inconnue s’est produite.</tr></td><tr><td>L’opération a échoué.</tr></td><tr><td>L’accès a été refusé car l’utilisateur n’est pas membre d’un rôle autorisé.</tr></td><tr><td>L’accès a été refusé car une communication chiffrée sécurisée est exigée.</tr></td><tr><td>Les données sont obsolètes et l’utilisateur doit confirmer l’activation des requêtes pour les actualiser.</tr></td><tr><td>Le quota d’UC de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la collection de sites est dépassé.</tr></td><tr><td>Le quota de mémoire de la session est dépassé.</tr></td><tr><td>Le classeur est dans un état non valide et l’opération ne peut pas être effectuée.</tr></td><tr><td>La session a expiré car elle était inactive et l’utilisateur doit recharger le classeur.</tr></td><tr><td>Le nombre maximal de sessions autorisées par utilisateur est dépassé.</tr></td><tr><td>L’opération a été annulée par l’utilisateur.</tr></td><tr><td>L’opération ne peut pas aboutir car elle prend trop de temps.</tr></td><tr><td>La demande ne peut pas aboutir et une nouvelle tentative doit être effectuée.</tr></td><tr><td>La période d’évaluation du produit a expiré.</tr></td><tr><td>La session a expiré car elle était inactive.</tr></td><tr><td>L’utilisateur n’est pas autorisé à effectuer l’opération sur la plage spécifiée.</tr></td><tr><td>Les paramètres régionaux de l’utilisateur ne correspondent pas à la session de collaboration active.</tr></td><tr><td>L’utilisateur n’est plus connecté et doit actualiser ou rouvrir le classeur.</tr></td><tr><td>La plage demandée n’existe pas dans la feuille.</tr></td><tr><td>L’utilisateur n’est pas autorisé à modifier le classeur.</tr></td><tr><td>Le classeur ne peut pas être modifié car il est verrouillé.</tr></td><tr><td>La session ne peut pas enregistrer automatiquement le classeur.</tr></td><tr><td>La session ne peut pas actualiser son verrouillage du fichier du classeur.</tr></td><tr><td>La demande ne peut pas être traitée et une nouvelle tentative doit être effectuée.</tr></td><tr><td>Les informations de connexion de l’utilisateur n’ont pas pu être vérifiées et doivent être saisies de nouveau.</tr></td><tr><td>L’accès a été refusé à l’utilisateur.</tr></td><tr><td>Le classeur partagé doit être mis à jour.</tr></td></table>|
 |5002|Autorisation refusée|L’opération demandée n’est pas autorisée sur le mode de document actuel.|Le développeur de solutions soumet une opération de définition, mais le document est dans un mode qui n’autorise pas de modifications, telles que « Restreindre la modification ».|
 |5003|Une erreur s’est produite lors de l’enregistrement de l’événement|Le type d’événement spécifié n’est pas pris en charge par l’objet actuel.|Le développeur de solutions tente d’inscrire ou d’annuler l’inscription d’un gestionnaire pour un événement qui n’existe pas.|

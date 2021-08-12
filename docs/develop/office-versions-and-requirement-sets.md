@@ -3,12 +3,12 @@ title: Versions d’Office et ensembles de conditions requises
 description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript.
 ms.date: 07/08/2021
 localization_priority: Priority
-ms.openlocfilehash: ec3d99fc89b8b6ced25dfc00bd02e0238f75e0af
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: e598026d7a34bfa71e943a760bfd2a051b320af90182e2b6204be7e74c77d8be
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773467"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57080335"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -51,7 +51,7 @@ Certains ensembles de conditions requises contiennent des API qui peuvent être 
 
 Le numéro de version d’un ensemble de conditions requises, par exemple « 1.1 » dans `ExcelApi 1.1`, est défini par rapport à l’application Office. Le numéro de version d’un ensemble donné de conditions requises (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js, ni aux ensembles de conditions requises pour d’autres applications Office (comme Word, Outlook, etc.).  Les ensembles de conditions requises pour les différentes applications Office sont publiés à des rythmes différents. Par exemple, `ExcelApi 1.5` a été publié avant l’ensemble de conditions requises `WordApi 1.3`.
 
-L’API JavaScript pour la bibliothèque Office (Office.js) inclut tous les ensembles de conditions requises actuellement disponibles. Alors qu’il existe des ensembles de conditions requises `ExcelApi 1.3` et `WordApi 1.3`, il n’existe pas d’ensemble de conditions requises `Office.js 1.3`. La dernière version d’Office.js est gérée comme un point de terminaison Office unique remis via le réseau de distribution de contenu (CDN). Pour plus d’informations sur le CDN Office.js, notamment sur la gestion des versions et de la compatibilité avec les anciennes versions, reportez-vous à l’article [Présentation de l’API Interface JavaScript pour Office](../develop/understanding-the-javascript-api-for-office.md).
+La bibliothèque d’API JavaScript Office (Office.js) inclut tous les ensembles de conditions requises actuellement disponibles. Bien qu’il existe un ensemble de conditions requises `ExcelApi 1.3` et `WordApi 1.3`, il n’existe aucun ensemble de conditions requises `Office.js 1.3` . La dernière version d’Office.js est conservée en tant que point de terminaison Office unique fourni via le réseau de distribution de contenu (CDN). Pour plus d’informations sur le CDN Office.js, notamment la façon dont le contrôle de version et la compatibilité descendante sont gérés, consultez [Présentation de l’API JavaScript Office](../develop/understanding-the-javascript-api-for-office.md).
 
 ## <a name="specify-office-applications-and-requirement-sets"></a>Spécifier les ensembles de conditions requises et les applications Office
 

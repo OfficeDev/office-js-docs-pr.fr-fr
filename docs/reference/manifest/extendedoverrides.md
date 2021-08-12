@@ -3,12 +3,12 @@ title: Élément ExtendedOverrides dans le fichier manifeste
 description: Spécifie les URL d’une extension au format JSON du manifeste.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
-ms.sourcegitcommit: e7009c565b18c607fe0868db2e26e250ad308dce
+ms.openlocfilehash: f2b9ea409763119b5bec5286ecdc5f15c94c49e6312a13209197e6457353f369
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "50505471"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57083583"
 ---
 # <a name="extendedoverrides-element"></a>Élément ExtendedOverrides
 
@@ -28,7 +28,7 @@ Spécifie les URL complètes pour les fichiers au format JSON qui étendent le m
 
 ## <a name="can-contain"></a>Peut contenir
 
-|Élément|Contenu|Courrier|TaskPane|
+|Élément|Contenu|Courrier Outlook|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Jetons](tokens.md)|||x|
 
@@ -36,10 +36,10 @@ Spécifie les URL complètes pour les fichiers au format JSON qui étendent le m
 
 |Attribut|Description|
 |:-----|:-----|
-|Url (obligatoire)| URL complète du fichier JSON de remplacements étendu. À l’avenir, cette valeur pourrait être un modèle d’URL qui utilise des jetons définis par [l’élément Tokens.](tokens.md) Voir [exemples.](#examples)|
+|Url (obligatoire)| URL complète du fichier JSON de remplacements étendu. À l’avenir, cette valeur pourrait être un modèle d’URL qui utilise des jetons définis par [l’élément Tokens.](tokens.md) Voir [exemples](#examples).|
 |ResourcesUrl (facultatif) | URL complète d’un fichier qui fournit des ressources supplémentaires, telles que des chaînes localisées, pour le fichier spécifié dans `Url` l’attribut. Il peut s’agit d’un modèle d’URL qui utilise des jetons définis par [l’élément Tokens.](tokens.md)|
 
-## <a name="examples"></a>範例
+## <a name="examples"></a>Exemples
 
 ```XML
 <OfficeApp ...>

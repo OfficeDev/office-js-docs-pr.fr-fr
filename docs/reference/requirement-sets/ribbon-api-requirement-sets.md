@@ -4,24 +4,24 @@ description: Spécifie les plateformes Office et les builds qui prisent en charg
 ms.date: 05/12/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: a608eff12fb21d7a4a6beb195749141bd473aa1c
-ms.sourcegitcommit: 30f6c620380075e3459cac748ca0c656427b384d
+ms.openlocfilehash: 18b081da28991eb15875c6999ddfe06ccea13eade8dd8a4e1f2a4cc09ac5e922
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/12/2021
-ms.locfileid: "52330184"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57084922"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
-Les ensembles de conditions requises sont des groupes nommés des membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par un complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 L’ensemble d’API du Ruban prend en charge le contrôle par programme du moment où les commandes de module personnalisées (c’est-à-dire, les boutons de ruban personnalisés et les éléments de menu) sont activées et désactivées.
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API du ruban, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office client.
 
-|  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat définitif) | Office 2016 ou une Windows<br>(achat définitif)   | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à un abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat définitif) | Office 2016 ou une Windows<br>(achat définitif)   | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à un abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonAPI 1.1  | N/A | N/A | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
+| RibbonAPI 1.1  | N/A | N/A | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
 | RibbonApi 1.2  | N/A | N/A | 2102 (build 13801.20294) | N/A | bientôt disponible | Mai 2021 | N/A|
 
 > **&#42;** L’API ruban est prise en charge uniquement sur Excel et nécessite un abonnement Microsoft 365 de connexion.
@@ -37,7 +37,7 @@ La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en cha
 |Canal Entreprise mensuel | 2004 | 12730.20602 ou supérieur|
 |Canal Entreprise semestriel | 2002 ou supérieure | 12527.20880 ou supérieur|
 
-## <a name="more-information"></a>Plus d’informations
+## <a name="more-information"></a>Informations supplémentaires
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 
@@ -65,4 +65,4 @@ L’API 1.2 du Ruban ajoute la prise en charge des onglets contextuels. Si vous 
 
 - [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md)
 - [Spécifier les exigences en matière d’applications Office et d’API](../../develop/specify-office-hosts-and-api-requirements.md)
-- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)
+- [Manifeste XML des compléments Office](../../develop/add-in-manifests.md)

@@ -1,18 +1,18 @@
 ---
 title: Élément OfficeTab dans le fichier manifest
-description: L’élément OfficeTab définit l’onglet du ruban où votre commande de complément s’affiche.
+description: L’élément OfficeTab définit l’onglet du ruban où votre commande de add-in apparaît.
 ms.date: 06/20/2019
 localization_priority: Normal
-ms.openlocfilehash: 25e8044d8b3264bf9ee64c54487566bf11f0065e
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: 2a223aaa212eacef07ca2b211bfa7c8168f961c0e41427ae25fc86adb7d36100
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47292299"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087421"
 ---
 # <a name="officetab-element"></a>Élément OfficeTab
 
-Définit l’onglet du ruban sur lequel votre commande de complément s’affiche. Il peut s’agir de l’onglet par défaut ( **domicile**, **message**ou **réunion**) ou d’un onglet personnalisé défini par le complément. Cet élément est obligatoire.
+Définit l’onglet du ruban sur lequel votre commande de complément s’affiche. Il peut s’agit de l’onglet par défaut (Accueil, **Message** ou **Réunion),** ou d’un onglet personnalisé défini par le module. Cet élément est obligatoire.
 
 ## <a name="child-elements"></a>Éléments enfants
 
@@ -20,7 +20,7 @@ Définit l’onglet du ruban sur lequel votre commande de complément s’affich
 |:-----|:-----|:-----|
 |  Groupe      | Oui |  Définit un groupe de commandes. Vous ne pouvez ajouter qu’un seul groupe par complément à l’onglet par défaut.  |
 
-Les valeurs d’onglet valides sont les suivantes `id` par application. Les valeurs en **gras** sont prises en charge dans l’ordinateur de bureau et en ligne (par exemple, Word 2016 ou version ultérieure sur Windows et Word sur le Web).
+Les valeurs d’onglet valides sont les suivantes `id` par application. Les valeurs **en gras** sont pris en charge à la fois sur ordinateur de bureau et en ligne (par exemple, Word 2016 ou version ultérieure Windows et Word sur le web).
 
 ### <a name="outlook"></a>Outlook
 
@@ -93,7 +93,7 @@ Les valeurs d’onglet valides sont les suivantes `id` par application. Les vale
 
 ## <a name="group"></a>Group
 
-Groupe de points d’extension d’interface utilisateur dans un onglet. Un groupe peut avoir jusqu’à six contrôles. L’attribut **ID** est obligatoire et chaque **ID** doit être unique dans le manifeste. L' **ID** est une chaîne avec un maximum de 125 caractères. Voir [Élément group](group.md).
+Groupe de points d’extension d’interface utilisateur dans un onglet. Un groupe peut avoir jusqu’à six contrôles. **L’attribut id** est obligatoire et chaque **ID** doit être unique dans le manifeste. **L’ID** est une chaîne de 125 caractères au maximum. Voir [Élément group](group.md).
 
 ## <a name="officetab-example"></a>Exemple OfficeTab
 

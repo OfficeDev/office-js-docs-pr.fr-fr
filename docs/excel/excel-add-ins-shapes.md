@@ -3,12 +3,12 @@ title: Utiliser des formes à l’aide Excel API JavaScript
 description: Découvrez comment Excel définit les formes comme n’importe quel objet qui se trouve sur la couche de dessin de Excel.
 ms.date: 01/14/2020
 localization_priority: Normal
-ms.openlocfilehash: 533a9cf9689bcaa5cd43635da836730a2af6ab61
-ms.sourcegitcommit: 3fa8c754a47bab909e559ae3e5d4237ba27fdbe4
+ms.openlocfilehash: 01dd8949105be8a511aefc90c69eec13b18e3243e0fb201dc2f2eeb36e62b3bf
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53671470"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087860"
 ---
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Utiliser des formes à l’aide Excel API JavaScript
 
@@ -54,7 +54,7 @@ Excel.run(function (context) {
 
 ### <a name="images"></a>Des images
 
-Les images JPEG, PNG et SVG peuvent être insérées dans une feuille de calcul sous forme de formes. La méthode prend comme argument une chaîne `ShapeCollection.addImage` codée en base 64. Il s’agit d’une image JPEG ou PNG sous forme de chaîne. `ShapeCollection.addSvg` prend également une chaîne, bien que cet argument soit XML qui définit le graphique.
+Les images JPEG, PNG et SVG peuvent être insérées dans une feuille de calcul sous forme de formes. La méthode prend comme argument une chaîne `ShapeCollection.addImage` codée en base 64. Il s’agit d’une image JPEG ou PNG sous forme de chaîne. `ShapeCollection.addSvg` prend également une chaîne, bien que cet argument soit du XML qui définit le graphique.
 
 L’exemple de code suivant montre un fichier image chargé par [un FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) sous la mesure d’une chaîne. La chaîne a les métadonnées « base64 » supprimées avant la création de la forme.
 
@@ -109,7 +109,7 @@ Excel.run(function (context) {
 
 ## <a name="move-and-resize-shapes"></a>Déplacer et re tailler des formes
 
-Les formes sont au-dessus de la feuille de calcul. Leur placement est défini par la `left` propriété `top` et la propriété. Elles agissent comme des marges des bords respectifs de la feuille de calcul, [0, 0] étant le coin supérieur gauche. Celles-ci peuvent être définies directement ou ajustées à partir de leur position actuelle avec les `incrementLeft` méthodes `incrementTop` et les méthodes. La quantité de rotation d’une forme par rapport à la position par défaut est également établie de cette manière, la propriété étant la quantité absolue et la méthode ajustant la `rotation` `incrementRotation` rotation existante.
+Les formes sont au-dessus de la feuille de calcul. Leur placement est défini par la `left` propriété `top` et la propriété. Elles agissent comme des marges des bords respectifs de la feuille de calcul, [0, 0] étant le coin supérieur gauche. Celles-ci peuvent être définies directement ou ajustées à partir de leur position actuelle avec les `incrementLeft` `incrementTop` méthodes et les méthodes. La quantité de rotation d’une forme à partir de la position par défaut est également établie de cette manière, la propriété étant la quantité absolue et la méthode d’ajustement de `rotation` `incrementRotation` la rotation existante.
 
 La profondeur d’une forme par rapport aux autres formes est définie par la `zorderPosition` propriété. Il est définie à `setZOrder` l’aide de la méthode, qui prend un [ShapeZOrder](/javascript/api/excel/excel.shapezorder). `setZOrder` ajuste l’ordre de la forme actuelle par rapport aux autres formes.
 
@@ -210,7 +210,7 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> Les formes individuelles au sein du groupe sont référencés par le biais de la `ShapeGroup.shapes` propriété, qui est de type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). Elles ne sont plus accessibles par le biais de la collection de formes de la feuille de calcul après avoir été regroupées. Par exemple, si votre feuille de calcul avait trois formes et qu’elles étaient toutes regroupées, la méthode de la feuille de calcul retournerait le nombre `shapes.getCount` 1.
+> Les formes individuelles au sein du groupe sont référencés par le biais de la propriété, qui `ShapeGroup.shapes` est de type [GroupShapeCollection](/javascript/api/excel/excel.GroupShapeCollection). Elles ne sont plus accessibles via la collection de formes de la feuille de calcul après avoir été regroupées. Par exemple, si votre feuille de calcul avait trois formes et qu’elles étaient toutes regroupées, la méthode de la feuille de calcul retournerait le nombre `shapes.getCount` 1.
 
 ## <a name="export-shapes-as-images"></a>Exporter des formes en tant qu’images
 
@@ -231,7 +231,7 @@ Excel.run(function (context) {
 
 ## <a name="delete-shapes"></a>Supprimer des formes
 
-Les formes sont supprimées de la feuille de calcul à `Shape` l’aide de la méthode de `delete` l’objet. Aucune autre métadonnée n’est nécessaire.
+Les formes sont supprimées de la feuille de calcul à `Shape` l’aide de la méthode de `delete` l’objet. Aucune autre métadonnées n’est nécessaire.
 
 L’exemple de code suivant supprime toutes les formes de **MyWorksheet**.
 

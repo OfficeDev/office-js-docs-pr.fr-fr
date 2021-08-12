@@ -1,27 +1,27 @@
 ---
-title: Authorization, élément dans le fichier manifeste
-description: Spécifie une ressource externe à laquelle l’application Web du complément doit disposer d’une autorisation et les autorisations requises.
+title: Élément Authorization dans le fichier manifeste
+description: Spécifie une ressource externe à qui l’application web du add-in a besoin d’autorisation et les autorisations requises.
 ms.date: 08/12/2019
 localization_priority: Normal
-ms.openlocfilehash: b8d3dd31a212a7de00ff4dbf263e8593a8ec2898
-ms.sourcegitcommit: 9609bd5b4982cdaa2ea7637709a78a45835ffb19
+ms.openlocfilehash: af40a47c4ae30b6d18d3457704487027ff18ac92da2a3ae23cf1afe5c1e9b46a
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "47294261"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57087710"
 ---
-# <a name="authorization-element"></a>Authorization, élément
+# <a name="authorization-element"></a>Élément Authorization
 
-Spécifie les ressources externes auxquelles l’application Web du complément doit disposer et les autorisations requises.
+Spécifie les ressources externes à qui l’application web du add-in a besoin d’autorisation et les autorisations requises.
 
-**Authorization** est un élément enfant de l’élément [Authorizations](authorizations.md) dans le manifeste.
+**L’autorisation** est un élément enfant de [l’élément Authorizations](authorizations.md) dans le manifeste.
 
 ## <a name="child-elements"></a>Éléments enfants
 
 |  Élément |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **Resource**  |  Oui   |  Spécifie l’URL de la ressource externe.|
-|  [Scopes](scopes.md)                |  Oui  |  Spécifie les autorisations dont le complément a besoin pour la ressource.  |
+|  [Scopes](scopes.md)                |  Oui  |  Spécifie les autorisations dont le add-in a besoin pour la ressource.  |
 
 ## <a name="example"></a>Exemple
 

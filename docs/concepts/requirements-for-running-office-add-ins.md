@@ -3,12 +3,12 @@ title: Configuration requise pour exécuter des compléments Office
 description: Découvrez les exigences en matière de client et de serveur dont un utilisateur final a besoin pour exécuter des Office de recherche.
 ms.date: 07/27/2021
 localization_priority: Normal
-ms.openlocfilehash: f432eab8404b210bbe2bc2734f81873e80bc6397
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 1cc591db443c1fb0e2ca934cd05f52ad41ed61cf977ef4053af70d536867a6db
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773229"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57082987"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 

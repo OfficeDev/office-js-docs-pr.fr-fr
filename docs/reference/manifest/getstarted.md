@@ -3,12 +3,12 @@ title: Élément GetStarted dans le fichier manifeste
 description: Fournit des informations utilisées par la callout qui s’affiche lorsque le add-in est installé dans Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: 86a96ba0b448e518f48deefc7aceb5133904c9147ba39a28bf646d922c449af7
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53348684"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57086662"
 ---
 # <a name="getstarted-element"></a>Élément GetStarted
 
@@ -16,7 +16,7 @@ Fournit des informations utilisées par la callout qui s’affiche lorsque le ad
 
 ## <a name="child-elements"></a>Éléments enfants
 
-| Élément                       | Requis | Description                                        |
+| Élément                       | Obligatoire | Description                                        |
 |:------------------------------|:--------:|:---------------------------------------------------|
 | [Titre](#title)               | Oui      | Définit l’emplacement où se trouvent les fonctionnalités d’un complément     |
 | [Description](#description)   | Oui      | URL pointant vers un fichier qui contient les fonctions JavaScript.|
