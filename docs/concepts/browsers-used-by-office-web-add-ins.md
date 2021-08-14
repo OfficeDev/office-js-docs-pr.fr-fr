@@ -3,12 +3,12 @@ title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
 ms.date: 08/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 2eb4fa20674b2b07ec73217a5542612d1cb94b9d40f9855b93ecfd60f67bbe8e
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: 2ffd408e497cdb845497479f5f4cbed2cedcc39e
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845591"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232195"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -29,7 +29,7 @@ Le navigateur utilisé dépend de ce qui suit :
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|SYSTÈME D’EXPLOITATION|Version d’Office|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
+|Système d’exploitation|Version d’Office|Edge WebView2 (Chromium basé sur) installé ?|Navigateur|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.|
 |Mac|indifférent|Non applicable|Safari|
@@ -49,7 +49,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>3</sup> Si votre application inclut l’élément dans le manifeste, elle n’utilisera `<Runtimes>` pas Microsoft Edge webview d’origine (EdgeHTML). Si les conditions d’utilisation Microsoft Edge avec WebView2 (basé sur Chromium web) sont remplies, le add-in utilise ce navigateur. Dans le cas contraire, il utilise Internet Explorer 11 quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
-<sup>4</sup> Le contrôle WebView2 intégrable doit être installé afin que Office puisse l’incorporer et qu’il ne soit pas installé automatiquement avec Edge. Il est installé avec Microsoft 365, version 2101 ou ultérieure. Si vous avez une version antérieure de Microsoft 365, utilisez les instructions d’installation du contrôle sur [Microsoft Edge WebView2 / Incorporer du contenu web... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> Le contrôle WebView2 intégrable doit être installé afin que Office puisse l’incorporer et qu’il ne soit pas installé automatiquement avec Edge. Il est installé avec Microsoft 365, version 2101 ou ultérieure. Si vous avez une version antérieure de Microsoft 365, utilisez les instructions d’installation du contrôle sur [Microsoft Edge WebView2 /Embed web content ... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si l’un des utilisateurs de votre add-in dispose de plateformes qui utilisent Internet Explorer 11, vous disposez de deux options pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou une ultérieure.
@@ -81,7 +81,7 @@ Microsoft Edge exige que localhost bénéficie d’une exemption de bouclage sur
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obtenir des erreurs lors de la tentative de téléchargement d’un fichier PDF
 
-Le téléchargement direct des blobs en tant que fichiers PDF dans un add-in n’est pas pris en charge lorsque Edge est le navigateur. La solution de contournement consiste à créer une application web simple qui télécharge les blobs en tant que fichiers PDF. Dans votre application, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et passez l’URL de l’application web. Cette procédure ouvre l’application web dans une fenêtre de navigateur en dehors de Office.
+Le téléchargement direct des blobs en tant que fichiers PDF dans un add-in n’est pas pris en charge lorsque Edge est le navigateur. La solution de contournement consiste à créer une application web simple qui télécharge les blobs sous forme de fichiers PDF. Dans votre application, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et passez l’URL de l’application web. Cette procédure ouvre l’application web dans une fenêtre de navigateur en dehors de Office.
 
 ## <a name="see-also"></a>Voir aussi
 

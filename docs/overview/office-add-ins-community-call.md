@@ -3,12 +3,12 @@ title: Microsoft Office Appel de la communauté des add-ins
 description: Planification et ressources Microsoft Office d’appel de la communauté des Microsoft Office les plus importants.
 ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 401bf2f174ee4d383417b7a465c316b3f1727036b229a1b13cafb750825a74a8
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 44f97748bc24e2a95b3b89976b7d33d038fbb67e
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095150"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232373"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 

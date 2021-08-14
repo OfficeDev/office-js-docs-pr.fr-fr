@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément simple de volet des tâche
 ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
-ms.openlocfilehash: a431b48eed7cedee75b7ef4121cec43d1777f5ecad06536752c1abedc92af725
-ms.sourcegitcommit: f5d4321763e366a10f2d868fb329dbef5239c830
+ms.openlocfilehash: 8341365fef2c29a5dd2680e1a9a768488654fc91
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2021
-ms.locfileid: "57845654"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232353"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 

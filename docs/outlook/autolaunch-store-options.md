@@ -4,16 +4,16 @@ description: Découvrez les options de liste AppSource disponibles pour votre co
 ms.topic: article
 ms.date: 08/05/2021
 localization_priority: Normal
-ms.openlocfilehash: cbc4f43340b5dba4c10c5cf9362c3c6104289ea6ba32a46fb7df758494e27b64
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5d48e441d41b9d1fcd5508cb1beb3a90acd1550f
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098362"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232393"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>Options de liste AppSource pour votre Outlook d’événements
 
-Pour l’instant, les add-ins doivent être déployés par les administrateurs d’une organisation pour que les utilisateurs finaux accèdent à la fonctionnalité basée sur un événement. Nous limitons l’activation basée sur les événements si l’utilisateur final a acquis le complément directement à partir d’AppSource. Par exemple, si le add-in Contoso inclut le point d’extension avec au moins un point défini sous le nœud, l’appel automatique du module ne se produit que si le module a été installé pour l’utilisateur final par l’administrateur de son organisation. Dans le cas `LaunchEvent` `LaunchEvent Type` contraire, l’appel automatique du module est `LaunchEvents` bloqué. Consultez l’extrait suivant d’un exemple de manifeste de add-in.
+Pour l’instant, les add-ins doivent être déployés par les administrateurs d’une organisation pour que les utilisateurs finaux accèdent à la fonctionnalité basée sur les événements. Nous limitons l’activation basée sur les événements si l’utilisateur final a acquis le complément directement à partir d’AppSource. Par exemple, si le add-in Contoso inclut le point d’extension avec au moins un point défini sous le nœud, l’appel automatique du module ne se produit que si le module a été installé pour l’utilisateur final par l’administrateur de son organisation. Dans le cas `LaunchEvent` `LaunchEvent Type` contraire, l’appel automatique du module est `LaunchEvents` bloqué. Consultez l’extrait suivant d’un exemple de manifeste de add-in.
 
 ```xml
 ...
@@ -50,7 +50,7 @@ Pour déployer le add-in, l’administrateur peut suivre les étapes suivantes.
 
 ## <a name="unrestricted-appsource-listing"></a>Liste AppSource non restreinte
 
-Si votre complément n’utilise pas l’activation basée sur les événements pour les scénarios critiques (autrement dit, votre complément fonctionne bien sans appel automatique), envisagez de répertorier votre complément dans AppSource sans codes de vol spéciaux. Si un utilisateur final obtient votre complément à partir d’AppSource, l’activation automatique ne se produit pas pour l’utilisateur. Toutefois, ils peuvent utiliser d’autres composants de votre add-in, tels qu’un volet Des tâches ou une commande sans interface utilisateur.
+Si votre complément n’utilise pas l’activation basée sur des événements pour les scénarios critiques (autrement dit, votre complément fonctionne bien sans appel automatique), envisagez de répertorier votre complément dans AppSource sans codes de vol spéciaux. Si un utilisateur final obtient votre complément à partir d’AppSource, l’activation automatique ne se produit pas pour l’utilisateur. Toutefois, ils peuvent utiliser d’autres composants de votre add-in, tels qu’un volet Des tâches ou une commande sans interface utilisateur.
 
 > [!IMPORTANT]
 > Il s’agit d’une restriction temporaire. À l’avenir, nous prévoyons d’activer l’activation de complément basée sur des événements pour les utilisateurs finaux qui achètent directement votre complément.
@@ -61,19 +61,19 @@ Vous pouvez mettre à jour votre complément existant pour inclure l’activatio
 
 Une fois le add-in mis à jour approuvé, les administrateurs de l’organisation qui ont précédemment déployé le add-in reçoivent un message de mise à jour dans la **section** Applications intégrées du Centre d’administration. Le message informe l’administrateur des modifications apportées à l’activation basée sur l’événement. Une fois que l’administrateur a accepté les modifications, la mise à jour est déployée pour les utilisateurs finaux.
 
-![Capture d’écran de la notification de mise à jour de l’application sur l’écran « Applications intégrées ».](../images/outlook-deploy-update-notification.png)
+![Capture d’écran de la notification de mise à jour d’application sur l’écran « Applications intégrées ».](../images/outlook-deploy-update-notification.png)
 
 Pour les utilisateurs finaux qui ont installé le complément eux-mêmes, la fonctionnalité d’activation basée sur des événements ne fonctionne pas même après la mise à jour du complément.
 
 ## <a name="admin-consent-for-installing-event-based-add-ins"></a>Consentement de l’administrateur pour l’installation de add-ins basés sur des événements
 
-Chaque fois qu’un complément basé sur  un événement est déployé à partir de l’écran Applications intégrées, l’administrateur obtient des détails sur les fonctionnalités d’activation basée sur les événements du complément dans l’Assistant de déploiement. Les détails apparaissent dans la section **Autorisations et fonctionnalités de l’application.** L’administrateur doit voir tous les événements dans lequel le add-in peut s’activer automatiquement.
+Chaque fois qu’un complément basé sur  un événement est déployé à partir de l’écran Applications intégrées, l’administrateur obtient des détails sur les fonctionnalités d’activation basée sur les événements du complément dans l’Assistant de déploiement. Les détails apparaissent dans la section Autorisations et **fonctionnalités de l’application.** L’administrateur doit voir tous les événements dans lequel le add-in peut s’activer automatiquement.
 
 ![Capture d’écran de l’écran « Accepter les demandes d’autorisations » lors du déploiement d’une nouvelle application.](../images/outlook-deploy-accept-permissions-requests.png)
 
-De même, lorsqu’un add-in existant est mis à jour vers une fonctionnalité basée sur un événement, l’administrateur voit l’état « Mise à jour en attente » sur le module. Le add-in mis à jour est déployé uniquement si l’administrateur consent aux modifications notées dans la section Autorisations et fonctionnalités de l’application, y compris l’ensemble des **événements** dans lesquels le module peut s’activer automatiquement.
+De même, lorsqu’un add-in existant est mis à jour vers une fonctionnalité basée sur les événements, l’administrateur voit l’état « Mettre à jour en attente » sur le add-in. Le add-in mis à jour est déployé uniquement si l’administrateur consent aux modifications notées dans la section Autorisations et fonctionnalités de l’application, y compris l’ensemble des **événements** dans lesquels le module peut s’activer automatiquement.
 
-Chaque fois que vous ajoutez de nouvelles informations à votre complément, les administrateurs voient le flux de mise à jour dans le portail d’administration et doivent donner leur consentement pour des `LaunchEvent Type` événements supplémentaires.
+Chaque fois que vous ajoutez de nouvelles informations à votre complément, les administrateurs voient le flux de mise à jour dans le portail d’administration et doivent donner leur consentement pour `LaunchEvent Type` d’autres événements.
 
 ![Capture d’écran du flux « Mises à jour » lors du déploiement d’une application mise à jour.](../images/outlook-deploy-update-flow.png)
 
