@@ -1,14 +1,14 @@
 ---
 title: Conception des compléments Outlook
 description: Les instructions suivantes vous aideront à concevoir et à créer un complément attrayant, qui apportera le meilleur de votre application directement dans Outlook sur Windows, le web, iOS, Mac et Android.
-ms.date: 07/05/2021
+ms.date: 08/12/2021
 localization_priority: Priority
-ms.openlocfilehash: 63dbeaee2c5718af656b5865cb016cb0ec72f53b5af2ab9e992c406f8dd84efc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 62a25595d42470094f7f9471fb97f2e133350da4
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090223"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232385"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Instructions de création d’un complément Outlook
 
@@ -30,7 +30,7 @@ Les instructions de haut niveau suivantes vous aideront à concevoir et à crée
 
    Votre complément doit être conçu à l’aide de schémas natifs de la plateforme sur laquelle Outlook s’exécute. Pour ce faire, veillez à respecter et implémenter les instructions d’interaction et visuelles définies par chaque plateforme. Outlook possède ses propres instructions et celles-ci doivent également être prises en compte. Un complément bien conçu sera une combinaison appropriée de votre expérience, de la plateforme et d’Outlook.
 
-   Cela ne signifie pas que votre complément devra être différent visuellement lorsqu’il est exécuté sur Outlook sur iOS et Outlook sur Android. Nous vous recommandons de vous référer à [Fluent UI](https://developer.microsoft.com/fluentui#/) comme une option pour vous aider dans les styles.
+   Cela ne signifie pas que votre complément devra être différent visuellement lorsqu’il est exécuté sur Outlook sur iOS versus Android. 
 
 3. **Faites en sorte que votre complément soit agréable à utiliser jusque dans les moindres détails**
 

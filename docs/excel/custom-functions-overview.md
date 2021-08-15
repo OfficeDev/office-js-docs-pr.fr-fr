@@ -1,16 +1,16 @@
 ---
 description: Créez une fonction personnalisée Excel pour votre Complément Office.
 title: Créer des fonctions personnalisées dans Excel
-ms.date: 07/08/2021
+ms.date: 08/04/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 99211ed1debbff5274b257d91bb5a3612609d9d4
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 8ff424df95d92c17004448aca99f8d0001dc3c06
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53774202"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232404"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -74,7 +74,7 @@ Le fichier manifeste XML d’un complément qui définit des fonctions personnal
 
 - Définit l’espace de noms pour vos fonctions personnalisées. Un espace de noms s’ajoute à vos fonctions personnalisées pour aider les clients à identifier vos fonctions dans le cadre de votre complément.
 - Utilise les éléments `<ExtensionPoint>` et `<Resources>` qui sont propres à un manifeste de fonctions personnalisées. Ces éléments contiennent les informations relatives aux emplacements des fichiers JavaScript, JSON et HTML.
-- Spécifie le runtime à utiliser pour votre fonction personnalisée. Nous vous recommandons de toujours utiliser une exécution partagée, sauf si vous avez un besoin spécifique d’autre runtime, car un runtime partagé autorise le partage de données entre les fonctions et le volet Office. Notez que l’utilisation d’un runtime partagé signifie que votre complément utilise Internet Explorer 11, et non Microsoft Edge.
+- Spécifie le runtime à utiliser pour votre fonction personnalisée. Nous vous recommandons de toujours utiliser une exécution partagée, sauf si vous avez un besoin spécifique d’autre runtime, car un runtime partagé autorise le partage de données entre les fonctions et le volet Office.
 
 Si vous utilisez le générateur Yo Office pour créer des fichiers, nous vous recommandons d’ajuster votre manifeste pour utiliser un runtime partagé, car il ne s’agit pas de la valeur par défaut pour ces fichiers. Pour modifier votre manifeste, suivez les instructions dans [Configurer votre complément Excel pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
@@ -84,7 +84,7 @@ Pour afficher un manifeste de travail complet à partir d’un exemple de compl�
 
 ## <a name="coauthoring"></a>Co-édition
 
-Excel sur le web et sur Windows connecté à un abonnement Microsoft 365 vous permettent de co-éditer dans Excel. Si votre classeur utilise une fonction personnalisée, votre collègue coauteur est invité à charger le complément de la fonction personnalisée. Quand vous avez tous les deux chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
+Excel sur le web et sur Windows connecté à un abonnement Microsoft 365 permettent aux utilisateurs finaux de co-éditer dans Excel. Si le classeur d’un utilisateur final utilise une fonction personnalisée, le collègue de co-création de cet utilisateur final est invité à charger le complément de fonctions personnalisées correspondant. Une fois que les deux utilisateurs ont chargé le complément, la fonction personnalisée partage les résultats via la co-édition.
 
 Pour plus d’informations sur la co-création, voir [À propos de la co-création dans Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
 
