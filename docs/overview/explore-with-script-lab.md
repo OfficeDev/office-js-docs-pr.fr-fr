@@ -1,20 +1,20 @@
 ---
 title: Explorer l’API JavaScript Office à l’aide de Script Lab
 description: Utilisez Script Lab pour explorer l’API JS Office et pour prototyper les fonctionnalités.
-ms.date: 06/18/2021
+ms.date: 08/05/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: ba70a95444bcc7a8b5eda8aad0bb2d8e1b0d12affe9ce341e65ba9baa3107c58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: fc0d2e82c759635fbd846ea31fc86a7af79a8499
+ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088870"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "58232220"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript Office à l’aide de Script Lab
 
-Les compléments [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) et [Script Lab pour Outlook](https://appsource.microsoft.com/product/office/WA200001603), disponibles gratuitement depuis AppSource, vous permettent d’explorer l’API JavaScript Office lorsque vous travaillez dans un programme Office tel qu’Excel ou Outlook. Script Lab est un outil pratique à ajouter à votre kit de ressources de développement lorsque vous réalisez un prototype et vérifiez les fonctionnalités souhaitées dans votre complément.
+Les compléments [Script Lab](https://appsource.microsoft.com/product/office/WA104380862) et [Script Lab pour Outlook](https://appsource.microsoft.com/product/office/wa200001603), disponibles gratuitement depuis AppSource, vous permettent d’explorer l’API JavaScript Office lorsque vous travaillez dans un programme Office tel qu’Excel ou Outlook. Script Lab est un outil pratique à ajouter à votre kit de ressources de développement lorsque vous réalisez un prototype et vérifiez les fonctionnalités souhaitées dans votre complément.
 
 ## <a name="what-is-script-lab"></a>Qu’est-ce que script Lab ?
 
@@ -70,11 +70,11 @@ Script Lab pour Outlook est disponible sur les clients suivants.
 Pour obtenir plus d’informations sur Script Lab pour Outlook, voir le [billet de blog](https://developer.microsoft.com/outlook/blogs/script-lab-now-supports-outlook/) associé.
 
 > [!IMPORTANT]
-> En 2021, Script Lab cessera de travailler sur les combinaisons de plateforme et de version d’Office qui utilisent Internet Explorer pour héberger des compléments. Cela inclut les versions Définitives d’Office via Office 2019 et certaines versions antérieures d’Office Microsoft 365 (abonnement). (Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).) Vous aurez besoin d’autres combinaisons de plateformes et de versions pour explorer et tester les API de la bibliothèque JavaScript Office avec Script Lab. Mais le comportement de ces API n’est pas différent dans Internet Explorer. Il ne s’agit donc pas vraiment d’une faiblesse de Script Lab. Notez que les compléments Office envoyés à [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) doivent prendre en charge les combinaisons de plateforme et de version qui utilisent Internet Explorer pour héberger des compléments.
+> Script Lab cessera de travailler sur les combinaisons de plateforme et de version d’Office qui utilisent Internet Explorer pour héberger des compléments. Cela inclut les versions Office en achat définitif d’Office jusqu’à Office 2019. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Pour utiliser Script Lab dans Excel, Word ou PowerPoint, installez le [complément Script Lab](https://appsource.microsoft.com/product/office/WA104380862) à partir d’AppSource. 
+Pour utiliser Script Lab dans Excel, Word ou PowerPoint, installez le [complément Script Lab](https://appsource.microsoft.com/product/office/WA104380862) à partir d’AppSource.
 
 Pour utiliser le Script Lab pour Outlook, vous pouvez installer le [complément Script Lab pour Outlook](https://appsource.microsoft.com/product/office/wa200001603) depuis AppSource.
 
