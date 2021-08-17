@@ -269,6 +269,9 @@ items:
                 href: testing/attach-debugger-from-task-pane.md
               - name: Débogage à l’aide des outils de développement
                 href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+              - name: Débogage à l’aide de Microsoft Edge WebView2
+                href: testing/debug-desktop-using-edge-chromium.md
+                displayName: 'debug, windows'
               - name: Tester avec Internet Explorer 11
                 href: testing/ie-11-testing.md
           - name: Navigateur web
