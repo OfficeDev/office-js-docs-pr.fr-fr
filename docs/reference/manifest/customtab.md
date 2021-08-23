@@ -1,14 +1,14 @@
 ---
 title: Élément CustomTab dans le fichier manifest
 description: Sur le ruban, indiquez l’onglet et le groupe où placer leurs commandes de complément.
-ms.date: 02/09/2021
+ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: de6233966abea4de423f255bda3c9e6e38ff5037c760c90cae7c8a1c7ca6ab2e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3656f68a722e5e0c224f18f80a0e0214fce47cfb
+ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085052"
+ms.lasthandoff: 08/18/2021
+ms.locfileid: "58382962"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -28,11 +28,11 @@ Sur les onglets personnalisés, le add-in peut avoir des groupes personnalisés 
 |  [Group](group.md)      | Non |  Définit un groupe de commandes.  |
 |  [OfficeGroup](#officegroup)      | Non |  Représente un groupe de contrôle Office intégré. **Important**: non disponible dans Outlook. |
 |  [Label](#label-tab)      | Oui |  Étiquette pour CustomTab ou Group.  |
-|  [InsertAfter](#insertafter)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. **Important**: Non disponible dans Outlook. |
-|  [InsertBefore](#insertbefore)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. **Important**: Non disponible dans Outlook. |
+|  [InsertAfter](#insertafter)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. **Important**: disponible uniquement dans PowerPoint. |
+|  [InsertBefore](#insertbefore)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. **Important**: disponible uniquement dans PowerPoint. |
 |  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si l’onglet personnalisé doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. **Important**: non disponible dans Outlook. |
 
-### <a name="group"></a>Groupe
+### <a name="group"></a>Group
 
 Facultatif, mais s’il n’est pas présent, il doit y avoir au moins **un élément OfficeGroup.** Voir [Élément group](group.md). L’ordre de **groupe** et **d’OfficeGroup** dans le manifeste doit être l’ordre dans le cas où vous souhaitez qu’ils apparaissent sous l’onglet personnalisé. Ils peuvent être entremêlés s’il existe plusieurs éléments, mais tous doivent se trouver au-dessus de **l’élément Label.**
 
@@ -52,14 +52,14 @@ Obligatoire. Étiquette de l’onglet personnalisé. **L’attribut resid** ne p
 Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
 
 > [!IMPORTANT]
-> `InsertAfter`L’élément n’est pas disponible dans Outlook.
+> `InsertAfter`L’élément est disponible uniquement dans PowerPoint.
 
 ### <a name="insertbefore"></a>InsertBefore
 
 Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
 
 > [!IMPORTANT]
-> `InsertBefore`L’élément n’est pas disponible dans Outlook.
+> `InsertBefore`L’élément est disponible uniquement dans PowerPoint.
 
 ### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
 
