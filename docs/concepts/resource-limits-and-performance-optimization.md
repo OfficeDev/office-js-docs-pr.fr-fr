@@ -1,14 +1,14 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.
-ms.date: 07/08/2021
+ms.date: 08/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 43902dcf3a7703a763e1268d5b5695c48c59e0fcacf3ae7d2740b54e31e3057e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082767"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505662"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -49,7 +49,7 @@ Outre les règles relatives au cœur de l’UC, à la mémoire et à la fiabilit
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que sur Outlook sur le web appareils mobiles et mobiles.
+- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé, et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que les Outlook sur le web et les appareils mobiles.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
@@ -62,11 +62,11 @@ Si vous construisez un Excel, n’ignorez pas les limitations de taille suivante
 
 Si vous pensez que l’entrée utilisateur dépasse ces limites, veillez à vérifier les données avant `context.sync()` d’appeler. Fractionner l’opération en plus petites parties selon les besoins. N’oubliez pas d’appeler chaque sous-opération pour éviter que ces `context.sync()` opérations ne soient à nouveau rassemblées par lots.
 
-Ces limitations sont généralement dépassées par de grandes plages. Votre add-in peut être en mesure d’utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour de manière stratégique des cellules dans une plage plus étendue. Pour [plus d’informations,](../excel/excel-add-ins-multiple-ranges.md) voir Travailler avec plusieurs plages simultanément dans Excel de recherche.
+Ces limitations sont généralement dépassées par de grandes plages. Votre add-in peut être en mesure d’utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour de manière stratégique des cellules dans une plage plus étendue. Pour plus d’informations sur l’utilisation, voir `RangeAreas` [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md). Pour plus d’informations sur l’optimisation de la taille de la charge utile Excel, voir les meilleures pratiques en matière de limite [de la charge utile.](../excel/performance.md#payload-size-limit-best-practices)
 
 ### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
 
-Si un application de contenu ou du volet Des tâches dépasse les seuils précédents sur l’utilisation du cœur de l’UC ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
+Si un application de contenu ou du volet Des tâches dépasse les seuils précédents en matière d’utilisation du cœur de l’UC ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
 
 - Redémarrer le complément.
 - Annuler les alertes supplémentaires de dépassement de seuil. Dans l’idéal, l’utilisateur devrait supprimer le complément du document. La poursuite de l’exécution du complément risquerait d’entraîner des problèmes supplémentaires au niveau des performances et de la stabilité.  
@@ -92,8 +92,8 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |8 |Échec du téléchargement du manifeste du complément|Critique|L Office’application n’a pas pu charger le fichier manifeste du Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
 |9 |Impossible d’analyser le balisage du complément|Critique|L Office’application a chargé Office manifeste de l’application, mais n’a pas pu lire le code HTML de l’application.|
 |10 |Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
-|15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
-|18 |Le complément a été fermé||L Office’application a pu fermer le Office le module.|
+|15 |Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
+|18 |Le complément a été fermé||L Office’application a pu fermer le Office le module.|
 |19|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l'Complément Office n'ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 
@@ -113,7 +113,7 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 ### <a name="performance-improvements-with-the-application-specific-apis"></a>Améliorations des performances avec les API propres à l’application
 
-Les conseils de performances dans l’utilisation du modèle API propre à [l’application](../develop/application-specific-api-model.md) fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
+Les conseils de performances dans l’utilisation du modèle [d’API](../develop/application-specific-api-model.md) propre à l’application fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
 
 - [Chargez uniquement les propriétés nécessaires.](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended)
 - [Réduisez le nombre d’appels sync().](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls) Pour [plus d’informations sur](correlated-objects-pattern.md) la gestion des appels dans votre code, évitez d’utiliser la méthode context.sync en `sync` boucle.

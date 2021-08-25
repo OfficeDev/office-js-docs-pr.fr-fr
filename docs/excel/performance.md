@@ -1,14 +1,14 @@
 ---
 title: Optimisation des performances API JavaScript Excel
 description: Optimisez Excel de votre application à l’aide de l’API JavaScript.
-ms.date: 07/29/2020
+ms.date: 08/24/2021
 localization_priority: Normal
-ms.openlocfilehash: 9061d6f248169bbfb58623f6710fd044cd50350b8f2e37c8417d41e281040237
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f65db836d6e7e640672fa5b9e6642ef8122ed5a5
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089276"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505655"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -66,7 +66,7 @@ Excel.run(async function(ctx) {
 })
 ```
 
-Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
+Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, le fait de renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
 
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
@@ -109,8 +109,143 @@ Excel.run(async (ctx) => {
 > [!NOTE]
 > Vous pouvez convertir un objet de Tableau en objet de Plage à l’aide de la méthode[Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__).
 
+## <a name="payload-size-limit-best-practices"></a>Meilleures pratiques en matière de limite de taille de charge utile
+
+L Excel’API JavaScript présente des limites de taille pour les appels d’API. Excel sur le Web a une limite de taille de charge utile pour les demandes et les réponses de 5 Mo, et une API renvoie une erreur si cette limite `RichAPI.Error` est dépassée. Sur toutes les plateformes, une plage est limitée à cinq millions de cellules pour obtenir des opérations. Les plages importantes dépassent généralement ces deux limitations.
+
+La taille de la charge utile d’une demande est une combinaison des trois composants suivants.
+
+* Nombre d’appels d’API
+* Nombre d’objets, tels que `Range` des objets
+* Longueur de la valeur à définir ou à obtenir
+
+Si une API renvoie l’erreur, utilisez les stratégies de meilleures pratiques documentées dans cet article pour optimiser votre script et `RequestPayloadSizeLimitExceeded` éviter l’erreur.
+
+### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>Stratégie 1 : déplacer des valeurs inchangées hors des boucles
+
+Limitez le nombre de processus qui se produisent au sein de boucles pour améliorer les performances. Dans l’exemple de code suivant, peut être déplacé hors de la boucle, car il ne change `context.workbook.worksheets.getActiveWorksheet()` `for` pas dans cette boucle.
+
+```js
+// DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    
+    // This sample retrieves the worksheet every time the loop runs, which is bad for performance.
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = context.workbook.worksheets.getActiveWorksheet().getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
+}
+```
+
+L’exemple de code suivant montre une logique similaire à l’exemple de code précédent, mais avec une stratégie de performances améliorée. La valeur est récupérée avant la boucle, car cette valeur n’a pas besoin d’être récupérée à chaque fois que la `context.workbook.worksheets.getActiveWorksheet()` `for` boucle `for` s’exécute. Seules les valeurs qui changent dans le contexte d’une boucle doivent être récupérées dans cette boucle.
+
+```js
+// This code sample shows a good performance strategy.
+async function run() {
+  await Excel.run(async (context) => {
+    var ranges = [];
+    // Retrieve the worksheet outside the loop.
+    var worksheet = context.workbook.worksheets.getActiveWorksheet(); 
+
+    // Only process the necessary values inside the loop.
+    for (let i = 0; i < 7500; i++) {
+      var rangeByIndex = worksheet.getRangeByIndexes(i, 1, 1, 1);
+    }    
+    await context.sync();
+  });
+}
+```
+
+### <a name="strategy-2-create-fewer-range-objects"></a>Stratégie 2 : créer moins d’objets de plage
+
+Créez moins d’objets de plage pour améliorer les performances et réduire la taille de la charge utile. Deux approches pour créer moins d’objets de plage sont décrites dans les sections d’article et les exemples de code suivants.
+
+#### <a name="split-each-range-array-into-multiple-arrays"></a>Fractionner chaque tableau de plages en plusieurs tableaux
+
+Pour créer moins d’objets de plage, vous pouvez fractionner chaque tableau de plages en plusieurs tableaux, puis traiter chaque nouveau tableau avec une boucle et un nouvel `context.sync()` appel.
+
+> [!IMPORTANT]
+> Utilisez cette stratégie uniquement si vous avez d’abord déterminé que vous dépassez la limite de taille de demande de charge utile. L’utilisation de boucles multiples peut réduire la taille de chaque demande de charge utile pour éviter de dépasser la limite de 5 Mo, mais l’utilisation de plusieurs boucles et appels a également un impact négatif sur `context.sync()` les performances.
+
+L’exemple de code suivant tente de traiter un grand tableau de plages en une seule boucle, puis un seul `context.sync()` appel. Si vous traitez trop de valeurs de plage dans un appel, la taille de la demande de charge utile `context.sync()` dépasse la limite de 5 Mo.
+
+```js
+// This code sample does not show a recommended strategy.
+// Calling 10,000 rows would likely exceed the 5MB payload size limit in a real-world situation.
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+    
+    // This sample attempts to process too many ranges at once. 
+    for (let row = 1; row < 10000; row++) {
+      var range = sheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+  });
+}
+```
+
+L’exemple de code suivant présente une logique similaire à l’exemple de code précédent, mais avec une stratégie qui évite de dépasser la limite de taille de demande de charge utile de 5 Mo. Dans l’exemple de code suivant, les plages sont traitées en deux boucles distinctes, et chaque boucle est suivie d’un `context.sync()` appel.
+
+```js
+// This code sample shows a strategy for reducing payload request size.
+// However, using multiple loops and `context.sync()` calls negatively impacts performance.
+// Only use this strategy if you've determined that you're exceeding the payload request limit.
+async function run() {
+  await Excel.run(async (context) => {
+    var worksheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Split the ranges into two loops, rows 1-5000 and then 5001-10000.
+    for (let row = 1; row < 5000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    // Sync after each loop. 
+    await context.sync(); 
+    
+    for (let row = 5001; row < 10000; row++) {
+      var range = worksheet.getRangeByIndexes(i, 1, 1, 1);
+      range.values = [["1"]];
+    }
+    await context.sync(); 
+  });
+}
+```
+
+#### <a name="set-range-values-in-an-array"></a>Définir des valeurs de plage dans un tableau
+
+Une autre façon de créer moins d’objets de plage consiste à créer un tableau, à utiliser une boucle pour définir toutes les données de ce tableau, puis à transmettre les valeurs du tableau à une plage. Cela bénéficie à la fois des performances et de la taille de la charge utile. Au lieu `range.values` d’appeler chaque plage d’une boucle, `range.values` est appelé une fois en dehors de la boucle.
+
+L’exemple de code suivant montre comment créer un tableau, définir les valeurs de ce tableau dans une boucle, puis passer les valeurs du tableau à une plage en dehors de `for` la boucle.
+
+```js
+// This code sample shows a good performance strategy.
+async function run() {
+  await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();    
+    // Create an array.
+    const array = new Array(10000);
+
+    // Set the values of the array inside the loop.
+    for (var i = 0; i < 10000; i++) {
+      array[i] = [1];
+    }
+
+    // Pass the array values to a range outside the loop. 
+    var range = worksheet.getRange("A1:A10000");
+    range.values = array;
+    await context.sync();
+  });
+}
+```
+
 ## <a name="see-also"></a>Voir aussi
 
 * [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
+* [Gestion des erreurs avec l Excel API JavaScript](excel-add-ins-error-handling.md)
 * [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)
 * [Objet de fonctions de feuille de calcul (API JavaScript pour Excel)](/javascript/api/excel/excel.functions)

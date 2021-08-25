@@ -1,22 +1,22 @@
 ---
 title: Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 description: Utilisez l’extension Visual Studio Code de Microsoft Office déboguer votre Office de débogage.
-ms.date: 02/01/2021
+ms.date: 08/18/2021
 localization_priority: Normal
-ms.openlocfilehash: d027e5937fa3a58623ce9e798fc683e5459e73b8b72606c0a006e465c9c1360c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ba831cfabdefbf3829bb702bf21a70ddb499b972
+ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088466"
+ms.lasthandoff: 08/24/2021
+ms.locfileid: "58505669"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
-L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre application Office par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article](./debug-desktop-using-edge-chromium.md)
+L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre Office Par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article.](./debug-desktop-using-edge-chromium.md)
 
 Ce mode de débogage est dynamique, ce qui vous permet de définir des points d’arrêt pendant l’exécution du code. Vous pouvez voir les modifications dans votre code immédiatement lorsque le déboguer est attaché, tout cela sans perdre votre session de débogage. Vos modifications de code sont également persistantes, afin que vous pouvez voir les résultats de plusieurs modifications apportées à votre code. L’image suivante illustre cette extension en action.
 
-![Office Extension déboguer une section de l’extension déboguer Excel les autres.](../images/vs-debugger-extension-for-office-addins.jpg)
+![Office Extension déboguer une section de Excel de projet.](../images/vs-debugger-extension-for-office-addins.jpg)
 
 ## <a name="prerequisites"></a>Configuration requise
 
@@ -29,7 +29,7 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
 
 ## <a name="install-and-use-the-debugger"></a>Installer et utiliser le débogueur
 
-1. Si vous avez besoin de créer un projet de Office, utilisez le générateur [yo-Office pour en créer un.](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator) Suivez les invites de la ligne de commande pour configurer votre projet. Vous pouvez choisir n’importe quelle langue ou type de projet en fonction de vos besoins.
+1. Si vous avez besoin de créer un projet de Office, utilisez le générateur [yo-Office pour en créer un.](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator) Suivez les invites de la ligne de commande pour configurer votre projet. Vous pouvez choisir n’importe quelle langue ou type de projet en fonction de vos besoins. Ce didacticiel utilise un Excel du volet Des tâches.
 
     > [!NOTE]
     > Si vous avez déjà un projet, ignorez l’étape 1 et passez à l’étape 2.
@@ -50,7 +50,7 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
   > [!TIP]
   > Pour ouvrir Visual Studio Code en tant qu’administrateur, sélectionnez **l’option** Exécuter en tant qu’administrateur lors de l’ouverture Visual Studio Code après l’avoir recherché dans Windows.
 
-1. Dans VS Code, sélectionnez **Ctrl + Maj + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de add-in » et installez-la.
+1. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de l’extension de module de 2013 » et installez-
 
 1. Dans le dossier .vscode de votre projet, ouvrez le fichier **launch.json**. Ajoutez le code suivant à la `configurations` section.
 
@@ -67,13 +67,13 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
     }
     ```
 
-1. Dans la section JSON que vous avez copiée, recherchez la section « url ». Dans cette URL, vous devez remplacer le texte HOST en minuscules par l’application qui héberge votre Office de messagerie. Par exemple, si votre Office est pour Excel, la valeur de votre URL est « https://localhost:3000/taskpane.html?_host_Info= <strong>Excel</strong>$Win 32$16.01$en-US$ \$ \$ \$ 0 ».
+1. Dans la section JSON que vous avez copiée, recherchez la `"url"` propriété. Dans cette URL, vous devez remplacer le texte **HOST** en minuscules par l’application qui héberge votre Office de messagerie. Par exemple, si votre Office est pour Excel, la valeur de votre URL est `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"` .
 
-1. Ouvrez l’invite de commandes et assurez-vous que vous êtes dans le dossier racine de votre projet. Exécutez la commande `npm start` pour démarrer le serveur dev. Lorsque votre add-in se charge dans le client Office client, ouvrez le volet Des tâches.
+1. Ouvrez l’invite de commandes et assurez-vous que vous êtes dans le dossier racine de votre projet. Exécutez la commande `npm start` pour démarrer le serveur dev. Lorsque votre add-in se charge dans l’application Office, ouvrez le volet Des tâches.
 
-1. Revenir à Visual Studio Code et choisissez **Afficher >** déboguer ou entrez **Ctrl + Shift + D** pour basculer en mode débogage.
+1. Revenir à Visual Studio Code et choisissez **Afficher >** Déboguer ou entrez **Ctrl+Shift+D** pour passer en mode Débogage.
 
-1. Dans les options de débogage, sélectionnez Attacher aux Office de **travail.** Sélectionnez **F5** ou **choisissez Déboguer -> démarrer le** débogage à partir du menu pour commencer le débogage.
+1. Dans les options de débogage, sélectionnez **Attacher aux Office de travail.** Sélectionnez **F5** ou **sélectionnez Exécuter > démarrer le débogage** à partir du menu pour commencer le débogage.
 
 1. Définissez un point d’arrêt dans le fichier du volet Des tâches de votre projet. Vous pouvez définir des points d’arrêt Visual Studio Code en pointant à côté d’une ligne de code et en sélectionnant le cercle rouge qui s’affiche.
 
