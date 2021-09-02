@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
-ms.date: 07/22/2021
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 6108051b9fd229804bb8c6a3ac25bb036ab072f03bc649139338361d0cc2ba89
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6e87ddfc6c29e74a578d399116df5df9b364028f
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080876"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863533"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -218,7 +218,7 @@ function processMessage(arg) {
 La boîte de dialogue ou le runtime JavaScript parent (soit dans un volet Des tâches, soit dans un runtime sans interface utilisateur qui héberge un fichier de fonction) peut être éloigné du domaine du module après l’ouverture de la boîte de dialogue. Si l’un de ces événements s’est produit, un appel échouera, sauf si votre code spécifie le domaine `messageParent` du runtime parent. Pour ce faire, ajoutez [un paramètre DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageParent` . Cet objet possède une `targetOrigin` propriété qui spécifie le domaine auquel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que la boîte de dialogue héberge actuellement.
 
 > [!NOTE]
-> `messageParent`L’utilisation pour envoyer un message entre domaines nécessite l’ensemble de conditions [requises Dialog Origin 1.1](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+> `messageParent`L’utilisation pour envoyer un message entre domaines nécessite l’ensemble de conditions [requises Dialog Origin 1.1](../reference/requirement-sets/dialog-origin-requirement-sets.md). Le paramètre est ignoré sur les versions antérieures de Office qui ne prisent pas en charge l’ensemble de conditions requises, de sorte que le comportement de la méthode n’est pas affecté si vous `DialogMessageOptions` le passez.
 
 Voici un exemple d’utilisation `messageParent` pour envoyer un message entre domaines.
 
@@ -341,7 +341,7 @@ function onRegisterMessageComplete(asyncResult) {
 La boîte de dialogue ou le runtime JavaScript parent (soit dans un volet Des tâches, soit dans un runtime sans interface utilisateur qui héberge un fichier de fonction) peut être éloigné du domaine du module après l’ouverture de la boîte de dialogue. Si l’un de ces événements s’est produit, un appel échouera, sauf si votre code spécifie le domaine `messageChild` du runtime de la boîte de dialogue. Pour ce faire, ajoutez [un paramètre DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild` . Cet objet possède une `targetOrigin` propriété qui spécifie le domaine auquel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que le runtime parent héberge actuellement. 
 
 > [!NOTE]
-> `messageChild`L’utilisation pour envoyer un message entre domaines nécessite l’ensemble de conditions [requises Dialog Origin 1.1](../reference/requirement-sets/dialog-origin-requirement-sets.md).
+> `messageChild`L’utilisation pour envoyer un message entre domaines nécessite l’ensemble de conditions [requises Dialog Origin 1.1](../reference/requirement-sets/dialog-origin-requirement-sets.md). Le paramètre est ignoré sur les versions antérieures de Office qui ne prisent pas en charge l’ensemble de conditions requises, de sorte que le comportement de la méthode n’est pas affecté si vous `DialogMessageOptions` le passez.
 
 Voici un exemple d’utilisation `messageChild` pour envoyer un message entre domaines.
 

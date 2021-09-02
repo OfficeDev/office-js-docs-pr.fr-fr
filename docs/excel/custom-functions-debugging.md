@@ -3,12 +3,12 @@ title: Débogage de fonctions personnalisées sans interface utilisateur
 description: Découvrez comment déboguer vos Excel personnalisées qui n’utilisent pas de volet de tâches.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1ee0e6e88b3ada88749278740d68f76c4a7368f6
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: 86c1cca9602bf56566609ed500b6ee41379fbc432ffd8e92e0a95b2adaa3709e
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773684"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079732"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
 
@@ -33,7 +33,7 @@ Sur Mac :
 > [!NOTE]
 > Par souci de simplicité, cet article présente le débogage dans le contexte de l’utilisation de Visual Studio Code pour modifier, exécuter des tâches et, dans certains cas, utiliser l’affichage débogage. Si vous utilisez un autre éditeur ou outil de ligne de commande, consultez les [instructions](#commands-for-building-and-running-your-add-in) de ligne de commande à la fin de cet article.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Configuration requise
 
 Ce processus de  débogage fonctionne uniquement pour les fonctions personnalisées sans interface utilisateur, qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur. Une fonction personnalisée sans interface utilisateur peut être créée en suivant les étapes du didacticiel Créer des fonctions personnalisées dans [Excel,](../tutorials/excel-tutorial-create-custom-functions.md) puis en supprimant tous les éléments du volet Des tâches et de l’interface utilisateur installés par le générateur [Yeoman](https://www.npmjs.com/package/generator-office)pour les Office.
 

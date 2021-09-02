@@ -3,16 +3,16 @@ ms.date: 05/17/2020
 description: Authentifier les utilisateurs à l’aide de fonctions Excel qui n’utilisent pas le volet Des tâches.
 title: Authentification pour les fonctions personnalisées sans interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 883f71d395b19ccfc6874a0d5942a7016eb49e2c
+ms.openlocfilehash: d39d31d2a54cafc6829482451dcbdb5c5b764b968dc1c0e03be77a72fe1e12f1
+ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "53349699"
+ms.lasthandoff: 08/07/2021
+ms.locfileid: "57079782"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>Authentification pour les fonctions personnalisées sans interface utilisateur
 
-Dans certains scénarios, votre fonction personnalisée qui n’utilise pas de volet de tâches ou d’autres éléments d’interface utilisateur (fonction personnalisée sans interface utilisateur) devra authentifier l’utilisateur pour accéder aux ressources protégées. N’ignorez pas que les fonctions personnalisées sans interface utilisateur s’exécutent dans un runtime JavaScript uniquement. Pour cette raison, vous devez transmettre des données entre le runtime JavaScript uniquement et le runtime de moteur de navigateur standard utilisé par la plupart des applications à l’aide de l’objet et de l’API de `OfficeRuntime.storage` dialogue.
+Dans certains scénarios, votre fonction personnalisée qui n’utilise pas de volet de tâches ou d’autres éléments d’interface utilisateur (fonction personnalisée sans interface utilisateur) devra authentifier l’utilisateur pour accéder aux ressources protégées. N’ignorez pas que les fonctions personnalisées sans interface utilisateur s’exécutent dans un runtime JavaScript uniquement. Pour cette raison, vous devrez transmettre des données entre le runtime JavaScript uniquement et le runtime de moteur de navigateur standard utilisé par la plupart des modules à l’aide de l’objet et de l’API de `OfficeRuntime.storage` dialogue.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -90,7 +90,7 @@ Les compléments Office sont basés sur le Web et vous pouvez utiliser n’impor
 
 Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées :
 
-- `localStorage`: les fonctions personnalisées sans interface utilisateur n’ont pas accès à l’objet global et, par conséquent, n’ont pas accès aux données `window` stockées dans `localStorage` .
+- `localStorage`: les fonctions personnalisées sans interface utilisateur n’ont pas accès à l’objet global et, par conséquent, n’ont pas accès aux `window` données stockées dans `localStorage` .
 - `Office.context.document.settings`: Cet emplacement n’est pas sécurisé et les informations peuvent être extraites par toute personne utilisant le complément.
 
 ## <a name="dialog-box-api-example"></a>Exemple d’API de boîte de dialogue
@@ -141,7 +141,7 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
 Découvrez comment [déboguer des](custom-functions-debugging.md)fonctions personnalisées sans interface utilisateur.
 
 ## <a name="see-also"></a>Voir aussi
