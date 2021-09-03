@@ -4,12 +4,12 @@ title: Configurez votre complément Office pour utiliser un runtime JavaScript p
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 localization_priority: Priority
-ms.openlocfilehash: 9e24545bac2b2aaad58c2441ed0a5741c78c053d
-ms.sourcegitcommit: 3cc8f6adee0c7c68c61a42da0d97ed5ea61be0ac
+ms.openlocfilehash: f2c47f7c666c173480851b780311002eb4dbeac0
+ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "53661140"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "58863540"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -54,16 +54,20 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
     <DefaultSettings>
     ```
 
-1. Recherchez la section `<VersionOverrides>`, puis ajoutez l'exemple d'entrée suivante à la section `<Runtimes>`, juste dans la balise `<Host ...>`. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section ` <bt:Urls>` près du bas du fichier **manifest.xml**.
+1. Recherchez la `<VersionOverrides>` section et ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section ` <bt:Urls>` près du bas du fichier **manifest.xml**.
+
+    > [!IMPORTANT]
+    > La `<Runtimes>` section doit être entrée après `<Host>` l’élément dans l’ordre exact indiqué dans le XML suivant.
 
    ```xml
    <VersionOverrides ...>
      <Hosts>
        <Host ...>
-       <Runtimes>
-         <Runtime resid="Taskpane.Url" lifetime="long" />
-       </Runtimes>
+         <Runtimes>
+           <Runtime resid="Taskpane.Url" lifetime="long" />
+         </Runtimes>
        ...
+       </Host>
    ```
 
 1. Si vous avez créé un complément Excel avec des fonctions personnalisées, recherchez l’élément `<Page>`. Puis remplacez l’emplacement de la source **Functions.Page.Url** par **TaskPane.Url**.
