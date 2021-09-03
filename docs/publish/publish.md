@@ -3,12 +3,12 @@ title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
 ms.date: 07/30/2021
 localization_priority: Priority
-ms.openlocfilehash: e702e5d16c986324b6f54a1927ca844852826aeb257d4958de37b8d1ed3c3174
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 28589d71d7b7e59640ce11fe231671ca2b3c65fb
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093338"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868714"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -50,7 +50,7 @@ Les options de déploiement disponibles dépendent de l’application Office que
 
 Les sections suivantes fournissent des informations supplémentaires sur les méthodes de déploiement les plus fréquemment utilisées pour distribuer des compléments Office de production aux utilisateurs au sein d’une organisation.
 
-Si vous souhaitez plus d’informations sur l’acquisition, l’insertion et l’exécution des compléments par les utilisateurs finaux, consultez l’article relatif aux [premiers pas de l’utilisation de votre complément Office](https://support.office.com/article/start-using-your-office-add-in-82e665c4-6700-4b56-a3f3-ef5441996862).
+Si vous souhaitez plus d’informations sur l’acquisition, l’insertion et l’exécution des compléments par les utilisateurs finaux, consultez l’article relatif aux [premiers pas de l’utilisation de votre complément Office](https://support.microsoft.com/office/82e665c4-6700-4b56-a3f3-ef5441996862).
 
 ### <a name="integrated-apps-via-the-microsoft-365-admin-center"></a>Applications intégrées via le Centre d’administration Microsoft 365
 

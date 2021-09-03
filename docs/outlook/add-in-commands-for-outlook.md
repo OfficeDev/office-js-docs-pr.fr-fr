@@ -3,12 +3,12 @@ title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 07/07/2020
 localization_priority: Priority
-ms.openlocfilehash: b99f793565163042821cc5c5bf3c7364858cd6fac37637359d90aec28ae3e1fc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8fc8f5c30f5a56ffe9c792f2347b915cf2f04051
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097545"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868742"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -19,10 +19,10 @@ Les commandes de complément Outlook permettent d’initier des actions de compl
 >
 > Pour qu’Outlook 2013 prenne en charge les commandes de complément, trois mises à jour doivent être installées :
 > - [Mise à jour de sécurité pour Outlook du 8 mars 2016](https://support.microsoft.com/kb/3114829)
-> - [Mise à jour de sécurité pour Office du 8 mars 2016 (KB3114816)](https://support.microsoft.com/help/3114816/march-8,-2016,-update-for-office-2013-kb3114816)
-> - [Mise à jour de sécurité pour Office du 8 mars 2016 (KB3114828)](https://support.microsoft.com/help/3114828/march-8,-2016,-update-for-office-2013-kb3114828)
+> - [Mise à jour de sécurité pour Office du 8 mars 2016 (KB3114816)](https://support.microsoft.com/topic/3d3eb171-78c2-0e61-62a2-85723bc4bcc0)
+> - [Mise à jour de sécurité pour Office du 8 mars 2016 (KB3114828)](https://support.microsoft.com/topic/54437016-d1e0-7aac-dbb7-4ecfbd57f5f0)
 >
-> La prise en charge des commandes de complément dans Exchange 2016 nécessite la [mise à jour cumulative 5](https://support.microsoft.com/help/4012106/cumulative-update-5-for-exchange-server-2016).
+> La prise en charge des commandes de complément dans Exchange 2016 nécessite la [mise à jour cumulative 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
 Les commandes de complément sont uniquement disponibles pour les compléments qui n’utilisent pas les règles [ItemHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](activation-rules.md) pour limiter les types d’éléments sur lesquels elles s’activent. Toutefois, les [compléments contextuels](contextual-outlook-add-ins.md) peuvent présenter diverses commandes selon que l’élément actuellement sélectionné est un message ou un rendez-vous, et peuvent apparaître dans des scénarios de lecture ou de composition. L’utilisation des commandes de complément constitue une [meilleure pratique](../concepts/add-in-development-best-practices.md).
 

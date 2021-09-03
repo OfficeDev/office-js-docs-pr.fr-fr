@@ -3,12 +3,12 @@ title: Activer les dossiers partagés et les scénarios de boîtes aux lettres p
 description: Explique comment configurer la prise en charge de la prise en charge des dossiers partagés (c’est-à-dire. accès délégué) et boîtes aux lettres partagées.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 9bcfaf77ecd837a39c9743d9194aa5e4ef30ba69a32c6caed41a38b8ab0ddb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092347"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868693"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
@@ -25,13 +25,13 @@ Les sections suivantes décrivent les configurations prise en charge pour les bo
 
 #### <a name="shared-folders"></a>Dossiers partagés
 
-Le propriétaire de la boîte aux lettres [doit d’abord fournir l’accès à un délégué.](https://support.microsoft.com/office/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926) Le délégué doit ensuite suivre les instructions décrites dans la section « Ajouter la boîte aux lettres d’une autre personne à votre profil » de l’article Gérer les éléments de courrier et de calendrier [d’une autre personne.](https://support.microsoft.com/office/manage-another-person-s-mail-and-calendar-items-afb79d6b-2967-43b9-a944-a6b953190af5)
+Le propriétaire de la boîte aux lettres [doit d’abord fournir l’accès à un délégué.](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926) Le délégué doit ensuite suivre les instructions décrites dans la section « Ajouter la boîte aux lettres d’une autre personne à votre profil » de l’article Gérer les éléments de courrier et de calendrier [d’une autre personne.](https://support.microsoft.com/office/afb79d6b-2967-43b9-a944-a6b953190af5)
 
 #### <a name="shared-mailboxes-preview"></a>Boîtes aux lettres partagées (aperçu)
 
 Exchange administrateurs de serveur peuvent créer et gérer des boîtes aux lettres partagées pour des ensembles d’utilisateurs à accéder. Actuellement, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) est la seule version de serveur prise en charge pour cette fonctionnalité.
 
-Une fonctionnalité Exchange Server appelée « mappage automatique » est mise en [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) place par défaut, ce qui signifie que la boîte aux lettres partagée doit apparaître automatiquement dans l’application Outlook d’un utilisateur après la fermeture et la réouverture de Outlook. Toutefois, si un administrateur a désactivé le mappage automatique, l’utilisateur doit suivre les étapes manuelles décrites dans la section « Ajouter une boîte aux lettres partagée à Outlook » de l’article Ouvrir et utiliser une boîte aux lettres partagée dans [Outlook](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-d94a8e9e-21f1-4240-808b-de9c9c088afd).
+Une fonctionnalité Exchange Server appelée « mappage automatique » est mise en [](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) place par défaut, ce qui signifie que la boîte aux lettres partagée doit apparaître automatiquement dans l’application Outlook d’un utilisateur après la fermeture et la réouverture de Outlook. Toutefois, si un administrateur a désactivé le mappage automatique, l’utilisateur doit suivre les étapes manuelles décrites dans la section « Ajouter une boîte aux lettres partagée à Outlook » de l’article Ouvrir et utiliser une boîte aux lettres partagée dans [Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 > [!WARNING]
 > Ne **vous connectez** PAS à la boîte aux lettres partagée avec un mot de passe. Les API de fonctionnalité ne fonctionneront pas dans ce cas.
@@ -40,13 +40,13 @@ Une fonctionnalité Exchange Server appelée « mappage automatique » est mise 
 
 #### <a name="shared-folders"></a>Dossiers partagés
 
-Le propriétaire de la boîte aux lettres doit [d’abord fournir l’accès à un délégué](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) en mettant à jour les autorisations du dossier de boîte aux lettres. Le délégué doit ensuite suivre les instructions décrites dans la section « Ajouter la boîte aux lettres d’une autre personne à votre liste de dossiers dans Outlook Web App » de l’article Accéder à la boîte aux lettres [d’une](https://support.microsoft.com/office/access-another-person-s-mailbox-a909ad30-e413-40b5-a487-0ea70b763081)autre personne.
+Le propriétaire de la boîte aux lettres doit [d’abord fournir l’accès à un délégué](https://www.microsoft.com/microsoft-365/blog/2013/09/04/configuring-delegate-access-in-outlook-web-app/) en mettant à jour les autorisations du dossier de boîte aux lettres. Le délégué doit ensuite suivre les instructions décrites dans la section « Ajouter la boîte aux lettres d’une autre personne à votre liste de dossiers dans Outlook Web App » de l’article Accéder à la boîte aux lettres [d’une](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081)autre personne.
 
 #### <a name="shared-mailboxes-preview"></a>Boîtes aux lettres partagées (aperçu)
 
 Exchange administrateurs de serveur peuvent créer et gérer des boîtes aux lettres partagées pour des ensembles d’utilisateurs à accéder. Actuellement, [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) est la seule version de serveur prise en charge pour cette fonctionnalité.
 
-Après avoir reçu l’accès, un utilisateur de boîte aux lettres partagée doit suivre les étapes décrites dans la section « Ajouter la boîte aux lettres partagée afin qu’elle s’affiche sous votre boîte aux lettres principale » de l’article Ouvrir et utiliser une boîte aux lettres partagée dans [Outlook sur le web](https://support.microsoft.com/office/open-and-use-a-shared-mailbox-in-outlook-on-the-web-98b5a90d-4e38-415d-a030-f09a4cd28207).
+Après avoir reçu l’accès, un utilisateur de boîte aux lettres partagée doit suivre les étapes décrites dans la section « Ajouter la boîte aux lettres partagée afin qu’elle s’affiche sous votre boîte aux lettres principale » de l’article Ouvrir et utiliser une boîte aux lettres partagée dans [Outlook sur le web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
 > [!WARNING]
 > **N’utilisez PAS** d’autres options telles que « Ouvrir une autre boîte aux lettres ». Il se peut que les API de fonctionnalité ne fonctionnent pas correctement.
@@ -61,8 +61,8 @@ Le tableau suivant décrit les autorisations que l’API JavaScript Office prend
 
 |Autorisation|Valeur|Description|
 |---|---:|---|
-|Lecture|1 (000001)|Peut lire des éléments.|
-|Écriture|2 (000010)|Peut créer des éléments.|
+|Lire|1 (000001)|Peut lire des éléments.|
+|Write|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut supprimer uniquement les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
 |EditOwn|16 (010000)|Peut modifier uniquement les éléments qu’ils ont créés.|
@@ -77,7 +77,7 @@ Le tableau suivant décrit les autorisations que l’API JavaScript Office prend
 
 Les mises à jour d’un délégué vers la boîte aux lettres du propriétaire sont généralement synchronisées immédiatement entre les boîtes aux lettres.
 
-Toutefois, si des opérations REST ou Exchange Web Services (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons plutôt d’utiliser [l’objet CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter un tel délai. Pour en savoir plus, consultez la [section des](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) propriétés personnalisées de l’article « Obtenir et définir des métadonnées dans un Outlook de données ».
+Toutefois, si des opérations REST ou Exchange Web Services (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons plutôt d’utiliser [l’objet CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter un tel délai. Pour en savoir plus, consultez la [section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) des propriétés personnalisées de l’article « Obtenir et définir des métadonnées dans un Outlook de données ».
 
 > [!IMPORTANT]
 > Dans un scénario de délégué, vous ne pouvez pas utiliser EWS avec les jetons actuellement fournis par office.js API.
@@ -223,8 +223,8 @@ Si un administrateur a caché un utilisateur ou une adresse de boîte aux lettre
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Autoriser quelqu’un d’autre à gérer votre courrier et votre calendrier](https://support.office.com/article/allow-someone-else-to-manage-your-mail-and-calendar-41c40c04-3bd1-4d22-963a-28eafec25926)
-- [Partage de calendrier dans Microsoft 365](https://support.office.com/article/calendar-sharing-in-office-365-b576ecc3-0945-4d75-85f1-5efafb8a37b4)
+- [Autoriser quelqu’un d’autre à gérer votre courrier et votre calendrier](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
+- [Partage de calendrier dans Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [Ajouter une boîte aux lettres partagée à Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
 - [Comment commander des éléments de manifeste](../develop/manifest-element-ordering.md)
 - [Masque (calcul)](https://en.wikipedia.org/wiki/Mask_(computing))

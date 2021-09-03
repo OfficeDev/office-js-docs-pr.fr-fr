@@ -3,12 +3,12 @@ title: Rendre votre complément Office compatible avec un complément COM exista
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
 ms.date: 08/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 498f1715462edb7f9c79be7738337dc7433fe403a2e0aa76eae81b4516af9caa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: bb842c60beb329571ce3dc7f055cc1d9d606209b
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080470"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868441"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
@@ -22,8 +22,8 @@ Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?men
 > - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
 > - Outlook sur Windows (version 2102 ou ultérieure) par rapport à une version Exchange serveur pris en charge
 >   - Exchange Online
->   - Exchange cumulative 2019 10 ou version ultérieure ([KB5003612](https://support.microsoft.com/topic/cumulative-update-10-for-exchange-server-2019-kb5003612-b1434cad-3fbc-4dc3-844d-82568e8d4344))
->   - Exchange cumulative 2016 21 ou version ultérieure ([KB5003611](https://support.microsoft.com/topic/cumulative-update-21-for-exchange-server-2016-kb5003611-b7ba1656-abba-4a0b-9be9-dac45095d969))
+>   - Exchange cumulative 2019 10 ou version ultérieure ([KB5003612](https://support.microsoft.com/topic/b1434cad-3fbc-4dc3-844d-82568e8d4344))
+>   - Exchange cumulative 2016 21 ou version ultérieure ([KB5003611](https://support.microsoft.com/topic/b7ba1656-abba-4a0b-9be9-dac45095d969))
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Spécifier un compl?ment COM équivalent
 
@@ -58,7 +58,7 @@ L’exemple suivant montre la partie du manifeste qui spécifie un compl?ment CO
 
 Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?ment COM/VSTO, identifiez le compl?ment COM équivalent dans la stratégie de groupe **Deactiver** les compl?ments web Outlook dont le compl?ment COM ou VSTO équivalent est install s en configurant sur l’ordinateur de l’utilisateur. Ensuite, Outlook sur Windows utilisera le compl?ment COM au lieu du compl?ment web, s’ils sont tous deux install s.
 
-1. Téléchargez le dernier [outil Modèles d’administration,](https://www.microsoft.com/download/details.aspx?id=49030)en vous important des instructions d’installation **de l’outil.**
+1. Téléchargez la dernière [version de l’outil Modèles d’administration,](https://www.microsoft.com/download/details.aspx?id=49030)en vous important des **instructions d’installation de l’outil.**
 1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
 1. Accédez **aux**  >  **modèles d’administration** de configuration utilisateur   >  **Microsoft Outlook 2016**  >  **divers.**
 1. Sélectionnez le paramètre Désactiver Outlook de sites web dont l’équivalent **COM ou VSTO est installé.**
@@ -74,7 +74,7 @@ Pour déclarer la compatibilité entre votre compl?ment web Outlook et le compl?
 Lorsqu’un compl?ment [COM](#specify-an-equivalent-com-add-in)équivalent est spécifié, Office sur Windows n’affiche pas l’interface utilisateur de votre compl?ment Office si le compl?ment COM ex quis est install . Office masque uniquement les boutons du ruban du Office et n’empêche pas l’installation. Par conséquent, votre Office’interface utilisateur apparaîtra toujours aux emplacements suivants dans l’interface utilisateur.
 
 - Sous **Mes modules**
-- En tant qu’entrée dans le Gestionnaire du ruban (Excel, Word et PowerPoint uniquement)
+- En tant qu’entrée dans le gestionnaire du ruban (Excel, Word et PowerPoint uniquement)
 
 > [!NOTE]
 > La spécification d’un module com équivalent dans le manifeste n’a aucun effet sur les autres plateformes telles que Office sur le Web ou Mac.

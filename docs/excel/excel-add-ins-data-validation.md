@@ -3,20 +3,20 @@ title: Ajout de validation des données à des plages Excel
 description: Découvrez comment les EXCEL JavaScript permettent à votre add-in d’ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un workbook.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 1d05db463da8586e39e6a8e172529d9da46a8cec11ca36f5231cb9c3f1c49033
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084294"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868644"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
 La bibliothèque JavaScript Excel fournit des API pour autoriser votre complément à ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages dans un classeur. Pour comprendre les concepts et la terminologie de validation des données, consultez les articles suivants sur la façon dont les utilisateurs ajoutent la validation des données via l’interface Excel utilisateur.
 
-- [Application d’une validation des données aux cellules](https://support.office.com/article/Apply-data-validation-to-cells-29FECBCC-D1B9-42C1-9D76-EFF3CE5F7249)
-- [Informations supplémentaires sur la validation des données](https://support.office.com/article/More-on-data-validation-f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
-- [Description et exemples de validation des données dans Excel](https://support.microsoft.com/help/211485/description-and-examples-of-data-validation-in-excel)
+- [Application d’une validation des données aux cellules](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)
+- [Informations supplémentaires sur la validation des données](https://support.microsoft.com/office/f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
+- [Description et exemples de validation des données dans Excel](https://support.microsoft.com/help/211485)
 
 ## <a name="programmatic-control-of-data-validation"></a>Contrôle par programme de validation des données
 

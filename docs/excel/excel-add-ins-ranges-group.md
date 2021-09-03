@@ -4,20 +4,20 @@ description: Découvrez comment grouper des lignes ou des colonnes d’une plage
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 5e5ba5e5d539d4391b65a792d05ae2f0d2ff49fc63725bc3681cb9015873bb45
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 41a5bad5013378257287602d5131f1ac07130cf7
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084054"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868413"
 ---
-# <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Plages de groupe pour un plan à l’aide de Excel API JavaScript
+# <a name="group-ranges-for-an-outline-using-the-excel-javascript-api"></a>Plages de groupe pour un plan à l’aide de l Excel API JavaScript
 
-Cet article fournit un exemple de code qui montre comment grouper des plages pour un plan à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit un exemple de code qui montre comment grouper des plages pour un plan à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="group-rows-or-columns-of-a-range-for-an-outline"></a>Grouper des lignes ou des colonnes d’une plage pour un plan
 
-Les lignes ou colonnes d’une plage peuvent être regroupées pour créer un [plan.](https://support.office.com/article/Outline-group-data-in-a-worksheet-08CE98C4-0063-4D42-8AC7-8278C49E9AFF) Ces groupes peuvent être réduire et développés pour masquer et afficher les cellules correspondantes. Cela facilite l’analyse rapide des données de première ligne. Utilisez [Range.group pour](/javascript/api/excel/excel.range#group_groupOption_) effectuer ces groupes de plan.
+Les lignes ou colonnes d’une plage peuvent être regroupées pour créer un [plan.](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff) Ces groupes peuvent être réduire et développés pour masquer et afficher les cellules correspondantes. Cela facilite l’analyse rapide des données de première ligne. Utilisez [Range.group pour](/javascript/api/excel/excel.range#group_groupOption_) effectuer ces groupes de plan.
 
 Un plan peut avoir une hiérarchie, où des groupes plus petits sont imbrmbrés sous des groupes plus grands. Cela permet d’afficher le plan à différents niveaux. La modification du niveau de plan visible peut être effectuée par programme via la [méthode Worksheet.showOutlineLevels.](/javascript/api/excel/excel.worksheet#showOutlineLevels_rowLevels__columnLevels_) Notez que Excel ne prend en charge que huit niveaux de groupes de plan.
 

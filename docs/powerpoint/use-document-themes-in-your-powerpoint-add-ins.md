@@ -3,16 +3,16 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: Découvrez comment coordonner visuellement les thèmes tels que les polices et les couleurs à appliquer aux présentations, documents, feuilles de calcul et e-mails.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 4493517fbaf5307ae0c9e0195944397c2ab766f8154f26095f764e1499d1f218
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b3dfce5e36f1247e84cdd13372fd822a27a59fe0
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096092"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868700"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
-Un [thème Office](https://support.office.com/article/create-your-own-theme-in-powerpoint-83e68627-2c17-454a-9fd8-62deb81951a6) est constitué, en partie, d’un jeu de polices et de couleurs visuellement assortis que vous pouvez appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques. Pour appliquer ou personnaliser le thème d’une présentation dans PowerPoint, utilisez les groupes **Thèmes** et **Variantes** dans l’onglet **Conception** du ruban. PowerPoint affecte le **thème Office** par défaut à chaque nouvelle présentation vierge, mais vous pouvez choisir parmi les autres thèmes disponibles dans l’onglet **Conception**, télécharger des thèmes supplémentaires à partir d’Office.com, ou créer et personnaliser votre propre thème.
+Un [thème Office](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) est constitué, en partie, d’un jeu de polices et de couleurs visuellement assortis que vous pouvez appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques. Pour appliquer ou personnaliser le thème d’une présentation dans PowerPoint, utilisez les groupes **Thèmes** et **Variantes** dans l’onglet **Conception** du ruban. PowerPoint affecte le **thème Office** par défaut à chaque nouvelle présentation vierge, mais vous pouvez choisir parmi les autres thèmes disponibles dans l’onglet **Conception**, télécharger des thèmes supplémentaires à partir d’Office.com, ou créer et personnaliser votre propre thème.
 
 À l’aide d’OfficeThemes.css, concevez des PowerPoint de deux manières.
 
@@ -214,7 +214,7 @@ Lors de l’exécution de PowerPoint avec **Fichier** > **Compte** > **Thème Of
 
 Si vous modifiez la valeur de **Thème Office** en la définissant sur **Gris foncé**, les polices et couleurs spécifiées avec des classes OfficeThemes.css seront mises à jour dynamiquement et seront restituées comme suit.
 
-![Volet Des tâches avec Office gris foncé.](../images/office15-app-task-pane-theme-dark-gray.png)
+![Volet De tâches avec Office gris foncé.](../images/office15-app-task-pane-theme-dark-gray.png)
 
 ## <a name="officethemecss-classes"></a>Classes OfficeTheme.css
 

@@ -4,12 +4,12 @@ description: Utilisez le plug-in Moment-MSDate avec l’API JavaScript Excel pou
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fdfc39f12b3374d9903156b1ba71a9bbd4f296735f0ed41dac56d62243058c1d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 82dd7bb957834efc17c0174e3b89fd526610a08a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084730"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868665"
 ---
 # <a name="work-with-dates-using-the-excel-javascript-api-and-the-moment-msdate-plug-in"></a>Utiliser des dates à l’aide Excel API JavaScript et Moment-MSDate plug-in
 
@@ -19,7 +19,7 @@ Cet article fournit des exemples de code qui montrent comment utiliser des dates
 
 ## <a name="use-the-moment-msdate-plug-in-to-work-with-dates"></a>Utiliser le plug-in Moment-MSDate pour travailler avec des dates
 
-La[bibliothèque Moment JavaScript](https://momentjs.com/)fournit une manière pratique d’utiliser les dates et les horodateurs. Le[plug-in Moment-MSDate](https://www.npmjs.com/package/moment-msdate)convertit le format des moments dans un préférable pour Excel. Il s’agit du même format que la[fonction NOW](https://support.office.com/article/now-function-3337fd29-145a-4347-b2e6-20c904739c46)renvoie.
+La[bibliothèque Moment JavaScript](https://momentjs.com/)fournit une manière pratique d’utiliser les dates et les horodateurs. Le[plug-in Moment-MSDate](https://www.npmjs.com/package/moment-msdate)convertit le format des moments dans un préférable pour Excel. Il s’agit du même format que la[fonction NOW](https://support.microsoft.com/office/3337fd29-145a-4347-b2e6-20c904739c46)renvoie.
 
 Le code suivant montre comment définir la plage **À B4** sur l’timestamp d’un moment.
 

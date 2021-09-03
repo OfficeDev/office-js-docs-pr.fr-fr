@@ -4,12 +4,12 @@ description: Spécifie les plateformes Office et les builds qui ouvrent la prise
 ms.date: 04/09/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 6b2a2d94b2bddc4875bcf1edae66efd0cd28a3d6521da48d00a97e4a7f35f898
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8197228f1d428fd48c494825fec0e73cb85609f6
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087195"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868756"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Ouvrir les ensembles de conditions requises de l’API Fenêtre du navigateur
 
@@ -32,8 +32,8 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 
 - [Numéros de version et de build des versions de canal de mise à jour Microsoft 365 Apps](/officeupdates/update-history-microsoft365-apps-by-date)
-- [Quelle est la version d’Office que j’utilise ?](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19)
-- [Où trouver la version et le numéro de build d’une application Office client](https://support.office.com/article/version-and-build-numbers-of-update-channel-releases-ae942449-1fca-4484-898b-a933ea23def7)
+- [Quelle est la version d’Office que j’utilise ?](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19)
+- [Où trouver la version et le numéro de build d’une application Office client](/officeupdates/update-history-microsoft365-apps-by-date)
 - [Présentation d’Office Online Server](/officeonlineserver/office-online-server-overview)
 
 ## <a name="office-common-api-requirement-sets"></a>Ensembles de conditions requises des API communes pour Office

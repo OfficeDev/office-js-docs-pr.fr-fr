@@ -3,19 +3,19 @@ title: Utiliser des tableaux croisés dynamiques à l’aide Excel API JavaScrip
 description: Utilisez l Excel API JavaScript pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
 ms.date: 07/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 7be7fe8a4f7dcb2509943f7fd03fbb8739312e87874583bbe97b8139ab83c6b5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d9ccaf72be4fa23b73f1f91d38d240ea02569eca
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084246"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868637"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utiliser des tableaux croisés dynamiques à l’aide Excel API JavaScript
 
 Les tableaux croisés dynamiques simplifient les jeux de données plus volumineux. Elles permettent la manipulation rapide des données groupées. L Excel API JavaScript permet à votre application de créer des tableaux croisés dynamiques et d’interagir avec leurs composants. Cet article décrit comment les tableaux croisés dynamiques sont représentés par Office API JavaScript et fournit des exemples de code pour les scénarios clés.
 
 Si vous ne connaissez pas la fonctionnalité des tableaux croisés dynamiques, envisagez de les explorer en tant qu’utilisateur final.
-Voir [Créer un tableau croisé dynamique pour analyser les](https://support.office.com/article/Import-and-analyze-data-ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EAABAAA=PivotTables) données de feuille de calcul afin d’obtenir une bonne base sur ces outils.
+Voir [Créer un tableau croisé dynamique pour analyser les](https://support.microsoft.com/office/ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EBBD=PivotTables) données de feuille de calcul afin d’obtenir une bonne base sur ces outils.
 
 > [!IMPORTANT]
 > Les tableaux croisés dynamiques créés avec OLAP ne sont actuellement pas pris en charge. Il n’existe pas non plus de prise en charge de Power Pivot.
@@ -242,7 +242,7 @@ Excel.run(function (context) {
 
 Par défaut, les tableaux croisés dynamiques ajustent les tailles de lignes et de colonnes selon les besoins. Cette chose est effectuée lorsque le tableau croisé dynamique est actualisé. `PivotLayout.autoFormat` spécifie ce comportement. Les modifications de taille de ligne ou de colonne apportées par votre add-in sont persistantes `autoFormat` lorsqu’elles le `false` sont. En outre, les paramètres par défaut d’un tableau croisé dynamique conservent toute mise en forme personnalisée dans le tableau croisé dynamique (par exemple, les remplissages et les modifications de police). Définir `PivotLayout.preserveFormatting` pour appliquer le format par défaut lors de `false` l’actualisation.
 
-A `PivotLayout` contrôle également les paramètres d’en-tête et de ligne totale, la façon dont les cellules de données vides sont affichées et les options de texte [de](https://support.microsoft.com/topic/add-alternative-text-to-a-shape-picture-chart-smartart-graphic-or-other-object-44989b2a-903c-4d9a-b742-6a75b451c669) alt. La [référence PivotLayout](/javascript/api/excel/excel.pivotlayout) fournit une liste complète de ces fonctionnalités.
+A `PivotLayout` contrôle également les paramètres d’en-tête et de ligne totale, la façon dont les cellules de données vides sont affichées et les options de texte [de](https://support.microsoft.com/topic/44989b2a-903c-4d9a-b742-6a75b451c669) alt. La [référence PivotLayout](/javascript/api/excel/excel.pivotlayout) fournit une liste complète de ces fonctionnalités.
 
 L’exemple de code suivant permet aux cellules de données vides d’afficher la chaîne, met en forme la plage de corps avec un alignement horizontal cohérent et garantit que les modifications de mise en forme restent même après l’actualisation du tableau croisé `"--"` dynamique.
 
@@ -283,7 +283,7 @@ La méthode principale de filtrage des données de tableau croisé dynamique est
 
 [Les filtres de tableau](/javascript/api/excel/excel.pivotfilters) croisé dynamique filtrent les données en fonction des quatre [catégories hiérarchiques](#hierarchies) d’un tableau croisé dynamique (filtres, colonnes, lignes et valeurs). Il existe quatre types de filtres de tableau croisé dynamique, ce qui permet le filtrage basé sur les dates du calendrier, l’comparaison des chaînes, la comparaison des nombres et le filtrage en fonction d’une entrée personnalisée.
 
-[Les slicers](/javascript/api/excel/excel.slicer) peuvent être appliqués à la fois aux tableaux croisés dynamiques et aux tableaux Excel tableaux. Lorsqu’ils sont appliqués à un tableau croisé dynamique, les slicers fonctionnent comme un [pivotManualFilter](#pivotmanualfilter) et autorisent le filtrage basé sur une entrée personnalisée. Contrairement aux filtres de tableau croisé dynamique, les slicers ont [un Excel’interface utilisateur.](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, gérez le filtrage et contrôlez son apparence visuelle.
+[Les slicers](/javascript/api/excel/excel.slicer) peuvent être appliqués à la fois aux tableaux croisés dynamiques et aux tableaux Excel tableaux. Lorsqu’ils sont appliqués à un tableau croisé dynamique, les slicers fonctionnent comme un [pivotManualFilter](#pivotmanualfilter) et autorisent le filtrage basé sur une entrée personnalisée. Contrairement aux filtres de tableau croisé dynamique, les slicers ont [un Excel’interface utilisateur.](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, gérez le filtrage et contrôlez son apparence visuelle.
 
 ### <a name="filter-with-pivotfilters"></a>Filtrer avec des filtres de tableau croisé dynamique
 
@@ -412,7 +412,7 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-slicers"></a>Filtrer avec des slicers
 
-[Les slicers](/javascript/api/excel/excel.slicer) permettent de filtrer les données à partir d’Excel tableau croisé dynamique ou d’un tableau. Un slicer utilise les valeurs d’une colonne spécifiée ou d’un champ de tableau croisé dynamique pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant [qu’objets SlicerItem](/javascript/api/excel/excel.sliceritem) dans `Slicer` le . Votre add-in peut ajuster ces filtres, tout comme les utilisateurs[(via l’interface Excel’interface utilisateur).](https://support.office.com/article/Use-slicers-to-filter-data-249f966b-a9d5-4b0f-b31a-12651785d29d) Le slicer se trouve au-dessus de la feuille de calcul dans la couche de dessin, comme illustré dans la capture d’écran suivante.
+[Les slicers](/javascript/api/excel/excel.slicer) permettent de filtrer les données à partir d’Excel tableau croisé dynamique ou d’un tableau. Un slicer utilise les valeurs d’une colonne spécifiée ou d’un champ de tableau croisé dynamique pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant [qu’objets SlicerItem](/javascript/api/excel/excel.sliceritem) dans `Slicer` le . Votre add-in peut ajuster ces filtres, tout comme les utilisateurs[(via l’interface Excel’interface utilisateur).](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) Le slicer se trouve au-dessus de la feuille de calcul dans la couche de dessin, comme illustré dans la capture d’écran suivante.
 
 ![Un slicer filtrant des données sur un tableau croisé dynamique.](../images/excel-slicer.png)
 

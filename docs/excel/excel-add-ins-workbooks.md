@@ -4,12 +4,12 @@ description: Découvrez comment effectuer des tâches courantes avec des workboo
 ms.date: 06/07/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 17802627fd5b9d23f2aa0a128e9ca8bda945c20ba63d2c5c3cc5960d4c8dfc20
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed63337aad322762019e8a51e3f1cc1c202db210
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086170"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868721"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
@@ -83,9 +83,9 @@ insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOp
 ```
 
 > [!IMPORTANT]
-> La `insertWorksheetsFromBase64` méthode est prise en charge pour Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le Web cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le Web. 
+> La `insertWorksheetsFromBase64` méthode est prise en charge Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le Web cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le Web. 
 
-L’exemple de code suivant montre comment insérer des feuilles de calcul à partir d’un autre workbook dans le workbook actuel. Cet exemple de code traite d’abord un fichier de classer avec un objet et extrait une chaîne codée en base 64, puis il insère cette chaîne codée en base 64 dans le classez en [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul nommée **Sheet1**. Notez qu’il est transmis en tant que paramètre pour la `[]` [propriété InsertWorksheetOptions.sheetNamesToInsert.](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) Cela signifie que toutes les feuilles de calcul du manuel cible sont insérées dans le manuel en cours.
+L’exemple de code suivant montre comment insérer des feuilles de calcul à partir d’un autre workbook dans le workbook actuel. Cet exemple de code traite d’abord un fichier de classer avec un objet et extrait une chaîne codée en base 64, puis il insère cette chaîne codée en base 64 dans le classez en [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul nommée **Sheet1**. Notez qu’il est transmis en tant que paramètre pour la `[]` [propriété InsertWorksheetOptions.sheetNamesToInsert.](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) Cela signifie que toutes les feuilles de calcul du workbook cible sont insérées dans le manuel en cours.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -140,11 +140,11 @@ La méthode`protect` accepte un paramètre de chaîne facultatif. Cette chaîne 
 La protection peut également être définie au niveau de la feuille de calcul pour empêcher la modification de données non souhaitée. Pour plus d’informations, voir la section **protection des données** de l’article [manipuler des feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md#data-protection).
 
 > [!NOTE]
-> Pour plus d’informations sur la protection du classeur dans Excel, voir l’article [protéger un classeur](https://support.office.com/article/Protect-a-workbook-7E365A4D-3E89-4616-84CA-1931257C1517).
+> Pour plus d’informations sur la protection du classeur dans Excel, voir l’article [protéger un classeur](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517).
 
 ## <a name="access-document-properties"></a>Accès aux propriétés du document
 
-Les objets classeur ont accès aux métadonnées de fichier Office, qui sont connues comme [propriétés du document](https://support.office.com/article/View-or-change-the-properties-for-an-Office-file-21D604C2-481E-4379-8E54-1DD4622C6B75). La propriété de l’objet classeur `properties` est un objet[DocumentProperties](/javascript/api/excel/excel.documentproperties) contenant ces valeurs de métadonnées. L’exemple suivant montre comment définir la `author` propriété.
+Les objets classeur ont accès aux métadonnées de fichier Office, qui sont connues comme [propriétés du document](https://support.microsoft.com/office/21d604c2-481e-4379-8e54-1dd4622c6b75). La propriété de l’objet classeur `properties` est un objet[DocumentProperties](/javascript/api/excel/excel.documentproperties) contenant ces valeurs de métadonnées. L’exemple suivant montre comment définir la `author` propriété.
 
 ```js
 Excel.run(function (context) {
@@ -234,7 +234,7 @@ Un workbook a des paramètres de langue et de culture qui affectent l’affichag
 
 `Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être modifiés par le biais [Excel’interface utilisateur.](https://support.office.com/article/Change-the-character-used-to-separate-thousands-or-decimals-c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être modifiés par le [biais Excel’interface utilisateur.](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
 
 L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 
@@ -329,7 +329,7 @@ L’objet [Application](/javascript/api/excel/excel.application) fournit une mé
 - `recalculate`: Recalculer des formules qui ont changé (ou marqués par programme pour le recalcul) depuis le dernier calcul et les formules dépendantes, dans tous les classeurs actifs.
 
 > [!NOTE]
-> Pour plus d’informations sur le recalcul, voir l’article [recalcul de modification, l’itération ou la précision](https://support.office.com/article/change-formula-recalculation-iteration-or-precision-73fc7dac-91cf-4d36-86e8-67124f6bcce4).
+> Pour plus d’informations sur le recalcul, voir l’article [recalcul de modification, l’itération ou la précision](https://support.microsoft.com/office/73fc7dac-91cf-4d36-86e8-67124f6bcce4).
 
 ### <a name="temporarily-suspend-calculations"></a>Suspendre temporairement les calculs
 

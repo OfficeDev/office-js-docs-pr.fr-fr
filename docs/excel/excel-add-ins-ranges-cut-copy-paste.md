@@ -4,12 +4,12 @@ description: Découvrez comment couper, copier et coller des plages à l’aide 
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: ef13a5d71a427c06db9e57daa265834db4fff850d12a79723a7c891a972ec8fb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084102"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868679"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Couper, copier et coller des plages à l’aide de l Excel API JavaScript
 
@@ -80,7 +80,7 @@ Excel.run(function (context) {
 
 ## <a name="cut-and-paste-move-cells"></a>Couper et coller (déplacer) des cellules
 
-La [méthode Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) déplace les cellules vers un nouvel emplacement dans le workbook. Ce comportement de déplacement de cellule fonctionne [](https://support.office.com/article/Move-or-copy-cells-and-cell-contents-803d65eb-6a3e-4534-8c6f-ff12d1c4139e) de la même manière  que lorsque les cellules sont déplacées en faisant glisser la bordure de la plage ou lors de l’action Couper **et** coller. La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement spécifié en tant que `destinationRange` paramètre.
+La [méthode Range.moveTo](/javascript/api/excel/excel.range#moveTo_destinationRange_) déplace les cellules vers un nouvel emplacement dans le workbook. Ce comportement de déplacement de cellule fonctionne [](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e) de la même manière  que lorsque les cellules sont déplacées en faisant glisser la bordure de la plage ou lors de l’action Couper **et** coller. La mise en forme et les valeurs de la plage sont déplacées vers l’emplacement spécifié en tant que `destinationRange` paramètre.
 
 L’exemple de code suivant déplace une plage avec la `Range.moveTo` méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue pour englober le contenu source.
 

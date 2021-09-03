@@ -1,14 +1,14 @@
 ---
 title: Gestion des erreurs avec l Excel API JavaScript
 description: En savoir plus sur Excel logique de gestion des erreurs de l’API JavaScript pour prendre en compte les erreurs d’utilisation.
-ms.date: 08/26/2021
+ms.date: 08/27/2021
 localization_priority: Normal
-ms.openlocfilehash: 8dde0a57ea79e87eed0f506ca7995b3ce1a1f964
-ms.sourcegitcommit: 7245eeedc6246c7aad2fc7df8d47e11971b42ee7
+ms.openlocfilehash: 37457e6cd8b35c9e68fa4ce9a1cb9317dcf9b1af
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2021
-ms.locfileid: "58614614"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868630"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Gestion des erreurs avec l Excel API JavaScript
 
@@ -60,7 +60,7 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 |`BadPassword`|Le mot de passe que vous avez fourni est incorrect.|
 |`Conflict`|La demande n’a pas pu être traitée en raison d’un conflit.|
 |`ContentLengthRequired`|Un `Content-length` en-tête HTTP est manquant.|
-|`FilteredRangeConflict`|- Un tableau ne peut pas être inséré sur une plage filtrée. <br>- La suppression d’une plage filtrée n’est pas prise en charge.|
+|`FilteredRangeConflict`|L’opération tentée provoque un conflit avec une plage filtrée.|
 |`GeneralException`|Une erreur interne s’est produite lors du traitement de la demande.|
 |`InactiveWorkbook`|L’opération a échoué car plusieurs workbooks sont ouverts et le workbook appelé par cette API a perdu le focus.|
 |`InsertDeleteConflict`|L’opération d’insertion ou de suppression tentée a créé un conflit.|
@@ -77,15 +77,15 @@ Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 |`MergedRangeConflict`|Impossible de terminer l’opération. Une table ne peut pas se chevaucher avec un autre tableau, un rapport de tableau croisé dynamique, des résultats de requête, des cellules fusionnées ou une carte XML.|
 |`NonBlankCellOffSheet`|Microsoft Excel ne peut pas insérer de nouvelles cellules, car cela pousse les cellules non vides à la fin de la feuille de calcul. Ces cellules non vides peuvent apparaître vides mais ont des valeurs vides, une mise en forme ou une formule. Supprimez suffisamment de lignes ou de colonnes pour faire de la place à ce que vous souhaitez insérer, puis essayez à nouveau.|
 |`NotImplemented`|La fonctionnalité demandée n’est pas implémentée|
-|`PivotTableRangeConflict`|- Impossible d’insérer un tableau adjacent à un tableau croisé dynamique. <br>- Impossible d’insérer ou de supprimer une cellule dans un tableau croisé dynamique. <br>- Impossible de modifier une cellule dans un tableau croisé dynamique.|
+|`PivotTableRangeConflict`|L’opération tentée provoque un conflit avec une plage de tableau croisé dynamique.|
 |`RangeExceedsLimit`|Le nombre de cellules dans la plage a dépassé le nombre maximal pris en charge. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)|
-|`RefreshWorkbookLinksBlocked`|L’appel d’API n’est pas pris en charge, car l’utilisateur n’a pas accordé l’autorisation d’actualiser les liens du workbook externe.|
+|`RefreshWorkbookLinksBlocked`|L’opération a échoué, car l’utilisateur n’a pas accordé l’autorisation d’actualiser les liens debook externes.|
 |`RequestAborted`|La demande a été interrompue pendant l’exécution.|
 |`RequestPayloadSizeLimitExceeded`|La taille de la charge utile de la demande a dépassé la limite. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) <br><br>Cette erreur se produit uniquement dans Excel sur le Web.|
 |`ResponsePayloadSizeLimitExceeded`|La taille de la charge utile de réponse a dépassé la limite. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)  <br><br>Cette erreur se produit uniquement dans Excel sur le Web.|
 |`ServiceNotAvailable`|Le service n’est pas disponible.|
 |`Unauthenticated` |Les informations d’authentification requises sont manquantes ou incorrectes.|
-|`UnsupportedFeature`|L’appel d’API n’est pas autorisé car il comporte des fonctionnalités non pris en compte.|
+|`UnsupportedFeature`|L’opération a échoué car la feuille de calcul source contient une ou plusieurs fonctionnalités non pris en compte.|
 |`UnsupportedOperation`|L’opération tentée n’est pas prise en charge.|
 |`UnsupportedSheet`|Ce type de feuille ne prend pas en charge cette opération, car il s’agit d’une feuille Macro ou Graphique.|
 

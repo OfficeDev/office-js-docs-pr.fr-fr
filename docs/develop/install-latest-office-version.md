@@ -3,12 +3,12 @@ title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c18e91c93d8125c30bd52ffa7ee602c555e53accea108fb6b0645eb03610caf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f5e1bf7afe89efd6f523a74b04d7b6a99f0195bf
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080578"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868434"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
@@ -17,7 +17,7 @@ De nouvelles fonctionnalités de développeur, y compris celles en version d’�
 ## <a name="opt-in-to-getting-the-latest-builds-of-office"></a>Optez pour obtenir les dernières builds de Office
 
 - Si vous êtes abonné à Microsoft 365 Famille, Personnel ou Université, consultez l’article Office [Insider.](https://insider.office.com)
-- Si vous êtes un client Applications Microsoft 365 pour les PME, voir Installer la build [First Release pour Applications Microsoft 365 pour les PME clients.](https://support.office.com/article/Install-the-First-Release-build-for-Office-365-for-business-customers-4dd8ba40-73c0-4468-b778-c7b744d03ead)
+- Si vous êtes un client Applications Microsoft 365 pour les PME, voir Installer la build [First Release pour Applications Microsoft 365 pour les PME clients.](https://support.office.com/article/4dd8ba40-73c0-4468-b778-c7b744d03ead)
 - Si vous exécutez Office sur un Mac :
   - Démarrez une application Office.
   - Sélectionnez **Vérifier les mises à jour** dans le menu Aide.

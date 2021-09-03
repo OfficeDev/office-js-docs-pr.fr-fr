@@ -3,12 +3,12 @@ title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
 ms.date: 08/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 2ffd408e497cdb845497479f5f4cbed2cedcc39e
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.openlocfilehash: bda86e8bb7aacf72fbe26e86b7f062f362adbdd3
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232195"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868392"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -29,21 +29,21 @@ Le navigateur utilisé dépend de ce qui suit :
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|Système d’exploitation|Version d’Office|Edge WebView2 (Chromium basé sur) installé ?|Navigateur|
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|Système d’exploitation|Version d’Office|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
+|:-----|:-----|:-----|:-----|
 |indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.|
 |Mac|indifférent|Non applicable|Safari|
 |iOS|indifférent|Non applicable|Safari|
 |Android|indifférent|Non applicable|Chrome|
 |Windows 7, 8.1, 10 | non-abonnement Office 2013 ou ultérieure|Peu importe|Internet Explorer 11|
-|Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
-|Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
+|Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
+|Windows 8.1,<br>Windows 10 ver. &nbsp; < &nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; < &nbsp; 16.0.11629<sup>1</sup>| Peu importe|Internet Explorer 11|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.11629 &nbsp; _ET_ &nbsp; < &nbsp; 16.0.13530.20424 <sup>1</sup>| Peu importe|Microsoft Edge<sup>2, 3 avec</sup> WebView d’origine (EdgeHTML)|
 |Windows 10 ver. &nbsp; >= &nbsp; 1903 | Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Non |Microsoft Edge<sup>2, 3 avec</sup> WebView d’origine (EdgeHTML)|
 |Windows 8.1<br>Windows 10| Microsoft 365 ver. &nbsp; >= &nbsp; 16.0.13530.20424<sup>1</sup>| Oui<sup>4</sup>|  Microsoft Edge<sup>2</sup> avec WebView2 (Chromium)) |
 
-<sup>1 Consultez</sup> la [page historique des](/officeupdates/update-history-office365-proplus-by-date) mises à jour et découvrez comment trouver votre version Office client [et](https://support.office.com/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19) le canal de mise à jour pour plus d’informations.
+<sup>1 Consultez</sup> la [page historique des](/officeupdates/update-history-office365-proplus-by-date) mises à jour et découvrez comment trouver votre version Office client [et](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) le canal de mise à jour pour plus d’informations.
 
 <sup>2</sup> Lorsque Microsoft Edge est utilisé, le Narrateur Windows 10 (parfois appelé « lecteur d’écran ») lit la balise dans la page qui s’ouvre dans le volet `<title>` Des tâches. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 

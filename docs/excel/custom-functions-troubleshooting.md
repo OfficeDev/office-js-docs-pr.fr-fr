@@ -1,14 +1,14 @@
 ---
 ms.date: 03/30/2021
-description: Résoudre les problèmes courants liés aux fonctions personnalisées Excel.
+description: Résolution des problèmes courants liés Excel fonctions personnalisées.
 title: Résoudre des problèmes de fonctions personnalisées
 localization_priority: Normal
-ms.openlocfilehash: e79b2f8ee8abccda2b34821761bab65592a90218
-ms.sourcegitcommit: 074526a6dca8381dbdabf2705474c5ae6753b829
+ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "51506139"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868616"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -45,7 +45,7 @@ Si l’erreur « Nous ne pouvons pas ouvrir ce module à partir de localhost » 
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Rapports de journalisation d’exécution « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») dans Excel sur Windows
 
-Si le message d’erreur « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») figure dans votre [journal d’exécution](custom-functions-troubleshooting.md#enable-runtime-logging) lorsque vous appelez votre serveur localhost, vous devez activer une exception de bouclage locale. Pour plus d’informations sur la façon de procéder, voir la *deuxième option* décrite dans [cet article du support Microsoft](https://support.microsoft.com/help/4490419/local-loopback-exemption-does-not-work).
+Si le message d’erreur « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») figure dans votre [journal d’exécution](custom-functions-troubleshooting.md#enable-runtime-logging) lorsque vous appelez votre serveur localhost, vous devez activer une exception de bouclage locale. Pour plus d’informations sur la façon de procéder, voir la *deuxième option* décrite dans [cet article du support Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### <a name="ensure-promises-return"></a>Veiller au renvoi de promesses
 
@@ -78,9 +78,9 @@ CustomFunctions.associate("ADD", add);
 
 Pour plus d’informations sur ce processus, voir [Associating function names with JSON metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
-## <a name="known-issues"></a>Problèmes connus
+## <a name="known-issues"></a>Problèmes détectés
 
-Les problèmes connus sont suivis et signalés dans le référentiel GitHub fonctions [personnalisées Excel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
+Les problèmes connus sont suivis et signalés dans le [Excel fonctions personnalisées GitHub référentiel.](https://github.com/OfficeDev/Excel-Custom-Functions/issues)
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 

@@ -3,16 +3,16 @@ title: Co-création dans des macros complémentaires Excel
 description: Apprenez à co-Excel un OneDrive, OneDrive Entreprise ou SharePoint Online.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: f9df90a83e25095da1334a9d3e8d70338a991bebd160fc58e1bb53fa2bb5a13e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f57fccea8b4f7315661d3b7ba596c74dc7427bf8
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079794"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868427"
 ---
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
-Avec la [co-création](https://support.office.com/article/Collaborate-on-Excel-workbooks-at-the-same-time-with-co-authoring-7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.
+Avec la [co-création](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.
 
 > [!IMPORTANT]
 > Dans Excel pour Microsoft 365, vous remarquerez l’autoSave dans le coin supérieur gauche. Lorsque l’enregistrement automatique est activé, les co-auteurs visualisent vos modifications en temps réel. Prenez en considération l’impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver l’enregistrement automatique via le commutateur dans le coin supérieur gauche de la fenêtre Excel.
@@ -53,7 +53,7 @@ Par exemple, dans les scénarios de validation de données, il est fréquent d�
 Il s’agit d’un problème connu : les appels à l’API peuvent provoquer des [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) conflits de co-édition. Nous vous déconseillons d’utiliser cette API si vous prévoyez d’exécuter votre application pendant que d’autres utilisateurs modifient le workbook du module (en particulier, s’ils modifient le tableau ou une plage sous le tableau). Les instructions suivantes doivent vous aider à éviter les problèmes avec la méthode (et éviter le déclenchement de la barre jaune Excel affiche qui demande aux utilisateurs `TableRowCollection.add` d’actualiser).
 
 1. Utilisez [`Range.values`](/javascript/api/excel/excel.range#values) au lieu de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) . La définition `Range` des valeurs directement sous le tableau développe automatiquement le tableau. Sinon, l’ajout de lignes de tableau via les API entraîne des conflits de fusion `Table` pour les utilisateurs coauth.
-1. Aucune règle de validation des données ne [doit](https://support.microsoft.com/office/apply-data-validation-to-cells-29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) être appliquée aux cellules sous le tableau, sauf si la validation des données est appliquée à la colonne entière.
+1. Aucune règle de validation des données ne [doit](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) être appliquée aux cellules sous le tableau, sauf si la validation des données est appliquée à la colonne entière.
 1. S’il existe des données sous le tableau, le add-in doit le gérer avant de définir la valeur de la plage. [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_)L’insertion d’une ligne vide déplace les données et fait de l’espace pour le tableau en cours d’expansion. Sinon, vous risquez de overwriting cells below the table.
 1. Vous ne pouvez pas ajouter une ligne vide à un tableau avec `Range.values` . Le tableau se développe automatiquement uniquement si des données sont présentes dans les cellules directement en dessous du tableau. Utilisez des données temporaires ou des colonnes masquées comme solution de contournement pour ajouter une ligne de tableau vide.
 

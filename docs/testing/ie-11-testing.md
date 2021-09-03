@@ -3,12 +3,12 @@ title: Test d’Internet Explorer 11
 description: Testez votre Office sur Internet Explorer 11.
 ms.date: 08/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 098479942f2e2b5ed7b7cc219e5bbd591b88112a
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 2d33853d37ddcf595583f24f232c36ae68e3a05c
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382955"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868623"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre Office sur Internet Explorer 11
 
@@ -55,7 +55,7 @@ Ces instructions supposent que vous avez déjà installé un projet Office Yo. S
     ```
 
 > [!TIP]
-> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1 et 10, ainsi que différentes versions de Office. Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/how-to-revert-to-an-earlier-version-of-office-2bd5c457-a917-d57e-35a1-f709e3dda841).
+> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1 et 10, ainsi que différentes versions de Office. Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### <a name="command-options"></a>Options de commande
 
