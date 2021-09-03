@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 07/08/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 1400bd4f91522ec50afa90b932cc5aeaedb4342bace4c007d10c8293257f8e11
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 65eb220eedfe74b905bee4312c366166836a075a
+ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098224"
+ms.lasthandoff: 09/03/2021
+ms.locfileid: "58868763"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -39,7 +39,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -86,7 +86,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-1. Ajoutez la fonction suivante à la fin du fichier. Remarque :
+1. Ajoutez la fonction suivante à la fin du fichier. Remarque :
 
    - Votre logique métier Word.js est ajoutée à la fonction qui est transmise à `Word.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
 
@@ -111,7 +111,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
     }
     ```
 
-1. À l’intérieur de la fonction `insertParagraph()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `insertParagraph()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - Le premier paramètre de la méthode `insertParagraph` correspond au texte pour le nouveau paragraphe.
 
@@ -317,7 +317,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 1. Assurez-vous qu’il existe au moins trois paragraphes dans le document. Vous pouvez cliquez trois fois sur le bouton **Insérer un paragraphe**. *Vérifiez attentivement qu’aucun paragraphe vide n’apparaît à la fin du document. S’il y en a un, supprimez-le.*
 
-1. Dans Word, créez un [style personnalisé](https://support.office.com/article/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
+1. Dans Word, créez un [style personnalisé](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563) nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
 
 1. Sélectionnez le bouton **Appliquer le style**. Le style prédéfini **Référence intense** est appliqué au premier paragraphe.
 
@@ -374,7 +374,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
     }
     ```
 
-1. À l’intérieur de la fonction `insertTextIntoRange()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `insertTextIntoRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - La méthode est destinée à insérer l’abréviation [« (C2R) »] à la fin de la plage dont le texte est « Click-to-Run » (Démarrer en un clic). Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
@@ -503,7 +503,7 @@ function insertTextIntoRange() {
     }
     ```
 
-1. À l’intérieur de la fonction `insertTextBeforeRange()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `insertTextBeforeRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - La méthode est destinée à ajouter une plage dont le texte est « Office 2019 », avant la plage contenant le texte « Microsoft 365 ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
@@ -715,7 +715,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
     }
     ```
 
-1. À l’intérieur de la fonction `insertHTML()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `insertHTML()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - La première ligne ajoute un paragraphe vide à la fin du document.
 
@@ -772,7 +772,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
     var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
-1. À l’intérieur de la fonction `insertTable()`, remplacez `TODO2` par le code suivant. Remarque :
+1. Dans la fonction `insertTable()`, remplacez `TODO2` par le code suivant. Remarque :
 
    - Les deux premiers paramètres de la méthode `insertTable` spécifient le nombre de lignes et de colonnes.
 
@@ -816,7 +816,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 > [!NOTE]
 > Plusieurs types de contrôles de contenu peuvent être ajoutés à un document Word via l’interface utilisateur. Toutefois, actuellement, seuls les contrôles de contenu de texte enrichi sont pris en charge par Word.js.
 >
-> Avant de commencer cette étape du didacticiel, nous vous recommandons de créer et de manipuler des contrôles de contenu de texte enrichi via l’interface utilisateur Word afin de vous familiariser avec les contrôles et leurs propriétés. Pour plus d’informations, reportez-vous à l’article [Créer des formulaires à remplir ou imprimer dans Word](https://support.office.com/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b).
+> Avant de commencer cette étape du didacticiel, nous vous recommandons de créer et de manipuler des contrôles de contenu de texte enrichi via l’interface utilisateur Word afin de vous familiariser avec les contrôles et leurs propriétés. Pour plus d’informations, reportez-vous à l’article [Créer des formulaires à remplir ou imprimer dans Word](https://support.microsoft.com/office/040c5cc1-e309-445b-94ac-542f732c8c8b).
 
 ### <a name="create-a-content-control"></a>Créer un contrôle de contenu
 
@@ -855,7 +855,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
     }
     ```
 
-1. À l’intérieur de la fonction `createContentControl()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `createContentControl()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - Ce code est destiné à intégrer l’expression « Microsoft 365 » dans un contrôle de contenu. Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
@@ -914,7 +914,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
     }
     ```
 
-1. À l’intérieur de la fonction `replaceContentInControl()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `replaceContentInControl()`, remplacez `TODO1` par le code suivant. Remarque :
 
     - La méthode `ContentControlCollection.getByTag` renvoie un élément `ContentControlCollection` comprenant tous les contrôles de contenu de la balise spécifiée. Nous utilisons `getFirst` pour obtenir une référence pour le contrôle souhaité.
 
