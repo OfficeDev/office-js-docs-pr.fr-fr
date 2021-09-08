@@ -4,11 +4,11 @@ description: Testez votre Office sur Internet Explorer 11.
 ms.date: 08/13/2021
 localization_priority: Normal
 ms.openlocfilehash: 2d33853d37ddcf595583f24f232c36ae68e3a05c
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868623"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937168"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre Office sur Internet Explorer 11
 

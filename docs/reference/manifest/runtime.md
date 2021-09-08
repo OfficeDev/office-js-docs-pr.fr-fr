@@ -3,12 +3,12 @@ title: Runtime dans le fichier manifeste
 description: L’élément Runtime configure votre add-in pour utiliser un runtime JavaScript partagé pour ses différents composants, par exemple, ruban, volet des tâches, fonctions personnalisées.
 ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: 10e008aa623aa81676ad3c219b31fdb77b6fa1c11f1a7b5cfff169ac7ce9de0b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098990"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936915"
 ---
 # <a name="runtime-element"></a>Élément Runtime
 
@@ -41,7 +41,7 @@ Configure votre add-in pour utiliser un runtime JavaScript partagé afin que dif
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
 |  **resid**  |  Oui  | Spécifie l’emplacement URL de la page HTML de votre application. Il ne peut pas y avoir plus de 32 caractères et doit correspondre à un `resid` `id` attribut `Url` d’un élément dans `Resources` l’élément. |
-|  **lifetime**  |  Non  | La valeur par `lifetime` défaut est et n’a pas besoin `short` d’être spécifiée. Outlook’utilisent que la `short` valeur. Si vous souhaitez utiliser un runtime partagé dans un Excel, définissez explicitement la valeur sur `long` . |
+|  **lifetime**  |  Non  | La valeur par `lifetime` défaut est `short` et n’a pas besoin d’être spécifiée. Outlook’utilisent que la `short` valeur. Si vous souhaitez utiliser un runtime partagé dans un Excel, définissez explicitement la valeur sur `long` . |
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
-ms.date: 08/27/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 6e87ddfc6c29e74a578d399116df5df9b364028f
-ms.sourcegitcommit: 3287eb4588d0af47f1ab8a59882bcc3f585169d8
+ms.openlocfilehash: 8b45aa0da3a92dd8387c316213698a5e040f05f5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "58863533"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938135"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -229,7 +229,7 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "https://resourc
 > [!NOTE]
 > Le `DialogMessageOptions` paramètre a été publié environ le 19 juillet 2021. Pendant environ 30 jours après cette date, en Office sur le Web, la première fois que le paramètre est appelé et que le parent est un domaine différent de celui de la boîte de dialogue, l’utilisateur est invité à approuver l’envoi de données au domaine `messageParent` `DialogMessageOptions` cible. Si l’utilisateur approuve, la réponse de l’utilisateur est mise en cache pendant 24 heures. L’utilisateur n’est pas invité à nouveau pendant cette période lorsqu’il est appelé `messageParent` avec le même domaine cible.
 
-Si le message n’inclut pas de données sensibles, vous pouvez définir sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
+Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
 
 ```js
 Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
@@ -441,11 +441,11 @@ Tous les exemples suivants utilisent `displayDialogAsync` . Certains ont des ser
 
 - [Office Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Complément Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 - [Office Exemple de monétisation SAAS pour le add-in](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook Add-in SSO](https://github.com/OfficeDev/Outlook-Add-in-SSO)
+- [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook Visionneuse de jetons de add-in](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlook Message actionnable du add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook Partage de OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)

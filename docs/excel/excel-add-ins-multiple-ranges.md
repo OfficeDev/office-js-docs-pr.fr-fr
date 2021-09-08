@@ -3,12 +3,12 @@ title: Travailler simultanément avec plusieurs plages dans des compléments Exc
 description: Découvrez comment la Excel JavaScript permet à votre add-in d’effectuer des opérations et de définir des propriétés simultanément sur plusieurs plages.
 ms.date: 04/01/2021
 localization_priority: Normal
-ms.openlocfilehash: 89c8b8bbc92e656230544caac0d7f584524ca58951d0041d548bebbea0ae4bf4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4f1661d07432d6072649cb6db7315fd39fee5b4f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084258"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937290"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 
@@ -16,7 +16,7 @@ La bibliothèque JavaScript Excel permet à votre complément d’effectuer des 
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Un ensemble de plages (éventuellement nonigues) est représenté par un [objet RangeAreas.](/javascript/api/excel/excel.rangeareas) Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
+Un ensemble de plages (éventuellement peuigues) est représenté par un [objet RangeAreas.](/javascript/api/excel/excel.rangeareas) Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
 
 - Les types de données pour les propriétés et le comportement des méthodes et des getters.
 - Les types de données de paramètres et des comportements de la méthode.

@@ -3,12 +3,12 @@ title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 611d7c28a75fc13464ae55f14f2784506b04882796ace8e73c831f75f2ef1a60
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081198"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937975"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -103,7 +103,7 @@ La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
 ## <a name="add-a-binding-to-a-named-item"></a>Ajout d’une liaison à un élément nommé
 
-L’exemple suivant montre comment ajouter une liaison à l’élément nommé existant en tant que liaison « matrix » à l’aide de la méthode `myRange` [addFromNamedItemAsync,] et affecte la liaison en tant que `id` « myMatrix ».
+L’exemple suivant montre comment ajouter une liaison à l’élément nommé existant en tant que liaison « matrix » à l’aide de la méthode `myRange` [addFromNamedItemAsync] et affecte la liaison en tant que `id` « myMatrix ».
 
 ```js
 function bindNamedItem() {

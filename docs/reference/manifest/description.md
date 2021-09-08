@@ -3,12 +3,12 @@ title: Élément Description dans le fichier manifeste
 description: Spécifie la description de votre complément Office sous forme d’une chaîne de 250 caractères maximum.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 055e1f7aeeea72950822b36b76ac4edb778be3a5db84de43c81c6d4eebb21d62
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b106699e946c851b833b72f312bd8a177a81eda8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085007"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937547"
 ---
 # <a name="description-element"></a>Description, élément
 

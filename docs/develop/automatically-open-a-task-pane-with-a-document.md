@@ -3,12 +3,12 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a9683f63b82232f8f5697007692b359ae06b7650e96866a2425e2d900ded4d8a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081210"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936861"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
@@ -113,7 +113,7 @@ Le composant `webextension` comprend également une référence au store ou au c
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|L’ID de la ressource AppSource du complément (voir la remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|La version dans le catalogue AppSource (voir la remarque).|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
-|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d’administration Microsoft 365.|La version dans le manifeste de complément.
+|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d'administration Microsoft 365.|La version dans le manifeste de complément.
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
 
 > [!NOTE]
@@ -142,7 +142,7 @@ Un moyen simple d’écrire le XML consiste à d’abord exécuter votre add-in 
 
 ## <a name="test-and-verify-opening-task-panes"></a>Tester et vérifier l’ouverture des volets Office
 
-Vous pouvez déployer une version de test de votre application qui ouvre automatiquement un volet Des tâches à l’aide du déploiement centralisé via le Centre d’administration Microsoft 365. L’exemple suivant montre la façon dont les compléments sont insérés à partir du catalogue de déploiement centralisé à l’aide de la version store d’EXCatalog.
+Vous pouvez déployer une version de test de votre application qui ouvre automatiquement un volet Des tâches à l’aide du déploiement centralisé via le Centre d'administration Microsoft 365. L’exemple suivant montre la façon dont les compléments sont insérés à partir du catalogue de déploiement centralisé à l’aide de la version store d’EXCatalog.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="{52811C31-4593-43B8-A697-EB873422D156}">

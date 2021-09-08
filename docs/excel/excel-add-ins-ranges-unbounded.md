@@ -4,18 +4,18 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour lire ou �
 ms.date: 04/05/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: e9df563c9bac688e0806f5280139da8faa5b94870d4d32a852c919cd7fd03ad0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f7be2efc3e069ea3451088608ca5255a632ef863
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087650"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937971"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Lire ou écrire dans une plage non limite à l’aide de l Excel API JavaScript
 
 Cet article explique comment lire et écrire dans une plage non limite à l’Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
-Une adresse de plage non limite est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
+Une adresse de plage non limite est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
 
 - Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
 - Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>

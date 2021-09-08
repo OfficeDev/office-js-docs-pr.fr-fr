@@ -3,12 +3,12 @@ title: Élément CitationText dans le fichier manifeste
 description: Spécifie le texte réutilisable de citation de ce dictionnaire.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 789462bb2754c9c50e9f8c27a34cc0b82e2f2d65c555eceeeba9243142d2a2dd
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f29640f04d940d8ba7fc7f933f6f7884f1667e9e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089348"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936743"
 ---
 # <a name="citationtext-element"></a>Élément CitationText
 

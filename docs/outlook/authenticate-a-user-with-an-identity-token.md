@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton identité dans un complément
 description: Découvrez comment utiliser le jeton d’identité fourni par un complément Outlook pour implémenter l’authentification unique SSO dans votre service.
 ms.date: 10/31/2019
 localization_priority: Normal
-ms.openlocfilehash: e3e0abf4ed0c2dcdc48eca1b8c4cf601bc726ba0fee6652e8bb39f8964acf237
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 839c3db2658ac4f16b965ee399df391ddcfd0385
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079137"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937663"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Authentifier un utilisateur avec un jeton d’identité pour Exchange
 

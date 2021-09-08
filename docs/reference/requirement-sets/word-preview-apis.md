@@ -4,12 +4,12 @@ description: Détails sur les API JavaScript word à venir
 ms.date: 11/09/2020
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 1a3871ca4445e595620112bb5176fe2b7ab39015228a1602c119c06730cc90ab
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097846"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936495"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|Se produit lorsque les données dans le contrôle de contenu sont modifiées.|
 ||[onDeleted](/javascript/api/word/word.contentcontrol#ondeleted)|Se produit lorsque le contrôle de contenu est supprimé.|
 ||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onselectionchanged)|Se produit lorsque la sélection dans le contrôle de contenu est modifiée.|
-|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|Objet qui a levé l’événement.|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|Objet qui a élevé l’événement.|
 ||[eventType](/javascript/api/word/word.contentcontroleventargs#eventtype)|Type d’événement.|
 |[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete--)|Supprime la partie XML personnalisée.|
 ||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteattribute-xpath--namespacemappings--name-)|Supprime un attribut avec le nom donné de l’élément identifié par xpath.|
@@ -80,7 +80,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[getItem(key: string)](/javascript/api/word/word.settingcollection#getitem-key-)|Obtient un objet de paramètre par sa clé, qui est sensible à la cas.|
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getitemornullobject-key-)|Obtient un objet de paramètre par sa clé, qui est sensible à la cas.|
 ||[items](/javascript/api/word/word.settingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Tableau](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Fusionne les cellules délimitées inclusivement par une première et une dernière cellule.|
+|[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergecells-toprow--firstcell--bottomrow--lastcell-)|Fusionne les cellules délimitées inclusivement par une première et une dernière cellule.|
 |[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split-rowcount--columncount-)|Divise la cellule en nombre de lignes et de colonnes spécifié.|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertcontentcontrol--)|Insère un contrôle de contenu sur la ligne.|
 ||[merge()](/javascript/api/word/word.tablerow#merge--)|Fusionne la ligne dans une cellule.|

@@ -1,14 +1,14 @@
 ---
 ms.date: 03/08/2021
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, tels que les plages Excel, les paramètres facultatifs, le contexte d’appel, etc.
-title: Options pour les fonctions personnalisées Excel
+title: Options pour Excel fonctions personnalisées
 localization_priority: Normal
 ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
-ms.sourcegitcommit: d153f6d4c3e01d63ed24aa1349be16fa8ad51218
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "50613926"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937159"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -119,7 +119,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Votre fonction personnalisée peut accepter une plage de données de cellule comme paramètre d’entrée. Une fonction peut également renvoyer une plage de données. Excel passe une plage de données de cellule sous forme de tableau à deux dimensions.
 
-Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre et la syntaxe JSDOC définit la propriété du paramètre dans les métadonnées `values` `number[][]` `dimensionality` `matrix` JSON de cette fonction. 
+Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre et la syntaxe JSDOC définit la propriété du paramètre dans les métadonnées `values` `number[][]` `dimensionality` `matrix` JSON pour cette fonction. 
 
 ```js
 /**
@@ -172,7 +172,7 @@ function ADD(operands: number[][][]): number {
 }
 ```
 
-Cette fonction `=CONTOSO.ADD([operands], [operands]...)` s’affiche dans le livre de calcul Excel.
+Cette fonction apparaît `=CONTOSO.ADD([operands], [operands]...)` dans le Excel de travail.
 
 <img alt="The ADD custom function being entered into cell of an Excel worksheet" src="../images/operands.png" />
 
@@ -197,7 +197,7 @@ function addSingleValue(singleValue) {
 
 ### <a name="single-range-parameter"></a>Paramètre de plage unique
 
-Un paramètre de plage unique n’est techniquement pas un paramètre exercable, mais il est inclus ici, car la déclaration est très similaire aux paramètres répétés. Il apparaît à l’utilisateur comme ADD(A2:B3) où une seule plage est passée à partir d’Excel. L’exemple suivant montre comment déclarer un paramètre de plage unique.
+Un paramètre de plage unique n’est techniquement pas un paramètre exercable, mais il est inclus ici, car la déclaration est très similaire aux paramètres répétés. Il apparaît à l’utilisateur comme ADD(A2:B3) où une seule plage est transmise à partir Excel. L’exemple suivant montre comment déclarer un paramètre de plage unique.
 
 ```JS
 /**
@@ -223,7 +223,7 @@ Un paramètre de plage exercidable permet de passer plusieurs plages ou nombres.
 ### <a name="declaring-repeating-parameters"></a>Déclaration de paramètres répétés
 Dans Typescript, indiquez que le paramètre est multidimensionnel. Par exemple, cela indiquerait un tableau à une dimension, un tableau à  `ADD(values: number[])` `ADD(values:number[][])` deux dimensions, etc.
 
-Dans JavaScript, utilisez pour les tableaux à une dimension, pour les tableaux à deux `@param values {number[]}` `@param <name> {number[][]}` dimensions, etc. pour plus de dimensions.
+Dans JavaScript, utilisez pour les tableaux à une dimension, pour les tableaux à deux dimensions, et ainsi de `@param values {number[]}` suite pour plus de `@param <name> {number[][]}` dimensions.
 
 Pour JSON écrit à la main, assurez-vous que votre paramètre est spécifié comme dans votre fichier JSON, et vérifiez que vos paramètres sont `"repeating": true` marqués comme `"dimensionality": matrix` .
 
@@ -232,7 +232,7 @@ Pour JSON écrit à la main, assurez-vous que votre paramètre est spécifié co
 Chaque fonction personnalisée est automatiquement passée un argument comme dernier paramètre `invocation` d’entrée, même s’il n’est pas explicitement déclaré. Ce `invocation` paramètre correspond à l’objet [Invocation.](/javascript/api/custom-functions-runtime/customfunctions.invocation) L’objet peut être utilisé pour récupérer un contexte supplémentaire, tel que l’adresse de la cellule `Invocation` qui a appelé votre fonction personnalisée. Pour accéder à `Invocation` l’objet, vous devez déclarer `invocation` comme dernier paramètre de votre fonction personnalisée. 
 
 > [!NOTE]
-> Le `invocation` paramètre n’apparaît pas en tant qu’argument de fonction personnalisée pour les utilisateurs dans Excel.
+> Le `invocation` paramètre n’apparaît pas en tant qu’argument de fonction personnalisée pour les utilisateurs Excel.
 
 L’exemple suivant montre comment utiliser le paramètre pour renvoyer l’adresse de la cellule `invocation` qui a appelé votre fonction personnalisée. Cet exemple utilise la propriété [d’adresse](/javascript/api/custom-functions-runtime/customfunctions.invocation#address) de `Invocation` l’objet. Pour accéder à `Invocation` l’objet, déclarez d’abord `CustomFunctions.Invocation` en tant que paramètre dans votre JSDoc. Ensuite, déclarez `@requiresAddress` dans votre JSDoc pour accéder à la `address` propriété de `Invocation` l’objet. Enfin, dans la fonction, récupérez et renvoyez la `address` propriété. 
 
@@ -251,7 +251,7 @@ function getAddress(first, second, invocation) {
 }
 ```
 
-Dans Excel, une fonction personnalisée appelant la propriété de l’objet retourne l’adresse absolue en suivant le format de la cellule qui a `address` `Invocation` appelé la `SheetName!RelativeCellAddress` fonction. Par exemple, si le paramètre d’entrée se trouve dans une feuille appelée **Prix** dans la cellule F6, la valeur d’adresse du paramètre renvoyé est `Prices!F6` . 
+Dans Excel, une fonction personnalisée appelant la propriété de l’objet retourne l’adresse absolue suivant le format de la cellule qui a `address` `Invocation` appelé la `SheetName!RelativeCellAddress` fonction. Par exemple, si le paramètre d’entrée se trouve dans une feuille appelée **Prix** dans la cellule F6, la valeur d’adresse du paramètre renvoyé est `Prices!F6` . 
 
 Le `invocation` paramètre peut également être utilisé pour envoyer des informations à Excel. Pour en [savoir plus, voir](custom-functions-web-reqs.md#make-a-streaming-function) Faire une fonction de diffusion en continu.
 
@@ -289,7 +289,7 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 
 Lorsqu’une fonction personnalisée appelant la propriété s’exécute, l’adresse du paramètre est renvoyée en suivant le format de la cellule `parameterAddresses` qui a appelé la `SheetName!RelativeCellAddress` fonction. Par exemple, si le paramètre d’entrée se trouve dans une feuille appelée **Costs** dans la cellule D8, la valeur d’adresse du paramètre renvoyé est `Costs!D8` . Si la fonction personnalisée possède plusieurs paramètres et que plusieurs adresses de paramètre sont renvoyées, les adresses renvoyées se renverront sur plusieurs cellules, décroit verticalement à partir de la cellule qui a appelé la fonction. 
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
 
 Découvrez comment utiliser des [valeurs volatiles dans vos fonctions personnalisées.](custom-functions-volatile.md)
 

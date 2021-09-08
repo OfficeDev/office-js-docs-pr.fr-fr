@@ -3,12 +3,12 @@ title: Obtenir ou modifier des destinataires dans un complément Outlook
 description: Découvrez comment obtenir, définir ou ajouter des destinataires d’un message ou un rendez-vous dans un complément Outlook.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: 53db46485fd49498357d77c4a9742b601175219d1f01c5e403a92a5088f488a9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9a98fbc78e98cbaaf99c60625dd7f6a725c57c0f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091403"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937851"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -161,7 +161,7 @@ Lorsque vous appelez , fournissez un tableau comme argument d’entrée pour le 
     
 - Tableau `EmailAddressDetails` d’objets, semblable à celui renvoyé par la `getAsync` méthode.
     
-Vous pouvez éventuellement fournir une méthode de rappel en tant qu’argument d’entrée à la méthode, pour vous assurer que tout code qui dépend de la définition des destinataires ne s’exécute que lorsque cela `setAsync` se produit. Vous pouvez également fournir des arguments à la méthode de rappel à l’aide du paramètre facultatif _asyncContext_. Si vous utilisez une méthode de rappel, vous pouvez accéder à un  paramètre  de sortie _asyncResult_ et utiliser les propriétés d’état et d’erreur de l’objet paramètre pour vérifier l’état et les messages d’erreur de l’appel `AsyncResult` asynchrone.
+Vous pouvez éventuellement fournir une méthode de rappel comme argument d’entrée à la méthode, pour vous assurer que tout code qui dépend de la définition des destinataires ne s’exécute que lorsque cela `setAsync` se produit. Vous pouvez également fournir des arguments à la méthode de rappel à l’aide du paramètre facultatif _asyncContext_. Si vous utilisez une méthode de rappel, vous pouvez accéder à un  paramètre  de sortie _asyncResult_ et utiliser les propriétés d’état et d’erreur de l’objet paramètre pour vérifier l’état et les messages d’erreur de l’appel `AsyncResult` asynchrone.
 
 
 
@@ -274,7 +274,7 @@ function write(message){
 ```
 
 
-## <a name="add-recipients"></a>Ajouter des destinataires
+## <a name="add-recipients"></a>Ajout de destinataires
 
 Si vous ne souhaitez pas réécrire des destinataires existants dans un rendez-vous ou un message, au lieu d’utiliser , vous pouvez utiliser la méthode asynchrone pour y envoyer des `Recipients.setAsync` `Recipients.addAsync` destinataires. `addAsync`fonctionne de la même manière que `setAsync` dans la mesure où elle nécessite un argument _d’entrée de destinataires._ Vous pouvez éventuellement fournir une méthode de rappel et tous les arguments pour le rappel à l’aide du paramètre asyncContext. Vous pouvez ensuite vérifier l’état, le résultat et toute erreur de l’appel asynchrone à l’aide du paramètre de sortie `addAsync` _asyncResult_ de la méthode de rappel. L’exemple suivant vérifie que l’élément en cours de composition est un rendez-vous et y ajoute deux participants obligatoires.
 

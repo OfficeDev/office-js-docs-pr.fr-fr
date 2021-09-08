@@ -3,12 +3,12 @@ title: Éviter d’utiliser la méthode context.sync dans des boucles
 description: Découvrez comment utiliser la boucle fractionée et les modèles d’objets corrélés pour éviter d’appeler context.sync dans une boucle.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 549713e4ea32b791acc10befe3f4ab86455434784f6ffc449258899cba2d9e21
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083250"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936714"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Éviter d’utiliser la méthode context.sync dans des boucles
 
@@ -168,7 +168,7 @@ Word.run(async (context) => {
 });
 ```
 
-Dans le code précédent, il existe une boucle externe et une boucle interne. Chacun d’eux contient un `context.sync` . Selon le tout premier extrait de code de cet article, vous verrez probablement que la boucle interne peut simplement être déplacée après la `context.sync` boucle interne. Toutefois, cela laisserait le code `context.sync` avec un (deux d’entre eux en fait) dans la boucle externe. Le code suivant montre comment supprimer `context.sync` des boucles. Nous abordons le code ci-dessous.
+Dans le code précédent, il y a une boucle externe et une boucle interne. Chacun d’eux contient un `context.sync` . Selon le tout premier extrait de code de cet article, vous verrez probablement que la boucle interne peut simplement être déplacée après la `context.sync` boucle interne. Toutefois, cela laisserait le code `context.sync` avec un (deux d’entre eux en fait) dans la boucle externe. Le code suivant montre comment supprimer `context.sync` des boucles. Nous abordons le code ci-dessous.
 
 ```javascript
 Word.run(async (context) => {

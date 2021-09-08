@@ -3,12 +3,12 @@ title: Mise à jour vers la dernière Office de l’API JavaScript et du schéma
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
 ms.date: 10/11/2019
 localization_priority: Normal
-ms.openlocfilehash: 3405509c5bd0274b0bf36593a549dcb1389daa9f412798895958c6210869781e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b0536b4b55accd99e002e26c467572330ba72ae2
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079922"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937845"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Mise à jour vers la dernière Office de l’API JavaScript et du schéma de manifeste de la version 1.1
 

@@ -1,16 +1,21 @@
 ---
 title: Résoudre les erreurs de développement avec Office de recherche
-description: Découvrez comment résoudre les erreurs de développement dans les Office de développement.
-ms.date: 06/11/2021
+description: Découvrez comment résoudre les erreurs de développement dans Office des modules.
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: a750f8db6e58406403d8bd0ef89e60128c2e08523375b4b2fbe6a904bfbae2d4
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 83c1c62efecff79baf7bfaf2040e7858d72b9ea4
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093223"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936190"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résoudre les erreurs de développement avec Office de recherche
+
+Voici une liste des problèmes courants que vous pouvez rencontrer lors du développement d’un Office de développement.
+
+> [!TIP]
+> L’effacement Office cache de données résout souvent les problèmes liés au code obsolète. Cela garantit que le dernier manifeste est téléchargé à l’aide des noms de fichiers, du texte du menu et d’autres éléments de commande actuels. Pour plus d’informations, voir [Effacer le cache Office cache.](clear-cache.md)
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément
 
@@ -18,19 +23,7 @@ Voir [Valider le manifeste d’un complément Office](troubleshoot-manifest.md) 
 
 ## <a name="changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect"></a>Les modifications apportées aux commandes de complément, y compris les éléments de menu et les boutons du ruban ne s’appliquent pas
 
-Si les modifications apportées au manifeste, par exemple aux noms de fichier des icônes de bouton dans le ruban ou au texte des éléments de menu, ne semblent pas appliquées, essayez de vider le cache Office de votre ordinateur. 
-
-#### <a name="for-windows"></a>Pour Windows :
-
-Supprimez le contenu du dossier `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\` et supprimez le contenu du `%userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\` dossier, s’il existe.
-
-#### <a name="for-mac"></a>Pour Mac :
-
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
-
-#### <a name="for-ios"></a>Pour iOS :
-
-Appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
+L’effacement du cache permet de s’assurer que la dernière version du manifeste de votre add-in est utilisée. Pour effacer le cache Office de données, suivez les instructions de [la Office cache.](clear-cache.md) Si vous utilisez Office sur le Web, effacer le cache de votre navigateur via l’interface utilisateur du navigateur.
 
 ## <a name="changes-to-static-files-such-as-javascript-html-and-css-do-not-take-effect"></a>Les modifications apportées aux fichiers statiques, tels que JavaScript, HTML et CSS ne sont pas prises en compte.
 
@@ -40,7 +33,7 @@ Le navigateur web met peut-être le contenu de ces fichiers en cache. Pour évit
 - Pragma : « aucun cache »
 - Date d’expiration : « -1 »
 
-Un exemple d’opération dans un serveur Node.JS Express est disponible dans [ce fichier app.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/app.js). Un exemple de projet ASP.NET est disponible dans [ce fichier cshtml](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
+Un exemple d’opération dans un serveur Node.JS Express est disponible dans [ce fichier app.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js). Un exemple de projet ASP.NET est disponible dans [ce fichier cshtml](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Views/Shared/_Layout.cshtml).
 
 Si votre complément est hébergé dans Internet Information Server (IIS), vous pouvez également ajouter ce qui suit à web. config.
 
@@ -68,11 +61,11 @@ myChart.id = "5";
 
 ## <a name="getting-error-this-add-in-is-no-longer-available"></a>Obtention d’une erreur : « Ce module n’est plus disponible »
 
-Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres causes, indiquez-nous l’outil de commentaires en bas de la page.
+Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres causes, n’hésitez pas à nous en faire part avec l’outil de commentaires en bas de la page.
 
 - Si vous utilisez Visual Studio, il se peut qu’il y a un problème avec le chargement de version secondaire. Fermez toutes les instances de l’hôte Office et des Visual Studio. Redémarrez Visual Studio puis réessayez d’appuyer sur F5.
 - Le manifeste du add-in a été supprimé de son emplacement de déploiement, tel qu’un déploiement centralisé, un catalogue SharePoint ou un partage réseau.
-- La valeur de [l’élément ID](../reference/manifest/id.md) dans le manifeste a été modifiée directement dans la copie déployée. Si, pour une raison quelconque, vous souhaitez modifier cet ID, supprimez d’abord le module de l’hôte Office, puis remplacez le manifeste d’origine par le manifeste modifié. Vous devez effacer le cache Office pour supprimer toutes les traces de l’original. Consultez la section Modifications apportées aux commandes [de add-in,](#changes-to-add-in-commands-including-ribbon-buttons-and-menu-items-do-not-take-effect) y compris les boutons du ruban et les éléments de menu ne prennent pas effet plus tôt dans cet article.
+- La valeur de [l’élément ID](../reference/manifest/id.md) dans le manifeste a été modifiée directement dans la copie déployée. Si, pour une raison quelconque, vous souhaitez modifier cet ID, supprimez d’abord le module de l’hôte Office, puis remplacez le manifeste d’origine par le manifeste modifié. Vous devez effacer le cache Office pour supprimer toutes les traces de l’original. Consultez [l’article Effacer Office cache pour](clear-cache.md) obtenir des instructions sur l’effacement du cache pour votre système d’exploitation.
 - Le manifeste du add-in a un qui n’est pas défini n’importe où dans la section Resources du manifeste, ou il y a une insmatance dans l’orthographe de l’endroit où il est utilisé et où il est défini dans la `resid` [](../reference/manifest/resources.md) `resid` `<Resources>` section.
 - Il existe un `resid` attribut quelque part dans le manifeste avec plus de 32 caractères. Un attribut et l’attribut de la ressource correspondante dans la section ne peuvent pas être `resid` `id` plus de `<Resources>` 32 caractères.
 - Le add-in possède une commande de add-in personnalisée, mais vous essayez de l’exécuter sur une plateforme qui ne les prend pas en charge. Pour plus d’informations, consultez les ensembles de conditions requises des commandes [de l’autre.](../reference/requirement-sets/add-in-commands-requirement-sets.md)
@@ -83,7 +76,7 @@ Voir [Résolution des problèmes Microsoft Edge problèmes.](../concepts/browser
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel de l’équipe de sécurité envoie des erreurs, mais pas de manière cohérente
 
-Pour [les causes possibles Excel résoudre les](../excel/excel-add-ins-troubleshooting.md) problèmes.
+Pour [plus d’Excel,](../excel/excel-add-ins-troubleshooting.md) voir Résoudre les problèmes.
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erreurs de validation de schéma de manifeste dans Visual Studio projets
 
@@ -119,3 +112,4 @@ Vous pouvez répéter le processus précédent pour tous les schémas supplémen
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](testing-and-troubleshooting.md)
+- [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

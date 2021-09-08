@@ -3,12 +3,12 @@ title: Élément IconUrl dans le fichier manifeste
 description: L’élément IconUrl spécifie l’URL de l’image qui représente votre Office dans l’UX d’insertion et Office Store.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: c2dac7835dcdd856fb3e713f00b5bd0a3c87189cf36fda3186e51da2c95e1ab9
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 68a449b40f6084d26140d59fec61967e163196df
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089810"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936585"
 ---
 # <a name="iconurl-element"></a>IconUrl, élément
 

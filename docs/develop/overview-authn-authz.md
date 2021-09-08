@@ -1,14 +1,14 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Priority
-ms.openlocfilehash: 76c0b42221b988be09feeb94d9d8ee70f85ef7852470505fb67587bdb90113d1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9802e4cccfcd6121d654dccb8606441c597b76f9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080347"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938133"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -43,8 +43,8 @@ Une fois que votre code a extrait la revendication souhaitée du jeton, il utili
 
 Avant de commencer à implémenter l’authentification utilisateur avec l’authentification unique, veillez à bien connaître l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md). Notez également les exemples suivants.
 
-- [Complément Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
-- [Complément Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
+- [Complément Office NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
+- [Complément Office ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 Toutefois, ces exemples n’utilisent pas le jeton comme jeton d’identité. Ils l’utilisent pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.
 
@@ -66,8 +66,8 @@ Vous devez également lire au moins l’un des articles de procédure de procéd
 
 Notez également les exemples suivants.
 
-- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
-- [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
+- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 
 ## <a name="access-to-non-microsoft-data-sources"></a>Accès à des sources de données non-Microsoft
 

@@ -4,12 +4,12 @@ description: Découvrez la Excel de l’API JavaScript d’une cellule et décou
 ms.date: 04/16/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 444feecd4aafb0e884de05b2ff198a3ca1423a16644c537865bcfb6905684a40
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ad8ca985b6bbdcf19920c36c371e690f61639f16
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079340"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937755"
 ---
 # <a name="work-with-cells-using-the-excel-javascript-api"></a>Utiliser des cellules à l’aide Excel API JavaScript
 
@@ -17,7 +17,7 @@ L’API JavaScript Excel ne comprend pas d’objet ou de classe « Cellule ». A
 
 Un `Range` objet peut également contenir plusieurs cellules contiguës. Les cellules contiguës forment un rectangle non abandonné (y compris des lignes ou des colonnes). Pour en savoir plus sur l’utilisation de cellules qui ne sont pas contiguës, voir Travailler avec des cellules non contiguës à l’aide de l’objet [RangeAreas](#work-with-discontiguous-cells-using-the-rangeareas-object).
 
-Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` [Range Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.range)
+Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en charge, voir `Range` [Range Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.range)
 
 ## <a name="work-with-discontiguous-cells-using-the-rangeareas-object"></a>Utiliser des cellules peuigues à l’aide de l’objet RangeAreas
 

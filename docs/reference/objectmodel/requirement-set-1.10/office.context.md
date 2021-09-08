@@ -3,12 +3,12 @@ title: Office.context - ensemble de conditions requises 1.10
 description: Office. Membres d’objet de contexte disponibles pour Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.10.
 ms.date: 05/11/2021
 localization_priority: Normal
-ms.openlocfilehash: b57b14a9cfea8c0b2b62cec27a9ea5597723352147cffd1157b07874d260de60
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cb189dc3b7b51357dee8ac83bc61795b3ec47ae5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084412"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937613"
 ---
 # <a name="context-mailbox-requirement-set-110"></a>context (Ensemble de conditions requises de boîte aux lettres 1.10)
 
@@ -27,16 +27,16 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [auth](#auth-auth) | Composition<br>Lecture | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [auth](#auth-auth) | Composition<br>Lire | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | Composition<br>Lire | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [host](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [host](#host-hosttype) | Composition<br>Lire | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [platform](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [platform](#platform-platformtype) | Composition<br>Lire | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [requirements](#requirements-requirementsetsupport) | Composition<br>Lecture | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Lecture | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [ui](#ui-ui) | Composition<br>Lecture | [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Lire | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [ui](#ui-ui) | Composition<br>Lire | [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="property-details"></a>Détails de la propriété
 
@@ -276,7 +276,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
-L’objet vous permet de stocker et d’accéder aux données d’un module de messagerie stocké dans la boîte aux lettres d’un utilisateur, afin qu’il soit disponible pour ce dernier lorsqu’il est en cours d’exécution à partir d’un client Outlook utilisé pour accéder à cette boîte aux `RoamingSettings` lettres.
+L’objet vous permet de stocker et d’accéder aux données d’un add-in de messagerie stocké dans la boîte aux lettres d’un utilisateur, afin qu’il soit disponible pour ce dernier lorsqu’il est en cours d’exécution à partir d’un client Outlook utilisé pour accéder à cette boîte aux `RoamingSettings` lettres.
 
 ##### <a name="type"></a>Type
 

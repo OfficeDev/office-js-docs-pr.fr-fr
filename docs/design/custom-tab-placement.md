@@ -3,16 +3,16 @@ title: Positionner un onglet personnalisé sur le ruban
 description: Découvrez comment contrôler l’endroit où un onglet personnalisé apparaît sur Office ruban et s’il a le focus par défaut.
 ms.date: 02/25/2021
 localization_priority: Normal
-ms.openlocfilehash: 98b90ad6a8a89cf739dfdc0fff8068235a75e34d7304032c87011476620a483a
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6718a69191d1d84d96512c01b2544094ce276ab6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082114"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937026"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>Positionner un onglet personnalisé sur le ruban
 
-Vous pouvez spécifier l’endroit où vous souhaitez que l’onglet personnalisé de votre application de Office apparaisse sur le ruban de l’application Office à l’aide de la marque dans le manifeste du module.
+Vous pouvez spécifier l’endroit où vous souhaitez que l’onglet personnalisé de votre application de Office apparaisse dans le ruban de l’application Office à l’aide de la marque dans le manifeste du module.
 
 > [!NOTE]
 > Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour [les commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
@@ -20,7 +20,7 @@ Vous pouvez spécifier l’endroit où vous souhaitez que l’onglet personnalis
 > [!IMPORTANT]
 >
 > - La fonctionnalité et le markup du add-in décrits dans cet article sont disponibles *uniquement dans PowerPoint sur le web*.
-> - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui supportent l’ensemble de conditions **requises AddinCommands 1.3**. Voir [Comportement sur les plateformes non](#behavior-on-unsupported-platforms) pris en cas de problème ci-dessous.
+> - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui prisent en charge l’ensemble de conditions **requises AddinCommands 1.3**. Voir [Comportement sur les plateformes non](#behavior-on-unsupported-platforms) pris en cas de problème ci-dessous.
 
 Spécifiez l’endroit où vous souhaitez qu’un onglet personnalisé apparaisse en identifiant l’onglet Office intégré que vous souhaitez qu’il soit à côté et en spécifiant s’il doit se trouver à gauche ou à droite de l’onglet intégré. Faites ces spécifications en incluant un [élément InsertBefore](../reference/manifest/customtab.md#insertbefore) (gauche) ou [InsertAfter](../reference/manifest/customtab.md#insertafter) (à droite) dans l’élément [CustomTab](../reference/manifest/customtab.md) du manifeste de votre add-in. (Vous ne pouvez pas avoir les deux éléments.)
 

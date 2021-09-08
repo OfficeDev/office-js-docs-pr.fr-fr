@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: 587ad9afde7b8f0619c720cdd83e1ec07150ab64
-ms.sourcegitcommit: dd77da9b19e7a2d65174b632556e9e01b7f006e0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2021
-ms.locfileid: "58407945"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937543"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -239,7 +239,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     ```
 
     > [!NOTE]
-    > Si votre application [n’a](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pas été automatiquement chargé de manière test, suivez les instructions du chargement de version test des Outlook pour tester le chargement de version test du Outlook.
+    > Si votre application [n’a](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pas été automatiquement rechargée de manière test, suivez les instructions du chargement de version test des Outlook pour tester le chargement de version test du Outlook.
 
 1. Dans Outlook sur le web, créez un message.
 
@@ -254,7 +254,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     >
     > 1. Fermez Outlook.
     > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
-    > 1. Exécutez la commande suivante :
+    > 1. Exécutez la commande suivante.
     >
     >    ```command&nbsp;line
     >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
@@ -266,7 +266,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [supprimez-le, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau.
+- Si vous avez mis à jour le manifeste, [supprimez le add-in,](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) puis chargez-le de nouveau.
 - Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
 Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer](debug-autolaunch.md)votre complément basé sur Outlook événement.
@@ -275,9 +275,9 @@ La journalisation runtime est également disponible pour cette fonctionnalité s
 
 ## <a name="deploy-to-users"></a>Déployer pour les utilisateurs
 
-Vous pouvez déployer des add-ins basés sur des événements en chargeant le manifeste via le Centre d’administration Microsoft 365. Dans le portail d’administration, **développez la** section Paramètres dans le volet de navigation, puis sélectionnez **Applications intégrées.** Dans la page **Applications intégrées,** sélectionnez l Télécharger **d’applications personnalisées.**
+Vous pouvez déployer des add-ins basés sur des événements en chargeant le manifeste via le Centre d'administration Microsoft 365. Dans le portail d’administration, **développez la** section Paramètres dans le volet de navigation, puis sélectionnez **Applications intégrées.** Dans la page **Applications intégrées,** sélectionnez l Télécharger **d’applications personnalisées.**
 
-![Capture d’écran de la page Applications intégrées sur le Centre d’administration Microsoft 365, y compris l’action Télécharger d’applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
+![Capture d’écran de la page Applications intégrées sur le Centre d'administration Microsoft 365, y compris l’action Télécharger d’applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource et le Office Store dans l’application : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur des événements devrait être disponible prochainement.
 

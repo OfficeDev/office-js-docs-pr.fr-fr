@@ -1,14 +1,14 @@
 ---
 title: Élémznr VersionOverrides dans le fichier manifest
-description: Documentation de référence de l’élément VersionOverrides Office fichiers manifeste (XML) des modules.
+description: Documentation de référence de l’élément VersionOverrides pour Office fichiers manifeste (XML) des add-ins.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 0db20a5245ea83a48e5ffbf3381613acdd4d2714de79402714b8010e84bb652d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 787ba8e7d90900cc72d6c5e9370d68ced0faee2f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096358"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936878"
 ---
 # <a name="versionoverrides-element"></a>Élément VersionOverrides
 
@@ -23,7 +23,7 @@ ms.locfileid: "57096358"
 
 ### <a name="namespace-values"></a>Valeurs des espaces de noms
 
-La liste suivante répertorie la valeur requise de la **valeur xmlns** en fonction de la valeur **xsi:type** de l’élément `<OfficeApp>` parent.
+La liste suivante répertorie la valeur requise de la valeur **xmlns** en fonction de la valeur **xsi:type** de l’élément `<OfficeApp>` parent.
 
 - **TaskPaneApp prend** en charge uniquement la version 1.0 de VersionOverrides, et les **xmlns** doivent être `http://schemas.microsoft.com/office/taskpaneappversionoverrides` .
 - **ContentApp** prend en charge uniquement la version 1.0 de VersionOverrides, et les **xmlns** doivent être `http://schemas.microsoft.com/office/contentappversionoverrides` .

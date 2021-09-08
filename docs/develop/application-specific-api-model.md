@@ -3,12 +3,12 @@ title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 66525dee5e0ca6ce4e2e45cb606ee990dd68c0f47327396f58866aca4698160e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 568494dc0b92f1a4f9c6556b169293e68ae0bce9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081369"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937050"
 ---
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 

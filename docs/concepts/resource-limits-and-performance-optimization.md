@@ -4,11 +4,11 @@ description: Découvrez les limites de ressources de la plateforme de Office, y 
 ms.date: 08/17/2021
 localization_priority: Normal
 ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
-ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "58505662"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937926"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -49,13 +49,13 @@ Outre les règles relatives au cœur de l’UC, à la mémoire et à la fiabilit
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé, et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que les Outlook sur le web et les appareils mobiles.
+- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que sur Outlook sur le web appareils mobiles et mobiles.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
 ### <a name="excel-add-ins"></a>Compléments Excel
 
-Si vous construisez un Excel, n’ignorez pas les limitations de taille suivantes lors de l’interaction avec le workbook.
+Si vous construisez un Excel, n’ignorez pas les limites de taille suivantes lors de l’interaction avec le workbook.
 
 - Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
 - Une plage est limitée à cinq millions de cellules pour obtenir des opérations.
@@ -66,7 +66,7 @@ Ces limitations sont généralement dépassées par de grandes plages. Votre add
 
 ### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
 
-Si un application de contenu ou du volet Des tâches dépasse les seuils précédents en matière d’utilisation du cœur de l’UC ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
+Si un application de contenu ou du volet Des tâches dépasse les seuils précédents sur l’utilisation du cœur de l’UC ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
 
 - Redémarrer le complément.
 - Annuler les alertes supplémentaires de dépassement de seuil. Dans l’idéal, l’utilisateur devrait supprimer le complément du document. La poursuite de l’exécution du complément risquerait d’entraîner des problèmes supplémentaires au niveau des performances et de la stabilité.  
@@ -113,7 +113,7 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 ### <a name="performance-improvements-with-the-application-specific-apis"></a>Améliorations des performances avec les API propres à l’application
 
-Les conseils de performances dans l’utilisation du modèle [d’API](../develop/application-specific-api-model.md) propre à l’application fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
+Les conseils de performances dans l’utilisation du modèle API propre à [l’application](../develop/application-specific-api-model.md) fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
 
 - [Chargez uniquement les propriétés nécessaires.](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended)
 - [Réduisez le nombre d’appels sync().](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls) Pour [plus d’informations sur](correlated-objects-pattern.md) la gestion des appels dans votre code, évitez d’utiliser la méthode context.sync en `sync` boucle.

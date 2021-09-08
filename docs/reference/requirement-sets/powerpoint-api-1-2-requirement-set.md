@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises PowerPointApi 1.2.
 ms.date: 01/27/2021
 ms.prod: powerpoint
 localization_priority: Normal
-ms.openlocfilehash: 971617bc2bd70525fc3d5adf34fc0ad092ae66f9892ed52f0d83053b142caa10
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: fac472e9b88b78f52fe939f883d88cded8b1702c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098687"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936286"
 ---
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>Nouveautés de l PowerPoint API JavaScript 1.2
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les PowerPoint conditions requises de l’API Jav
 
 | Classe | Champs | Description |
 |:---|:---|:---|
-|[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[mise en forme](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|Spécifie la mise en forme à utiliser lors de l’insertion des diapositives.|
+|[InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions)|[mise en forme](/javascript/api/powerpoint/powerpoint.insertslideoptions#formatting)|Spécifie la mise en forme à utiliser lors de l’insertion d’une diapositive.|
 ||[sourceSlideIds](/javascript/api/powerpoint/powerpoint.insertslideoptions#sourceSlideIds)|Spécifie les diapositives de la présentation source qui seront insérées dans la présentation actuelle.|
 ||[targetSlideId](/javascript/api/powerpoint/powerpoint.insertslideoptions#targetSlideId)|Spécifie l’endroit où seront insérées les nouvelles diapositives dans la présentation.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[insertSlidesFromBase64(base64File: string, options?: PowerPoint. InsertSlideOptions)](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_)|Insère les diapositives spécifiées d’une présentation dans la présentation actuelle.|

@@ -3,12 +3,12 @@ title: Office de noms - ensemble de conditions requises 1.3
 description: Office’espace de noms disponible pour les Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.3.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: 10495eac45c76219cfd8037bc8c2d436716acd68b27219a9bb42e4eb30cdfc4e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f4aecf016e259141fd8adb2683864d4c36bdaf4b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094167"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937808"
 ---
 # <a name="office-mailbox-requirement-set-13"></a>Office (ensemble de conditions requises de boîte aux lettres 1.3)
 
@@ -25,15 +25,15 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [context](office.context.md) | Composition<br>Lecture | [Context](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | Composition<br>Lire | [Context](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>Énumérations
 
 | Énumération | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Espaces de noms
 
@@ -80,7 +80,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| String|Demande que les données soient renvoyées au format HTML.|
+|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
 |`Text`| String|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise

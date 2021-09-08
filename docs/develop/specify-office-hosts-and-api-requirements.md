@@ -3,12 +3,12 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
 ms.date: 05/04/2021
 localization_priority: Normal
-ms.openlocfilehash: 8d8d4d8536cd118bd139c19541f9a9808e6eec442b1a828fa241222e282e8b8b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080097"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937051"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -56,7 +56,7 @@ Si vous utilisez des vérifications à l’exécution, référencez la version l
 
 ## <a name="options-to-specify-office-applications-or-api-requirements"></a>Options permettant de spécifier les Office applications ou les conditions requises de l’API
 
-Lorsque vous spécifiez Office applications ou des exigences d’API, plusieurs facteurs sont à prendre en compte. Le diagramme suivant montre comment choisir la technique à utiliser dans votre complément.
+Lorsque vous spécifiez Office d’api, plusieurs facteurs sont à prendre en compte. Le diagramme suivant montre comment choisir la technique à utiliser dans votre complément.
 
 ![Choisissez la meilleure option pour votre add-in lors de la spécification de Office applications ou d’API requises.](../images/options-for-office-hosts.png)
 
@@ -84,7 +84,7 @@ Par exemple, l’exemple suivant et la déclaration spécifient que le module de
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Base de données      | applications web Access                                | Volet de tâches              |
 | Document      | Word sur le web, Windows, Mac, iPad            | Volet de tâches              |
-| Boîte aux lettres       | Outlook sur le web, Windows, Mac, Android, iOS | Courrier Outlook                   |
+| Boîte aux lettres       | Outlook sur le web, Windows, Mac, Android, iOS | Courrier                   |
 | Bloc-notes      | OneNote sur le web                             | Volet De tâches, Contenu     |
 | Présentation  | PowerPoint sur le web, Windows, Mac, iPad      | Volet De tâches, Contenu     |
 | Project       | Project sur Windows                             | Volet de tâches              |

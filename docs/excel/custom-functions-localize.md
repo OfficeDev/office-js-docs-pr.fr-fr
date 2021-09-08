@@ -1,31 +1,31 @@
 ---
 ms.date: 11/06/2020
-description: Localisez vos fonctions personnalisées Excel.
-title: Localiser des fonctions personnalisées
+description: Localisez vos Excel personnalisées.
+title: Localiser les fonctions personnalisées
 localization_priority: Normal
 ms.openlocfilehash: b393cbb76e4993eb77df8ddbe60247c8af74c580
-ms.sourcegitcommit: 5bfd1e9956485c140179dfcc9d210c4c5a49a789
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "49071654"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936935"
 ---
-# <a name="localize-custom-functions"></a>Localiser des fonctions personnalisées
+# <a name="localize-custom-functions"></a>Localiser les fonctions personnalisées
 
-Vous pouvez localiser votre complément et vos noms de fonctions personnalisées. Pour ce faire, fournissez des noms de fonction localisés dans le fichier JSON des fonctions et des informations de paramètres régionaux dans le fichier manifeste XML.
+Vous pouvez localiser à la fois vos noms de fonctions personnalisées et de votre add-in. Pour ce faire, fournissez des noms de fonctions localisées dans le fichier JSON des fonctions et des informations de paramètres régionaux dans le fichier manifeste XML.
 
 >[!IMPORTANT]
-> Les métadonnées générées automatiquement ne fonctionnent pas pour la localisation, c’est pourquoi vous devez mettre à jour le fichier JSON manuellement. Pour savoir comment procéder, consultez la rubrique [Création manuelle de métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
+> Les métadonnées auto-genrées ne fonctionnent pas pour la localisation. Vous devez donc mettre à jour le fichier JSON manuellement. Pour savoir comment faire, voir Créer manuellement des [métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-## <a name="localize-function-names"></a>Noms des fonctions de localisation
+## <a name="localize-function-names"></a>Localiser les noms des fonctions
 
-Pour localiser vos fonctions personnalisées, créez un nouveau fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, créez `name` et des `description` Propriétés dans la langue cible. Le fichier par défaut pour l’anglais est nommé **functions.js**. Utilisez les paramètres régionaux dans le nom de fichier de chaque fichier JSON supplémentaire, tel que **functions-de.js** pour les identifier.
+Pour localiser vos fonctions personnalisées, créez un fichier de métadonnées JSON pour chaque langue. Dans chaque fichier JSON de langue, créez `name` et créez `description` les propriétés dans la langue cible. Le fichier par défaut pour l’anglais est **nomméfunctions.jssur**. Utilisez les paramètres régionaux dans le nom de fichier pour chaque fichier JSON supplémentaire, par exemple **functions-de.jspour** les identifier.
 
-Le `name` et `description` s’affichent dans Excel et sont localisés. Toutefois, la `id` de chaque fonction n’est pas localisée. La `id` propriété indique comment Excel identifie votre fonction comme étant unique et ne doit pas être modifiée une fois qu’elle a été définie.
+Les `name` et `description` apparaissent dans Excel et sont localisées. Toutefois, `id` la fonction de chaque fonction n’est pas localisée. La propriété est comment Excel votre fonction comme unique et ne doit pas être modifiée une fois `id` qu’elle est définie.
 
-Le code JSON suivant montre comment définir une fonction avec la `id` propriété « Multiply ». La `name` `description` propriété et de la fonction est localisée pour l’allemand. Chaque paramètre `name` et `description` est également localisé pour l’allemand.
+Le JSON suivant montre comment définir une fonction avec la `id` propriété « MULTIPLY ». La `name` propriété et la propriété de la fonction sont `description` localisées pour l’allemand. Chaque paramètre `name` est également localisée pour `description` l’allemand.
 
 ```JSON
 {
@@ -79,9 +79,9 @@ Comparez le JSON précédent avec le JSON suivant pour l’anglais.
 }
 ```
 
-## <a name="localize-your-add-in"></a>Localiser votre complément
+## <a name="localize-your-add-in"></a>Localiser votre add-in
 
-Après avoir créé un fichier JSON pour chaque langue, mettez à jour votre fichier manifeste XML avec une valeur de remplacement pour chaque paramètre régional qui spécifie l’URL de chaque fichier de métadonnées JSON. Le code XML de manifeste suivant affiche les `en-us` paramètres régionaux par défaut avec une URL de fichier JSON de remplacement pour `de-de` (Allemagne). Le **functions-de.jssur** le fichier contient les noms et ID des fonctions localisées en allemand.
+Après avoir créé un fichier JSON pour chaque langue, mettez à jour votre fichier manifeste XML avec une valeur de remplacement pour chaque paramètre local qui spécifie l’URL de chaque fichier de métadonnées JSON. Le manifeste XML suivant affiche les paramètres régionaux par défaut avec une URL de fichier JSON de substitution `en-us` `de-de` pour (Allemagne). Le **functions-de.jssur** le fichier contient les ID et les noms de fonctions allemands localisées.
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
@@ -96,10 +96,10 @@ Après avoir créé un fichier JSON pour chaque langue, mettez à jour votre fic
 </Resources>
 ```
 
-Pour plus d’informations sur le processus de localisation d’un complément, reportez-vous à la rubrique [Localization for Office Add-ins](../develop/localization.md#control-localization-from-the-manifest).
+Pour plus d’informations sur le processus de localisation d’un Office, consultez La localisation [des modules complémentaires.](../develop/localization.md#control-localization-from-the-manifest)
 
-## <a name="next-steps"></a>Étapes suivantes
-Découvrez [les conventions d’affectation de noms pour les fonctions personnalisées](custom-functions-naming.md) ou découvrir les [meilleures pratiques en matière de gestion des erreurs](custom-functions-errors.md).
+## <a name="next-steps"></a>Prochaines étapes
+Découvrez les [conventions d’attribution de noms pour les fonctions personnalisées](custom-functions-naming.md) ou découvrez les meilleures [pratiques de gestion des erreurs.](custom-functions-errors.md)
 
 ## <a name="see-also"></a>Voir aussi
 

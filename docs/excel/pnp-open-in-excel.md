@@ -3,12 +3,12 @@ title: Ouvrez Excel à partir de votre page web et incorporez votre Office de re
 description: Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche.
 ms.date: 02/09/2021
 localization_priority: Normal
-ms.openlocfilehash: 3d9f9d0ce811fefe31792f2ab924a6d3d0bb684faec01bb03043707c87dc70be
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089206"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936437"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche
 
@@ -22,7 +22,7 @@ Cet article vous présente le code et les techniques permettant d’implémenter
 
 ## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>Créer un document Excel et incorporer un Office de document
 
-Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L Office exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) [ooXML](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) dans un Script Lab dans un nouveau document Office document. Bien que l’exemple fonctionne avec Office document, nous nous concentrerons simplement sur Excel feuilles de calcul dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
+Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L Office exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) [ooXML](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) dans un document Script Lab dans un nouveau document Office. Bien que l’exemple fonctionne avec Office document, nous nous concentrerons simplement sur Excel feuilles de calcul dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
 
 1. Extrayez l’exemple de code  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier de votre ordinateur.
 2. Pour créer et exécuter l’exemple, suivez les étapes de la section **Pour utiliser le** projet du lisez-moi.
@@ -61,7 +61,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 - La **valeur** du Store est « en-US » dans la section culture Microsoft AppSource Script Lab.
 - La **valeur d’ID** est l’ID d’actif Microsoft AppSource Script Lab.
 
-Si vous souhaitez ouvrir automatiquement un add-in à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
+Si vous souhaitez ouvrir automatiquement un module de partage de fichiers à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
 
 La **valeur StoreType** est « FileSystem ».
 
@@ -114,7 +114,7 @@ Nous vous recommandons de télécharger de nouveaux documents vers OneDrive si v
 
 ### <a name="upload-a-file-to-onedrive"></a>Télécharger fichier à OneDrive
 
-1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019 et ouvrez **PrivateSettings.config** fichier.
+1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019 et ouvrez **le fichierPrivateSettings.config** graphique.
 
 1. Ajoutez une nouvelle **étendue Files.ReadWrite** à la clé   **ida:AppScopes** afin qu’elle ressemble au code suivant.
 
@@ -182,11 +182,11 @@ L’exemple modifie un document Excel existant. Un scénario plus courant consis
 
 ### <a name="read-custom-properties-when-your-add-in-starts"></a>Lire les propriétés personnalisées au démarrage de votre add-in
 
-L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel l’aide du SDK OOXML. Script Lab lit l’ID d’extrait de code du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
+L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel à l’aide du SDK OOXML. Script Lab lit l’ID d’extrait de code du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
 
 ### <a name="initialize-the-excel-document-with-data"></a>Initialiser le document Excel avec des données
 
-En règle générale, lorsque le client ouvre un document Excel partir de votre site web, il s’attend à ce que le document contienne des données du site web. Il existe deux façons d’écrire des données dans le document.
+En règle générale, lorsque le client ouvre un document Excel partir de votre site web, il s’attend à ce que le document contienne certaines données du site web. Il existe deux façons d’écrire des données dans le document.
 
 - **Utilisez le SDK OOXML pour écrire les données.** Vous pouvez utiliser le SDK pour écrire directement des données dans le document. Cette approche est utile si vous souhaitez que les données soient disponibles dès que le document est ouvert.
 - **Passez une propriété de requête personnalisée à votre Office.** Lorsque vous générez le document, vous incorporez une propriété personnalisée pour le Office qui contient une chaîne de requête qui récupère toutes les données requises. Lorsque votre application s’ouvre, elle récupère la requête, l’exécute et utilise l’API JS Office pour insérer le résultat de la requête dans le document.

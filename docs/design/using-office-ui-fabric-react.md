@@ -3,12 +3,12 @@ title: Interface utilisateur Fluent - Comment faire pour les modules add-in Offi
 description: Découvrez comment utiliser les Fluent’interface utilisateur React dans Office de l’interface utilisateur.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1137fd2465af6c09a42a14babe8ca2898e864c743cfd73e0263ad39ff085bf3f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081565"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936724"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Utiliser Fluent’interface utilisateur React dans les Office de l’interface utilisateur
 
@@ -36,7 +36,7 @@ Vous utiliserez le générateur Yeoman pour les compléments Office pour créer 
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word-react.png)
+![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word-react.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -126,7 +126,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Ce code effectue les opérations suivantes :
 
 - Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.
-- Fait référence à l Fluent’interface utilisateur React composants ( , , ) qui `PrimaryButton` sont utilisés pour créer `IButtonProps` `Label` `ButtonPrimaryExample` .
+- Fait référence à l Fluent’interface utilisateur React composants ( , , ) qui `PrimaryButton` `IButtonProps` sont utilisés pour `Label` `ButtonPrimaryExample` créer.
 - Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.
 - Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.
 - Définit l’interface utilisateur du composant React dans la fonction `render`. Le code HTML utilise les composants de Fluent’interface utilisateur React et spécifie que lorsque l’événement se déclenche, la fonction `Label` `PrimaryButton` `onClick` `insertText` s’exécute.

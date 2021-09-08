@@ -4,16 +4,16 @@ description: Vue d’Office ensembles de conditions requises des commandes de l�
 ms.date: 11/01/2020
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 616e404c086a18fe80f700a918838364b8ef029da0b710a1cb647768e771dfae
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f5f7c07f9bdb6bee923337dcc2ae547ca1f76df3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098954"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937277"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
-Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Pour plus d’informations, reportez-vous à la rubrique sur les [commandes de complément pour Excel, Word et PowerPoint](../../design/add-in-commands.md) et celle sur les [commandes de complément pour Outlook](../../outlook/add-in-commands-for-outlook.md).
 
@@ -37,7 +37,7 @@ Le tableau suivant répertorie les ensembles de conditions requises pour les com
 >\* La méthode [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
 
 > [!IMPORTANT]
-> AddinCommands 1.3 est en prévisualisation et est *uniquement disponible dans PowerPoint sur le web*. Nous vous recommandons d’essayer le markup uniquement dans les environnements de test et de développement. N’utilisez pas de marques d’aperçu dans un environnement de production ou dans des documents critiques pour l’entreprise.
+> AddinCommands 1.3 est en prévisualisation et n’est disponible que *dans PowerPoint sur le web*. Nous vous recommandons d’essayer le markup uniquement dans les environnements de test et de développement. N’utilisez pas de marques d’aperçu dans un environnement de production ou dans des documents critiques pour l’entreprise.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

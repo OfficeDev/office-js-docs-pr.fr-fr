@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
-description: Découvrez les exigences en matière de client et de serveur dont un utilisateur final a besoin pour exécuter des Office de recherche.
+description: En savoir plus sur les exigences de client et de serveur dont un utilisateur final a besoin pour exécuter Office de recherche.
 ms.date: 07/27/2021
 localization_priority: Normal
 ms.openlocfilehash: eaa5836cc9254314b952fb49d251cc240a1d56e4
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868399"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937909"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -78,7 +78,7 @@ L’installation du logiciel suivant est nécessaire pour tester et exécuter le
 |:-----|:-----|:-----|:-----|:-----|
 |Outlook sur Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Application native pour Android, navigateur non applicable|
 |Outlook sur iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Application native pour iOS, navigateur non applicable|
-|Outlook sur le web|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Microsoft 365, Exchange Online ou en local sur Exchange Server 2013 ou ultérieure|Safari|
+|Outlook sur le web|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Microsoft 365, Exchange Online, ou en local sur Exchange Server 2013 ou ultérieure|Safari|
 
 > [!NOTE]
 > Les applications natives OWA pour Android, OWA pour iPad et OWA pour iPhone ont été [supprimées](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b) et ne sont plus requises ou disponibles pour les tests des compléments Outlook.

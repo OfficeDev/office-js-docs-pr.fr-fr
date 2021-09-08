@@ -3,12 +3,12 @@ title: Obtenir ou définir des données d’élément dans un complément Outloo
 description: Selon qu’un complément est activé dans un formulaire de lecture ou de composition, les propriétés disponibles pour le complément sur un élément diffèrent.
 ms.date: 12/10/2019
 localization_priority: Normal
-ms.openlocfilehash: d274d850c06178e1fdb31f95d921c5a8ae4ea0a399a5dbebd61de548c084ce5d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0f7e2335420ee74765ec28bf7d33b339dc3fb6a5
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093916"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937342"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>Obtenir et définir des données d’élément Outlook dans des formulaires de lecture ou de composition
 
@@ -33,7 +33,7 @@ Pour les propriétés restantes au niveau de l’élément disponibles dans les 
 |Rendez-vous et messages|[dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Objet **Date** JavaScript|Propriété non disponible|
 |Rendez-vous et messages|[itemClass](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Propriété non disponible|
 |Rendez-vous et messages|[itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Propriété non disponible|
-|Rendez-vous et messages|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Chaîne dans l’énumération [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)|Chaîne dans l’énumération [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) (lecture seule)|
+|Rendez-vous et messages|[itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Chaîne dans l’énumération [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)|Chaîne dans [l’éumération ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) (lecture seule)|
 |Rendez-vous et messages|[attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)|Propriété non disponible|
 |Rendez-vous et messages|[body](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[Corps](/javascript/api/outlook/office.body)|[Body](/javascript/api/outlook/office.body)|
 |Rendez-vous et messages|[normalizedSubject](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Propriété non disponible|
@@ -46,7 +46,7 @@ Pour les propriétés restantes au niveau de l’élément disponibles dans les 
 |Rendez-vous|[start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Objet **Date** JavaScript|[Time](/javascript/api/outlook/office.time)|
 |Messages|[bbc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Propriété non disponible|[Destinataires](/javascript/api/outlook/office.recipients)|
 |Messages|[cc](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[Destinataires](/javascript/api/outlook/office.recipients)|
-|Messages|[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|String (lecture seule)|
+|Messages|[conversationId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|String|Chaîne (lecture seule)|
 |Messages|[from](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|[From](/javascript/api/outlook/office.from)|
 |Messages|[internetMessageId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Entier|Propriété non disponible|
 |Messages|[sender](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|[EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails)|Propriété non disponible|

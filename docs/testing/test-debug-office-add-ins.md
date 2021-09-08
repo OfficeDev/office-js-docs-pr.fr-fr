@@ -3,12 +3,12 @@ title: Test et débogage de compléments Office
 description: Découvrez comment tester et déboguer votre Complément Office.
 ms.date: 05/19/2021
 localization_priority: Priority
-ms.openlocfilehash: bf3fb2dc869b382212c607144b5c61728e393c24c0ec5397dd035c6906830ac3
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5df42a6c22325528eaaf2dcde28fddbfd3a211fb
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094155"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936471"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 

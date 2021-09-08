@@ -3,12 +3,12 @@ title: Office de noms - ensemble de conditions requises 1.9
 description: Office’espace de noms disponible pour les Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.9.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: e46fb1c3ee210887f05dc57cc6d70adfd7e959dfa1ad40d05418d10b5c3de8c3
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 203b901c619e19a8e5b9255e36274e2f6e1d1658
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087211"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936198"
 ---
 # <a name="office-mailbox-requirement-set-19"></a>Office (ensemble de conditions requises de boîte aux lettres 1.9)
 
@@ -25,16 +25,16 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [context](office.context.md) | Composition<br>Lecture | [Context](/javascript/api/office/office.context?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [context](office.context.md) | Composition<br>Lire | [Context](/javascript/api/office/office.context?view=outlook-js-1.9&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="enumerations"></a>Énumérations
 
 | Énumération | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Composition<br>Lecture | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Composition<br>Lire | Chaîne | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lire | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Espaces de noms
 
@@ -81,7 +81,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| String|Demande que les données soient renvoyées au format HTML.|
+|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
 |`Text`| String|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -110,7 +110,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 |---|---|---|:---:|
 |`AppointmentTimeChanged`| Chaîne | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
 |`AttachmentsChanged`| Chaîne | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | 1.8 |
-|`EnhancedLocationsChanged`| String | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
+|`EnhancedLocationsChanged`| Chaîne | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
 |`ItemChanged`| Chaîne | Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
 |`RecipientsChanged`| Chaîne | La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
 |`RecurrenceChanged`| Chaîne | La périodicité de la série sélectionnée a été modifiée. | 1.7 |
@@ -139,7 +139,7 @@ Spécifie la source des données renvoyées par la méthode appelée.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Body`| String|La source de données est dans le corps d’un message.|
+|`Body`| Chaîne|La source de données est dans le corps d’un message.|
 |`Subject`| String|La source de données est dans l’objet d’un message.|
 
 ##### <a name="requirements"></a>Configuration requise

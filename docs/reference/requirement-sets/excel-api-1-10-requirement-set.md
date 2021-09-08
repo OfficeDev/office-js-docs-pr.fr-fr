@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.10.
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 34c21ad0e90593352ae4042c2be148e607c63164aac1845357e9f96371104f6f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7b620bb76f758bc2574e8bd99d2c45d3d4bfae39
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087212"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936467"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Nouveautés de l Excel API JavaScript 1.10
 
@@ -142,7 +142,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.timelinestylecollection#getItemOrNullObject_name_)|Obtient `TimelineStyle` une par nom.|
 ||[items](/javascript/api/excel/excel.timelinestylecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 ||[setDefault (newDefaultStyle : PivotTableStyle \| chaîne)](/javascript/api/excel/excel.timelinestylecollection#setDefault_newDefaultStyle_)|Définit le style de chronologie par défaut à utiliser dans l’étendue de l’objet parent.|
-|[Classeur](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|Obtient le segment actif actuel du classeur.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveSlicer()](/javascript/api/excel/excel.workbook#getActiveSlicer__)|Obtient le segment actif actuel du classeur.|
 ||[getActiveSlicerOrNullObject()](/javascript/api/excel/excel.workbook#getActiveSlicerOrNullObject__)|Obtient le segment actif actuel du classeur.|
 ||[comments](/javascript/api/excel/excel.workbook#comments)|Représente une collection de commentaires associés au workbook.|
 ||[pivotTableStyles](/javascript/api/excel/excel.workbook#pivotTableStyles)|Représente une collection de PivotTableStyles associée au classeur.|

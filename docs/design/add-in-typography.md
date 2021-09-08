@@ -3,16 +3,16 @@ title: Instructions concernant la typographie pour les compléments Office
 description: Découvrez les polices et les tailles de police à utiliser dans les Office de police.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: 8cc17a25ed33fc34dd7a44622baacc620304402931de87eeadee903db5f135b0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 187267c20d119ca1b3d103f32a5fd665dc903a5a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082308"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936435"
 ---
 # <a name="typography"></a>Typographie
 
-Segoe est la police standard pour Office. Utilisez-la dans votre complément pour être en adéquation avec les volets des tâches, les boîtes de dialogue et les objets de contenu d’Office. [Fabric Core vous](fabric-core.md) donne accès à Segoe. Il fournit un dégradé de polices complet de Segoe avec de nombreuses variations, d’épaisseur de police et de taille, dans des classes CSS pratiques. Les tailles et les pondérations Fabric Core ne s’offrent pas toutes à l’Office d’un add-in. Pour s’adapter harmonieusement ou éviter les conflits, envisagez d’utiliser un sous-ensemble de la ramp de type Fabric Core. Le tableau suivant répertorie les classes de base de Fabric Core que nous vous recommandons d’utiliser dans Office de base.
+Segoe est la police standard pour Office. Utilisez-la dans votre complément pour être en adéquation avec les volets des tâches, les boîtes de dialogue et les objets de contenu d’Office. [Fabric Core vous](fabric-core.md) donne accès à Segoe. Il fournit un dégradé de polices complet de Segoe avec de nombreuses variations, d’épaisseur de police et de taille, dans des classes CSS pratiques. Les tailles et les pondérations Fabric Core ne s’offrent pas toutes à l’Office d’un add-in. Pour s’ajuster harmonieusement ou éviter les conflits, envisagez d’utiliser un sous-ensemble de la ramp de type Fabric Core. Le tableau suivant répertorie les classes de base de Fabric Core que nous vous recommandons d’utiliser dans Office de base.
 
 > [!NOTE]
 > La couleur du texte n’est pas incluse dans ces classes de base. Utilisez le « principal neutre » de Fabric Core pour la plupart du texte sur des arrière-plans blancs.

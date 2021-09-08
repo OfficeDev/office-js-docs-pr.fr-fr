@@ -4,11 +4,11 @@ description: Découvrez les aspects liés à la confidentialité et à la sécur
 ms.date: 03/19/2021
 localization_priority: Normal
 ms.openlocfilehash: 1972fa8de2c6a6f42a003efe99be7694290ee06c
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868420"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937729"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -54,7 +54,7 @@ Le runtime des compléments Office gère les communications entre processus, la
 
 ### <a name="web-clients"></a>Clients web
 
-Dans les clients web pris en charge, les Office sont hébergés dans un **iFrame** qui s’exécute à l’aide de l’attribut **bac à sable** HTML5. Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les applications dans Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client web, **l’iframe,** le runtime des applications Office et l’API JavaScript pour Office) qui sont requis pour les prendre en charge.
+Dans les clients web pris en charge, les Office sont hébergés dans un **iFrame** qui s’exécute à l’aide de l’attribut **bac à sable** HTML5. Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les applications dans Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client **web,** le runtime des applications Office et l’API JavaScript pour Office) qui sont requis pour les prendre en charge.
 
 *Figure 3. Infrastructure prenant en charge les compléments Office dans les clients web Office*
 
@@ -99,7 +99,7 @@ La plateforme du add-in répond aux préoccupations des utilisateurs finaux en m
 
 - Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les modules de contenu et de volet de tâches, les utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers   >    >    >  **Paramètres** Catalogues de produits de  >  **confiance).** Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
-- La conception de la plateforme de l’outil de recherche fournit aux utilisateurs finaux une sécurité et des performances des manières suivantes.
+- La conception de la plateforme de l’outil de recherche fournit la sécurité et les performances aux utilisateurs finaux des manières suivantes.
 
   - Un Office s’exécute dans un contrôle de navigateur web hébergé dans un environnement d’runtime de Office application cliente. Cette conception assure à la fois la sécurité et l’isolation des performances de l’application cliente.
 
@@ -190,7 +190,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
     Pour plus d’informations sur les différences entre **innerText** et **textContent**, voir [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Pour plus d’informations sur la compatibilité DOM entre les navigateurs les plus répandus, voir les instructions relatives à la [compatibilité DOM W3C - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Si vous devez utiliser **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne contient pas de contenu malveillant avant de le transmettre à **innerHTML**. Pour plus d’informations et un exemple d’utilisation sûre de **innerHTML,** voir [la propriété innerHTML.](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+- Si vous devez utiliser **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne contient pas de contenu malveillant avant de le transmettre à **innerHTML**. Pour plus d’informations et un exemple d’utilisation sûre **de innerHTML,** voir [la propriété innerHTML.](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
@@ -230,7 +230,7 @@ Les développeurs doivent également prendre note des pratiques de sécurité su
 
   Pour s’assurer que les applications ne livrent pas de contenu à l’aide du protocole HTTP, lors du  test de ces derniers, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans les **options Internet** du Panneau de configuration et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
 
-  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez ce qui suit  dans **Options Internet**: sous l’onglet Sécurité, sélectionnez la zone **Internet,** sélectionnez Niveau **personnalisé,** faites défiler pour rechercher Afficher le contenu mixte **et** sélectionnez **Invite** si elle n’est pas déjà sélectionnée.
+  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez ce qui suit  dans **Options Internet**: sous l’onglet Sécurité, sélectionnez la  zone **Internet,** sélectionnez Le niveau **personnalisé,** faites défiler pour rechercher Afficher le contenu **mixte,** puis sélectionnez Invite si elle n’est pas déjà sélectionnée.
 
   - Assurez-vous que l’option **Avertir en cas de changement entre mode sécurisé et non sécurisé** est sélectionnée sur l’onglet **Avancé** de la boîte de dialogue **Options Internet**.
 

@@ -4,11 +4,11 @@ description: Demander, flux de données et annuler la diffusion en continu de do
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 localization_priority: Normal
 ms.openlocfilehash: aaaee865c95c2edb568f73df91fd1a8f2ff659de
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773355"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937379"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
@@ -104,7 +104,7 @@ Pour déclarer une fonction de diffusion en continu, vous pouvez utiliser :
 - `@streaming`Balise.
 - Paramètre `CustomFunctions.StreamingInvocation` d’appel.
 
-L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat chaque seconde. Notez les points suivants concernant ce code.
+L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat chaque seconde. Notez ce qui suit à propos de ce code.
 
 - Excel affiche chaque nouvelle valeur automatiquement à l’aide de la méthode `setResult`.
 - Le deuxième paramètre d’entrée, l’invocation, n’est pas visible aux utilisateurs finaux dans Excel lorsqu’ils sélectionnent la fonction à partir du menu de saisie semi-automatique.

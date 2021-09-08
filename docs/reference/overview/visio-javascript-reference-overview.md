@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 58eedf260a52fd2ffc321de6d1a389736a93b4e4e65f7dfa824286bcfa156f7b
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 7f706d8f566a747468c4c8d676bd54882bb2a6bf
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098092"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936696"
 ---
 # <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 
@@ -30,12 +30,12 @@ Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
 
 Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio sur le web pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets `EmbeddedSession`, `RequestContext`, les objets de proxy JavaScript, ainsi que les méthodes `sync()`, `Visio.run()` et `load()`. Les exemples de code vous montrent comment appliquer ces concepts.
 
-## <a name="embeddedsession&quot;></a>EmbeddedSession
+## <a name="embeddedsession"></a>EmbeddedSession
 
 L’objet EmbeddedSession initialise la communication entre le cadre du développeur et le cadre de Visio dans le navigateur.
 
 ```js
-var session = new OfficeExtension.EmbeddedSession(url, { id: &quot;embed-iframe&quot;,container: document.getElementById(&quot;iframeHost") });
+var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
 session.init().then(function () {
     window.console.log("Session successfully initialized");
 });

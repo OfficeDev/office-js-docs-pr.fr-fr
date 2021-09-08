@@ -4,11 +4,11 @@ description: Optimisez Excel de votre application à l’aide de l’API JavaScr
 ms.date: 08/24/2021
 localization_priority: Normal
 ms.openlocfilehash: f65db836d6e7e640672fa5b9e6642ef8122ed5a5
-ms.sourcegitcommit: 7ced26d588cca2231902bbba3f0032a0809e4a4a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2021
-ms.locfileid: "58505655"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936450"
 ---
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
@@ -66,7 +66,7 @@ Excel.run(async function(ctx) {
 })
 ```
 
-Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, le fait de renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
+Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
 
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
@@ -119,11 +119,11 @@ La taille de la charge utile d’une demande est une combinaison des trois compo
 * Nombre d’objets, tels que `Range` des objets
 * Longueur de la valeur à définir ou à obtenir
 
-Si une API renvoie l’erreur, utilisez les stratégies de meilleures pratiques documentées dans cet article pour optimiser votre script et `RequestPayloadSizeLimitExceeded` éviter l’erreur.
+Si une API renvoie l’erreur, utilisez les stratégies de meilleure pratique documentées dans cet article pour optimiser votre script et `RequestPayloadSizeLimitExceeded` éviter l’erreur.
 
 ### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>Stratégie 1 : déplacer des valeurs inchangées hors des boucles
 
-Limitez le nombre de processus qui se produisent au sein de boucles pour améliorer les performances. Dans l’exemple de code suivant, peut être déplacé hors de la boucle, car il ne change `context.workbook.worksheets.getActiveWorksheet()` `for` pas dans cette boucle.
+Limitez le nombre de processus qui se produisent au sein de boucles pour améliorer les performances. Dans l’exemple de code suivant, peut être déplacé hors de la boucle, car il ne change pas dans `context.workbook.worksheets.getActiveWorksheet()` `for` cette boucle.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -168,7 +168,7 @@ Créez moins d’objets de plage pour améliorer les performances et réduire la
 Pour créer moins d’objets de plage, vous pouvez fractionner chaque tableau de plages en plusieurs tableaux, puis traiter chaque nouveau tableau avec une boucle et un nouvel `context.sync()` appel.
 
 > [!IMPORTANT]
-> Utilisez cette stratégie uniquement si vous avez d’abord déterminé que vous dépassez la limite de taille de demande de charge utile. L’utilisation de boucles multiples peut réduire la taille de chaque demande de charge utile pour éviter de dépasser la limite de 5 Mo, mais l’utilisation de plusieurs boucles et appels a également un impact négatif sur `context.sync()` les performances.
+> Utilisez cette stratégie uniquement si vous avez d’abord déterminé que vous dépassez la limite de taille de demande de charge utile. L’utilisation de boucles multiples peut réduire la taille de chaque demande de charge utile pour éviter de dépasser la limite de 5 Mo, mais l’utilisation de plusieurs boucles et appels a également un impact négatif sur les `context.sync()` performances.
 
 L’exemple de code suivant tente de traiter un grand tableau de plages en une seule boucle, puis un seul `context.sync()` appel. Si vous traitez trop de valeurs de plage dans un appel, la taille de la demande de charge utile `context.sync()` dépasse la limite de 5 Mo.
 
@@ -189,7 +189,7 @@ async function run() {
 }
 ```
 
-L’exemple de code suivant présente une logique similaire à l’exemple de code précédent, mais avec une stratégie qui évite de dépasser la limite de taille de demande de charge utile de 5 Mo. Dans l’exemple de code suivant, les plages sont traitées en deux boucles distinctes, et chaque boucle est suivie d’un `context.sync()` appel.
+L’exemple de code suivant montre une logique similaire à l’exemple de code précédent, mais avec une stratégie qui évite de dépasser la limite de taille de demande de charge utile de 5 Mo. Dans l’exemple de code suivant, les plages sont traitées en deux boucles distinctes, et chaque boucle est suivie d’un `context.sync()` appel.
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
@@ -218,7 +218,7 @@ async function run() {
 
 #### <a name="set-range-values-in-an-array"></a>Définir des valeurs de plage dans un tableau
 
-Une autre façon de créer moins d’objets de plage consiste à créer un tableau, à utiliser une boucle pour définir toutes les données de ce tableau, puis à transmettre les valeurs du tableau à une plage. Cela bénéficie à la fois des performances et de la taille de la charge utile. Au lieu `range.values` d’appeler chaque plage d’une boucle, `range.values` est appelé une fois en dehors de la boucle.
+Une autre façon de créer moins d’objets de plage consiste à créer un tableau, à utiliser une boucle pour définir toutes les données de ce tableau, puis à transmettre les valeurs du tableau à une plage. Cela bénéficie à la fois des performances et de la taille de la charge utile. Au lieu `range.values` d’appeler pour chaque plage d’une boucle, `range.values` est appelé une fois en dehors de la boucle.
 
 L’exemple de code suivant montre comment créer un tableau, définir les valeurs de ce tableau dans une boucle, puis passer les valeurs du tableau à une plage en dehors de `for` la boucle.
 

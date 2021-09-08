@@ -4,11 +4,11 @@ description: Découvrez comment les EXCEL JavaScript permettent à votre add-in 
 ms.date: 03/19/2019
 localization_priority: Normal
 ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868644"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937161"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 

@@ -3,12 +3,12 @@ title: Retarder l’exécution pendant la modification de la cellule
 description: Découvrez comment retarder l’exécution de la méthode Excel.run lorsqu’une cellule est en cours de modification.
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: 41bbfba3894bcef0c1fd075ce76557dfdc4ba4721b7bc7b19ca21756b86ccc4d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b7b28064ef4d313639391e63cba780351b5623f9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084282"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937682"
 ---
 # <a name="delay-execution-while-cell-is-being-edited"></a>Retarder l’exécution pendant la modification de la cellule
 

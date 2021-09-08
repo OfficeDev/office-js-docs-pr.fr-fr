@@ -3,12 +3,12 @@ title: Élément DesktopSettings dans le fichier manifest
 description: Spécifie l’emplacement source et les paramètres de contrôle qui s’appliquent lorsque votre complément de messagerie est utilisé sur un ordinateur de bureau.
 ms.date: 04/09/2020
 localization_priority: Normal
-ms.openlocfilehash: d8f35a29e14337a849f81b0becb60f761116cb48fa420119228255bb1179bb35
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 50201080d8be3c8943d16730c34a4bac236d7b90
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089850"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937399"
 ---
 # <a name="desktopsettings-element"></a>DesktopSettings, élément
 

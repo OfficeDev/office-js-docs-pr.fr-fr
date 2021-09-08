@@ -3,12 +3,12 @@ title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
 ms.date: 07/06/2021
 localization_priority: Normal
-ms.openlocfilehash: 60a3dab3794dc3c379ae3e6ddf47324a72726e0388839e884ec272c868bdec35
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e7ed6c1c21d90ac058e2dce1eb0856aad02845aa
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093307"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936931"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 
@@ -17,7 +17,7 @@ L’espace de noms [Office.context.mailbox.item](../reference/objectmodel/previe
 > [!IMPORTANT]
 > **Les API REST Outlook sont dépréciées**
 >
-> Les Outlook rest seront complètement désaffectés en novembre 2022 (pour plus d’informations, reportez-vous à l’annonce de novembre [2020).](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) Vous devez migrer des add-ins existants pour utiliser [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Comparez [également les points de terminaison Graph l’API REST Outlook Microsoft.](/outlook/rest/compare-graph)
+> Les Outlook rest seront complètement désaffectés en novembre 2022 (pour plus d’informations, reportez-vous à l’annonce de novembre [2020).](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) Vous devez migrer des add-ins existants pour utiliser [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). En outre, [comparez les points Graph et Outlook de l’API REST Microsoft.](/outlook/rest/compare-graph)
 
 ## <a name="get-an-access-token"></a>Obtenir un jeton d’accès
 

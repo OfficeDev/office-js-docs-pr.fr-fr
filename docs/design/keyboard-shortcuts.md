@@ -4,11 +4,11 @@ description: Découvrez comment ajouter des raccourcis clavier personnalisés, �
 ms.date: 07/08/2021
 localization_priority: Normal
 ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868406"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936742"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -19,7 +19,7 @@ Les raccourcis clavier, également appelés combinaisons de touches, permettent 
 > [!NOTE]
 > Pour commencer avec une version de travail d’un add-in avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple [Excel raccourcis clavier.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre add-in, poursuivez avec cet article.
 
-Il existe trois étapes pour ajouter des raccourcis clavier à un add-in.
+Il existe trois étapes pour ajouter des raccourcis clavier à un module.
 
 1. [Configurez le manifeste du add-in.](#configure-the-manifest)
 1. [Créez ou modifiez le fichier JSON](#create-or-edit-the-shortcuts-json-file) de raccourcis pour définir des actions et leurs raccourcis clavier.

@@ -3,12 +3,12 @@ title: Obtenir ou définir l’heure de rendez-vous dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’heure de début et de fin d’un rendez-vous dans un complément Outlook.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 6af5bc6227a8a159946991beeb4bdfda85bf9c52fa880c523224c2ad3c67da3d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: eadce9b540a9b3b8a03186340fff4511d42dd35a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098966"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937654"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’heure lors de la composition d’un rendez-vous dans Outlook
 

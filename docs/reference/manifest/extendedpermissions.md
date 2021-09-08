@@ -3,12 +3,12 @@ title: Élément ExtendedPermissions dans le fichier manifeste
 description: Définit la collection d’autorisations étendues dont le add-in a besoin pour accéder aux API ou fonctionnalités associées.
 ms.date: 10/15/2020
 localization_priority: Normal
-ms.openlocfilehash: c3f021adfcc2f3a4ba7b7d7aeeb52f3213d92788d401130abbc92618930d09fe
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1e3aa16c160613d34ef2c4f9c25bc2ffe4970816
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097894"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937818"
 ---
 # <a name="extendedpermissions-element"></a>Élément ExtendedPermissions
 

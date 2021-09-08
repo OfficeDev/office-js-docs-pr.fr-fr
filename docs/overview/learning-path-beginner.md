@@ -4,12 +4,12 @@ description: Un parcours recommandé pour les débutants à travers les ressourc
 ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: c3242057be7e8306af91268085b6b46078d301fd507013fc1a27b94e7538d26c
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b71e4dfaf6f80431e114c6a9bd83d47bc06c3128
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089415"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937567"
 ---
 # <a name="beginners-guide"></a>Guide du débutant
 
@@ -27,7 +27,7 @@ Vous voulez commencer à créer vos propres extensions Office sur plusieurs plat
 
 Nous savons que vous êtes impatient de commencer à coder, mais il convient de lire certains points concernant les compléments Office avant d’ouvrir votre IDE ou votre éditeur de code.
 
-- [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md) : découvrez les compléments web Office et leurs différences par rapport aux anciennes méthodes d’extension d’Office, telles que les compléments VSTO.
+- [Vue d’ensemble de la plateforme des compléments Office](office-add-ins.md) : découvrez les compléments web Office et leurs différences par rapport aux anciennes méthodes d’extension d’Office, telles que les compléments VSTO.
 - [Développement de compléments Office](../develop/develop-overview.md) : obtenez une vue d’ensemble du développement et du cycle de vie des compléments Office, y compris les outils, la création d’une interface utilisateur de complément et l’utilisation des API JavaScript pour interagir avec le document Office.
 
 Ces articles comportent un grand nombre de liens. Toutefois, si vous êtes débutant avec les compléments Office, nous vous recommandons de revenir ici lorsque vous les aurez lus et de passer à la section suivante.
@@ -39,7 +39,7 @@ Vous avez maintenant une vue d’ensemble, alors lancez-vous avec l’un de nos 
 - [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
 - [Node.js et Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
 
-## <a name="step-3-code"></a>Étape 3 : Code
+## <a name="step-3-code"></a>Étape 3 : Code
 
 Vous ne pouvez pas apprendre à conduire en lisant le manuel du propriétaire, alors commencez à coder à l’aide de ce [didacticiel Excel](../tutorials/excel-tutorial.md). Vous utiliserez la bibliothèque JavaScript pour Office et du code XML dans le manifeste du complément. Il n’est pas nécessaire de mémoriser quoi que ce soit, car vous obtiendrez plus d’informations sur ces deux éléments plus tard.
 
@@ -57,7 +57,7 @@ Découvrez les objectifs du manifeste du complément et consultez une présentat
 
 Félicitations pour avoir terminé le parcours d’apprentissage pour les débutants pour les compléments Office ! Voici quelques suggestions pour approfondir les informations contenues dans notre documentation :
 
-- Didacticiels ou guides de démarrage rapide pour les autres applications Office :
+- Didacticiels ou guides de démarrage rapide pour les autres applications Office :
 
   - [Guide de démarrage rapide de OneNote](../quickstarts/onenote-quickstart.md)
   - [Didacticiel Outlook](/outlook/add-ins/addin-tutorial)
@@ -65,12 +65,12 @@ Félicitations pour avoir terminé le parcours d’apprentissage pour les début
   - [Guide de démarrage rapide de Project](../quickstarts/project-quickstart.md)
   - [Didacticiel Word](../tutorials/word-tutorial.md)
 
-- Autres sujets importants :
+- Autres sujets importants :
 
   - [Développement de compléments Office](../develop/develop-overview.md)
-  - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
+  - [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
   - [Concevoir des compléments Office](../design/add-in-design.md)
   - [Test et débogage de compléments Office](../testing/test-debug-office-add-ins.md)
   - [Déployer et publier des compléments Office](../publish/publish.md)
   - [Resources](../resources/resources-links-help.md)
-  - [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+  - [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

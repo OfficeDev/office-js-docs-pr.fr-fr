@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: b6cc766277d6f6a7c9ecca505e2f527f7654fd6e93fc85a2f2694c2a3df6db05
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088949"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936363"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l Excel API JavaScript 1.8
 
@@ -40,7 +40,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[BasicDataValidation](/javascript/api/excel/excel.basicdatavalidation)|[formula1](/javascript/api/excel/excel.basicdatavalidation#formula1)|Spécifie l’opérande de droite lorsque la propriété de l’opérateur est définie sur un opérateur binaire tel que GreaterThan (l’opérande gauche est la valeur que l’utilisateur tente d’entrer dans la cellule).|
 ||[formula2](/javascript/api/excel/excel.basicdatavalidation#formula2)|Avec les opérateurs ternaires Between et NotBetween, spécifie l’opérande lié supérieur.|
 ||[opérateur](/javascript/api/excel/excel.basicdatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
-|[Graphique](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|Spécifie une constante d’éumération au niveau des étiquettes de catégorie de graphique, faisant référence au niveau des étiquettes de catégorie source.|
+|[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|Spécifie une constante d’éumération au niveau des étiquettes de catégorie de graphique, faisant référence au niveau des étiquettes de catégorie source.|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayBlanksAs)|Spécifie la façon dont les cellules vides sont tracées sur un graphique.|
 ||[plotBy](/javascript/api/excel/excel.chart#plotBy)|Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique.|
 ||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotVisibleOnly)|Vrai si seules les cellules visibles sont tracées.|
@@ -272,12 +272,12 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[sum](/javascript/api/excel/excel.subtotals#sum)||
 ||[variance](/javascript/api/excel/excel.subtotals#variance)||
 ||[varianceP](/javascript/api/excel/excel.subtotals#varianceP)||
-|[Tableau](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyId)|Renvoie un ID numérique.|
+|[Table](/javascript/api/excel/excel.table)|[legacyId](/javascript/api/excel/excel.table#legacyId)|Renvoie un ID numérique.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[getRange(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRange_ctx_)|Obtient la plage qui représente la zone modifiée d’un tableau dans une feuille de calcul spécifique.|
 ||[getRangeOrNullObject(ctx: Excel.RequestContext)](/javascript/api/excel/excel.tablechangedeventargs#getRangeOrNullObject_ctx_)|Obtient la plage qui représente la zone modifiée d’un tableau dans une feuille de calcul spécifique.|
-|[Classeur](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|Renvoie `true` si le workbook est ouvert en mode lecture seule.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[readOnly](/javascript/api/excel/excel.workbook#readOnly)|Renvoie `true` si le workbook est ouvert en mode lecture seule.|
 |[WorkbookCreated](/javascript/api/excel/excel.workbookcreated)|||
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|Se produit lorsque la feuille de calcul est calculée.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onCalculated](/javascript/api/excel/excel.worksheet#onCalculated)|Se produit lorsque la feuille de calcul est calculée.|
 ||[showGridlines](/javascript/api/excel/excel.worksheet#showGridlines)|Spécifie si le quadrillage est visible par l’utilisateur.|
 ||[showHeadings](/javascript/api/excel/excel.worksheet#showHeadings)|Spécifie si les titres sont visibles pour l’utilisateur.|
 |[WorksheetCalculatedEventArgs](/javascript/api/excel/excel.worksheetcalculatedeventargs)|[type](/javascript/api/excel/excel.worksheetcalculatedeventargs#type)|Obtient le type de l’événement.|

@@ -1,14 +1,14 @@
 ---
 title: Activer l’authentification unique pour des compléments Office
 description: Découvrez comment activer l’authentification unique pour les Compléments Office à l’aide de votre compte courant Microsoft personnel, professionnel ou scolaire.
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Priority
-ms.openlocfilehash: 2e3951cd4e480de1fec563b68b3c5b4e2ff4cd293446a14c42c0cc7e50104e41
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b424d30148f216c1c9bb4290e5bb9f9b12bb073a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080030"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938144"
 ---
 # <a name="enable-single-sign-on-for-office-add-ins"></a>Activer la connexion unique pour des compléments Office
 
@@ -20,7 +20,7 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bu
 
 Si vous travaillez avec un complément **Outlook**, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
-Vous ne devez *pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Autoriser des services externes dans votre complément Office](auth-external-add-ins.md). Concernant *Outlook*, il existe un système de secours recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](../outlook/implement-sso-in-outlook-add-in.md). Pour consulter des exemples d’utilisation d’Azure Active Directory comme système de secours, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
+Vous ne devez *pas* dépendre de l’authentification unique SSO comme seule méthode de votre complément d’authentification. Vous devez implémenter un système d’authentification secondaire vers lequel votre complément peut revenir dans certaines situations d’erreur. Vous pouvez utiliser un système de tableaux d’utilisateur et d’authentification, ou vous pouvez tirer parti d’un des fournisseurs de connexion sociale. Pour plus d’informations sur la procédure à suivre avec un complément Office, voir[Autoriser des services externes dans votre complément Office](auth-external-add-ins.md). Concernant *Outlook*, il existe un système de secours recommandé. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](../outlook/implement-sso-in-outlook-add-in.md). Pour consulter des exemples d’utilisation d’Azure Active Directory comme système de secours, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ## <a name="how-sso-works-at-runtime"></a>Mode de fonctionnement de l’authentification unique SSO en cours d’exécution
 
@@ -99,7 +99,7 @@ Ajoutez un code JavaScript pour le complément à :
 Voici un exemple simple d’un appel à`getAccessToken`.
 
 > [!NOTE]
-> Cet exemple ne pr?sente explicitement qu'un seul type d'erreur. Pour des exemples de traitement des erreurs plus élaborés, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO).
+> Cet exemple ne pr?sente explicitement qu'un seul type d'erreur. Pour des exemples de traitement des erreurs plus élaborés, voir [SSO NodeJS pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) et [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
 ```js
 async function getGraphData() {

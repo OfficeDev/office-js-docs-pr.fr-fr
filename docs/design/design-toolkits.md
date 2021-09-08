@@ -3,12 +3,12 @@ title: Kits d’outils de Office pour les Office de conception
 description: Obtenez des liens vers certains outils pour vous aider à concevoir l’interface utilisateur d’un Office de recherche.
 ms.date: 05/12/2021
 localization_priority: Normal
-ms.openlocfilehash: b290b0f29d47c49b32cd4438c057d8fdec3db607e0a850366b1d7fa44e37379f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0f3f6c03019bec9f5e5f3bddce489ab952138d67
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082038"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937223"
 ---
 # <a name="design-tool-kits"></a>Boîte de forme d’outils De conception
 

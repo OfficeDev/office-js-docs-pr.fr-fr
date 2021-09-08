@@ -3,12 +3,12 @@ title: Obtention du document complet à partir d’un complément pour Word
 description: Apprenez à obtenir l’intégralité du document à partir d’un add-in Word.
 ms.date: 12/04/2017
 localization_priority: Normal
-ms.openlocfilehash: d8c4c30e9b7442a661abb8650b34e287c0fe8479e8f24fff73348e5d6fbdd976
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 68117a78895205c2e27e79d922ed825e1ba54ddd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086566"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936781"
 ---
 # <a name="get-the-whole-document-from-an-add-in-for-word-or-powerpoint"></a>Obtenir l’intégralité du document à partir d’un add-in pour Word ou PowerPoint
 

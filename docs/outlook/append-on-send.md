@@ -4,12 +4,12 @@ description: Découvrez comment implémenter la fonctionnalité d’ajout à l�
 ms.topic: article
 ms.date: 02/01/2021
 localization_priority: Normal
-ms.openlocfilehash: c590c26f9c7f092702efe91dd4debea911af38fc165a0806435f10ed1192180f
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8b69fbbaef1d0f060f0675fe5c4948a70d935b7a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095570"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938044"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter l’ajout à l’envoi dans votre Outlook de messagerie
 
@@ -124,7 +124,7 @@ Pour ce scénario, au lieu d’exécuter la fonction sur le bouton Effectuer une
 
 ## <a name="implement-append-on-send-handling"></a>Implémenter la gestion de l’envoi
 
-Ensuite, implémentez l’application sur l’événement d’envoi.
+Ensuite, implémentez l’appending sur l’événement d’envoi.
 
 > [!IMPORTANT]
 > Si votre add-in implémente également la gestion des [événements `ItemSend` ](outlook-on-send-addins.md)d’envoi à l’aide de , l’appel dans le handler d’envoi renvoie une erreur, car ce scénario `AppendOnSendAsync` n’est pas pris en charge.
@@ -165,7 +165,7 @@ Pour ce scénario, vous allez implémenter l’application d’une clause d’ex
     g.appendDisclaimerOnSend = appendDisclaimerOnSend;
     ```
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
 1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et que votre application est rechargée de nouveau. 
 
@@ -177,7 +177,7 @@ Pour ce scénario, vous allez implémenter l’application d’une clause d’ex
 
 1. Dans le ruban ou le menu de dépassement, choisissez **Effectuer une action.**
 
-1. Envoyez le message, puis  ouvrez-le à partir de votre boîte de réception ou dossier Éléments envoyés pour afficher la clause d’exclusion de responsabilité. 
+1. Envoyez le message, puis  ouvrez-le à partir de votre boîte de réception ou du dossier Éléments envoyés pour afficher la clause d’exclusion de responsabilité. 
 
     ![Capture d’écran d’un exemple de message avec la clause d’exclusion de responsabilité à l’envoi Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
 

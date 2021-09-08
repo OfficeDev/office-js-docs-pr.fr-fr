@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Project qui utilise REST avec un service OData Project Server local
-description: Découvrez comment créer un add-in du volet Des tâches pour Project Professionnel 2013 qui compare les données de coût et de travail dans le projet actif avec les moyennes de tous les projets dans l’instance Project Web App actuelle.
+description: Découvrez comment créer un add-in du volet Des tâches pour Project Professionnel 2013 qui compare les données de coût et de travail dans le projet actif aux moyennes de tous les projets dans l’instance Project Web App actuelle.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: a9a6d8699720f63107c3f4ad0114fbb75cd7771c1e730dda71ee5c1df1b8730d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2ffcd8eacef56f881ae61a5c0f2a656e5b3edfee
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088052"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937188"
 ---
 # <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Créer un complément Project qui utilise REST avec un service OData Project Server local
 
@@ -16,7 +16,7 @@ Cet article décrit comment créer un complément de volet Office pour Project P
 
 Le code de cet article est basé sur un exemple développé par Saurabh Sanghvi et Arvind Iyer, Microsoft Corporation.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prerequisites
 
 Voici les conditions préalables à la création d’un Project du volet Des tâches qui lit le service **ProjectData** d’une instance Project Web App dans une installation sur site de Project Server 2013.
 
@@ -71,7 +71,7 @@ Outils de développement Office pour Visual Studio comprend un modèle pour les 
 
 1. Exécutez Visual Studio 2015 en tant qu’administrateur, puis sélectionnez Nouveau **Project** sur la page de démarrage.
 
-2. Dans la boîte de dialogue Nouveau **Project,** développez les **modèles,** **Visual C#** et **les Office/SharePoint,** puis sélectionnez Office de **votre choix.** Sélectionnez **.NET Framework 4.5.2 dans** la liste bas de l’infrastructure cible en haut du volet central, puis sélectionnez Office Pour plus d’actualités **(voir** la capture d’écran suivante).
+2. Dans la boîte de dialogue Nouveau **Project,** développez les **modèles,** **Visual C#** et **les Office/SharePoint,** puis sélectionnez Office de votre **choix.** Sélectionnez **.NET Framework 4.5.2 dans** la liste bas de l’infrastructure cible en haut du volet central, puis sélectionnez le Office **(voir** la capture d’écran suivante).
 
 3. Pour placer les deux projets Visual Studio dans le même répertoire, sélectionnez **Créer le répertoire pour la solution**, puis accédez à l’emplacement de votre choix.
 
@@ -109,7 +109,7 @@ Pour plus d’informations sur le manifeste, voir [Manifeste XML des complément
 
 1. Dans Visual Studio, ouvrez le fichier HelloProjectOData.xml.
 
-2. Le nom d’affichage par défaut est le nom du projet Visual Studio (« HelloProjectOData »). Par exemple, modifiez la valeur par défaut de l’élément **DisplayName** en « Hello ProjectData ».
+2. Le nom d’affichage par défaut est le nom du projet Visual Studio (« HelloProjectOData »). Par exemple, modifiez la valeur par défaut de **l’élément DisplayName** en « Hello ProjectData ».
 
 3. La description par défaut est également « HelloProjectOData ». Par exemple, remplacez la valeur par défaut de l’élément Description par "Test REST queries of the ProjectData service".
 
@@ -173,7 +173,7 @@ Le volet Des tâches affiche le nom complet du add-in en haut, qui est la valeur
 
 1. Dans **l’élément head** du fichier Home.html, ajoutez les éléments de lien supplémentaires pour les fichiers CSS que votre complément utilise.  Le modèle de projet Visual Studio inclut un lien pour le fichier App.css que vous pouvez utiliser pour des styles CSS personnalisés.
 
-2. Ajoutez des éléments **de script** supplémentaires pour les bibliothèques JavaScript que votre complément utilise. Le modèle de projet inclut des liens pour les fichiers jQuery- _[version]_.js, office.js et MicrosoftAjax.js dans le dossier **Scripts.**
+2. Ajoutez des **éléments de script** supplémentaires pour les bibliothèques JavaScript que votre complément utilise. Le modèle de projet inclut des liens pour les fichiers jQuery- _[version]_.js, office.js et MicrosoftAjax.js dans le dossier **Scripts.**
 
     > [!NOTE]
     > Avant de déployer le complément, remplacez la référence à office.js et celle à jQuery par la référence au réseau de distribution de contenu. Cette dernière permet d’accéder à la version la plus récente et d’obtenir de meilleures performances.
@@ -1111,7 +1111,7 @@ Si vous modifiez **le add-in HelloProjectOData** pour une utilisation en product
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 
-  Pour plus d’informations, voir [les options de requête système OData à l’aide du point de terminaison REST.](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)) Vous pouvez également utiliser la commande [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps&preserve-view=true) dans Windows PowerShell pour remplacer la taille de page par défaut pour une requête du jeu d’entités **Projects** (ou n’importe lequel des 33 jeux d’entités). Voir [ProjectData – Référence de service Project OData](/previous-versions/office/project-odata/jj163015(v=office.15)).
+  Pour plus d’informations, voir les options de requête système [OData à l’aide du point de terminaison REST.](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)) Vous pouvez également utiliser la commande [Set-SPProjectOdataConfiguration](/powershell/module/sharepoint-server/Set-SPProjectOdataConfiguration?view=sharepoint-ps&preserve-view=true) dans Windows PowerShell pour remplacer la taille de page par défaut pour une requête du jeu d’entités **Projects** (ou n’importe lequel des 33 jeux d’entités). Voir [ProjectData – Référence de service Project OData](/previous-versions/office/project-odata/jj163015(v=office.15)).
 
 - Pour déployer le complément, voir [Publier votre complément Office](../publish/publish.md).
 

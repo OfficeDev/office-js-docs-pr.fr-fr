@@ -3,12 +3,12 @@ title: Instructions concernant les couleurs pour les compléments Office
 description: Découvrez comment utiliser des couleurs dans l’interface utilisateur d’un Office de l’interface utilisateur.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: fc22a2168a531d0f3fe50358f5d45e6052bfde6c3418f9ee13197bd48ed35101
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a472dfd02787d68a5ce11a198d580aefe37ce315
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082731"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937232"
 ---
 # <a name="color-guidelines-for-office-add-ins"></a>Instructions concernant les couleurs pour les compléments Office
 
@@ -16,7 +16,7 @@ La couleur est souvent utilisée pour mettre en évidence la marque et renforcer
 
 ![Diagramme montrant le modèle de couleurs pour Office, Excel, Word et PowerPoint. Les couleurs principales Office sont le noir et le blanc, et les couleurs mineures sont gris clair, gris foncé et orange. La couleur dominante de Excel est vert, Word est bleu et PowerPoint orange.](../images/office-addins-color-schemes.png)
 
-[Fabric Core inclut](fabric-core.md) un ensemble de couleurs de thème par défaut. Lorsque Fabric Core est appliqué à un Office dans les composants ou dans les dispositions, les mêmes objectifs s’appliquent. La couleur doit communiquer la hiérarchie, guidant ainsi les clients vers l’action sans interférer avec le contenu. Les couleurs de thème Fabric Core peuvent introduire une nouvelle couleur d’accentuer dans l’interface globale. Cette nouvelle accentuation peut entrer en conflit avec la personnalisation de l’application Office et interférer avec la hiérarchie. En d’autres termes, Fabric Core peut introduire une nouvelle couleur d’accentu utilisateur dans l’interface globale lorsqu’elle est utilisée dans un module. Cette nouvelle couleur de l’accentuation peut créer une confusion et interférer avec la hiérarchie globale. Envisagez des façons d’éviter les conflits et les interférences. Utilisez des accents neutres ou surécriture des couleurs de thème Fabric Core pour application Office la marque ou vos propres couleurs de marque.
+[Fabric Core inclut](fabric-core.md) un ensemble de couleurs de thème par défaut. Lorsque Fabric Core est appliqué à un Office dans les composants ou dans les dispositions, les mêmes objectifs s’appliquent. La couleur doit communiquer la hiérarchie, guidant ainsi les clients vers l’action sans interférer avec le contenu. Les couleurs de thème Fabric Core peuvent introduire une nouvelle couleur d’accentuer dans l’interface globale. Cette nouvelle accentuation peut entrer en conflit avec la personnalisation de l’application Office et interférer avec la hiérarchie. En d’autres termes, Fabric Core peut introduire une nouvelle couleur d’accentuage dans l’interface globale lorsqu’elle est utilisée dans un add-in. Cette nouvelle couleur de l’accentuation peut créer une confusion et interférer avec la hiérarchie globale. Envisagez des façons d’éviter les conflits et les interférences. Utilisez des accents neutres ou surécriture des couleurs de thème Fabric Core pour application Office la marque ou vos propres couleurs de marque.
 
 Les applications Office permettent aux clients de personnaliser leurs interfaces en appliquant un thème de l’interface utilisateur d’Office. Les clients peuvent choisir entre quatre thèmes de l’interface utilisateur pour modifier le style des arrière-plans et des boutons dans Word, PowerPoint, Excel et les autres applications de la suite Office. Pour donner à vos add-ins l’impression d’être une partie naturelle de Office et répondre à la personnalisation, utilisez nos API de theming. Par exemple, les couleurs d’arrière-plan du volet des tâches deviennent gris foncé dans certains thèmes. Nos API de thèmes vous permettent de faire de même et d’ajuster le texte de premier plan pour garantir l’[accessibilité](../design/accessibility-guidelines.md).
 

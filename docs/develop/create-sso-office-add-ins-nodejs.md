@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Apprenez à créer un complément basé sur Node.js utilisant l’authentification unique Office.
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 4d92b5b7249540ada274bb0aa310cf894a7be6bc
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.openlocfilehash: ba3c0ab64ce82d68aab677baa48cdb34cce6f7e6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773866"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937940"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -37,7 +37,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
-1. Clonez ou téléchargez le référentiel sur [Complément Office NodeJS SSO](https://github.com/officedev/office-add-in-nodejs-sso).
+1. Clonez ou téléchargez le référentiel sur [Complément Office NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
     > [!NOTE]
     > Il existe trois versions de l’échantillon :
@@ -84,7 +84,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Donnez la valeur **Administrateurs et utilisateurs** à **Qui peut donner son consentement ?** .
 
-1. Remplissez les champs pour configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue, ce qui permet à l’application cliente Office d’utiliser les API web de votre add-in avec les mêmes droits que `access_as_user` l’utilisateur actuel. Suggestions :
+1. Remplissez les champs pour configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue, ce qui permet à l’application cliente Office d’utiliser les API web de votre add-in avec les mêmes droits que `access_as_user` l’utilisateur actuel. Suggestions :
 
     - **Nom complet du** consentement de l’administrateur : Office peut agir en tant qu’utilisateur.
     - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
@@ -188,7 +188,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         catch(exception) {
 
             // TODO 5: Respond to exceptions thrown by the
-            //         OfficeRuntime.auth.getAccessToken call.
+            //         Office.auth.getAccessToken call.
 
         }
     }
@@ -196,13 +196,13 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO 1` par le code suivant. À propos de ce code, notez les informations suivantes :
 
-    - `OfficeRuntime.auth.getAccessToken` commande à Office d’obtenir un jeton de démarrage à partir d’Azure AD. Un jeton d’amorçage est semblable à un jeton d’ID, mais il possède une `scp` propriété (étendue) ayant la valeur `access-as-user`. Ce type de jeton peut être échangé par une application Web pour un jeton d’accès à Microsoft Graph.
+    - `Office.auth.getAccessToken` commande à Office d’obtenir un jeton de démarrage à partir d’Azure AD. Un jeton d’amorçage est semblable à un jeton d’ID, mais il possède une `scp` propriété (étendue) ayant la valeur `access-as-user`. Ce type de jeton peut être échangé par une application Web pour un jeton d’accès à Microsoft Graph.
     - La définition de l’option sur True signifie que si aucun utilisateur n’est actuellement Office, Office ouvre une invite de signature `allowSignInPrompt` pop-up.
     - La définition de l’option sur true signifie que si l’utilisateur n’a pas accepté de laisser le add-in accéder au profil AAD de l’utilisateur, Office ouvre une invite de `allowConsentPrompt` consentement. (L’invite permet uniquement à l’utilisateur de consentir au profil AAD de l’utilisateur, et non aux étendues Graph Microsoft.)
-    - La définition de l’option sur true indique à Office que le add-in a l’intention d’utiliser le jeton d’a bootstrap pour obtenir un jeton d’accès à Microsoft Graph, au lieu de simplement l’utiliser comme jeton `forMSGraphAccess` d’ID. Si l’administrateur du client n’a pas accordé l’autorisation d’accès au complément dans Microsoft Graph, `OfficeRuntime.auth.getAccessToken` renvoie l’erreur **13012**. Le complément peut répondre en rétablissant un autre système d’autorisation, ce qui est nécessaire car Office peut uniquement inviter pour accepter le profil Azure AD de l’utilisateur, et non les étendues Microsoft Graph. Le système d’autorisation de base exige que  l’utilisateur se connecte à nouveau et l’utilisateur peut être invité à consentir aux étendues Graph Microsoft. Par conséquent, l’option `forMSGraphAccess` permet de s’assurer que le complément ne fera pas d’échange de jetons échouant en raison d’une absence d’autorisation. (ayant reçu votre consentement de la part de l’administrateur lors d’une étape précédente, ce scénario ne se produira pas pour ce complément. Mais l’option est tout de même incluse ici pour illustrer les pratiques recommandées.)
+    - La définition de l’option sur true indique à Office que le add-in a l’intention d’utiliser le jeton d’a bootstrap pour obtenir un jeton d’accès à Microsoft Graph, au lieu de simplement l’utiliser comme jeton `forMSGraphAccess` d’ID. Si l’administrateur du client n’a pas accordé l’autorisation d’accès au complément dans Microsoft Graph, `Office.auth.getAccessToken` renvoie l’erreur **13012**. Le complément peut répondre en rétablissant un autre système d’autorisation, ce qui est nécessaire car Office peut uniquement inviter pour accepter le profil Azure AD de l’utilisateur, et non les étendues Microsoft Graph. Le système d’autorisation de base exige que  l’utilisateur se connecte à nouveau et l’utilisateur peut être invité à consentir aux étendues Graph Microsoft. Par conséquent, l’option `forMSGraphAccess` permet de s’assurer que le complément ne fera pas d’échange de jetons échouant en raison d’une absence d’autorisation. (ayant reçu votre consentement de la part de l’administrateur lors d’une étape précédente, ce scénario ne se produira pas pour ce complément. Mais l’option est tout de même incluse ici pour illustrer les pratiques recommandées.)
 
     ```javascript
-    let bootstrapToken = await OfficeRuntime.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
+    let bootstrapToken = await Office.auth.getAccessToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true }); 
     ```
 
 1. Remplacez `TODO 2` par le code suivant. Vous créerez la méthode `getGraphToken` lors d’une étape ultérieure.
@@ -213,11 +213,11 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Remplacez `TODO 3` par ce qui suit. Tenez compte du code suivant : 
 
-    - Si le Microsoft 365 client a été configuré pour exiger une authentification multifacteur, la propriété inclura une propriété avec des informations sur les `exchangeResponse` `claims` facteurs supplémentaires requis. Dans ce cas, `OfficeRuntime.auth.getAccessToken` doit être rappelé avec l’option `authChallenge` configurée avec la valeur de la propriété revendications. Cela indique à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis.
+    - Si le Microsoft 365 client a été configuré pour exiger une authentification multifacteur, la propriété inclura une propriété avec des informations sur les `exchangeResponse` `claims` facteurs supplémentaires requis. Dans ce cas, `Office.auth.getAccessToken` doit être rappelé avec l’option `authChallenge` configurée avec la valeur de la propriété revendications. Cela indique à AAD d’inviter l’utilisateur à accepter tous les formulaires d’authentification requis.
 
     ```javascript
     if (exchangeResponse.claims) {
-        let mfaBootstrapToken = await OfficeRuntime.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
+        let mfaBootstrapToken = await Office.auth.getAccessToken({ authChallenge: exchangeResponse.claims });
         exchangeResponse = await getGraphToken(mfaBootstrapToken);
     }
     ```
@@ -290,7 +290,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         showMessage("No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again.");  
         break;
     case 13002:
-        // OfficeRuntime.auth.getAccessToken was called with the allowConsentPrompt 
+        // Office.auth.getAccessToken was called with the allowConsentPrompt 
         // option set to true. But, the user aborted the consent prompt. 
         showMessage("You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."); 
         break;
@@ -299,7 +299,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         showMessage("Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."); 
         break;
     case 13008:
-        // The OfficeRuntime.auth.getAccessToken method has already been called and 
+        // The Office.auth.getAccessToken method has already been called and 
         // that call has not completed yet. Only seen in Office on the web.
         showMessage("Office is still working on the last operation. When it completes, try this operation again."); 
         break;
@@ -496,7 +496,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
         try {
             const tokenResponse = await fetch(`${stsDomain}/${tenant}/${tokenURLSegment}`, {
                 method: 'POST',
-                body: form(formParams),
+                body: formurlencoded(formParams),
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -575,7 +575,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez le bouton **Afficher le complément** dans le groupe **Node.js SSO** pour ouvrir le complément du panneau des tâches.
 
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un Microsoft 365 Éducation ou un compte de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont insérés dans le document. (La première fois, cela peut prendre jusqu’à 15 secondes.) Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichier et de dossier apparaissent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 Éducation ou de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont insérés dans le document. (La première fois, cela peut prendre jusqu’à 15 secondes.) Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichier et de dossier apparaissent.
 
 > [!NOTE]
 > Si vous étiez précédemment connecté à Office avec un ID différent et si certaines applications précédemment ouvertes Office le sont toujours, Office ne changera pas systématiquement votre identifiant même si cela semble être le cas. Dans ce cas, l’appel vers Microsoft Graph peut échouer ou des données de l’ID précédent peuvent être renvoyées. Afin d’éviter ce problème, veillez à *fermer toutes les autres applications Office* avant de cliquer sur **Obtenir des noms de fichiers OneDrive**.

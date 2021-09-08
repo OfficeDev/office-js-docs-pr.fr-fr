@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour définir 
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 575436a1d69ec0125dd58e5b8b542405b9b64c9c6493462f3cf7512dcf0f0f02
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57087051"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937294"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
 
@@ -101,7 +101,7 @@ La capture d’écran suivante montre le même tableau que la capture d’écran
 
 ### <a name="select-all-cells-from-current-range-to-furthest-edge-of-used-range"></a>Sélectionner toutes les cellules de la plage actuelle au bord le plus proche de la plage utilisée
 
-L’exemple de code suivant montre comment utiliser la méthode pour sélectionner toutes les cellules de la plage actuellement sélectionnée jusqu’au bord le plus proche de la plage utilisée, dans la direction vers le `Range.getExtendedRange` bas. Cette action correspond au résultat de l’utilisation du raccourci clavier avec touches de direction Ctrl+Shift+Bas pendant qu’une plage est sélectionnée.
+L’exemple de code suivant montre comment utiliser la méthode pour sélectionner toutes les cellules de la plage actuellement sélectionnée au bord le plus proche de la plage utilisée, dans la direction vers le `Range.getExtendedRange` bas. Cette action correspond au résultat de l’utilisation du raccourci clavier avec touches de direction Ctrl+Shift+Bas pendant qu’une plage est sélectionnée.
 
 ```js
 Excel.run(function (context) {

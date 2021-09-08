@@ -4,22 +4,22 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 07/19/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 3c5aea3fecc6b48a830e48cf7739e93ef16dab6bacee1338b94774911a06ef5d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a5e0855cf6e7b7c9c3157fe24bed3610a26992ed
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098942"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938156"
 ---
 # <a name="dialog-api-requirement-sets"></a>Ensembles de conditions requises de l’API de dialogue
 
-Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API de dialogue, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
 |  Ensemble de conditions requises  | Office 2013 sur Windows\*<br>(achat définitif) | Office 2016 ou une Windows\*<br>(achat définitif)   | Office pour Windows<br>(abonnement) |  Office sur iPad<br>(abonnement)  |  Office sur Mac<br>(abonnement)  | Office sur le web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.2  | N/A | N/A | Voir la prise en charge<br>section ci-dessous | 2.37 ou ultérieure | 16.37 ou ultérieure | Juin 2020 | N/A |
+| DialogApi 1.2  | N/A | N/A | Voir la prise en charge<br>section ci-dessous | 2.37 ou ultérieure | 16.37 ou ultérieure | Juin 2020 | N/A |
 | DialogApi 1.1  | Build 15.0.4855.1000 ou version ultérieure | Build 16.0.4390.1000 ou version ultérieure | Version 1602 (Build 6741.0000) ou version ultérieure | 1.22 ou version ultérieure | 15.20 ou version ultérieure | Janvier 2017 | Version 1608 (Build 7601.6800) ou version ultérieure|
 
 >\*Les utilisateurs de l’achat Office n’ont peut-être pas accepté tous les correctifs et mises à jour. Si c’est le cas, la DLL que Office utilise pour signaler sa version dans l’interface utilisateur peut être supérieure aux versions répertoriées ici, même si les DLL mises à jour nécessaires pour prendre en charge DialogApi n’ont pas été installées sur l’ordinateur de l’utilisateur. Pour s’assurer que le correctif nécessaire est installé, l’utilisateur doit se rendre dans la liste des mises à jour Office ([liste Office 2013](/officeupdates/msp-files-office-2013) ou [Office 2016](/officeupdates/msp-files-office-2016)), rechercher **osfclient-x-none** et installer le correctif répertorié.
@@ -31,8 +31,8 @@ L’ensemble de conditions requises DialogApi 1.2 est pris en charge dans le can
 |Canal | Version | Build|
 |:-----|:-----|:-----|
 |Canal actuel | 2005 ou supérieure | 12827.20160 ou supérieur|
-|Canal Entreprise mensuel | 2004 ou supérieure | 12730.20430 ou supérieur|
-|Canal Entreprise semestriel | 2002 ou supérieure | 12527.20720 ou supérieur|
+|Canal mensuel des entreprises | 2004 ou supérieure | 12730.20430 ou supérieur|
+|Canal d’entreprise semi-annuel | 2002 ou supérieure | 12527.20720 ou supérieur|
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

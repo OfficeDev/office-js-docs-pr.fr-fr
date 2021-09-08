@@ -3,20 +3,20 @@ title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 ms.date: 05/13/2021
 localization_priority: Normal
-ms.openlocfilehash: 6c50a6966915d0aa87d27b1768b0e67e5e8c6d8867c3e0148166f6abfdcd92e0
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093378"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938147"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
-## <a name="sideload-automatically"></a>Chargement de version de version de version automatique
+## <a name="sideload-automatically"></a>Chargement de version de version automatique
 
-Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de faire un chargement de version de version par le biais de la ligne de commande. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
+Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de recharger une version de version par le biais de la ligne de commande. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
 
 1. À l’aide de la ligne de commande, accédez au répertoire racine de votre projet de add-in généré par Yeoman. Exécutez la commande `npm start`.
 
@@ -27,9 +27,9 @@ Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://g
 
 1. Si votre manifeste ne contient pas d’erreurs et que le chemin d’accès est valide, votre application est désormais rechargée de côté et disponible à la fois sur votre bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
 
-## <a name="sideload-manually"></a>Chargement manuel d’une version de version
+## <a name="sideload-manually"></a>Chargement de version de version manuelle
 
-Bien que nous recommandions vivement le chargement d’une version de version secondaire automatiquement par le biais de la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de version antérieure d’un Outlook basé sur le client Outlook.
+Bien que nous recommandions vivement le chargement de version secondaire automatiquement via la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de Outlook basée sur le client Outlook.
 
 ### <a name="outlook-on-the-web"></a>Outlook sur le web
 
@@ -105,7 +105,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. S’il existe des onglets en haut de la boîte de dialogue, **assurez-vous** que l’onglet Des applications est sélectionné. Choose **My add-ins**.
 
-    ![Outlook 2016 dans la boîte de dialogue Du store avec Mes applications sélectionnée.](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016 dans la boîte de dialogue Du store avec mes applications sélectionnées.](../images/outlook-sideload-store-select-add-ins.png)
 
 1. Recherchez la section **Compléments personnalisés** en bas de la boîte de dialogue. Sélectionnez le lien **Ajouter un complément personnalisé**, puis sélectionnez **Ajouter à partir d’un fichier**.
 

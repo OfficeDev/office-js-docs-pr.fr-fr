@@ -3,12 +3,12 @@ title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
 ms.date: 07/07/2020
 localization_priority: Normal
-ms.openlocfilehash: 22ac87b3b8437e610e743ecc844d2395671e04201cb2031a36b3ff96ff8c3dcc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 57a17a90fe565adb3ffb9d23e3b169bc83be2735
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083851"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937272"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 

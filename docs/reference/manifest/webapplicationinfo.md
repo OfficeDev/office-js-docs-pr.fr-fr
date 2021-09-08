@@ -3,12 +3,12 @@ title: Élément WebApplicationInfo dans le fichier manifeste
 description: Documentation de référence de l’élément WebApplicationInfo pour Office de manifeste des applications (XML).
 ms.date: 07/30/2020
 localization_priority: Normal
-ms.openlocfilehash: 7b14b62fa8b3dd87c650dbeaaeedb8d29c3995a77e0be8c8582da422cb480e67
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 037de49320a6d1a1ca7dce3446b4f4008a2f1331
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097882"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937088"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 

@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: onenote
 localization_priority: Priority
 ms.openlocfilehash: 8341365fef2c29a5dd2680e1a9a768488654fc91
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232353"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938006"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 

@@ -3,12 +3,12 @@ title: Programmation asynchrone dans des compléments Office
 description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans Office’applications.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 0e16cf86c57d6020ecf63d077cd4e55b11059d2587ab2ef5c5e3f51fb5da3885
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6408d1efc99f38468b371247156d84f1a4ac4b99
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081400"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937078"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -138,7 +138,7 @@ function write(message){
 }
 ```
 
-Ce modèle de rappel imbrique de base peut être utilisé pour toutes les méthodes asynchrones dans l’API JavaScript Office base.
+Ce modèle de rappel imbrique de base peut être utilisé pour toutes les méthodes asynchrones dans l Office API JavaScript.
 
 Les sections suivantes montrent comment utiliser des fonctions anonymes ou nommées pour des rappels imbriqués dans des méthodes asynchrones.
 
@@ -230,7 +230,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> La `Binding` promesse d’objet renvoyée par `Office.select` la méthode permet d’accéder uniquement aux quatre méthodes de `Binding` l’objet. Si vous devez accéder à l’un des autres membres de l’objet, vous devez utiliser la propriété et ou les méthodes `Binding` `Document.bindings` pour récupérer `Bindings.getByIdAsync` `Bindings.getAllAsync` `Binding` l’objet. Par exemple, si vous devez accéder à l’une des propriétés de l’objet (la ou les propriétés), ou si vous devez accéder aux propriétés des objets `Binding` `document` `id` `type` [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding,](/javascript/api/office/office.tablebinding) `getByIdAsync` `getAllAsync` vous devez utiliser la ou les méthodes pour récupérer un `Binding` objet.
+> La `Binding` promesse d’objet renvoyée par la méthode permet d’accéder uniquement `Office.select` aux quatre méthodes de `Binding` l’objet. Si vous devez accéder à l’un des autres membres de l’objet, vous devez utiliser la propriété et ou les méthodes `Binding` `Document.bindings` pour récupérer `Bindings.getByIdAsync` `Bindings.getAllAsync` `Binding` l’objet. Par exemple, si vous devez accéder à l’une des propriétés de l’objet (la ou les propriétés), ou si vous devez accéder aux propriétés des objets `Binding` `document` `id` `type` [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding,](/javascript/api/office/office.tablebinding) `getByIdAsync` `getAllAsync` vous devez utiliser la ou les méthodes pour récupérer un `Binding` objet.
 
 ## <a name="pass-optional-parameters-to-asynchronous-methods"></a>Passer des paramètres facultatifs à des méthodes asynchrones
 

@@ -4,11 +4,11 @@ description: Utilisez l Excel API JavaScript pour créer des tableaux croisés d
 ms.date: 07/02/2021
 localization_priority: Normal
 ms.openlocfilehash: d9ccaf72be4fa23b73f1f91d38d240ea02569eca
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868637"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936262"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utiliser des tableaux croisés dynamiques à l’aide Excel API JavaScript
 
@@ -36,7 +36,7 @@ Examinons comment ces relations s’appliquent à certains exemples de données.
 
 ![Collection de ventes de fruit de différents types de batteries de serveurs.](../images/excel-pivots-raw-data.png)
 
-Les données de ventes de cette batterie de serveurs de fruit seront utilisées pour la production d’un tableau croisé dynamique. Chaque colonne, telle que **Types,** est une `PivotHierarchy` . La **hiérarchie Types** contient le champ **Types.** Le **champ Types** contient les éléments **Apple**, **Domaine,** **Domaine,** **Vert** vert et **Orange**.
+Les données de ventes de cette batterie de serveurs de fruit seront utilisées pour la production d’un tableau croisé dynamique. Chaque colonne, telle que **Types,** est une `PivotHierarchy` . La **hiérarchie Types** contient le champ **Types.** Le **champ Types** contient les éléments **Apple**, **Domaine,** **Citron,** **Vert** et **Orange**.
 
 ### <a name="hierarchies"></a>Hierarchies
 
@@ -44,7 +44,7 @@ Les tableaux croisés dynamiques sont organisés en quatre catégories hiérarch
 
 Les données de batterie de serveurs indiquées précédemment disposent de cinq hiérarchies : Batteries **de** serveurs, **Type**, **Classification**, **Caisses vendues** à la batterie de serveurs et **Caisses vendues en commun**. Chaque hiérarchie ne peut exister que dans l’une des quatre catégories. Si **type** est ajouté aux hiérarchies de colonnes, il ne peut pas non plus se trouver dans les hiérarchies de lignes, de données ou de filtres. Si **Type** est ensuite ajouté aux hiérarchies de lignes, il est supprimé des hiérarchies de colonnes. Ce comportement est le même si l’affectation de hiérarchie est effectuée via l’interface Excel’interface utilisateur ou Excel api JavaScript.
 
-Les hiérarchies de lignes et de colonnes définissent le regroupement des données. Par exemple, une hiérarchie de lignes **de** batteries de serveurs rassemble tous les ensembles de données de la même batterie de serveurs. Le choix entre la hiérarchie de lignes et de colonnes définit l’orientation du tableau croisé dynamique.
+Les hiérarchies de lignes et de colonnes définissent le regroupement des données. Par exemple, une hiérarchie de lignes **de** batteries de serveurs groupe tous les ensembles de données de la même batterie de serveurs. Le choix entre la hiérarchie de lignes et de colonnes définit l’orientation du tableau croisé dynamique.
 
 Les hiérarchies de données sont les valeurs à agréger en fonction des hiérarchies de lignes et de colonnes. Un tableau croisé dynamique avec  une hiérarchie de lignes de batteries de serveurs et une hiérarchie de données de l’ordre des **caisses vendues indique** le total total (par défaut) de tous les différents produits pour chaque batterie de serveurs.
 
@@ -149,7 +149,7 @@ Excel.run(function (context) {
 
 ## <a name="add-data-hierarchies-to-the-pivottable"></a>Ajouter des hiérarchies de données au tableau croisé dynamique
 
-Les hiérarchies de données remplissent le tableau croisé dynamique avec des informations à combiner en fonction des lignes et des colonnes. L’ajout des hiérarchies de données **des caisses vendues** à la batterie de serveurs et des **caisses vendues permet** d’obtenir les sommes de ces chiffres pour chaque ligne et colonne.
+Les hiérarchies de données remplissent le tableau croisé dynamique avec des informations à combiner en fonction des lignes et des colonnes. L’ajout des hiérarchies de données **des caisses vendues** au niveau de la batterie de serveurs et des **caisses vendues permet** d’obtenir les sommes de ces chiffres pour chaque ligne et colonne.
 
 Dans l’exemple, **la batterie de** serveurs et le **type** sont des lignes, avec les ventes de caisse en tant que données.
 
@@ -204,7 +204,7 @@ Excel.run(function (context) {
 
 ### <a name="layout-types"></a>Types de disposition
 
-Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Outline et Tabulaire. Nous avons vu le style compact dans les exemples précédents.
+Les tableaux croisés dynamiques ont trois styles de disposition : Compact, Plan et Tabulaire. Nous avons vu le style compact dans les exemples précédents.
 
 Les exemples suivants utilisent respectivement les styles plan et tabulaire. L’exemple de code montre comment faire un cycle entre les différentes dispositions.
 
@@ -283,7 +283,7 @@ La méthode principale de filtrage des données de tableau croisé dynamique est
 
 [Les filtres de tableau](/javascript/api/excel/excel.pivotfilters) croisé dynamique filtrent les données en fonction des quatre [catégories hiérarchiques](#hierarchies) d’un tableau croisé dynamique (filtres, colonnes, lignes et valeurs). Il existe quatre types de filtres de tableau croisé dynamique, ce qui permet le filtrage basé sur les dates du calendrier, l’comparaison des chaînes, la comparaison des nombres et le filtrage en fonction d’une entrée personnalisée.
 
-[Les slicers](/javascript/api/excel/excel.slicer) peuvent être appliqués à la fois aux tableaux croisés dynamiques et aux tableaux Excel tableaux. Lorsqu’ils sont appliqués à un tableau croisé dynamique, les slicers fonctionnent comme un [pivotManualFilter](#pivotmanualfilter) et autorisent le filtrage basé sur une entrée personnalisée. Contrairement aux filtres de tableau croisé dynamique, les slicers ont [un Excel’interface utilisateur.](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, gérez le filtrage et contrôlez son apparence visuelle.
+[Les slicers](/javascript/api/excel/excel.slicer) peuvent être appliqués à la fois aux tableaux croisés dynamiques et aux tableaux Excel tableaux. Lorsqu’ils sont appliqués à un tableau croisé dynamique, les slicers fonctionnent comme un [pivotManualFilter](#pivotmanualfilter) et autorisent le filtrage en fonction d’une entrée personnalisée. Contrairement aux filtres de tableau croisé dynamique, les slicers ont [un Excel’interface utilisateur.](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) Avec la `Slicer` classe, vous créez ce composant d’interface utilisateur, gérez le filtrage et contrôlez son apparence visuelle.
 
 ### <a name="filter-with-pivotfilters"></a>Filtrer avec des filtres de tableau croisé dynamique
 
@@ -343,7 +343,7 @@ Excel.run(function (context) {
 
 ##### <a name="pivotlabelfilter"></a>PivotLabelFilter
 
-Le deuxième extrait de code montre comment appliquer un [pivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) au champ de tableau croisé dynamique de **type,** en utilisant la propriété pour exclure les étiquettes qui commencent par la lettre `LabelFilterCondition.beginsWith` **L**.
+Le deuxième extrait de code montre comment appliquer un [pivotLabelFilter](/javascript/api/excel/excel.pivotlabelfilter) au champ de tableau croisé dynamique **de type,** en utilisant la propriété pour exclure les étiquettes qui commencent par la lettre `LabelFilterCondition.beginsWith` **L**.
 
 ```js
     // Get the "Type" field.
@@ -412,7 +412,7 @@ Excel.run(function (context) {
 
 ### <a name="filter-with-slicers"></a>Filtrer avec des slicers
 
-[Les slicers](/javascript/api/excel/excel.slicer) permettent de filtrer les données à partir d’Excel tableau croisé dynamique ou d’un tableau. Un slicer utilise les valeurs d’une colonne spécifiée ou d’un champ de tableau croisé dynamique pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant [qu’objets SlicerItem](/javascript/api/excel/excel.sliceritem) dans `Slicer` le . Votre add-in peut ajuster ces filtres, tout comme les utilisateurs[(via l’interface Excel’interface utilisateur).](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) Le slicer se trouve au-dessus de la feuille de calcul dans la couche de dessin, comme illustré dans la capture d’écran suivante.
+[Les slicers](/javascript/api/excel/excel.slicer) permettent de filtrer les données à partir d’Excel tableau croisé dynamique ou d’un tableau. Un slicer utilise les valeurs d’une colonne spécifiée ou d’un champ de tableau croisé dynamique pour filtrer les lignes correspondantes. Ces valeurs sont stockées en tant [qu’objets SlicerItem](/javascript/api/excel/excel.sliceritem) dans `Slicer` le . Votre add-in peut ajuster ces filtres, tout comme les utilisateurs[(via Excel’interface utilisateur).](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d) Le slicer se trouve au-dessus de la feuille de calcul dans la couche de dessin, comme illustré dans la capture d’écran suivante.
 
 ![Un slicer filtrant des données sur un tableau croisé dynamique.](../images/excel-slicer.png)
 

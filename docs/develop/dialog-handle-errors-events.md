@@ -3,12 +3,12 @@ title: Gestion des erreurs et des événements dans la boîte de dialogue Office
 description: Découvrez comment éviter et gérer les erreurs lors de l’ouverture et de l’utilisation de Office boîte de dialogue.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 50b439f9d3d20af97d78ea51db66a96c219b32d64140531ee1d51e1149feaffc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 86b8e6f3ff6dba72245d70551846884901ec597a
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080792"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937865"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>Gérer les erreurs et les événements dans la boîte Office dialogue
 
@@ -33,9 +33,9 @@ Outre les erreurs générales de plateforme et système, quatre erreurs sont sp�
 |12004|Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port).|
 |12005|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. (Dans certaines versions de Office, le texte du message d’erreur renvoyé avec 12005 est identique à celui renvoyé pour 12004.)|
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
-|12009|L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans Office sur le Web, où les utilisateurs peuvent choisir de ne pas autoriser un module de présentation d’une boîte de dialogue. Pour plus d’informations, voir [Gestion des bloqueurs de](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web)fenêtres Office sur le Web .|
+|12009|L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans Office sur le Web, où les utilisateurs peuvent choisir de ne pas autoriser un module de présentation d’une boîte de dialogue. Pour plus d’informations, voir Gestion des [bloqueurs de](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web)fenêtres Office sur le Web .|
 
-Lorsqu’elle est appelée, elle transmet un `displayDialogAsync` objet [AsyncResult](/javascript/api/office/office.asyncresult) à sa fonction de rappel. Lorsque l’appel réussit, la boîte de dialogue s’ouvre et la propriété de `value` l’objet est un objet `AsyncResult` [Dialog.](/javascript/api/office/office.dialog) Pour obtenir un exemple de cela, voir Envoyer des informations à partir de la boîte [de dialogue vers la page hôte.](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page) Lorsque l’appel échoue, la boîte de dialogue n’est pas créée, la propriété de l’objet est définie sur et la propriété de `displayDialogAsync` `status` `AsyncResult` l’objet est `Office.AsyncResultStatus.Failed` `error` remplie. Vous devez toujours fournir un rappel qui teste et répond en cas `status` d’erreur. Pour obtenir un exemple qui signale le message d’erreur, quel que soit son numéro de code, consultez le code suivant. (La `showNotification` fonction, non définie dans cet article, affiche ou enregistre l’erreur. Pour obtenir un exemple de la façon dont vous pouvez implémenter cette fonction au sein de votre Office,voir l’exemple d’API de boîte de dialogue du [Office.)](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)
+Lorsqu’elle est appelée, elle transmet un `displayDialogAsync` objet [AsyncResult](/javascript/api/office/office.asyncresult) à sa fonction de rappel. Lorsque l’appel réussit, la boîte de dialogue s’ouvre et la propriété de `value` l’objet est un objet `AsyncResult` [Dialog.](/javascript/api/office/office.dialog) Pour obtenir un exemple de cela, voir Envoyer des informations à partir de la boîte [de dialogue vers la page hôte.](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page) Lorsque l’appel échoue, la boîte de dialogue n’est pas créée, la propriété de l’objet est définie sur et la propriété de `displayDialogAsync` `status` `AsyncResult` l’objet est `Office.AsyncResultStatus.Failed` `error` remplie. Vous devez toujours fournir un rappel qui teste et répond en cas `status` d’erreur. Pour obtenir un exemple qui signale le message d’erreur, quel que soit son numéro de code, consultez le code suivant. (La `showNotification` fonction, non définie dans cet article, affiche ou enregistre l’erreur. Pour obtenir un exemple de la façon dont vous pouvez implémenter cette fonction dans votre application, voir Office’API de boîte de dialogue [de l’application.)](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example)
 
 ```js
 var dialog;

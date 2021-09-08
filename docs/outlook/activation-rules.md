@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 09/22/2020
 localization_priority: Normal
-ms.openlocfilehash: 609bb915c98b1213c4d20733a7b00681740bdce1e182e237dbde9253e8b06104
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 24f17b7bb3da4665f3f05b23d34ba15bcc4ae729
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096938"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936208"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -113,7 +113,7 @@ Vous pouvez spécifier une règle à l’aide de celle qui affiche votre add-in 
 - TaskSuggestion
 - URL
 
-Vous pouvez éventuellement inclure une expression régulière dans l’attribut afin que votre add-in ne s’affiche qu’en présence d’une entité qui correspond à `RegularExpression` l’expression régulière. Pour obtenir des correspondances avec des expressions régulières spécifiées dans les règles, vous pouvez utiliser la ou la méthode pour `ItemHasKnownEntity` `getRegExMatches` l’élément Outlook actuellement `getFilteredEntitiesByName` sélectionné.
+Vous pouvez éventuellement inclure une expression régulière dans l’attribut afin que votre add-in s’affiche uniquement lorsqu’une entité correspond à `RegularExpression` l’expression régulière présente. Pour obtenir des correspondances avec des expressions régulières spécifiées dans les règles, vous pouvez utiliser la ou la méthode pour `ItemHasKnownEntity` `getRegExMatches` l’élément Outlook actuellement `getFilteredEntitiesByName` sélectionné.
 
 L’exemple suivant montre une collection d’éléments qui montrent le add-in lorsque l’une des entités connues spécifiées est présente `Rule` dans le message.
 

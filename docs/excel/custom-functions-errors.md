@@ -4,11 +4,11 @@ description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fo
 ms.date: 08/12/2021
 localization_priority: Normal
 ms.openlocfilehash: b72ed2baea49b4b6d5f00e63e323d12a7e57d021
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232334"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937554"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
@@ -54,7 +54,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-Les `#VALUE!` `#N/A` erreurs et les erreurs sont également des messages d’erreur personnalisés. Les messages d’erreur personnalisés sont affichés dans le menu indicateur d’erreur, accessible en pointant sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec `#VALUE!` l’erreur.
+Les `#VALUE!` `#N/A` erreurs et les erreurs sont également des messages d’erreur personnalisés. Les messages d’erreur personnalisés s’affichent dans le menu indicateur d’erreur, accessible en pointant sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec `#VALUE!` l’erreur.
 
 ```typescript
 // You can only return a custom error message with the #VALUE! and #N/A errors.
@@ -62,7 +62,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lors de l’travail avec des tableaux dynamiques
+### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lorsque vous travaillez avec des tableaux dynamiques
 
 En plus de renvoyer une seule erreur, une fonction personnalisée peut créer un tableau dynamique qui inclut une erreur. Par exemple, une fonction personnalisée peut créer le `[1],[#NUM!],[3]` tableau. L’exemple de code suivant montre comment entrer trois paramètres dans une fonction personnalisée, remplacer l’un des paramètres d’entrée par une erreur, puis renvoyer un tableau à deux dimensions avec les résultats du traitement de chaque paramètre `#NUM!` d’entrée.
 

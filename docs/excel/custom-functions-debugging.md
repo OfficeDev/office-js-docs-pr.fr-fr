@@ -1,16 +1,16 @@
 ---
-title: Débogage de fonctions personnalisées sans interface utilisateur
+title: Débogage des fonctions personnalisées sans interface utilisateur
 description: Découvrez comment déboguer vos Excel personnalisées qui n’utilisent pas de volet de tâches.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 86c1cca9602bf56566609ed500b6ee41379fbc432ffd8e92e0a95b2adaa3709e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 1ee0e6e88b3ada88749278740d68f76c4a7368f6
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079732"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937361"
 ---
-# <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
+# <a name="ui-less-custom-functions-debugging"></a>Débogage des fonctions personnalisées sans interface utilisateur
 
 Cet article traite du  débogage uniquement pour les fonctions personnalisées qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur (fonctions personnalisées sans interface utilisateur).
 
@@ -56,7 +56,7 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 
 1. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 1. Dans le menu déroulant Exécuter, choisissez **Excel bureau (fonctions personnalisées).**
-1. Sélectionnez **F5** (ou **exécutez -> démarrer le** débogage à partir du menu) pour commencer le débogage. Un nouveau Excel de travail s’ouvre avec votre add-in déjà chargé et prêt à l’emploi.
+1. Sélectionnez **F5** (ou **exécutez -> démarrer** le débogage à partir du menu) pour commencer le débogage. Un nouveau Excel de travail s’ouvre avec votre add-in déjà chargé et prêt à l’emploi.
 
 ### <a name="start-debugging"></a>Démarrer le débogage
 

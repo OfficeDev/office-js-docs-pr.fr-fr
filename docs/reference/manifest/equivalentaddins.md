@@ -1,18 +1,18 @@
 ---
 title: Élément EquivalentAddins dans le fichier manifeste
-description: Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
+description: Spécifie la compatibilité ascendante avec un add-in COM équivalent, XLL ou les deux.
 ms.date: 03/09/2021
 localization_priority: Normal
-ms.openlocfilehash: b1a3eed0003a2798019ea6879a5d5c6b4ed3d6fc49b4efb45eaaf2006e9f7160
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cce316ceac2b6c79a0f7ea1378411b864923cada
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096519"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937987"
 ---
 # <a name="equivalentaddins-element"></a>Élément EquivalentAddins
 
-Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
+Spécifie la compatibilité ascendante avec un add-in COM équivalent, XLL ou les deux.
 
 **Type de add-in :** Volet Des tâches, Fonction personnalisée
 

@@ -3,12 +3,12 @@ title: Développement d’un complément Office avec Visual Studio Code
 description: Comment développer un complément Office avec Visual Studio Code.
 ms.date: 10/14/2020
 localization_priority: Priority
-ms.openlocfilehash: de941cb6421be20a2aa0725a1780af4d67b940a0ed986a75ae57bce2a3f11242
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3f2a95e8ba08fa91b5f10707459ea87ab6c857e3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080924"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937426"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Développement d’un complément Office avec Visual Studio Code
 

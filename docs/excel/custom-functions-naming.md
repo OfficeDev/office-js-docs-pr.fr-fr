@@ -4,11 +4,11 @@ description: Découvrez les conditions requises pour les noms Excel fonctions pe
 ms.date: 07/08/2021
 localization_priority: Normal
 ms.openlocfilehash: bfc850fb2a40e7736006930c63489ec7e0c9912b
-ms.sourcegitcommit: e570fa8925204c6ca7c8aea59fbf07f73ef1a803
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "53773348"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936366"
 ---
 # <a name="custom-functions-naming-guidelines"></a>Règles de noms des fonctions personnalisées
 
@@ -48,7 +48,7 @@ Pour résoudre un conflit d’attribution de noms, modifiez le nom de votre `nam
 - Envisagez d’ajouter plusieurs arguments à une fonction plutôt que de créer plusieurs fonctions avec des noms identiques ou similaires.
 - Évitez les abréviations ambiguës dans les noms de fonctions. La clarté est plus importante que la concision. Choisissez un nom comme `=INCREASETIME` plutôt que `=INC` .
 - Les noms de fonction doivent indiquer l’action de la fonction, telle que =GETZIPCODE au lieu de ZIPCODE.
-- Utilisez systématiquement les mêmes verbes pour les fonctions qui effectuent des actions similaires. Par exemple, utilisez `=DELETEZIPCODE` et , plutôt que et `=DELETEADDRESS` `=DELETEZIPCODE` `=REMOVEADDRESS` .
+- Utilisez systématiquement les mêmes verbes pour les fonctions qui effectuent des actions similaires. Par exemple, utilisez `=DELETEZIPCODE` `=DELETEADDRESS` et, plutôt que `=DELETEZIPCODE` et `=REMOVEADDRESS` .
 - Lorsque vous nommez une fonction de diffusion en continu, envisagez d’ajouter une note à cet effet dans la description de la fonction ou d’ajouter à la fin du nom `STREAM` de la fonction.
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]

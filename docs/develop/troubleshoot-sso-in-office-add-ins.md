@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: Recommandations sur la façon de résoudre les problèmes liés à l' sign-on unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
-ms.date: 07/08/2021
+ms.date: 09/03/2021
 localization_priority: Normal
-ms.openlocfilehash: 1587f747ab3128904d4b287581f6f909f3fdb216ec03a711b30d994ca696eb03
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: f2a4b4b7ae44596bef101aeeba51ee6dffa8ba5e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079958"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937986"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
@@ -28,9 +28,8 @@ Lors du développement, nous vous recommandons vivement d’utiliser un outil ca
 ## <a name="causes-and-handling-of-errors-from-getaccesstoken"></a>Causes et gestion des erreurs de getAccessToken
 
 Pour consulter des exemples de la gestion des erreurs décrite dans cette section, reportez-vous aux articles suivants :
-
-- [HomeES6.js dans Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
-- [ssoAuthES6.js dans Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js)
+- [HomeES6.js dans Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js)
+- [ssoAuthES6.js dans Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js)
 
 ### <a name="13000"></a>13000
 
@@ -108,7 +107,7 @@ En développement, le complément est sideloaded dans Outlook et l’option `for
 
 ### <a name="13013"></a>13013
 
-Le nombre d’appels a été trop élevé en un court laps de `getAccessToken` temps, Office a donc limitée l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios lorsque le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée dans [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO/blob/master/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO/blob/master/Complete/public/javascripts/ssoAuthES6.js).
+Le nombre d’appels a été trop élevé en un court laps de `getAccessToken` temps, Office a donc limitée l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios dans le cas où le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée dans [HomeES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -119,17 +118,16 @@ Dans un complément de production, celui-ci doit répondre à cette erreur en ba
 ## <a name="errors-on-the-server-side-from-azure-active-directory"></a>Erreurs d’Azure Active Directory côté serveur
 
 Pour plus d’exemples de la gestion des erreurs décrite dans cette section, reportez-vous aux articles suivants :
-
-- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/Office-Add-in-ASPNET-SSO)
-- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/Office-Add-in-NodeJS-SSO)
+- [Office-Add-in-ASPNET-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office-Add-in-NodeJS-SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>Erreurs d’accès conditionnel / authentification multifacteur
 
-Dans certaines configurations d’identité dans AAD et Microsoft 365, il est possible pour certaines ressources accessibles avec Microsoft Graph d’exiger une authentification multifacteur (MFA), même lorsque la location Microsoft 365 de l’utilisateur ne le fait pas. Lorsqu’AAD reçoit une requête pour obtenir un jeton d’accès à la ressource protégée par AMF via le flux « de la part de », il renvoie au service web de votre complément un message JSON contenant une propriété `claims`. La propriété de revendication comporte des informations sur les facteurs d’authentification supplémentaires nécessaires.
+Dans certaines configurations d’identité dans AAD et Microsoft 365, il est possible pour certaines ressources accessibles avec Microsoft Graph d’exiger une authentification multifacteur (MFA), même lorsque le client Microsoft 365 de l’utilisateur ne le fait pas. Lorsqu’AAD reçoit une requête pour obtenir un jeton d’accès à la ressource protégée par AMF via le flux « de la part de », il renvoie au service web de votre complément un message JSON contenant une propriété `claims`. La propriété de revendication comporte des informations sur les facteurs d’authentification supplémentaires nécessaires.
 
 Votre code doit tester cette propriété `claims`. En fonction de l’architecture de votre complément, vous pouvez le tester côté client, ou le tester sur le serveur et le relayer sur le client. Il vous faut ces informations dans le client, car Office gère l’authentification des compléments SSO. Si vous le relayez côté serveur, le message adressé au client peut être une erreur (telle que `500 Server Error` ou `401 Unauthorized`) ou se trouver dans le corps d’une réponse de succès (telle que `200 OK`). Dans les deux cas, le rappel (réussite ou échec) de l’appel AJAX de votre code côté client à l’API web de votre complément devra tester cette réponse.
 
-Quelle que soit votre architecture, si la valeur de revendications a été envoyée à partir d’AAD, votre code doit rappeler et transmettre `getAccessToken` l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
+Quelle que soit votre architecture, si la valeur des revendications a été envoyée à partir d’AAD, votre code doit rappeler et transmettre `getAccessToken` l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
 
 ### <a name="consent-missing-errors"></a>Erreurs de consentement manquant
 

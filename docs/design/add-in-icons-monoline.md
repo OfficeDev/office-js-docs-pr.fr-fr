@@ -3,12 +3,12 @@ title: Instructions relatives aux icônes de style monoligne pour Office de rech
 description: Recommandations en matière d’utilisation d’icônes de style Monoline dans Office des modules.
 ms.date: 03/30/2021
 localization_priority: Normal
-ms.openlocfilehash: 15077c9dd798b2cb633d7ce200a8cefc4e9605d312ebab48fe2ce814b7479c11
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 0e8bf4f39ddbad457df7d033a08836825d9e1d3f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082400"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938108"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monoligne pour Office de recherche
 
@@ -56,7 +56,7 @@ Monoline est un style minimal. Tout utilise une couleur plate, ce qui signifie q
 
 ### <a name="sizes"></a>Tailles
 
-Nous vous recommandons de produire chaque icône de toutes ces tailles pour prendre en charge les appareils à hautes dimensions. Les *tailles absolument requises* sont de 16 px, 20 px et 32 px, car il s’s’il s’tt de la taille 100 %.
+Nous vous recommandons de produire chaque icône de toutes ces tailles pour prendre en charge les appareils à hautes dimensions. Les tailles *absolument requises* sont de 16 px, 20 px et 32 px, car il s’s’il s’tt de la taille 100 %.
 
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
@@ -103,7 +103,7 @@ Chaque icône de taille possède une quantité spécifiée de remplissage autour
 
 #### <a name="line-weights"></a>Poids des lignes
 
-La monoligne est un style en courbes et en contours. Selon la taille que vous produisez, l’icône doit utiliser les poids de ligne suivants.
+Le monoligne est un style en courbes et en contours. Selon la taille que vous produisez, l’icône doit utiliser les poids de ligne suivants.
 
 |Taille de l’icône :|16px|20px|24px|32px|40px|48px|64px|80 px|96 px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|

@@ -3,16 +3,16 @@ title: Créer votre premier complément de volet des tâches pour Microsoft Proj
 description: Créez un add-in de volet de tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour Office de recherche.
 ms.date: 07/10/2020
 localization_priority: Normal
-ms.openlocfilehash: ff43d8a93eab3bf66414341c584e69ea78b2d9450f3dc7e9846d36430ff35ccc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: c1de70bec62c4080306c985a319601c506270f2b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57096615"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938021"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
-Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Après avoir  utilisé le Centre de confiance dans Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
+Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Une fois  que vous avez utilisé le Centre de Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
 
 Project utilise le même schéma de manifeste de Office et la plupart de la même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
 
@@ -551,7 +551,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
 1. Ajoutez des rappels et des fonctions du gestionnaire d’événements JavaScript pour enregistrer la sélection de tâches, la sélection de ressources et les gestionnaires d’événements de changement de sélection d’affichage, et pour annuler l’enregistrement de gestionnaires d’événements. La `manageEventHandlerAsync` fonction ajoute ou supprime le handler d’événements spécifié, en fonction du paramètre _d’opération._ L’opération peut être `addHandlerAsync` ou `removeHandlerAsync` .
 
-   Les fonctions , et peuvent ajouter ou supprimer un handler d’événements, comme spécifié par `manageTaskEventHandler` `manageResourceEventHandler` le paramètre `manageViewEventHandler` _docMethod._
+   Les fonctions et les fonctions peuvent ajouter ou supprimer un handler d’événements, comme spécifié par `manageTaskEventHandler` `manageResourceEventHandler` le paramètre `manageViewEventHandler` _docMethod._
 
     ```js
     // Task selection changed event handler.
@@ -656,7 +656,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     </div>
     ```
 
-1. Ajouter des sections avec des boutons pour les méthodes et événements de ressources, les méthodes et événements d’affichage, les `div` propriétés de projet et les propriétés de contexte
+1. Ajouter des sections avec des boutons pour les méthodes et événements de ressource, les méthodes et événements d’affichage, les `div` propriétés de projet et les propriétés de contexte
 
     ```HTML
     <div id="ResourceMethods">

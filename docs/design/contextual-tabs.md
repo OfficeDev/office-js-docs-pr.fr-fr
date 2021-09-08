@@ -1,14 +1,14 @@
 ---
 title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
-ms.date: 07/15/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 8bb724c30d3bd3729b6f4e4879157f3cbebf3ff90ad1cc9d50194f91ea0cc481
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3efcc29ea78d7dd528734e2c67a14cd65e3c0875
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57082157"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937540"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
@@ -41,7 +41,7 @@ L’expérience utilisateur pour les onglets contextuels personnalisés suit le 
 
 - Lorsqu’un onglet contextuel personnalisé est visible, il apparaît à l’extrémité droite du ruban.
 - Si un ou plusieurs onglets contextuels intégrés et un ou plusieurs onglets contextuels personnalisés des modules sont visibles en même temps, les onglets contextuels personnalisés sont toujours à droite de tous les onglets contextuels intégrés.
-- Si votre add-in possède plusieurs onglets contextuels et qu’il existe des contextes dans lesquels plusieurs onglets sont visibles, ils apparaissent dans l’ordre dans lequel ils sont définis dans votre add-in. (Le sens est le même que celui de la langue Office ; c’est-à-dire, de gauche à droite dans les langues de gauche à droite, mais de droite à gauche dans les langues de droite à gauche.) Pour [plus d’informations sur](#define-the-groups-and-controls-that-appear-on-the-tab) leur définition, voir Définir les groupes et les contrôles qui apparaissent sous l’onglet.
+- Si votre add-in possède plusieurs onglets contextuels et qu’il existe des contextes dans lesquels plusieurs onglets sont visibles, ils apparaissent dans l’ordre dans lequel ils sont définis dans votre module. (Le sens est le même que celui de la langue Office ; c’est-à-dire, de gauche à droite dans les langues de gauche à droite, mais de droite à gauche dans les langues de droite à gauche.) Pour [plus d’informations sur](#define-the-groups-and-controls-that-appear-on-the-tab) leur définition, voir Définir les groupes et les contrôles qui apparaissent sous l’onglet.
 - Si plusieurs d’entre eux ont un onglet contextuel visible dans un contexte spécifique, ils apparaissent dans l’ordre dans lequel les modules ont été lancés.
 - Contrairement *aux* onglets principaux personnalisés, les onglets contextuels personnalisés ne sont pas ajoutés Office le ruban de l’application. Ils sont présents uniquement dans Office documents sur lesquels votre module est en cours d’exécution.
 
@@ -60,12 +60,12 @@ L’ajout d’onglets contextuels personnalisés nécessite que votre add-in uti
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>Définir les groupes et les contrôles qui apparaissent sous l’onglet
 
-Contrairement aux onglets principaux personnalisés, qui sont définis avec du XML dans le manifeste, les onglets contextuels personnalisés sont définis lors de l’runtime avec un blob JSON. Votre code parse le blob dans un objet JavaScript, puis passe l’objet à la [méthode Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Les onglets contextuels personnalisés sont uniquement présents dans les documents sur lesquels votre add-in est en cours d’exécution. Cela est différent des onglets principaux personnalisés qui sont ajoutés au ruban de l’application Office lorsque le module est installé et restent présents à l’ouverture d’un autre document. En outre, `requestCreateControls` la méthode ne peut être exécuté qu’une seule fois dans une session de votre add-in. Si elle est appelée à nouveau, une erreur est lancée.
+Contrairement aux onglets principaux personnalisés, qui sont définis avec du XML dans le manifeste, les onglets contextuels personnalisés sont définis lors de l’runtime avec un blob JSON. Votre code parse le blob dans un objet JavaScript, puis passe l’objet à la [méthode Office.ribbon.requestCreateControls.](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestCreateControls_tabDefinition_) Les onglets contextuels personnalisés sont uniquement présents dans les documents sur lesquels votre module est en cours d’exécution. Cela est différent des onglets principaux personnalisés qui sont ajoutés au ruban de l’application Office lorsque le module est installé et restent présents à l’ouverture d’un autre document. En outre, `requestCreateControls` la méthode ne peut être exécuté qu’une seule fois dans une session de votre add-in. Si elle est appelée à nouveau, une erreur est lancée.
 
 > [!NOTE]
 > La structure des propriétés et sous-propriétés de l’objet blob JSON (et les noms clés) est à peu près parallèle à la structure de l’élément [CustomTab](../reference/manifest/customtab.md) et de ses éléments descendants dans le manifeste XML.
 
-Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Si vous travaillez dans Visual Studio Code, vous pouvez utiliser ce fichier pour obtenir IntelliSense et valider votre JSON. Pour plus d’informations, voir [Modification de JSON avec Visual Studio Code - Schémas et paramètres JSON.](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
+Nous allons créer un exemple d’objet blob JSON d’onglets contextuels pas à pas. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Si vous travaillez dans Visual Studio Code, vous pouvez utiliser ce fichier pour obtenir IntelliSense et valider votre JSON. Pour plus d’informations, voir [Modification de JSON avec Visual Studio Code - Schémas et paramètres JSON.](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings)
 
 1. Commencez par créer une chaîne JSON avec deux propriétés de tableau `actions` nommées et `tabs` . Le tableau est une spécification de toutes les fonctions qui peuvent être exécutées par des `actions` contrôles sous l’onglet contextuel. Le `tabs` tableau définit un ou plusieurs onglets contextuels, *jusqu’à un maximum de 20*.
 
@@ -102,7 +102,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
     - La propriété `groups` est requise. Il définit les groupes de contrôles qui apparaîtront sous l’onglet. Elle doit avoir au moins un *membre et pas plus de 20*. (Il existe également des limites au nombre de contrôles que vous pouvez avoir sur un onglet contextuel personnalisé et qui limitent également le nombre de groupes que vous avez. Pour plus d’informations, voir l’étape suivante.)
 
     > [!NOTE]
-    > L’objet tabulation peut également avoir une propriété facultative qui spécifie si l’onglet est visible immédiatement au démarrage `visible` du module. Dans la mesure où les onglets contextuels sont normalement masqués jusqu’à ce qu’un événement utilisateur déclenche leur visibilité (par exemple, l’utilisateur sélectionnant une entité d’un type dans le document), la propriété se présente par défaut lorsqu’elle n’est pas `visible` `false` présente. Dans une section ultérieure, nous montrons comment définir la propriété en réponse `true` à un événement.
+    > L’objet tabulation peut également avoir une propriété facultative qui spécifie si l’onglet est visible immédiatement au démarrage `visible` du module. Étant donné que les onglets contextuels sont normalement masqués jusqu’à ce qu’un événement utilisateur déclenche leur visibilité (par exemple, lorsque l’utilisateur sélectionne une entité d’un type dans le document), la propriété se présente par défaut lorsqu’elle n’est pas `visible` `false` présente. Dans une section ultérieure, nous montrons comment définir la propriété en réponse `true` à un événement.
 
     ```json
     {
@@ -141,7 +141,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
 1. Chaque groupe doit avoir une icône d’au moins deux tailles, 32 x 32 px et 80 x 80 px. Si vous le souhaitez, vous pouvez également avoir des icônes de tailles 16 x 16 px, 20 x 20 px, 24 x 24 px, 40 x 40 px, 48 x 48 px et 64 x 64 px. Office l’icône à utiliser en fonction de la taille du ruban et de la Office’application. Ajoutez les objets suivants au tableau d’icônes. (Si les tailles de la fenêtre et  du ruban sont suffisamment grandes pour qu’au moins l’un des contrôles du groupe apparaisse, aucune icône de groupe ne s’affiche. Pour obtenir un exemple, regardez le groupe **Styles** sur le ruban Word lorsque vous réduirez et développez la fenêtre Word.) À propos de ce markup, notez :
 
     - Les deux propriétés sont obligatoires.
-    - `size`L’unité de mesure de la propriété est pixels. Les icônes sont toujours carrées, de sorte que le nombre est à la fois la hauteur et la largeur.
+    - `size`L’unité de mesure de propriété est pixels. Les icônes sont toujours carrées, de sorte que le nombre est à la fois la hauteur et la largeur.
     - La `sourceLocation` propriété spécifie l’URL complète de l’icône.
 
     > [!IMPORTANT]
@@ -292,7 +292,7 @@ Office.onReady(async () => {
 });
 ```
 
-Ensuite, définissez les handlers. Voici un exemple simple d’une erreur, mais voir Gestion de l’erreur `showDataTab` [HostRestartNeeded](#handle-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
+Ensuite, définissez les handlers. Voici un exemple simple d’une erreur `showDataTab` [HostRestartNeeded](#handle-the-hostrestartneeded-error) plus loin dans cet article pour obtenir une version plus robuste de la fonction. Tenez compte du code suivant :
 
 - Office effectue un contrôle lorsqu’il met à jour l’état du ruban. La [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#requestUpdate_input_) met en file d’attente une demande de mise à jour. La méthode résout l’objet dès qu’il a mis la demande en file d’attente, et non lorsque `Promise` le ruban est réellement mis à jour.
 - Le paramètre de la méthode est un objet `requestUpdate` [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie l’onglet par son ID exactement comme spécifié dans le *JSON* et (2) spécifie la visibilité de l’onglet.
@@ -533,36 +533,12 @@ Certaines combinaisons de plateforme, Office application et de Office build ne s
 
 Il existe un élément manifeste, [OverriddenByRibbonApi,](../reference/manifest/overriddenbyribbonapi.md)conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés.
 
-La stratégie la plus simple pour l’utilisation de cet élément est que vous définissez dans le manifeste un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés *non* contextuels) qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` ajoutez en tant que premier élément enfant de [CustomTab](../reference/manifest/customtab.md). L’effet de cette utilisation est le suivant :
+La stratégie la plus simple pour utiliser cet élément est que vous définissez  dans le manifeste un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés nontexte) qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous ajoutez en tant que premier élément enfant des éléments group, control et menu en double sur `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` les [](../reference/manifest/group.md) [](../reference/manifest/control.md) `<Item>` onglets principaux personnalisés. L’effet de cette utilisation est le suivant :
 
-- Si le add-in s’exécute sur une application et une plateforme qui prend en charge les onglets contextuels personnalisés, l’onglet principal personnalisé n’apparaît pas sur le ruban. Au lieu de cela, l’onglet contextuel personnalisé est créé lorsque le add-in appelle la `requestCreateControls` méthode.
-- Si le add-in *s’exécute* sur une application ou une plateforme qui ne prend pas en charge, l’onglet principal personnalisé `requestCreateControls` apparaît sur le ruban.
+- Si le add-in s’exécute sur une application et une plateforme qui prend en charge les onglets contextuels personnalisés, les groupes et contrôles principaux personnalisés n’apparaissent pas sur le ruban. Au lieu de cela, l’onglet contextuel personnalisé est créé lorsque le add-in appelle la `requestCreateControls` méthode.
+- Si le add-in *s’exécute* sur une application ou une plateforme qui ne prend pas en charge, les éléments apparaissent dans les `requestCreateControls` onglets principaux personnalisés.
 
-Voici un exemple de cette stratégie simple.
-
-```xml
-<OfficeApp ...>
-  ...
-  <VersionOverrides ...>
-    ...
-    <Hosts>
-      <Host ...>
-        ...
-        <DesktopFormFactor>
-          <ExtensionPoint ...>
-            <CustomTab ...>
-              <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-              ...
-              <Group ...>
-                ...
-                <Control ... id="MyButton">
-                  ...
-                  <Action ...>
-...
-</OfficeApp>
-```
-
-Cette stratégie simple utilise un onglet principal personnalisé qui met en miroir un onglet contextuel personnalisé avec ses groupes et ses contrôles enfants, mais vous pouvez utiliser une stratégie plus complexe. L’élément peut également être ajouté en tant que (le premier) élément enfant aux éléments Group et Control (type de bouton et type de `<OverriddenByRibbonApi>` [menu)](../reference/manifest/control.md#menu-dropdown-button-controls)et [](../reference/manifest/group.md) [](../reference/manifest/control.md) aux éléments de [](../reference/manifest/control.md#button-control) `<Item>` menu. Cela vous permet de distribuer les groupes et les contrôles qui apparaîtraient dans l’onglet contextuel entre différents groupes, boutons et menus dans différents onglets principaux personnalisés. Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal personnalisé uniquement lorsque les onglets contextuels personnalisés ne sont pas pris en charge. Toutefois, le groupe parent et l’onglet principal personnalisé apparaissent, que les onglets contextuels personnalisés soient pris en charge ou non.
+Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal personnalisé uniquement lorsque les onglets contextuels personnalisés ne sont pas pris en charge. Toutefois, le groupe parent et l’onglet principal personnalisé apparaissent, que les onglets contextuels personnalisés soient pris en charge ou non.
 
 ```xml
 <OfficeApp ...>
@@ -588,14 +564,14 @@ Cette stratégie simple utilise un onglet principal personnalisé qui met en mir
 
 Pour plus d’exemples, [voir OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
 
-Lorsqu’un onglet, un groupe ou un menu parent est marqué avec, il n’est pas visible et tout son markup enfant est ignoré, lorsque les onglets contextuels personnalisés ne sont pas pris en `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` charge. Ainsi, peu importe si l’un de ces éléments enfants a l’élément ou `<OverriddenByRibbonApi>` sa valeur. En conséquence, si un élément de menu, un contrôle ou un groupe doit être visible dans tous les contextes, non seulement il ne doit pas être marqué avec, mais son `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` *ancêtre menu,* groupe et onglet ne doit pas non plus être marqué de cette façon.
+Lorsqu’un groupe parent ou un menu est marqué avec, il n’est pas visible et tous ses marques enfants sont ignorés lorsque les onglets contextuels personnalisés ne sont pas pris en `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` charge. Ainsi, peu importe si l’un de ces éléments enfants a l’élément ou `<OverriddenByRibbonApi>` sa valeur. En conséquence, si un élément de menu ou un contrôle doit être visible dans tous les contextes, non seulement il ne doit pas être marqué avec, mais son menu ancêtre et son groupe ne doivent pas non plus être marqués de cette `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` façon. 
 
 > [!IMPORTANT]
-> Ne marquez pas *tous les* éléments enfants d’un onglet, d’un groupe ou d’un menu avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Cela est inutile si l’élément parent est marqué pour `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` des raisons indiquées dans le paragraphe précédent. En outre, si vous ne le faites pas sur le parent (ou si vous le définissez sur ), le parent apparaît, que les onglets contextuels personnalisés soient pris en charge ou non, mais qu’ils soient vides lorsqu’ils sont pris en `<OverriddenByRibbonApi>` `false` charge. Ainsi, si tous les éléments enfants ne doivent pas apparaître lorsque les onglets contextuels personnalisés sont pris en charge, marquez le parent et uniquement le parent, avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
+> Ne marquez pas *tous les* éléments enfants d’un groupe ou d’un menu avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Cela est inutile si l’élément parent est marqué pour `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` des raisons indiquées dans le paragraphe précédent. En outre, si vous ne le faites pas sur le parent (ou si vous le définissez sur ), le parent apparaît, que les onglets contextuels personnalisés soient pris en charge ou non, mais qu’ils soient vides lorsqu’ils sont pris en `<OverriddenByRibbonApi>` `false` charge. Ainsi, si tous les éléments enfants ne doivent pas apparaître lorsque les onglets contextuels personnalisés sont pris en charge, marquez le parent et uniquement le parent, avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>Utiliser des API qui montrent ou masquent un volet Des tâches dans des contextes spécifiés
 
-En remplacement, votre add-in peut définir un volet Des tâches avec des contrôles d’interface utilisateur qui dupliquent la fonctionnalité des contrôles sur un `<OverriddenByRibbonApi>` onglet contextuel personnalisé. Utilisez ensuite les [méthodes Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) et [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) pour afficher le volet Des tâches quand et uniquement quand l’onglet contextuel aurait été affiché s’il était pris en charge. Pour plus d’informations sur l’utilisation de ces méthodes, voir Afficher ou masquer le volet Des tâches de [votre Office.](../develop/show-hide-add-in.md)
+Au lieu de , votre add-in peut définir un volet Des tâches avec des contrôles d’interface utilisateur qui dupliquent les fonctionnalités des contrôles sur un `<OverriddenByRibbonApi>` onglet contextuel personnalisé. Utilisez ensuite les [méthodes Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) et [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) pour afficher le volet Des tâches quand et uniquement quand l’onglet contextuel aurait été affiché s’il était pris en charge. Pour plus d’informations sur l’utilisation de ces méthodes, voir Afficher ou masquer le volet Des tâches de [votre Office.](../develop/show-hide-add-in.md)
 
 ### <a name="handle-the-hostrestartneeded-error"></a>Gérer l’erreur HostRestartNeeded
 

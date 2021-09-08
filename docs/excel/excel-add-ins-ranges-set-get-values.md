@@ -4,12 +4,12 @@ description: Découvrez comment utiliser l’API JavaScript Excel pour définir 
 ms.date: 04/02/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: fccf4325fb3e2473e10719efb6d5336cb87d8abcedfaa6a4f80f8e07eb2b05b6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5d9d1bf3b248585bf27ac591754cfa4eb4dd0fbc
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085389"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936588"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript
 
@@ -19,7 +19,7 @@ Cet article fournit des exemples de code qui définissent et obtiennent des vale
 
 ## <a name="set-values-or-formulas"></a>Définir des valeurs ou des formules
 
-Les exemples de code suivants définissent des valeurs et des formules pour une seule cellule ou une plage de cellules.
+Les exemples de code suivants définissent des valeurs et des formules pour une cellule unique ou une plage de cellules.
 
 ### <a name="set-value-for-a-single-cell"></a>Définir une valeur pour une cellule unique
 

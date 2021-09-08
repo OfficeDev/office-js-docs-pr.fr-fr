@@ -3,19 +3,19 @@ title: Autres méthodes de transmission de messages à une boîte de dialogue à
 description: Découvrez les solutions de contournement à utiliser lorsque la méthode messageChild n’est pas prise en charge.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 1dd603a144aa14a1456b15a67ffd2563028dfc333561e853f518dde1af06f899
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d664178a804b206e02634326cc27699fc6ceb0f7
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080292"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936432"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>Autres méthodes de transmission de messages à une boîte de dialogue à partir de sa page hôte
 
 La méthode recommandée pour passer des données et des messages à partir d’une page parent à une boîte de dialogue enfant est d’utiliser la méthode décrite dans l’API de boîte de dialogue Office dans vos Office. `messageChild` [](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) Si votre module complémentaire est en cours d’exécution sur une plateforme ou un hôte qui ne prend pas en charge l’ensemble de conditions [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)vous pouvez transmettre des informations à la boîte de dialogue de deux autres façons.
 
 - ajouter des paramètres de requête à l’URL qui est transmise à `displayDialogAsync` ;
-- stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun (propriété [Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) mais si elles ont le même domaine *(y* compris le numéro de port, le cas Stockage [.](https://www.w3schools.com/html/html5_webstorage.asp)\*
+- stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun (propriété [Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) mais s’ils ont le même domaine *(y* compris le numéro de port, le cas Stockage [.](https://www.w3schools.com/html/html5_webstorage.asp)\*
 
 > [!NOTE]
 > \* Un bogue peut affecter votre stratégie de gestion des jetons. Si le complément s’exécute dans **Office sur le web** dans le navigateur Safari ou Edge, la boîte de dialogue et le volet des tâches Office ne partagent pas le même stockage local. Il ne peut donc pas être utilisé pour communiquer entre eux.

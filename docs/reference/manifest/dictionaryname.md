@@ -3,12 +3,12 @@ title: Élément DictionaryName dans le fichier manifest
 description: Spécifie le nom de ce dictionnaire.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 391ae71a86b8c4ea78cc13bef09c2f730459e65139c87303015c1b63df931135
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d591c405d016474d2b7ee1f883d38e2051bd6d5b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086020"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937112"
 ---
 # <a name="dictionaryname-element"></a>Élément DictionaryName
 

@@ -3,12 +3,12 @@ title: Utilisation des substitutions étendues du manifeste
 description: Découvrez comment configurer des fonctionnalités d’extensibilité avec des substitutions étendues du manifeste.
 ms.date: 02/23/2021
 localization_priority: Normal
-ms.openlocfilehash: 09ced571f4b7d72a3479984582a8f58a0cb440bb2a3e62afe3f90329f2cd1be3
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 4eb8936e8a01b81a3883f848446d20ebf4ecf863
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080669"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936661"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>Utilisation des substitutions étendues du manifeste
 

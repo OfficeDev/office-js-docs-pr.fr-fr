@@ -1,14 +1,14 @@
 ---
 title: Élément CustomTab dans le fichier manifest
 description: Sur le ruban, indiquez l’onglet et le groupe où placer leurs commandes de complément.
-ms.date: 08/13/2021
+ms.date: 09/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3656f68a722e5e0c224f18f80a0e0214fce47cfb
-ms.sourcegitcommit: bc6203dd8f21d1c375039c5ee8f1388ede9be93b
+ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2021
-ms.locfileid: "58382962"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938051"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -30,9 +30,8 @@ Sur les onglets personnalisés, le add-in peut avoir des groupes personnalisés 
 |  [Label](#label-tab)      | Oui |  Étiquette pour CustomTab ou Group.  |
 |  [InsertAfter](#insertafter)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. **Important**: disponible uniquement dans PowerPoint. |
 |  [InsertBefore](#insertbefore)      | Non |  Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. **Important**: disponible uniquement dans PowerPoint. |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si l’onglet personnalisé doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. **Important**: non disponible dans Outlook. |
 
-### <a name="group"></a>Group
+### <a name="group"></a>Groupe
 
 Facultatif, mais s’il n’est pas présent, il doit y avoir au moins **un élément OfficeGroup.** Voir [Élément group](group.md). L’ordre de **groupe** et **d’OfficeGroup** dans le manifeste doit être l’ordre dans le cas où vous souhaitez qu’ils apparaissent sous l’onglet personnalisé. Ils peuvent être entremêlés s’il existe plusieurs éléments, mais tous doivent se trouver au-dessus de **l’élément Label.**
 
@@ -49,36 +48,14 @@ Obligatoire. Étiquette de l’onglet personnalisé. **L’attribut resid** ne p
 
 ### <a name="insertafter"></a>InsertAfter
 
-Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
+Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas **avoir à la fois InsertAfter** et **InsertBefore**.
 
 > [!IMPORTANT]
 > `InsertAfter`L’élément est disponible uniquement dans PowerPoint.
 
 ### <a name="insertbefore"></a>InsertBefore
 
-Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
+Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas **avoir à la fois InsertAfter** et **InsertBefore**.
 
 > [!IMPORTANT]
 > `InsertBefore`L’élément est disponible uniquement dans PowerPoint.
-
-### <a name="overriddenbyribbonapi"></a>OverriddenByRibbonApi
-
-Facultatif (booléen). Spécifie si **CustomTab** sera masqué sur les combinaisons d’applications et de plateformes qui la prise en charge d’une API qui installe un onglet contextuel personnalisé sur le ruban lors de l’utilisation. La valeur par défaut, si elle n’est pas présente, est `false` . S’il **est utilisé, OverriddenByRibbonApi doit** être le *premier* enfant de **CustomTab**. Pour plus d’informations, [voir OverriddenByRibbonApi](overriddenbyribbonapi.md).
-
-> [!IMPORTANT]
-> `OverriddenByRibbonApi`L’élément n’est pas disponible dans Outlook.
-
-## <a name="customtab-example"></a>Exemple CustomTab
-
-```xml
-<ExtensionPoint xsi:type="PrimaryCommandSurface">
-  <CustomTab id="TabCustom1">
-    <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
-    <Group id="ContosoCustomTab.grp1">
-    </Group>
-    <OfficeGroup id="Paragraph" />
-    <Label resid="customTabLabel1"/>
-    <InsertAfter>TabReview</InsertAfter>
-  </CustomTab>
-</ExtensionPoint>
-```

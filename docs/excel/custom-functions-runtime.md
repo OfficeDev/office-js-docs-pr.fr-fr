@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: Comprendre Excel fonctions personnalisées qui n’utilisent pas de volet de tâches et leur runtime JavaScript spécifique.
 title: Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
 localization_priority: Normal
-ms.openlocfilehash: 973bbf8179c6536d5964453ff63b7a04d425dae3c1d17527bf0247ff03eef4a5
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57079458"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936936"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
 

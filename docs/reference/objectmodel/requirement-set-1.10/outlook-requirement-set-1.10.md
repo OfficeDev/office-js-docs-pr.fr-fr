@@ -3,12 +3,12 @@ title: Outlook conditions requises de l’API du add-in 1.10
 description: Ensemble de conditions requises 1.10 pour Outlook API de votre application.
 ms.date: 05/17/2021
 localization_priority: Normal
-ms.openlocfilehash: fe870792a730404c4e90bf3eb1c3377b0f40c6f4b01a26a86deca56049868f16
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9e3e30590279036a08a93d8643cd56c2c73be78c
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095522"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938029"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conditions requises de l’API du add-in 1.10
 
@@ -34,7 +34,7 @@ L’ensemble de conditions requises 1.10 inclut toutes les fonctionnalités de l
 - Ajout [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): ajoute une nouvelle enum disponible en mode Composition.
 - Ajout [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype): ajoute un nouveau type à `ItemNotificationMessageType` l’enum. Il représente un message de notification avec une action personnalisée.
 - Ajout [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction): ajoute un nouvel objet afin que vous pouvez définir une action personnalisée pour votre `InsightMessage` notification.
-- Ajout [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions): ajoute une nouvelle propriété qui vous permet d’ajouter une `InsightMessage` notification avec une action personnalisée.
+- Ajout de [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions): ajoute une nouvelle propriété qui vous permet d’ajouter une `InsightMessage` notification avec une action personnalisée.
 
 ## <a name="see-also"></a>Voir aussi
 

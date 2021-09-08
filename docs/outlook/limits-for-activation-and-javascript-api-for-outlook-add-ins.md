@@ -3,12 +3,12 @@ title: Limites pour l’activation et l’utilisation des API dans des compléme
 description: Tenez compte de certaines instructions relatives à l’activation et l’utilisation des API et implémentez vos compléments pour respecter ces limites.
 ms.date: 06/11/2021
 localization_priority: Normal
-ms.openlocfilehash: fcc28a5183195cade1314aaa6ed4d0890a892e8f8a3bf71935bdd8c01b968ab6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b1d948add382f19083f099ed7a01b4f954555b6f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097526"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58937506"
 ---
 # <a name="limits-for-activation-and-javascript-api-for-outlook-add-ins"></a>Limites pour l’activation et l’API JavaScript pour les compléments Outlook
 
@@ -62,7 +62,7 @@ Le tableau 3 répertorie les limites et décrit les différences entre les corre
 
 ||Client riche Outlook|Outlook sur le web ou sur appareils mobiles|
 |:-----|:-----|:-----|
-|**Ordre des correspondances renvoyées**|Supposons que les correspondances pour la même expression régulière appliquée au même élément sont différentes dans un client riche Outlook que dans les appareils Outlook sur le web `getRegExMatches` ou mobiles.|Supposons que les correspondances sont renvoient dans un ordre différent Outlook client riche que dans Outlook sur le web `getRegExMatches` ou appareils mobiles.|
+|**Ordre des correspondances renvoyées**|Supposons que les correspondances pour la même expression régulière appliquée au même élément sont différentes dans un client riche Outlook que dans les appareils Outlook sur le web ou `getRegExMatches` mobiles.|Supposons que les correspondances sont renvoient dans un ordre différent Outlook client riche que dans Outlook sur le web `getRegExMatches` ou appareils mobiles.|
 |**Corps d’élément en texte brut**|`getRegExMatches` renvoie toutes les correspondances d’un maximum de 1 536 caractères (1,5 Ko), pour un maximum de 50 correspondances.<br/><br/>**Remarque**: `getRegExMatches` ne retourne pas de correspondances dans un ordre spécifique dans le tableau renvoyé. En règle générale, supposons que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui des appareils mobiles et Outlook sur le web.|`getRegExMatches` renvoie toutes les correspondances d’un maximum de 3 072 caractères (3 Ko), pour un maximum de 50 correspondances.|
 |**Corps d’élément HTML**|`getRegExMatches` renvoie toutes les correspondances d’un maximum de 3 072 caractères (3 Ko), pour un maximum de 50 correspondances.<br/> <br/> **Remarque**: `getRegExMatches` ne retourne pas de correspondances dans un ordre spécifique dans le tableau renvoyé. En règle générale, supposons que l’ordre des correspondances dans un client riche Outlook pour la même expression régulière appliquée au même élément est différent de celui des appareils mobiles et Outlook sur le web.|`getRegExMatches` renvoie toutes les correspondances d’un maximum de 3 072 caractères (3 Ko), pour un maximum de 50 correspondances.|
 
