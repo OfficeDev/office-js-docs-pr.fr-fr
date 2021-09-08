@@ -3,12 +3,12 @@ title: Modèles de navigation pour les compléments Office
 description: Découvrez les meilleures pratiques d’utilisation des barres de commandes, des barres de tabulation et des boutons arrière pour concevoir la navigation d’un Office de commande.
 ms.date: 06/26/2018
 localization_priority: Normal
-ms.openlocfilehash: 42f217d240f1c66c69ad94d59f501a73e6d9a85d1dc24e94b5bb5307a808a6eb
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 3bb350ede78bef684899f26e4818eba440677541
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57081742"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938930"
 ---
 # <a name="navigation-patterns"></a>Modèles de navigation
 

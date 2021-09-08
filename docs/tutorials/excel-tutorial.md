@@ -4,12 +4,12 @@ description: Créez un complément Excel qui crée, remplit, filtre et trie un t
 ms.date: 07/08/2021
 ms.prod: excel
 localization_priority: Priority
-ms.openlocfilehash: 2fd962f3729805805601af4379e83086059314151e880143443d65fbd8e80416
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57085641"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938369"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -117,7 +117,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     }
     ```
 
-1. À l’intérieur de la fonction `createTable()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `createTable()`, remplacez `TODO1` par le code suivant. Remarque :
 
     - Le code crée un tableau à l’aide de la méthode `add` de collection de tableau d’une feuille de calcul, qui existe toujours même si elle est vide. Il s’agit de la méthode standard de création d’objets Excel.js. Il n’existe aucune API pour le constructeur de classe API. De plus, vous n’utilisez jamais d’opérateur `new` pour créer un objet Excel. Au lieu de cela, vous l’ajoutez à un objet de la collection parent.
 
@@ -131,7 +131,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     expensesTable.name = "ExpensesTable";
     ```
 
-1. À l’intérieur de la fonction `createTable()`, remplacez `TODO2` par le code suivant. Remarque :
+1. Dans la fonction `createTable()`, remplacez `TODO2` par le code suivant. Remarque :
 
     - Les valeurs de cellule d’une plage sont définies avec un tableau de tableaux.
 
@@ -152,7 +152,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     ]);
     ```
 
-1. À l’intérieur de la fonction `createTable()`, remplacez `TODO3` par le code suivant. Remarque :
+1. Dans la fonction`createTable()`, remplacez `TODO3` par le code suivant. Remarque :
 
     - Le code recherche une référence à la colonne **Amount** en transmettant son index de base zéro à la méthode `getItemAt` de collection de colonnes du tableau.
 
@@ -249,7 +249,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     }
     ```
 
-1. À l’intérieur de la fonction `filterTable()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `filterTable()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - Le code obtient tout d’abord une référence à la colonne à filtrer en transférant le nom de la colonne à la méthode `getItem`, au lieu de transmettre son index à la méthode `getItemAt` comme le fait la méthode `createTable`. Puisque les utilisateurs peuvent déplacer des colonnes de tableau, la colonne d’un index donné peut être modifiée après la création du tableau. Par conséquent, il est préférable d’utiliser le nom de la colonne pour obtenir une référence de la colonne. Dans le didacticiel précédent, nous avons utilisé la méthode `getItemAt` en toute sécurité, car nous l’avons utilisée dans la même méthode que celle qui crée le tableau, il n’y a donc aucune chance qu’un utilisateur ait déplacé la colonne.
 
@@ -299,7 +299,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
     }
     ```
 
-1. À l’intérieur de la fonction `sortTable()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `sortTable()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - Le code crée un tableau d’objets `SortField` qui ne comporte qu’un seul membre puisque le complément ne trie que la colonne Merchant.
 
@@ -399,7 +399,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-1. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
+1. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
 
    - Les paramètres de la méthode `setPosition` spécifient les cellules situées en haut à gauche et en bas à droite de la zone de feuille de calcul devant contenir le graphique. Excel peut ajuster des éléments, tels que la largeur de ligne pour que le graphique s’affiche correctement dans l’espace attribué.
 
@@ -470,7 +470,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
     }
     ```
 
-1. À l’intérieur de la fonction `freezeHeader()`, remplacez `TODO1` par le code suivant. Remarque :
+1. Dans la fonction `freezeHeader()`, remplacez `TODO1` par le code suivant. Remarque :
 
    - La collection `Worksheet.freezePanes` est un ensemble de volets de la feuille de calcul qui sont épinglés, c’est-à-dire figés, lorsque vous faites défiler la feuille de calcul.
 
@@ -656,7 +656,7 @@ Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à prése
 
 Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*read*) des informations provenant du document Office.
 
-1. À l’intérieur de la fonction `toggleProtection`, remplacez `TODO2` par le code suivant. Remarque :
+1. Dans la fonction `toggleProtection`, remplacez `TODO2` par le code suivant. remarque :
 
    - Chaque objet Excel possède une méthode `load`. Vous spécifiez les propriétés de l’objet que vous voulez lire dans le paramètre en tant que chaîne de noms séparés par des virgules. Dans ce cas, la propriété que vous devez lire est une sous-propriété de la propriété `protection`. Pour référence la sous-propriété, procédez presque exactement de la même façon que vous le feriez à n’importe quel autre emplacement de votre code, sauf que vous devez utiliser une barre oblique (« / ») au lieu d’un point « . ».
 

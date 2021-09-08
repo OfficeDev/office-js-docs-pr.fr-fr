@@ -3,12 +3,12 @@ title: Compléments Outlook pour Outlook Mobile
 description: Outlook pour appareils mobiles sont pris en charge sur tous les comptes d’entreprise Microsoft 365, les comptes Outlook.com et la prise en charge sera bientôt disponible pour les comptes Gmail.
 ms.date: 05/27/2020
 localization_priority: Normal
-ms.openlocfilehash: 3f77e4cefb801255b1d00c594be0846c7fa47010450fd66e7744b185e2f3c7c6
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e4f44d36f6dab5841d249e3754e78c5dd7a3813e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57090235"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938294"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
@@ -35,7 +35,7 @@ Outlook pour appareils mobiles sont pris en charge sur tous les comptes d’entr
   - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
   - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Pour plus [d’informations sur](online-meeting.md) ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface.](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) Pour plus [d’informations sur](online-meeting.md) ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
 
 - L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 

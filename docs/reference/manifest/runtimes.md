@@ -3,12 +3,12 @@ title: Runtimes dans le fichier manifeste
 description: L’élément Runtimes spécifie le runtime de votre add-in.
 ms.date: 05/14/2021
 localization_priority: Normal
-ms.openlocfilehash: e5ec70449d3984671d507131ac8d4fc0f7617cdcda1ad8f99b4f4bf52773aded
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 80336674c6d954bb9e0c6892feb41cb2f03c5859
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57091627"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938667"
 ---
 # <a name="runtimes-element"></a>Élément Runtimes
 

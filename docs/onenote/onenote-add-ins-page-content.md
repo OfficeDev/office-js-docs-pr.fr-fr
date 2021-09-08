@@ -3,12 +3,12 @@ title: Utiliser du contenu de page OneNote
 description: Découvrez comment utiliser le contenu OneNote page à l’aide de l’API JavaScript.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: 5f521c11c085f296c8eb0600a3249392224fcfa1ae3bca273a32cb5dda978dcf
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 01aa4a65f6f1d7ae8fccf490986c10035d30b0c3
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089953"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938583"
 ---
 # <a name="work-with-onenote-page-content"></a>Utiliser du contenu de page OneNote
 

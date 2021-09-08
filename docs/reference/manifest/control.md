@@ -3,12 +3,12 @@ title: Élément Control dans le fichier manifeste
 description: Définit une fonction JavaScript qui exécute une action ou lance un volet Office.
 ms.date: 01/29/2021
 localization_priority: Normal
-ms.openlocfilehash: 3ad26165e77305c69791aac9b128c5dfadf7f9beb97f85ae24a000876146c2cc
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 737902bef52edeb70e2c5760df5bb589b624271b
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095953"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938203"
 ---
 # <a name="control-element"></a>Élément Control
 
@@ -37,7 +37,7 @@ Un bouton effectue une action unique quand il est sélectionné. Il peut exécut
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  [Action](action.md)    | Oui |  Spécifie l’action à effectuer.  |
 |  [Enabled](enabled.md)    | Non |  Spécifie si le contrôle est activé au lancement du module.  |
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si le bouton doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. S’il est utilisé, il doit s’agit du *premier* élément enfant. |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si le bouton doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. S’il est utilisé, il doit s’agit du *premier élément* enfant. |
 
 ### <a name="executefunction-button-example"></a>Exemple du bouton ExecuteFunction
 
@@ -156,7 +156,7 @@ L’exemple suivant montre comment définir un élément de menu avec deux élé
 |  [Supertip](supertip.md)  | Oui |  Info-bulle pour ce bouton.    |
 |  [Icon](icon.md)      | Oui |  Image du bouton.         |
 |  **Éléments**     | Oui |  Collection de boutons à afficher dans le menu. Contient les éléments **Élément** pour chaque élément de sous-menu. Chaque **élément Item** contient les éléments enfants du contrôle [Bouton.](#button-control)|
-|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si le menu doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. S’il est utilisé, il doit s’agit du *premier* élément enfant. |
+|  [OverriddenByRibbonApi](overriddenbyribbonapi.md)      | Non |  Spécifie si le menu doit apparaître sur les combinaisons d’applications et de plateformes qui prendre en charge les onglets contextuels personnalisés. S’il est utilisé, il doit s’agit du *premier élément* enfant. |
 
 ### <a name="menu-control-examples"></a>Exemples de contrôle de menu
 

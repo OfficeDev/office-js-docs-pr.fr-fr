@@ -3,12 +3,12 @@ title: Élément OfficeMenu dans le fichier manifeste
 description: L’élément OfficeMenu définit une collection de contrôles à ajouter au menu context Office de l’élément OfficeMenu.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 741e5cabacbc28bf0ebcfdaab8068b280a356dd473d0a83a2378d253df977232
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d181e0c6f489997a149b9713bdc257f4a2baeb16
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094179"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939378"
 ---
 # <a name="officemenu-element"></a>Élément OfficeMenu
 

@@ -3,12 +3,12 @@ title: Élément GetStarted dans le fichier manifeste
 description: Fournit des informations utilisées par la callout qui s’affiche lorsque le add-in est installé dans Word, Excel, PowerPoint et OneNote.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 86a96ba0b448e518f48deefc7aceb5133904c9147ba39a28bf646d922c449af7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a637f3f9031d9f8e09d14f17f2095ca0647c4d50
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086662"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938668"
 ---
 # <a name="getstarted-element"></a>Élément GetStarted
 

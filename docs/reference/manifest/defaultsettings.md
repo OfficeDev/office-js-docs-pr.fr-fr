@@ -3,12 +3,12 @@ title: Élément defaultSettings dans le fichier manifeste
 description: Spécifie l’emplacement de la source par défaut et d’autres paramètres par défaut pour votre complément de contenu ou de volet des tâches.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: 11e398d86a702f4e45a5cea7b63e0380ce65d1749d0660789e96477744d73079
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: a9711fb44390bcbda8979b8018eed1318c5579bc
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095899"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938689"
 ---
 # <a name="defaultsettings-element"></a>Élément DefaultSettings
 
@@ -30,7 +30,7 @@ Spécifie l’emplacement de la source par défaut et d’autres paramètres par
 
 ## <a name="can-contain"></a>Peut contenir
 
-|Élément|Contenu|Courrier Outlook|TaskPane|
+|Élément|Contenu|Courrier|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[SourceLocation](sourcelocation.md)|x||x|
 |[RequestedWidth](requestedwidth.md)|x|||

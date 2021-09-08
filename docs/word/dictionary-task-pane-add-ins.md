@@ -3,12 +3,12 @@ title: Créer un complément dictionnaire du volet Office
 description: Découvrez comment créer un add-in de volet de tâches de dictionnaire
 ms.date: 09/26/2019
 localization_priority: Normal
-ms.openlocfilehash: 2473edc8e9de78ffdb03faf472c2c01eafbaa7425a62e505904f51f970893b56
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: e8667e77416caeb041af15141cd47b9cf35e2737
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57094119"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938452"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
@@ -28,7 +28,7 @@ La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux
 
 *Figure 2. Commande Définir dans le menu contextuel*
 
-![Définir le menu contexto.](../images/dictionary-agave-02.jpg)
+![Définissez le menu contexto.](../images/dictionary-agave-02.jpg)
 
 
 *Figure 3. Définitions dans les volets Orthographe et Grammaire*
@@ -533,7 +533,7 @@ Les principaux membres de l’API JavaScript Office (Office.js) qui sont appelé
     
 - Méthode [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) de l’objet, qui est appelée dans la fonction pour ajouter un handler d’événements pour l’événement SelectionChanged du document afin d’écouter les modifications de sélection de `Document` l’utilisateur. `initialize` [](/javascript/api/office/office.documentselectionchangedeventargs)
     
-- Méthode [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) de l’objet, qui est appelée dans la fonction lorsque le handler d’événements est élevé pour obtenir le mot ou l’expression que l’utilisateur a sélectionné, forcer en texte simple, puis exécuter la fonction de rappel `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` asynchrone.
+- Méthode [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) de l’objet, qui est appelée dans la fonction lorsque le handler d’événements est élevé pour obtenir le mot ou l’expression sélectionné par l’utilisateur, forcer en texte simple, puis exécuter la fonction de rappel `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` asynchrone.
     
 - Lorsque la fonction de rappel asynchrone transmise en tant qu’argument de rappel de la méthode s’exécute, elle obtient la valeur du texte sélectionné lors du retour du `selectTextCallback`  `getSelectedDataAsync` rappel. Elle obtient cette valeur à partir de l’argument _selectedText_ du rappel (de type [AsyncResult)](/javascript/api/office/office.asyncresult)à l’aide de la propriété [value](/javascript/api/office/office.asyncresult#status) de l’objet `AsyncResult` renvoyé.
     

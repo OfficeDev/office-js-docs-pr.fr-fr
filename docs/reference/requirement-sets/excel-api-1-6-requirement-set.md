@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.6.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 74fd184c4d65f30643266ba4799406cfe6f6e8e1e275af09eb6102e4bda986fa
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 9cc7155928fb3f98acf25a38ca5210ca6d57bb19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088980"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938538"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Nouveautés de l’API JavaScript 1.6 pour Excel
 
@@ -50,11 +50,11 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 |[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#color)|Représentation de code couleur HTML de la couleur d’échelle de couleur (par exemple, #FF0000 représente le rouge).|
 ||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#formula)|Un nombre, une formule ou `null` (si `type` c’est `lowestValue` le cas).|
 ||[type](/javascript/api/excel/excel.conditionalcolorscalecriterion#type)|Sur quoi la formule conditionnelle critère doit être basée.|
-|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#fillColor)|Code couleur HTML représentant la couleur de remplissage, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[matchPositiveBorderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#matchPositiveBorderColor)|Spécifie si la barre de données négative a la même couleur de bordure que la barre de données positive.|
 ||[matchPositiveFillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#matchPositiveFillColor)|Spécifie si la barre de données négative a la même couleur de remplissage que la barre de données positive.|
-|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#fillColor)|Code couleur HTML représentant la couleur de remplissage, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#gradientFill)|Spécifie si la barre de données a un dégradé.|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#formula)|Formule, si nécessaire, sur laquelle évaluer la règle de barre de données.|
@@ -90,7 +90,7 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 ||[items](/javascript/api/excel/excel.conditionalformatcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[ConditionalFormatRule](/javascript/api/excel/excel.conditionalformatrule)|[formula](/javascript/api/excel/excel.conditionalformatrule#formula)|Formule, si nécessaire, sur laquelle évaluer la règle de mise en forme conditionnelle.|
 ||[formulaLocal](/javascript/api/excel/excel.conditionalformatrule#formulaLocal)|Formule, si nécessaire, sur laquelle évaluer la règle de mise en forme conditionnelle dans la langue de l’utilisateur.|
-||[formulaR1C1](/javascript/api/excel/excel.conditionalformatrule#formulaR1C1)|Formule, si nécessaire, sur laquelle évaluer la règle de mise en forme conditionnelle dans la notation de style R1C1.|
+||[formulaR1C1](/javascript/api/excel/excel.conditionalformatrule#formulaR1C1)|Formule, si nécessaire, sur laquelle évaluer la règle de mise en forme conditionnelle en notation de style R1C1.|
 |[ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion)|[customIcon](/javascript/api/excel/excel.conditionaliconcriterion#customIcon)|L’icône personnalisée pour le critère actuel, si elle est différente du jeu d’icônes par défaut, `null` est renvoyée.|
 ||[formula](/javascript/api/excel/excel.conditionaliconcriterion#formula)|Un nombre ou une formule en fonction du type.|
 ||[opérateur](/javascript/api/excel/excel.conditionaliconcriterion#operator)|`greaterThan` ou `greaterThanOrEqual` pour chacun des types de règles pour la mise en forme conditionnelle d’icône.|
@@ -145,7 +145,7 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 ||[rule](/javascript/api/excel/excel.textconditionalformat#rule)|Règle de mise en forme conditionnelle.|
 |[TopBottomConditionalFormat](/javascript/api/excel/excel.topbottomconditionalformat)|[format](/javascript/api/excel/excel.topbottomconditionalformat#format)|Renvoie un objet format, qui encapsule la police, le remplissage, les bordures et d’autres propriétés de la mise en forme conditionnelle.|
 ||[rule](/javascript/api/excel/excel.topbottomconditionalformat#rule)|Critères de la mise en forme conditionnelle supérieure/inférieure.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[calculate(markAllDirty: boolean)](/javascript/api/excel/excel.worksheet#calculate_markAllDirty_)|Calcule toutes les cellules d’une feuille de calcul.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[calculate(markAllDirty: boolean)](/javascript/api/excel/excel.worksheet#calculate_markAllDirty_)|Calcule toutes les cellules d’une feuille de calcul.|
 
 ## <a name="see-also"></a>Voir aussi
 

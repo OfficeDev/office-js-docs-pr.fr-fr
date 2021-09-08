@@ -3,12 +3,12 @@ title: Élément Override dans le fichier manifest
 description: L’élément Override vous permet de spécifier la valeur d’un paramètre en fonction d’une condition spécifiée.
 ms.date: 05/19/2021
 localization_priority: Normal
-ms.openlocfilehash: d6f91d32a604a939118e42de882976239006c5235ea65a55d713712ebca4ee70
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093643"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938246"
 ---
 # <a name="override-element"></a>Élément Override
 
@@ -26,7 +26,7 @@ Chaque type est décrit dans des sections distinctes plus loin dans cet article.
 
 ## <a name="override-element-for-localetoken"></a>Élément Override pour `LocaleToken`
 
-Un `<Override>` élément exprime une conditionnel et peut être lu en tant que « If ... alors... . Si `<Override>` l’élément est de type **LocaleTokenOverride**, l’attribut est la `Locale` condition et `Value` l’attribut en est la conséquence. Par exemple, le texte suivant est lu « Si le paramètre Office paramètres régionaux est fr-fr, le nom complet est Lecteur vidéo ».
+Un `<Override>` élément exprime une conditionnel et peut être lu en tant que « If ... alors... . Si `<Override>` l’élément est de type **LocaleTokenOverride**, l’attribut est la condition et l’attribut `Locale` en est le `Value` résultat. Par exemple, le texte suivant est lu « Si le paramètre Office paramètres régionaux est fr-fr, le nom complet est Lecteur vidéo ».
 
 ```xml
 <DisplayName DefaultValue="Video player">
@@ -143,7 +143,7 @@ Un `<Override>` élément exprime une conditionnel et peut être lu en tant que 
 
 ### <a name="must-contain"></a>Doit contenir
 
-|Élément|Contenu|Courrier Outlook|TaskPane|
+|Élément|Contenu|Courrier|TaskPane|
 |:-----|:-----|:-----|:-----|
 |[Configuration requise](requirements.md)|||x|
 

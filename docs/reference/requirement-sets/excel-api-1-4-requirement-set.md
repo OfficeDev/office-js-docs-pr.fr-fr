@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.4.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: f1201b15c1f4e09e064afa7301d68d1f6ce54e05f2b202e3bec2dbb7179e2db1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: be71d1e0c063bd3902bf57ba8f2024ae5a78ff1d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088999"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938741"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Nouveautés de l’API JavaScript 1.4 pour Excel
 
@@ -21,7 +21,7 @@ Nouvelles propriétés :
 
 * `comment`
 * `scope` - Éléments d’étendue de feuille de calcul ou de feuille de calcul.
-* `worksheet` - Renvoie la feuille de calcul sur laquelle porte l’élément nommé.
+* `worksheet` - Renvoie la feuille de calcul dans laquelle l’élément nommé est étendue.
 
 Nouvelles méthodes :
 
@@ -40,7 +40,7 @@ Les API incluent l’accès à l’entrée de paramètre via la clé et l’ajou
 * Ajoutez une colonne de tableau à la fin du tableau.
 * Ajoutez plusieurs lignes à un tableau à la fois.
 * `range.getColumnsAfter(count: number)` et `range.getColumnsBefore(count: number)` pour obtenir un certain nombre de colonnes à droite/gauche de l’objet de plage actuel.
-* Méthodes [ \* et propriétés OrNullObject](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): cette fonctionnalité permet d’obtenir un objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet `isNullObject` renvoyé aura la valeur true. Cela permet aux développeurs de vérifier si un objet existe sans avoir à le gérer par le biais de la gestion des exceptions. Une `*OrNullObject` méthode est disponible sur la plupart des objets de collection.
+* Méthodes [ \* et propriétés OrNullObject](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties): cette fonctionnalité permet d’obtenir un objet à l’aide d’une clé. Si l’objet n’existe pas, la propriété de l’objet `isNullObject` renvoyé est true. Cela permet aux développeurs de vérifier si un objet existe sans avoir à le gérer par le biais de la gestion des exceptions. Une `*OrNullObject` méthode est disponible sur la plupart des objets de collection.
 
 ```js
 worksheet.getItemOrNullObject("itemName")
@@ -88,8 +88,8 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[TableColumnCollection](/javascript/api/excel/excel.tablecolumncollection)|[getCount()](/javascript/api/excel/excel.tablecolumncollection#getCount__)|Obtient le nombre de colonnes dans le tableau.|
 ||[getItemOrNullObject(key: number \| string)](/javascript/api/excel/excel.tablecolumncollection#getItemOrNullObject_key_)|Obtient un objet de colonne par son nom ou son ID.|
 |[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[getCount()](/javascript/api/excel/excel.tablerowcollection#getCount__)|Obtient le nombre de lignes dans le tableau.|
-|[Classeur](/javascript/api/excel/excel.workbook)|[paramètres](/javascript/api/excel/excel.workbook#settings)|Représente une collection de paramètres associés au workbook.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRangeOrNullObject_valuesOnly_)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[paramètres](/javascript/api/excel/excel.workbook#settings)|Représente une collection de paramètres associés au workbook.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getUsedRangeOrNullObject(valuesOnly?: boolean)](/javascript/api/excel/excel.worksheet#getUsedRangeOrNullObject_valuesOnly_)|La plage utilisée est la plus petite plage qui englobe toutes les cellules auxquelles une valeur ou un format est affecté.|
 ||[names](/javascript/api/excel/excel.worksheet#names)|Collection de noms inclus dans l’étendue de la feuille de calcul active.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[getCount(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheetcollection#getCount_visibleOnly_)|Obtient le nombre de feuilles de calcul dans la collection.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.worksheetcollection#getItemOrNullObject_key_)|Obtient un objet de feuille de calcul à l’aide de son nom ou de son ID.|

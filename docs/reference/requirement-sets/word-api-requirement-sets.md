@@ -4,12 +4,12 @@ description: Informations sur la configuration requise pour le complément Offic
 ms.date: 05/05/2021
 ms.prod: word
 localization_priority: Priority
-ms.openlocfilehash: 7edead1b1683eca1fd00e92c12043974933864c0ff0efda202c9fcb78f45f249
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 816bb49c165d41e5a29b71bb8df422c353087bab
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098675"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939121"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 

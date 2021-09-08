@@ -3,12 +3,12 @@ title: Chargement du DOM et de l’environnement d’exécution
 description: Chargez le DOM et Office’environnement d’runtime des add-ins.
 ms.date: 07/08/2021
 localization_priority: Normal
-ms.openlocfilehash: 5d04d4dcfefdc234543dafe646826756b7ef631103793613c6396ff8c40d61d2
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 26ff15eb009fbec2554fa74db3109c4fa4abd712
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080554"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938239"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -42,7 +42,7 @@ La figure suivante illustre le flux des événements impliqués au démarrage d�
 
 ![Flow d’événements au démarrage Outlook de votre module.](../images/outlook15-loading-dom-agave-runtime.png)
 
-Les événements suivants se produisent lorsqu’un Outlook démarre.
+Les événements suivants se produisent lorsqu’un Outlook de démarrage.
 
 1. Lorsqu’Outlook démarre, il lit les manifestes XML pour les compléments Outlook qui ont été installés pour le compte de messagerie de l’utilisateur.
 

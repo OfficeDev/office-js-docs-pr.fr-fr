@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1.3.
 ms.date: 03/09/2021
 ms.prod: word
 localization_priority: Normal
-ms.openlocfilehash: 4943eeb020e99f9a87d77996c59ea838e84ec6eecf705cb483930dc948d4e8c1
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b58bb99e664e982d1d9047f4348755d807ad216d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57092161"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938920"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
 
@@ -180,7 +180,7 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[getNextOrNullObject()](/javascript/api/word/word.section#getNextOrNullObject__)|Obtient la section suivante.|
 |[SectionCollection](/javascript/api/word/word.sectioncollection)|[getFirst()](/javascript/api/word/word.sectioncollection#getFirst__)|Obtient la première section de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.sectioncollection#getFirstOrNullObject__)|Obtient la première section de cette collection.|
-|[Tableau](/javascript/api/word/word.table)|[addColumns(insertLocation: Word.InsertLocation, columnCount: number, values?: string[][])](/javascript/api/word/word.table#addColumns_insertLocation__columnCount__values_)|Ajoute des colonnes au début ou à la fin du tableau, en utilisant la première ou la dernière colonne existante en tant que modèle.|
+|[Table](/javascript/api/word/word.table)|[addColumns(insertLocation: Word.InsertLocation, columnCount: number, values?: string[][])](/javascript/api/word/word.table#addColumns_insertLocation__columnCount__values_)|Ajoute des colonnes au début ou à la fin du tableau, en utilisant la première ou la dernière colonne existante en tant que modèle.|
 ||[addRows(insertLocation: Word.InsertLocation, rowCount: number, values?: string[][])](/javascript/api/word/word.table#addRows_insertLocation__rowCount__values_)|Ajoute des lignes au début ou à la fin du tableau, en utilisant la première ou la dernière ligne existante en tant que modèle.|
 ||[alignement](/javascript/api/word/word.table#alignment)|Obtient ou définit l’alignement du tableau par rapport à la colonne de page.|
 ||[autoFitWindow()](/javascript/api/word/word.table#autoFitWindow__)|Ajuste automatiquement les colonnes du tableau à la largeur de la fenêtre.|

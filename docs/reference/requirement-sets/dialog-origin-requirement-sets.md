@@ -4,18 +4,18 @@ description: En savoir plus sur les ensembles de conditions requises d’origine
 ms.date: 07/22/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 20cd797cfcc0c8b673f8531fbe71769196d0d274ea58a9b76171c1427c125aba
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 24513823eb60435359d5d7307a11a192fece2015
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57086626"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938901"
 ---
 # <a name="dialog-origin-requirement-sets"></a>Ensembles de conditions requises d’origine de boîte de dialogue
 
-Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises d’origine de la boîte de dialogue, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
+Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises d’origine de la boîte de dialogue, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l Office’application.
 
 |  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 ou une Windows<br>(achat définitif) | Office pour Windows<br>(abonnement) |  Office sur iPad<br>(abonnement)  |  Office sur Mac<br>(abonnement)  | Office sur le web  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|

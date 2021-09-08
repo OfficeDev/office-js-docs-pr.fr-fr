@@ -5,11 +5,11 @@ ms.date: 08/04/2021
 ms.prod: outlook
 localization_priority: Priority
 ms.openlocfilehash: f72e84a71fd853f8a8f0c00d1b226b3b08548e1c
-ms.sourcegitcommit: 758450a621f45ff615ab2f70c13c75a79bd8b756
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "58232350"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938695"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 

@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApiOnline.
 ms.date: 07/23/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 26d735903bf3981cdb65719a44ed0b37ac9c70f185f8fe99df1e5c3669e19d80
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57093235"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938752"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 
@@ -46,7 +46,7 @@ Une fois que l’API se trouve dans un ensemble de conditions requises sur plusi
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+Le tableau suivant répertorie Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -63,7 +63,7 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement incluses da
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|Obtient une vue de feuille à l’aide de son nom.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|Obtient une vue de feuille par son index dans la collection.|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|Renvoie une collection d’affichages de feuille présents dans la feuille de calcul.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|Renvoie une collection d’affichages de feuille présents dans la feuille de calcul.|
 
 ## <a name="see-also"></a>Voir aussi
 

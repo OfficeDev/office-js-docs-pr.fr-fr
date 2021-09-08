@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.3.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: d237455baa73aef8e70a6e4901cba6ee8b2b8f3475f6e915b93c437747478408
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: d3606b74e8a1099cd58631cc047a783f27a09a19
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57095369"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938328"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Excel
 
@@ -47,13 +47,13 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[values](/javascript/api/excel/excel.rangeview#values)|Représente les valeurs brutes de l’affichage de plage spécifié.|
 |[RangeViewCollection](/javascript/api/excel/excel.rangeviewcollection)|[getItemAt(index: number)](/javascript/api/excel/excel.rangeviewcollection#getItemAt_index_)|Obtient une `RangeView` ligne via son index.|
 ||[items](/javascript/api/excel/excel.rangeviewcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Tableau](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightFirstColumn)|Spécifie si la première colonne contient une mise en forme spéciale.|
+|[Table](/javascript/api/excel/excel.table)|[highlightFirstColumn](/javascript/api/excel/excel.table#highlightFirstColumn)|Spécifie si la première colonne contient une mise en forme spéciale.|
 ||[highlightLastColumn](/javascript/api/excel/excel.table#highlightLastColumn)|Spécifie si la dernière colonne contient une mise en forme spéciale.|
 ||[showBandedColumns](/javascript/api/excel/excel.table#showBandedColumns)|Spécifie si les colonnes indiquent une mise en forme à bandes dans laquelle les colonnes impaires sont mises en surbrillante différemment des colonnes impaires, pour faciliter la lecture du tableau.|
 ||[showBandedRows](/javascript/api/excel/excel.table#showBandedRows)|Spécifie si les lignes indiquent une mise en forme à bandes dans laquelle les lignes impaires sont mises en surbrillante différemment des lignes impaires, pour faciliter la lecture du tableau.|
 ||[showFilterButton](/javascript/api/excel/excel.table#showFilterButton)|Spécifie si les boutons de filtre sont visibles en haut de chaque en-tête de colonne.|
-|[Classeur](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivotTables)|Représente une collection de tableaux croisés dynamiques associés au classeur.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivotTables)|Collection de tableaux croisés dynamiques qui font partie de la feuille de calcul.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[pivotTables](/javascript/api/excel/excel.workbook#pivotTables)|Représente une collection de tableaux croisés dynamiques associés au classeur.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[pivotTables](/javascript/api/excel/excel.worksheet#pivotTables)|Collection de tableaux croisés dynamiques qui font partie de la feuille de calcul.|
 
 ## <a name="see-also"></a>Voir aussi
 

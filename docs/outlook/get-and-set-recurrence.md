@@ -3,12 +3,12 @@ title: Obtenir et définir la récurrence dans un complément Outlook
 description: Cette rubrique vous explique comment utiliser l’API JavaScript Office pour obtenir et définir différentes propriétés de récurrence d’un élément dans un complément Outlook.
 ms.date: 08/18/2020
 localization_priority: Normal
-ms.openlocfilehash: 288baeefb92376e167b669a6ce01549a4e2824930e1fecb1594c1473553f1a8d
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 47f805dff855cec4e6a6cfd2792a86179fac48f9
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089526"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939365"
 ---
 # <a name="get-and-set-recurrence"></a>Obtenir et définir la récurrence
 

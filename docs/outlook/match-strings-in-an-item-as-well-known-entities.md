@@ -3,12 +3,12 @@ title: Faire correspondre les chaînes en tant qu’entités connues dans un com
 description: À l’Office’API JavaScript, vous pouvez obtenir des chaînes qui correspondent à des entités connues spécifiques pour un traitement ultérieur.
 ms.date: 04/15/2019
 localization_priority: Normal
-ms.openlocfilehash: bc95b53b0b94574f2db3543d9c8b1b3f6eecae0b87f82922a4ad245b8ad84575
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57097906"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939261"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues
 
@@ -149,11 +149,11 @@ Si vous utilisez des entités connues dans votre complément, vous devez connaî
     
 En outre, les éléments suivants s’appliquent si vous utilisez une règle [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) et peuvent affecter les scénarios dans lequel vous vous attendriez à ce que votre complément soit activé autrement.
 
-- Lorsque vous utilisez la règle, attendez Outlook des chaînes d’entité en anglais uniquement, quels que soient les paramètres régionaux par défaut `ItemHasKnownEntity` spécifiés dans le manifeste.
+- Lors de l’utilisation de la règle, Outlook des chaînes d’entité en anglais uniquement, quels que soient les paramètres régionaux par défaut spécifiés `ItemHasKnownEntity` dans le manifeste.
     
 - Lorsque votre application est en cours d’exécution sur un client riche Outlook, attendez-vous à ce que Outlook applique la règle au premier mégaoctet du corps de l’élément et non au reste du corps au-dessus de cette `ItemHasKnownEntity` limite.
     
-- Vous ne pouvez pas utiliser une règle pour activer un `ItemHasKnownEntity` add-in pour les éléments du dossier Éléments envoyés.
+- Vous ne pouvez pas utiliser une règle pour activer un add-in pour les éléments du `ItemHasKnownEntity` dossier Éléments envoyés.
     
 
 ## <a name="see-also"></a>Voir aussi

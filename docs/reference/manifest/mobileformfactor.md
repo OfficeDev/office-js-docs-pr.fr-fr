@@ -3,12 +3,12 @@ title: Élément MobileFormFactor dans le fichier manifest
 description: L’élément MobileFormFactor spécifie les paramètres de facteur de forme mobile d’un module de recherche.
 ms.date: 10/09/2018
 localization_priority: Normal
-ms.openlocfilehash: f8854b2e6db6d19b1ba07276047b930436d1c9f91cb1b10345e1e332444ac897
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 5e52e66a2b97a32a19d42a4938dbeaed8f367478
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089703"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938458"
 ---
 # <a name="mobileformfactor-element"></a>Élément MobileFormFactor
 

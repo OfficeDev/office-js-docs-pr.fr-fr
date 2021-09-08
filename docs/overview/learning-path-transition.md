@@ -4,12 +4,12 @@ description: Chemin d’accès recommandé pour les développeurs de complément
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 localization_priority: Priority
-ms.openlocfilehash: 653f90d610dbad7d1b00df777109d3d02bffc0598454c38b5945fa56542beb61
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089391"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938806"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guide du développeur de compléments VSTO
 

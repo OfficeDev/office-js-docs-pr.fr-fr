@@ -3,12 +3,12 @@ title: Chargement de version test des compléments Office dans Office sur le we
 description: Testez votre Office dans votre Office sur le Web par chargement de version test.
 ms.date: 08/02/2021
 localization_priority: Normal
-ms.openlocfilehash: 3dbb6ade3089fa20dc7f5a13a5a87654cda8cafa4c4391386513b33169aa8a15
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098255"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938420"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -27,7 +27,7 @@ Ce processus est pris en charge **pour Excel,** **OneNote,** **PowerPoint** et *
 
 1. Ouvrez [Office sur le Web](https://office.live.com/). À **l’aide de l’option** Créer, créez un document **dans Excel,** **OneNote,** **PowerPoint** ou **Word.** Dans ce nouveau document, **sélectionnez Partager** dans le ruban, **sélectionnez Copier** le lien et copiez l’URL.
 
-1. Dans le répertoire racine de vos fichiers de projet Yo Office, ouvrezpackage.js **fichier on.** Dans la section **de config** de ce fichier, créez une `"document"` propriété. Collez l’URL que vous avez copiée comme valeur pour la `"document"` propriété. Par exemple, le vôtre ressemblera à ceci :
+1. Dans le répertoire racine de vos fichiers de projet Yo Office, ouvrez **package.jsfichier on.** Dans la section **de config** de ce fichier, créez une `"document"` propriété. Collez l’URL que vous avez copiée comme valeur pour la `"document"` propriété. Par exemple, le vôtre ressemblera à ceci :
 
     ```json
       "config": {
@@ -46,11 +46,11 @@ Ce processus est pris en charge **pour Excel,** **OneNote,** **PowerPoint** et *
     > Si vous utilisez le générateur Yeoman, l’ajout de ces informations n’est pas nécessaire, car les outils Yeoman ajoutent ces informations automatiquement.
     > Notez que dans les deux cas, toutefois, vous ne pouvez charger les manifestes qu’à partir de l’host local.
 
-1. Dans la ligne de commande commençant au répertoire racine de votre projet, exécutez la commande suivante `npm run start:web` :
+1. Dans la ligne de commande commençant dans le répertoire racine de votre projet, exécutez la commande suivante `npm run start:web` :
 
 1. La première fois que vous utilisez cette méthode pour le chargement indépendant d’un application sur le web, une boîte de dialogue vous demande d’activer le mode développeur. Activez la case à cocher **activer le mode développeur maintenant** et sélectionnez **OK.**
 
-1. Vous verrez une deuxième boîte de dialogue vous demandant si vous souhaitez inscrire un manifeste de Office à partir de votre ordinateur. Vous devez sélectionner **Oui**.
+1. Vous verrez une deuxième boîte de dialogue vous demandant si vous souhaitez inscrire un manifeste de Office à partir de votre ordinateur. Vous devez sélectionner **Oui.**
 
 1. Votre add-in est installé. S’il s’agit d’une commande de add-in, elle doit apparaître dans le ruban ou le menu contexté. S’il s’agit d’un add-in du volet Des tâches, celui-ci doit apparaître.
 
@@ -71,7 +71,7 @@ Cette méthode n’utilise pas la ligne de commande et peut être accomplie à l
 1. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
 
 > [!NOTE]
-> Pour tester votre complément Office avec Microsoft Edge webview d’origine (EdgeHTML), une étape de configuration supplémentaire est requise. Dans une invite Windows commande, exécutez la ligne suivante `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` : Cela n’est pas nécessaire lorsque Office utilise Chromium WebView2 Edge basé sur Chromium web. Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+> Pour tester votre complément Office avec Microsoft Edge webview d’origine (EdgeHTML), une étape de configuration supplémentaire est requise. Dans une invite Windows commande, exécutez la ligne suivante `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` : Cela n’est pas nécessaire lorsque Office utilise Chromium WebView2 Edge basé sur Chromium web. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="sideload-an-office-add-in"></a>Chargement d’une version Office de module
 
@@ -99,7 +99,7 @@ Si vous utilisez Visual Studio pour développer votre add-in, le processus de ch
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache de votre navigateur. Si vous a apporté des modifications au manifeste de votre add-in (par exemple, mettre à jour les noms de fichiers des icônes ou le texte des commandes de l’extension), vous devrez peut-être effacer le cache de votre navigateur, puis recharger le module à l’aide du manifeste mis à jour. Cela permettra aux Office sur le Web de restituer le module tel qu’il est décrit par le manifeste mis à jour.
+Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache de votre navigateur. Si vous modifiez le manifeste de votre add-in (par exemple, mettez à jour les noms de fichiers des icônes ou le texte des commandes de votre module), vous devrez peut-être effacer le cache de votre navigateur, puis recharger le module à l’aide du manifeste mis à jour. Cela permettra aux Office sur le Web de restituer le module tel qu’il est décrit par le manifeste mis à jour.
 
 ## <a name="see-also"></a>Voir aussi
 

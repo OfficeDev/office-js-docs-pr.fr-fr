@@ -3,12 +3,12 @@ title: Conditions particulières pour les compléments sur iPad
 description: Découvrez quelques conditions requises pour créer un Office qui s’exécute sur une iPad.
 ms.date: 09/03/2020
 localization_priority: Normal
-ms.openlocfilehash: f494cfbb85b6e59b9f26a2b00917e07f44623f1d094656ca104fb85d0faeb2af
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 04ee1a4bea8b9f27189bf67368f883cd3b91ab3e
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57080960"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938964"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>Conditions particulières pour les compléments sur iPad
 

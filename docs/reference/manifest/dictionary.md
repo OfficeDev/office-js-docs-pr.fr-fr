@@ -3,12 +3,12 @@ title: Élément Dictionary dans le fichier manifeste
 description: Définit les paramètres pour un complément de volet Office qui implémente la prise en charge d’un dictionnaire supplémentaire.
 ms.date: 03/19/2019
 localization_priority: Normal
-ms.openlocfilehash: f22c30d7a04e9e51e99d86932b783ad0228ac19ab6bc5d09a0043a5f1046131e
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 89f9327fa640c4248e733a602c44be76d87bd841
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57089336"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938242"
 ---
 # <a name="dictionary-element"></a>Élément Dictionary
 

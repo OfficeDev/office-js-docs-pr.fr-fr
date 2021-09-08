@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.5.
 ms.date: 03/19/2021
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1ce97ae8acbcd943027ea799e0c8183790ce3c733c73cc8ed0f39303957e5093
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 01a13a0f531eae9eea2c213ba0da764fbe51ee15
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084910"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938537"
 ---
 # <a name="whats-new-in-excel-javascript-api-15"></a>Nouveautés de l’API JavaScript 1.5 pour Excel
 
@@ -54,8 +54,8 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[id](/javascript/api/excel/excel.pivottable#id)|ID du tableau croisé dynamique.|
 |[RequestContext](/javascript/api/excel/excel.requestcontext)|[runtime](/javascript/api/excel/excel.requestcontext#runtime)||
 |[Runtime](/javascript/api/excel/excel.runtime)|||
-|[Classeur](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customXmlParts)|Représente la collection de parties XML personnalisées contenues dans ce manuel.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: booléen)](/javascript/api/excel/excel.worksheet#getNext_visibleOnly_)|Obtient la feuille de calcul qui suit celle-ci.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[customXmlParts](/javascript/api/excel/excel.workbook#customXmlParts)|Représente la collection de parties XML personnalisées contenues dans ce manuel.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[getNext(visibleOnly?: booléen)](/javascript/api/excel/excel.worksheet#getNext_visibleOnly_)|Obtient la feuille de calcul qui suit celle-ci.|
 ||[getNextOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getNextOrNullObject_visibleOnly_)|Obtient la feuille de calcul qui suit celle-ci.|
 ||[getPrevious(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getPrevious_visibleOnly_)|Obtient la feuille de calcul qui précède celle-ci.|
 ||[getPreviousOrNullObject(visibleOnly?: boolean)](/javascript/api/excel/excel.worksheet#getPreviousOrNullObject_visibleOnly_)|Obtient la feuille de calcul qui précède celle-ci.|

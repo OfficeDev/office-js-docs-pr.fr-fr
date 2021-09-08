@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.7.
 ms.date: 11/09/2020
 ms.prod: excel
 localization_priority: Normal
-ms.openlocfilehash: 1012efa0143710a6646c5288ef8c4adfd49a6006e62eb850f25d6d12e9028c51
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: ed18997224f052c2e36943fcdbb93865ec8ac73d
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57088961"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938745"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Nouveautés de l’API JavaScript 1.7 pour Excel
 
@@ -69,7 +69,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 
 | Classe | Champs | Description |
 |:---|:---|:---|
-|[Graphique](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|Spécifie le type du graphique.|
+|[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|Spécifie le type du graphique.|
 ||[id](/javascript/api/excel/excel.chart#id)|L’ID unique du graphique.|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showAllFieldButtons)|Spécifie s’il faut afficher tous les boutons de champ sur une PivotChart.|
 |[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[border](/javascript/api/excel/excel.chartareaformat#border)|Représente le format de bordure de la zone de graphique, qui inclut la couleur, le style de trait et l’pondération.|
@@ -239,7 +239,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[StyleCollection](/javascript/api/excel/excel.stylecollection)|[add(name: string)](/javascript/api/excel/excel.stylecollection#add_name_)|Ajoute un nouveau style à la collection.|
 ||[getItem(name: string)](/javascript/api/excel/excel.stylecollection#getItem_name_)|Obtient `Style` une par nom.|
 ||[items](/javascript/api/excel/excel.stylecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Tableau](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onChanged)|Se produit lorsque les données des cellules changent dans un tableau spécifique.|
+|[Table](/javascript/api/excel/excel.table)|[onChanged](/javascript/api/excel/excel.table#onChanged)|Se produit lorsque les données des cellules changent dans un tableau spécifique.|
 ||[onSelectionChanged](/javascript/api/excel/excel.table#onSelectionChanged)|Se produit lorsque la sélection change dans un tableau spécifique.|
 |[TableChangedEventArgs](/javascript/api/excel/excel.tablechangedeventargs)|[adresse](/javascript/api/excel/excel.tablechangedeventargs#address)|Obtient l’adresse qui représente la zone modifiée d’un tableau figurant dans une feuille de calcul spécifique.|
 ||[changeType](/javascript/api/excel/excel.tablechangedeventargs#changeType)|Obtient le type de modification qui représente la façon dont l’événement modifié est déclenché.|
@@ -253,7 +253,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[tableId](/javascript/api/excel/excel.tableselectionchangedeventargs#tableId)|Obtient l’ID du tableau dans lequel la sélection a été modifiée.|
 ||[type](/javascript/api/excel/excel.tableselectionchangedeventargs#type)|Obtient le type de l’événement.|
 ||[worksheetId](/javascript/api/excel/excel.tableselectionchangedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul dans laquelle la sélection a été modifiée.|
-|[Classeur](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|Obtient la cellule active du classeur.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[getActiveCell()](/javascript/api/excel/excel.workbook#getActiveCell__)|Obtient la cellule active du classeur.|
 ||[dataConnections](/javascript/api/excel/excel.workbook#dataConnections)|Représente toutes les connexions de données dans le workbook.|
 ||[name](/javascript/api/excel/excel.workbook#name)|Obtient le nom du classeur.|
 ||[properties](/javascript/api/excel/excel.workbook#properties)|Obtient les propriétés du classeur.|
@@ -262,7 +262,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect(password?: string)](/javascript/api/excel/excel.workbookprotection#protect_password_)|Protège un classeur.|
 ||[protected](/javascript/api/excel/excel.workbookprotection#protected)|Spécifie si le workbook est protégé.|
 ||[unprotect(password?: string)](/javascript/api/excel/excel.workbookprotection#unprotect_password_)|Annule la protection un classeur.|
-|[Feuille de calcul](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Feuille de calcul)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|Copie une feuille de calcul et la place à la position spécifiée.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Feuille de calcul)](/javascript/api/excel/excel.worksheet#copy_positionType__relativeTo_)|Copie une feuille de calcul et la place à la position spécifiée.|
 ||[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#getRangeByIndexes_startRow__startColumn__rowCount__columnCount_)|Obtient l’objet qui commence à un index de ligne et un index de colonne particuliers et s’étend sur un certain nombre de lignes `Range` et de colonnes.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#freezePanes)|Obtient un objet qui peut être utilisé pour manipuler des volets figés sur la feuille de calcul.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#onActivated)|Se produit lorsque la feuille de calcul est activée.|

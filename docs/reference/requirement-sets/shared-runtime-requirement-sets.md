@@ -4,16 +4,16 @@ description: Spécifie les plateformes et les applications Office qui la prise e
 ms.date: 04/08/2021
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: d5b931c5bda65f5907684c2f957e15c6fdacd1668d410dc3db96ca614f426892
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 8d0db6e129aaf7a4aa2967e7a1341d6db1188359
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57084898"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939069"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’runtime partagé
 
-Les ensembles de conditions requises sont des groupes nommés de membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’un complément nécessite. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 Les parties d’un Office qui exécutent du code JavaScript, telles que les volets des tâches, les fichiers de fonctions lancés à partir de commandes de Excel et les fonctions personnalisées de Excel, peuvent partager un runtime JavaScript unique. Cela permet à tous les composants de partager un ensemble de variables globales, de partager un ensemble de bibliothèques chargées et de communiquer entre eux sans avoir à passer de messages via un stockage persistant. Pour plus d’informations, voir Configurer votre Office pour utiliser un [runtime JavaScript partagé.](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
 

@@ -3,12 +3,12 @@ title: Vue d’ensemble des modèles et pratiques (PnP) pour les compléments Of
 description: Vue d’ensemble des modèles et pratiques (PnP) pour les développeurs de compléments Office.
 ms.date: 01/22/2021
 localization_priority: Priority
-ms.openlocfilehash: 5dd2d8b60b9a41b29800c7b77f1cb79f3949e6d6763f63079cf94a2ab60849f7
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 92539c917926658378bdfc074eeaa5bbc3f49213
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57098735"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58938606"
 ---
 # <a name="overview-of-patterns-and-practices-pnp-for-office-add-ins"></a>Vue d’ensemble des modèles et pratiques (PnP) pour les compléments Office
 

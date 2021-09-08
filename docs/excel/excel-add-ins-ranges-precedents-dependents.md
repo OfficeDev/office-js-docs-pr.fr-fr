@@ -1,15 +1,15 @@
 ---
-title: Utiliser des antécédents et des dépendances de formule à l’aide Excel API JavaScript
+title: Utiliser les antécédents et les dépendances de formule à l’aide Excel API JavaScript
 description: Découvrez comment utiliser l’API JavaScript Excel pour récupérer les antécédents et les dépendances de formule.
 ms.date: 07/02/2021
 ms.prod: excel
 localization_priority: Normal
 ms.openlocfilehash: defab38c2096fa00051d5246d734e0bae592f46b
-ms.sourcegitcommit: 69f6492de8a4c91e734250c76681c44b3f349440
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/03/2021
-ms.locfileid: "58868707"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58939329"
 ---
 # <a name="get-formula-precedents-and-dependents-using-the-excel-javascript-api"></a>Obtenir des antécédents et des dépendances de formule à l’aide Excel API JavaScript
 
@@ -17,7 +17,7 @@ Excel formules font souvent référence à d’autres cellules. Ces références
 
 Une cellule peut avoir une cellule précédente et cette cellule peut avoir ses propres cellules précédentes. Un « précédent direct » est le premier groupe de cellules précédent dans cette séquence, similaire au concept de parents dans une relation parent-enfant. Un « dépendant direct » est le premier groupe dépendant de cellules dans une séquence, semblable aux enfants d’une relation parent-enfant. Les cellules qui font référence à d’autres cellules d’un workbook, mais dont la relation n’est pas une relation parent-enfant, ne sont pas des dépendants directs ou des antécédents directs.
 
-Cet article fournit des exemples de code qui récupèrent des antécédents directs et des dépendances directes des formules à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et des méthodes que l’objet prend en charge, voir `Range` [Range Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.range)
+Cet article fournit des exemples de code qui récupèrent des antécédents directs et des dépendances directes des formules à l’aide de l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en charge, voir `Range` [Range Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.range)
 
 ## <a name="get-the-direct-precedents-of-a-formula"></a>Obtenir les antécédents directs d’une formule
 
