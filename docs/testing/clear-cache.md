@@ -3,16 +3,16 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 08/02/2021
 localization_priority: Priority
-ms.openlocfilehash: 93f6a851ffc0813cc3a6bc6acedddfb000accc36fc50c9cc11fba37faacc0e58
-ms.sourcegitcommit: 4f2c76b48d15e7d03c5c5f1f809493758fcd88ec
+ms.openlocfilehash: 2c08cb1c83657c685b069dc13b3bf1a7e6b7de09
+ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2021
-ms.locfileid: "57083631"
+ms.lasthandoff: 09/08/2021
+ms.locfileid: "58936248"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
-Vous pouvez supprimer un complément que vous avez précédemment chargé sur Windows, Mac ou iOS en vidant le cache Office sur votre ordinateur.
+Pour supprimer un complément que vous avez précédemment chargé sur Windows, Mac ou iOS, vous devez effacer le cache Office sur votre ordinateur.
 
 En outre, si vous apportez des modifications au manifeste de votre complément (par exemple, vous mettez à jour le nom des fichiers d’icônes ou de texte de commandes du complément), videz le cache Office, puis rechargez le complément à l’aide d’un manifeste mis à jour. Cette action permettra à Office d’afficher le complément tel que décrit par le manifeste mis à jour.
 
@@ -21,7 +21,7 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 
-Pour éliminer tous les compléments chargés indépendamment dans Excel, Word et PowerPoint supprimez les contenus du dossier :
+Pour éliminer tous les compléments chargés indépendamment dans Excel, Word et PowerPoint supprimez les contenus du dossier.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -71,6 +71,7 @@ Pour vider le cache Office sur iOS, appelez `window.location.reload(true)` à pa
 
 ## <a name="see-also"></a>Voir aussi
 
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](troubleshoot-development-errors.md)
 - [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
