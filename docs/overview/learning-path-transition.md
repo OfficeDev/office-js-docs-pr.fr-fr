@@ -3,13 +3,13 @@ title: Guide du développeur de compléments VSTO
 description: Chemin d’accès recommandé pour les développeurs de compléments VSTO expérimentés pour la formation de ressources pour les compléments web Office.
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 6da72dbdc5dc25d222cc7c2a269d905d9271ce15
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 4cafa1221a24c7537d84fb662761e7ec66a0125d
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938806"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152910"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guide du développeur de compléments VSTO
 

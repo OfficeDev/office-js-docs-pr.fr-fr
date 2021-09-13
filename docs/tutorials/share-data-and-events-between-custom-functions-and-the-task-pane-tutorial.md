@@ -3,13 +3,13 @@ title: 'Tutoriel : Partager des données et des événements entre des fonctions
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: fe304ff0eef4b707cb0b90a2c38c60aff921279d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 0d42329d08de9db35d15d122321d771f6017b937
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938907"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153399"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 

@@ -2,13 +2,13 @@
 title: Élément CustomTab dans le fichier manifest
 description: Sur le ruban, indiquez l’onglet et le groupe où placer leurs commandes de complément.
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 642b6eabaa9885041dd122b179ee2baa3e772977
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f8cdcd2c1a1e567f36d9d146ed4806b13d400dfe
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938051"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150600"
 ---
 # <a name="customtab-element"></a>Élément CustomTab
 
@@ -48,14 +48,14 @@ Obligatoire. Étiquette de l’onglet personnalisé. **L’attribut resid** ne p
 
 ### <a name="insertafter"></a>InsertAfter
 
-Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas **avoir à la fois InsertAfter** et **InsertBefore**.
+Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement après un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups) S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
 
 > [!IMPORTANT]
 > `InsertAfter`L’élément est disponible uniquement dans PowerPoint.
 
 ### <a name="insertbefore"></a>InsertBefore
 
-Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas **avoir à la fois InsertAfter** et **InsertBefore**.
+Facultatif. Spécifie que l’onglet personnalisé doit être immédiatement avant un onglet Office spécifié. La valeur de l’élément est l’ID de l’onglet intégré, tel que « TabHome » ou « TabReview ». (Voir [Rechercher les ID des contrôles et des groupes de contrôles.)](../../design/built-in-button-integration.md#find-the-ids-of-controls-and-control-groups)  S’il est présent, il doit se trouver après **l’élément Label.** Vous ne pouvez pas avoir **à la fois InsertAfter** **et InsertBefore**.
 
 > [!IMPORTANT]
 > `InsertBefore`L’élément est disponible uniquement dans PowerPoint.

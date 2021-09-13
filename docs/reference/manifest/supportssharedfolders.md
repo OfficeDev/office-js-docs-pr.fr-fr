@@ -2,13 +2,13 @@
 title: Élément SupportsSharedFolders dans le fichier manifest
 description: L’élément SupportsSharedFolders définit si le Outlook est disponible dans les dossiers partagés et les scénarios de boîtes aux lettres partagées.
 ms.date: 06/15/2021
-localization_priority: Normal
-ms.openlocfilehash: 43f2c60664a6822b714023246cfa044e179e9a55
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f6a7cbe1c6549c8a93a6ecceab9e4bdaba07001f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938264"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153340"
 ---
 # <a name="supportssharedfolders-element"></a>Élément SupportsSharedFolders
 

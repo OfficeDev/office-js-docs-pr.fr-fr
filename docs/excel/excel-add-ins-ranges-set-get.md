@@ -3,13 +3,13 @@ title: Définir et obtenir la plage sélectionnée à l’aide de l Excel API Ja
 description: Découvrez comment utiliser l’API JavaScript Excel pour définir et obtenir la plage sélectionnée à l’aide de Excel API JavaScript.
 ms.date: 07/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 623ba5c1b9e76151d4a2c4b169e655236b37e8c8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e6a61e200482d48691c38845598987a1719b457f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937294"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152280"
 ---
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
 

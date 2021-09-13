@@ -3,13 +3,13 @@ title: Guide du débutant pour les compléments Office
 description: Un parcours recommandé pour les débutants à travers les ressources d’apprentissage pour les compléments Office.
 ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: b71e4dfaf6f80431e114c6a9bd83d47bc06c3128
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: beafa972129133955ddebef9ebaaeae6dda101b6
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937567"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152913"
 ---
 # <a name="beginners-guide"></a>Guide du débutant
 

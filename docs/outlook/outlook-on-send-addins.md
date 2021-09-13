@@ -2,13 +2,13 @@
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 08/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 561498f11114b560975155fa3561043a5c392aed
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9195128dff2bac178822764eda03588597b50d10
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936889"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150439"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -300,7 +300,7 @@ Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuv
 
 1. Téléchargez l’[outil de modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Ouvrez l’Éditeur de stratégie de groupe local (**gpedit.msc**).
-1. Accédez aux  >  **modèles d’administration** de configuration   >  **utilisateur Microsoft Outlook 2016**  >  **Security**  >  **Trust Center**.
+1. Accédez aux  >  **modèles d’administration** de configuration utilisateur   >  **Microsoft Outlook 2016**  >  **Security**  >  **Trust Center**.
 1. Sélectionnez **le paramètre Bloquer l’envoi** lorsque les applications web ne peuvent pas charger le paramètre.
 1. Ouvrir le lien pour modifier le paramètre de stratégie.
 1. Dans la fenêtre Bloquer l’envoi lorsque les **add-ins**  web ne peuvent pas charger la boîte de dialogue, sélectionnez Activé ou Désactivé selon le cas, puis **sélectionnez OK** ou **Appliquer** pour mettre la mise à jour en vigueur. 

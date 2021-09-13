@@ -2,13 +2,13 @@
 title: Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 description: Explique comment configurer la prise en charge de la prise en charge des dossiers partagés (c’est-à-dire. accès délégué) et boîtes aux lettres partagées.
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 55c084ba8b0c2d7d83a4e7df0acb6aa7e7abc7c1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 65850699612e9dc48dfe7cc1aed5b00ce5b79012
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936537"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153164"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
@@ -61,7 +61,7 @@ Le tableau suivant décrit les autorisations que l’API JavaScript Office prend
 
 |Autorisation|Valeur|Description|
 |---|---:|---|
-|Lire|1 (000001)|Peut lire des éléments.|
+|Lecture|1 (000001)|Peut lire des éléments.|
 |Write|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut supprimer uniquement les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|

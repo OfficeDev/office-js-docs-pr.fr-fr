@@ -2,13 +2,13 @@
 title: Élément Methods dans le fichier manifeste
 description: L’élément Methods spécifie la liste des Office de l’API JavaScript dont votre Office a besoin pour être activé.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: b270122240314b792ee492336417a4d133bdcc84
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 6a36e1e05634b0ebc4ca4fce6fb22c042cd8f6fb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936545"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153639"
 ---
 # <a name="methods-element"></a>Élément Methods
 

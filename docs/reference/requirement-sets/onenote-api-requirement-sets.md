@@ -3,13 +3,13 @@ title: Ensembles de conditions requises de l’API JavaScript pour OneNote
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour OneNote.
 ms.date: 08/24/2020
 ms.prod: onenote
-localization_priority: Priority
-ms.openlocfilehash: ecdb26edca54758540688ba03b1d9c1eec14e739
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 579046ea007104d777d4cb02d4305aca79f72aae
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938786"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153648"
 ---
 # <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 

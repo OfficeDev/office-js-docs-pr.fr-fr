@@ -3,13 +3,13 @@ title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel.
 ms.date: 05/05/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 6fb5587b7eb3120a1e4b7db7dc6327bdcadc6691
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: c2082ff33de42e58753231008e46d01afff757dd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937150"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152239"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -28,7 +28,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](excel-preview-apis.md)  | Veuillez utiliser la dernière version d’Office pour tester les API d’aperçu (vous devrez peut-être adhérer au [programme Office Insider](https://insider.office.com)). |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | N/A | N/A | N/A | Dernière version (voir la [page des ensembles de conditions requises](excel-api-online-requirement-set.md)) |
-| [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Version 2008 (Build 13127.20408) ou version ultérieure | 16.40 ou version ultérieure | 16.40 ou version ultérieure | Septembre 2020 |
+| [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Version 2008 (Build 13127.20408) ou version ultérieure | 16.40 ou version ultérieure | 16.40 ou version ultérieure | Septembre 2020 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | Version 2002 (Build 12527.20470) ou version ultérieure | 16.35 ou version ultérieure | 16.33 ou version ultérieure | Mai 2020 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Version 1907 (Build 11929.20306) ou version ultérieure | 16.0 ou version ultérieure | 16.30 ou version ultérieure | Octobre 2019 |
 | [ExcelApi 1.9](excel-api-1-9-requirement-set.md)  | Version 1903 (Build 11425.20204) ou version ultérieure | 16.0 ou version ultérieure | 16.24 ou version ultérieure | Mai 2019 |

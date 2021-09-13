@@ -2,13 +2,13 @@
 title: Élément OverriddenByRibbonApi dans le fichier manifeste
 description: Découvrez comment spécifier qu’un onglet, un groupe, un contrôle ou un élément de menu personnalisé ne doit pas apparaître lorsqu’il fait également partie d’un onglet contextuel personnalisé.
 ms.date: 09/02/2021
-localization_priority: Normal
-ms.openlocfilehash: b2633fac0c83d1e9c2195efd155496a0dacafad7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 35893bba5c00d8b6d63f02cc12ac6902197ab0d8
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937834"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153700"
 ---
 # <a name="overriddenbyribbonapi-element"></a>Élément OverriddenByRibbonApi
 

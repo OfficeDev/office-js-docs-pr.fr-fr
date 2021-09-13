@@ -2,13 +2,13 @@
 title: Élément ProviderName dans le fichier manifeste
 description: Les éléments ProviderName spécifient le nom de la personne ou de la société qui a développé ce Office de service.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: f97acfa32b742edf55dd50a2dc00fd113cb02411
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 5eb72d4edda0790ecc0e51c5523d7f558fdfa810
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936813"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153611"
 ---
 # <a name="providername-element"></a>ProviderName, élément
 

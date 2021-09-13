@@ -2,13 +2,13 @@
 title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: Vue d’ensemble de l’amélioration de votre add-in Word avec Office Open XML.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: c8fe7c181c8dc05f91b36042bdf2732177638add
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 21a70b2b76ef306c06b0b85db5e579fbc1b70eba
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938981"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153056"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -109,7 +109,7 @@ Lorsque vous utilisez [getSelectedDataAsync](/javascript/api/office/office.docum
 
 Même un simple package de document Word comprend des composants pour les propriétés du document, les styles, le thème (paramètres de mise en forme), les paramètres web, les polices, en plus d’autres composants pour le contenu réel.
 
-Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous saisissez le Office Open XML pour le texte formaté à l’aide de , vous voyez une grande quantité `getSelectedDataAsync` de marques de contrôle. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
+Par exemple, supposons que vous voulez insérer uniquement un paragraphe de texte avec une mise en forme directe, comme indiqué précédemment sur la figure 1. Lorsque vous saisissez le Office Open XML pour le texte formaté à l’aide de , vous voyez une grande quantité de `getSelectedDataAsync` marques de contrôle. Ce balisage comprend un élément de package qui représente un document entier, formé de plusieurs parties (communément appelées composants de document ou, dans Office Open XML, composants de package), listées dans la figure 13. Chaque composant représente un fichier distinct du package.
 
 > [!TIP]
 > Modifiez Office de texte Open XML dans un éditeur de texte comme Bloc-notes. Si vous l’ouvrez dans Visual Studio, utilisez **Edit >Advanced > Format Document** (Ctrl+K, Ctrl+D) pour mettre en forme le package pour faciliter la modification. Ensuite, vous pouvez réduire ou développer des parties de document ou des sections de celles-ci, comme indiqué dans la figure 12, pour vérifier et modifier plus facilement le contenu du package Office Open XML. Chaque composant du document commence par une balise **pkg:part**.
@@ -127,7 +127,7 @@ Avec toutes ces balises, vous serez surpris de découvrir que les seuls élémen
 > [!NOTE]
 > Les deux lignes de balisage situées au-dessus de la balise package (déclarations XML pour la version et l’ID de programme Office) sont supposées lorsque vous utilisez le type de forçage Office Open XML. Vous n’avez donc pas à les inclure. Conservez-les si vous voulez ouvrir le balisage modifié en tant que document Word afin de le tester.
 
-Plusieurs des autres types de contenu présentés au début de cette rubrique nécessitent également des composants supplémentaires (au-delà de ceux présentés dans la figure 13), et vous aborderez ceux-ci plus loin dans cette rubrique. En attendant, étant donné que vous verrez la plupart des composants affichés dans la figure 13 dans le markup pour n’importe quel package de document Word, voici un résumé rapide de l’objectif de chacun de ces composants et du moment où vous en avez besoin :
+Plusieurs des autres types de contenu présentés au début de cette rubrique nécessitent également des composants supplémentaires (au-delà de ceux de la figure 13), et vous aborderez ceux-ci plus loin dans cette rubrique. En attendant, étant donné que vous verrez la plupart des composants affichés dans la figure 13 dans le markup pour n’importe quel package de document Word, voici un résumé rapide de l’objectif de chacun de ces composants et du moment où vous en avez besoin :
 
 - À l’intérieur de la balise package, le premier composant est le fichier .rels, qui définit les relations entre les composants de niveau supérieur du package (généralement les propriétés du document, la miniature (le cas échéant) et le corps du document principal). Une partie du contenu de ce composant est toujours nécessaire dans votre balisage car vous devez définir la relation entre le composant de document principal (où réside votre contenu) et le package de document.
 
@@ -140,7 +140,7 @@ Plusieurs des autres types de contenu présentés au début de cette rubrique n�
 
 - De nombreux composants sont automatiquement ignorés par les méthodes Set lors de l’insertion de contenu dans un document à l’aide du forçage Office Open XML. Vous pouvez également les supprimer. Il s’agit notamment du fichier theme1.xml (thème de mise en forme du document), les composants des propriétés du document (principales, de complément et de miniature) et les fichiers de paramètres (settings, WebSettings et fontTable).
 
-- Dans l’exemple de la figure 1, la mise en forme du texte est appliquée directement (c’est-à-dire que chaque paramètre de police et de mise en forme de paragraphe est appliqué individuellement). Cependant, si vous utilisez un style (par exemple, si vous voulez que votre texte suive automatiquement la mise en forme du style Titre 1 dans le document de destination) comme indiqué précédemment dans la figure 2, vous aurez besoin d’une partie du composant styles.xml, ainsi que de la définition de relation correspondante. Pour plus d’informations, voir la rubrique « Ajouter des objets qui utilisent des [composants Office Open XML](#add-objects-that-use-additional-office-open-xml-parts)».
+- Dans l’exemple de la figure 1, la mise en forme du texte est appliquée directement (c’est-à-dire que chaque paramètre de police et de mise en forme de paragraphe est appliqué individuellement). Cependant, si vous utilisez un style (par exemple, si vous voulez que votre texte suive automatiquement la mise en forme du style Titre 1 dans le document de destination) comme indiqué précédemment dans la figure 2, vous aurez besoin d’une partie du composant styles.xml, ainsi que de la définition de relation correspondante. Pour plus d’informations, voir la section « Ajouter des objets qui utilisent des [composants Office Open XML](#add-objects-that-use-additional-office-open-xml-parts)».
 
 ## <a name="insert-document-content-at-the-selection"></a>Insérer le contenu du document au niveau de la sélection
 
@@ -274,7 +274,7 @@ Le balisage suivant présente le composant document.xml, qui contient notre exem
 </pkg:part>
 ```
 
-Étant donné document.xml est le principal document dans lequel vous placez votre contenu, vous pouvez parcourir ce dernier rapidement. (La figure 14, qui suit cette liste, représente visuellement le rapport entre une partie du contenu de base et les balises de mise en forme, qui font l’objet de cette rubrique, et ce qui apparaît dans un document Word.)
+Étant donné document.xml est le principal document dans lequel vous placez votre contenu, prenez une rapide visite de ce dernier. (La figure 14, qui suit cette liste, représente visuellement le rapport entre une partie du contenu de base et les balises de mise en forme, qui font l’objet de cette rubrique, et ce qui apparaît dans un document Word.)
 
 - La balise de début  **w:document** comprend plusieurs listes d’espaces de noms (**xmlns**). Un grand nombre de ces espaces de noms se réfèrent à des types de contenu spécifiques, dont vous avez besoin uniquement s’ils correspondent à votre contenu.
 
@@ -672,7 +672,7 @@ Un diagramme SmartArt possède quatre composants associés, mais seulement deux 
 > [!TIP]
 > Le fichier SmartArt layout1.xml est un bon exemple pour illustrer les parties que vous pouvez supprimer de votre balisage, mais il peut être inutile de consacrer davantage de temps à cela (car cette opération supprime une petite quantité de balisage par rapport à la totalité du package). Si vous voulez vous débarrasser de toutes les lignes possibles de balisage, vous pouvez supprimer la balise **dgm:sampData** et son contenu. Ces données d’exemple définissent l’apparence de la miniature d’aperçu pour le diagramme dans les galeries de styles SmartArt. Toutefois, si elles sont omises, les exemples de données par défaut sont utilisés.
 
-N’ignorez pas que le marques d’un diagramme SmartArt dans document.xml contient des références d’ID de relation à la disposition, aux données, aux couleurs et aux composants styles rapides. Vous pouvez supprimer les références dans document.xml aux composants de couleurs et de styles lorsque vous supprimez ces composants et leurs définitions de relation (et il est certainement préférable de le faire, étant donné que vous supprimez ces relations), mais vous n’obtenez pas d’erreur si vous les laissez, car elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document.xml la balise **dgm:relIds.** Que vous passiez ou non cette étape, conservez les références d’ID de relation pour la disposition requise et les composants de données.
+N’ignorez pas que le markup d’un diagramme SmartArt dans document.xml contient des références d’ID de relation à la disposition, aux données, aux couleurs et aux composants de styles rapides. Vous pouvez supprimer les références dans document.xml aux composants de couleurs et de styles lorsque vous supprimez ces composants et leurs définitions de relation (et il est certainement préférable de le faire, étant donné que vous supprimez ces relations), mais vous n’obtenez pas d’erreur si vous les laissez, car elles ne sont pas requises pour que votre diagramme soit inséré dans un document. Recherchez ces références dans document.xml la balise **dgm:relIds.** Que vous passiez ou non cette étape, conservez les références d’ID de relation pour la disposition requise et les composants de données.
 
 ### <a name="work-with-charts"></a>Travailler avec des graphiques
 
@@ -719,7 +719,7 @@ Après les sept étapes précédentes, vous avez supprimé probablement entre 9
 Que vous vous arrêtiez à cette étape ou que vous décidiez de continuer à explorer votre contenu pour trouver les dernières lignes de balisage que vous pouvez supprimer, n’oubliez pas que vous pouvez utiliser l’exemple de code précédemment référencé [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) comme complément de travail pour tester rapidement et facilement votre balisage modifié.
 
 > [!TIP]
-> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres à partir de Visual Studio 2019, dans le menu **Débogage,** choisissez **Options.** Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
+> Si vous mettez à jour un extrait Office Open XML dans une solution existante lors du développement, effacez les fichiers Internet temporaires avant d’exécuter à nouveau la solution pour mettre à jour le balisage Office Open XML utilisé par votre code. Le balisage qui est inclus dans votre solution pour les fichiers XML est mis en cache sur votre ordinateur. Vous pouvez évidemment effacer les fichiers Internet temporaires à partir de votre navigateur web par défaut. Pour accéder aux options Internet et supprimer ces paramètres à partir de Visual Studio 2019, dans le menu **Débogage,** choisissez **Options**. Ensuite, sous **Environnement**, choisissez **Navigateur web**, puis **Options Internet Explorer**.
 
 ## <a name="create-an-add-in-for-both-template-and-stand-alone-use"></a>Créer un module pour un modèle et une utilisation autonome
 

@@ -2,13 +2,13 @@
 title: Insérer des données dans le corps dans un complément Outlook
 description: Découvrez comment insérer des données dans le corps d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 575718baa6a54f4e2e8c6ddd4e582254e1607fa8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 377c278464038a2b04d8b0ca49de92530e3724d9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938904"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153116"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -27,7 +27,7 @@ Dans Outlook, un utilisateur peut créer un message au format texte, HTML ou RTF
 
 1.  Sur les tablettes et les smartphones, **getTypeAsync** renvoie **Office. MailboxEnums.BodyType.Text** si le système d’exploitation ou l’application ne prend pas en charge la modification d’un élément, qui a été créé à l’origine au format HTML, au format HTML.
 
-2.  Si vos données à insérer sont au format HTML et **que getTypeAsync** renvoie un type de texte pour cet élément, réorganisez vos données sous forme de texte et insérez-les **Office. MailboxEnums.BodyType.Text** en tant _que coercionType_. Si vous insérez simplement les données HTML avec un type de contrainte de texte, l’application affiche les balises HTML sous forme de texte. Si vous tentez d’insérer les données HTML **avecOffice.MailboxEnums.BodyType.Html** en tant que _coercionType,_ vous obtenez une erreur.
+2.  Si vos données à insérer sont au format HTML et **que getTypeAsync** renvoie un type de texte pour cet élément, réorganisez vos données sous forme de texte et insérez-les **Office. MailboxEnums.BodyType.Text** en tant _que coercionType_. Si vous insérez simplement les données HTML avec un type de contrainte de texte, l’application affiche les balises HTML sous forme de texte. Si vous tentez d’insérer les données HTML avec **Office.MailboxEnums.BodyType.Html** _en tant que coercionType_, vous obtenez une erreur.
 
 En plus de _coercionType_, comme avec la plupart des méthodes asynchrones dans l’API JavaScript Office, **getTypeAsync**, **prependAsync** et **setSelectedDataAsync** prennent d’autres paramètres d’entrée facultatifs. Pour plus d’informations sur la spécification de ces paramètres d’entrée facultatifs, voir [Passage de paramètres facultatifs à des méthodes asynchrones](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-inline) dans [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md).
 

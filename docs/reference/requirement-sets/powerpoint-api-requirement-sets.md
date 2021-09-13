@@ -3,13 +3,13 @@ title: Séries de conditions requises de l’API JavaScript pour PowerPoint
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour PowerPoint.
 ms.date: 01/08/2021
 ms.prod: powerpoint
-localization_priority: Priority
-ms.openlocfilehash: 8ab5ad7067ed29b161935cfd2716a02ca261c55b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 8cb557ed46490e52da3f372ae48848b7305cdd17
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939305"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153488"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Séries de conditions requises de l’API JavaScript pour PowerPoint
 

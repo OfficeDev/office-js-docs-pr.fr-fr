@@ -3,13 +3,13 @@ title: Déboguer votre Outlook d’événement (prévisualisation)
 description: Découvrez comment déboguer votre complément Outlook qui implémente l’activation basée sur des événements.
 ms.topic: article
 ms.date: 05/14/2021
-localization_priority: Normal
-ms.openlocfilehash: 8cabbb669d9b46e047efa7e79ae4225c1fc22689
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: ebf469ec15948ae2daf693bc7fda692367d70bec
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937096"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153167"
 ---
 # <a name="debug-your-event-based-outlook-add-in-preview"></a>Déboguer votre Outlook d’événement (prévisualisation)
 
@@ -64,7 +64,7 @@ Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minima
     code .
     ```
 
-1. Dans Visual Studio Code, ouvrez le fichier **./.vscode/launch.js** et ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
+1. Dans Visual Studio Code, ouvrez le fichier **./.vscode/launch.json** et ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
 
     ```json
     {
@@ -87,11 +87,11 @@ Pour prévisualiser cette fonctionnalité Outlook sur Windows, la version minima
 
     ![Capture d’écran de l’icône Déboguer dans la barre d’activité.](../images/vs-code-debug.png)
 
-1. Sélectionnez **créer une launch.jssur le lien de** fichier.
+1. Sélectionnez **le lien créer un fichier launch.json.**
 
-    ![Capture d’écran du lien pour créer une launch.jsfichier dans Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    ![Capture d’écran du lien pour créer un fichier launch.json dans Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
-1. Dans la **dropdown Sélectionner un** environnement, **sélectionnez Edge : Lancer** pour créer une launch.jsfichier.
+1. In the **Select Environment** dropdown, select **Edge: Launch** to create a launch.json file.
 1. Ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
 
     ```json

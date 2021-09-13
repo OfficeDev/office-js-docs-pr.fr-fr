@@ -2,13 +2,13 @@
 title: Outlook conditions requises de l’API du add-in 1.9
 description: Ensemble de conditions requises 1.9 pour Outlook API de votre application.
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 4448a7391e2d829fa95fa72392bf22867fafe7a7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8616cbd8f3f1e178caad698f98fe9a35804bb5b7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936632"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153487"
 ---
 # <a name="outlook-add-in-api-requirement-set-19"></a>Outlook conditions requises de l’API du add-in 1.9
 

@@ -2,13 +2,13 @@
 title: Élément Override dans le fichier manifest
 description: L’élément Override vous permet de spécifier la valeur d’un paramètre en fonction d’une condition spécifiée.
 ms.date: 05/19/2021
-localization_priority: Normal
-ms.openlocfilehash: cd270fa19750810238b42c26c2abc35a61c1bac8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: bf0f4d8877ba2228d5bfc2053f53b2a8e1ab7b29
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938246"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153627"
 ---
 # <a name="override-element"></a>Élément Override
 

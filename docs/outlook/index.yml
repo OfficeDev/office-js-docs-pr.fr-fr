@@ -7,13 +7,13 @@ metadata:
   ms.prod: outlook
   ms.topic: landing-page
   ms.date: 03/29/2021
-  localization_priority: Priority
-  ms.openlocfilehash: 22a4d97562287d7c4ef60208e87cc1c42f7ddf68
-  ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+  ms.localizationpriority: high
+  ms.openlocfilehash: 00b0db41c60a8eaf23d9cee39126df2413ee9c68
+  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/08/2021
-  ms.locfileid: "58937591"
+  ms.lasthandoff: 09/12/2021
+  ms.locfileid: "59153120"
 landingContent:
 - title: À propos Outlook des modules
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
       url: ../overview/explore-with-script-lab.md
   - linkListType: how-to-guide
     links:
-    - text: Utiliser l’API JavaScript Outlook pour interagir avec des objets
+    - text: Utiliser l Outlook API JavaScript pour interagir avec des objets
       url: apis.md
     - text: Tester et déboguer un Outlook de test
       url: ../testing/test-debug-office-add-ins.md

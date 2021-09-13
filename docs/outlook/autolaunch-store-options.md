@@ -3,13 +3,13 @@ title: Options de liste AppSource pour votre Outlook d’événements
 description: Découvrez les options de liste AppSource disponibles pour votre complément Outlook qui implémente l’activation basée sur des événements.
 ms.topic: article
 ms.date: 08/05/2021
-localization_priority: Normal
-ms.openlocfilehash: 5d48e441d41b9d1fcd5508cb1beb3a90acd1550f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8b8ff55f852d7817903411ea21034df51f49accd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937095"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153188"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>Options de liste AppSource pour votre Outlook d’événements
 

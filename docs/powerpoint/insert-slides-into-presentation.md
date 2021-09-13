@@ -2,13 +2,13 @@
 title: Insérer des diapositives dans une présentation PowerPoint présentation
 description: Découvrez comment insérer des diapositives d’une présentation dans une autre.
 ms.date: 03/07/2021
-localization_priority: Normal
-ms.openlocfilehash: d9c50b87e7ba702a2cffcef5ca94dfb0d39b1af0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c7dde2d2d6b1b886816bbf12122319984f4c7138
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937658"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152202"
 ---
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>Insérer des diapositives dans une présentation PowerPoint présentation
 
@@ -23,7 +23,7 @@ Il existe deux étapes pour insérer des diapositives d’une présentation dans
 
 ## <a name="convert-the-source-presentation-to-base64"></a>Convertir la présentation source en base64
 
-Il existe de nombreuses façons de convertir un fichier en base64. Le langage de programmation et la bibliothèque que vous utilisez, et s’il faut les convertir côté serveur ou côté client, sont déterminés par votre scénario. Le plus souvent, vous allez faire la conversion dans JavaScript côté client à l’aide d’un [objet FileReader.](https://developer.mozilla.org/docs/Web/API/FileReader) L’exemple suivant illustre cette pratique.
+Il existe plusieurs façons de convertir un fichier en base64. Le langage de programmation et la bibliothèque que vous utilisez, et s’il faut les convertir côté serveur ou côté client, sont déterminés par votre scénario. Le plus souvent, vous allez faire la conversion dans JavaScript côté client à l’aide d’un [objet FileReader.](https://developer.mozilla.org/docs/Web/API/FileReader) L’exemple suivant illustre cette pratique.
 
 1. Commencez par obtenir une référence au fichier PowerPoint source. Dans cet exemple, nous allons utiliser un contrôle de type pour demander à `<input>` l’utilisateur de choisir un `file` fichier. Ajoutez le markup suivant à la page du add-in.
 
@@ -75,7 +75,7 @@ Il existe de nombreuses façons de convertir un fichier en base64. Le langage de
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>Insérer des diapositives avec insertSlidesFromBase64
 
-Votre add-in insère des diapositives d’une autre PowerPoint dans la présentation actuelle à l’aide de la méthode [Presentation.insertSlidesFromBase64.](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) Voici un exemple simple dans lequel toutes les diapositives de la présentation source sont insérées au début de la présentation en cours et les diapositives insérées conservent la mise en forme du fichier source. Notez qu’il s’agit d’une variable globale qui contient une version codée `chosenFileBase64` en base 64 d’PowerPoint de présentation.
+Votre add-in insère des diapositives d’une autre PowerPoint présentation dans la présentation actuelle à l’aide de la méthode [Presentation.insertSlidesFromBase64.](/javascript/api/powerpoint/powerpoint.presentation#insertSlidesFromBase64_base64File__options_) Voici un exemple simple dans lequel toutes les diapositives de la présentation source sont insérées au début de la présentation en cours et les diapositives insérées conservent la mise en forme du fichier source. Notez qu’il s’agit d’une variable globale qui contient une version codée `chosenFileBase64` en base 64 d’PowerPoint de présentation.
 
 ```javascript
 async function insertAllSlides() {
@@ -108,7 +108,7 @@ async function insertSlidesDestinationFormatting() {
 
 Bien entendu, vous ne connaissez généralement pas au moment du codage l’ID ou l’ID de création de la diapositive cible. Plus souvent, un add-in demande aux utilisateurs de sélectionner la diapositive cible. Les étapes suivantes montrent comment obtenir l’ID ***nnn*#** de la diapositive actuellement sélectionnée et l’utiliser comme diapositive cible.
 
-1. Créez une fonction qui obtient l’ID de la diapositive actuellement sélectionnée à l’aide de la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes. Voici un exemple. Notez que l’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir Wrap Common-APIs dans les fonctions [de renvoi de promesse.](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
+1. Créez une fonction qui obtient l’ID de la diapositive actuellement sélectionnée à l’aide de la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes. Voici un exemple. Notez que l’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir Wrap Common-APIs dans les fonctions [de renvoi de promesse.](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
 
  
     ```javascript

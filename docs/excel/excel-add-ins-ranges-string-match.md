@@ -3,13 +3,13 @@ title: Rechercher une chaîne à l’aide de Excel API JavaScript
 description: Découvrez comment trouver une chaîne dans une plage à l’aide de l Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 9b649bb249cd24d7578bc4f8285e5d0a23d0e4cd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c143acdfb94928b3c59e4fa92eab41ca635f021a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936447"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152276"
 ---
 # <a name="find-a-string-within-a-range-using-the-excel-javascript-api"></a>Rechercher une chaîne dans une plage à l’aide de Excel API JavaScript
 

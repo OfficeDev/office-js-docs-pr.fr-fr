@@ -3,13 +3,13 @@ title: Ensembles de conditions requises concernant les commandes de complément
 description: Vue d’Office ensembles de conditions requises des commandes de l’autre.
 ms.date: 11/01/2020
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: f5f7c07f9bdb6bee923337dcc2ae547ca1f76df3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cb1a21c4d233a716e383d97585a61f5ab2cd2c1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937277"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153287"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
@@ -37,7 +37,7 @@ Le tableau suivant répertorie les ensembles de conditions requises pour les com
 >\* La méthode [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
 
 > [!IMPORTANT]
-> AddinCommands 1.3 est en prévisualisation et n’est disponible que *dans PowerPoint sur le web*. Nous vous recommandons d’essayer le markup uniquement dans les environnements de test et de développement. N’utilisez pas de marques d’aperçu dans un environnement de production ou dans des documents critiques pour l’entreprise.
+> AddinCommands 1.3 est en prévisualisation et est *uniquement disponible dans PowerPoint sur le web*. Nous vous recommandons d’essayer le markup uniquement dans les environnements de test et de développement. N’utilisez pas de marques d’aperçu dans un environnement de production ou dans des documents critiques pour l’entreprise.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

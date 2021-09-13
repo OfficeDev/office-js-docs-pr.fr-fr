@@ -3,13 +3,13 @@ title: Rechercher des cellules spéciales dans une plage à l’aide de Excel AP
 description: Découvrez comment utiliser l’API JavaScript Excel pour rechercher des cellules spéciales, telles que des cellules avec des formules, des erreurs ou des nombres.
 ms.date: 07/08/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: f1562351b045b5c8df1edb3c22f651883a836ad9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9ddd60f3cd87f528616fe376003b9eb7d3374f4a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937468"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152279"
 ---
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Rechercher des cellules spéciales dans une plage à l’aide de Excel API JavaScript
 

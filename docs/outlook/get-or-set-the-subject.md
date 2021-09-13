@@ -2,13 +2,13 @@
 title: Obtenir ou définir l’objet dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’objet d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 048aa079adf3fda5d5f4a85bfcadd3b671ce865a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 534b0cff9d065873ddf566a0d82a3716529414df
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937509"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153131"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook
 

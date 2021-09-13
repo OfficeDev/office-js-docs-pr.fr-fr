@@ -3,13 +3,13 @@ title: Excel Ensemble de conditions requises de l’API JavaScript 1.8
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 87d59bb78a00035d4dc0ff8514d3214bc93397b3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e97dd98d024b27aa58ca6f0c76fdee17b657c7c9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936363"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153687"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l Excel API JavaScript 1.8
 
@@ -68,7 +68,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textOrientation)|Spécifie l’angle vers lequel le texte est orienté pour l’étiquette de la tick de l’axe du graphique.|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|Spécifie la mise en forme du remplissage du graphique.|
 |[ChartAxisTitle](/javascript/api/excel/excel.chartaxistitle)|[setFormula(formula: string)](/javascript/api/excel/excel.chartaxistitle#setFormula_formula_)|Valeur de chaîne qui représente la formule de titre de l’axe graphique à l’aide de la notation de style A1.|
-|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[border](/javascript/api/excel/excel.chartaxistitleformat#border)|Spécifie le format de bordure du titre de l’axe du graphique, qui inclut la couleur, le style de trait et l’pondération.|
+|[ChartAxisTitleFormat](/javascript/api/excel/excel.chartaxistitleformat)|[bordure](/javascript/api/excel/excel.chartaxistitleformat#border)|Spécifie le format de bordure du titre de l’axe du graphique, qui inclut la couleur, le style de trait et l’pondération.|
 ||[fill](/javascript/api/excel/excel.chartaxistitleformat#fill)|Spécifie la mise en forme du remplissage du titre de l’axe du graphique.|
 |[ChartBorder](/javascript/api/excel/excel.chartborder)|[clear()](/javascript/api/excel/excel.chartborder#clear__)|Désactiver le format de bordure d’un élément de graphique.|
 |[ChartCollection](/javascript/api/excel/excel.chartcollection)|[onActivated](/javascript/api/excel/excel.chartcollection#onActivated)|Se produit lorsqu’un graphique est activé.|
@@ -87,7 +87,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[textOrientation](/javascript/api/excel/excel.chartdatalabel#textOrientation)|Représente l’angle vers lequel le texte est orienté pour l’étiquette de données du graphique.|
 ||[top](/javascript/api/excel/excel.chartdatalabel#top)|Représente la distance en points, du bord supérieur de l’étiquette de données graphique au bord supérieur de la zone de graphique.|
 ||[verticalAlignment](/javascript/api/excel/excel.chartdatalabel#verticalAlignment)|Représente l’alignement vertical de l’étiquette de données du graphique.|
-|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[border](/javascript/api/excel/excel.chartdatalabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
+|[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[bordure](/javascript/api/excel/excel.chartdatalabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[autoText](/javascript/api/excel/excel.chartdatalabels#autoText)|Spécifie si les étiquettes de données génèrent automatiquement le texte approprié en fonction du contexte.|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabels#horizontalAlignment)|Spécifie l’alignement horizontal pour l’étiquette de données du graphique.|
 ||[numberFormat](/javascript/api/excel/excel.chartdatalabels#numberFormat)|Spécifie le code de format pour les étiquettes de données.|
@@ -105,7 +105,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[left](/javascript/api/excel/excel.chartlegendentry#left)|Spécifie la valeur gauche d’une entrée de légende de graphique.|
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Spécifie le haut d’une entrée de légende de graphique.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Représente la largeur de l’entrée de légende sur la légende du graphique.|
-|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[border](/javascript/api/excel/excel.chartlegendformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
+|[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[bordure](/javascript/api/excel/excel.chartlegendformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
 |[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[height](/javascript/api/excel/excel.chartplotarea#height)|Spécifie la valeur de hauteur d’une zone de traçage.|
 ||[insideHeight](/javascript/api/excel/excel.chartplotarea#insideHeight)|Spécifie la valeur de hauteur intérieure d’une zone de traçage.|
 ||[insideLeft](/javascript/api/excel/excel.chartplotarea#insideLeft)|Spécifie la valeur à l’intérieur gauche d’une zone de traçage.|
@@ -116,7 +116,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[format](/javascript/api/excel/excel.chartplotarea#format)|Spécifie la mise en forme d’une zone de traçage de graphique.|
 ||[top](/javascript/api/excel/excel.chartplotarea#top)|Spécifie la valeur supérieure d’une zone de traçage.|
 ||[width](/javascript/api/excel/excel.chartplotarea#width)|Spécifie la valeur de largeur d’une zone de traçage.|
-|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[border](/javascript/api/excel/excel.chartplotareaformat#border)|Spécifie les attributs de bordure d’une zone de traçage de graphique.|
+|[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[bordure](/javascript/api/excel/excel.chartplotareaformat#border)|Spécifie les attributs de bordure d’une zone de traçage de graphique.|
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|Spécifie le format de remplissage d’un objet, qui inclut des informations de mise en forme d’arrière-plan.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisGroup)|Spécifie le groupe de la série spécifiée.|
 ||[explosion](/javascript/api/excel/excel.chartseries#explosion)|Spécifie la valeur d’explosion d’un graphique en secteurs ou d’une tranche de graphique en doughnuts.|
@@ -144,7 +144,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[textOrientation](/javascript/api/excel/excel.charttrendlinelabel#textOrientation)|Représente l’angle vers lequel le texte est orienté pour l’étiquette de courbe de tendance du graphique.|
 ||[top](/javascript/api/excel/excel.charttrendlinelabel#top)|Représente la distance, en points, entre le bord supérieur de l’étiquette de tendances du graphique et le haut de la zone de graphique.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttrendlinelabel#verticalAlignment)|Représente l’alignement vertical de l’étiquette de tendances du graphique.|
-|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[border](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Spécifie le format de bordure, qui inclut la couleur, le style de trait et l’pondération.|
+|[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[bordure](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Spécifie le format de bordure, qui inclut la couleur, le style de trait et l’pondération.|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#fill)|Spécifie le format de remplissage de l’étiquette de tendances du graphique actuel.|
 ||[police](/javascript/api/excel/excel.charttrendlinelabelformat#font)|Spécifie les attributs de police (tels que le nom de la police, la taille et la couleur) d’une étiquette de tendances de graphique.|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#formula)|Une formule de validation des données personnalisée.|

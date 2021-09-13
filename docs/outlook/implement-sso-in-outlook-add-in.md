@@ -2,13 +2,13 @@
 title: 'Scénario: implémenter l’authentification unique dans votre service'
 description: Découvrez comment utiliser le jeton d’authentification unique et le jeton d’identité Exchange fournis par un complément Outlook afin d’implémenter l’authentification unique (SSO) pour votre service.
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: ab86e54ef4f71674904811581d1f2f176ce5b16a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 89b90444fbb467c6be1f713461f6cc66d21a8443
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938075"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153127"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook
 

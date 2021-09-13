@@ -2,13 +2,13 @@
 title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 07/07/2020
-localization_priority: Priority
-ms.openlocfilehash: 8fc8f5c30f5a56ffe9c792f2347b915cf2f04051
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 6676dd624163b8ce409a5049e5249cb9299bf9cb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938158"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153219"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 

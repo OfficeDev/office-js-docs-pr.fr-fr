@@ -3,13 +3,13 @@ title: Excel Ensemble de conditions requises de l’API JavaScript 1.7
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.7.
 ms.date: 11/09/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: ed18997224f052c2e36943fcdbb93865ec8ac73d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 81ae4b7ec9180ebb14bdf3b0e19d6dc2a9e997cf
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938745"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153000"
 ---
 # <a name="whats-new-in-excel-javascript-api-17"></a>Nouveautés de l’API JavaScript 1.7 pour Excel
 
@@ -72,7 +72,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[Chart](/javascript/api/excel/excel.chart)|[chartType](/javascript/api/excel/excel.chart#chartType)|Spécifie le type du graphique.|
 ||[id](/javascript/api/excel/excel.chart#id)|L’ID unique du graphique.|
 ||[showAllFieldButtons](/javascript/api/excel/excel.chart#showAllFieldButtons)|Spécifie s’il faut afficher tous les boutons de champ sur une PivotChart.|
-|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[border](/javascript/api/excel/excel.chartareaformat#border)|Représente le format de bordure de la zone de graphique, qui inclut la couleur, le style de trait et l’pondération.|
+|[ChartAreaFormat](/javascript/api/excel/excel.chartareaformat)|[bordure](/javascript/api/excel/excel.chartareaformat#border)|Représente le format de bordure de la zone de graphique, qui inclut la couleur, le style de trait et l’pondération.|
 |[ChartAxes](/javascript/api/excel/excel.chartaxes)|[getItem(type : Excel. ChartAxisType, group? : Excel. ChartAxisGroup)](/javascript/api/excel/excel.chartaxes#getItem_type__group_)|Renvoie l’axe spécifique identifié par type et par groupe.|
 |[ChartAxis](/javascript/api/excel/excel.chartaxis)|[baseTimeUnit](/javascript/api/excel/excel.chartaxis#baseTimeUnit)|Spécifie l’unité de base de l’axe des catégories spécifié.|
 ||[categoryType](/javascript/api/excel/excel.chartaxis#categoryType)|Spécifie le type d’axe des catégories.|
@@ -128,7 +128,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[markerSize](/javascript/api/excel/excel.chartpoint#markerSize)|Représente la taille du marqueur d’un point de données.|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#markerStyle)|Représente le style du marqueur du point de données de graphique.|
 ||[dataLabel](/javascript/api/excel/excel.chartpoint#dataLabel)|Renvoie l’étiquette de données d’un point du graphique.|
-|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[border](/javascript/api/excel/excel.chartpointformat#border)|Représente le format de bordure d’un point de données de graphique, qui inclut des informations sur la couleur, le style et l’poids.|
+|[ChartPointFormat](/javascript/api/excel/excel.chartpointformat)|[bordure](/javascript/api/excel/excel.chartpointformat#border)|Représente le format de bordure d’un point de données de graphique, qui inclut des informations sur la couleur, le style et l’poids.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[chartType](/javascript/api/excel/excel.chartseries#chartType)|Représente le type de graphique d’une série.|
 ||[delete()](/javascript/api/excel/excel.chartseries#delete__)|Supprime la série graphique.|
 ||[doughnutHoleSize](/javascript/api/excel/excel.chartseries#doughnutHoleSize)|Représente la taille du centre d’une série de graphiques en anneaux.|
@@ -158,7 +158,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[textOrientation](/javascript/api/excel/excel.charttitle#textOrientation)|Spécifie l’angle vers lequel le texte est orienté pour le titre du graphique.|
 ||[top](/javascript/api/excel/excel.charttitle#top)|Spécifie la distance, en points, entre le bord supérieur du titre du graphique et le haut de la zone de graphique.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttitle#verticalAlignment)|Spécifie l’alignement vertical du titre du graphique.|
-|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[border](/javascript/api/excel/excel.charttitleformat#border)|Représente le format de bordure du titre du graphique, qui inclut la couleur, le style de trait et l’pondération.|
+|[ChartTitleFormat](/javascript/api/excel/excel.charttitleformat)|[bordure](/javascript/api/excel/excel.charttitleformat#border)|Représente le format de bordure du titre du graphique, qui inclut la couleur, le style de trait et l’pondération.|
 |[ChartTrendline](/javascript/api/excel/excel.charttrendline)|[delete()](/javascript/api/excel/excel.charttrendline#delete__)|Supprime l’objet courbe de tendance.|
 ||[intercept](/javascript/api/excel/excel.charttrendline#intercept)|Représente la valeur intercept de la courbe de tendance.|
 ||[movingAveragePeriod](/javascript/api/excel/excel.charttrendline#movingAveragePeriod)|Représente la période d’une courbe de tendance de graphique.|

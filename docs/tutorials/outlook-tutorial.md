@@ -3,13 +3,13 @@ title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
 ms.date: 05/12/2021
 ms.prod: outlook
-localization_priority: Priority
-ms.openlocfilehash: 4939d6a57cd7aaf529d8507ba535e32a55eeb237
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: d79089ee8b63883d0fe07a98042c8d683a8bfb43
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938396"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153408"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 

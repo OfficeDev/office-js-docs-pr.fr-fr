@@ -3,17 +3,17 @@ title: Excel Ensemble de conditions requises de l’API JavaScript 1.12
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.12.
 ms.date: 04/01/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 10587b84ba476b91cdd56d8472e551348b3a718b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f2780e188eeebc70d754d7c2ea26cde1b1974702
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936947"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152862"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>Nouveautés de l Excel API JavaScript 1.12
 
-ExcelApi 1.12 a augmenté la prise en charge des formules dans les plages en ajoutant des API pour suivre les tableaux dynamiques et trouver les antécédents directs d’une formule. Il a également ajouté le contrôle API des filtres de tableau croisé dynamique. Des améliorations ont également été apportées aux zones de fonctionnalités de commentaires, de paramètres de culture et de propriétés personnalisées.
+ExcelApi 1.12 a augmenté la prise en charge des formules dans les plages en ajoutant des API pour le suivi des tableaux dynamiques et la recherche des antécédents directs d’une formule. Il a également ajouté le contrôle API des filtres de tableau croisé dynamique. Des améliorations ont également été apportées aux zones de fonctionnalités de commentaires, de paramètres de culture et de propriétés personnalisées.
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
@@ -26,7 +26,7 @@ ExcelApi 1.12 a augmenté la prise en charge des formules dans les plages en ajo
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.12. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.12 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true)ou une version antérieure.
+Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.12. Pour afficher la documentation de référence de l’API pour toutes les API pris en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.12 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.12](/javascript/api/excel?view=excel-js-1.12&preserve-view=true)ou version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -93,11 +93,11 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[selectionType](/javascript/api/excel/excel.pivotvaluefilter#selectionType)|Spécifie si le filtre est pour les éléments N supérieur/inférieur, le pourcentage N supérieur/inférieur ou la somme N supérieure/inférieure.|
 ||[seuil](/javascript/api/excel/excel.pivotvaluefilter#threshold)|Nombre seuil « N » d’éléments, de pourcentage ou de somme à filtrer pour une condition de filtre supérieure/inférieure.|
 ||[upperBound](/javascript/api/excel/excel.pivotvaluefilter#upperBound)|Limite supérieure de la plage pour la `between` condition de filtre.|
-||[value](/javascript/api/excel/excel.pivotvaluefilter#value)|Nom de la « valeur » choisie dans le champ à filtrer.|
+||[value](/javascript/api/excel/excel.pivotvaluefilter#value)|Nom de la « valeur » choisie dans le champ par lequel filtrer.|
 |[Range](/javascript/api/excel/excel.range)|[getDirectPrecedents()](/javascript/api/excel/excel.range#getDirectPrecedents__)|Renvoie un objet qui représente la plage contenant tous les antécédents directs d’une cellule dans la même feuille de calcul ou `WorkbookRangeAreas` dans plusieurs feuilles de calcul.|
 ||[getPivotTables(fullyContained?: boolean)](/javascript/api/excel/excel.range#getPivotTables_fullyContained_)|Obtient une collection étendue de tableaux croisés dynamiques qui chevauchent la plage.|
 ||[getSpillParent()](/javascript/api/excel/excel.range#getSpillParent__)|Obtient l’objet de la plage contenant la cellule d’ancrage d’une cellule prise renversée dans.|
-||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getSpillParentOrNullObject__)|Obtient l’objet de plage contenant la cellule d’ancrage de la cellule dans laquelle la cellule est répandu.|
+||[getSpillParentOrNullObject()](/javascript/api/excel/excel.range#getSpillParentOrNullObject__)|Obtient l’objet de plage contenant la cellule d’ancrage de la cellule dans laquelle la cellule est étendue.|
 ||[getSpillingToRange()](/javascript/api/excel/excel.range#getSpillingToRange__)|Obtient l’objet de la plage contenant la plage renversé lorsque appelée sur une cellule d’ancrage.|
 ||[getSpillingToRangeOrNullObject()](/javascript/api/excel/excel.range#getSpillingToRangeOrNullObject__)|Obtient l’objet de la plage contenant la plage renversé lorsque appelée sur une cellule d’ancrage.|
 ||[hasSpill](/javascript/api/excel/excel.range#hasSpill)|Représente si toutes les cellules ont une bordure renversée.|

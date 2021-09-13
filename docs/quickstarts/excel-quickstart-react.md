@@ -3,13 +3,13 @@ title: Utiliser React pour créer un complément du volet Office Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et de React pour Office.
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 74a28f3914ddbc54188d3b8baa33fc1faa7a30fe
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b97bd4cdf2190f23a99b9fba314906f4cac35aad
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939198"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153379"
 ---
 # <a name="use-react-to-build-an-excel-task-pane-add-in"></a>Utiliser React pour créer un complément du volet Office Excel
 

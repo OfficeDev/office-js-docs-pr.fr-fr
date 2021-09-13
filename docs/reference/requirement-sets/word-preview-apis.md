@@ -3,13 +3,13 @@ title: API d’aperçu JavaScript pour Word
 description: Détails sur les API JavaScript word à venir
 ms.date: 11/09/2020
 ms.prod: word
-localization_priority: Normal
-ms.openlocfilehash: 09e8c978160cbe59fea1a80ac7f3dce653115440
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936495"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153071"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#ondatachanged)|Se produit lorsque les données dans le contrôle de contenu sont modifiées.|
 ||[onDeleted](/javascript/api/word/word.contentcontrol#ondeleted)|Se produit lorsque le contrôle de contenu est supprimé.|
 ||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onselectionchanged)|Se produit lorsque la sélection dans le contrôle de contenu est modifiée.|
-|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|Objet qui a élevé l’événement.|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentcontrol)|Objet qui a levé l’événement.|
 ||[eventType](/javascript/api/word/word.contentcontroleventargs#eventtype)|Type d’événement.|
 |[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete--)|Supprime la partie XML personnalisée.|
 ||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteattribute-xpath--namespacemappings--name-)|Supprime un attribut avec le nom donné de l’élément identifié par xpath.|

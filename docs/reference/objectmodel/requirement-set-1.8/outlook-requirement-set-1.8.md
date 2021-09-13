@@ -2,13 +2,13 @@
 title: Ensemble de conditions requises de l’API du complément Outlook 1.8
 description: Ensemble de conditions requises 1.8 pour Outlook API de votre application.
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: b852d8948044cc853cc78e81dbce25a587736f77
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: f5aa192d783fdd08155dfbe80a509de72ccd402f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939043"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150543"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 

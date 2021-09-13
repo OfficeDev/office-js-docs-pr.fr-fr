@@ -2,13 +2,13 @@
 title: Résolution des problèmes Excel des modules
 description: Découvrez comment résoudre les erreurs de développement dans les Excel de développement.
 ms.date: 02/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b90d8cfdb4696445655122a2fa7eb74d1c87fa2f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 06ed12eb1daf8876e14806fd88f541b5b58eea16
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939081"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152925"
 ---
 # <a name="troubleshooting-excel-add-ins"></a>Résolution des problèmes Excel des modules
 
@@ -98,5 +98,5 @@ Les [méthodes Worksheet.getRange(address)](/javascript/api/excel/excel.workshee
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Résoudre les erreurs de développement avec Office de recherche](../testing/troubleshoot-development-errors.md)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/troubleshoot-development-errors.md)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)

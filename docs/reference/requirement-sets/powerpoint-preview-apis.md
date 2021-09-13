@@ -3,13 +3,13 @@ title: PowerPoint API d’aperçu JavaScript
 description: Détails sur les API JavaScript PowerPoint à venir.
 ms.date: 01/27/2021
 ms.prod: powerpoint
-localization_priority: Normal
-ms.openlocfilehash: af947919ad680864bf4a63ab29af33d0560aaaa0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d9cb28c56a84829d87ba30e494aa46b927e0bc64
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939176"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153647"
 ---
 # <a name="powerpoint-javascript-preview-apis"></a>PowerPoint API d’aperçu JavaScript
 

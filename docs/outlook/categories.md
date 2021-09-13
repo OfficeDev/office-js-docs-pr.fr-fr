@@ -2,13 +2,13 @@
 title: Obtenir et définir des catégories
 description: Comment gérer les catégories sur la boîte aux lettres et l’élément
 ms.date: 01/14/2020
-localization_priority: Normal
-ms.openlocfilehash: f9f46d689166983083b33fb92da78469470e4d7d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 22065293ab992e74a270c45499f31646bb9ea5aa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937889"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153176"
 ---
 # <a name="get-and-set-categories"></a>Obtenir et définir des catégories
 
@@ -90,7 +90,7 @@ Vous pouvez utiliser l’API pour ajouter, obtenir et supprimer des catégories 
 
 ### <a name="add-categories-to-an-item"></a>Ajouter des catégories à un élément
 
-L’exemple suivant montre comment appliquer la catégorie nommée « Urgent! » à l’élément actuel en appelant [addAsync](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) on `item.categories` .
+L’exemple suivant montre comment appliquer la catégorie nommée « Urgent! » à l’élément actuel en appelant [addAsync](/javascript/api/outlook/office.categories#addAsync_categories__options__callback_) sur `item.categories` .
 
 ```js
 var categoriesToAdd = ["Urgent!"];

@@ -2,13 +2,13 @@
 title: Créer des compléments Outlook pour les formulaires de composition
 description: Découvrez les scénarios et fonctionnalités des compléments Outlook pour les formulaires de composition.
 ms.date: 02/09/2021
-localization_priority: Priority
-ms.openlocfilehash: 59ccebafbb3991ff3edb241596f44b5939d73693
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: b755c727cde9ab705e129c1159a536d654dfbe0e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938161"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153171"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
 

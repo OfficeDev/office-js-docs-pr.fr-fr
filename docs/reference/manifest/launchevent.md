@@ -2,13 +2,13 @@
 title: LaunchEvent dans le fichier manifeste
 description: L’élément LaunchEvent configure votre add-in pour qu’il s’active en fonction des événements pris en charge.
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: c866a085ed6b7a33c8d7bf02d25e6ec748629e07
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 23615424e194917a15b20ea4afbf7d9c5b8017e9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937612"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152877"
 ---
 # <a name="launchevent-element"></a>Élément LaunchEvent
 

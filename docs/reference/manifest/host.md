@@ -2,13 +2,13 @@
 title: Élément Host dans le fichier manifeste
 description: Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
 ms.date: 11/05/2019
-localization_priority: Normal
-ms.openlocfilehash: 45d4ed42946038699be235ff3912c071a92ff226
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e262183f11361d02d1a710d1f442539a8e936bcd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936914"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153523"
 ---
 # <a name="host-element"></a>Élément Host
 

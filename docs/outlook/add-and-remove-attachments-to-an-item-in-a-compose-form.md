@@ -2,13 +2,13 @@
 title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Vous pouvez utiliser différentes API de pièce jointe pour gérer les fichiers ou Outlook éléments joints à l’élément que l’utilisateur compose.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 87076965d600cbbcfe88d6711ea3acfb2b3c1fdd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1df37568d52ae76caaec3e65286fac5544b577c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937752"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153216"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition Outlook
 
@@ -26,7 +26,7 @@ Il s’agit de méthodes asynchrones, ce qui signifie que l’exécution peut co
 
 S’il existe des tâches qui dépendent de l’action à effectuer, vous devez les réaliser dans une méthode de rappel. Cette méthode de rappel est facultative et est invoquée lorsque le chargement de la pièce jointe est terminé. La méthode de rappel utilise un objet [AsyncResult](/javascript/api/office/office.asyncresult) comme paramètre de sortie qui indique les statuts, erreurs et valeurs renvoyés par l’ajout de la pièce jointe. Si le rappel requiert des paramètres supplémentaires, vous pouvez les spécifier dans le paramètre facultatif `options.asyncContext`. L’élément `options.asyncContext` peut appartenir à n’importe quel type prévu par votre méthode de rappel.
 
-Par exemple, vous pouvez définir en `options.asyncContext` tant qu’objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de Office Add-ins en [programmation asynchrone dans les](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods)Office de développement. L’exemple suivant montre comment utiliser le paramètre `asyncContext` pour passer 2 arguments à une méthode de rappel.
+Par exemple, vous pouvez définir en `options.asyncContext` tant qu’objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de Office Add-ins en [programmation asynchrone dans Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). L’exemple suivant montre comment utiliser le paramètre `asyncContext` pour passer 2 arguments à une méthode de rappel.
 
 ```js
 var options = { asyncContext: { var1: 1, var2: 2}};
@@ -112,7 +112,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> Vous pouvez utiliser un module de composition pour joindre une instance d’un rendez-vous périodique Outlook sur le web ou sur des appareils mobiles. Toutefois, dans une prise en charge Outlook client de bureau, la tentative d’attachement d’une instance entraînerait l’attachement de la série périodique (le rendez-vous parent).
+> Vous pouvez utiliser un module de composition pour joindre une instance d’un rendez-vous Outlook sur le web ou sur des appareils mobiles. Toutefois, dans une prise en charge Outlook client de bureau, la tentative d’attachement d’une instance entraînerait l’attachement de la série périodique (le rendez-vous parent).
 
 ## <a name="get-attachments"></a>Obtention de pièces jointes
 
@@ -168,7 +168,7 @@ function handleAttachmentsCallback(result) {
 Vous pouvez supprimer un fichier ou une pièce jointe d’un élément de message ou de rendez-vous dans un formulaire de composition en spécifiant l’ID de pièce jointe correspondant lors de l’utilisation de la méthode [removeAttachmentAsync.](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
 
 > [!IMPORTANT]
-> Si vous utilisez l’ensemble de conditions requises 1.7 ou une précédente, vous devez uniquement supprimer les pièces jointes ajoutées par le même module dans la même session.
+> Si vous utilisez l’ensemble de conditions requises 1.7 ou une précédente, vous devez supprimer uniquement les pièces jointes ajoutées par le même module dans la même session.
 
 Similaire à la méthode , et aux `addFileAttachmentAsync` `addItemAttachmentAsync` `getAttachmentsAsync` méthodes, `removeAttachmentAsync` est une méthode asynchrone. Vous devez fournir une méthode de rappel pour vérifier l’état et toute erreur à l’aide de `AsyncResult` l’objet paramètre de sortie. Vous pouvez également transmettre des paramètres supplémentaires à la méthode de rappel à l’aide du paramètre `asyncContext` facultatif.
 

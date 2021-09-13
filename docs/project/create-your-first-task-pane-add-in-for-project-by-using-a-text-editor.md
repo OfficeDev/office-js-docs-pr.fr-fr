@@ -1,18 +1,18 @@
 ---
 title: Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
-description: Créez un add-in de volet de tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour Office de recherche.
+description: Créez un add-in de volet de tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office de recherche.
 ms.date: 07/10/2020
-localization_priority: Normal
-ms.openlocfilehash: c1de70bec62c4080306c985a319601c506270f2b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8a38599c1820b325eb89035c0d438ebf48b889ca
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938021"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153452"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
-Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Une fois  que vous avez utilisé le Centre de Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
+Vous pouvez créer un add-in du volet Des tâches pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les Office. Cet article explique comment créer un simple add-in qui utilise un manifeste XML qui pointe vers un fichier HTML sur un partage de fichiers. L Project exemple de test du modèle objet teste certaines fonctions JavaScript qui utilisent le modèle objet pour les modules complémentaires. Après avoir  utilisé le Centre de confiance dans Project pour inscrire le partage de fichiers qui contient le fichier manifeste, vous pouvez ouvrir le add-in du volet Des tâches à partir de l’onglet **Project** du ruban. (Le code de cet article est basé sur un exemple développé par Arvind Iyer, Microsoft Corporation.)
 
 Project utilise le même schéma de manifeste de Office et la plupart de la même API JavaScript. Le code complet pour le complément décrit dans cet article est disponible dans le `Samples\Apps` sous-répertoire du téléchargement SDK Project 2013.
 
@@ -656,7 +656,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     </div>
     ```
 
-1. Ajouter des sections avec des boutons pour les méthodes et événements de ressource, les méthodes et événements d’affichage, les `div` propriétés de projet et les propriétés de contexte
+1. Ajouter des sections avec des boutons pour les méthodes et événements de ressources, les méthodes et événements d’affichage, les `div` propriétés de projet et les propriétés de contexte
 
     ```HTML
     <div id="ResourceMethods">
@@ -808,7 +808,7 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
     - Position du symbole : `0`
     - URL Project Web App : `http://servername/pwa`
   
-1. Sélectionnez  le bouton Obtenir les valeurs de contexte pour obtenir les propriétés du document et de l’application dans laquelle le module est en cours d’exécution, en obtenant les propriétés de l’objet **Office.Context.document** et de `Office.context.application` l’objet. Par exemple, si le fichier Project1.mpp se trouve sur le bureau de l’ordinateur local, l’URL du document est  `C:\Users\UserAlias\Desktop\Project1.mpp`. Si le fichier .mpp se trouve dans une bibliothèque SharePoint, la valeur est l’URL du document. Si vous utilisez Project Professionnel 2013 pour ouvrir un projet nommé Project1 à partir de Project Web App, l’URL du document est  `<>\Project1`.
+1. Sélectionnez le bouton Obtenir **les valeurs** de contexte pour obtenir les propriétés du document et de l’application dans laquelle le module est en cours d’exécution, en obtenant les propriétés du **Office. Objet Context.document** et `Office.context.application` objet. Par exemple, si le fichier Project1.mpp se trouve sur le bureau de l’ordinateur local, l’URL du document est  `C:\Users\UserAlias\Desktop\Project1.mpp`. Si le fichier .mpp se trouve dans une bibliothèque SharePoint, la valeur est l’URL du document. Si vous utilisez Project Professionnel 2013 pour ouvrir un projet nommé Project1 à partir de Project Web App, l’URL du document est  `<>\Project1`.
 
     - URL du document : `<>\Project1`
     - Mode de document : `readWrite`

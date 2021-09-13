@@ -4,13 +4,13 @@ description: En savoir plus sur l’API JavaScript de OneNote pour les compléme
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
-localization_priority: Priority
-ms.openlocfilehash: 8c0765fe2c56d23bcf7073f3e72e2138717e9e37
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 20f413db4025b0fe4225cd8f8e7e2f52497f6d2c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938789"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153232"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 

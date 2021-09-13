@@ -3,13 +3,13 @@ title: Excel Ensemble de conditions requises de l’API JavaScript 1.9
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.9.
 ms.date: 04/01/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 41f6eb2dd329a2ab82981cb3ee8e11a784e23591
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: dde36db799a7f0612439e934d50af4f3ab04077e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936953"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152243"
 ---
 # <a name="whats-new-in-excel-javascript-api-19"></a>Nouveautés de l Excel API JavaScript 1.9
 
@@ -226,7 +226,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[headerMargin](/javascript/api/excel/excel.pagelayout#headerMargin)|Marge d’en-tête de la feuille de calcul, en points, à utiliser lors de l’impression.|
 ||[leftMargin](/javascript/api/excel/excel.pagelayout#leftMargin)|Marge gauche de la feuille de calcul, en points, à utiliser lors de l’impression.|
 ||[Orientation](/javascript/api/excel/excel.pagelayout#orientation)|Orientation de la feuille de calcul de la page.|
-||[paperSize](/javascript/api/excel/excel.pagelayout#paperSize)|Format de papier de la feuille de calcul de la page.|
+||[paperSize](/javascript/api/excel/excel.pagelayout#paperSize)|Taille de la feuille de calcul de la page.|
 ||[printComments](/javascript/api/excel/excel.pagelayout#printComments)|Spécifie si les commentaires de la feuille de calcul doivent être affichés lors de l’impression.|
 ||[printErrors](/javascript/api/excel/excel.pagelayout#printErrors)|Option d’erreurs d’impression de la feuille de calcul.|
 ||[printGridlines](/javascript/api/excel/excel.pagelayout#printGridlines)|Spécifie si le quadrillage de la feuille de calcul sera imprimé.|
@@ -243,7 +243,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[PageLayoutMarginOptions](/javascript/api/excel/excel.pagelayoutmarginoptions)|[bas](/javascript/api/excel/excel.pagelayoutmarginoptions#bottom)|Spécifie la marge inférieure de mise en page dans l’unité spécifiée à utiliser pour l’impression.|
 ||[footer](/javascript/api/excel/excel.pagelayoutmarginoptions#footer)|Spécifie la marge de pied de page de mise en page dans l’unité spécifiée à utiliser pour l’impression.|
 ||[header](/javascript/api/excel/excel.pagelayoutmarginoptions#header)|Spécifie la marge d’en-tête de mise en page dans l’unité spécifiée à utiliser pour l’impression.|
-||[left](/javascript/api/excel/excel.pagelayoutmarginoptions#left)|Spécifie la marge gauche de la mise en page dans l’unité spécifiée à utiliser pour l’impression.|
+||[left](/javascript/api/excel/excel.pagelayoutmarginoptions#left)|Spécifie la marge gauche de mise en page dans l’unité spécifiée à utiliser pour l’impression.|
 ||[right](/javascript/api/excel/excel.pagelayoutmarginoptions#right)|Spécifie la marge droite de mise en page dans l’unité spécifiée à utiliser pour l’impression.|
 ||[top](/javascript/api/excel/excel.pagelayoutmarginoptions#top)|Spécifie la marge supérieure de mise en page dans l’unité spécifiée à utiliser pour l’impression.|
 |[PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions)|[horizontalFitToPages](/javascript/api/excel/excel.pagelayoutzoomoptions#horizontalFitToPages)|Nombre de pages pour l’ajuster horizontalement.|
@@ -455,7 +455,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[getActiveChartOrNullObject()](/javascript/api/excel/excel.workbook#getActiveChartOrNullObject__)|Obtient la feuille de calcul active du classeur.|
 ||[getIsActiveCollabSession()](/javascript/api/excel/excel.workbook#getIsActiveCollabSession__)|Renvoie si le workbook est modifié par plusieurs `true` utilisateurs (via la co-édition).|
 ||[getSelectedRanges()](/javascript/api/excel/excel.workbook#getSelectedRanges__)|Obtient la ou les plage(s) sélectionnée(s) actuelle(s) dans le classeur.|
-||[isDirty](/javascript/api/excel/excel.workbook#isDirty)|Indique si des modifications ont été apportées depuis le dernier enregistré du manuel.|
+||[isDirty](/javascript/api/excel/excel.workbook#isDirty)|Spécifie si des modifications ont été apportées depuis le dernier enregistré du manuel.|
 ||[autoSave](/javascript/api/excel/excel.workbook#autoSave)|Spécifie si le workbook est en mode d’auto-ave.|
 ||[calculationEngineVersion](/javascript/api/excel/excel.workbook#calculationEngineVersion)|Renvoie un nombre sur la version de moteur de calcul Excel.|
 ||[onAutoSaveSettingChanged](/javascript/api/excel/excel.workbook#onAutoSaveSettingChanged)|Se produit lorsque le paramètre AutoSave est modifié sur le workbook.|

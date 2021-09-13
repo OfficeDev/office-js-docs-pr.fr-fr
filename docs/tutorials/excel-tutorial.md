@@ -3,13 +3,13 @@ title: Didacticiel sur le complément Excel
 description: Créez un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
 ms.date: 07/08/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 2441d5fa266ba0e10e64e2af55d6679a6c77af9f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f3ecf502f035783aa99dda959d23a3cb2444ec83
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938369"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150364"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -399,7 +399,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-1. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
+1. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
 
    - Les paramètres de la méthode `setPosition` spécifient les cellules situées en haut à gauche et en bas à droite de la zone de feuille de calcul devant contenir le graphique. Excel peut ajuster des éléments, tels que la largeur de ligne pour que le graphique s’affiche correctement dans l’espace attribué.
 

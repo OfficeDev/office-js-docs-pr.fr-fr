@@ -3,13 +3,13 @@ title: Excel Ensemble de conditions requises de l’API JavaScript 1.13
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.13.
 ms.date: 07/09/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 8238f6c32aad74d59ed1d178b3f7b162a64026f1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 677cb9eceba3d25a7f2d0f8677ab63942852a784
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937669"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152853"
 ---
 # <a name="whats-new-in-excel-javascript-api-113"></a>Nouveautés de l Excel API JavaScript 1.13
 
@@ -42,7 +42,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#showFieldHeaders)|Spécifie si le tableau croisé dynamique affiche les en-têtes de champ (légendes de champ et les drop-downs de filtre).|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#refreshOnOpen)|Spécifie si le tableau croisé dynamique est actualisé à l’ouverture du manuel.|
 |[Range](/javascript/api/excel/excel.range)|[getDirectDependents()](/javascript/api/excel/excel.range#getDirectDependents__)|Renvoie un objet qui représente la plage contenant tous les dépendants directs d’une cellule dans la même feuille de calcul ou `WorkbookRangeAreas` dans plusieurs feuilles de calcul.|
-||[getExtendedRange(direction : Excel. KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getExtendedRange_direction__activeCell_)|Renvoie un objet de plage qui inclut la plage actuelle et jusqu’au bord de la plage, en fonction de la direction fournie.|
+||[getExtendedRange(direction: Excel. KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getExtendedRange_direction__activeCell_)|Renvoie un objet de plage qui inclut la plage actuelle et jusqu’au bord de la plage, en fonction de la direction fournie.|
 ||[getMergedAreasOrNullObject()](/javascript/api/excel/excel.range#getMergedAreasOrNullObject__)|Renvoie un objet RangeAreas qui représente les zones fusionnées dans cette plage.|
 ||[getRangeEdge(direction: Excel. KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#getRangeEdge_direction__activeCell_)|Renvoie un objet de plage qui est la cellule edge de la zone de données qui correspond à la direction fournie.|
 |[Table](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#resize_newRange_)|Resize the table to the new range.|

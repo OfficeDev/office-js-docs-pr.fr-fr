@@ -3,13 +3,13 @@ title: Utiliser un générateur Yeoman pour créer un complément Office qui uti
 description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise la connexion unique.
 ms.date: 11/03/2020
 ms.prod: non-product-specific
-localization_priority: Priority
-ms.openlocfilehash: eb75c0b4f2a27612a2e361caaaefefa047a68a44
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 5153c1ed3987f619b180dd22ba90f2eb4c760d09
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938571"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153532"
 ---
 # <a name="use-the-yeoman-generator-to-create-an-office-add-in-that-uses-single-sign-on"></a>Utiliser le générateur Yeoman pour créer un complément Office qui utilise la connexion unique
 

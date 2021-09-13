@@ -2,13 +2,13 @@
 title: Élément ExtendedOverrides dans le fichier manifeste
 description: Spécifie les URL d’une extension au format JSON du manifeste.
 ms.date: 02/23/2021
-localization_priority: Normal
-ms.openlocfilehash: f433c9c5604f3fae35580ba20780ea6fe91401c7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 062d62284d786e81f230b1d094c46a73208a6c2c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938637"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153033"
 ---
 # <a name="extendedoverrides-element"></a>Élément ExtendedOverrides
 

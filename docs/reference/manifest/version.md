@@ -2,13 +2,13 @@
 title: Élément version dans le fichier manifest
 description: L’élément Version spécifie votre Office version du add-in.
 ms.date: 02/05/2021
-localization_priority: Normal
-ms.openlocfilehash: 48a2be94d95ece597e47468bb18db2a7962a51e9
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 34cefa22123ed4ee723d51a669e01e042efc2934
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937228"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153504"
 ---
 # <a name="version-element"></a>Version, élément
 

@@ -2,13 +2,13 @@
 title: Élément Page dans le fichier manifeste
 description: L’élément Page définit les paramètres de page HTML qu’une fonction personnalisée utilise dans Excel.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: aa8a2807cbf2549ded680a22b17f24513ea76b9a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 6bde3ba86270874b1d9059b2f1c44952241bf00f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937841"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153623"
 ---
 # <a name="page-element"></a>Élément Page
 

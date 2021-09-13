@@ -2,13 +2,13 @@
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: Découvrez comment résoudre les erreurs de l’utilisateur dans Office des modules.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1593dd5aa5ae690d4a44f1a7527dce2c6dfcbd87
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937317"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153643"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -89,4 +89,4 @@ Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callb
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Résoudre les erreurs de développement avec Office de recherche](troubleshoot-development-errors.md)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](troubleshoot-development-errors.md)

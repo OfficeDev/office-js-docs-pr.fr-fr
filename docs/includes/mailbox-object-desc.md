@@ -14,4 +14,4 @@ En outre, Outlook compléments peuvent utiliser les objets suivants.
 
 -  Objet **RoamingSettings** : pour l’enregistrement des paramètres personnalisés propres au complément Outlook dans la boîte aux lettres de l’utilisateur dans laquelle le complément est installé.
 
-Pour plus d’informations sur l’utilisation Outlook’API JavaScript, voir [Outlook de recherche.](../outlook/outlook-add-ins-overview.md)
+Pour plus d’informations sur l’utilisation Outlook l’API JavaScript, [voir Outlook de recherche.](../outlook/outlook-add-ins-overview.md)

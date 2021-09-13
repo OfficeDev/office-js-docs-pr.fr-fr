@@ -3,13 +3,13 @@ title: Excel Ensemble de conditions requises de l’API JavaScript en ligne uniq
 description: Détails sur l’ensemble de conditions requises ExcelApiOnline.
 ms.date: 07/23/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 8e49d2a9d655e7bc1bf21233bdaf23321d1e48d1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 067bd3f033c415b0a6ac271aa1f132cfeb92730c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938752"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152240"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 
@@ -46,7 +46,7 @@ Une fois que l’API se trouve dans un ensemble de conditions requises sur plusi
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+Le tableau suivant répertorie les Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|

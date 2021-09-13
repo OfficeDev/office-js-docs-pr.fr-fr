@@ -2,13 +2,13 @@
 title: Concevoir l'interface utilisateur des modules complémentaires d'Office
 description: Apprenez les meilleures pratiques pour la conception visuelle des compléments d'Office.
 ms.date: 07/08/2021
-localization_priority: Priority
-ms.openlocfilehash: 7c43a491de9ae3204ca77db45c64cbdf6404969d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 68b398cb04b59f7ce4506739db1357b7cbc3998e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938149"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150203"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>Concevoir l'interface utilisateur des modules complémentaires d'Office
 
@@ -29,7 +29,7 @@ Suivez les principes de conception d’Office pour créer des expériences de co
 
 - **Contenu Favor sur chrome.** Autoriser les clients&rsquo; page, diapositive ou feuille de calcul pour rester le focus de l’expérience. Un complément est une interface auxiliaire. Aucun chrome d’accessoire ne doit interférer avec le contenu et les fonctionnalités du complément. Marquez votre expérience avec personnalisation. Nous savons qu’il est important de fournir aux utilisateurs une expérience unique et reconnaissable, tout en évitant toute distraction. Efforcez-vous de garder le focus sur le contenu et l’achèvement des tâches, et non sur l’attention de la marque.
 
-- **Rendez-la agréable et laissez suffisamment de contrôle aux utilisateurs.** Nous aimons tous utiliser des produits qui sont à la fois attrayants visuellement et fonctionnels. Créez votre expérience avec soin. Obtenez les détails directement en tenant compte de chaque interaction et détail visuel. Permettez aux utilisateurs de contrôler leur expérience. Les étapes nécessaires pour exécuter une tâche doivent être claires et pertinentes. Les décisions importantes doivent être faciles à comprendre. Les actions doivent être facilement réversibles. Un complément n’est pas une destination : c’est une amélioration des fonctionnalités Office.
+- **Rendez l’expérience agréable et garder les utilisateurs au contrôle.** Les utilisateurs aiment utiliser des produits fonctionnels et visuellement attrayants. Concevez votre expérience avec soin. Obtenez les détails correctement en tenant compte de chaque interaction et détail visuel. Autoriser les utilisateurs à contrôler leur expérience. Les étapes nécessaires pour effectuer une tâche doivent être claires et pertinentes. Les décisions importantes doivent être faciles à comprendre. Les actions doivent être facilement réversibles. Un complément n’est pas une – destination, mais ’ une amélioration des fonctionnalités d’Office.
 
 - **Prenez en compte toutes les plateformes et les méthodes d’entrée lors de la conception**. Les compléments sont conçus pour fonctionner sur toutes les plateformes prenant en charge Office ; aussi l’expérience utilisateur de votre complément doit-elle être optimisée pour fonctionner avec toutes les plateformes et tous les facteurs de forme. Veillez à ce que votre complément prenne aussi bien en charge les périphériques de type souris/clavier que les appareils et assurez-vous que votre interface utilisateur HTML personnalisée puisse s’adapter à différents facteurs de forme. Pour plus d’informations, consultez notre section relative aux [fonctions tactiles](../concepts/add-in-development-best-practices.md#optimize-for-touch).
 

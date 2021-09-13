@@ -3,13 +3,13 @@ title: Ensembles de conditions requises des API ruban
 description: Spécifie les plateformes Office et les builds qui prisent en charge les API du ruban dynamique.
 ms.date: 05/12/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: aa198009a3d1d16a1c34966516a4ddeee9f7f940
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936488"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153484"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 

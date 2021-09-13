@@ -1,16 +1,16 @@
 ---
-title: Résoudre les erreurs de développement avec Office de recherche
-description: Découvrez comment résoudre les erreurs de développement dans Office des modules.
+title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
+description: Découvrez comment résoudre les erreurs de développement dans les Office de développement.
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 83c1c62efecff79baf7bfaf2040e7858d72b9ea4
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9a2b36a0c8a89dd5f4087794e1901e72baca6244
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936190"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152235"
 ---
-# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résoudre les erreurs de développement avec Office de recherche
+# <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
 Voici une liste des problèmes courants que vous pouvez rencontrer lors du développement d’un Office de développement.
 
@@ -50,7 +50,7 @@ Si ces étapes ne semblent pas fonctionner au départ, vous devrez peut-être vi
 del /s /f /q %LOCALAPPDATA%\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>Les modifications apportées aux valeurs des propriétés ne se produisent pas et il n’y a aucun message d’erreur
+## <a name="changes-made-to-property-values-dont-happen-and-there-is-no-error-message"></a>Les modifications apportées aux valeurs des propriétés ne se produisent pas et il n’existe aucun message d’erreur
 
 Consultez la documentation de référence de la propriété pour voir si elle est en lecture seule. En outre, les [définitions TypeScript](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md) pour Office JS spécifient quelles propriétés d’objet sont en lecture seule. Si vous tentez de définir une propriété en lecture seule, l’opération d’écriture échoue silencieusement, sans qu’aucune erreur ne soit lancée. L’exemple suivant tente par erreur de définir la propriété en lecture seule [Chart.id](/javascript/api/excel/excel.chart#id). Voir aussi [Certaines propriétés ne peuvent pas être définies directement.](../develop/application-specific-api-model.md#some-properties-cannot-be-set-directly)
 
@@ -76,7 +76,7 @@ Voir [Résolution des problèmes Microsoft Edge problèmes.](../concepts/browser
 
 ## <a name="excel-add-in-throws-errors-but-not-consistently"></a>Excel de l’équipe de sécurité envoie des erreurs, mais pas de manière cohérente
 
-Pour [plus d’Excel,](../excel/excel-add-ins-troubleshooting.md) voir Résoudre les problèmes.
+Pour [les causes possibles Excel résoudre les](../excel/excel-add-ins-troubleshooting.md) problèmes.
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erreurs de validation de schéma de manifeste dans Visual Studio projets
 

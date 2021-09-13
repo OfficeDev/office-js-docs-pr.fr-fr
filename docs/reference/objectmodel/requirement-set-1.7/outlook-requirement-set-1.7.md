@@ -2,13 +2,13 @@
 title: Ensemble de conditions requises de l’API du complément Outlook 1.7
 description: Vue d’ensemble Outlook API du module de mise en Outlook (ensemble de conditions requises 1.7)
 ms.date: 05/17/2021
-localization_priority: Normal
-ms.openlocfilehash: 6130cdadb63c7c3093b869950832e7a68358ea81
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9f9e20391113cddb78750e5933d2dd4ad11ba2a3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938838"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153295"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Ensemble de conditions requises de l’API du complément Outlook 1.7
 

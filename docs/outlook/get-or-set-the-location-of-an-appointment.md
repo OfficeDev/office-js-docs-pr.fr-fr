@@ -2,13 +2,13 @@
 title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 10/31/2019
-localization_priority: Normal
-ms.openlocfilehash: 5669f656348465baabb3e684b359261024a509ca
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 02a6360d43b91cde773d767d9a9838c015d9ecd7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936491"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153132"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
@@ -22,11 +22,11 @@ Le tableau suivant répertorie les API d’emplacement et les modes (c’est-à-
 | API | Modes de rendez-vous applicables |
 |---|---|
 | [item.location](/javascript/api/outlook/office.appointmentread#location) | Attendee/Read |
-| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | Organizer/Compose |
-| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | Organizer/Compose |
+| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | Organisateur/Composition |
+| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | Organisateur/Composition |
 | [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) | Organisateur/Composition,<br>Attendee/Read |
-| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
-| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | Organizer/Compose |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | Organisateur/Composition |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | Organisateur/Composition |
 
 Pour utiliser les méthodes disponibles uniquement pour composer des add-ins, configurez le manifeste du add-in pour activer le module en mode Organisateur/Composition. Pour [plus d Outlook,](compose-scenario.md) voir Créer des Outlook pour les formulaires de composition.
 

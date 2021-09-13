@@ -2,13 +2,13 @@
 title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un Office à l’aide du schéma XML et d’autres outils.
 ms.date: 09/18/2020
-localization_priority: Normal
-ms.openlocfilehash: 66127652a9abd00a3d1cb2e92a8a780b0c029327
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 60151522906fc45c8d0d501c8263acd818612897
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936615"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152232"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 

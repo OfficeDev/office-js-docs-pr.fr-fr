@@ -2,17 +2,17 @@
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide Excel API JavaScript.
 ms.date: 07/02/2021
-localization_priority: Normal
-ms.openlocfilehash: 931a035b5e46a77afe2f56fecb0cd7ef6d134570
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c0903718eab98866e88c18c715bf121979d87d82
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937415"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152204"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir une liste complète des propriétés et des méthodes prises en charge par les objets `Table` et `TableCollection`, reportez-vous à la rubrique [Objet Table (API JavaScript pour Excel)](/javascript/api/excel/excel.table) et [Objet TableCollection (API JavaScript pour Excel)](/javascript/api/excel/excel.tablecollection).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(interface API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript](/javascript/api/excel/excel.tablecollection)pour Excel).
 
 ## <a name="create-a-table"></a>Créer un tableau
 
@@ -59,7 +59,7 @@ Excel.run(function (context) {
 L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **ExpensesTable** au sein de la feuille de calcul **Sample**. Les nouvelles lignes sont ajoutées à la fin du tableau. Si l’application Excel où le code [](../reference/requirement-sets/excel-api-requirement-sets.md) est en cours d’exécution prend en charge l’ensemble de conditions **requises ExcelApi 1.2**, la largeur des colonnes et la hauteur des lignes sont définies pour mieux s’adapter aux données actuelles du tableau.
 
 > [!NOTE]
-> La propriété `index` d’un objet [TableRow](/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection de lignes du tableau. Un objet `TableRow` ne contient pas de propriété `id` qui peut être utilisée comme clé unique pour identifier la ligne.
+> La `index` propriété d’un [objet TableRow](/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection rows du tableau. Un objet ne contient pas de propriété qui peut être utilisée comme clé `TableRow` unique pour identifier la `id` ligne.
 
 > [!WARNING]
 > L’ajout de lignes à un tableau à partir d’un add-in de contenu entraîne une fuite de mémoire. Consultez [GitHub'#1415 problème](https://github.com/OfficeDev/office-js/issues/1415) pour l’état actuel et des informations supplémentaires. 
@@ -367,7 +367,7 @@ Excel.run(function (context) {
 
 ## <a name="get-the-visible-range-from-a-filtered-table"></a>Obtenir la plage visible à partir d’une table filtrée
 
-L’exemple de code suivant recherche une plage qui contient des données uniquement pour des cellules qui sont actuellement visibles dans le tableau spécifié, et écrit ensuite les valeurs de la plage dans la console. Vous pouvez utiliser la méthode `getVisibleView()` comme indiqué ci-dessous pour rechercher le contenu d’un tableau visible dès que les filtres de colonne ont été appliqués.
+L’exemple de code suivant recherche une plage qui contient des données uniquement pour des cellules qui sont actuellement visibles dans le tableau spécifié, et écrit ensuite les valeurs de la plage dans la console. Vous pouvez utiliser la méthode comme indiqué ci-dessous pour obtenir le contenu visible d’un tableau chaque fois que des filtres `getVisibleView()` de colonne ont été appliqués.
 
 ```js
 Excel.run(function (context) {
@@ -470,7 +470,7 @@ Excel.run(function (context) {
 
 **Données de la plage (avant la conversion de la plage en tableau)**
 
-![Données de plage dans Excel.](../images/excel-ranges.png)
+![Données de plage en Excel.](../images/excel-ranges.png)
 
 **Données du tableau (après la conversion de la plage en tableau)**
 

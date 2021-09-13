@@ -3,13 +3,13 @@ title: Utiliser Angular pour créer un complément de volet Office Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et d’Angular pour Office.
 ms.date: 08/04/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 433c78a00604b29b93c3a774b5f21416075f5ff1
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f7c4ff77833d4eabc854718c9156a4da0c6e7cc3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939004"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59153384"
 ---
 # <a name="use-angular-to-build-an-excel-task-pane-add-in"></a>Utiliser Angular pour créer un complément de volet Office Excel
 

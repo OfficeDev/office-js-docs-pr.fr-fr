@@ -2,17 +2,17 @@
 title: Élément AppDomain dans le fichier manifeste
 description: Spécifie les domaines supplémentaires qui sont utilisés par votre complément et qui doivent être Office.
 ms.date: 06/12/2020
-localization_priority: Normal
-ms.openlocfilehash: ae49944afceada559b39353cd119e26a21fd3d15
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c17195e6d9d3f4f22465c8aa1fc626afd3eb06c4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938119"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152187"
 ---
 # <a name="appdomain-element"></a>AppDomain, élément
 
-Spécifie un domaine supplémentaire que Office doit faire confiance, en plus de celui spécifié dans [l’élément SourceLocation](sourcelocation.md). La spécification d’un domaine a les effets suivants :
+Spécifie un domaine supplémentaire qui doit Office, en plus de celui spécifié dans [l’élément SourceLocation](sourcelocation.md). La spécification d’un domaine a les effets suivants :
 
 - Il permet d’ouvrir des pages, des itinéraires ou d’autres ressources dans le domaine directement dans le volet Des tâches racine du module de Office de bureau. (La spécification d’un domaine dans un **AppDomain** n’est pas nécessaire pour Office sur le Web ou pour ouvrir une ressource dans un IFrame, ni pour ouvrir une ressource dans une boîte de dialogue ouverte avec [l’API](../../develop/dialog-api-in-office-add-ins.md)de dialogue.)
 - Il permet aux pages du domaine d’effectuer des Office.js API à partir d’IFrames au sein du module.

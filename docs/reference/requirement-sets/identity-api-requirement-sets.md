@@ -3,13 +3,13 @@ title: Ensembles de conditions requises de l’API d’identité
 description: Informations de l’ensemble de conditions requises de l’API d’identité Office les modules complémentaires.
 ms.date: 01/26/2021
 ms.prod: non-product-specific
-localization_priority: Normal
-ms.openlocfilehash: 40f9154b06b0e373ac367b0dcc24cbfc05be4856
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: d8a18ed8e7f78c5c83aeb2177a45c4fb46ba4a46
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937740"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59152236"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
