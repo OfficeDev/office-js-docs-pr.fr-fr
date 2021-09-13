@@ -2,13 +2,13 @@
 title: Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 description: Utilisez l Office API JavaScript pour créer un volet De tâches dans Office 2013.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 356880c0f4bb4377f2d5997217f26f51dd95f845
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8af93e7cd0ba527c72a4e6e721e30fb9739dda6a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939359"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149942"
 ---
 # <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>Prise en charge de l’API JavaScript pour Office pour les compléments de contenu et du volet Office dans Office 2013
 
@@ -18,9 +18,9 @@ Vous pouvez utiliser [l’API JavaScript Office pour](../reference/javascript-ap
 
 1. **Objets communs partagés avec d’autres Office des modules.** Ces objets incluent [Office,](/javascript/api/office) [Context](/javascript/api/office/office.context)et [AsyncResult](/javascript/api/office/office.asyncresult). `Office`L’objet est l’objet racine de l Office API JavaScript. `Context`L’objet représente l’environnement d’runtime du add-in. Les deux objets sont fondamentaux pour n’importe `Office` `Context` quel Office de recherche. L’objet représente les résultats d’une opération asynchrone, telle que les données renvoyées à la méthode, qui lit ce qu’un utilisateur a sélectionné `AsyncResult` `getSelectedDataAsync` dans un document.
 
-2. **Objet Document.** La majorité des éléments de l’API disponibles pour les compléments de contenu et du volet Office sont exposés via les méthodes, propriétés et événements de l’objet [Document](/javascript/api/office/office.document). Un application de contenu ou du volet Des tâches peut utiliser la propriété [Office.context.document](/javascript/api/office/office.context#document) pour accéder à l’objet **Document** et, par son biais, accéder aux membres clés de l’API pour utiliser des données dans des documents, tels que les objets [Bindings](/javascript/api/office/office.bindings) et [CustomXmlParts,](/javascript/api/office/office.customxmlparts) et les méthodes [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_), [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_)et [getFileAsync.](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) L’objet fournit également la propriété mode permettant de déterminer si un document est en lecture seule ou en mode édition, la propriété d’URL pour obtenir l’URL du document actuel et l’accès à `Document` l’objet [Paramètres.](/javascript/api/office/office.settings) [](/javascript/api/office/office.document#mode) [](/javascript/api/office/office.document#url) L’objet prend également en charge l’ajout de handlers d’événements pour `Document` l’événement [SelectionChanged,](/javascript/api/office/office.documentselectionchangedeventargs) afin que vous pouvez détecter quand un utilisateur modifie sa sélection dans le document.
+2. **Objet Document.** La majorité des éléments de l’API disponibles pour les compléments de contenu et du volet Office sont exposés via les méthodes, propriétés et événements de l’objet [Document](/javascript/api/office/office.document). Un add-in de contenu ou de volet de tâches peut utiliser la propriété [Office.context.document](/javascript/api/office/office.context#document) pour accéder à l’objet **Document** et, par son biais, accéder aux membres clés de l’API pour utiliser des données dans des documents, tels que les objets [Bindings](/javascript/api/office/office.bindings) et [CustomXmlParts,](/javascript/api/office/office.customxmlparts) et les méthodes [getSelectedDataAsync,](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_)et [getFileAsync.](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) L’objet fournit également la propriété mode permettant de déterminer si un document est en lecture seule ou en mode édition, la propriété d’URL permettant d’obtenir l’URL du document actuel et l’accès à `Document` l’objet [Paramètres.](/javascript/api/office/office.settings) [](/javascript/api/office/office.document#mode) [](/javascript/api/office/office.document#url) L’objet prend également en charge l’ajout de handlers d’événements pour `Document` l’événement [SelectionChanged,](/javascript/api/office/office.documentselectionchangedeventargs) afin que vous pouvez détecter quand un utilisateur modifie sa sélection dans le document.
 
-   Un add-in de contenu ou du volet Des tâches peut accéder à l’objet uniquement après le chargement du DOM et de l’environnement d’runtime, généralement dans le handler d’événements pour l’événement `Document` [Office.initialize.](/javascript/api/office) Pour plus d’informations sur le flux d’événements lors de l’initialisation d’un complément et sur la vérification du chargement correct du DOM et de l’environnement d’exécution, voir la page relative au [chargement du DOM et de l’environnement d’exécution](loading-the-dom-and-runtime-environment.md).
+   Un module de contenu ou du volet Des tâches peut accéder à l’objet uniquement après le chargement du DOM et de l’environnement d’runtime, généralement dans le handler d’événements pour l’événement `Document` [Office.initialize.](/javascript/api/office) Pour plus d’informations sur le flux d’événements lors de l’initialisation d’un complément et sur la vérification du chargement correct du DOM et de l’environnement d’exécution, voir la page relative au [chargement du DOM et de l’environnement d’exécution](loading-the-dom-and-runtime-environment.md).
 
 3. **Objets pour l’utilisation de fonctionnalités spécifiques.** Pour utiliser des fonctionnalités spécifiques de l’API, utilisez les objets et méthodes suivants.
 
@@ -119,7 +119,7 @@ Pour éviter les allers-retours vers le serveur où le document est stocké, les
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
-Étant donné que les données de paramètres créées ou supprimées avec les méthodes agissent sur une copie en mémoire des données, vous devez appeler pour faire persister les modifications apportées aux données de paramètres dans le document sur le document avec qui votre module est en cours `set` `remove` `saveAsync` d’utilisation.
+Étant donné que les données de paramètres créées ou supprimées avec les méthodes agissent sur une copie en mémoire des données, vous devez appeler pour faire persister les modifications apportées aux données de paramètres dans le document sur le document avec qui votre `set` `remove` `saveAsync` add-in travaille.
 
 Pour plus d’informations sur l’utilisation de données personnalisées à l’aide des méthodes de l’objet, voir Persistance de l’état et `Settings` [des paramètres du module.](persisting-add-in-state-and-settings.md)
 

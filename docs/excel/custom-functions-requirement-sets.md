@@ -3,13 +3,13 @@ title: Ensembles de conditions requises fonctions personnalisées
 description: Détails sur les ensembles de conditions requises fonctions personnalisées pour Excel API JavaScript.
 ms.date: 09/14/2020
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 0860dd2d1b55376a85eadf04898d288d83b0205d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0d29d56bb41d44ed8553e97c583e41510e83c132
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936217"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150260"
 ---
 # <a name="custom-functions-requirement-sets"></a>Ensembles de conditions requises fonctions personnalisées
 

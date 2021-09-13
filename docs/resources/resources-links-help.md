@@ -2,13 +2,13 @@
 title: Ressources supplémentaires sur les compléments Office
 description: Ressources utiles sur la rubrique de Office de recherche
 ms.date: 04/14/2021
-localization_priority: Normal
-ms.openlocfilehash: de774386acca2825734ac50096b83d562df0263b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 01bf4b89758194a2d9ea5bd1d59f755d47f32bbb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938365"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149228"
 ---
 # <a name="office-add-ins-additional-resources"></a>Ressources supplémentaires sur les compléments Office
 

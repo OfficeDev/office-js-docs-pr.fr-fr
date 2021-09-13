@@ -2,13 +2,13 @@
 title: Règles de style de visualisation de données pour les compléments Office
 description: Obtenez quelques bonnes pratiques pour visualiser des données dans un Office de recherche.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 353406742bf247b7b9d2700f731de8a70f7b4928
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cc3c743e3a793c4d4fdc2639313eb40a01923ada
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939347"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150140"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
@@ -35,7 +35,7 @@ Suivez ces instructions pour les titres de graphique.
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez l’interface Fluent, voir la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez l’interface Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -55,7 +55,7 @@ Pour des recommandations sur l’utilisation des couleurs dans les visualisation
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez l’interface Fluent, voir la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez l’interface Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 

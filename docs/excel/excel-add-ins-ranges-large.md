@@ -3,13 +3,13 @@ title: Lire ou écrire dans de grandes plages à l’aide de l Excel API JavaScr
 description: Découvrez comment lire ou écrire dans de grandes plages à l’Excel’API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: b7a1e54d6b516889884f777bd256df8fb663c794
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4b0398c043ba7cfc4933efe600f89281c988bbb1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937075"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149259"
 ---
 # <a name="read-or-write-to-a-large-range-using-the-excel-javascript-api"></a>Lire ou écrire dans une grande plage à l’aide de l Excel API JavaScript
 

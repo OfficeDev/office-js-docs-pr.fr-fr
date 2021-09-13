@@ -2,13 +2,13 @@
 title: Afficher ou masquer le volet des tâches de votre complément Office
 description: Découvrez comment masquer ou afficher par programme l’interface utilisateur d’un add-in pendant qu’il s’exécute en continu.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: b2f0efa95f4ce71fc73d9834cfc165cfdd85dc8f
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: eb540b9b39870a02343e5a42fdbe3cc9cbd78f01
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936637"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149948"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Afficher ou masquer le volet des tâches de votre complément Office
 

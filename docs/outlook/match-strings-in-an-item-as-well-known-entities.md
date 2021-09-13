@@ -2,13 +2,13 @@
 title: Faire correspondre les chaînes en tant qu’entités connues dans un complément Outlook
 description: À l’Office’API JavaScript, vous pouvez obtenir des chaînes qui correspondent à des entités connues spécifiques pour un traitement ultérieur.
 ms.date: 04/15/2019
-localization_priority: Normal
-ms.openlocfilehash: 8d4b78259b771d29244641d9e3ca867018b763ef
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 636414f3e90fba9ffa78338b20f23d2bd63e4983
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939261"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149098"
 ---
 # <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues
 
@@ -153,7 +153,7 @@ En outre, les éléments suivants s’appliquent si vous utilisez une règle [It
     
 - Lorsque votre application est en cours d’exécution sur un client riche Outlook, attendez-vous à ce que Outlook applique la règle au premier mégaoctet du corps de l’élément et non au reste du corps au-dessus de cette `ItemHasKnownEntity` limite.
     
-- Vous ne pouvez pas utiliser une règle pour activer un add-in pour les éléments du `ItemHasKnownEntity` dossier Éléments envoyés.
+- Vous ne pouvez pas utiliser une règle pour activer un `ItemHasKnownEntity` add-in pour les éléments du dossier Éléments envoyés.
     
 
 ## <a name="see-also"></a>Voir aussi

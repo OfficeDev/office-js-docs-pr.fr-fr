@@ -2,13 +2,13 @@
 ms.date: 03/08/2021
 description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, tels que les plages Excel, les paramètres facultatifs, le contexte d’appel, etc.
 title: Options pour Excel fonctions personnalisées
-localization_priority: Normal
-ms.openlocfilehash: a168853eeb6a81cf3d0054cb3628b609ec283af7
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 760e680441472d3089e9f6a986af60aac26a02f1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937159"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150504"
 ---
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
@@ -119,7 +119,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 Votre fonction personnalisée peut accepter une plage de données de cellule comme paramètre d’entrée. Une fonction peut également renvoyer une plage de données. Excel passe une plage de données de cellule sous forme de tableau à deux dimensions.
 
-Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre et la syntaxe JSDOC définit la propriété du paramètre dans les métadonnées `values` `number[][]` `dimensionality` `matrix` JSON pour cette fonction. 
+Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le paramètre et la syntaxe JSDOC définit la propriété du paramètre dans les métadonnées `values` `number[][]` `dimensionality` `matrix` JSON de cette fonction. 
 
 ```js
 /**
@@ -223,7 +223,7 @@ Un paramètre de plage exercidable permet de passer plusieurs plages ou nombres.
 ### <a name="declaring-repeating-parameters"></a>Déclaration de paramètres répétés
 Dans Typescript, indiquez que le paramètre est multidimensionnel. Par exemple, cela indiquerait un tableau à une dimension, un tableau à  `ADD(values: number[])` `ADD(values:number[][])` deux dimensions, etc.
 
-Dans JavaScript, utilisez pour les tableaux à une dimension, pour les tableaux à deux dimensions, et ainsi de `@param values {number[]}` suite pour plus de `@param <name> {number[][]}` dimensions.
+Dans JavaScript, utilisez pour les tableaux à une dimension, pour les tableaux à deux `@param values {number[]}` `@param <name> {number[][]}` dimensions, etc. pour plus de dimensions.
 
 Pour JSON écrit à la main, assurez-vous que votre paramètre est spécifié comme dans votre fichier JSON, et vérifiez que vos paramètres sont `"repeating": true` marqués comme `"dimensionality": matrix` .
 
@@ -289,7 +289,7 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
 
 Lorsqu’une fonction personnalisée appelant la propriété s’exécute, l’adresse du paramètre est renvoyée en suivant le format de la cellule `parameterAddresses` qui a appelé la `SheetName!RelativeCellAddress` fonction. Par exemple, si le paramètre d’entrée se trouve dans une feuille appelée **Costs** dans la cellule D8, la valeur d’adresse du paramètre renvoyé est `Costs!D8` . Si la fonction personnalisée possède plusieurs paramètres et que plusieurs adresses de paramètre sont renvoyées, les adresses renvoyées se renverront sur plusieurs cellules, décroit verticalement à partir de la cellule qui a appelé la fonction. 
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
 Découvrez comment utiliser des [valeurs volatiles dans vos fonctions personnalisées.](custom-functions-volatile.md)
 

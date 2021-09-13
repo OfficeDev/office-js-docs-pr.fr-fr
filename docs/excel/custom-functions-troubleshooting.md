@@ -2,13 +2,13 @@
 ms.date: 03/30/2021
 description: Résolution des problèmes courants liés Excel fonctions personnalisées.
 title: Résoudre des problèmes de fonctions personnalisées
-localization_priority: Normal
-ms.openlocfilehash: 5029deea7b02f7564d2149e3aa689408fbb8b479
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: b95dae1acb60fe21298641076fb63f0655193e11
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938313"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150503"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 

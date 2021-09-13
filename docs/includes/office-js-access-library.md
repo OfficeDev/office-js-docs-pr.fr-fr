@@ -1,9 +1,9 @@
-La bibliothèque de l’interface API JavaScript Office est accessible via le réseau de distribution de contenu (CDN) d’Office JS à l’adresse suivante : `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Pour utiliser les API JavaScript Office dans les pages web de votre complément, vous devez référencer le réseau de distribution de contenu dans une balise `<script>`dans la balise `<head>` de la page.
+La bibliothèque de l’interface API JavaScript Office est accessible via le réseau de distribution de contenu (CDN) d’Office JS à l’adresse suivante : `https://appsforoffice.microsoft.com/lib/1/hosted/office.js`. Pour utiliser les API JavaScript Office dans les pages web de votre complément, vous devez référencer le réseau de distribution de contenu dans une balise `<script>`dans la balise `<head>` de la page.
 
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 

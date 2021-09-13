@@ -2,13 +2,13 @@
 title: Limites des ressources et optimisation des performances pour les compléments Office
 description: Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.
 ms.date: 08/17/2021
-localization_priority: Normal
-ms.openlocfilehash: e89aebeb93c5b5b3f3b41cd5c8c72870e0fa2e51
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 03050c325ffd7b67c8c7eaf5047215fce6ac70dd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937926"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149211"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
@@ -55,7 +55,7 @@ Outre les règles relatives au cœur de l’UC, à la mémoire et à la fiabilit
 
 ### <a name="excel-add-ins"></a>Compléments Excel
 
-Si vous construisez un Excel, n’ignorez pas les limites de taille suivantes lors de l’interaction avec le workbook.
+Si vous construisez un Excel, n’ignorez pas les limitations de taille suivantes lors de l’interaction avec le workbook.
 
 - Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
 - Une plage est limitée à cinq millions de cellules pour obtenir des opérations.

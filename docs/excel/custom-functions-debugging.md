@@ -1,16 +1,16 @@
 ---
-title: Débogage des fonctions personnalisées sans interface utilisateur
+title: Débogage de fonctions personnalisées sans interface utilisateur
 description: Découvrez comment déboguer vos Excel personnalisées qui n’utilisent pas de volet de tâches.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 1ee0e6e88b3ada88749278740d68f76c4a7368f6
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 112374758aab8f7fb493cb8bbe1c214765edd5a5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937361"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149879"
 ---
-# <a name="ui-less-custom-functions-debugging"></a>Débogage des fonctions personnalisées sans interface utilisateur
+# <a name="ui-less-custom-functions-debugging"></a>Débogage de fonctions personnalisées sans interface utilisateur
 
 Cet article traite du  débogage uniquement pour les fonctions personnalisées qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur (fonctions personnalisées sans interface utilisateur).
 
@@ -33,7 +33,7 @@ Sur Mac :
 > [!NOTE]
 > Par souci de simplicité, cet article présente le débogage dans le contexte de l’utilisation de Visual Studio Code pour modifier, exécuter des tâches et, dans certains cas, utiliser l’affichage débogage. Si vous utilisez un autre éditeur ou outil de ligne de commande, consultez les [instructions](#commands-for-building-and-running-your-add-in) de ligne de commande à la fin de cet article.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Conditions requises
 
 Ce processus de  débogage fonctionne uniquement pour les fonctions personnalisées sans interface utilisateur, qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur. Une fonction personnalisée sans interface utilisateur peut être créée en suivant les étapes du didacticiel Créer des fonctions personnalisées dans [Excel,](../tutorials/excel-tutorial-create-custom-functions.md) puis en supprimant tous les éléments du volet Des tâches et de l’interface utilisateur installés par le générateur [Yeoman](https://www.npmjs.com/package/generator-office)pour les Office.
 
@@ -56,7 +56,7 @@ Vous pouvez utiliser VS Code pour déboguer des fonctions personnalisées sans i
 
 1. Choose **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 1. Dans le menu déroulant Exécuter, choisissez **Excel bureau (fonctions personnalisées).**
-1. Sélectionnez **F5** (ou **exécutez -> démarrer** le débogage à partir du menu) pour commencer le débogage. Un nouveau Excel de travail s’ouvre avec votre add-in déjà chargé et prêt à l’emploi.
+1. Sélectionnez **F5** (ou **exécutez -> démarrer le** débogage à partir du menu) pour commencer le débogage. Un nouveau Excel de travail s’ouvre avec votre add-in déjà chargé et prêt à l’emploi.
 
 ### <a name="start-debugging"></a>Démarrer le débogage
 
@@ -174,7 +174,7 @@ Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur un or
 - `npm run start:web`: démarre Excel sur le Web charge une version de votre add-in.
 - `npm run stop`: arrête Excel et le débogage.
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
 Découvrez les [pratiques d’authentification](custom-functions-authentication.md)pour les fonctions personnalisées sans interface utilisateur.
 

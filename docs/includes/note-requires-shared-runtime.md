@@ -1,2 +1,2 @@
 > [!NOTE]
-> Cet article nécessite que votre add-in Office soit configuré pour utiliser un runtime partagé. Pour plus d’informations, voir [Configurer votre add-in Office pour utiliser un runtime partagé.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+> Cet article nécessite que votre Office de service soit configuré pour utiliser un runtime partagé. Pour plus d’informations, [voir Configurer votre Office pour utiliser un runtime partagé.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

@@ -2,13 +2,13 @@
 title: Élément TabletSettings dans le fichier manifeste
 description: L’élément TabletSettings spécifie les paramètres de contrôle qui s’appliquent lorsque votre module de messagerie est utilisé sur une tablette.
 ms.date: 04/09/2020
-localization_priority: Normal
-ms.openlocfilehash: b5a74db4f9fb43df10a08ab43b59507f6e0d7952
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3d7ace7fe9258ee32f3f5507d35b35ae026ef5eb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938292"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150304"
 ---
 # <a name="tabletsettings-element"></a>TabletSettings, élément
 

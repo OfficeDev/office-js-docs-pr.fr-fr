@@ -2,13 +2,13 @@
 title: Élément ProgId dans le fichier manifeste
 description: L’élément ProgId spécifie l’ID programmatique du compl?ment COM équivalent pour le volet Des tâches de votre compl?ment web.
 ms.date: 03/09/2021
-localization_priority: Normal
-ms.openlocfilehash: 484de764dda745e93f39c16d51b9da0a65c0b337
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 1b8a1b6f4b6271f026995359b24e4eaa98ee7d3a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936803"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150384"
 ---
 # <a name="progid-element"></a>Élément ProgId
 

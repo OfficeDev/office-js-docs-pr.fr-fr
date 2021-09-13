@@ -2,13 +2,13 @@
 title: Demande d’autorisations d’utilisation de l’API dans des compléments
 description: Découvrez les différents niveaux d’autorisation à déclarer dans le manifeste d’un application de contenu ou du volet Des tâches pour spécifier le niveau d’accès à l’API JavaScript.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: ecb9211431beb6671395f40526cc2340ee2a50a3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 889de0733ba5ed7b36ce0520e330a0a605210ae0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938778"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149957"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>Demande d’autorisations d’utilisation de l’API dans des compléments
 

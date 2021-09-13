@@ -2,13 +2,13 @@
 ms.date: 01/14/2020
 description: Découvrez comment implémenter des fonctions personnalisées de diffusion en continu volatiles et hors connexion.
 title: Valeurs volatiles dans les fonctions
-localization_priority: Normal
-ms.openlocfilehash: f441ef4fb7f90add5318546e3ccf4cc8bc60a8cf
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 90f0ecea718282ce85e7e6f2b604239c18533a9a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936675"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150500"
 ---
 # <a name="volatile-values-in-functions"></a>Valeurs volatiles dans les fonctions
 
@@ -37,7 +37,7 @@ function roll6sided() {
 }
 ```
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 * Découvrez les [options des paramètres de fonctions personnalisées.](custom-functions-parameter-options.md)
 
 ## <a name="see-also"></a>Voir aussi

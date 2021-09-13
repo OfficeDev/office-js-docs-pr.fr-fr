@@ -2,13 +2,13 @@
 title: Interface utilisateur Fluent - Comment faire pour les modules add-in Office ?
 description: Découvrez comment utiliser les Fluent’interface utilisateur React dans Office de l’interface utilisateur.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 8018c27a50aa4aca96aae5fd8fb2b62261a694a0
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3989430c2c73881c9374c078b39d314d9f9705bb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936724"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149180"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Utiliser Fluent’interface utilisateur React dans les Office de l’interface utilisateur
 
@@ -76,7 +76,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
         Pour utiliser votre complément, ouvrez un nouveau document dans Word sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-3. Pour ouvrir le volet Des tâches  du add-in, sous l’onglet Accueil, sélectionnez le bouton Afficher le **volet Des** tâches. Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office. Dans le reste de cette walkthrough, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise des composants UX à partir de Fluent’interface utilisateur React.
+3. Pour ouvrir le volet Des tâches  du add-in, sous l’onglet Accueil, sélectionnez le bouton Afficher **le volet Des** tâches. Remarquez le texte par défaut et le bouton **Exécuter** en bas du volet Office. Dans le reste de cette walkthrough, vous redéfinirez ce texte et ce bouton en créant un composant React qui utilise des composants UX à partir de Fluent’interface utilisateur React.
 
     ![Screenshot showing the Word application with the Show Taskpane ribbon button highlighted and the Run button and immediately preceding text highlighted in the task pane.](../images/word-task-pane-yo-default.png)
 
@@ -126,7 +126,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Ce code effectue les opérations suivantes :
 
 - Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.
-- Fait référence à l Fluent’interface utilisateur React composants ( , , ) qui `PrimaryButton` `IButtonProps` sont utilisés pour `Label` `ButtonPrimaryExample` créer.
+- Fait référence à l Fluent’interface utilisateur React composants ( , , ) qui `PrimaryButton` sont utilisés pour créer `IButtonProps` `Label` `ButtonPrimaryExample` .
 - Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.
 - Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.
 - Définit l’interface utilisateur du composant React dans la fonction `render`. Le code HTML utilise les composants de Fluent’interface utilisateur React et spécifie que lorsque l’événement se déclenche, la fonction `Label` `PrimaryButton` `onClick` `insertText` s’exécute.

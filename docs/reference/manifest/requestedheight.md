@@ -2,13 +2,13 @@
 title: Élément RequestedHeight dans le fichier manifeste
 description: L’élément RequestedHeight spécifie la hauteur initiale (en pixels) d’un contenu ou d’un module de messagerie.
 ms.date: 05/14/2020
-localization_priority: Normal
-ms.openlocfilehash: 44675918a4208683f442fe8a6e8f4f906f484571
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e0589e81e8905c4fc8c7a8e50ec7c14038035677
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938496"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150380"
 ---
 # <a name="requestedheight-element"></a>Élément RequestedHeight.
 

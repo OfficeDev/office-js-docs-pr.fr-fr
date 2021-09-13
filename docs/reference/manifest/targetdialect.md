@@ -2,13 +2,13 @@
 title: Élément TargetDialect dans le fichier manifest
 description: L’élément TargetDialect définit une langue régionale prise en charge par ce dictionnaire, représentée par une chaîne de nom de culture.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: d0f60989ee5375f356343a8b3495f9c84120d467
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a208b80f1a715c5ee3626f632fb757f347bdcc0a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937238"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150303"
 ---
 # <a name="targetdialect-element"></a>Élément TargetDialect
 

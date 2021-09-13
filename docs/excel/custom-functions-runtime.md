@@ -2,13 +2,13 @@
 ms.date: 07/08/2021
 description: Comprendre Excel fonctions personnalisées qui n’utilisent pas de volet de tâches et leur runtime JavaScript spécifique.
 title: Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
-localization_priority: Normal
-ms.openlocfilehash: 8e08f4accd33e405beb5fab618e92dd28abf2246
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 491e47674d87d99d0adeda952ee65ffc24dff2bd
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936936"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149115"
 ---
 # <a name="runtime-for-ui-less-excel-custom-functions"></a>Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
 
@@ -68,7 +68,7 @@ function StoreValue(key, value) {
 
 Si votre add-in utilise uniquement des fonctions personnalisées sans interface utilisateur, notez que vous ne pouvez pas accéder au modèle DOM (Document Object Model) avec des fonctions personnalisées sans interface utilisateur ou utiliser des bibliothèques telles que jQuery qui reposent sur le DOM.
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
 Découvrez comment [déboguer des](custom-functions-debugging.md)fonctions personnalisées sans interface utilisateur.
 

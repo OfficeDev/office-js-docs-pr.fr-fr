@@ -2,13 +2,13 @@
 title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
 ms.date: 08/12/2021
-localization_priority: Normal
-ms.openlocfilehash: b72ed2baea49b4b6d5f00e63e323d12a7e57d021
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 011868f35c656869ae75c7ffab195db18f690f4f
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937554"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150344"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
@@ -54,7 +54,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-Les `#VALUE!` `#N/A` erreurs et les erreurs sont également des messages d’erreur personnalisés. Les messages d’erreur personnalisés s’affichent dans le menu indicateur d’erreur, accessible en pointant sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec `#VALUE!` l’erreur.
+Les `#VALUE!` `#N/A` erreurs et les erreurs sont également des messages d’erreur personnalisés. Les messages d’erreur personnalisés sont affichés dans le menu indicateur d’erreur, accessible en pointant sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec `#VALUE!` l’erreur.
 
 ```typescript
 // You can only return a custom error message with the #VALUE! and #N/A errors.
@@ -105,7 +105,7 @@ Pour traiter les entrées qui contiennent des erreurs, une fonction personnalis�
 
 En règle générale, utilisez [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) des blocs dans votre fonction personnalisée pour capturer les erreurs potentielles qui se produisent. Si vous ne traitez pas les exceptions dans votre code, elles sont renvoyées à Excel. Par défaut, Excel renvoie `#VALUE!` les erreurs ou les exceptions nonhandées.
 
-Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si cela se produit, la fonction personnalisée revient pour `#N/A` indiquer que l’appel web a échoué.
+Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si cela se produit, la fonction personnalisée revient `#N/A` pour indiquer que l’appel web a échoué.
 
 ```typescript
 /**

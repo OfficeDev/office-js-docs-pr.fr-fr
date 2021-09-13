@@ -2,13 +2,13 @@
 title: Déboguer des compléments Office dans Visual Studio
 description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 44a3d56a276d70e24a3b466e16dd24d264f6555d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3bceb5faadde48cb98e6eaa9ac96cff7bbfbeb4a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936258"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149121"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 

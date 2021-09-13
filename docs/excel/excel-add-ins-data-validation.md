@@ -2,13 +2,13 @@
 title: Ajout de validation des données à des plages Excel
 description: Découvrez comment les EXCEL JavaScript permettent à votre add-in d’ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un workbook.
 ms.date: 03/19/2019
-localization_priority: Normal
-ms.openlocfilehash: 188abed325a432023ee78c42a04f875f1b7f1ec8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83f7f21621b6ddffa3cb7e51134a3b4cd1cc2aaa
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937161"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150499"
 ---
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 

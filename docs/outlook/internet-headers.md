@@ -2,13 +2,13 @@
 title: Obtenir et définir des en-têtes Internet
 description: Comment obtenir et définir des en-têtes Internet sur un message dans un Outlook de recherche.
 ms.date: 04/28/2020
-localization_priority: Normal
-ms.openlocfilehash: 9e88af7c8fa996fe3b6164ce1fc04b6d77b048f2
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 9784ef16c70e273e6bd1c242ffe91d97aa5d40ed
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939168"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150464"
 ---
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obtenir et définir des en-têtes Internet sur un message dans un Outlook de recherche
 
@@ -31,7 +31,7 @@ Bien qu’il soit possible de définir les en-têtes Internet par le biais de de
 Introduites dans [l’ensemble de conditions requises 1.8,](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)les API d’en-têtes Internet permettent aux développeurs de :
 
 - Marquez les informations d’un e-mail qui persistent après son Exchange tous les clients.
-- Lire les informations d’un e-mail qui ont persisté une fois qu’il a été laissé Exchange tous les clients dans les scénarios de lecture de courrier.
+- Lire les informations d’un e-mail qui ont persisté après qu’il a été laissé Exchange tous les clients dans les scénarios de lecture de courrier électronique.
 - Accéder à l’intégralité de l’en-tête MIME de l’e-mail.
 
 ![Diagramme des en-têtes Internet. Texte : l’utilisateur 1 envoie un e-mail. Le add-in gère les en-têtes Internet personnalisés pendant que l’utilisateur compose des messages électroniques. L’utilisateur 2 reçoit le message électronique. Le add-in obtient les en-têtes Internet provenant du courrier électronique reçu, puis il parcourt et utilise des en-têtes personnalisés.](../images/outlook-internet-headers.png)
@@ -40,7 +40,7 @@ Introduites dans [l’ensemble de conditions requises 1.8,](../reference/objectm
 
 Essayez d’utiliser [la propriété item.internetHeaders](/javascript/api/outlook/office.messagecompose#internetHeaders) pour gérer les en-têtes Internet personnalisés que vous placez sur le message actuel en mode Composition.
 
-### <a name="set-get-and-remove-custom-headers-example"></a>Exemple de définir, obtenir et supprimer des en-têtes personnalisés
+### <a name="set-get-and-remove-custom-headers-example"></a>Exemple de définir, d’obtenir et de supprimer des en-têtes personnalisés
 
 L’exemple suivant montre comment définir, obtenir et supprimer des en-têtes personnalisés.
 

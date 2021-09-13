@@ -2,13 +2,13 @@
 title: Élément RequestedWidth dans le fichier manifeste
 description: L’élément RequestedWidth spécifie la largeur initiale (en pixels) d’un module de contenu.
 ms.date: 04/09/2020
-localization_priority: Normal
-ms.openlocfilehash: 517b09492aede111d6359dc8e127c6029df89341
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c5e3758f86da81a18280eec63f5669039542edcc
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938295"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150379"
 ---
 # <a name="requestedwidth-element"></a>RequestedWidth, élément
 

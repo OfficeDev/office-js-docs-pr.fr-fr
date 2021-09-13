@@ -2,13 +2,13 @@
 title: Cœur de fabric dans les modules
 description: Obtenez une vue d’ensemble de l’utilisation de Fabric Core et des composants de l’interface utilisateur fabric dans Office des composants.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: e8455cbdf37d80545c9e9fc957a75152db5c7841
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: cd534809bb443134e2df06de478e8283a3452aac
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936511"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150119"
 ---
 # <a name="fabric-core-in-office-add-ins"></a>Cœur de fabric dans les modules
 
@@ -49,7 +49,7 @@ Des exemples sont inclus dans [les exemples plus](#samples) loin dans cet articl
 
 ## <a name="samples"></a>Exemples
 
-Les exemples de modules suivants utilisent Fabric Core et/ou Office composants JS UI Fabric. Certains de ces dépôts sont archivés, ce qui signifie qu’ils ne sont plus mis à jour avec des correctifs de bogue ou de sécurité, mais vous pouvez toujours les utiliser pour apprendre à utiliser les composants d’interface utilisateur Fabric Core et Fabric.
+Les exemples de composants suivants utilisent Fabric Core et/ou Office composants JS UI Fabric. Certains de ces dépôts sont archivés, ce qui signifie qu’ils ne sont plus mis à jour avec des correctifs de bogue ou de sécurité, mais vous pouvez toujours les utiliser pour apprendre à utiliser les composants d’interface utilisateur Fabric Core et Fabric.
 
 - [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)
 - [Excel Add-in SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads)

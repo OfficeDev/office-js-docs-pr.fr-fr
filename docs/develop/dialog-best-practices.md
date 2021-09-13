@@ -2,17 +2,17 @@
 title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des meilleures pratiques pour l’API Office dialogue, telles que les meilleures pratiques pour une application mono-page (SPA)
 ms.date: 07/22/2021
-localization_priority: Normal
-ms.openlocfilehash: eef26157381303c67939f4ad33d2054f482bd07a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 46d990488f635aa0918380833a4221daafcae5ce
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939130"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149116"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
-Cet article fournit des règles, des gotchas et des meilleures pratiques pour l’API de boîte de dialogue Office, y compris les meilleures pratiques pour la conception de l’interface utilisateur d’une boîte de dialogue et l’utilisation de l’API dans une application mono-page (SPA)
+Cet article fournit des règles, des gotchas et des meilleures pratiques pour l’API de boîte de dialogue Office, y compris les meilleures pratiques pour la conception de l’interface utilisateur d’une boîte de dialogue et l’utilisation de l’API avec dans une application mono-page (SPA)
 
 > [!NOTE]
 > Cet article présuppose que vous connaissez les principes de base de l’utilisation de l’API de boîte de dialogue Office, comme décrit dans [l’API](dialog-api-in-office-add-ins.md)de boîte de dialogue Office dans vos Office.
@@ -47,11 +47,11 @@ Toute tentative d’affichage d’une boîte de dialogue lors de l’Office sur 
 
 Si l’utilisateur choisit **Autoriser,** la boîte Office dialogue s’ouvre. Si l’utilisateur choisit **Ignorer,** l’invite se ferme et la boîte de dialogue Office’ouvre pas. Au lieu de cela, `displayDialogAsync` la méthode renvoie l’erreur 12009. Votre code doit capturer cette erreur et fournir une autre expérience qui ne nécessite pas de boîte de dialogue, ou afficher un message à l’utilisateur pour lui conseiller que le add-in exige qu’il autorise la boîte de dialogue. (Pour plus d’informations sur 12009, voir [Erreurs de displayDialogAsync.)](dialog-handle-errors-events.md#errors-from-displaydialogasync)
 
-Si, pour une raison quelconque, vous souhaitez désactiver cette fonctionnalité, votre code doit le désactiver. Il effectue cette demande avec [l’objet DialogOptions](/javascript/api/office/office.dialogoptions) qui est transmis à la `displayDialogAsync` méthode. Plus précisément, l’objet doit inclure `promptBeforeOpen: false` . Lorsque cette option est définie sur False, Office sur le Web demande pas à l’utilisateur d’autoriser le add-in à ouvrir une boîte de dialogue et la boîte de dialogue Office ne s’ouvre pas.
+Si, pour une raison quelconque, vous souhaitez désactiver cette fonctionnalité, votre code doit la désactiver. Il effectue cette demande avec [l’objet DialogOptions](/javascript/api/office/office.dialogoptions) qui est transmis à la `displayDialogAsync` méthode. Plus précisément, l’objet doit inclure `promptBeforeOpen: false` . Lorsque cette option est définie sur False, Office sur le Web demande pas à l’utilisateur d’autoriser le add-in à ouvrir une boîte de dialogue et la boîte de dialogue Office ne s’ouvre pas.
 
 ### <a name="do-not-use-the-_host_info-value"></a>N’utilisez pas la valeur \_ \_ d’informations de l’hôte
 
-Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. Il est appended après vos paramètres de requête personnalisés, le cas cas. Elle n’est pas appendée aux URL suivantes vers qui la boîte de dialogue navigue. Microsoft peut modifier le contenu de cette valeur ou le supprimer entièrement, de sorte que votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue (autrement dit, la [propriété Window.sessionStorage).](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
+Office ajoute automatiquement un paramètre de requête appelé `_host_info` à l’URL qui est transmise à `displayDialogAsync`. Il est appended après vos paramètres de requête personnalisés, le cas cas. Elle n’est pas appendée aux URL suivantes vers qui la boîte de dialogue navigue. Microsoft peut modifier le contenu de cette valeur ou le supprimer complètement, de sorte que votre code ne doit pas le lire. La même valeur est ajoutée au stockage de session de la boîte de dialogue (autrement dit, la [propriété Window.sessionStorage).](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) Là encore, *votre code ne doit ni lire, ni écrire cette valeur*.
 
 ### <a name="open-another-dialog-immediately-after-closing-one"></a>Ouvrir une autre boîte de dialogue immédiatement après en avoir fermé une
 
@@ -129,7 +129,7 @@ Par exemple, si vous avez transmis un itinéraire à la méthode, vous n’ariez
 
 #### <a name="microsoft-recommendations"></a>Recommandations de Microsoft
 
-Au lieu de transmettre un itinéraire côté client à la méthode, nous vous recommandons d’adopter l’une des méthodes `displayDialogAsync` suivantes :
+Au lieu de transmettre un itinéraire côté client à la méthode, nous vous recommandons d’adopter l’une des `displayDialogAsync` méthodes suivantes :
 
 * Si le code que vous souhaitez exécuter dans la boîte de dialogue est suffisamment complexe, créez explicitement deux spa différents . autrement dit, avoir deux spas dans des dossiers différents du même domaine. Une SPA s’exécute dans la boîte de dialogue et l’autre dans la page hôte de la boîte de dialogue où `displayDialogAsync` elle a été appelée. 
 * Dans la plupart des scénarios, seule une logique simple est nécessaire dans la boîte de dialogue. Dans ce cas, votre projet sera considérablement simplifié en hébergeant une page HTML unique, avec javaScript incorporé ou référencé, dans le domaine de votre SPA. Passez l’URL de la page à la méthode`displayDialogAsync`. Cela signifie que vous déviez de l’idée littérale d’une application à page unique ; vous n’avez pas vraiment une seule instance d’une SPA lorsque vous utilisez l’API Office dialogue.

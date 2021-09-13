@@ -2,13 +2,13 @@
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
 ms.date: 05/04/2021
-localization_priority: Normal
-ms.openlocfilehash: f1382bcdba0c3bb88c1d98075fc4b14eb0ca3b07
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 701d52a7923f93533553807b0c169801c6ae86a7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937051"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149945"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 

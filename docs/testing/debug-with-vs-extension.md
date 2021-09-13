@@ -2,17 +2,17 @@
 title: Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 description: Utilisez l’extension Visual Studio Code de Microsoft Office déboguer votre Office de débogage.
 ms.date: 08/18/2021
-localization_priority: Normal
-ms.openlocfilehash: ba831cfabdefbf3829bb702bf21a70ddb499b972
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 256c7855f4757f49c23b4c633323cf2124bb6516
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938349"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150532"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
-L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre application Office par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article.](./debug-desktop-using-edge-chromium.md)
+L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre application Office par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article](./debug-desktop-using-edge-chromium.md)
 
 Ce mode de débogage est dynamique, ce qui vous permet de définir des points d’arrêt pendant l’exécution du code. Vous pouvez voir les modifications dans votre code immédiatement lorsque le déboguer est attaché, tout cela sans perdre votre session de débogage. Vos modifications de code sont également persistantes, afin que vous pouvez voir les résultats de plusieurs modifications apportées à votre code. L’image suivante illustre cette extension en action.
 
@@ -69,7 +69,7 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
 
 1. Dans la section JSON que vous avez copiée, recherchez la `"url"` propriété. Dans cette URL, vous devez remplacer le texte **HOST** en minuscules par l’application qui héberge votre Office de messagerie. Par exemple, si votre Office est pour Excel, la valeur de votre URL est `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"` .
 
-1. Ouvrez l’invite de commandes et assurez-vous que vous êtes dans le dossier racine de votre projet. Exécutez la commande `npm start` pour démarrer le serveur dev. Lorsque votre application se charge dans l’application Office, ouvrez le volet Des tâches.
+1. Ouvrez l’invite de commandes et assurez-vous que vous êtes dans le dossier racine de votre projet. Exécutez la commande `npm start` pour démarrer le serveur dev. Lorsque votre add-in se charge dans l’application Office, ouvrez le volet Des tâches.
 
 1. Revenir à Visual Studio Code et choisissez **Afficher >** déboguer ou entrez **Ctrl+Shift+D** pour basculer vers l’affichage débogage.
 

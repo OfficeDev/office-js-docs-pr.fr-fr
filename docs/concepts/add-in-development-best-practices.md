@@ -2,13 +2,13 @@
 title: Meilleures pratiques en matière de développement de compléments Office
 description: Appliquez les meilleures pratiques lors du développement pour créer des Office de développement.
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 2dd8162814115398a89dd75a0542d1d077abf006
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: e6c0982591fa2f101309520e7a0c999927c3fc2a
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937462"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149220"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 

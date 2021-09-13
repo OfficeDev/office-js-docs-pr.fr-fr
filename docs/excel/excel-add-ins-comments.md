@@ -2,19 +2,19 @@
 title: Utiliser des commentaires à l’aide de l Excel API JavaScript
 description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des threads de commentaires.
 ms.date: 10/09/2020
-localization_priority: Normal
-ms.openlocfilehash: 16569bc1d72391dff0ac35a48e45470ff90852f8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7714a1e83e2b9e191e95e9e8b1d997bfc3344d1e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936670"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149114"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l Excel API JavaScript
 
 Cet article explique comment ajouter, lire, modifier et supprimer des commentaires dans un Excel api JavaScript. Pour en savoir plus sur la fonctionnalité de commentaire, voir l’article Insérer des commentaires et des [notes Excel’article.](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
 
-Dans l Excel API JavaScript, un commentaire inclut à la fois le commentaire initial unique et la discussion threaded connectée. Il est lié à une cellule individuelle. Toute personne qui affiche le manuel avec des autorisations suffisantes peut répondre à un commentaire. Un [objet Comment](/javascript/api/excel/excel.comment) stocke ces réponses en tant [qu’objets CommentReply.](/javascript/api/excel/excel.commentreply) Vous devez considérer un commentaire comme un thread et qu’un thread doit avoir une entrée spéciale comme point de départ.
+Dans l Excel API JavaScript, un commentaire inclut à la fois le commentaire initial unique et la discussion threaded connectée. Elle est liée à une cellule individuelle. Toute personne qui affiche le manuel avec des autorisations suffisantes peut répondre à un commentaire. Un [objet Comment](/javascript/api/excel/excel.comment) stocke ces réponses en tant [qu’objets CommentReply.](/javascript/api/excel/excel.commentreply) Vous devez considérer un commentaire comme un thread et qu’un thread doit avoir une entrée spéciale comme point de départ.
 
 ![Un Excel, étiqueté « Comment » avec deux réponses, étiqueté « Comment.replies[0] » et « Comment.replies[1].](../images/excel-comments.png)
 
@@ -24,7 +24,7 @@ Les commentaires dans un workbook sont suivis par la `Workbook.comments` propri�
 
 Utilisez la `CommentCollection.add` méthode pour ajouter des commentaires à un workbook. Cette méthode prend jusqu’à trois paramètres :
 
-- `cellAddress`: cellule dans laquelle le commentaire est ajouté. Il peut s’agit d’une chaîne ou [d’un objet Range.](/javascript/api/excel/excel.range) La plage doit être une seule cellule.
+- `cellAddress`: cellule dans laquelle le commentaire est ajouté. Il peut s’agit d’une chaîne ou [d’un objet Range.](/javascript/api/excel/excel.range) La plage doit être une cellule unique.
 - `content`: contenu du commentaire. Utilisez une chaîne pour les commentaires en texte simple. Utilisez un [objet CommentRichContent](/javascript/api/excel/excel.commentrichcontent) pour les commentaires avec [des mentions.](#mentions)
 - `contentType`: Une [enum ContentType](/javascript/api/excel/excel.contenttype) spécifiant le type de contenu. La valeur par défaut est `ContentType.plain`.
 

@@ -2,13 +2,13 @@
 title: Enregistrer un complément Office utilisant une SSO (authentification unique) au point de terminaison Azure AD v2.0
 description: Découvrez comment inscrire un Office avec le point de terminaison Azure AD v2.0.
 ms.date: 04/10/2019
-localization_priority: Normal
-ms.openlocfilehash: 8bcd72bd6f2d56c5f97d2d4f153d6791d111452e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 7be1c676844bfe369982a794b457bf7c8a2aada5
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937724"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149963"
 ---
 # <a name="register-an-office-add-in-that-uses-sso-with-the-azure-ad-v20-endpoint"></a>Enregistrer un complément Office utilisant une SSO (authentification unique) au point de terminaison Azure AD v2.0
 

@@ -2,20 +2,20 @@
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: Découvrez comment convertir un projet de Office dans Visual Studio pour utiliser TypeScript.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 33378fa1270d4ff43a9c8219f6c68675974834f3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2771dbde52689200bc861aa208b33280776798b0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938091"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149135"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. Cet article décrit ce processus de conversion pour un complément Excel. Vous pouvez utiliser le même processus pour convertir les autres types de projet de complément Office de JavaScript au format TypeScript dans Visual Studio.
 
 > [!IMPORTANT]
-> Cet article décrit  les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière secondaire dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le mot clé et non avec `var` `let` un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code. 
+> Cet article décrit  les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le mot clé et non avec `var` `let` un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code. 
 
 > [!NOTE]
 > Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.

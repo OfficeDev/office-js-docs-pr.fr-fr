@@ -2,13 +2,13 @@
 title: Éviter d’utiliser la méthode context.sync dans des boucles
 description: Découvrez comment utiliser la boucle fractionée et les modèles d’objets corrélés pour éviter d’appeler context.sync dans une boucle.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 85230378f40be06c7f3385f5dde88ecaba503cb5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3a8e726eccb88e7df47d4a881bc9bb724c265bed
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936714"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149216"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Éviter d’utiliser la méthode context.sync dans des boucles
 

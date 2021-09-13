@@ -2,13 +2,13 @@
 title: Raccourcis clavier personnalisés dans les Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 2ac9a83511fc29eb055ebdc4d2c77f7675c68994
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0f4ef373ee5352f012561d76fa5bc01cb391af48
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936742"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150113"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -19,7 +19,7 @@ Les raccourcis clavier, également appelés combinaisons de touches, permettent 
 > [!NOTE]
 > Pour commencer avec une version de travail d’un add-in avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple [Excel raccourcis clavier.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre add-in, poursuivez avec cet article.
 
-Il existe trois étapes pour ajouter des raccourcis clavier à un module.
+Il existe trois étapes pour ajouter des raccourcis clavier à un add-in.
 
 1. [Configurez le manifeste du add-in.](#configure-the-manifest)
 1. [Créez ou modifiez le fichier JSON](#create-or-edit-the-shortcuts-json-file) de raccourcis pour définir des actions et leurs raccourcis clavier.
@@ -136,7 +136,7 @@ La suite des étapes précédentes permet à votre add-in de faire tourner la vi
 
 ### <a name="construct-the-action-objects"></a>Construire les objets d’action
 
-Utilisez les instructions suivantes lors de la spécification des objets dans le tableau de la `actions` shortcuts.jssur.
+Utilisez les instructions suivantes lors de la spécification des objets dans le `actions` tableau du shortcuts.json.
 
 - Les noms des `id` propriétés `name` et sont obligatoires.
 - La `id` propriété est utilisée pour identifier de manière unique l’action à appeler à l’aide d’un raccourci clavier.
@@ -164,7 +164,7 @@ The complete schema for the shortcuts JSON is at [extended-manifest.schema.json]
 
 ### <a name="construct-the-shortcut-objects"></a>Construire les objets de raccourci
 
-Utilisez les instructions suivantes lors de la spécification des objets dans le tableau de la `shortcuts` shortcuts.jssur.
+Utilisez les instructions suivantes lors de la spécification des objets dans le `shortcuts` tableau du shortcuts.json.
 
 - Les noms des `action` propriétés `key` et sont `default` obligatoires.
 - La valeur de la propriété est une chaîne et doit correspondre à l’une `action` des `id` propriétés de l’objet action.

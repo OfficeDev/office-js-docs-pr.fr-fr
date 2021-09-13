@@ -3,13 +3,13 @@ title: Créer un Outlook mobile pour un fournisseur de réunion en ligne
 description: Explique comment configurer un Outlook mobile pour un fournisseur de services de réunion en ligne.
 ms.topic: article
 ms.date: 07/09/2021
-localization_priority: Normal
-ms.openlocfilehash: 34574809e2b874217113e42043b3bde7ef0dd8ba
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 339763294e2e3609a1a503cd59d74eb4af4fefb3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938643"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149097"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un Outlook mobile pour un fournisseur de réunion en ligne
 
@@ -213,7 +213,7 @@ Suivez les instructions habituelles [pour tester et valider votre add-in.](testi
 
 En tant qu’organisateur de réunion, vous devriez voir des écrans semblables aux trois images suivantes lorsque vous créez une réunion.
 
-[![Écran créer une réunion sur Android - Contoso bascule.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Écran créer une réunion sur Android - chargement du basculement Contoso.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Écran créer une réunion sur Android - Contoso bascule.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Écran créer une réunion sur Android - Contoso bascule.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Écran Créer une réunion sur Android : chargement du basculement Contoso.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Écran créer une réunion sur Android - Contoso bascule.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Rejoindre l’interface utilisateur de réunion
 
@@ -230,7 +230,7 @@ Si vous souhaitez inscrire le modèle de réunion en ligne pour votre service, v
 
 1. Go to the **Feedback** section at the end of this article.
 1. Appuyez sur **le lien Cette page.**
-1. Définissez **le titre** du nouveau problème sur « Enregistrer le modèle de réunion en ligne pour mon service », en remplaçant par votre nom de `my-service` service.
+1. Définissez **le titre** du nouveau problème sur « Enregistrer le modèle de réunion en ligne pour mon service », en remplaçant par le nom de votre `my-service` service.
 1. Dans le corps du problème, remplacez la chaîne « [Entrez les commentaires ici] » par la chaîne que vous avez définie dans la variable ou une variable similaire de la section Implémenter l’ajout de détails de réunion en ligne plus haut dans cet `newBody` article. [](#implement-adding-online-meeting-details)
 1. Cliquez **sur Envoyer un nouveau problème.**
 
@@ -261,7 +261,7 @@ Plusieurs restrictions s’appliquent.
 - Seuls les add-ins installés par l’administrateur apparaissent sur l’écran de composition de la réunion, remplaçant l’option Teams ou Skype par défaut. Les add-ins installés par l’utilisateur ne s’activent pas.
 - L’icône du add-in doit être en échelles de gris à l’aide de code hexas ou de son équivalent `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
 - Une seule commande sans interface utilisateur est prise en charge en mode Organisateur de rendez-vous (composition).
-- Le add-in doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’une minute. Toutefois, tout temps passé dans une boîte de dialogue où le module a été ouvert pour authentification, etc. est exclu du délai d’attente.
+- Le add-in doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’une minute. Toutefois, tout temps passé dans une boîte de dialogue où le add-in a été ouvert pour authentification, etc. est exclu du délai d’attente.
 
 ## <a name="see-also"></a>Voir aussi
 

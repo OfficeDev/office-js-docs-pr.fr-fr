@@ -2,13 +2,13 @@
 title: Obtenir JavaScript IntelliSense dans Visual Studio 2019
 description: Découvrez comment utiliser JSDoc pour créer des IntelliSense pour vos variables, objets, paramètres et valeurs de retour JavaScript.
 ms.date: 10/11/2019
-localization_priority: Normal
-ms.openlocfilehash: 6135649ce80e496d5e195b0ddb0dcb64172d41f5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3fedf9e637ffaa32318e6eeca5f0f724abf62ba1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936705"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150065"
 ---
 # <a name="get-javascript-intellisense-in-visual-studio-2019"></a>Obtenir JavaScript IntelliSense dans Visual Studio 2019
 
@@ -49,7 +49,7 @@ La technique de base est de faire précéder la variable (ou le paramètre, etc.
 var subsetRange;
 ```
 
-![Capture d’écran montrant l IntelliSense de la variable « subsetRange ».](../images/intellisense-vs17-var.png)
+![Screenshot showing excerpt of IntelliSense for 'subsetRange' variable.](../images/intellisense-vs17-var.png)
 
 ### <a name="parameter"></a>Paramètre
 

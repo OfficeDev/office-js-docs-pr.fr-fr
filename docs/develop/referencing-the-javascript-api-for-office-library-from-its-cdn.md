@@ -2,13 +2,13 @@
 title: Référencement de la bibliothèque de l’API JavaScript Office
 description: Découvrez comment référencer la bibliothèque Office’API JavaScript et les définitions de type dans votre application.
 ms.date: 02/18/2021
-localization_priority: Normal
-ms.openlocfilehash: 04f97412c07cb39f5b2f753c3ce14e56e87c3de5
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 134b3de88218101761c3f25c897ea67c2eb3d68c
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936457"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149969"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Référencement de la bibliothèque de l’API JavaScript Office
 

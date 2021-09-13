@@ -2,13 +2,13 @@
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
 ms.date: 07/27/2021
-localization_priority: Priority
-ms.openlocfilehash: cd0c793bb8a2cfbc4cef17e0cf717c35cb68794c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 594c5715336533931d68acaffc5b8688cf1a40a1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937836"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150423"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 

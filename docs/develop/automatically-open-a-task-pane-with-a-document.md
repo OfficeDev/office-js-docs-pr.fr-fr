@@ -2,13 +2,13 @@
 title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 53776d41aff2446267b637dcf0b33ffe379b803c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4858cc3bee0eb679b4345fe74af39a1db3833ae0
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936861"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149138"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 

@@ -2,13 +2,13 @@
 title: Modèles de conception de l’expérience utilisateur pour les compléments Office
 description: Obtenez une vue d’ensemble des modèles de conception d’interface utilisateur pour les Office, y compris les modèles de navigation, d’authentification, de première utilisation et de authentification.
 ms.date: 05/12/2021
-localization_priority: Normal
-ms.openlocfilehash: 8544b56b85a25d522c95546b42a78fe01a3c2586
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3515a5bf915b711f79aa328ba2cc50a3b03670a4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937529"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149179"
 ---
 # <a name="ux-design-patterns-for-office-add-ins"></a>Modèles de conception de l’expérience utilisateur pour les compléments Office
 
@@ -16,7 +16,7 @@ La conception de l’expérience utilisateur pour les compléments Office doit o
 
 Nos modèles d’expérience utilisateur sont composés de composants. Les composants sont des contrôles qui aident vos clients à interagir avec les éléments de votre logiciel ou service. Les boutons, la navigation et les menus sont des exemples de composants courants qui ont souvent des comportements et des styles cohérents.
 
-[Fluent’interface utilisateur React composants](using-office-ui-fabric-react.md) se comportent comme une partie de Office, tout comme les composants neutres de l’infrastructure de [Office UI Fabric JS](fabric-core.md). Tirez parti de l’un ou l’autre des ensembles de composants à intégrer à Office. Sinon, si votre add-in possède son propre langage de composant existant, vous n’avez pas besoin de l’ignorer. Recherchez les opportunités pour le conserver lors de l’intégration avec Office. Pensez à remplacer les éléments stylistiques, à supprimer les conflits ou à adopter des styles et des comportements qui éliminent la confusion de l’utilisateur.
+[Fluent’interface utilisateur React se](using-office-ui-fabric-react.md) comportent comme une partie de Office, tout comme les composants neutres de l’infrastructure de [Office UI Fabric JS](fabric-core.md). Tirez parti de l’un ou l’autre des ensembles de composants à intégrer à Office. Sinon, si votre add-in possède son propre langage de composant existant, vous n’avez pas besoin de l’ignorer. Recherchez les opportunités pour le conserver lors de l’intégration avec Office. Pensez à remplacer les éléments stylistiques, à supprimer les conflits ou à adopter des styles et des comportements qui éliminent la confusion de l’utilisateur.
 
 Les modèles fournis sont les meilleures solutions pratiques basées sur des scénarios courants d’utilisation et sur les recherches en expérience utilisateur. Ils sont destinés à fournir un point d’entrée rapide pour concevoir et développer des modules, ainsi que des conseils pour trouver un équilibre entre les éléments de marque Microsoft et les vôtres. Fournir une expérience utilisateur propre et moderne qui équilibre les éléments de conception du langage de conception de l’interface utilisateur Fluent de Microsoft et l’identité de marque unique du partenaire peut aider à augmenter la rétention et l’adoption par les utilisateurs de votre add-in.
 

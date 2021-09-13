@@ -2,13 +2,13 @@
 title: Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche
 description: Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche.
 ms.date: 02/09/2021
-localization_priority: Normal
-ms.openlocfilehash: a7998d1f15f40a549f8ff9ddd9745d6bf9b8ab6d
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 0ac644de03c1f3a4c382dbe151c3224afffdbc81
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936437"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149102"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche
 
@@ -22,7 +22,7 @@ Cet article vous présente le code et les techniques permettant d’implémenter
 
 ## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>Créer un document Excel et incorporer un Office de document
 
-Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L Office exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) [ooXML](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) dans un document Script Lab dans un nouveau document Office. Bien que l’exemple fonctionne avec Office document, nous nous concentrerons simplement sur Excel feuilles de calcul dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
+Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L Office exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) [ooXML](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) dans un Script Lab dans un nouveau document Office document. Bien que l’exemple fonctionne avec Office document, nous nous concentrerons simplement sur Excel feuilles de calcul dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
 
 1. Extrayez l’exemple de code  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier de votre ordinateur.
 2. Pour créer et exécuter l’exemple, suivez les étapes de la section **Pour utiliser le** projet du lisez-moi.
@@ -74,7 +74,7 @@ La **valeur StoreType** est « FileSystem ».
 
 :::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Fluent Icônes d’interface utilisateur pour Word, Excel et PowerPoint.":::
 
-Une meilleure pratique consiste à utiliser l’interface Fluent utilisateur pour aider vos utilisateurs à passer d’un produit Microsoft à un autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel pour indiquer qu’il lance l’application Excel application.
+Une meilleure pratique consiste à utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à passer d’un produit Microsoft à un autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel pour indiquer qu’il lance l’application Excel application.
 
 1. Ouvrez l’exemple dans Visual Studio.
 1. Ouvrez la page **Home.aspx.**
@@ -101,7 +101,7 @@ Nous vous recommandons de télécharger de nouveaux documents vers OneDrive si v
 ### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>Utiliser un démarrage rapide pour créer une application web Microsoft Graph
 
 1. Suivez les étapes de création et d’ouverture d’un exemple de code de démarrage rapide qui [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) interagit avec Office services.
-1. À **l’étape 1 : choisissez la langue ou la plateforme,** choisissez **ASP.NET MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
+1. À **l’étape 1 : choisissez la langue ou la** plateforme, choisissez ASP.NET **MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
 1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir un ID d’application et un **secret**.
 1. Connectez-vous à Microsoft 365 compte.  
 1. Dans la page **Web Veuillez enregistrer votre** secret d’application, enregistrez-la dans un emplacement de fichier où vous pourrez l’extraire et l’utiliser ultérieurement.
@@ -174,7 +174,7 @@ Maintenant que vous avez appris à télécharger un fichier vers OneDrive, vous 
 
 ## <a name="additional-considerations-for-your-solution"></a>Considérations supplémentaires pour votre solution
 
-La solution de chacun est différente en termes de technologies et d’approches. Les considérations suivantes vous aideront à planifier la modification de votre solution pour ouvrir des documents et incorporer votre Office de données.
+La solution de tout le monde est différente en termes de technologies et d’approches. Les considérations suivantes vous aideront à planifier la modification de votre solution pour ouvrir des documents et incorporer votre Office de données.
 
 ### <a name="create-a-new-excel-spreadsheet-from-the-web-page"></a>Créer une feuille Excel feuille de calcul à partir de la page web
 
@@ -182,11 +182,11 @@ L’exemple modifie un document Excel existant. Un scénario plus courant consis
 
 ### <a name="read-custom-properties-when-your-add-in-starts"></a>Lire les propriétés personnalisées au démarrage de votre add-in
 
-L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel à l’aide du SDK OOXML. Script Lab lit l’ID d’extrait de code du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
+L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel l’aide du SDK OOXML. Script Lab lit l’ID de l’extrait de code à partir du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
 
 ### <a name="initialize-the-excel-document-with-data"></a>Initialiser le document Excel avec des données
 
-En règle générale, lorsque le client ouvre un document Excel partir de votre site web, il s’attend à ce que le document contienne certaines données du site web. Il existe deux façons d’écrire des données dans le document.
+En règle générale, lorsque le client ouvre un document Excel partir de votre site web, il s’attend à ce que le document contienne des données du site web. Il existe deux façons d’écrire des données dans le document.
 
 - **Utilisez le SDK OOXML pour écrire les données.** Vous pouvez utiliser le SDK pour écrire directement des données dans le document. Cette approche est utile si vous souhaitez que les données soient disponibles dès que le document est ouvert.
 - **Passez une propriété de requête personnalisée à votre Office.** Lorsque vous générez le document, vous incorporez une propriété personnalisée pour le Office qui contient une chaîne de requête qui récupère toutes les données requises. Lorsque votre application s’ouvre, elle récupère la requête, l’exécute et utilise l’API JS Office pour insérer le résultat de la requête dans le document.

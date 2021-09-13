@@ -2,13 +2,13 @@
 title: Runtime dans le fichier manifeste
 description: L’élément Runtime configure votre add-in pour utiliser un runtime JavaScript partagé pour ses différents composants, par exemple, ruban, volet des tâches, fonctions personnalisées.
 ms.date: 05/19/2021
-localization_priority: Normal
-ms.openlocfilehash: cd09abe31ff57eac629c6c61c873c5c886f73f9c
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d58cdce1520439685d868ae264d3b6fb3fe9e69
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936915"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149081"
 ---
 # <a name="runtime-element"></a>Élément Runtime
 

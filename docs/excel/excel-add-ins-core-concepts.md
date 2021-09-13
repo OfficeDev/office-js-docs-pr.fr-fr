@@ -3,13 +3,13 @@ title: Modèle d’objet JavaScript Excel dans les compléments Office
 description: Découvrez les types d’objets clés dans les API JavaScript Excel et comment les utiliser pour créer des compléments Excel.
 ms.date: 04/05/2021
 ms.prod: excel
-localization_priority: Priority
-ms.openlocfilehash: 6c88dc84796d9fd898bee880035ed964ab6cd7c8
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f301c69a60305dd204ff9e2c2d034899704b8a78
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936326"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149101"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Excel dans les compléments Office
 

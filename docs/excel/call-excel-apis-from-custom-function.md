@@ -2,13 +2,13 @@
 title: Appeler Excel API JavaScript à partir d’une fonction personnalisée
 description: Découvrez les Excel JavaScript que vous pouvez appeler à partir de votre fonction personnalisée.
 ms.date: 08/30/2021
-localization_priority: Normal
-ms.openlocfilehash: 93b0c1a792c752102359b31b8baa808182c29c46
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 83d2e488d56fb9ab3e97b87160c71f44da2f8371
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939096"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149888"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler Excel API JavaScript à partir d’une fonction personnalisée
 
@@ -61,7 +61,7 @@ Le Excel peut entraîner des performances médiocres, des délai d’exécution 
 
 A la place, a apporté des modifications Excel à partir du contexte d’un bouton de ruban ou d’un volet De tâches.
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
 

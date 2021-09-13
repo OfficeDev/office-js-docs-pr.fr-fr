@@ -3,13 +3,13 @@ title: Excel Ensemble de conditions requises de l’API JavaScript 1.10
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.10.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: 7b620bb76f758bc2574e8bd99d2c45d3d4bfae39
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 768902eaac53c67d3aabc35ddb8d96f297d798de
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936467"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150206"
 ---
 # <a name="whats-new-in-excel-javascript-api-110"></a>Nouveautés de l Excel API JavaScript 1.10
 
@@ -24,7 +24,7 @@ ExcelApi 1.10 a introduit des fonctionnalités clés, telles que les commentaire
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.10. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.10 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.10](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)ou une version antérieure.
+Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.10. Pour afficher la documentation de référence de l’API pour toutes les API pris en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.10 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.10](/javascript/api/excel?view=excel-js-1.10&preserve-view=true)ou version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|

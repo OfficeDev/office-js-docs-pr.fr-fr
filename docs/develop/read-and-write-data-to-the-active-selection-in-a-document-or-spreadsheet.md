@@ -2,13 +2,13 @@
 title: Lire et écrire des données dans la sélection active d’un document ou d’une feuille de calcul
 description: Découvrez comment lire et écrire des données dans la sélection active dans un document Word ou Excel feuille de calcul.
 ms.date: 06/20/2019
-localization_priority: Normal
-ms.openlocfilehash: bf4d1256a41d4150d81cd33f876a14791e93e483
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: c8a199d5c6491f91a13c61a9b87ab6f302be9105
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937970"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149993"
 ---
 # <a name="read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet"></a>Lecture et écriture de données dans la sélection active d’un document ou d’une feuille de calcul
 

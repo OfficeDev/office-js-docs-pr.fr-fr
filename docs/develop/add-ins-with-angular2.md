@@ -2,13 +2,13 @@
 title: Développement de compléments Office avec Angular
 description: Utilisez Angular pour créer un Office en tant qu’application à page unique.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: e0d30b7cb2f3d5489f5dae9e257c0cfc115a955e
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939146"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149172"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Prise en charge d’Internet Explorer si vous chargez dynamiquement Office.js
 
-En fonction de la version Windows et du client de bureau Office sur lequel votre application est en cours d’exécution, il se peut que votre application utilise Internet Explorer 11. (Pour plus d’informations, voir [Browsers used by Office Add-ins.)](../concepts/browsers-used-by-office-web-add-ins.md) Angular dépend de quelques API, mais ces API ne fonctionnent pas dans le runtime d’IE incorporé dans Windows `window.history` clients de bureau. Lorsque ces API ne fonctionnent pas, il se peut que votre add-in ne fonctionne pas correctement, par exemple, qu’il charge un volet De tâches vide. Pour atténuer ce risque, Office.js annule ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant d'Office.js. Dans ce cas, vous devez désactiver les API en ajoutant le code suivant à la `window.history` pageindex.html de **votre** add-in.
+En fonction de la version Windows et du client de bureau Office sur lequel votre application est en cours d’exécution, il se peut que votre application utilise Internet Explorer 11. (Pour plus d’informations, voir [Browsers used by Office Add-ins.)](../concepts/browsers-used-by-office-web-add-ins.md) Angular dépend de quelques API, mais ces API ne fonctionnent pas dans le runtime d’IE incorporé dans Windows `window.history` clients de bureau. Lorsque ces API ne fonctionnent pas, il se peut que votre add-in ne fonctionne pas correctement, par exemple, qu’il charge un volet De tâches vide. Pour atténuer ce risque, Office.js annule ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant d'Office.js. Dans ce cas, vous devez désactiver les API en ajoutant le code suivant à la pageindex.html`window.history` de **votre** index.html.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

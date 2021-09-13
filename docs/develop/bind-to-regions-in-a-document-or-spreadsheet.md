@@ -2,13 +2,13 @@
 title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 9db35168274b599b93a6688d1318103c48edee55
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4da5dabe75f41e0ab7add6ee33aa82144a53b3e7
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937975"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149137"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -93,7 +93,7 @@ Dans cet exemple, le type de liaison spécifié est « Text ». Cela signifie qu
 
 Le deuxième paramètre est un objet qui contient l’ID de la nouvelle liaison créée. Si un ID n’est pas spécifié, un ID est généré automatiquement.
 
-La fonction anonyme transmise dans la fonction en tant que _troisième_ paramètre de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
+La fonction anonyme passée dans la fonction en tant que _troisième_ paramètre de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
 
 La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
@@ -103,7 +103,7 @@ La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
 ## <a name="add-a-binding-to-a-named-item"></a>Ajout d’une liaison à un élément nommé
 
-L’exemple suivant montre comment ajouter une liaison à l’élément nommé existant en tant que liaison « matrix » à l’aide de la méthode `myRange` [addFromNamedItemAsync] et affecte la liaison en tant que `id` « myMatrix ».
+L’exemple suivant montre comment ajouter une liaison à l’élément nommé existant en tant que liaison « matrix » à l’aide de la méthode `myRange` [addFromNamedItemAsync,] et affecte la liaison en tant que `id` « myMatrix ».
 
 ```js
 function bindNamedItem() {

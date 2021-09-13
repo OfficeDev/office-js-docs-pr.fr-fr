@@ -2,13 +2,13 @@
 title: Modèles de première expérience d’utilisation des complément Office
 description: Découvrez les meilleures pratiques pour concevoir des expériences de première Office des modules.
 ms.date: 07/08/2018
-localization_priority: Normal
-ms.openlocfilehash: cd268e227f6d4c6cc5aae5c954a39e0c19315330
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a89fb53a0693c4a7f6da49713413986f10584514
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937862"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150122"
 ---
 # <a name="first-run-experience-patterns"></a>Modèles de première expérience d’utilisation
 
@@ -48,7 +48,7 @@ Le carrousel présente aux utilisateurs une série de fonctionnalités ou d’in
 
 La mise en place de la valeur communique la proposition de valeur de votre complément en faisant appel au positionnement de votre logo, à une proposition de valeur clairement déclarée, à une présentation ou un résumé des fonctionnalités et à une fonctionnalité claire d’appel à l’action.
 
-*Figure 4. Un lieu de valeur avec logo, proposition de valeur claire, résumé des fonctionnalités et appel à l’action*
+*Figure 4. Un lieu de valeur avec logo, proposition de valeur claire, synthèse de fonctionnalité et appel à l’action*
 
 ![Illustration montrant une mise en place de valeur dans l’expérience de première utilisation d’Office du volet Des tâches de l’application de bureau. Dans cet exemple, le volet Des tâches affiche le logo du module, une description du module et un bouton pour commencer.](../images/add-in-FRE-value.png)
 

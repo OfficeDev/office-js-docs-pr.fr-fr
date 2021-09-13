@@ -2,13 +2,13 @@
 title: Élément Hosts dans le fichier manifeste
 description: Spécifie l’application cliente Office dans laquelle le complément Office s’active.
 ms.date: 10/09/2018
-localization_priority: Normal
-ms.openlocfilehash: 037ac2b5fedbfb1b59b7523382574942fe59a00a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 2684753fc32a295d7e177ef3bf668c194458128e
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939276"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150459"
 ---
 # <a name="hosts-element"></a>Hosts, élément
 

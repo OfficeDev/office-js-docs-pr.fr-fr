@@ -2,25 +2,25 @@
 title: Intégrer des boutons Office intégrés dans des onglets et des groupes de contrôles personnalisés
 description: Découvrez comment inclure des boutons de Office intégrés dans vos groupes de commandes et onglets personnalisés sur Office ruban.
 ms.date: 02/25/2021
-localization_priority: Normal
-ms.openlocfilehash: 8d4e8f39313551d001669b948b146250114f3e06
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 078619a616a06610f12a0bebf36d6159eec1e0e2
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58939071"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150176"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>Intégrer des boutons Office intégrés dans des onglets et des groupes de contrôles personnalisés
 
 Vous pouvez insérer des boutons de Office intégrés dans vos groupes de contrôles personnalisés sur le ruban Office à l’aide de la marque dans le manifeste du module. (Vous ne pouvez pas insérer vos commandes de Office personnalisées.) Vous pouvez également insérer des groupes de contrôles Office intégrés dans vos onglets de ruban personnalisés.
 
 > [!NOTE]
-> Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour [les commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
+> Cet article suppose que vous êtes familiarisé avec l’article Concepts de base pour les [commandes de add-in.](add-in-commands.md) Si vous ne l’avez pas fait récemment, veuillez l’examiner.
 
 > [!IMPORTANT]
 >
 > - La fonctionnalité et le markup du add-in décrits dans cet article sont disponibles *uniquement dans PowerPoint sur le web*.
-> - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui supportent l’ensemble de conditions **requises AddinCommands 1.3**. Consultez la section [Comportement sur les plateformes](#behavior-on-unsupported-platforms)non pris en place.
+> - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui supportent l’ensemble de conditions **requises AddinCommands 1.3**. Consultez la section Comportement sur les plateformes non pris [en cas de problème.](#behavior-on-unsupported-platforms)
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>Insérer un groupe de contrôles intégré dans un onglet personnalisé
 
@@ -72,7 +72,7 @@ L’exemple de marques de Office suivant ajoute le contrôle Superscript à un g
 
 ## <a name="find-the-ids-of-controls-and-control-groups"></a>Rechercher les ID des contrôles et des groupes de contrôles
 
-Les ID des contrôles et des groupes de contrôles pris en charge sont dans les fichiers du [Office de contrôle.](https://github.com/OfficeDev/office-control-ids) Suivez les instructions du fichier ReadMe de ce dépôt.
+Les ID des contrôles et des groupes de contrôles pris en charge se font dans les fichiers du [Office des ID de contrôle.](https://github.com/OfficeDev/office-control-ids) Suivez les instructions du fichier ReadMe de ce dépôt.
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportement sur les plateformes non pris en place
 

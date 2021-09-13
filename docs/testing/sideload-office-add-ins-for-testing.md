@@ -2,13 +2,13 @@
 title: Chargement de version test des compléments Office dans Office sur le web
 description: Testez votre Office dans votre Office sur le Web par chargement de version test.
 ms.date: 08/02/2021
-localization_priority: Normal
-ms.openlocfilehash: b128bf26c185a51ef9b8235b4439739bc35253bd
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 4e0f4b1f9fcdad6b0e4e9d3eb387c9322d240581
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938420"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150296"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -27,7 +27,7 @@ Ce processus est pris en charge **pour Excel,** **OneNote,** **PowerPoint** et *
 
 1. Ouvrez [Office sur le Web](https://office.live.com/). À **l’aide de l’option** Créer, créez un document **dans Excel,** **OneNote,** **PowerPoint** ou **Word.** Dans ce nouveau document, **sélectionnez Partager** dans le ruban, **sélectionnez Copier** le lien et copiez l’URL.
 
-1. Dans le répertoire racine de vos fichiers de projet Yo Office, ouvrez **package.jsfichier on.** Dans la section **de config** de ce fichier, créez une `"document"` propriété. Collez l’URL que vous avez copiée comme valeur pour la `"document"` propriété. Par exemple, le vôtre ressemblera à ceci :
+1. Dans le répertoire racine de vos fichiers de projet Yo Office, ouvrez le **fichier package.json.** Dans la section **de config** de ce fichier, créez une `"document"` propriété. Collez l’URL que vous avez copiée comme valeur pour la `"document"` propriété. Par exemple, le vôtre ressemblera à ceci :
 
     ```json
       "config": {

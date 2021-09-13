@@ -2,13 +2,13 @@
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: Guide pas à pas sur la création (ou la conversion) d’un Office add-in avec un système ASP.NET backend pour utiliser l' sign-on unique (SSO).
 ms.date: 09/03/2021
-localization_priority: Normal
-ms.openlocfilehash: 685e482c3c714f6831ea827e4a65b2ac057bddec
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 99471b78100c2627186ceb8f1c93afce5a19d396
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936315"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149123"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -53,7 +53,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
     * Dans la section **redirection d’URI**, assurez-vous que **Web** est sélectionnée dans la liste déroulante, puis définissez l’URI sur` https://localhost:44355/AzureADAuth/Authorize`.
     * Choisissez **Inscrire**.
 
-1. Dans la page **Office-Add-in-ASPNET-SSO,** copiez et enregistrez la valeur de l’ID d’application **(client).** Vous en aurez besoin dans les procédures ultérieures.
+1. Sur la page **Office-Add-in-ASPNET-SSO,** copiez et enregistrez la valeur de l’ID d’application **(client).** Vous en aurez besoin dans les procédures ultérieures.
 
     > [!NOTE]
     > Cet ID d’application **(client)** est la valeur « audience » lorsque d’autres applications, telles que l’application cliente Office (par exemple, PowerPoint, Word, Excel), recherchent un accès autorisé à l’application. Il s’agit également de l’« ID client » de l’application dès que celle-ci recherche un accès autorisé à Microsoft Graph.
@@ -128,7 +128,7 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 1. Si vous n’avez pas choisi « Comptes dans ce répertoire d’organisation uniquement » pour **TYPES DE COMPTES PRIS EN CHARGE** lorsque vous avez enregistré le complément, enregistrez et fermez le fichier web.config. Dans le cas contraire, enregistrez-le et laissez-le ouvert.
 
-1. Toujours dans l’Explorateur de **solutions,** choisissez le projet **Office-Add-in-ASPNET-SSO,** ouvrez le fichier manifeste de la solution « Office-Add-in-ASPNET-SSO.xml », puis faites défiler vers le bas du fichier. Juste au-dessus de la `</VersionOverrides>` balise de fin, vous trouverez les balises suivantes.
+1. Toujours dans l’Explorateur de **solutions,** choisissez le projet **Office-Add-in-ASPNET-SSO,** ouvrez le fichier manifeste de la solution « Office-Add-in-ASPNET-SSO.xml », puis faites défiler vers le bas du fichier. Juste au-dessus de `</VersionOverrides>` la balise de fin, vous trouverez les balises suivantes.
 
     ```xml
     <WebApplicationInfo>
@@ -208,7 +208,7 @@ Si vous avez choisi « Comptes dans cet annuaire d’organisation uniquement » 
 
     * `allowSignInPrompt` est définie sur true. Cela indique Office à l’utilisateur de se connecter si l’utilisateur n’est pas déjà Office.
     * `allowConsentPrompt` est définie sur true. Cela indique Office à l’utilisateur de donner son consentement pour permettre au add-in d’accéder au profil Microsoft Azure Active Directory de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte *n’autorise pas* l’utilisateur à consentir à des étendues Graph Microsoft.)
-    * `forMSGraphAccess` est définie sur true. Cela informe Office renvoyer une erreur (code 13012) si l’utilisateur ou l’administrateur n’Graph pas donné son consentement aux étendues du module. Pour accéder à Microsoft Graph le add-in doit échanger le jeton d’accès contre un nouveau jeton d’accès via le flux « de la part de ». La définition de la valeur true permet d’éviter le scénario dans lequel `forMSGraphAccess` **getAccessToken()** réussit, mais le flux de la part de échoue ultérieurement pour Microsoft Graph. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours.
+    * `forMSGraphAccess` est définie sur true. Cela informe Office de renvoyer une erreur (code 13012) si l’utilisateur ou l’administrateur n’Graph pas donné son consentement aux étendues du module. Pour accéder à Microsoft Graph le add-in doit échanger le jeton d’accès contre un nouveau jeton d’accès via le flux « de la part de ». La définition de la valeur true permet d’éviter le scénario dans lequel `forMSGraphAccess` **getAccessToken()** réussit, mais le flux de la part de échoue ultérieurement pour Microsoft Graph. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours.
 
     Notez également le code suivant :
 
@@ -606,7 +606,7 @@ Si vous avez choisi « Comptes dans cet annuaire d’organisation uniquement » 
 
 1. Appuyez sur la touche F5.
 1. Dans l’application Office, sur le ruban **Accueil**, sélectionnez **Afficher le complément** dans le groupe **ASP.NET SSO** pour ouvrir le complément du panneau des tâches.
-1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un Microsoft 365 Éducation ou un compte de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont affichés dans le volet Des tâches. Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichier et de dossier apparaissent.
+1. Cliquez sur le bouton **Obtenir des noms de fichier OneDrive**. Si vous êtes connecté à Office avec un compte Microsoft 365 Éducation ou de travail, ou un compte Microsoft, et que l' sso fonctionne comme prévu, les 10 premiers noms de fichiers et de dossiers de votre OneDrive Entreprise sont affichés dans le volet Des tâches. Si vous n’êtes pas connecté, ou si vous êtes dans un scénario qui ne prend pas en charge l' sso ou si l' utilisateur ne fonctionne pas pour une raison quelconque, vous êtes invité à vous y inscrire. Une fois que vous vous êtes connecté, les noms de fichier et de dossier apparaissent.
 
 ### <a name="testing-the-fallback-path"></a>Test du chemin d’accès de retour
 

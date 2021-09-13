@@ -2,19 +2,19 @@
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 ms.date: 05/13/2021
-localization_priority: Normal
-ms.openlocfilehash: 47eb5da19f858b6e30339acc59da24a818fc0959
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: a9ea360d58849afeaceb0258f97c7cbf4458e889
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938147"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150419"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
-## <a name="sideload-automatically"></a>Chargement de version de version automatique
+## <a name="sideload-automatically"></a>Chargement de version de version de version automatique
 
 Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de recharger une version de version par le biais de la ligne de commande. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
 
@@ -27,7 +27,7 @@ Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://g
 
 1. Si votre manifeste ne contient pas d’erreurs et que le chemin d’accès est valide, votre application est désormais rechargée de côté et disponible à la fois sur votre bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
 
-## <a name="sideload-manually"></a>Chargement de version de version manuelle
+## <a name="sideload-manually"></a>Chargement manuel d’une version de version
 
 Bien que nous recommandions vivement le chargement de version secondaire automatiquement via la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de Outlook basée sur le client Outlook.
 
@@ -88,7 +88,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 #### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
 
-1. Ouvrez Outlook 2016 ou ultérieur sur Windows mac.
+1. Ouvrez Outlook 2016 ou ultérieurement sur Windows ou Mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 

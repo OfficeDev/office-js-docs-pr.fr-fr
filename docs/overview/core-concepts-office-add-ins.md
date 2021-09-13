@@ -4,13 +4,13 @@ ms.topic: landing-page
 title: Vue d’ensemble du cycle de vie du développement
 description: Découvrez les événements de planification, de développement, de test et de publication du cycle de vie.
 ms.date: 05/25/2021
-localization_priority: Priority
-ms.openlocfilehash: 37a31e57fe15504937e9ece42a4b0dea8328fa24
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: 26450019026a81ab134ba623521e6dc2a34e77d9
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936963"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150411"
 ---
 # <a name="development-lifecycle-overview"></a>Vue d’ensemble du cycle de vie du développement
 

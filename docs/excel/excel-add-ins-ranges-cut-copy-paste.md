@@ -3,13 +3,13 @@ title: Couper, copier et coller des plages à l’aide de l Excel API JavaScript
 description: Découvrez comment couper, copier et coller des plages à l’aide de l Excel API JavaScript.
 ms.date: 04/02/2021
 ms.prod: excel
-localization_priority: Normal
-ms.openlocfilehash: a48d726e517899249652d857d9e79d2201f3bfc3
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 3f8d7842eb9b35b293f1ae56c4d444834d1cf672
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938524"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149271"
 ---
 # <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Couper, copier et coller des plages à l’aide de l Excel API JavaScript
 

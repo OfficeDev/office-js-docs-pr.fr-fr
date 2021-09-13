@@ -2,13 +2,13 @@
 title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
 ms.date: 07/08/2021
-localization_priority: Priority
-ms.openlocfilehash: 0fe7aa8d24b4da14a14480aaf07ef588cd8a243a
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: high
+ms.openlocfilehash: f9c9fa23dc59a36bee608fe8115b3ad77cfab623
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58937128"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150416"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 

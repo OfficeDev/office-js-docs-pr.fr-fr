@@ -2,13 +2,13 @@
 title: Utiliser les services Web Exchange (EWS) à partir d’un complément Outlook.
 description: Fournit un exemple qui illustre comment un complément Outlook peut demander des informations à partir des Services Web Exchange.
 ms.date: 04/28/2020
-localization_priority: Normal
-ms.openlocfilehash: 63c969355c9bae5dab6ef8603a9f3d61d8e82eec
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 80140ee4280b0e8b6f3dff9057e77e7bd6a1eceb
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938476"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150412"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Appeler des services Web à partir d’un complément Outlook
 

@@ -2,13 +2,13 @@
 title: Ajouter et supprimer des diapositives dans PowerPoint
 description: Découvrez comment ajouter et supprimer des diapositives et spécifier le maître et la mise en page des nouvelles diapositives.
 ms.date: 07/08/2021
-localization_priority: Normal
-ms.openlocfilehash: 7fbfd24da7bf552adfe96437187ae0128c513574
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 26999ed770fa8fde8766a2accb7ec9eb791fb3d4
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58936503"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59150404"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Ajouter et supprimer des diapositives dans PowerPoint
 
@@ -69,10 +69,10 @@ Si votre add-in peut être utilisé dans des scénarios où la nouvelle diaposit
 
 1. Créez une méthode pour obtenir l’index de la diapositive sélectionnée. Voici un exemple. Tenez compte du code suivant :
 
-    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript courantes.
+    - Il utilise la [méthode Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes.
     - L’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` renvoie un tableau car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’en a sélectionné qu’une seule, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
-    - La valeur de la diapositive est la valeur 1 que l’utilisateur voit à côté de la diapositive dans le volet de `index` miniatures.
+    - La valeur de la diapositive est la valeur 1 que l’utilisateur voit en regard de la diapositive dans le volet de `index` miniatures.
 
     ```javascript
     function getSelectedSlideIndex() {

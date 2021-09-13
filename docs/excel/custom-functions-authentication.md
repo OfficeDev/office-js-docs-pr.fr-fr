@@ -2,13 +2,13 @@
 ms.date: 05/17/2020
 description: Authentifier les utilisateurs à l’aide de fonctions Excel qui n’utilisent pas le volet Des tâches.
 title: Authentification pour les fonctions personnalisées sans interface utilisateur
-localization_priority: Normal
-ms.openlocfilehash: 94eadd343f969e6dbd83881764fac936acf0704b
-ms.sourcegitcommit: 42c55a8d8e0447258393979a09f1ddb44c6be884
+ms.localizationpriority: medium
+ms.openlocfilehash: 415663d4947caa6476fff21359d20a03eb8d67c3
+ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2021
-ms.locfileid: "58938711"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "59149885"
 ---
 # <a name="authentication-for-ui-less-custom-functions"></a>Authentification pour les fonctions personnalisées sans interface utilisateur
 
@@ -141,7 +141,7 @@ function getTokenViaDialog(url) {
 }
 ```
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 Découvrez comment [déboguer des](custom-functions-debugging.md)fonctions personnalisées sans interface utilisateur.
 
 ## <a name="see-also"></a>Voir aussi
