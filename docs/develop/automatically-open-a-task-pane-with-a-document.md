@@ -1,20 +1,20 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
-ms.date: 07/08/2021
+ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4858cc3bee0eb679b4345fe74af39a1db3833ae0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
+ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149138"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "59326764"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser les commandes de votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
-Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet des tâches, présentée dans l’ensemble des conditions AddInCommands 1.1, pour ouvrir automatiquement un volet des tâches lorsque votre scénario l’exige.
+Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1,](../reference/requirement-sets/add-in-commands-requirement-sets.md)pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
@@ -24,9 +24,9 @@ Avec la fonctionnalité d’ouverture automatique, vous pouvez explicitement dé
 
 ## <a name="support-and-availability"></a>Prise en charge et disponibilité
 
-La fonctionnalité d’ouverture automatique est maintenant <!-- in **developer preview** and it is only --> prise en charge dans les produits et les plateformes suivantes.
+La fonctionnalité d’ouverture automatique est actuellement prise en charge dans les produits et plateformes suivants.
 
-|**Produits**|**Plateformes**|
+|Produits|Plateformes|
 |:-----------|:------------|
 |<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plateformes prises en charge pour tous les produits :<ul><li>Office pour bureau Windows. Build 16.0.8121.1000+</li><li>Office sur Mac. Build 15.34.17051500+</li><li>Office sur le web</li></ul>|
 
@@ -109,11 +109,12 @@ Le composant `webextension` inclut un conteneur de propriétés et une propriét
 
 Le composant `webextension` comprend également une référence au store ou au catalogue avec des attributs pour `id`, `storeType`, `store` et `version`. Parmi les valeurs `storeType`, uniquement quatre sont pertinentes pour la fonctionnalité d’ouverture automatique. Les valeurs pour les trois autres attributs dépendent de la valeur pour `storeType`, comme illustré dans le tableau suivant.
 
-| **`storeType`valeur** | **`id`valeur**    |**`store`valeur** | **`version`valeur**|
+|`storeType`valeur|`id` value|`store` value|`version`valeur|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|L’ID de la ressource AppSource du complément (voir la remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|La version dans le catalogue AppSource (voir la remarque).|
+|OMEX (AppSource)|ID d’actif AppSource du add-in (voir Remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|Version dans le catalogue AppSource (voir Remarque).|
+|WOPICatalog (hôtes [WOPI tiers)](/microsoft-365/cloud-storage-partner-program/online/)| ID d’actif AppSource du add-in (voir Remarque). | « wopicatalog « . Utilisez cette valeur pour les applications publiées dans app Source et installées dans des hôtes WOPI tiers. Pour plus d’informations, [voir Intégration à Office Online.](/microsoft-365/cloud-storage-partner-program/online/overview) | La version dans le manifeste de complément.|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
-|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d'administration Microsoft 365.|La version dans le manifeste de complément.
+|EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d'administration Microsoft 365.|La version dans le manifeste de complément.|
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
 
 > [!NOTE]
@@ -158,5 +159,5 @@ Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Micro
 
 ## <a name="see-also"></a>Voir aussi
 
-Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-[Rejoignez le Microsoft 365 développeur.](/office/developer-program/office-365-developer-program)
+- Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- [Rejoignez le Microsoft 365 développeur.](/office/developer-program/office-365-developer-program)
