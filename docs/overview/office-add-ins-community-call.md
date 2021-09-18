@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office Appel de la communauté des add-ins
-description: Planification et ressources Microsoft Office d’appel de la communauté des Microsoft Office les plus importants.
-ms.date: 09/08/2021
+description: Planification et ressources Microsoft Office d’appel de la communauté des Microsoft Office les plus complets.
+ms.date: 09/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a880b100fba25ded26c0e1bc9f3392177c2fbfc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153547"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443537"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 
@@ -35,7 +35,8 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 ## <a name="see-also"></a>Voir aussi
 
 - [Invitation périodique, mensuelle à un calendrier d’appel de la communauté](https://aka.ms/officeaddinscommunitycall)
-- [Tous les Microsoft 365 de la communauté de développeurs](https://aka.ms/M365DevCalls)
 - [Community et questions sur les sujets d’appel](https://aka.ms/officeaddinsform)
-- [Microsoft 365 Canal YouTube du développeur](https://aka.ms/OfficeDevYouTube)
-- [Pratiques et modèles Microsoft 365](https://aka.ms/M365PnP)
+- [Microsoft 365 canal YouTube pour les développeurs](https://aka.ms/m365devyoutube)
+- [Microsoft 365 de la communauté YouTube](https://aka.ms/m365pnp/videos )
+- [Microsoft 365 PnP sur tech Community](https://aka.ms/m365pnp/community)
+- [Microsoft 365 Blog de la communauté technique PnP](https://aka.ms/m365pnp/community/blog)

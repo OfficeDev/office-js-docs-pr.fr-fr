@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises concernant les commandes de complément
 description: Vue d’Office ensembles de conditions requises des commandes de l’autre.
-ms.date: 11/01/2020
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: cb1a21c4d233a716e383d97585a61f5ab2cd2c1e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 73bedf79ff9698ed14ed0e17976a3c9e1602cc7e
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153287"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443530"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
@@ -31,7 +31,7 @@ Le tableau suivant répertorie les ensembles de conditions requises pour les com
 
 |  Ensemble de conditions requises  |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | N/A | N/A  | N/A | bientôt disponible | N/A | bientôt disponible | Novembre 2020 |
+| AddinCommands 1.3  | N/A | N/A  | N/A | Non prise en charge | N/A | Non prise en charge | Novembre 2020 |
 | AddinCommands 1.1  | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook*  | Version 1809 (build 10827.20150) ou version ultérieure | Version 1705 (build 8121.1000) ou ultérieure | S/O | 15.34 ou version ultérieure\*| Mai 2017 |
 
 >\* La méthode [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
