@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443544"
+ms.locfileid: "59445718"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
@@ -62,7 +62,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lors de l’travail avec des tableaux dynamiques
+### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lorsque vous travaillez avec des tableaux dynamiques
 
 En plus de renvoyer une seule erreur, une fonction personnalisée peut créer un tableau dynamique qui inclut une erreur. Par exemple, une fonction personnalisée peut créer le `[1],[#NUM!],[3]` tableau. L’exemple de code suivant montre comment entrer trois paramètres dans une fonction personnalisée, remplacer l’un des paramètres d’entrée par une erreur, puis renvoyer un tableau à deux dimensions avec les résultats du traitement de chaque paramètre `#NUM!` d’entrée.
 
@@ -94,7 +94,7 @@ function returnInvalidNumberError(first, second, third) {
 
 ### <a name="errors-as-custom-function-inputs"></a>Erreurs en tant qu’entrées de fonction personnalisée
 
-Une fonction personnalisée peut être évaluée même si la plage d’entrée contient une erreur. Par exemple, une fonction personnalisée peut prendre la plage **A2:A7** comme entrée, même si **A6:A7** contient une erreur.
+Une fonction personnalisée peut être évaluée même si la plage d’entrées contient une erreur. Par exemple, une fonction personnalisée peut prendre la plage **A2:A7** comme entrée, même si **A6:A7** contient une erreur.
 
 Pour traiter les entrées qui contiennent des erreurs, une fonction personnalisée doit avoir la propriété de métadonnées JSON `allowErrorForDataTypeAny` définie sur `true` . Pour [plus d’informations, voir Créer manuellement des métadonnées JSON pour les fonctions](custom-functions-json.md#metadata-reference) personnalisées.
 
