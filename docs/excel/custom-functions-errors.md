@@ -3,12 +3,12 @@ title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 011868f35c656869ae75c7ffab195db18f690f4f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a2f93059f9082bc5a53c07159c9356a41cf16729
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150344"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59443544"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
@@ -62,7 +62,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lorsque vous travaillez avec des tableaux dynamiques
+### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lors de l’travail avec des tableaux dynamiques
 
 En plus de renvoyer une seule erreur, une fonction personnalisée peut créer un tableau dynamique qui inclut une erreur. Par exemple, une fonction personnalisée peut créer le `[1],[#NUM!],[3]` tableau. L’exemple de code suivant montre comment entrer trois paramètres dans une fonction personnalisée, remplacer l’un des paramètres d’entrée par une erreur, puis renvoyer un tableau à deux dimensions avec les résultats du traitement de chaque paramètre `#NUM!` d’entrée.
 
@@ -105,7 +105,7 @@ Pour traiter les entrées qui contiennent des erreurs, une fonction personnalis�
 
 En règle générale, utilisez [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) des blocs dans votre fonction personnalisée pour capturer les erreurs potentielles qui se produisent. Si vous ne traitez pas les exceptions dans votre code, elles sont renvoyées à Excel. Par défaut, Excel renvoie `#VALUE!` les erreurs ou les exceptions nonhandées.
 
-Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si cela se produit, la fonction personnalisée revient `#N/A` pour indiquer que l’appel web a échoué.
+Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si cela se produit, la fonction personnalisée revient pour `#N/A` indiquer que l’appel web a échoué.
 
 ```typescript
 /**
@@ -135,5 +135,5 @@ Découvrez comment [résoudre les problèmes liés à vos fonctions personnalis�
 ## <a name="see-also"></a>Voir aussi
 
 * [Débogage des fonctions personnalisées](custom-functions-debugging.md)
-* [Configuration requise de fonctions personnalisées](custom-functions-requirement-sets.md)
+* [Ensembles de besoins de fonctions personnalisées](../reference/requirement-sets/custom-functions-requirement-sets.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: Informations de l’ensemble de conditions requises de l’API d’identité Office les modules complémentaires.
-ms.date: 01/26/2021
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a18ed8e7f78c5c83aeb2177a45c4fb46ba4a46
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e3af8767666d3015894c0b7bcdecd758b1a1547c
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152236"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445816"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
@@ -17,9 +17,9 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API d’identité, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.3  | N/A | 2008 (build 13127.20000) ou ultérieure | Bientôt disponible | 16.40 ou version ultérieure | Microsoft Office SharePoint Online et OneDrive\* |
+|  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
+|:-----|:-----|:-----|:-----|:-----|:-----|
+| IdentityAPI 1.3  | 2008 (build 13127.20000) ou ultérieure | 2008 (build 13127.20000) ou ultérieure | Non pris en charge | 16.40 ou version ultérieure | Microsoft Office SharePoint Online et OneDrive\* |
 
 \*Actuellement, l’ensemble de conditions requises est pris en charge Office sur le Web uniquement pour les documents ouverts à partir de Microsoft Office SharePoint Online et OneDrive.
 

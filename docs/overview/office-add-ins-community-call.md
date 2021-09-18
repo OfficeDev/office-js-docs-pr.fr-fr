@@ -8,7 +8,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443537"
+ms.locfileid: "59445725"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 

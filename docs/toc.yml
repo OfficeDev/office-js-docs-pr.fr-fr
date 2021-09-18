@@ -737,7 +737,7 @@ items:
             href: excel/custom-functions-overview.md
             displayName: 'Excel, Custom Functions'
           - name: Ensembles de conditions requises de l’API CustomFunctionsRuntime
-            href: excel/custom-functions-requirement-sets.md
+            href: reference/requirement-sets/custom-functions-requirement-sets.md
             displayName: 'Excel, Custom Functions'
           - name: Didacticiels
             items:
@@ -1273,20 +1273,14 @@ items:
           - name: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
             href: word/search-option-guidance.md
             displayName: Word
-  - name: Modèles et pratiques
+  - name: Échantillons
     items:
-      - name: Vue d’ensemble
-        href: overview/patterns-and-practices-overview.md
+      - name: Liste d’échantillons
+        href: overview/office-add-in-code-samples.md
+        displayName: PnP
       - name: Ouvrir dans Excel
         href: excel/pnp-open-in-excel.md
         displayName: Excel
-      - name: Traitement par lots des appels distants de fonction personnalisée
-        href: excel/custom-functions-batching.md
-        displayName: 'Excel, Custom Functions'
-      - name: Authentification
-        href: develop/authentication-pnp.md
-      - name: Gérer une résolution élevée et redimensionner la résolution dans votre solution Office
-        href: /office/client-developer/ddpi/handle-high-dpi-and-dpi-scaling-in-your-office-solution
       - name: Appel à la communauté des compléments Office
         href: overview/office-add-ins-community-call.md
   - name: Ressources de transition VSTO et COM

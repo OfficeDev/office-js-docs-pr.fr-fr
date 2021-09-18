@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API ruban
-description: Spécifie les plateformes Office et les builds qui prisent en charge les API du ruban dynamique.
-ms.date: 05/12/2021
+description: Spécifie les plateformes Office et les builds qui la prise en charge des API du ruban dynamique.
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d68a7a3cf1c7e4f187250a87babcf5525bb867b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f0bc97eb7600c913642471650418e14744536ce3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153484"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445711"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
@@ -19,23 +19,23 @@ L’ensemble d’API du Ruban prend en charge le contrôle par programme du mome
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API du ruban, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office client.
 
-|  Ensemble de conditions requises  | Office 2013 sur Windows<br>(achat définitif) | Office 2016 ou une Windows<br>(achat définitif)   | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à un abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
-|:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.1  | N/A | N/A | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
-| RibbonApi 1.2  | N/A | N/A | 2102 (build 13801.20294) | N/A | bientôt disponible | Mai 2021 | N/A|
+|  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à un abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| RibbonApi 1.2  | 2102 (build 13801.20294) | 2102 (build 13801.20294) | N/A | Non prise en charge | Mai 2021 | N/A|
+| RibbonApi 1.1  | 2102 (build 13801.20294) | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
 
-> **&#42;** L’API ruban est prise en charge uniquement sur Excel et nécessite un abonnement Microsoft 365 de connexion.
+> **&#42;** L’API ruban est prise en charge uniquement dans Excel.
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>Prise en charge de la version 1.1 Office sur Windows (abonnement)
 
-La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en charge dans le Canal consommateur version 2006 (build 13001.20498 ou version supérieure). Pour Office sur Windows la fonctionnalité est également prise en charge dans les builds du canal Semi-Annual et du canal Enterprise mensuel disponibles le 14 juillet 2020 ou une date ultérieure. Les builds minimales prise en charge pour chaque canal sont les suivantes :  
+La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en charge dans la version 2006 du canal consommateur (build 13001.20498 ou supérieure). Pour Office sur Windows la fonctionnalité est également prise en charge dans les builds du canal Semi-Annual et du canal Enterprise mensuel disponibles le 14 juillet 2020 ou une date ultérieure. Les builds minimales prise en charge pour chaque canal sont les suivantes :  
 
 |Canal | Version | Build|
 |:-----|:-----|:-----|
 |Canal actuel | 2006 ou supérieure | 20266.20266 ou supérieur|
 |Canal mensuel des entreprises | 2005 ou supérieure | 12827.20538 ou supérieur|
 |Canal Entreprise mensuel | 2004 | 12730.20602 ou supérieur|
-|Canal d’entreprise semi-annuel | 2002 ou supérieure | 12527.20880 ou supérieur|
+|Canal d’entreprise semestriel | 2002 ou supérieure | 12527.20880 ou supérieur|
 
 ## <a name="more-information"></a>Plus d’informations
 

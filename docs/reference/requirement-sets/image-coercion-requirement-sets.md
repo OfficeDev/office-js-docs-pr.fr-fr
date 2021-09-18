@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de coercition d’image
-description: Prise en charge des ensembles de conditions requises pour le foragage d’image avec Office pour les Excel, PowerPoint et Word.
-ms.date: 02/19/2021
+description: Prise en charge des ensembles de conditions requises pour le foragage d’image avec Office des Excel, PowerPoint et Word.
+ms.date: 09/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e55eba4d28b459f4ffe9d402640dd04cff9acb4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0f0b80c0af8213eaa9e3695373ddc037c2e60cc3
+ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149082"
+ms.lasthandoff: 09/18/2021
+ms.locfileid: "59445801"
 ---
 # <a name="image-coercion-requirement-sets"></a>Ensembles de conditions requises de coercition d’image
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 permet la conversion en image ( ) lors de l’écriture de données `Office.CoercionType.Image` à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) méthode. Les applications suivantes sont pris en charge.
+ImageCoercion 1.1 permet la conversion en image () lors de l’écriture de `Office.CoercionType.Image` données à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) méthode. Les applications suivantes sont pris en charge.
 
 - Excel 2013 et les ultérieures Windows
 - Excel 2016 et ultérieures sur Mac
@@ -36,13 +36,13 @@ ImageCoercion 1.1 permet la conversion en image ( ) lors de l’écriture de don
 
 ImageCoercion 1.2 permet la conversion au format SVG () lors de l’écriture de données `Office.CoercionType.XmlSvg` à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) méthode. Les applications suivantes sont pris en charge.
 
-- Excel sur Windows (connecté à un abonnement Microsoft 365 abonnement)
-- Excel mac (connecté à un abonnement Microsoft 365))
-- PowerPoint sur Windows (connecté à un abonnement Microsoft 365 abonnement)
-- PowerPoint mac (connecté à un abonnement Microsoft 365))
+- Excel 2021 et les Windows
+- Excel 2021 et les ultérieures sur Mac
+- PowerPoint 2021 et les Windows
+- PowerPoint 2021 et les ultérieures sur Mac
 - PowerPoint sur le web
-- Word on Windows (connecté à un abonnement Microsoft 365))
-- Word sur Mac (connecté à un abonnement Microsoft 365))
+- Word 2021 et les Windows
+- Word 2021 et les ultérieurs sur Mac
 
 ## <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
