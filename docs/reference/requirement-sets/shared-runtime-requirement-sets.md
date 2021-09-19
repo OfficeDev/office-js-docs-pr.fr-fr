@@ -1,5 +1,5 @@
 ---
-title: Ensembles de conditions requises pour l’runtime partagé
+title: Ensembles de conditions requises pour le runtime partagé
 description: Spécifie les plateformes et les applications Office qui la prise en charge des API SharedRuntime.
 ms.date: 09/08/2021
 ms.prod: non-product-specific
@@ -8,10 +8,10 @@ ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445809"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448718"
 ---
-# <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’runtime partagé
+# <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour le runtime partagé
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 

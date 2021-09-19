@@ -7,8 +7,8 @@ ms.openlocfilehash: 056fc0a260ebdd22ea0b53c73ef2c1ef25e16db0
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445725"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448745"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 
@@ -22,7 +22,7 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 - [Office Appel de la communauté des add-ins : 12 mai 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Office Appel de la communauté des add-ins : 14 avril 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [Office Appel de la communauté des add-ins : 10 mars 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
-- [Office Appel de la communauté des modules de développement – 10 février 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-february-10-2021/)
+- [Office Appel de la communauté des add-ins : 10 février 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-february-10-2021/)
 - [Office Appel de la communauté des add-ins : 13 janvier 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-january-13-2021%e2%80%af/)
 - [Office Appel de la communauté des add-ins : 9 décembre 2020](https://developer.microsoft.com/microsoft-365/blogs/office-add-ins-community-call-december-9-2020/)
 - [Office Appel de la communauté des add-ins - 11 novembre 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)

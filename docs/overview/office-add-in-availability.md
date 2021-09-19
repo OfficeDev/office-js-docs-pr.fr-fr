@@ -7,8 +7,8 @@ ms.openlocfilehash: a563aba3ea0920058625c2958aded06a574215dd
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445746"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "59448760"
 ---
 # <a name="office-client-application-and-platform-availability-for-office-add-ins"></a>Application cliente Office et disponibilité de la plate-forme pour les compléments Office
 
