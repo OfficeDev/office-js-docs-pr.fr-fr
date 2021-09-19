@@ -9,7 +9,7 @@ ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/19/2021
-ms.locfileid: "59448711"
+ms.locfileid: "59450792"
 ---
 # <a name="image-coercion-requirement-sets"></a>Ensembles de conditions requises de coercition d’image
 
@@ -17,7 +17,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ## <a name="imagecoercion-11"></a>ImageCoercion 1.1
 
-ImageCoercion 1.1 permet la conversion en image () lors de l’écriture de `Office.CoercionType.Image` données à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) méthode. Les applications suivantes sont pris en charge.
+ImageCoercion 1.1 permet la conversion en image ( ) lors de l’écriture de données `Office.CoercionType.Image` à l’aide de la [`Document.setSelectedDataAsync`](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) méthode. Les applications suivantes sont pris en charge.
 
 - Excel 2013 et les ultérieures Windows
 - Excel 2016 et ultérieures sur Mac
