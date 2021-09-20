@@ -8,8 +8,8 @@ ms.openlocfilehash: 1a3518d9efb3b4bf1aec7a9c7713611a130b1c0a
 ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59451949"
+ms.lasthandoff: 09/20/2021
+ms.locfileid: "59453116"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Ouvrir les ensembles de conditions requises de l’API Fenêtre du navigateur
 
