@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 08/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 2a0c4f5b904e8f63a3a361f1339e87785bf40eea
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 575ab4006187d6986f6ed79fc20e87e5b22725cb
+ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153468"
+ms.lasthandoff: 09/22/2021
+ms.locfileid: "59474356"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -38,7 +38,7 @@ Pour supprimer un complément chargé indépendamment d’Outlook, suivez la pro
 En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Office dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge.
 
 > [!TIP]
-> Si vous souhaitez que le complément chargé indépendamment reflète les modifications récentes apportées à ses fichiers sources HTML ou JavaScript, vous n’avez normalement pas besoin de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **F5** pour recharger le complément.
+> Si vous souhaitez que le complément chargé indépendamment reflète les modifications récentes apportées à ses fichiers sources HTML ou JavaScript, vous n’avez normalement pas besoin de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **Ctrl+F5** pour recharger le complément.
 
 > [!NOTE]
 > Pour vider le cache Office à l'aide des étapes ci-dessous, votre complément doit avoir un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](../outlook/outlook-on-send-addins.md), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](../reference/manifest/sourcelocation.md), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
