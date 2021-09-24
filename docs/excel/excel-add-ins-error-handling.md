@@ -1,14 +1,14 @@
 ---
 title: Gestion des erreurs avec l Excel API JavaScript
 description: En savoir plus sur Excel logique de gestion des erreurs de l’API JavaScript pour prendre en compte les erreurs d’utilisation.
-ms.date: 08/27/2021
+ms.date: 09/20/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: bf69831f097f28dcb26c4451582dc805dc81cfd2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 24daaa8dcd5256be997c8742016a9ec80b3294df
+ms.sourcegitcommit: 43f20d0933d0159dd390da052187b315222b185f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150496"
+ms.lasthandoff: 09/24/2021
+ms.locfileid: "59502730"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Gestion des erreurs avec l Excel API JavaScript
 
@@ -51,43 +51,45 @@ Lorsqu’une Excel’API JavaScript échoue, l’API renvoie un objet d’erreur
 
 Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 
-|Code d’erreur | Message d’erreur |
-|:----------|:--------------|
-|`AccessDenied` |Vous ne pouvez pas effectuer l’opération demandée.|
-|`ActivityLimitReached`|La limite d’activité a été atteinte.|
-|`ApiNotAvailable`|L’API demandée n’est pas disponible.|
-|`ApiNotFound`|L’API que vous essayez d’utiliser est in trouver. Il peut être disponible dans une version plus récente de Excel. Pour plus [d’informations, voir Excel’ensembles de](../reference/requirement-sets/excel-api-requirement-sets.md) conditions requises de l’API JavaScript.|
-|`BadPassword`|Le mot de passe que vous avez fourni est incorrect.|
-|`Conflict`|La demande n’a pas pu être traitée en raison d’un conflit.|
-|`ContentLengthRequired`|Un `Content-length` en-tête HTTP est manquant.|
-|`FilteredRangeConflict`|L’opération tentée provoque un conflit avec une plage filtrée.|
-|`GeneralException`|Une erreur interne s’est produite lors du traitement de la demande.|
-|`InactiveWorkbook`|L’opération a échoué car plusieurs workbooks sont ouverts et le workbook appelé par cette API a perdu le focus.|
-|`InsertDeleteConflict`|L’opération d’insertion ou de suppression tentée a créé un conflit.|
-|`InvalidArgument` |L’argument est manquant ou non valide, ou a un format incorrect.|
-|`InvalidBinding` |Cette liaison d’objets n’est plus valide en raison de mises à jour précédentes.|
-|`InvalidOperation`|L’opération tentée n’est pas valide sur l’objet.|
-|`InvalidOperationInCellEditMode`|L’opération n’est pas disponible Excel est en mode Modifier la cellule. Quittez le mode Édition à l’aide des touches **Entrée** ou **Tabulation,** ou en sélectionnant une autre cellule, puis essayez à nouveau.|
-|`InvalidReference`|Cette référence n’est pas valide pour l’opération en cours.|
-|`InvalidRequest`  |Impossible de traiter la demande.|
-|`InvalidSelection`|La sélection en cours est incorrecte pour cette action.|
-|`ItemAlreadyExists`|La ressource en cours de création existe déjà.|
-|`ItemNotFound` |La ressource demandée n’existe pas.|
-|`MemoryLimitReached`|La limite de mémoire a été atteinte. Votre action n’a pas pu être terminée.|
+|Code d’erreur | Message d’erreur | Remarques |
+|:----------|:--------------|:------|
+|`AccessDenied` |Vous ne pouvez pas effectuer l’opération demandée.| |
+|`ActivityLimitReached`|La limite d’activité a été atteinte.| |
+|`ApiNotAvailable`|L’API demandée n’est pas disponible.| |
+|`ApiNotFound`|L’API que vous essayez d’utiliser est in trouver. Il peut être disponible dans une version plus récente de Excel. Pour plus [d’informations, voir Excel’ensembles de](../reference/requirement-sets/excel-api-requirement-sets.md) conditions requises de l’API JavaScript.| |
+|`BadPassword`|Le mot de passe que vous avez fourni est incorrect.| |
+|`Conflict`|La demande n’a pas pu être traitée en raison d’un conflit.| |
+|`ContentLengthRequired`|Un `Content-length` en-tête HTTP est manquant.| |
+|`FilteredRangeConflict`|L’opération tentée provoque un conflit avec une plage filtrée.| |
+|`FormulaLengthExceedsLimit`|Le bytecode de la formule appliquée dépasse la limite de longueur maximale. Pour Office sur les ordinateurs 32 bits, la limite de longueur du bytecode est de 1 6384 caractères. Sur les ordinateurs 64 bits, la limite de longueur du bytecode est de 32 768 caractères.| Cette erreur se produit à la fois dans Excel sur le Web et sur le bureau.|
+|`GeneralException`|Une erreur interne s’est produite lors du traitement de la demande.| |
+|`InactiveWorkbook`|L’opération a échoué car plusieurs workbooks sont ouverts et le workbook appelé par cette API a perdu le focus.| |
+|`InsertDeleteConflict`|L’opération d’insertion ou de suppression tentée a créé un conflit.| |
+|`InvalidArgument` |L’argument est manquant ou non valide, ou a un format incorrect.| |
+|`InvalidBinding` |Cette liaison d’objets n’est plus valide en raison de mises à jour précédentes.| |
+|`InvalidOperation`|L’opération tentée n’est pas valide sur l’objet.| |
+|`InvalidOperationInCellEditMode`|L’opération n’est pas disponible Excel est en mode Modifier la cellule. Quittez le mode Édition à l’aide des touches **Entrée** ou **Tabulation,** ou en sélectionnant une autre cellule, puis essayez à nouveau.| |
+|`InvalidReference`|Cette référence n’est pas valide pour l’opération en cours.| |
+|`InvalidRequest`  |Impossible de traiter la demande.| |
+|`InvalidSelection`|La sélection en cours est incorrecte pour cette action.| |
+|`ItemAlreadyExists`|La ressource en cours de création existe déjà.| |
+|`ItemNotFound` |La ressource demandée n’existe pas.| |
+|`MemoryLimitReached`|La limite de mémoire a été atteinte. Votre action n’a pas pu être terminée.| |
 |`MergedRangeConflict`|Impossible de terminer l’opération. Une table ne peut pas se chevaucher avec un autre tableau, un rapport de tableau croisé dynamique, des résultats de requête, des cellules fusionnées ou une carte XML.|
-|`NonBlankCellOffSheet`|Microsoft Excel ne peut pas insérer de nouvelles cellules, car cela pousse les cellules non vides à la fin de la feuille de calcul. Ces cellules non vides peuvent apparaître vides mais ont des valeurs vides, une mise en forme ou une formule. Supprimez suffisamment de lignes ou de colonnes pour faire de la place à ce que vous souhaitez insérer, puis essayez à nouveau.|
-|`NotImplemented`|La fonctionnalité demandée n’est pas implémentée|
-|`PivotTableRangeConflict`|L’opération tentée provoque un conflit avec une plage de tableau croisé dynamique.|
-|`RangeExceedsLimit`|Le nombre de cellules dans la plage a dépassé le nombre maximal pris en charge. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)|
-|`RefreshWorkbookLinksBlocked`|L’opération a échoué, car l’utilisateur n’a pas accordé l’autorisation d’actualiser les liens debook externes.|
-|`RequestAborted`|La demande a été interrompue pendant l’exécution.|
-|`RequestPayloadSizeLimitExceeded`|La taille de la charge utile de la demande a dépassé la limite. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) <br><br>Cette erreur se produit uniquement dans Excel sur le Web.|
-|`ResponsePayloadSizeLimitExceeded`|La taille de la charge utile de réponse a dépassé la limite. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)  <br><br>Cette erreur se produit uniquement dans Excel sur le Web.|
-|`ServiceNotAvailable`|Le service n’est pas disponible.|
-|`Unauthenticated` |Les informations d’authentification requises sont manquantes ou incorrectes.|
-|`UnsupportedFeature`|L’opération a échoué car la feuille de calcul source contient une ou plusieurs fonctionnalités non pris en compte.|
-|`UnsupportedOperation`|L’opération tentée n’est pas prise en charge.|
-|`UnsupportedSheet`|Ce type de feuille ne prend pas en charge cette opération, car il s’agit d’une feuille Macro ou Graphique.|
+|`NonBlankCellOffSheet`|Microsoft Excel ne peut pas insérer de nouvelles cellules, car cela pousse les cellules non vides à la fin de la feuille de calcul. Ces cellules non vides peuvent apparaître vides mais ont des valeurs vides, une mise en forme ou une formule. Supprimez suffisamment de lignes ou de colonnes pour faire de la place à ce que vous souhaitez insérer, puis essayez à nouveau.| |
+|`NotImplemented`|La fonctionnalité demandée n’est pas implémentée| |
+|`OperationCellsExceedLimit`|L’opération tentée affecte plus que la limite de 33554000 cellules.| Si le déclencheur de cette erreur, confirmez qu’il n’y a pas de données involontaires dans la feuille de calcul mais en `TableColumnCollection.add API` dehors du tableau. En particulier, recherchez les données dans les colonnes les plus à droite de la feuille de calcul. Supprimez les données inattendues pour résoudre cette erreur. Une façon de vérifier le nombre de cellules qu’une opération traite consiste à exécuter le calcul suivant `(number of table rows) x (16383 - (number of table columns))` : Le nombre 16383 est le nombre maximal de colonnes que les Excel prend en charge. <br><br>Cette erreur se produit uniquement dans Excel sur le Web. |
+|`PivotTableRangeConflict`|L’opération tentée provoque un conflit avec une plage de tableau croisé dynamique.| |
+|`RangeExceedsLimit`|Le nombre de cellules dans la plage a dépassé le nombre maximal pris en charge. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)| |
+|`RefreshWorkbookLinksBlocked`|L’opération a échoué, car l’utilisateur n’a pas accordé l’autorisation d’actualiser les liens debook externes.| |
+|`RequestAborted`|La demande a été interrompue pendant l’exécution.| |
+|`RequestPayloadSizeLimitExceeded`|La taille de la charge utile de la demande a dépassé la limite. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)| Cette erreur se produit uniquement dans Excel sur le Web.|
+|`ResponsePayloadSizeLimitExceeded`|La taille de la charge utile de réponse a dépassé la limite. Pour plus d’informations, voir les limites de ressources et l’optimisation des performances pour Office’article sur les [modules complémentaires.](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins)|  Cette erreur se produit uniquement dans Excel sur le Web.|
+|`ServiceNotAvailable`|Le service n’est pas disponible.| |
+|`Unauthenticated` |Les informations d’authentification requises sont manquantes ou incorrectes.| |
+|`UnsupportedFeature`|L’opération a échoué car la feuille de calcul source contient une ou plusieurs fonctionnalités non pris en compte.| |
+|`UnsupportedOperation`|L’opération tentée n’est pas prise en charge.| |
+|`UnsupportedSheet`|Ce type de feuille ne prend pas en charge cette opération, car il s’agit d’une feuille Macro ou Graphique.| |
 
 > [!NOTE]
 > Le tableau précédent répertorie les messages d’erreur que vous pouvez rencontrer lors de l’utilisation Excel API JavaScript. Si vous travaillez avec l’API commune au lieu de l’API JavaScript Excel spécifique à l’application, voir Office Codes d’erreur [d’API](../reference/javascript-api-for-office-error-codes.md) courants pour en savoir plus sur les messages d’erreur pertinents.
