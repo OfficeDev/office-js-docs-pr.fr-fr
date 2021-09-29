@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Créez un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f3ecf502f035783aa99dda959d23a3cb2444ec83
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 49145c2c5e6e48fe4f0256d6dbc661e9a826fee5
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150364"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990823"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -37,7 +37,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `JavaScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office.](../images/yo-office-excel.png)
@@ -644,7 +644,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     }
     ```
 
-### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
+### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
 
 Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à présent, vous avez mis en file d’attente les commandes pour *écrire* dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()`, qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Toutefois, le code que vous avez ajouté dans la dernière étape appelle la `sheet.protection.protected property`. C’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `sheet` est uniquement un objet de proxy qui existe dans le script de votre volet Office. L’objet proxy ne connaît pas l’état réel de la protection du document. par conséquent, sa propriété `protection.protected` ne peut pas avoir de valeur réelle. Pour éviter une erreur d’exception, vous devez d’abord récupérer l’état de protection du document et l’utiliser pour déterminer la valeur de `sheet.protection.protected`. Ce processus de récupération comporte trois étapes.
 
@@ -682,7 +682,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
    - Le fait de transmettre la méthode `sync` à une fonction `then` permet de s’assurer qu’elle n’est pas exécutée tant que `sheet.protection.unprotect()` ou `sheet.protection.protect()` n’a pas été mis en file d’attente.
 
-   - La méthode `then` appelle n’importe quelle fonction qui lui est transmise, et vous ne souhaitez pas appeler `sync` deux fois, donc omettez les parenthèses « () » à la fin de `context.sync`.
+   - La méthode `then` appelle n’importe quelle fonction qui lui est transmise, et vous ne souhaitez pas appeler `sync` deux fois, donc omettez les parenthèses « () » à la fin de `context.sync`.
 
     ```js
     .then(context.sync);
@@ -722,11 +722,11 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. Fermez toutes les applications Office, y compris Excel.
+1. Fermez toutes les applications Office, y compris Excel.
 
 1. Supprimez le cache Office en supprimant le contenu (tous les fichiers et sous-dossiers) du dossier cache. Cela est nécessaire pour effacer complètement l’ancienne version du complément de l’application cliente.
 
-    - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
+    - Pour Windows : `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\`.
 
     - Pour Mac : `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
 
@@ -843,7 +843,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
     ```
 
 > [!NOTE]
-> Le fichier **popup.html** et le fichier **popup.js** qu’il charge s’exécutent dans un processus Microsoft Edge ou Internet Explorer 11 entièrement séparé à partir du volet Office du complément. Si le **popup.js** était transpilé dans le même fichier **bundle.js** en tant que fichier **app.js**, le complément devrait charger deux copies du fichier **bundle.js**, ce qui irait à l’encontre de l’objectif de groupement. Par conséquent, ce complément ne transpile pas le fichier **popup.js** du tout.
+> Le fichier **popup.html** et le fichier **popup.js** qu’il charge s’exécutent dans un processus d’exécution de navigateur entièrement distinct du volet Office du complément. Si le **popup.js** était transpilé dans le même fichier **bundle.js** en tant que fichier **app.js**, le complément devrait charger deux copies du fichier **bundle.js**, ce qui irait à l’encontre de l’objectif de groupement. Par conséquent, ce complément ne transpile pas le fichier **popup.js** du tout.
 
 ### <a name="update-webpack-config-settings"></a>Mettre à jour les paramètres de configuration webapck
 
@@ -951,7 +951,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     }
     ```
 
-1. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO1` par le code suivant. Tenez compte des informations suivantes :
 
    - La méthode `displayDialogAsync` ouvre une boîte de dialogue au centre de l’écran.
 

@@ -1,15 +1,15 @@
 ---
 title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
-ms.date: 08/04/2021
+ms.date: 09/23/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 0d42329d08de9db35d15d122321d771f6017b937
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153399"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990529"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -52,7 +52,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
    ```
 
 > [!NOTE]
-> Si votre complément inclut l’élément `Runtimes` dans le manifeste, il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
+> Si votre complément inclut l’élément `Runtimes` dans le manifeste (requis pour un runtime partagé) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basé sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, elle utilise Internet Explorer 11, quelle que soit la version de Windows ou Microsoft 365. Pour plus d’informations, consultez [Runtimes](../reference/manifest/runtimes.md) et [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 4. Dans l’élément `<Page>`, remplacez l’emplacement de la source **Functions.Page.Url** par **ContosoAddin.Url**.
 
