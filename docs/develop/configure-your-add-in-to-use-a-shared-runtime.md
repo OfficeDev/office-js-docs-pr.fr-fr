@@ -1,15 +1,15 @@
 ---
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: 6b0815b734b1fe9ad28f0662fdf84841349b0079
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b72f38fc51925124b62b14a4316f2117edfa9f7c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149136"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990564"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -200,7 +200,7 @@ Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une dur
 ```
 
 > [!NOTE]
-> Si votre complément inclut l’élément `Runtimes` dans le manifeste (nécessaire pour une exécution partagée), il utilise Internet Explorer 11 quelle que soit la version de Windows ou de Microsoft 365. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
+> Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](../reference/manifest/runtimes.md) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="about-the-shared-javascript-runtime"></a>À propos du runtime JavaScript partagé
 
