@@ -1,14 +1,14 @@
 ---
 title: Prise en charge d’Internet Explorer 11
 description: Découvrez comment prendre en charge Internet Explorer 11 et ES5 Javascript dans votre add-in.
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 963d5139a37393e9b09b0df40f1d76190b6526c7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3edab25361b8ababf8a004f25e8012ca23a085ab
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149936"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990522"
 ---
 # <a name="support-internet-explorer-11"></a>Prise en charge d’Internet Explorer 11
 
@@ -17,7 +17,7 @@ ms.locfileid: "59149936"
 >
 > Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris toutes les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md)utilisés par les applications Office . En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
 >
-> - AppSource ne teste plus les Office sur le Web l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
+> - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les Office sur le Web à l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
 > - [L Script Lab ne prend](../overview/explore-with-script-lab.md) plus en charge Internet Explorer.
 
 Office Les add-ins sont des applications web qui sont affichées dans des IFrames lors de l’exécution sur Office sur le Web. Office Les macros sont affichées à l’aide de contrôles de navigateur incorporés lors de l’exécution dans Office sur Windows ou Office sur Mac. Les contrôles de navigateur incorporés sont fournis par le système d’exploitation ou par un navigateur installé sur l’ordinateur de l’utilisateur.

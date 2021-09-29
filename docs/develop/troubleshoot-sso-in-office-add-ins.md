@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 description: Recommandations sur la façon de résoudre les problèmes liés à l' sign-on unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
-ms.date: 09/03/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9740b62a0587b2453edbef17d0be51114d0c51f0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f7fc09c7a0b5a55712c61e9a27ac69d6f2351178
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149933"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990655"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
@@ -92,7 +92,7 @@ L’utilisateur a déclenché une opération qui appelle `getAccessToken` avant 
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le complément dans Office sur Microsoft Edge ou Internet Explorer. Le domaine de Microsoft 365 utilisateur et le domaine se sont dans une zone de sécurité différente dans `login.microsoftonline.com` les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le Office sur Microsoft Edge. Le domaine de Microsoft 365 utilisateur et le domaine se sont dans une zone de sécurité différente dans `login.microsoftonline.com` les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 

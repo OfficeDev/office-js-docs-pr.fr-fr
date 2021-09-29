@@ -1,14 +1,14 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
 description: Outlook pour appareils mobiles sont pris en charge sur tous les comptes Microsoft 365 entreprise et Outlook.com.
-ms.date: 09/08/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 312e333e41dae5fa061540bec5018d4d2034b66b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e2b43a555821856256bb3da65ecac912f3e60620
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149083"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990816"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
@@ -65,7 +65,7 @@ Voici quelques exemples de scénarios pertinents dans Outlook Mobile.
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Test de vos compléments sur mobile
 
-Pour tester un complément sur Outlook Mobile, vous pouvez charger de manière indépendante un complément sur un compte Office 365 ou Outlook.com. Dans Outlook sur le web, accédez à l’icône des paramètres représentée par un engrenage, puis choisissez **Gérer les intégrations** ou **Gérer les compléments**. Près de la partie supérieure, cliquez sur l’emplacement qui indique **Cliquez ici pour ajouter un complément personnalisé** et téléchargez votre manifeste. Vérifiez que votre manifeste est correctement mis en forme et qu’il contient `MobileFormFactor`, sinon il ne sera pas chargé.
+Pour tester un compl?ment sur Outlook [](sideload-outlook-add-ins-for-testing.md) Mobile, chargez tout d’abord une version test d’un compl?ment vers un compte O365 ou Outlook.com sur le web, Windows ou Mac. Assurez-vous que votre manifeste est correctement formaté pour contenir ou qu’il ne sera pas chargé dans `MobileFormFactor` votre client Outlook sur mobile.
 
 Une fois que votre complément fonctionne, testez-le sur différentes tailles d’écran, y compris sur des téléphones et des tablettes. Vous devez vous assurer qu’il respecte les instructions d’accessibilité en matière de contraste, de taille de police et de couleur, et qu’il peut être utilisé avec un lecteur d’écran comme VoiceOver sur iOS ou TalkBack sur Android.
 

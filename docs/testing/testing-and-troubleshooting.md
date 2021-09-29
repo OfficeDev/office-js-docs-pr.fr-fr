@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: Découvrez comment résoudre les erreurs de l’utilisateur dans Office des modules.
-ms.date: 07/08/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 58983f9733e5a05c3aae317f9cc707de9aee8430
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153643"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990543"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -67,9 +67,9 @@ Lorsqu’un utilisateur utilise un complément Office, il est invité à autoris
 
 |**Navigateurs concernés**|**Plateformes concernées**|
 |:--------------------|:---------------------|
-|Internet Explorer, Microsoft Edge|Office sur le web|
+|Microsoft Edge|Office sur le web|
 
-Pour résoudre le problème, les utilisateurs finals et les administrateurs peuvent ajouter le domaine du complément à la liste des sites de confiance dans Internet Explorer. Utilisez la même procédure, que vous utilisiez le navigateur Internet Explorer ou Microsoft Edge.
+Pour résoudre le problème, les utilisateurs finaux ou les administrateurs peuvent ajouter le domaine du module à la liste des sites de confiance dans Microsoft Edge navigateur.
 
 > [!IMPORTANT]
 > n’ajoutez pas l’URL d’un complément à votre liste de sites de confiance si vous ne faites pas confiance au complément.

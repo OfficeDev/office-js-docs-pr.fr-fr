@@ -1,14 +1,14 @@
 ---
 title: Test d’Internet Explorer 11
 description: Testez votre Office sur Internet Explorer 11.
-ms.date: 08/13/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f5add8e61dc686e413cfb83b248185d40b2a624f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 97c60b12fe735f5ff6b1fd7c8171f90f12dced72
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150531"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990774"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre Office sur Internet Explorer 11
 
@@ -17,7 +17,7 @@ ms.locfileid: "59150531"
 >
 > Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris toutes les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md)utilisés par les applications Office . En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
 >
-> - AppSource ne teste plus les Office sur le Web l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
+> - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les Office sur le Web à l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
 > - [L Script Lab ne prend](../overview/explore-with-script-lab.md) plus en charge Internet Explorer.
 
 Si vous envisagez de commercialiser votre application via AppSource ou si vous prévoyez de prendre en charge des versions antérieures de Windows et Office, votre application doit fonctionner dans le contrôle de navigateur in incorporer basé sur Internet Explorer 11 (IE11). Vous pouvez utiliser une ligne de commande pour passer de runtimes plus modernes utilisés par les modules de mise à l’essai à Internet Explorer 11 pour ce test. Pour plus d’informations sur les versions de Windows et Office utiliser le contrôle d’affichage web Internet Explorer 11, voir Navigateurs utilisés par les Office des [applications.](../concepts/browsers-used-by-office-web-add-ins.md)
@@ -33,7 +33,7 @@ Si vous envisagez de commercialiser votre application via AppSource ou si vous p
 > Par ailleurs, Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les éléments multimédias, l’enregistrement et l’emplacement.
 
 > [!NOTE]
-> Pour tester votre add-in sur le navigateur Internet Explorer 11, ouvrez Office sur le Web dans Internet Explorer et chargez une version test [du module.](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+> Office sur le Web ne peut pas être ouvert dans Internet Explorer 11, vous ne pouvez pas (et n’avez pas besoin de) tester votre module sur Office sur le Web avec Internet Explorer.
 
 ## <a name="prerequisites"></a>Conditions préalables
 

@@ -1,14 +1,14 @@
 ---
 title: Élément ExtendedPermission dans le fichier manifeste
 description: Définit une autorisation étendue dont le add-in a besoin pour accéder à l’API ou à la fonctionnalité associée.
-ms.date: 10/15/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3655ff43088e4506c8bf4125a4a9fae1ef721b4e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 127ad4ea1df0d069a12f642e8fafdfcad006d715
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152883"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990781"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` élément
 
@@ -16,6 +16,8 @@ Définit une autorisation étendue dont le add-in a besoin pour accéder à l’
 
 > [!IMPORTANT]
 > La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+
+**Type de complément :** messagerie
 
 ## <a name="available-extended-permissions"></a>Autorisations étendues disponibles
 

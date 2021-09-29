@@ -1,14 +1,14 @@
 ---
 title: Élément MobileFormFactor dans le fichier manifest
 description: L’élément MobileFormFactor spécifie les paramètres de facteur de forme mobile d’un module de recherche.
-ms.date: 10/09/2018
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 619e0465ccf0c4b327956ca166aaa6195744ebee
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c0b701064f3a8c0244dc62226899c4317b9075c4
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153664"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990676"
 ---
 # <a name="mobileformfactor-element"></a>Élément MobileFormFactor
 
@@ -17,6 +17,8 @@ Spécifie les paramètres d’un complément pour le facteur de forme pour envir
 Chaque **définition MobileFormFactor** contient **l’élément FunctionFile** et un ou plusieurs **éléments ExtensionPoint.** Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
 
 L’élément **MobileFormFactor** est défini dans le schéma VersionOverrides 1.1. Pour les éléments [VersionOverrides](versionoverrides.md) le contenant, l’attribut `xsi:type` doit avoir la valeur `VersionOverridesV1_1`.
+
+**Type de complément :** messagerie
 
 ## <a name="child-elements"></a>Éléments enfants
 

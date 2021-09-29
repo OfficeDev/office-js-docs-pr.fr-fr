@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: Découvrez les exigences en matière de client et de serveur dont un utilisateur final a besoin pour exécuter des Office de recherche.
-ms.date: 07/27/2021
+ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e846da92ac398fa16ed51764a419e9a05b85293e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b39af2b381bc6dd29df2f1925ca5cbf67740e4a8
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149212"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990557"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -66,7 +66,7 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office et SharePoint
 
-Tout navigateur prenant en charge ECMAScript 5.1, HTML5 et CSS3, tel qu’Internet Explorer 11 ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
+Tout navigateur, à l’exception d’Internet Explorer, qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel que Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
 
 ## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows

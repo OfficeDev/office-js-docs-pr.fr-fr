@@ -1,14 +1,14 @@
 ---
 title: Exécuter un cote dans votre complément Office lors de l’ouverture du document
 description: Découvrez comment exécuter du code dans votre Office de votre add-in à l’ouverture du document.
-ms.date: 12/28/2020
+ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce550284a10a9410978402f087c2caf231a5917f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149951"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990550"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Exécuter un cote dans votre complément Office lors de l’ouverture du document
 
@@ -29,23 +29,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 > [!NOTE]
 > La `setStartupBehavior` méthode est asynchrone.
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>Configurer votre add-in pour qu’il n’y a aucun comportement de chargement à l’ouverture d’un document
-
-Le code suivant configure votre add-in pour qu’il ne démarre pas lorsque le document est ouvert. Au lieu de cela, il démarre lorsque l’utilisateur l’engage d’une manière ou d’une autre, par exemple en choisissant un bouton de ruban ou en ouvrant le volet Des tâches.
-
-```JavaScript
-Office.addin.setStartupBehavior(Office.StartupBehavior.none);
-```
-
-## <a name="get-the-current-load-behavior"></a>Obtenir le comportement de chargement actuel
-
-Pour déterminer le comportement de démarrage actuel, exécutez la fonction suivante, qui renvoie un `Office.StartupBehavior` objet.
-
-```JavaScript
-let behavior = await Office.addin.getStartupBehavior();
-```
-
-## <a name="how-to-run-code-when-the-document-opens"></a>Comment exécuter du code à l’ouverture du document
+## <a name="place-startup-code-in-officeinitialize"></a>Placer le code de démarrage dans Office.initialize
 
 Lorsque votre add-in est configuré pour se charger à l’ouverture du document, il s’exécute immédiatement. Le `Office.initialize` handler d’événements est appelé. Placez votre code de démarrage dans le `Office.initialize` ou le `Office.onReady` handler d’événements.
 
@@ -101,6 +85,22 @@ Office.onReady(info => {
 async function onChange(event) {
   console.log("Change type of event: " + event.type);
 }
+```
+
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>Configurer votre add-in pour qu’il n’y a aucun comportement de chargement à l’ouverture d’un document
+
+Le code suivant configure votre add-in pour qu’il ne démarre pas lorsque le document est ouvert. Au lieu de cela, il démarre lorsque l’utilisateur l’engage d’une manière ou d’une autre, par exemple en choisissant un bouton de ruban ou en ouvrant le volet Des tâches.
+
+```JavaScript
+Office.addin.setStartupBehavior(Office.StartupBehavior.none);
+```
+
+## <a name="get-the-current-load-behavior"></a>Obtenir le comportement de chargement actuel
+
+Pour déterminer le comportement de démarrage actuel, exécutez la fonction suivante, qui renvoie un `Office.StartupBehavior` objet.
+
+```JavaScript
+let behavior = await Office.addin.getStartupBehavior();
 ```
 
 ## <a name="see-also"></a>Voir aussi

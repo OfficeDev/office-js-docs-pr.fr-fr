@@ -1,18 +1,21 @@
 ---
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
-ms.date: 05/13/2021
+ms.date: 09/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a9ea360d58849afeaceb0258f97c7cbf4458e889
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d58df95f1e530039e2333b8a6b323b99e6718013
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150419"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990704"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
+
+> [!IMPORTANT]
+> Si votre Outlook prend en charge les appareils mobiles, chargez une version test du manifeste à l’aide des instructions de cet article pour votre client Outlook sur le web, Windows ou Mac, puis suivez les **instructions** de la section Test de vos macros sur mobile de l’article [Add-ins for Outlook Mobile.](outlook-mobile-addins.md#testing-your-add-ins-on-mobile)
 
 ## <a name="sideload-automatically"></a>Chargement de version de version de version automatique
 
@@ -99,7 +102,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
     >
     > - **Bouton Stocker** sur le ruban, si disponible.
     >
-    >   OU
+    >   OR
     >
     > - **Menu** Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations** pour ouvrir la boîte de dialogue Des Outlook sur le web. <br>Vous pouvez en savoir plus sur l’expérience web dans la section précédente chargement de version de chargement d’un [Outlook sur le web](#outlook-on-the-web).
 
@@ -128,3 +131,7 @@ Sur toutes les versions de Outlook, la clé de la suppression  d’un module de 
 Pour accéder à la boîte de dialogue Mes applications pour votre client Outlook, [](#sideload-manually) utilisez les dernières **étapes** répertoriées pour le chargement de version manuelle dans les sections précédentes de cet article.
 
 Pour supprimer un **add-in** chargé de Outlook, utilisez les étapes décrites précédemment dans cet article pour trouver le module dans la section Des applications personnalisées de la boîte de dialogue qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le module, puis choisissez Supprimer pour `...` supprimer ce dernier.  Fermez la boîte de dialogue.
+
+## <a name="see-also"></a>Voir aussi
+
+- [Compléments pour Outlook Mobile](outlook-mobile-addins.md)

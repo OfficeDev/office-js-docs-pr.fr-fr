@@ -1,18 +1,20 @@
 ---
 title: Élément Script dans le fichier manifeste
 description: L’élément Script définit les paramètres de script qu’une fonction personnalisée utilise dans Excel.
-ms.date: 10/09/2018
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c3c1946bbb45b2fd41e4f39b46f9429b17343e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 259976f752cf3fca72c5012bedd92b9bf021f6aa
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153364"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990669"
 ---
 # <a name="script-element"></a>Élément Script
 
 Définit les paramètres de script utilisés par une fonction personnalisée dans Excel.
+
+**Type de add-in :** Fonction personnalisée
 
 ## <a name="attributes"></a>Attributs
 

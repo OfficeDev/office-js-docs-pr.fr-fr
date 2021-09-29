@@ -1,14 +1,14 @@
 ---
 title: Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 description: Activer la compatibilité avec Excel fonctions XLL définies par l’utilisateur qui ont des fonctionnalités équivalentes à vos fonctions personnalisées
-ms.date: 08/24/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 806f920fb6c9a25907fc475cfd29b844ef00f9a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 82d1120e68a69bee74a6fe1911bbd8d3ccb3fb00
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152991"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990711"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
@@ -17,8 +17,7 @@ ms.locfileid: "59152991"
 
 Si vous disposez de Excel XLL, vous pouvez créer des macros supplémentaires de fonction personnalisée équivalentes à l’aide de l’API JavaScript Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes, telles que Excel sur le Web ou sur un Mac. Toutefois, Excel’API JavaScript ne disposent pas de toutes les fonctionnalités disponibles dans les add-ins XLL. Selon les fonctionnalités que votre solution utilise, le add-in XLL peut offrir une meilleure expérience que le Excel de l’API JavaScript dans Excel sur Windows.
 
-> [!IMPORTANT]
-> La compatibilité des fonctions définies par l’utilisateur (UDF) et du compl?ment COM et XLL est prise en charge par Excel sur Windows (version 1904 ou ultérieure). La compatibilité des fonctions définies par l’utilisateur (UDF) et du Excel sur le Web COM n’est pas prise en charge sur Mac.
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## <a name="specify-equivalent-xll-in-the-manifest"></a>Spécifier un XLL équivalent dans le manifeste
 
@@ -64,7 +63,7 @@ Le tableau suivant compare les fonctionnalités entre les fonctions XLL définie
 | **Fonctions volatiles** | Oui | Oui | Oui |
 | **Prise en charge du recalcul multi-thread** | Oui | Oui | Oui |
 | **Comportement du calcul** | Aucune interface utilisateur. Excel ne répond pas pendant le calcul. | Les utilisateurs voient #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. | Les utilisateurs voient #BUSY ! jusqu’à ce qu’un résultat soit renvoyé. |
-| **Ensembles de conditions requises** | N/A | CustomFunctions 1.1 et les ultérieures | CustomFunctions 1.1 et les ultérieures |
+| **Ensembles de conditions requises** | S/O | CustomFunctions 1.1 et les ultérieures | CustomFunctions 1.1 et les ultérieures |
 
 ## <a name="see-also"></a>Voir aussi
 

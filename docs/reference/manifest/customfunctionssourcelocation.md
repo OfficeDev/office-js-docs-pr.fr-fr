@@ -1,18 +1,20 @@
 ---
 title: Élément SourceLocation pour les fonctions personnalisées dans le fichier manifeste
 description: Définit l’emplacement d’une ressource requise par les éléments Script ou Page utilisés par les fonctions personnalisées dans Excel.
-ms.date: 08/07/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d5607fbb02c1925137e1a143b7715c7c87c6fa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5f2d881f31f4e46e7f5bb8ab30d78abd0e9b7200
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150604"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990683"
 ---
 # <a name="sourcelocation-element-custom-functions"></a>Élément SourceLocation (fonctions personnalisées)
 
 Définit l’emplacement d’une ressource requise par les éléments Script ou Page utilisés par les fonctions personnalisées dans Excel.
+
+**Type de add-in :** Fonction personnalisée
 
 ## <a name="attributes"></a>Attributs
 

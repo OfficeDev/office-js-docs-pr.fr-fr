@@ -1,18 +1,21 @@
 ---
 title: Chargement de version test des compléments Office sur iPad et Mac
 description: Testez votre Office sur iPad Mac en chargeant une version test.
-ms.date: 09/02/2020
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 04609f8cceee20403c25ec91a8ca75adf82b51c4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 38c2d39cf5dc997492899a41e430413e2ae388b4
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153680"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990718"
 ---
 # <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Chargement de version test des compléments Office sur iPad et Mac
 
 Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pouvez charger une version test du manifeste de votre complément sur un iPad à l’aide d’iTunes ou directement dans Office sur Mac. Cette opération ne vous permettra pas de définir des points d’arrêt ni de déboguer le code de votre complément pendant son exécution, mais vous pourrez observer son comportement, et vérifier que l’interface utilisateur est fonctionnelle et qu’elle s’affiche correctement.
+
+> [!NOTE]
+> Pour charger une version test de complément Outlook, voir la rubrique relative au [chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 ## <a name="prerequisites-for-office-on-ios"></a>Configuration requise pour Office sur iOS
 
@@ -79,9 +82,6 @@ Pour voir comment votre complément s’exécutera dans Office sur iOS, vous pou
 
 ## <a name="sideload-an-add-in-in-office-on-mac"></a>Chargement d’une version test de complément dans Office sur Mac
 
-> [!NOTE]
-> Pour charger une version test de complément Outlook sur Mac, voir l’article relatif au [chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md).
-
 1. Ouvrez **Terminal** et allez dans l’un des dossiers suivants où vous allez enregistrer le fichier manifeste de votre module. Si le dossier `wef` n’existe pas sur votre ordinateur, créez-le.
 
     - Pour Word : `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`
@@ -111,4 +111,5 @@ Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant l
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Déboguer des compléments Office sur un Mac](debug-office-add-ins-on-ipad-and-mac.md)
+- [Chargement de version test des compléments Outlook pour les tester](../outlook/sideload-outlook-add-ins-for-testing.md)

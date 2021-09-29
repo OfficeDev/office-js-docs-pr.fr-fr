@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: Découvrez comment résoudre les erreurs de développement dans les Office de développement.
-ms.date: 09/03/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a2b36a0c8a89dd5f4087794e1901e72baca6244
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2a17a9eafd91cd174209b1974eea61715385c0ad
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152235"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990802"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -107,7 +107,7 @@ Vous pouvez répéter le processus précédent pour tous les schémas supplémen
 
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 - [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
-- [Débogage des compléments Office sur iPad et Mac](debug-office-add-ins-on-ipad-and-mac.md)  
+- [Déboguer des compléments Office sur un Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)

@@ -1,14 +1,14 @@
 ---
 title: Rendre votre complément Office compatible avec un complément COM existant
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
-ms.date: 08/03/2021
+ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e84bce51e0233f7186b22e6571ec3968ea8d8ed5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7f401e2ea15fde54401e329262dd783887f025af
+ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150017"
+ms.lasthandoff: 09/29/2021
+ms.locfileid: "59990574"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
@@ -16,14 +16,7 @@ Si vous avez un compl?ment COM existant, vous pouvez créer des fonctionnalités
 
 Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?ment COM équivalent est déjà install sur l’ordinateur d’un utilisateur, Office sur Windows exécute le compl?ment COM au lieu du compl?ment Office. Le add-in COM est appelé « équivalent », car Office passe en toute transparence entre le compl?ment COM et le compl?ment Office en fonction de celui qui est install ? l’ordinateur d’un utilisateur.
 
-> [!NOTE]
-> Cette fonctionnalité est prise en charge par la plateforme et les applications suivantes, lorsqu’elles sont connectées à Microsoft 365 abonnement. Les add-ins COM ne peuvent pas être installés sur une autre plateforme. Ainsi, sur ces plateformes, l’élément manifeste qui est abordé plus loin dans cet article, `EquivalentAddins` est ignoré.
->
-> - Excel, Word et PowerPoint sur Windows (version 1904 ou ultérieure)
-> - Outlook sur Windows (version 2102 ou ultérieure) par rapport à une version Exchange serveur pris en charge
->   - Exchange Online
->   - Exchange cumulative 2019 10 ou version ultérieure ([KB5003612](https://support.microsoft.com/topic/b1434cad-3fbc-4dc3-844d-82568e8d4344))
->   - Exchange cumulative 2016 21 ou version ultérieure ([KB5003611](https://support.microsoft.com/topic/b7ba1656-abba-4a0b-9be9-dac45095d969))
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ## <a name="specify-an-equivalent-com-add-in"></a>Spécifier un compl?ment COM équivalent
 
