@@ -1,25 +1,25 @@
 ---
 title: Ensembles de conditions requises de l’API d’identité
 description: Informations de l’ensemble de conditions requises de l’API d’identité Office les modules complémentaires.
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: e3af8767666d3015894c0b7bcdecd758b1a1547c
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: 743e92b22aa3e5026991bc08524f35607a58a4d3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59450799"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138575"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API d’identité, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l Office’application.
+Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API d’identité, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
 |  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|
-| IdentityAPI 1.3  | 2008 (build 13127.20000) ou ultérieure | 2008 (build 13127.20000) ou ultérieure | Non pris en charge | 16.40 ou version ultérieure | Microsoft Office SharePoint Online et OneDrive\* |
+| IdentityAPI 1.3  | Build 16.0.14326.20454 ou ultérieure | 2008 (build 13127.20000) ou ultérieure | Non pris en charge | 16.40 ou version ultérieure | Microsoft Office SharePoint Online et OneDrive\* |
 
 \*Actuellement, l’ensemble de conditions requises est pris en charge Office sur le Web uniquement pour les documents ouverts à partir de Microsoft Office SharePoint Online et OneDrive.
 

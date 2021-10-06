@@ -1,27 +1,38 @@
 ---
 title: Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 description: Explique comment configurer la prise en charge de la prise en charge des dossiers partagés (c’est-à-dire. accès délégué) et boîtes aux lettres partagées.
-ms.date: 07/02/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 65850699612e9dc48dfe7cc1aed5b00ce5b79012
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 346d05db7bdfec6b3ea95d487780c7a146130b59
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153164"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138736"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
 Cet article explique comment activer les scénarios de dossiers partagés [](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes)(également appelés accès délégué) et de boîtes aux lettres partagées (désormais en prévisualisation) dans votre application Outlook, y compris les autorisations que l’API JavaScript Office prend en charge.
 
+## <a name="supported-clients-and-platforms"></a>Clients et plateformes pris en charge
+
+Le tableau suivant présente les combinaisons client-serveur pris en charge pour cette fonctionnalité, y compris la mise à jour cumulative minimale requise, le cas échéant. Les combinaisons exclues ne sont pas pris en charge.
+
+| Client | Exchange Online | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2013 en local |
+|---|:---:|:---:|:---:|:---:|
+|Windows :<br>version 1910 (build 12130.20272) ou version ultérieure|Oui|Non|Non|Non|
+|Mac :<br>build 16.47 ou ultérieure|Oui|Oui|Oui|Oui|
+|Navigateur web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|Non applicable|
+|Navigateur web :<br>interface utilisateur Outlook classique|Non applicable|Non|Non|Non|
+
 > [!IMPORTANT]
-> La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (pour plus d’informations, reportez-vous [aux clients et aux plateformes).](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
 
 ## <a name="supported-setups"></a>Configurations prise en charge
 
 Les sections suivantes décrivent les configurations prise en charge pour les boîtes aux lettres partagées (désormais en prévisualisation) et les dossiers partagés. Les API de fonctionnalité peuvent ne pas fonctionner comme prévu dans d’autres configurations. Sélectionnez la plateforme que vous souhaitez apprendre à configurer.
 
-### <a name="windows"></a>[Windows](#tab/windows)
+### <a name="windows"></a>[Fenêtres](#tab/windows)
 
 #### <a name="shared-folders"></a>Dossiers partagés
 
@@ -51,6 +62,26 @@ Après avoir reçu l’accès, un utilisateur de boîte aux lettres partagée do
 > [!WARNING]
 > **N’utilisez PAS** d’autres options telles que « Ouvrir une autre boîte aux lettres ». Il se peut que les API de fonctionnalité ne fonctionnent pas correctement.
 
+### <a name="mac"></a>[Mac](#tab/unix)
+
+#### <a name="shared-mailboxes-preview"></a>Boîtes aux lettres partagées (aperçu)
+
+Le courrier et le calendrier sont partagés avec un délégué ou un utilisateur de boîte aux lettres partagé. Les add-ins sont disponibles pour le délégué ou l’utilisateur dans les modes de lecture et de composition des messages et des rendez-vous.
+
+#### <a name="shared-folders"></a>Dossiers partagés
+
+Si le **dossier Boîte de** réception est partagé avec un délégué, les modules sont disponibles pour le délégué en mode lecture de message.
+
+Si le **dossier Brouillons** est également partagé avec le délégué, les add-ins sont disponibles en mode composition.
+
+#### <a name="local-shared-calendar-new-model"></a>Calendrier partagé local (nouveau modèle)
+
+Si le propriétaire du calendrier a explicitement partagé son calendrier avec un délégué (la boîte aux lettres entière n’est peut-être pas partagée), les modules sont disponibles pour le délégué en mode de lecture et de composition de rendez-vous.
+
+#### <a name="remote-shared-calendar-previous-model"></a>Calendrier partagé à distance (modèle précédent)
+
+Si le propriétaire du calendrier a accordé un large accès à son calendrier (par exemple, l’a rendu modifiable à une DL particulière ou à l’ensemble de l’organisation), les utilisateurs peuvent alors avoir des autorisations indirectes ou implicites et les modules sont disponibles pour ces utilisateurs en mode lecture et composition de rendez-vous.
+
 ---
 
 Pour en savoir plus sur l’endroit où les modules sont activés et non activés en général, reportez-vous à la section Éléments de boîte aux lettres disponibles pour les [add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) de la page de vue d’ensemble des Outlook.
@@ -62,7 +93,7 @@ Le tableau suivant décrit les autorisations que l’API JavaScript Office prend
 |Autorisation|Valeur|Description|
 |---|---:|---|
 |Lecture|1 (000001)|Peut lire des éléments.|
-|Write|2 (000010)|Peut créer des éléments.|
+|Écriture|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut supprimer uniquement les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|
 |EditOwn|16 (010000)|Peut modifier uniquement les éléments qu’ils ont créés.|

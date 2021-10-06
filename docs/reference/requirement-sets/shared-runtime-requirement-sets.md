@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises pour l’runtime partagé
 description: Spécifie les plateformes et les applications Office qui la prise en charge des API SharedRuntime.
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e7d37e66a562799bc841fd7d7e7ad8cd6d89e7
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2021
-ms.locfileid: "59450785"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138498"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’runtime partagé
 
@@ -21,10 +21,10 @@ Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime
 
 | Ensemble de conditions requises | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) | Office sur iPad<br>(connecté à un abonnement Microsoft 365) | Office sur Mac<br>(connecté à un abonnement Microsoft 365) | Office sur le web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Version 2002 (build 12527.20092) ou version ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | N/A | 16.35 ou version ultérieure | Février 2020 | N/A |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
 
 > [!IMPORTANT]
-> L’ensemble de conditions requises du runtime JavaScript partagé est disponible uniquement sur les plateformes suivantes.
+> L’ensemble de conditions requises du runtime JavaScript partagé est disponible uniquement sur les applications et les plateformes Office suivantes.
 >
 > - Excel sur le web, Windows et Mac.
 > - PowerPoint sur Windows (version 13218.10000 ou ultérieure). Le runtime partagé JavaScript pour PowerPoint est actuellement en préversion et est susceptible de changer. Il n’est actuellement pas pris en charge pour une utilisation dans les environnements de production. Pour obtenir la dernière version, vous devez [rejoindre le programme Office Insider](https://insider.office.com/join). Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Microsoft 365. Si vous n’avez pas déjà d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).

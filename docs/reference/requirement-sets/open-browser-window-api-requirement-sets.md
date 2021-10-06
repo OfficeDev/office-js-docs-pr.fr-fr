@@ -1,15 +1,15 @@
 ---
 title: Séries de conditions requises pour ouvrir une fenêtre de navigateur
 description: Spécifie les plateformes Office et les builds qui ouvrent la prise en charge de l’API openBrowserWindow.
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a3518d9efb3b4bf1aec7a9c7713611a130b1c0a
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: 65088c6a8fa7c7f9bd3e53da0d2b1755b7ec22e6
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2021
-ms.locfileid: "59453116"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138785"
 ---
 # <a name="open-browser-window-api-requirement-sets"></a>Ouvrir les ensembles de conditions requises de l’API Fenêtre du navigateur
 
@@ -21,7 +21,7 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 
 |  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Microsoft 365) |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| OpenBrowserWindowApi 1.1  | Version 1810 (build 16.0.11001.20074) ou version ultérieure | Version 1810 (build 16.0.11001.20074) ou version ultérieure | 16.0.0.0 ou ultérieur | 16.0.0.0 ou ultérieur | N/A | N/A|
+| OpenBrowserWindowApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 1810 (build 16.0.11001.20074) ou version ultérieure | 16.0.0.0 ou ultérieur | 16.0.0.0 ou ultérieur | N/A | N/A|
 
 > [!NOTE]
 > L’ensemble de conditions requises OpenBrowserWindowApi est disponible uniquement comme suit :

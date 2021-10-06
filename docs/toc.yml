@@ -268,7 +268,7 @@ items:
               - name: Attacher un débogueur à partir du volet Office
                 href: testing/attach-debugger-from-task-pane.md
               - name: Débogage à l’aide des outils de développement
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md
+                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
               - name: Débogage à l’aide de Microsoft Edge WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'

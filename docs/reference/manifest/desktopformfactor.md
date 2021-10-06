@@ -1,20 +1,30 @@
 ---
 title: Élément DesktopFormFactor dans le fichier manifeste
 description: Spécifie les paramètres d’un complément en fonction du facteur de forme pour bureau.
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f15840a7b6716cd8acabe9e061effa566d48930
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 52c9a029e3f43e9b7d5416455eb99ef3de4dae7a
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474328"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138729"
 ---
 # <a name="desktopformfactor-element"></a>DesktopFormFactor, élément
 
 Spécifie les paramètres d’un complément en fonction du facteur de forme pour bureau. Le facteur de forme de bureau inclut Office sur le Web, Windows et Mac. Il contient toutes les informations de l’application pour le facteur de forme de bureau, à l’exception **du** nœud Resources.
 
 Chaque définition DesktopFormFactor contient **l’élément FunctionFile** et un ou plusieurs **éléments ExtensionPoint.** Pour plus d’informations, voir [Élément FunctionFile](functionfile.md) et [Élément ExtensionPoint](extensionpoint.md).
+
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
 
 ## <a name="child-elements"></a>Éléments enfants
 

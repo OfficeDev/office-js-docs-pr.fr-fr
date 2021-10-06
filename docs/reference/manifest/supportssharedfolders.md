@@ -1,14 +1,14 @@
 ---
 title: Élément SupportsSharedFolders dans le fichier manifest
 description: L’élément SupportsSharedFolders définit si le Outlook est disponible dans les dossiers partagés et les scénarios de boîtes aux lettres partagées.
-ms.date: 06/15/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fed9d98fb993e8568e9ff27b3a3bd44d64efa279
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 8e13393f10b12e0a3c5ca1b004b202eb2970d264
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990508"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138722"
 ---
 # <a name="supportssharedfolders-element"></a>Élément SupportsSharedFolders
 
@@ -18,6 +18,16 @@ Définit si le Outlook est disponible dans les scénarios de boîte aux lettres 
 > La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1.8. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 **Type de complément :** messagerie
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+
+**Associés à ces ensembles de conditions requises**:
+
+- [Mailbox 1.8](../../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md)
 
 Voici un exemple de **l’élément SupportsSharedFolders.**
 

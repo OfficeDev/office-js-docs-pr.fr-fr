@@ -1,14 +1,14 @@
 ---
 title: Élément FunctionFile dans le fichier manifest
 description: Spécifie le fichier de code source pour les opérations qu’un complément expose via les commandes de complément qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
-ms.date: 11/06/2020
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 443fde5cc5456508556962254ecceb6bd717e8a8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8d65e8d8ba94dd63dc82c0519260157b1d22a62
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153580"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138757"
 ---
 # <a name="functionfile-element"></a>Élément FunctionFile
 
@@ -17,7 +17,22 @@ Spécifie le fichier de code source pour les opérations qu’un add-in expose d
 * Commandes de add-in qui exécutent une fonction JavaScript au lieu d’afficher l’interface utilisateur.
 * Raccourcis clavier qui exécutent une fonction JavaScript.
 
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+
 `FunctionFile`L’élément est un élément enfant de [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md). L’attribut de l’élément ne peut pas être plus de 32 caractères et est défini sur la valeur de l’attribut d’un élément dans l’élément qui contient l’URL d’un fichier HTML qui contient ou charge toutes les fonctions JavaScript utilisées par les boutons de commande de l’interface utilisateur sans interface `resid` `FunctionFile` `id` `Url` `Resources` utilisateur, [](control.md)comme défini par l’élément Control .
+
+> [!NOTE]
+> Lorsque le add-in est configuré pour utiliser un [runtime](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)partagé, les fonctions dans le fichier de code s’exécutent dans le même runtime JavaScript (et partagent un espace de noms global commun) que le JavaScript dans le volet Des tâches du add-in (s’il y en a).
+>
+> L’élément et le fichier de code associé ont également un rôle spécial à jouer avec des raccourcis clavier personnalisés, qui nécessitent un `FunctionFile` runtime partagé. [](../../design/keyboard-shortcuts.md)
 
 Voici un exemple de `FunctionFile` l’élément.
 

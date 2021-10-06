@@ -1,20 +1,31 @@
 ---
 title: Runtime dans le fichier manifeste
 description: L’élément Runtime configure votre add-in pour utiliser un runtime JavaScript partagé pour ses différents composants, par exemple, ruban, volet des tâches, fonctions personnalisées.
-ms.date: 05/19/2021
+ms.date: 09/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d58cdce1520439685d868ae264d3b6fb3fe9e69
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: acdff8f7ffb1e9392c1671eadc36a79348ece5fa
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149081"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138442"
 ---
 # <a name="runtime-element"></a>Élément Runtime
 
 Configure votre add-in pour utiliser un runtime JavaScript partagé afin que différents composants s’exécutent tous dans le même runtime. Enfant de [`<Runtimes>`](runtimes.md) l’élément.
 
 **Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+ - Volet De tâches 1.0
+ - Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+
+**Associés à ces ensembles de conditions requises**:
+
+- [SharedRuntime 1.1](../requirement-sets/shared-runtime-requirement-sets.md) (uniquement lorsqu’il est utilisé dans un add-in de volet de tâches.)
 
 [!include[Runtimes support](../../includes/runtimes-note.md)]
 

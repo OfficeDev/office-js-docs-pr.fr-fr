@@ -3,12 +3,12 @@ title: Test et débogage de compléments Office
 description: Découvrez comment tester et déboguer votre Complément Office.
 ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: fd7bcaf5fdc6ded1a2d6991a4ab5207e515fad16
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 1a47c9e5b4d45dc2a20f7fd5dd04a384eea5cba3
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990788"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138596"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
@@ -44,7 +44,7 @@ La procédure de débogage d’un complément Office varie également selon la p
 
 - [Attacher un débogueur à partir du volet Office (sur Windows)](attach-debugger-from-task-pane.md)
 
-- [Débogage de compléments avec les outils de développement F12 sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Débogage de compléments avec les outils de développement F12 sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 

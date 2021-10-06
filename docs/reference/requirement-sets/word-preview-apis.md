@@ -1,15 +1,15 @@
 ---
 title: API d’aperçu JavaScript pour Word
-description: Détails sur les API JavaScript word à venir
+description: Détails sur les API JavaScript word à venir.
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c6aa7b8107e0443091f876baa8bd66ccb8db7061
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0aedc0dac2c4af62bf1e21b1c46690a27cbcfc95
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153071"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138774"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -65,7 +65,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[customXmlParts](/javascript/api/word/word.documentcreated#customxmlparts)|Obtient les parties XML personnalisées du document.|
 ||[paramètres](/javascript/api/word/word.documentcreated#settings)|Obtient les paramètres du add-in dans le document.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageformat)|Obtient le format de l’image fixe.|
-|[List](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Obtient la police de la puce, du numéro ou de l’image au niveau spécifié dans la liste.|
+|[Liste](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getlevelfont-level-)|Obtient la police de la puce, du numéro ou de l’image au niveau spécifié dans la liste.|
 ||[getLevelPicture(level: number)](/javascript/api/word/word.list#getlevelpicture-level-)|Obtient la représentation de chaîne codée en base 64 de l’image au niveau spécifié dans la liste.|
 ||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetlevelfont-level--resetfontname-)|Réinitialise la police de la puce, du numéro ou de l’image au niveau spécifié dans la liste.|
 ||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setlevelpicture-level--base64encodedimage-)|Définit l’image au niveau spécifié dans la liste.|

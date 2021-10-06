@@ -1,14 +1,14 @@
 ---
 title: Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 description: Utilisez l’extension Visual Studio Code de Microsoft Office déboguer votre Office de débogage.
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 256c7855f4757f49c23b4c633323cf2124bb6516
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1eb71ec1bd52198af32129882cb531451fff422a
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150532"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138638"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
@@ -22,7 +22,7 @@ Ce mode de débogage est dynamique, ce qui vous permet de définir des points d�
 
 - [Visual Studio Code](https://code.visualstudio.com/) (doit être exécuté en tant qu’administrateur)
 - [Node.js (version 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - [Microsoft Edge](https://www.microsoft.com/edge)
 
 Ces instructions supposent que vous avez de l’expérience en utilisant la ligne de commande, que vous comprenez javaScript de base et que vous avez créé un projet de Office avant d’utiliser le générateur Yo Office. Si vous ne l’avez pas encore fait, envisagez de consulter l’un de nos didacticiels, comme Excel Office [didacticiel sur le add-in.](../tutorials/excel-tutorial.md)
@@ -35,7 +35,7 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
     > Si vous avez déjà un projet, ignorez l’étape 1 et passez à l’étape 2.
 
 1. Ouvrez une invite de commandes en tant qu’administrateur.
-   ![Options d’invite de commandes, y compris « Exécuter en tant qu’administrateur » Windows 10.](../images/run-as-administrator-vs-code.jpg)
+   ![Options d’invite de commandes, y compris « Exécuter en tant qu’administrateur » Windows 10 et 11.](../images/run-as-administrator-vs-code.jpg)
 
 1. Accédez au répertoire de votre projet.
 
@@ -85,6 +85,6 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
 
 - [Test et débogage de compléments Office](test-debug-office-add-ins.md)
 
-- [Débogage des compléments avec les outils de développement sur Windows 10](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Déboguer des applications à l’aide des outils de développement Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 
 - [Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)](debug-desktop-using-edge-chromium.md)

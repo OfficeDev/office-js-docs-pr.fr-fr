@@ -1,18 +1,28 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 05/11/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c68df7bdaf1bf6aa93002e3120321f80d69724ab
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 17e39cf85ef19516d4b2a04ba6b96cf97b32336b
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150242"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138764"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
  Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office. L’élément **ExtensionPoint** est un élément enfant de [AllFormFactors](allformfactors.md) ou [DesktopFormFactor](desktopformfactor.md) ou [MobileFormFactor](mobileformfactor.md).
+
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
 
 ## <a name="attributes"></a>Attributs
 
@@ -34,7 +44,7 @@ ms.locfileid: "59150242"
 Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint** avec les valeurs d’attribut **PrimaryCommandSurface** et **ContextMenu**, ainsi que les éléments enfants qui doivent être utilisés avec chacune d’elles.
 
 > [!IMPORTANT]
-> Pour les éléments qui contiennent un attribut ID, assurez-vous que vous indiquez un ID unique. Nous vous recommandons d’utiliser le nom de votre organisation, ainsi que votre ID. Par exemple, utilisez le format suivant. <CustomTab id="mycompanyname.mygroupname">
+> Pour les éléments qui contiennent un attribut ID, veillez à indiquer un ID unique. Nous vous recommandons d’utiliser le nom de votre organisation, ainsi que votre ID. Par exemple, utilisez le format suivant : `<CustomTab id="mycompanyname.mygroupname">`.
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
@@ -264,7 +274,7 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-Ce point d’extension place un basculement adapté au mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
+Ce point d’extension place un basculement approprié en mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
 
 > [!NOTE]
 > Ce point d’extension est uniquement pris en charge sur Android et iOS avec Microsoft 365 abonnement.
@@ -281,7 +291,7 @@ Ce point d’extension place un basculement adapté au mode dans l’surface de 
 
 L’attribut doit être attribué à l’élément contenu dans ce `Control` point `xsi:type` d’extension. `MobileButton`
 
-Les images doivent être en échelle de gris à `Icon` l’aide d’un code hexas ou de son équivalent `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
+Les images doivent être en échelles de gris à l’aide de code hex ou de son équivalent `Icon` `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
 
 #### <a name="example"></a>Exemple
 

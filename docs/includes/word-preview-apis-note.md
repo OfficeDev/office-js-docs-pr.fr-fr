@@ -1,5 +1,7 @@
 > [!IMPORTANT]
-> Notez que les API d’aperçu Word suivantes sont disponibles uniquement sur les plateformes suivantes.
-> - Word sur Windows
+> Notez que les API d’aperçu Word suivantes peuvent être disponibles sur les plateformes suivantes.
 >
-> Les API d’aperçu Word ne sont actuellement pas pris en charge sur Mac, iOS ou sur le Web.
+> - Word sur Windows
+> - Word sur Mac
+>
+> Les API d’aperçu Word ne sont actuellement pas pris en charge sur iPad. Toutefois, les API de fonctionnalité de signet sont également disponibles dans Word sur le web.

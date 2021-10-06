@@ -1,18 +1,30 @@
 ---
 title: Élément GetStarted dans le fichier manifeste
 description: Fournit des informations utilisées par la callout qui s’affiche lorsque le add-in est installé dans Word, Excel, PowerPoint et OneNote.
-ms.date: 09/17/2021
+ms.date: 09/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c311e1bb5fbc2db265f430c8762216ad3a727107
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 1630b50824cda18ca92ef6b34b0105acf9a4ca9c
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474342"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138749"
 ---
 # <a name="getstarted-element"></a>Élément GetStarted
 
 Fournit des informations utilisées par la callout qui s’affiche lorsque le add-in est installé dans Word, Excel, PowerPoint et OneNote. L’élément **GetStarted** est un élément enfant de [DesktopFormFactor](desktopformfactor.md). Si **l’élément GetStarted** est omis, la légende utilise à la place les valeurs des éléments [DisplayName](displayname.md) et [Description.](description.md)
+
+**Type de complément :** volet Office
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Volet De tâches 1.0
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+
+**Associés à ces ensembles de conditions requises**:
+
+- [AppCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="child-elements"></a>Éléments enfants
 

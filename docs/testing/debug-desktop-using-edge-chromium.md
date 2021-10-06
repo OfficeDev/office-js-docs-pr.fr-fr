@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)
 description: Découvrez comment déboguer un complément Office qui utilise Microsoft Edge WebView2 (avec Chromium) à l’aide du débogueur pour l’extension Microsoft Edge dans VS Code.
-ms.date: 08/18/2021
+ms.date: 10/05/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 90c58352ef49a365cd80dd7699d23f40c800bbd6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149074"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138645"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Déboguer un complément à l’aide de Microsoft Edge WebView2
 
@@ -18,7 +18,7 @@ L’exécution d’un complément Office sur Windows peut utiliser le débogueur
 
 - [Visual Studio Code](https://code.visualstudio.com/) (doit être exécuté en tant qu’administrateur)
 - [Node.js (version 10+)](https://nodejs.org/)
-- Windows 10
+- Windows 10, 11
 - La combinaison d’une plateforme et d’une application Office qui prend en charge Microsoft Edge avec WebView2 (basé sur Chromium), comme expliqué dans [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). Si votre version de Microsoft 365 est antérieure à 2101, vous devez installer WebView2. Suivez les instructions pour l’installer sur [Microsoft Edge WebView2/Incorporer du contenu web... avec Microsoft Edge webView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## <a name="install-and-use-the-debugger"></a>Installer et utiliser le débogueur

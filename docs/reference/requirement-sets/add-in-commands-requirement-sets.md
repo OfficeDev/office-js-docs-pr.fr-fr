@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises concernant les commandes de complément
 description: Vue d’Office ensembles de conditions requises des commandes de l’autre.
-ms.date: 09/08/2021
+ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 73bedf79ff9698ed14ed0e17976a3c9e1602cc7e
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: c290a739a59cd147d668acce8bea84adb1801104
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59443530"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138465"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
@@ -19,9 +19,9 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 
 La version initiale des commandes de add-in n’a pas d’ensemble de conditions requises correspondant (autrement dit, il n’existe pas d’ensemble de conditions requises AddinCommands 1.0). Le tableau suivant répertorie les applications clientes Office qui la prise en charge de la version initiale, ainsi que les versions ou le numéro de build de ces applications.  
 
-| Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Commandes de complément (version initiale, aucune condition) | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook* | Version 1809 (build 10827.20150) ou version ultérieure |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
+| Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| Commandes de complément (version initiale, aucune condition) | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook* | Version 1809 (build 10827.20150) ou version ultérieure| 16.0.14326.20454 ou ultérieur |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
 
 L’ensemble de conditions requises des commandes de add-in **1.1** introduit la possibilité d’ouverture automatique d’un volet De tâches [avec des documents.](../../develop/automatically-open-a-task-pane-with-a-document.md)
 
@@ -29,10 +29,10 @@ L’ensemble de conditions requises des commandes de l’ajout **1.3** introduit
 
 Le tableau suivant répertorie les ensembles de conditions requises pour les commandes de Office, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |  
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | N/A | N/A  | N/A | Non prise en charge | N/A | Non prise en charge | Novembre 2020 |
-| AddinCommands 1.1  | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook*  | Version 1809 (build 10827.20150) ou version ultérieure | Version 1705 (build 8121.1000) ou ultérieure | S/O | 15.34 ou version ultérieure\*| Mai 2017 |
+|  Ensemble de conditions requises  |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) |  Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |  
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+| AddinCommands 1.3  | N/A | N/A | N/A | N/A | Non prise en charge | N/A | Non prise en charge | Novembre 2020 |
+| AddinCommands 1.1  | S/O | 16.0.4678.1000 *Pris en charge uniquement dans Outlook*  | Version 1809 (build 10827.20150) ou version ultérieure | 16.0.14326.20454 ou ultérieur | Version 1705 (build 8121.1000) ou ultérieure | S/O | 15.34 ou version ultérieure\*| Mai 2017 |
 
 >\* La méthode [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
 
