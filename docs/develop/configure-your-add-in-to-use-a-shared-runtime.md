@@ -1,15 +1,15 @@
 ---
-ms.date: 09/23/2021
+ms.date: 10/05/2021
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: b72f38fc51925124b62b14a4316f2117edfa9f7c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990564"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138471"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -40,7 +40,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 
 1. Démarrez Visual Studio Code, puis ouvrez le projet de complément Excel ou PowerPoint créé.
 1. Ouvrez le fichier **manifest.xml**.
-1. Si vous avez créé un complément Excel, mettez à jour la section des conditions préalables pour utiliser un [runtime partagé](../reference/requirement-sets/shared-runtime-requirement-sets.md) au lieu du runtime de fonction partagé. Le XML s’affiche comme suit.
+1. Si vous avez généré un complément Excel, mettez à jour la section des exigences pour utiliser le [ de runtime partagé](../reference/requirement-sets/shared-runtime-requirement-sets.md)au lieu du runtime de fonction personnalisé. Le code XML doit apparaître comme suit.
 
     ```xml
     <Hosts>
@@ -188,7 +188,7 @@ Chaque fois que vous sélectionnez le bouton de complément, il changera le text
 
 ## <a name="runtime-lifetime"></a>Durée de vie de l’exécution
 
-Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une durée de vie ayant une valeur de `long` ou de `short`. Configurez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, continuer à exécuter un code après la fermeture du volet des tâches, ou utiliser CORS et DOM à partir de fonctions personnalisées.
+Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une durée de vie avec la valeur `long` ou `short`. Définissez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, la poursuite de l’exécution du code après la fermeture du volet Office ou l’utilisation de CORS et DOM à partir de fonctions personnalisées.
 
 > [!NOTE]
 > La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément Excel démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
@@ -226,7 +226,7 @@ Pour Office sur Windows, le runtime partagé utilise Microsoft Edge avec WebView
 
 ### <a name="debugging"></a>Débogage
 
-Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Visual Studio Code pour déboguer des fonctions personnalisées dans Excel sur Windows à cette date. Vous devez utiliser les outils de développement à la place. Pour plus d'informations, voir le [Débogage des compléments avec les outils de développement sur Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Visual Studio Code pour déboguer des fonctions personnalisées dans Excel sur Windows à cette date. Vous devez utiliser les outils de développement à la place. Pour plus d'informations, voir le [Débogage des compléments avec les outils de développement sur Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md).
 
 ### <a name="multiple-task-panes"></a>Multiples volets des tâches
 
@@ -234,7 +234,7 @@ Ne concevez pas votre complément pour utiliser plusieurs volets des tâches si 
 
 ## <a name="give-us-feedback"></a>Faites-nous part de vos commentaires
 
-Nous aimerions connaître votre avis concernant cette fonctionnalité. Si vous trouvez des bogues, des problèmes ou si vous avez des questions relatives à cette fonctionnalité, faites-le nous savoir en créant un problème GitHub dans le [référentiel Office-js](https://github.com/OfficeDev/office-js).
+Nous aimerions connaître vos commentaires sur cette fonctionnalité. Si vous trouvez des bogues, des problèmes ou des demandes sur cette fonctionnalité, faites-le nous savoir en créant un problème GitHub dans le dépôt [office-js](https://github.com/OfficeDev/office-js).
 
 ## <a name="see-also"></a>Voir aussi
 

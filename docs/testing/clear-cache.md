@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 08/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 575ab4006187d6986f6ed79fc20e87e5b22725cb
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 0e3d03303bea1b26f9cf982b59e58865fb683f5d
+ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474356"
+ms.lasthandoff: 10/06/2021
+ms.locfileid: "60138512"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -33,7 +33,7 @@ Si le dossier suivant existe, supprimez également son contenu.
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
-Pour supprimer un complément chargé indépendamment d’Outlook, suivez la procédure décrite dans [Charger indépendamment des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour rechercher le complément dans la section **Compléments personnalisés** de la boîte de dialogue qui répertorie les compléments installés. Sélectionnez les points de suspension (`...`) du complément, puis sélectionnez **Supprimer** pour supprimer ce complément spécifique. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du dossier `Wef` comme indiqué précédemment pour Excel, Word et PowerPoint.
+Pour supprimer un complément chargé indépendamment d’Outlook, suivez la procédure décrite dans [Charger indépendamment des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour rechercher le complément dans la section **Compléments personnalisés** de la boîte de dialogue qui répertorie les compléments installés. Sélectionnez les points de suspension (`...`) du complément, puis sélectionnez **Supprimer** pour supprimer ce complément spécifique. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du dossier `Wef`comme indiqué précédemment pour Excel, Word et PowerPoint.
 
 En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Office dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge.
 
@@ -41,7 +41,7 @@ En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Offic
 > Si vous souhaitez que le complément chargé indépendamment reflète les modifications récentes apportées à ses fichiers sources HTML ou JavaScript, vous n’avez normalement pas besoin de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **Ctrl+F5** pour recharger le complément.
 
 > [!NOTE]
-> Pour vider le cache Office à l'aide des étapes ci-dessous, votre complément doit avoir un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](../outlook/outlook-on-send-addins.md), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](../reference/manifest/sourcelocation.md), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
+> Pour effacer le cache d'Office à l'aide des étapes suivantes, votre module complémentaire doit disposer d'un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](../outlook/outlook-on-send-addins.md), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](../reference/manifest/sourcelocation.md), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
 
 1. Installez [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
 
@@ -67,12 +67,12 @@ En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Offic
 
 ## <a name="clear-the-office-cache-on-ios"></a>Vider le cache Office sur iOS
 
-Pour vider le cache Office sur iOS, appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également choisir de réinstaller Office.
+Pour vider le cache Office sur iOS, appelez `window.location.reload(true)` à partir de JavaScript dans le complément pour forcer le rechargement. Vous pouvez également réinstaller Office.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](troubleshoot-development-errors.md)
-- [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows-10.md)
+- [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
