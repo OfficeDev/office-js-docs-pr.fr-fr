@@ -3,12 +3,12 @@ title: Outlook conditions requises de l’API du add-in 1.10
 description: Ensemble de conditions requises 1.10 pour Outlook API de votre application.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b54d327d37acd7b2c7fcff100cc7dbe7a39187c0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a94e829b1656d7c3a33ff51918834c7ea6913967
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153567"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237496"
 ---
 # <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conditions requises de l’API du add-in 1.10
 
@@ -30,11 +30,11 @@ L’ensemble de conditions requises 1.10 inclut toutes les fonctionnalités de l
 - Ajout de [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction qui désactive la signature du client pour la boîte aux lettres d’envoi en mode composition.
 - Ajout [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): ajoute une nouvelle fonction qui obtient le type de composition d’un message en mode composition.
 - Ajout de [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction qui vérifie si la signature du client est activée sur l’élément en mode composition.
-- Ajout [Office. MailboxEnums.ActionType :](/javascript/api/outlook/office.mailboxenums.actiontype)ajoute une nouvelle enum. Il représente le type d’action personnalisée dans un message de notification.
+- Ajout de [Office. MailboxEnums.ActionType :](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true)ajoute une nouvelle enum. Il représente le type d’action personnalisée dans un message de notification.
 - Ajout [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): ajoute une nouvelle enum disponible en mode Composition.
-- Ajout [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype): ajoute un nouveau type à `ItemNotificationMessageType` l’enum. Il représente un message de notification avec une action personnalisée.
-- Ajout [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction): ajoute un nouvel objet afin que vous pouvez définir une action personnalisée pour votre `InsightMessage` notification.
-- Ajout [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails#actions): ajoute une nouvelle propriété qui vous permet d’ajouter une `InsightMessage` notification avec une action personnalisée.
+- Ajout de [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): ajoute un nouveau type à `ItemNotificationMessageType` l’enum. Il représente un message de notification avec une action personnalisée.
+- Ajout [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): ajoute un nouvel objet afin que vous pouvez définir une action personnalisée pour votre `InsightMessage` notification.
+- Ajout [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): ajoute une nouvelle propriété qui vous permet d’ajouter une `InsightMessage` notification avec une action personnalisée.
 
 ## <a name="see-also"></a>Voir aussi
 

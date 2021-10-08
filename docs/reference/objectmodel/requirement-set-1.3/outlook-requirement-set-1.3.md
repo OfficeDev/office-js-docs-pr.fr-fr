@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.3
 description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.3.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ffc618f0f3555eef47abb38bb5118ac7177b9a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a8688d5d63cd658084bd0ba4601ed85a631bf8d8
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153603"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237768"
 ---
 # <a name="outlook-add-in-api-requirement-set-13"></a>Ensemble de conditions requises de l’API du complément Outlook 1.3
 
@@ -31,7 +31,7 @@ L’ensemble de conditions requises 1.3 inclut toutes les fonctionnalités de l�
 
 - Ajout de la méthode [Body.getAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#getAsync_coercionType__options__callback_) : Renvoie le corps actif dans un format spécifié.
 - Ajout de la méthode [Body.setAsync](/javascript/api/outlook/office.body?view=outlook-js-1.3&preserve-view=true#setAsync_data__options__callback_) : Remplace l’ensemble du corps avec le texte spécifié.
-- Ajout de l’objet [Event](/javascript/api/office/office.addincommands.event) : transmis comme paramètre aux fonctions de commande sans IU dans un complément Outlook. Utilisé pour signaler la fin du traitement de l’événement.
+- Ajout de l’objet [Event](/javascript/api/office/office.addincommands.event?view=outlook-js-1.3&preserve-view=true) : transmis comme paramètre aux fonctions de commande sans IU dans un complément Outlook. Utilisé pour signaler la fin du traitement de l’événement.
 - Ajout de la méthode [Office.context.mailbox.item.close](office.context.mailbox.item.md#methods) : Ferme l’élément en cours qui est composé.
 - Ajout de la méthode [Office.context.mailbox.item.saveAsync](office.context.mailbox.item.md#methods) : Enregistre un élément de manière asynchrone.
 - Ajout de l’objet [Office.context.mailbox.item.notificationMessages](office.context.mailbox.item.md#properties) : Obtient les messages de notification pour un élément.

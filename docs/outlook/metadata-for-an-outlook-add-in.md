@@ -3,12 +3,12 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fcff058fe05229d13a378fcba9c1b165e84fdd51
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8ac7915a7e9c0c34806052ff42e12acff60dcf2f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149096"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237740"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
@@ -21,7 +21,7 @@ Ces deux méthodes donnent accès aux données personnalisées auxquelles seul v
 
 ## <a name="custom-data-per-mailbox-roaming-settings"></a>Données personnalisées par boîte aux lettres : paramètres d’itinérance
 
-Vous pouvez indiquer des données propres à la boîte aux lettres Exchange d’un utilisateur, à l’aide de l’objet [RoamingSettings](/javascript/api/outlook/office.RoamingSettings), telles que les préférences et les données personnelles de l’utilisateur. Votre complément de messagerie peut accéder aux paramètres d’itinérance lorsqu’il est en itinérance sur un appareil pour lequel il a été conçu (ordinateur, tablette ou smartphone).
+Vous pouvez indiquer des données propres à la boîte aux lettres Exchange d’un utilisateur, à l’aide de l’objet [RoamingSettings](/javascript/api/outlook/office.roamingsettings), telles que les préférences et les données personnelles de l’utilisateur. Votre complément de messagerie peut accéder aux paramètres d’itinérance lorsqu’il est en itinérance sur un appareil pour lequel il a été conçu (ordinateur, tablette ou smartphone).
 
 Les modifications apportées à ces données sont stockées dans une copie en mémoire de ces paramètres pour la session Outlook en cours. Vous devez explicitement enregistrer tous les paramètres d’itinérance après les avoir mis à jour afin qu’ils soient disponibles lors de la prochaine ouverture de votre complément, sur le même appareil ou sur un autre appareil pris en charge.
 
@@ -69,7 +69,7 @@ Office.initialize = function () {
 
 Pour faire suite à l’exemple précédent, la fonction JavaScript suivante, `setAddInSetting`, montre comment utiliser la méthode [RoamingSettings.set](/javascript/api/outlook/office.RoamingSettings) pour définir un paramètre nommé `cookie` avec la date du jour, et conserver les données en utilisant la méthode [RoamingSettings.saveAsync](/javascript/api/outlook/office.RoamingSettings#saveAsync_callback_) pour réenregistrer tous les paramètres d’itinérance sur le serveur.
 
-La méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre `set` à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code transmet une méthode de rappel, à « When the asynchronous call finishes » (Lorsque l’appel asynchrone se termine), est appelée à l’aide d’un `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
+La méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre `set` à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de manière asynchrone. Cet exemple de code passe une méthode de rappel, à Une fois l’appel asynchrone terminé, est appelée à l’aide d’un `saveMyAddInSettingsCallback` `saveAsync`  `saveMyAddInSettingsCallback` paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
 
 ```js
 // Set a roaming setting.

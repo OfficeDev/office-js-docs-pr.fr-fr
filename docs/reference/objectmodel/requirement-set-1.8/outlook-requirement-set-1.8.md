@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.8
 description: Ensemble de conditions requises 1.8 pour Outlook API de votre application.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f5aa192d783fdd08155dfbe80a509de72ccd402f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 956bf1ed7109ce274d47ad6f2fda3999d1db913b
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150543"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237762"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 
@@ -48,13 +48,13 @@ L’ensemble de conditions requises 1.8 inclut toutes les fonctionnalités de l�
 - Ajout d’[Office.context.mailbox.item.getItemIdAsync](office.context.mailbox.item.md#methods) : ajoute une nouvelle méthode obtenant l’ID d’un rendez-vous ou d’un élément de message enregistré.
 - Ajout d’[Office.context.mailbox.item.getSharedPropertiesAsync](office.context.mailbox.item.md#methods) : ajout d’une nouvelle méthode obtenant un objet représentant les sharedProperties d’un rendez-vous ou d’un élément de message.
 - Ajout d’[Office.context.mailbox.item.internetHeaders](office.context.mailbox.item.md#properties) : ajoute une nouvelle propriété représentant les en-têtes Internet personnalisés d’élément de message. Mode composition uniquement.
-- Modification d’[Event.Completed](/javascript/api/office/office.addincommands.event#completed_options_) : ajoute un nouveau paramètre facultatif `options`, qui est un dictionnaire dont la seule valeur valide est `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
+- Modification d’[Event.Completed](/javascript/api/office/office.addincommands.event?view=outlook-js-1.8&preserve-view=true#completed_options_) : ajoute un nouveau paramètre facultatif `options`, qui est un dictionnaire dont la seule valeur valide est `allowEvent`. Cette valeur est utilisée pour annuler l’exécution d’un événement.
 - Ajout d’[Office.MailboxEnums.AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true) : ajoute une nouvelle énumération spécifiant la mise en forme qui s’applique au contenu d’une pièce jointe.
 - Ajout d’[Office.MailboxEnums.AttachmentStatus](/javascript/api/outlook/office.mailboxenums.attachmentstatus?view=outlook-js-1.8&preserve-view=true) : ajoute une nouvelle énumération qui spécifie si une pièce jointe a été ajoutée à un élément ou supprimée d’un élément.
 - Ajout d’[Office.MailboxEnums.CategoryColor](/javascript/api/outlook/office.mailboxenums.categorycolor?view=outlook-js-1.8&preserve-view=true) : ajoute une nouvelle énumération spécifiant les couleurs disponibles à associer à des catégories.
 - Ajout d’[Office.MailboxEnums.DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions?view=outlook-js-1.8&preserve-view=true) : ajoute une nouvelle énumération d’indicateur binaire spécifiant les autorisations accordées aux délégués.
 - Ajout d’[Office.MailboxEnums.LocationType](/javascript/api/outlook/office.mailboxenums.locationtype?view=outlook-js-1.8&preserve-view=true) : ajoute une nouvelle énumération spécifiant le type de lieu d’un rendez-vous.
-- Modification d’[Office.EventType](/javascript/api/office/office.eventtype) : ajoute la prise en charge des événements `AttachmentsChanged` et `EnhancedLocationsChanged`.
+- Modification d’[Office.EventType](/javascript/api/office/office.eventtype?view=outlook-js-1.8&preserve-view=true) : ajoute la prise en charge des événements `AttachmentsChanged` et `EnhancedLocationsChanged`.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,12 +3,12 @@ title: Office.context - ensemble de conditions requises 1.10
 description: Office. Membres d’objet de contexte disponibles pour Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.10.
 ms.date: 05/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cd7a450cbabf4a94339252d48f216c4510a5715
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 20c8eeac33802f233ec6af994abdf5fb7e426f0a
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153604"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237450"
 ---
 # <a name="context-mailbox-requirement-set-110"></a>context (Ensemble de conditions requises de boîte aux lettres 1.10)
 
@@ -28,9 +28,9 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
 | [auth](#auth-auth) | Composition<br>Lecture | [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [platform](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
@@ -40,13 +40,13 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 
 ## <a name="property-details"></a>Détails de la propriété
 
-#### <a name="auth-auth"></a>auth: [Auth](/javascript/api/office/office.auth)
+#### <a name="auth-auth"></a>auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true)
 
 Prend en charge l' [sign-on unique (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) en fournissant une méthode qui permet à l’application Office d’obtenir un jeton d’accès à l’application web du module. Indirectement, ceci active également le complément pour accéder aux données de Microsoft Graph de l’utilisateur sans que l’utilisateur ne doive se connecter une deuxième fois.
 
 ##### <a name="type"></a>Type
 
-*   [Auth](/javascript/api/office/office.auth)
+*   [Auth](/javascript/api/office/office.auth?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -116,13 +116,13 @@ function write(message){
 ---
 ---
 
-#### <a name="diagnostics-contextinformation"></a>diagnostics : [ContextInformation](/javascript/api/office/office.contextinformation)
+#### <a name="diagnostics-contextinformation"></a>diagnostics : [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true)
 
 Obtient des informations sur l’environnement dans lequel le module complémentaire est en cours d’exécution.
 
 ##### <a name="type"></a>Type
 
-*   [ContextInformation](/javascript/api/office/office.contextinformation)
+*   [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -188,7 +188,7 @@ function write(message){
 ---
 ---
 
-#### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype)
+#### <a name="host-hosttype"></a>host: [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true)
 
 Obtient Office application qui héberge le module.
 
@@ -197,7 +197,7 @@ Obtient Office application qui héberge le module.
 
 ##### <a name="type"></a>Type
 
-*   [HostType](/javascript/api/office/office.hosttype)
+*   [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -217,7 +217,7 @@ console.log(JSON.stringify(Office.context.host));
 ---
 ---
 
-#### <a name="platform-platformtype"></a>platform: [PlatformType](/javascript/api/office/office.platformtype)
+#### <a name="platform-platformtype"></a>platform: [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true)
 
 Fournit la plateforme sur laquelle le module est en cours d’exécution.
 
@@ -226,7 +226,7 @@ Fournit la plateforme sur laquelle le module est en cours d’exécution.
 
 ##### <a name="type"></a>Type
 
-*   [PlatformType](/javascript/api/office/office.platformtype)
+*   [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -246,13 +246,13 @@ console.log(JSON.stringify(Office.context.platform));
 ---
 ---
 
-#### <a name="requirements-requirementsetsupport"></a>requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+#### <a name="requirements-requirementsetsupport"></a>requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true)
 
 Fournit une méthode pour déterminer quels ensembles de conditions requises sont pris en charge sur l’application et la plateforme actuelles.
 
 ##### <a name="type"></a>Type
 
-*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport)
+*   [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -272,7 +272,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 ---
 ---
 
-#### <a name="roamingsettings-roamingsettings"></a>roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings)
+#### <a name="roamingsettings-roamingsettings"></a>roamingSettings: [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true)
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
@@ -280,7 +280,7 @@ L’objet vous permet de stocker et d’accéder aux données d’un module de m
 
 ##### <a name="type"></a>Type
 
-*   [RoamingSettings](/javascript/api/outlook/office.RoamingSettings)
+*   [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -295,13 +295,13 @@ L’objet vous permet de stocker et d’accéder aux données d’un module de m
 ---
 ---
 
-#### <a name="ui-ui"></a>Interface utilisateur : [interface utilisateur](/javascript/api/office/office.ui)
+#### <a name="ui-ui"></a>Interface utilisateur : [interface utilisateur](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true)
 
 Fournit des objets et des méthodes que vous pouvez utiliser pour créer et manipuler des composants d’interface utilisateur, tels que des boîtes de dialogue, dans vos Office de données.
 
 ##### <a name="type"></a>Type
 
-*   [UI](/javascript/api/office/office.ui)
+*   [UI](/javascript/api/office/office.ui?view=outlook-js-1.10&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 

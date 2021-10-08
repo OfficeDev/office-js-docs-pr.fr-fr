@@ -1,16 +1,16 @@
 ---
-title: Outlook conditions requises de l’API du module de prévisualisation du add-in
+title: Outlook prévisualisation de l’API du add-in
 description: Fonctionnalités et API actuellement en prévisualisation pour Outlook de recherche.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a9d94956bc4adaa0910cdb54e6be406a84f594f3
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 7e377725bc61b33d8b67729cf041a12255e3dba5
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138589"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237188"
 ---
-# <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook conditions requises de l’API du module de prévisualisation du add-in
+# <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook prévisualisation de l’API du add-in
 
 Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
@@ -88,7 +88,7 @@ Ajout d’une nouvelle propriété qui renvoie un objet qui vous permet de gére
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
 
-#### <a name="officedelaydeliverytime"></a>[Office. DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime)
+#### <a name="officedelaydeliverytime"></a>[Office. DelayDeliveryTime](/javascript/api/outlook/office.delaydeliverytime?view=outlook-js-preview&preserve-view=true)
 
 Ajout d’un nouvel objet qui vous permet de gérer la date et l’heure de remise d’un message en mode Composition.
 
@@ -128,13 +128,13 @@ Ajout d’une nouvelle fonction qui renvoie les données d’initialisation tran
 
 ### <a name="office-theme"></a>Thème Office
 
-#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context#officeTheme)
+#### <a name="officecontextofficetheme"></a>[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#officeTheme)
 
 Ajout de la possibilité d’obtenir un thème Office.
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
 
-#### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype)
+#### <a name="officeeventtypeofficethemechanged"></a>[Office.EventType.OfficeThemeChanged](/javascript/api/office/office.eventtype?view=outlook-js-preview&preserve-view=true)
 
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
@@ -148,7 +148,7 @@ Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 ### <a name="session-data"></a>Données de session
 
-#### <a name="officesessiondata"></a>[Office. SessionData](/javascript/api/outlook/office.sessiondata)
+#### <a name="officesessiondata"></a>[Office. SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
 
 Ajout d’un nouvel objet qui représente les données de session d’un élément.
 

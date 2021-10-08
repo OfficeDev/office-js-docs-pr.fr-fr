@@ -1,14 +1,14 @@
 ---
 title: Comparer Outlook prise en charge des Outlook sur Mac
 description: Découvrez comment la prise en charge des Outlook sur Mac se compare à d’Outlook clients.
-ms.date: 07/01/2021
+ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb9d80d1eff89919b3c33a68b42eb61eca27af3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 53f8620c62ad01af85d4e8405fc72920ea641387
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153172"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237363"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparer Outlook prise en charge des Outlook sur Mac avec d’autres clients Outlook client
 
@@ -31,9 +31,9 @@ Pour plus d’informations sur la nouvelle prise en charge de l’interface util
 
 ## <a name="add-in-support-in-outlook-on-new-mac-ui-preview"></a>Prise en charge des Outlook sur la nouvelle interface utilisateur Mac (prévisualisation)
 
-Outlook sont désormais pris en charge sur la nouvelle interface utilisateur Mac (prévisualisation), jusqu’à l’ensemble de conditions requises 1.8. Toutefois, les ensembles de conditions requises et les fonctionnalités suivants ne **sont pas encore** pris en charge.
+Outlook sont désormais pris en charge sur la nouvelle interface utilisateur Mac (prévisualisation), jusqu’à l’ensemble de conditions requises 1.9. Toutefois, les ensembles de conditions requises et les fonctionnalités suivants **ne sont pas encore** pris en charge.
 
-- Ensembles de conditions requises de l’API 1.9 et 1.10
+- Ensemble de conditions requises de l’API 1.10
 
 Nous vous encourageons à prévisualiser Outlook la nouvelle interface utilisateur Mac, disponible à partir de la version 16.38.506. Pour en savoir plus sur la façon de l’essayer, voir Outlook pour Mac - Notes de publication pour les [builds Insider Fast.](https://support.microsoft.com/office/d6347358-5613-433e-a49e-a9a0e8e0462a)
 

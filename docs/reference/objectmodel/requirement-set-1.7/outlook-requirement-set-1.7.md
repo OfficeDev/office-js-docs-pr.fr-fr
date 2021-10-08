@@ -3,12 +3,12 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.7
 description: Vue d’ensemble Outlook API du module de mise en Outlook (ensemble de conditions requises 1.7)
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f9e20391113cddb78750e5933d2dd4ad11ba2a3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 51cd018d5e4438daf76b53e00195671b63afd50f
+ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153295"
+ms.lasthandoff: 10/08/2021
+ms.locfileid: "60237342"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Ensemble de conditions requises de l’API du complément Outlook 1.7
 
@@ -43,7 +43,7 @@ L’ensemble de conditions requises 1.7 inclut toutes les fonctionnalités de l�
 - Ajout de [Office.MailboxEnums.RecurrenceTimeZone](/javascript/api/outlook/office.mailboxenums.recurrencetimezone?view=outlook-js-1.7&preserve-view=true): ajoute une nouvelle énumération qui spécifie le fuseau horaire appliqué à la périodicité.
 - Ajout de [Office.MailboxEnums.RecurrenceType](/javascript/api/outlook/office.mailboxenums.recurrencetype?view=outlook-js-1.7&preserve-view=true): ajoute une nouvelle énumération qui spécifie le type de périodicité.
 - Ajout de [Office.MailboxEnums.WeekNumber](/javascript/api/outlook/office.mailboxenums.weeknumber?view=outlook-js-1.7&preserve-view=true): ajoute une nouvelle énumération qui spécifie la semaine du mois.
-- Modifié [Office.EventType](/javascript/api/office/office.eventtype): ajoute la prise en charge des événements `RecurrenceChanged`, `RecipientsChanged` et `AppointmentTimeChanged`.
+- Modifié [Office.EventType](/javascript/api/office/office.eventtype?view=outlook-js-1.7&preserve-view=true): ajoute la prise en charge des événements `RecurrenceChanged`, `RecipientsChanged` et `AppointmentTimeChanged`.
 
 ## <a name="see-also"></a>Voir aussi
 
