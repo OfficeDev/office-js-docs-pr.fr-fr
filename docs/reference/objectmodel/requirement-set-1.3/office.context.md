@@ -1,20 +1,20 @@
 ---
 title: Office.context - ensemble de conditions requises 1.3
 description: Office. Membres d’objet de contexte disponibles pour Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.3.
-ms.date: 12/02/2020
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2821e0a13b892279ec7e9977ad0e7a32e9e28fc0
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 96473c8406d82757b43965247af4567b05632dd9
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237209"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250391"
 ---
-# <a name="context-mailbox-requirement-set-13"></a>context (ensemble de conditions requises de boîte aux lettres 1.3)
+# <a name="context-mailbox-requirement-set-13"></a>context (Ensemble de conditions requises de boîte aux lettres 1.3)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context fournit des interfaces partagées qui sont utilisées par les modules de Office applications. Cette liste ne documente que les interfaces utilisées par les Outlook les autres. Pour obtenir la liste complète de l’espace Office.context, voir la référence [Office.context dans l’API commune.](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)
+Office.context fournit des interfaces partagées qui sont utilisées par les modules de Office applications. Cette liste ne documente que les interfaces utilisées par les Outlook les autres. Pour obtenir une liste complète de l’espace Office.context, voir la référence [Office.context dans l’API commune.](/javascript/api/office/office.context?view=outlook-js-1.3&preserve-view=true)
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -41,7 +41,7 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 
 Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour la modification de l’élément.
 
-La valeur reflète le paramètre de langue d’édition actuel spécifié avec > Options de > langue dans l Office `contentLanguage` application cliente.  
+La valeur reflète le paramètre de langue d’édition actuel spécifié avec > Options d'> langue dans `contentLanguage` l’application cliente Office’édition.  
 
 ##### <a name="type"></a>Type
 
@@ -113,7 +113,7 @@ console.log("Platform: " + contextInfo.platform);
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifié par l’utilisateur pour l’interface utilisateur de l’application Office client.
 
-La valeur reflète le paramètre de langue d’affichage actuel spécifié avec > Options d'> langue dans `displayLanguage` l’application cliente Office..  
+La valeur reflète le paramètre de langue d’affichage actuel spécifié avec > Options d'> langue dans `displayLanguage` l’application cliente Office’affichage.  
 
 ##### <a name="type"></a>Type
 
@@ -172,6 +172,9 @@ Fournit une méthode pour déterminer quels ensembles de conditions requises son
 ```js
 console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox", "1.1")));
 ```
+
+> [!IMPORTANT]
+> Il existe actuellement un bogue dans lequel une erreur est `isSetSupported('mailbox', '1.3')` Outlook sur le web par rapport à Exchange `true` 2013. Pour en savoir plus sur les combinaisons de conditions requises, les serveurs Exchange et les clients Outlook pris en charge, reportez-vous aux ensembles de conditions requises pris en charge par les serveurs Exchange et les [clients Outlook.](../../requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
 
 <br>
 

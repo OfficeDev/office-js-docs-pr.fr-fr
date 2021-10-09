@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 10/05/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1593a86ec188364a0f5d14bbf6ac99081b8b5c81
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 4998b84da9bdddac258e0531f6ce431ea374627b
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138484"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250426"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -22,14 +22,14 @@ Le navigateur utilisé dépend de ce qui suit :
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les Office de recherche**
 >
-> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris toutes les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans cet article. En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
+> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans cet article. En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
 >
 > - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les Office sur le Web à l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
 > - [L Script Lab ne prend](../overview/explore-with-script-lab.md) plus en charge Internet Explorer.
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
-|Système d’exploitation|Version d’Office|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
+|Système d’exploitation|Version d’Office|Edge WebView2 (Chromium basé sur) installé ?|Navigateur|
 |:-----|:-----|:-----|:-----|
 |indifférent|Office sur le web|Non applicable|Navigateur dans lequel Office sur le web est ouvert.<br>(Toutefois, notez Office sur le Web ne s’ouvre pas dans Internet Explorer.<br>Si vous essayez de le faire, Office sur le Web dans Edge.) |
 |Mac|indifférent|Non applicable|Safari|
@@ -50,7 +50,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 <sup>3</sup> Si votre application inclut l’élément dans le manifeste, elle n’utilisera `<Runtimes>` pas Microsoft Edge webview d’origine (EdgeHTML). Si les conditions d’utilisation Microsoft Edge avec WebView2 (basé sur Chromium web) sont remplies, le add-in utilise ce navigateur. Dans le cas contraire, il utilise Internet Explorer 11 quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, voir [Services d’exécution](../reference/manifest/runtimes.md).
 
-<sup>4</sup> Sur Windows versions antérieures à Windows 11, le contrôle WebView2 doit être installé afin Office l’incorporer. Il est installé avec Microsoft 365 version 2101 ou ultérieure, mais pas automatiquement avec Edge. Si vous avez une version antérieure de Microsoft 365, utilisez les instructions d’installation du contrôle sur [Microsoft Edge WebView2 /Embed web content ... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+<sup>4</sup> Sur Windows versions antérieures à Windows 11, le contrôle WebView2 doit être installé afin Office l’incorporer. Il est installé avec Microsoft 365 version 2101 ou ultérieure, mais pas automatiquement avec Edge. Si vous avez une version antérieure de Microsoft 365, utilisez les instructions d’installation du contrôle sur [Microsoft Edge WebView2 / Incorporer du contenu web... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge les versions de JavaScript ultérieures à la version ES5. Si l’un des utilisateurs de votre add-in dispose de plateformes qui utilisent Internet Explorer 11, vous disposez de deux options pour utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou une ultérieure.
@@ -66,7 +66,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 
 ### <a name="service-workers-are-not-working"></a>Les employés de service ne fonctionnent pas
 
-Office Les add-ins ne sont pas en charge par les travailleurs de service lorsque l’Microsoft Edge WebView d’origine, [EdgeHTML](https://en.wikipedia.org/wiki/EdgeHTML), est utilisé. Ils sont pris en charge avec [Chromium WebView2 edge basé sur Chromium.](/microsoft-edge/hosting/webview2)
+Office Les modules de prise en charge des services ne sont pas utilisés lorsque l’Microsoft Edge WebView d’origine, [EdgeHTML,](https://en.wikipedia.org/wiki/EdgeHTML)est utilisée. Ils sont pris en charge avec [Chromium WebView2 edge basé sur Chromium.](/microsoft-edge/hosting/webview2)
 
 ### <a name="scroll-bar-does-not-appear-in-task-pane"></a>La barre de défilement n’apparaît pas dans le volet des tâches
 
@@ -82,7 +82,7 @@ Microsoft Edge exige que localhost bénéficie d’une exemption de bouclage sur
 
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obtenir des erreurs lors de la tentative de téléchargement d’un fichier PDF
 
-Le téléchargement direct des blobs en tant que fichiers PDF dans un add-in n’est pas pris en charge lorsque Edge est le navigateur. La solution de contournement consiste à créer une application web simple qui télécharge les blobs sous forme de fichiers PDF. Dans votre application, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et passez l’URL de l’application web. Cette procédure ouvre l’application web dans une fenêtre de navigateur en dehors de Office.
+Le téléchargement direct des blobs en tant que fichiers PDF dans un add-in n’est pas pris en charge lorsque Edge est le navigateur. La solution de contournement consiste à créer une application web simple qui télécharge les blobs en tant que fichiers PDF. Dans votre application, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et passez l’URL de l’application web. Cette procédure ouvre l’application web dans une fenêtre de navigateur en dehors de Office.
 
 ## <a name="see-also"></a>Voir aussi
 

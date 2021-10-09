@@ -1,21 +1,21 @@
 ---
 title: Test d’Internet Explorer 11
 description: Testez votre Office sur Internet Explorer 11.
-ms.date: 10/05/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 40a380d902de211f2dfcbe2e474553dfa1b02fcb
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: cfa6a35565fdca28eab9734ccde9fc8fbb2e8270
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138624"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250517"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre Office sur Internet Explorer 11
 
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les Office de recherche**
 >
-> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris toutes les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md)utilisés par les applications Office . En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
+> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris les versions d’achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les navigateurs utilisés par les applications [Office.](../concepts/browsers-used-by-office-web-add-ins.md) En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
 >
 > - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les Office sur le Web à l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
 > - [L Script Lab ne prend](../overview/explore-with-script-lab.md) plus en charge Internet Explorer.
@@ -55,7 +55,7 @@ Ces instructions supposent que vous avez déjà installé un projet Office Yo. S
     ```
 
 > [!TIP]
-> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1, 10 et 11, ainsi que différentes versions de Office. Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
+> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1, 10 et 11, ainsi que différentes versions de Office. Pour plus d’informations, voir [Navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office et comment revenir à une version antérieure de [Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### <a name="command-options"></a>Options de commande
 
@@ -69,5 +69,5 @@ La `office-addin-dev-settings webview` commande peut également prendre un certa
 
 * [Test et débogage de compléments Office](test-debug-office-add-ins.md)
 * [Chargement de la version test des compléments Office](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Déboguer des applications à l’aide des outils de développement Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
+* [Déboguer des applications à l’aide des outils de développement sur Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
 * [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md)

@@ -1,21 +1,21 @@
 ---
 title: Prise en charge d’Internet Explorer 11
 description: Découvrez comment prendre en charge Internet Explorer 11 et ES5 Javascript dans votre add-in.
-ms.date: 09/23/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3edab25361b8ababf8a004f25e8012ca23a085ab
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 5bb39235961fcb6ab37b211fe96d2c776de5a9ad
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990522"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250419"
 ---
 # <a name="support-internet-explorer-11"></a>Prise en charge d’Internet Explorer 11
 
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les Office de recherche**
 >
-> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris toutes les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md)utilisés par les applications Office . En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
+> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris les versions d’achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les navigateurs utilisés par les applications [Office.](../concepts/browsers-used-by-office-web-add-ins.md) En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
 >
 > - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les Office sur le Web à l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
 > - [L Script Lab ne prend](../overview/explore-with-script-lab.md) plus en charge Internet Explorer.
@@ -27,7 +27,7 @@ Si vous envisagez de commercialiser votre application via AppSource ou si vous p
 > [!IMPORTANT]
 > Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les médias, l’enregistrement et l’emplacement. Si votre add-in doit prendre en charge Internet Explorer 11, vous ne pouvez pas utiliser ces fonctionnalités.
 
-Internet Explorer 11 ne prend pas en charge les versions JavaScript ultérieures à ES5. Si vous souhaitez utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou ultérieure, ou TypeScript, vous disposez de deux options, comme décrit dans cet article. Vous pouvez également combiner ces deux techniques.
+Internet Explorer 11 ne prend pas en charge les versions JavaScript ultérieures à ES5. Si vous souhaitez utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou ultérieure, ou TypeScript, vous disposez de deux options comme décrit dans cet article. Vous pouvez également combiner ces deux techniques.
 
 ## <a name="use-a-transpiler"></a>Utiliser un transpiler
 
@@ -47,11 +47,11 @@ Consultez la documentation de l’un d’eux pour plus d’informations sur l’
 
 Un [polyfill est](https://en.wikipedia.org/wiki/Polyfill_(programming)) une version antérieure de JavaScript qui duplique les fonctionnalités des versions plus récentes de JavaScript. Le polyfill fonctionne avec dans les navigateurs qui ne sont pas en charge les versions ultérieures de JavaScript. Par exemple, la méthode de chaîne ne faisait pas partie de la version ES5 de JavaScript et ne s’exécutera donc pas dans `startsWith` Internet Explorer 11. Il existe des bibliothèques polyfill, écrites dans ES5, qui définissent et implémentent une `startsWith` méthode. Nous vous recommandons la bibliothèque de polyfill [core-js.](https://github.com/zloirock/core-js)
 
-Pour utiliser une bibliothèque polyfill, chargez-la comme n’importe quel autre fichier ou module JavaScript. Par exemple, vous pouvez utiliser une balise dans le fichier HTML de la page d’accueil du add-in (par exemple), ou vous pouvez utiliser une instruction dans un fichier `<script>` `<script src="/js/core-js.js"></script>` `import` JavaScript (par exemple, `import 'core-js';` ). Lorsque le moteur JavaScript voit une méthode comme , il recherche d’abord s’il existe une méthode de ce nom `startsWith` intégrée dans la langue. Si c’est le cas, il appellera la méthode native. Si la méthode n’est pas intégrée et uniquement si elle n’est pas intégrée, le moteur recherche la méthode dans tous les fichiers chargés. Ainsi, la version polyfilled n’est pas utilisée dans les navigateurs qui la prise en charge de la version native.
+Pour utiliser une bibliothèque polyfill, chargez-la comme n’importe quel autre fichier ou module JavaScript. Par exemple, vous pouvez utiliser une balise dans le fichier HTML de la page d’accueil du add-in (par exemple), ou vous pouvez utiliser une instruction dans un fichier `<script>` `<script src="/js/core-js.js"></script>` `import` JavaScript (par exemple, `import 'core-js';` ). Lorsque le moteur JavaScript voit une méthode comme , il recherche d’abord s’il existe une méthode de ce nom `startsWith` intégrée dans le langage. Si c’est le cas, il appellera la méthode native. Si la méthode n’est pas intégrée et uniquement si elle n’est pas intégrée, le moteur recherche la méthode dans tous les fichiers chargés. Ainsi, la version polyfilled n’est pas utilisée dans les navigateurs qui la prise en charge de la version native.
 
-L’importation de l’intégralité de la bibliothèque core-js importe toutes les fonctionnalités core-js. Vous pouvez également importer uniquement les polyfills dont votre Office a besoin. Pour obtenir des instructions sur la façon de faire, voir [les API CommonJS.](https://github.com/zloirock/core-js#commonjs-api) La bibliothèque Core-js dispose de la plupart des polyfills dont vous avez besoin. Il existe quelques exceptions détaillées dans la section [Polyfills manquants](https://github.com/zloirock/core-js#missing-polyfills) de la documentation core-js. Par exemple, il ne prend pas en charge, mais vous pouvez utiliser le `fetch` polyfill [d’extraction.](https://github.com/github/fetch)
+L’importation de l’intégralité de la bibliothèque core-js importe toutes les fonctionnalités core-js. Vous pouvez également importer uniquement les polyfills dont votre Office a besoin. Pour obtenir des instructions sur la façon de faire, voir [les API CommonJS.](https://github.com/zloirock/core-js#commonjs-api) La bibliothèque Core-js dispose de la plupart des polyfills dont vous avez besoin. Il existe quelques exceptions détaillées dans la section [Polyfills manquantes](https://github.com/zloirock/core-js#missing-polyfills) de la documentation core-js. Par exemple, il ne prend pas en charge, mais vous pouvez utiliser le `fetch` polyfill [d’extraction.](https://github.com/github/fetch)
 
-Pour obtenir un exemple de core.js, consultez l’exemple de [add-in Word Angular2 StyleChecker.](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)
+Pour obtenir un exemple de core.js, consultez l’exemple de core.js [Angular2 StyleChecker.](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)
 
 ## <a name="testing-an-add-in-on-internet-explorer"></a>Test d’un add-in sur Internet Explorer
 

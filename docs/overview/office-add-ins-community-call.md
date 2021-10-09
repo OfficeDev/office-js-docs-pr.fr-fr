@@ -1,18 +1,26 @@
 ---
 title: Microsoft Office Appel de la communauté des add-ins
-description: Planification et ressources Microsoft Office d’appel de la communauté des Microsoft Office les plus importants.
-ms.date: 09/29/2021
+description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e22840b4a47354c698a20575a000f370ad8c0518
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 85d0f0d697c5c66145536acb8db88ffe66acf278
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138449"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250398"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 
 L’appel de la communauté Microsoft Office compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office compléments. L’appel de la communauté a lieu le deuxième mercredi de chaque mois à 8:00 PDT. Vous pouvez télécharger l’invitation de calendrier sur [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
+
+## <a name="agenda-for-october-13th-call"></a>Agenda de l’appel du 13 octobre
+
+- Mises à jour de l’API Word
+- Mises à jour d’API Outlook sur Mac
+- Exemple de démonstration de code : Hello World
+
+## <a name="previous-calls"></a>Appels précédents
 
 Vous avez manqué un appel de la communauté précédent ? Consultez les ressources de blog suivantes pour découvrir la discussion !
 
@@ -23,7 +31,7 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 - [Office Appel de la communauté des add-ins : 12 mai 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [Office Appel de la communauté des add-ins : 14 avril 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [Office Appel de la communauté des add-ins : 10 mars 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
-- [Office Appel de la communauté des modules de développement – 10 février 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-february-10-2021/)
+- [Office Appel de la communauté des add-ins : 10 février 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-february-10-2021/)
 - [Office Appel de la communauté des add-ins : 13 janvier 2021](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-january-13-2021%e2%80%af/)
 - [Office Appel de la communauté des add-ins : 9 décembre 2020](https://developer.microsoft.com/microsoft-365/blogs/office-add-ins-community-call-december-9-2020/)
 - [Office Appel de la communauté des add-ins - 11 novembre 2020](https://developer.microsoft.com/office/blogs/office-add-ins-community-call-november-11-2020/)

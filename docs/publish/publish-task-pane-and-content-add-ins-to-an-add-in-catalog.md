@@ -1,14 +1,14 @@
 ---
 title: Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 description: Pour rendre les compléments Office accessibles aux utilisateurs, les administrateurs peuvent charger des fichiers manifeste de compléments Office vers le catalogue d’applications pour leur organisation.
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 786fbd24790a1b8205fc3b0e8a15ce591cf66ca4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 80a790ada4425b13880b9eeedfbd002dc818b927
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153423"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250510"
 ---
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-app-catalog"></a>Publier des compléments du volet Office et de contenu dans un catalogue d’applications SharePoint
 
@@ -94,4 +94,4 @@ Pour les applications Office sur le bureau, vous pouvez rechercher des compléme
 1. Dans la boîte de dialogue Compléments Office, choisissez l’onglet **MON ORGANISATION** Les compléments Office sont alors affichés.
 1. Choisissez un complément Office, puis sélectionnez **Ajouter**.
 
-Par ailleurs, un administrateur peut spécifier un catalogue d’applications sur SharePoint à l’aide d’une stratégie de groupe. Les paramètres de stratégie appropriés sont disponibles dans les fichiers de modèles d’administration [(ADMX/ADML) pour Microsoft 365 Apps, Office 2019 et Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) et se trouvent sous **Configuration utilisateur\Stratégies\Modèles d’administration\Microsoft Office 2016\Sécurité Paramètres\Centre** de gestion de la confidentialité\Catalogues de confiance.
+Par ailleurs, un administrateur peut spécifier un catalogue d’applications sur SharePoint à l’aide d’une stratégie de groupe. Les paramètres de stratégie pertinents sont disponibles dans les fichiers de modèles d’administration [(ADMX/ADML) pour Microsoft 365 Apps, Office LTSC 2021, Office 2019 et Office 2016](https://www.microsoft.com/download/details.aspx?id=49030) et se trouvent sous **Configuration utilisateur\Stratégies\Modèles d’administration\Microsoft Office 2016\Sécurité Paramètres\Centre de confiance\Catalogues de confiance.**
