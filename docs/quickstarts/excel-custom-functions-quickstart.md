@@ -1,15 +1,15 @@
 ---
-ms.date: 08/04/2021
+ms.date: 10/08/2021
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f503948b8f468234221ee8713ea4654a7cc76c07
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153388"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250496"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -20,11 +20,8 @@ Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Microsoft 365) ou Excel sur le web.
+- Excel sur Windows (version 1904 ou ultérieure) ou Excel sur le Web.
 - Les fonctions personnalisées d’Excel sont prises en charge dans Office sur Mac (connecté à un abonnement Office 365). Une mise à jour de ce didacticiel est bientôt prévue.
-
->[!NOTE]
->Les fonctions personnalisées d’Excel ne sont pas prises en charge dans Office 2019 (achat unique).
 
 ## <a name="build-your-first-custom-functions-project"></a>Créer votre premier projet de fonctions personnalisées
 
@@ -96,7 +93,7 @@ Le projet de fonctions personnalisées que vous avez crées en utilisant le gén
 
 Dans votre classeur Excel, essayez la fonction personnalisée `ADD` en effectuant les étapes suivantes.
 
-1. Sélectionner une cellule, puis taper `=CONTOSO` Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans l’espace de noms `CONTOSO`.
+1. Sélectionnez une cellule et tapez `=CONTOSO`. Notez que le menu de saisie semi-automatique affiche la liste de toutes les fonctions dans `CONTOSO` l'espace de noms.
 
 1. Exécutez la`CONTOSO.ADD` fonction, en utilisant les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
 

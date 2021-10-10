@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 07/07/2021
+ms.date: 10/08/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f975adeec36490482c2fb54d2455bc15f8f17c78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7f8a0cb7fcccce4861d77f23c0f3099fd1af2ec5
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152231"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250454"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -26,11 +26,11 @@ Dans ce didacticiel, vous allez :
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (1904 ou version ultérieure, connecté à un abonnement Microsoft 365) ou Excel sur le web.
+* Excel sur Windows (version 1904 ou ultérieure) ou Excel sur le Web.
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
- Pour commencer, créez le projet de code pour générer votre complément de fonction personnalisée. Le générateur [Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec des fonctions personnalisées prédéfinies que vous pouvez essayer. Si vous avez déjà exécuté les fonctions personnalisées de démarrage rapide et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) à la place.
+ Pour commencer, créez le projet de code pour créer votre complément de fonction personnalisé. Le [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec des fonctions personnalisées prédéfinies que vous pouvez essayer. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) à la place.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 

@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel.
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c2082ff33de42e58753231008e46d01afff757dd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d6e8ea8fecf2f5495eb7d0c7ac5c3db6952e8b9a
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152239"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250538"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -28,6 +28,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](excel-preview-apis.md)  | Veuillez utiliser la dernière version d’Office pour tester les API d’aperçu (vous devrez peut-être adhérer au [programme Office Insider](https://insider.office.com)). |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | N/A | N/A | N/A | Dernière version (voir la [page des ensembles de conditions requises](excel-api-online-requirement-set.md)) |
+| [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | Version 2102 (Construire 13801.20738) ou ultérieure | 16.50 ou ultérieure | 16.50 ou ultérieure | Juin 2021 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Version 2008 (Build 13127.20408) ou version ultérieure | 16.40 ou version ultérieure | 16.40 ou version ultérieure | Septembre 2020 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | Version 2002 (Build 12527.20470) ou version ultérieure | 16.35 ou version ultérieure | 16.33 ou version ultérieure | Mai 2020 |
 | [ExcelApi 1.10](excel-api-1-10-requirement-set.md) | Version 1907 (Build 11929.20306) ou version ultérieure | 16.0 ou version ultérieure | 16.30 ou version ultérieure | Octobre 2019 |
@@ -44,6 +45,7 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 > [!NOTE]
 > Les versions sans abonnement d'Office prennent en charge l'ensemble des conditions requises suivantes :
 >
+> - Office 2021 prend en charge ExcelApi 1.13 et versions antérieures.
 > - Office 2019 prend en charge ExcelApi 1.8 et versions antérieures.
 > - Office 2016 prend uniquement en charge l'ensemble des conditions requises de ExcelApi 1.1.
 

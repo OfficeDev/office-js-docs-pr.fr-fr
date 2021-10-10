@@ -1,14 +1,14 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 07/27/2021
+ms.date: 10/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0ad18ca62014ac8b3f4c3710680cd5d97b476215
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2685a157d6c478afc4343d54f52e4337472d015f
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149188"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250433"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -17,7 +17,7 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 Pour une vue d'ensemble du reportage, voir la vidéo [Ruban de l'application commandes complémentaires au sein du Bureau](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
-> les catalogues SharePoint n’acceptent pas les commandes de complément. Vous pouvez déployer des commandes de complément via les [applications intégrées](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser le [chargement indépendant](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.
+> Les catalogues SharePoint ne prennent pas en charge les commandes de complément. Vous pouvez déployer des commandes de complément via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser [le chargement latéral](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.
 
 > [!IMPORTANT]
 > Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, voir [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md).
@@ -85,9 +85,9 @@ Vous pouvez spécifier qu’un onglet n’est visible que dans le ruban dans cer
 Les commandes de complément sont actuellement prises en charge sur les plateformes suivantes, à l’exception des limitations spécifiées plus haut dans les sous-sections de [Fonctionnalités de commande](#command-capabilities).
 
 - Office on Windows (build 16.0.6769+, connecté à un abonnement Microsoft 365)
-- Office 2019 sur Windows
+- Office 2019 ou version ultérieure sous Windows
 - Office sur Mac (build 15.33+, connecté à un abonnement Microsoft 365)
-- Office 2019 sur Mac
+- Office 2019 ou version ultérieure sur Mac
 - Office sur le web
 
 > [!NOTE]

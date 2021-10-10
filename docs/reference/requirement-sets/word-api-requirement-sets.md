@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: Informations sur la configuration requise pour le complément Office sur les builds Word.
-ms.date: 05/05/2021
+ms.date: 10/08/2021
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: dba512af0228b8ee7bb9e7ff54654c779e4b3ca5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153644"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250531"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
@@ -34,7 +34,7 @@ Les compléments Word peuvent être exécutés dans différentes versions d’Of
 > [!NOTE]
 > Les versions sans abonnement d'Office prennent en charge l'ensemble des conditions requises suivantes :
 >
-> - Office 2019 prend en charge WordApi 1.3 et versions antérieures.
+> - Office 2019 et Office 2021 prennent en charge WordApi 1.3 et versions antérieures.
 > - Office 2016 prend uniquement en charge l'ensemble des conditions requises de WordApi 1.1.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office

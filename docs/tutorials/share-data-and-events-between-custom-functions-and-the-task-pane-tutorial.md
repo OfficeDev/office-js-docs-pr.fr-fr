@@ -1,103 +1,158 @@
 ---
 title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
-ms.date: 09/23/2021
+ms.date: 10/07/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 714f7dc62c7357a67ac26179dee6abc1d229ea49
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 9ca494cb458755e2878bbc93a4a4fc36cc69138e
+ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990529"
+ms.lasthandoff: 10/09/2021
+ms.locfileid: "60250440"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
-Vous pouvez configurer votre complément Excel pour utiliser un runtime partagé. Vous pouvez ainsi partager des données globales ou envoyer des événements entre le volet des tâches et les fonctions personnalisées.
-
-Pour la plupart des scénarios de fonctions personnalisées, nous vous recommandons d’utiliser un runtime partagé, sauf si vous avez une raison particulière d’utiliser une fonction personnalisée (sans interface utilisateur).
-
-Ce didacticiel part du principe que vous avez l’habitude d’utiliser le générateur d’Office YÔ pour créer des projets de complément. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
+Partagez des données globales et envoyez des événements entre le volet Office et les fonctions personnalisées de votre complément Excel avec un runtime partagé. Nous vous recommandons d'utiliser un environnement d'exécution partagé pour la plupart des scénarios de fonctions personnalisées, à moins que vous n'ayez une raison spécifique d'utiliser une fonction personnalisée sans volet des tâches (sans interface utilisateur). Ce didacticiel part du principe que vous avez l’habitude d’utiliser le générateur d’Office YÔ pour créer des projets de complément. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Utilisez le générateur Yeoman afin de créer un projet de complément Project. Exécutez la commande suivante, puis répondez aux invites avec les réponses suivantes.
+Utilisez le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) pour créer le projet de complément Excel.
 
-```command line
-yo office
-```
+- Pour générer un complément Excel avec des fonctions personnalisées, exécutez la commande suivante.
+    
+    ```command&nbsp;line
+    yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true
+    ```
 
-- Choose a project type (Choisissez un type de projet) : **projet de complément Fonctions personnalisées Excel**
-- Choose a script type (Choisissez un type de script) :  **JavaScript**
-- What do you want to name your add-in? (Comment souhaitez-vous nommer votre complément ?)  **My Office Add-in**
-
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-excel-project.png)
-
-Après avoir exécuté l’Assistant, le générateur crée le projet et installe les composants Node de prise en charge.
+Le générateur crée le projet et installe les composants Node de support.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-1. Démarrez Visual Studio Code et ouvrez le projet **My Office Add-in**.
-2. Ouvrez le fichier **manifest.xml**.
-3. Recherchez la section `<VersionOverrides>`, puis ajoutez l'exemple d'entrée suivante à la section `<Runtimes>`. La durée de vie doit être **longue** afin que les fonctions personnalisées puissent continuer de fonctionner même quand le volet Office est fermé.
+Suivez ces étapes pour configurer le projet de complément pour utiliser un runtime partagé.
 
-   ```xml
-   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-     <Hosts>
-       <Host xsi:type="Workbook">
-         <Runtimes>
-           <Runtime resid="ContosoAddin.Url" lifetime="long" />
-         </Runtimes>
-       <AllFormFactors>
-   ```
+1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
+1. Ouvrez le fichier **manifest.xml**.
+1. Remplacez (ou ajoutez) `<Requirements>` la section XML suivante pour exiger [l'ensemble d'exigences d'exécution partagé](../reference/requirement-sets/shared-runtime-requirement-sets.md).
 
-> [!NOTE]
-> Si votre complément inclut l’élément `Runtimes` dans le manifeste (requis pour un runtime partagé) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basé sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, elle utilise Internet Explorer 11, quelle que soit la version de Windows ou Microsoft 365. Pour plus d’informations, consultez [Runtimes](../reference/manifest/runtimes.md) et [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
+    ```xml
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    ```
 
-4. Dans l’élément `<Page>`, remplacez l’emplacement de la source **Functions.Page.Url** par **ContosoAddin.Url**.
+    Après la mise à jour, votre manifeste XML doit apparaître dans l'ordre suivant.
+
+    ```xml
+    <Hosts>
+      <Host Name="..."/>
+    </Hosts>
+    <Requirements>
+      <Sets DefaultMinVersion="1.1">
+        <Set Name="SharedRuntime" MinVersion="1.1"/>
+      </Sets>
+    </Requirements>
+    <DefaultSettings>
+    ```
+
+1. Recherchez la `<VersionOverrides>` section et ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section `<bt:Urls>` près du bas du fichier **manifest.xml**.
+    
+    ```xml
+    <Runtimes>
+      <Runtime resid="Taskpane.Url" lifetime="long" />
+    </Runtimes>
+    ```
+    
+    > [!IMPORTANT]
+    > La `<Runtimes>` section doit être entrée après `<Host xsi:type="...">` l’élément dans l’ordre exact indiqué dans le XML suivant.
+
+    ```xml
+    <VersionOverrides ...>
+      <Hosts>
+        <Host xsi:type="...">
+          <Runtimes>
+            <Runtime resid="Taskpane.Url" lifetime="long" />
+          </Runtimes>
+        ...
+        </Host>
+    ```
+    
+    > [!NOTE]
+    > Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](../reference/manifest/runtimes.md) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
+
+1. Trouvez `<Page>` l'élément. Modifiez ensuite l'emplacement source de **Functions.Page.Url** en **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
    ...
    <Page>
-   <SourceLocation resid="ContosoAddin.Url"/>
+     <SourceLocation resid="Taskpane.Url"/>
    </Page>
    ...
    ```
 
-5. Dans la section `<DesktopFormFactor>`, changez la valeur **Commands.Url** de **FunctionFile** pour utiliser **ContosoAddin.Url**.
+1. Recherchez la balise `<FunctionFile ...>` et remplacez le `resid` de **Commands.Url** par **Taskpane.Url**.
 
-   ```xml
-   <DesktopFormFactor>
-   <GetStarted>
-   ...
-   </GetStarted>
-   <FunctionFile resid="ContosoAddin.Url"/>
-   ```
+    ```xml
+    </GetStarted>
+    ...
+    <FunctionFile resid="Taskpane.Url"/>
+    ...
+    ```
 
-6. Dans la section `<Action>`, remplacez l’emplacement de la source **Taskpane.Url** par **ContosoAddin.Url**.
+1. Enregistrez le fichier **manifest.xml**.
 
-   ```xml
-   <Action xsi:type="ShowTaskpane">
-   <TaskpaneId>ButtonId1</TaskpaneId>
-   <SourceLocation resid="ContosoAddin.Url"/>
-   </Action>
-   ```
+## <a name="configure-the-webpackconfigjs-file"></a>Configurer le fichier webpack.config.js
 
-7. Ajoutez un nouvel **ID d’URL** pour **ContosoAddin.Url** qui pointe vers **taskpane.html**.
+Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous devez le modifier pour charger uniquement le runtime JavaScript partagé via le fichier **taskpane.html**.
 
-   ```xml
-   <bt:Urls>
-   <bt:Url id="Functions.Script.Url" DefaultValue="https://localhost:3000/dist/functions.js"/>
-   ...
-   <bt:Url id="ContosoAddin.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-   ...
-   ```
+1. Ouvrez le fichier **webpack.config.js**.
+1. Allez dans la `plugins:` rubrique.
+1. Supprimez le `functions.html` plugin suivant s'il existe.
+    
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "functions.html",
+        template: "./src/functions/functions.html",
+        chunks: ["polyfill", "functions"]
+      })
+    ```
 
-8. Enregistrez vos changements et regénérez le projet.
+1. Supprimez le `commands.html` plugin suivant s'il existe.
 
-   ```command line
+    ```javascript
+    new HtmlWebpackPlugin({
+        filename: "commands.html",
+        template: "./src/commands/commands.html",
+        chunks: ["polyfill", "commands"]
+      })
+    ```
+
+1. Si vous avez supprimé le `functions` ou `commands` plugin, ajoutez-les en tant que `chunks`. Le code JavaScript suivant affiche l'entrée mise à jour si vous avez supprimé à la fois `functions` et `commands` les plugins.
+    
+    ```javascript
+      new HtmlWebpackPlugin({
+        filename: "taskpane.html",
+        template: "./src/taskpane/taskpane.html",
+        chunks: ["polyfill", "taskpane", "commands", "functions"]
+      })
+    ```
+    
+1. Enregistrez vos changements et reconstruisez le projet.
+
+   ```command&nbsp;line
    npm run build
+   ```
+    
+    > [!NOTE]
+    > Vous pouvez également supprimer les fichiers **functions.html** et **Commands.html**. Le **taskpane.html** charge le **code functions.js** et **Commands.js** dans l'environnement d'exécution JavaScript partagé via les mises à jour du pack Web que vous venez de faire.
+    
+1. Enregistrez vos changements et exécutez le projet. Assurez-vous qu'il se charge et s'exécute sans erreur.
+    
+   ```command&nbsp;line
+   npm run start
    ```
 
 ## <a name="share-state-between-custom-function-and-task-pane-code"></a>Partager l’état entre une fonction personnalisée et du code du volet Office
@@ -183,7 +238,7 @@ Après avoir exécuté l’Assistant, le générateur crée le projet et install
    </div>
    ```
 
-4. Avant l’élément de fermeture`</body>`, ajoutez le script suivant. Ce code gère les événements de clic de bouton quand l’utilisateur souhaite stocker ou obtenir des données globales.
+4. Avant `</body>`l'élément de fermeture, ajoutez le script suivant. Ce code gérera les événements de clic sur le bouton lorsque l'utilisateur souhaite stocker ou obtenir des données globales.
 
    ```js
    <script>
@@ -217,3 +272,7 @@ Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour 
 
 > [!NOTE]
 > La configuration de votre projet comme illustré dans cet article permet de partager le contexte entre des fonctions personnalisées et le volet Office. L’appel de certaines API Office à partir de fonctions personnalisées est possible. Pour plus d’informations, [consultez Appeler les API Microsoft Excel à partir d’une fonction personnalisée](../excel/call-excel-apis-from-custom-function.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
