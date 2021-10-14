@@ -799,7 +799,7 @@ items:
       - name: Documentation sur les compléments OneNote
         href: onenote/index.yml
         displayName: OneNote
-      - name: Vue d’ensemble
+      - name: Vue d'ensemble
         href: onenote/onenote-add-ins-programming-overview.md
         displayName: OneNote
       - name: Créer votre premier complément OneNote
@@ -1177,6 +1177,9 @@ items:
             displayName: PowerPoint
           - name: Utiliser des thèmes de document dans vos compléments PowerPoint
             href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
+            displayName: PowerPoint
+          - name: Utiliser des formes
+            href: powerpoint/shapes.md
             displayName: PowerPoint
   - name: Project
     items:

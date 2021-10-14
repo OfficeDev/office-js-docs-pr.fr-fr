@@ -3,16 +3,16 @@ title: Héberger un complément pour Office sur Microsoft Azure | Microsoft Doc
 description: Découvrez comment déployer une application web de complément sur Azure et charger une version test du complément pour le tester dans une application cliente Office.
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 598cfa2691ef1a532e1f94e0f4566c2b41d1a2d7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: af2079c4e6df38e64347ec0a67d441298758c41e
+ms.sourcegitcommit: fb4a55764fb60e826ad06d15d1539e41df503b65
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153444"
+ms.lasthandoff: 10/14/2021
+ms.locfileid: "60356372"
 ---
 # <a name="host-an-office-add-in-on-microsoft-azure"></a>Héberger un complément pour Office sur Microsoft Azure
 
-Le complément Office le plus simple est constitué d’un fichier manifeste XML et d’une page HTML. Le fichier manifeste XML décrit les caractéristiques du module, telles que son nom, les clients de bureau Office qu’il peut exécuter et l’URL de la page HTML du module. La page HTML est contenue dans une application web avec laquelle les utilisateurs interagissent lorsqu’ils installent et exécutent votre complément au sein d’une application cliente Office. Vous pouvez héberger l’application web d’un complément Office sur n’importe quelle plateforme d’hébergement web, y compris Azure.
+Le complément Office le plus simple est constitué d’un fichier manifeste XML et d’une page HTML. Le fichier manifeste XML décrit les caractéristiques du module, telles que son nom, les clients de bureau Office dans qui il peut s’exécuter et l’URL de la page HTML du module. La page HTML est contenue dans une application web avec laquelle les utilisateurs interagissent lorsqu’ils installent et exécutent votre complément au sein d’une application cliente Office. Vous pouvez héberger l’application web d’un complément Office sur n’importe quelle plateforme d’hébergement web, y compris Azure.
 
 Cet article décrit comment déployer une application web de complément sur Azure et [charger une version test du complément](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour le tester dans une application cliente Office.
 
@@ -131,7 +131,7 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
 
 4. Visual Studio publie le projet web pour votre complément Office sur votre site web Azure. Une fois le projet web publié par Visual Studio, votre navigateur s’ouvre et affiche une page web avec le texte « Votre application de service d’application a été créée. » Il s’agit de la page active par défaut pour l’application web.
 
-5. Copiez l’URL racine (par exemple : https://YourDomain.azurewebsites.net) ; vous en aurez besoin lorsque vous modifierez le fichier manifeste de complément plus loin dans cet article.
+5. Copiez l’URL racine (par exemple : ) ; vous en aurez besoin lorsque vous modifierez le fichier manifeste du `https://YourDomain.azurewebsites.net` add-in plus loin dans cet article.
 
 ## <a name="step-6-edit-and-deploy-the-add-in-xml-manifest-file"></a>Étape 6 : Modifier et déployer le fichier manifeste XML
 
@@ -139,7 +139,7 @@ Visual Studio crée un complément Word de base que vous pourrez publier tel qu
 
 2. Développez le projet macro complémentaire Office (par exemple WordWebAddIn), le dossier manifeste d’avec le bouton droit de la souris et sélectionnez **Ouvrir**. Le fichier manifeste XML du complément s’ouvre.
 
-3. Dans le fichier manifeste XML, recherchez et remplacez toutes les instances de « ~remoteAppUrl » par l’URL racine de l’application web du complément sur Azure. Il s’agit de l’URL que vous avez copiée précédemment une fois que vous avez publié l’application web du complément sur Azure (par exemple : https://YourDomain.azurewebsites.net). 
+3. Dans le fichier manifeste XML, recherchez et remplacez toutes les instances de « ~remoteAppUrl » par l’URL racine de l’application web du complément sur Azure. Il s’agit de l’URL que vous avez copiée précédemment après la publication de l’application web de add-in sur Azure (par exemple : `https://YourDomain.azurewebsites.net` ).
 
 4. Choisissez **Fichier**, puis **Enregistrer tout**. Ensuite, copiez le fichier manifeste XML du complément (par exemple, WordWebAddIn.xml).
 
