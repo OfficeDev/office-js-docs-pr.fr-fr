@@ -1,15 +1,15 @@
 ---
 title: Version d’évaluation API JavaScript Excel
 description: Détails sur les API JavaScript Excel à venir.
-ms.date: 09/16/2021
+ms.date: 10/13/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: bd36d9ba1be4e9e0caafdd49e63d8e7cdea01c59
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: 1c60fa7fe41a9606150b5a83c4d611c97427d1ab
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474349"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367473"
 ---
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
@@ -33,14 +33,14 @@ Le tableau suivant fournit un résumé concis des API, tandis que le tableau de 
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript](/javascript/api/excel?view=excel-js-preview&preserve-view=true)Excel.
+Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript Excel.](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
 |[AllowEditRange](/javascript/api/excel/excel.alloweditrange)|[adresse](/javascript/api/excel/excel.alloweditrange#address)|Spécifie la plage associée à l’objet.|
 ||[delete()](/javascript/api/excel/excel.alloweditrange#delete__)|Supprime cet objet du `AllowEditRangeCollection` .|
-||[pauseProtection(password?: string)](/javascript/api/excel/excel.alloweditrange#pauseProtection_password_)|Suspend la protection de feuille de calcul pour `AllowEditRange` l’objet donné pour l’utilisateur dans une session donnée.|
 ||[isPasswordProtected](/javascript/api/excel/excel.alloweditrange#isPasswordProtected)|Spécifie si le mot `AllowEditRange` de passe est protégé.|
+||[pauseProtection(password?: string)](/javascript/api/excel/excel.alloweditrange#pauseProtection_password_)|Suspend la protection de feuille de calcul pour `AllowEditRange` l’objet donné pour l’utilisateur dans une session donnée.|
 ||[setPassword(password?: string)](/javascript/api/excel/excel.alloweditrange#setPassword_password_)|Modifie le mot de passe associé au `AllowEditRange` .|
 ||[title](/javascript/api/excel/excel.alloweditrange#title)|Spécifie le titre de l’objet.|
 |[AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection)|[add(title: string, rangeAddress: string, options?: Excel. AllowEditRangeOptions)](/javascript/api/excel/excel.alloweditrangecollection#add_title__rangeAddress__options_)|Ajoute un `AllowEditRange` objet à la collection.|
@@ -48,8 +48,8 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[getItem(key: string)](/javascript/api/excel/excel.alloweditrangecollection#getItem_key_)|Obtient `AllowEditRange` l’objet par son titre.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.alloweditrangecollection#getItemAt_index_)|Renvoie un `AllowEditRange` objet par son index dans la collection.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.alloweditrangecollection#getItemOrNullObject_key_)|Obtient `AllowEditRange` l’objet par son titre.|
-||[pauseProtection(password: string)](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|Suspend la protection de feuille de calcul pour tous les objets de la collection qui ont le mot de passe donné pour l’utilisateur `AllowEditRange` dans une session donnée.|
 ||[items](/javascript/api/excel/excel.alloweditrangecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+||[pauseProtection(password: string)](/javascript/api/excel/excel.alloweditrangecollection#pauseProtection_password_)|Suspend la protection de feuille de calcul pour tous les objets de la collection qui ont le mot de passe donné pour l’utilisateur `AllowEditRange` dans une session donnée.|
 |[AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions)|[mot de passe](/javascript/api/excel/excel.alloweditrangeoptions#password)|Mot de passe associé au `AllowEditRange` .|
 |[BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue)|[errorSubType](/javascript/api/excel/excel.blockederrorcellvalue#errorSubType)|Représente le type de `BlockedErrorCellValue` .|
 ||[errorType](/javascript/api/excel/excel.blockederrorcellvalue#errorType)|Représente le type de `ErrorCellValue` .|
@@ -76,28 +76,12 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 |[CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes)|[description](/javascript/api/excel/excel.cellvalueproviderattributes#description)|Représente la propriété de description du fournisseur utilisée en affichage carte si aucun logo n’est spécifié.|
 ||[logoSourceAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoSourceAddress)|Représente une URL utilisée pour télécharger une image qui sera utilisée comme logo en affichage carte.|
 ||[logoTargetAddress](/javascript/api/excel/excel.cellvalueproviderattributes#logoTargetAddress)|Représente une URL qui est la cible de navigation si l’utilisateur clique sur l’élément logo en affichage carte.|
-|[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|Représente la direction (par exemple, vers le haut ou vers la gauche) vers le haut ou vers la gauche que les cellules restantes déplacent lorsqu’une ou plusieurs cellules sont supprimées.|
-||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|Représente la direction (par exemple, vers le bas ou vers la droite) que les cellules existantes déplacent lorsqu’une ou plusieurs nouvelles cellules sont insérées.|
-|[Chart](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|Obtient la table de données du graphique.|
-||[getDataTableOrNullObject()](/javascript/api/excel/excel.chart#getDataTableOrNullObject__)|Obtient la table de données du graphique.|
-|[ChartDataTable](/javascript/api/excel/excel.chartdatatable)|[format](/javascript/api/excel/excel.chartdatatable#format)|Représente le format d’un tableau de données de graphique, qui inclut le format de remplissage, de police et de bordure.|
-||[showHorizontalBorder](/javascript/api/excel/excel.chartdatatable#showHorizontalBorder)|Spécifie s’il faut afficher la bordure horizontale de la table de données.|
-||[showLegendKey](/javascript/api/excel/excel.chartdatatable#showLegendKey)|Spécifie s’il faut afficher le clé de légende de la table de données.|
-||[showOutlineBorder](/javascript/api/excel/excel.chartdatatable#showOutlineBorder)|Spécifie s’il faut afficher la bordure de plan de la table de données.|
-||[showVerticalBorder](/javascript/api/excel/excel.chartdatatable#showVerticalBorder)|Spécifie s’il faut afficher la bordure verticale de la table de données.|
-||[visible](/javascript/api/excel/excel.chartdatatable#visible)|Spécifie s’il faut afficher la table de données du graphique.|
-|[ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat)|[bordure](/javascript/api/excel/excel.chartdatatableformat#border)|Représente le format de bordure de la table de données du graphique, qui inclut la couleur, le style de trait et l’pondération.|
-||[fill](/javascript/api/excel/excel.chartdatatableformat#fill)|Représente le format de remplissage d’un objet, qui comprend des informations de mise en forme d’arrière-plan.|
-||[police](/javascript/api/excel/excel.chartdatatableformat#font)|Représente les attributs de police (tels que le nom de la police, la taille de police et la couleur) de l’objet actuel.|
 |[Comment](/javascript/api/excel/excel.comment)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.comment#assignTask_assignee_)|Affecte la tâche liée au commentaire à l’utilisateur donné en tant que personne assignée.|
 ||[getTask()](/javascript/api/excel/excel.comment#getTask__)|Obtient la tâche associée à ce commentaire.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.comment#getTaskOrNullObject__)|Obtient la tâche associée à ce commentaire.|
-|[CommentCollection](/javascript/api/excel/excel.commentcollection)|[getItemOrNullObject(commentId: string)](/javascript/api/excel/excel.commentcollection#getItemOrNullObject_commentId_)|Obtient un commentaire à partir de la collection de sites en fonction de son ID.|
 |[CommentReply](/javascript/api/excel/excel.commentreply)|[assignTask(assignee: Identity)](/javascript/api/excel/excel.commentreply#assignTask_assignee_)|Affecte la tâche liée au commentaire à l’utilisateur donné en tant que seule personne assignée.|
 ||[getTask()](/javascript/api/excel/excel.commentreply#getTask__)|Obtient la tâche associée au fil de discussion de cette réponse de commentaire.|
 ||[getTaskOrNullObject()](/javascript/api/excel/excel.commentreply#getTaskOrNullObject__)|Obtient la tâche associée au fil de discussion de cette réponse de commentaire.|
-|[CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection)|[getItemOrNullObject(commentReplyId: string)](/javascript/api/excel/excel.commentreplycollection#getItemOrNullObject_commentReplyId_)|Renvoie une réponse de commentaire identifié via son ID.|
-|[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[getItemOrNullObject(id: string)](/javascript/api/excel/excel.conditionalformatcollection#getItemOrNullObject_id_)|Renvoie un format conditionnel identifié par son ID.|
 |[ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue)|[errorSubType](/javascript/api/excel/excel.connecterrorcellvalue#errorSubType)|Représente le type de `ConnectErrorCellValue` .|
 ||[errorType](/javascript/api/excel/excel.connecterrorcellvalue#errorType)|Représente le type de `ErrorCellValue` .|
 ||[primitive](/javascript/api/excel/excel.connecterrorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
@@ -107,9 +91,7 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[primitive](/javascript/api/excel/excel.div0errorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
 ||[primitiveType](/javascript/api/excel/excel.div0errorcellvalue#primitiveType)|Représente la valeur renvoyée par une `Range.valueTypes` cellule avec cette valeur.|
 ||[type](/javascript/api/excel/excel.div0errorcellvalue#type)|Représente le type de cette valeur de cellule.|
-|[DocumentTask](/javascript/api/excel/excel.documenttask)|[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|Spécifie le pourcentage d’achèvement de la tâche.|
-||[priority](/javascript/api/excel/excel.documenttask#priority)|Spécifie la priorité de la tâche.|
-||[assignees](/javascript/api/excel/excel.documenttask#assignees)|Renvoie une collection de personnes assignées à la tâche.|
+|[DocumentTask](/javascript/api/excel/excel.documenttask)|[assignees](/javascript/api/excel/excel.documenttask#assignees)|Renvoie une collection de personnes assignées à la tâche.|
 ||[modifications](/javascript/api/excel/excel.documenttask#changes)|Obtient les enregistrements de modification de la tâche.|
 ||[comment](/javascript/api/excel/excel.documenttask#comment)|Obtient le commentaire associé à la tâche.|
 ||[completedBy](/javascript/api/excel/excel.documenttask#completedBy)|Obtient l’utilisateur le plus récent à avoir effectué la tâche.|
@@ -117,6 +99,8 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[createdBy](/javascript/api/excel/excel.documenttask#createdBy)|Obtient l’utilisateur qui a créé la tâche.|
 ||[createdDateTime](/javascript/api/excel/excel.documenttask#createdDateTime)|Obtient la date et l’heure de création de la tâche.|
 ||[id](/javascript/api/excel/excel.documenttask#id)|Obtient l’ID de la tâche.|
+||[percentComplete](/javascript/api/excel/excel.documenttask#percentComplete)|Spécifie le pourcentage d’achèvement de la tâche.|
+||[priority](/javascript/api/excel/excel.documenttask#priority)|Spécifie la priorité de la tâche.|
 ||[setStartAndDueDateTime(startDateTime: Date, dueDateTime: Date)](/javascript/api/excel/excel.documenttask#setStartAndDueDateTime_startDateTime__dueDateTime_)|Modifie le début et les dates d’échéance de la tâche.|
 ||[startAndDueDateTime](/javascript/api/excel/excel.documenttask#startAndDueDateTime)|Obtient ou définit la date et l’heure de début et d’échéance de la tâche.|
 ||[title](/javascript/api/excel/excel.documenttask#title)|Spécifie le titre de la tâche.|
@@ -161,7 +145,6 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[primitive](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
 ||[primitiveType](/javascript/api/excel/excel.gettingdataerrorcellvalue#primitiveType)|Représente la valeur renvoyée par une `Range.valueTypes` cellule avec cette valeur.|
 ||[type](/javascript/api/excel/excel.gettingdataerrorcellvalue#type)|Représente le type de cette valeur de cellule.|
-|[GroupShapeCollection](/javascript/api/excel/excel.groupshapecollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.groupshapecollection#getItemOrNullObject_key_)|Obtient une forme à l’aide de son nom ou de son ID.|
 |[Identité](/javascript/api/excel/excel.identity)|[displayName](/javascript/api/excel/excel.identity#displayName)|Représente le nom d’affichage de l’utilisateur.|
 ||[email](/javascript/api/excel/excel.identity#email)|Représente l’adresse e-mail de l’utilisateur.|
 ||[id](/javascript/api/excel/excel.identity#id)|Représente l’ID unique de l’utilisateur.|
@@ -179,15 +162,15 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[name](/javascript/api/excel/excel.linkeddatatype#name)|Nom du type de données liées.|
 ||[periodicRefreshInterval](/javascript/api/excel/excel.linkeddatatype#periodicRefreshInterval)|Fréquence, en secondes, à laquelle le type de données liées est actualisé si elle est définie `refreshMode` sur « Périodique ».|
 ||[refreshMode](/javascript/api/excel/excel.linkeddatatype#refreshMode)|Mécanisme par lequel les données du type de données liées sont récupérées.|
-||[serviceId](/javascript/api/excel/excel.linkeddatatype#serviceId)|ID unique du type de données liées.|
-||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedRefreshModes)|Renvoie un tableau avec tous les modes d’actualisation pris en charge par le type de données liées.|
 ||[requestRefresh()](/javascript/api/excel/excel.linkeddatatype#requestRefresh__)|Effectue une demande d’actualisation du type de données liées.|
 ||[requestSetRefreshMode(refreshMode: Excel. LinkedDataTypeRefreshMode)](/javascript/api/excel/excel.linkeddatatype#requestSetRefreshMode_refreshMode_)|Effectue une demande de modification du mode d’actualisation pour ce type de données liées.|
+||[serviceId](/javascript/api/excel/excel.linkeddatatype#serviceId)|ID unique du type de données liées.|
+||[supportedRefreshModes](/javascript/api/excel/excel.linkeddatatype#supportedRefreshModes)|Renvoie un tableau avec tous les modes d’actualisation pris en charge par le type de données liées.|
 |[LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs)|[serviceId](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#serviceId)|ID unique du nouveau type de données liées.|
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#source)|Obtient la source de l’événement.|
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|Obtient le type de l’événement.|
 |[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getCount__)|Obtient le nombre de types de données liées dans la collection.|
-||[getItem(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|Obtient un type de données liées par ID de service.|
+||[getItem(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|Obtient un type de données lié par ID de service.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|Obtient un type de données liées par son index dans la collection.|
 ||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|Obtient un type de données liées par ID.|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
@@ -212,18 +195,10 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 |[PivotLayout](/javascript/api/excel/excel.pivotlayout)|[getCell(dataHierarchy: DataPivotHierarchy \| string, rowItems: Array<PivotItem \| string>, columnItems: Array<PivotItem \| string>)](/javascript/api/excel/excel.pivotlayout#getCell_dataHierarchy__rowItems__columnItems_)|Obtient une cellule unique dans le tableau croisé dynamique basé sur une hiérarchie de données ainsi que les éléments de ligne et de colonne de leurs hiérarchies respectives.|
 ||[pivotStyle](/javascript/api/excel/excel.pivotlayout#pivotStyle)|Style appliqué au tableau croisé dynamique.|
 ||[setStyle(style: string \| PivotTableStyle \| BuiltInPivotTableStyle)](/javascript/api/excel/excel.pivotlayout#setStyle_style_)|Définit le style appliqué au tableau croisé dynamique.|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[getDataSourceString()](/javascript/api/excel/excel.pivottable#getDataSourceString__)|Renvoie la représentation sous la chaîne de la source de données pour le tableau croisé dynamique.|
+||[getDataSourceType()](/javascript/api/excel/excel.pivottable#getDataSourceType__)|Obtient le type de la source de données pour le tableau croisé dynamique.|
 |[PivotTableScopedCollection](/javascript/api/excel/excel.pivottablescopedcollection)|[getFirstOrNullObject()](/javascript/api/excel/excel.pivottablescopedcollection#getFirstOrNullObject__)|Obtient le premier tableau croisé dynamique de la collection.|
-|[Query](/javascript/api/excel/excel.query)|[error](/javascript/api/excel/excel.query#error)|Obtient le message d’erreur de requête à partir de la dernière actualisation de la requête.|
-||[loadedTo](/javascript/api/excel/excel.query#loadedTo)|Obtient la requête chargée dans le type d’objet.|
-||[loadedToDataModel](/javascript/api/excel/excel.query#loadedToDataModel)|Spécifie si la requête a été chargée dans le modèle de données.|
-||[name](/javascript/api/excel/excel.query#name)|Obtient le nom de la requête.|
-||[refreshDate](/javascript/api/excel/excel.query#refreshDate)|Obtient la date et l’heure de la dernière actualisation de la requête.|
-||[rowsLoadedCount](/javascript/api/excel/excel.query#rowsLoadedCount)|Obtient le nombre de lignes qui ont été chargées lors de la dernière actualisation de la requête.|
-|[QueryCollection](/javascript/api/excel/excel.querycollection)|[getCount()](/javascript/api/excel/excel.querycollection#getCount__)|Obtient le nombre de requêtes dans le workbook.|
-||[getItem(key: string)](/javascript/api/excel/excel.querycollection#getItem_key_)|Obtient une requête de la collection en fonction de son nom.|
-||[items](/javascript/api/excel/excel.querycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[Range](/javascript/api/excel/excel.range)|[getDependents()](/javascript/api/excel/excel.range#getDependents__)|Renvoie un objet qui représente la plage contenant tous les dépendants d’une cellule dans la même feuille de calcul ou `WorkbookRangeAreas` dans plusieurs feuilles de calcul.|
-||[getPrecedents()](/javascript/api/excel/excel.range#getPrecedents__)|Renvoie un objet qui représente la plage contenant tous les antécédents d’une cellule dans la même feuille de calcul ou `WorkbookRangeAreas` dans plusieurs feuilles de calcul.|
 |[RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue)|[errorSubType](/javascript/api/excel/excel.referrorcellvalue#errorSubType)|Représente le type de `RefErrorCellValue` .|
 ||[errorType](/javascript/api/excel/excel.referrorcellvalue#errorType)|Représente le type de `ErrorCellValue` .|
 ||[primitive](/javascript/api/excel/excel.referrorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
@@ -240,30 +215,27 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[avertissements](/javascript/api/excel/excel.refreshrequestcompletedeventargs#warnings)|Tableau qui contient les avertissements générés à partir de la demande d’actualisation.|
 |[Shape](/javascript/api/excel/excel.shape)|[displayName](/javascript/api/excel/excel.shape#displayName)|Obtient le nom complet de la forme.|
 |[ShapeCollection](/javascript/api/excel/excel.shapecollection)|[addSvg(xml: string)](/javascript/api/excel/excel.shapecollection#addSvg_xml_)|Crée un graphique de fichiers SVG (SVG) à partir d’une chaîne XML et il est ajouté à la feuille de calcul.|
-||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.shapecollection#getItemOrNullObject_key_)|Obtient une forme à l’aide de son nom ou de son ID.|
 |[Segment](/javascript/api/excel/excel.slicer)|[nameInFormula](/javascript/api/excel/excel.slicer#nameInFormula)|Représente le nom du segment utilisé dans la formule.|
-||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|Style appliqué au slicer.|
 ||[setStyle(style: string \| SlicerStyle \| BuiltInSlicerStyle)](/javascript/api/excel/excel.slicer#setStyle_style_)|Définit le style appliqué au slicer.|
+||[slicerStyle](/javascript/api/excel/excel.slicer#slicerStyle)|Style appliqué au slicer.|
 |[SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#errorSubType)|Représente le type de `SpillErrorCellValue` .|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|Représente le type de `ErrorCellValue` .|
 ||[primitive](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
 ||[primitiveType](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|Représente la valeur renvoyée par une `Range.valueTypes` cellule avec cette valeur.|
+||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|Représente le nombre de colonnes qui seraient déversées en l’absence de #SPILL ! erreur.|
+||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#spilledRows)|Représente le nombre de lignes qui seraient surdessin s’il n’y avait #SPILL ! erreur.|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|Représente le type de cette valeur de cellule.|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[primitive](/javascript/api/excel/excel.stringcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
 ||[primitiveType](/javascript/api/excel/excel.stringcellvalue#primitiveType)|Représente la valeur renvoyée par une `Range.valueTypes` cellule avec cette valeur.|
 ||[type](/javascript/api/excel/excel.stringcellvalue#type)|Représente le type de cette valeur de cellule.|
-|[StyleCollection](/javascript/api/excel/excel.stylecollection)|[getItemOrNullObject(name: string)](/javascript/api/excel/excel.stylecollection#getItemOrNullObject_name_)|Obtient un style par nom.|
 |[Table](/javascript/api/excel/excel.table)|[clearStyle()](/javascript/api/excel/excel.table#clearStyle__)|Modifie le tableau pour utiliser le style de tableau par défaut.|
 ||[onFiltered](/javascript/api/excel/excel.table#onFiltered)|Se produit lorsqu’un filtre est appliqué à une table spécifique.|
-||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|Style appliqué au tableau.|
 ||[setStyle(style: string \| TableStyle \| BuiltInTableStyle)](/javascript/api/excel/excel.table#setStyle_style_)|Définit le style appliqué au tableau.|
+||[tableStyle](/javascript/api/excel/excel.table#tableStyle)|Style appliqué au tableau.|
 |[TableCollection](/javascript/api/excel/excel.tablecollection)|[onFiltered](/javascript/api/excel/excel.tablecollection#onFiltered)|Se produit lorsqu’un filtre est appliqué à une table d’un workbook ou d’une feuille de calcul.|
 |[TableFilteredEventArgs](/javascript/api/excel/excel.tablefilteredeventargs)|[tableId](/javascript/api/excel/excel.tablefilteredeventargs#tableId)|Obtient l’ID du tableau dans lequel le filtre est appliqué.|
 ||[type](/javascript/api/excel/excel.tablefilteredeventargs#type)|Obtient le type de l’événement.|
 ||[worksheetId](/javascript/api/excel/excel.tablefilteredeventargs#worksheetId)|Obtient l’ID de la feuille de calcul qui contient le tableau.|
-|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|Supprimez plusieurs lignes d’un tableau.|
-||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|Supprimez un nombre spécifié de lignes d’un tableau, en commençant à un index donné.|
-|[TableScopedCollection](/javascript/api/excel/excel.tablescopedcollection)|[getItemOrNullObject(key: string)](/javascript/api/excel/excel.tablescopedcollection#getItemOrNullObject_key_)|Obtient un tableau à l’aide de son nom ou de son ID.|
 |[ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|[errorSubType](/javascript/api/excel/excel.valueerrorcellvalue#errorSubType)|Représente le type de `ValueErrorCellValue` .|
 ||[errorType](/javascript/api/excel/excel.valueerrorcellvalue#errorType)|Représente le type de `ErrorCellValue` .|
 ||[primitive](/javascript/api/excel/excel.valueerrorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
@@ -281,57 +253,27 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[relatedImagesAddress](/javascript/api/excel/excel.webimagecellvalue#relatedImagesAddress)|Représente l’URL d’une page web avec des images qui sont considérées comme étant liées à `WebImageCellValue` ce .|
 ||[type](/javascript/api/excel/excel.webimagecellvalue#type)|Représente le type de cette valeur de cellule.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|Renvoie une collection de types de données liées qui font partie du manuel.|
-||[requêtes](/javascript/api/excel/excel.workbook#queries)|Renvoie une collection de requêtes Power Query qui font partie du manuel.|
-||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches qui sont présentes dans le workbook.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|Spécifie si le volet liste des champs du tableau croisé dynamique est affiché au niveau du workbook.|
+||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches présentes dans le manuel.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|True si le classeur utilise le calendrier depuis 1904.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|Se produit lorsqu’un filtre est appliqué à une feuille de calcul spécifique.|
-||[onNameChanged](/javascript/api/excel/excel.worksheet#onNameChanged)|Se produit lorsque le nom de la feuille de calcul est modifié.|
-||[onProtectionChanged](/javascript/api/excel/excel.worksheet#onProtectionChanged)|Se produit lorsque l’état de protection de la feuille de calcul est modifié.|
-||[onVisibilityChanged](/javascript/api/excel/excel.worksheet#onVisibilityChanged)|Se produit lorsque la visibilité de la feuille de calcul est modifiée.|
-||[tabId](/javascript/api/excel/excel.worksheet#tabId)|Renvoie une valeur représentant cette feuille de calcul qui peut être lue par Open Office XML.|
 ||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Renvoie une collection de tâches présentes dans la feuille de calcul.|
-|[worksheetChangedEventArgs](/javascript/api/excel/excel.worksheetchangedeventargs)|[changeDirectionState](/javascript/api/excel/excel.worksheetchangedeventargs#changeDirectionState)|Représente une modification du sens de déplacement des cellules d’une feuille de calcul lorsqu’une ou plusieurs cellules sont supprimées ou insérées.|
-||[triggerSource](/javascript/api/excel/excel.worksheetchangedeventargs#triggerSource)|Représente la source du déclencheur de l’événement.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|Insère les feuilles de calcul spécifiées d’un classeur dans le classeur actif.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onFiltered)|Se produit lorsqu’un filtre de la feuille de calcul est appliqué dans le classeur.|
-||[onMoved](/javascript/api/excel/excel.worksheetcollection#onMoved)|Se produit lorsqu’une feuille de calcul est déplacée par un utilisateur dans un workbook.|
-||[onNameChanged](/javascript/api/excel/excel.worksheetcollection#onNameChanged)|Se produit lorsque le nom de la feuille de calcul est modifié dans la collection de feuilles de calcul.|
-||[onProtectionChanged](/javascript/api/excel/excel.worksheetcollection#onProtectionChanged)|Se produit lorsque l’état de protection de la feuille de calcul est modifié.|
-||[onVisibilityChanged](/javascript/api/excel/excel.worksheetcollection#onVisibilityChanged)|Se produit lorsque la visibilité de la feuille de calcul est modifiée dans la collection de feuilles de calcul.|
 |[WorksheetFilteredEventArgs](/javascript/api/excel/excel.worksheetfilteredeventargs)|[type](/javascript/api/excel/excel.worksheetfilteredeventargs#type)|Obtient le type de l’événement.|
 ||[worksheetId](/javascript/api/excel/excel.worksheetfilteredeventargs#worksheetId)|Obtient l’ID de la feuille de calcul dans laquelle le filtre est appliqué.|
-|[WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs)|[positionAfter](/javascript/api/excel/excel.worksheetmovedeventargs#positionAfter)|Obtient la nouvelle position de la feuille de calcul, après le déplacement.|
-||[positionBefore](/javascript/api/excel/excel.worksheetmovedeventargs#positionBefore)|Obtient la position précédente de la feuille de calcul, avant le déplacement.|
-||[source](/javascript/api/excel/excel.worksheetmovedeventargs#source)|Source de l'événement.|
-||[type](/javascript/api/excel/excel.worksheetmovedeventargs#type)|Obtient le type de l’événement.|
-||[worksheetId](/javascript/api/excel/excel.worksheetmovedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul qui a été déplacée.|
-|[WorksheetNameChangedEventArgs](/javascript/api/excel/excel.worksheetnamechangedeventargs)|[nameAfter](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameAfter)|Obtient le nouveau nom de la feuille de calcul, après la modification du nom.|
-||[nameBefore](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameBefore)|Obtient le nom précédent de la feuille de calcul, avant que le nom ne soit modifié.|
-||[source](/javascript/api/excel/excel.worksheetnamechangedeventargs#source)|Source de l'événement.|
-||[type](/javascript/api/excel/excel.worksheetnamechangedeventargs#type)|Obtient le type de l’événement.|
-||[worksheetId](/javascript/api/excel/excel.worksheetnamechangedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul avec le nouveau nom.|
-|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[checkPassword(password?: string)](/javascript/api/excel/excel.worksheetprotection#checkPassword_password_)|Spécifie si le mot de passe peut être utilisé pour déverrouiller la protection de feuille de calcul.|
-||[pauseProtection(password?: string)](/javascript/api/excel/excel.worksheetprotection#pauseProtection_password_)|Suspend la protection de feuille de calcul pour l’objet de feuille de calcul donné pour l’utilisateur dans une session donnée.|
-||[allowEditRanges](/javascript/api/excel/excel.worksheetprotection#allowEditRanges)|Spécifie les `AllowEditRangeCollection` trouvés dans cette feuille de calcul.|
+|[WorksheetProtection](/javascript/api/excel/excel.worksheetprotection)|[allowEditRanges](/javascript/api/excel/excel.worksheetprotection#allowEditRanges)|Spécifie les `AllowEditRangeCollection` trouvés dans cette feuille de calcul.|
 ||[canPauseProtection](/javascript/api/excel/excel.worksheetprotection#canPauseProtection)|Spécifie si la protection peut être suspendue pour cette feuille de calcul.|
+||[checkPassword(password?: string)](/javascript/api/excel/excel.worksheetprotection#checkPassword_password_)|Spécifie si le mot de passe peut être utilisé pour déverrouiller la protection de feuille de calcul.|
 ||[isPasswordProtected](/javascript/api/excel/excel.worksheetprotection#isPasswordProtected)|Spécifie si la feuille est protégée par mot de passe.|
 ||[isPaused](/javascript/api/excel/excel.worksheetprotection#isPaused)|Spécifie si la protection de feuille de calcul est suspendue.|
+||[pauseProtection(password?: string)](/javascript/api/excel/excel.worksheetprotection#pauseProtection_password_)|Suspend la protection de feuille de calcul pour l’objet de feuille de calcul donné pour l’utilisateur dans une session donnée.|
 ||[resumeProtection()](/javascript/api/excel/excel.worksheetprotection#resumeProtection__)|Reprend la protection de feuille de calcul pour l’objet de feuille de calcul donné pour l’utilisateur dans une session donnée.|
 ||[setPassword(password?: string)](/javascript/api/excel/excel.worksheetprotection#setPassword_password_)|Modifie le mot de passe associé à `WorksheetProtection` l’objet.|
 ||[updateOptions(options: Excel. WorksheetProtectionOptions)](/javascript/api/excel/excel.worksheetprotection#updateOptions_options_)|Modifiez les options de protection de feuille de calcul associées à `WorksheetProtection` l’objet.|
-|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[allowEditRangesChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#allowEditRangesChanged)|Indique si l’un des `AllowEditRange` objets a changé.|
-||[isProtected](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#isProtected)|Obtient l’état de protection actuel de la feuille de calcul.|
+|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[allowEditRangesChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#allowEditRangesChanged)|Spécifie si l’un des `AllowEditRange` objets a changé.|
 ||[protectionOptionsChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#protectionOptionsChanged)|Spécifie si les changements `WorksheetProtectionOptions` ont été faits.|
-||[sheetPasswordChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#sheetPasswordChanged)|Indique si le mot de passe de la feuille de calcul a changé.|
-||[source](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#source)|Source de l'événement.|
-||[type](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#type)|Obtient le type de l’événement.|
-||[worksheetId](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul dans laquelle l’état de protection est modifié.|
-|[WorksheetVisibilityChangedEventArgs](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs)|[source](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#source)|Source de l'événement.|
-||[type](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#type)|Obtient le type de l’événement.|
-||[visibilityAfter](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityAfter)|Obtient le nouveau paramètre de visibilité de la feuille de calcul, après la modification de la visibilité.|
-||[visibilityBefore](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityBefore)|Obtient le paramètre de visibilité précédent de la feuille de calcul, avant la modification de la visibilité.|
-||[worksheetId](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul dont la visibilité a changé.|
+||[sheetPasswordChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#sheetPasswordChanged)|Spécifie si le mot de passe de la feuille de calcul a changé.|
 
 ## <a name="see-also"></a>Voir aussi
 

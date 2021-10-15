@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises WordApi 1.3.
 ms.date: 03/09/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: d8b8f494886be015abd2922bea1ec280d7c03b76
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3d569390a87b3eb153f8139c9e9608bf747fde07
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153559"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367466"
 ---
 # <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
 
@@ -30,9 +30,9 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#parentContentControlOrNullObject)|Obtient le contrôle de contenu qui contient le corps.|
 ||[parentSection](/javascript/api/word/word.body#parentSection)|Obtient la section parent du corps.|
 ||[parentSectionOrNullObject](/javascript/api/word/word.body#parentSectionOrNullObject)|Obtient la section parent du corps.|
+||[styleBuiltIn](/javascript/api/word/word.body#styleBuiltIn)|Obtient ou définit le nom de style intégré pour le corps.|
 ||[tables](/javascript/api/word/word.body#tables)|Obtient la collection d’objets table dans le corps.|
 ||[type](/javascript/api/word/word.body#type)|Obtient le type du corps.|
-||[styleBuiltIn](/javascript/api/word/word.body#styleBuiltIn)|Obtient ou définit le nom de style intégré pour le corps.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.contentcontrol#getRange_rangeLocation_)|Obtient le contrôle de contenu entier, ou le point de début ou de fin du contrôle de contenu, sous la forme d’une plage.|
 ||[getTextRanges(endingMarks: string[], trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#getTextRanges_endingMarks__trimSpacing_)|Obtient les plages de texte dans le contrôle de contenu à l’aide de signes de ponctuation et/ou d’autres marques de fin.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.contentcontrol#insertTable_rowCount__columnCount__insertLocation__values_)|Insère un tableau avec le nombre spécifié de lignes et de colonnes dans un contrôle de contenu ou à proximité de celui-ci.|
@@ -43,10 +43,10 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[parentTableCell](/javascript/api/word/word.contentcontrol#parentTableCell)|Obtient la cellule de tableau qui contient le contrôle de contenu.|
 ||[parentTableCellOrNullObject](/javascript/api/word/word.contentcontrol#parentTableCellOrNullObject)|Obtient la cellule de tableau qui contient le contrôle de contenu.|
 ||[parentTableOrNullObject](/javascript/api/word/word.contentcontrol#parentTableOrNullObject)|Obtient le tableau qui contient le contrôle de contenu.|
-||[sous-type](/javascript/api/word/word.contentcontrol#subtype)|Obtient le sous-type du contrôle de contenu.|
-||[tables](/javascript/api/word/word.contentcontrol#tables)|Obtient la collection d’objets table du contrôle de contenu.|
 ||[split(delimiters: string[], multiParagraphs?: boolean, trimDelimiters?: boolean, trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#split_delimiters__multiParagraphs__trimDelimiters__trimSpacing_)|Fractionne le contrôle de contenu en plages enfants à l’aide de délimiteurs.|
 ||[styleBuiltIn](/javascript/api/word/word.contentcontrol#styleBuiltIn)|Obtient ou définit le nom de style intégré pour le contrôle de contenu.|
+||[sous-type](/javascript/api/word/word.contentcontrol#subtype)|Obtient le sous-type du contrôle de contenu.|
+||[tables](/javascript/api/word/word.contentcontrol#tables)|Obtient la collection d’objets table du contrôle de contenu.|
 |[ContentControlCollection](/javascript/api/word/word.contentcontrolcollection)|[getByIdOrNullObject(id: number)](/javascript/api/word/word.contentcontrolcollection#getByIdOrNullObject_id_)|Obtient un contrôle de contenu par son identificateur.|
 ||[getByTypes(types: Word.ContentControlType[])](/javascript/api/word/word.contentcontrolcollection#getByTypes_types_)|Obtient les contrôles de contenu qui ont les types et/ou sous-types spécifiés.|
 ||[getFirst()](/javascript/api/word/word.contentcontrolcollection#getFirst__)|Obtient le premier contrôle de contenu de cette collection.|
@@ -62,30 +62,30 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.custompropertycollection#getItemOrNullObject_key_)|Obtient un objet de propriété personnalisé par sa clé, qui ne tient pas compte de la casse.|
 ||[items](/javascript/api/word/word.custompropertycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[Document](/javascript/api/word/word.document)|[properties](/javascript/api/word/word.document#properties)|Obtient les propriétés du document.|
-|[DocumentCreated](/javascript/api/word/word.documentcreated)|[open()](/javascript/api/word/word.documentcreated#open__)|Ouvre le document.|
-||[body](/javascript/api/word/word.documentcreated#body)|Obtient l’objet body du document.|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[body](/javascript/api/word/word.documentcreated#body)|Obtient l’objet body du document.|
 ||[contentControls](/javascript/api/word/word.documentcreated#contentControls)|Obtient la collection d’objets de contrôle de contenu dans le document.|
+||[open()](/javascript/api/word/word.documentcreated#open__)|Ouvre le document.|
 ||[properties](/javascript/api/word/word.documentcreated#properties)|Obtient les propriétés du document.|
+||[save()](/javascript/api/word/word.documentcreated#save__)|Enregistre le document.|
 ||[saved](/javascript/api/word/word.documentcreated#saved)|Indique si les modifications apportées au document ont été enregistrées.|
 ||[sections](/javascript/api/word/word.documentcreated#sections)|Obtient la collection d’objets de section dans le document.|
-||[save()](/javascript/api/word/word.documentcreated#save__)|Enregistre le document.|
-|[DocumentProperties](/javascript/api/word/word.documentproperties)|[author](/javascript/api/word/word.documentproperties#author)|Obtient ou définit l’auteur du document.|
+|[DocumentProperties](/javascript/api/word/word.documentproperties)|[applicationName](/javascript/api/word/word.documentproperties#applicationName)|Obtient le nom d’application du document.|
+||[author](/javascript/api/word/word.documentproperties#author)|Obtient ou définit l’auteur du document.|
 ||[category](/javascript/api/word/word.documentproperties#category)|Obtient ou définit la catégorie du document.|
 ||[comments](/javascript/api/word/word.documentproperties#comments)|Obtient ou définit les commentaires du document.|
 ||[company](/javascript/api/word/word.documentproperties#company)|Obtient ou définit la société du document.|
-||[format](/javascript/api/word/word.documentproperties#format)|Obtient ou définit le format du document.|
-||[keywords](/javascript/api/word/word.documentproperties#keywords)|Obtient ou définit les mots clés du document.|
-||[manager](/javascript/api/word/word.documentproperties#manager)|Obtient ou définit le responsable du document.|
-||[applicationName](/javascript/api/word/word.documentproperties#applicationName)|Obtient le nom d’application du document.|
 ||[creationDate](/javascript/api/word/word.documentproperties#creationDate)|Obtient la date de création du document.|
 ||[customProperties](/javascript/api/word/word.documentproperties#customProperties)|Obtient la collection de propriétés personnalisées du document.|
+||[format](/javascript/api/word/word.documentproperties#format)|Obtient ou définit le format du document.|
+||[keywords](/javascript/api/word/word.documentproperties#keywords)|Obtient ou définit les mots clés du document.|
 ||[lastAuthor](/javascript/api/word/word.documentproperties#lastAuthor)|Obtient le dernier auteur du document.|
 ||[lastPrintDate](/javascript/api/word/word.documentproperties#lastPrintDate)|Obtient la dernière date d’impression du document.|
 ||[lastSaveTime](/javascript/api/word/word.documentproperties#lastSaveTime)|Obtient la dernière heure d’enregistrement du document.|
+||[manager](/javascript/api/word/word.documentproperties#manager)|Obtient ou définit le responsable du document.|
 ||[revisionNumber](/javascript/api/word/word.documentproperties#revisionNumber)|Obtient le numéro de révision du document.|
 ||[sécurité](/javascript/api/word/word.documentproperties#security)|Obtient les paramètres de sécurité du document.|
-||[template](/javascript/api/word/word.documentproperties#template)|Obtient le modèle du document.|
 ||[subject](/javascript/api/word/word.documentproperties#subject)|Obtient ou définit le sujet du document.|
+||[template](/javascript/api/word/word.documentproperties#template)|Obtient le modèle du document.|
 ||[title](/javascript/api/word/word.documentproperties#title)|Obtient ou définit le titre du document.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[getNext()](/javascript/api/word/word.inlinepicture#getNext__)|Obtient l’image insérée suivante.|
 ||[getNextOrNullObject()](/javascript/api/word/word.inlinepicture#getNextOrNullObject__)|Obtient l’image insérée suivante.|
@@ -97,10 +97,10 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[parentTableOrNullObject](/javascript/api/word/word.inlinepicture#parentTableOrNullObject)|Obtient le tableau qui contient l’image insérée.|
 |[InlinePictureCollection](/javascript/api/word/word.inlinepicturecollection)|[getFirst()](/javascript/api/word/word.inlinepicturecollection#getFirst__)|Obtient la première image insérée de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.inlinepicturecollection#getFirstOrNullObject__)|Obtient la première image insérée de cette collection.|
-|[List](/javascript/api/word/word.list)|[getLevelParagraphs(level: number)](/javascript/api/word/word.list#getLevelParagraphs_level_)|Obtient les paragraphes qui figurent au niveau spécifié de la liste.|
+|[Liste](/javascript/api/word/word.list)|[getLevelParagraphs(level: number)](/javascript/api/word/word.list#getLevelParagraphs_level_)|Obtient les paragraphes qui figurent au niveau spécifié de la liste.|
 ||[getLevelString(level: number)](/javascript/api/word/word.list#getLevelString_level_)|Obtient la puce, le numéro ou l’image au niveau spécifié sous la mesure d’une chaîne.|
-||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.list#insertParagraph_paragraphText__insertLocation_)|Insère un paragraphe à l’emplacement spécifié.|
 ||[id](/javascript/api/word/word.list#id)|Obtient l’ID de la liste.|
+||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.list#insertParagraph_paragraphText__insertLocation_)|Insère un paragraphe à l’emplacement spécifié.|
 ||[levelExistences](/javascript/api/word/word.list#levelExistences)|Vérifie si chacun des 9 niveaux existe dans la liste.|
 ||[levelTypes](/javascript/api/word/word.list#levelTypes)|Obtient les 9 types de niveau de la liste.|
 ||[paragraphs](/javascript/api/word/word.list#paragraphs)|Obtient les paragraphes de la liste.|
@@ -142,10 +142,10 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[parentTableCell](/javascript/api/word/word.paragraph#parentTableCell)|Obtient la cellule de tableau qui contient le paragraphe.|
 ||[parentTableCellOrNullObject](/javascript/api/word/word.paragraph#parentTableCellOrNullObject)|Obtient la cellule de tableau qui contient le paragraphe.|
 ||[parentTableOrNullObject](/javascript/api/word/word.paragraph#parentTableOrNullObject)|Obtient le tableau qui contient le paragraphe.|
-||[tableNestingLevel](/javascript/api/word/word.paragraph#tableNestingLevel)|Obtient le niveau de tableau du paragraphe.|
 ||[split(delimiters: string[], trimDelimiters?: boolean, trimSpacing?: boolean)](/javascript/api/word/word.paragraph#split_delimiters__trimDelimiters__trimSpacing_)|Divise le paragraphe en plages enfants à l’aide de délimiteurs.|
 ||[startNewList()](/javascript/api/word/word.paragraph#startNewList__)|Démarre une nouvelle liste avec ce paragraphe.|
 ||[styleBuiltIn](/javascript/api/word/word.paragraph#styleBuiltIn)|Obtient ou définit le nom du style prédéfini du paragraphe.|
+||[tableNestingLevel](/javascript/api/word/word.paragraph#tableNestingLevel)|Obtient le niveau de tableau du paragraphe.|
 |[ParagraphCollection](/javascript/api/word/word.paragraphcollection)|[getFirst()](/javascript/api/word/word.paragraphcollection#getFirst__)|Obtient le premier paragraphe de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.paragraphcollection#getFirstOrNullObject__)|Obtient le premier paragraphe de cette collection.|
 ||[getLast()](/javascript/api/word/word.paragraphcollection#getLast__)|Obtient le dernier paragraphe dans cette collection.|
@@ -170,9 +170,9 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[parentTableCell](/javascript/api/word/word.range#parentTableCell)|Obtient la cellule de tableau qui contient la plage.|
 ||[parentTableCellOrNullObject](/javascript/api/word/word.range#parentTableCellOrNullObject)|Obtient la cellule de tableau qui contient la plage.|
 ||[parentTableOrNullObject](/javascript/api/word/word.range#parentTableOrNullObject)|Obtient le tableau qui contient la plage.|
-||[tables](/javascript/api/word/word.range#tables)|Obtient la collection d’objets de table dans la plage.|
 ||[split(delimiters: string[], multiParagraphs?: boolean, trimDelimiters?: boolean, trimSpacing?: boolean)](/javascript/api/word/word.range#split_delimiters__multiParagraphs__trimDelimiters__trimSpacing_)|Divise la plage en plages enfants à l’aide de délimiteurs.|
 ||[styleBuiltIn](/javascript/api/word/word.range#styleBuiltIn)|Obtient ou définit le nom du style prédéfini de la plage.|
+||[tables](/javascript/api/word/word.range#tables)|Obtient la collection d’objets de table dans la plage.|
 |[RangeCollection](/javascript/api/word/word.rangecollection)|[getFirst()](/javascript/api/word/word.rangecollection#getFirst__)|Obtient la première plage de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.rangecollection#getFirstOrNullObject__)|Obtient la première plage de cette collection.|
 |[RequestContext](/javascript/api/word/word.requestcontext)|[application](/javascript/api/word/word.requestcontext#application)|[Ensemble d’api : WordApi 1.3] *|
@@ -189,6 +189,7 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[deleteColumns(columnIndex: number, columnCount?: number)](/javascript/api/word/word.table#deleteColumns_columnIndex__columnCount_)|Supprime des colonnes spécifiques.|
 ||[deleteRows(rowIndex: number, rowCount?: number)](/javascript/api/word/word.table#deleteRows_rowIndex__rowCount_)|Supprime des lignes spécifiques.|
 ||[distributeColumns()](/javascript/api/word/word.table#distributeColumns__)|Répartit uniformément les largeurs de colonne.|
+||[police](/javascript/api/word/word.table#font)|Obtient la police.|
 ||[getBorder(borderLocation: Word.BorderLocation)](/javascript/api/word/word.table#getBorder_borderLocation_)|Obtient le style de la bordure spécifiée.|
 ||[getCell(rowIndex: number, cellIndex: number)](/javascript/api/word/word.table#getCell_rowIndex__cellIndex_)|Obtient la cellule du tableau à une ligne et une colonne spécifiées.|
 ||[getCellOrNullObject(rowIndex: number, cellIndex: number)](/javascript/api/word/word.table#getCellOrNullObject_rowIndex__cellIndex_)|Obtient la cellule du tableau à une ligne et une colonne spécifiées.|
@@ -207,13 +208,12 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[insertContentControl()](/javascript/api/word/word.table#insertContentControl__)|Insère un contrôle de contenu dans le tableau.|
 ||[insertParagraph(paragraphText: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.table#insertParagraph_paragraphText__insertLocation_)|Insère un paragraphe à l’emplacement spécifié.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.table#insertTable_rowCount__columnCount__insertLocation__values_)|Insère un tableau avec le nombre spécifié de lignes et de colonnes.|
+||[isUniform](/javascript/api/word/word.table#isUniform)|Indique si toutes les lignes du tableau sont uniformes.|
 ||[matchCase](/javascript/api/word/word.table#matchCase)||
 ||[matchPrefix](/javascript/api/word/word.table#matchPrefix)||
 ||[matchSuffix](/javascript/api/word/word.table#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.table#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.table#matchWildcards)||
-||[police](/javascript/api/word/word.table#font)|Obtient la police.|
-||[isUniform](/javascript/api/word/word.table#isUniform)|Indique si toutes les lignes du tableau sont uniformes.|
 ||[nestingLevel](/javascript/api/word/word.table#nestingLevel)|Obtient le niveau d’imbrication du tableau.|
 ||[parentBody](/javascript/api/word/word.table#parentBody)|Obtient le corps parent du tableau.|
 ||[parentContentControl](/javascript/api/word/word.table#parentContentControl)|Obtient le contrôle de contenu qui contient le tableau.|
@@ -224,7 +224,6 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[parentTableOrNullObject](/javascript/api/word/word.table#parentTableOrNullObject)|Obtient le tableau qui contient ce tableau.|
 ||[rowCount](/javascript/api/word/word.table#rowCount)|Obtient le nombre de lignes dans le tableau.|
 ||[rows](/javascript/api/word/word.table#rows)|Obtient toutes les lignes du tableau.|
-||[tables](/javascript/api/word/word.table#tables)|Obtient les tableaux enfants imbriqués au niveau de profondeur suivant.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.table#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Effectue une recherche avec les searchOptions spécifiées sur l’étendue de l’objet table.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.table#select_selectionMode_)|Sélectionne le tableau ou la position de début ou de fin du tableau et y accède dans l’interface utilisateur de Word.|
 ||[setCellPadding(cellPaddingLocation: Word.CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.table#setCellPadding_cellPaddingLocation__cellPadding_)|Définit la marge intérieure des cellules en points.|
@@ -236,13 +235,16 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[styleFirstColumn](/javascript/api/word/word.table#styleFirstColumn)|Obtient et définit l’information qui indique si le tableau comporte une première colonne avec un style spécial.|
 ||[styleLastColumn](/javascript/api/word/word.table#styleLastColumn)|Obtient et définit l’information qui indique si le tableau comporte une dernière colonne avec un style spécial.|
 ||[styleTotalRow](/javascript/api/word/word.table#styleTotalRow)|Obtient et définit l’information qui indique si le tableau comporte une ligne de total (dernière ligne) avec un style spécial.|
+||[tables](/javascript/api/word/word.table#tables)|Obtient les tableaux enfants imbriqués au niveau de profondeur suivant.|
 ||[values](/javascript/api/word/word.table#values)|Obtient et définit les valeurs de texte du tableau, sous la forme d’un tableau Javascript 2D.|
 ||[verticalAlignment](/javascript/api/word/word.table#verticalAlignment)|Obtient et définit l’alignement vertical de chaque cellule du tableau.|
 ||[width](/javascript/api/word/word.table#width)|Obtient et définit la largeur du tableau en points.|
 |[TableBorder](/javascript/api/word/word.tableborder)|[color](/javascript/api/word/word.tableborder#color)|Obtient ou définit la couleur de bordure du tableau.|
 ||[type](/javascript/api/word/word.tableborder#type)|Obtient ou définit le type de bordure du tableau.|
 ||[width](/javascript/api/word/word.tableborder#width)|Obtient ou définit la largeur, en points, de la bordure du tableau.|
-|[TableCell](/javascript/api/word/word.tablecell)|[columnWidth](/javascript/api/word/word.tablecell#columnWidth)|Obtient et définit la largeur de colonne de la cellule en points.|
+|[TableCell](/javascript/api/word/word.tablecell)|[body](/javascript/api/word/word.tablecell#body)|Renvoie l’objet corps de la cellule.|
+||[cellIndex](/javascript/api/word/word.tablecell#cellIndex)|Obtient l’index de la cellule dans la ligne correspondante.|
+||[columnWidth](/javascript/api/word/word.tablecell#columnWidth)|Obtient et définit la largeur de colonne de la cellule en points.|
 ||[deleteColumn()](/javascript/api/word/word.tablecell#deleteColumn__)|Supprime la colonne qui contient cette cellule.|
 ||[deleteRow()](/javascript/api/word/word.tablecell#deleteRow__)|Supprime la ligne qui contient cette cellule.|
 ||[getBorder(borderLocation: Word.BorderLocation)](/javascript/api/word/word.tablecell#getBorder_borderLocation_)|Obtient le style de la bordure spécifiée.|
@@ -252,24 +254,25 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[horizontalAlignment](/javascript/api/word/word.tablecell#horizontalAlignment)|Obtient et définit l’alignement horizontal de la cellule.|
 ||[insertColumns(insertLocation: Word.InsertLocation, columnCount: number, values?: string[][])](/javascript/api/word/word.tablecell#insertColumns_insertLocation__columnCount__values_)|Ajoute des colonnes à gauche ou à droite de la cellule, en utilisant la colonne de la cellule en tant que modèle.|
 ||[insertRows(insertLocation: Word.InsertLocation, rowCount: number, values?: string[][])](/javascript/api/word/word.tablecell#insertRows_insertLocation__rowCount__values_)|Insère les lignes au-dessus ou au-dessous de la cellule, en utilisant la ligne de la cellule en tant que modèle.|
-||[body](/javascript/api/word/word.tablecell#body)|Renvoie l’objet corps de la cellule.|
-||[cellIndex](/javascript/api/word/word.tablecell#cellIndex)|Obtient l’index de la cellule dans la ligne correspondante.|
 ||[parentRow](/javascript/api/word/word.tablecell#parentRow)|Obtient la ligne parent de la cellule.|
 ||[parentTable](/javascript/api/word/word.tablecell#parentTable)|Obtient le tableau parent de la cellule.|
 ||[rowIndex](/javascript/api/word/word.tablecell#rowIndex)|Obtient l’index de la ligne de la cellule dans le tableau.|
-||[width](/javascript/api/word/word.tablecell#width)|Obtient la largeur de la cellule en points.|
 ||[setCellPadding(cellPaddingLocation: Word.CellPaddingLocation, cellPadding: number)](/javascript/api/word/word.tablecell#setCellPadding_cellPaddingLocation__cellPadding_)|Définit la marge intérieure des cellules en points.|
 ||[shadingColor](/javascript/api/word/word.tablecell#shadingColor)|Obtient ou définit la couleur d’ombrage de la cellule.|
 ||[value](/javascript/api/word/word.tablecell#value)|Obtient et définit le texte de la cellule.|
 ||[verticalAlignment](/javascript/api/word/word.tablecell#verticalAlignment)|Obtient et définit l’alignement vertical de la cellule.|
+||[width](/javascript/api/word/word.tablecell#width)|Obtient la largeur de la cellule en points.|
 |[TableCellCollection](/javascript/api/word/word.tablecellcollection)|[getFirst()](/javascript/api/word/word.tablecellcollection#getFirst__)|Obtient la première cellule de tableau de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.tablecellcollection#getFirstOrNullObject__)|Obtient la première cellule de tableau de cette collection.|
 ||[items](/javascript/api/word/word.tablecellcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[TableCollection](/javascript/api/word/word.tablecollection)|[getFirst()](/javascript/api/word/word.tablecollection#getFirst__)|Obtient le premier tableau de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.tablecollection#getFirstOrNullObject__)|Obtient le premier tableau de cette collection.|
 ||[items](/javascript/api/word/word.tablecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[TableRow](/javascript/api/word/word.tablerow)|[clear()](/javascript/api/word/word.tablerow#clear__)|Efface le contenu de la ligne.|
+|[TableRow](/javascript/api/word/word.tablerow)|[cellCount](/javascript/api/word/word.tablerow#cellCount)|Obtient le nombre de cellules dans la ligne.|
+||[cells](/javascript/api/word/word.tablerow#cells)|Obtient les cellules.|
+||[clear()](/javascript/api/word/word.tablerow#clear__)|Efface le contenu de la ligne.|
 ||[delete()](/javascript/api/word/word.tablerow#delete__)|Supprime la ligne entière.|
+||[police](/javascript/api/word/word.tablerow#font)|Obtient la police.|
 ||[getBorder(borderLocation: Word.BorderLocation)](/javascript/api/word/word.tablerow#getBorder_borderLocation_)|Obtient le style de bordure des cellules de la ligne.|
 ||[getCellPadding(cellPaddingLocation: Word.CellPaddingLocation)](/javascript/api/word/word.tablerow#getCellPadding_cellPaddingLocation_)|Obtient la marge intérieure des cellules en points.|
 ||[getNext()](/javascript/api/word/word.tablerow#getNext__)|Obtient la ligne suivante.|
@@ -278,17 +281,14 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[ignorePunct](/javascript/api/word/word.tablerow#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.tablerow#ignoreSpace)||
 ||[insertRows(insertLocation: Word.InsertLocation, rowCount: number, values?: string[][])](/javascript/api/word/word.tablerow#insertRows_insertLocation__rowCount__values_)|Insère des lignes en utilisant cette ligne en tant que modèle.|
+||[isHeader](/javascript/api/word/word.tablerow#isHeader)|Vérifie si la ligne est une ligne d’en-tête.|
 ||[matchCase](/javascript/api/word/word.tablerow#matchCase)||
 ||[matchPrefix](/javascript/api/word/word.tablerow#matchPrefix)||
 ||[matchSuffix](/javascript/api/word/word.tablerow#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.tablerow#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.tablerow#matchWildcards)||
-||[preferredHeight](/javascript/api/word/word.tablerow#preferredHeight)|Obtient et définit la hauteur de ligne préférée en points.|
-||[cellCount](/javascript/api/word/word.tablerow#cellCount)|Obtient le nombre de cellules dans la ligne.|
-||[cells](/javascript/api/word/word.tablerow#cells)|Obtient les cellules.|
-||[police](/javascript/api/word/word.tablerow#font)|Obtient la police.|
-||[isHeader](/javascript/api/word/word.tablerow#isHeader)|Vérifie si la ligne est une ligne d’en-tête.|
 ||[parentTable](/javascript/api/word/word.tablerow#parentTable)|Obtient la table parente.|
+||[preferredHeight](/javascript/api/word/word.tablerow#preferredHeight)|Obtient et définit la hauteur de ligne préférée en points.|
 ||[rowIndex](/javascript/api/word/word.tablerow#rowIndex)|Obtient l’index de la ligne dans le tableau parent correspondant.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.tablerow#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Effectue une recherche avec les searchOptions spécifiées sur l’étendue de la ligne.|
 ||[select(selectionMode?: Word.SelectionMode)](/javascript/api/word/word.tablerow#select_selectionMode_)|Sélectionne la ligne et y accède via l’interface utilisateur de Word.|

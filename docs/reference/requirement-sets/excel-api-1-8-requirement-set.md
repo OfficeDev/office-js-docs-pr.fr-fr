@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e97dd98d024b27aa58ca6f0c76fdee17b657c7c9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bf9ac5adbaf79e0740a0e9a8b913c129b444893f
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153687"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367487"
 ---
 # <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l Excel API JavaScript 1.8
 
@@ -42,11 +42,11 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[opérateur](/javascript/api/excel/excel.basicdatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
 |[Chart](/javascript/api/excel/excel.chart)|[categoryLabelLevel](/javascript/api/excel/excel.chart#categoryLabelLevel)|Spécifie une constante d’éumération au niveau des étiquettes de catégorie de graphique, faisant référence au niveau des étiquettes de catégorie source.|
 ||[displayBlanksAs](/javascript/api/excel/excel.chart#displayBlanksAs)|Spécifie la façon dont les cellules vides sont tracées sur un graphique.|
-||[plotBy](/javascript/api/excel/excel.chart#plotBy)|Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique.|
-||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotVisibleOnly)|Vrai si seules les cellules visibles sont tracées.|
 ||[onActivated](/javascript/api/excel/excel.chart#onActivated)|Se produit lorsque le graphique est activé.|
 ||[onDeactivated](/javascript/api/excel/excel.chart#onDeactivated)|Se produit lorsque le graphique est désactivé.|
 ||[plotArea](/javascript/api/excel/excel.chart#plotArea)|Représente la zone de traçage du graphique.|
+||[plotBy](/javascript/api/excel/excel.chart#plotBy)|Spécifie la façon dont les colonnes ou les lignes sont utilisées comme séries de données sur le graphique.|
+||[plotVisibleOnly](/javascript/api/excel/excel.chart#plotVisibleOnly)|Vrai si seules les cellules visibles sont tracées.|
 ||[seriesNameLevel](/javascript/api/excel/excel.chart#seriesNameLevel)|Spécifie une constante d’éumération de niveau de nom de série de graphique, faisant référence au niveau des noms de série source.|
 ||[showDataLabelsOverMaximum](/javascript/api/excel/excel.chart#showDataLabelsOverMaximum)|Spécifie s’il faut afficher les étiquettes de données lorsque la valeur est supérieure à la valeur maximale sur l’axe des valeurs.|
 ||[style](/javascript/api/excel/excel.chart#style)|Spécifie le style de graphique pour le graphique.|
@@ -62,8 +62,8 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[multiLevel](/javascript/api/excel/excel.chartaxis#multiLevel)|Spécifie si un axe est à plusieurs niveaux.|
 ||[numberFormat](/javascript/api/excel/excel.chartaxis#numberFormat)|Spécifie le code de format de l’étiquette de la coche de l’axe.|
 ||[offset](/javascript/api/excel/excel.chartaxis#offset)|Spécifie la distance entre les niveaux d’étiquettes et la distance entre le premier niveau et la ligne d’axe.|
-||[position](/javascript/api/excel/excel.chartaxis#position)|Spécifie la position de l’axe spécifié à l’endroit où l’autre axe croise.|
-||[positionAt](/javascript/api/excel/excel.chartaxis#positionAt)|Spécifie la position de l’axe où l’autre axe croise.|
+||[position](/javascript/api/excel/excel.chartaxis#position)|Spécifie la position de l’axe spécifié à l’endroit où l’autre axe le croise.|
+||[positionAt](/javascript/api/excel/excel.chartaxis#positionAt)|Spécifie la position de l’axe où l’autre axe le croise.|
 ||[setPositionAt(value: number)](/javascript/api/excel/excel.chartaxis#setPositionAt_value_)|Définit la position de l’axe spécifié à l’endroit où l’autre axe le croise.|
 ||[textOrientation](/javascript/api/excel/excel.chartaxis#textOrientation)|Spécifie l’angle vers lequel le texte est orienté pour l’étiquette de la tick de l’axe du graphique.|
 |[ChartAxisFormat](/javascript/api/excel/excel.chartaxisformat)|[fill](/javascript/api/excel/excel.chartaxisformat#fill)|Spécifie la mise en forme du remplissage du graphique.|
@@ -76,17 +76,17 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[onDeactivated](/javascript/api/excel/excel.chartcollection#onDeactivated)|Se produit lorsqu’un graphique est désactivé.|
 ||[onDeleted](/javascript/api/excel/excel.chartcollection#onDeleted)|Se produit lorsqu’un graphique est supprimé.|
 |[ChartDataLabel](/javascript/api/excel/excel.chartdatalabel)|[autoText](/javascript/api/excel/excel.chartdatalabel#autoText)|Spécifie si l’étiquette de données génère automatiquement le texte approprié en fonction du contexte.|
+||[format](/javascript/api/excel/excel.chartdatalabel#format)|Représente le format d’étiquette de données graphique.|
 ||[formula](/javascript/api/excel/excel.chartdatalabel#formula)|Valeur de chaîne qui représente la formule de l’étiquette de données du graphique à l’aide de la notation de style A1.|
+||[height](/javascript/api/excel/excel.chartdatalabel#height)|Représente la hauteur, exprimée en points, de l’étiquette de données du graphique.|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabel#horizontalAlignment)|Représente l’alignement horizontal de l’étiquette de données du graphique.|
 ||[left](/javascript/api/excel/excel.chartdatalabel#left)|Représente la distance en points, du bord gauche de l’étiquette de données graphique au bord gauche de la zone de graphique.|
 ||[numberFormat](/javascript/api/excel/excel.chartdatalabel#numberFormat)|Valeur de chaîne qui représente le code de format pour l’étiquette de données.|
-||[format](/javascript/api/excel/excel.chartdatalabel#format)|Représente le format d’étiquette de données graphique.|
-||[height](/javascript/api/excel/excel.chartdatalabel#height)|Représente la hauteur, exprimée en points, de l’étiquette de données du graphique.|
-||[width](/javascript/api/excel/excel.chartdatalabel#width)|Représente la largeur, exprimée en points, de l’étiquette de données du graphique.|
 ||[text](/javascript/api/excel/excel.chartdatalabel#text)|Chaîne représentant le texte d’étiquette de données dans un graphique.|
 ||[textOrientation](/javascript/api/excel/excel.chartdatalabel#textOrientation)|Représente l’angle vers lequel le texte est orienté pour l’étiquette de données du graphique.|
 ||[top](/javascript/api/excel/excel.chartdatalabel#top)|Représente la distance en points, du bord supérieur de l’étiquette de données graphique au bord supérieur de la zone de graphique.|
 ||[verticalAlignment](/javascript/api/excel/excel.chartdatalabel#verticalAlignment)|Représente l’alignement vertical de l’étiquette de données du graphique.|
+||[width](/javascript/api/excel/excel.chartdatalabel#width)|Représente la largeur, exprimée en points, de l’étiquette de données du graphique.|
 |[ChartDataLabelFormat](/javascript/api/excel/excel.chartdatalabelformat)|[bordure](/javascript/api/excel/excel.chartdatalabelformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
 |[ChartDataLabels](/javascript/api/excel/excel.chartdatalabels)|[autoText](/javascript/api/excel/excel.chartdatalabels#autoText)|Spécifie si les étiquettes de données génèrent automatiquement le texte approprié en fonction du contexte.|
 ||[horizontalAlignment](/javascript/api/excel/excel.chartdatalabels#horizontalAlignment)|Spécifie l’alignement horizontal pour l’étiquette de données du graphique.|
@@ -106,24 +106,24 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[top](/javascript/api/excel/excel.chartlegendentry#top)|Spécifie le haut d’une entrée de légende de graphique.|
 ||[width](/javascript/api/excel/excel.chartlegendentry#width)|Représente la largeur de l’entrée de légende sur la légende du graphique.|
 |[ChartLegendFormat](/javascript/api/excel/excel.chartlegendformat)|[bordure](/javascript/api/excel/excel.chartlegendformat#border)|Représente le format bordure, qui inclut couleur, style de ligne et épaisseur.|
-|[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[height](/javascript/api/excel/excel.chartplotarea#height)|Spécifie la valeur de hauteur d’une zone de traçage.|
+|[ChartPlotArea](/javascript/api/excel/excel.chartplotarea)|[format](/javascript/api/excel/excel.chartplotarea#format)|Spécifie la mise en forme d’une zone de traçage de graphique.|
+||[height](/javascript/api/excel/excel.chartplotarea#height)|Spécifie la valeur de hauteur d’une zone de traçage.|
 ||[insideHeight](/javascript/api/excel/excel.chartplotarea#insideHeight)|Spécifie la valeur de hauteur intérieure d’une zone de traçage.|
 ||[insideLeft](/javascript/api/excel/excel.chartplotarea#insideLeft)|Spécifie la valeur à l’intérieur gauche d’une zone de traçage.|
 ||[insideTop](/javascript/api/excel/excel.chartplotarea#insideTop)|Spécifie la valeur supérieure intérieure d’une zone de traçage.|
 ||[insideWidth](/javascript/api/excel/excel.chartplotarea#insideWidth)|Spécifie la valeur de largeur intérieure d’une zone de traçage.|
 ||[left](/javascript/api/excel/excel.chartplotarea#left)|Spécifie la valeur gauche d’une zone de traçage.|
 ||[position](/javascript/api/excel/excel.chartplotarea#position)|Spécifie la position d’une zone de traçage.|
-||[format](/javascript/api/excel/excel.chartplotarea#format)|Spécifie la mise en forme d’une zone de traçage de graphique.|
 ||[top](/javascript/api/excel/excel.chartplotarea#top)|Spécifie la valeur supérieure d’une zone de traçage.|
 ||[width](/javascript/api/excel/excel.chartplotarea#width)|Spécifie la valeur de largeur d’une zone de traçage.|
 |[ChartPlotAreaFormat](/javascript/api/excel/excel.chartplotareaformat)|[bordure](/javascript/api/excel/excel.chartplotareaformat#border)|Spécifie les attributs de bordure d’une zone de traçage de graphique.|
 ||[fill](/javascript/api/excel/excel.chartplotareaformat#fill)|Spécifie le format de remplissage d’un objet, qui inclut des informations de mise en forme d’arrière-plan.|
 |[ChartSeries](/javascript/api/excel/excel.chartseries)|[axisGroup](/javascript/api/excel/excel.chartseries#axisGroup)|Spécifie le groupe de la série spécifiée.|
+||[dataLabels](/javascript/api/excel/excel.chartseries#dataLabels)|Représente une collection de toutes les étiquettes de données de la série.|
 ||[explosion](/javascript/api/excel/excel.chartseries#explosion)|Spécifie la valeur d’explosion d’un graphique en secteurs ou d’une tranche de graphique en doughnuts.|
 ||[firstSliceAngle](/javascript/api/excel/excel.chartseries#firstSliceAngle)|Spécifie l’angle de la première tranche de graphique en secteurs ou de graphique en doughnuts, en degrés (dans le sens des aiguilles d’une montre à partir de la verticale).|
 ||[invertIfNegative](/javascript/api/excel/excel.chartseries#invertIfNegative)|True si Excel inverse le motif dans l’élément lorsqu’il correspond à un nombre négatif.|
 ||[overlap](/javascript/api/excel/excel.chartseries#overlap)|Spécifie comment barres et colonnes sont positionnées.|
-||[dataLabels](/javascript/api/excel/excel.chartseries#dataLabels)|Représente une collection de toutes les étiquettes de données de la série.|
 ||[secondPlotSize](/javascript/api/excel/excel.chartseries#secondPlotSize)|Spécifie la taille de la section secondaire d’un graphique en secteurs de secteur ou d’un graphique en barres de secteur, sous forme de pourcentage de la taille du secteur principal.|
 ||[splitType](/javascript/api/excel/excel.chartseries#splitType)|Spécifie le mode de fractionnement des deux sections d’un graphique en secteurs de secteur ou d’un graphique en barres de secteur.|
 ||[varyByCategories](/javascript/api/excel/excel.chartseries#varyByCategories)|True si Excel affecte une couleur ou un motif différent à chaque marqueur de données.|
@@ -133,26 +133,26 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[showEquation](/javascript/api/excel/excel.charttrendline#showEquation)|Vrai si l’équation de la courbe de tendance est affichée sur le graphique.|
 ||[showRSquared](/javascript/api/excel/excel.charttrendline#showRSquared)|True si la valeur r-squared de la courbe de tendance est affichée sur le graphique.|
 |[ChartTrendlineLabel](/javascript/api/excel/excel.charttrendlinelabel)|[autoText](/javascript/api/excel/excel.charttrendlinelabel#autoText)|Spécifie si l’étiquette de courbe de tendance génère automatiquement le texte approprié en fonction du contexte.|
+||[format](/javascript/api/excel/excel.charttrendlinelabel#format)|Format de l’étiquette de courbe de tendance du graphique.|
 ||[formula](/javascript/api/excel/excel.charttrendlinelabel#formula)|Valeur de chaîne qui représente la formule de l’étiquette de courbe de tendance du graphique à l’aide de la notation de style A1.|
+||[height](/javascript/api/excel/excel.charttrendlinelabel#height)|Représente la hauteur, exprimée en points, de l’étiquette de tendances du graphique.|
 ||[horizontalAlignment](/javascript/api/excel/excel.charttrendlinelabel#horizontalAlignment)|Représente l’alignement horizontal de l’étiquette de tendances du graphique.|
 ||[left](/javascript/api/excel/excel.charttrendlinelabel#left)|Représente la distance, en points, entre le bord gauche de l’étiquette de la courbe de tendance du graphique et le bord gauche de la zone de graphique.|
 ||[numberFormat](/javascript/api/excel/excel.charttrendlinelabel#numberFormat)|Valeur de chaîne qui représente le code de format de l’étiquette de courbe de tendance.|
-||[format](/javascript/api/excel/excel.charttrendlinelabel#format)|Format de l’étiquette de courbe de tendance du graphique.|
-||[height](/javascript/api/excel/excel.charttrendlinelabel#height)|Représente la hauteur, exprimée en points, de l’étiquette de tendances du graphique.|
-||[width](/javascript/api/excel/excel.charttrendlinelabel#width)|Représente la largeur, exprimée en points, de l’étiquette de tendances du graphique.|
 ||[text](/javascript/api/excel/excel.charttrendlinelabel#text)|Chaîne représentant le texte d’étiquette de tendances dans un graphique.|
 ||[textOrientation](/javascript/api/excel/excel.charttrendlinelabel#textOrientation)|Représente l’angle vers lequel le texte est orienté pour l’étiquette de courbe de tendance du graphique.|
 ||[top](/javascript/api/excel/excel.charttrendlinelabel#top)|Représente la distance, en points, entre le bord supérieur de l’étiquette de tendances du graphique et le haut de la zone de graphique.|
 ||[verticalAlignment](/javascript/api/excel/excel.charttrendlinelabel#verticalAlignment)|Représente l’alignement vertical de l’étiquette de tendances du graphique.|
+||[width](/javascript/api/excel/excel.charttrendlinelabel#width)|Représente la largeur, exprimée en points, de l’étiquette de tendances du graphique.|
 |[ChartTrendlineLabelFormat](/javascript/api/excel/excel.charttrendlinelabelformat)|[bordure](/javascript/api/excel/excel.charttrendlinelabelformat#border)|Spécifie le format de bordure, qui inclut la couleur, le style de trait et l’pondération.|
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#fill)|Spécifie le format de remplissage de l’étiquette de tendances du graphique actuel.|
 ||[police](/javascript/api/excel/excel.charttrendlinelabelformat#font)|Spécifie les attributs de police (tels que le nom de la police, la taille et la couleur) d’une étiquette de tendances de graphique.|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#formula)|Une formule de validation des données personnalisée.|
-|[DataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|[name](/javascript/api/excel/excel.datapivothierarchy#name)|Nom de la DataPivotHierarchy.|
+|[DataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|[field](/javascript/api/excel/excel.datapivothierarchy#field)|Renvoie les PivotFields associés à la DataPivotHierarchy.|
+||[id](/javascript/api/excel/excel.datapivothierarchy#id)|ID de la DataPivotHierarchy.|
+||[name](/javascript/api/excel/excel.datapivothierarchy#name)|Nom de la DataPivotHierarchy.|
 ||[numberFormat](/javascript/api/excel/excel.datapivothierarchy#numberFormat)|Format de nombre de la DataPivotHierarchy.|
 ||[position](/javascript/api/excel/excel.datapivothierarchy#position)|Position de la DataPivotHierarchy.|
-||[champ](/javascript/api/excel/excel.datapivothierarchy#field)|Renvoie les PivotFields associés à la DataPivotHierarchy.|
-||[id](/javascript/api/excel/excel.datapivothierarchy#id)|ID de la DataPivotHierarchy.|
 ||[setToDefault()](/javascript/api/excel/excel.datapivothierarchy#setToDefault__)|Restaurer la DataPivotHierarchy à ses valeurs par défaut.|
 ||[showAs](/javascript/api/excel/excel.datapivothierarchy#showAs)|Spécifie si les données doivent être affichées en tant que calcul récapitulatif spécifique.|
 ||[summarizeBy](/javascript/api/excel/excel.datapivothierarchy#summarizeBy)|Spécifie si tous les éléments de la DataPivotHierarchy sont affichés.|
@@ -166,12 +166,12 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[errorAlert](/javascript/api/excel/excel.datavalidation#errorAlert)|Alerte d’erreur lorsque l’utilisateur entre des données non valides.|
 ||[ignoreBlanks](/javascript/api/excel/excel.datavalidation#ignoreBlanks)|Spécifie si la validation des données sera effectuée sur des cellules vides.|
 ||[prompt](/javascript/api/excel/excel.datavalidation#prompt)|Invite lorsque les utilisateurs sélectionnent une cellule.|
+||[rule](/javascript/api/excel/excel.datavalidation#rule)|Règle de validation des données qui contient différents types de critères de validation des données.|
 ||[type](/javascript/api/excel/excel.datavalidation#type)|Type de validation des données, voir `Excel.DataValidationType` pour plus d’informations.|
 ||[valide](/javascript/api/excel/excel.datavalidation#valid)|Représente si toutes les valeurs de cellule sont valides selon les règles de validation des données.|
-||[rule](/javascript/api/excel/excel.datavalidation#rule)|Règle de validation des données qui contient différents types de critères de validation des données.|
 |[DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert)|[message](/javascript/api/excel/excel.datavalidationerroralert#message)|Représente le message d’alerte d’erreur.|
 ||[showAlert](/javascript/api/excel/excel.datavalidationerroralert#showAlert)|Spécifie s’il faut afficher une boîte de dialogue d’alerte d’erreur lorsqu’un utilisateur entre des données non valides.|
-||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|Type d’alerte de validation des données. Pour `Excel.DataValidationAlertStyle` plus d’informations, voir.|
+||[style](/javascript/api/excel/excel.datavalidationerroralert#style)|Type d’alerte de validation des données, pour `Excel.DataValidationAlertStyle` plus d’informations.|
 ||[title](/javascript/api/excel/excel.datavalidationerroralert#title)|Représente le titre de la boîte de dialogue d’alerte d’erreur.|
 |[DataValidationPrompt](/javascript/api/excel/excel.datavalidationprompt)|[message](/javascript/api/excel/excel.datavalidationprompt#message)|Spécifie le message de l’invite.|
 ||[showPrompt](/javascript/api/excel/excel.datavalidationprompt#showPrompt)|Spécifie si une invite s’affiche lorsqu’un utilisateur sélectionne une cellule avec validation des données.|
@@ -187,10 +187,10 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[formula2](/javascript/api/excel/excel.datetimedatavalidation#formula2)|Avec les opérateurs ternaires Between et NotBetween, spécifie l’opérande lié supérieur.|
 ||[opérateur](/javascript/api/excel/excel.datetimedatavalidation#operator)|L’opérateur à utiliser pour la validation des données.|
 |[FilterPivotHierarchy](/javascript/api/excel/excel.filterpivothierarchy)|[enableMultipleFilterItems](/javascript/api/excel/excel.filterpivothierarchy#enableMultipleFilterItems)|Détermine si vous voulez autoriser plusieurs éléments de filtre.|
-||[name](/javascript/api/excel/excel.filterpivothierarchy#name)|Nom du filterPivotHierarchy.|
-||[position](/javascript/api/excel/excel.filterpivothierarchy#position)|Position du filterPivotHierarchy.|
 ||[fields](/javascript/api/excel/excel.filterpivothierarchy#fields)|Renvoie les PivotFields associés à la FilterPivotHierarchy.|
 ||[id](/javascript/api/excel/excel.filterpivothierarchy#id)|ID de la FilterPivotHierarchy.|
+||[name](/javascript/api/excel/excel.filterpivothierarchy#name)|Nom du filterPivotHierarchy.|
+||[position](/javascript/api/excel/excel.filterpivothierarchy#position)|Position du filterPivotHierarchy.|
 ||[setToDefault()](/javascript/api/excel/excel.filterpivothierarchy#setToDefault__)|Restaurer la FilterPivotHierarchy à ses valeurs par défaut.|
 |[FilterPivotHierarchyCollection](/javascript/api/excel/excel.filterpivothierarchycollection)|[add(pivotHierarchy: Excel. PivotHierarchy)](/javascript/api/excel/excel.filterpivothierarchycollection#add_pivotHierarchy_)|Ajoute le PivotHierarchy à l’axe en cours.|
 ||[getCount()](/javascript/api/excel/excel.filterpivothierarchycollection#getCount__)|Obtient le nombre de hiérarchies croisées de la collection.|
@@ -200,9 +200,9 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[remove(filterPivotHierarchy: Excel. FilterPivotHierarchy)](/javascript/api/excel/excel.filterpivothierarchycollection#remove_filterPivotHierarchy_)|Supprime le PivotHierarchy de l’axe en cours.|
 |[ListDataValidation](/javascript/api/excel/excel.listdatavalidation)|[inCellDropDown](/javascript/api/excel/excel.listdatavalidation#inCellDropDown)|Spécifie s’il faut afficher la liste dans une liste de cellules.|
 ||[source](/javascript/api/excel/excel.listdatavalidation#source)|Source de la liste de validation des données|
-|[PivotField](/javascript/api/excel/excel.pivotfield)|[name](/javascript/api/excel/excel.pivotfield#name)|Nom du champ PivotField.|
-||[id](/javascript/api/excel/excel.pivotfield#id)|ID du champ de tableau croisé dynamique.|
-||[items](/javascript/api/excel/excel.pivotfield#items)|Renvoie les PivotFields associés à PivotField.|
+|[PivotField](/javascript/api/excel/excel.pivotfield)|[id](/javascript/api/excel/excel.pivotfield#id)|ID du champ de tableau croisé dynamique.|
+||[items](/javascript/api/excel/excel.pivotfield#items)|Renvoie les pivotItems associés au champ de tableau croisé dynamique.|
+||[name](/javascript/api/excel/excel.pivotfield#name)|Nom du champ PivotField.|
 ||[showAllItems](/javascript/api/excel/excel.pivotfield#showAllItems)|Détermine si vous voulez afficher tous les éléments de PivotField.|
 ||[sortByLabels(sortBy: SortBy)](/javascript/api/excel/excel.pivotfield#sortByLabels_sortBy_)|Trie le PivotField.|
 ||[subtotals](/javascript/api/excel/excel.pivotfield#subtotals)|Sous-totaux du champ PivotField.|
@@ -210,16 +210,16 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[getItem(name: string)](/javascript/api/excel/excel.pivotfieldcollection#getItem_name_)|Obtient un champ de tableau croisé dynamique par son nom ou son ID.|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivotfieldcollection#getItemOrNullObject_name_)|Obtient un champ de tableau croisé dynamique par nom.|
 ||[items](/javascript/api/excel/excel.pivotfieldcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)|[name](/javascript/api/excel/excel.pivothierarchy#name)|Nom de la PivotHierarchy.|
-||[fields](/javascript/api/excel/excel.pivothierarchy#fields)|Renvoie les PivotFields associés à la PivotHierarchy.|
+|[PivotHierarchy](/javascript/api/excel/excel.pivothierarchy)|[fields](/javascript/api/excel/excel.pivothierarchy#fields)|Renvoie les PivotFields associés à la PivotHierarchy.|
 ||[id](/javascript/api/excel/excel.pivothierarchy#id)|ID de la PivotHierarchy.|
+||[name](/javascript/api/excel/excel.pivothierarchy#name)|Nom de la PivotHierarchy.|
 |[PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection)|[getCount()](/javascript/api/excel/excel.pivothierarchycollection#getCount__)|Obtient le nombre de hiérarchies croisées de la collection.|
 ||[getItem(name: string)](/javascript/api/excel/excel.pivothierarchycollection#getItem_name_)|Obtient une PivotHierarchy par son nom ou son ID.|
 ||[getItemOrNullObject(name: string)](/javascript/api/excel/excel.pivothierarchycollection#getItemOrNullObject_name_)|Obtient une PivotHierarchy par nom.|
 ||[items](/javascript/api/excel/excel.pivothierarchycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[PivotItem](/javascript/api/excel/excel.pivotitem)|[isExpanded](/javascript/api/excel/excel.pivotitem#isExpanded)|Détermine si l’élément est développé pour afficher les éléments enfants ou si ce dernier est réduit et les éléments enfants sont masqués.|
+|[PivotItem](/javascript/api/excel/excel.pivotitem)|[id](/javascript/api/excel/excel.pivotitem#id)|ID du PivotItem.|
+||[isExpanded](/javascript/api/excel/excel.pivotitem#isExpanded)|Détermine si l’élément est développé pour afficher les éléments enfants ou si ce dernier est réduit et les éléments enfants sont masqués.|
 ||[name](/javascript/api/excel/excel.pivotitem#name)|Nom du champ PivotItem.|
-||[id](/javascript/api/excel/excel.pivotitem#id)|ID du PivotItem.|
 ||[visible](/javascript/api/excel/excel.pivotitem#visible)|Spécifie si l’pivotItem est visible.|
 |[PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection)|[getCount()](/javascript/api/excel/excel.pivotitemcollection#getCount__)|Obtient le nombre d’pivotItems dans la collection.|
 ||[getItem(name: string)](/javascript/api/excel/excel.pivotitemcollection#getItem_name_)|Obtient un PivotItem par son nom ou son ID.|
@@ -234,19 +234,19 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[showColumnGrandTotals](/javascript/api/excel/excel.pivotlayout#showColumnGrandTotals)|Spécifie si le rapport de tableau croisé dynamique affiche les totaux grands des colonnes.|
 ||[showRowGrandTotals](/javascript/api/excel/excel.pivotlayout#showRowGrandTotals)|Spécifie si le rapport de tableau croisé dynamique affiche les totaux complets des lignes.|
 ||[subtotalLocation](/javascript/api/excel/excel.pivotlayout#subtotalLocation)|Cette propriété indique tous les `SubtotalLocationType` champs du tableau croisé dynamique.|
-|[PivotTable](/javascript/api/excel/excel.pivottable)|[delete()](/javascript/api/excel/excel.pivottable#delete__)|Supprime le tableau croisé dynamique.|
-||[columnHierarchies](/javascript/api/excel/excel.pivottable#columnHierarchies)|Les hiérarchies de colonne de tableau croisé dynamique.|
+|[PivotTable](/javascript/api/excel/excel.pivottable)|[columnHierarchies](/javascript/api/excel/excel.pivottable#columnHierarchies)|Les hiérarchies de colonne de tableau croisé dynamique.|
 ||[dataHierarchies](/javascript/api/excel/excel.pivottable#dataHierarchies)|Les hiérarchies de données de tableau croisé dynamique.|
+||[delete()](/javascript/api/excel/excel.pivottable#delete__)|Supprime le tableau croisé dynamique.|
 ||[filterHierarchies](/javascript/api/excel/excel.pivottable#filterHierarchies)|Les hiérarchies de filtre de tableau croisé dynamique.|
 ||[hiérarchies](/javascript/api/excel/excel.pivottable#hierarchies)|Les hiérarchies Pivot de tableau croisé dynamique.|
 ||[disposition](/javascript/api/excel/excel.pivottable#layout)|Le PivotLayout décrivant la disposition et la structure visuelle de tableau croisé dynamique.|
 ||[rowHierarchies](/javascript/api/excel/excel.pivottable#rowHierarchies)|Les hiérarchies de lignes de tableau croisé dynamique.|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[add(name: string, source: Range \| string \| Table, destination: Range \| string)](/javascript/api/excel/excel.pivottablecollection#add_name__source__destination_)|Ajoutez un tableau croisé dynamique basé sur les données sources spécifiées et insérez-le dans la cellule supérieure gauche de la plage de destination.|
 |[Range](/javascript/api/excel/excel.range)|[dataValidation](/javascript/api/excel/excel.range#dataValidation)|Renvoie un objet de validation des données.|
-|[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|Nom de la RowColumnPivotHierarchy.|
-||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|Position de la RowColumnPivotHierarchy.|
-||[fields](/javascript/api/excel/excel.rowcolumnpivothierarchy#fields)|Renvoie les PivotFields associés à la RowColumnPivotHierarchy.|
+|[RowColumnPivotHierarchy](/javascript/api/excel/excel.rowcolumnpivothierarchy)|[fields](/javascript/api/excel/excel.rowcolumnpivothierarchy#fields)|Renvoie les PivotFields associés à la RowColumnPivotHierarchy.|
 ||[id](/javascript/api/excel/excel.rowcolumnpivothierarchy#id)|ID de la RowColumnPivotHierarchy.|
+||[name](/javascript/api/excel/excel.rowcolumnpivothierarchy#name)|Nom de la RowColumnPivotHierarchy.|
+||[position](/javascript/api/excel/excel.rowcolumnpivothierarchy#position)|Position de la RowColumnPivotHierarchy.|
 ||[setToDefault()](/javascript/api/excel/excel.rowcolumnpivothierarchy#setToDefault__)|Restaurer la RowColumnPivotHierarchy à ses valeurs par défaut.|
 |[RowColumnPivotHierarchyCollection](/javascript/api/excel/excel.rowcolumnpivothierarchycollection)|[add(pivotHierarchy: Excel. PivotHierarchy)](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#add_pivotHierarchy_)|Ajoute le PivotHierarchy à l’axe en cours.|
 ||[getCount()](/javascript/api/excel/excel.rowcolumnpivothierarchycollection#getCount__)|Obtient le nombre de hiérarchies croisées de la collection.|
@@ -260,7 +260,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[calcul](/javascript/api/excel/excel.showasrule#calculation)|Calcul `ShowAs` à utiliser pour le champ de tableau croisé dynamique.|
 |[Style](/javascript/api/excel/excel.style)|[autoIndent](/javascript/api/excel/excel.style#autoIndent)|Spécifie si le texte est automatiquement mis en retrait lorsque l’alignement du texte dans une cellule est égal à la distribution.|
 ||[textOrientation](/javascript/api/excel/excel.style#textOrientation)|L’orientation du texte pour le style.|
-|[Subtotals](/javascript/api/excel/excel.subtotals)|[automatic](/javascript/api/excel/excel.subtotals#automatic)|Si `Automatic` la valeur est définie sur , toutes les autres `true` valeurs seront ignorées lors de la définition de `Subtotals` la propriété .|
+|[Subtotals](/javascript/api/excel/excel.subtotals)|[automatic](/javascript/api/excel/excel.subtotals#automatic)|Si `Automatic` la valeur est définie sur , toutes les autres `true` valeurs seront ignorées lors de la définition du `Subtotals` paramètre .|
 ||[moyenne](/javascript/api/excel/excel.subtotals#average)||
 ||[count](/javascript/api/excel/excel.subtotals#count)||
 ||[countNumbers](/javascript/api/excel/excel.subtotals#countNumbers)||

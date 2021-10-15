@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.11.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e396ed369942c22c6e460f3e27702b35d3ef20b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3f340a7f69cfbbb0c87e937e7d9d1043929a94c9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153084"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367445"
 ---
 # <a name="whats-new-in-excel-javascript-api-111"></a>Nouveautés de l Excel API JavaScript 1.11
 
@@ -26,7 +26,7 @@ ExcelApi 1.11 a amélioré la prise en charge des commentaires et des contrôles
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.11. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.11 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)ou version antérieure.
+Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.11. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.11 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true)ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -35,8 +35,8 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 ||[thousandsSeparator](/javascript/api/excel/excel.application#thousandsSeparator)|Obtient la chaîne utilisée pour séparer les groupes de chiffres à gauche de la virgule pour les valeurs numériques.|
 ||[useSystemSeparators](/javascript/api/excel/excel.application#useSystemSeparators)|Spécifie si les séparateurs système de Excel sont activés.|
 |[Comment](/javascript/api/excel/excel.comment)|[mentions](/javascript/api/excel/excel.comment#mentions)|Obtient les entités (par exemple, les personnes) mentionnées dans les commentaires.|
-||[richContent](/javascript/api/excel/excel.comment#richContent)|Obtient le contenu des commentaires enrichis (par exemple, les mentions dans les commentaires).|
 ||[résolu](/javascript/api/excel/excel.comment#resolved)|État du thread de commentaire.|
+||[richContent](/javascript/api/excel/excel.comment#richContent)|Obtient le contenu des commentaires enrichis (par exemple, les mentions dans les commentaires).|
 ||[updateMentions(contentWithMentions: Excel. CommentRichContent)](/javascript/api/excel/excel.comment#updateMentions_contentWithMentions_)|Met à jour le contenu des commentaires avec une chaîne spécialement mise en forme et une liste de mentions.|
 |[CommentCollection](/javascript/api/excel/excel.commentcollection)|[add(cellAddress: Range \| string, content: CommentRichContent \| string, contentType?: Excel. ContentType)](/javascript/api/excel/excel.commentcollection#add_cellAddress__content__contentType_)|Crée un nouveau commentaire avec le contenu donné sur la cellule donnée.|
 |[CommentMention](/javascript/api/excel/excel.commentmention)|[email](/javascript/api/excel/excel.commentmention#email)|Adresse de messagerie de l’entité mentionnée dans un commentaire.|

@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.12.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: f2780e188eeebc70d754d7c2ea26cde1b1974702
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 99447cb7a92f0431a04c10a767af91df3a56ee80
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152862"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367312"
 ---
 # <a name="whats-new-in-excel-javascript-api-112"></a>Nouveautés de l Excel API JavaScript 1.12
 
@@ -77,7 +77,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[condition](/javascript/api/excel/excel.pivotlabelfilter#condition)|Spécifie la condition du filtre, qui définit les critères de filtrage nécessaires.|
 ||[exclusive](/javascript/api/excel/excel.pivotlabelfilter#exclusive)|Si `true` , le filtre exclut *les* éléments qui répondent aux critères.|
 ||[lowerBound](/javascript/api/excel/excel.pivotlabelfilter#lowerBound)|Limite inférieure de la plage pour la `between` condition de filtre.|
-||[sous-string](/javascript/api/excel/excel.pivotlabelfilter#substring)|Sous-stration utilisée pour `beginsWith` , et les conditions de `endsWith` `contains` filtre.|
+||[substring](/javascript/api/excel/excel.pivotlabelfilter#substring)|Sous-stration utilisée pour `beginsWith` , et les conditions de `endsWith` `contains` filtre.|
 ||[upperBound](/javascript/api/excel/excel.pivotlabelfilter#upperBound)|Limite supérieure de la plage pour la `between` condition de filtre.|
 |[PivotManualFilter](/javascript/api/excel/excel.pivotmanualfilter)|[selectedItems](/javascript/api/excel/excel.pivotmanualfilter#selectedItems)|Liste des éléments sélectionnés à filtrer manuellement.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[allowMultipleFiltersPerField](/javascript/api/excel/excel.pivottable#allowMultipleFiltersPerField)|Spécifie si le tableau croisé dynamique autorise l’application de plusieurs filtres de tableau croisé dynamique sur un champ de tableau croisé dynamique donné dans le tableau.|
@@ -106,10 +106,10 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[RangeAreasCollection](/javascript/api/excel/excel.rangeareascollection)|[getCount()](/javascript/api/excel/excel.rangeareascollection#getCount__)|Obtient le nombre `RangeAreas` d’objets de cette collection.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.rangeareascollection#getItemAt_index_)|Renvoie `RangeAreas` l’objet en fonction de la position dans la collection.|
 ||[items](/javascript/api/excel/excel.rangeareascollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|Renvoie `RangeAreas` l’objet en fonction de l’ID de feuille de calcul ou du nom de la collection.|
-||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|Renvoie `RangeAreas` l’objet en fonction du nom de la feuille de calcul ou de l’ID de la collection.|
-||[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Renvoie un tableau d’adresses de style A1.|
+|[WorkbookRangeAreas](/javascript/api/excel/excel.workbookrangeareas)|[addresses](/javascript/api/excel/excel.workbookrangeareas#addresses)|Renvoie un tableau d’adresses de style A1.|
 ||[Zones](/javascript/api/excel/excel.workbookrangeareas#areas)|Renvoie `RangeAreasCollection` l’objet.|
+||[getRangeAreasBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasBySheet_key_)|Renvoie `RangeAreas` l’objet en fonction de l’ID de feuille de calcul ou du nom de la collection.|
+||[getRangeAreasOrNullObjectBySheet(key: string)](/javascript/api/excel/excel.workbookrangeareas#getRangeAreasOrNullObjectBySheet_key_)|Renvoie `RangeAreas` l’objet en fonction du nom de la feuille de calcul ou de l’ID de la collection.|
 ||[plages](/javascript/api/excel/excel.workbookrangeareas#ranges)|Renvoie les plages qui composent cet objet dans un `RangeCollection` objet.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[customProperties](/javascript/api/excel/excel.worksheet#customProperties)|Obtient une collection de propriétés personnalisées au niveau de la feuille de calcul.|
 |[WorksheetCustomProperty](/javascript/api/excel/excel.worksheetcustomproperty)|[delete()](/javascript/api/excel/excel.worksheetcustomproperty#delete__)|Supprime la propriété personnalisée.|

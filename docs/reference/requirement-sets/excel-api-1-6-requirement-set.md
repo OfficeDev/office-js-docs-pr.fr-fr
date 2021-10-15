@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.6.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e5d8cb39c7b4fc41c12625a70d16f47d01d81a5f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5460a678eb23aeee0be5795856790eb8cccd593e
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153079"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367424"
 ---
 # <a name="whats-new-in-excel-javascript-api-16"></a>Nouveautés de l’API JavaScript 1.6 pour Excel
 
@@ -32,7 +32,7 @@ De plus :
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.6. Pour afficher la documentation de référence de l’API pour toutes les API pris en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.6 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)ou version antérieure.
+Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.6. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.6 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true)ou version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -50,38 +50,38 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 |[ConditionalColorScaleCriterion](/javascript/api/excel/excel.conditionalcolorscalecriterion)|[color](/javascript/api/excel/excel.conditionalcolorscalecriterion#color)|Représentation de code couleur HTML de la couleur d’échelle de couleur (par exemple, #FF0000 représente le rouge).|
 ||[formula](/javascript/api/excel/excel.conditionalcolorscalecriterion#formula)|Un nombre, une formule ou `null` (si `type` c’est `lowestValue` le cas).|
 ||[type](/javascript/api/excel/excel.conditionalcolorscalecriterion#type)|Sur quoi la formule conditionnelle critère doit être basée.|
-|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+|[ConditionalDataBarNegativeFormat](/javascript/api/excel/excel.conditionaldatabarnegativeformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#fillColor)|Code couleur HTML représentant la couleur de remplissage, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[matchPositiveBorderColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#matchPositiveBorderColor)|Spécifie si la barre de données négative a la même couleur de bordure que la barre de données positive.|
 ||[matchPositiveFillColor](/javascript/api/excel/excel.conditionaldatabarnegativeformat#matchPositiveFillColor)|Spécifie si la barre de données négative a la même couleur de remplissage que la barre de données positive.|
-|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+|[ConditionalDataBarPositiveFormat](/javascript/api/excel/excel.conditionaldatabarpositiveformat)|[borderColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#borderColor)|Code couleur HTML représentant la couleur de la bordure, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[fillColor](/javascript/api/excel/excel.conditionaldatabarpositiveformat#fillColor)|Code couleur HTML représentant la couleur de remplissage, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[gradientFill](/javascript/api/excel/excel.conditionaldatabarpositiveformat#gradientFill)|Spécifie si la barre de données a un dégradé.|
 |[ConditionalDataBarRule](/javascript/api/excel/excel.conditionaldatabarrule)|[formula](/javascript/api/excel/excel.conditionaldatabarrule#formula)|Formule, si nécessaire, sur laquelle évaluer la règle de barre de données.|
 ||[type](/javascript/api/excel/excel.conditionaldatabarrule#type)|Type de règle pour la barre de données.|
-|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|Supprime cette mise en forme conditionnelle.|
-||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|Renvoie la plage à laquelle s’applique la mise en forme conditionnelle.|
-||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|Renvoie la plage à laquelle le format conditionnel est appliqué.|
-||[priority](/javascript/api/excel/excel.conditionalformat#priority)|Priorité (ou index) dans la collection de formats conditionnels dans qui ce format conditionnel existe actuellement.|
-||[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|Renvoie les propriétés de mise en forme conditionnelle de la valeur de cellule si la mise en forme conditionnelle actuelle est un `CellValue` type.|
+|[ConditionalFormat](/javascript/api/excel/excel.conditionalformat)|[cellValue](/javascript/api/excel/excel.conditionalformat#cellValue)|Renvoie les propriétés de mise en forme conditionnelle de la valeur de cellule si la mise en forme conditionnelle actuelle est un `CellValue` type.|
 ||[cellValueOrNullObject](/javascript/api/excel/excel.conditionalformat#cellValueOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle de la valeur de cellule si la mise en forme conditionnelle actuelle est un `CellValue` type.|
 ||[colorScale](/javascript/api/excel/excel.conditionalformat#colorScale)|Renvoie les propriétés de mise en forme conditionnelle d’échelle de couleur si la mise en forme conditionnelle actuelle est un `ColorScale` type.|
 ||[colorScaleOrNullObject](/javascript/api/excel/excel.conditionalformat#colorScaleOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle d’échelle de couleur si la mise en forme conditionnelle actuelle est un `ColorScale` type.|
-||[custom](/javascript/api/excel/excel.conditionalformat#custom)|Renvoie les propriétés de mise en forme conditionnelle personnalisées si la mise en forme conditionnelle actuelle est un type personnalisé.|
-||[customOrNullObject](/javascript/api/excel/excel.conditionalformat#customOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle personnalisées si la mise en forme conditionnelle actuelle est un type personnalisé.|
+||[custom](/javascript/api/excel/excel.conditionalformat#custom)|Renvoie les propriétés de mise en forme conditionnelle personnalisée si la mise en forme conditionnelle actuelle est un type personnalisé.|
+||[customOrNullObject](/javascript/api/excel/excel.conditionalformat#customOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle personnalisée si la mise en forme conditionnelle actuelle est un type personnalisé.|
 ||[dataBar](/javascript/api/excel/excel.conditionalformat#dataBar)|Renvoie les propriétés de la barre de données si la mise en forme conditionnelle actuelle est une barre de données.|
 ||[dataBarOrNullObject](/javascript/api/excel/excel.conditionalformat#dataBarOrNullObject)|Renvoie les propriétés de la barre de données si la mise en forme conditionnelle actuelle est une barre de données.|
+||[delete()](/javascript/api/excel/excel.conditionalformat#delete__)|Supprime cette mise en forme conditionnelle.|
+||[getRange()](/javascript/api/excel/excel.conditionalformat#getRange__)|Renvoie la plage à laquelle s’applique la mise en forme conditionnelle.|
+||[getRangeOrNullObject()](/javascript/api/excel/excel.conditionalformat#getRangeOrNullObject__)|Renvoie la plage à laquelle le format conditionnel est appliqué.|
 ||[iconSet](/javascript/api/excel/excel.conditionalformat#iconSet)|Renvoie les propriétés de mise en forme conditionnelle du jeu d’icônes si la mise en forme conditionnelle actuelle est un `IconSet` type.|
 ||[iconSetOrNullObject](/javascript/api/excel/excel.conditionalformat#iconSetOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle du jeu d’icônes si la mise en forme conditionnelle actuelle est un `IconSet` type.|
 ||[id](/javascript/api/excel/excel.conditionalformat#id)|Priorité de la mise en forme conditionnelle dans la version `ConditionalFormatCollection` actuelle.|
 ||[preset](/javascript/api/excel/excel.conditionalformat#preset)|Renvoie la mise en forme conditionnelle des critères prédéfinits.|
 ||[presetOrNullObject](/javascript/api/excel/excel.conditionalformat#presetOrNullObject)|Renvoie la mise en forme conditionnelle des critères prédéfinits.|
+||[priority](/javascript/api/excel/excel.conditionalformat#priority)|Priorité (ou index) dans la collection de formats conditionnels dans qui ce format conditionnel existe actuellement.|
+||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopIfTrue)|Si les conditions de cette mise en forme conditionnelle sont remplies, aucun format de priorité inférieure ne doit prendre effet sur cette cellule.|
 ||[textComparison](/javascript/api/excel/excel.conditionalformat#textComparison)|Renvoie les propriétés de mise en forme conditionnelle de texte spécifiques si la mise en forme conditionnelle actuelle est un type de texte.|
 ||[textComparisonOrNullObject](/javascript/api/excel/excel.conditionalformat#textComparisonOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle de texte spécifiques si la mise en forme conditionnelle actuelle est un type de texte.|
 ||[topBottom](/javascript/api/excel/excel.conditionalformat#topBottom)|Renvoie les propriétés de mise en forme conditionnelle supérieure/inférieure si la mise en forme conditionnelle actuelle est un `TopBottom` type.|
 ||[topBottomOrNullObject](/javascript/api/excel/excel.conditionalformat#topBottomOrNullObject)|Renvoie les propriétés de mise en forme conditionnelle supérieure/inférieure si la mise en forme conditionnelle actuelle est un `TopBottom` type.|
 ||[type](/javascript/api/excel/excel.conditionalformat#type)|Type de mise en forme conditionnelle.|
-||[stopIfTrue](/javascript/api/excel/excel.conditionalformat#stopIfTrue)|Si les conditions de cette mise en forme conditionnelle sont remplies, aucun format de priorité inférieure ne doit prendre effet sur cette cellule.|
 |[ConditionalFormatCollection](/javascript/api/excel/excel.conditionalformatcollection)|[add(type: Excel. ConditionalFormatType)](/javascript/api/excel/excel.conditionalformatcollection#add_type_)|Ajoute un nouveau format conditionnel à la collection à la priorité première/supérieure.|
 ||[clearAll()](/javascript/api/excel/excel.conditionalformatcollection#clearAll__)|Efface toutes les mises en forme conditionnelles actives sur la plage spécifiée actuelle.|
 ||[getCount()](/javascript/api/excel/excel.conditionalformatcollection#getCount__)|Renvoie le nombre de formats conditionnels dans le manuel.|
@@ -96,13 +96,13 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 ||[opérateur](/javascript/api/excel/excel.conditionaliconcriterion#operator)|`greaterThan` ou `greaterThanOrEqual` pour chacun des types de règles pour la mise en forme conditionnelle d’icône.|
 ||[type](/javascript/api/excel/excel.conditionaliconcriterion#type)|Ce sur quoi la formule conditionnelle de l’icône doit être basée.|
 |[ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule)|[critère](/javascript/api/excel/excel.conditionalpresetcriteriarule#criterion)|Critère de la mise en forme conditionnelle.|
-|[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|Code couleur HTML représentant la couleur de la bordure, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+|[ConditionalRangeBorder](/javascript/api/excel/excel.conditionalrangeborder)|[color](/javascript/api/excel/excel.conditionalrangeborder#color)|Code couleur HTML représentant la couleur de la bordure, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[sideIndex](/javascript/api/excel/excel.conditionalrangeborder#sideIndex)|Valeur constante qui indique un côté spécifique de la bordure.|
 ||[style](/javascript/api/excel/excel.conditionalrangeborder#style)|L’une des constantes de style de ligne déterminant le style de ligne de la bordure.|
-|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[getItem(index: Excel. ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getItem_index_)|Obtient un objet de bordure à l’aide de son nom.|
-||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getItemAt_index_)|Obtient un objet de bordure à l’aide de son indice.|
-||[bas](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|Obtient la bordure inférieure.|
+|[ConditionalRangeBorderCollection](/javascript/api/excel/excel.conditionalrangebordercollection)|[bas](/javascript/api/excel/excel.conditionalrangebordercollection#bottom)|Obtient la bordure inférieure.|
 ||[count](/javascript/api/excel/excel.conditionalrangebordercollection#count)|Nombre d’objets de bordure de la collection.|
+||[getItem(index: Excel. ConditionalRangeBorderIndex)](/javascript/api/excel/excel.conditionalrangebordercollection#getItem_index_)|Obtient un objet de bordure à l’aide de son nom.|
+||[getItemAt(index: number)](/javascript/api/excel/excel.conditionalrangebordercollection#getItemAt_index_)|Obtient un objet de bordure à l’aide de son indice.|
 ||[items](/javascript/api/excel/excel.conditionalrangebordercollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 ||[left](/javascript/api/excel/excel.conditionalrangebordercollection#left)|Obtient la bordure gauche.|
 ||[right](/javascript/api/excel/excel.conditionalrangebordercollection#right)|Obtient la bordure droite.|
@@ -115,10 +115,10 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 ||[italic](/javascript/api/excel/excel.conditionalrangefont#italic)|Spécifie si la police est en italique.|
 ||[strikethrough](/javascript/api/excel/excel.conditionalrangefont#strikethrough)|Spécifie l’état de la police de type strikethrough.|
 ||[underline](/javascript/api/excel/excel.conditionalrangefont#underline)|Type de soulignement appliqué à la police.|
-|[ConditionalRangeFormat](/javascript/api/excel/excel.conditionalrangeformat)|[numberFormat](/javascript/api/excel/excel.conditionalrangeformat#numberFormat)|Représente le Excel de format numérique de la plage donnée.|
-||[Borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|Collection d’objets de bordure qui s’appliquent à la plage de mise en forme conditionnelle globale.|
+|[ConditionalRangeFormat](/javascript/api/excel/excel.conditionalrangeformat)|[Borders](/javascript/api/excel/excel.conditionalrangeformat#borders)|Collection d’objets de bordure qui s’appliquent à la plage de mise en forme conditionnelle globale.|
 ||[fill](/javascript/api/excel/excel.conditionalrangeformat#fill)|Renvoie l’objet de remplissage défini sur la plage de mise en forme conditionnelle globale.|
 ||[police](/javascript/api/excel/excel.conditionalrangeformat#font)|Renvoie l’objet de police défini sur la plage de mise en forme conditionnelle globale.|
+||[numberFormat](/javascript/api/excel/excel.conditionalrangeformat#numberFormat)|Représente le Excel de format numérique de la plage donnée.|
 |[ConditionalTextComparisonRule](/javascript/api/excel/excel.conditionaltextcomparisonrule)|[opérateur](/javascript/api/excel/excel.conditionaltextcomparisonrule#operator)|Opérateur de la mise en forme conditionnelle du texte.|
 ||[text](/javascript/api/excel/excel.conditionaltextcomparisonrule#text)|Valeur de texte de la mise en forme conditionnelle.|
 |[ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule)|[rank](/javascript/api/excel/excel.conditionaltopbottomrule#rank)|Rang compris entre 1 et 1000 pour les rangs numériques ou entre 1 et 100 pour les rangs en pourcentage.|

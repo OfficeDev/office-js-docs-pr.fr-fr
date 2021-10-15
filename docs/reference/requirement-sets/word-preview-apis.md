@@ -1,15 +1,15 @@
 ---
 title: API d’aperçu JavaScript pour Word
 description: Détails sur les API JavaScript word à venir.
-ms.date: 10/11/2021
+ms.date: 10/13/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: 67d49528e40c3e6331a874d7589142855861b06f
-ms.sourcegitcommit: fb4a55764fb60e826ad06d15d1539e41df503b65
+ms.openlocfilehash: ba33c6c53dd62aa0adc37b90963d35988165fa96
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2021
-ms.locfileid: "60356362"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367442"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -20,43 +20,11 @@ Les nouvelles API JavaScript pour Word sont d’abord introduites dans « aperç
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation. Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word.](/javascript/api/word?view=word-js-preview&preserve-view=true)
+Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation, à l’exception de celles qui sont disponibles uniquement [dans Word sur le web](#web-only-api-list). Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word.](/javascript/api/word?view=word-js-preview&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
-|[Corps](/javascript/api/word/word.body)|[getComments()](/javascript/api/word/word.body#getComments__)|Obtient les commentaires associés au corps.|
-||[notes de fin](/javascript/api/word/word.body#endnotes)|Obtient la collection de notes de fin dans le corps.|
-||[notes de bas de page](/javascript/api/word/word.body#footnotes)|Obtient la collection de notes de bas de page dans le corps.|
-||[type](/javascript/api/word/word.body#type)|Obtient le type du corps.|
-|[Comment](/javascript/api/word/word.comment)|[content](/javascript/api/word/word.comment#content)|Gtes ou définit le contenu du commentaire en tant que texte simple.|
-||[delete()](/javascript/api/word/word.comment#delete__)|Supprime le commentaire et ses réponses.|
-||[getRange()](/javascript/api/word/word.comment#getRange__)|Obtient la plage du document principal où se trouve le commentaire.|
-||[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtenir l’adresse email de l’auteur du commentaire.|
-||[authorName](/javascript/api/word/word.comment#authorName)|Obtient le nom de l’auteur du commentaire.|
-||[creationDate](/javascript/api/word/word.comment#creationDate)|Obtient la date de création du commentaire.|
-||[id](/javascript/api/word/word.comment#id)|ID|
-||[Réponses](/javascript/api/word/word.comment#replies)|Obtient la collection d’objets de réponse associés au commentaire.|
-||[reply(replyText: string)](/javascript/api/word/word.comment#reply_replyText_)|Ajoute une nouvelle réponse à la fin du fil de discussion de commentaires.|
-||[résolu](/javascript/api/word/word.comment#resolved)|Obtient ou définit l’état du thread de commentaire.|
-|[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#getFirst__)|Obtient le premier commentaire de la collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Obtient le premier commentaire ou objet null de la collection.|
-||[getItem(index : numérique)](/javascript/api/word/word.commentcollection#getItem_index_)|Obtient un objet comment par son index dans la collection.|
-||[items](/javascript/api/word/word.commentcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[CommentReply](/javascript/api/word/word.commentreply)|[content](/javascript/api/word/word.commentreply#content)|Obtient ou définit le contenu de la réponse au commentaire.|
-||[delete()](/javascript/api/word/word.commentreply#delete__)|Supprime la réponse de commentaire.|
-||[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|Obtenir l’adresse email de l’auteur de la réponse au commentaire.|
-||[authorName](/javascript/api/word/word.commentreply#authorName)|Obtenir le nom de l’auteur de la réponse au commentaire.|
-||[creationDate](/javascript/api/word/word.commentreply#creationDate)|Obtient la date de création de la réponse au commentaire.|
-||[id](/javascript/api/word/word.commentreply#id)|ID|
-||[parentComment](/javascript/api/word/word.commentreply#parentComment)|Obtient le commentaire parent de cette réponse.|
-|[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|Obtient la première réponse de commentaire dans la collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Obtient le premier objet de réponse de commentaire ou null de la collection.|
-||[getItem(index : numérique)](/javascript/api/word/word.commentreplycollection#getItem_index_)|Obtient un objet de réponse de commentaire par son index dans la collection.|
-||[items](/javascript/api/word/word.commentreplycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[ContentControl](/javascript/api/word/word.contentcontrol)|[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|Obtient les commentaires associés au corps.|
-||[notes de fin](/javascript/api/word/word.contentcontrol#endnotes)|Obtient la collection de notes de fin dans le contentcontrol.|
-||[notes de bas de page](/javascript/api/word/word.contentcontrol#footnotes)|Obtient la collection de notes de bas de page dans le contentcontrol.|
-||[onDataChanged](/javascript/api/word/word.contentcontrol#onDataChanged)|Se produit lorsque les données dans le contrôle de contenu sont modifiées.|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#onDataChanged)|Se produit lorsque les données dans le contrôle de contenu sont modifiées.|
 ||[onDeleted](/javascript/api/word/word.contentcontrol#onDeleted)|Se produit lorsque le contrôle de contenu est supprimé.|
 ||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onSelectionChanged)|Se produit lorsque la sélection dans le contrôle de contenu est modifiée.|
 |[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentControl)|Objet qui a levé l’événement.|
@@ -65,11 +33,11 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteAttribute_xpath__namespaceMappings__name_)|Supprime un attribut avec le nom donné de l’élément identifié par xpath.|
 ||[deleteElement(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#deleteElement_xpath__namespaceMappings_)|Supprime l’élément identifié par xpath.|
 ||[getXml()](/javascript/api/word/word.customxmlpart#getXml__)|Obtient le contenu XML complet de la partie XML personnalisée.|
+||[id](/javascript/api/word/word.customxmlpart#id)|Obtient l’ID de la partie XML personnalisée.|
 ||[insertAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#insertAttribute_xpath__namespaceMappings__name__value_)|Insère un attribut avec le nom et la valeur donnés à l’élément identifié par xpath.|
 ||[insertElement(xpath: string, xml: string, namespaceMappings: any, index?: number)](/javascript/api/word/word.customxmlpart#insertElement_xpath__xml__namespaceMappings__index_)|Insère le XML donné sous l’élément parent identifié par xpath à l’index de position enfant.|
-||[query(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#query_xpath__namespaceMappings_)|Interroge le contenu XML de la partie XML personnalisée.|
-||[id](/javascript/api/word/word.customxmlpart#id)|Obtient l’ID de la partie XML personnalisée.|
 ||[namespaceUri](/javascript/api/word/word.customxmlpart#namespaceUri)|Obtient l’URI d’espace de noms de la partie XML personnalisée.|
+||[query(xpath: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#query_xpath__namespaceMappings_)|Interroge le contenu XML de la partie XML personnalisée.|
 ||[setXml(xml: string)](/javascript/api/word/word.customxmlpart#setXml_xml_)|Définit le contenu XML complet de la partie XML personnalisée.|
 ||[updateAttribute(xpath: string, namespaceMappings: any, name: string, value: string)](/javascript/api/word/word.customxmlpart#updateAttribute_xpath__namespaceMappings__name__value_)|Met à jour la valeur d’un attribut avec le nom donné de l’élément identifié par xpath.|
 ||[updateElement(xpath: string, xml: string, namespaceMappings: any)](/javascript/api/word/word.customxmlpart#updateElement_xpath__xml__namespaceMappings_)|Met à jour le XML de l’élément identifié par xpath.|
@@ -85,11 +53,10 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[getOnlyItem()](/javascript/api/word/word.customxmlpartscopedcollection#getOnlyItem__)|Si la collection contient exactement un élément, cette méthode le renvoie.|
 ||[getOnlyItemOrNullObject()](/javascript/api/word/word.customxmlpartscopedcollection#getOnlyItemOrNullObject__)|Si la collection contient exactement un élément, cette méthode le renvoie.|
 ||[items](/javascript/api/word/word.customxmlpartscopedcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Document](/javascript/api/word/word.document)|[deleteBookmark(name: string)](/javascript/api/word/word.document#deleteBookmark_name_)|Supprime un signet, s’il existe, du document.|
+|[Document](/javascript/api/word/word.document)|[customXmlParts](/javascript/api/word/word.document#customXmlParts)|Obtient les parties XML personnalisées du document.|
+||[deleteBookmark(name: string)](/javascript/api/word/word.document#deleteBookmark_name_)|Supprime un signet, s’il existe, du document.|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.document#getBookmarkRange_name_)|Obtient la plage d’un signet.|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.document#getBookmarkRangeOrNullObject_name_)|Obtient la plage d’un signet.|
-||[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Obtient le corps des notes de fin du document.|
-||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Obtient le corps des notes de bas de page du document.|
 ||[ignorePunct](/javascript/api/word/word.document#ignorePunct)||
 ||[ignoreSpace](/javascript/api/word/word.document#ignoreSpace)||
 ||[matchCase](/javascript/api/word/word.document#matchCase)||
@@ -97,40 +64,21 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[matchSuffix](/javascript/api/word/word.document#matchSuffix)||
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
-||[customXmlParts](/javascript/api/word/word.document#customXmlParts)|Obtient les parties XML personnalisées du document.|
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|Se produit lorsqu’un contrôle de contenu est ajouté.|
-||[paramètres](/javascript/api/word/word.document#settings)|Obtient les paramètres du add-in dans le document.|
 ||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Effectue une recherche avec les searchOptions spécifiées sur l’étendue du document entier.|
-|[DocumentCreated](/javascript/api/word/word.documentcreated)|[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Supprime un signet, s’il existe, du document.|
+||[paramètres](/javascript/api/word/word.document#settings)|Obtient les paramètres du add-in dans le document.|
+|[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Obtient les parties XML personnalisées du document.|
+||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Supprime un signet, s’il existe, du document.|
 ||[getBookmarkRange(name: string)](/javascript/api/word/word.documentcreated#getBookmarkRange_name_)|Obtient la plage d’un signet.|
 ||[getBookmarkRangeOrNullObject(name: string)](/javascript/api/word/word.documentcreated#getBookmarkRangeOrNullObject_name_)|Obtient la plage d’un signet.|
-||[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Obtient les parties XML personnalisées du document.|
 ||[paramètres](/javascript/api/word/word.documentcreated#settings)|Obtient les paramètres du add-in dans le document.|
 |[InlinePicture](/javascript/api/word/word.inlinepicture)|[imageFormat](/javascript/api/word/word.inlinepicture#imageFormat)|Obtient le format de l’image fixe.|
 |[Liste](/javascript/api/word/word.list)|[getLevelFont(level: number)](/javascript/api/word/word.list#getLevelFont_level_)|Obtient la police de la puce, du numéro ou de l’image au niveau spécifié dans la liste.|
 ||[getLevelPicture(level: number)](/javascript/api/word/word.list#getLevelPicture_level_)|Obtient la représentation de chaîne codée en base 64 de l’image au niveau spécifié dans la liste.|
 ||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetLevelFont_level__resetFontName_)|Réinitialise la police de la puce, du numéro ou de l’image au niveau spécifié dans la liste.|
 ||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setLevelPicture_level__base64EncodedImage_)|Définit l’image au niveau spécifié dans la liste.|
-|[NoteItem](/javascript/api/word/word.noteitem)|[delete()](/javascript/api/word/word.noteitem#delete__)|Supprime l’élément de note.|
-||[getNext()](/javascript/api/word/word.noteitem#getNext__)|Obtient l’élément de note suivant du même type.|
-||[getNextOrNullObject()](/javascript/api/word/word.noteitem#getNextOrNullObject__)|Obtient l’élément de note suivant du même type.|
-||[body](/javascript/api/word/word.noteitem#body)|Représente l’objet body de l’élément de note.|
-||[reference](/javascript/api/word/word.noteitem#reference)|Représente une référence de note de bas de page/note de fin dans le document principal.|
-||[type](/javascript/api/word/word.noteitem#type)|Représente le type d’élément de note : note de bas de page ou note de fin.|
-|[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|Obtient le premier élément de note de cette collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|Obtient le premier élément de note de cette collection.|
-||[items](/javascript/api/word/word.noteitemcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
-|[Paragraph](/javascript/api/word/word.paragraph)|[getComments()](/javascript/api/word/word.paragraph#getComments__)|Obtient les commentaires associés au paragraphe.|
-||[notes de fin](/javascript/api/word/word.paragraph#endnotes)|Obtient la collection de notes de fin du paragraphe.|
-||[notes de bas de page](/javascript/api/word/word.paragraph#footnotes)|Obtient la collection de notes de bas de page du paragraphe.|
 |[Range](/javascript/api/word/word.range)|[getBookmarks(includeHidden?: boolean, includeAdjacent?: boolean)](/javascript/api/word/word.range#getBookmarks_includeHidden__includeAdjacent_)|Obtient les noms de tous les signets dans la plage ou qui se chevauchent.|
-||[getComments()](/javascript/api/word/word.range#getComments__)|Obtient les commentaires associés à la plage.|
 ||[insertBookmark(name: string)](/javascript/api/word/word.range#insertBookmark_name_)|Insère un signet sur la plage.|
-||[insertComment(commentText: string)](/javascript/api/word/word.range#insertComment_commentText_)|Insérez un commentaire sur la plage.|
-||[insertEndnote(insertText?: string)](/javascript/api/word/word.range#insertEndnote_insertText_)|Insère une note de fin.|
-||[insertFootnote(insertText?: string)](/javascript/api/word/word.range#insertFootnote_insertText_)|Insère une note de bas de page.|
-||[notes de fin](/javascript/api/word/word.range#endnotes)|Obtient la collection de notes de fin dans la plage.|
-||[notes de bas de page](/javascript/api/word/word.range#footnotes)|Obtient la collection de notes de bas de page dans la plage.|
 |[Paramètre](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete__)|Supprime le paramètre.|
 ||[key](/javascript/api/word/word.setting#key)|Obtient la clé du paramètre.|
 ||[value](/javascript/api/word/word.setting#value)|Obtient ou définit la valeur du paramètre.|
@@ -141,12 +89,71 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[getItemOrNullObject(key: string)](/javascript/api/word/word.settingcollection#getItemOrNullObject_key_)|Obtient un objet de paramètre par sa clé, qui est sensible à la cas.|
 ||[items](/javascript/api/word/word.settingcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[Table](/javascript/api/word/word.table)|[mergeCells(topRow: number, firstCell: number, bottomRow: number, lastCell: number)](/javascript/api/word/word.table#mergeCells_topRow__firstCell__bottomRow__lastCell_)|Fusionne les cellules délimitées inclusivement par une première et une dernière cellule.|
-||[notes de fin](/javascript/api/word/word.table#endnotes)|Obtient la collection de notes de fin du tableau.|
-||[notes de bas de page](/javascript/api/word/word.table#footnotes)|Obtient la collection de notes de bas de page du tableau.|
 |[TableCell](/javascript/api/word/word.tablecell)|[split(rowCount: number, columnCount: number)](/javascript/api/word/word.tablecell#split_rowCount__columnCount_)|Divise la cellule en nombre de lignes et de colonnes spécifié.|
 |[TableRow](/javascript/api/word/word.tablerow)|[insertContentControl()](/javascript/api/word/word.tablerow#insertContentControl__)|Insère un contrôle de contenu sur la ligne.|
-||[merge()](/javascript/api/word/word.tablerow#merge__)|Fusionne la ligne dans une cellule.|
-||[notes de fin](/javascript/api/word/word.tablerow#endnotes)|Obtient la collection de notes de fin dans la ligne du tableau.|
+||[merge()](/javascript/api/word/word.tablerow#merge__)|Fusionne la ligne en une seule cellule.|
+
+## <a name="web-only-api-list"></a>Liste des API web uniquement
+
+Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation uniquement dans Word sur le web. Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word.](/javascript/api/word?view=word-js-preview&preserve-view=true)
+
+| Classe | Champs | Description |
+|:---|:---|:---|
+|[Corps](/javascript/api/word/word.body)|[notes de fin](/javascript/api/word/word.body#endnotes)|Obtient la collection de notes de fin dans le corps.|
+||[notes de bas de page](/javascript/api/word/word.body#footnotes)|Obtient la collection de notes de bas de page dans le corps.|
+||[getComments()](/javascript/api/word/word.body#getComments__)|Obtient les commentaires associés au corps.|
+||[type](/javascript/api/word/word.body#type)|Obtient le type du corps.|
+|[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtenir l’adresse email de l’auteur du commentaire.|
+||[authorName](/javascript/api/word/word.comment#authorName)|Obtient le nom de l’auteur du commentaire.|
+||[content](/javascript/api/word/word.comment#content)|Obtient ou définit le contenu du commentaire en tant que texte simple.|
+||[creationDate](/javascript/api/word/word.comment#creationDate)|Obtient la date de création du commentaire.|
+||[delete()](/javascript/api/word/word.comment#delete__)|Supprime le commentaire et ses réponses.|
+||[getRange()](/javascript/api/word/word.comment#getRange__)|Obtient la plage du document principal où se trouve le commentaire.|
+||[id](/javascript/api/word/word.comment#id)|ID|
+||[Réponses](/javascript/api/word/word.comment#replies)|Obtient la collection d’objets de réponse associés au commentaire.|
+||[reply(replyText: string)](/javascript/api/word/word.comment#reply_replyText_)|Ajoute une nouvelle réponse à la fin du fil de discussion de commentaires.|
+||[résolu](/javascript/api/word/word.comment#resolved)|Obtient ou définit l’état du thread de commentaire.|
+|[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#getFirst__)|Obtient le premier commentaire de la collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Obtient le premier commentaire ou objet null de la collection.|
+||[getItem(index : numérique)](/javascript/api/word/word.commentcollection#getItem_index_)|Obtient un objet comment par son index dans la collection.|
+||[items](/javascript/api/word/word.commentcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|Obtenir l’adresse email de l’auteur de la réponse au commentaire.|
+||[authorName](/javascript/api/word/word.commentreply#authorName)|Obtenir le nom de l’auteur de la réponse au commentaire.|
+||[content](/javascript/api/word/word.commentreply#content)|Obtient ou définit le contenu de la réponse au commentaire.|
+||[creationDate](/javascript/api/word/word.commentreply#creationDate)|Obtient la date de création de la réponse au commentaire.|
+||[delete()](/javascript/api/word/word.commentreply#delete__)|Supprime la réponse de commentaire.|
+||[id](/javascript/api/word/word.commentreply#id)|ID|
+||[parentComment](/javascript/api/word/word.commentreply#parentComment)|Obtient le commentaire parent de cette réponse.|
+|[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|Obtient la première réponse de commentaire dans la collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Obtient le premier objet de réponse de commentaire ou null de la collection.|
+||[getItem(index : numérique)](/javascript/api/word/word.commentreplycollection#getItem_index_)|Obtient un objet de réponse de commentaire par son index dans la collection.|
+||[items](/javascript/api/word/word.commentreplycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[ContentControl](/javascript/api/word/word.contentcontrol)|[notes de fin](/javascript/api/word/word.contentcontrol#endnotes)|Obtient la collection de notes de fin dans le contentcontrol.|
+||[notes de bas de page](/javascript/api/word/word.contentcontrol#footnotes)|Obtient la collection de notes de bas de page dans le contentcontrol.|
+||[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|Obtient les commentaires associés au corps.|
+|[Document](/javascript/api/word/word.document)|[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Obtient le corps des notes de fin du document.|
+||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Obtient le corps des notes de bas de page du document.|
+|[NoteItem](/javascript/api/word/word.noteitem)|[body](/javascript/api/word/word.noteitem#body)|Représente l’objet body de l’élément de note.|
+||[delete()](/javascript/api/word/word.noteitem#delete__)|Supprime l’élément de note.|
+||[getNext()](/javascript/api/word/word.noteitem#getNext__)|Obtient l’élément de note suivant du même type.|
+||[getNextOrNullObject()](/javascript/api/word/word.noteitem#getNextOrNullObject__)|Obtient l’élément de note suivant du même type.|
+||[reference](/javascript/api/word/word.noteitem#reference)|Représente une référence de note de bas de page/note de fin dans le document principal.|
+||[type](/javascript/api/word/word.noteitem#type)|Représente le type d’élément de note : note de bas de page ou note de fin.|
+|[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|Obtient le premier élément de note de cette collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|Obtient le premier élément de note de cette collection.|
+||[items](/javascript/api/word/word.noteitemcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[Paragraph](/javascript/api/word/word.paragraph)|[notes de fin](/javascript/api/word/word.paragraph#endnotes)|Obtient la collection de notes de fin du paragraphe.|
+||[notes de bas de page](/javascript/api/word/word.paragraph#footnotes)|Obtient la collection de notes de bas de page du paragraphe.|
+||[getComments()](/javascript/api/word/word.paragraph#getComments__)|Obtient les commentaires associés au paragraphe.|
+|[Range](/javascript/api/word/word.range)|[notes de fin](/javascript/api/word/word.range#endnotes)|Obtient la collection de notes de fin dans la plage.|
+||[notes de bas de page](/javascript/api/word/word.range#footnotes)|Obtient la collection de notes de bas de page dans la plage.|
+||[getComments()](/javascript/api/word/word.range#getComments__)|Obtient les commentaires associés à la plage.|
+||[insertComment(commentText: string)](/javascript/api/word/word.range#insertComment_commentText_)|Insérez un commentaire sur la plage.|
+||[insertEndnote(insertText?: string)](/javascript/api/word/word.range#insertEndnote_insertText_)|Insère une note de fin.|
+||[insertFootnote(insertText?: string)](/javascript/api/word/word.range#insertFootnote_insertText_)|Insère une note de bas de page.|
+|[Table](/javascript/api/word/word.table)|[notes de fin](/javascript/api/word/word.table#endnotes)|Obtient la collection de notes de fin du tableau.|
+||[notes de bas de page](/javascript/api/word/word.table#footnotes)|Obtient la collection de notes de bas de page du tableau.|
+|[TableRow](/javascript/api/word/word.tablerow)|[notes de fin](/javascript/api/word/word.tablerow#endnotes)|Obtient la collection de notes de fin dans la ligne du tableau.|
 ||[notes de bas de page](/javascript/api/word/word.tablerow#footnotes)|Obtient la collection de notes de bas de page dans la ligne du tableau.|
 
 ## <a name="see-also"></a>Voir aussi

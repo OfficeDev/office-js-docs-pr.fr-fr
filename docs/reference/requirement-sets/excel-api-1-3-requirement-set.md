@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.3.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 45a0a3551662997984a5c999b62c651d81e243f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c7c39a341f635e3355014f75e32c1501124f99d9
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149232"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367459"
 ---
 # <a name="whats-new-in-excel-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Excel
 
@@ -26,20 +26,20 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[addFromNamedItem(name: string, bindingType: Excel. BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addFromNamedItem_name__bindingType__id_)|Ajoute une nouvelle liaison basée sur un élément nommé dans le classeur.|
 ||[addFromSelection(bindingType: Excel. BindingType, id: string)](/javascript/api/excel/excel.bindingcollection#addFromSelection_bindingType__id_)|Ajoute une nouvelle liaison basée sur la sélection en cours.|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[name](/javascript/api/excel/excel.pivottable#name)|Nom du tableau croisé dynamique.|
-||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|Feuille de calcul contenant le tableau croisé dynamique.|
 ||[refresh()](/javascript/api/excel/excel.pivottable#refresh__)|Actualise le tableau croisé dynamique.|
+||[worksheet](/javascript/api/excel/excel.pivottable#worksheet)|Feuille de calcul contenant le tableau croisé dynamique.|
 |[PivotTableCollection](/javascript/api/excel/excel.pivottablecollection)|[getItem(name: string)](/javascript/api/excel/excel.pivottablecollection#getItem_name_)|Obtient un tableau croisé dynamique par nom.|
 ||[items](/javascript/api/excel/excel.pivottablecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 ||[refreshAll()](/javascript/api/excel/excel.pivottablecollection#refreshAll__)|Actualise tous les tableaux croisés dynamiques de la collection.|
 |[Range](/javascript/api/excel/excel.range)|[getVisibleView()](/javascript/api/excel/excel.range#getVisibleView__)|Représente les lignes visibles de la plage en cours.|
-|[RangeView](/javascript/api/excel/excel.rangeview)|[formulas](/javascript/api/excel/excel.rangeview#formulas)|Représente la formule dans le style de notation A1.|
+|[RangeView](/javascript/api/excel/excel.rangeview)|[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Représente les adresses de cellule du `RangeView` .|
+||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|Nombre de colonnes visibles.|
+||[formulas](/javascript/api/excel/excel.rangeview#formulas)|Représente la formule dans le style de notation A1.|
 ||[formulasLocal](/javascript/api/excel/excel.rangeview#formulasLocal)|Représente la formule en notation A1, en utilisant le langage et les paramètres de format de nombre régionaux de l’utilisateur.|
 ||[formulasR1C1](/javascript/api/excel/excel.rangeview#formulasR1C1)|Représente la formule dans le style de notation R1C1.|
 ||[getRange()](/javascript/api/excel/excel.rangeview#getRange__)|Obtient la plage parent associée à l’actuel `RangeView` .|
-||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Représente le code de format de nombre d’Excel pour une cellule donnée.|
-||[cellAddresses](/javascript/api/excel/excel.rangeview#cellAddresses)|Représente les adresses de cellule du `RangeView` .|
-||[columnCount](/javascript/api/excel/excel.rangeview#columnCount)|Nombre de colonnes visibles.|
 ||[index](/javascript/api/excel/excel.rangeview#index)|Renvoie une valeur qui représente l’index du `RangeView` .|
+||[numberFormat](/javascript/api/excel/excel.rangeview#numberFormat)|Représente le code de format de nombre d’Excel pour une cellule donnée.|
 ||[rowCount](/javascript/api/excel/excel.rangeview#rowCount)|Nombre de lignes visibles.|
 ||[rows](/javascript/api/excel/excel.rangeview#rows)|Représente une collection d’affichages de plage associés à la plage.|
 ||[text](/javascript/api/excel/excel.rangeview#text)|Valeurs de texte de la plage spécifiée.|

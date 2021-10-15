@@ -1,24 +1,24 @@
 ---
 title: Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 description: Détails sur l’ensemble de conditions requises ExcelApiOnline.
-ms.date: 09/16/2021
+ms.date: 10/13/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b8d326e1a756a873fc19b3d78f795ebf04e5f4e
-ms.sourcegitcommit: a854a2fd2ad9f379a3ef712f307e0b1bb9b5b00d
+ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2021
-ms.locfileid: "59474335"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367326"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 
-L’ensemble de conditions requises est un ensemble de conditions requises spécial qui inclut des fonctionnalités qui ne sont disponibles que `ExcelApiOnline` pour Excel sur le Web. Les API de cet ensemble de conditions requises sont considérées comme des API de production (non sujettes à des modifications comportementales ou structurelles nondocumentées) pour l’application Excel sur le Web de production. `ExcelApiOnline`Les API sont considérées comme des API « d’aperçu » pour d’autres plateformes (Windows, Mac, iOS) et peuvent ne pas être pris en charge par l’une de ces plateformes.
+L’ensemble de conditions requises est un ensemble de conditions requises spécial qui inclut des fonctionnalités qui ne sont disponibles que `ExcelApiOnline` pour Excel sur le Web. Les API de cet ensemble de conditions requises sont considérées comme des API de production (non sujettes à des modifications comportementales ou structurelles nondocumentées) pour l Excel sur le Web application. `ExcelApiOnline`Les API sont considérées comme des API « d’aperçu » pour d’autres plateformes (Windows, Mac, iOS) et peuvent ne pas être pris en charge par l’une de ces plateformes.
 
 Lorsque les API de l’ensemble de conditions requises sont pris en charge sur toutes les plateformes, elles sont ajoutées à l’ensemble de conditions requises `ExcelApiOnline` publié suivant ( `ExcelApi 1.[NEXT]` ). Une fois que cette nouvelle exigence est publique, ces API sont supprimées de `ExcelApiOnline` . Il s’agit d’un processus de promotion similaire à une API passant de la version d’évaluation à la publication.
 
 > [!IMPORTANT]
-> `ExcelApiOnline` est un sur-ensemble de l’ensemble de conditions requises numérotées le plus récent.
+> `ExcelApiOnline` est un sur-ensemble de l’ensemble de conditions requises numérodé le plus récent.
 
 > [!IMPORTANT]
 > `ExcelApiOnline 1.1` est la seule version des API en ligne uniquement. Cela est dû au Excel sur le Web’une seule version disponible pour les utilisateurs qui est la dernière version.
@@ -27,7 +27,7 @@ Le tableau suivant fournit un résumé concis des API, tandis que le tableau de 
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
-| Workbooks liés | Gérer les liens entre les workbooks, y compris la prise en charge de l’actualisation et de la rupture des liens de ces derniers. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
+| Workbooks liés | Gérez les liens entre les workbooks, notamment la prise en charge de l’actualisation et de la rupture des liens de ces derniers. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | Vues de feuille nommée | Permet de contrôler par programme les affichages de feuille de calcul par utilisateur. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview), [NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
 
 ## <a name="recommended-usage"></a>Utilisation recommandée
@@ -47,7 +47,7 @@ Une fois que l’API se trouve dans un ensemble de conditions requises sur plusi
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+Le tableau suivant répertorie les Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -73,8 +73,30 @@ Le tableau suivant répertorie Excel api JavaScript actuellement incluses dans l
 ||[getItem(key: string)](/javascript/api/excel/excel.namedsheetviewcollection#getItem_key_)|Obtient une vue de feuille à l’aide de son nom.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.namedsheetviewcollection#getItemAt_index_)|Obtient une vue de feuille par son index dans la collection.|
 ||[items](/javascript/api/excel/excel.namedsheetviewcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[TableRowCollection](/javascript/api/excel/excel.tablerowcollection)|[deleteRows(rows: number[] \| TableRow[])](/javascript/api/excel/excel.tablerowcollection#deleteRows_rows_)|Supprimez plusieurs lignes d’un tableau.|
+||[deleteRowsAt(index: number, count?: number)](/javascript/api/excel/excel.tablerowcollection#deleteRowsAt_index__count_)|Supprimez un nombre spécifié de lignes d’un tableau, en commençant à un index donné.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedWorkbooks](/javascript/api/excel/excel.workbook#linkedWorkbooks)|Renvoie une collection de workbooks liés.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[namedSheetViews](/javascript/api/excel/excel.worksheet#namedSheetViews)|Renvoie une collection d’affichages de feuille présents dans la feuille de calcul.|
+||[onNameChanged](/javascript/api/excel/excel.worksheet#onNameChanged)|Se produit lorsque le nom de la feuille de calcul est modifié.|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheet#onVisibilityChanged)|Se produit lorsque la visibilité de la feuille de calcul est modifiée.|
+|[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[onMoved](/javascript/api/excel/excel.worksheetcollection#onMoved)|Se produit lorsqu’une feuille de calcul est déplacée par un utilisateur dans un workbook.|
+||[onNameChanged](/javascript/api/excel/excel.worksheetcollection#onNameChanged)|Se produit lorsque le nom de la feuille de calcul est modifié dans la collection de feuilles de calcul.|
+||[onVisibilityChanged](/javascript/api/excel/excel.worksheetcollection#onVisibilityChanged)|Se produit lorsque la visibilité de la feuille de calcul est modifiée dans la collection de feuilles de calcul.|
+|[WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs)|[positionAfter](/javascript/api/excel/excel.worksheetmovedeventargs#positionAfter)|Obtient la nouvelle position de la feuille de calcul, après le déplacement.|
+||[positionBefore](/javascript/api/excel/excel.worksheetmovedeventargs#positionBefore)|Obtient la position précédente de la feuille de calcul, avant le déplacement.|
+||[source](/javascript/api/excel/excel.worksheetmovedeventargs#source)|Source de l'événement.|
+||[type](/javascript/api/excel/excel.worksheetmovedeventargs#type)|Obtient le type de l’événement.|
+||[worksheetId](/javascript/api/excel/excel.worksheetmovedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul qui a été déplacée.|
+|[WorksheetNameChangedEventArgs](/javascript/api/excel/excel.worksheetnamechangedeventargs)|[nameAfter](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameAfter)|Obtient le nouveau nom de la feuille de calcul, après la modification du nom.|
+||[nameBefore](/javascript/api/excel/excel.worksheetnamechangedeventargs#nameBefore)|Obtient le nom précédent de la feuille de calcul, avant que le nom ne soit modifié.|
+||[source](/javascript/api/excel/excel.worksheetnamechangedeventargs#source)|Source de l'événement.|
+||[type](/javascript/api/excel/excel.worksheetnamechangedeventargs#type)|Obtient le type de l’événement.|
+||[worksheetId](/javascript/api/excel/excel.worksheetnamechangedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul avec le nouveau nom.|
+|[WorksheetVisibilityChangedEventArgs](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs)|[source](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#source)|Source de l'événement.|
+||[type](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#type)|Obtient le type de l’événement.|
+||[visibilityAfter](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityAfter)|Obtient le nouveau paramètre de visibilité de la feuille de calcul, après la modification de la visibilité.|
+||[visibilityBefore](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#visibilityBefore)|Obtient le paramètre de visibilité précédent de la feuille de calcul, avant la modification de la visibilité.|
+||[worksheetId](/javascript/api/excel/excel.worksheetvisibilitychangedeventargs#worksheetId)|Obtient l’ID de la feuille de calcul dont la visibilité a changé.|
 
 ## <a name="see-also"></a>Voir aussi
 

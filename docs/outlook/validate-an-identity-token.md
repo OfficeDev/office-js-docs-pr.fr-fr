@@ -1,14 +1,14 @@
 ---
 title: Valider un jeton d’identité de complément Outlook
 description: Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu.
-ms.date: 07/07/2020
+ms.date: 10/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b11cae1d773ea17b5e1dc06dcc57097d474162d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c22c174e6783a53e856e11e4338d0168cb974a20
+ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149256"
+ms.lasthandoff: 10/15/2021
+ms.locfileid: "60367480"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
@@ -47,7 +47,15 @@ Pour valider le contenu du jeton, vous devez vérifier les éléments suivants :
 
 ### <a name="verify-the-domain"></a>Vérifier le domaine
 
-Lorsque vous implémentez la logique de vérification décrite précédemment dans cette section, vous devez également exiger que le domaine de la revendication corresponde au domaine de découverte automatique `amurl` de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique. Pour en savoir plus, vous pouvez commencer par la découverte automatique [pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+Lorsque vous implémentez la logique de vérification décrite dans la section précédente, vous devez également exiger que le domaine de la revendication corresponde au domaine de découverte automatique `amurl` de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique [pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+
+- Par Exchange Online, confirmez qu’il s’agit d’un domaine connu ( ou qu’il appartient à un cloud spécifique à la géo ou à la spécialité ( Office 365 URL et `amurl` https://outlook.office365.com:443/autodiscover/metadata/json/1) plages d’adresses[IP](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)).
+
+- Si votre service de add-in dispose d’une configuration qui existe déjà avec le client de l’utilisateur, vous pouvez établir si cette configuration `amurl` est fiable.
+
+- Pour un [déploiement Exchange hybride,](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true)utilisez la découverte automatique basée sur OAuth pour vérifier le domaine attendu pour l’utilisateur. Toutefois, alors que l’utilisateur devra s’authentifier dans le cadre du flux de découverte automatique, votre module de découverte automatique ne doit jamais collecter les informations d’identification de l’utilisateur et s’authentifier de base.
+
+Si votre application ne peut pas vérifier l’utilisation de l’une de ces options, vous pouvez choisir de l’arrêter normalement avec une notification appropriée à l’utilisateur si l’authentification est nécessaire pour le flux de travail du `amurl` module.
 
 ## <a name="validate-the-identity-token-signature"></a>Validation de la signature du jeton d’identité
 
@@ -102,7 +110,7 @@ Une fois que vous avez trouvé la bonne clé publique, vérifiez la signature. L
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>Calculer l’ID unique d’un compte Exchange
 
-Vous pouvez créer un identificateur unique pour un compte Exchange en concatenant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange du compte. Lorsque vous avez cet identificateur unique, vous pouvez l’utiliser pour créer un système de connexion unique (SSO) pour le service Web de votre complément Outlook. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, consultez la section [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
+Créez un identificateur unique pour un compte Exchange en concatenant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange pour le compte. Lorsque vous avez cet identificateur unique, utilisez-le pour créer un système d' sign-on unique (SSO) pour Outlook service web de votre application. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, consultez la section [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="use-a-library-to-validate-the-token"></a>Utiliser une bibliothèque pour valider le jeton
 
