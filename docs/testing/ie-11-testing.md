@@ -3,12 +3,12 @@ title: Test d’Internet Explorer 11
 description: Testez votre Office sur Internet Explorer 11.
 ms.date: 10/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cfa6a35565fdca28eab9734ccde9fc8fbb2e8270
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: e64ce43b4b105b54ed5fcf3fa260ef7f81a04520
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250517"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537631"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre Office sur Internet Explorer 11
 
@@ -55,7 +55,7 @@ Ces instructions supposent que vous avez déjà installé un projet Office Yo. S
     ```
 
 > [!TIP]
-> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1, 10 et 11, ainsi que différentes versions de Office. Pour plus d’informations, voir [Navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office et comment revenir à une version antérieure de [Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
+> Il n’est pas nécessaire d’utiliser cette commande, mais elle doit aider à déboguer la plupart des problèmes liés au runtime d’Internet Explorer 11. Pour une robustesse totale, vous devez tester l’utilisation d’ordinateurs avec différentes combinaisons de Windows 7, 8.1, 10 et 11, ainsi que différentes versions de Office. Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [How to revert to an earlier version of Office](https://support.microsoft.com/topic/2bd5c457-a917-d57e-35a1-f709e3dda841).
 
 ### <a name="command-options"></a>Options de commande
 
@@ -69,5 +69,5 @@ La `office-addin-dev-settings webview` commande peut également prendre un certa
 
 * [Test et débogage de compléments Office](test-debug-office-add-ins.md)
 * [Chargement de la version test des compléments Office](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-* [Déboguer des applications à l’aide des outils de développement sur Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
+* [Déboguer des applications à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 * [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md)

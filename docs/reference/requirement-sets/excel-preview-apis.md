@@ -1,15 +1,15 @@
 ---
 title: Version d’évaluation API JavaScript Excel
 description: Détails sur les API JavaScript Excel à venir.
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c60fa7fe41a9606150b5a83c4d611c97427d1ab
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: a7f1c81f75243619f562d901cb78e16bcba676d2
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367473"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537561"
 ---
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
@@ -21,19 +21,17 @@ Le tableau suivant fournit un résumé concis des API, tandis que le tableau de 
 
 | Fonctionnalité | Description | Objets pertinents |
 |:--- |:--- |:--- |
-| Tables de données de graphique | Contrôler l’apparence, la mise en forme et la visibilité des tables de données sur les graphiques. | [Chart](/javascript/api/excel/excel.chart), [ChartDataTable](/javascript/api/excel/excel.chartdatatable), [ChartDataTableFormat](/javascript/api/excel/excel.chartdatatableformat) |
 | Types de données personnalisés | Extension des types de données Excel existants, y compris la prise en charge des nombres formatés et des images web. | [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue), [CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes), [CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes), [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue), [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue), [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue), [StringCellValue](/javascript/api/excel/excel.stringcellvalue), [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue), [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) |
-| Erreurs de types de données personnalisés| Objets d’erreur qui la prise en charge des types de données personnalisés. | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue), [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue), [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue), [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue), [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue), [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue), [GettingDataErrorCellValuee](/javascript/api/excel/excel.gettingdataerrorcellvalue), [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue), [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue), [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue), [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue), [RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue), [SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue), [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|
+| Erreurs de types de données personnalisés | Objets d’erreur qui la prise en charge des types de données personnalisés. | [BlockedErrorCellValue](/javascript/api/excel/excel.blockederrorcellvalue), [BusyErrorCellValue](/javascript/api/excel/excel.busyerrorcellvalue), [CalcErrorCellValue](/javascript/api/excel/excel.calcerrorcellvalue), [ConnectErrorCellValue](/javascript/api/excel/excel.connecterrorcellvalue), [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue), [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue), [GettingDataErrorCellValuee](/javascript/api/excel/excel.gettingdataerrorcellvalue), [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue), [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue), [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue), [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue), [RefErrorCellValue](/javascript/api/excel/excel.referrorcellvalue), [SpillErrorCellValue](/javascript/api/excel/excel.spillerrorcellvalue), [ValueErrorCellValue](/javascript/api/excel/excel.valueerrorcellvalue)|
 | Tâches de document | Transformez les commentaires en tâches affectées aux utilisateurs. | [DocumentTask](/javascript/api/excel/excel.documenttask) |
 | Identités | Gérer les identités des utilisateurs, y compris le nom d’affichage et l’adresse e-mail. | [Identity](/javascript/api/excel/excel.identity), [IdentityCollection](/javascript/api/excel/excel.identitycollection), [IdentityEntity](/javascript/api/excel/excel.identityentity) |
-| Types de données liées | Ajoute la prise en charge des types de données connectés Excel à partir de sources externes. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype)|
+| Types de données liées | Ajoute la prise en charge des types de données connectés Excel à partir de sources externes. | [LinkedDataType](/javascript/api/excel/excel.linkeddatatype), [LinkedDataTypeAddedEventArgs](/javascript/api/excel/excel.linkeddatatypeaddedeventargs), [LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection) |
 | Styles de tableau | Permet de contrôler la police, la bordure, la couleur de remplissage et d’autres aspects des styles de tableau. | [Tableau](/javascript/api/excel/excel.table), [Tableau croisé dynamique](/javascript/api/excel/excel.pivottable), [Slicer](/javascript/api/excel/excel.slicer) |
-| Requêtes | Récupérer les attributs de requête tels que le nom, la date d’actualisation et le nombre de requêtes. | [Query](/javascript/api/excel/excel.query), [QueryCollection](/javascript/api/excel/excel.querycollection)|
-| Protection de feuille de calcul | Empêcher les utilisateurs non autorisés d’apporter des modifications à des plages spécifiées dans une feuille de calcul. | [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection), [WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs), [AllowEditRange](/javascript/api/excel/excel.alloweditrange), [AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection), [AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions) |
+| Protection de feuille de calcul | Empêcher les utilisateurs non autorisés d’apporter des modifications à des plages spécifiées dans une feuille de calcul. | [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection), [AllowEditRange](/javascript/api/excel/excel.alloweditrange), [AllowEditRangeCollection](/javascript/api/excel/excel.alloweditrangecollection), [AllowEditRangeOptions](/javascript/api/excel/excel.alloweditrangeoptions) |
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript Excel.](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
+Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), voir toutes les API [JavaScript](/javascript/api/excel?view=excel-js-preview&preserve-view=true)Excel.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -170,7 +168,7 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 ||[source](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#source)|Obtient la source de l’événement.|
 ||[type](/javascript/api/excel/excel.linkeddatatypeaddedeventargs#type)|Obtient le type de l’événement.|
 |[LinkedDataTypeCollection](/javascript/api/excel/excel.linkeddatatypecollection)|[getCount()](/javascript/api/excel/excel.linkeddatatypecollection#getCount__)|Obtient le nombre de types de données liées dans la collection.|
-||[getItem(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|Obtient un type de données lié par ID de service.|
+||[getItem(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItem_key_)|Obtient un type de données liées par ID de service.|
 ||[getItemAt(index: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemAt_index_)|Obtient un type de données liées par son index dans la collection.|
 ||[getItemOrNullObject(key: number)](/javascript/api/excel/excel.linkeddatatypecollection#getItemOrNullObject_key_)|Obtient un type de données liées par ID.|
 ||[items](/javascript/api/excel/excel.linkeddatatypecollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
@@ -222,7 +220,7 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#errorType)|Représente le type de `ErrorCellValue` .|
 ||[primitive](/javascript/api/excel/excel.spillerrorcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
 ||[primitiveType](/javascript/api/excel/excel.spillerrorcellvalue#primitiveType)|Représente la valeur renvoyée par une `Range.valueTypes` cellule avec cette valeur.|
-||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|Représente le nombre de colonnes qui seraient déversées en l’absence de #SPILL ! erreur.|
+||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#spilledColumns)|Représente le nombre de colonnes qui seraient déversées s’il n’y avait #SPILL ! erreur.|
 ||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#spilledRows)|Représente le nombre de lignes qui seraient surdessin s’il n’y avait #SPILL ! erreur.|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#type)|Représente le type de cette valeur de cellule.|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[primitive](/javascript/api/excel/excel.stringcellvalue#primitive)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
@@ -254,9 +252,9 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 ||[type](/javascript/api/excel/excel.webimagecellvalue#type)|Représente le type de cette valeur de cellule.|
 |[Workbook](/javascript/api/excel/excel.workbook)|[linkedDataTypes](/javascript/api/excel/excel.workbook#linkedDataTypes)|Renvoie une collection de types de données liées qui font partie du manuel.|
 ||[showPivotFieldList](/javascript/api/excel/excel.workbook#showPivotFieldList)|Spécifie si le volet liste des champs du tableau croisé dynamique est affiché au niveau du workbook.|
-||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches présentes dans le manuel.|
+||[tasks](/javascript/api/excel/excel.workbook#tasks)|Renvoie une collection de tâches qui sont présentes dans le workbook.|
 ||[use1904DateSystem](/javascript/api/excel/excel.workbook#use1904DateSystem)|True si le classeur utilise le calendrier depuis 1904.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|Se produit lorsqu’un filtre est appliqué à une feuille de calcul spécifique.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[onFiltered](/javascript/api/excel/excel.worksheet#onFiltered)|Se produit lorsqu’un filtre est appliqué sur une feuille de calcul spécifique.|
 ||[tasks](/javascript/api/excel/excel.worksheet#tasks)|Renvoie une collection de tâches présentes dans la feuille de calcul.|
 |[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection)|[addFromBase64(base64File: string, sheetNamesToInsert?: string[], positionType?: Excel.WorksheetPositionType, relativeTo?: Worksheet \| string)](/javascript/api/excel/excel.worksheetcollection#addFromBase64_base64File__sheetNamesToInsert__positionType__relativeTo_)|Insère les feuilles de calcul spécifiées d’un classeur dans le classeur actif.|
 ||[onFiltered](/javascript/api/excel/excel.worksheetcollection#onFiltered)|Se produit lorsqu’un filtre de la feuille de calcul est appliqué dans le classeur.|
@@ -271,9 +269,9 @@ Le tableau suivant répertorie les Excel api JavaScript actuellement en prévisu
 ||[resumeProtection()](/javascript/api/excel/excel.worksheetprotection#resumeProtection__)|Reprend la protection de feuille de calcul pour l’objet de feuille de calcul donné pour l’utilisateur dans une session donnée.|
 ||[setPassword(password?: string)](/javascript/api/excel/excel.worksheetprotection#setPassword_password_)|Modifie le mot de passe associé à `WorksheetProtection` l’objet.|
 ||[updateOptions(options: Excel. WorksheetProtectionOptions)](/javascript/api/excel/excel.worksheetprotection#updateOptions_options_)|Modifiez les options de protection de feuille de calcul associées à `WorksheetProtection` l’objet.|
-|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[allowEditRangesChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#allowEditRangesChanged)|Spécifie si l’un des `AllowEditRange` objets a changé.|
+|[WorksheetProtectionChangedEventArgs](/javascript/api/excel/excel.worksheetprotectionchangedeventargs)|[allowEditRangesChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#allowEditRangesChanged)|Indique si l’un des `AllowEditRange` objets a changé.|
 ||[protectionOptionsChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#protectionOptionsChanged)|Spécifie si les changements `WorksheetProtectionOptions` ont été faits.|
-||[sheetPasswordChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#sheetPasswordChanged)|Spécifie si le mot de passe de la feuille de calcul a changé.|
+||[sheetPasswordChanged](/javascript/api/excel/excel.worksheetprotectionchangedeventargs#sheetPasswordChanged)|Indique si le mot de passe de la feuille de calcul a changé.|
 
 ## <a name="see-also"></a>Voir aussi
 

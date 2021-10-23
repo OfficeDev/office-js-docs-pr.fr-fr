@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
-ms.date: 09/22/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d58df95f1e530039e2333b8a6b323b99e6718013
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 43007ece67d85f584a682b7503f1b59e0d19ad5b
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990704"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537505"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
@@ -19,9 +19,9 @@ Vous pouvez utiliser le chargement de version test pour installer un complément
 
 ## <a name="sideload-automatically"></a>Chargement de version de version de version automatique
 
-Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de recharger une version de version par le biais de la ligne de commande. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
+Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de recharger une version de version par le biais de la ligne de commande Windows. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
 
-1. À l’aide de la ligne de commande, accédez au répertoire racine de votre projet de add-in généré par Yeoman. Exécutez la commande `npm start`.
+1. Sur Windows, ouvrez une invite de commandes et accédez au répertoire racine de votre projet de add-in généré par Yeoman. Exécutez la commande `npm start`.
 
 1. Votre Outlook de bureau est automatiquement chargé de manière Outlook sur votre ordinateur de bureau. Une boîte de dialogue s’affiche, indiquant qu’il y a une tentative de chargement de version de chargement du module, répertoriant le nom et l’emplacement du fichier manifeste. Sélectionnez **OK,** qui enregistre le manifeste.
 
@@ -89,7 +89,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 ### <a name="outlook-on-the-desktop"></a>Outlook sur le bureau
 
-#### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
+### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
 
 1. Ouvrez Outlook 2016 ou ultérieurement sur Windows ou Mac.
 
@@ -116,7 +116,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-#### <a name="outlook-2013"></a>Outlook 2013
+### <a name="outlook-2013"></a>Outlook 2013
 
 1. Ouvrez Outlook 2013 sur Windows.
 

@@ -1,15 +1,15 @@
 ---
 title: Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 description: Détails sur l’ensemble de conditions requises ExcelApiOnline.
-ms.date: 10/13/2021
+ms.date: 10/14/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: ae014930d3ec11d52b3904ee1205b670f8d3790f
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: bd1f62b92b9a08d23daf77f8f4b86c60333faab3
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367326"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537589"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 
@@ -29,6 +29,7 @@ Le tableau suivant fournit un résumé concis des API, tandis que le tableau de 
 |:--- |:--- |:--- |
 | Workbooks liés | Gérez les liens entre les workbooks, notamment la prise en charge de l’actualisation et de la rupture des liens de ces derniers. | [LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook), [LinkedWorkbookCollection](/javascript/api/excel/excel.linkedworkbookcollection) |
 | Vues de feuille nommée | Permet de contrôler par programme les affichages de feuille de calcul par utilisateur. | [NamedSheetView](/javascript/api/excel/excel.namedsheetview), [NamedSheetViewCollection](/javascript/api/excel/excel.namedsheetviewcollection) |
+| Événements de déplacement de feuille de calcul | Détecter le moment où les feuilles de calcul sont déplacées dans une collection, la position de la feuille de calcul et la source de la modification. | [WorksheetCollection](/javascript/api/excel/excel.worksheetcollection), [WorksheetMovedEventArgs](/javascript/api/excel/excel.worksheetmovedeventargs) |
 
 ## <a name="recommended-usage"></a>Utilisation recommandée
 

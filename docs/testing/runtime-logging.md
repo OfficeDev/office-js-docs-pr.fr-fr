@@ -3,12 +3,12 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 333096d1ea63696e854b35c103da5d5670a940f3
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: b5fdd28f95d4513c9364ce0bacbfe6f27cc9779c
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138668"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537617"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
@@ -141,4 +141,5 @@ Vous pouvez afficher des messages dans le fichier journal qui sont source de con
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Vider le cache Office](clear-cache.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
-- [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [Déboguer des applications à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Déboguer des applications à l’aide des outils de développement pour l’héritage Edge](debug-add-ins-using-devtools-edge-legacy.md)

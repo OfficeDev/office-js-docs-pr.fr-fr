@@ -4,12 +4,12 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.4.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 297f0d2a9c892800a5f26ecd29be0c7587bc52fc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: e8a38d45a73560cade580cf5f2f9a0892790b38d
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153003"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537477"
 ---
 # <a name="whats-new-in-excel-javascript-api-14"></a>Nouveautés de l’API JavaScript 1.4 pour Excel
 
@@ -61,7 +61,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[NamedItem](/javascript/api/excel/excel.nameditem)|[comment](/javascript/api/excel/excel.nameditem#comment)|Spécifie le commentaire associé à ce nom.|
 ||[delete()](/javascript/api/excel/excel.nameditem#delete__)|Supprime le nom donné.|
 ||[getRangeOrNullObject()](/javascript/api/excel/excel.nameditem#getRangeOrNullObject__)|Renvoie l’objet de plage qui est associé au nom.|
-||[scope](/javascript/api/excel/excel.nameditem#scope)|Spécifie si le nom est d’étendue au workbook ou à une feuille de calcul spécifique.|
+||[étendue](/javascript/api/excel/excel.nameditem#scope)|Spécifie si le nom est d’étendue au workbook ou à une feuille de calcul spécifique.|
 ||[worksheet](/javascript/api/excel/excel.nameditem#worksheet)|Renvoie la feuille de calcul dans laquelle est inclus l’élément nommé.|
 ||[worksheetOrNullObject](/javascript/api/excel/excel.nameditem#worksheetOrNullObject)|Renvoie la feuille de calcul dans laquelle l’élément nommé est d’étendue.|
 |[NamedItemCollection](/javascript/api/excel/excel.nameditemcollection)|[add(name: string, reference: Range \| string, comment?: string)](/javascript/api/excel/excel.nameditemcollection#add_name__reference__comment_)|Ajoute un nouveau nom à la collection de l’étendue donnée.|
@@ -76,7 +76,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 |[Paramètre](/javascript/api/excel/excel.setting)|[delete()](/javascript/api/excel/excel.setting#delete__)|Supprime le paramètre.|
 ||[key](/javascript/api/excel/excel.setting#key)|Clé qui représente l’ID du paramètre.|
 ||[value](/javascript/api/excel/excel.setting#value)|Représente la valeur stockée pour ce paramètre.|
-|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number \| boolean \| Date Array \| <any> \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|Définit ou ajoute le paramètre spécifié dans le classeur.|
+|[SettingCollection](/javascript/api/excel/excel.settingcollection)|[add(key: string, value: string \| number \| boolean \| Date Array \| \| any)](/javascript/api/excel/excel.settingcollection#add_key__value_)|Définit ou ajoute le paramètre spécifié dans le classeur.|
 ||[getCount()](/javascript/api/excel/excel.settingcollection#getCount__)|Obtient le nombre de paramètres de la collection.|
 ||[getItem(key: string)](/javascript/api/excel/excel.settingcollection#getItem_key_)|Obtient une entrée de paramètre via la clé.|
 ||[getItemOrNullObject(key: string)](/javascript/api/excel/excel.settingcollection#getItemOrNullObject_key_)|Obtient une entrée de paramètre via la clé.|

@@ -3,12 +3,12 @@ title: Complément Microsoft Office Extension de débogueur pour Visual Studio C
 description: Utilisez l’extension Visual Studio Code de Microsoft Office déboguer votre Office de débogage.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eb71ec1bd52198af32129882cb531451fff422a
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 56dee52f71bfb460abbadafb0cdfd82f8f7cb548
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138638"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537638"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
@@ -84,7 +84,6 @@ Ces instructions supposent que vous avez de l’expérience en utilisant la lign
 ## <a name="see-also"></a>Voir aussi
 
 - [Test et débogage de compléments Office](test-debug-office-add-ins.md)
-
-- [Déboguer des applications à l’aide des outils de développement Windows](debug-add-ins-using-f12-developer-tools-on-windows.md)
-
+- [Déboguer des applications à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Déboguer des applications à l’aide des outils de développement pour l’héritage Edge](debug-add-ins-using-devtools-edge-legacy.md)
 - [Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)](debug-desktop-using-edge-chromium.md)

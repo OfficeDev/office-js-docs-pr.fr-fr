@@ -1,14 +1,14 @@
 ---
 title: Obtenir ou modifier des destinataires dans un complément Outlook
 description: Découvrez comment obtenir, définir ou ajouter des destinataires d’un message ou un rendez-vous dans un complément Outlook.
-ms.date: 12/10/2019
+ms.date: 10/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ce4ad1af913362965fd4e3bfe95918a6a9b10989
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c85a49ea3c409b64e0bd62f3eae3aa79dd614568
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153124"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537456"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -54,8 +54,9 @@ Pour utiliser une méthode de rappel pour vérifier l’état, les résultats et
 
 Notez que, étant donné que la méthode est asynchrone, si des actions ultérieures dépendent de l’obtention réussie des destinataires, vous devez organiser votre code pour démarrer ces actions uniquement dans la méthode de rappel correspondante lorsque l’appel `getAsync` asynchrone est terminé.
 
-
-
+> [!IMPORTANT]
+> Dans Outlook sur le web, si un utilisateur a créé un nouveau message en activant le lien d’adresse de messagerie d’un contact à partir de son contact ou de sa carte de visite, l’appel de votre add-in ne retourne actuellement pas de valeur dans la propriété de l’objet `Recipients.getAsync` `displayName` `EmailAddressDetails` associé.
+> Pour plus d’informations, reportez-vous à la [GitHub problème.](https://github.com/OfficeDev/office-js-docs-pr/issues/2962)
 
 ```js
 var item;

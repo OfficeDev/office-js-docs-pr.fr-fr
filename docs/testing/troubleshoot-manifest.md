@@ -3,12 +3,12 @@ title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un Office à l’aide du schéma XML et d’autres outils.
 ms.date: 09/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b84461a8062ac0ca0300f869fcf4dba0019a6a9b
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: e9af96db7fbbeaf21274d4c5980afe0f4e9be3c5
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138610"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537610"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -74,5 +74,6 @@ Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définitio
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
 - [Vider le cache Office](clear-cache.md)
 - [Déboguer votre complément avec la journalisation de l’exécution](runtime-logging.md)
-- [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
-- [Débogage des compléments Office](debug-add-ins-using-f12-developer-tools-on-windows.md)
+- [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
+- [Déboguer des applications à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Déboguer des applications à l’aide des outils de développement pour l’héritage Edge](debug-add-ins-using-devtools-edge-legacy.md)
