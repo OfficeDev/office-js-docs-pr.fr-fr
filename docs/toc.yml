@@ -267,8 +267,10 @@ items:
                 href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
               - name: Attacher un débogueur à partir du volet Office
                 href: testing/attach-debugger-from-task-pane.md
-              - name: Débogage à l’aide des outils de développement
-                href: testing/debug-add-ins-using-f12-developer-tools-on-windows.md
+              - name: "Déboguer à l’aide des outils de développement pour Internet\_Explorer"
+                href: testing/debug-add-ins-using-f12-tools-ie.md
+              - name: Déboguer à l’aide des outils de développement pour la version héritée Edge
+                href: testing/debug-add-ins-using-devtools-edge-legacy.md
               - name: Débogage à l’aide de Microsoft Edge WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
@@ -576,6 +578,8 @@ items:
               - name: Ensemble de conditions requises pour ExcelApi en ligne uniquement
                 href: reference/requirement-sets/excel-api-online-requirement-set.md
                 displayName: Excel
+              - name: Ensemble de conditions requises ExcelApi 1.14
+                href: reference/requirement-sets/excel-api-1-14-requirement-set.md
               - name: Ensemble de pré-requise ExcelApi 1.13
                 href: reference/requirement-sets/excel-api-1-13-requirement-set.md
                 displayName: Excel
@@ -799,7 +803,7 @@ items:
       - name: Documentation sur les compléments OneNote
         href: onenote/index.yml
         displayName: OneNote
-      - name: Vue d'ensemble
+      - name: Vue d’ensemble
         href: onenote/onenote-add-ins-programming-overview.md
         displayName: OneNote
       - name: Créer votre premier complément OneNote
