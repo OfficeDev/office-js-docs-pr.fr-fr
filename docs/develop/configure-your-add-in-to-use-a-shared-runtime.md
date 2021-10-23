@@ -4,12 +4,12 @@ title: Configurez votre complément Office pour utiliser un runtime JavaScript p
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: 95a4cb410bf92a68c1790e3fba67ea482bdc78b6
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1c80247346c6303c552558894357db71669a9376
+ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138471"
+ms.lasthandoff: 10/22/2021
+ms.locfileid: "60537463"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -224,9 +224,9 @@ Pour Office sur Windows, le runtime partagé utilise Microsoft Edge avec WebView
 
 ![Diagramme d’une fonction personnalisée, du volet des tâches et des boutons du ruban qui s’exécutent tous dans un runtime de navigateur partagé dans Excel.](../images/custom-functions-in-browser-runtime.png)
 
-### <a name="debugging"></a>Débogage
+### <a name="debug"></a>Débogage
 
-Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Visual Studio Code pour déboguer des fonctions personnalisées dans Excel sur Windows à cette date. Vous devez utiliser les outils de développement à la place. Pour plus d'informations, voir le [Débogage des compléments avec les outils de développement sur Windows](../testing/debug-add-ins-using-f12-developer-tools-on-windows.md).
+Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Visual Studio Code pour déboguer des fonctions personnalisées dans Excel sur Windows à cette date. Vous devez utiliser les outils de développement à la place. Pour plus d’informations, voir [Déboguer des compléments à l’aide des outils de développeur pour Internet Explorer](../testing/debug-add-ins-using-f12-tools-ie.md) ou [Déboguer des compléments à l’aide des outils de développeur pour la version héritée Edge](../testing/debug-add-ins-using-devtools-edge-legacy.md).
 
 ### <a name="multiple-task-panes"></a>Multiples volets des tâches
 
