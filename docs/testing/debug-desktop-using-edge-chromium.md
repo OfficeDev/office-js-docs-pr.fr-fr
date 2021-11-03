@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)
 description: Découvrez comment déboguer un complément Office qui utilise Microsoft Edge WebView2 (avec Chromium) à l’aide du débogueur pour l’extension Microsoft Edge dans VS Code.
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 8ee266b3197a2b02dd4d072b6666cd68add6fec9
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138645"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681265"
 ---
 # <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Déboguer un complément à l’aide de Microsoft Edge WebView2
 
@@ -25,8 +25,12 @@ L’exécution d’un complément Office sur Windows peut utiliser le débogueur
 
 1. Créez un projet à l’aide du [générateur Yoman pour complément Office](https://github.com/OfficeDev/generator-office). Vous pouvez utiliser l’un de nos guides de démarrage rapide, tels que le [Démarrage rapide du complément Outlook](../quickstarts/outlook-quickstart.md) pour pouvoir exécuter cette opération.
 
-    > [!TIP]
-    > Si vous n’utilisez pas de générateur Yeoman basé sur un complément, vous pouvez être invité à ajuster une clé de Registre. Dans le dossier racine de votre projet, exécutez ce qui suit en ligne de commande.`office-add-in-debugging start <your manifest path>`
+   > [!TIP]
+   > Si vous n’utilisez pas de générateur Yeoman basé sur un complément, vous pouvez être invité à ajuster une clé de Registre. Dans le dossier racine de votre projet, exécutez ce qui suit dans la ligne de commande.
+   >
+   > ``` command&nbsp;line
+   > npx office-addin-debugging start <your manifest path>
+   > ```
 
 1. Ouvrez le projet dans VS Code. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Débogueur pour Microsoft Edge », puis installez-la.
 

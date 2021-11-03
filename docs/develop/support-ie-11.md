@@ -1,21 +1,21 @@
 ---
 title: Prise en charge d’Internet Explorer 11
 description: Découvrez comment prendre en charge Internet Explorer 11 et ES5 Javascript dans votre add-in.
-ms.date: 10/08/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bb39235961fcb6ab37b211fe96d2c776de5a9ad
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: a6f762231face1b69a3354b584ca0bbea1742050
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250419"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681131"
 ---
 # <a name="support-internet-explorer-11"></a>Prise en charge d’Internet Explorer 11
 
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les Office de recherche**
 >
-> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris les versions d’achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les navigateurs utilisés par les applications [Office.](../concepts/browsers-used-by-office-web-add-ins.md) En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
+> Microsoft termine la prise en charge d’Internet Explorer, mais cela n’a pas d’incidence significative sur Office des modules. Certaines combinaisons de plateformes et de versions Office, y compris les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview qui est livré avec Internet Explorer 11 pour héberger des applications, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md)utilisés par les Office. En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les applications soumises à [AppSource.](/office/dev/store/submit-to-appsource-via-partner-center) Deux choses *changent* :
 >
 > - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les Office sur le Web à l’aide d’Internet Explorer en tant que navigateur. Toutefois, AppSource teste toujours les combinaisons de plateforme et de Office *de bureau* qui utilisent Internet Explorer.
 > - [L Script Lab ne prend](../overview/explore-with-script-lab.md) plus en charge Internet Explorer.
@@ -25,11 +25,13 @@ Office Les add-ins sont des applications web qui sont affichées dans des IFrame
 Si vous envisagez de commercialiser votre application via AppSource ou si vous prévoyez de prendre en charge des versions antérieures de Windows et Office, votre application doit fonctionner dans le contrôle de navigateur in incorporer basé sur Internet Explorer 11 (IE11). Pour plus d’informations sur les combinaisons de Windows et Office utiliser le contrôle de navigateur internet explorer 11, voir Navigateurs utilisés par les Office de [recherche.](../concepts/browsers-used-by-office-web-add-ins.md)
 
 > [!IMPORTANT]
-> Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les médias, l’enregistrement et l’emplacement. Si votre add-in doit prendre en charge Internet Explorer 11, vous ne pouvez pas utiliser ces fonctionnalités.
+> Internet Explorer 11 ne prend pas en charge certaines fonctionnalités HTML5 telles que les médias, l’enregistrement et l’emplacement. Si votre add-in doit prendre en charge Internet Explorer 11, vous devez le concevoir afin d’éviter ces fonctionnalités non prise en charge ou bien il doit détecter quand Internet Explorer est utilisé et offrir une autre expérience qui n’utilise pas les fonctionnalités non prise en charge. Pour plus d’informations, voir [Determine at runtime if the add-in is running in Internet Explorer](#determine-at-runtime-if-the-add-in-is-running-in-internet-explorer).
+
+## <a name="support-for-recent-versions-of-javascript"></a>Prise en charge des versions récentes de JavaScript
 
 Internet Explorer 11 ne prend pas en charge les versions JavaScript ultérieures à ES5. Si vous souhaitez utiliser la syntaxe et les fonctionnalités d’ECMAScript 2015 ou ultérieure, ou TypeScript, vous disposez de deux options comme décrit dans cet article. Vous pouvez également combiner ces deux techniques.
 
-## <a name="use-a-transpiler"></a>Utiliser un transpiler
+### <a name="use-a-transpiler"></a>Utiliser un transpiler
 
 Vous pouvez écrire votre code dans TypeScript ou javaScript moderne, puis le transpiler au moment de la build dans JAVAScript ES5. Les fichiers ES5 qui en résultent sont les fichiers que vous téléchargez dans l’application web de votre application.
 
@@ -43,7 +45,7 @@ Consultez la documentation de l’un d’eux pour plus d’informations sur l’
 > [!NOTE]
 > Si vous utilisez Visual Studio (pas Visual Studio Code), tsc est probablement plus simple à utiliser. Vous pouvez installer la prise en charge avec un package nuget. Pour plus d’informations, [voir JavaScript et TypeScript dans Visual Studio 2019](/visualstudio/javascript/javascript-in-vs-2019). Pour utiliser l’outil Visual Studio, créez un script de build ou utilisez l’Explorateur de séquenceur de tâches dans Visual Studio avec des outils tels que l’outil [WebPack Task Runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebPackTaskRunner) ou [NPM Task Runner.](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner)
 
-## <a name="use-a-polyfill"></a>Utiliser un polyfill
+### <a name="use-a-polyfill"></a>Utiliser un polyfill
 
 Un [polyfill est](https://en.wikipedia.org/wiki/Polyfill_(programming)) une version antérieure de JavaScript qui duplique les fonctionnalités des versions plus récentes de JavaScript. Le polyfill fonctionne avec dans les navigateurs qui ne sont pas en charge les versions ultérieures de JavaScript. Par exemple, la méthode de chaîne ne faisait pas partie de la version ES5 de JavaScript et ne s’exécutera donc pas dans `startsWith` Internet Explorer 11. Il existe des bibliothèques polyfill, écrites dans ES5, qui définissent et implémentent une `startsWith` méthode. Nous vous recommandons la bibliothèque de polyfill [core-js.](https://github.com/zloirock/core-js)
 
@@ -53,7 +55,34 @@ L’importation de l’intégralité de la bibliothèque core-js importe toutes 
 
 Pour obtenir un exemple de core.js, consultez l’exemple de core.js [Angular2 StyleChecker.](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker)
 
-## <a name="testing-an-add-in-on-internet-explorer"></a>Test d’un add-in sur Internet Explorer
+## <a name="determine-at-runtime-if-the-add-in-is-running-in-internet-explorer"></a>Déterminer au moment de l’exécution si le module est en cours d’exécution dans Internet Explorer
+
+Votre add-in peut découvrir s’il s’exécute dans Internet Explorer en lisant la [propriété window.navigator.userAgent.](https://developer.mozilla.org/docs/Web/API/Navigator/userAgent) Cela permet au module de fournir une expérience de remplacement ou d’échouer normalement. Voici un exemple. Notez qu’Internet Explorer envoie une chaîne commençant par « Trident » comme valeur de userAgent.
+
+```javascript
+if (navigator.userAgent.indexOf("Trident") === -1) {
+
+    // IE is not the browser. Provide a full-featured version of the add-in here.
+
+} else {
+
+    // IE is the browser. So here, do one of the following: 
+    //  1. Provide an alternate experience that does not use any of the HTML5
+    //     features that are not supported in IE.
+    //  2. Enable the add-in to gracefully fail by putting a message in the UI that
+    //     says something similar to: 
+    //      "This add-in won't run in your version of Office. Please upgrade to 
+    //      either one-time purchase Office 2021 or to a Microsoft 365 account."          
+
+}
+```
+
+> [!IMPORTANT]
+> La lecture de la propriété n’est généralement pas `userAgent` une bonne pratique. Assurez-vous que vous êtes familiarisé avec l’article, détection du navigateur à l’aide de [l’agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent)utilisateur, y compris les recommandations et les alternatives à la lecture `userAgent` . En particulier, si vous utilisez l’option 1 dans la clause ci-dessus, envisagez d’utiliser la détection de fonctionnalités au lieu de tester `else` l’agent utilisateur.
+>
+> Depuis le 30 septembre 2021, le texte de la section Quelle partie de [l’agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) utilisateur contient les informations que vous recherchez ? date d’avant la publication d’Internet Explorer 11. Il est toujours généralement précis et les *tableaux* de la section de la version anglaise de l’article sont à jour. De même, le texte et, dans la plupart des cas, les tableaux, dans les versions non anglaises de l’article sont hors de la date.
+
+## <a name="test-an-add-in-on-internet-explorer"></a>Tester un add-in sur Internet Explorer
 
 Voir [les tests d’Internet Explorer 11.](../testing/ie-11-testing.md)
 

@@ -1,14 +1,14 @@
 ---
 title: Élément WebApplicationInfo dans le fichier manifeste
-description: Documentation de référence de l’élément WebApplicationInfo pour Office de manifeste des applications (XML).
-ms.date: 07/30/2020
+description: Documentation de référence de l’élément WebApplicationInfo Office fichiers manifeste (XML) des applications.
+ms.date: 10/25/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de9271fc3e7ed76c0423c8a0b8ab70360b105c3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb21c584f516fc9e50bdd881a383fb03f01c753c
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153415"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681548"
 ---
 # <a name="webapplicationinfo-element"></a>Élément WebApplicationInfo
 
@@ -24,13 +24,11 @@ Prend en charge l’authentification unique (SSO) dans des compléments Office. 
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  **Id**    |  Oui   |  **ID d’application** du service associé au complément, tel qu’inscrit dans le point de terminaison Azure Active Directory (Azure AD) v2.0.|
-|  **MsaId**    |  Non   |  ID client de l’application web de votre add-in pour MSA tel qu’inscrit dans msm.live.com.|
 |  **Resource**  |  Oui   |  Spécifie l’**URI de l’ID d’application** du complément, tel qu’inscrit dans le point de terminaison Azure AD v2.0.|
 |  [Scopes](scopes.md)                |  Oui  |  Spécifie les autorisations dont le add-in a besoin pour une ressource, telles que Microsoft Graph.  |
-|  [Autorisations](authorizations.md)  |  Non   | Spécifie les ressources externes à qui l’application web du add-in a besoin d’autorisation et les autorisations requises.|
 
 ## <a name="webapplicationinfo-example"></a>Exemple pour WebApplicationInfo
 
@@ -41,21 +39,13 @@ Prend en charge l’authentification unique (SSO) dans des compléments Office. 
     ...
     <WebApplicationInfo>
       <Id>12345678-abcd-1234-efab-123456789abc</Id>
-      <Resource>api://myDomain.com/12345678-abcd-1234-efab-123456789abc</Resource>
+      <Resource>api://contoso.com/12345678-abcd-1234-efab-123456789abc</Resource>
       <Scopes>
         <Scope>Files.Read.All</Scope>
         <Scope>offline_access</Scope>
         <Scope>openid</Scope>
         <Scope>profile</Scope>
       </Scopes>
-      <Authorizations>
-        <Authorization>
-          <Resource>https://api.contoso.com</Resource>
-            <Scopes>
-              <Scope>profile</Scope>
-          </Scopes>
-        </Authorization>
-      </Authorizations>
     </WebApplicationInfo>
   </VersionOverrides>
 ...

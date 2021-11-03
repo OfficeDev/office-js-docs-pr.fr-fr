@@ -1,14 +1,14 @@
 ---
 title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un Office à l’aide du schéma XML et d’autres outils.
-ms.date: 09/18/2020
+ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9af96db7fbbeaf21274d4c5980afe0f4e9be3c5
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 30e7b93430b8ddffc5ebc2cc8f2ae2bab5c0850f
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537610"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681527"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -52,7 +52,7 @@ Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Offi
     > Si cette commande n’est pas disponible ou ne fonctionne pas, exécutez la commande suivante à la place pour forcer l’utilisation de la dernière version de l’outil de manifeste du addin office (en remplaçant par le nom du fichier `MANIFEST_FILE` manifeste).
     >
     > ```command&nbsp;line
-    > npx --ignore-existing office-addin-manifest validate MANIFEST_FILE
+    > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
 ## <a name="validate-your-manifest-against-the-xml-schema"></a>Validez votre manifeste par rapport au schéma XML
@@ -75,5 +75,5 @@ Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définitio
 - [Vider le cache Office](clear-cache.md)
 - [Déboguer votre complément avec la journalisation de l’exécution](runtime-logging.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
-- [Déboguer des applications à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Déboguer des applications à l’aide des outils de développement pour l’héritage Edge](debug-add-ins-using-devtools-edge-legacy.md)
+- [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)

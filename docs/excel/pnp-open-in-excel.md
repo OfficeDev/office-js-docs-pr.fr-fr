@@ -1,20 +1,20 @@
 ---
 title: Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche
 description: Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche.
-ms.date: 02/09/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ac644de03c1f3a4c382dbe151c3224afffdbc81
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 8d22291c5e4e781535105c22e137097b255cd1d2
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149102"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681541"
 ---
 # <a name="open-excel-from-your-web-page-and-embed-your-office-add-in"></a>Ouvrez Excel à partir de votre page web et incorporez votre Office de recherche
 
 :::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Image du Excel sur votre page web ouvrant un nouveau document Excel avec votre application incorporée et à l’ouverture automatique.":::
 
-Étendez votre application web SaaS afin que vos clients peuvent ouvrir leurs données directement à partir d’une page web Microsoft Excel. Un scénario courant est que les clients vont travailler avec des données dans votre application web. Ensuite, ils souhaiteront copier les données dans un document Excel document. Par exemple, ils peuvent effectuer des analyses supplémentaires à l’aide de Excel. En règle générale, le client doit exporter les données dans un fichier, tel qu’un fichier .csv, puis importer ces données dans Excel. Ils doivent également ajouter manuellement votre Office au document.
+Étendez votre application web SaaS afin que vos clients peuvent ouvrir leurs données directement à partir d’une page web Microsoft Excel. Un scénario courant est que les clients vont travailler avec des données dans votre application web. Ensuite, ils souhaiteront copier les données dans un document Excel document. Par exemple, ils peuvent vouloir effectuer des analyses supplémentaires à l’aide Excel. En règle générale, le client doit exporter les données dans un fichier, tel qu’un fichier .csv, puis importer ces données dans Excel. Ils doivent également ajouter manuellement votre Office au document.
 
 Réduisez le nombre d’étapes en un seul clic sur votre page web qui génère et ouvre Excel document. Vous pouvez également incorporer votre Office dans le document et l’afficher à l’ouverture du document. Cela garantit que le client a toujours accès aux fonctionnalités de votre application. Lorsque le document s’ouvre, les données que le client a sélectionnées et votre Office est déjà disponible pour qu’il continue de fonctionner.
 
@@ -22,7 +22,7 @@ Cet article vous présente le code et les techniques permettant d’implémenter
 
 ## <a name="create-a-new-excel-document-and-embed-an-office-add-in"></a>Créer un document Excel et incorporer un Office de document
 
-Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L Office exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) [ooXML](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) dans un Script Lab dans un nouveau document Office document. Bien que l’exemple fonctionne avec Office document, nous nous concentrerons simplement sur Excel feuilles de calcul dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
+Tout d’abord, nous allons apprendre à créer un document Excel à partir d’une page web et à incorporer un add-in dans le document. L Office exemple de code de l’incorporation de code [](https://appsource.microsoft.com/product/office/wa104380862) [ooXML](https://github.com/OfficeDev/Office-OOXML-EmbedAddin) dans un document Script Lab dans un nouveau document Office. Bien que l’exemple fonctionne avec Office document, nous nous concentrerons simplement sur Excel feuilles de calcul dans cet article. Utilisez les étapes suivantes pour créer et exécuter l’exemple.
 
 1. Extrayez l’exemple de code  https://github.com/OfficeDev/Office-OOXML-EmbedAddin/archive/master.zip dans un dossier de votre ordinateur.
 2. Pour créer et exécuter l’exemple, suivez les étapes de la section **Pour utiliser le** projet du lisez-moi.
@@ -31,7 +31,7 @@ Tout d’abord, nous allons apprendre à créer un document Excel à partir d’
 
 ### <a name="how-the-sample-works"></a>Fonctionnement de l’exemple
 
-L’exemple de code utilise le SDK OOXML pour incorporer le Script Lab dans le document Excel que vous choisissez. Les informations suivantes sont issues de la section à propos [ **du code**](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) dans le fichier Lisez-moi.
+L’exemple de code utilise le SDK OOXML pour incorporer le Script Lab dans le document Excel que vous choisissez. Les informations suivantes sont issues de la section [ **à propos du code**](https://github.com/OfficeDev/Office-OOXML-EmbedAddin/blob/master/README.md) dans le fichier Lisez-moi.
 
 Le fichier **Home.aspx.cs**:
 
@@ -61,7 +61,7 @@ We.WebExtensionStoreReference webExtensionStoreReference1 = new We.WebExtensionS
 - La **valeur** du Store est « en-US » dans la section culture Microsoft AppSource Script Lab.
 - La **valeur d’ID** est l’ID d’actif Microsoft AppSource Script Lab.
 
-Si vous souhaitez ouvrir automatiquement un module de partage de fichiers à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
+Si vous souhaitez ouvrir automatiquement un add-in à partir d’un catalogue de partages de fichiers, vous utiliserez différentes valeurs :
 
 La **valeur StoreType** est « FileSystem ».
 
@@ -74,7 +74,7 @@ La **valeur StoreType** est « FileSystem ».
 
 :::image type="content" source="../images/fluent-ui-wxp.png" alt-text="Fluent Icônes d’interface utilisateur pour Word, Excel et PowerPoint.":::
 
-Une meilleure pratique consiste à utiliser l’interface utilisateur Fluent pour aider vos utilisateurs à passer d’un produit Microsoft à un autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel pour indiquer qu’il lance l’application Excel application.
+Une meilleure pratique consiste à utiliser l’interface Fluent utilisateur pour aider vos utilisateurs à passer d’un produit Microsoft à un autre. Vous devez toujours utiliser une icône Office pour indiquer quelle application Office sera lancée à partir de votre page web. Nous allons modifier l’exemple de code pour utiliser l’icône Excel pour indiquer qu’il lance l’application Excel application.
 
 1. Ouvrez l’exemple dans Visual Studio.
 1. Ouvrez la page **Home.aspx.**
@@ -101,8 +101,8 @@ Nous vous recommandons de télécharger de nouveaux documents vers OneDrive si v
 ### <a name="use-a-quick-start-to-build-a-new-microsoft-graph-web-application"></a>Utiliser un démarrage rapide pour créer une application web Microsoft Graph
 
 1. Suivez les étapes de création et d’ouverture d’un exemple de code de démarrage rapide qui [https://developer.microsoft.com/graph/quick-start](https://developer.microsoft.com/graph/quick-start) interagit avec Office services.
-1. À **l’étape 1 : choisissez la langue ou la** plateforme, choisissez ASP.NET **MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
-1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir un ID d’application et un **secret**.
+1. À **l’étape 1 : choisissez la langue ou la plateforme,** choisissez **ASP.NET MVC.** Bien que les étapes de cette procédure utilisent l’option ASP.NET MVC, elles suivent un modèle qui s’applique à n’importe quelle langue ou plateforme.
+1. À **l’étape 2 : Obtenez un ID d’application** et une secret, choisissez Obtenir **un ID d’application et un secret**.
 1. Connectez-vous à Microsoft 365 compte.  
 1. Dans la page **Web Veuillez enregistrer votre** secret d’application, enregistrez-la dans un emplacement de fichier où vous pourrez l’extraire et l’utiliser ultérieurement.
 1. Choose **Got it, take me back to the quick start**.
@@ -114,7 +114,7 @@ Nous vous recommandons de télécharger de nouveaux documents vers OneDrive si v
 
 ### <a name="upload-a-file-to-onedrive"></a>Télécharger fichier à OneDrive
 
-1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019 et ouvrez **le fichierPrivateSettings.config** graphique.
+1. Ouvrez la solution **graph-tutorial.sln** Visual Studio 2019 et ouvrez **PrivateSettings.config** fichier.
 
 1. Ajoutez une nouvelle **étendue Files.ReadWrite** à la clé   **ida:AppScopes** afin qu’elle ressemble au code suivant.
 
@@ -182,11 +182,11 @@ L’exemple modifie un document Excel existant. Un scénario plus courant consis
 
 ### <a name="read-custom-properties-when-your-add-in-starts"></a>Lire les propriétés personnalisées au démarrage de votre add-in
 
-L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel l’aide du SDK OOXML. Script Lab lit l’ID de l’extrait de code à partir du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
+L’exemple de code stocke un ID d’extrait de code dans le nouveau document Excel l’aide du SDK OOXML. Script Lab lit l’ID d’extrait de code du document Excel puis affiche ce code d’extrait de code lorsqu’il s’ouvre. Vous devrez peut-être envoyer des propriétés personnalisées à votre propre add-in (par exemple, une chaîne de requête ou un jeton d’authentification temporaire).) Pour **plus d’informations** sur la lecture des propriétés personnalisées au démarrage de votre compl?ment, voir l’état et les paramètres persistants du compl?ment.
 
 ### <a name="initialize-the-excel-document-with-data"></a>Initialiser le document Excel avec des données
 
-En règle générale, lorsque le client ouvre un document Excel partir de votre site web, il s’attend à ce que le document contienne des données du site web. Il existe deux façons d’écrire des données dans le document.
+En règle générale, lorsque le client ouvre un document Excel partir de votre site web, il s’attend à ce que le document contienne certaines données du site web. Il existe deux façons d’écrire des données dans le document.
 
 - **Utilisez le SDK OOXML pour écrire les données.** Vous pouvez utiliser le SDK pour écrire directement des données dans le document. Cette approche est utile si vous souhaitez que les données soient disponibles dès que le document est ouvert.
 - **Passez une propriété de requête personnalisée à votre Office.** Lorsque vous générez le document, vous incorporez une propriété personnalisée pour le Office qui contient une chaîne de requête qui récupère toutes les données requises. Lorsque votre application s’ouvre, elle récupère la requête, l’exécute et utilise l’API JS Office pour insérer le résultat de la requête dans le document.
@@ -195,9 +195,7 @@ En règle générale, lorsque le client ouvre un document Excel partir de votre 
 
 Le SDK OOXML est basé sur .NET. Si votre application web n’est pas .NET, vous devez rechercher une autre façon de travailler avec OOXML.
 
-Il existe une version JavaScript du SDK OOXML disponible dans le [SDK Open XML pour JavaScript.](https://archive.codeplex.com/?p=openxmlsdkjs)
-
-Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .NET du reste de votre application web. Appelez ensuite la fonction Azure (pour générer le Excel document) à partir de votre application Web. Pour plus d’informations sur les fonctions Azure, voir [une présentation des fonctions Azure.](/azure/azure-functions/functions-overview)
+Vous pouvez placer le code OOXML dans une fonction Azure pour séparer le code .NET du reste de votre application web. Ensuite, appelez la fonction Azure (pour générer Excel document) à partir de votre application Web. Pour plus d’informations sur les fonctions Azure, voir [une présentation des fonctions Azure.](/azure/azure-functions/functions-overview)
 
 ### <a name="use-single-sign-on"></a>Utiliser l' sign-on unique
 

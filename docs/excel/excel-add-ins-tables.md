@@ -1,18 +1,18 @@
 ---
 title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide Excel API JavaScript.
-ms.date: 07/02/2021
+ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c0903718eab98866e88c18c715bf121979d87d82
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f5ea4e12b4662c890259e29c52b98f1b16b9e5f6
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152204"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681159"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 
-Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(interface API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript](/javascript/api/excel/excel.tablecollection)pour Excel).
+Cet article fournit des exemples de code qui expliquent comment effectuer des tâches courantes avec des tableaux à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Table` propriétés, voir Table Object `TableCollection` [(interface API JavaScript](/javascript/api/excel/excel.table) pour Excel) et [TableCollection Object (interface API JavaScript](/javascript/api/excel/excel.tablecollection)pour Excel).
 
 ## <a name="create-a-table"></a>Créer un tableau
 
@@ -60,9 +60,6 @@ L’exemple de code suivant ajoute sept nouvelles lignes au tableau nommé **Exp
 
 > [!NOTE]
 > La `index` propriété d’un [objet TableRow](/javascript/api/excel/excel.tablerow) indique le numéro d’index de la ligne dans la collection rows du tableau. Un objet ne contient pas de propriété qui peut être utilisée comme clé `TableRow` unique pour identifier la `id` ligne.
-
-> [!WARNING]
-> L’ajout de lignes à un tableau à partir d’un add-in de contenu entraîne une fuite de mémoire. Consultez [GitHub'#1415 problème](https://github.com/OfficeDev/office-js/issues/1415) pour l’état actuel et des informations supplémentaires. 
 
 ```js
 Excel.run(function (context) {
@@ -183,7 +180,7 @@ Excel.run(function (context) {
 ```
 
 > [!IMPORTANT]
-> La nouvelle plage du tableau doit chevaucher la plage d’origine et les en-têtes (ou le haut du tableau) doivent se trouver dans la même ligne.
+> La nouvelle plage du tableau doit chevaucher la plage d’origine et les en-têtes (ou le haut du tableau) doivent se trouver sur la même ligne.
 
 **Tableau après re resize** 
 
@@ -470,7 +467,7 @@ Excel.run(function (context) {
 
 **Données de la plage (avant la conversion de la plage en tableau)**
 
-![Données de plage en Excel.](../images/excel-ranges.png)
+![Données de plage dans Excel.](../images/excel-ranges.png)
 
 **Données du tableau (après la conversion de la plage en tableau)**
 

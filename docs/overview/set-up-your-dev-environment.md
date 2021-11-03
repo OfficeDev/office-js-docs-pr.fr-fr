@@ -1,14 +1,14 @@
 ---
 title: Configuration de votre environnement de développement
 description: Configurer votre environnement de développement pour créer des Office de développement.
-ms.date: 07/08/2021
+ms.date: 10/26/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 71982a51e4941cb90a488f317cf6f771ccf5b005
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9dbe2a994dd8da028ecd1ae4a31b2c7847a062b1
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149251"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681173"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
@@ -18,6 +18,7 @@ Ce guide vous aide à configurer des outils pour créer des Office en suivant no
 - npm
 - Un Microsoft 365 qui inclut la version d’abonnement de Office
 - Éditeur de code de votre choix
+- Le Office javascript de linter
 
 Ce guide suppose que vous savez utiliser un outil de ligne de commande.
 
@@ -57,7 +58,49 @@ Vous pouvez utiliser n’importe quel éditeur de code ou IDE qui prend en charg
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="install-and-use-the-office-javascript-linter"></a>Installer et utiliser le Office JavaScript
+
+Microsoft fournit un linter JavaScript pour vous aider à capturer les erreurs courantes lors de l’utilisation Office bibliothèque JavaScript. Pour installer le linter, exécutez les deux commandes suivantes (une fois que vous avez installé [Node.js](#install-nodejs) et [npm](#install-npm)).
+
+```command&nbsp;line
+npm install office-addin-lint --save-dev
+npm install eslint-plugin-office-addins --save-dev
+```
+
+Si vous créez un projet de Office avec l’outil Yo Office, le reste de l’installation est terminé pour vous. Exécutez le linter avec la commande suivante dans le terminal d’un éditeur, par exemple Visual Studio Code, ou dans une invite de commandes. Les problèmes trouvés par le linter apparaissent dans le terminal ou l’invite, et apparaissent également directement dans le code lorsque vous utilisez un éditeur qui prend en charge les messages linter, tels que Visual Studio Code. (Pour plus d’informations sur l’installation de l’outil Yo Office, voir l’un de nos démarrages rapides de Office, comme [celui-ci](../quickstarts/excel-quickstart-jquery.md)pour les Excel.)
+
+```command&nbsp;line
+npm run lint
+```
+
+Si votre projet de add-in a été créé d’une autre façon, prenez les mesures suivantes.
+
+1. À la racine du projet, créez un fichier texte nommé **.eslintrc.json,** s’il n’en existe pas déjà un. Assurez-vous qu’il possède des propriétés `plugins` nommées `extends` et , les deux types de tableau. Le `plugins` tableau doit inclure et le tableau doit inclure `"office-addins"` `extends` `"plugin:office-addins/recommended"` . Voici un exemple simple. Votre **fichier .eslintrc.json** peut avoir des propriétés supplémentaires et des membres supplémentaires des deux tableaux.
+
+   ```json
+   {
+     "plugins": [
+       "office-addins"
+     ],
+     "extends": [
+       "plugin:office-addins/recommended"
+     ]
+   }
+   ```
+
+1. À la racine du projet, ouvrez le **fichier package.json** et assurez-vous que le tableau `scripts` possède le membre suivant.
+
+   ```json
+   "lint": "office-addin-lint check",
+   ```
+
+1. Exécutez le linter avec la commande suivante dans le terminal d’un éditeur, par exemple Visual Studio Code, ou dans une invite de commandes. Les problèmes trouvés par le linter apparaissent dans le terminal ou l’invite, et apparaissent également directement dans le code lorsque vous utilisez un éditeur qui prend en charge les messages linter, tels que Visual Studio Code.
+
+   ```command&nbsp;line
+   npm run lint
+   ```
+
+## <a name="next-steps"></a>Prochaines étapes
 
 Essayez de créer votre propre Script Lab pour essayer des exemples intégrés.
 

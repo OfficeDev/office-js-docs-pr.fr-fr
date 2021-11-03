@@ -1,14 +1,14 @@
 ---
 title: Élément Icon dans le fichier manifeste
 description: Définit les éléments Image pour les contrôles de bouton ou de menu.
-ms.date: 03/30/2021
+ms.date: 10/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f47f35f18995b3d9e0af1115668b43a506e830d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152267"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681725"
 ---
 # <a name="icon-element"></a>Icon, élément
 
@@ -22,7 +22,7 @@ Définit les éléments **Image** pour les contrôles de [bouton](control.md#but
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  [Image](#image)        | Oui |   Attribut resid d’une image à utiliser         |
 
@@ -43,7 +43,7 @@ Image du bouton. **L’attribut resid** ne peut pas être plus de 32 caractères
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>Configuration requise supplémentaire pour les facteurs de forme pour environnement mobile
 
-Lorsque l’élément **Icon** parent est un descendant de l’élément [MobileFormFactor](mobileformfactor.md), la taille minimale requise est légèrement différente. Le manifeste doit fournir au minimum les tailles 25, 32 et 48 pixels. Chaque taille fournie doit apparaître trois fois, avec un ensemble d’attributs `scale` défini sur `1`, `2` ou `3`.
+Lorsque l’élément **Icon** parent est un descendant de l’élément [MobileFormFactor](mobileformfactor.md), la taille minimale requise est légèrement différente. Le manifeste doit fournir au minimum les tailles 25, 32 et 48 pixels. Chaque taille fournie doit apparaître trois fois, avec un ensemble d’attributs `scale` défini sur `1`, `2` ou `3`. Cet attribut spécifie la propriété `UIScreen.scale` pour les appareils iOS. Pour plus d’informations, voir [l’échelle.](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale)
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

@@ -1,15 +1,15 @@
 ---
 title: Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 description: Détails sur l’ensemble de conditions requises ExcelApiOnline.
-ms.date: 10/14/2021
+ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: bd1f62b92b9a08d23daf77f8f4b86c60333faab3
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: ae338b6bd361113ee04ae3dd9076df6c66125345
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537589"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681492"
 ---
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel Ensemble de conditions requises de l’API JavaScript en ligne uniquement
 
@@ -18,7 +18,7 @@ L’ensemble de conditions requises est un ensemble de conditions requises spéc
 Lorsque les API de l’ensemble de conditions requises sont pris en charge sur toutes les plateformes, elles sont ajoutées à l’ensemble de conditions requises `ExcelApiOnline` publié suivant ( `ExcelApi 1.[NEXT]` ). Une fois que cette nouvelle exigence est publique, ces API sont supprimées de `ExcelApiOnline` . Il s’agit d’un processus de promotion similaire à une API passant de la version d’évaluation à la publication.
 
 > [!IMPORTANT]
-> `ExcelApiOnline` est un sur-ensemble de l’ensemble de conditions requises numérodé le plus récent.
+> `ExcelApiOnline` est un sur-ensemble de l’ensemble de conditions requises numérotées le plus récent.
 
 > [!IMPORTANT]
 > `ExcelApiOnline 1.1` est la seule version des API en ligne uniquement. Cela est dû au Excel sur le Web’une seule version disponible pour les utilisateurs qui est la dernière version.
@@ -48,11 +48,10 @@ Une fois que l’API se trouve dans un ensemble de conditions requises sur plusi
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
+Le tableau suivant répertorie Excel api JavaScript actuellement incluses dans l’ensemble `ExcelApiOnline` de conditions requises. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API et les API publiées précédemment), consultez toutes les API `ExcelApiOnline` [JavaScript Excel.](/javascript/api/excel?view=excel-js-online&preserve-view=true)
 
 | Classe | Champs | Description |
 |:---|:---|:---|
-|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|Cette fonction permet d’effacer les critères de filtrage des colonnes du filtre automatique.|
 |[LinkedWorkbook](/javascript/api/excel/excel.linkedworkbook)|[breakLinks()](/javascript/api/excel/excel.linkedworkbook#breakLinks__)|Effectue une demande pour rompre les liens pointant vers le workbook lié.|
 ||[id](/javascript/api/excel/excel.linkedworkbook#id)|URL d’origine pointant vers le workbook lié.|
 ||[refresh()](/javascript/api/excel/excel.linkedworkbook#refresh__)|Effectue une demande d’actualisation des données récupérées à partir du workbook lié.|

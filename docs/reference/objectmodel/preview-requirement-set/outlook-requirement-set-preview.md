@@ -1,14 +1,14 @@
 ---
 title: Outlook prévisualisation de l’API du add-in
 description: Fonctionnalités et API actuellement en prévisualisation pour Outlook de recherche.
-ms.date: 10/05/2021
+ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e377725bc61b33d8b67729cf041a12255e3dba5
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 2d1efa2b2dca5a88a56fb5f54a84b790e08745ec
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237188"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681647"
 ---
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook prévisualisation de l’API du add-in
 
@@ -20,17 +20,17 @@ Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des obje
 [!INCLUDE [Information about using preview APIs](../../../includes/using-preview-apis-host.md)]
 
 > [!TIP]
-> Vous pourrez peut-être prévisualiser les fonctionnalités dans Outlook sur le web en configurant la version [ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) Cette page indique « Configurer l’accès en aperçu » pour les fonctionnalités applicables.
+> Vous pourrez peut-être prévisualiser les fonctionnalités dans Outlook sur le web en configurant la version [ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center) « Configurer l’accès à l’aperçu » est indiqué sur cette page pour les fonctionnalités applicables.
 >
 > Pour d’autres fonctionnalités, vous pouvez demander l’accès aux bits d’aperçu pour Outlook sur le web à l’aide de votre compte Microsoft 365 en complétant et en envoyant [ce formulaire.](https://aka.ms/OWAPreview) « Demander l’accès en prévisualisation » est indiqué sur ces fonctionnalités.
 
-L’ensemble de conditions requises de prévisualisation inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md).
+L’ensemble de conditions requises de prévisualisation inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md).
 
 ## <a name="features-in-preview"></a>Fonctionnalités (aperçu) :
 
 Les fonctionnalités suivantes sont disponibles en aperçu.
 
-### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation de complément sur des éléments protégés par la Gestion des droits de l’information (IRM)
+### <a name="add-in-activation-on-items-protected-by-information-rights-management-irm"></a>Activation de compléments sur des éléments protégés par la Gestion des droits de l’information (IRM)
 
 Les add-ins peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, un administrateur client doit activer le droit d’utilisation en paramètres de stratégie personnalisée Autoriser l’accès par programme `OBJMODEL` dans Office.  Pour plus [d’informations, voir droits d’utilisation et descriptions.](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions)
 
@@ -104,7 +104,7 @@ Ajout d’un nouvel objet qui vous permet de gérer la date et l’heure de remi
 
 Cette fonctionnalité a été publiée dans [l’ensemble de conditions requises 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). Toutefois, des événements supplémentaires sont désormais disponibles en prévisualisation. Pour en savoir plus, reportez-vous aux [événements pris en charge.](../../../outlook/autolaunch.md#supported-events)
 
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
+**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
 
 <br>
 
@@ -139,26 +139,6 @@ Ajout de la possibilité d’obtenir un thème Office.
 Ajout de l’événement `OfficeThemeChanged` à `Mailbox`.
 
 **Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
-
-<br>
-
----
-
----
-
-### <a name="session-data"></a>Données de session
-
-#### <a name="officesessiondata"></a>[Office. SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true)
-
-Ajout d’un nouvel objet qui représente les données de session d’un élément.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
-
-#### <a name="officecontextmailboxitemsessiondata"></a>[Office.context.mailbox.item.sessionData](office.context.mailbox.item.md#properties)
-
-Ajout d’une nouvelle propriété pour gérer les données de session d’un élément en mode Composition.
-
-**Disponible dans**: Outlook sur Windows (connecté à un abonnement Microsoft 365), Outlook sur le web (moderne)
 
 <br>
 

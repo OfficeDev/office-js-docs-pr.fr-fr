@@ -1,15 +1,15 @@
 ---
 title: Excel Ensemble de conditions requises de l’API JavaScript 1.14
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.14.
-ms.date: 10/13/2021
+ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b968cf40fa35921df1be0aca508041e72cddf23
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 9cdf22d35125607237b724c88da2083ae78a9940
+ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537713"
+ms.lasthandoff: 11/02/2021
+ms.locfileid: "60681506"
 ---
 # <a name="whats-new-in-excel-javascript-api-114"></a>Nouveautés de l Excel API JavaScript 1.14
 
@@ -28,6 +28,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 
 | Classe | Champs | Description |
 |:---|:---|:---|
+|[AutoFilter](/javascript/api/excel/excel.autofilter)|[clearColumnCriteria(columnIndex: number)](/javascript/api/excel/excel.autofilter#clearColumnCriteria_columnIndex_)|Cette fonction permet d’effacer les critères de filtrage des colonnes du filtre automatique.|
 |[ChangeDirectionState](/javascript/api/excel/excel.changedirectionstate)|[deleteShiftDirection](/javascript/api/excel/excel.changedirectionstate#deleteShiftDirection)|Représente la direction (par exemple, vers le haut ou vers la gauche) vers le haut ou vers la gauche que les cellules restantes déplacent lorsqu’une ou plusieurs cellules sont supprimées.|
 ||[insertShiftDirection](/javascript/api/excel/excel.changedirectionstate#insertShiftDirection)|Représente la direction (par exemple, vers le bas ou vers la droite) que les cellules existantes déplacent lorsqu’une ou plusieurs nouvelles cellules sont insérées.|
 |[Chart](/javascript/api/excel/excel.chart)|[getDataTable()](/javascript/api/excel/excel.chart#getDataTable__)|Obtient la table de données du graphique.|
