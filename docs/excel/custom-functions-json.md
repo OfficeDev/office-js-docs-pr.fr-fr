@@ -1,14 +1,14 @@
 ---
 title: Créer manuellement des métadonnées JSON pour les fonctions personnalisées dans Excel
 description: Définissez les métadonnées JSON pour les fonctions personnalisées Excel et associez votre ID de fonction et vos propriétés de nom.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 517fd8f8eb0338f32b58f0b61f1810b3c7ac26a4
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 28be374a88890d20294311599b06b16942edd9b7
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681230"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749398"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Créer manuellement des métadonnées JSON pour les fonctions personnalisées
 
@@ -16,7 +16,7 @@ Comme décrit dans l’article de vue d’ensemble des fonctions [personnalisée
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-Nous vous recommandons d’utiliser la génération automatique JSON lorsque cela est possible au lieu de créer votre propre fichier JSON. La génération automatique est moins sujette aux erreurs de l’utilisateur et les fichiers `yo office` échafaudés l’incluent déjà. Pour plus d’informations sur les balises JSDoc et le processus de génération automatique JSON, voir métadonnées JSON de génération automatique [pour les fonctions personnalisées](custom-functions-json-autogeneration.md).
+Nous vous recommandons d’utiliser la génération automatique JSON lorsque cela est possible au lieu de créer votre propre fichier JSON. La génération automatique est moins sujette aux erreurs de l’utilisateur et les fichiers `yo office` échafaudés l’incluent déjà. Pour plus d’informations sur les balises JSDoc et le processus de génération automatique JSON, voir métadonnées JSON de génération automatique [pour les fonctions personnalisées.](custom-functions-json-autogeneration.md)
 
 Toutefois, vous pouvez créer un projet de fonctions personnalisées à partir de zéro. Ce processus nécessite que vous :
 
@@ -143,11 +143,11 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 ### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (aperçu)
 
 > [!NOTE]
-> La `allowCustomDataForDataTypeAny` propriété est actuellement disponible en prévisualisation publique et n’est compatible qu’avec Office sur Windows. Les fonctionnalités d’aperçu sont sujettes à modification et ne sont pas destinées à être utilisés dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas de fonctionnalités d’aperçu dans un environnement de production ou dans des documents critiques pour l’entreprise.
+> La `allowCustomDataForDataTypeAny` propriété est actuellement disponible en prévisualisation publique et n’est compatible qu’avec Office sur Windows. Les fonctionnalités en préversion sont sujettes à modification et ne sont pas destinées à être utilisés dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas les fonctionnalités en préversion dans un environnement de production ou dans des documents critiques pour l’entreprise.
 >
-> Pour essayer cette propriété dans Office sur Windows, vous devez avoir un numéro de build Excel supérieur ou égal à 16.0.14623.20002. Pour utiliser cette fonctionnalité, vous devez rejoindre le [programme Office Insider,](https://insider.office.com/) puis choisir le niveau **Beta Channel** Insider. Pour en savoir plus, [consultez la Office Programme Insider.](https://insider.office.com/join/windows)
+> Pour essayer cette propriété dans Office sur Windows, vous devez avoir un numéro de build Excel supérieur ou égal à 16.0.14623.20002. Pour utiliser cette fonctionnalité, vous devez participer au [programme Office Insider](https://insider.office.com/), puis choisir le niveau Insider **Cana bêta**. Pour en savoir plus, consultez le [Programme Office Insider](https://insider.office.com/join/windows).
 
-La `allowCustomDataForDataTypeAny` propriété est de type booléen. La définition de cette valeur permet à une fonction personnalisée d’accepter les types de données en tant que `true` paramètres et de renvoyer des valeurs. Pour en savoir plus, consultez les concepts de base des [fonctions personnalisées et des types de données.](/custom-functions-data-types-concepts.md)
+La `allowCustomDataForDataTypeAny` propriété est de type booléen. La définition de cette valeur permet à une fonction personnalisée d’accepter les types de données en tant que `true` paramètres et de renvoyer des valeurs. Pour en savoir plus, consultez les concepts de base des [fonctions personnalisées et des types de données.](custom-functions-data-types-concepts.md)
 
 Contrairement à la plupart des autres propriétés de métadonnées JSON, est une propriété de niveau `allowCustomDataForDataTypeAny` supérieur et ne contient aucune sous-propriété. Consultez [l’exemple de code de métadonnées JSON](#json-metadata-example) précédent pour obtenir un exemple de mise en forme de cette propriété.
 
@@ -182,7 +182,7 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 | `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` , votre fonction personnalisée peut accéder à l’adresse de la cellule qui l’a appelé. La `address` propriété du paramètre [d’appel](custom-functions-parameter-options.md#invocation-parameter) contient l’adresse de la cellule qui a appelé votre fonction personnalisée. Une fonction ne peut pas utiliser les `stream` propriétés et les `requiresAddress` propriétés. |
 | `requiresParameterAddresses` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true` , votre fonction personnalisée peut accéder aux adresses des paramètres d’entrée de la fonction. Cette propriété doit être utilisée en association avec la propriété de l’objet de résultat et doit `dimensionality` être définie sur [](#result) `dimensionality` `matrix` . Pour [plus d’informations, voir Détecter l’adresse d’un](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) paramètre. |
 | `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `StreamingInvocation.setResult`. Pour plus d’informations, [voir Faire une fonction de diffusion en continu.](custom-functions-web-reqs.md#make-a-streaming-function) |
-| `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si , la fonction recalcule chaque fois que Excel recalcule, et non uniquement lorsque les valeurs dépendantes de la `true` formule ont changé. Une fonction ne peut pas utiliser les `stream` propriétés et les `volatile` propriétés. Si les `stream` `volatile` propriétés et les propriétés sont définies sur , la propriété `true` volatile est ignorée. |
+| `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si , la fonction recalcule à chaque Excel recalcul, et non uniquement lorsque les valeurs dépendantes de la `true` formule ont changé. Une fonction ne peut pas utiliser les `stream` propriétés et les `volatile` propriétés. Si les `stream` `volatile` propriétés et les propriétés sont définies sur , la propriété `true` volatile est ignorée. |
 
 ### <a name="parameters"></a>paramètres
 
@@ -284,7 +284,7 @@ L’exemple suivant montre les métadonnées JSON qui correspondent aux fonction
 }
 ```
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
 Découvrez les [meilleures pratiques pour nommer](custom-functions-naming.md) votre [](custom-functions-localize.md) fonction ou découvrir comment la localiser à l’aide de la méthode JSON manuscrite précédemment décrite.
 

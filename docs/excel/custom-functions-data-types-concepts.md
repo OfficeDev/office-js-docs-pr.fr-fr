@@ -1,16 +1,16 @@
 ---
-title: Fonctions personnalisées et concepts de base des types de données
+title: Concepts de base des fonctions personnalisées et des types de données
 description: Découvrez les concepts de base pour l’utilisation Excel types de données avec vos fonctions personnalisées.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
-ms.openlocfilehash: 65cc8e04006c999237d44f1c4698a6e82e5f459d
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 3b7e735f78ca7b6dcdffa3bd5e8ba9c9d3093766
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681766"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749405"
 ---
 # <a name="custom-functions-and-data-types-core-concepts-preview"></a>Fonctions personnalisées et concepts de base des types de données (aperçu)
 
@@ -18,14 +18,14 @@ ms.locfileid: "60681766"
 
 Les types de données améliorent Excel l’API JavaScript en étendu la prise en charge des types de données au-delà des quatre types d’origine (chaîne, nombre, booléen et erreur). Les types de données incluent la prise en charge des valeurs numériques formatées, des images web, des valeurs d’entité et des tableaux au sein des valeurs d’entité. Les fonctions personnalisées acceptent les types de données en tant que valeurs d’entrée et de sortie, ce qui développe la puissance de calcul des fonctions personnalisées.
 
-Pour en savoir plus sur l’utilisation des types de données avec un Excel, voir Excel concepts de [base des types de données.](/excel-data-types-concepts.md)
+Pour en savoir plus sur l’utilisation des types de données avec un Excel, voir Excel concepts de [base des types de données.](excel-data-types-concepts.md)
 
 ## <a name="how-custom-functions-handle-data-types"></a>Gestion des types de données par les fonctions personnalisées
 
 Les fonctions personnalisées peuvent reconnaître les types de données et les accepter comme valeurs de paramètre. Une fonction personnalisée peut créer un nouveau type de données pour une valeur de retour. Les fonctions personnalisées utilisent le même schéma JSON pour les types de données que l’API JavaScript Excel, et ce schéma JSON est conservé à mesure que les fonctions personnalisées calculent et évaluent.
 
 > [!NOTE]
-> Les fonctions personnalisées ne prisent pas en charge toutes les fonctionnalités des objets d’erreur améliorés offerts par les types de données. Une fonction personnalisée peut accepter un objet d’erreur de types de données, mais elle ne sera pas conservée tout au long du calcul. Pour l’instant, les fonctions personnalisées ne peuvent que supporter les [erreurs incluses dans l’objet CustomFunctions.Error.](/custom-functions-errors.md)
+> Les fonctions personnalisées ne prisent pas en charge toutes les fonctionnalités des objets d’erreur améliorés offerts par les types de données. Une fonction personnalisée peut accepter un objet d’erreur de types de données, mais elle ne sera pas conservée tout au long du calcul. Pour l’instant, les fonctions personnalisées ne peuvent que supporter les [erreurs incluses dans l’objet CustomFunctions.Error.](custom-functions-errors.md)
 
 ## <a name="enable-data-types-for-custom-functions"></a>Activer les types de données pour les fonctions personnalisées
 
@@ -95,7 +95,7 @@ function getEntityAttribute(value, attribute) {
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble des fonctions personnalisées et des types de données](/custom-functions-data-types-overview.md)
-* [Vue d’ensemble des types de données dans Excel de données](/excel-data-types-overview.md)
-* [Excel concepts fondamentaux des types de données](/excel-data-types-concepts.md)
+* [Vue d’ensemble des fonctions personnalisées et des types de données](custom-functions-data-types-overview.md)
+* [Présentation des types de données dans les compléments Excel](excel-data-types-overview.md)
+* [Concepts de base des types de données Excel](excel-data-types-concepts.md)
 * [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

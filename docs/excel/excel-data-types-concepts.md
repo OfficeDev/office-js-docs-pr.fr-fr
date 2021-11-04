@@ -1,17 +1,17 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 11/01/2021
+ms.date: 11/03/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: cb5a1e13ced03116d10c7d7a09f822485b41ff6a
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: a5d4915638d67c67679095eb03bc04a48e9196dd
+ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681775"
+ms.lasthandoff: 11/04/2021
+ms.locfileid: "60749384"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -109,6 +109,6 @@ Chacun des objets d’erreur peut accéder à une enum via la propriété, et ce
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble des types de données dans Excel de données](/excel-data-types-overview.md)
+- [Vue d’ensemble des types de données dans Excel de données](excel-data-types-overview.md)
 - [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Vue d’ensemble des fonctions personnalisées et des types de données](/custom-functions-data-types-overview.md)
+- [Vue d’ensemble des fonctions personnalisées et des types de données](custom-functions-data-types-overview.md)
