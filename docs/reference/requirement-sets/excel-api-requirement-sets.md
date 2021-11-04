@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel.
-ms.date: 10/18/2021
+ms.date: 11/02/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b2e09d508b4f937ce18029e55c7754719d85527f
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 8770f91531b74442561d93d76daf57492d4c13f5
+ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537582"
+ms.lasthandoff: 11/03/2021
+ms.locfileid: "60683790"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -24,10 +24,11 @@ Les compléments Excel peuvent être exécutés dans différentes versions d’O
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript d’Excel preview API](excel-preview-apis.md).
 
-|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web |
+|  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | [Aperçu](excel-preview-apis.md)  | Veuillez utiliser la dernière version d’Office pour tester les API d’aperçu (vous devrez peut-être adhérer au [programme Office Insider](https://insider.office.com)). |
 | [ExcelApiOnline](excel-api-online-requirement-set.md) | N/A | N/A | N/A | Dernière version (voir la [page des ensembles de conditions requises](excel-api-online-requirement-set.md)) |
+| [ExcelApi 1.14](excel-api-1-14-requirement-set.md) | Version 2108 (build 14326.20508) ou version ultérieure | 16.53 ou ultérieure | 16.52 ou ultérieure | Octobre 2021 |
 | [ExcelApi 1.13](excel-api-1-13-requirement-set.md) | Version 2102 (Construire 13801.20738) ou ultérieure | 16.50 ou ultérieure | 16.50 ou ultérieure | Juin 2021 |
 | [ExcelApi 1.12](excel-api-1-12-requirement-set.md) | Version 2008 (Build 13127.20408) ou version ultérieure | 16.40 ou version ultérieure | 16.40 ou version ultérieure | Septembre 2020 |
 | [ExcelApi 1.11](excel-api-1-11-requirement-set.md) | Version 2002 (Build 12527.20470) ou version ultérieure | 16.35 ou version ultérieure | 16.33 ou version ultérieure | Mai 2020 |
