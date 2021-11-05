@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises pour l’runtime partagé
 description: Spécifie les plateformes et les applications Office qui la prise en charge des API SharedRuntime.
-ms.date: 10/05/2021
+ms.date: 11/03/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c202ba3047b8dc3998b3bcfd241274bcedf5a93d
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: a5f7d3c9394de047b358d7f190c5adae5b5199b1
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138498"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793602"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’runtime partagé
 
@@ -21,15 +21,24 @@ Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime
 
 | Ensemble de conditions requises | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) | Office sur iPad<br>(connecté à un abonnement Microsoft 365) | Office sur Mac<br>(connecté à un abonnement Microsoft 365) | Office sur le web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
 
 > [!IMPORTANT]
-> L’ensemble de conditions requises du runtime JavaScript partagé est disponible uniquement sur les applications et les plateformes Office suivantes.
->
-> - Excel sur le web, Windows et Mac.
-> - PowerPoint sur Windows (version 13218.10000 ou ultérieure). Le runtime partagé JavaScript pour PowerPoint est actuellement en préversion et est susceptible de changer. Il n’est actuellement pas pris en charge pour une utilisation dans les environnements de production. Pour obtenir la dernière version, vous devez [rejoindre le programme Office Insider](https://insider.office.com/join). Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Microsoft 365. Si vous n’avez pas déjà d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
->
-> Le runtime partagé JavaScript n’est à l’heure actuelle pas pris en charge on iPad ou les versions en achat définitif d’Office 2019 ou versions antérieures.
+> Le runtime partagé JavaScript n’est à l’heure actuelle pas pris en charge on iPad ou les versions en achat définitif d’Office 2019 ou versions antérieures. Pour plus d’informations sur le support, voir les sections suivantes.
+
+## <a name="support-for-version-11-on-excel"></a>Prise en charge de la version 1.1 sur Excel
+
+L’ensemble de conditions requises SharedRuntime 1.1 est publié pour Excel sur le Web, Windows et Mac.
+
+## <a name="preview-support-for-version-11-on-word-and-powerpoint"></a>Prévisualisation de la prise en charge de la version 1.1 sur Word et PowerPoint
+
+Le tableau suivant répertorie les builds d’application supplémentaires qui prisent en charge un aperçu du runtime JavaScript partagé. La version d’aperçu du runtime partagé est sujette à modification. Il n’est actuellement pas pris en charge pour une utilisation dans les environnements de production. Pour obtenir la dernière version, vous devez [rejoindre le programme Office Insider](https://insider.office.com/join). Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Microsoft 365. Si vous n’avez pas déjà d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
+
+|Application Office |Créer |
+|-------------------|------|
+|PowerPoint sur Windows |Build 16.0.13218.10000 ou ultérieure |
+|Word sur Windows |Build 16.0.13218.10000 ou ultérieure |
+|Word sur Mac |Build 16.46.207.0 ou ultérieure |
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 

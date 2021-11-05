@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office dans Office sur le web
 description: Testez votre Office dans votre Office sur le Web par chargement de version test.
-ms.date: 08/02/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e0f4b1f9fcdad6b0e4e9d3eb387c9322d240581
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a2067bc4de24c3e9cfecdf957af4b57856d8ee7b
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150296"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793609"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -72,6 +72,8 @@ Cette méthode n’utilise pas la ligne de commande et peut être accomplie à l
 
 > [!NOTE]
 > Pour tester votre complément Office avec Microsoft Edge webview d’origine (EdgeHTML), une étape de configuration supplémentaire est requise. Dans une invite Windows commande, exécutez la ligne suivante `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` : Cela n’est pas nécessaire lorsque Office utilise Chromium WebView2 Edge basé sur Chromium web. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 ## <a name="sideload-an-office-add-in"></a>Chargement d’une version Office de module
 

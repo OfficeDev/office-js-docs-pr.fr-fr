@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office Appel de la communauté des add-ins
 description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 10/18/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ce768bd6b03f3103efae0e9b679a6221e3e7927
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: eae3c8d78f411af31011d6af7b76a3282b53192b
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537597"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793595"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 
@@ -16,19 +16,22 @@ L’appel de la communauté Microsoft Office compléments est un appel mensuel d
 
 ## <a name="agenda-for-november-10th-call"></a>Agenda de l’appel du 10 novembre
 
-- Nous prévoyons de publier l’ordre du jour du vendredi 5 novembre.
+- Community présentation par CodeTwo. Intégration de l’activation basée sur des événements Outlook signatures.
+- Démonstration de la nouvelle bibliothèque Office-Addin-Mock pour tester votre code lorsque vous travaillez avec Office API JS.
+- Microsoft 365 bac à sable instantané.
 
 ## <a name="previous-calls"></a>Appels précédents
 
 Vous avez manqué un appel de la communauté précédent ? Consultez les ressources de blog suivantes pour découvrir la discussion !
 
-- [Office Appel de la communauté des add-ins : 8 septembre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
-- [Office Appel de la communauté des add-ins : 11 août 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
-- [Office Appel de la communauté des add-ins : 14 juillet 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
-- [Office Appel de la communauté des add-ins : 9 juin 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
-- [Office Appel de la communauté des add-ins : 12 mai 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
-- [Office Appel de la communauté des add-ins : 14 avril 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
-- [Office Appel de la communauté des add-ins : 10 mars 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
+- [13 octobre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
+- [8 septembre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
+- [11 août 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
+- [14 juillet 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-july-2021/ba-p/2573384)
+- [9 juin 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-june-2021/ba-p/2446156)
+- [12 mai 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
+- [14 avril 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
+- [10 mars 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
 - [Appels Office de la communauté des Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>Voir aussi

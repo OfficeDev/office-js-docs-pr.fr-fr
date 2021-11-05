@@ -1,14 +1,14 @@
 ---
 title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
-ms.date: 07/08/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b5fdd28f95d4513c9364ce0bacbfe6f27cc9779c
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: e97c9b8bea3ebd656452f096a33d6b386bb82df7
+ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537617"
+ms.lasthandoff: 11/05/2021
+ms.locfileid: "60793584"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
@@ -23,6 +23,8 @@ Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de vo
 ## <a name="use-runtime-logging-from-the-command-line"></a>Utiliser la journalisation de l’exécution à partir de la ligne de commande
 
 L’activation de la journalisation de l’exécution à partir de la ligne de commande est le moyen le plus rapide d’utiliser cet outil de journalisation. Celles-ci utilisent npx, fourni par défaut dans le cadre de npm@5.2.0 +. Si vous disposez d’une version antérieure de [npm](https://www.npmjs.com/), essayez les instructions [Journalisation de l’exécution sur Windows](#runtime-logging-on-windows) ou [Journalisation de l’exécution sur Mac](#runtime-logging-on-mac), ou [install npx](https://www.npmjs.com/package/npx).
+
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 - Pour activer la journalisation de l’exécution :
 
@@ -141,5 +143,5 @@ Vous pouvez afficher des messages dans le fichier journal qui sont source de con
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Vider le cache Office](clear-cache.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
-- [Déboguer des applications à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Déboguer des applications à l’aide des outils de développement pour l’héritage Edge](debug-add-ins-using-devtools-edge-legacy.md)
+- [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
+- [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
