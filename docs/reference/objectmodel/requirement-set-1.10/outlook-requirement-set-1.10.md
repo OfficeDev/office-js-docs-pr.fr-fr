@@ -1,16 +1,16 @@
 ---
-title: Outlook l’ensemble de conditions requises de l’API du add-in 1.10
+title: Outlook conditions requises de l’API du add-in 1.10
 description: Ensemble de conditions requises 1.10 pour Outlook API de votre application.
-ms.date: 11/01/2021
+ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 57814ab7da8faec3cc60f943ef13db12de01dc17
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 76cdf267a707a7f7d3481fcf6e50265fca061ff0
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681096"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809055"
 ---
-# <a name="outlook-add-in-api-requirement-set-110"></a>Outlook l’ensemble de conditions requises de l’API du add-in 1.10
+# <a name="outlook-add-in-api-requirement-set-110"></a>Outlook conditions requises de l’API du add-in 1.10
 
 Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
 
@@ -22,6 +22,7 @@ Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des obje
 L’ensemble de conditions requises 1.10 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.9](../requirement-set-1.9/outlook-requirement-set-1.9.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Ajout de nouvelles API pour [l’activation basée](../../../outlook/autolaunch.md) sur des événements et les fonctionnalités de signature électronique.
+- Prise en charge supplémentaire de [l’objet OfficeRuntime.Stockage](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true) avec la fonctionnalité d’activation basée sur des événements.
 - Ajout de la possibilité d’inclure une action personnalisée sur un message de notification.
 
 ### <a name="change-log"></a>Journal des modifications
@@ -33,11 +34,12 @@ L’ensemble de conditions requises 1.10 inclut toutes les fonctionnalités de l
 - Ajout de [Office.context.mailbox.item.disableClientSignatureAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction qui désactive la signature du client pour la boîte aux lettres d’envoi en mode composition.
 - Ajout [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-1.10&preserve-view=true#getComposeTypeAsync_options__callback_): ajoute une nouvelle fonction qui obtient le type de composition d’un message en mode composition.
 - Ajout de [Office.context.mailbox.item.isClientSignatureEnabledAsync](office.context.mailbox.item.md#methods): ajoute une nouvelle fonction qui vérifie si la signature du client est activée sur l’élément en mode composition.
-- Ajout de [Office. MailboxEnums.ActionType :](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true)ajoute une nouvelle enum. Il représente le type d’action personnalisée dans un message de notification.
+- Ajout [Office. MailboxEnums.ActionType :](/javascript/api/outlook/office.mailboxenums.actiontype?view=outlook-js-1.10&preserve-view=true)ajoute une nouvelle enum. Il représente le type d’action personnalisée dans un message de notification.
 - Ajout [Office.MailboxEnums.ComposeType](/javascript/api/outlook/office.mailboxenums.composetype?view=outlook-js-1.10&preserve-view=true): ajoute une nouvelle enum disponible en mode Composition.
 - Ajout [Office. MailboxEnums.ItemNotificationMessageType.InsightMessage](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype?view=outlook-js-1.10&preserve-view=true): ajoute un nouveau type à `ItemNotificationMessageType` l’enum. Il représente un message de notification avec une action personnalisée.
-- Ajout de [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): ajoute un nouvel objet afin que vous pouvez définir une action personnalisée pour votre `InsightMessage` notification.
+- Ajout [Office. NotificationMessageAction](/javascript/api/outlook/office.notificationmessageaction?view=outlook-js-1.10&preserve-view=true): ajoute un nouvel objet afin que vous pouvez définir une action personnalisée pour votre `InsightMessage` notification.
 - Ajout [Office. NotificationMessageDetails.actions](/javascript/api/outlook/office.notificationmessagedetails?view=outlook-js-1.10&preserve-view=true#actions): ajoute une nouvelle propriété qui vous permet d’ajouter une `InsightMessage` notification avec une action personnalisée.
+- Modification [d’OfficeRuntime.Stockage](/javascript/api/office-runtime/officeruntime.storage?view=outlook-js-1.10&preserve-view=true): ajoute Outlook prise en charge, mais uniquement avec la fonctionnalité d’activation basée sur des événements.
 
 ## <a name="see-also"></a>Voir aussi
 

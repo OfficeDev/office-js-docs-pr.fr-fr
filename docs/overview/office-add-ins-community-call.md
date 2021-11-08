@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office Appel de la communauté des add-ins
 description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 11/04/2021
+ms.date: 11/07/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: eae3c8d78f411af31011d6af7b76a3282b53192b
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: b2479c4942ca2b4df6cc39da3ac0a06755e760b1
+ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793595"
+ms.lasthandoff: 11/08/2021
+ms.locfileid: "60809069"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
 
@@ -16,7 +16,7 @@ L’appel de la communauté Microsoft Office compléments est un appel mensuel d
 
 ## <a name="agenda-for-november-10th-call"></a>Agenda de l’appel du 10 novembre
 
-- Community présentation par CodeTwo. Intégration de l’activation basée sur des événements Outlook signatures.
+- [CodeTwo :](https://www.codetwo.com/email-signatures/)l’Outlook signatures basées sur les destinataires du courrier électronique et bien plus encore.
 - Démonstration de la nouvelle bibliothèque Office-Addin-Mock pour tester votre code lorsque vous travaillez avec Office API JS.
 - Microsoft 365 bac à sable instantané.
 
