@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
 description: En savoir plus sur les ensembles Office d’API communes.
-ms.date: 04/28/2021
+ms.date: 11/08/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: d31b119db15689a8ba4c5f5cf070f26aa916a6d3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c6b2f7f41ff002f3ce66c5dd8afbb36f2e3e6f1e
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153268"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60890006"
 ---
 # <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
@@ -32,7 +32,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 Les sections suivantes listent les ensembles de conditions requises d’API communes, les méthodes de chaque ensemble et les applications clientes Office qui la prise en charge. Tous ces ensembles de conditions requises d’API sont à la version 1.1., sauf indication contraire.
 
 > [!TIP]
-> Vous avez besoin d’informations sur l’endroit où les modules complémentaires et les ensembles de conditions requises sont pris en charge par Office’application et la version ? Consultez Office disponibilité des applications clientes et de [la plateforme pour Office des applications.](../../overview/office-add-in-availability.md)
+> Vous avez besoin d’informations sur l’endroit où les modules complémentaires et les ensembles de conditions requises sont pris en charge par Office’application et la version ? Consultez Office disponibilité des applications clientes et de la [plateforme pour Office des applications.](../../overview/office-add-in-availability.md)
 
 ### <a name="activeview"></a>ActiveView
 
@@ -96,7 +96,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ---
 
-### <a name="file"></a>Fichier
+### <a name="file"></a>File
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
@@ -180,7 +180,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Excel sur Windows<br>Excel sur le web<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web|Prend en charge la sortie au format PDF (Office.FileType.Pdf)<br>lorsque vous utilisez la méthode Document.getFileAsync.|
+| Excel sur Windows<br>Excel sur le web<br>Excel sur Mac<br>PowerPoint sur Windows<br>PowerPoint sur le web<br>PowerPoint sur iPad<br>PowerPoint sur Mac<br>Word 2013 ou version ultérieure sur Windows<br>Word 2016 ou version ultérieure sur Mac<br>Word sur le web<br>Word sur iPad|Prend en charge la sortie au format PDF (Office.FileType.Pdf)<br>lorsque vous utilisez la méthode Document.getFileAsync.|
 
 ---
 
@@ -192,7 +192,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ---
 
-### <a name="selection"></a>Sélection
+### <a name="selection"></a>Selection
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|

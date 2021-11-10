@@ -1,17 +1,17 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 11/03/2021
+ms.date: 11/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a5d4915638d67c67679095eb03bc04a48e9196dd
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: 6155805245b14d3c3365d759bcd647419266f499
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749384"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889978"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -97,7 +97,7 @@ Voici une liste de tous les objets d’erreur avec prise en charge étendue via 
 - [Div0ErrorCellValue](/javascript/api/excel/excel.div0errorcellvalue)
 - [FieldErrorCellValue](/javascript/api/excel/excel.fielderrorcellvalue)
 - [GettingDataErrorCellValue](/javascript/api/excel/excel.gettingdataerrorcellvalue)
-- [NaErrorCellValue](/javascript/api/excel/excel.naerrorcellvalue)
+- [NotAvailableErrorCellValue](/javascript/api/excel/excel.notavailableerrorcellvalue)
 - [NameErrorCellValue](/javascript/api/excel/excel.nameerrorcellvalue)
 - [NullErrorCellValue](/javascript/api/excel/excel.nullerrorcellvalue)
 - [NumErrorCellValue](/javascript/api/excel/excel.numerrorcellvalue)
