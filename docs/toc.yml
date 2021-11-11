@@ -271,7 +271,9 @@ items:
                 href: testing/debug-add-ins-using-f12-tools-ie.md
               - name: Déboguer à l’aide des outils de développement pour la version héritée Edge
                 href: testing/debug-add-ins-using-devtools-edge-legacy.md
-              - name: Débogage à l’aide de Microsoft Edge WebView2
+              - name: Déboguer à l’aide des outils de développement pour Edge Chromium WebView2
+                href: testing/debug-add-ins-using-devtools-edge-chromium.md
+              - name: Déboguer à l’aide de Visual Studio Code et de Edge Chromium WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
               - name: Tester avec Internet Explorer 11
