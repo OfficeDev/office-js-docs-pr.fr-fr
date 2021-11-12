@@ -1,18 +1,21 @@
 ---
-title: Déboguer des compléments à l’aide de Microsoft Edge WebView2 (avec Chromium)
+title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 description: Découvrez comment déboguer un complément Office qui utilise Microsoft Edge WebView2 (avec Chromium) à l’aide du débogueur pour l’extension Microsoft Edge dans VS Code.
-ms.date: 11/01/2021
+ms.date: 11/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: bc7aea8cd48e74edd554a760b80c065c3d287f11
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
+ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681265"
+ms.lasthandoff: 11/10/2021
+ms.locfileid: "60889985"
 ---
-# <a name="debug-add-ins-on-windows-using-edge-chromium-webview2"></a>Déboguer un complément à l’aide de Microsoft Edge WebView2
+# <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
-L’exécution d’un complément Office sur Windows peut utiliser le débogueur pour l’extension Microsoft Edge dans VS Code pour déboguer sur le runtime d’Edge Chromium WebView2.
+Les compléments Office s’exécutant sur Windows peuvent utiliser le débogueur pour Microsoft Edge extension dans Visual Studio Code afin de déboguer sur le runtime Edge Chromium WebView2. 
+
+> [!TIP]
+> Si vous ne pouvez pas ou ne souhaitez pas déboguer à l’aide d’outils intégrés à Visual Studio Code; ou vous rencontrez un problème qui se produit uniquement lorsque le complément est exécuté en dehors de Visual Studio Code, vous pouvez déboguer le runtime Edge Chromium WebView2 à l’aide des outils de développement Edge (basés sur Chromium), comme décrit dans [Déboguer les compléments à l’aide des outils de développement pour Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
 
 ## <a name="prerequisites"></a>Configuration requise
 

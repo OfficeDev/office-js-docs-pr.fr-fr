@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 9e0e630d9a64390f1f8d5e4ca78262ec8cc998e4
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: f5587fc96789769b17a15e242211a7cbb97e5ea3
+ms.sourcegitcommit: e36c25023b4268e8a50af984d753379082d44295
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138491"
+ms.lasthandoff: 11/12/2021
+ms.locfileid: "60923565"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -546,7 +546,7 @@ Pour plus d’informations sur la validation d’un manifeste par rapport à la 
 ## <a name="see-also"></a>Voir aussi
 
 * [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md)
-* [Créer des commandes de complément dans votre manifeste] [create-addin-commands.md]
+* [Création de commandes de complément dans votre manifeste](create-addin-commands.md)
 * [Spécifier les exigences en matière d’applications Office et de l’API](specify-office-hosts-and-api-requirements.md)
 * [Localisation des compléments Office](localization.md)
 * [Référence de schéma pour les manifestes des compléments Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
