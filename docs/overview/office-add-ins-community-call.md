@@ -1,24 +1,22 @@
 ---
-title: Microsoft Office Appel de la communauté des add-ins
+title: Microsoft Office de la communauté des add-ins
 description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 11/07/2021
+ms.date: 11/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b2479c4942ca2b4df6cc39da3ac0a06755e760b1
-ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
+ms.openlocfilehash: dd96efb632b065e15d80a73f6bc54a4424e24d49
+ms.sourcegitcommit: 4cd94f6b365ea7813f19d4a06e6de2a1308b5aee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "60809069"
+ms.lasthandoff: 11/15/2021
+ms.locfileid: "60963436"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office Appel de la communauté des add-ins
+# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des add-ins
 
 L’appel de la communauté Microsoft Office compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office compléments. L’appel de la communauté a lieu le deuxième mercredi de chaque mois à 8:00 PDT. Vous pouvez télécharger l’invitation de calendrier sur [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
 
-## <a name="agenda-for-november-10th-call"></a>Agenda de l’appel du 10 novembre
+## <a name="agenda-for-december-8th-call"></a>Agenda de l’appel du 8 décembre
 
-- [CodeTwo :](https://www.codetwo.com/email-signatures/)l’Outlook signatures basées sur les destinataires du courrier électronique et bien plus encore.
-- Démonstration de la nouvelle bibliothèque Office-Addin-Mock pour tester votre code lorsque vous travaillez avec Office API JS.
-- Microsoft 365 bac à sable instantané.
+L’agenda de décembre sera publié environ une semaine avant l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 
@@ -32,7 +30,7 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 - [12 mai 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [14 avril 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [10 mars 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
-- [Appels Office de la communauté des Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
+- [Appels de Office de la communauté des Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -40,5 +38,5 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 - [Community et questions sur les sujets d’appel](https://aka.ms/officeaddinsform)
 - [Microsoft 365 canal YouTube pour les développeurs](https://aka.ms/m365devyoutube)
 - [Microsoft 365 de la communauté YouTube](https://aka.ms/m365pnp/videos )
-- [Microsoft 365 PnP sur tech Community](https://aka.ms/m365pnp/community)
-- [Microsoft 365 Blog de la communauté technique PnP](https://aka.ms/m365pnp/community/blog)
+- [Microsoft 365 PnP sur Tech Community](https://aka.ms/m365pnp/community)
+- [Microsoft 365 de la communauté technique PnP](https://aka.ms/m365pnp/community/blog)
