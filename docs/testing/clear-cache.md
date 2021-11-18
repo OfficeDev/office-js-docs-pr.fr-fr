@@ -1,14 +1,14 @@
 ---
 title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
-ms.date: 08/02/2021
+ms.date: 11/15/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 4d5351e9f8758109bfd0ef4a901c5ef916c98fa4
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537645"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066666"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -21,7 +21,25 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 
-Pour éliminer tous les compléments chargés indépendamment dans Excel, Word et PowerPoint supprimez les contenus du dossier.
+Il existe trois façons d’effacer le cache Office sur un ordinateur Windows : automatiquement, manuellement et à l’aide des outils de développement Microsoft Edge. Les méthodes sont décrites dans les sous-sections suivantes.
+
+### <a name="automatically"></a>Automatiquement
+
+Cette méthode est recommandée pour les ordinateurs liés au développement de compléments. Si votre version Office sur Windows est 2108 ou ultérieure, les étapes suivantes configurent le cache Office pour qu’il soit automatiquement effacé chaque fois qu’Office est rouvert.
+
+> [!NOTE]
+> La méthode automatique n’est pas prise en charge pour Outlook.
+
+1. À partir du ruban de n’importe quel hôte Office à l’exception d’Outlook, accédez à **Fichier** > **Options** > **Centre de gestion de la confidentialité** > **Paramètres du Centre de gestion de la confidentialité** > **Catalogues des compléments approuvés**.
+1. Sélectionnez la case **Au prochain démarrage d’Office, effacer le cache de tous les compléments web précédemment démarrés**.
+
+### <a name="manually"></a>Manuellement
+
+La méthode manuelle pour Excel, Word et PowerPoint est différente de celle pour Outlook.
+
+#### <a name="manually-clear-the-cache-in-excel-word-and-powerpoint"></a>Effacer manuellement le cache dans Excel, Word et PowerPoint
+
+Pour supprimer tous les compléments chargés indépendamment d’Excel, de Word et de PowerPoint, supprimez le contenu du dossier suivant.
 
 ```
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
@@ -33,9 +51,13 @@ Si le dossier suivant existe, supprimez également son contenu.
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
 ```
 
+#### <a name="manually-clear-the-cache-in-outlook"></a>Effacer manuellement le cache dans Outlook
+
 Pour supprimer un complément chargé indépendamment d’Outlook, suivez la procédure décrite dans [Charger indépendamment des compléments Outlook à des fins de test](../outlook/sideload-outlook-add-ins-for-testing.md) pour rechercher le complément dans la section **Compléments personnalisés** de la boîte de dialogue qui répertorie les compléments installés. Sélectionnez les points de suspension (`...`) du complément, puis sélectionnez **Supprimer** pour supprimer ce complément spécifique. Si la suppression de ce complément ne fonctionne pas, supprimez le contenu du dossier `Wef`comme indiqué précédemment pour Excel, Word et PowerPoint.
 
-En outre, vous pouvez utiliser Microsoft Edge DevTools pour vider le cache Office dans Windows 10 lorsque le complément s’exécute dans Microsoft Edge.
+### <a name="using-the-microsoft-edge-developer-tools"></a>Utilisation des outils de développement Microsoft Edge
+
+Pour effacer le cache Office sur Windows 10 lorsque le complément s’exécute dans Microsoft Edge, vous pouvez utiliser Outils de développement Microsoft Edge.
 
 > [!TIP]
 > Si vous souhaitez que le complément chargé indépendamment reflète les modifications récentes apportées à ses fichiers sources HTML ou JavaScript, vous n’avez normalement pas besoin de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **Ctrl+F5** pour recharger le complément.
