@@ -1,14 +1,14 @@
 ---
 title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
-ms.date: 09/03/2021
+ms.date: 11/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eddbcc1db05ca618506ce4810bf2bb795e59f7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7e2667e7f465749f708bf35cf00b0806306a618a
+ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153199"
+ms.lasthandoff: 11/17/2021
+ms.locfileid: "61064693"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook’authentification unique
 
@@ -23,7 +23,7 @@ Pour une vue d’ensemble de l’authentification unique dans les compléments O
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans Microsoft 365 location
 
-Pour utiliser l’authentification Outlook un autre, vous devez activer l’authentification moderne pour Microsoft 365 location. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Pour utiliser l’authentification Outlook un Outlook, vous devez activer l’authentification moderne pour le Microsoft 365 location. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Inscription de votre complément
 
@@ -48,8 +48,13 @@ Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jet
 > [!IMPORTANT]
 > Quand vous utilisez le jeton SSO sous forme d’identité dans le complément *Outlook*, nous vous recommandons d’[utiliser le jeton d’identité Exchange](authenticate-a-user-with-an-identity-token.md) comme identité alternative. Les utilisateurs de votre complément peuvent utiliser plusieurs clients, dont certains ne fourniront peut-être pas de jeton SSO. En utilisant le jeton d’identité Exchange comme alternative, vous pouvez éviter d’inviter les utilisateurs à entrer leurs informations d’identification plusieurs fois. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](implement-sso-in-outlook-add-in.md).
 
+## <a name="sso-for-event-based-activation"></a>SSO pour l’activation basée sur des événements
+
+Des étapes supplémentaires sont à suivre si votre complément utilise l’activation basée sur des événements. Pour plus d’informations, voir Activer l' [sign-on unique (SSO)](use-sso-in-event-based-activation.md)dans Outlook qui utilisent l’activation basée sur des événements.
+
 ## <a name="see-also"></a>Voir aussi
 
-- Pour obtenir un exemple Outlook qui utilise le jeton ssO pour accéder à l’API Microsoft Graph, voir Outlook [SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)du Outlook.
+- Pour obtenir un exemple Outlook qui utilise le jeton sso pour accéder à l’API Microsoft Graph, voir Outlook [SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)du Outlook.
 - [Référence d’API SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
 - [Ensemble d’exigences IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+- [Activer l' sign-on unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur des événements](use-sso-in-event-based-activation.md)
