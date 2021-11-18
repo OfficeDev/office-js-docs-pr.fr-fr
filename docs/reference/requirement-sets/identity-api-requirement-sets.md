@@ -8,8 +8,8 @@ ms.openlocfilehash: d953e3ca2d135b96ab8b3219d9fe0f52fbda9d99
 ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2021
-ms.locfileid: "61064658"
+ms.lasthandoff: 11/18/2021
+ms.locfileid: "61066715"
 ---
 # <a name="identity-api-requirement-sets"></a>Ensembles de conditions requises de l’API d’identité
 

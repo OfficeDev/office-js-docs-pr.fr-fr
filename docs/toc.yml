@@ -1136,6 +1136,8 @@ items:
                 href: outlook/authentication.md
               - name: S’authentifier avec un jeton à authentification unique
                 href: outlook/authenticate-a-user-with-an-sso-token.md
+              - name: SSO dans l’activation basée sur un événement
+                href: outlook/use-sso-in-event-based-activation.md
               - name: S’authentifier avec un jeton d’identité
                 href: outlook/authenticate-a-user-with-an-identity-token.md
               - name: Valider un jeton d’identité
