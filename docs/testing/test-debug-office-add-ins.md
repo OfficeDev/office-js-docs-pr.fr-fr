@@ -3,12 +3,12 @@ title: Test et débogage de compléments Office
 description: Découvrez comment tester et déboguer votre Complément Office.
 ms.date: 09/24/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77f1fcf47689d9a31611e48d6235f5c8893dcfe7
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: db0edec5c7b7c741425a9d27d7580a52d2839546
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537547"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081413"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
@@ -45,6 +45,7 @@ La procédure de débogage d’un complément Office varie également selon la p
 - [Attacher un débogueur à partir du volet Office (sur Windows)](attach-debugger-from-task-pane.md)
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
+- [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
 - [Déboguer des compléments Office sur un Mac](debug-office-add-ins-on-ipad-and-mac.md)
 - [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)

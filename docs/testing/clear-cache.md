@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 11/15/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 79b5f4e483eadec5d9f3095ab1c37e8eb697658b
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: 36f3de58eb5089f6c638510cb33879cb36c7330c
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066666"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081406"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -96,6 +96,7 @@ Pour vider le cache Office sur iOS, appelez `window.location.reload(true)` à pa
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](troubleshoot-development-errors.md)
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
+- [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
 - [Manifeste XML des compléments Office](../develop/add-in-manifests.md)
