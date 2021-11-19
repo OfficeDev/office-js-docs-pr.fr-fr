@@ -3,12 +3,12 @@ title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un Office à l’aide du schéma XML et d’autres outils.
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e7b93430b8ddffc5ebc2cc8f2ae2bab5c0850f
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: e9b7e868b55489c70a5abe067a262b0ea73fbae8
+ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681527"
+ms.lasthandoff: 11/19/2021
+ms.locfileid: "61081420"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -25,7 +25,7 @@ Si vous avez utilisé [le générateur Yeoman pour les compléments Office](http
 npm run validate
 ```
 
-![Image GIF animée qui montre le validateur Office Yo exécuté sur la ligne de commande et générant des résultats qui indiquent validation transmise.](../images/yo-office-validator.gif)
+![Image GIF animée qui montre le validateur Office Yo exécuté sur la ligne de commande et générant des résultats qui indiquent Validation Passed.](../images/yo-office-validator.gif)
 
 > [!NOTE]
 > Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).
@@ -77,3 +77,4 @@ Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définitio
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
+- [Déboguer des applications à l’aide des outils de développement Microsoft Edge (Chromium base de données)](debug-add-ins-using-devtools-edge-chromium.md)
