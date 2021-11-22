@@ -1,14 +1,14 @@
 ---
 title: Test et débogage de compléments Office
 description: Découvrez comment tester et déboguer votre Complément Office.
-ms.date: 09/24/2021
+ms.date: 11/14/2021
 ms.localizationpriority: high
-ms.openlocfilehash: db0edec5c7b7c741425a9d27d7580a52d2839546
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 3eaf86d7cc2702e0501522debad2e64ac24c323c
+ms.sourcegitcommit: 67b70f5328e4b9c9e9df098ec98f29a02f363464
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081413"
+ms.locfileid: "61124393"
 ---
 # <a name="test-and-debug-office-add-ins"></a>Test et débogage de compléments Office
 
@@ -37,6 +37,10 @@ Vous pouvez utiliser le chargement indépendant pour installer un complément Of
 - [Chargement de version test de compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
 
 - [Chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md)
+
+## <a name="unit-testing"></a>Tests unitaires
+
+Pour plus d’informations sur l’ajout de tests unitaires à votre projet de complément, consultez [Test unitaires dans les compléments Office](unit-testing.md).
 
 ## <a name="debug-an-office-add-in"></a>Débogage d’un complément Office
 
