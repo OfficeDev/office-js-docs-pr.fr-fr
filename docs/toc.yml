@@ -348,6 +348,8 @@ items:
                 href: reference/requirement-sets/identity-api-requirement-sets.md
               - name: Ensembles de conditions requises de coercition d’image
                 href: reference/requirement-sets/image-coercion-requirement-sets.md
+              - name: Ensembles de conditions requises pour les raccourcis clavier
+                href: reference/requirement-sets/keyboard-shortcuts-requirement-sets.md
               - name: Séries de conditions requises des API communes pour Office
                 href: reference/requirement-sets/office-add-in-requirement-sets.md
               - name: Séries de conditions requises pour ouvrir une fenêtre de navigateur
@@ -817,7 +819,7 @@ items:
       - name: Documentation sur les compléments OneNote
         href: onenote/index.yml
         displayName: OneNote
-      - name: Vue d'ensemble
+      - name: Vue d’ensemble
         href: onenote/onenote-add-ins-programming-overview.md
         displayName: OneNote
       - name: Créer votre premier complément OneNote
