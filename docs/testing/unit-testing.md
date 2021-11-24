@@ -1,14 +1,14 @@
 ---
 title: Test unitaire dans les Office de test
 description: Découvrez comment unitér le code de test qui appelle Office API JavaScript
-ms.date: 11/14/2021
+ms.date: 11/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3daf47a6221d5c9dbc0ad9fe1c357264d0a2f622
-ms.sourcegitcommit: 67b70f5328e4b9c9e9df098ec98f29a02f363464
+ms.openlocfilehash: 32f0cefeeeaa2ab78a45069711d537303af26a24
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61124833"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153476"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>Test unitaire dans les Office de test
 
@@ -31,7 +31,7 @@ Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exe
 Cet article part du principe que vous connaissez les concepts de base des tests unitaires et de la maquette, notamment la création et l’utilisation de fichiers de test, et que vous avez une certaine expérience avec une infrastructure de test unitaire.
 
 > [!TIP]
-> Si vous travaillez avec Visual Studio, nous vous recommandons de lire l’article Unit [testing JavaScript et TypeScript](/visualstudio/javascript/unit-testing-javascript-with-visual-studio.md) dans Visual Studio pour obtenir des informations de base sur le test d’unité JavaScript dans Visual Studio, puis de revenir à cet article.
+> Si vous travaillez avec Visual Studio, nous vous recommandons de lire l’article Unit [testing JavaScript et TypeScript](/visualstudio/javascript/unit-testing-javascript-with-visual-studio) dans Visual Studio pour obtenir des informations de base sur le test d’unité JavaScript dans Visual Studio, puis de revenir à cet article.
 
 ## <a name="install-the-tool"></a>Installer l’outil
 
@@ -179,7 +179,7 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 
 ### <a name="mocking-the-outlook-apis"></a>Mocking the Outlook APIs
 
-Bien qu’à proprement parler, les API Outlook font partie du modèle API commun, elles ont une architecture spéciale qui est conçue autour de l’objet [Mailbox,](/javascript/api/office/office.mailbox) donc nous avons fourni un exemple distinct pour Outlook. Cet exemple suppose qu’un Outlook possède l’une de ses fonctionnalités dans un fichier nommé `my-outlook-add-in-feature.js` . L’exemple suivant montre le contenu du fichier. La `addHelloWorldText` fonction définit le texte « Hello World! » à tout ce qui est actuellement sélectionné dans la fenêtre de composition du message.
+Bien qu’à proprement parler, les API Outlook font partie du modèle API commun, elles ont une architecture spéciale qui est conçue autour de l’objet [Mailbox,](/javascript/api/outlook/office.mailbox) donc nous avons fourni un exemple distinct pour Outlook. Cet exemple suppose qu’un Outlook possède l’une de ses fonctionnalités dans un fichier nommé `my-outlook-add-in-feature.js` . L’exemple suivant montre le contenu du fichier. La `addHelloWorldText` fonction définit le texte « Hello World! » à tout ce qui est actuellement sélectionné dans la fenêtre de composition du message.
 
 ```javascript
 const myOutlookAddinFeature = {

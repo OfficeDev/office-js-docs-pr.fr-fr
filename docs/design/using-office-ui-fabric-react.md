@@ -1,23 +1,23 @@
 ---
 title: Interface utilisateur Fluent - Comment faire pour les modules add-in Office ?
 description: Découvrez comment utiliser les Fluent’interface utilisateur React dans Office de l’interface utilisateur.
-ms.date: 07/08/2021
+ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3989430c2c73881c9374c078b39d314d9f9705bb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bb53dfcfca644159a10d3b3c1d7bb6911561e58e
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149180"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153462"
 ---
 # <a name="use-fluent-ui-react-in-office-add-ins"></a>Utiliser Fluent’interface utilisateur React dans les Office de l’interface utilisateur
 
-Fluent La React d’interface utilisateur est l’infrastructure frontale JavaScript open source officielle conçue pour créer des expériences qui s’intègrent parfaitement à un large éventail de produits Microsoft, notamment Office. Il fournit des composants robustes, à jour, accessibles et basés sur React, qui sont hautement personnalisables à l'aide de CSS-in-JS.
+Fluent interface utilisateur React est l’infrastructure frontale JavaScript open source officielle conçue pour créer des expériences qui s’intègrent parfaitement à un large éventail de produits Microsoft, notamment Office. Il fournit des composants robustes, à jour, accessibles et basés sur React, qui sont hautement personnalisables à l'aide de CSS-in-JS.
 
 > [!NOTE]
 > Cet article décrit l’utilisation des Fluent’interface utilisateur React dans le contexte de Office de l’interface utilisateur. Mais il est également utilisé dans un large éventail d’applications Microsoft 365 et d’extensions. Pour plus d’informations, [voir Fluent’interface](https://developer.microsoft.com/fluentui#/get-started/web#fluent-ui-react) utilisateur React et le repo open source [Fluent UI Web](https://github.com/microsoft/fluentui).
 
-Cet article explique comment créer un add-in qui est créé à l’React et qui utilise Fluent’interface utilisateur React composants.
+Cet article explique comment créer un module qui est créé à l’React et qui utilise Fluent’interface utilisateur React composants.
 
 ## <a name="create-an-add-in-project"></a>Création d’un projet de complément
 
@@ -90,8 +90,8 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ```typescript
 import * as React from 'react';
-import { PrimaryButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
-import { Label } from 'office-ui-fabric-react/lib/Label';
+import { PrimaryButton, IButtonProps } from '@fluentui/react/lib/components/Button';
+import { Label } from '@fluentui/react/lib/components/Label';
 
 export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
   public constructor(props) {
@@ -126,7 +126,7 @@ export class ButtonPrimaryExample extends React.Component<IButtonProps, {}> {
 Ce code effectue les opérations suivantes :
 
 - Fait référence à la bibliothèque React en utilisant `import * as React from 'react';`.
-- Fait référence à l Fluent’interface utilisateur React composants ( , , ) qui `PrimaryButton` sont utilisés pour créer `IButtonProps` `Label` `ButtonPrimaryExample` .
+- Fait référence à l Fluent’interface utilisateur React composants ( , , ) qui `PrimaryButton` `IButtonProps` sont utilisés pour `Label` `ButtonPrimaryExample` créer.
 - Déclare le nouveau composant `ButtonPrimaryExample` en utilisant `export class ButtonPrimaryExample extends React.Component`.
 - Déclare la fonction `insertText` qui gère l’événement du bouton `onClick`.
 - Définit l’interface utilisateur du composant React dans la fonction `render`. Le code HTML utilise les composants de Fluent’interface utilisateur React et spécifie que lorsque l’événement se déclenche, la fonction `Label` `PrimaryButton` `onClick` `insertText` s’exécute.
@@ -141,11 +141,9 @@ Ajoutez le composant à votre application en ouvrant `ButtonPrimaryExample` **sr
     import {ButtonPrimaryExample} from './Button';
     ```
 
-2. Supprimez les deux instructions d’importation suivantes.
+2. Supprimez l’instruction import suivante.
 
     ```typescript
-    import { Button, ButtonType } from 'office-ui-fabric-react';
-    ...
     import Progress from './Progress';
     ```
 

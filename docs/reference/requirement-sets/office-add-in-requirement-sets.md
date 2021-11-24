@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API communes pour Office
-description: En savoir plus sur les ensembles Office d’API communes.
-ms.date: 11/08/2021
+description: En savoir plus sur les ensembles Office conditions requises d’API communes.
+ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: c6b2f7f41ff002f3ce66c5dd8afbb36f2e3e6f1e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
+ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60890006"
+ms.lasthandoff: 11/24/2021
+ms.locfileid: "61153469"
 ---
 # <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
@@ -96,7 +96,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ---
 
-### <a name="file"></a>File
+### <a name="file"></a>Fichier
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
@@ -125,6 +125,14 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
 | Voir [Ensembles de conditions requises de coercition d’image](image-coercion-requirement-sets.md). | Méthode Document.setSelectedDataAsync|
+
+---
+
+### <a name="keyboardshortcuts"></a>KeyboardShortcuts
+
+|**Applications Office**|**Méthodes dans l’ensemble**|
+|:-----|:-----|
+| Voir ensembles de conditions [requises raccourcis clavier.](keyboard-shortcuts-requirement-sets.md) | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
 
 ---
 
