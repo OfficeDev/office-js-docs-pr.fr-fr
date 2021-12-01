@@ -1,14 +1,14 @@
 ---
 title: Test unitaire dans les Office de test
 description: Découvrez comment unitér le code de test qui appelle Office API JavaScript
-ms.date: 11/23/2021
+ms.date: 11/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 32f0cefeeeaa2ab78a45069711d537303af26a24
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 8824b8e759e3c1acecf30683f2b89bb41bd558f3
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153476"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242039"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>Test unitaire dans les Office de test
 
@@ -21,12 +21,11 @@ La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisé
 
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Tso](https://jasmine.github.io/)
 
 Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha Office page d’accueil [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
 Cet article part du principe que vous connaissez les concepts de base des tests unitaires et de la maquette, notamment la création et l’utilisation de fichiers de test, et que vous avez une certaine expérience avec une infrastructure de test unitaire.
 
@@ -106,12 +105,9 @@ npm install office-addin-mock --save-dev
    npm test
    ```
 
-## <a name="examples"></a>Exemples
+## <a name="examples"></a>範例
 
 Les exemples de cette section utilisent Jest avec ses paramètres par défaut. Ces paramètres prise en charge les modules CommonJS. Consultez [la documentation de Jest](https://jestjs.io/docs/getting-started) pour savoir comment configurer Jest et node.js pour prendre en charge les modules ECMAScript et TypeScript. Pour exécuter l’un de ces exemples, exécutez les étapes suivantes.
-
-> [!NOTE]
-> 
 
 1. Créez un Office pour l’application Office hôte appropriée (par exemple, Excel ou Word). Une façon de le faire rapidement consiste à utiliser [l’outil Yo Office](https://github.com/OfficeDev/generator-office).
 1. À la racine du projet, [installez Jest](https://jestjs.io/docs/getting-started).
@@ -420,6 +416,4 @@ Il `OfficeMockObject` dispose de trois méthodes pour vous aider dans ces scéna
 - Le repo open source est [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 - [Jest](https://jestjs.io)
 - [Mocha](https://mochajs.org/)
-- [Storybook](https://storybook.js.org/docs/react/workflows/unit-testing)
 - [Tso](https://jasmine.github.io/)
- 

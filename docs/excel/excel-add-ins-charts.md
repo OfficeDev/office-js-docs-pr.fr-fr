@@ -1,19 +1,19 @@
 ---
 title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
-description: Exemples de code montrant les tâches graphiques à l’aide Excel API JavaScript.
-ms.date: 07/17/2019
+description: Exemples de code illustrant les tâches graphiques à l’aide Excel’API JavaScript.
+ms.date: 11/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b3cb04ff3bd8b1b0c050741a7238b1e9d6bd498f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173e20977270e84c7cef39d9ea0e326cb7b5d298
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150455"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242070"
 ---
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel.
-Pour obtenir la liste complète des propriétés et des méthodes qui sont prise en charge par les objets et les `Chart` propriétés, voir Chart Object `ChartCollection` [(interface API JavaScript](/javascript/api/excel/excel.chart) pour Excel) et [Chart Collection Object (interface API JavaScript](/javascript/api/excel/excel.chartcollection)pour Excel).
+Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Chart` propriétés, voir Chart Object `ChartCollection` [(Interface API JavaScript](/javascript/api/excel/excel.chart) pour Excel) et [Chart Collection Object (interface API JavaScript](/javascript/api/excel/excel.chartcollection)pour Excel).
 
 ## <a name="create-a-chart"></a>Création d’un graphique
 
@@ -187,6 +187,46 @@ Excel.run(function (context) {
 **Graphique avec une courbe de tendance linéaire**
 
 ![Graphique avec courbe de tendance linéaire Excel.](../images/excel-charts-trendline-linear.png)
+
+## <a name="add-and-format-a-chart-data-table"></a>Ajouter et mettre en forme un tableau de données de graphique
+
+Vous pouvez accéder à l’élément de table de données d’un graphique avec la [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) méthode. Cette méthode renvoie [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) l’objet. L’objet possède des propriétés de mise en forme `ChartDataTable` booléiennes telles `visible` que , et `showLegendKey` `showHorizontalBorder` .
+
+La `ChartDataTable.format` propriété renvoie l’objet, ce qui vous permet de mettre en forme et de donner un style supplémentaire [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) à la table de données. `ChartDataTableFormat`L’objet offre , et `border` `fill` `font` propriétés.
+
+L’exemple de code suivant montre comment ajouter une table de données à un graphique, puis mettre en forme cette table de données à l’aide des `ChartDataTable` objets et des `ChartDataTableFormat` objets.
+
+```js
+// This code sample adds a data table to a chart that already exists on the worksheet, 
+// and then adjusts the display and format of that data table.
+Excel.run(function (context) {
+    // Retrieve the chart on the "Sample" worksheet.
+    var chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+
+    // Get the chart data table object and load its properties.
+    var chartDataTable = chart.getDataTableOrNullObject();
+    chartDataTable.load();
+
+    // Set the display properties of the chart data table.
+    chartDataTable.visible = true;
+    chartDataTable.showLegendKey = true;
+    chartDataTable.showHorizontalBorder = false;
+    chartDataTable.showVerticalBorder = true;
+    chartDataTable.showOutlineBorder = true;
+
+    // Retrieve the chart data table format object and set font and border properties. 
+    var chartDataTableFormat = chartDataTable.format;
+    chartDataTableFormat.font.color = "#B76E79";
+    chartDataTableFormat.font.name = "Comic Sans";
+    chartDataTableFormat.border.color = "blue";
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
+La capture d’écran suivante montre la table de données créée par l’exemple de code précédent.
+
+![Graphique avec une table de données, présentant la mise en forme personnalisée de la table de données.](../images/excel-charts-data-table.png)
 
 ## <a name="export-a-chart-as-an-image"></a>Exporter un graphique sous forme d’image
 

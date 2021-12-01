@@ -1,34 +1,37 @@
 ---
 title: Ensembles de conditions requises des API ruban
-description: Spécifie les plateformes Office et les builds qui prisent en charge les API du ruban dynamique.
-ms.date: 10/05/2021
+description: Spécifie les plateformes Office et les builds qui la prise en charge des API du ruban dynamique.
+ms.date: 11/29/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d99f3ce3c1f781ca8ebc20ae1d637018386cd1c
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 1801d95da8dd0b2b707e1237498db71ca81474b5
+ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138708"
+ms.lasthandoff: 12/01/2021
+ms.locfileid: "61242046"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-L’ensemble d’API du Ruban prend en charge le contrôle par programme du moment où les commandes de module personnalisées (c’est-à-dire, les boutons de ruban personnalisés et les éléments de menu) sont activées et désactivées.
+L’ensemble d’API du Ruban prend en charge le contrôle par programme du moment où les commandes de module personnalisées (c’est-à-dire, les boutons de ruban personnalisés et les éléments de menu) sont activés et désactivés, et lorsque des onglets contextuels apparaissent sur le ruban.
+
+> [!NOTE]
+> Les ensembles de conditions requises RibbonApi sont pris en charge uniquement sur les add-ins du volet Des tâches.
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API du ruban, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office client.
 
 |  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(connecté à un abonnement Microsoft 365)  | Office sur le web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | N/A | Non prise en charge | Mai 2021 | S/O|
-| RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | S/O | 16.38 | Novembre 2020 | S/O|
+| RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
 
 > **&#42;** L’API ruban est prise en charge uniquement dans Excel.
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>Prise en charge de la version 1.1 Office sur Windows (abonnement)
 
-La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en charge dans le Canal consommateur version 2006 (build 13001.20498 ou version supérieure). Pour Office sur Windows la fonctionnalité est également prise en charge dans les builds du canal Semi-Annual et du canal Enterprise mensuel disponibles le 14 juillet 2020 ou une date ultérieure. Les builds minimales prise en charge pour chaque canal sont les suivantes :  
+La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en charge dans la version 2006 du canal consommateur (build 13001.20498 ou supérieure). Pour Office sur Windows la fonctionnalité est également prise en charge dans les builds du canal Semi-Annual et du canal Enterprise mensuel disponibles le 14 juillet 2020 ou une date ultérieure. Les builds minimales prise en charge pour chaque canal sont les suivantes :  
 
 |Canal | Version | Build|
 |:-----|:-----|:-----|
@@ -37,7 +40,7 @@ La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en cha
 |Canal Entreprise mensuel | 2004 | 12730.20602 ou supérieur|
 |Canal Entreprise semestriel | 2002 ou supérieure | 12527.20880 ou supérieur|
 
-## <a name="more-information"></a>Plus d’informations
+## <a name="more-information"></a>Informations supplémentaires
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 
