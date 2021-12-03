@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: c29f6b09d77ab946c9e97483688cd265e8495aef
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: b92d703ac4c10ba554a7aed8aabb73b65fdbdca7
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153493"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61285005"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -272,7 +272,9 @@ Votre add-in peut permettre aux utilisateurs de réaffecter les actions du modul
 > [!NOTE]
 > Les API décrites dans cette section nécessitent [l’ensemble de conditions requises KeyboardShortcuts 1.1.](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md)
 
-Utilisez la [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) pour affecter les combinaisons de clavier personnalisées d’un utilisateur à vos actions de modules. La méthode prend un paramètre de type , où les s sont un `{[actionId:string]: string}` sous-ensemble des ID d’action définis dans le manifeste JSON étendu du `actionId` module. Les valeurs sont les combinaisons de touches préférées de l’utilisateur. Si l’utilisateur est connecté Office, les combinaisons personnalisées sont enregistrées dans les paramètres d’itinérance de l’utilisateur. Si l’utilisateur n’est pas connecté, les personnalisations ne duent que pour la session actuelle du module.
+Utilisez la [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#replaceShortcuts) pour affecter les combinaisons de clavier personnalisées d’un utilisateur à vos actions de modules. La méthode prend un paramètre de type , où les s sont un `{[actionId:string]: string|null}` sous-ensemble des ID d’action qui doivent être définis dans le manifeste JSON étendu du `actionId` module. Les valeurs sont les combinaisons de touches préférées de l’utilisateur. La valeur peut également être , ce qui permet de supprimer toute personnalisation pour cela et de revenir à la combinaison de clavier par défaut définie dans le manifeste JSON étendu du `null` `actionId` module.
+
+Si l’utilisateur est connecté Office, les combinaisons personnalisées sont enregistrées dans les paramètres d’itinérance de l’utilisateur par plateforme. La personnalisation des raccourcis n’est actuellement pas prise en charge pour les utilisateurs anonymes.
 
 ```javascript
 const userCustomShortcuts = {
@@ -290,10 +292,11 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-Pour savoir quels raccourcis sont déjà utilisés pour l’utilisateur, appelez la [méthode Office.actions.getShortcuts.](/javascript/api/office/office.actions#getShortcuts) Cette méthode renvoie un objet de type `[actionId:string]:string|null}` , où les s sont `actionId` :
+Pour savoir quels raccourcis sont déjà utilisés pour l’utilisateur, appelez la [méthode Office.actions.getShortcuts.](/javascript/api/office/office.actions#getShortcuts) Cette méthode renvoie un objet de type , où les valeurs représentent la combinaison de clavier actuelle que l’utilisateur doit utiliser pour appeler `[actionId:string]:string|null}` l’action spécifiée. Les valeurs peuvent être provenant de trois sources différentes :
 
-- Tous les ID d’action qui sont définis dans le manifeste JSON étendu du add-in.
-- Tous les raccourcis personnalisés enregistrés pour l’utilisateur dans les paramètres d’itinérance de l’utilisateur. Les valeurs sont les combinaisons de touches actuellement affectées aux actions. 
+- S’il y a eu un conflit avec le raccourci et que l’utilisateur a choisi d’utiliser une autre action (native ou autre) pour cette combinaison de clavier, la valeur renvoyée sera puisque le raccourci a été changé et qu’il n’existe aucune combinaison de clavier que l’utilisateur peut utiliser actuellement pour appeler cette action de module. `null`
+- Si le raccourci a été personnalisé à l’aide de [la méthode Office.actions.replaceShortcuts,](/javascript/api/office/office.actions#replaceShortcuts) la valeur renvoyée sera la combinaison de clavier personnalisée.
+- Si le raccourci n’a pas été overrided ou personnalisé, il retourne la valeur à partir du manifeste JSON étendu du module.
 
 Voici un exemple.
 

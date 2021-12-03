@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office de la communauté des add-ins
 description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 11/15/2021
+ms.date: 12/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: dd96efb632b065e15d80a73f6bc54a4424e24d49
-ms.sourcegitcommit: 4cd94f6b365ea7813f19d4a06e6de2a1308b5aee
+ms.openlocfilehash: da85ba3cafec7c7eb86a4c6a617273747802b8e8
+ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2021
-ms.locfileid: "60963436"
+ms.lasthandoff: 12/03/2021
+ms.locfileid: "61284991"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des add-ins
 
@@ -16,12 +16,14 @@ L’appel de la communauté Microsoft Office compléments est un appel mensuel d
 
 ## <a name="agenda-for-december-8th-call"></a>Agenda de l’appel du 8 décembre
 
-L’agenda de décembre sera publié environ une semaine avant l’appel.
+- Outlook : Récapitulatif des annonces Ignite
+- Outlook exemple : utiliser l’activation basée sur des événements pour chiffrer les pièces jointes
 
 ## <a name="previous-calls"></a>Appels précédents
 
 Vous avez manqué un appel de la communauté précédent ? Consultez les ressources de blog suivantes pour découvrir la discussion !
 
+- [10 novembre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)
 - [13 octobre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-october-13-2021/ba-p/2867151)
 - [8 septembre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-september-8-2021/ba-p/2747100)
 - [11 août 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-august-2021/ba-p/2661372)
