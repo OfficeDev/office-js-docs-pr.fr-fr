@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide Excel API JavaScript.
-ms.date: 07/02/2021
+ms.date: 12/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 56bd443c6ec6921247aa8adb98932599594aa55f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3ab27032c8d80d8cd01c3a0239ba23e6bbd7e14f
+ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150332"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "61331063"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -322,7 +322,7 @@ function onWorksheetChanged(eventArgs) {
 
 Votre add-in peut suivre les modifications apportées aux formules dans une feuille de calcul. Cela est utile lorsqu’une feuille de calcul est connectée à une base de données externe. Lorsque la formule change dans la feuille de calcul, l’événement dans ce scénario déclenche les mises à jour correspondantes dans la base de données externe.
 
-Pour détecter les modifications apportées aux formules, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour [l’événement onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) d’une feuille de calcul. Les handlers d’événements `onFormulaChanged` de l’événement reçoivent un objet [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) lorsque l’événement se déclenche.
+Pour détecter les modifications apportées aux formules, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour [l’événement onFormulaChanged](/javascript/api/excel/excel.worksheet#onFormulaChanged) d’une feuille de calcul. Les handlers d’événements de l’événement reçoivent un `onFormulaChanged` [objet WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) lorsque l’événement se déclenche.
 
 > [!IMPORTANT]
 > `onFormulaChanged`L’événement détecte lorsqu’une formule elle-même change, et non la valeur de données résultant du calcul de la formule.
@@ -330,7 +330,7 @@ Pour détecter les modifications apportées aux formules, inscrivez un [handler]
 L’exemple de code suivant montre comment inscrire le handler d’événements, utiliser l’objet pour récupérer le tableau formulaDetails de la formule modifiée, puis imprimer les détails sur la formule modifiée avec les `onFormulaChanged` `WorksheetFormulaChangedEventArgs` propriétés [FormulaChangedEventDetail.](/javascript/api/excel/excel.formulachangedeventdetail) [](/javascript/api/excel/excel.worksheetformulachangedeventargs#formulaDetails)
 
 > [!NOTE]
-> Cet exemple de code ne fonctionne qu’en cas de changement d’une seule formule.
+> Cet exemple de code fonctionne uniquement lorsqu’une seule formule est modifiée.
 
 ```js
 Excel.run(function (context) {
@@ -374,7 +374,7 @@ Les images suivantes montrent les plages retournées par la propriété `address
 
 ![Les données de tableau Excel avant d’être triées.](../images/excel-sort-event-before.png)
 
-Si un tri de haut en bas est effectué sur «**Q1**» (les valeurs dans «**B**») les lignes mises en surbrill valeur suivantes sont renvoyées par `WorksheetRowSortedEventArgs.address` .
+Si un tri de haut en bas est effectué sur «**Q1**» (les valeurs dans «**B**») les lignes mises en surbrill plan suivantes sont renvoyées par `WorksheetRowSortedEventArgs.address` .
 
 ![Données d’un tableau dans Excel après un tri de haut en bas. Les lignes qui ont été déplacées sont mises en surbrillance.](../images/excel-sort-event-after-row.png)
 
@@ -429,7 +429,7 @@ Excel.run(function (context) {
 
 > [!NOTE]
 > Cette section décrit comment rechercher des cellules et plages à l’aide des `Worksheet` fonctions de l’objet. Plus d’informations sur l’extraction de plage sont disponibles dans les articles spécifiques.
-> - Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul à l’aide de l’objet, voir Obtenir une plage à l’aide de `Range` [l Excel API JavaScript .](excel-add-ins-ranges-get.md)
+> - Pour obtenir des exemples qui montrent comment obtenir une plage dans une feuille de calcul à l’aide de l’objet, voir Obtenir une plage à l’aide Excel `Range` [API JavaScript](excel-add-ins-ranges-get.md).
 > - Pour obtenir des exemples qui montrent comment obtenir une plage dans un objet `Table`, reportez-vous à la rubrique [Utiliser des tableaux à l’aide de l’API JavaScript pour Excel](excel-add-ins-tables.md).
 > - Pour consulter des exemples qui montrent comment rechercher une grande plage pour plusieurs sous-plages basées sur les caractéristiques de cellule, voir [Travailler avec plusieurs plages simultanément dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
@@ -499,6 +499,41 @@ La méthode `protect` présente deux paramètres facultatifs :
 - `password` : chaîne représentant le mot de passe nécessaire pour qu’un utilisateur puisse ignorer la protection et modifier la feuille de calcul.
 
 L’article [Protéger une feuille de calcul](https://support.microsoft.com/office/3179efdb-1285-4d49-a9c3-f4ca36276de6) comporte davantage d’informations sur la protection des feuilles de calcul et leur modification via l’interface utilisateur Excel.
+
+### <a name="detect-changes-to-the-worksheet-protection-state"></a>Détecter les modifications apportées à l’état de protection de la feuille de calcul
+
+L’état de protection d’une feuille de calcul peut être modifié par un Excel’interface utilisateur. Pour détecter les modifications apportées à l’état de protection, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements [`onProtectionChanged`](/javascript/api/excel/excel.worksheet#onProtectionChanged) pour l’événement d’une feuille de calcul. Les responsables d’événements de `onProtectionChanged` l’événement reçoivent [`WorksheetProtectionChangedEventArgs`](/javascript/api/excel/excel.worksheetprotectionchangedeventargs) un objet lorsque l’événement se déclenche.
+
+L’exemple de code suivant montre comment inscrire le handler d’événements et utiliser l’objet pour récupérer `onProtectionChanged` `WorksheetProtectionChangedEventArgs` les `isProtected` `worksheetId` propriétés et les propriétés `source` de l’événement.
+
+```js
+// This method registers an event handler for the onProtectionChanged event of a worksheet.
+Excel.run(function (context) {
+    // Retrieve the worksheet named "Sample".
+    var sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Register the onProtectionChanged event handler.
+    sheet.onProtectionChanged.add(checkProtection);
+
+    return context.sync();
+}).catch(errorHandlerFunction);
+
+// This method is an event handler that returns the protection state of a worksheet 
+// and information about the changed worksheet.
+function checkProtection(event) {
+    Excel.run(function (context) {
+        // Retrieve the protection, worksheet ID, and source properties of the event.
+        var protectionStatus = event.isProtected;
+        var worksheetId = event.worksheetId;
+        var source = event.source;
+
+        // Print the event properties to the console.
+        console.log("Protection status changed. Protection status is now: " + protectionStatus);
+        console.log("    ID of changed worksheet: " + worksheetId);
+        console.log("    Source of change event: " + source);    
+    });
+}
+```
 
 ## <a name="page-layout-and-print-settings"></a>Mise en page et paramètres d’impression
 
