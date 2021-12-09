@@ -1,14 +1,14 @@
 ---
 title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
-ms.date: 07/30/2021
+ms.date: 12/07/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 52612a9f3ab1844098dd7ae5b7a674c8db9e33b4
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 81c02a36becb9ef3244f7754dda44d064cdd9925
+ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153420"
+ms.lasthandoff: 12/08/2021
+ms.locfileid: "61331077"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -81,7 +81,7 @@ Le déploiement de compléments Outlook nécessite :
 - Microsoft 365, Exchange Online ou Exchange Server 2013 ou version ultérieure
 - Outlook 2013 ou une version ultérieure
 
-Pour affecter des compléments à des clients, utilisez le centre d’administration Exchange pour télécharger un manifeste directement, à partir d’un fichier ou d’une URL, ou ajoutez un complément à partir d’AppSource. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus d’informations, reportez-vous à [Installation ou suppression de compléments Outlook pour votre organisation](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/install-or-remove-outlook-add-ins) sur TechNet.
+Pour attribuer des compléments aux locataires, utilisez le centre d'administration Exchange pour télécharger un manifeste directement, à partir d'un fichier ou d'une URL, ou ajoutez un complément à partir d'AppSource. Pour affecter des compléments à des utilisateurs individuels, vous devez utiliser Exchange PowerShell. Pour plus de détails, consultez [Compléments pour Outlook dans Exchange Server](/exchange/add-ins-for-outlook-2013-help).
 
 ## <a name="see-also"></a>Voir aussi
 
