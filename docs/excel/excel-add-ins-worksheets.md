@@ -1,14 +1,14 @@
 ---
 title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide Excel API JavaScript.
-ms.date: 12/06/2021
+ms.date: 12/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ab27032c8d80d8cd01c3a0239ba23e6bbd7e14f
-ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
+ms.openlocfilehash: 55234d7c7c4d13fcfc3663e6d5454bf04b75b830
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "61331063"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406633"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -444,6 +444,8 @@ Un [filtre automatique](/javascript/api/excel/excel.autofilter) applique des fil
 Le premier exemple de code montre comment ajouter un filtre à la plage utilisée de la feuille de calcul. Ce filtre masque les entrées qui ne sont pas dans les premiers 25%, basé sur les valeurs de colonne **3**.
 
 ```js
+// This method adds a custom AutoFilter to the active worksheet
+// and applies the filter to a column of the used range.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     var farmData = sheet.getUsedRange();
@@ -457,6 +459,7 @@ Excel.run(function (context) {
 L’exemple de code suivant montre comment actualiser le filtre automatique à l’aide de la méthode`reapply`. Cette opération doit être effectuée lorsque les données dans la plage changent.
 
 ```js
+// This method refreshes the AutoFilter to ensure that changes are captured.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.reapply();
@@ -464,9 +467,24 @@ Excel.run(function (context) {
 }).catch(errorHandlerFunction);
 ```
 
+L’exemple de code suivant montre comment utiliser la méthode pour effacer le filtre automatique d’une seule colonne, tout en laissant le filtre actif sur `clearColumnCriteria` d’autres colonnes.
+
+```js
+// This method clears the AutoFilter setting from one column.
+Excel.run(function (context) {
+    // Retrieve the active worksheet.
+    var sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Clear the filter from only column 3.
+    sheet.autoFilter.clearColumnCriteria(3);
+    return context.sync();
+}).catch(errorHandlerFunction);
+```
+
 L’exemple de code de filtre automatique final montre comment supprimer le filtre automatique de la feuille de calcul avec la méthode`remove`.
 
 ```js
+// This method removes all AutoFilters from the active worksheet.
 Excel.run(function (context) {
     var sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.autoFilter.remove();

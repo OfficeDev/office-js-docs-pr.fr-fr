@@ -1,14 +1,14 @@
 ---
 title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
-ms.date: 09/22/2020
+ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e0cac8a2f0153d85e5b6d2600f1dbc7f4c03c398
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 836e66a6e7eb49cb745861fe47946cfdbd18ea77
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153227"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406661"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -61,7 +61,7 @@ Spécifiez l’un des types d’éléments suivants dans `ItemType` l’attribut
 |**Rendez-vous**|Spécifie un élément dans le calendrier Outlook. Par exemple, un élément de réunion auquel une réponse a été donnée et auquel un organisateur et des participants sont associés, ou un rendez-vous auquel n’est associé aucun organisateur ou participant et qui constitue un simple élément de calendrier. Cela correspond à la classe de message IPM.Appointment dans Outlook.|
 |**Message**|Spécifie l’un des éléments suivants reçus dans la boîte de réception. <ul><li><p>Message électronique. Cela correspond à la classe de message IPM.Note dans Outlook.</p></li><li><p>Demande de réunion, réponse à une demande de réunion ou annulation d’une réunion. Cela correspond aux classes de message suivantes dans Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
-`FormType`L’attribut est utilisé pour spécifier le mode (lecture ou composition) dans lequel le module doit être activé.
+L’attribut permet de spécifier le mode (lecture ou composition) dans lequel le `FormType` module doit être activé.
 
 
  > [!NOTE]
@@ -73,7 +73,7 @@ Vous pouvez éventuellement utiliser l’attribut pour spécifier la classe de m
 
 Pour plus d’informations sur les classes de message, reportez-vous à la rubrique [Types d’éléments et classes de messages](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes).
 
-L’exemple suivant est une règle **ItemIs** qui permet aux utilisateurs de voir le add-in dans la barre de Outlook lorsque l’utilisateur lit un message.
+L’exemple suivant est une règle **ItemIs** qui permet aux utilisateurs de voir le Outlook dans la barre du Outlook lorsque l’utilisateur lit un message.
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
@@ -113,7 +113,7 @@ Vous pouvez spécifier une règle à l’aide de celle qui affiche votre add-in 
 - TaskSuggestion
 - URL
 
-Vous pouvez éventuellement inclure une expression régulière dans l’attribut afin que votre add-in s’affiche uniquement lorsqu’une entité correspond à `RegularExpression` l’expression régulière présente. Pour obtenir des correspondances avec des expressions régulières spécifiées dans les règles, vous pouvez utiliser la ou la méthode pour `ItemHasKnownEntity` `getRegExMatches` l’élément Outlook actuellement `getFilteredEntitiesByName` sélectionné.
+Vous pouvez éventuellement inclure une expression régulière dans l’attribut afin que votre add-in ne s’affiche qu’en présence d’une entité qui correspond à `RegularExpression` l’expression régulière. Pour obtenir des correspondances avec des expressions régulières spécifiées dans les règles, vous pouvez utiliser la ou la méthode pour l’élément `ItemHasKnownEntity` `getRegExMatches` Outlook actuellement `getFilteredEntitiesByName` sélectionné.
 
 L’exemple suivant montre une collection d’éléments qui montrent le add-in lorsque l’une des entités connues spécifiées est présente `Rule` dans le message.
 
@@ -183,7 +183,7 @@ L’exemple suivant illustre l’activation du complément lorsque l’utilisate
 ## <a name="limits-for-rules-and-regular-expressions"></a>Limites pour les règles et les expressions régulières
 
 
-Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant présente des limites générales pour les expressions régulières et les règles, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
+Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant indique les limites générales pour les expressions régulières et les règles, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
 
 <br/>
 
@@ -192,7 +192,7 @@ Pour fournir une expérience satisfaisante avec les compléments Outlook, vous d
 |Taille de manifeste|Inférieur à 256 Ko.|
 |Règles|Pas plus de 15 règles.|
 |ItemHasKnownEntity|Un riche client Outlook appliquera la règle au premier mégaoctet du corps, mais pas au reste.|
-|Expressions régulières|Pour les règles ItemHasKnownEntity ou ItemHasRegularExpressionMatch pour toutes Outlook applications :<br><ul><li>Ne spécifiez pas plus de 5 expressions régulières dans les règles d’activation pour un complément Outlook. Vous ne pouvez pas installer de complément si vous dépassez cette limite.</li><li>Spécifiez des expressions régulières dont les résultats sont renvoyés par l’appel de la méthode <b>getRegExMatches</b> dans les 50 premières correspondances. </li><li>Spécifiez des assertions avant dans les expressions régulières, mais pas d’assertions arrière, `(?<=text)`, ni d’assertions arrière négatives `(?<!text)`.</li><li>Spécifiez des expressions régulières dont la correspondance ne dépasse pas les limites figurant dans le tableau ci-dessous.<br/><br/><table><tr><th>Limite de longueur d’une correspondance d’expression régulière</th><th>Clients riches Outlook</th><th>Outlook sur iOS et Android</th></tr><tr><td>Corps d’élément en texte brut</td><td>1,5 Ko</td><td>3 Ko</td></tr><tr><td>Corps d’élément en HTML</td><td>3 Ko</td><td>3 Ko</td></tr></table>|
+|Expressions régulières|Pour les règles ItemHasKnownEntity ou ItemHasRegularExpressionMatch pour toutes Outlook applications :<br><ul><li>Ne spécifiez pas plus de 5 expressions régulières dans les règles d’activation pour un complément Outlook. Vous ne pouvez pas installer de complément si vous dépassez cette limite.</li><li>Spécifiez des expressions régulières dont les résultats sont renvoyés par l’appel de la méthode <b>getRegExMatches</b> dans les 50 premières correspondances. </li><li>**Important**: le texte est mis en surbrillement en fonction des chaînes résultant de la mise en correspondance de l’expression régulière. Toutefois, les occurrences mises en surbrillance peuvent ne pas correspondre exactement à ce qui doit résulter des assertions d’expression régulière réelles telles que l’avance négative, la recherche arrière et `(?!text)` `(?<=text)` l’arrière-arrière `(?<!text)` négatif. Par exemple, si vous utilisez l’expression régulière « Like under, under score, and underscore », la chaîne « under » est mise en surbrillance pour toutes les occurrences au lieu des deux `under(?!score)` premières.</li><li>Spécifiez des expressions régulières dont la correspondance ne dépasse pas les limites du tableau suivant.<br/><br/><table><tr><th>Limite de longueur d’une correspondance d’expression régulière</th><th>Clients riches Outlook</th><th>Outlook sur iOS et Android</th></tr><tr><td>Corps d’élément en texte brut</td><td>1,5 Ko</td><td>3 Ko</td></tr><tr><td>Corps d’élément en HTML</td><td>3 Ko</td><td>3 Ko</td></tr></table>|
 
 ## <a name="see-also"></a>Voir aussi
 
