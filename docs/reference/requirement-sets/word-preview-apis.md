@@ -4,12 +4,12 @@ description: Détails sur les API JavaScript word à venir.
 ms.date: 10/13/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: ba33c6c53dd62aa0adc37b90963d35988165fa96
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
+ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367442"
+ms.lasthandoff: 12/13/2021
+ms.locfileid: "61420242"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -27,7 +27,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[onDataChanged](/javascript/api/word/word.contentcontrol#onDataChanged)|Se produit lorsque les données dans le contrôle de contenu sont modifiées.|
 ||[onDeleted](/javascript/api/word/word.contentcontrol#onDeleted)|Se produit lorsque le contrôle de contenu est supprimé.|
 ||[onSelectionChanged](/javascript/api/word/word.contentcontrol#onSelectionChanged)|Se produit lorsque la sélection dans le contrôle de contenu est modifiée.|
-|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentControl)|Objet qui a levé l’événement.|
+|[ContentControlEventArgs](/javascript/api/word/word.contentcontroleventargs)|[contentControl](/javascript/api/word/word.contentcontroleventargs#contentControl)|Objet qui a élevé l’événement.|
 ||[eventType](/javascript/api/word/word.contentcontroleventargs#eventType)|Type d’événement.|
 |[CustomXmlPart](/javascript/api/word/word.customxmlpart)|[delete()](/javascript/api/word/word.customxmlpart#delete__)|Supprime la partie XML personnalisée.|
 ||[deleteAttribute(xpath: string, namespaceMappings: any, name: string)](/javascript/api/word/word.customxmlpart#deleteAttribute_xpath__namespaceMappings__name_)|Supprime un attribut avec le nom donné de l’élément identifié par xpath.|
@@ -65,7 +65,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|Se produit lorsqu’un contrôle de contenu est ajouté.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions__ignorePunct__ignoreSpace__matchCase__matchPrefix__matchSuffix__matchWholeWord__matchWildcards_)|Effectue une recherche avec les searchOptions spécifiées sur l’étendue du document entier.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|Effectue une recherche avec les searchOptions spécifiées sur l’étendue du document entier.|
 ||[paramètres](/javascript/api/word/word.document#settings)|Obtient les paramètres du add-in dans le document.|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Obtient les parties XML personnalisées du document.|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Supprime un signet, s’il existe, du document.|
@@ -78,7 +78,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[resetLevelFont(level: number, resetFontName?: boolean)](/javascript/api/word/word.list#resetLevelFont_level__resetFontName_)|Réinitialise la police de la puce, du numéro ou de l’image au niveau spécifié dans la liste.|
 ||[setLevelPicture(level: number, base64EncodedImage?: string)](/javascript/api/word/word.list#setLevelPicture_level__base64EncodedImage_)|Définit l’image au niveau spécifié dans la liste.|
 |[Range](/javascript/api/word/word.range)|[getBookmarks(includeHidden?: boolean, includeAdjacent?: boolean)](/javascript/api/word/word.range#getBookmarks_includeHidden__includeAdjacent_)|Obtient les noms de tous les signets dans la plage ou qui se chevauchent.|
-||[insertBookmark(name: string)](/javascript/api/word/word.range#insertBookmark_name_)|Insère un signet sur la plage.|
+||[insertBookmark(name: string)](/javascript/api/word/word.range#insertBookmark_name_)|Insère un signet dans la plage.|
 |[Paramètre](/javascript/api/word/word.setting)|[delete()](/javascript/api/word/word.setting#delete__)|Supprime le paramètre.|
 ||[key](/javascript/api/word/word.setting#key)|Obtient la clé du paramètre.|
 ||[value](/javascript/api/word/word.setting#value)|Obtient ou définit la valeur du paramètre.|
