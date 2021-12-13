@@ -1,25 +1,29 @@
 ---
 title: Vue d’ensemble des types de données dans les compléments Excel
 description: Les types de données dans l’API JavaScript Excel permettent aux développeurs de compléments Office de travailler avec des valeurs numériques, des images web, des valeurs d’entité, des tableaux mis en forme au sein des valeurs d’entité et des erreurs améliorées en tant que types de données.
-ms.date: 11/03/2021
+ms.date: 12/08/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 5ff0d5a055c74eeff096d45ddb6c417615775431
-ms.sourcegitcommit: ad5d7ab21f64012543fb2bd9226d90330d25468b
+ms.openlocfilehash: f6545eb314ec5aef30a595b755e3f702a3e5df20
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/04/2021
-ms.locfileid: "60749391"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406668"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Vue d’ensemble des types de données dans les compléments Excel (préversion)
 
 > [!NOTE]
-> Les API de types de données ne sont actuellement disponibles que dans la préversion publique. L’aperçu API peut être modifiés et n’est pas destinés à utiliser dans un environnement de production. N’utilisez pas un aperçu d’API dans un environnement de production ou dans les documents commerciaux importants.
-
-> [!IMPORTANT]
-> Certaines API de types de données, telles que `Range.valuesAsJSON` sont dans un développement actif et ne sont pas encore disponibles en préversion publique. Cet article est conçu comme une introduction conceptuelle. Les concepts décrits dans cet article qui ne sont pas encore en préversion publique seront bientôt lancés en préversion.
+> Les API de types de données ne sont actuellement disponibles que dans la préversion publique. L’aperçu API peut être modifiés et n’est pas destinés à utiliser dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas un aperçu d’API dans un environnement de production ou dans les documents commerciaux importants.
+>
+> Pour utiliser les API disponibles en préversion :
+>
+> - Vous devez référencer la bibliothèque **bêta** sur le CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` . Pour plus d’informations, voir le @microsoft du package NPM [office-js.](https://www.npmjs.com/package/@microsoft/office-js)
+> - Vous devrez peut-être rejoindre [Office programme Insider pour](https://insider.office.com) accéder à des builds Office plus récentes.
+>
+> Pour tester les types de données dans Office sur Windows, vous devez avoir un numéro de build Excel supérieur ou égal à 16.0.14626.10000. Pour tester les types de données dans Office sur Mac, vous devez avoir un numéro de build Excel supérieur ou égal à 16.55.21102600.
 
 Les types de données dans l’API JavaScript Excel permettent aux développeurs de compléments d’organiser des structures de données complexes en tant qu’objets, tels que des valeurs numériques, des images web et des valeurs d’entité mises en forme.
 
@@ -35,6 +39,6 @@ Les types de données améliorent la puissance des fonctions personnalisées. Le
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Concepts de base des types de données Excel](excel-data-types-concepts.md)
-* [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
-* [Vue d’ensemble des fonctions personnalisées et des types de données](custom-functions-data-types-overview.md)
+- [Concepts de base des types de données Excel](excel-data-types-concepts.md)
+- [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Vue d’ensemble des fonctions personnalisées et des types de données](custom-functions-data-types-overview.md)

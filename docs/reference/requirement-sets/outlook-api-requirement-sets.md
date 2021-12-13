@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour Outlook.
-ms.date: 11/01/2021
+ms.date: 11/18/2021
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 07e3f8da6c9d5af1d06f1bb388588dcd109b137e
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: f94f76edfd7ba9fcb5d45fc426f5d8579aefe863
+ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681499"
+ms.lasthandoff: 12/10/2021
+ms.locfileid: "61406650"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -72,7 +72,7 @@ Les développeurs doivent utiliser l’ensemble de conditions requises le plus a
 Dans cette section, nous prenons note de la plage d’ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook. Pour plus d’informations sur la configuration requise pour le serveur et le client pour l’exécution de compléments Outlook, voir [Conditions requises pour les compléments Outlook](../../outlook/add-in-requirements.md).
 
 > [!IMPORTANT]
-> Si votre serveur Exchange cible et votre client Outlook prennent en charge différents ensembles de conditions requises, vous êtes limité à la plage inférieure d’ensembles de conditions requises. Par exemple, si un complément est exécuté dans Outlook 2016 sur Mac (configuration maximale requise : 1.6) sur Exchange 2013 (ensemble de conditions requises le plus élevé : 1.1), votre complément est limité à l’ensemble de conditions requises 1.1.
+> Si votre serveur cible Exchange client Outlook prendre en charge différents ensembles de conditions requises, vous pouvez être limité à la plage d’ensembles de conditions requises inférieure. Par exemple, si un complément est en cours d’exécution dans Outlook 2016 sur Mac (ensemble de conditions requises le plus élevé : 1.6) par rapport à Exchange 2013 (ensemble de conditions requises le plus élevé : 1.1), votre macro peut être limitée à l’ensemble de conditions requises 1.1.
 
 ### <a name="exchange-server-support"></a>Prise en charge par le serveur Exchange
 
@@ -86,7 +86,7 @@ Les serveurs suivants prennent en charge des compléments Outlook.
 || 2013 | [1.1](../objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 > [!NOTE]
-> \* Pour nécessiter le jeu d'API d'identité 1.3 dans votre code additionnel, vérifiez s'il est pris en charge en appelant `isSetSupported('IdentityAPI', '1.3')`. Le déclarer dans le manifeste de votre macro complémentaire n'est pas pris en charge. Vous pouvez également déterminer si l’API est prise en charge en vérifiant qu’elle n’est pas `undefined`. Pour plus d’informations, consultez [Utilisation des API d’un ensemble de conditions requises ultérieure](#using-apis-from-later-requirement-sets).
+> \* [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 
 ### <a name="outlook-client-support"></a>Prise en charge du client Outlook
 
@@ -113,7 +113,7 @@ Les compléments sont pris en charge dans Outlook sur les plateformes suivantes.
 > [!NOTE]
 > <sup>1</sup> La prise en charge de la version **1.8** dans Outlook sous Windows avec un abonnement Microsoft 365 ou un achat définitif au détail est disponible depuis la version 1910 (build 12130.20272). La prise en charge de la version **1.9** dans Outlook sous Windows avec un abonnement Microsoft 365 est disponible depuis la version 2008 (build 13127.20296). La prise en charge de la version **1.10** dans Outlook sous Windows avec un abonnement Microsoft 365 est disponible depuis la version 2104 (build 13929.20296). La prise en charge de **1.11** dans Outlook sur Windows avec un abonnement Microsoft 365 est disponible à partir de la version 2110 (build 14527.20226). Pour plus d’informations en fonction de version, consultez la page de l’historique des mises à jour d’[Office 2019](/officeupdates/update-history-office-2019) ou [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version client et le canal de mise à jour Office que vous utilisez](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 >
-> <sup>2</sup> Pour nécessiter le jeu d'API d'identité 1.3 dans votre code additionnel, vérifiez s'il est pris en charge en appelant `isSetSupported('IdentityAPI', '1.3')`. Le déclarer dans le manifeste de votre macro complémentaire n'est pas pris en charge. Vous pouvez également déterminer si l’API est prise en charge en vérifiant qu’elle n’est pas `undefined`. Pour plus d’informations, consultez [Utilisation des API d’un ensemble de conditions requises ultérieure](#using-apis-from-later-requirement-sets).
+> <sup>2</sup> [!INCLUDE [How to use the Identity 1.3 requirement set in Outlook add-ins](../../includes/outlook-identity-13-note.md)]
 >
 > <sup>3</sup> La prise en charge de la version 1.3 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 8 décembre 2015 pour Outlook 2013 (KB3114349)](https://support.microsoft.com/kb/3114349). La prise en charge de la version 1.4 dans Outlook 2013 a été ajoutée dans le cadre de la [mise à jour du 13 septembre 2016 pour Outlook 2013 (KB3118280)](https://support.microsoft.com/help/3118280). La prise en charge de la version 1.4 dans Outlook 2016 a été ajoutée dans le cadre la [mise à jour du 3 juillet 2018 pour Office 2016 (KB4022223)](https://support.microsoft.com/help/4022223).
 >
