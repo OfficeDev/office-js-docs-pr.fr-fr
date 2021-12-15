@@ -1,14 +1,14 @@
 ---
 title: Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 07/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e71a73c6f253587968affb5e04d28cc95649b8c5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149134"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514081"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
@@ -31,15 +31,15 @@ Cet article explique comment modifier un manifeste pour définir des commandes d
 
 L’image ci-après est une présentation des éléments de commandes de complément dans le fichier manifeste.
 
-![Vue d’ensemble des éléments de commandes de add-in dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes et les ressources enfants. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Sous ExtensionPoint sont CustomTab ou OfficeTab et Office Menu. Sous CustomTab ou Office tabulation sont Group puis Control then Action. Sous Office menu, contrôle puis action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
+![Vue d’ensemble des éléments de commandes de add-in dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes et les ressources enfants. Les sous Hôtes sont Host, puis DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Sous ExtensionPoint sont CustomTab ou OfficeTab et Office Menu. Sous CustomTab ou Office tabulation sont Group puis Control then Action. Sous Office Menu, contrôle puis action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
 
-## <a name="step-1-start-from-a-sample"></a>Étape 1 : démarrer à partir d’un exemple
+## <a name="step-1-create-the-project"></a>Étape 1 : Créer le projet
 
-Nous vous recommandons vivement de commencer à partir d’un des exemples que nous fournissons sur la page des [exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Command-Sample). Si vous le souhaitez, vous pouvez créer votre propre manifeste en suivant les étapes décrites dans ce guide. Vous pouvez valider votre manifeste à l’aide du fichier XSD sur le site des exemples de commandes de complément Office. Assurez-vous que vous avez lu la rubrique [Commandes de complément pour Excel, Word et PowerPoint](../design/add-in-commands.md) avant d’utiliser les commandes de complément.
+Nous vous recommandons de créer un projet en suivant l’un des démarrages rapides, par exemple créer un Excel du volet Des [tâches.](../quickstarts/excel-quickstart-jquery.md) Chaque démarrage rapide pour Excel, Word et PowerPoint génère un projet qui contient déjà une commande de add-in (bouton) pour afficher le volet Des tâches. Assurez-vous que vous avez lu les commandes de [Excel, Word](../design/add-in-commands.md) et PowerPoint avant d’utiliser les commandes de add-in.
 
-## <a name="step-2-create-a-task-pane-add-in"></a>Étape 2 : créer un complément de volet Office
+## <a name="step-2-create-a-task-pane-add-in"></a>Étape 2 : créer un complément de volet Office
 
-Pour commencer à utiliser des commandes de add-in, vous devez d’abord créer un add-in du volet Des tâches, puis modifier le manifeste du add-in comme décrit dans cet article. Vous ne pouvez pas utiliser de commandes de add-in avec des modules de contenu. Si vous met à jour un manifeste existant, vous devez ajouter les espaces de noms **XML appropriés,** ainsi que l’élément **VersionOverrides** au manifeste, comme décrit à l’étape 3 : ajouter l’élément [VersionOverrides.](#step-3-add-versionoverrides-element)
+Pour commencer à utiliser des commandes de add-in, vous devez d’abord créer un add-in du volet Des tâches, puis modifier le manifeste du add-in comme décrit dans cet article. Vous ne pouvez pas utiliser de commandes de add-in avec des modules de contenu. Si vous met à jour un manifeste existant, vous devez ajouter les espaces de noms **XML appropriés,** ainsi que l’élément **VersionOverrides** au manifeste, comme décrit à l’étape 3 : Ajouter un élément [VersionOverrides.](#step-3-add-versionoverrides-element)
 
 L’exemple suivant illustre le manifeste d’un complément Office 2013. Ce manifeste ne contient pas de commande de complément car il n’y a pas d’élément **VersionOverrides**. Office 2013 ne prend pas en charge les commandes de complément mais, en ajoutant **VersionOverrides** à ce manifeste, votre complément s’exécute dans Office 2013 et Office 2016. Dans Office 2013, votre complément n’affiche pas les commandes de complément et utilise la valeur **SourceLocation** pour exécuter votre complément sous la forme d’un complément de volet de tâches unique. Dans Office 2016, si aucun élément **VersionOverrides** n’est inclus, **SourceLocation** est utilisé pour exécuter votre complément. Cependant, si vous incluez **VersionOverrides**, votre complément affiche uniquement les commandes de complément et n’affiche pas votre complément sous la forme d’un complément de volet de tâches unique.
   
@@ -249,7 +249,7 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 |Élément|Description|
 |:-----|:-----|
 |**CustomTab** <br/> |Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. <br/> |
-|**OfficeTab** <br/> |Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface).** Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. <br/> Pour plus de valeurs d’onglet à utiliser avec **l’attribut id,** voir Valeurs d’onglet pour les [onglets application Office ruban par défaut.](../reference/manifest/officetab.md)  <br/> |
+|**OfficeTab** <br/> |Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface).** Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. <br/> Pour plus d’informations sur les valeurs d’onglet à utiliser avec **l’attribut id,** voir Valeurs de tabulation pour les [onglets application Office ruban par défaut.](../reference/manifest/officetab.md)  <br/> |
 |**OfficeMenu** <br/> | Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul. <br/> |
 |**Group** <br/> |Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. <br/> |
 |**Label** <br/> |Obligatoire. L’étiquette du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
@@ -442,3 +442,6 @@ Dans Excel et Word, vous pouvez ajouter vos commandes de complément au ruban en
 ## <a name="see-also"></a>Voir aussi
 
 - [Commandes de complément pour Excel, PowerPoint et Word](../design/add-in-commands.md)
+- [Exemple : Créer un Excel avec des boutons de commande](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
+- [Exemple : Créer un add-in Word avec des boutons de commande](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
+- [Exemple : Créer un PowerPoint avec des boutons de commande](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)

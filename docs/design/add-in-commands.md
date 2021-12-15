@@ -1,20 +1,18 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 10/08/2021
+ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 2685a157d6c478afc4343d54f52e4337472d015f
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: ac79355e916e27ce945d773a580f7ac5d101c67d
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250433"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514116"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
 Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur d’Office et lancent des actions dans votre complément. Vous pouvez les utiliser pour ajouter un bouton sur le ruban ou un élément dans le menu contextuel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans le volet Office. Les commandes de complément aident les utilisateurs à trouver et utiliser votre complément, ce qui favorise l’adoption et la réutilisation de votre complément, et améliore la fidélisation des clients.
-
-Pour une vue d'ensemble du reportage, voir la vidéo [Ruban de l'application commandes complémentaires au sein du Bureau](https://channel9.msdn.com/events/Build/2016/P551).
 
 > [!NOTE]
 > Les catalogues SharePoint ne prennent pas en charge les commandes de complément. Vous pouvez déployer des commandes de complément via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), ou utiliser [le chargement latéral](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) pour déployer votre commande de complément à des fins de test.

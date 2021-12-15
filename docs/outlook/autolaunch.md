@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 11/16/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 4875018d2c457fe26eaed0d86f549d44f7932d52
-ms.sourcegitcommit: 6e6c4803fdc0a3cc2c1bcd275288485a987551ff
+ms.openlocfilehash: 9dc0d75d9bf0f32d4df2de1a88bc4d175c291c2a
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/18/2021
-ms.locfileid: "61066722"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514229"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -22,15 +22,15 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 
 ## <a name="supported-events"></a>Événements pris en charge
 
-Le tableau suivant répertorie les événements actuellement pris en charge. Lorsqu’un événement est élevé, le handler reçoit un objet qui peut inclure des `event` détails spécifiques au type d’événement. La **colonne JSON propre à l’événement** inclut un lien vers l’objet associé, le cas échéant. Le tableau indique également les clients pris en charge pour chaque événement.
+Le tableau suivant répertorie les événements actuellement disponibles et les clients pris en charge pour chaque événement. Lorsqu’un événement est élevé, le handler reçoit un objet qui peut inclure des `event` détails spécifiques au type d’événement. La **colonne JSON propre à l’événement** inclut un lien vers l’objet associé, le cas échéant.
 
 > [!IMPORTANT]
-> Les événements encore en prévisualisation peuvent être disponibles uniquement avec un abonnement Microsoft 365 dans Outlook sur le web et Windows. Pour plus d’informations, voir [La prévisualisation](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
+> Les événements encore en prévisualisation peuvent uniquement être disponibles avec un abonnement Microsoft 365 et dans un ensemble limité de clients pris en charge, comme indiqué dans le tableau suivant. Pour plus d’informations sur la configuration du client, voir [La prévisualisation](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
 
 |Événement|Description|JSON propre à un événement|Ensemble de conditions requises minimales|Clients pris en charge|
 |---|---|---|---|---|
-|`OnNewMessageCompose`|Lors de la composition d’un nouveau message (y compris répondre, répondre à tous et transmettre), mais pas lors de la modification, par exemple, d’un brouillon.|Non applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, navigateur web|
-|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas de la modification d’un rendez-vous existant.|Non applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, navigateur web|
+|`OnNewMessageCompose`|Lors de la composition d’un nouveau message (y compris répondre, répondre à tous et transmettre), mais pas lors de la modification, par exemple, d’un brouillon.|Non applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, navigateur web, nouvelle prévisualisation de l’interface utilisateur Mac|
+|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas de la modification d’un rendez-vous existant.|Non applicable|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)|Windows, navigateur web, nouvelle prévisualisation de l’interface utilisateur Mac|
 |`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, navigateur web|
 |`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.|[AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, navigateur web|
 |`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.|[RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)|Windows, navigateur web|
@@ -45,9 +45,9 @@ Le tableau suivant répertorie les événements actuellement pris en charge. Lor
 
 Nous vous invitons à tester les événements maintenant en prévisualisation ! Faites-nous part de vos scénarios et de la façon dont nous pouvons les améliorer en nous faisant part de vos commentaires GitHub (voir la **section** Commentaires à la fin de cette page).
 
-Pour afficher un aperçu de ces événements :
+Pour afficher un aperçu de ces événements lorsqu’ils sont disponibles :
 
-- Pour Outlook sur le web :
+- Pour Outlook sur le web et Outlook la nouvelle prévisualisation de l’interface utilisateur Mac :
   - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur Windows :
@@ -85,7 +85,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -181,7 +181,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
+Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web et sur le nouvel aperçu de l’interface utilisateur Mac utilisent un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du `Resources` client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML dans l’élément, puis, dans son élément enfant, fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le `Runtime` `Override` code HTML.
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes de Outlook des Outlook, consultez la Outlook [des manifestes de ces derniers.](manifests.md)
@@ -248,6 +248,8 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 1. Dans Outlook sur le web, créez un message.
 
     ![Capture d’écran d’une fenêtre de message Outlook sur le web avec l’objet de la composition.](../images/outlook-web-autolaunch-1.png)
+
+1. Dans Outlook la nouvelle prévisualisation de l’interface utilisateur Mac, créez un message.
 
 1. Dans Outlook sur Windows, créez un message.
 

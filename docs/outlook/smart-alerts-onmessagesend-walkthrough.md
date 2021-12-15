@@ -2,27 +2,27 @@
 title: Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 description: Découvrez comment gérer l’événement d’envoi de message dans Outlook complément à l’aide de l’activation basée sur un événement.
 ms.topic: article
-ms.date: 11/01/2021
+ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e10f8609264d69ba32b78badc14c626c210d76
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681787"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514074"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 
-L’événement tire parti des alertes intelligentes qui vous permettent d’exécuter la logique après qu’un utilisateur a sélectionné Envoyer `OnMessageSend` dans Outlook message.  Votre handler d’événements vous permet de donner à vos utilisateurs la possibilité d’améliorer leurs e-mails avant qu’ils ne soit envoyés. `OnAppointmentSend`L’événement est similaire mais s’applique à un rendez-vous.
+`OnMessageSend`L’événement tire parti des alertes intelligentes qui vous  permettent d’exécuter la logique après qu’un utilisateur a sélectionné Envoyer Outlook message. Votre handler d’événements vous permet de donner à vos utilisateurs la possibilité d’améliorer leurs e-mails avant qu’ils ne soit envoyés. `OnAppointmentSend`L’événement est similaire mais s’applique à un rendez-vous.
 
 À la fin de cette walkthrough, vous aurez un module qui s’exécute chaque fois qu’un message est envoyé et vérifie si l’utilisateur a oublié d’ajouter un document ou une image qu’il a mentionnés dans son e-mail.
 
 > [!IMPORTANT]
 > Les événements et les événements sont disponibles uniquement en `OnMessageSend` `OnAppointmentSend` prévisualisation avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, voir [Comment prévisualiser](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
-`OnMessageSend`L’événement est disponible via la fonctionnalité d’activation basée sur des événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, les événements disponibles, la prévisualisation de cet événement, le débogage, les limitations de fonctionnalités, etc., reportez-vous à Configurer votre complément Outlook pour [l’activation](autolaunch.md)basée sur des événements.
+`OnMessageSend`L’événement est disponible via la fonctionnalité d’activation basée sur des événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, les événements disponibles, comment afficher un aperçu de cet événement, le débogage, les limitations de fonctionnalités, etc., reportez-vous à Configurer votre complément Outlook pour [l’activation](autolaunch.md)basée sur des événements.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -49,7 +49,7 @@ L’événement tire parti des alertes intelligentes qui vous permettent d’ex�
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -138,7 +138,7 @@ L’événement tire parti des alertes intelligentes qui vous permettent d’ex�
 > [!TIP]
 >
 > - Pour les options **SendMode** disponibles avec l’événement, `OnMessageSend` reportez-vous aux [options SendMode disponibles.](../reference/manifest/launchevent.md#available-sendmode-options-preview)
-> - Pour en savoir plus sur les manifestes de Outlook de votre Outlook, consultez la Outlook [des manifestes de modules.](manifests.md)
+> - Pour en savoir plus sur les manifestes de Outlook des Outlook, consultez la Outlook [des manifestes de ces derniers.](manifests.md)
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
@@ -228,11 +228,11 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 1. Ajoutez une pièce jointe, puis renvoyez le message. Il ne doit pas y avoir d’alerte cette fois.
 
 > [!NOTE]
-> Si vous exécutez votre add-in à partir de l’host local et que vous voyez l’erreur « Désolé, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
+> Si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{votre-add-in-name-here}*». Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
 >
 > 1. Fermez Outlook.
 > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
-> 1. Exécutez la commande suivante.
+> 1. Exécutez la commande suivante :
 >
 >    ```command&nbsp;line
 >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC

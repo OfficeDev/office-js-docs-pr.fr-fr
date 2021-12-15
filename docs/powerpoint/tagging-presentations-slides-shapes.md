@@ -1,21 +1,18 @@
 ---
 title: Utiliser des balises personnalisées sur les présentations, diapositives et formes dans PowerPoint
 description: Découvrez comment utiliser des balises pour des métadonnées personnalisées sur les présentations, les diapositives et les formes.
-ms.date: 04/08/2021
+ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: db9d31424ac4e08e6eaccca824ca5881d2ef617e
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 03f1656919ed16b801e97623f7f69c9f4adfaac8
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153460"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514208"
 ---
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Utiliser des balises personnalisées pour les présentations, diapositives et formes dans PowerPoint
 
 Un add-in peut joindre des métadonnées personnalisées, sous la forme de paires clé-valeur, appelées « balises », à des présentations, des diapositives spécifiques et des formes spécifiques sur une diapositive.
-
-> [!IMPORTANT]
-> Les API pour les balises sont en prévisualisation. Testez-les dans un environnement de développement ou de test, mais ne les ajoutez pas à un module de production.
 
 Il existe deux scénarios principaux pour l’utilisation de balises :
 
@@ -30,7 +27,7 @@ Une balise est une paire clé-valeur, où la valeur est toujours de type et est 
 
 Pour ajouter une balise à un objet, appelez la méthode [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#add_key__value_) de la propriété de l’objet `tags` parent. Le code suivant ajoute deux balises à la première diapositive d’une présentation. Tenez compte du code suivant :
 
-- Le premier paramètre de la méthode est la clé de la paire `add` clé-valeur. 
+- Le premier paramètre de la méthode est la clé de la paire `add` clé-valeur.
 - Le deuxième paramètre est la valeur.
 - La clé est en lettres majuscules. Cela n’est pas strictement obligatoire pour la méthode ; toutefois, la clé est toujours stockée par PowerPoint en tant que minuscules, et certaines méthodes liées aux balises nécessitent que la clé soit exprimée en minuscules . Nous vous recommandons donc, en tant que meilleure pratique, d’utiliser toujours des minuscules dans votre code pour une clé de `add` balise. 
 
@@ -85,7 +82,7 @@ Envisagez le scénario suivant : Contoso Consulting présente une présentation 
 
 2. Le code suivant crée une méthode pour obtenir l’index de la diapositive sélectionnée. Tenez compte du code suivant :
 
-    - Il utilise la [méthode Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes.
+    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes.
     - L’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` renvoie un tableau car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’en a sélectionné qu’une seule, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
     - La valeur de la diapositive est la valeur basée sur 1 que l’utilisateur voit en regard de la diapositive dans le PowerPoint miniatures de l’interface `index` utilisateur.
@@ -111,7 +108,7 @@ Envisagez le scénario suivant : Contoso Consulting présente une présentation 
 
 3. Le code suivant crée une méthode pour supprimer les diapositives marquées pour les clients premium. Tenez compte du code suivant :
 
-    - Étant donné `key` que les `value` propriétés et les balises vont être lues après `context.sync` l', elles doivent être chargées en premier.
+    - Étant donné `key` que les `value` propriétés des balises vont être lues après `context.sync` le , elles doivent être chargées en premier.
 
     ```javascript
     async function deleteSlidesByAudience() {

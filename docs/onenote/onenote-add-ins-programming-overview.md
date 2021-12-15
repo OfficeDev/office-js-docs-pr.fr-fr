@@ -2,15 +2,15 @@
 title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: En savoir plus sur l’API JavaScript de OneNote pour les compléments OneNote sur le web.
 ms.date: 10/14/2020
-ms.topic: conceptual
+ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 20f413db4025b0fe4225cd8f8e7e2f52497f6d2c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7c08a684a3b6b88b060edebc14d5711fc5bcc3de
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153232"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514236"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -52,7 +52,7 @@ Utilisez l’objet `Application` pour accéder aux objets OneNote tels que **Not
 
 4. Appelez la méthode `context.sync` pour exécuter toutes les commandes en attente dans l’ordre dans lequel elles ont été mises en file d’attente. Cela permet de synchroniser l’état entre votre script d’exécution et les objets réels, en récupérant les propriétés des objets OneNote chargés à utiliser dans vos scripts. Vous pouvez utiliser l’objet Promise renvoyé pour créer une chaîne avec les actions supplémentaires.
 
-Par exemple :
+Par exemple :
 
 ```js
 function getPagesInSection() {
