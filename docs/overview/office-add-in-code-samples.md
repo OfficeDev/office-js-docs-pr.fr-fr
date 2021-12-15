@@ -1,18 +1,27 @@
 ---
 title: Exemples de code Office
 description: Une liste d Office exemples de code pour vous aider à apprendre et à créer vos propres modules.
-ms.date: 10/07/2021
+ms.date: 11/18/2021
 localization_priority: high
-ms.openlocfilehash: a7e84fb86fb795afc3f73385e2f577458d85621a
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 62bce4c5c6a01895db5d183e0526e0af820156ea
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250482"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514012"
 ---
 # <a name="office-add-in-code-samples"></a>Exemples de code Office
 
 Ces exemples de code sont écrits pour vous aider à apprendre à utiliser différentes fonctionnalités lors du développement de Office de développement.
+
+## <a name="getting-started"></a>Prise en main
+
+Les exemples suivants montrent comment créer le complément Office le plus simple avec uniquement un manifeste, une page web HTML et un logo. Ces composants sont les éléments fondamentaux d’un complément Office. Pour plus d’informations sur la prise en main, consultez nos [démarrages rapides](../quickstarts/excel-quickstart-jquery.md) et [didacticiels](/search/?terms=tutorial&scope=Office%20Add-ins).
+
+* [Complément Excel « Hello World »](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/excel-hello-world)
+* [Complément Outlook « Hello World »](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/outlook-hello-world)
+* [Complément PowerPoint « Hello World »](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/powerpoint-hello-world)
+* [Complément Word « Hello World »](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/hello-world/word-hello-world)
 
 ## <a name="outlook"></a>Outlook
 

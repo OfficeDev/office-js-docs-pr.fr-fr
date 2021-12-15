@@ -1,15 +1,15 @@
 ---
 title: Séries de conditions requises de l’API JavaScript pour PowerPoint
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour PowerPoint.
-ms.date: 01/08/2021
+ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 8cb557ed46490e52da3f372ae48848b7305cdd17
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2381252ef0d0a4e5b757b38534a826c77108a380
+ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153488"
+ms.lasthandoff: 12/15/2021
+ms.locfileid: "61514004"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Séries de conditions requises de l’API JavaScript pour PowerPoint
 
@@ -19,6 +19,7 @@ Le tableau suivant répertorie les ensembles de conditions requises pour PowerPo
 
 |  Ensemble de conditions requises  |  Office pour Windows<br>(connecté à un abonnement Microsoft 365)  |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| [PowerPointApi 1.3](powerpoint-api-1-3-requirement-set.md)  | Version 2111 (build 14701.20060) ou version ultérieure| Pas encore<br>Pris en charge | 16.55 ou ultérieure | Décembre 2021 |
 | [PowerPointApi 1.2](powerpoint-api-1-2-requirement-set.md)  | Version 2011 (build 13426.20184) ou version ultérieure| Pas encore<br>Pris en charge | 16.43 ou version ultérieure | Octobre 2020 |
 | [PowerPointApi 1.1](powerpoint-api-1-1-requirement-set.md) | Version 1810 (Build 11001.20074) ou version ultérieure | 2.17 ou version ultérieure | 16.19 ou version ultérieure | Octobre 2018 |
 
@@ -35,6 +36,10 @@ L’API JavaScript PowerPoint 1.1 inclut une [seule API pour créer une nouvelle
 ## <a name="powerpoint-javascript-api-12"></a>API JavaScript pour PowerPoint 1.2
 
 API JavaScript PowerPoint 1.2 ajoute la prise en charge de l’insertion de diapositives à partir d’une autre présentation PowerPoint dans la présentation actuelle et de la suppression de diapositives. Pour plus d’informations sur les API, consultez [Insérer et supprimer des diapositives dans une présentation PowerPoint](../../powerpoint/insert-slides-into-presentation.md).
+
+## <a name="powerpoint-javascript-api-13"></a>API JavaScript PowerPoint 1.3
+
+L’API JavaScript PowerPoint 1.3 ajoute une prise en charge supplémentaire pour l’ajout et la suppression de diapositives. Il permet également aux compléments d’appliquer des balises de métadonnées personnalisées. Pour plus d’informations sur les API, consultez [Ajouter et supprimer des diapositives dans PowerPoint](../../powerpoint/add-slides.md) et [Utiliser des balises personnalisées pour les présentations, les diapositives et les formes dans PowerPoint](../../powerpoint/tagging-presentations-slides-shapes.md).
 
 ## <a name="how-to-use-powerpoint-requirement-sets-at-runtime-and-in-the-manifest"></a>Utiliser les conditions requises PowerPoint au moment de l’exécution et dans le manifeste
 
