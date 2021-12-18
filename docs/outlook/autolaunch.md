@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 12/15/2021
+ms.date: 12/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b97faa9b294b597aea7085209e9ab2dae7be4d8e
-ms.sourcegitcommit: 9ca8259b17566b8d73169de7f98bd4e16764bcdc
+ms.openlocfilehash: ecb758db993052614bd479cc6c8e62525a0bf02d
+ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/16/2021
-ms.locfileid: "61537882"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "61565370"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -47,9 +47,11 @@ Nous vous invitons à tester les événements maintenant en prévisualisation ! 
 
 Pour afficher un aperçu de ces événements lorsqu’ils sont disponibles :
 
-- Pour Outlook sur le web et Outlook la nouvelle prévisualisation de l’interface utilisateur Mac :
+- Pour Outlook sur le web :
   - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez **la bibliothèque** bêta sur le CDN ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
+- Pour Outlook sur la nouvelle prévisualisation de l’interface utilisateur Mac :
+  - La build minimale requise est de 16,54 (21101001). Rejoignez le [Office Insider et](https://insider.office.com/join/Mac) choisissez le canal **bêta** pour accéder Office versions bêta.
 - Pour Outlook sur Windows :
   - La build minimale requise est 16.0.14511.10000. Rejoignez le [Office Insider et](https://insider.office.com/join/windows) choisissez le canal **bêta** pour accéder Office versions bêta.
   - Configurez le Registre. Outlook inclut une copie locale des versions de production et bêta de Office.js au lieu de charger à partir du CDN. Par défaut, la copie de production locale de l’API est référencé. Pour basculer vers la copie bêta locale des API JavaScript Outlook, vous devez ajouter cette entrée de Registre, sinon les API bêta risquent de ne pas être trouvées.

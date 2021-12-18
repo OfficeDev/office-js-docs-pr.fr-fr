@@ -1,15 +1,15 @@
 ---
 title: API d’aperçu JavaScript pour Word
 description: Détails sur les API JavaScript word à venir.
-ms.date: 10/13/2021
+ms.date: 12/14/2021
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e32a224a3d3a9f72a4f5aade1a8c98bbcab839
-ms.sourcegitcommit: e4d915edde57ad5d4e20f1e2c288d572bd9fe5e9
+ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
+ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/13/2021
-ms.locfileid: "61420242"
+ms.lasthandoff: 12/17/2021
+ms.locfileid: "61565363"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -65,7 +65,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 ||[matchWholeWord](/javascript/api/word/word.document#matchWholeWord)||
 ||[matchWildcards](/javascript/api/word/word.document#matchWildcards)||
 ||[onContentControlAdded](/javascript/api/word/word.document#onContentControlAdded)|Se produit lorsqu’un contrôle de contenu est ajouté.|
-||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|Effectue une recherche avec les searchOptions spécifiées sur l’étendue du document entier.|
+||[search(searchText: string, searchOptions?: Word.SearchOptions \| { ignorePunct?: boolean ignoreSpace?: boolean matchCase?: boolean matchPrefix?: boolean matchSuffix?: boolean matchWholeWord?: boolean matchWildcards?: boolean })](/javascript/api/word/word.document#search_searchText__searchOptions_)|Effectue une recherche avec les options de recherche spécifiées sur l’étendue du document entier.|
 ||[paramètres](/javascript/api/word/word.document#settings)|Obtient les paramètres du add-in dans le document.|
 |[DocumentCreated](/javascript/api/word/word.documentcreated)|[customXmlParts](/javascript/api/word/word.documentcreated#customXmlParts)|Obtient les parties XML personnalisées du document.|
 ||[deleteBookmark(name: string)](/javascript/api/word/word.documentcreated#deleteBookmark_name_)|Supprime un signet, s’il existe, du document.|
@@ -102,6 +102,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[Corps](/javascript/api/word/word.body)|[notes de fin](/javascript/api/word/word.body#endnotes)|Obtient la collection de notes de fin dans le corps.|
 ||[notes de bas de page](/javascript/api/word/word.body#footnotes)|Obtient la collection de notes de bas de page dans le corps.|
 ||[getComments()](/javascript/api/word/word.body#getComments__)|Obtient les commentaires associés au corps.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.body#getReviewedText_changeTrackingVersion_)|Obtient le texte révisé en fonction de la sélection changeTrackingVersion.|
 ||[type](/javascript/api/word/word.body#type)|Obtient le type du corps.|
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtenir l’adresse email de l’auteur du commentaire.|
 ||[authorName](/javascript/api/word/word.comment#authorName)|Obtient le nom de l’auteur du commentaire.|
@@ -131,13 +132,15 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[notes de fin](/javascript/api/word/word.contentcontrol#endnotes)|Obtient la collection de notes de fin dans le contentcontrol.|
 ||[notes de bas de page](/javascript/api/word/word.contentcontrol#footnotes)|Obtient la collection de notes de bas de page dans le contentcontrol.|
 ||[getComments()](/javascript/api/word/word.contentcontrol#getComments__)|Obtient les commentaires associés au corps.|
-|[Document](/javascript/api/word/word.document)|[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Obtient le corps des notes de fin du document.|
-||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Obtient le corps des notes de bas de page du document.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.contentcontrol#getReviewedText_changeTrackingVersion_)|Obtient le texte révisé en fonction de la sélection changeTrackingVersion.|
+|[Document](/javascript/api/word/word.document)|[changeTrackingMode](/javascript/api/word/word.document#changeTrackingMode)|Obtient ou définit le mode ChangeTracking.|
+||[getEndnoteBody()](/javascript/api/word/word.document#getEndnoteBody__)|Obtient les notes de fin du document dans un corps unique.|
+||[getFootnoteBody()](/javascript/api/word/word.document#getFootnoteBody__)|Obtient les notes de bas de page du document dans un corps unique.|
 |[NoteItem](/javascript/api/word/word.noteitem)|[body](/javascript/api/word/word.noteitem#body)|Représente l’objet body de l’élément de note.|
 ||[delete()](/javascript/api/word/word.noteitem#delete__)|Supprime l’élément de note.|
 ||[getNext()](/javascript/api/word/word.noteitem#getNext__)|Obtient l’élément de note suivant du même type.|
 ||[getNextOrNullObject()](/javascript/api/word/word.noteitem#getNextOrNullObject__)|Obtient l’élément de note suivant du même type.|
-||[reference](/javascript/api/word/word.noteitem#reference)|Représente une référence de note de bas de page/note de fin dans le document principal.|
+||[reference](/javascript/api/word/word.noteitem#reference)|Représente une référence de note de bas de page ou de note de fin dans le document principal.|
 ||[type](/javascript/api/word/word.noteitem#type)|Représente le type d’élément de note : note de bas de page ou note de fin.|
 |[NoteItemCollection](/javascript/api/word/word.noteitemcollection)|[getFirst()](/javascript/api/word/word.noteitemcollection#getFirst__)|Obtient le premier élément de note de cette collection.|
 ||[getFirstOrNullObject()](/javascript/api/word/word.noteitemcollection#getFirstOrNullObject__)|Obtient le premier élément de note de cette collection.|
@@ -145,9 +148,11 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[Paragraph](/javascript/api/word/word.paragraph)|[notes de fin](/javascript/api/word/word.paragraph#endnotes)|Obtient la collection de notes de fin du paragraphe.|
 ||[notes de bas de page](/javascript/api/word/word.paragraph#footnotes)|Obtient la collection de notes de bas de page du paragraphe.|
 ||[getComments()](/javascript/api/word/word.paragraph#getComments__)|Obtient les commentaires associés au paragraphe.|
-|[Range](/javascript/api/word/word.range)|[notes de fin](/javascript/api/word/word.range#endnotes)|Obtient la collection de notes de fin dans la plage.|
-||[notes de bas de page](/javascript/api/word/word.range#footnotes)|Obtient la collection de notes de bas de page dans la plage.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.paragraph#getReviewedText_changeTrackingVersion_)|Obtient le texte révisé en fonction de la sélection changeTrackingVersion.|
+|[Range](/javascript/api/word/word.range)|[notes de fin](/javascript/api/word/word.range#endnotes)|Obtient la collection de notes de fin de la plage.|
+||[notes de bas de page](/javascript/api/word/word.range#footnotes)|Obtient la collection de notes de bas de page de la plage.|
 ||[getComments()](/javascript/api/word/word.range#getComments__)|Obtient les commentaires associés à la plage.|
+||[getReviewedText(changeTrackingVersion?: Word.ChangeTrackingVersion)](/javascript/api/word/word.range#getReviewedText_changeTrackingVersion_)|Obtient le texte révisé en fonction de la sélection changeTrackingVersion.|
 ||[insertComment(commentText: string)](/javascript/api/word/word.range#insertComment_commentText_)|Insérez un commentaire sur la plage.|
 ||[insertEndnote(insertText?: string)](/javascript/api/word/word.range#insertEndnote_insertText_)|Insère une note de fin.|
 ||[insertFootnote(insertText?: string)](/javascript/api/word/word.range#insertFootnote_insertText_)|Insère une note de bas de page.|
