@@ -1,14 +1,14 @@
 ---
 title: Conservation de l’état et des paramètres des compléments
 description: Apprenez à faire persister des données dans Office applications web de recherche de contenu s’exécutant dans l’environnement sans état d’un contrôle de navigateur.
-ms.date: 03/23/2021
+ms.date: 12/15/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ad6240df76c1f314072b381f51fe0bd54889b2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc99285aaaedfe5aa8385709fc5512f7cedfb2a6
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149996"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583797"
 ---
 # <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
 
@@ -16,23 +16,23 @@ ms.locfileid: "59149996"
 
 Les compléments Office sont essentiellement des applications web exécutées dans l’environnement sans état d’un contrôle de navigateur. En conséquence, votre complément devra peut-être faire persister les données pour assurer la continuité de certaines opérations ou fonctionnalités entre les sessions d’utilisation du complément. Par exemple, votre complément peut disposer de paramètres personnalisés ou d’autres valeurs dont il a besoin pour l’enregistrement et le rechargement à la prochaine initialisation, tels que l’affichage préféré d’un utilisateur ou l’emplacement par défaut. Pour ce faire, vous pouvez procéder comme suit :
 
-- Utilisez les membres de l’API JavaScript Office qui stockent les données sous l’une des formes :
+- Utilisez les membres de l’API JavaScript Office qui stockent les données sous l’une ou l’autre des formes :
   - Paires nom/valeur dans un conteneur de propriétés stocké dans un emplacement qui dépend du type de complément.
   - Éléments XML personnalisés stockés dans le document.
 
 - Utilisez des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     > [!NOTE]
-    > L’utilisateur peut bloquer les techniques de stockage basées sur le navigateur en fonction des paramètres qu’il choisit.
+    > Certains navigateurs ou paramètres de navigateur de l’utilisateur peuvent bloquer les techniques de stockage basées sur le navigateur. Vous devez tester la disponibilité comme documenté dans [l’utilisation de l’API Stockage Web.](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
 
-Cet article se concentre sur l’utilisation de l Office API JavaScript pour rendre persistant l’état du module dans le document actuel. Si vous devez rendre persistant l’état entre les documents, par exemple suivre les préférences des utilisateurs dans tous les documents qu’ils ouvrent, vous devez utiliser une approche différente. Par exemple, vous [](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) pouvez utiliser l' utilisateur unique pour obtenir l’identité de l’utilisateur, puis enregistrer l’ID utilisateur et ses paramètres dans une base de données en ligne.
+Cet article se concentre sur l’utilisation de l Office’API JavaScript pour rendre persistant l’état du module dans le document actuel. Si vous devez rendre persistant l’état entre les documents, par exemple suivre les préférences des utilisateurs dans tous les documents qu’ils ouvrent, vous devez utiliser une approche différente. Par exemple, vous [](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) pouvez utiliser l' utilisateur unique pour obtenir l’identité de l’utilisateur, puis enregistrer l’ID utilisateur et ses paramètres dans une base de données en ligne.
 
-## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistance de l’état et des paramètres d’un Office avec l’API JavaScript
+## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistance de l’état et des paramètres du Office l’API JavaScript
 
-L Office API JavaScript fournit les objets [Paramètres,](/javascript/api/office/office.settings) [RoamingSettings](/javascript/api/outlook/office.roamingsettings)et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du module dans les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
+L’API JavaScript Office fournit les objets [Paramètres,](/javascript/api/office/office.settings) [RoamingSettings](/javascript/api/outlook/office.roamingsettings)et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
 
 |**Objet**|**Type de complément**|**Emplacement de stockage**|**Office prise en charge des applications**|
 |:-----|:-----|:-----|:-----|
-|[Paramètres](/javascript/api/office/office.settings)|Contenu et volet de tâches|Document, feuille de calcul ou présentation qu’utilise le complément. Seul le complément qui a créé les paramètres de complément de contenu et du volet Office peut y accéder à partir du document où ils sont enregistrés.<br/><br/>**Remarque importante :** ne stockez pas de mots de passe ou autres informations d’identification personnelle (PII) avec l’objet **Settings**. Les données enregistrées ne sont pas visibles par les utilisateurs finals. Toutefois, elles sont stockées en tant que partie du document, qui est accessible en lisant directement le format de fichier. Vous devez limiter l’utilisation de PII de votre complément et stocker ces informations requises par votre complément uniquement sur le serveur qui l’héberge en tant que ressource sécurisée par l’utilisateur.|Word, Excel ou PowerPoint<br/><br/> **Remarque :** les compléments du volet Office pour Project 2013 ne prennent pas en charge l’API **Settings** pour le stockage de l’état ou des paramètres du complément. Toutefois, pour les applications Project (ainsi que d’autres applications clientes Office), vous pouvez utiliser des techniques telles que les cookies de navigateur ou le stockage web. Pour plus d’informations sur ces techniques, reportez-vous à l’exemple de code [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
+|[Paramètres](/javascript/api/office/office.settings)|Contenu et volet de tâches|Document, feuille de calcul ou présentation qu’utilise le complément. Seul le complément qui a créé les paramètres de complément de contenu et du volet Office peut y accéder à partir du document où ils sont enregistrés.<br/><br/>**Remarque importante :** ne stockez pas de mots de passe ou autres informations d’identification personnelle (PII) avec l’objet **Settings**. Les données enregistrées ne sont pas visibles par les utilisateurs finals. Toutefois, elles sont stockées en tant que partie du document, qui est accessible en lisant directement le format de fichier. Vous devez limiter l’utilisation de PII de votre complément et stocker ces informations requises par votre complément uniquement sur le serveur qui l’héberge en tant que ressource sécurisée par l’utilisateur.|Word, Excel ou PowerPoint<br/><br/> **Remarque :** les compléments du volet Office pour Project 2013 ne prennent pas en charge l’API **Settings** pour le stockage de l’état ou des paramètres du complément. Toutefois, pour les Project (ainsi que d’autres applications clientes Office), vous pouvez utiliser des techniques telles que les cookies de navigateur ou le stockage web. Pour plus d’informations sur ces techniques, reportez-vous à l’exemple de code [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings). |
 |[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Outlook|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Étant donné que ces paramètres sont stockés dans la boîte aux lettres du serveur de l’utilisateur, ils peuvent être « itinérants » avec l’utilisateur et sont disponibles pour le module lorsqu’il est en cours d’exécution dans le contexte d’une application cliente ou d’un navigateur Office pris en charge accédant à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|Outlook|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Outlook|Élément de message, de rendez-vous ou de demande de réunion qu’utilise le complément. Seul le complément qui a créé les propriétés personnalisées d’élément de complément Outlook peut y accéder, et uniquement dans l’élément où elles sont enregistrées.|Outlook|
 |[CustomXmlParts](/javascript/api/office/office.customxmlparts)|volet Office|Document, feuille de calcul ou présentation que le complément utilise. Les paramètres de complément de volet Office sont disponibles pour le complément qui les a créés dans le document dans lequel ils sont enregistrés.<br/><br/>**Important :** ne stockez pas de mot de passe ni d’autres informations d’identification personnelle dans une partie XML personnalisée. Les données enregistrées ne sont pas visibles par les utilisateurs finals. Toutefois, elles sont stockées en tant que partie du document, qui est accessible en lisant directement le format de fichier. Vous devez limiter l’utilisation des informations d’identification personnelle de votre complément et stocker ces informations requises par votre complément uniquement sur le serveur qui l’héberge en tant que ressource sécurisée par l’utilisateur.|Word (à l’aide Office’API commune JavaScript) Excel (à l’aide de l’API JavaScript Excel l’application)|
@@ -54,7 +54,7 @@ Cet exemple de structure de conteneur des propriétés contient trois valeurs de
 }
 ```
 
-Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont gérés entièrement en mémoire à l’aide de l’objet , et des méthodes de l’objet qui correspond au type de paramètres que vous créez `get` `set` ( `remove` **Paramètres,** **CustomProperties** ou **RoamingSettings**).
+Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont gérés entièrement en mémoire à l’aide de l’objet , et des méthodes de l’objet qui correspond au type de paramètres que vous créez `get` ( Paramètres `set` , `remove` **CustomProperties** ou **RoamingSettings**).
 
 > [!IMPORTANT]
 > Pour rendre persistants les ajouts, mises à jour ou suppressions effectués au cours de la session actuelle du complément vers l’emplacement de stockage, vous devez appeler la méthode de l’objet correspondant utilisé pour travailler avec ce type de `saveAsync` paramètres. Les méthodes et les paramètres fonctionnent uniquement sur la copie en mémoire du sac des `get` `set` `remove` propriétés des paramètres. Si votre add-in est fermé sans appel, toutes les modifications apportées aux paramètres au cours de `saveAsync` cette session seront perdues.
@@ -63,7 +63,7 @@ Après avoir enregistré le conteneur des propriétés de paramètres durant la 
 
 Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](/javascript/api/office/office.settings) et ses méthodes. Le sac de propriétés créé avec les méthodes de l’objet est disponible uniquement pour l’instance du contenu ou du module de tâches qui l’a créé, et uniquement à partir du document dans lequel il est `Settings` enregistré.
 
-L’objet est automatiquement chargé dans le cadre de l’objet Document et est disponible lorsque le volet Des tâches ou le module de contenu `Settings` est activé. [](/javascript/api/office/office.document) Une fois l’objet ins instantié, vous pouvez accéder à l’objet avec la propriété `Document` `Settings` [settings](/javascript/api/office/office.document#settings) de `Document` l’objet. Pendant toute la durée de vie de la session, vous pouvez simplement utiliser le , et les méthodes pour lire, écrire ou supprimer les paramètres persistants et l’état du add-in de la copie en mémoire du sac des `Settings.get` `Settings.set` `Settings.remove` propriétés.
+L’objet est automatiquement chargé dans le cadre de l’objet Document et est disponible lorsque le volet Des tâches ou le module de `Settings` contenu est activé. [](/javascript/api/office/office.document) Une fois l’objet ins instantié, vous pouvez accéder à l’objet avec la propriété `Document` `Settings` [settings](/javascript/api/office/office.document#settings) de `Document` l’objet. Pendant la durée de vie de la session, vous pouvez simplement utiliser les méthodes et les paramètres persistants pour lire, écrire ou supprimer les paramètres persistants et l’état du module de la copie en mémoire du sac des `Settings.get` `Settings.set` `Settings.remove` propriétés.
 
 Étant donné que les méthodes de définition (set) et de suppression (remove) fonctionnent uniquement par rapport à la copie en mémoire du conteneur des propriétés de paramètres, pour enregistrer de nouveaux paramètres ou des paramètres modifiés dans le document auquel le complément est associé, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_).
 
@@ -79,7 +79,7 @@ Office.context.document.settings.set('themeColor', 'green');
 
 ### <a name="getting-the-value-of-a-setting"></a>Obtention de la valeur d’un paramètre
 
-L’exemple suivant illustre comment utiliser la méthode [Settings.get](/javascript/api/office/office.settings#get_name_) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la méthode est le nom du paramètre sensible `get` _à la_ cas.
+L’exemple suivant illustre comment utiliser la méthode [Settings.get](/javascript/api/office/office.settings#get_name_) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la méthode est le nom du paramètre `get` sensible _à la_ cas.
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -90,11 +90,11 @@ function write(message){
 }
 ```
 
- La méthode renvoie la valeur précédemment enregistrée pour le nom du paramètre `get` qui a été transmis.  Si le paramètre n’existe pas, la méthode retourne **null**.
+ La méthode renvoie la valeur précédemment enregistrée pour le nom de `get` _paramètre_ passé. Si le paramètre n’existe pas, la méthode retourne **null**.
 
 ### <a name="removing-a-setting"></a>Suppression d’un paramètre
 
-L’exemple suivant illustre comment utiliser la méthode [Settings.remove](/javascript/api/office/office.settings#remove_name_) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la méthode est le nom du paramètre sensible `remove` _à la_ cas.
+L’exemple suivant illustre comment utiliser la méthode [Settings.remove](/javascript/api/office/office.settings#remove_name_) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la méthode est le nom du paramètre `remove` sensible _à la_ cas.
 
 ```js
 Office.context.document.settings.remove('themeColor');
@@ -145,7 +145,7 @@ function createCustomXmlPart() {
 }
 ```
 
-Pour récupérer une partie XML personnalisée, vous utilisez la méthode [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_), mais l’identifiant correspond à un GUID généré lorsque la partie XML est créée. Vous ne pouvez donc pas connaître l’identifiant lors du codage. Pour cette raison, il est recommandé de stocker immédiatement l’identifiant de la partie XML en tant que paramètre et de lui donner une clé facilement mémorisable lorsque vous créez une partie XML. L’exemple de méthode suivant montre comment procéder. (Mais consultez les sections précédentes de cet article pour plus d’informations et les meilleures pratiques concernant l’utilisation de paramètres personnalisés.)
+Pour récupérer une partie XML personnalisée, vous utilisez la méthode [getByIdAsync](/javascript/api/office/office.customxmlparts#getByIdAsync_id__options__callback_), mais l’identifiant correspond à un GUID généré lorsque la partie XML est créée. Vous ne pouvez donc pas connaître l’identifiant lors du codage. Pour cette raison, il est recommandé de stocker immédiatement l’identifiant de la partie XML en tant que paramètre et de lui donner une clé facilement mémorisable lorsque vous créez une partie XML. L’exemple de méthode suivant montre comment procéder. (Mais consultez les sections précédentes de cet article pour plus d’informations et les meilleures pratiques en matière d’utilisation des paramètres personnalisés.)
 
  ```js
 function createCustomXmlPartAndStoreId() {

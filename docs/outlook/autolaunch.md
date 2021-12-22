@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 12/16/2021
+ms.date: 12/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb758db993052614bd479cc6c8e62525a0bf02d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
+ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565370"
+ms.lasthandoff: 12/22/2021
+ms.locfileid: "61583806"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -252,6 +252,8 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     ![Capture d’écran d’une fenêtre de message Outlook sur le web avec l’objet de la composition.](../images/outlook-web-autolaunch-1.png)
 
 1. Dans Outlook la nouvelle prévisualisation de l’interface utilisateur Mac, créez un message.
+
+    ![Capture d’écran d’une fenêtre de message Outlook sur la nouvelle prévisualisation de l’interface utilisateur Mac avec l’objet de la composition.](../images/outlook-mac-autolaunch.png)
 
 1. Dans Outlook sur Windows, créez un message.
 
