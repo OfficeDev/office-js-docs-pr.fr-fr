@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 12/17/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebf82aa778cb10db596630e2b6912c3518ee0ef1
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: c74969e761494dcc795c1360d08e23d93f09735d
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583806"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598364"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -264,10 +264,16 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     >
     > 1. Fermez Outlook.
     > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
-    > 1. Exécutez la commande suivante :
+    > 1. Si vous utilisez (la version par défaut `https://localhost` dans le manifeste), exécutez la commande suivante.
     >
     >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+    >    ```
+    >
+    > 1. Si vous utilisez, `http://localhost` exécutez la commande suivante.
+    >
+    >    ```command&nbsp;line
+    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
     >    ```
     >
     > 1. Redémarrez Outlook.

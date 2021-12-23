@@ -2,14 +2,14 @@
 title: Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 description: Découvrez comment gérer l’événement d’envoi de message dans Outlook complément à l’aide de l’activation basée sur un événement.
 ms.topic: article
-ms.date: 12/13/2021
+ms.date: 12/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 2412e1a713c2f15a6b04c77eaba6f368d3607dfb
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d0745ac0f91fbda7866f52cba431369e45e2a1fe
+ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514074"
+ms.lasthandoff: 12/23/2021
+ms.locfileid: "61598378"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 
@@ -20,7 +20,7 @@ ms.locfileid: "61514074"
 > [!IMPORTANT]
 > Les événements et les événements sont disponibles uniquement en `OnMessageSend` `OnAppointmentSend` prévisualisation avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, voir [Comment prévisualiser](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 `OnMessageSend`L’événement est disponible via la fonctionnalité d’activation basée sur des événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, les événements disponibles, comment afficher un aperçu de cet événement, le débogage, les limitations de fonctionnalités, etc., reportez-vous à Configurer votre complément Outlook pour [l’activation](autolaunch.md)basée sur des événements.
 
@@ -232,10 +232,16 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 >
 > 1. Fermez Outlook.
 > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que le processus **msoadfsb.exe** n’est pas en cours d’exécution.
-> 1. Exécutez la commande suivante :
+> 1. Si vous utilisez (la version par défaut `https://localhost` dans le manifeste), exécutez la commande suivante.
 >
 >    ```command&nbsp;line
->    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E50E47DD96FC
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
+>    ```
+>
+> 1. Si vous utilisez, `http://localhost` exécutez la commande suivante.
+>
+>    ```command&nbsp;line
+>    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
 >    ```
 >
 > 1. Redémarrez Outlook.
