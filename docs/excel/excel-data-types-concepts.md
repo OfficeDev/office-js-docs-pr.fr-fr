@@ -1,17 +1,17 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 12/08/2021
+ms.date: 12/28/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 37fe1b90065dd8a784fc7cfc191ccb9cdc3ce5b9
-ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
+ms.openlocfilehash: 7b14182c188900cd472b623dc2204bd74584e082
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "61406619"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647943"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -33,20 +33,23 @@ Utilisez la [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJso
 
 ### <a name="json-schema"></a>Schéma JSON
 
-Les types de données utilisent un schéma JSON cohérent qui définit [le CellValueType](/javascript/api/excel/excel.cellvaluetype) des données et des informations supplémentaires telles `basicValue` que , ou `numberFormat` `address` . Chacune `CellValueType` possède des propriétés disponibles en fonction de ce type. Par exemple, le `webImage` type inclut les [propriétés altText](/javascript/api/excel/excel.webimagecellvalue#altText) [et attribution.](/javascript/api/excel/excel.webimagecellvalue#attribution) Les sections suivantes montrent des exemples de code JSON pour la valeur numérique mise en forme, la valeur d’entité et les types de données d’image web.
+Chaque type de données utilise un schéma de métadonnées JSON conçu pour ce type. Cela définit le [CellValueType](/javascript/api/excel/excel.cellvaluetype) des données et des informations supplémentaires sur la cellule, telles que `basicValue`, `numberFormat`, ou `address`. Chacune `CellValueType` possède des propriétés disponibles en fonction de ce type. Par exemple, le `webImage` type inclut les [propriétés altText](/javascript/api/excel/excel.webimagecellvalue#altText) [et attribution.](/javascript/api/excel/excel.webimagecellvalue#attribution) Les sections suivantes montrent des exemples de code JSON pour la valeur numérique mise en forme, la valeur d’entité et les types de données d’image web.
+
+Le schéma de métadonnées JSON pour chaque type de données inclut également une ou plusieurs propriétés en lecture seule qui sont utilisées lorsque les calculs rencontrent des scénarios incompatibles, tels qu’une version d’Excel qui ne répond pas à la condition de numéro de build minimale pour la fonctionnalité des types de données. La propriété `basicType` fait partie des métadonnées JSON de chaque type de données, et il s’agit toujours d’une propriété en lecture seule. La `basicType`propriété est utilisée comme secours lorsque le type de données n’est pas pris en charge ou est formatée de manière incorrecte.
 
 ## <a name="formatted-number-values"></a>Valeurs numériques formatées
 
 [L’objet FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) permet aux Excel de définir une propriété `numberFormat` pour une valeur. Une fois affecté, ce format de nombre parcourt les calculs avec la valeur et peut être renvoyé par des fonctions.
 
-L’exemple de code JSON suivant montre une valeur numérique mise en forme. La valeur numérique mise en forme`myDate` dans l’exemple de code s’affiche comme **16/16/1990** dans l Excel’interface utilisateur.
+L’exemple de code JSON suivant montre le schéma complet d’une valeur numérique mise en forme. La valeur numérique mise en forme`myDate` dans l’exemple de code s’affiche comme **16/16/1990** dans l Excel’interface utilisateur. Si les exigences de compatibilité minimales pour la fonctionnalité de types de données ne sont pas remplies, les calculs utilisent le `basicValue` à la place nombre mis en forme.
 
 ```json
-// This is an example of the JSON of a formatted number value.
+// This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
 const myDate = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
+    basicType: Excel.CellValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -55,10 +58,12 @@ const myDate = {
 
 Une valeur d’entité est un conteneur pour les types de données, semblable à un objet dans la programmation orientée objet. Les entités sont également des tableaux en tant que propriétés d’une valeur d’entité. [L’objet EntityCellValue](/javascript/api/excel/excel.entitycellvalue) permet aux compléments de définir des propriétés telles `type` que , et `text` `properties` . La `properties` propriété permet à la valeur d’entité de définir et de contenir des types de données supplémentaires.
 
-L’exemple de code JSON suivant montre une valeur d’entité qui contient du texte, une image, une date et une valeur de texte supplémentaire.
+Les propriétés `basicType` et `basicValue`définissent la manière dont les calculs lisent ce type de données d’entité si les exigences de compatibilité minimales pour utiliser les types de données ne sont pas remplies. Dans ce scénario, ce type de données d’entité s’affiche en tant que **#VALUE!** erreur dans l’interface Excel IU.
+
+L’exemple de code JSON suivant montre le schéma complet d’une valeur d’entité qui contient du texte, une image, une date et une valeur de texte supplémentaire.
 
 ```json
-// This is an example of the JSON for an entity value.
+// This is an example of the complete JSON for an entity value.
 // The entity contains text and properties which contain an image, a date, and another text value.
 const myEntity = {
     type: Excel.CellValueType.entity,
@@ -70,7 +75,9 @@ const myEntity = {
             type: Excel.CellValueType.string,
             basicValue: "I love llamas."
         }
-    }
+    }, 
+    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -78,13 +85,17 @@ const myEntity = {
 
 [L’objet WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) crée la possibilité de [ stocker une image](#entity-values) dans le cadre d’une entité ou en tant que valeur indépendante dans une plage. Cet objet offre de nombreuses propriétés, notamment `address` `altText` , et `relatedImagesAddress` .
 
-L’exemple de code JSON suivant montre comment représenter une image web.
+Les propriétés `basicType` et `basicValue` définissent la manière dont les calculs lisent le type de données d’image web si les exigences de compatibilité minimales requises pour utiliser la fonctionnalité des types de données ne sont pas remplies. Dans ce scénario, ce type de données d’image web s’affiche en tant que **#VALUE!** erreur dans l’interface Excel IU.
+
+L’exemple de code JSON suivant montre le schéma complet d’une image web.
 
 ```json
-// This is an example of the JSON for a web image.
+// This is an example of the complete JSON for a web image.
 const myImage = {
     type: Excel.CellValueType.webImage,
-    address: "https://bit.ly/2YGOwtw"
+    address: "https://bit.ly/2YGOwtw", 
+    basicType: Excel.CellValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -115,4 +126,4 @@ Chacun des objets d’erreur peut accéder à une enum via la propriété, et ce
 
 - [Vue d’ensemble des types de données dans Excel de données](excel-data-types-overview.md)
 - [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Vue d’ensemble des fonctions personnalisées et des types de données](custom-functions-data-types-overview.md)
+- [Fonctions personnalisées et types de données](custom-functions-data-types-concepts.md)

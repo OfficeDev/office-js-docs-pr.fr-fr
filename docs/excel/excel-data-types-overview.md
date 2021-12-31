@@ -1,17 +1,17 @@
 ---
 title: Vue d’ensemble des types de données dans les compléments Excel
 description: Les types de données dans l’API JavaScript Excel permettent aux développeurs de compléments Office de travailler avec des valeurs numériques, des images web, des valeurs d’entité, des tableaux mis en forme au sein des valeurs d’entité et des erreurs améliorées en tant que types de données.
-ms.date: 12/08/2021
+ms.date: 12/27/2021
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f6545eb314ec5aef30a595b755e3f702a3e5df20
-ms.sourcegitcommit: ddb1d85186fd6e77d732159430d20eb7395b9a33
+ms.openlocfilehash: 06a10051b1b243689f9d46d22c38cbdbfb155e4d
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2021
-ms.locfileid: "61406668"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647950"
 ---
 # <a name="overview-of-data-types-in-excel-add-ins-preview"></a>Vue d’ensemble des types de données dans les compléments Excel (préversion)
 
@@ -35,10 +35,10 @@ Les types de données développent la prise en charge de l’API JavaScript au-d
 
 [!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
 
-Les types de données améliorent la puissance des fonctions personnalisées. Les fonctions personnalisées acceptent les types de données comme entrées et sorties de fonctions personnalisées et les fonctions personnalisées utilisent le même schéma JSON pour les types de données que l’API JavaScript Excel. Ce schéma JSON de types de données est conservé à mesure que les fonctions personnalisées calculent et évaluent. Si vous souhaitez en savoir plus sur l’intégration des types de données à vos fonctions personnalisées, consultez les [Concepts de base des fonctions personnalisées et des types de données](custom-functions-data-types-concepts.md).
+Les types de données améliorent la puissance des fonctions personnalisées. Les fonctions personnalisées acceptent les types de données comme entrées et sorties de fonctions personnalisées et les fonctions personnalisées utilisent le même schéma JSON pour les types de données que l’API JavaScript Excel. Ce schéma JSON de types de données est conservé à mesure que les fonctions personnalisées calculent et évaluent. Pour en savoir plus sur l’intégration des types de données à vos fonctions personnalisées, consultez[Fonctions personnalisées et types de données.](custom-functions-data-types-concepts.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Concepts de base des types de données Excel](excel-data-types-concepts.md)
 - [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
-- [Vue d’ensemble des fonctions personnalisées et des types de données](custom-functions-data-types-overview.md)
+- [Fonctions personnalisées et types de données](custom-functions-data-types-concepts.md)
