@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7f8a0cb7fcccce4861d77f23c0f3099fd1af2ec5
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250454"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61647971"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -17,7 +17,7 @@ Les fonctions personnalisées vous permettent d’ajouter de nouvelles fonctions
 
 Dans ce didacticiel, vous allez :
 > [!div class="checklist"]
-> - Créer un complément de fonction personnalisée à l’aide la [Générateur Yeoman de compléments Office](https://www.npmjs.com/package/generator-office). 
+> - Créer un complément de fonction personnalisée à l’aide la [Générateur Yeoman de compléments Office](https://www.npmjs.com/package/generator-office).
 > - Utiliser une fonction personnalisée prédéfinie pour effectuer un calcul simple.
 > - Créer une fonction personnalisée qui demande les données à partir du web.
 > - Créer une fonction personnalisée qui diffuse les données en temps réel à partir du web.
@@ -31,6 +31,9 @@ Dans ce didacticiel, vous allez :
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
  Pour commencer, créez le projet de code pour créer votre complément de fonction personnalisé. Le [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec des fonctions personnalisées prédéfinies que vous pouvez essayer. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) à la place.
+
+> [!NOTE]
+> Il se peut que vous receviez une erreur si vous recréez le projet office yo car le cache Office possède déjà une instance d’une fonction du même nom. Vous pouvez éviter cela en [effaçant le cache Office](../testing/clear-cache.md) avant d’exécuter `npm run start`.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -206,7 +209,7 @@ Pour tester les fonctions, tapez le texte **=CONTOSO. CLOCK()** dans la cellule 
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Ensuite, vous pouvez modifier votre projet pour utiliser un runtime partagé, ce qui permet à votre fonction d’interagir plus facilement avec le volet de tâches. Suivez la procédure décrite dans cet article.
+Félicitations ! Vous avez créé un nouveau projet de fonctions personnalisées, essayé une fonction prédéfinie, créé une fonction personnalisée qui récupère des données à partir du web et créé une fonction personnalisée qui diffuse des données. Ensuite, vous pouvez modifier votre projet pour utiliser un runtime partagé, ce qui permet à votre fonction d’interagir plus facilement avec le volet de tâches. Suivez la procédure décrite dans cet article.
 
 > [!div class="nextstepaction"]
 > [Configurer votre complément pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

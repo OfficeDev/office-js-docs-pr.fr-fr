@@ -1,15 +1,15 @@
 ---
-ms.date: 10/08/2021
+ms.date: 12/28/2021
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1bbd519fa49d4518baacf4f8d0b6d88af38f3c94
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
+ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250496"
+ms.lasthandoff: 12/30/2021
+ms.locfileid: "61648002"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -105,6 +105,12 @@ Félicitations, vous avez créé une fonction personnalisée dans un complément
 
 > [!div class="nextstepaction"]
 > [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
+
+## <a name="troubleshooting"></a>Résolution des problèmes
+
+Vous pouvez rencontrer des problèmes si vous exécutez le démarrage rapide plusieurs fois. Votre complément retourne une erreur lors de son chargement si le cache d'Office contient déjà une instance d'une fonction qui porte le même nom. Vous pouvez éviter cela en [vidant le cache Office ](../testing/clear-cache.md) avant d’exécuter `npm run start`.
+
+:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="Message d’erreur Excel intitulé « Erreur lors de l’installation des fonctions ». Il contient le texte « Ce complément n’a pas été installé car une fonction personnalisée du même nom existe déjà ».":::
 
 ## <a name="see-also"></a>Voir aussi
 
