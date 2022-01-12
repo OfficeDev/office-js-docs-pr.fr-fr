@@ -1,14 +1,14 @@
 ---
 title: Élément Event dans le fichier manifeste
 description: Définit un gestionnaire d’événements dans un complément.
-ms.date: 09/24/2021
+ms.date: 01/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 095023a8f2d8cd5a01835e09cd50ae7289c98c01
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: fac920fc91abd908d3d159877c0c414bd7fae244
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990661"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765891"
 ---
 # <a name="event-element"></a>Élément Event
 
@@ -18,6 +18,13 @@ Définit un gestionnaire d’événements dans un complément.
 > Pour plus d’informations sur la prise en charge et l’utilisation, voir La fonctionnalité [d’envoi pour Outlook des applications.](../../outlook/outlook-on-send-addins.md)
 
 **Type de complément :** messagerie
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
 
 ## <a name="attributes"></a>Attributs
 
