@@ -1,18 +1,18 @@
 ---
 title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 description: Découvrez comment déboguer un complément Office qui utilise Microsoft Edge WebView2 (avec Chromium) à l’aide du débogueur pour l’extension Microsoft Edge dans VS Code.
-ms.date: 11/09/2021
+ms.date: 01/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2ffc9226cb5e4fb38c88a98a79f3676ca3b6071e
-ms.sourcegitcommit: 3d37c42f5e465dac52d231d31717bdbb3bfa0e30
+ms.openlocfilehash: 370aee798b40631000310f65b7ace931d0c2ae3e
+ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2021
-ms.locfileid: "60889985"
+ms.lasthandoff: 01/12/2022
+ms.locfileid: "61765898"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
-Les compléments Office s’exécutant sur Windows peuvent utiliser le débogueur pour Microsoft Edge extension dans Visual Studio Code afin de déboguer sur le runtime Edge Chromium WebView2. 
+Les compléments Office s’exécutant sur Windows peuvent utiliser le débogueur pour Microsoft Edge extension dans Visual Studio Code afin de déboguer sur le runtime Edge Chromium WebView2.
 
 > [!TIP]
 > Si vous ne pouvez pas ou ne souhaitez pas déboguer à l’aide d’outils intégrés à Visual Studio Code; ou vous rencontrez un problème qui se produit uniquement lorsque le complément est exécuté en dehors de Visual Studio Code, vous pouvez déboguer le runtime Edge Chromium WebView2 à l’aide des outils de développement Edge (basés sur Chromium), comme décrit dans [Déboguer les compléments à l’aide des outils de développement pour Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
@@ -35,7 +35,7 @@ Les compléments Office s’exécutant sur Windows peuvent utiliser le débogueu
    > npx office-addin-debugging start <your manifest path>
    > ```
 
-1. Ouvrez le projet dans VS Code. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Débogueur pour Microsoft Edge », puis installez-la.
+1. Ouvrez le projet dans VS Code. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez[l’extension Microsoft Edge « DevTools](/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)» et installez-la.
 
 1. Ensuite, choisissez  **Afficher > Exécuter** ou entrez **Ctrl+Shift+D** pour basculer en mode débogage.
 
