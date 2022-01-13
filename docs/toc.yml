@@ -258,9 +258,12 @@ items:
             href: develop/develop-office-add-ins-for-the-ipad.md
       - name: Test et débogage
         items:
-          - name: Test et débogage de compléments Office
+          - name: Test des compléments Office
             href: testing/test-debug-office-add-ins.md
             displayName: 'test, debug'
+          - name: Débogage des compléments Office
+            href: testing/debug-add-ins-overview.md
+            displayName: debug
           - name: Windows
             items:
               - name: Chargez des compléments Office sur Windows à partir d’un partage réseau
