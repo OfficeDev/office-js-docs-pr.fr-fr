@@ -1,22 +1,29 @@
 ---
 title: Élément EquivalentAddins dans le fichier manifeste
-description: Spécifie la compatibilité ascendante avec un add-in COM équivalent, XLL ou les deux.
-ms.date: 09/24/2021
+description: Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d32f67f49d334a75433aec2d079b45a44a04121a
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 48f3ef86f71ad3d4f0c759df4583af4cd95e5c5a
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990809"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042153"
 ---
 # <a name="equivalentaddins-element"></a>Élément EquivalentAddins
 
-Spécifie la compatibilité ascendante avec un add-in COM équivalent, XLL ou les deux.
+Spécifie la compatibilité ascendante avec un compl?ment COM, une XLL ou les deux.
 
 [!INCLUDE [Support note for equivalent add-ins feature](../../includes/equivalent-add-in-support-note.md)]
 
 **Type de add-in :** Volet Des tâches, Courrier, Fonction personnalisée
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Volet De tâches 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
 
 ## <a name="syntax"></a>Syntaxe
 

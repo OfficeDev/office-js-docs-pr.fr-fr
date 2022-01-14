@@ -1,14 +1,14 @@
 ---
 title: Élément ExtendedPermission dans le fichier manifeste
 description: Définit une autorisation étendue dont le add-in a besoin pour accéder à l’API ou à la fonctionnalité associée.
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 127ad4ea1df0d069a12f642e8fafdfcad006d715
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 5ed3745da87c2fa04839a8fbd1c677f62ad771dc
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990781"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042139"
 ---
 # <a name="extendedpermission-element"></a>`ExtendedPermission` élément
 
@@ -18,6 +18,16 @@ Définit une autorisation étendue dont le add-in a besoin pour accéder à l’
 > La prise en charge de cet élément a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](../../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 **Type de complément :** messagerie
+
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+
+**Associés à ces ensembles de conditions requises**:
+
+- [Mailbox 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
 
 ## <a name="available-extended-permissions"></a>Autorisations étendues disponibles
 

@@ -1,14 +1,14 @@
 ---
 title: Élément ExtendedPermissions dans le fichier manifeste
 description: Définit la collection d’autorisations étendues dont le add-in a besoin pour accéder aux API ou fonctionnalités associées.
-ms.date: 09/24/2021
+ms.date: 01/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c8316e045323b6b8c9c8ef140944b92c08f543c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 46ca6e3e2fb992755d9067b4251200073f07ade1
+ms.sourcegitcommit: 9b0e70bb296a84adfaea0d6fee54916be9e13031
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990641"
+ms.lasthandoff: 01/14/2022
+ms.locfileid: "62042125"
 ---
 # <a name="extendedpermissions-element"></a>Élément ExtendedPermissions
 
@@ -19,9 +19,19 @@ Définit la collection d’autorisations étendues dont le add-in a besoin pour 
 
 **Type de complément :** messagerie
 
+**Valide uniquement dans ces schémas VersionOverrides**:
+
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+
+**Associés à ces ensembles de conditions requises**:
+
+- [Mailbox 1.9](../../reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md)
+
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----:|:-----|
 |  [ExtendedPermission](extendedpermission.md)    |  Non   | Définit une autorisation étendue nécessaire pour que le add-in accède à l’API ou à la fonctionnalité associée. |
 
