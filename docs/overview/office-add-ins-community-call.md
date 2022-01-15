@@ -1,23 +1,22 @@
 ---
 title: Microsoft Office de la communauté des add-ins
 description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 01/10/2022
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: be9f637db2161f3c3b2da07503a623c0401c1121
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 59b0be6e0fe2196cf0ff80970cd9035ed8e66b5e
+ms.sourcegitcommit: 015e0839c4acca0f4dc5ec5df08489314fb509ca
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765919"
+ms.lasthandoff: 01/15/2022
+ms.locfileid: "62055057"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des add-ins
 
 L’appel de la communauté Microsoft Office compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office compléments. L’appel de la communauté a lieu le deuxième mercredi de chaque mois à 8:00 PDT. Vous pouvez télécharger l’invitation de calendrier sur [https://aka.ms/officeaddinscommunitycall](https://aka.ms/officeaddinscommunitycall) .
 
-## <a name="agenda-for-january-12th-call"></a>Agenda de l’appel du 12 janvier
+## <a name="agenda-for-february-9th-call"></a>Agenda de l’appel du 9 février
 
-- Excel api de personnalisation de raccourci
-- Mises à jour de l' sso dans Office
+L’ordre du jour de février sera publié environ une semaine avant l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 
