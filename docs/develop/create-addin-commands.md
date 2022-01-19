@@ -3,12 +3,12 @@ title: Créer des commandes complémentaires dans votre formulaire pour Excel, P
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
 ms.date: 12/13/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fa9c26dffd9584fd83ce42058a4fef71bf1152e9
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f12f95f3d45ee0e5b7bce0f0a3b484adcbdcd999
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514081"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073380"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
@@ -419,7 +419,7 @@ L’exemple suivant montre un exemple de l’utilisation de l’élément **Ress
 </Resources>
 ```
 
-|Resource|Description|
+|Ressource|Description|
 |:-----|:-----|
 |**Images**/ **Image** <br/> | Fournit l’URL HTTPS d’un fichier image. Chaque image doit définir les trois tailles d’image obligatoires : <br/>  16 x 16 <br/>  32 x 32 <br/>  80 × 80 <br/>  Les tailles d’image suivantes sont également prises en charge, mais ne sont pas obligatoires : <br/>  20 × 20 <br/>  24 × 24 <br/>  40 × 40 <br/>  48 × 48 <br/>  64 x 64 <br/> |
 |**URL**/ **Url** <br/> |Indique un emplacement d’URL HTTPS. Une URL peut comporter 2 048 caractères au maximum.  <br/> |
@@ -442,6 +442,6 @@ Dans Excel et Word, vous pouvez ajouter vos commandes de complément au ruban en
 ## <a name="see-also"></a>Voir aussi
 
 - [Commandes de complément pour Excel, PowerPoint et Word](../design/add-in-commands.md)
-- [Exemple : Créer un Excel avec des boutons de commande](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/excel)
-- [Exemple : Créer un add-in Word avec des boutons de commande](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/word)
-- [Exemple : Créer un PowerPoint avec des boutons de commande](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/office-add-in-commands/powerpoint)
+- [Exemple : Créer un Excel avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [Exemple : Créer un add-in Word avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [Exemple : Créer un PowerPoint avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

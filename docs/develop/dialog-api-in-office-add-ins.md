@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 02239437c12e44708e870540c95f1333e78351f9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150074"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073352"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -26,7 +26,7 @@ Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’u
 - héberger une vidéo qui serait trop petite si elle était limitée à un volet Office.
 
 > [!NOTE]
-> Comme des éléments d’interface utilisateur qui se chevauchent peuvent gêner des utilisateurs, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office à moins que votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour obtenir un exemple de volet De tâches à onglets, voir l’exemple Excel de [salestracker JavaScript pour le](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) module de développement javascript.
+> Comme des éléments d’interface utilisateur qui se chevauchent peuvent gêner des utilisateurs, évitez d’ouvrir une boîte de dialogue à partir d’un volet Office à moins que votre scénario l’exige. Lorsque vous envisagez d’utiliser la surface d’exposition d’un volet Office, tenez compte du fait que les volets Office peuvent être affichés sous forme d’onglets. Pour obtenir un exemple de volet De tâches à onglets, voir l’exemple Excel de [salestracker JavaScript pour le](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) module de développement.
 
 L’image suivante montre un exemple de boîte de dialogue.
 
@@ -79,14 +79,14 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 La valeur par défaut est `false`, ce qui revient à omettre entièrement la propriété. Si le module n’est pas en cours d’Office sur le Web, il `displayInIframe` est ignoré.
 
 > [!NOTE]
-> Vous ne **devez pas** l’utiliser si la boîte de dialogue redirige à un moment donné vers une page qui ne peut pas être ouverte dans `displayInIframe: true` un iFrame. Par exemple, les pages de signature de nombreux services web populaires, tels que les comptes Google et Microsoft, ne peuvent pas être ouvertes dans un iFrame.
+> Vous ne **devez pas** l’utiliser si la boîte de dialogue redirige à tout moment vers une page qui ne peut pas être ouverte dans `displayInIframe: true` un iFrame. Par exemple, les pages de signature de nombreux services web populaires, tels que les comptes Google et Microsoft, ne peuvent pas être ouvertes dans un iFrame.
 
 ## <a name="send-information-from-the-dialog-box-to-the-host-page"></a>Envoi d’informations à la page hôte à partir de la boîte de dialogue
 
 > [!NOTE]
 >
-> - Pour plus de clarté, dans cette section, nous appelons le message cible de la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](#cross-domain-messaging-to-the-host-runtime).
-> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque Office API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit initialiser le module. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
+> - Pour plus de clarté, dans cette section, nous appelons le message cible la *page* hôte, mais à proprement parler les messages vont au *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de fonction [).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](#cross-domain-messaging-to-the-host-runtime).
+> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque d’API JavaScript Office est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit initialiser le module. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
 Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
 
@@ -227,9 +227,9 @@ Office.context.ui.messageParent("Some message", { targetOrigin: "https://resourc
 ```
 
 > [!NOTE]
-> Le `DialogMessageOptions` paramètre a été publié environ le 19 juillet 2021. Pendant environ 30 jours après cette date, en Office sur le Web, la première fois que le paramètre est appelé et que le parent est un domaine différent de celui de la boîte de dialogue, l’utilisateur est invité à approuver l’envoi de données au domaine `messageParent` `DialogMessageOptions` cible. Si l’utilisateur approuve, la réponse de l’utilisateur est mise en cache pendant 24 heures. L’utilisateur n’est pas invité à nouveau pendant cette période lorsqu’il est appelé `messageParent` avec le même domaine cible.
+> Le `DialogMessageOptions` paramètre a été publié environ le 19 juillet 2021. Pendant environ 30 jours après cette date, en Office sur le Web, la première fois que le paramètre est appelé et que le parent est un domaine différent de celui de la boîte de dialogue, l’utilisateur est invité à approuver l’envoi de données au domaine `messageParent` `DialogMessageOptions` cible. Si l’utilisateur approuve, la réponse de l’utilisateur est mise en cache pendant 24 heures. L’utilisateur n’est pas invité à nouveau pendant cette période lorsqu’il est `messageParent` appelé avec le même domaine cible.
 
-Si le message n’inclut pas de données sensibles, vous pouvez définir sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
+Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* envoyé à n’importe quel domaine. Voici un exemple.
 
 ```js
 Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
@@ -288,7 +288,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement à l’auprès de la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) Cette étape est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
+Dans le javaScript de la boîte de dialogue, inscrivez un handler pour l’événement avec la méthode `DialogParentMessageReceived` [UI.addHandlerAsync.](/javascript/api/office/office.ui#addHandlerAsync_eventType__handler__options__callback_) Cette étape est généralement effectuée dans [les méthodes Office.onReady ou Office.initialize,](initialize-add-in.md)comme illustré ci-après. (Vous trouverez ci-dessous un exemple plus robuste.)
 
 ```javascript
 Office.onReady()
@@ -308,7 +308,7 @@ function onMessageFromParent(arg) {
 }
 ```
 
-Il est préférable de vérifier que votre handler est correctement enregistré. Vous pouvez le faire en passant un rappel à la `addHandlerAsync` méthode. Cela s’exécute lorsque la tentative d’inscription du handler est terminée. Utilisez le handler pour enregistrer ou afficher une erreur si le handler n’a pas été enregistré avec succès. Voici un exemple. Notez `reportError` qu’il s’agit d’une fonction, qui n’est pas définie ici, qui enregistre ou affiche l’erreur.
+Il est préférable de vérifier que votre handler est correctement enregistré. Vous pouvez le faire en passant un rappel à la `addHandlerAsync` méthode. Cette tentative s’exécute lorsque la tentative d’inscription du handler est terminée. Utilisez le handler pour enregistrer ou afficher une erreur si le handler n’a pas été enregistré avec succès. Voici un exemple. Notez `reportError` qu’il s’agit d’une fonction, qui n’est pas définie ici, qui enregistre ou affiche l’erreur.
 
 ```javascript
 Office.onReady()
@@ -328,7 +328,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="conditional-messaging-from-parent-page-to-dialog-box"></a>Messagerie conditionnelle d’une page parent à une boîte de dialogue
 
-Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
+Étant donné que vous pouvez effectuer plusieurs appels à partir de la page hôte, mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les `messageChild` `DialogParentMessageReceived` différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la messagerie [conditionnelle.](#conditional-messaging)
 
 > [!NOTE]
 > Dans certains cas, l’API, qui fait partie de l’ensemble de conditions `messageChild` [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte.](parent-to-dialog.md)
@@ -349,7 +349,7 @@ Voici un exemple d’utilisation `messageChild` pour envoyer un message entre do
 dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.com" });
 ```
 
-Si le message n’inclut pas de données sensibles, vous pouvez définir sur « », ce qui permet d’être `targetOrigin` \* *envoyé* à n’importe quel domaine. Voici un exemple.
+Si le message n’inclut pas de données sensibles, vous pouvez définir la sur « », ce qui permet d’être `targetOrigin` \* *envoyé* à n’importe quel domaine. Voici un exemple.
 
 ```js
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
@@ -428,7 +428,7 @@ Voir [Gestion des erreurs et des événements dans la boîte de dialogue Office]
 
 Découvrez les pièges et pratiques recommandées pour l’API de boîte de dialogue Office dans les [Meilleures pratiques et règles pour l’API de boîte de dialogue Office](dialog-best-practices.md).
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>Échantillons
 
 Tous les exemples suivants utilisent `displayDialogAsync` . Certains ont des serveurs NodeJS et d’autres des serveurs basés sur ASP.NET/IIS, mais la logique d’utilisation de la méthode est la même quelle que soit la façon dont le côté serveur du module est implémenté.
 
@@ -439,22 +439,22 @@ Tous les exemples suivants utilisent `displayDialogAsync` . Certains ont des ser
 
 **Exemples plus complexes :**
 
-- [Office Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
-- [Complément Office Microsoft Graph React](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Office-Add-in-Microsoft-Graph-React)
-- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
-- [Office Add-in ASPNET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-- [Office Exemple de monétisation SAAS pour le add-in](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
-- [Outlook Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
-- [Outlook Visionneuse de jetons de add-in](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
-- [Outlook Message actionnable du add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
-- [Outlook Partage de OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
-- [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Excel Scénario d’runtime partagé](https://github.com/OfficeDev/PnP-OfficeAddins/tree/900b5769bca9bbcff79d6cd6106d9fcc55c70d5a/Samples/excel-shared-runtime-scenario)
-- [Excel Add-in ASPNET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Office de microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
+- [Complément Office Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
+- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Office' ssO ASPNET du add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+- [Office exemple de monétisation SAAS de l’AAS](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Outlook de microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
+- [Outlook' SSO du module de 2013](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Outlook visionneuse de jetons de add-in](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
+- [Outlook message actionnable du add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
+- [Outlook partage de OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
+- [PowerPoint de microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Excel scénario d’runtime partagé](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)
+- [Excel des quickBooks ASPNET de la solution de recherche](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
 - [Word Add-in JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
 - [Word Add-in JS SpecKit](https://github.com/OfficeDev/Word-Add-in-JS-SpecKit)
 - [Word Add-in AngularJS Client OAuth](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
 - [Complément Office dans Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
-- [Office Ajout de OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-- [Office Code de modèles de conception de l’UX de l’UX de l’ajout](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [Office de OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+- [Office code de modèles de conception de l’UX de l’UX de l’autre](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)

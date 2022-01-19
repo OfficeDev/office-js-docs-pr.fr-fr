@@ -3,20 +3,20 @@ title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: de31ff257484379af1904ba530f94cb9ab5c3197
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ae6d635535e9d8882877a6567160fa540c138310
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153136"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074349"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
-Vous pouvez obtenir les pièces jointes d’un Outlook de deux manières, mais l’option que vous utilisez dépend de votre scénario.
+Vous pouvez obtenir les pièces jointes d’un Outlook de deux façons, mais l’option que vous utilisez dépend de votre scénario.
 
 1. Envoyez les informations de pièce jointe à votre service distant.
 
-    Votre add-in peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
+    Votre application peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
 
 1. Utilisez [l’API getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge [: AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
@@ -420,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md)
 - [Explorer l’API managée EWS, EWS et les services web dans Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Prise en main des applications clientes d'API managée EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Outlook' SSO du module de 2013](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)

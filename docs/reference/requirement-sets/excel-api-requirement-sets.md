@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Excel
 description: Informations sur la configuration requise pour le complément Office sur les builds Excel.
-ms.date: 11/02/2021
+ms.date: 01/14/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8770f91531b74442561d93d76daf57492d4c13f5
-ms.sourcegitcommit: a3debae780126e03a1b566efdec4d8be83e405b8
+ms.openlocfilehash: 6ddab3218b313fff244cdd83d8464e8953921f4b
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2021
-ms.locfileid: "60683790"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074335"
 ---
 # <a name="excel-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Excel
 
@@ -20,7 +20,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 Les compléments Excel peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure pour Windows, Office pour iPad, Office pour Mac et Office Online. Le tableau suivant répertorie les ensembles de conditions requises pour Excel, les applications clientes Office qui prennent en charge chaque ensemble de conditions et les versions ou numéro de build de ces applications.
 
 > [!NOTE]
-> Pour utiliser des API dans l’un des ensembles de conditions requises numérotés ou `ExcelApiOnline`, vous devez référencer la bibliothèque de **production** sur le CDN : https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
+> Pour utiliser des API dans l’un des ensembles de conditions requises numérotées ou `ExcelApiOnline`, vous devez référencer la bibliothèque de **production** sur le [réseau de distribution de contenu (CDN) Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js.).
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript d’Excel preview API](excel-preview-apis.md).
 

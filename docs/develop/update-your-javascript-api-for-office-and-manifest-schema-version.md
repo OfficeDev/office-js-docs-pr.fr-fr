@@ -1,14 +1,14 @@
 ---
 title: Mise à jour vers la dernière Office de l’API JavaScript et du schéma de manifeste de la version 1.1
 description: Mettez à jour vos fichiers JavaScript (Office.js et fichiers .js propres aux applications) et le fichier de validation du manifeste du complément dans votre projet Complément Office vers la version 1.1.
-ms.date: 10/11/2019
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c5672f1b650c7ae6950f8669d831b5db4ac9fcf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 73ed8fffe43bda3052712ec99e2a353586cc7196
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149900"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074244"
 ---
 # <a name="update-to-the-latest-office-javascript-api-library-and-version-11-add-in-manifest-schema"></a>Mise à jour vers la dernière Office de l’API JavaScript et du schéma de manifeste de la version 1.1
 
@@ -21,9 +21,9 @@ Cet article décrit comment mettre à jour vers la version 1.1 les fichiers Jav
 
 Si vous utilisez Visual Studio pour développer votre application, pour utiliser les membres d’API les plus récents de l’API JavaScript Office et les fonctionnalités [v1.1](../develop/add-in-manifests.md) du manifeste de l’application (validées par rapport à offappmanifest-1.1.xsd), vous devez télécharger Visual Studio 2019. Pour télécharger Visual Studio 2019, consultez la [page Visual Studio IDE.](https://visualstudio.microsoft.com/vs/) Lors de l’installation, vous devez sélectionner la charge de travail de développement Office/SharePoint.
 
-Si vous utilisez un éditeur de texte ou une interface IDE autre que Visual Studio pour développer votre complément, vous devez mettre à jour les références vers le CDN pour Office.js et la version de schéma référencée dans le manifeste de votre complément.
+Si vous utilisez un éditeur de texte ou un IDE autre que Visual Studio pour développer votre add-in, vous devez mettre à jour les références au réseau de distribution de contenu (CDN) pour Office.js et la version du schéma référencé dans le manifeste de votre add-in.
 
-Pour exécuter un add-in développé à l’aide de fonctionnalités de manifeste de Office.js et de l’API de Office.js mises à jour, vos clients doivent fonctionner sur Office 2013 SP1 ou version ultérieure sur site et, le cas échéant, SharePoint Server 2013 SP1 et les produits serveur associés, Exchange Server 2013 Service Pack 1 (SP1) ou les produits hébergés en ligne équivalents : Microsoft 365, SharePoint Online et Exchange Online.
+Pour exécuter un add-in développé à l’aide de nouvelles fonctionnalités de manifeste de Office.js et d’API de Office.js mises à jour, vos clients doivent exécuter des produits locaux Office 2013 SP1 ou version ultérieure et, le cas échéant, SharePoint Server 2013 SP1 et les produits serveur associés, Exchange Server 2013 Service Pack 1 (SP1) ou les produits hébergés en ligne équivalents : Microsoft 365, SharePoint Online et Exchange Online.
 
 Pour télécharger des produits Office, SharePoint et Exchange SP1, voir :
 
@@ -33,15 +33,15 @@ Pour télécharger des produits Office, SharePoint et Exchange SP1, voir :
 
 - [Description du Service Pack 1 d’Exchange Server 2013](https://support.microsoft.com/kb/2926248)
 
-
 ## <a name="updating-an-office-add-in-project-created-with-visual-studio"></a>Mise à jour d’un projet de complément Office créé avec Visual Studio
 
-Pour les projets créés avant la publication de la version 1.1 de l’API JavaScript Office et du schéma de manifeste de add-in, vous pouvez mettre à jour les fichiers d’un projet à l’aide de **la NuGet Gestionnaire de package,** puis mettre à jour les pages HTML de votre application pour les référencer. 
+Pour les projets créés avant la publication de la version 1.1 de l’API JavaScript Office et du schéma de manifeste de add-in, vous pouvez mettre à jour les fichiers d’un projet à l’aide de **la NuGet Gestionnaire de package,** puis mettre à jour les pages HTML de votre application pour les référencer.
 
 Notez que le processus de mise à jour est appliqué  _par projet_  ; vous devrez répéter le processus de mise à jour pour chaque projet de complément dans lequel vous souhaitez utiliser la version 1.1 d’Office.js et du schéma de manifeste de complément.
 
 ### <a name="update-the-office-javascript-api-library-files-in-your-project-to-the-newest-release"></a>Mettre à jour Office fichiers de bibliothèque d’API JavaScript dans votre projet vers la dernière version
-Les étapes suivantes met à jour Office.js fichiers de bibliothèque vers la dernière version. Les étapes utilisent Visual Studio 2019, mais elles sont similaires pour les versions précédentes de Visual Studio.
+
+Les étapes suivantes met à jour Office.js bibliothèque de fichiers vers la dernière version. Les étapes utilisent Visual Studio 2019, mais elles sont similaires pour les versions précédentes de Visual Studio.
 
 1. Dans Visual Studio 2019, ouvrez ou créez un projet **de Office de** recherche.
 2. Choose **Tools**  >  **NuGet Gestionnaire de package**  >  **Manage Nuget Packages for Solution**.
@@ -55,9 +55,8 @@ Vous devez effectuer quelques étapes supplémentaires pour terminer la mise à 
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
   ```
 
-   > [!NOTE] 
+   > [!NOTE]
    > La valeur `/1/` de `office.js` dans l’URL du CDN préconise l’utilisation de la dernière version incrémentielle comprise dans la version 1 d’Office.js.
-
 
 ### <a name="update-the-manifest-file-in-your-project-to-use-schema-version-11"></a>Mise à jour du fichier manifeste dans votre projet afin d’utiliser la version 1.1 du schéma
 
@@ -75,11 +74,11 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```
 
 > [!NOTE]
-> Après avoir mis à jour la version du schéma de manifeste de l’ajout vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability** et les remplacer par les éléments [Hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) ou Requirements [et Requirement.](specify-office-hosts-and-api-requirements.md)
+> Une fois que vous avez mis à jour la version du schéma de manifeste du add-in vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability** et les remplacer par les éléments [Hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) ou Requirements [et Requirement.](specify-office-hosts-and-api-requirements.md)
 
 ## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide"></a>Mise à jour d’un projet de complément Office créé avec un éditeur de texte ou une autre IDE
 
-Pour les projets créés avant la publication de la version 1.1 de l’API JavaScript Office et du schéma de manifeste de l’application, vous devez mettre à jour les pages HTML de votre application pour référencer les CDN de la bibliothèque v1.1 et mettre à jour le fichier manifeste de votre application pour utiliser le schéma version 1.1. 
+Pour les projets créés avant la publication de la version 1.1 de l’API JavaScript Office et du schéma de manifeste de votre application, vous devez mettre à jour les pages HTML de votre application pour référencer les CDN de la bibliothèque v1.1 et mettre à jour le fichier manifeste de votre application pour utiliser le schéma version 1.1.
 
 Le processus de mise à jour est appliqué  _par projet_  ; vous devrez répéter le processus de mise à jour pour chaque projet de complément dans lequel vous souhaitez utiliser la version 1.1 d’Office.js et du schéma de manifeste de complément.
 
@@ -87,7 +86,6 @@ Vous n’avez pas besoin de copies locales des fichiers de l’API JavaScript Of
 
 > [!NOTE]
 > pour obtenir une copie du fichier XSD (définition du schéma XML) pour le manifeste de complément version 1.1, consultez les [informations de référence sur le schéma des manifestes des compléments Office (version 1.1)](../develop/add-in-manifests.md).
-
 
 ### <a name="update-the-office-javascript-api-library-files-in-your-project-to-use-the-newest-release"></a>Mettre à jour Office fichiers de bibliothèque d’API JavaScript dans votre projet pour utiliser la dernière version
 
@@ -118,7 +116,7 @@ Dans le fichier manifeste de votre complément, mettez à jour l’attribut **xm
 ```
 
 > [!NOTE]
-> Après avoir mis à jour la version du schéma de manifeste de l’ajout vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability** et les remplacer par les éléments [Hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) ou Requirements [et Requirement.](specify-office-hosts-and-api-requirements.md)
+> Une fois que vous avez mis à jour la version du schéma de manifeste du add-in vers la version 1.1, vous devez supprimer les éléments **Capabilities** et **Capability** et les remplacer par les éléments [Hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) ou Requirements [et Requirement.](specify-office-hosts-and-api-requirements.md)
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,16 +1,16 @@
 ---
 title: Explorer l’API JavaScript Office à l’aide de Script Lab
 description: Utilisez Script Lab pour explorer l’API JS Office et pour prototyper les fonctionnalités.
-ms.date: 08/05/2021
+ms.date: 01/14/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 2a8d7f94eab26bc1cb831f95a30442e8e08afe70
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 75b4b5f1e30549628ba9327957e6d0b39c308da9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765933"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074272"
 ---
 # <a name="explore-office-javascript-api-using-script-lab"></a>Explorer l’API JavaScript Office à l’aide de Script Lab
 
@@ -39,7 +39,7 @@ Commencez rapidement avec une collection d’exemples d’extraits de code inté
 En plus du code JavaScript ou TypeScript qui appelle l’API Office JS, chaque extrait de code contient également une balise HTML qui définit le contenu du volet des tâches et CSS qui définit l’apparence de ce dernier. Vous pouvez personnaliser la balise HTML et CSS pour tester le placement des éléments et les styles lorsque vous prototypez la conception du volet des tâches pour votre propre complément.
 
 > [!TIP]
-> Pour appeler les API d’aperçu dans un extrait de code, vous devez mettre à jour les bibliothèques de l’extrait de code de façon à utiliser le CDN bêta (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) et les définitions de type d’aperçu `@types/office-js-preview`. De plus, certaines API d’aperçu sont accessibles uniquement si vous êtes inscrit au [programme Office Insider](https://insider.office.com) et que vous exécutez une version Insider d’Office.
+> Pour appeler des API d’aperçu dans un extrait de code, vous devez mettre à jour les bibliothèques de l’extrait de code pour utiliser le réseau de distribution de contenu bêta (CDN) (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) et les définitions de type d’aperçu `@types/office-js-preview`. De plus, certaines API d’aperçu sont accessibles uniquement si vous êtes inscrit au [programme Office Insider](https://insider.office.com) et que vous exécutez une version Insider d’Office.
 
 ### <a name="save-and-share-snippets"></a>Enregistrer et partager des extraits de code
 

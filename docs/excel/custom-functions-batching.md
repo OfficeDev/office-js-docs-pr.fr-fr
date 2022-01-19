@@ -3,12 +3,12 @@ ms.date: 07/08/2021
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 ms.localizationpriority: medium
-ms.openlocfilehash: d6cc6d33cfd5c88aff88ee92f173bf504b1c7df3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0cf1a1df922a08f63af80498da2e357d285775e9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149882"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074230"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>Traitement par lots d’appels de fonction personnalisée pour un service distant
 
@@ -22,7 +22,7 @@ Par exemple, si une personne a utilisé votre fonction personnalisée dans 100 
 
 Vous pouvez suivre cet article et coller les exemples de code dans votre propre projet. Par exemple, vous pouvez utiliser le [générateur Yo Office](https://github.com/OfficeDev/generator-office)pour créer un projet de fonction personnalisée pour TypeScript, puis ajouter l’ensemble du code de cet article au projet. Vous pouvez alors exécuter le code, puis le tester.
 
-Vous pouvez également télécharger ou afficher l’exemple de projet complet dans [Modèle de traitement par lots de fonction personnalisée](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Excel-custom-functions/Batching). Si vous voulez afficher l’ensemble du code avant de poursuivre la lecture, examinez le [fichier de script](https://github.com/OfficeDev/PnP-OfficeAddins/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
+Vous pouvez également télécharger ou afficher l’exemple de projet complet dans [Modèle de traitement par lots de fonction personnalisée](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Si vous voulez afficher l’ensemble du code avant de poursuivre la lecture, examinez le [fichier de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>Créer le modèle le traitement par lots dans cet article
 

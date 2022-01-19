@@ -1,14 +1,14 @@
 ---
 title: Meilleures pratiques en matière de développement de compléments Office
 description: Appliquez les meilleures pratiques lors du développement pour créer des Office de développement.
-ms.date: 05/12/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e6c0982591fa2f101309520e7a0c999927c3fc2a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: bd6a4511f7466ee9aa63aecb496d90f17b21b69a
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149220"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073338"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -36,11 +36,11 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 
 - Proposez une interface utilisateur pédagogique pour guider les utilisateurs et la personnaliser.
 
-  ![Capture d’écran montrant une comparaison « À faire » et « Ne pas faire ». L’exemple « Faire » montre un add-in qui inclut un bouton sur le bouton sur quoi les utilisateurs peuvent cliquer pour commencer. L’exemple « À ne pas faire » montre un add-in sans étapes ni boutons d’introduction.](../images/contoso-part-catalog-do-dont.png)
+  ![Screenshot showing a « Do » vs. « Don’t » comparison. L’exemple « Faire » montre un add-in qui inclut un bouton sur le bouton sur le bouton que les utilisateurs peuvent cliquer pour commencer. L’exemple « À ne pas faire » montre un add-in sans étapes d’introduction ni boutons.](../images/contoso-part-catalog-do-dont.png)
 
 - Si votre complément de contenu est lié à des données dans le document de l’utilisateur, incluez des exemples de données ou un modèle pour montrer aux utilisateurs le format de données à utiliser.
 
-  ![Capture d’écran montrant une comparaison « À faire » et « Ne pas faire ». L’exemple « Faire » montre un add-in qui inclut un bouton sur le bouton que les utilisateurs peuvent cliquer pour insérer des exemples de données. L’exemple « À ne pas faire » montre un add-in sans exemple de données ou de boutons.](../images/add-in-title.png)
+  ![Screenshot showing a « Do » vs. « Don’t » comparison. L’exemple « Faire » montre un add-in qui inclut un bouton sur le bouton que les utilisateurs peuvent cliquer pour insérer des exemples de données. L’exemple « À ne pas faire » montre un add-in sans exemple de données ou de boutons.](../images/add-in-title.png)
 
 - Offrez des [essais gratuits](/office/dev/store/decide-on-a-pricing-model). Si votre complément nécessite un abonnement, proposez certaines fonctionnalités gratuitement.
 
@@ -90,8 +90,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 - Testez votre complément sur un véritable appareil en utilisant le [chargement de version test](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
 
 > [!NOTE]
-> Si vous utilisez des [Fluent’interface](../design/using-office-ui-fabric-react.md) utilisateur React pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
-
+> Si vous utilisez des Fluent [d’interface React](../design/using-office-ui-fabric-react.md) pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Optimisation et contrôle des performances du complément
 
@@ -101,7 +100,7 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 - Fournissez des indicateurs de chargement pour les opérations à longue durée d’exécution.
 
-- Utilisez un CDN pour héberger les images, les ressources et les bibliothèques communes. Chargez autant d’éléments que possible à partir d’un seul emplacement.
+- Utilisez un réseau de distribution de contenu (CDN) pour héberger des images, des ressources et des bibliothèques communes. Chargez autant d’éléments que possible à partir d’un seul emplacement.
 
 - Suivez les pratiques web standard pour optimiser votre page web. En production, utilisez uniquement les versions réduites des bibliothèques. Chargez uniquement les ressources dont vous avez besoin et optimisez leur chargement.
 

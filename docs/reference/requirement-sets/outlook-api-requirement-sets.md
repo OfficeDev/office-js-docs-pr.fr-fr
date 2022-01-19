@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour Outlook.
-ms.date: 12/13/2021
+ms.date: 01/14/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 05f44eb07c9484447e1380a02e7047ab0d410a32
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 111cd8a7153b602e726209bfca84ca5c891f2302
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514130"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074328"
 ---
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
@@ -30,7 +30,7 @@ Toutes les API Outlook appartiennent à l’[ensemble de conditions requises](..
 La définition d’une version minimale d’ensemble de conditions requises dans le manifeste permet de contrôler les clients Outlook dans lesquels le complément va apparaître. Si un client ne prend pas en charge l’ensemble minimal de conditions requises, il ne charge pas le complément. Par exemple, si la version de l’ensemble de conditions requises spécifiée est 1.3, le complément n’apparaîtra pas dans les clients Outlook qui ne prennent pas en charge au minimum la version 1.3.
 
 > [!NOTE]
-> Pour utiliser des API dans l’un des ensembles de conditions requises numérotés, vous devez référencer la bibliothèque de **production** sur le CDN (https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
+> Pour utiliser des API dans l’un des ensembles de conditions requises numérotées, vous devez référencer la bibliothèque de **production** sur le [réseau de distribution de contenu (CDN) Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
 >
 > Pour plus d’informations sur l’utilisation des API disponibles en préversion, consultez la section [Utilisation des API disponibles en préversion](#using-preview-apis) plus loin dans cet article.
 

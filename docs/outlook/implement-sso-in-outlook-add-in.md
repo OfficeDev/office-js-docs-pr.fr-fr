@@ -3,18 +3,18 @@ title: 'Scénario: implémenter l’authentification unique dans votre service'
 description: Découvrez comment utiliser le jeton d’authentification unique et le jeton d’identité Exchange fournis par un complément Outlook afin d’implémenter l’authentification unique (SSO) pour votre service.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 89b90444fbb467c6be1f713461f6cc66d21a8443
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4a2d73439e7db8cdaf8274bd6b9ad54366c24770
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153127"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073303"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook
 
 Dans cet article, nous allons vous expliquer comment utiliser le [jeton d’accès à authentification unique](authenticate-a-user-with-an-sso-token.md) et le [jeton d’identité Exchange](authenticate-a-user-with-an-identity-token.md) pour implémenter une authentification unique sur votre service principal. En utilisant ces jetons, vous pouvez profiter des avantages du jeton d’accès SSO quand il est disponible, tout en garantissant le fonctionnement de votre complément quand il ne l’est pas, par exemple quand l’utilisateur bascule vers un client qui ne les prend pas en charge , ou quand la boîte aux lettres de l’utilisateur se trouve sur un serveur Exchange local.
 
-Pour obtenir un exemple de add-in qui implémente les idées de cet article, voir Outlook [SSO de l’application.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO)
+Pour obtenir un exemple de add-in qui implémente les idées de cet article, voir Outlook [SSO de l’application.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 
 
 > [!NOTE]
@@ -83,7 +83,7 @@ En fonction de la réponse de l’API web principale, le complément doit autori
 1. Le complément informe l’utilisateur qu’il doit autoriser l’utilisation de l’API et lui demande de cliquer sur un lien ou un bouton pour démarrer la procédure.
 
     > [!NOTE]
-    > L’exemple de add-in de [Outlook Add-in SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Outlook-Add-in-SSO) montre comment utiliser l’API [de](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) dialogue et la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) comme options pour démarrer le flux de code d’autorisation [OAuth2](/azure/active-directory/develop/active-directory-protocols-oauth-code) pour l’API.
+    > L’exemple de add-in de [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO) indique comment utiliser l’API [de](/javascript/api/office/office.ui#displaydialogasync-startaddress--options--callback-) dialogue et la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) comme options pour démarrer le flux de code d’autorisation [OAuth2](/azure/active-directory/develop/active-directory-protocols-oauth-code) pour l’API.
 
 1. Une fois le flux terminé, le complément envoie le jeton d’actualisation à l’API web principale et inclut le jeton SSO (s’il est disponible) ou le jeton d’identité Exchange.
 

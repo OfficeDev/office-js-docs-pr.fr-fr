@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 12/22/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c74969e761494dcc795c1360d08e23d93f09735d
-ms.sourcegitcommit: c23aa91492ae2d4d07cda2a3ebba94db78929f62
+ms.openlocfilehash: 5e4287c127135b01213a3f888c09613eba5c0543
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2021
-ms.locfileid: "61598364"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073324"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -54,7 +54,7 @@ Pour afficher un aperçu de ces événements lorsqu’ils sont disponibles :
   - La build minimale requise est de 16,54 (21101001). Rejoignez le [Office Insider et](https://insider.office.com/join/Mac) choisissez le canal **bêta** pour accéder Office versions bêta.
 - Pour Outlook sur Windows :
   - La build minimale requise est 16.0.14511.10000. Rejoignez le [Office Insider et](https://insider.office.com/join/windows) choisissez le canal **bêta** pour accéder Office versions bêta.
-  - Configurez le Registre. Outlook inclut une copie locale des versions de production et bêta de Office.js au lieu de charger à partir du CDN. Par défaut, la copie de production locale de l’API est référencé. Pour basculer vers la copie bêta locale des API JavaScript Outlook, vous devez ajouter cette entrée de Registre, sinon les API bêta risquent de ne pas être trouvées.
+  - Configurez le Registre. Outlook inclut une copie locale des versions de production et bêta de Office.js au lieu de charger à partir du réseau de distribution de contenu (CDN). Par défaut, la copie de production locale de l’API est référencé. Pour basculer vers la copie bêta locale des API JavaScript Outlook, vous devez ajouter cette entrée de Registre, sinon les API bêta risquent de ne pas être trouvées.
     1. Créez la clé de `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer` Registre.
     1. Ajoutez une entrée nommée `EnableBetaAPIsInJavaScript` et définissez la valeur sur `1` . L’image suivante indique à quoi doit ressembler le registre.
 
@@ -345,5 +345,5 @@ La prise en charge complète de CORS sera bientôt disponible.
 - [Options de liste AppSource pour votre Outlook d’événements](autolaunch-store-options.md)
 - [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)
 - Exemples PnP :
-  - [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-set-signature)
-  - [Utiliser Outlook’activation basée sur un événement pour baliser des destinataires externes](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-tag-external)
+  - [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+  - [Utiliser Outlook’activation basée sur un événement pour baliser des destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

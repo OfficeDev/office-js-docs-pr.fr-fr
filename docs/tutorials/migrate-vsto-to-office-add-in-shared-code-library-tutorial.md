@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 ms.localizationpriority: high
-ms.openlocfilehash: 087d35a6de6618a238ec7c2a30331abcdfdd44f2
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ddf1e22141cee516bcd7808fd37b789f6943e093
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150291"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62073138"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -55,12 +55,12 @@ Vous devez également disposer des éléments ci-après :
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>Le composant VSTO d’analyseur de cellule
 
-Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration). Le dossier **/Start** contient la solution de complément VSTO que vous allez migrer. Votre objectif est de migrer le complément VSTO vers un complément Office moderne en partageant le code lorsque cela est possible.
+Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration). Le dossier **/Start** contient la solution de complément VSTO que vous allez migrer. Votre objectif est de migrer le complément VSTO vers un complément Office moderne en partageant le code lorsque cela est possible.
 
 > [!NOTE]
 > L’exemple utilise C# , mais vous pouvez utiliser les techniques décrites dans ce didacticiel pour appliquer un complément VSTO écrit dans n’importe quel langage .NET.
 
-1. Téléchargez la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/VSTO-shared-code-migration) vers un dossier de travail de votre ordinateur.
+1. Téléchargez la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) vers un dossier de travail de votre ordinateur.
 1. Démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
 1. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellule**, puis choisissez **Propriétés**.

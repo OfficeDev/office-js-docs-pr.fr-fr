@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Word
 description: Informations sur la configuration requise pour le complément Office sur les builds Word.
-ms.date: 10/08/2021
+ms.date: 01/14/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 88d49b860cb832f59e8e2a631f0c4a3c57698306
-ms.sourcegitcommit: a37be80cf47a37c85b7f5cab216c160f4e905474
+ms.openlocfilehash: 6838ed66b6a91f522e7ae78aeeee3d545b6bbf2c
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2021
-ms.locfileid: "60250531"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074321"
 ---
 # <a name="word-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Word
 
@@ -20,7 +20,7 @@ Les ensembles de conditions requises sont des groupes nommés des membres de l�
 Les compléments Word peuvent être exécutés dans différentes versions d’Office, notamment Office 2016 ou version ultérieure sur Windows, et Office sur le web, iPad et Mac. Le tableau suivant répertorie les ensembles de conditions requises pour Word, les applications clientes Office qui prennent en charge l’ensemble des conditions requises et les numéros de création ou de version de ces applications.
 
 > [!NOTE]
-> Pour utiliser l’API dans un des jeux exigence numérotée, vous devez référencer la **production** de la bibliothèque sur le CDN : https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
+> Pour utiliser des API dans l’un des ensembles de conditions requises numérotées, vous devez référencer la bibliothèque de **production** sur le [réseau de distribution de contenu (CDN) Office.js](https://appsforoffice.microsoft.com/lib/1/hosted/office.js).
 >
 > Pour plus d’informations sur l’utilisation aperçu API, voir l’article[JavaScript de Word preview API](word-preview-apis.md).
 

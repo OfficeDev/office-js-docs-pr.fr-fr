@@ -3,12 +3,12 @@ title: Extraire des chaînes d’entités d’un élément Outlook
 description: Découvrez comment extraire des chaînes d’entités d’un élément Outlook dans un complément Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 712246f22a83d5bcef85d89a46a3027b763e1304
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7234e601f448de850a4ab9358362c69392589391
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153151"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074279"
 ---
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extraire des chaînes d’entité d’un élément Outlook
 
@@ -99,7 +99,7 @@ xsi:type="MailApp">
 
 Le fichier HTML du complément pour entités spécifie les boutons permettant à l’utilisateur de sélectionner chaque type d’entité, et un autre bouton pour effacer les instances affichées d’une entité. Il inclut un fichier JavaScript, default_entities.js, qui est décrit dans la section suivante sous [Implémentation JavaScript](#javascript-implementation). Le fichier JavaScript inclut le gestionnaire d’événements pour chacun des boutons.
 
-Notez que tous les compléments Outlook doivent comprendre le fichier office.js. Le fichier HTML suivant inclut la version 1.1 du fichier office.js sur le réseau de distribution de contenu (CDN). 
+Notez que tous les compléments Outlook doivent comprendre le fichier office.js. Le fichier HTML qui suit inclut la version 1.1 de office.js sur le réseau de distribution de contenu (CDN).
 
 ```html
 <!DOCTYPE html>
@@ -373,7 +373,7 @@ Lorsque l’utilisateur clique sur le bouton **Obtenir des suggestions de réuni
 
 
  > [!NOTE]
- > Seuls les messages, mais pas les rendez-vous, ne peuvent prendre `MeetingSuggestion` en charge le type d’entité.
+ > Seuls les messages, mais pas les rendez-vous, peuvent prendre en charge `MeetingSuggestion` le type d’entité.
 
 Chaque suggestion de réunion extraite est stockée sous la forme d’un objet [MeetingSuggestion](/javascript/api/outlook/office.meetingsuggestion) dans le tableau. `myGetMeetingSuggestions` obtient d’autres données sur chaque suggestion de réunion :
 

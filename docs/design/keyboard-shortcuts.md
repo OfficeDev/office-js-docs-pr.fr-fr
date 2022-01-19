@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: b92d703ac4c10ba554a7aed8aabb73b65fdbdca7
-ms.sourcegitcommit: e4d7791cefb29498a8bffce626a6218cee06abd9
+ms.openlocfilehash: 1ea44b9a6ab38d0d167b04ba806e0f7e40ca8f99
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2021
-ms.locfileid: "61285005"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074195"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
 
@@ -17,7 +17,7 @@ Les raccourcis clavier, également appelés combinaisons de touches, permettent 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> Pour commencer avec une version de travail d’un add-in avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple [Excel raccourcis clavier.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre add-in, poursuivez avec cet article.
+> Pour commencer avec une version de travail d’un add-in avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple [Excel raccourcis clavier.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre add-in, poursuivez avec cet article.
 
 Il existe trois étapes pour ajouter des raccourcis clavier à un module.
 
@@ -130,7 +130,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     });
     ```
 
-La suite des étapes précédentes permet à votre add-in de faire tourner la visibilité du volet Des tâches en appuyant sur **Ctrl+Alt+Haut** et **Ctrl+Alt+Bas.** Le même comportement est illustré dans [l’exemple de raccourcis](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) clavier Excel dans le Office PnP des Office dans GitHub.
+La suite des étapes précédentes permet à votre add-in de faire tourner la visibilité du volet Des tâches en appuyant sur **Ctrl+Alt+Haut** et **Ctrl+Alt+Bas.** Le même comportement est illustré dans [l’exemple de raccourcis](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) clavier Excel dans le Office PnP des Office dans GitHub.
 
 ## <a name="details-and-restrictions"></a>Détails et restrictions
 
@@ -311,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-Comme décrit dans Éviter les combinaisons de touches en cours d’utilisation par d’autres [modules,](#avoid-key-combinations-in-use-by-other-add-ins)il est bon d’éviter les conflits dans les raccourcis. Pour découvrir si une ou plusieurs combinaisons de touches sont déjà utilisées, passez-les en tant que tableau de chaînes à la [méthode Office.actions.areShortcutsInUse.](/javascript/api/office/office.actions#areShortcutsInUse) La méthode renvoie un rapport contenant des combinaisons de touches qui sont déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}` . La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Shift+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie sur `true` . Par exemple, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
+Comme décrit dans Éviter les combinaisons de touches en cours d’utilisation par d’autres [modules,](#avoid-key-combinations-in-use-by-other-add-ins)il est bon d’éviter les conflits dans les raccourcis. Pour découvrir si une ou plusieurs combinaisons de touches sont déjà utilisées, passez-les en tant que tableau de chaînes à la [méthode Office.actions.areShortcutsInUse.](/javascript/api/office/office.actions#areShortcutsInUse) La méthode renvoie un rapport contenant des combinaisons de touches qui sont déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}` . La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Shift+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie sur `true` . Par exemple : `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
@@ -327,5 +327,5 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- Consultez [l Excel exemple de raccourcis](https://github.com/OfficeDev/PnP-OfficeAddins/tree/master/Samples/excel-keyboard-shortcuts) clavier.
+- Consultez [l Excel exemple de raccourcis](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) clavier.
 - Obtenez une vue d’ensemble de l’utilisation des substitutions étendues dans [Work avec des substitutions étendues du manifeste.](../develop/extended-overrides.md)

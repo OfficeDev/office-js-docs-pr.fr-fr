@@ -3,12 +3,12 @@ title: Créer de meilleurs compléments pour Word avec Office Open XML
 description: Vue d’ensemble de l’amélioration de votre add-in Word avec Office Open XML.
 ms.date: 11/19/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b54690bc2de601ffddffce46eb76ef4f8c69258e
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 9ba15487a964d13edb659374bd8cd6c7e135228e
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153455"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074342"
 ---
 # <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
 
@@ -24,7 +24,7 @@ Office Open XML étant le langage dans lequel les documents Word (notamment .d
 > Office Open XML est également le langage utilisé pour les documents PowerPoint et Excel (et pour Visio depuis Office 2013). Cependant, vous pouvez actuellement forcer le contenu au format Office Open XML uniquement dans les compléments Office créés pour Word. Pour plus d’informations sur Office Open XML, notamment pour consulter la documentation de référence du langage complète, reportez-vous à la rubrique [Ressources supplémentaires](#see-also).
 
 Pour commencer, jetez un œil à quelques-uns des types de contenu que vous pouvez insérer à l’aide du forçage Office Open XML.
-Téléchargez l’exemple de code Charger et écrire [Open XML](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)dans votre application Word, qui contient le code Office Open XML et le code Office.js requis pour insérer l’un des exemples suivants dans Word.
+Téléchargez l’exemple de code Charger et écrire [Open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)dans votre application Word, qui contient le code Office Open XML et le code Office.js requis pour insérer l’un des exemples suivants dans Word.
 
 > [!NOTE]
 > Tout au long de cet article, les **termes types** de contenu et contenu enrichi **font** référence aux types de contenu enrichi que vous pouvez insérer dans un document Word.
@@ -197,7 +197,7 @@ Une fois que vous avez enregistrez l’Office Open XML en tant que fichier XML a
 Dans cette fonction, vous remarquerez que toutes les lignes sauf la dernière sont utilisées pour obtenir votre balisage enregistré afin de l’utiliser dans l’appel de méthode [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) à la fin de la fonction. `setSelectedDataASync` vous devez uniquement spécifier le contenu à insérer et le type de contrainte.
 
 > [!NOTE]
-> Remplacez _yourXMLfilename_ par le nom et le chemin du fichier XML que vous avez enregistré dans votre solution. Si vous ne savez pas où inclure des fichiers XML dans votre solution ou comment les référencer dans votre code, consultez l’exemple de code Charger et écrire Open XML dans votre [add-in Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) pour obtenir des exemples de ce code et un exemple pratique du code et du code JavaScript présentés ici.
+> Remplacez _yourXMLfilename_ par le nom et le chemin du fichier XML que vous avez enregistré dans votre solution. Si vous ne savez pas où inclure des fichiers XML dans votre solution ou comment les référencer dans votre code, consultez l’exemple de code Charger et écrire Open XML dans votre [add-in Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) pour obtenir des exemples de ce code et un exemple pratique du code et du code JavaScript présentés ici.
 
 ```js
 function writeContent() {
@@ -325,7 +325,7 @@ Après avoir supprimé la majorité du balisage de ce package, nous nous retrouv
 
 Plusieurs types de contenu riche exigent uniquement les composants .rels et document.xml indiqués dans l’exemple précédent, notamment les contrôles de contenu, les formes de dessin et les zones de texte Office, ainsi que les tableaux (sauf si un style est appliqué au tableau). En effet, vous pouvez réutiliser les mêmes composants de package modifiés et transférer uniquement le contenu **body** de document.xml pour le balisage de votre contenu.
 
-Pour consulter le code Office Open XML pour obtenir des exemples de chacun de ces types de contenu présentés précédemment dans les figures 5 à 8, explorez l’exemple de code Open XML load et write dans votre code de [add-in Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) référencé dans la section vue d’ensemble.
+Pour consulter le code Office Open XML pour obtenir des exemples de chacun de ces types de contenu présentés précédemment dans les figures 5 à 8, explorez l’exemple de code Open XML load et write dans votre code de [add-in Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) référencé dans la section vue d’ensemble.
 
 Avant de passer à autre chose, prenez en compte les différences à noter pour deux de ces types de contenu et la façon d’échanger les éléments dont vous avez besoin.
 
@@ -335,7 +335,7 @@ Si le balisage pour votre forme ou zone de texte semble beaucoup plus complexe q
 
 Donc, pour prendre en charge les formes et les zones de texte dans des documents Word au format Office Open XML sous Word 2007, les formes (y compris les zones de texte) nécessitent un balisage VML de secours.
 
-En règle générale, comme vous pouvez le voir pour les exemples de forme et de zone de texte inclus dans l’exemple de code Charger et écrire [open XML](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) dans votre code de module de recherche Word, le code de retour peut être supprimé. Word ajoute automatiquement les marques de base manquantes aux formes lorsqu’un document est enregistré. Mais si vous préférez conserver le balisage de secours pour garantir la prise en charge de tous les scénarios utilisateur, c’est tout à fait possible.
+En règle générale, comme vous pouvez le voir pour les exemples de forme et de zone de texte inclus dans l’exemple de code Charger et écrire [open XML](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) dans votre code de module de recherche Word, le code de retour peut être supprimé. Word ajoute automatiquement les marques de base manquantes aux formes lorsqu’un document est enregistré. Mais si vous préférez conserver le balisage de secours pour garantir la prise en charge de tous les scénarios utilisateur, c’est tout à fait possible.
 
 Si vous avez regroupé des objets dessin inclus dans votre contenu, un balisage supplémentaire (apparemment répétitif) s’affiche. Celui-ci doit être conservé. Des portions du balisage pour les formes de dessin sont dupliquées lorsque l’objet est inclus dans un groupe.
 
@@ -344,7 +344,7 @@ Si vous avez regroupé des objets dessin inclus dans votre contenu, un balisage 
 
 #### <a name="about-graphic-positioning"></a>Remarque à propos du positionnement des graphiques
 
-Dans les exemples de code Charger et écrire Open XML dans votre [add-in Word](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) et [Word-Add-in-Get-Set-EditOpen-XML,](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)la zone de texte et la forme sont configurées à l’aide de différents types de positionnement et d’habillage de texte. (Sachez aussi que les exemples d’image dans ces exemples de code sont configurés en ligne avec la mise en forme du texte, qui positionne un objet graphique sur la ligne de base du texte.)
+Dans les exemples de code Charger et écrire Open XML dans votre [add-in Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) et [Word-Add-in-Get-Set-EditOpen-XML,](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)la zone de texte et la forme sont configurées à l’aide de différents types de positionnement et d’habillage de texte. (Sachez aussi que les exemples d’image dans ces exemples de code sont configurés en ligne avec la mise en forme du texte, qui positionne un objet graphique sur la ligne de base du texte.)
 
 La forme de ces exemples de code est positionnée par rapport aux marges droite et inférieure de la page. Le positionnement relatif permet une coordination plus facile avec la configuration de document inconnu d’un utilisateur, car le système s’adapte aux marges de l’utilisateur. La mise en page risque alors de paraître moins déséquilibrée à cause de paramètres de marges, d’orientation ou de taille du papier non adaptés. Pour conserver les paramètres de positionnement relatif lorsque vous insérez un objet graphique, vous devez conserver la marque de paragraphe (w:p) dans laquelle est stocké le positionnement (désigné dans Word par le terme point d’ancrage). Si vous insérez le contenu dans une marque de paragraphe existante plutôt que d’inclure la vôtre, vous pourriez être en mesure de conserver le même visuel initial, mais de nombreux types de références relatives qui permettent l’ajustement automatique du positionnement par rapport à la mise en page de l’utilisateur peuvent être perdus.
 
@@ -534,7 +534,7 @@ Par exemple, tenez compte des éléments suivants :
 
 - Les graphiques (comme celui de la figure 11) nécessitent plusieurs composants supplémentaires, y compris leur propre composant de relation (.rels).
 
-Vous pouvez voir des exemples modifiés du code pour tous ces types de contenu dans l’exemple de code précédemment référencé Charger et écrire Open XML dans votre [add-in Word.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) Vous pouvez insérer tous ces types de contenu avec le code JavaScript mentionné plus haut (et indiqué dans les exemples de code référencés) pour l’insertion de contenu à l’emplacement de sélection actif et l’écriture de contenu sur un emplacement spécifié à l’aide des liaisons.
+Vous pouvez voir des exemples modifiés du code pour tous ces types de contenu dans l’exemple de code précédemment référencé Charger et écrire Open XML dans votre [add-in Word.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) Vous pouvez insérer tous ces types de contenu avec le code JavaScript mentionné plus haut (et indiqué dans les exemples de code référencés) pour l’insertion de contenu à l’emplacement de sélection actif et l’écriture de contenu sur un emplacement spécifié à l’aide des liaisons.
 
 Avant d’explorer les exemples, prenons quelques conseils pour travailler avec chacun de ces types de contenu.
 
@@ -632,7 +632,7 @@ Cependant, lorsque vous examinez le balisage de votre tableau dans document.xml 
 
 Le balisage d’une image inclut une référence à au moins un composant qui contient les données binaires permettant de décrire votre image. Pour une image complexe, on peut compter des centaines de pages de balisage non modifiable. Puisque vous n’avez pas à modifier les composants binaires, vous pouvez simplement les réduire si vous utilisez un éditeur structuré tel que Visual Studio, de sorte que vous pouvez toujours facilement vérifier et modifier le reste du package.
 
-Si vous consultez l’exemple de code pour l’image simple présentée précédemment dans la figure 3, disponible dans l’exemple de code précédemment référencé Charger et écrire Open XML dans votre [add-in Word,](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)vous verrez que le code de l’image dans document.xml inclut des informations de taille et de position, ainsi qu’une référence de relation à la partie qui contient les données d’image binaires. Cette référence est incluse dans la balise **a:blip**, comme suit :
+Si vous consultez l’exemple de code pour l’image simple présentée précédemment dans la figure 3, disponible dans l’exemple de code précédemment référencé Charger et écrire Open XML dans votre [add-in Word,](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)vous verrez que le code de l’image dans document.xml inclut des informations de taille et de position, ainsi qu’une référence de relation à la partie qui contient les données d’image binaires. Cette référence est incluse dans la balise **a:blip**, comme suit :
 
 ```XML
 <a:blip r:embed="rId4" cstate="print">
@@ -651,11 +651,11 @@ Lorsque vous utilisez des effets de mise en forme d’image Office sur votre ima
 <a14:imgLayer r:embed="rId5">
 ```
 
-Consultez le code requis pour l’image mise en forme présentée dans la figure 4 (qui utilise des effets de superposition, entre autres) dans l’exemple de code Charger et écrire open XML dans votre exemple de code de [add-in Word.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)
+Consultez le code requis pour l’image mise en forme présentée dans la figure 4 (qui utilise des effets de superposition, entre autres) dans l’exemple de code Charger et écrire open XML dans votre exemple de code de [add-in Word.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)
 
 ### <a name="work-with-smartart-diagrams"></a>Travailler avec des diagrammes SmartArt
 
-Un diagramme SmartArt possède quatre composants associés, mais seulement deux sont toujours requis. Vous pouvez examiner un exemple de code SmartArt dans load et écrire Open XML dans l’exemple de code [de votre add-in Word.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml) Lisez d’abord une brève description de chacun des composants et découvrez pourquoi ils sont requis ou non :
+Un diagramme SmartArt possède quatre composants associés, mais seulement deux sont toujours requis. Vous pouvez examiner un exemple de code SmartArt dans load et écrire Open XML dans l’exemple de code [de votre add-in Word.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) Lisez d’abord une brève description de chacun des composants et découvrez pourquoi ils sont requis ou non :
 
 > [!NOTE]
 > Si votre contenu comprend plusieurs diagrammes, ils seront numérotés les uns à la suite des autres, en remplaçant le chiffre 1 dans les noms de fichier répertoriés ici.
@@ -692,7 +692,7 @@ Les graphiques que vous pouvez créer et modifier en mode natif dans Word sont d
 
 Toutefois, comme pour SmartArt, vous pouvez supprimer les composants de couleurs et de styles. Si vous avez utilisé les styles de graphique et les styles de couleurs disponibles dans pour mettre en forme votre graphique, celui-ci adoptera automatiquement la mise en forme applicable lors de son insertion dans le document de destination.
 
-Consultez le code modifié pour l’exemple de graphique illustré à la figure 11 dans l’exemple de code Charger et écrire du code Open XML dans [votre add-in Word.](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/word-add-in-load-and-write-open-xml)
+Consultez le code modifié pour l’exemple de graphique illustré à la figure 11 dans l’exemple de code Charger et écrire du code Open XML dans [votre add-in Word.](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)
 
 ## <a name="edit-the-office-open-xml-for-use-in-your-task-pane-add-in"></a>Modifier le Office Open XML pour l’utiliser dans votre add-in du volet Des tâches
 

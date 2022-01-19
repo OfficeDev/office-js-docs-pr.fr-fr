@@ -1,14 +1,14 @@
 ---
 title: Débogage des fonctions personnalisées sans interface utilisateur
 description: Découvrez comment déboguer vos Excel personnalisées qui n’utilisent pas de volet de tâches.
-ms.date: 01/07/2022
+ms.date: 01/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 28f597d7a4dd6befac7b2df6d1d6c7f8bfc3033f
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: a4ec54bc731ab37335070c01eae2f9700327e360
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765947"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074223"
 ---
 # <a name="ui-less-custom-functions-debugging"></a>Débogage des fonctions personnalisées sans interface utilisateur
 
@@ -33,7 +33,7 @@ Sur Mac :
 > [!NOTE]
 > Par souci de simplicité, cet article présente le débogage dans le contexte de l’utilisation de Visual Studio Code pour modifier, exécuter des tâches et, dans certains cas, utiliser l’affichage débogage. Si vous utilisez un autre éditeur ou outil de ligne de commande, consultez les [instructions](#commands-for-building-and-running-your-add-in) de ligne de commande à la fin de cet article.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Conditions requises
 
 Ce processus de  débogage fonctionne uniquement pour les fonctions personnalisées sans interface utilisateur, qui n’utilisent pas de volet de tâches ou d’autres éléments d’interface utilisateur. Une fonction personnalisée sans interface utilisateur peut être créée en suivant les étapes du didacticiel Créer des fonctions personnalisées dans [Excel,](../tutorials/excel-tutorial-create-custom-functions.md) puis en supprimant tous les éléments du volet Des tâches et de l’interface utilisateur installés par le générateur [Yeoman](https://www.npmjs.com/package/generator-office)pour les Office.
 
@@ -149,9 +149,9 @@ Si vous n’utilisez pas VS Code, vous pouvez utiliser la ligne de commande (par
   
     Ou si vous préférez démarrer votre Excel sur le Web exécutez la commande suivante.
   
-    `npm run start:web`
+    `npm run start:web -- --document {url}`(où `{url}` se trouve l’URL d’un fichier Excel sur OneDrive ou SharePoint)
   
-    Par Excel sur le Web vous devez également recharger votre module. Suivez les étapes du chargement de version de version sideload de votre [add-in](#sideload-your-add-in) pour le chargement de version de votre module. Ensuite, continuez jusqu’à la section suivante pour démarrer le débogage.
+    Si votre add-in ne charge pas une version de version sideload dans le document, suivez les étapes du chargement de version [sideload](#sideload-your-add-in) de votre add-in. Ensuite, continuez jusqu’à la section suivante pour démarrer le débogage.
   
 4. Ouvrez les outils de développement dans le navigateur. Pour Chrome et la plupart des navigateurs F12 ouvrent les outils de développement.
 5. Dans les outils de développement, ouvrez votre fichier de script de code source (**functions.js** ou **functions.ts**). Votre code de fonctions personnalisées peut se trouver à la fin du fichier.
@@ -171,7 +171,7 @@ Plusieurs tâches de build sont disponibles.
 Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur un ordinateur de bureau ou en ligne.
 
 - `npm run start:desktop`: démarre Excel sur ordinateur de bureau et charge une version de version de chargement de votre application.
-- `npm run start:web`: démarre Excel sur le Web charge une version de votre add-in.
+- `npm run start:web -- --document {url}`(où se trouve l’URL d’un fichier Excel sur OneDrive ou SharePoint) : démarre Excel sur le Web et charge une version de votre `{url}` module.
 - `npm run stop`: arrête Excel et le débogage.
 
 ## <a name="next-steps"></a>Prochaines étapes

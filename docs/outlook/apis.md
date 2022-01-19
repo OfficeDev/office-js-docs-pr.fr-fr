@@ -1,14 +1,14 @@
 ---
 title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
-ms.date: 02/21/2021
+ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7346882a11b81321c65730390dc213d76879773
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5a44d389bb480ec17b73fe445c885c45aff768f7
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153208"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62074293"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
@@ -16,17 +16,18 @@ Pour utiliser des API dans votre complément Outlook, vous devez spécifier l�
 
 ## <a name="officejs-library"></a>Bibliothèque Office.js
 
-Pour interagir avec l’API du complément Outlook, vous devez utiliser les API JavaScript dans Office.js. Le CDN de la bibliothèque est `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Les compléments soumis à AppSource doivent faire référence à Office.js par le biais de ce CDN et ne peuvent pas utiliser de référence locale.
+Pour interagir avec l’API du complément Outlook, vous devez utiliser les API JavaScript dans Office.js. Le réseau de distribution de contenu (CDN) de la bibliothèque est `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js` . Les compléments soumis à AppSource doivent faire référence à Office.js par le biais de ce CDN et ne peuvent pas utiliser de référence locale.
 
 Référencez le CDN dans une `<script>`balise`<head>` de la page web (fichier .html, .aspx ou .php) qui implémente l’interface utilisateur de votre complément.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
+
 L’ajout de nouvelles API ne modifie pas l’URL vers Office.js. La version de l’URL sera modifiée uniquement si un comportement d’API existant est interrompu.
 
 > [!IMPORTANT]
-> Lors du développement d’un application Office client, référencez l’API JavaScript Office à l’intérieur de la `<head>` section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body.
+> Lors du développement d’un application Office client, référencez l’API JavaScript Office à partir de l’intérieur de `<head>` la section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body.
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
@@ -64,7 +65,7 @@ Votre complément requiert les autorisations appropriées pour utiliser les API 
 | **Lecture/Écriture** | En plus des autorisations indiquées dans **Read item**, il autorise :<ul><li>l’accès total à l’API du complément Outlook, à l’exception de `makeEwsRequestAsync`</li><li>la définition des propriétés de l’élément</li></ul> |
 | **Lire/écrire dans la boîte aux lettres** | En plus des autorisations indiquées dans **Read/write**, il autorise :<ul><li>la création, la lecture, l’écriture d’éléments et de dossiers</li><li>l’envoi d’éléments</li><li>l’appel de [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
 
-En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, voir Confidentialité et [sécurité pour les Office de sécurité.](../concepts/privacy-and-security.md)
+En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, voir Confidentialité et [sécurité pour les Office des modules complémentaires.](../concepts/privacy-and-security.md)
 
 ## <a name="mailbox-object"></a>Objet Mailbox
 
