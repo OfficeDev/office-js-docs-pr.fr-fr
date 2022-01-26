@@ -3,12 +3,12 @@ title: Test unitaire dans les Office de test
 description: Découvrez comment unitér le code de test qui appelle Office API JavaScript
 ms.date: 11/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 8824b8e759e3c1acecf30683f2b89bb41bd558f3
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
+ms.openlocfilehash: b93bee764b0019f7095eef203cc8916375cf7223
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242039"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222156"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>Test unitaire dans les Office de test
 
@@ -25,7 +25,7 @@ La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisé
 
 Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha Office page d’accueil [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 Cet article part du principe que vous connaissez les concepts de base des tests unitaires et de la maquette, notamment la création et l’utilisation de fichiers de test, et que vous avez une certaine expérience avec une infrastructure de test unitaire.
 
@@ -105,7 +105,7 @@ npm install office-addin-mock --save-dev
    npm test
    ```
 
-## <a name="examples"></a>範例
+## <a name="examples"></a>Exemples
 
 Les exemples de cette section utilisent Jest avec ses paramètres par défaut. Ces paramètres prise en charge les modules CommonJS. Consultez [la documentation de Jest](https://jestjs.io/docs/getting-started) pour savoir comment configurer Jest et node.js pour prendre en charge les modules ECMAScript et TypeScript. Pour exécuter l’un de ces exemples, exécutez les étapes suivantes.
 
@@ -370,42 +370,6 @@ describe("Insert blue paragraph at end tests", () => {
   });
 })
 ```
-
-## <a name="adding-mock-objects-properties-and-methods-dynamically-when-testing"></a>Ajout dynamique d’objets, de propriétés et de méthodes facturants lors des tests
-
-Dans certains scénarios, des tests efficaces nécessitent la création ou la modification d’objets facturables au moment de l’utilisation . autrement dit, pendant que les tests sont en cours d’exécution. Les éléments suivants sont des exemples :
-
-- La fonction testée se comporte différemment lorsqu’elle est appelée une deuxième fois. Vous devez d’abord tester la fonction avec un objet facturant, puis modifier cet objet et tester à nouveau la fonction avec l’objet maquette modifié.
-- Vous devez tester une fonction sur plusieurs objets facturants similaires, mais pas identiques. Par exemple, vous devez tester une fonction avec un objet maquette qui possède une propriété de couleur, puis tester à nouveau la fonction avec un objet factuel qui possède une propriété de texte, mais qui est sinon identique à l’objet maquette d’origine.
-
-Il `OfficeMockObject` dispose de trois méthodes pour vous aider dans ces scénarios.
-
-- `OfficeMockObject.setMock` ajoute une propriété et une valeur à un `OfficeMockObject` objet. L’exemple suivant ajoute la `address` propriété.
-
-    ```javascript
-    rangeMock.setMock("address", "G6:K9");
-    ```
-
-- `OfficeMockObject.addMockFunction` ajoute une fonction de maquette à `OfficeMockObject` un objet, comme illustré dans l’exemple suivant.
-
-    ```javascript
-    workbookMock.addMockFunction("getSelectedRange", function () { 
-      const range = {
-        address: "B2:G5",
-      };
-      return range;
-    });
-    ```
-
-    > [!NOTE]
-    > Le paramètre de fonction est facultatif. Si elle n’est pas présente, une fonction vide est créée.
-
-- `OfficeMockObject.addMock` ajoute un nouvel `OfficeMockObject` objet en tant que propriété à un objet existant et lui donne un nom. Il aurait le minimum de membres, `OfficeMockObject` tels que `load` et `sync` . Des membres supplémentaires peuvent être ajoutés avec les `setMock` méthodes `addMockFunction` et les méthodes. Voici un exemple qui ajoute un objet `Excel.WorkbookProtection` facturant en tant que propriété à un `protection` workbook factur. Il ajoute ensuite une `protected` propriété au nouvel objet mock.
-
-    ```javascript
-    workbookMock.addMock("protection");
-    workbookMock.protection.setMock("protected", true);
-    ```
 
 > [!NOTE]
 > La documentation de référence complète pour `OfficeMockObject` le type est [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).

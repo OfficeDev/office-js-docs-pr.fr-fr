@@ -1,15 +1,15 @@
 ---
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f4a2ed07c23c3ced19632b9dbfee2957f0f5ba0
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61648002"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222303"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -59,19 +59,15 @@ Pour tester votre complément dans Excel sur Windows, exécutez la commande suiv
 npm run start:desktop
 ```
 
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start`, acceptez d’installer le certificat fourni par le générateur Yeoman.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
     
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-Pour tester votre complément dans Excel sur le web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+Pour tester votre complément dans Excel sur le web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document Excel sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous disposez d’autorisations.
 
-```command&nbsp;line
-npm run start:web
-```
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run start`, acceptez d’installer le certificat fourni par le générateur Yeoman.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur un navigateur. Dans ce classeur, procédez comme suit pour charger une version test de votre complément.
 

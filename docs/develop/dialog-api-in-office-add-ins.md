@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
-ms.date: 09/03/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: edf28450ae63a232912ae4344d808a4d0c26ed45
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: a105ff917816d24dd412be200fc84181610a09a6
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073352"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222170"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -334,7 +334,7 @@ function onRegisterMessageComplete(asyncResult) {
 > Dans certains cas, l’API, qui fait partie de l’ensemble de conditions `messageChild` [requises DialogApi 1.2,](../reference/requirement-sets/dialog-api-requirement-sets.md)peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte.](parent-to-dialog.md)
 
 > [!IMPORTANT]
-> L’ensemble de conditions [requises DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) ne peut pas être spécifié dans la section d’un `<Requirements>` manifeste de add-in. Vous devez vérifier la prise en charge de DialogApi 1.2 lors de l’runtime à l’aide de la méthode [isSetSupported.](specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code) La prise en charge des exigences de manifeste est en cours de développement.
+> L’ensemble de conditions [requises DialogApi 1.2](../reference/requirement-sets/dialog-api-requirement-sets.md) ne peut pas être spécifié dans la section **Conditions** requises d’un manifeste de add-in. Vous devez vérifier la prise en charge de DialogApi 1.2 à l’runtime à l’aide de la méthode décrite dans les vérifications runtime pour la prise en charge de la méthode et de l’ensemble de `isSetSupported` [conditions requises.](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) La prise en charge des exigences de manifeste est en cours de développement.
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Messagerie entre domaines à l’runtime de la boîte de dialogue
 
@@ -355,7 +355,7 @@ Si le message n’inclut pas de données sensibles, vous pouvez définir la sur 
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-Étant donné que le runtime JavaScript qui héberge la boîte de dialogue ne peut pas accéder à la section du manifeste et, par conséquent, déterminer si le domaine à partir duquel le message provient est approuvé, vous devez utiliser le handler pour le `<AppDomains>`  `DialogParentMessageReceived` déterminer. L’objet transmis au handler contient le domaine actuellement hébergé dans le parent en tant que `origin` propriété. Voici un exemple d’utilisation de la propriété.
+Étant donné que le runtime JavaScript qui héberge la boîte de dialogue ne peut pas accéder à la section **AppDomains** du manifeste et, par conséquent, déterminer si le domaine à partir duquel le *message* provient est approuvé, vous devez utiliser le handler pour le `DialogParentMessageReceived` déterminer. L’objet transmis au handler contient le domaine actuellement hébergé dans le parent en tant que `origin` propriété. Voici un exemple d’utilisation de la propriété.
 
 ```javascript
 function onMessageFromParent(arg) {

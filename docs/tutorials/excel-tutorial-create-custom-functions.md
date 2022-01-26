@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 12/28/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8239cb52002dcf679df0ebd336c1afa17fdad693
-ms.sourcegitcommit: b46d2afc92409bfc6612b016b1cdc6976353b19e
+ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/30/2021
-ms.locfileid: "61647971"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222254"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -74,23 +74,9 @@ npm run start:desktop
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-Pour tester votre complément dans Excel sur un navigateur, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre.
+Pour tester votre complément dans Excel sur un navigateur, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document Excel sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous disposez d’autorisations.
 
-```command&nbsp;line
-npm run start:web
-```
-
-Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur le web. Dans ce classeur, chargez une version test de votre complément en procédant comme suit.
-
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
-
-   ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
-
-1. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
-
-1. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
+[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 ---
 

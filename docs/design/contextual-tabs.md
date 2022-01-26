@@ -1,14 +1,14 @@
 ---
 title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
-ms.date: 09/09/2021
+ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fd89d2e7dd90f00e027187fe662d220cde760aae
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 7a2c6c93c009b42e1017bd52272ff0cb8a60085e
+ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074209"
+ms.lasthandoff: 01/26/2022
+ms.locfileid: "62222135"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
@@ -33,7 +33,7 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 > - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
 > - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
 >
-> Vous pouvez utiliser les vérifications à l’runtime dans votre code pour tester si la combinaison hôte et plateforme de l’utilisateur prend en charge ces ensembles de conditions requises, comme décrit dans [Spécifier les applications Office](../develop/specify-office-hosts-and-api-requirements.md#use-runtime-checks-in-your-javascript-code)et les conditions requises de l’API. (La technique de spécification des ensembles de conditions requises dans le manifeste, également décrite dans cet article, ne fonctionne actuellement pas pour RibbonApi 1.2.) Vous pouvez également implémenter [une autre expérience d’interface utilisateur lorsque les onglets contextuels personnalisés ne sont pas pris en charge.](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)
+> Vous pouvez utiliser les vérifications à l’runtime dans votre code pour tester si la combinaison hôte et plateforme de l’utilisateur prend en charge ces ensembles de conditions requises comme décrit dans les vérifications runtime pour la prise en charge des méthodes et des ensembles de [conditions requises.](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) (La technique de spécification des ensembles de conditions requises dans le manifeste, également décrite dans cet article, ne fonctionne actuellement pas pour RibbonApi 1.2.) Vous pouvez également implémenter [une autre expérience d’interface utilisateur lorsque les onglets contextuels personnalisés ne sont pas pris en charge.](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported)
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportement des onglets contextuels personnalisés
 
@@ -117,7 +117,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
 1. Dans l’exemple continu simple, l’onglet contextuel ne possède qu’un seul groupe. Ajoutez ce qui suit en tant que seul membre du `groups` tableau. À propos de ce markup, notez :
 
     - Toutes les propriétés sont requises.
-    - La `id` propriété doit être unique parmi tous les groupes de l’onglet. Utilisez un ID bref et descriptif.
+    - La `id` propriété doit être unique parmi tous les groupes dans le manifeste. Utilisez un bref ID descriptif de 125 caractères au plus.
     - Il `label` s’agit d’une chaîne conviviale qui sert d’étiquette au groupe.
     - La valeur de la propriété est un tableau d’objets qui spécifient les icônes que le groupe aura sur le ruban en fonction de la taille du ruban et de la fenêtre `icon` d’application Office’application.
     - La valeur de la propriété est un tableau d’objets qui spécifient les boutons et `controls` les menus du groupe. Il doit y en avoir au moins un.
@@ -381,7 +381,7 @@ function myContextChanges() {
 
 ## <a name="open-a-task-pane-from-contextual-tabs"></a>Ouvrir un volet Des tâches à partir d’onglets contextuels
 
-Pour ouvrir votre volet Des tâches à partir d’un bouton d’un onglet contextuel personnalisé, créez une action dans le JSON avec une `type` des `ShowTaskpane` touches . Définissez ensuite un bouton dont `actionId` la propriété est définie sur la valeur de `id` l’action. Cela ouvre le volet Des tâches par défaut spécifié par `<Runtime>` l’élément dans votre manifeste.
+Pour ouvrir votre volet Des tâches à partir d’un bouton d’un onglet contextuel personnalisé, créez une action dans le JSON avec une `type` des `ShowTaskpane` touches . Définissez ensuite un bouton dont `actionId` la propriété est définie sur la valeur de `id` l’action. Cela ouvre le volet Des tâches par défaut spécifié par l’élément **Runtime** dans votre manifeste.
 
 ```json
 `{
@@ -533,7 +533,7 @@ Certaines combinaisons de plateforme, Office application et de Office build ne s
 
 Il existe un élément manifeste, [OverriddenByRibbonApi,](../reference/manifest/overriddenbyribbonapi.md)conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés.
 
-La stratégie la plus simple pour utiliser cet élément est que vous définissez  dans le manifeste un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés nontexte) qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous ajoutez en tant que premier élément enfant des éléments group, control et menu en double dans `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` les [](../reference/manifest/group.md) [](../reference/manifest/control.md) `<Item>` onglets principaux personnalisés. L’effet de cette utilisation est le suivant :
+La stratégie la plus simple pour utiliser cet élément consiste à définir un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés *non* contextuels) dans le manifeste qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Mais vous ajoutez en tant que premier élément enfant des éléments `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` [Group,](../reference/manifest/group.md) [Control](../reference/manifest/control.md)et Menu **Item** dupliqués dans les onglets principaux personnalisés. L’effet de cette utilisation est le suivant :
 
 - Si le add-in s’exécute sur une application et une plateforme qui prend en charge les onglets contextuels personnalisés, les groupes et contrôles principaux personnalisés n’apparaissent pas sur le ruban. Au lieu de cela, l’onglet contextuel personnalisé est créé lorsque le add-in appelle la `requestCreateControls` méthode.
 - Si le add-in *s’exécute* sur une application ou une plateforme qui ne prend pas en charge, les éléments apparaissent dans les `requestCreateControls` onglets principaux personnalisés.
@@ -554,7 +554,7 @@ Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal pe
               ...
               <Group ...>
                 ...
-                <Control ... id="MyButton">
+                <Control ... id="Contoso.MyButton1">
                   <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
                   ...
                   <Action ...>
@@ -564,14 +564,14 @@ Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal pe
 
 Pour plus d’exemples, [voir OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
 
-Lorsqu’un groupe parent ou un menu est marqué avec, il n’est pas visible et tous ses marques enfants sont ignorés lorsque les onglets contextuels personnalisés ne sont pas pris en `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` charge. Ainsi, peu importe si l’un de ces éléments enfants a l’élément ou `<OverriddenByRibbonApi>` sa valeur. En conséquence, si un élément de menu ou un contrôle doit être visible dans tous les contextes, non seulement il ne doit pas être marqué avec, mais son menu ancêtre et son groupe ne doivent pas non plus être marqués de cette `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` façon. 
+Lorsqu’un groupe parent ou un menu est marqué avec, il n’est pas visible et tous ses marques enfants sont ignorés lorsque les onglets contextuels personnalisés ne sont pas pris en `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` charge. Ainsi, peu importe si l’un de ces éléments enfants a l’élément **OverriddenByRibbonApi** ou sa valeur. En conséquence, si un élément de menu ou un contrôle doit être visible dans tous les contextes, non seulement il ne doit pas être marqué avec, mais son menu ancêtre et son groupe ne doivent pas non plus être marqués de cette `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` façon. 
 
 > [!IMPORTANT]
-> Ne marquez pas *tous les* éléments enfants d’un groupe ou d’un menu avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Cela est inutile si l’élément parent est marqué pour `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` des raisons indiquées dans le paragraphe précédent. En outre, si vous ne le faites pas sur le parent (ou si vous le définissez sur ), le parent apparaît, que les onglets contextuels personnalisés soient pris en charge ou non, mais qu’ils soient vides lorsqu’ils sont pris en `<OverriddenByRibbonApi>` `false` charge. Ainsi, si tous les éléments enfants ne doivent pas apparaître lorsque les onglets contextuels personnalisés sont pris en charge, marquez le parent et uniquement le parent, avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
+> Ne marquez pas *tous les* éléments enfants d’un groupe ou d’un menu avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` . Cela est inutile si l’élément parent est marqué pour `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` des raisons indiquées dans le paragraphe précédent. En outre, si vous laissez l’élément **OverriddenByRibbonApi** sur le parent (ou si vous le définissez sur ), le parent apparaît, que les onglets contextuels personnalisés soient pris en charge ou non, mais qu’ils soient vides lorsqu’ils sont pris en `false` charge. Ainsi, si tous les éléments enfants ne doivent pas apparaître lorsque les onglets contextuels personnalisés sont pris en charge, marquez le parent avec `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` .
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>Utiliser des API qui montrent ou masquent un volet Des tâches dans des contextes spécifiés
 
-En remplacement, votre add-in peut définir un volet Des tâches avec des contrôles d’interface utilisateur qui dupliquent la fonctionnalité des contrôles sur un `<OverriddenByRibbonApi>` onglet contextuel personnalisé. Utilisez ensuite les [méthodes Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) et [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) pour afficher le volet Des tâches quand et uniquement quand l’onglet contextuel aurait été affiché s’il était pris en charge. Pour plus d’informations sur l’utilisation de ces méthodes, voir Afficher ou masquer le volet Des tâches de [votre Office.](../develop/show-hide-add-in.md)
+En remplacement de **OverriddenByRibbonApi,** votre add-in peut définir un volet Des tâches avec des contrôles d’interface utilisateur qui dupliquent la fonctionnalité des contrôles dans un onglet contextuel personnalisé. Utilisez ensuite les [méthodes Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#showAsTaskpane__) et [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#hide__) pour afficher le volet Des tâches lorsque l’onglet contextuel aurait été affiché s’il était pris en charge. Pour plus d’informations sur l’utilisation de ces méthodes, voir Afficher ou masquer le volet Des tâches de [votre Office.](../develop/show-hide-add-in.md)
 
 ### <a name="handle-the-hostrestartneeded-error"></a>Gérer l’erreur HostRestartNeeded
 
