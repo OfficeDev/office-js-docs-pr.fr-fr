@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Créez un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 09/23/2021
+ms.date: 01/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 49145c2c5e6e48fe4f0256d6dbc661e9a826fee5
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990823"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "62222180"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -37,7 +37,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `JavaScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office.](../images/yo-office-excel.png)
@@ -175,8 +175,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 1. Pour démarrer le serveur web local et charger indépendamment votre complément, procédez comme suit.
 
-    > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté une des commandes suivantes, acceptez d’installer le certificat fourni par le générateur Yeoman.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     > [!TIP]
     > Si vous testez votre complément sur Mac, exécutez la commande suivante dans le répertoire racine de votre projet avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
@@ -191,13 +190,9 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
         npm start
         ```
 
-    - Pour tester votre complément dans Excel sur le web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution).
+    - Pour tester votre complément dans Excel sur le web, exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document Excel sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous disposez d’autorisations.
 
-        ```command&nbsp;line
-        npm run start:web
-        ```
-
-        Pour utiliser votre complément, ouvrez un nouveau document dans Excel sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
@@ -207,18 +202,18 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
     ![Capture d’écran d’Excel, montrant un volet office de complément avec un bouton Créer un tableau et un tableau dans la feuille de calcul rempli de données Date, Commerçant, Catégorie et Montant.](../images/excel-tutorial-create-table-2.png)
 
-## <a name="filter-and-sort-a-table&quot;></a>Filtrer et trier un tableau
+## <a name="filter-and-sort-a-table"></a>Filtrer et trier un tableau
 
 Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vous avez créé précédemment.
 
-### <a name=&quot;filter-the-table&quot;></a>Filtrage du tableau
+### <a name="filter-the-table"></a>Filtrage du tableau
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
 1. Recherchez l’élément `<button>` pour le bouton `create-table`, et ajoutez le balisage suivant après cette ligne.
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;filter-table&quot;>Filter Table</button><br/><br/>
+    <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
@@ -226,7 +221,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-table`, puis ajoutez le code suivant après cette ligne.
 
     ```js
-    document.getElementById(&quot;filter-table").onclick = filterTable;
+    document.getElementById("filter-table").onclick = filterTable;
     ```
 
 1. Ajoutez la fonction suivante à la fin du fichier.
@@ -429,18 +424,18 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
     ![Capture d’écran d’Excel, avec un bouton Créer un graphique visible dans le volet Office du complément et un graphique dans la feuille de calcul affichant les données de dépenses d’alimentation et d’éducation.](../images/excel-tutorial-create-chart-2.png)
 
-## <a name="freeze-a-table-header&quot;></a>Figer un en-tête de tableau
+## <a name="freeze-a-table-header"></a>Figer un en-tête de tableau
 
 Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défiler pour afficher les lignes suivantes, la ligne d’en-tête peut être masquée. Dans cette étape du didacticiel, vous allez figer la ligne d’en-tête du tableau que vous avez créé précédemment, afin qu’elle reste visible même lorsque l’utilisateur fait défiler la feuille de calcul vers le bas.
 
-### <a name=&quot;freeze-the-tables-header-row&quot;></a>Figer la ligne d’en-tête du tableau
+### <a name="freeze-the-tables-header-row"></a>Figer la ligne d’en-tête du tableau
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.html**.
 
 1. Recherchez l’élément `<button>` pour le bouton `create-chart`, et ajoutez le balisage suivant après cette ligne.
 
     ```html
-    <button class=&quot;ms-Button&quot; id=&quot;freeze-header&quot;>Freeze Header</button><br/><br/>
+    <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
@@ -448,7 +443,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-chart`, puis ajoutez le code suivant après cette ligne.
 
     ```js
-    document.getElementById(&quot;freeze-header").onclick = freezeHeader;
+    document.getElementById("freeze-header").onclick = freezeHeader;
     ```
 
 1. Ajoutez la fonction suivante à la fin du fichier.
@@ -754,7 +749,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
         npm run start:web
         ```
 
-        Pour utiliser votre complément, ouvrez un nouveau document dans Excel sur le web, puis chargez la version test de votre complément en suivant les instructions de l’article relatif au [chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
+        Pour utiliser votre complément, ouvrez un document dans Microsoft Excel sur le web, puis chargez votre complément en suivant les instructions de la section [Charger des compléments Office dans Office sur le Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
 1. Sous l’onglet **Accueil** d’Excel, sélectionnez le bouton **Activer/désactiver la protection de la feuille de calcul**. Notez que la plupart des contrôles figurant sur le ruban sont désactivés (et visuellement grisés) comme on peut le voir dans la capture d’écran suivante.
 
