@@ -1,14 +1,14 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
-description: Découvrez les aspects liés à la confidentialité et à la sécurité de la plateforme de Office de l’utilisateur.
-ms.date: 03/19/2021
+description: Découvrez les aspects liés à la confidentialité et à la sécurité de la plateforme Office de l’utilisateur.
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 610fe2d430a88b99a0bc7251ddeb29b1d805ac2b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4f1e18279c9a05e618e1101cfb4f7c54b9b63653
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149215"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263064"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -46,15 +46,15 @@ Sur le bureau Windows, le mode protégé d’Internet Explorer doit être activ�
 
 Comme le montre la figure suivante, sur un ordinateur de bureau Mac OS X, la page web du add-in est hébergée à l’intérieur d’un processus hôte d’exécution WebKit en bac à sable (sandbox), ce qui permet d’offrir un niveau similaire de sécurité et de protection des performances.
 
-*Figure 2. Office Environnement d’runtime des macros dans les clients Mac OS X*
+*Figure 2. Office’environnement d’runtime des macros dans les clients Mac OS X*
 
-![Diagramme montrant les applications pour Office’environnement d’runtime sur Mac OS X.](../images/dk2-agave-overview-mac-02.png)
+![Diagramme montrant les applications pour Office’environnement d’exploitation sur Mac OS X.](../images/dk2-agave-overview-mac-02.png)
 
 Le runtime des compléments Office gère les communications entre processus, la traduction des appels et des événements d’API JavaScript dans des appels et événements natifs, ainsi que la prise en charge à distance de l’interface utilisateur pour permettre au complément d’être restitué à l’intérieur du document, dans un volet Office ou de façon adjacente à un message électronique, une demande de réunion ou un rendez-vous.
 
 ### <a name="web-clients"></a>Clients web
 
-Dans les clients web pris en charge, les Office sont hébergés dans un **iFrame** qui s’exécute à l’aide de l’attribut **bac à sable** HTML5. Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les applications dans Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client web, **l’iframe,** le runtime des applications Office et l’API JavaScript pour Office) qui sont requis pour les prendre en charge.
+Dans les clients web pris en charge, les Office sont hébergés dans un **iFrame** qui s’exécute à l’aide de l’attribut **bac à sable** HTML5. Les composants ActiveX ou la navigation dans la page principale du client web ne sont pas autorisés. La prise en charge des compléments Office est activée dans les clients web par l’intégration de l’API JavaScript pour Office. Comme pour les applications clientes de bureau, l’API JavaScript gère le cycle de vie du complément et l’interopérabilité entre le complément et le client web. Cette interopérabilité est implémentée à l’aide d’une infrastructure spéciale de communication par publication de messages sur plusieurs cadres. La bibliothèque JavaScript (Office.js) utilisée sur les clients de bureau est disponible pour l’interaction avec le client web. La figure suivante illustre l’infrastructure qui prend en charge les applications dans Office en cours d’exécution dans le navigateur, ainsi que les composants pertinents (le client **web,** le runtime des applications Office et l’API JavaScript pour Office) qui sont requis pour les prendre en charge.
 
 *Figure 3. Infrastructure prenant en charge les compléments Office dans les clients web Office*
 
@@ -72,7 +72,7 @@ Vous pouvez rendre vos compléments Office accessibles au public en les publian
 
 ## <a name="optional-connected-experiences"></a>Expériences connectées facultatives
 
-Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les Office, l’impact de la désactivation du paramètre Expériences connectées facultatives est que les utilisateurs ne peuvent plus accéder aux modules ou au Office Store via ces clients.  Toutefois, certains add-ins Microsoft considérés comme essentiels ou critiques pour l’entreprise, et les add-ins déployés par l’administrateur informatique d’une organisation via un déploiement [centralisé](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) restent disponibles. En outre, les compléments et le Store restent disponibles Outlook sur le web, quel que soit l’état du paramètre.
+Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les Office, l’impact de la désactivation du paramètre Expériences connectées facultatives est que les utilisateurs ne peuvent plus accéder aux Office Store via ces clients.  Toutefois, certains de ces derniers sont considérés comme essentiels ou critiques pour l’entreprise, et les modules déployés par l’administrateur informatique d’une organisation via un déploiement [centralisé](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) restent disponibles. En outre, les compléments et le Store restent disponibles Outlook sur le web, quel que soit l’état du paramètre.
 
 Pour plus d’informations Outlook comportement spécifique, voir Confidentialité, autorisations et sécurité [pour Outlook des modules.](../outlook/privacy-and-security.md#optional-connected-experiences)
 
@@ -87,7 +87,7 @@ Cette section décrit la protection offerte par la plateforme des compléments 
 Les compléments Office sont créés à l’aide de technologies web qui sont exécutées dans un contrôle de navigateur ou un composant **iframe**. C’est la raison pour laquelle l’utilisation de compléments est semblable à la navigation sur les sites web, que ce soit sur Internet ou sur l’intranet. Les compléments peuvent être externes à une organisation (si le complément est acquis à partir d’AppSource) ou internes (si le complément est acquis à partir d’un catalogue de compléments Exchange Server, d’un catalogue d’applications SharePoint ou d’un partage de fichiers sur le réseau d’une organisation). Les compléments ont un accès limité au réseau et la plupart d’entre eux peuvent effectuer des opérations de lecture ou d’écriture dans le document ou l’élément de messagerie actif. La plateforme du complément applique certaines contraintes avant qu’un utilisateur ou un administrateur installe ou démarre ce complément. Mais, comme pour tout modèle d’extensibilité, les utilisateurs doivent faire preuve de prudence avant de lancer un complément inconnu.
 
 > [!NOTE]
-> Les utilisateurs peuvent voir une invite de sécurité pour faire confiance au domaine la première fois qu’un module est chargé. Cela se produit si l’hôte de domaine du add-in se trouve en dehors du domaine Exchange local ou Office Online Server.
+> Les utilisateurs peuvent voir une invite de sécurité pour faire confiance au domaine la première fois qu’un module est chargé. Cela se produit si l’hôte de domaine du Exchange est en dehors du domaine local ou Office Online Server.
 
 La plateforme du add-in répond aux préoccupations des utilisateurs finaux en matière de confidentialité des manières suivantes.
 
@@ -97,9 +97,9 @@ La plateforme du add-in répond aux préoccupations des utilisateurs finaux en m
 
 - Lorsqu’ils partagent un document, les utilisateurs partagent également les compléments insérés dans ces documents ou qui y sont associés. Si un utilisateur ouvre un document qui contient un add-in qu’il n’a pas utilisé auparavant, l’application cliente Office invite l’utilisateur à accorder l’autorisation au module de l’exécuter dans le document. Dans un environnement organisationnel, l’application Office client demande également à l’utilisateur si le document provient d’une source externe.
 
-- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les modules de contenu et de volet de tâches, les utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers   >    >    >  **Paramètres** Catalogues de produits de  >  **confiance).** Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
+- Les utilisateurs peuvent autoriser ou refuser l’accès à AppSource. Pour les add-ins de contenu et du volet De tâches, les  utilisateurs gèrent l’accès aux catalogues et aux add-ins de confiance à partir du Centre de gestion de la confiance sur le client Office hôte (ouvert à partir du Centre de gestion de la confiance des options de fichiers  >    >    >  **Paramètres**  >  Cataloguesde produits de confiance). Pour Outlook, les applications peuvent gérer les applications en cliquant sur le bouton Gérer les applications : dans Outlook sur Windows, sélectionnez Gérer les fichiers des   >  applications. Dans Outlook mac, sélectionnez le bouton Gérer les **macros** dans la barre des macros. Dans Outlook sur le web, choisissez le menu **Paramètres** (icône d’engrenage) > **Gérer les compléments**. Les administrateurs peuvent également gérer cet accès [à l’aide d’une stratégie de groupe](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office).
 
-- La conception de la plateforme de l’outil de recherche fournit aux utilisateurs finaux une sécurité et des performances des manières suivantes.
+- La conception de la plateforme de l’outil de recherche fournit la sécurité et les performances aux utilisateurs finaux des manières suivantes.
 
   - Un Office s’exécute dans un contrôle de navigateur web hébergé dans un environnement d’runtime de Office application cliente. Cette conception assure à la fois la sécurité et l’isolation des performances de l’application cliente.
 
@@ -190,7 +190,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
     Pour plus d’informations sur les différences entre **innerText** et **textContent**, voir [Node.textContent](https://developer.mozilla.org/docs/DOM/Node.textContent). Pour plus d’informations sur la compatibilité DOM entre les navigateurs les plus répandus, voir les instructions relatives à la [compatibilité DOM W3C - HTML](https://www.quirksmode.org/dom/w3c_html.html#t07).
 
-- Si vous devez utiliser **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne contient pas de contenu malveillant avant de le transmettre à **innerHTML**. Pour plus d’informations et un exemple d’utilisation sûre de **innerHTML,** voir [la propriété innerHTML.](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
+- Si vous devez utiliser **innerHTML**, assurez-vous que l’entrée de l’utilisateur ne contient pas de contenu malveillant avant de le transmettre à **innerHTML**. Pour plus d’informations et un exemple d’utilisation sûre **de innerHTML,** voir [la propriété innerHTML.](https://developer.mozilla.org/docs/Web/API/Element/innerHTML)
 
 - Si vous utilisez jQuery, utilisez la méthode [.text()](https://api.jquery.com/text/) au lieu de la méthode [.html()](https://api.jquery.com/html/).
 
@@ -202,7 +202,7 @@ Un utilisateur mal intentionné pourrait attaquer l’origine d’un complément
 
 ### <a name="tips-to-prevent-clickjacking"></a>Conseils pour éviter les « détournements de clic »
 
-Étant donné que les Office complémentaires sont restituer dans un iframe lors de l’exécution dans un [](https://en.wikipedia.org/wiki/Clickjacking) navigateur avec des applications clientes Office, utilisez les conseils suivants pour minimiser le risque de détournement de clic : technique utilisée par les pirates informatiques pour empêcher les utilisateurs de révéler des informations confidentielles.
+Étant donné que les Office complémentaires sont restituer dans un iFrame lors de l’exécution dans un [](https://en.wikipedia.org/wiki/Clickjacking) navigateur avec des applications clientes Office, utilisez les conseils suivants pour minimiser le risque de détournement de clic : technique utilisée par les pirates informatiques pour empêcher les utilisateurs de révéler des informations confidentielles.
 
 Tout d’abord, identifiez les actions sensibles que votre complément est en mesure d’effectuer, notamment celles qu’un utilisateur non autorisé pourrait utiliser à des fins malveillantes, comme effectuer une opération financière ou publier des données sensibles. Par exemple, votre complément peut permettre à l’utilisateur d’envoyer un paiement à un destinataire qu’il a lui-même défini.
 
@@ -230,7 +230,7 @@ Les développeurs doivent également prendre note des pratiques de sécurité su
 
   Pour s’assurer que les applications ne livrent pas de contenu à l’aide du protocole HTTP, lors du  test de ces derniers, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans les **options Internet** du Panneau de configuration et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
 
-  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez ce qui suit  dans **Options Internet**: sous l’onglet Sécurité, sélectionnez la zone **Internet,** sélectionnez Niveau **personnalisé,** faites défiler pour rechercher Afficher le contenu mixte **et** sélectionnez **Invite** si elle n’est pas déjà sélectionnée.
+  - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez ce qui suit  dans **Options Internet**: sous l’onglet Sécurité, sélectionnez la  zone **Internet,** sélectionnez Le niveau **personnalisé,** faites défiler pour rechercher Afficher le contenu **mixte,** puis sélectionnez Invite si elle n’est pas déjà sélectionnée.
 
   - Assurez-vous que l’option **Avertir en cas de changement entre mode sécurisé et non sécurisé** est sélectionnée sur l’onglet **Avancé** de la boîte de dialogue **Options Internet**.
 
@@ -256,9 +256,9 @@ La gestion et l’application des paramètres Office s’effectuent avec des par
 
 | Nom du paramètre | Description |
 |--------------|-------------|
-| Autoriser les compléments et les catalogues web non sécurisés | Permet aux utilisateurs d’exécuter des compléments non sécurisés, par exemple les compléments qui disposent d’une page web ou à des emplacements de catalogue qui ne sont pas sécurisées par SSL (https://) et ne figurent pas dans les zones Internet des utilisateurs. |
-| Bloquer les compléments web | Vous permet d’empêcher les utilisateurs d’utiliser des compléments web. |
-| Bloquer Office Store |  Vous permet d’empêcher les utilisateurs d’utiliser ou d’insérer des compléments web inclus dans Office Store. |
+| Autoriser les compléments et les catalogues web non sécurisés | Permet aux utilisateurs d’exécuter des applications Office non sécurisées, qui sont des Office qui ont des emplacements de page web ou de catalogue qui ne sont pas sécurisés par SSL (https://) et qui ne sont pas dans les zones Internet des utilisateurs. |
+| Bloquer les compléments web | Permet d’empêcher les utilisateurs d’Office des applications qui utilisent des technologies web. |
+| Bloquer Office Store |  Vous permet d’empêcher les utilisateurs d’obtenir ou d’Office des modules qui proviennent du Office Store. |
 
 > [!IMPORTANT]
 > Si vos groupes de travail utilisent plusieurs versions d’Office, les paramètres de stratégie de groupe doivent être configurés pour chaque version. Veuillez consulter la rubrique [Utiliser les stratégies de groupe pour gérer la manière dont les utilisateurs peuvent installer et utiliser des applications pour Office](/previous-versions/office/office-2013-resource-kit/jj219429(v=office.15)#using-group-policy-to-manage-how-users-can-install-and-use-apps-for-office) dans l’article [Vue d’ensemble des applications pour Office 2013](/previous-versions/office/office-2013-resource-kit/jj219429(v%3doffice.15)) pour plus d’informations sur les paramètres de stratégie de groupe pour Office 2013.

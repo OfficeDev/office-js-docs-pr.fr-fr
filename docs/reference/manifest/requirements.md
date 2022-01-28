@@ -1,18 +1,18 @@
 ---
 title: Élément Requirements dans le fichier manifest
 description: L’élément Requirements spécifie l’ensemble minimal de conditions requises et les méthodes que votre Office doit activer par Office ou pour remplacer les paramètres de manifeste de base.
-ms.date: 01/22/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 85dcd08f3bfcffe34c4c479608f25ea0c2b6a134
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
+ms.openlocfilehash: e7953ca1e47c492849fe9d0c79384376ffdec347
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222282"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263036"
 ---
 # <a name="requirements-element"></a>Élément Requirements
 
-La signification de cet élément dépend de son utilisation dans le manifeste de [base](#in-the-base-manifest)] ou en tant qu’enfant d’un [élément **VersionOverrides**](#as-a-child-of-a-versionoverrides-element).
+La signification de cet élément dépend de son utilisation dans le manifeste de [base](#in-the-base-manifest) ou en tant qu’enfant d’un [élément **VersionOverrides.**](#as-a-child-of-a-versionoverrides-element)
 
 > [!TIP]
 > Avant d’utiliser cet élément, familiarisez-vous avec [spécifier Office hôtes et les conditions requises de l’API](../../develop/specify-office-hosts-and-api-requirements.md)
@@ -60,7 +60,7 @@ Pour plus d’informations, voir [Remplacements de version dans le manifeste.](.
 > Ne répétez pas **les éléments Requirement** à partir du manifeste de base à l’intérieur **d’une VersionOverrides**. Cela n’a aucun effet et peut être erronée quant à l’objectif de l’élément **Requirements** à l’intérieur d’une **VersionOverrides**.
 
 > [!WARNING]
-> Faites très attention avant d’utiliser un élément **Requirements** dans **une VersionOverrides,** car sur les combinaisons de plateforme et de version qui ne prend pas en charge la condition *requise,* aucune des commandes de module ne sera installée, même celles qui appellent des fonctionnalités qui *n’ont* pas besoin de cette exigence. Prenons l’exemple d’un add-in qui possède deux boutons de ruban personnalisés. L’un d’eux Office des API JavaScript disponibles dans l’ensemble de conditions **requises ExcelApi 1.4** (et version ultérieure). Les autres appellent des API qui sont uniquement disponibles dans **ExcelApi 1.9** (et ultérieur). Si vous avez ajouté une condition requise pour **ExcelApi 1.9** dans **VersionOverrides,** aucun des deux boutons n’apparaît sur le ruban.  Une meilleure stratégie dans ce scénario consisterait à utiliser la technique décrite dans les vérifications runtime pour la prise en charge des méthodes et des ensembles [de conditions requises.](../../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) Le code appelé par le deuxième bouton utilise d’abord pour vérifier la prise en charge `isSetSupported` **d’ExcelApi 1.9**. S’il n’est pas pris en charge, le code envoie à l’utilisateur un message lui disant que cette fonctionnalité du module n’est pas disponible sur sa version de Office. 
+> Faites très attention avant d’utiliser un élément **Requirements** dans **une VersionOverrides,** car sur les combinaisons de plateforme et de version qui ne prend pas en charge la condition *requise,* aucune des commandes de module ne sera installée, même celles qui appellent des fonctionnalités qui *n’ont* pas besoin de cette exigence. Prenons l’exemple d’un add-in qui possède deux boutons de ruban personnalisés. L’un d’eux Office des API JavaScript disponibles dans l’ensemble de conditions **requises ExcelApi 1.4** (et version ultérieure). Les autres appellent des API qui sont uniquement disponibles dans **ExcelApi 1.9** (et ultérieur). Si vous avez placé une condition requise pour **ExcelApi 1.9** dans **VersionOverrides,** alors lorsque la version 1.9 n’est pas prise en charge, aucun bouton n’apparaît sur le ruban.  Une meilleure stratégie dans ce scénario consisterait à utiliser la technique décrite dans les vérifications runtime pour la prise en charge des méthodes et des ensembles [de conditions requises.](../../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support) Le code appelé par le deuxième bouton utilise d’abord pour vérifier la prise en charge `isSetSupported` **d’ExcelApi 1.9**. S’il n’est pas pris en charge, le code envoie à l’utilisateur un message lui disant que cette fonctionnalité du module n’est pas disponible sur sa version de Office. 
 
 > [!NOTE]
 > Dans les modules de messagerie, il est possible d’imbrier **versionOverrides** 1.1 à l’intérieur d’une **version VersionOverrides** 1.0. Office utilisera toujours la version la plus élevée **VersionOverrides** prise en charge par la plateforme et Office version.

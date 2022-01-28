@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
-ms.date: 01/22/2022
+ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ac1792c74b80de0d3dcb188e1f9d2425eb2d3267
-ms.sourcegitcommit: ae3a09d905beb4305a6ffcbc7051ad70745f79f9
+ms.openlocfilehash: e0cf0a99706861a5446512542b28f3b27db54d8d
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/26/2022
-ms.locfileid: "62222226"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263050"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -60,7 +60,7 @@ Par exemple, la déclaration **Hosts** et **Host** suivante spécifie que le add
 |:--------------|:-----------------------------------------------|:-----------------------|
 | Base de données      | applications web Access                                | Volet de tâches              |
 | Document      | Word sur le web, Windows, Mac, iPad            | Volet de tâches              |
-| Mailbox       | Outlook sur le web, Windows, Mac, Android, iOS | Courrier                   |
+| Boîte aux lettres       | Outlook sur le web, Windows, Mac, Android, iOS | Courrier                   |
 | Bloc-notes      | OneNote sur le web                             | Volet De tâches, Contenu     |
 | Présentation  | PowerPoint sur le web, Windows, Mac, iPad      | Volet De tâches, Contenu     |
 | Project       | Project sur Windows                             | Volet de tâches              |
@@ -155,7 +155,7 @@ Vous implémentez cette conception différemment selon la façon dont la fonctio
 
 ### <a name="runtime-checks-for-method-and-requirement-set-support"></a>L’runtime vérifie la prise en charge des méthodes et des ensembles de conditions requises 
 
-Vous testez un runtime pour déterminer si le compte de l’utilisateur Office un ensemble de conditions requises avec [la méthode isSetSupported.](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) Passez le nom de l’ensemble de conditions requises et la version minimale en tant que paramètres. Si l’ensemble de conditions requises est pris en charge, `isSetSupported` renvoie **true**. Le code ci-dessous vous montre un exemple.
+Vous testez au moment de l’utilisation pour déterminer si l’Office utilisateur prend en charge un ensemble de conditions requises avec [la méthode isSetSupported.](/javascript/api/office/office.requirementsetsupport#isSetSupported_name__minVersion_) Passez le nom de l’ensemble de conditions requises et la version minimale en tant que paramètres. Si l’ensemble de conditions requises est pris en charge, `isSetSupported` renvoie **true**. Le code ci-dessous vous montre un exemple.
 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
@@ -245,7 +245,7 @@ Voici un exemple.
 ```
 
 > [!WARNING]
-> Vous devez faire très attention avant d’utiliser un élément **Requirements** dans **une VersionOverrides,** car sur les combinaisons de plateforme et de version qui ne prend pas en charge la condition *requise,* aucune des commandes de module ne sera installée, même celles qui appellent des fonctionnalités qui *n’en* ont pas besoin. Prenons l’exemple d’un add-in qui possède deux boutons de ruban personnalisés. L’un d’eux Office des API JavaScript disponibles dans l’ensemble de conditions **requises ExcelApi 1.4** (et version ultérieure). Les autres appellent des API qui sont uniquement disponibles dans **ExcelApi 1.9** (et ultérieur). Si vous avez ajouté une condition requise pour **ExcelApi 1.9** dans **VersionOverrides,** aucun des deux boutons n’apparaît sur le ruban.  Une meilleure stratégie dans ce scénario consisterait à utiliser la technique décrite dans les vérifications runtime pour la prise en charge des méthodes et des ensembles [de conditions requises.](#runtime-checks-for-method-and-requirement-set-support) Le code appelé par le deuxième bouton utilise d’abord pour vérifier la prise en charge `isSetSupported` **d’ExcelApi 1.9**. S’il n’est pas pris en charge, le code envoie à l’utilisateur un message lui disant que cette fonctionnalité du module n’est pas disponible sur sa version de Office. 
+> Faites très attention avant d’utiliser un élément **Requirements** dans **une VersionOverrides,** car sur les combinaisons de plateforme et de version qui ne prend pas en charge la condition *requise,* aucune des commandes de module ne sera installée, même celles qui appellent des fonctionnalités qui *n’ont* pas besoin de cette exigence. Prenons l’exemple d’un add-in qui possède deux boutons de ruban personnalisés. L’un d’eux Office des API JavaScript disponibles dans l’ensemble de conditions **requises ExcelApi 1.4** (et version ultérieure). Les autres appellent des API qui sont uniquement disponibles dans **ExcelApi 1.9** (et ultérieur). Si vous avez placé une condition requise pour **ExcelApi 1.9** dans **VersionOverrides,** alors lorsque la version 1.9 n’est pas prise en charge, aucun bouton n’apparaît sur le ruban.  Une meilleure stratégie dans ce scénario consisterait à utiliser la technique décrite dans les vérifications runtime pour la prise en charge des méthodes et des ensembles [de conditions requises.](#runtime-checks-for-method-and-requirement-set-support) Le code appelé par le deuxième bouton utilise d’abord pour vérifier la prise en charge `isSetSupported` **d’ExcelApi 1.9**. S’il n’est pas pris en charge, le code envoie à l’utilisateur un message lui disant que cette fonctionnalité du module n’est pas disponible sur sa version de Office. 
 
 > [!TIP]
 > Il n’est pas nécessaire de répéter un élément **Requirement** dans **une versionOverrides** qui apparaît déjà dans le manifeste de base. Si l’exigence est spécifiée dans le manifeste de base, le add-in ne peut pas s’installer lorsque la condition n’est pas prise en charge, de sorte que Office n’a pas même l’élément **VersionOverrides.** 
