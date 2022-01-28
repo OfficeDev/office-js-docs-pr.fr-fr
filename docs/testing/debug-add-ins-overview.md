@@ -1,14 +1,14 @@
 ---
 title: Débogage des compléments Office
 description: Recherchez les Office de débogage des modules pour votre environnement de développement.
-ms.date: 12/02/2021
+ms.date: 01/27/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa98bda4de1786f58b730b2375e5586d2cb8b0ad
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
+ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61766097"
+ms.lasthandoff: 01/28/2022
+ms.locfileid: "62263057"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Vue d’ensemble du débogage Office des modules
 
@@ -78,3 +78,7 @@ Il n’existe aucune version de bureau de Office pour [ Linux. Vous devrez donc 
 
 > [!NOTE]
 > Nous vous déconseillons de développer des compléments Office sur un ordinateur Linux, sauf dans le cas inhabituel où vous pouvez vous assurer que tous les utilisateurs du module accéderont au module par le biais de Office sur le Web à partir d’un ordinateur Linux.
+
+## <a name="debug-add-ins-in-staging-or-production"></a>Déboguer des compléments en préproduction ou en production
+
+Pour déboguer un complément déjà en préproduction ou en production, attachez un débogueur à partir de l’interface utilisateur du complément. Pour obtenir des instructions, consultez [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md).
