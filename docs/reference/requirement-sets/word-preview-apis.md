@@ -1,15 +1,15 @@
 ---
 title: API d’aperçu JavaScript pour Word
 description: Détails sur les API JavaScript word à venir.
-ms.date: 12/14/2021
+ms.date: 02/01/2022
 ms.prod: word
 ms.localizationpriority: medium
-ms.openlocfilehash: c68a63dc57fbcaa8282343c3f3271778c43bc28d
-ms.sourcegitcommit: 9b6556563451f9907cb5da50cba757eb9960aa39
+ms.openlocfilehash: 4ef8bd9897689b354fa7c19ba0d7be7f8fb92be9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/17/2021
-ms.locfileid: "61565363"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320157"
 ---
 # <a name="word-javascript-preview-apis"></a>API d’aperçu JavaScript pour Word
 
@@ -20,7 +20,7 @@ Les nouvelles API JavaScript pour Word sont d’abord introduites dans « aperç
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation, à l’exception de celles qui sont disponibles uniquement [dans Word sur le web](#web-only-api-list). Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word.](/javascript/api/word?view=word-js-preview&preserve-view=true)
+Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation, à l’exception de celles qui sont [disponibles uniquement dans Word sur le web](#web-only-api-list). Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -95,7 +95,7 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 
 ## <a name="web-only-api-list"></a>Liste des API web uniquement
 
-Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation uniquement dans Word sur le web. Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word.](/javascript/api/word?view=word-js-preview&preserve-view=true)
+Le tableau suivant répertorie les API JavaScript pour Word actuellement en prévisualisation uniquement dans Word sur le web. Pour afficher la liste complète de toutes les API JavaScript pour Word (y compris les API d’aperçu et les API publiées précédemment), consultez toutes les API [JavaScript pour Word](/javascript/api/word?view=word-js-preview&preserve-view=true).
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -107,26 +107,36 @@ Le tableau suivant répertorie les API JavaScript pour Word actuellement en pré
 |[Comment](/javascript/api/word/word.comment)|[authorEmail](/javascript/api/word/word.comment#authorEmail)|Obtenir l’adresse email de l’auteur du commentaire.|
 ||[authorName](/javascript/api/word/word.comment#authorName)|Obtient le nom de l’auteur du commentaire.|
 ||[content](/javascript/api/word/word.comment#content)|Obtient ou définit le contenu du commentaire en tant que texte simple.|
+||[contentRange](/javascript/api/word/word.comment#contentRange)|Obtient ou définit l’état du thread de commentaire.|
 ||[creationDate](/javascript/api/word/word.comment#creationDate)|Obtient la date de création du commentaire.|
 ||[delete()](/javascript/api/word/word.comment#delete__)|Supprime le commentaire et ses réponses.|
 ||[getRange()](/javascript/api/word/word.comment#getRange__)|Obtient la plage du document principal où se trouve le commentaire.|
 ||[id](/javascript/api/word/word.comment#id)|ID|
 ||[Réponses](/javascript/api/word/word.comment#replies)|Obtient la collection d’objets de réponse associés au commentaire.|
 ||[reply(replyText: string)](/javascript/api/word/word.comment#reply_replyText_)|Ajoute une nouvelle réponse à la fin du fil de discussion de commentaires.|
-||[résolu](/javascript/api/word/word.comment#resolved)|Obtient ou définit l’état du thread de commentaire.|
+||[résolu](/javascript/api/word/word.comment#resolved)|Obtient ou définit l’état du thread de commentaires.|
 |[CommentCollection](/javascript/api/word/word.commentcollection)|[getFirst()](/javascript/api/word/word.commentcollection#getFirst__)|Obtient le premier commentaire de la collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Obtient le premier commentaire ou objet null de la collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentcollection#getFirstOrNullObject__)|Obtient le premier commentaire de la collection.|
 ||[getItem(index : numérique)](/javascript/api/word/word.commentcollection#getItem_index_)|Obtient un objet comment par son index dans la collection.|
 ||[items](/javascript/api/word/word.commentcollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
+|[CommentContentRange](/javascript/api/word/word.commentcontentrange)|[bold](/javascript/api/word/word.commentcontentrange#bold)|Obtient ou définit une valeur qui indique si le texte du commentaire est en gras.|
+||[lien hypertexte](/javascript/api/word/word.commentcontentrange#hyperlink)|Obtient le premier lien hypertexte de la plage ou définit un lien hypertexte sur la plage.|
+||[insertText(text: string, insertLocation: Word.InsertLocation)](/javascript/api/word/word.commentcontentrange#insertText_text__insertLocation_)|Insère du texte à l’emplacement spécifié.|
+||[isEmpty](/javascript/api/word/word.commentcontentrange#isEmpty)|Vérifie si la longueur de la plage est zéro.|
+||[italic](/javascript/api/word/word.commentcontentrange#italic)|Obtient ou définit une valeur qui indique si le texte du commentaire est en italique.|
+||[strikeThrough](/javascript/api/word/word.commentcontentrange#strikeThrough)|Obtient ou définit une valeur qui indique si le texte du commentaire a un signet.|
+||[text](/javascript/api/word/word.commentcontentrange#text)|Obtient le texte de la plage de commentaires.|
+||[underline](/javascript/api/word/word.commentcontentrange#underline)|Obtient ou définit une valeur qui indique le type de soulignement du texte du commentaire.|
 |[CommentReply](/javascript/api/word/word.commentreply)|[authorEmail](/javascript/api/word/word.commentreply#authorEmail)|Obtenir l’adresse email de l’auteur de la réponse au commentaire.|
 ||[authorName](/javascript/api/word/word.commentreply#authorName)|Obtenir le nom de l’auteur de la réponse au commentaire.|
 ||[content](/javascript/api/word/word.commentreply#content)|Obtient ou définit le contenu de la réponse au commentaire.|
+||[contentRange](/javascript/api/word/word.commentreply#contentRange)|Obtient ou définit la plage de contenu de commentReply.|
 ||[creationDate](/javascript/api/word/word.commentreply#creationDate)|Obtient la date de création de la réponse au commentaire.|
 ||[delete()](/javascript/api/word/word.commentreply#delete__)|Supprime la réponse de commentaire.|
 ||[id](/javascript/api/word/word.commentreply#id)|ID|
 ||[parentComment](/javascript/api/word/word.commentreply#parentComment)|Obtient le commentaire parent de cette réponse.|
 |[CommentReplyCollection](/javascript/api/word/word.commentreplycollection)|[getFirst()](/javascript/api/word/word.commentreplycollection#getFirst__)|Obtient la première réponse de commentaire dans la collection.|
-||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Obtient le premier objet de réponse de commentaire ou null de la collection.|
+||[getFirstOrNullObject()](/javascript/api/word/word.commentreplycollection#getFirstOrNullObject__)|Obtient la première réponse de commentaire dans la collection.|
 ||[getItem(index : numérique)](/javascript/api/word/word.commentreplycollection#getItem_index_)|Obtient un objet de réponse de commentaire par son index dans la collection.|
 ||[items](/javascript/api/word/word.commentreplycollection#items)|Obtient l’élément enfant chargé dans cette collection de sites.|
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[notes de fin](/javascript/api/word/word.contentcontrol#endnotes)|Obtient la collection de notes de fin dans le contentcontrol.|

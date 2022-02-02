@@ -1,26 +1,29 @@
 ---
-title: Autoriser la connexion à Microsoft Graph sans authentification unique
-description: Découvrir l'autorisation de connexion à Microsoft Graph sans authentification unique
-ms.date: 07/08/2021
+title: Autoriser l’accès à Microsoft Graph à partir d’un Office de conférence
+description: Découvrez comment autoriser microsoft Graph à partir d’un Office de conférence
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f9555067b6fac9c55f07623daf5872cecf3c2ba
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 8b2d800daa9cbdf90303405690470b4c44fc3d5e
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074174"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320136"
 ---
-# <a name="authorize-to-microsoft-graph-without-sso"></a>Autoriser la connexion à Microsoft Graph sans authentification unique
+# <a name="authorize-to-microsoft-graph-from-an-office-add-in"></a>Autoriser l’accès à Microsoft Graph à partir d’un Office de conférence
 
-Votre add-in peut obtenir une autorisation pour les données microsoft Graph en obtenant un jeton d’accès à Microsoft Graph auprès de Azure Active Directory (Azure AD). Utilisez le flux de code d’autorisation ou le flux implicite comme vous le feriez dans d’autres applications web, mais à une exception près : Azure AD n’autorise pas l’ouverture de sa page de signature dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Cela signifie que vous devez ouvrir l’écran Azure AD connexion dans une boîte de dialogue ouverte avec l’API Office dialogue. Cela a un effet sur votre utilisation des bibliothèques d’aide à l’authentification et l’autorisation. Pour plus d’informations, consultez l'[Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+Votre add-in peut obtenir l’autorisation d’accès aux données microsoft Graph en obtenant un jeton d’accès à Microsoft Graph à partir du Plateforme d'identités Microsoft. Utilisez le flux de code d’autorisation ou le flux implicite comme vous le feriez dans d’autres applications web, mais à une exception près : le Plateforme d'identités Microsoft n’autorise pas l’ouverture de sa page de signature dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Cela signifie que vous devez ouvrir la page de connexion dans une boîte de dialogue à l’aide de l’API Office dialogue. Cela a un effet sur votre utilisation des bibliothèques d’aide à l’authentification et l’autorisation. Pour plus d’informations, consultez l'[Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
-Pour plus d’informations sur la programmation de l’authentification avec Azure AD, commencez par la vue d’ensemble de [Plateforme d'identités Microsoft (v2.0),](/azure/active-directory/develop/v2-overview)où vous trouverez des didacticiels et des guides dans cet ensemble de documentation, ainsi que des liens vers des exemples pertinents. Une fois encore, vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office, afin de tenir compte du fait que la boîte de dialogue Office s’exécute dans un processus distinct de celui du volet Office.
+> [!NOTE]
+> Si vous implémentez l’oD SSO et prévoyez d’accéder à Microsoft Graph, consultez Autoriser [l’accès à Microsoft Graph avec sso.](authorize-to-microsoft-graph.md)
 
-Une fois que votre code a obtenu le jeton d’accès à Microsoft Graph, il transmet le jeton d’accès de la boîte de dialogue au volet Des tâches, ou il stocke le jeton dans une base de données et signale au volet Des tâches que le jeton est disponible. (Pour plus [d’informations, voir Authentification Office boîte](auth-with-office-dialog-api.md) de dialogue.) Le code du volet Des tâches demande des données à Microsoft Graph et inclut le jeton dans ces demandes. Pour plus d’informations sur l’appel de Microsoft Graph et des SDK Microsoft Graph, voir [la documentation microsoft Graph.](/graph/)
+Pour plus d’informations sur la programmation de l’authentification à l Plateforme d'identités Microsoft, voir [Plateforme d'identités Microsoft documentation.](/azure/active-directory/develop) Vous trouverez des didacticiels et des guides dans cet ensemble de documentation, ainsi que des liens vers des exemples pertinents. Une fois encore, vous devrez peut-être ajuster le code des exemples à exécuter dans la boîte de dialogue Office pour prendre en compte la boîte de dialogue Office qui s’exécute dans un processus distinct du volet Des tâches.
+
+Une fois que votre code a obtenu le jeton d’accès à Microsoft Graph, il transmet le jeton d’accès de la boîte de dialogue au volet Des tâches, ou il stocke le jeton dans une base de données et signale au volet Des tâches que le jeton est disponible. (Pour plus [d’informations, voir Authentification Office boîte de dialogue](auth-with-office-dialog-api.md) de connexion.) Le code du volet Des tâches demande des données à Microsoft Graph et inclut le jeton dans ces demandes. Pour plus d’informations sur l’appel de Microsoft Graph et des SDK Microsoft Graph, consultez la [documentation de Microsoft Graph](/graph/).
 
 ## <a name="recommended-libraries-and-samples"></a>Bibliothèques et exemples recommandés
 
-Nous vous recommandons d’utiliser les bibliothèques suivantes lorsque vous accédez à Microsoft Graph sans utiliser l' sso.
+Nous vous recommandons d’utiliser les bibliothèques suivantes lors de l’accès à Microsoft Graph.
 
 - Pour les compléments utilisant un élément côté serveur avec une infrastructure .NET basée sur le réseau, comme .NET Core ou ASP.NET, utilisez [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation).
 - Pour les compléments utilisant un élément côté serveur NodeJS, utilisez [Passport Azure AD](https://github.com/AzureAD/passport-azure-ad).

@@ -1,21 +1,18 @@
 ---
-title: Autoriser des services externes dans votre complément Office
-description: Autorisation d’accès à des sources de données non-Microsoft comme Google, Facebook, LinkedIn, SalesForce et GitHub à l’aide d’OAuth 2.0, du code d’autorisation et des flux implicites.
-ms.date: 07/08/2021
+title: Autorisation avec des fournisseurs d’identité non Microsoft
+description: Obtenir l’autorisation pour les sources de données autres que Microsoft à l’aide d’OAuth 2.0, du code d’autorisation et des flux implicites.
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b633fa5cf41603d77454c23390f40f4a33201b8a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150264"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320429"
 ---
-# <a name="authorize-external-services-in-your-office-add-in"></a>Autoriser des services externes dans votre complément Office
+# <a name="authorization-with-non-microsoft-identity-providers"></a>Autorisation avec des fournisseurs d’identité non Microsoft
 
-Les services en ligne populaires, notamment Microsoft 365, Google, Facebook, LinkedIn, SalesForce et GitHub, donnent aux développeurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office.
-
-> [!NOTE]
-> Le reste de cet article concerne l’accès aux services non-Microsoft. Pour plus d’informations sur l’accès à Microsoft Graph (y compris Microsoft 365), consultez l’accès à Microsoft Graph avec [ssO](overview-authn-authz.md#access-to-microsoft-graph-with-sso) et l’accès à Microsoft Graph sans [SSO](overview-authn-authz.md#access-to-microsoft-graph-without-sso).
+Il existe de nombreux services de fourniture d’identités populaires, en plus des Plateforme d'identités Microsoft, que vous pouvez utiliser dans votre complément. Ils donnent aux utilisateurs, et aux applications telles que Office votre application, l’accès aux comptes des utilisateurs dans d’autres applications.
 
 L’infrastructure standard dans le secteur permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
 
@@ -47,8 +44,6 @@ De nombreuses bibliothèques sont disponibles pour l’implémentation du flux d
 
 Des bibliothèques sont disponibles dans de nombreuses langues et sur de nombreuses plateformes, aussi bien pour le flux implicite que pour le flux de code d’autorisation. Certaines sont destinées à un usage général, d’autres sont propres à des services en ligne bien spécifiques.
 
-**Google** : cherchez « auth » ou le nom de votre langue sur [GitHub.com/Google](https://github.com/google). La plupart des référentiels pertinents sont nommés `google-auth-library-[name of language]`.
-
 **Facebook** : cherchez « bibliothèque » ou « sdk » sur le site [Facebook pour les développeurs](https://developers.facebook.com).
 
 **OAuth 2.0 général** : une page contenant des liens vers des bibliothèques pour plus d’une dizaine de langues est conservée par le groupe de travail OAuth de l’IETF sur une page relative au [code OAuth](https://oauth.net/code/). Notez que certaines de ces bibliothèques sont destinées à l’implémentation d’un service compatible OAuth. Les bibliothèques qui vous sont utiles en tant que développeur de compléments sont appelées bibliothèques *client* sur cette page car votre serveur web est un client du service compatible OAuth.
@@ -62,3 +57,7 @@ Nous vous recommandons que l’interface utilisateur de l’authentification/aut
 ## <a name="what-is-cors"></a>Que signifie l’acronyme CORS ?
 
 CORS est l’acronyme de [Cross Origin Resource Sharing](https://developer.mozilla.org/docs/Web/HTTP/Access_control_CORS) (partage des ressources d’origines croisées). Pour plus d’informations sur l’utilisation de CORS dans les compléments, reportez-vous à la rubrique relative à la [résolution des limites de stratégie d’origine identique dans les compléments Office](addressing-same-origin-policy-limitations.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Vue d’ensemble de l’authentification et de l’autorisation dans Office des applications.](overview-authn-authz.md)

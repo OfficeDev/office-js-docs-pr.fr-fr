@@ -1,16 +1,16 @@
 ---
-title: Conservation de l’état et des paramètres des compléments
+title: Persist add-in state and settings
 description: Apprenez à faire persister des données dans Office applications web de recherche de contenu s’exécutant dans l’environnement sans état d’un contrôle de navigateur.
-ms.date: 12/15/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dc99285aaaedfe5aa8385709fc5512f7cedfb2a6
-ms.sourcegitcommit: a8bfb169b9e0b26d34a2839843e480a47ca098cc
+ms.openlocfilehash: 2944eb1f98f1654d1a67be91c532be600f62a0ca
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/22/2021
-ms.locfileid: "61583797"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320227"
 ---
-# <a name="persisting-add-in-state-and-settings"></a>Conservation de l’état et des paramètres des compléments
+# <a name="persist-add-in-state-and-settings"></a>Persist add-in state and settings
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
@@ -22,13 +22,13 @@ Les compléments Office sont essentiellement des applications web exécutées d
 
 - Utilisez des techniques fournies par le contrôle de navigateur sous-jacent : les cookies de navigateur ou le stockage web HTML5 ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
     > [!NOTE]
-    > Certains navigateurs ou paramètres de navigateur de l’utilisateur peuvent bloquer les techniques de stockage basées sur le navigateur. Vous devez tester la disponibilité comme documenté dans [l’utilisation de l’API Stockage Web.](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
+    > Certains navigateurs ou paramètres de navigateur de l’utilisateur peuvent bloquer les techniques de stockage basées sur le navigateur. Vous devez tester la disponibilité comme documenté dans [l’utilisation de l’API Stockage Web](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
-Cet article se concentre sur l’utilisation de l Office’API JavaScript pour rendre persistant l’état du module dans le document actuel. Si vous devez rendre persistant l’état entre les documents, par exemple suivre les préférences des utilisateurs dans tous les documents qu’ils ouvrent, vous devez utiliser une approche différente. Par exemple, vous [](sso-in-office-add-ins.md#using-the-sso-token-as-an-identity) pouvez utiliser l' utilisateur unique pour obtenir l’identité de l’utilisateur, puis enregistrer l’ID utilisateur et ses paramètres dans une base de données en ligne.
+Cet article se concentre sur l’utilisation de l Office’API JavaScript pour rendre persistant l’état du module dans le document actuel. Si vous devez rendre persistant l’état entre les documents, par exemple suivre les préférences des utilisateurs dans tous les documents qu’ils ouvrent, vous devez utiliser une approche différente. Par exemple, vous pouvez utiliser [](use-sso-to-get-office-signed-in-user-token.md) l’utilisateur unique pour obtenir l’identité de l’utilisateur, puis enregistrer l’ID utilisateur et ses paramètres dans une base de données en ligne.
 
-## <a name="persisting-add-in-state-and-settings-with-the-office-javascript-api"></a>Persistance de l’état et des paramètres du Office l’API JavaScript
+## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>Persist add-in state and settings with the Office JavaScript API
 
-L’API JavaScript Office fournit les objets [Paramètres,](/javascript/api/office/office.settings) [RoamingSettings](/javascript/api/outlook/office.roamingsettings)et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
+L’API JavaScript Office fournit les objets [Paramètres](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
 
 |**Objet**|**Type de complément**|**Emplacement de stockage**|**Office prise en charge des applications**|
 |:-----|:-----|:-----|:-----|
@@ -42,7 +42,7 @@ L’API JavaScript Office fournit les objets [Paramètres,](/javascript/api/offi
 > [!NOTE]
 > Les deux sections suivantes abordent les paramètres dans le contexte de l’API JavaScript courante pour Office. L’api JavaScript Excel l’application fournit également l’accès aux paramètres personnalisés. Les API Excel et les modes de programmation sont légèrement différents. Pour plus d’informations, reportez-vous à l’article sur l’objet [SettingCollection pour Excel](/javascript/api/excel/excel.settingcollection).
 
-En interne, les données du sac de propriétés accessibles avec le ou les objets sont stockées sous la forme d’un objet JSON (JavaScript Object Notation) sérialisé qui contient des `Settings` `CustomProperties` `RoamingSettings` paires nom/valeur. Le nom (clé) de chaque valeur doit être un , et la valeur stockée peut être un JavaScript , ou , mais pas `string` `string` une `number` `date` `object` **fonction**.
+En interne, `Settings`les données du sac de propriétés accessibles avec le ou `CustomProperties``RoamingSettings` les objets sont stockées sous la forme d’un objet JSON (JavaScript Object Notation) sérialisé qui contient des paires nom/valeur. Le nom (clé) `string`de chaque valeur doit être un , et la valeur stockée peut être un JavaScript `string`, `number`ou , `date``object`mais pas une **fonction**.
 
 Cet exemple de structure de conteneur des propriétés contient trois valeurs de type **string** (chaîne) définies, nommées `firstName`, `location` et `defaultView`.
 
@@ -54,16 +54,16 @@ Cet exemple de structure de conteneur des propriétés contient trois valeurs de
 }
 ```
 
-Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont gérés entièrement en mémoire à l’aide de l’objet , et des méthodes de l’objet qui correspond au type de paramètres que vous créez `get` ( Paramètres `set` , `remove` **CustomProperties** ou **RoamingSettings**).
+Après avoir enregistré le conteneur des propriétés de paramètres durant la session de complément précédente, vous pouvez le charger pendant ou après l’initialisation du complément, durant la session actuelle du complément. Pendant la session, les paramètres sont gérés `get``set``remove` entièrement en mémoire à l’aide des méthodes et des méthodes de l’objet qui correspondent au type de paramètres que vous créez (**Paramètres**, **CustomProperties** ou **RoamingSettings**).
 
 > [!IMPORTANT]
-> Pour rendre persistants les ajouts, mises à jour ou suppressions effectués au cours de la session actuelle du complément vers l’emplacement de stockage, vous devez appeler la méthode de l’objet correspondant utilisé pour travailler avec ce type de `saveAsync` paramètres. Les méthodes et les paramètres fonctionnent uniquement sur la copie en mémoire du sac des `get` `set` `remove` propriétés des paramètres. Si votre add-in est fermé sans appel, toutes les modifications apportées aux paramètres au cours de `saveAsync` cette session seront perdues.
+> Pour rendre persistants les ajouts, mises à jour ou suppressions effectués au cours de la session actuelle du complément vers l’emplacement de stockage, `saveAsync` vous devez appeler la méthode de l’objet correspondant utilisé pour travailler avec ce type de paramètres. Les `get`méthodes `set`et les paramètres `remove` fonctionnent uniquement sur la copie en mémoire du sac des propriétés des paramètres. Si votre add-in est fermé sans appel `saveAsync`, toutes les modifications apportées aux paramètres au cours de cette session seront perdues.
 
 ## <a name="how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins"></a>Enregistrement de l’état et des paramètres d’un complément par document pour les compléments de contenu et du volet Office
 
-Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](/javascript/api/office/office.settings) et ses méthodes. Le sac de propriétés créé avec les méthodes de l’objet est disponible uniquement pour l’instance du contenu ou du module de tâches qui l’a créé, et uniquement à partir du document dans lequel il est `Settings` enregistré.
+Pour conserver l’état ou les paramètres personnalisés d’un complément de contenu ou du volet Office pour Word, Excel ou PowerPoint, utilisez l’objet [Settings](/javascript/api/office/office.settings) et ses méthodes. Le sac de propriétés `Settings` créé avec les méthodes de l’objet est disponible uniquement pour l’instance du contenu ou du module de tâches qui l’a créé, et uniquement à partir du document dans lequel il est enregistré.
 
-L’objet est automatiquement chargé dans le cadre de l’objet Document et est disponible lorsque le volet Des tâches ou le module de `Settings` contenu est activé. [](/javascript/api/office/office.document) Une fois l’objet ins instantié, vous pouvez accéder à l’objet avec la propriété `Document` `Settings` [settings](/javascript/api/office/office.document#settings) de `Document` l’objet. Pendant la durée de vie de la session, vous pouvez simplement utiliser les méthodes et les paramètres persistants pour lire, écrire ou supprimer les paramètres persistants et l’état du module de la copie en mémoire du sac des `Settings.get` `Settings.set` `Settings.remove` propriétés.
+L’objet `Settings` est automatiquement chargé dans le cadre de l’objet [Document](/javascript/api/office/office.document) et est disponible lorsque le volet Des tâches ou le module de contenu est activé. Une fois `Document` l’objet ins instantié, vous pouvez accéder `Settings` à l’objet avec la propriété [settings](/javascript/api/office/office.document#settings) de l’objet `Document` . Pendant la durée de vie de la session, `Settings.get`vous pouvez simplement utiliser les méthodes et `Settings.set``Settings.remove` les paramètres persistants pour lire, écrire ou supprimer les paramètres persistants et l’état du module de la copie en mémoire du sac des propriétés.
 
 Étant donné que les méthodes de définition (set) et de suppression (remove) fonctionnent uniquement par rapport à la copie en mémoire du conteneur des propriétés de paramètres, pour enregistrer de nouveaux paramètres ou des paramètres modifiés dans le document auquel le complément est associé, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_).
 
@@ -75,11 +75,11 @@ L’exemple de code suivant montre comment utiliser la méthode [Settings.set](/
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
- Le paramètre avec le nom spécifié est créé s’il n’existe pas déjà ou sa valeur est mise à jour s’il existe. Utilisez la méthode pour rendre persistants les paramètres nouveaux ou mis à `Settings.saveAsync` jour dans le document.
+ Le paramètre avec le nom spécifié est créé s’il n’existe pas déjà ou sa valeur est mise à jour s’il existe. Utilisez la `Settings.saveAsync` méthode pour rendre persistants les paramètres nouveaux ou mis à jour dans le document.
 
 ### <a name="getting-the-value-of-a-setting"></a>Obtention de la valeur d’un paramètre
 
-L’exemple suivant illustre comment utiliser la méthode [Settings.get](/javascript/api/office/office.settings#get_name_) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la méthode est le nom du paramètre `get` sensible _à la_ cas.
+L’exemple suivant illustre comment utiliser la méthode [Settings.get](/javascript/api/office/office.settings#get_name_) pour obtenir la valeur d’un paramètre nommé « themeColor ». Le seul paramètre de la méthode `get` est le nom du paramètre sensible _à la_ cas.
 
 ```js
 write('Current value for mySetting: ' + Office.context.document.settings.get('themeColor'));
@@ -90,21 +90,21 @@ function write(message){
 }
 ```
 
- La méthode renvoie la valeur précédemment enregistrée pour le nom de `get` _paramètre_ passé. Si le paramètre n’existe pas, la méthode retourne **null**.
+ La `get` méthode renvoie la valeur précédemment enregistrée pour le nom de _paramètre_ passé. Si le paramètre n’existe pas, la méthode retourne **null**.
 
 ### <a name="removing-a-setting"></a>Suppression d’un paramètre
 
-L’exemple suivant illustre comment utiliser la méthode [Settings.remove](/javascript/api/office/office.settings#remove_name_) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la méthode est le nom du paramètre `remove` sensible _à la_ cas.
+L’exemple suivant illustre comment utiliser la méthode [Settings.remove](/javascript/api/office/office.settings#remove_name_) pour supprimer un paramètre portant le nom « themeColor ». Le seul paramètre de la méthode `remove` est le nom du paramètre sensible _à la_ cas.
 
 ```js
 Office.context.document.settings.remove('themeColor');
 ```
 
-Rien ne se produit si le paramètre n’existe pas. Utilisez la `Settings.saveAsync` méthode pour rendre persistant la suppression du paramètre du document.
+Rien ne se produit si le paramètre n’existe pas. Utilisez la méthode `Settings.saveAsync` pour rendre persistant la suppression du paramètre du document.
 
 ### <a name="saving-your-settings"></a>Enregistrement de vos paramètres
 
-Pour enregistrer les ajouts, modifications ou suppressions que votre complément a effectués sur la copie en mémoire du conteneur de propriétés des paramètres pendant la session en cours, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) pour les stocker dans le document. Le seul paramètre de la méthode est le rappel, qui est une fonction `saveAsync` de rappel avec un seul paramètre. 
+Pour enregistrer les ajouts, modifications ou suppressions que votre complément a effectués sur la copie en mémoire du conteneur de propriétés des paramètres pendant la session en cours, vous devez appeler la méthode [Settings.saveAsync](/javascript/api/office/office.settings#saveAsync_options__callback_) pour les stocker dans le document. Le seul paramètre de la méthode `saveAsync` est _le rappel_, qui est une fonction de rappel avec un seul paramètre.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -120,7 +120,7 @@ function write(message){
 }
 ```
 
-La fonction anonyme transmise dans la méthode en tant que paramètre de rappel est `saveAsync` exécutée lorsque l’opération  est terminée. Le _paramètre asyncResult_ du rappel permet d’accéder à un objet qui contient `AsyncResult` l’état de l’opération. Dans l’exemple, la fonction vérifie la propriété pour voir si l’opération d’enregistrer a réussi ou échoué, puis affiche le résultat dans la page du `AsyncResult.status` module.
+La fonction anonyme transmise dans la méthode `saveAsync` en _tant que paramètre_ de rappel est exécutée lorsque l’opération est terminée. Le _paramètre asyncResult_ du `AsyncResult` rappel permet d’accéder à un objet qui contient l’état de l’opération. Dans l’exemple, `AsyncResult.status` la fonction vérifie la propriété pour voir si l’opération d’enregistrer a réussi ou échoué, puis affiche le résultat dans la page du module.
 
 ## <a name="how-to-save-custom-xml-to-the-document"></a>Enregistrement du XML personnalisé dans le document
 
@@ -178,7 +178,7 @@ function getReviewers() {
 
 ## <a name="how-to-save-settings-in-an-outlook-add-in"></a>Comment enregistrer des paramètres dans un Outlook de configuration
 
-Pour plus d’informations sur l’enregistrer dans un Outlook, voir Gérer l’état et [les paramètres d’un Outlook.](../outlook/manage-state-and-settings-outlook.md)
+Pour plus d’informations sur l’enregistrer dans un Outlook, voir Gérer l’état et les [paramètres d’un Outlook de gestion](../outlook/manage-state-and-settings-outlook.md).
 
 ## <a name="see-also"></a>Voir aussi
 

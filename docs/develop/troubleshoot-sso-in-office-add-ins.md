@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
-description: Recommandations sur la façon de résoudre les problèmes liés à l' signature unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
-ms.date: 09/23/2021
+description: Recommandations sur la façon de résoudre les problèmes liés à l’signature unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a4777ebeb9b2ca005f58010e0f8e0b7daf5a8d94
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 83b6f72ec43a3d9d654206ab895cd5e4eb98bf7e
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074251"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320220"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
@@ -33,7 +33,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 
 ### <a name="13000"></a>13000
 
-L’API [getAccessToken](../develop/sso-in-office-add-ins.md#sso-api-reference) n’est pas prise en charge par le complément ou la version d’Office.
+L’API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) n’est pas prise en charge par le complément ou la version d’Office.
 
 - La version d’Office ne prend pas en charge la SSO. La version requise est Microsoft 365 abonnement, dans n’importe quel canal mensuel.
 - Le manifeste de complément n’inclut pas la section [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) appropriée.
@@ -59,7 +59,7 @@ L’utilisateur a annulé la connexion ou l’autorisation, par exemple, en choi
 
 ### <a name="13003"></a>13003
 
-Type d’utilisateur non pris en charge. L’utilisateur n’est pas Office avec un compte Microsoft valide, un compte Microsoft 365 Éducation ou un compte de travail. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Dans Outlook, cette erreur peut également [](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) se produire si l’authentification moderne est désactivée pour le client de l’utilisateur dans Exchange Online. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+Type d’utilisateur non pris en charge. L’utilisateur n’est pas Office avec un compte Microsoft valide, un compte Microsoft 365 Éducation ou un compte de travail. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Dans Outlook, cette erreur peut également se produire si l’authentification moderne est désactivée pour le client de l’utilisateur dans Exchange Online.[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
@@ -67,7 +67,7 @@ Ressource non valide. (Cette erreur ne doit être visible qu’en cours de déve
 
 ### <a name="13005"></a>13005
 
-Octroi non valide. Cela signifie généralement qu’Office n’a pas été pré-autorisé sur le service web du complément. Pour plus d’informations, consultez la rubrique sur la [création de l’application de service](sso-in-office-add-ins.md#create-the-service-application) et sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md). Cela peut également arriver si l’utilisateur n’a pas accordé à votre service les autorisations d’application pour son `profile` ou a révoqué l’accord. Votre code doit basculer vers un autre système d’authentification des utilisateurs.
+Octroi non valide. Cela signifie généralement qu’Office n’a pas été pré-autorisé sur le service web du complément. Pour plus d’informations, consultez la rubrique sur la [création de l’application de service](sso-in-office-add-ins.md#register-your-add-in-with-the-microsoft-identity-platform) et sur l’[enregistrement du complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md). Cela peut également arriver si l’utilisateur n’a pas accordé à votre service les autorisations d’application pour son `profile` ou a révoqué l’accord. Votre code doit basculer vers un autre système d’authentification des utilisateurs.
 
 Une autre cause possible, lors du développement, est que votre complément utilise Internet Explorer et que vous utilisez un certificat auto-signé. (Pour déterminer quel navigateur est utilisé par le complément, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).)
 
@@ -92,13 +92,13 @@ L’utilisateur a déclenché une opération qui appelle `getAccessToken` avant 
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le Office sur Microsoft Edge. Le domaine de Microsoft 365 utilisateur et le domaine se sont dans une zone de sécurité différente dans `login.microsoftonline.com` les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le Office sur Microsoft Edge. Le domaine de Microsoft 365 utilisateur et `login.microsoftonline.com` le domaine se sont dans une zone de sécurité différente dans les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 
 Il existe plusieurs causes possibles.
 
-- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir aussi les [ensembles de conditions requises de l’API d’identité.](../reference/requirement-sets/identity-api-requirement-sets.md)
+- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir aussi les [ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
 - L’option `forMSGraphAccess` a été transmise à l’appel à `getAccessToken` et l’utilisateur a obtenu le complément à partir d’AppSource. Dans ce scénario, l’administrateur du client n’a pas donné son accord au complément pour les étendues Microsoft Graph (autorisations) dont il a besoin. Le fait de rappeler `getAccessToken` avec le `allowConsentPrompt` ne résoudra pas le problème, car Office est autorisé à inviter l’utilisateur à donner l’autorisation uniquement à l’étendue de `profile` AAD.
 
 Votre code doit basculer vers un autre système d’authentification des utilisateurs.
@@ -107,7 +107,7 @@ En développement, le complément est sideloaded dans Outlook et l’option `for
 
 ### <a name="13013"></a>13013
 
-Le nombre d’appels a été trop élevé en peu de temps, Office `getAccessToken` a donc limitée l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios dans le cas où le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la variable est utilisée dans `retryGetAccessToken` [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
+Le `getAccessToken` nombre d’appels a été trop élevé en peu de temps, Office a donc limitée l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios dans le cas où le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée [ dansHomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -127,7 +127,7 @@ Dans certaines configurations d’identité dans AAD et Microsoft 365, il est po
 
 Votre code doit tester cette propriété `claims`. En fonction de l’architecture de votre complément, vous pouvez le tester côté client, ou le tester sur le serveur et le relayer sur le client. Il vous faut ces informations dans le client, car Office gère l’authentification des compléments SSO. Si vous le relayez côté serveur, le message adressé au client peut être une erreur (telle que `500 Server Error` ou `401 Unauthorized`) ou se trouver dans le corps d’une réponse de succès (telle que `200 OK`). Dans les deux cas, le rappel (réussite ou échec) de l’appel AJAX de votre code côté client à l’API web de votre complément devra tester cette réponse.
 
-Quelle que soit votre architecture, si la valeur de revendications a été envoyée à partir de AAD, votre code doit rappeler et transmettre `getAccessToken` l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
+Quelle que soit votre architecture, si la valeur de revendications a été envoyée à partir de AAD, votre code `getAccessToken` doit rappeler et transmettre l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
 
 ### <a name="consent-missing-errors"></a>Erreurs de consentement manquant
 
@@ -142,6 +142,6 @@ Ce type d’erreur ne doit apparaître qu’en développement.
 - Votre code côté serveur doit envoyer une réponse `403 Forbidden` au client qui doit consigner l’erreur dans la console ou l’enregistrer dans un journal.
 - Assurez-vous que la section [Scopes](../reference/manifest/scopes.md) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
-### <a name="invalid-audience-error-in-the-access-token-not-the-bootstrap-token"></a>Erreur d’audience non valide dans le jeton d’accès (pas le jeton bootstrap)
+### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Erreur d’audience non valide dans le jeton d’accès pour Microsoft Graph
 
 Votre code côté serveur doit envoyer une réponse `403 Forbidden` au client, qui doit présenter un message amical à l’utilisateur et éventuellement consigner l’erreur dans la console ou l’enregistrer dans un journal.

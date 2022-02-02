@@ -1,14 +1,14 @@
 ---
 title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
-ms.date: 11/11/2021
+ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f920ce4465256004ab0a286feca8f889c38a4f3
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 5769c6bbd639fab1ce5399b3d7a414ae54d35269
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074286"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320283"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook’authentification unique
 
@@ -31,7 +31,7 @@ Pour utiliser l’authentification unique, votre complément Outlook devra avoir
 
 ### <a name="provide-consent-when-sideloading-an-add-in"></a>Consentement fourni pendant le chargement indépendant d’un complément
 
-Lorsque vous développez un add-in, vous devez fournir votre consentement à l’avance. Pour plus d’informations, voir [Accorder le consentement de l’administrateur au module complémentaire.](../develop/grant-admin-consent-to-an-add-in.md)
+Lorsque vous développez un add-in, vous devez fournir votre consentement à l’avance. Pour plus d’informations, voir [Accorder le consentement de l’administrateur au module complémentaire](../develop/grant-admin-consent-to-an-add-in.md).
 
 ## <a name="update-the-add-in-manifest"></a>Mise à jour du manifeste de complément
 
@@ -43,18 +43,19 @@ Le complément obtient un jeton SSO avec le script côté client. Pour plus d’
 
 ## <a name="use-the-sso-token-at-the-back-end"></a>Utilisation du jeton SSO dans le back-end
 
-Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jeton d’accès si votre complément ne le transmet pas côté serveur et ne l’utilise pas à cet emplacement. Pour plus d’informations sur ce que votre côté serveur peut et doit faire, reportez-vous à la section [Ajouter du code côté serveur](../develop/sso-in-office-add-ins.md#add-server-side-code).
+Dans la plupart des scénarios, il n’est pas vraiment utile d’obtenir le jeton d’accès si votre complément ne le transmet pas côté serveur et ne l’utilise pas à cet emplacement. Pour plus d’informations sur ce que votre côté serveur peut et doit faire, reportez-vous à la section [Ajouter du code côté serveur](../develop/sso-in-office-add-ins.md#pass-the-access-token-to-server-side-code).
 
 > [!IMPORTANT]
 > Quand vous utilisez le jeton SSO sous forme d’identité dans le complément *Outlook*, nous vous recommandons d’[utiliser le jeton d’identité Exchange](authenticate-a-user-with-an-identity-token.md) comme identité alternative. Les utilisateurs de votre complément peuvent utiliser plusieurs clients, dont certains ne fourniront peut-être pas de jeton SSO. En utilisant le jeton d’identité Exchange comme alternative, vous pouvez éviter d’inviter les utilisateurs à entrer leurs informations d’identification plusieurs fois. Pour plus d’informations, voir[Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook](implement-sso-in-outlook-add-in.md).
 
 ## <a name="sso-for-event-based-activation"></a>SSO pour l’activation basée sur des événements
 
-Des étapes supplémentaires sont à suivre si votre complément utilise l’activation basée sur des événements. Pour plus d’informations, voir Activer l' [sign-on unique (SSO)](use-sso-in-event-based-activation.md)dans Outlook qui utilisent l’activation basée sur des événements.
+Des étapes supplémentaires sont à suivre si votre complément utilise l’activation basée sur des événements. Pour plus d’informations, voir [Activer l’sign-on unique (SSO) dans Outlook qui utilisent l’activation basée sur des événements](use-sso-in-event-based-activation.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-- Pour obtenir un exemple Outlook qui utilise le jeton sso pour accéder à l’API Microsoft Graph, voir Outlook [SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)du Outlook.
-- [Référence d’API SSO](../develop/sso-in-office-add-ins.md#sso-api-reference)
+- [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_)
+- Pour obtenir un exemple Outlook qui utilise le jeton sso pour accéder à l’API Microsoft Graph, voir Outlook [SSO du Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
+- [Référence d’API SSO](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [Ensemble d’exigences IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
-- [Activer l' sign-on unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur des événements](use-sso-in-event-based-activation.md)
+- [Activer l’sign-on unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur des événements](use-sso-in-event-based-activation.md)
