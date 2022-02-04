@@ -3,13 +3,8 @@ title: Vue d’ensemble de l’authentification et de l’autorisation dans les 
 description: Découvrez le fonctionnement de l’authentification et de l’autorisation dans les compléments Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1dab5e7e4cd1d5a32115bdecca3fa742699a53b9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320122"
 ---
+
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
 Les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de se connecter pour utiliser votre complément avec un compte Microsoft, un compte Microsoft 365 Éducation ou professionnel ou un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
@@ -32,7 +27,7 @@ L’utilisation de l’authentification unique (SSO) est pratique pour l’utili
 
 Souvent, votre complément a uniquement besoin de l’identité de l’utilisateur. Par exemple, vous pouvez simplement personnaliser votre complément et afficher le nom de l’utilisateur dans le volet des tâches. Vous pouvez également souhaiter qu’un ID unique associe l’utilisateur à ses données dans votre base de données. Pour ce faire, il suffit d’obtenir le jeton d’accès pour l’utilisateur auprès d’Office.
 
-Pour obtenir l’identité de l’utilisateur via l’authentification unique, appelez la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). La méthode retourne un jeton d’accès qui est également un jeton d’identité contenant plusieurs revendications, unique à l’utilisateur connecté actuel, y compris `preferred_username`, `name`, `sub` et `oid`. Pour plus d’informations sur ces propriétés, consultez [jetons d’ID de la Plateforme d’identités Microsoft](/azure/active-directory/develop/id-tokens). Pour obtenir un exemple du jeton retourné par [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_), consultez [Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+Pour obtenir l’identité de l’utilisateur via l’authentification unique, appelez la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). La méthode retourne un jeton d’accès qui est également un jeton d’identité contenant plusieurs revendications, unique à l’utilisateur connecté actuel, y compris `preferred_username`, `name`, `sub` et `oid`. Pour plus d’informations sur ces propriétés, consultez [jetons d’ID de la Plateforme d’identités Microsoft](/azure/active-directory/develop/id-tokens). Pour obtenir un exemple du jeton retourné par [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)), consultez [Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
 
 Si l’utilisateur n’est pas connecté, Office ouvrira une boîte de dialogue et utilise la plateforme d’identités Microsoft pour demander à l’utilisateur de se connecter. Ensuite, la méthode retournera un jeton d’accès ou génère une erreur si elle ne parvient pas à connecter l’utilisateur.
 
@@ -42,7 +37,7 @@ Avant de commencer l’implémentation de l’authentification des utilisateurs 
 
 ### <a name="access-your-web-apis-through-sso"></a>Accéder à vos API Web via l’authentification unique
 
-Si votre complément a des API côté serveur qui nécessitent un utilisateur autorisé, appelez la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) pour obtenir un jeton d’accès. Le jeton d’accès fournit l’accès à votre propre serveur web (configuré via un [inscription d’application Microsoft Azure ](register-sso-add-in-aad-v2.md).) Lorsque vous appelez des API sur votre serveur Web, vous transmettez également le jeton d’accès pour autoriser l’utilisateur.
+Si votre complément a des API côté serveur qui nécessitent un utilisateur autorisé, appelez la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) pour obtenir un jeton d’accès. Le jeton d’accès fournit l’accès à votre propre serveur web (configuré via un [inscription d’application Microsoft Azure ](register-sso-add-in-aad-v2.md).) Lorsque vous appelez des API sur votre serveur Web, vous transmettez également le jeton d’accès pour autoriser l’utilisateur.
 
 Le code suivant montre comment construire une requête HTTPS GET vers l’API de serveur Web du complément pour obtenir des données. Le code s’exécute côté client, par exemple dans un volet Office. Il obtient d’abord le jeton d’accès en appelant `getAccessToken`. Il construit ensuite un appel AJAX avec l’en-tête et l’URL d’autorisation appropriés pour l’API serveur.
 
@@ -77,7 +72,7 @@ Le code suivant montre un exemple de gestionnaire /api/data pour l’appel REST 
 
 Dans certains scénarios, non seulement vous avez besoin de l’identité de l’utilisateur, mais vous devez également accéder aux ressources [Microsoft Graph](/graph) pour le compte de l’utilisateur. Par exemple, vous devrez peut-être envoyer un e-mail ou créer une conversation dans Teams pour le compte de l’utilisateur. Ces actions, et bien plus encore, peuvent être effectuées via Microsoft Graph. Vous devrez suivre ces étapes :
 
-1. Obtenez le jeton d’accès pour l’utilisateur actuel via l’authentification unique en appelant [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Si l’utilisateur n’est pas connecté, Office ouvrira une boîte de dialogue et connectera l’utilisateur avec la plateforme d’identités Microsoft. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès.
+1. Obtenez le jeton d’accès pour l’utilisateur actuel via l’authentification unique en appelant [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). Si l’utilisateur n’est pas connecté, Office ouvrira une boîte de dialogue et connectera l’utilisateur avec la plateforme d’identités Microsoft. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès.
 1. Transmettez le jeton d’accès à votre code côté serveur.
 1. Du côté serveur, utilisez le [flux on-Behalf-Of OAuth 2.0 On-Behalf-Of](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) pour échanger le jeton d’accès contre un nouveau jeton d’accès contenant l’identité d’utilisateur déléguée et les autorisations nécessaires pour appeler Microsoft Graph.
 

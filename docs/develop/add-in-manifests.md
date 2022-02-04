@@ -3,13 +3,8 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 09/28/2021
 ms.localizationpriority: high
-ms.openlocfilehash: f5587fc96789769b17a15e242211a7cbb97e5ea3
-ms.sourcegitcommit: e36c25023b4268e8a50af984d753379082d44295
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2021
-ms.locfileid: "60923565"
 ---
+
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
 Le fichier manifeste XML d’un complément Office la manière dont votre complément doit être activé lorsqu’un utilisateur final l’installe et l’utilise avec des documents et des applications Office.
@@ -122,7 +117,7 @@ Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque
 > Il existe deux exceptions à ce comportement.
 >
 > - Cela s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
-> - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#displayDialogAsync_startAddress__options__callback_), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
+> - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
 
 L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, même dans la version de bureau Office.
 

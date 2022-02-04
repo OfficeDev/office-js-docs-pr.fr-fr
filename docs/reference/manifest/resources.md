@@ -1,18 +1,23 @@
 ---
 title: Élément Ressources dans le fichier manifest
-description: L’élément Resources contient des icônes, des chaînes, des URL pour le nœud VersionOverrides.
-ms.date: 03/30/2021
+description: 'L’élément Resources contient des icônes, des chaînes, des URL pour le nœud VersionOverrides.'
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 874c89a504fa32d7fc7b21324a08d21681d5a11a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153091"
 ---
+
 # <a name="resources-element"></a>Élément Resources
 
 Contient des icônes, des chaînes et des URL pour le nœud [VersionOverrides](versionoverrides.md). Un élément de manifeste indique une ressource à l’aide de l’**Id** de la ressource. Cela permet de conserver une taille de manifeste raisonnable, surtout lorsque les ressources sont disponibles en plusieurs versions selon les paramètres régionaux. Un **Id** doit être unique au sein du manifeste et doit comporter 32 caractères au maximum.
+
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que vous puissiez définir une ressource différente pour un paramètre régional spécifique.
 
@@ -28,15 +33,15 @@ Chaque ressource peut avoir plusieurs éléments enfants **Override** afin que v
 > [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
-### <a name="images"></a>Images
+### <a name="images"></a>Des images
 
-Chaque icône doit avoir trois **éléments Images,** un pour chacune des trois tailles obligatoires :
+Chaque icône doit avoir trois **éléments Images** , un pour chacune des trois tailles obligatoires :
 
 - 16x16
 - 32x32
 - 80x80
 
-Les tailles supplémentaires suivantes sont également pris en charge, mais pas obligatoires.
+Les tailles supplémentaires suivantes sont également pris en charge, mais ne sont pas obligatoires.
 
 - 20x20
 - 24x24
@@ -46,8 +51,8 @@ Les tailles supplémentaires suivantes sont également pris en charge, mais pas 
 
 > [!IMPORTANT]
 >
-> - Si cette image est l’icône représentative de votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
-> - Outlook doit pouvoir mettre en cache les ressources d’image pour des raisons de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Outlook remplacera alors automatiquement une image générique ou par défaut.
+> - Si cette image est l’icône représentative de votre application, voir Créer des [listes efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
+> - Office les add-ins nécessitent la possibilité de mettre en cache des ressources d’image à des fins de performances. Par conséquent, le serveur qui héberge une ressource d’image ne doit pas ajouter les directives CACHE-CONTROL à l’en-tête de réponse. Ces directives entraînent la Office automatiquement une image générique ou par défaut. Pour forcer l’utilisation de nouvelles icônes sur votre ordinateur de développement, Office [cache](../../testing/clear-cache.md). Pour forcer l’utilisation de nouvelles icônes sur les ordinateurs de vos utilisateurs finaux, vous devez leur donner une URL différente de celle des anciennes.
 
 ## <a name="resources-examples"></a>Exemples de ressources
 

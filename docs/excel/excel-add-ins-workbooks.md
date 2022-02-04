@@ -4,16 +4,11 @@ description: Découvrez comment effectuer des tâches courantes avec des workboo
 ms.date: 06/07/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 50371c0670e8e66bf7a36c5c52c7a9753154f29d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152203"
 ---
+
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 
-Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de classeurs utilisant l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en charge, voir `Workbook` [Objet Workbook (interface API JavaScript pour Excel).](/javascript/api/excel/excel.workbook) Cet article décrit également les actions de niveau classeur effectuées via l’objet[Application](/javascript/api/excel/excel.application).
+Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de classeurs utilisant l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés `Workbook` et méthodes que l’objet prend en charge, voir [Objet Workbook (interface API JavaScript pour Excel).](/javascript/api/excel/excel.workbook). Cet article décrit également les actions de niveau classeur effectuées via l’objet[Application](/javascript/api/excel/excel.application).
 
 L’objet classeur est le point d’entrée pour votre complément pour interagir avec Excel. Il gère les collections de feuilles de calcul, des tableaux, des tableaux croisés dynamiques et plus, via lesquels les données Excel sont consultées et modifiées. L’objet[WorksheetCollection](/javascript/api/excel/excel.worksheetcollection) donne accès à votre complément aux données de tous les classeurs via les feuilles de calcul individuelles. Plus précisément, il permet à votre complément d’ajouter des feuilles de calcul et naviguer parmi celles-ci, et assigner des gestionnaires d’événements de feuille de calcul. L’article [Manipuler des feuilles de calcul à l’aide de l’API JavaScript Excel](excel-add-ins-worksheets.md) décrit comment accéder et modifier des feuilles de calcul.
 
@@ -52,7 +47,7 @@ Excel.createWorkbook();
 
 La `createWorkbook` méthode peut également créer une copie d’un classeur existant. La méthode accepte comme un paramètre facultatif une représentation de chaîne codée en base 64 d’un fichier .xlsx. Le classeur résultant sera une copie de ce fichier, en supposant que l’argument de chaîne est un fichier .xlsx valide.
 
-Vous pouvez obtenir le classez actuel de votre add-in sous la forme d’une chaîne codée en base 64 à l’aide du [slicing de fichier.](/javascript/api/office/office.document#getFileAsync_fileType__options__callback_) La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
+Vous pouvez obtenir le classez actuel de votre add-in sous la forme d’une chaîne codée en base 64 à l’aide du [slicing de fichier](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). La classe [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) peut être utilisée pour convertir un fichier dans la chaîne codée en base 64 requise, comme indiqué dans l’exemple suivant.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -76,16 +71,16 @@ reader.readAsDataURL(myFile.files[0]);
 
 ### <a name="insert-a-copy-of-an-existing-workbook-into-the-current-one"></a>Insérer une copie d’un classeur existant dans l’offre actuelle
 
-L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode pour insérer des copies des feuilles de calcul du `insertWorksheetsFromBase64` workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, tout comme `Excel.createWorkbook` l’appel. 
+L’exemple précédent montre un nouveau classeur créé à partir d’un classeur existant. Vous pouvez également copier la totalité ou une partie d’un classeur existant dans le tableau actuellement associé à votre complément. Un [workbook a](/javascript/api/excel/excel.workbook) la méthode `insertWorksheetsFromBase64` pour insérer des copies des feuilles de calcul du workbook cible dans lui-même. Le fichier de l’autre classeeur est transmis sous la forme d’une chaîne codée en base 64, comme l’appel `Excel.createWorkbook` . 
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
 ```
 
 > [!IMPORTANT]
-> La `insertWorksheetsFromBase64` méthode est prise en charge Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le Web cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la `insertWorksheetsFromBase64` méthode renvoie `UnsupportedFeature` l’erreur dans Excel sur le Web. 
+> La `insertWorksheetsFromBase64` méthode est prise en charge pour Excel sur Windows, Mac et le web. Il n’est pas pris en charge pour iOS. En outre, dans Excel sur le Web cette méthode ne prend pas en charge les feuilles de calcul source avec les éléments PivotTable, Chart, Comment ou Slicer. Si ces objets sont présents, la méthode `insertWorksheetsFromBase64` renvoie l’erreur `UnsupportedFeature` dans Excel sur le Web. 
 
-L’exemple de code suivant montre comment insérer des feuilles de calcul à partir d’un autre workbook dans le workbook actuel. Cet exemple de code traite d’abord un fichier de classer avec un objet et extrait une chaîne codée en base 64, puis il insère cette chaîne codée en base 64 dans le classez en [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) cours. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul nommée **Sheet1**. Notez qu’il est transmis en tant que paramètre pour la `[]` [propriété InsertWorksheetOptions.sheetNamesToInsert.](/javascript/api/excel/excel.insertworksheetoptions#sheetNamesToInsert) Cela signifie que toutes les feuilles de calcul du workbook cible sont insérées dans le manuel en cours.
+L’exemple de code suivant montre comment insérer des feuilles de calcul à partir d’un autre workbook dans le workbook actuel. Cet exemple de code [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) traite d’abord un fichier de classer avec un objet et extrait une chaîne codée en base 64, puis il insère cette chaîne codée en base 64 dans le classez actuel. Les nouvelles feuilles de calcul sont insérées après la feuille de calcul nommée **Sheet1**. Notez qu’il `[]` est transmis en tant que paramètre pour la [propriété InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) . Cela signifie que toutes les feuilles de calcul du manuel cible sont insérées dans le manuel en cours.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -232,9 +227,9 @@ Excel.run(function (context) {
 
 Un workbook a des paramètres de langue et de culture qui affectent l’affichage de certaines données. Ces paramètres peuvent vous aider à trouver des données lorsque les utilisateurs de votre add-in partagent des workbooks dans différentes langues et cultures. Votre add-in peut utiliser l’analyse de chaîne pour localiser le format des nombres, des dates et des heures en fonction des paramètres de culture système afin que chaque utilisateur voie les données dans le format de sa propre culture.
 
-`Application.cultureInfo`définit les paramètres de culture système en tant [qu’objet CultureInfo.](/javascript/api/excel/excel.cultureinfo) Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
+`Application.cultureInfo` définit les paramètres de culture système en tant [qu’objet CultureInfo](/javascript/api/excel/excel.cultureinfo) . Il contient des paramètres tels que le séparateur décimal numérique ou le format de date.
 
-Certains paramètres de culture peuvent être modifiés par le [biais Excel’interface utilisateur.](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans `CultureInfo` l’objet. Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application)au niveau de l’application, telles que `Application.decimalSeparator` .
+Certains paramètres de culture peuvent être [modifiés par le biais Excel’interface utilisateur.](https://support.microsoft.com/office/c093b545-71cb-4903-b205-aebb9837bd1e) Les paramètres système sont conservés dans l’objet `CultureInfo` . Toutes les modifications locales sont conservées en tant [que propriétés](/javascript/api/excel/excel.application) au niveau de l’application, telles que `Application.decimalSeparator`.
 
 L’exemple suivant modifie le caractère séparateur décimal d’une chaîne numérique de « , » au caractère utilisé par les paramètres système.
 
@@ -343,12 +338,12 @@ context.application.suspendApiCalculationUntilNextSync();
 
 Votre add-in peut détecter lorsqu’un workbook est activé. Un workbook devient *inactif* lorsque l’utilisateur bascule le focus vers un autre workbook, vers une autre application ou (dans Excel sur le Web) vers un autre onglet du navigateur web. Un workbook est *activé lorsque* l’utilisateur renvoie le focus au workbook. L’activation du workbook peut déclencher des fonctions de rappel dans votre complément, telles que l’actualisation des données du workbook.
 
-Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#onActivated) d’un workbook. Les handlers d’événements de l’événement reçoivent un `onActivated` [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
+Pour détecter lorsqu’un workbook est activé, inscrivez un [handler](excel-add-ins-events.md#register-an-event-handler) d’événements pour l’événement [onActivated](/javascript/api/excel/excel.workbook#excel-excel-workbook-onactivated-member) d’un workbook. Les handlers d’événements de `onActivated` l’événement reçoivent un [objet WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) lorsque l’événement se déclenche.
 
 > [!IMPORTANT]
-> `onActivated`L’événement ne détecte pas lorsqu’un workbook est ouvert. Cet événement détecte uniquement lorsqu’un utilisateur bascule le focus vers un workbook déjà ouvert.
+> L’événement `onActivated` ne détecte pas lorsqu’un workbook est ouvert. Cet événement détecte uniquement lorsqu’un utilisateur bascule le focus vers un workbook déjà ouvert.
 
-L’exemple de code suivant montre comment inscrire le handler d’événements et `onActivated` configurer une fonction de rappel.
+L’exemple de code suivant montre comment inscrire le handler `onActivated` d’événements et configurer une fonction de rappel.
 
 ```js
 Excel.run(function (context) {
@@ -377,7 +372,7 @@ function workbookActivated(event) {
 
 ## <a name="save-the-workbook"></a>Enregistrer le classeur
 
-`Workbook.save` enregistre le classeur dans un espace de stockage permanent. La `save` méthode prend un seul paramètre facultatif qui peut être `saveBehavior` l’une des valeurs suivantes.
+`Workbook.save` enregistre le classeur dans un espace de stockage permanent. La `save` méthode prend un seul paramètre facultatif `saveBehavior` qui peut être l’une des valeurs suivantes.
 
 - `Excel.SaveBehavior.save` (par défaut) : le fichier est enregistré sans inviter l’utilisateur à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier n’a pas été enregistré précédemment, il est enregistré dans l’emplacement par défaut. Si le fichier a été enregistré précédemment, il est enregistré au même emplacement.
 - `Excel.SaveBehavior.prompt` : si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement. Si le fichier a été enregistré précédemment, il est enregistré dans le même emplacement et l’utilisateur ne reçoit pas d’invite.
@@ -391,7 +386,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ## <a name="close-the-workbook"></a>Fermer le classeur
 
-`Workbook.close` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La `close` méthode prend un seul paramètre facultatif qui peut être `closeBehavior` l’une des valeurs suivantes.
+`Workbook.close` ferme le classeur, ainsi que des compléments qui sont associées au classeur (l’application Excel reste ouverte). La `close` méthode prend un seul paramètre facultatif `closeBehavior` qui peut être l’une des valeurs suivantes.
 
 - `Excel.CloseBehavior.save` (par défaut) : le fichier est enregistré avant d’être fermé. Si le fichier n’a pas été enregistré précédemment, l’utilisateur sera invité à spécifier le nom de fichier et l’emplacement d’enregistrement.
 - `Excel.CloseBehavior.skipSave` : le fichier est fermé immédiatement, sans enregistrer. Les modifications non enregistrées sont perdues.

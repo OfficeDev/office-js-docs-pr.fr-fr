@@ -4,15 +4,10 @@ description: Découvrez les concepts de base pour l’utilisation Excel types de
 ms.date: 01/14/2021
 ms.topic: conceptual
 ms.prod: excel
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: a769010ad46af7bba2210d9a6f9d66082cb3f815
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074307"
 ---
+
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
 > [!NOTE]
@@ -20,7 +15,7 @@ ms.locfileid: "62074307"
 >
 > Pour utiliser les API disponibles en préversion :
 >
-> - Vous devez référencer la bibliothèque **bêta** sur le réseau de distribution de contenu (CDN) (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` . Pour plus d’informations, voir le @microsoft du package NPM [office-js.](https://www.npmjs.com/package/@microsoft/office-js)
+> - Vous devez référencer la **bibliothèque bêta** sur le réseau de distribution de contenu (CDN) ( https://appsforoffice.microsoft.com/lib/beta/hosted/office.js) . Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` . Pour plus d’informations, voir le @microsoft du package NPM [office-js.](https://www.npmjs.com/package/@microsoft/office-js)
 > - Vous devrez peut-être rejoindre [Office programme Insider pour](https://insider.office.com) accéder à des builds Office plus récentes.
 >
 > Pour tester les types de données dans Office sur Windows, vous devez avoir un numéro de build Excel supérieur ou égal à 16.0.14626.10000. Pour tester les types de données dans Office sur Mac, vous devez avoir un numéro de build Excel supérieur ou égal à 16.55.21102600.
@@ -29,11 +24,11 @@ Cet article explique comment utiliser [l’API JavaScript Excel pour](../referen
 
 ## <a name="core-concepts"></a>Concepts de base
 
-Utilisez la [`Range.valuesAsJson`](/javascript/api/excel/excel.range#valuesAsJson) propriété pour utiliser des valeurs de type de données. Cette propriété est similaire à [Range.values,](/javascript/api/excel/excel.range#values)mais renvoie uniquement les quatre types de base : `Range.values` chaîne, nombre, booléen ou valeurs d’erreur. `Range.valuesAsJson` peut renvoyer des informations étendues sur les quatre types de base, et cette propriété peut renvoyer des types de données tels que des valeurs numériques formatées, des entités et des images web.
+Utilisez la [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) propriété pour utiliser des valeurs de type de données. Cette propriété est similaire à [Range.values,](/javascript/api/excel/excel.range#excel-excel-range-values-member)mais renvoie uniquement les quatre types de base : `Range.values` chaîne, nombre, booléen ou valeurs d’erreur. `Range.valuesAsJson` peut renvoyer des informations étendues sur les quatre types de base, et cette propriété peut renvoyer des types de données tels que des valeurs numériques formatées, des entités et des images web.
 
 ### <a name="json-schema"></a>Schéma JSON
 
-Chaque type de données utilise un schéma de métadonnées JSON conçu pour ce type. Cela définit le [CellValueType](/javascript/api/excel/excel.cellvaluetype) des données et des informations supplémentaires sur la cellule, telles que `basicValue`, `numberFormat`, ou `address`. Chacune `CellValueType` possède des propriétés disponibles en fonction de ce type. Par exemple, le `webImage` type inclut les [propriétés altText](/javascript/api/excel/excel.webimagecellvalue#altText) [et attribution.](/javascript/api/excel/excel.webimagecellvalue#attribution) Les sections suivantes montrent des exemples de code JSON pour la valeur numérique mise en forme, la valeur d’entité et les types de données d’image web.
+Chaque type de données utilise un schéma de métadonnées JSON conçu pour ce type. Cela définit le [CellValueType](/javascript/api/excel/excel.cellvaluetype) des données et des informations supplémentaires sur la cellule, telles que `basicValue`, `numberFormat`, ou `address`. Chacune `CellValueType` possède des propriétés disponibles en fonction de ce type. Par exemple, le `webImage` type inclut les [propriétés altText](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-alttext-member) [et attribution.](/javascript/api/excel/excel.webimagecellvalue#excel-excel-webimagecellvalue-attribution-member) Les sections suivantes montrent des exemples de code JSON pour la valeur numérique mise en forme, la valeur d’entité et les types de données d’image web.
 
 Le schéma de métadonnées JSON pour chaque type de données inclut également une ou plusieurs propriétés en lecture seule qui sont utilisées lorsque les calculs rencontrent des scénarios incompatibles, tels qu’une version d’Excel qui ne répond pas à la condition de numéro de build minimale pour la fonctionnalité des types de données. La propriété `basicType` fait partie des métadonnées JSON de chaque type de données, et il s’agit toujours d’une propriété en lecture seule. La `basicType`propriété est utilisée comme secours lorsque le type de données n’est pas pris en charge ou est formatée de manière incorrecte.
 

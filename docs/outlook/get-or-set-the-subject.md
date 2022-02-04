@@ -3,16 +3,11 @@ title: Obtenir ou définir l’objet dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’objet d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 04/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 534b0cff9d065873ddf566a0d82a3716529414df
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153131"
 ---
+
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
-L’API JavaScript Office fournit des méthodes asynchrones ([subject.getAsync](/javascript/api/outlook/office.Subject#getAsync_options__callback_) et [subject.setAsync](/javascript/api/outlook/office.subject#setAsync_subject__options__callback_)) pour obtenir et définir l’objet d’un rendez-vous ou d’un message que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour composer des add-ins. Pour utiliser ces méthodes, assurez-vous que vous avez correctement installé le manifeste du Outlook pour activer le module dans les formulaires de composition.
+L’API JavaScript Office fournit des méthodes asynchrones ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) et [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) pour obtenir et définir l’objet d’un rendez-vous ou d’un message que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour composer des add-ins. Pour utiliser ces méthodes, assurez-vous que vous avez correctement installé le manifeste du Outlook pour activer le module dans les formulaires de composition.
 
 La propriété **subject** est disponible pour un accès en lecture dans les formulaires de lecture et de composition des rendez-vous et des messages. Dans un formulaire de lecture, vous pouvez accéder à la propriété directement à partir de l’objet parent, comme dans l’exemple suivant :
 
@@ -44,7 +39,7 @@ Cette section présente un exemple de code qui obtient l’objet du rendez-vous 
 
 ```
 
-Pour utiliser **item.subject.getAsync**, fournissez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la méthode de rappel via le paramètre facultatif _asyncContext_. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’objet sous forme de chaîne de texte brut à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Pour utiliser **item.subject.getAsync**, fournissez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la méthode de rappel via le paramètre facultatif _asyncContext_. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’objet sous forme de chaîne de texte brut à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 
 ```js

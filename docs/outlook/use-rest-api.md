@@ -3,13 +3,8 @@ title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
 ms.date: 07/06/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fd34e40a35d7a0cc190265587fec6bf8dd60593c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149075"
 ---
+
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 
 L’espace de noms [Office.context.mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) permet d’accéder à de nombreux champs communs pour les messages et les rendez-vous. Toutefois, dans certains scénarios, un complément peut avoir besoin d’accéder aux données qui ne sont pas exposées par l’espace de noms. Par exemple, le complément peut dépendre de propriétés personnalisées définies par une application extérieure ou avoir besoin rechercher dans la boîte aux lettres de l’utilisateur des messages provenant du même expéditeur. Dans ces scénarios, l’[API REST Outlook](/outlook/rest) est la méthode recommandée pour récupérer les informations.
@@ -17,7 +12,7 @@ L’espace de noms [Office.context.mailbox.item](../reference/objectmodel/previe
 > [!IMPORTANT]
 > **Les API REST Outlook sont dépréciées**
 >
-> Les Outlook rest seront complètement désaffectés en novembre 2022 (pour plus d’informations, reportez-vous à l’annonce de novembre [2020).](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/) Vous devez migrer des add-ins existants pour utiliser [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). En outre, [comparez les points Graph et Outlook de l’API REST Microsoft.](/outlook/rest/compare-graph)
+> Les Outlook rest seront complètement désaffectés en novembre 2022 (pour plus d’informations, reportez-vous à l’annonce de novembre [2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Vous devez migrer des add-ins existants pour utiliser [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Comparez [également les points Graph de l’API REST Outlook Microsoft](/outlook/rest/compare-graph).
 
 ## <a name="get-an-access-token"></a>Obtenir un jeton d’accès
 
@@ -54,7 +49,7 @@ Pour extraire l’élément en cours via REST, votre complément aura besoin de 
 - Dans d’autres clients Outlook, la valeur renvoyée par `Office.context.mailbox.item.itemId` est un ID au format EWS et doit être convertie à l’aide de la méthode [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
 - Vous devez également convertir l’ID de pièce jointe en ID au format REST afin de l’utiliser. La raison pour laquelle les ID doivent être convertis est que les ID EWS peuvent contenir des valeurs approuvées autres que des URL, ce qui entraîne des problèmes pour REST.
 
-Votre complément peut déterminer dans quel client Outlook il est chargé en consultant la propriété [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#hostName).
+Votre complément peut déterminer dans quel client Outlook il est chargé en consultant la propriété [Office.context.mailbox.diagnostics.hostName](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostname-member).
 
 ### <a name="example"></a>Exemple
 
@@ -89,7 +84,7 @@ var restHost = Office.context.mailbox.restUrl;
 Une fois que votre complément a le jeton d’accès, l’ID de l’élément et l’URL de l’API REST, il peut transmettre ces informations à un service principal qui appelle l’API REST, ou l’appeler directement à l’aide d’AJAX. L’exemple suivant appelle l’API REST de courrier Outlook pour obtenir le message actuel.
 
 > [!IMPORTANT]
-> Pour les déploiements Exchange locaux, les demandes côté client utilisant AJAX ou des bibliothèques similaires échouent, car CORS n’est pas pris en charge dans cette configuration de serveur.
+> Pour les déploiements de Exchange locaux, les demandes côté client utilisant AJAX ou des bibliothèques similaires échouent, car CORS n’est pas pris en charge dans cette configuration de serveur.
 
 ```js
 function getCurrentItem(accessToken) {

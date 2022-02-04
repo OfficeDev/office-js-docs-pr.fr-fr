@@ -1,26 +1,37 @@
 ---
 title: Élément OfficeTab dans le fichier manifest
 description: L’élément OfficeTab définit l’onglet du ruban où votre commande de add-in apparaît.
-ms.date: 06/20/2019
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 94af0e8744c496538a506fdc4626cd3f515129bb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152970"
 ---
+
 # <a name="officetab-element"></a>Élément OfficeTab
 
-Définit l’onglet du ruban sur lequel votre commande de complément s’affiche. Il peut s’agit de l’onglet par défaut (Accueil, **Message** ou **Réunion),** ou d’un onglet personnalisé défini par le module. Cet élément est obligatoire.
+Définit l’onglet du ruban sur lequel votre commande de complément s’affiche. Il peut s’agit de l’onglet par défaut ( **accueil,** **message** ou **réunion) ou** d’un onglet personnalisé défini par le module. Cet élément est obligatoire.
+
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Taskpane 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) lorsque le parent **VersionOverrides** est de type Taskpane 1.0.
+- [Boîte aux lettres 1.3 lorsque](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) le parent **VersionOverrides** est de type Mail 1.0.
+- [Boîte aux lettres 1.5 lorsque](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) le parent **VersionOverrides** est de type Mail 1.1.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  Groupe      | Oui |  Définit un groupe de commandes. Vous ne pouvez ajouter qu’un seul groupe par complément à l’onglet par défaut.  |
 
-Les valeurs d’onglet valides sont les suivantes `id` par application. Les valeurs **en gras** sont pris en charge à la fois sur ordinateur de bureau et en ligne (par exemple, Word 2016 ou version ultérieure Windows et Word sur le web).
+Les valeurs d’onglet valides sont les `id` suivantes par application. Les valeurs **en gras** sont pris en charge à la fois sur ordinateur de bureau et en ligne (par exemple, Word 2016 ou version ultérieure Windows et Word sur le web).
 
 ### <a name="outlook"></a>Outlook
 
@@ -93,14 +104,14 @@ Les valeurs d’onglet valides sont les suivantes `id` par application. Les vale
 
 ## <a name="group"></a>Group
 
-Groupe de points d’extension d’interface utilisateur dans un onglet. Un groupe peut avoir jusqu’à six contrôles. **L’attribut id** est obligatoire et chaque **ID** doit être unique dans le manifeste. **L’ID** est une chaîne de 125 caractères au maximum. Voir [Élément group](group.md).
+Groupe de points d’extension d’interface utilisateur dans un onglet. Un groupe peut avoir jusqu’à six contrôles. **L’attribut id** est obligatoire et chaque **ID** doit être unique parmi tous les groupes dans le manifeste. **L’ID** est une chaîne de 125 caractères au maximum. Voir [Élément group](group.md).
 
 ## <a name="officetab-example"></a>Exemple OfficeTab
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">
-    <Group id="msgreadTabMessage.grp1">
+    <Group id="Contoso.msgreadTabMessage.group1">
         <!-- Group Definition -->
     </Group>
   </OfficeTab>

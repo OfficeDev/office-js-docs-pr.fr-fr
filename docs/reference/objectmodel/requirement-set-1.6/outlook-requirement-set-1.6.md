@@ -1,15 +1,10 @@
 ---
-title: Ensemble de conditions requises de l’API du complément Outlook 1.6
+title: "Ensemble de conditions requises de l’API du complément\_Outlook\_1.6"
 description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.6.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fd96fbd8f310b4e194fe2601dd1900eae49c713
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150564"
 ---
+
 # <a name="outlook-add-in-api-requirement-set-16"></a>Ensemble de conditions requises de l’API du complément Outlook 1.6
 
 Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
@@ -19,7 +14,7 @@ Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des obje
 
 ## <a name="whats-new-in-16"></a>Nouveautés de la version 1.6
 
-L’ensemble de conditions requises 1.6 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md). Les fonctionnalités suivantes ont été ajoutées.
+L’ensemble de conditions requises 1.6 inclut toutes les fonctionnalités de l’ensemble [de conditions requises 1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Les nouvelles APIs Ajoutées pour les compléments contextuels pour que l’entité ou l’expression régulière corresponde avec l’utilisateur sélectionné pour activer le complément.
 - La nouvelles API ajoutée pour ouvrir un nouveau formulaire de message.
@@ -30,7 +25,7 @@ L’ensemble de conditions requises 1.6 inclut toutes les fonctionnalités de l�
 - [Office.context.mailbox.item.getSelectedEntities](office.context.mailbox.item.md#methods) ajouté: ajout d’une fonction qui obtient les entités figurant dans une correspondance en surbrillance sélectionnée par un utilisateur. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
 - [Office.context.mailbox.item.getSelectedRegExMatches](office.context.mailbox.item.md#methods) ajouté: ajout d’une fonction qui renvoie les valeurs de chaîne dans une correspondance en surbrillance qui correspondent aux expressions régulières définies dans le fichier manifeste XML. Les correspondances en surbrillance s’appliquent aux compléments contextuels.
 - [Office.context.mailbox.displayNewMessageForm](office.context.mailbox.md#methods)-Ajout d’une nouvelle fonction qui ouvre un nouveau formulaire de message.
-- [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6&preserve-view=true#accountType) ajouté: ajout d’un nouveau membre dans le profil d’utilisateur qui indique le type de compte d’utilisateur.
+- [Office.context.mailbox.userProfile.accountType](/javascript/api/outlook/office.userprofile?view=outlook-js-1.6&preserve-view=true#outlook-office-userprofile-accounttype-member) ajouté: ajout d’un nouveau membre dans le profil d’utilisateur qui indique le type de compte d’utilisateur.
 
 ## <a name="see-also"></a>Voir aussi
 

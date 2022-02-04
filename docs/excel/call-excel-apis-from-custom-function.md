@@ -3,18 +3,13 @@ title: Appeler Excel API JavaScript à partir d’une fonction personnalisée
 description: Découvrez les Excel JavaScript que vous pouvez appeler à partir de votre fonction personnalisée.
 ms.date: 08/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 83d2e488d56fb9ab3e97b87160c71f44da2f8371
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149888"
 ---
+
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler Excel API JavaScript à partir d’une fonction personnalisée
 
 Appelez Excel API JavaScript à partir de vos fonctions personnalisées pour obtenir des données de plage et obtenir plus de contexte pour vos calculs. Appeler Excel API JavaScript par le biais d’une fonction personnalisée peut être utile lorsque :
 
-- Une fonction personnalisée doit obtenir des informations de la Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de Excel informations spécifiques.
+- Une fonction personnalisée doit obtenir des informations de la Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de Excel des informations spécifiques.
 - Une fonction personnalisée définira le format numérique de la cellule pour les valeurs de retour après le calcul.
 
 > [!IMPORTANT]
@@ -24,7 +19,7 @@ Appelez Excel API JavaScript à partir de vos fonctions personnalisées pour obt
 
 Pour appeler Excel API JavaScript à partir d’une fonction personnalisée, vous avez d’abord besoin d’un contexte. Utilisez le [Excel. Objet RequestContext](/javascript/api/excel/excel.requestcontext) pour obtenir un contexte. Utilisez ensuite le contexte pour appeler les API dont vous avez besoin dans le workbook.
 
-L’exemple de code suivant montre comment utiliser pour obtenir une valeur à partir `Excel.RequestContext` d’une cellule dans le workbook. Dans cet exemple, le paramètre est transmis à la Excel `address` de l’API JavaScript [Worksheet.getRange](/javascript/api/excel/excel.worksheet#getRange_address_) et doit être entré sous forme de chaîne. Par exemple, la fonction personnalisée entrée dans l’interface utilisateur Excel doit suivre le modèle , où est l’adresse de la cellule à partir de laquelle récupérer `=CONTOSO.GETRANGEVALUE("A1")` `"A1"` la valeur.
+L’exemple de code suivant montre comment `Excel.RequestContext` utiliser pour obtenir une valeur à partir d’une cellule dans le workbook. Dans cet exemple, le `address` paramètre est transmis à la Excel de l’API JavaScript [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) et doit être entré sous forme de chaîne. Par exemple, la fonction personnalisée entrée dans l’interface utilisateur Excel doit `=CONTOSO.GETRANGEVALUE("A1")`suivre le modèle , `"A1"` où est l’adresse de la cellule à partir de laquelle récupérer la valeur.
 
 ```JavaScript
 /**
@@ -46,7 +41,7 @@ async function getRangeValue(address) {
 }
 ```
 
-## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitations de l’appel Excel api JavaScript par le biais d’une fonction personnalisée
+## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitations de l’appel Excel api JavaScript via une fonction personnalisée
 
 N’appelez pas Excel API JavaScript à partir d’une fonction personnalisée qui modifie l’environnement de Excel. Cela signifie que vos fonctions personnalisées ne doivent pas faire l’une des choses suivantes :
 
@@ -57,11 +52,11 @@ N’appelez pas Excel API JavaScript à partir d’une fonction personnalisée q
 - Ajoutez des noms à un workbook.
 - Définissez des propriétés ou exécutez la plupart des méthodes.
 
-Le Excel peut entraîner des performances médiocres, des délai d’exécution et des boucles infinies. Les calculs de fonction personnalisée ne doivent pas s’exécuter pendant qu’Excel recalcul est en cours, car il se traduit par des résultats imprévisibles.
+Le Excel peut entraîner des performances médiocres, des délai d’exécution et des boucles infinies. Les calculs de fonction personnalisée ne doivent pas s’exécuter pendant Excel recalcul est en cours, car il se traduit par des résultats imprévisibles.
 
 A la place, a apporté des modifications Excel à partir du contexte d’un bouton de ruban ou d’un volet De tâches.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
 

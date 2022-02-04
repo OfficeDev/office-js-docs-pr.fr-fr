@@ -1,18 +1,13 @@
 ---
 title: Ajout d’une prise en charge mobile pour un complément Outlook
-description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
+description: "L’ajout de la prise en charge d’Outlook\_Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles."
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0237b880610bffef675e011d7c02f70cef4346d5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153211"
 ---
+
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
-L’utilisation des commandes de Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations)](#code-considerations)que dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
+L’utilisation des commandes de Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations](#code-considerations)) que dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 
 ## <a name="updating-the-manifest"></a>Mise à jour du manifeste
 
@@ -72,7 +67,7 @@ La conception d’un complément pour mobile implique certaines considérations 
 
 La méthode [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
 
-L’ensemble de conditions requises de la boîte aux lettres 1.5 a introduit une nouvelle version de [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST, ainsi qu’une nouvelle propriété [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
+L’ensemble de conditions requises de la boîte aux lettres 1.5 a introduit une nouvelle version de [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST et une nouvelle propriété [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
 
 ### <a name="pinch-zoom"></a>Pincer pour zoomer
 
@@ -80,11 +75,11 @@ Par défaut les utilisateurs peuvent utiliser le mouvement pincer pour zoomer su
 
 ### <a name="close-task-panes"></a>Fermeture des volets Office
 
-Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et exigent par défaut que l’utilisateur les ferme pour revenir au message. Envisagez d’utiliser la méthode [Office.context.ui.closeContainer](/javascript/api/office/office.ui#closeContainer__) pour fermer le volet Office lorsque votre scénario est terminé.
+Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et exigent par défaut que l’utilisateur les ferme pour revenir au message. Envisagez d’utiliser la méthode [Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) pour fermer le volet Office lorsque votre scénario est terminé.
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 
-Actuellement, les compléments dans Outlook Mobile ne peuvent être activés que lors de la lecture de messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus d’informations sur cette exception (y compris les API disponibles), reportez-vous à Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](online-meeting.md#available-apis)
+Actuellement, les compléments dans Outlook Mobile ne peuvent être activés que lors de la lecture de messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus d’informations sur cette exception (y compris les API disponibles), voir Créer un Outlook mobile pour un fournisseur de [réunion en ligne](online-meeting.md#available-apis).
 
 ### <a name="unsupported-apis"></a>API non prises en charge
 

@@ -3,13 +3,8 @@ title: Appliquer la mise en forme conditionnelle aux plages avec l’API Excel J
 description: Découvrez la mise en forme conditionnelle dans le contexte des Excel javaScript.
 ms.date: 04/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d36989b1161ad6953c21207f9f478a60aceafb
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149103"
 ---
+
 # <a name="apply-conditional-formatting-to-excel-ranges"></a>Appliquer une mise en forme conditionnelle à des plages Excel
 
 La bibliothèque JavaScript Excel fournit des API pour appliquer une mise en forme conditionnelle aux plages de données dans vos feuilles de calcul. Cette fonctionnalité simplifie l’analyse visuelle de grands ensembles de données. La mise en forme effectue également des mises à jour dynamiques en fonction des changements dans la plage.
@@ -33,7 +28,7 @@ La `Range.conditionalFormats` propriété est un ensemble d’objets [Conditiona
 -    `topBottom`
 
 > [!NOTE]
-> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la section [ \* Méthodes OrNullObject.](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)
+> Chacune de ces propriétés de mise en forme a une variante correspondante`*OrNullObject`. En savoir plus sur ce modèle dans la [\*section Méthodes OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) .
 
 Un seul type de format peut être défini pour l’objet ConditionalFormat. Cela est déterminé par la `type` propriété, c'est-à-dire une [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) valeur enum. `type` est défini lorsque vous ajoutez une mise en forme conditionnelle à une plage.
 
@@ -133,7 +128,7 @@ await context.sync();
 ```
 ### <a name="data-bar"></a>[Barre de données](/javascript/api/excel/excel.databarconditionalformat)
 
-La mise en forme conditionnelle de la barre de données ajoute des barres de données aux cellules. Par défaut, les valeurs minimales et maximales dans la plage forment les limites et les tailles proportionnelles des barres de données. `DataBarConditionalFormat`L’objet possède plusieurs propriétés pour contrôler l’apparence de la barre. 
+La mise en forme conditionnelle de la barre de données ajoute des barres de données aux cellules. Par défaut, les valeurs minimales et maximales dans la plage forment les limites et les tailles proportionnelles des barres de données. L’objet `DataBarConditionalFormat` possède plusieurs propriétés pour contrôler l’apparence de la barre. 
 
 L’exemple suivant met en forme la plage contenant des barres de données remplissant de gauche à droite.
 
@@ -153,7 +148,7 @@ await context.sync();
 
 ### <a name="icon-set"></a>[Jeu d’icônes](/javascript/api/excel/excel.iconsetconditionalformat)
 
-La mise en forme conditionnelle du jeu d’icônes utilise Excel [icônes](/javascript/api/excel/excel.icon) pour mettre en surbrillance les cellules. La `criteria` propriété est une matrice de [ConditionalIconCriterion](/javascript/api/excel/excel.ConditionalIconCriterion), qui définit le symbole à insérer et la condition sous laquelle celui-ci est inséré. Ce tableau est automatiquement pré-rempli avec éléments critères avec les propriétés par défaut. Les propriétés individuelles ne peut pas être remplacées. Au lieu de cela, l’ensemble de l’objet de critères doit être remplacé. 
+La mise en forme conditionnelle du jeu d’icônes utilise Excel [icônes](/javascript/api/excel/excel.icon) pour mettre en surbrillance les cellules. La `criteria` propriété est une matrice de [ConditionalIconCriterion](/javascript/api/excel/excel.conditionaliconcriterion), qui définit le symbole à insérer et la condition sous laquelle celui-ci est inséré. Ce tableau est automatiquement pré-rempli avec éléments critères avec les propriétés par défaut. Les propriétés individuelles ne peut pas être remplacées. Au lieu de cela, l’ensemble de l’objet de critères doit être remplacé. 
 
 L’exemple suivant montre un jeu d’icônes trois triangles utilisé dans la plage.
 
@@ -196,7 +191,7 @@ await context.sync();
 
 ### <a name="preset-criteria"></a>[Critères prédéfinis](/javascript/api/excel/excel.presetcriteriaconditionalformat)
 
-La mise en forme conditionnelle prédéfinie applique un format défini par l’utilisateur pour la plage basée sur une règle standard sélectionnée. Ces règles sont définies par le [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.ConditionalFormatPresetCriterion) dans le [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
+La mise en forme conditionnelle prédéfinie applique un format défini par l’utilisateur pour la plage basée sur une règle standard sélectionnée. Ces règles sont définies par le [ConditionalFormatPresetCriterion](/javascript/api/excel/excel.conditionalformatpresetcriterion) dans le [ConditionalPresetCriteriaRule](/javascript/api/excel/excel.conditionalpresetcriteriarule). 
 
 L’exemple suivant colore la police en blanc lorsque la valeur d’une cellule est au moins un écart-type au-dessus de la moyenne de la plage.
 
@@ -243,7 +238,7 @@ conditionalFormat.textComparison.rule = {
 await context.sync();
 ```
 
-### <a name="topbottom"></a>[Supérieure/inférieure](/javascript/api/excel/excel.TopBottomconditionalformat)
+### <a name="topbottom"></a>[Supérieure/inférieure](/javascript/api/excel/excel.topbottomconditionalformat)
 
 La mise en forme conditionnelle supérieure/inférieure applique un format aux valeurs les plus élevées ou plus faibles d’une plage. La `rule` propriété, de type [ConditionalTopBottomRule](/javascript/api/excel/excel.conditionaltopbottomrule), définit si la condition est basée sur le plus élevé ou le plus bas, ainsi que si l’évaluation est en classement ou pourcentage. 
 

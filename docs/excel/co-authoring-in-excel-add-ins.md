@@ -1,21 +1,17 @@
 ---
 title: Co-création dans des macros complémentaires Excel
-description: Apprenez à co-Excel un OneDrive, OneDrive Entreprise ou SharePoint Online.
+description: 'Apprenez à co-Excel un OneDrive, OneDrive Entreprise ou SharePoint Online.'
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a906a9fa46c99881469dea101ac3cf329d74b113
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149891"
 ---
+
+
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
 Avec la [co-création](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.
 
 > [!IMPORTANT]
-> Dans Excel pour Microsoft 365, vous remarquerez l’autoSave dans le coin supérieur gauche. Lorsque l’enregistrement automatique est activé, les co-auteurs visualisent vos modifications en temps réel. Prenez en considération l’impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver l’enregistrement automatique via le commutateur dans le coin supérieur gauche de la fenêtre Excel.
+> Dans Excel pour Microsoft 365, vous remarquerez AutoSave dans le coin supérieur gauche. Lorsque l’enregistrement automatique est activé, les co-auteurs visualisent vos modifications en temps réel. Prenez en considération l’impact de ce comportement sur la conception de votre complément Excel. Les utilisateurs peuvent désactiver l’enregistrement automatique via le commutateur dans le coin supérieur gauche de la fenêtre Excel.
 
 ## <a name="coauthoring-overview"></a>Vue d’ensemble de la co-création
 
@@ -46,16 +42,16 @@ Si vous souhaitez que les visualisations personnalisées de l’utilisateur A r
 
 Comme indiqué précédemment, dans certains scénarios, le déclenchement d’événements pour tous les co-auteurs permet d’améliorer l’expérience utilisateur. Toutefois, sachez que, dans certains scénarios, ce comportement peut entraîner des expériences utilisateur médiocres.
 
-Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le handler d’événement de l’événement affiche l’interface utilisateur, les utilisateurs voient une interface utilisateur qui n’est pas liée aux modifications qu’ils utilisaient dans le classeur, ce qui a pour effet de rendre l’expérience utilisateur `BindingDataChanged` médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
+Par exemple, dans les scénarios de validation de données, il est fréquent d’afficher l’interface utilisateur en réponse aux événements. L’événement [BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs) décrit dans la section précédente s’exécute lorsqu’un utilisateur local ou un co-auteur modifie (à distance) le contenu du classeur dans la liaison. Si le handler `BindingDataChanged` d’événement de l’événement affiche l’interface utilisateur, les utilisateurs voient une interface utilisateur qui n’est pas liée aux modifications qu’ils utilisaient dans le classeur, entraînant une expérience utilisateur médiocre. Évitez d’afficher l’interface utilisateur lorsque vous utilisez des événements dans votre complément.
 
 ## <a name="avoid-table-row-coauthoring-conflicts"></a>Éviter les conflits de co-auteur de lignes de tableau
 
-Il s’agit d’un problème connu : les appels à l’API peuvent provoquer des [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) conflits de co-édition. Nous vous déconseillons d’utiliser cette API si vous prévoyez d’exécuter votre application pendant que d’autres utilisateurs modifient le workbook du module (en particulier, s’ils modifient le tableau ou une plage sous le tableau). Les instructions suivantes doivent vous aider à éviter les problèmes avec la méthode (et éviter le déclenchement de la barre jaune Excel affiche qui demande aux utilisateurs `TableRowCollection.add` d’actualiser).
+Il s’agit d’un problème connu : les appels à l’API [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) peuvent provoquer des conflits de co-édition. Nous vous déconseillons d’utiliser cette API si vous prévoyez d’exécuter votre application pendant que d’autres utilisateurs modifient le workbook du module (en particulier, s’ils modifient le tableau ou une plage sous le tableau). Les instructions suivantes doivent vous aider à éviter les problèmes avec la méthode (et éviter le déclenchement de la barre jaune Excel affiche qui demande aux utilisateurs `TableRowCollection.add` d’actualiser).
 
-1. Utilisez [`Range.values`](/javascript/api/excel/excel.range#values) au lieu de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#add_index__values_) . La définition `Range` des valeurs directement sous le tableau développe automatiquement le tableau. Sinon, l’ajout de lignes de tableau via les API entraîne des conflits de fusion `Table` pour les utilisateurs coauth.
-1. Aucune règle de validation des données ne [doit](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) être appliquée aux cellules sous le tableau, sauf si la validation des données est appliquée à la colonne entière.
-1. S’il existe des données sous le tableau, le add-in doit le gérer avant de définir la valeur de la plage. [`Range.insert`](/javascript/api/excel/excel.range#insert_shift_)L’insertion d’une ligne vide déplace les données et fait de l’espace pour le tableau en cours d’expansion. Sinon, vous risquez de overwriting cells below the table.
-1. Vous ne pouvez pas ajouter une ligne vide à un tableau avec `Range.values` . Le tableau se développe automatiquement uniquement si des données sont présentes dans les cellules directement en dessous du tableau. Utilisez des données temporaires ou des colonnes masquées comme solution de contournement pour ajouter une ligne de tableau vide.
+1. Utilisez [`Range.values`](/javascript/api/excel/excel.range#excel-excel-range-values-member) au lieu de [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)). La définition `Range` des valeurs directement sous le tableau développe automatiquement le tableau. Sinon, l’ajout de lignes de tableau via les `Table` API entraîne des conflits de fusion pour les utilisateurs coauth.
+1. Aucune règle de [validation](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) des données ne doit être appliquée aux cellules sous le tableau, sauf si la validation des données est appliquée à la colonne entière.
+1. S’il existe des données sous le tableau, le add-in doit le gérer avant de définir la valeur de la plage. L’insertion [`Range.insert`](/javascript/api/excel/excel.range#excel-excel-range-insert-member(1)) d’une ligne vide déplace les données et fait de l’espace pour le tableau en développement. Sinon, vous risquez de overwriting cells below the table.
+1. Vous ne pouvez pas ajouter une ligne vide à un tableau avec `Range.values`. Le tableau se développe automatiquement uniquement si des données sont présentes dans les cellules directement en dessous du tableau. Utilisez des données temporaires ou des colonnes masquées comme solution de contournement pour ajouter une ligne de tableau vide.
 
 ## <a name="see-also"></a>Voir aussi
 

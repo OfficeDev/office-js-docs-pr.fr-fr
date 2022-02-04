@@ -1,18 +1,25 @@
 ---
 title: Élément OfficeMenu dans le fichier manifeste
-description: L’élément OfficeMenu définit une collection de contrôles à ajouter au menu context Office de l’élément OfficeMenu.
-ms.date: 10/09/2018
+description: L’élément OfficeMenu définit une collection de contrôles à ajouter au menu context Office de travail.
+ms.date: 02/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: eba4431fd31ee7df918014cb30d8085a4040880f
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153096"
 ---
+
 # <a name="officemenu-element"></a>Élément OfficeMenu
 
 Définit un ensemble d’options à ajouter au menu contextuel Office. S’applique aux compléments Word, Excel, PowerPoint et OneNote.
+
+**Type de complément :** volet Office
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Taskpane 1.0
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 ## <a name="attributes"></a>Attributs
 
@@ -22,7 +29,7 @@ Définit un ensemble d’options à ajouter au menu contextuel Office. S’appli
 
 ## <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  [Control](#control)    | Oui |  Ensemble d’un ou de plusieurs objets Control  |
 
@@ -41,7 +48,7 @@ Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](cont
 
 ```xml
 <OfficeMenu id="ContextMenuCell">
-    <Control xsi:type="Menu" id="myMenuID">
+    <Control xsi:type="Menu" id="Contoso.myMenu">
       <Label resid="residLabel3" />
       <Supertip>
           <Title resid="residLabel" />

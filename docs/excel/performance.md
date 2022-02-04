@@ -3,19 +3,14 @@ title: Optimisation des performances API JavaScript Excel
 description: Optimisez Excel de votre application à l’aide de l’API JavaScript.
 ms.date: 08/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ade2ac02f22c93d920174f54e6fc2efed349e3d5
-ms.sourcegitcommit: e4b83d43c117225898a60391ea06465ba490f895
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2021
-ms.locfileid: "60809062"
 ---
+
 # <a name="performance-optimization-using-the-excel-javascript-api"></a>Optimisation des performances à l’aide de l’API JavaScript d’Excel
 
 Il existe plusieurs façons d’effectuer des tâches courantes avec l’API JavaScript Excel. Vous trouverez des différences de performances significatives entre les différentes approches. Cet article fournit des instructions et exemples de code pour vous montrer comment effectuer des tâches courantes efficacement à l’aide des API JavaScript Excel.
 
 > [!IMPORTANT]
-> De nombreux problèmes de performances peuvent être résolus par le biais d’une utilisation recommandée `load` et `sync` d’appels. Consultez la section « Améliorations des performances avec les API propres à l’application » des limites de ressources et de l’optimisation des performances pour les Office Pour obtenir des [conseils](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) sur l’utilisation efficace des API propres à l’application.
+> De nombreux problèmes de performances peuvent être résolus par le biais d’une utilisation recommandée et `load` d’appels `sync` . Consultez la section « Améliorations des performances avec les API propres à l’application » des limites de ressources et de l’optimisation des performances pour les Office Pour obtenir des [conseils](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) sur l’utilisation efficace des API propres à l’application.
 
 ## <a name="suspend-excel-processes-temporarily"></a>Suspendre temporairement les processus Excel
 
@@ -66,14 +61,14 @@ Excel.run(async function(ctx) {
 })
 ```
 
-Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
+Notez que seuls les calculs de formule sont suspendus. Toutes les références modifiées sont toujours reconstruites. Par exemple, le fait de renommer une feuille de calcul met toujours à jour les références dans les formules de cette feuille de calcul.
 
 ### <a name="suspend-screen-updating"></a>Suspendre la mise à jour de l’écran
 
 Excel affiche les modifications effectuées par votre complément à peu près au moment où elles ont lieu dans le code. Dans le cas de grands ensembles de données itératifs, il se peut que vous ne deviez pas afficher cette progression sur l’écran en temps réel. `Application.suspendScreenUpdatingUntilNextSync()` interrompt les mises à jour visuelles vers Excel tant que le complément n’appelle pas `context.sync()`, ou tant que `Excel.run` ne se termine pas (appelant implicitement `context.sync`). N’oubliez pas qu'Excel n’affiche aucun signe d’activité jusqu'à la synchronisation suivante. Votre complément doit donner des conseils aux utilisateurs pour les préparer à ce délai ou fournir une barre d’état pour démontrer l’activité.
 
 > [!NOTE]
-> N’appelez `suspendScreenUpdatingUntilNextSync` pas à plusieurs reprises (par exemple, dans une boucle). Les appels répétés entraînent le clignotement Excel fenêtre.
+> N’appelez pas `suspendScreenUpdatingUntilNextSync` à plusieurs reprises (par exemple, dans une boucle). Les appels répétés entraînent le clignotement Excel fenêtre.
 
 ### <a name="enable-and-disable-events"></a>Activation et désactivation d’événements
 
@@ -107,23 +102,23 @@ Excel.run(async (ctx) => {
 ```
 
 > [!NOTE]
-> Vous pouvez convertir un objet de Tableau en objet de Plage à l’aide de la méthode[Table.convertToRange()](/javascript/api/excel/excel.table#convertToRange__).
+> Vous pouvez convertir un objet de Tableau en objet de Plage à l’aide de la méthode[Table.convertToRange()](/javascript/api/excel/excel.table#excel-excel-table-converttorange-member(1)).
 
 ## <a name="payload-size-limit-best-practices"></a>Meilleures pratiques en matière de limite de taille de charge utile
 
-L Excel’API JavaScript présente des limites de taille pour les appels d’API. Excel sur le Web a une limite de taille de charge utile pour les demandes et les réponses de 5 Mo, et une API renvoie une erreur si cette limite `RichAPI.Error` est dépassée. Sur toutes les plateformes, une plage est limitée à cinq millions de cellules pour obtenir des opérations. Les plages importantes dépassent généralement ces deux limitations.
+L Excel’API JavaScript présente des limites de taille pour les appels d’API. Excel sur le Web a une limite de taille de charge utile pour les demandes et les réponses de 5 Mo, et une API `RichAPI.Error` renvoie une erreur si cette limite est dépassée. Sur toutes les plateformes, une plage est limitée à cinq millions de cellules pour obtenir des opérations. Les plages importantes dépassent généralement ces deux limitations.
 
 La taille de la charge utile d’une demande est une combinaison des trois composants suivants.
 
 * Nombre d’appels d’API
-* Nombre d’objets, tels que `Range` des objets
+* Nombre d’objets, tels que des `Range` objets
 * Longueur de la valeur à définir ou à obtenir
 
-Si une API renvoie l’erreur, utilisez les stratégies de meilleure pratique documentées dans cet article pour optimiser votre script et `RequestPayloadSizeLimitExceeded` éviter l’erreur.
+Si une API renvoie l’erreur `RequestPayloadSizeLimitExceeded` , utilisez les stratégies de meilleures pratiques documentées dans cet article pour optimiser votre script et éviter l’erreur.
 
 ### <a name="strategy-1-move-unchanged-values-out-of-loops"></a>Stratégie 1 : déplacer des valeurs inchangées hors des boucles
 
-Limitez le nombre de processus qui se produisent au sein de boucles pour améliorer les performances. Dans l’exemple de code suivant, peut être déplacé hors de la boucle, car il ne change pas dans `context.workbook.worksheets.getActiveWorksheet()` `for` cette boucle.
+Limitez le nombre de processus qui se produisent au sein de boucles pour améliorer les performances. Dans l’exemple de code suivant, `context.workbook.worksheets.getActiveWorksheet()` peut être déplacé hors de la `for` boucle, car il ne change pas dans cette boucle.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -140,7 +135,7 @@ async function run() {
 }
 ```
 
-L’exemple de code suivant montre une logique similaire à l’exemple de code précédent, mais avec une stratégie de performances améliorée. La valeur est récupérée avant la boucle, car cette valeur n’a pas besoin d’être récupérée à chaque fois que la `context.workbook.worksheets.getActiveWorksheet()` `for` boucle `for` s’exécute. Seules les valeurs qui changent dans le contexte d’une boucle doivent être récupérées dans cette boucle.
+L’exemple de code suivant présente une logique similaire à l’exemple de code précédent, mais avec une stratégie de performances améliorée. La valeur `context.workbook.worksheets.getActiveWorksheet()` est récupérée avant `for` la boucle, car cette valeur n’a pas besoin d’être `for` récupérée à chaque fois que la boucle s’exécute. Seules les valeurs qui changent dans le contexte d’une boucle doivent être récupérées dans cette boucle.
 
 ```js
 // This code sample shows a good performance strategy.
@@ -168,9 +163,9 @@ Créez moins d’objets de plage pour améliorer les performances et réduire la
 Pour créer moins d’objets de plage, vous pouvez fractionner chaque tableau de plages en plusieurs tableaux, puis traiter chaque nouveau tableau avec une boucle et un nouvel `context.sync()` appel.
 
 > [!IMPORTANT]
-> Utilisez cette stratégie uniquement si vous avez d’abord déterminé que vous dépassez la limite de taille de demande de charge utile. L’utilisation de boucles multiples peut réduire la taille de chaque demande de charge utile pour éviter de dépasser la limite de 5 Mo, mais l’utilisation de plusieurs boucles et appels a également un impact négatif sur les `context.sync()` performances.
+> Utilisez cette stratégie uniquement si vous avez d’abord déterminé que vous dépassez la limite de taille de demande de charge utile. L’utilisation de boucles multiples peut réduire la taille de chaque demande de charge utile pour éviter de dépasser la limite de 5 Mo, mais l’utilisation de plusieurs boucles `context.sync()` et appels a également un impact négatif sur les performances.
 
-L’exemple de code suivant tente de traiter un grand tableau de plages en une seule boucle, puis un seul `context.sync()` appel. Si vous traitez trop de valeurs de plage dans un appel, la taille de la demande de charge utile `context.sync()` dépasse la limite de 5 Mo.
+L’exemple de code suivant tente de traiter un grand tableau de plages en une seule boucle, puis un seul `context.sync()` appel. Si vous traitez trop de valeurs de plage dans un `context.sync()` appel, la taille de la demande de charge utile dépasse la limite de 5 Mo.
 
 ```js
 // This code sample does not show a recommended strategy.
@@ -189,7 +184,7 @@ async function run() {
 }
 ```
 
-L’exemple de code suivant montre une logique similaire à l’exemple de code précédent, mais avec une stratégie qui évite de dépasser la limite de taille de demande de charge utile de 5 Mo. Dans l’exemple de code suivant, les plages sont traitées en deux boucles distinctes, et chaque boucle est suivie d’un `context.sync()` appel.
+L’exemple de code suivant présente une logique similaire à l’exemple de code précédent, mais avec une stratégie qui évite de dépasser la limite de taille de demande de charge utile de 5 Mo. Dans l’exemple de code suivant, les plages sont traitées en deux boucles distinctes, et chaque boucle est suivie d’un `context.sync()` appel.
 
 ```js
 // This code sample shows a strategy for reducing payload request size.
@@ -218,9 +213,9 @@ async function run() {
 
 #### <a name="set-range-values-in-an-array"></a>Définir des valeurs de plage dans un tableau
 
-Une autre façon de créer moins d’objets de plage consiste à créer un tableau, à utiliser une boucle pour définir toutes les données de ce tableau, puis à transmettre les valeurs du tableau à une plage. Cela bénéficie à la fois des performances et de la taille de la charge utile. Au lieu `range.values` d’appeler pour chaque plage d’une boucle, `range.values` est appelé une fois en dehors de la boucle.
+Une autre façon de créer moins d’objets de plage consiste à créer un tableau, à utiliser une boucle pour définir toutes les données de ce tableau, puis à transmettre les valeurs du tableau à une plage. Cela bénéficie à la fois des performances et de la taille de la charge utile. Au lieu d’appeler `range.values` chaque plage d’une boucle, `range.values` est appelé une fois en dehors de la boucle.
 
-L’exemple de code suivant montre comment créer un tableau, définir les valeurs de ce tableau dans une boucle, puis passer les valeurs du tableau à une plage en dehors de `for` la boucle.
+L’exemple de code suivant montre comment créer un tableau, `for` définir les valeurs de ce tableau dans une boucle, puis passer les valeurs du tableau à une plage en dehors de la boucle.
 
 ```js
 // This code sample shows a good performance strategy.

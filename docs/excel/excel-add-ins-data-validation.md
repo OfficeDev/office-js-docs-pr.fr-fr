@@ -1,15 +1,10 @@
 ---
 title: Ajout de validation des données à des plages Excel
-description: Découvrez comment les EXCEL JavaScript permettent à votre add-in d’ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un workbook.
+description: 'Découvrez comment les EXCEL JavaScript permettent à votre add-in d’ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages d’un workbook.'
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 83f7f21621b6ddffa3cb7e51134a3b4cd1cc2aaa
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150499"
 ---
+
 # <a name="add-data-validation-to-excel-ranges"></a>Ajout de validation des données à des plages Excel
 
 La bibliothèque JavaScript Excel fournit des API pour autoriser votre complément à ajouter la validation automatique des données aux tableaux, colonnes, lignes et autres plages dans un classeur. Pour comprendre les concepts et la terminologie de validation des données, consultez les articles suivants sur la façon dont les utilisateurs ajoutent la validation des données via l’interface Excel utilisateur.
@@ -163,7 +158,7 @@ Excel.run(function (context) {
 Vous pouvez créer une alerte d’erreur personnalisée qui s’affiche lorsqu’un utilisateur tente d’entrer des données non valides dans une cellule. Voici un exemple simple. Notez ce qui suit à propos de ce code.
 
 - La propriété `style` détermine si l’utilisateur reçoit une alerte d’information, un avertissement ou une alerte « Stop ». Seule l'alerte `Stop` empêche l’utilisateur d’ajouter des données non valides. La fenêtre contextuelle pour `Warning` et `Information` affiche des options qui autorisent l’utilisateur à entrer tout de même les données non valides.
-- La propriété `showAlert` est définie par défaut sur `true`. Cela signifie que Excel une alerte générique (de type) s’ouvre, sauf si vous créez une alerte personnalisée qui définit ou définit un message, un titre et un `Stop` `showAlert` style `false` personnalisés. Ce code définit un message et un titre personnalisés.
+- La propriété `showAlert` est définie par défaut sur `true`. Cela signifie que Excel une alerte générique (de type`Stop`) `showAlert` `false` s’ouvre, sauf si vous créez une alerte personnalisée qui définit ou définit un message, un titre et un style personnalisés. Ce code définit un message et un titre personnalisés.
 
 ```js
 Excel.run(function (context) {
@@ -210,7 +205,7 @@ Pour plus d’informations, voir [DataValidationPrompt](/javascript/api/excel/ex
 
 ## <a name="remove-data-validation-from-a-range"></a>Supprimer la validation des données d’une plage
 
-Pour supprimer la validation des données d’une plage, appelez la méthode [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#clear__).
+Pour supprimer la validation des données d’une plage, appelez la méthode [Range.dataValidation.clear()](/javascript/api/excel/excel.datavalidation#excel-excel-datavalidation-clear-member(1)).
 
 ```js
 myrange.dataValidation.clear()

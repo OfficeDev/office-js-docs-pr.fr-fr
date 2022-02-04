@@ -3,16 +3,11 @@ title: Résolution des problèmes d’activation de complément contextuel Outlo
 description: Raisons possibles pour lesquelles votre add-in ne s’active pas comme prévu.
 ms.date: 09/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c1656df532943a8958494a2ad3734fea97d597a5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149080"
 ---
+
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
-Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection du complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
+Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection de complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
 
 ## <a name="is-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Est-ce que la boîte aux lettres utilisateur se trouve sur une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
@@ -24,7 +19,7 @@ Vous pouvez vérifier la version de Exchange 2013 en utilisant l’une des appro
 
 - Si vous testez le complément sur Outlook sur le web ou sur appareils mobiles, dans un débogueur de script (par exemple le débogueur JScript disponible avec Internet Explorer), recherchez l’attribut **src** de la balise **script** qui spécifie l’emplacement à partir duquel les scripts sont chargés. Le chemin d’accès doit contenir une sous-chaîne **owa/15.0.516.x/owa2/...**, où **15.0.516.x** représente la version du serveur Exchange Server (par exemple **15.0.516.2**).
 
-- Vous pouvez également utiliser la propriété [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#hostVersion) pour vérifier la version. Dans Outlook sur le web et sur appareils mobiles, cette propriété renvoie la version du serveur Exchange Server.
+- Vous pouvez également utiliser la propriété [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) pour vérifier la version. Dans Outlook sur le web et sur appareils mobiles, cette propriété renvoie la version du serveur Exchange Server.
 
 - Si vous pouvez tester le Outlook, vous pouvez utiliser la technique de débogage simple suivante qui utilise le modèle objet Outlook et Visual Basic Editor.
 
@@ -77,7 +72,7 @@ Même si un élément de messagerie ne correspond pas à l’un des types ci-des
 Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM. Toutefois, il existe quelques exceptions.
 
 1. Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
-1. Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en prévisualisation, consultez l’activation des compléments sur les éléments protégés par la Gestion des droits de [l’information (IRM).](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)
+1. Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en prévisualisation, voir Activation de compléments sur des éléments protégés par la Gestion des droits de [l’information (IRM).](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 
@@ -183,7 +178,7 @@ Les expressions régulières contenues dans les règles d’activation font part
 
 Les clients riches Outlook utilisent un moteur d’expression régulière différent de celui utilisé par Outlook sur le web et sur appareils mobiles. Les clients riches Outlook utilisent le moteur d’expressions régulières C++ fourni avec la bibliothèque de modèles standard de Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. Outlook sur le web et sur appareils mobiles utilisent l’évaluation d’expression régulière incluse dans JavaScript. Celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5.
 
-Bien que dans la plupart des cas, Outlook clients recherchent les mêmes correspondances pour la même expression régulière dans une règle d’activation, il existe des exceptions. Par exemple, si l’regex inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfines, un client riche Outlook peut renvoyer des résultats différents de ceux des Outlook sur le web et des appareils mobiles. Par exemple, les classes de caractères qui contiennent des classes de caractères abrégées  `[\d\w]` renvoient des résultats distincts. Dans ce cas, pour éviter des résultats différents sur différentes applications, utilisez `(\d|\w)` à la place.
+Bien que dans la plupart des cas, Outlook clients recherchent les mêmes correspondances pour la même expression régulière dans une règle d’activation, il existe des exceptions. Par exemple, si l’regex inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfines, un client riche Outlook peut renvoyer des résultats différents de ceux des Outlook sur le web et des appareils mobiles. Par exemple, les classes de caractères qui contiennent des classes de caractères abrégées  `[\d\w]` renvoient des résultats distincts. Dans ce cas, pour éviter des résultats différents sur différentes applications, utilisez à `(\d|\w)` la place.
 
 Testez minutieusement l’expression régulière. Si elle renvoie des résultats différents, réécrivez l’expression régulière pour qu’elle soit compatible avec les deux moteurs. Pour vérifier les résultats d’évaluation sur un client riche Outlook, écrivez un court programme C++ qui applique l’expression régulière par rapport à un échantillon du texte auquel vous essayez de la faire correspondre. Lors de son exécution dans Visual Studio, le programme de test C++ utilise la bibliothèque de modèles standards, simulant le comportement du client riche Outlook lors de l’exécution de la même expression régulière. Pour vérifier les résultats de l’évaluation sur Outlook sur le web ou sur appareils mobiles, utilisez le testeur d’expression régulière JavaScript privilégié.
 

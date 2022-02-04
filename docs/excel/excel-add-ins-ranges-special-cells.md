@@ -1,23 +1,18 @@
 ---
 title: Rechercher des cellules spéciales dans une plage à l’aide de Excel API JavaScript
-description: Découvrez comment utiliser l’API JavaScript Excel pour rechercher des cellules spéciales, telles que des cellules avec des formules, des erreurs ou des nombres.
+description: 'Découvrez comment utiliser l’API JavaScript Excel pour rechercher des cellules spéciales, telles que des cellules avec des formules, des erreurs ou des nombres.'
 ms.date: 07/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ddd60f3cd87f528616fe376003b9eb7d3374f4a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152279"
 ---
+
 # <a name="find-special-cells-within-a-range-using-the-excel-javascript-api"></a>Rechercher des cellules spéciales dans une plage à l’aide de Excel API JavaScript
 
-Cet article fournit des exemples de code qui recherchent des cellules spéciales dans une plage à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit des exemples de code qui recherchent des cellules spéciales dans une plage à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 ## <a name="find-ranges-with-special-cells"></a>Rechercher des plages avec des cellules spéciales
 
-Les méthodes [Range.getSpecialCells](/javascript/api/excel/excel.range#getSpecialCells_cellType__cellValueType_) et [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#getSpecialCellsOrNullObject_cellType__cellValueType_) recherchent des plages en fonction des caractéristiques de leurs cellules et des types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
+Les méthodes [Range.getSpecialCells](/javascript/api/excel/excel.range#excel-excel-range-getspecialcells-member(1)) et [Range.getSpecialCellsOrNullObject](/javascript/api/excel/excel.range#excel-excel-range-getspecialcellsornullobject-member(1)) recherchent des plages en fonction des caractéristiques de leurs cellules et des types de valeurs de leurs cellules. Ces deux méthodes renvoient à des`RangeAreas`objets. Voici les signatures des méthodes à partir des types de fichiers de données TypeScript:
 
 ```typescript
 getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
@@ -27,7 +22,7 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-L’exemple de code suivant utilise `getSpecialCells` la méthode pour rechercher toutes les cellules avec des formules. Tenez compte du code suivant:
+L’exemple de code suivant utilise la `getSpecialCells` méthode pour rechercher toutes les cellules avec des formules. Tenez compte du code suivant:
 
 - Cela limite la partie de la feuille qui nécessite d’être recherchée en appelant d’abord`Worksheet.getUsedRange`et en appelant`getSpecialCells`uniquement pour cette plage.
 - La`getSpecialCells`méthode renvoie un`RangeAreas`objet, toutes les cellules alors dotées de formules seront colorées en rose même si elles ne sont pas adjacentes.
@@ -43,12 +38,12 @@ Excel.run(function (context) {
 })
 ```
 
-Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur **ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’y a `catch` pas de bloc, l’erreur arrête la méthode.
+Si aucune cellule avec la caractéristique ciblée n’existe dans la plage `getSpecialCells` lève une erreur **ItemNotFound**. Cela dévie le flux de contrôle vers un(e)`catch`bloc/méthode, s’il en existe. S’il n’y a pas de `catch` bloc, l’erreur arrête la méthode.
 
 Si vous attendez que des cellules avec la caractéristique ciblée existent toujours, vous souhaiterez probablement que votre code  lève une erreur si ces cellules ne sont pas là. Mais dans les scénarios où les cellules ne correspondent pas; votre code doit vérifier cette possibilité et le gérer gracieusement sans émettre d’erreur. Vous pouvez obtenir ce comportement avec la `getSpecialCellsOrNullObject`méthode et sa propriété renvoyée`isNullObject`. L’exemple de code suivant utilise ce modèle. Tenez compte du code suivant :
 
-- La méthode renvoie toujours un objet proxy, donc elle `getSpecialCellsOrNullObject` n’est jamais dans le sens `null` JavaScript ordinaire. Mais si les cellules non correspondantes sont introuvables, la propriété`isNullObject` de l’objet est établi à`true`.
-- Il appelle`context.sync`*avant* de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Toutefois, il n’est pas nécessaire de *charger explicitement* la `isNullObject` propriété. Il est automatiquement chargé par le même `context.sync` s’il `load` n’est pas appelé sur l’objet. Pour plus d’informations, [ \* voir méthodes et propriétés OrNullObject.](../develop/application-specific-api-model.md#ornullobject-methods-and-properties)
+- La `getSpecialCellsOrNullObject` méthode renvoie toujours un objet proxy, donc elle n’est `null` jamais dans le sens JavaScript ordinaire. Mais si les cellules non correspondantes sont introuvables, la propriété`isNullObject` de l’objet est établi à`true`.
+- Il appelle`context.sync`*avant* de tester la propriété`isNullObject`. Il s’agit d’une condition avec toutes les méthodes et propriétés`*OrNullObject`, car vous devez toujours télécharger et synchroniser une propriété afin de le lire.  Toutefois, il n’est pas nécessaire de *charger explicitement* la `isNullObject` propriété. Il est automatiquement chargé par le `context.sync` même s’il `load` n’est pas appelé sur l’objet. Pour plus d’informations, [voir\* méthodes et propriétés OrNullObject](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 - Vous pouvez tester ce code en sélectionnant d’abord une plage qui n’a pas de cellules de formule et en l’exécutant. Puis sélectionnez une plage qui dispose au moins d’une cellule dotée d’une formule et en l’exécutant à nouveau.
 
 ```js
@@ -68,7 +63,7 @@ Excel.run(function (context) {
 })
 ```
 
-Par souci de simplicité, tous les autres exemples de code de cet article utilisent la `getSpecialCells` méthode au lieu de  `getSpecialCellsOrNullObject` .
+Par souci de simplicité, tous les autres exemples de code de cet article utilisent la `getSpecialCells` méthode au lieu de  `getSpecialCellsOrNullObject`.
 
 ## <a name="narrow-the-target-cells-with-cell-value-types"></a>Réduisez les cellules cibles avec les types de valeur de cellule
 
@@ -124,6 +119,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
 - [Rechercher une chaîne à l’aide de Excel API JavaScript](excel-add-ins-ranges-string-match.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

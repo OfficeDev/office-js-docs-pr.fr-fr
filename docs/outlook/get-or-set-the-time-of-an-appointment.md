@@ -3,16 +3,11 @@ title: Obtenir ou définir l’heure de rendez-vous dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’heure de début et de fin d’un rendez-vous dans un complément Outlook.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ab4016923a883a259a3c9c478639ae288b1ebdf7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153128"
 ---
+
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’heure lors de la composition d’un rendez-vous dans Outlook
 
-L’API JavaScript Office fournit des méthodes asynchrones ([Time.getAsync](/javascript/api/outlook/office.time#getAsync_options__callback_) et [Time.setAsync](/javascript/api/outlook/office.time#setAsync_dateTime__options__callback_)) pour obtenir et définir l’heure de début ou de fin d’un rendez-vous que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour les modules de composition. Pour utiliser ces méthodes, [assurez-vous](compose-scenario.md)que vous avez correctement installé le manifeste de la Outlook pour activer le add-in dans les formulaires de composition, comme décrit dans Créer des Outlook pour les formulaires de composition.
+L’API JavaScript Office fournit des méthodes asynchrones ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) et [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) pour obtenir et définir l’heure de début ou de fin d’un rendez-vous que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour les modules de composition. Pour utiliser ces méthodes, [assurez-vous](compose-scenario.md) que vous avez correctement installé le manifeste de la Outlook afin d’activer le add-in dans les formulaires de composition, comme décrit dans Créer des Outlook pour les formulaires de composition.
 
 Les propriétés [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) et [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) sont disponibles pour les rendez-vous dans les formulaires de lecture et de composition. Dans un formulaire de lecture, vous pouvez accéder aux propriétés directement dans l’objet parent, comme dans :
 
@@ -51,7 +46,7 @@ Cette section présente un exemple de code qui obtient l’heure de début du re
 
 ```
 
-Pour utiliser les éléments **item.start.getAsync** ou **item.end.getAsync**, fournissez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la méthode de rappel via le paramètre facultatif _asyncContext_. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’heure de début comme objet **Date** au format UTC à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Pour utiliser les éléments **item.start.getAsync** ou **item.end.getAsync**, fournissez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la méthode de rappel via le paramètre facultatif _asyncContext_. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’heure de début comme objet **Date** au format UTC à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 
 ```js

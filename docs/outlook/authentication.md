@@ -3,13 +3,8 @@ title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 30991c09b5e98fbf098771cc753081d578d107e6
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074356"
 ---
+
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
 Votre complément Outlook peut accéder à des informations à partir de n’importe quel emplacement sur Internet, qu’il s’agisse du serveur qui héberge le complément, de votre réseau interne ou du cloud. Si ces informations sont protégées, votre complément doit trouver un moyen d’authentifier votre utilisateur. Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
@@ -50,7 +45,7 @@ Les jetons d’identité d’utilisateur Exchange permettent à votre complémen
 - quand le complément doit accéder à un service non-Microsoft que vous contrôlez ;
 - En tant qu’authentification de secours quand le complément est exécuté sur une version d’Office qui ne prend pas en charge SSO.
 
-Votre complément peut appeler la méthode [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#getCallbackTokenAsync_callback__userContext_) pour obtenir des jetons d’identité d’utilisateur Exchange. Pour plus d’informations sur l’utilisation de ces jetons, voir [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
+Votre complément peut appeler la méthode [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1)) pour obtenir des jetons d’identité d’utilisateur Exchange. Pour plus d’informations sur l’utilisation de ces jetons, voir [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>Jetons d’accès obtenus via les flux OAuth2
 
@@ -58,7 +53,7 @@ Les compléments peuvent également accéder à des services tiers qui prennent 
 
 - doit accéder à un service tiers en dehors de votre contrôle.
 
-Grâce à cette méthode, votre complément invite l’utilisateur à se connecter au service à l’aide de la méthode [displayDialogAsync](/javascript/api/office/office.ui#displayDialogAsync_startAddress__options__callback_) pour initialiser le flux OAuth2 ou à l’aide de la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) pour le flux implicite OAuth2.
+Grâce à cette méthode, votre complément invite l’utilisateur à se connecter au service à l’aide de la méthode [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) pour initialiser le flux OAuth2 ou à l’aide de la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) pour le flux implicite OAuth2.
 
 ## <a name="callback-tokens"></a>Jetons de rappel
 

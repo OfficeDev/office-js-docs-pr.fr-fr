@@ -4,18 +4,13 @@ description: Spécifie les plateformes Office et les builds qui ouvrent la prise
 ms.date: 10/05/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 65088c6a8fa7c7f9bd3e53da0d2b1755b7ec22e6
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138785"
 ---
+
 # <a name="open-browser-window-api-requirement-sets"></a>Ouvrir les ensembles de conditions requises de l’API Fenêtre du navigateur
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-L’ensemble d’API OpenBrowserWindow permet aux applications d’ouvrir un navigateur pour accomplir des tâches qui ne peuvent pas toujours être réalisées dans le contrôle webview en bac à sable (sandbox) au sein du module lui-même. par exemple, le téléchargement d’un fichier PDF lorsque le contrôle webview est fourni par Microsoft Edge.
+L’ensemble d’API OpenBrowserWindow permet aux applications d’ouvrir un navigateur pour accomplir des tâches qui ne peuvent pas toujours être réalisées dans le contrôle webview en bac à sable au sein du module lui-même. par exemple, le téléchargement d’un fichier PDF lorsque le contrôle webview est fourni par Microsoft Edge.
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API OpenBrowserWindow, les applications hôtes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
@@ -42,7 +37,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 ## <a name="openbrowserwindowapi-11"></a>OpenBrowserWindowApi 1.1
 
-OpenBrowserWindowApi 1.1 est la première version de l’API. Pour plus d’informations sur l’API, voir [Office.context.ui](/javascript/api/office/office.context#ui) reference topic.
+OpenBrowserWindowApi 1.1 est la première version de l’API. Pour plus d’informations sur l’API, voir [Office.context.ui](/javascript/api/office/office.context#office-office-context-ui-member) reference topic.
 
 ## <a name="see-also"></a>Voir aussi
 

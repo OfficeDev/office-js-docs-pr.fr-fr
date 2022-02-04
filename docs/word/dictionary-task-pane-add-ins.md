@@ -3,13 +3,9 @@ title: Créer un complément dictionnaire du volet Office
 description: Découvrez comment créer un add-in de volet de tâches de dictionnaire
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f340afbc372d37f3d82c55583906e4212e01da0a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153059"
 ---
+
+
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
 
@@ -23,12 +19,12 @@ Dans un complément du volet Office classique, un utilisateur sélectionne un mo
 
 ![Application de dictionnaire affichant une définition.](../images/dictionary-agave-01.jpg)
 
-C’est à vous de déterminer  si le fait de cliquer sur le lien Afficher plus dans l’interface utilisateur HTML du dictionnaire affiche plus d’informations dans le volet Des tâches ou ouvre une fenêtre de navigateur distincte sur la page web complète du mot ou de l’expression sélectionné.
+C’est à vous de déterminer si le fait de  cliquer sur le lien Afficher plus dans l’interface utilisateur HTML du dictionnaire affiche plus d’informations dans le volet Des tâches ou ouvre une fenêtre de navigateur distincte sur la page web complète du mot ou de l’expression sélectionné.
 La figure 2 illustre la commande de menu contextuel **Définir** qui permet aux utilisateurs de lancer rapidement des dictionnaires installés. Les figures 3 à 5 montrent les endroits dans l’interface utilisateur d’Office où les services XML de dictionnaire sont utilisés pour fournir des définitions dans Word 2013.
 
 *Figure 2. Commande Définir dans le menu contextuel*
 
-![Définissez le menu contexto.](../images/dictionary-agave-02.jpg)
+![Définir le menu contexto.](../images/dictionary-agave-02.jpg)
 
 
 *Figure 3. Définitions dans les volets Orthographe et Grammaire*
@@ -54,38 +50,38 @@ Pour créer un complément du volet Office qui fournit une recherche de dictionn
     
 Les sections suivantes fournissent des exemples sur la création de ces composants.
 
-## <a name="creating-a-dictionary-xml-web-service&quot;></a>Création d’un service web XML de dictionnaire
+## <a name="creating-a-dictionary-xml-web-service"></a>Création d’un service web XML de dictionnaire
 
 
 Le service web XML doit renvoyer des requêtes au service web sous la forme de code XML conforme au schéma XML OfficeDefinitions. Les deux sections suivantes décrivent le schéma XML OfficeDefinitions, et fournissent un exemple illustrant comment coder un service web XML qui renvoie des requêtes dans ce format XML.
 
 
-### <a name=&quot;officedefinitions-xml-schema&quot;></a>Schéma XML OfficeDefinitions
+### <a name="officedefinitions-xml-schema"></a>Schéma XML OfficeDefinitions
 
 Le code suivant illustre le XSD pour le schéma XML OfficeDefinitions.
 
 
 ```XML
-<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema
-  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-  xmlns:xs=&quot;https://www.w3.org/2001/XMLSchema&quot;
-  targetNamespace=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;
-  xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
-  <xs:element name=&quot;Result&quot;>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xs="https://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions"
+  xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  <xs:element name="Result">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name=&quot;SeeMoreURL&quot; type=&quot;xs:anyURI&quot;/>
-        <xs:element name=&quot;Definitions&quot; type=&quot;DefinitionListType&quot;/>
+        <xs:element name="SeeMoreURL" type="xs:anyURI"/>
+        <xs:element name="Definitions" type="DefinitionListType"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:complexType name=&quot;DefinitionListType&quot;>
+  <xs:complexType name="DefinitionListType">
     <xs:sequence>
-      <xs:element name=&quot;Definition&quot; maxOccurs=&quot;3&quot;>
+      <xs:element name="Definition" maxOccurs="3">
         <xs:simpleType>
-          <xs:restriction base=&quot;xs:normalizedString&quot;>
-            <xs:maxLength value=&quot;400&quot;/>
+          <xs:restriction base="xs:normalizedString">
+            <xs:maxLength value="400"/>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -94,13 +90,13 @@ Le code suivant illustre le XSD pour le schéma XML OfficeDefinitions.
 </xs:schema>
 ```
 
-Le XML renvoyé conforme au schéma OfficeDefinitions se compose d’un élément racine qui contient un élément de zéro à trois éléments enfants, chacun contenant des définitions d’une longueur maximale de `Result` `Definitions` `Definition` 400 caractères. En outre, l’URL de la page complète sur le site de dictionnaire doit être fournie dans `SeeMoreURL` l’élément. L’exemple suivant illustre la structure du code XML renvoyé conforme au schéma OfficeDefinitions.
+Le XML renvoyé conforme au schéma OfficeDefinitions `Result` `Definitions` `Definition` se compose d’un élément racine qui contient un élément de zéro à trois éléments enfants, chacun contenant des définitions d’une longueur maximale de 400 caractères. En outre, l’URL de la page complète sur le site de dictionnaire doit être fournie dans l’élément `SeeMoreURL` . L’exemple suivant illustre la structure du code XML renvoyé conforme au schéma OfficeDefinitions.
 
 ```XML
-<?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?>
-<Result xmlns=&quot;http://schemas.microsoft.com/NLG/2011/OfficeDefinitions&quot;>
-  <SeeMoreURL xmlns=&quot;&quot;>www.bing.com/dictionary/search?q=example</SeeMoreURL>
-  <Definitions xmlns=&quot;&quot;>
+<?xml version="1.0" encoding="utf-8"?>
+<Result xmlns="http://schemas.microsoft.com/NLG/2011/OfficeDefinitions">
+  <SeeMoreURL xmlns="">www.bing.com/dictionary/search?q=example</SeeMoreURL>
+  <Definitions xmlns="">
     <Definition>Definition1</Definition>
     <Definition>Definition2</Definition>
     <Definition>Definition3</Definition>
@@ -110,7 +106,7 @@ Le XML renvoyé conforme au schéma OfficeDefinitions se compose d’un élémen
 ```
 
 
-### <a name=&quot;sample-dictionary-xml-web-service&quot;></a>Exemple de service web XML de dictionnaire
+### <a name="sample-dictionary-xml-web-service"></a>Exemple de service web XML de dictionnaire
 
 Le code C# suivant fournit un exemple simple d’écriture de code pour un service web XML qui renvoie le résultat d’une interrogation de dictionnaire dans le format XML OfficeDefinitions.
 
@@ -129,7 +125,7 @@ using System.Net;
 /// <summary>
 /// Summary description for _Default
 /// </summary>
-[WebService(Namespace = &quot;http://tempuri.org/")]
+[WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 // To allow this web service to be called from script, using ASP.NET AJAX, uncomment the following line. 
 // [System.Web.Script.Services.ScriptService]
@@ -258,7 +254,7 @@ L’exemple suivant illustre un fichier de manifeste pour un complément de dict
 </OfficeApp>
 ```
 
-L’élément et ses éléments enfants spécifiques à la création d’un fichier manifeste de dictionnaire sont décrits dans `Dictionary` les sections suivantes. Pour plus d’informations sur les autres éléments du fichier de manifeste, voir [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
+L’élément `Dictionary` et ses éléments enfants spécifiques à la création d’un fichier manifeste de dictionnaire sont décrits dans les sections suivantes. Pour plus d’informations sur les autres éléments du fichier de manifeste, voir [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 
 
 ### <a name="dictionary-element"></a>Élément Dictionary
@@ -276,7 +272,7 @@ Spécifie les paramètres pour les compléments de dictionnaire.
 
  **Remarques**
 
-L’élément et ses éléments enfants sont ajoutés au manifeste d’un add-in du volet Des tâches lorsque vous créez un `Dictionary` add-in de dictionnaire.
+L’élément `Dictionary` et ses éléments enfants sont ajoutés au manifeste d’un add-in du volet Des tâches lorsque vous créez un add-in de dictionnaire.
 
 
 #### <a name="targetdialects-element"></a>Élément TargetDialects
@@ -294,7 +290,7 @@ Indique les langues régionales prises en charge par ce dictionnaire. Requis pou
 
  **Remarques**
 
-`TargetDialects`L’élément et ses éléments enfants spécifient l’ensemble des langues régionales que contient votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
+L’élément `TargetDialects` et ses éléments enfants spécifient l’ensemble des langues régionales que contient votre dictionnaire. Par exemple, si votre dictionnaire s’applique à l’espagnol (Mexique) et à l’espagnol (Pérou), mais pas à l’espagnol (Espagne), vous pouvez le préciser dans cet élément. N’indiquez pas plus d’une langue (par exemple, espagnol et anglais) dans ce manifeste. Publiez les langues distinctes dans des dictionnaires différents.
 
  **Exemple**
 
@@ -377,7 +373,7 @@ Spécifie le texte à utiliser dans les citations. Requis pour les compléments 
 
 Cet élément spécifie le début du texte de citation qui sera affiché sur une ligne sous le contenu qui est renvoyé du service web (par exemple, « Résultats par : » ou « Optimisé par : »).
 
-Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires à l’aide de `Override` l’élément. Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
+Pour cet élément, vous pouvez spécifier des valeurs pour des paramètres régionaux supplémentaires à l’aide de l’élément `Override` . Par exemple si un utilisateur exécute le SKU espagnol d’Office, mais utilise un dictionnaire anglais, ceci permet à la ligne de citation de prendre la valeur « Resultados por: Bing » et non « Results by: Bing ». Pour plus d’informations sur la spécification de valeurs pour des paramètres régionaux supplémentaires, voir la section « Fourniture de paramètres pour différents paramètres régionaux » dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md).
 
  **Exemple**
 
@@ -529,13 +525,13 @@ L’exemple suivant montre l’implémentation JavaScript dans le fichier Dictio
 Les principaux membres de l’API JavaScript Office (Office.js) qui sont appelés à partir de cette implémentation sont les suivants :
 
 
-- Événement [d’initialisation](/javascript/api/office) de l’objet, qui est élevé lors de l’initialisation du contexte du add-in et donne accès à une instance d’objet Document qui représente le document avec lequel le module `Office` interagit. [](/javascript/api/office/office.document)
+- Événement [d’initialisation](/javascript/api/office) `Office` de l’objet, qui est élevé lors de l’initialisation du contexte du add-in et donne accès à une instance d’objet [Document](/javascript/api/office/office.document) qui représente le document avec lequel le module interagit.
     
-- Méthode [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) de l’objet, qui est appelée dans la fonction pour ajouter un handler d’événements pour l’événement SelectionChanged du document afin d’écouter les modifications de sélection de `Document` l’utilisateur. `initialize` [](/javascript/api/office/office.documentselectionchangedeventargs)
+- Méthode [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) `Document` de l’objet, `initialize` qui est appelée dans la fonction pour ajouter un handler d’événements pour l’événement [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) du document afin d’écouter les modifications de sélection de l’utilisateur.
     
-- Méthode [getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) de l’objet, qui est appelée dans la fonction lorsque le handler d’événements est élevé pour obtenir le mot ou l’expression que l’utilisateur a sélectionné, forcer en texte simple, puis exécuter la fonction de rappel `Document` `tryUpdatingSelectedWord()` `SelectionChanged` `selectedTextCallback` asynchrone.
+- Méthode [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) `Document` de l’objet, `tryUpdatingSelectedWord()` `SelectionChanged` qui est appelée dans la fonction lorsque le handler d’événements est élevé pour obtenir le mot ou l’expression sélectionné par l’utilisateur, forcer en texte simple, `selectedTextCallback` puis exécuter la fonction de rappel asynchrone.
     
-- Lorsque la fonction de rappel asynchrone transmise en tant qu’argument de rappel de la méthode s’exécute, elle obtient la valeur du texte sélectionné lors du retour du `selectTextCallback`  `getSelectedDataAsync` rappel. Elle obtient cette valeur à partir de l’argument _selectedText_ du rappel (de type [AsyncResult)](/javascript/api/office/office.asyncresult)à l’aide de la propriété [value](/javascript/api/office/office.asyncresult#status) de l’objet `AsyncResult` renvoyé.
+- Lorsque la  `selectTextCallback` fonction de rappel asynchrone transmise en tant _qu’argument_ `getSelectedDataAsync` de rappel de la méthode s’exécute, elle obtient la valeur du texte sélectionné lors du retour du rappel. Elle obtient cette valeur à partir de l’argument _selectedText_ du rappel (de type [AsyncResult](/javascript/api/office/office.asyncresult)) à l’aide de la propriété [value](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) de l’objet `AsyncResult` renvoyé.
     
 - Le reste du code dans la fonction  `selectedTextCallback` interroge le service web XML pour obtenir des définitions. Il appelle également les API de Microsoft Translator pour fournir l’URL d’un fichier .wav produisant la prononciation du mot sélectionné.
     

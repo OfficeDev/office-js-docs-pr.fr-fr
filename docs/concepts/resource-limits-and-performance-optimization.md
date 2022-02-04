@@ -1,15 +1,10 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
-description: Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.
+description: 'Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.'
 ms.date: 08/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 03050c325ffd7b67c8c7eaf5047215fce6ac70dd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149211"
 ---
+
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
 Afin d’offrir la meilleure expérience utilisateur, assurez-vous que votre complément Office fonctionne dans les limites prévues en matière d’utilisation du cœur du processeur et de la mémoire, ainsi qu’en matière de fiabilité et, pour les compléments Outlook, de temps de réponse lors de l’évaluation des expressions régulières. Ces limites propres à l’utilisation des ressources d’exécution s’appliquent aux compléments exécutés sur des clients Office sous Windows et OS X mais pas sur des applications mobiles, ni dans un navigateur.
@@ -43,30 +38,30 @@ Les limites d’utilisation des ressources au moment de l’Office s’appliquen
 > [!NOTE]
 > Même si seuls les clients enrichis Outlook et non les clients non-Outlook sur le web ou les appareils mobiles contrôlent l’utilisation des ressources, si un client enrichi désactive un complément Outlook, ce complément est également désactivé pour une utilisation dans Outlook sur le web et les appareils mobiles.
 
-Outre les règles relatives au cœur de l’UC, à la mémoire et à la fiabilité, Outlook compléments doivent respecter les règles suivantes lors de l’activation.
+Outre les règles de cœur de processeur, de mémoire et de fiabilité, Outlook compléments doivent respecter les règles suivantes lors de l’activation.
 
 - **Temps de réponse des expressions régulières** - Seuil par défaut de 1 000 millisecondes pour Outlook afin d’évaluer toutes les expressions régulières contenues dans le manifeste d’un complément Outlook. Le dépassement du seuil oblige Outlook à retenter l’évaluation un peu plus tard.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold,** si ce paramètre existe dans le Registre Windows), Outlook désactive le Outlook. Le Centre d’administration Exchange affiche l’état désactivé et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que sur Outlook sur le web appareils mobiles et mobiles.
+- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le module Outlook. Le Centre d’administration Exchange affiche l’état désactivé, et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que les Outlook sur le web et les appareils mobiles.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
 ### <a name="excel-add-ins"></a>Compléments Excel
 
-Si vous construisez un Excel, n’ignorez pas les limitations de taille suivantes lors de l’interaction avec le workbook.
+Si vous construisez un Excel, n’ignorez pas les limites de taille suivantes lors de l’interaction avec le workbook.
 
 - Excel sur le web a une limite de taille de charge utile de 5 Mo pour les demandes et les réponses. L’erreur `RichAPI.Error` est déclenchée en cas de dépassement de cette limite.
 - Une plage est limitée à cinq millions de cellules pour obtenir des opérations.
 
-Si vous pensez que l’entrée utilisateur dépasse ces limites, veillez à vérifier les données avant `context.sync()` d’appeler. Fractionner l’opération en plus petites parties selon les besoins. N’oubliez pas d’appeler chaque sous-opération pour éviter que ces `context.sync()` opérations ne soient à nouveau rassemblées par lots.
+Si vous pensez que l’entrée utilisateur dépasse ces limites, veillez à vérifier les données avant d’appeler `context.sync()`. Fractionner l’opération en plus petites parties selon les besoins. N’oubliez pas d’appeler `context.sync()` chaque sous-opération pour éviter que ces opérations ne soient à nouveau rassemblées par lots.
 
-Ces limitations sont généralement dépassées par de grandes plages. Votre add-in peut être en mesure d’utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour de manière stratégique des cellules dans une plage plus étendue. Pour plus d’informations sur l’utilisation, voir `RangeAreas` [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md). Pour plus d’informations sur l’optimisation de la taille de la charge utile Excel, voir les meilleures pratiques en matière de limite [de la charge utile.](../excel/performance.md#payload-size-limit-best-practices)
+Ces limitations sont généralement dépassées par de grandes plages. Votre add-in peut être en mesure d’utiliser [RangeAreas](/javascript/api/excel/excel.rangeareas) pour mettre à jour de manière stratégique les cellules d’une plage plus large. Pour plus d’informations sur l’utilisation`RangeAreas`, voir [Work with multiple ranges simultaneously in Excel add-ins](../excel/excel-add-ins-multiple-ranges.md). Pour plus d’informations sur l’optimisation de la taille de la charge utile Excel, voir les meilleures pratiques en matière de limite [de la charge utile](../excel/performance.md#payload-size-limit-best-practices).
 
 ### <a name="task-pane-and-content-add-ins"></a>Compléments de volet Office et de contenu
 
-Si un application de contenu ou du volet Des tâches dépasse les seuils précédents sur l’utilisation du cœur de l’UC ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
+Si un application de contenu ou du volet Des tâches dépasse les seuils précédents en matière d’utilisation du cœur de l’UC ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
 
 - Redémarrer le complément.
 - Annuler les alertes supplémentaires de dépassement de seuil. Dans l’idéal, l’utilisateur devrait supprimer le complément du document. La poursuite de l’exécution du complément risquerait d’entraîner des problèmes supplémentaires au niveau des performances et de la stabilité.  
@@ -91,7 +86,7 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |7 |Le manifeste du complément a été correctement téléchargé||Le manifeste du Office a été chargé et lu avec succès par l’application Office’application.|
 |8 |Échec du téléchargement du manifeste du complément|Critique|L Office’application n’a pas pu charger le fichier manifeste du Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
 |9 |Impossible d’analyser le balisage du complément|Critique|L Office’application a chargé Office manifeste de l’application, mais n’a pas pu lire le code HTML de l’application.|
-|10 |Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
+|10|Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
 |15 |Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
 |18 |Le complément a été fermé||L Office’application a pu fermer le Office le module.|
 |19|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
@@ -115,18 +110,18 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 Les conseils de performances dans l’utilisation du modèle API propre à [l’application](../develop/application-specific-api-model.md) fournissent des conseils lors de l’utilisation des API propres à l’application pour Excel, OneNote, Visio et Word. En résumé, vous devez :
 
-- [Chargez uniquement les propriétés nécessaires.](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended)
-- [Réduisez le nombre d’appels sync().](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls) Pour [plus d’informations sur](correlated-objects-pattern.md) la gestion des appels dans votre code, évitez d’utiliser la méthode context.sync en `sync` boucle.
-- [Réduisez le nombre d’objets proxy créés.](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created) Vous pouvez également désister les objets proxy, comme décrit dans la section suivante.
+- [Chargez uniquement les propriétés nécessaires](../develop/application-specific-api-model.md#calling-load-without-parameters-not-recommended).
+- [Réduisez le nombre d’appels sync(](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-sync-calls)). Pour [plus d’informations sur](correlated-objects-pattern.md) la gestion des appels dans votre code, évitez d’utiliser la méthode context.sync `sync` en boucle.
+- [Réduisez le nombre d’objets proxy créés](../develop/application-specific-api-model.md#performance-tip-minimize-the-number-of-proxy-objects-created). Vous pouvez également désister les objets proxy, comme décrit dans la section suivante.
 
-#### <a name="untrack-unneeded-proxy-objects"></a>Untrack unneeded proxy objects
+#### <a name="untrack-unneeded-proxy-objects"></a>Untrack unneed proxy objects
 
-[Les objets proxy sont persistants](../develop/application-specific-api-model.md#proxy-objects) en mémoire `RequestContext.sync()` jusqu’à ce qu’ils soient appelés. Les opérations par lots volumineux peuvent générer un grand nombre d’objets proxy qui sont uniquement utiles une fois pour le complément et peuvent être publiés à partir de la mémoire avant l’exécution du lot.
+[Les objets proxy sont persistants](../develop/application-specific-api-model.md#proxy-objects) en mémoire jusqu’à ce qu’ils `RequestContext.sync()` soient appelés. Les opérations par lots volumineux peuvent générer un grand nombre d’objets proxy qui sont uniquement utiles une fois pour le complément et peuvent être publiés à partir de la mémoire avant l’exécution du lot.
 
-La `untrack()` méthode libère l’objet de la mémoire. Cette méthode est implémentée sur de nombreux objets proxy d’API propres à l’application. L’appel après la fin de votre ajout avec l’objet devrait produire un avantage de performances perceptible lors de l’utilisation d’un grand nombre `untrack()` d’objets proxy.
+La `untrack()` méthode libère l’objet de la mémoire. Cette méthode est implémentée sur de nombreux objets proxy d’API propres à l’application. L’appel `untrack()` après la fin de l’utilisation de votre add-in avec l’objet devrait produire un avantage de performances perceptible lors de l’utilisation d’un grand nombre d’objets proxy.
 
 > [!NOTE]
-> `Range.untrack()` est un raccourci pour [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#remove_object_). N’importe quel objet proxy peut être non suivi en le supprimant de la liste d’objets suivis dans le contexte.
+> `Range.untrack()` est un raccourci pour [ClientRequestContext.trackedObjects.remove(thisRange)](/javascript/api/office/officeextension.trackedobjects#office-officeextension-trackedobjects-remove-member(1)). N’importe quel objet proxy peut être non suivi en le supprimant de la liste d’objets suivis dans le contexte.
 
 L’exemple Excel code suivant remplit une plage sélectionnée avec des données, une cellule à la fois. Une fois que la valeur est ajoutée à la cellule, la plage représentant cette cellule est non suivie. Exécuter tout d’abord ce code avec une plage sélectionnée de 10 000 à 20 000 cellules, avec la `cell.untrack()` ligne et puis sans. Vous devez remarquer que le code est exécuté plus rapidement avec la `cell.untrack()` ligne que sans elle. Vous pouvez également remarquer un temps de réponse plus rapide par la suite, étant donné que l’étape de nettoyage prend moins de temps.
 

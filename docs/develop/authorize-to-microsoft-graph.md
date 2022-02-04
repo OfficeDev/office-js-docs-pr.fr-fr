@@ -3,13 +3,8 @@ title: Autoriser la connexion à Microsoft Graph avec l’authentification uniqu
 description: Découvrez comment les utilisateurs d’un Office peuvent utiliser l’sign-on unique (SSO) pour extraire des données de Microsoft Graph.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 538648e96233bd0c2b497ef588d10c4f708e8522
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320264"
 ---
+
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
 Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel, de leur compte professionnel, ou scolaire (Office 365). Le meilleur moyen pour un complément Office d’obtenir un accès autorisé à [Microsoft Graph](https://developer.microsoft.com/graph/docs) est d’utiliser les informations d’identification Office de l’utilisateur. Cela leur permet d’accéder à leurs données Microsoft Graph sans avoir à se connecter une deuxième fois.
@@ -26,7 +21,7 @@ Le diagramme suivant montre les étapes nécessaires pour se connecter et accéd
 
 :::image type="content" source="../images/sso-access-to-microsoft-graph.svg" alt-text="Diagramme montrant le processus DSO." border="false":::
 
-1. Le code côté client du add-in appelle l’API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Cela indique à l Office’hôte d’obtenir un jeton d’accès pour le module.
+1. Le code côté client du add-in appelle l’API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). Cela indique à l Office’hôte d’obtenir un jeton d’accès pour le module.
 
     Si l’utilisateur n’est pas signé, l’hôte Office conjointement avec le Plateforme d'identités Microsoft fournit une interface utilisateur pour la signature et le consentement de l’utilisateur.
 
@@ -81,5 +76,5 @@ Pour Outlook des applications, assurez-vous d’activer l’authentification mod
 ## <a name="see-also"></a>Voir aussi
 
 * [Jeton OAuth2 Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
-* [Plateforme d'identités Microsoft flux « De la part de » et OAuth 2.0](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
+* [Plateforme d’identités Microsoft et flux OAuth 2.0 On-Behalf-Of](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
 * [Ensembles de conditions requises IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)

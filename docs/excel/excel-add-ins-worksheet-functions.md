@@ -1,15 +1,10 @@
 ---
 title: Appel de fonctions de feuille de calcul Excel intégrées à l’aide de l’API JavaScript pour Excel
-description: Découvrez comment appeler des fonctions de feuille de Excel intégrées, telles que l’API JavaScript Excel et à `VLOOKUP` `SUM` l’aide de cette fonction.
+description: 'Découvrez comment appeler des fonctions de feuille de Excel intégrées, telles `VLOOKUP` `SUM` que l’API JavaScript Excel et à l’aide de cette fonction.'
 ms.date: 12/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 179ede5fe26c0b34e13bcab8b37cae7177d35c22
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152272"
 ---
+
 # <a name="call-built-in-excel-worksheet-functions"></a>Appel de fonctions de feuille de calcul Excel intégrées
 
 Cet article explique comment appeler les fonctions de feuille de calcul Excel intégrées telles que `VLOOKUP` et `SUM` utilisant l’API JavaScript pour Excel. Il fournit également la liste complète des fonctions de feuille de calcul Excel intégrées pouvant être appelées à l’aide de l’API JavaScript pour Excel.
@@ -19,7 +14,7 @@ Cet article explique comment appeler les fonctions de feuille de calcul Excel in
 
 ## <a name="calling-a-worksheet-function"></a>Appel d’une fonction de feuille de calcul
 
-L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La propriété de l’objet renvoyé par une fonction de feuille de calcul contient le `value` résultat de la fonction `FunctionResult` spécifiée. Comme le montre cet exemple, vous devez `load` la `value` propriété de `FunctionResult` l’objet avant de pouvoir le lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console.
+L’extrait de code suivant montre comment appeler une fonction de feuille de calcul où `sampleFunction()` est un espace réservé devant être remplacé par le nom de la fonction à appeler et les paramètres d’entrée nécessitant la fonction. La `value` propriété de l’objet `FunctionResult` renvoyé par une fonction de feuille de calcul contient le résultat de la fonction spécifiée. Comme le montre cet exemple, vous devez avoir `load` la propriété `value` de l’objet `FunctionResult` avant de pouvoir le lire. Dans cet exemple, le résultat de la fonction est simplement écrit sur la console.
 
 ```js
 var functionResult = context.workbook.functions.sampleFunction();
@@ -37,7 +32,7 @@ return context.sync()
 
 L’image suivante montre un tableau dans une feuille de calcul Excel contenant des données de ventes pour divers types d’outils sur une période de trois mois. Chaque numéro de la table représente le nombre d’unités vendues pour un outil spécifique lors d’un mois donné. Les exemples suivant expliquent comment appliquer des fonctions de feuille de calcul intégrées à ces données.
 
-![Capture d’écran des données de ventes Excel données pour Hammer, Wrench et Saw en novembre, décembre et janvier.](../images/worksheet-functions-chaining-results.jpg)
+![Capture d’écran des données de ventes Excel données pour hammer, Wrench et Saw en novembre, décembre et janvier.](../images/worksheet-functions-chaining-results.jpg)
 
 ## <a name="example-1-single-function"></a>Exemple 1 : Fonction unique
 
@@ -447,4 +442,4 @@ Les fonctions de feuille de calcul Excel intégrées suivantes peuvent être app
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
 - [Classe Functions (interface API JavaScript pour Excel)](/javascript/api/excel/excel.functions)
-- [Objet Workbook Functions (interface API JavaScript pour Excel)](/javascript/api/excel/excel.workbook#functions)
+- [Objet Workbook Functions (interface API JavaScript pour Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

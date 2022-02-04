@@ -3,13 +3,8 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: Recommandations sur la façon de résoudre les problèmes liés à l’signature unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 83b6f72ec43a3d9d654206ab895cd5e4eb98bf7e
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320220"
 ---
+
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
 Cet article fournit des conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office, et explique comment faire en sorte que votre complément gère correctement les conditions particulières ou les erreurs.
@@ -33,7 +28,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 
 ### <a name="13000"></a>13000
 
-L’API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) n’est pas prise en charge par le complément ou la version d’Office.
+L’API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) n’est pas prise en charge par le complément ou la version d’Office.
 
 - La version d’Office ne prend pas en charge la SSO. La version requise est Microsoft 365 abonnement, dans n’importe quel canal mensuel.
 - Le manifeste de complément n’inclut pas la section [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) appropriée.

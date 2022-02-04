@@ -3,15 +3,10 @@ title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: En savoir plus sur l’API JavaScript de OneNote pour les compléments OneNote sur le web.
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: 7c08a684a3b6b88b060edebc14d5711fc5bcc3de
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514236"
 ---
+
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
 OneNote présente une API JavaScript pour les compléments OneNote sur le web. Vous pouvez créer des compléments de volet de tâches et de contenu, ainsi que des commandes de complément qui interagissent avec les objets OneNote et se connectent à des services web ou à d’autres ressources basées sur le web.
@@ -96,7 +91,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet *Document*
 
-Utilisez l’objet `Document` pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) et [setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_).
+Utilisez l’objet `Document` pour accéder à l’API commune, par exemple les méthodes[getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) et [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)).
 
 Par exemple :  
 
@@ -119,10 +114,10 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 
 | API | Commentaires |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) | Office.CoercionType.Text`Office.CoercionType.Text` et Office.CoercionType.Matrix`Office.CoercionType.Matrix` uniquement |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#setSelectedDataAsync_data__options__callback_) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement | 
-| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#get_name_) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#set_name__value_) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | Office.CoercionType.Text`Office.CoercionType.Text` et Office.CoercionType.Matrix`Office.CoercionType.Matrix` uniquement |
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement | 
+| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API spécifique à l’application. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).

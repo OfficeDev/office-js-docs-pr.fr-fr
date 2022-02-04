@@ -3,40 +3,35 @@ title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 02a6360d43b91cde773d767d9a9838c015d9ecd7
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153132"
 ---
+
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
-L Office API JavaScript fournit des propriétés et des méthodes pour gérer l’emplacement d’un rendez-vous que l’utilisateur compose. Actuellement, deux propriétés fournissent l’emplacement d’un rendez-vous :
+L Office API JavaScript fournit des propriétés et des méthodes pour gérer l’emplacement d’un rendez-vous que l’utilisateur compose. Actuellement, il existe deux propriétés qui fournissent l’emplacement d’un rendez-vous :
 
-- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API de base qui vous permet d’obtenir et de définir l’emplacement.
-- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties): API améliorée qui vous permet d’obtenir et de définir l’emplacement, et inclut la spécification du [type d’emplacement.](/javascript/api/outlook/office.mailboxenums.locationtype) Le type est `LocationType.Custom` si vous définissez l’emplacement à l’aide `item.location` de .
+- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) : API de base qui vous permet d’obtenir et de définir l’emplacement.
+- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) : API améliorée qui vous permet d’obtenir et de définir l’emplacement, et inclut la spécification du [type d’emplacement](/javascript/api/outlook/office.mailboxenums.locationtype). Le type est si `LocationType.Custom` vous définissez l’emplacement à l’aide de `item.location`.
 
 Le tableau suivant répertorie les API d’emplacement et les modes (c’est-à-dire, composer ou lire) où elles sont disponibles.
 
 | API | Modes de rendez-vous applicables |
 |---|---|
-| [item.location](/javascript/api/outlook/office.appointmentread#location) | Attendee/Read |
-| [item.location.getAsync](/javascript/api/outlook/office.location#getAsync_options__callback_) | Organisateur/Composition |
-| [item.location.setAsync](/javascript/api/outlook/office.location#setAsync_location__options__callback_) | Organisateur/Composition |
-| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) | Organisateur/Composition,<br>Attendee/Read |
-| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) | Organisateur/Composition |
-| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) | Organisateur/Composition |
+| [item.location](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-location-member) | Attendee/Read |
+| [item.location.getAsync](/javascript/api/outlook/office.location#outlook-office-location-getasync-member(1)) | Organizer/Compose |
+| [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1)) | Organizer/Compose |
+| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) | Organizer/Compose,<br>Attendee/Read |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
 
-Pour utiliser les méthodes disponibles uniquement pour composer des add-ins, configurez le manifeste du add-in pour activer le module en mode Organisateur/Composition. Pour [plus d Outlook,](compose-scenario.md) voir Créer des Outlook pour les formulaires de composition.
+Pour utiliser les méthodes disponibles uniquement pour composer des add-ins, configurez le manifeste du add-in pour activer le module en mode Organisateur/Composition. Pour [plus d’Outlook,](compose-scenario.md) voir Créer des Outlook pour les formulaires de composition.
 
-## <a name="use-the-enhancedlocation-api"></a>Utiliser `enhancedLocation` l’API
+## <a name="use-the-enhancedlocation-api"></a>Utiliser l’API `enhancedLocation`
 
-Vous pouvez utiliser `enhancedLocation` l’API pour obtenir et définir l’emplacement d’un rendez-vous. Le champ Emplacement prend en charge plusieurs emplacements et, pour chaque emplacement, vous pouvez définir le nom complet, le type et l’adresse e-mail de la salle de conférence (le cas échéant). Voir [LocationType pour](/javascript/api/outlook/office.mailboxenums.locationtype) les types d’emplacement pris en charge.
+Vous pouvez utiliser l’API `enhancedLocation` pour obtenir et définir l’emplacement d’un rendez-vous. Le champ Emplacement prend en charge plusieurs emplacements et, pour chaque emplacement, vous pouvez définir le nom complet, le type et l’adresse e-mail de la salle de conférence (le cas échéant). Voir [LocationType pour](/javascript/api/outlook/office.mailboxenums.locationtype) les types d’emplacement pris en charge.
 
 ### <a name="add-location"></a>Ajouter un emplacement
 
-L’exemple suivant montre comment ajouter un emplacement en appelant [addAsync](/javascript/api/outlook/office.enhancedlocation#addAsync_locationIdentifiers__options__callback_) sur [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
+L’exemple suivant montre comment ajouter un emplacement en appelant [addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) sur [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member).
 
 ```js
 var item;
@@ -60,7 +55,7 @@ Office.initialize = function () {
 
 ### <a name="get-location"></a>Obtenir un emplacement
 
-L’exemple suivant montre comment obtenir l’emplacement en appelant [getAsync](/javascript/api/outlook/office.enhancedlocation#getAsync_options__callback_) sur [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#enhancedLocation).
+L’exemple suivant montre comment obtenir l’emplacement en appelant [getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) sur [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-enhancedlocation-member).
 
 ```js
 var item;
@@ -88,7 +83,7 @@ function callbackFunction(asyncResult) {
 
 ### <a name="remove-location"></a>Supprimer un emplacement
 
-L’exemple suivant montre comment supprimer l’emplacement en appelant [removeAsync](/javascript/api/outlook/office.enhancedlocation#removeAsync_locationIdentifiers__options__callback_) sur [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#enhancedLocation).
+L’exemple suivant montre comment supprimer l’emplacement en appelant [removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) sur [mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member).
 
 ```js
 var item;
@@ -111,15 +106,15 @@ function callbackFunction(asyncResult) {
 }
 ```
 
-## <a name="use-the-location-api"></a>Utiliser `location` l’API
+## <a name="use-the-location-api"></a>Utiliser l’API `location`
 
-Vous pouvez utiliser `location` l’API pour obtenir et définir l’emplacement d’un rendez-vous.
+Vous pouvez utiliser l’API `location` pour obtenir et définir l’emplacement d’un rendez-vous.
 
 ### <a name="get-the-location"></a>Recherche de l’emplacement
 
 Cette section présente un exemple de code qui obtient et affiche l’emplacement du rendez-vous que compose l’utilisateur.
 
-Pour utiliser `item.location.getAsync`, indiquez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone.  Vous pouvez fournir les arguments nécessaires à la méthode de rappel via le paramètre facultatif `asyncContext`. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie `asyncResult` du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’emplacement sous forme de chaîne à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#value).
+Pour utiliser `item.location.getAsync`, indiquez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone.  Vous pouvez fournir les arguments nécessaires à la méthode de rappel via le paramètre facultatif `asyncContext`. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie `asyncResult` du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’emplacement sous forme de chaîne à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 ```js
 var item;
@@ -158,7 +153,7 @@ function write(message){
 
 Cette section présente un exemple de code qui définit l’emplacement du rendez-vous composé par l’utilisateur.
 
-Pour utiliser `item.location.setAsync`, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une méthode de rappel et tous les arguments de la méthode de rappel dans le paramètre `asyncContext`. Vous devez vérifier l’état, le résultat et tout message d’erreur dans le paramètre `asyncResult` de sortie du rappel. Si l’appel asynchrone aboutit, `setAsync` insère la chaîne d’emplacement spécifiée sous forme de texte brut, en écrasant tous les emplacements existants pour cet élément.
+Pour utiliser `item.location.setAsync`, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une méthode de rappel et tous les arguments de la méthode de rappel dans le paramètre `asyncContext`. Vous devez vérifier l’état, le résultat et tout message `asyncResult` d’erreur dans le paramètre de sortie du rappel. Si l’appel asynchrone aboutit, `setAsync` insère la chaîne d’emplacement spécifiée sous forme de texte brut, en écrasant tous les emplacements existants pour cet élément.
 
 > [!NOTE]
 > Vous pouvez définir plusieurs emplacements en utilisant un point-virgule comme séparateur (par exemple, « Salle de conférence A ; Salle de conférence B').

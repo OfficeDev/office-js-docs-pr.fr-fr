@@ -1,17 +1,12 @@
 ---
 title: Compléments PowerPoint
-description: Découvrez comment utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur.
+description: 'Découvrez comment utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur.'
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: scenarios:getting-started
+ms.custom: 'scenarios:getting-started'
 ms.localizationpriority: high
-ms.openlocfilehash: 2b44b17b14f49e386c44d1581cf2d638005a9a5c
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514215"
 ---
+
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
 Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur toutes les plateformes, y compris Windows, iPad, Mac et dans un navigateur. Vous pouvez créer deux types de complément PowerPoint :
@@ -39,9 +34,9 @@ Si vous créez un complément de contenu, vous devrez obtenir la vue active de l
 
 Collez le code suivant:
 
-- La fonction`getActiveFileView` appelle la méthode [Document.getActiveViewAsync](/javascript/api/office/office.document#getActiveViewAsync_options__callback_) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
+- La fonction`getActiveFileView` appelle la méthode [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) afin de renvoyer si la vue actuelle de la présentation est une vue de « modification » (toutes les vues dans lesquelles vous modifiez des diapositives, telles que les vues **Normal** ou **Mode Plan**) ou « lecture » ( **Diaporama** ou **Mode Lecture**).
 
-- La fonction`registerActiveViewChanged`appelle la méthode [addHandlerAsync](/javascript/api/office/office.document#addHandlerAsync_eventType__handler__options__callback_) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document).
+- La fonction`registerActiveViewChanged`appelle la méthode [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) afin d’inscrire un gestionnaire pour l’événement [Document.ActiveViewChanged](/javascript/api/office/office.document).
 
 
 ```js
@@ -90,7 +85,7 @@ function registerActiveViewChanged() {
 
 ## <a name="navigate-to-a-particular-slide-in-the-presentation"></a>Accéder à une diapositive spécifique dans la présentation
 
-Dans l’exemple de code suivant, la fonction `getSelectedRange` appelle la méthode [Document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__options__callback_) pour obtenir l’objet JSON retourné par `asyncResult.value`, qui contient un tableau nommé `slides`. Le tableau `slides` contient les ID, titres et index de la plage sélectionnée de diapositives (ou de la diapositive active, si plusieurs diapositives ne sont pas sélectionnées). Il enregistre également l’ID de la première diapositive de la plage sélectionnée dans une variable globale.
+Dans l’exemple de code suivant, la fonction `getSelectedRange` appelle la méthode [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) pour obtenir l’objet JSON retourné par `asyncResult.value`, qui contient un tableau nommé `slides`. Le tableau `slides` contient les ID, titres et index de la plage sélectionnée de diapositives (ou de la diapositive active, si plusieurs diapositives ne sont pas sélectionnées). Il enregistre également l’ID de la première diapositive de la plage sélectionnée dans une variable globale.
 
 ```js
 function getSelectedRange() {
@@ -109,7 +104,7 @@ function getSelectedRange() {
 }
 ```
 
-Dans l’exemple de code suivant la fonction`goToFirstSlide`appelle la méthode[Document.goToByIdAsync](/javascript/api/office/office.document#goToByIdAsync_id__goToType__options__callback_)pour accéder à la première diapositive qui a été identifiée par la fonction`getSelectedRange`illustrée précédemment.
+Dans l’exemple de code suivant la fonction`goToFirstSlide`appelle la méthode[Document.goToByIdAsync](/javascript/api/office/office.document#office-office-document-gotobyidasync-member(1))pour accéder à la première diapositive qui a été identifiée par la fonction`getSelectedRange`illustrée précédemment.
 
 ```js
 function goToFirstSlide() {
@@ -148,7 +143,7 @@ function goToSlideByIndex() {
 
 ## <a name="get-the-url-of-the-presentation"></a>Obtenir l’URL de la présentation
 
-La fonction`getFileUrl` appelle la méthode [Document.getFileProperties](/javascript/api/office/office.document#getFilePropertiesAsync_options__callback_) pour obtenir l’URL du fichier de présentation.
+La fonction`getFileUrl` appelle la méthode [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) pour obtenir l’URL du fichier de présentation.
 
 ```js
 function getFileUrl() {

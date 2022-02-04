@@ -1,15 +1,10 @@
 ---
 title: Utilisation du modèle de l’API propre à l’application
-description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
+description: 'Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.'
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d7eaa51f6ac9255772e7dcd154e82dc28f39e848
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149168"
 ---
+
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
 Cet article décrit l’utilisation du modèle d’API pour la création de compléments dans Excel, Word et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
@@ -225,7 +220,7 @@ Excel.run(function (ctx) {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>Certaines propriétés ne peuvent pas être définies directement
 
-Certaines propriétés ne peuvent pas être définies, même si elles sont accessibles en écriture. Ces propriétés font partie d’une propriété parente qui doit être définie en tant qu’objet unique. En effet, cette propriété parente s’appuie sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parentes doivent être définies à l’aide de la notation littérale de l’objet pour définir l’intégralité de l’objet, plutôt que de définir les sous-propriétés individuelles de cet objet. Un exemple de ce modèle est trouvé dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul objet [PageLayoutZoomOptions,](/javascript/api/excel/excel.pagelayoutzoomoptions) comme illustré ici.
+Certaines propriétés ne peuvent pas être définies, même si elles sont accessibles en écriture. Ces propriétés font partie d’une propriété parente qui doit être définie en tant qu’objet unique. En effet, cette propriété parente s’appuie sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parentes doivent être définies à l’aide de la notation littérale de l’objet pour définir l’intégralité de l’objet, plutôt que de définir les sous-propriétés individuelles de cet objet. Un exemple de ce modèle est trouvé dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul [objet PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ici.
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -234,7 +229,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 Dans l’exemple précédent, vous ***ne pouvez pas*** affecter directement une valeur à `zoom` : `sheet.pageLayout.zoom.scale = 200;`. Cette instruction génère une erreur, car `zoom` n’est pas chargé. Même si `zoom` était chargé, l’ensemble d’échelles n’est pas pris en compte. Toutes les opérations de contexte se produisent sur `zoom`, elles actualisent l’objet proxy du complément et remplacement des valeurs définies localement.
 
-Ce comportement diffère des [propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range.format](/javascript/api/excel/excel.range#format). Les `format` propriétés peuvent être définies à l’aide de la navigation d’objet, comme illustré ici.
+Ce comportement diffère des [propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Les propriétés peuvent `format` être définies à l’aide de la navigation d’objet, comme illustré ici.
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.

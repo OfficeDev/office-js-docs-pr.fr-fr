@@ -3,17 +3,12 @@ title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: Exemples de code illustrant les tâches graphiques à l’aide Excel’API JavaScript.
 ms.date: 11/29/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 173e20977270e84c7cef39d9ea0e326cb7b5d298
-ms.sourcegitcommit: 5daf91eb3be99c88b250348186189f4dc1270956
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2021
-ms.locfileid: "61242070"
 ---
+
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel.
-Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les `Chart` propriétés, voir Chart Object `ChartCollection` [(Interface API JavaScript](/javascript/api/excel/excel.chart) pour Excel) et [Chart Collection Object (interface API JavaScript](/javascript/api/excel/excel.chartcollection)pour Excel).
+Pour obtenir la liste complète des propriétés et méthodes qui sont prise en charge par les objets et les propriétés `Chart` `ChartCollection`, voir [Chart Object (Interface API JavaScript pour Excel)](/javascript/api/excel/excel.chart) et [Chart Collection Object (interface API JavaScript pour Excel).](/javascript/api/excel/excel.chartcollection).
 
 ## <a name="create-a-chart"></a>Création d’un graphique
 
@@ -128,7 +123,7 @@ Excel.run(function (context) {
 
 ## <a name="set-visibility-of-gridlines-in-a-chart"></a>Définir la visibilité du quadrillage dans un graphique
 
-L’exemple de code suivant masque le quadrillage principal de l’axe des ordonnées du premier graphique de la feuille de calcul. Vous pouvez afficher le quadrillage principal de l’axe des valeurs du graphique, en le réglage `chart.axes.valueAxis.majorGridlines.visible` sur `true` .
+L’exemple de code suivant masque le quadrillage principal de l’axe des ordonnées du premier graphique de la feuille de calcul. Vous pouvez afficher le quadrillage principal de l’axe des valeurs du graphique, en `chart.axes.valueAxis.majorGridlines.visible` le réglage sur `true`.
 
 ```js
 Excel.run(function (context) {
@@ -169,7 +164,7 @@ Excel.run(function (context) {
 
 ### <a name="update-a-trendline"></a>Mettre à jour une courbe de tendance
 
-L’exemple de code suivant définit la courbe de tendance à taper pour la première série du premier graphique de la feuille de calcul `Linear` nommée **Sample**.
+L’exemple de code suivant définit la courbe de tendance à taper `Linear` pour la première série du premier graphique de la feuille de calcul nommée **Sample**.
 
 ```js
 Excel.run(function (context) {
@@ -190,11 +185,11 @@ Excel.run(function (context) {
 
 ## <a name="add-and-format-a-chart-data-table"></a>Ajouter et mettre en forme un tableau de données de graphique
 
-Vous pouvez accéder à l’élément de table de données d’un graphique avec la [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#getDataTableOrNullObject__) méthode. Cette méthode renvoie [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) l’objet. L’objet possède des propriétés de mise en forme `ChartDataTable` booléiennes telles `visible` que , et `showLegendKey` `showHorizontalBorder` .
+Vous pouvez accéder à l’élément de table de données d’un graphique avec la [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#excel-excel-chart-getdatatableornullobject-member(1)) méthode. Cette méthode renvoie l’objet [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) . L’objet `ChartDataTable` possède des propriétés de mise en forme booléiennes telles `visible`que , `showLegendKey`et `showHorizontalBorder`.
 
-La `ChartDataTable.format` propriété renvoie l’objet, ce qui vous permet de mettre en forme et de donner un style supplémentaire [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) à la table de données. `ChartDataTableFormat`L’objet offre , et `border` `fill` `font` propriétés.
+La `ChartDataTable.format` propriété renvoie l’objet [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) , ce qui vous permet de mettre en forme et de donner un style supplémentaire à la table de données. L’objet `ChartDataTableFormat` offre `border`, `fill`et propriétés `font` .
 
-L’exemple de code suivant montre comment ajouter une table de données à un graphique, puis mettre en forme cette table de données à l’aide des `ChartDataTable` objets et des `ChartDataTableFormat` objets.
+L’exemple de code suivant montre comment ajouter une table de données à un graphique, puis mettre en forme cette table `ChartDataTable` de données à l’aide des objets et des `ChartDataTableFormat` objets.
 
 ```js
 // This code sample adds a data table to a chart that already exists on the worksheet, 
