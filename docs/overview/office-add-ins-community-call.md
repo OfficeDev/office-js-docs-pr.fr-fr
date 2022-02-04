@@ -1,22 +1,18 @@
 ---
 title: Microsoft Office de la communauté des add-ins
-description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 01/26/2022
+description: 'L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.'
+ms.date: 02/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 94f86ef910d032069fe3e537ae5bf5e63bb4ffb0
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263001"
 ---
+
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des add-ins
 
-L’appel de la communauté Microsoft Office compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office compléments. L’appel de la communauté a lieu le deuxième mercredi de chaque mois à 8 h 00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier sur https://aka.ms/officeaddinscommunitycall .
+L’appel de la communauté Microsoft Office compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office compléments. L’appel de la communauté a lieu le deuxième mercredi de chaque mois à 8 h 00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier sur https://aka.ms/officeaddinscommunitycall.
 
 ## <a name="agenda-for-february-9th-call"></a>Agenda de l’appel du 9 février
 
-L’ordre du jour de février sera publié environ une semaine avant l’appel.
+- Travailler avec des [types de données](../excel/excel-data-types-overview.md) dans l’API Excel de données.
+- Mise à jour sur les API Word.
 
 ## <a name="previous-calls"></a>Appels précédents
 
