@@ -1,18 +1,20 @@
 ---
 title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
-ms.date: 07/22/2021
+ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa4ce5b74752623e10b61082d6f9becc1a26b713
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 90a8bed04a5f563de1bdbb509def39d96c732b11
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074188"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320185"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
-De nombreuses autorités d’identité, également appelées service d’émission de jeton de sécurité (STS), empêchent leur page de connexion de s’ouvrir dans un IFRAME. Il s'agit notamment de Google, Facebook et des services protégés par Microsoft Identity Platform (anciennement Azure AD V 2.0) tels qu'un compte Microsoft, un compte Microsoft 365 Éducation ou travail, ou tout autre compte commun. Cela a pour effet de créer un problème pour les compléments Office, car lorsque le complément est exécuté dans **Office sur le Web**, le volet Office est un IFRAME. Les utilisateurs d’un complément peuvent se connecter à l’un de ces services uniquement si le complément peut ouvrir une instance de navigateur entièrement distincte. C’est la raison pour laquelle Office fournit son [API de boîte de dialogue Office](dialog-api-in-office-add-ins.md), à savoir la méthode [displayDialogAsync](/javascript/api/office/office.ui).
+Utilisez toujours l’API de boîte de dialogue Office pour authentifier et autoriser les utilisateurs avec votre complément Office. Vous devez également utiliser l’API de boîte de dialogue Office si vous implémentez l’authentification de secours lorsque l’authentification unique (SSO) ne peut pas être utilisée.
+
+De nombreuses autorités d’identité, également appelées service d’émission de jeton de sécurité (STS), empêchent leur page de connexion de s’ouvrir dans un IFRAME. Il s'agit notamment de Google, Facebook et des services protégés par la plateforme d’identités Microsoft pour développeurs (anciennement Azure AD V 2.0) tels qu'un compte Microsoft, un compte Microsoft 365 Éducation ou professionnel ou tout autre compte commun. Cela a pour effet de créer un problème pour les compléments Office, car lorsque le complément est exécuté dans **Office sur le Web**, le volet Office est un IFRAME. Les utilisateurs d’un complément peuvent se connecter à l’un de ces services uniquement si le complément peut ouvrir une instance de navigateur entièrement distincte. C’est la raison pour laquelle Office fournit son [API de boîte de dialogue Office](dialog-api-in-office-add-ins.md), à savoir la méthode [displayDialogAsync](/javascript/api/office/office.ui).
 
 > [!NOTE]
 > Cet article part du principe que vous êtes familiarisé(e) avec [Utiliser l’API de boîte de dialogue Office](dialog-api-in-office-add-ins.md) dans vos compléments Office.
@@ -27,11 +29,10 @@ La boîte de dialogue ouverte avec cette API présente les caractéristiques sui
 - La première page ouverte dans la boîte de dialogue doit être hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port, le cas échéant.
 - La boîte de dialogue peut renvoyer des informations au volet Office à l’aide de la méthode [messageParent](/javascript/api/office/office.ui#messageParent_message__messageOptions_) . Nous vous recommandons d’appeler cette méthode uniquement à partir d’une page hébergée dans le même domaine que le volet Office, y compris le protocole, les sous-domaines et le port. Sinon, il existe des complications dans la façon dont vous appelez la méthode et traitez le message. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
-
-Par défaut, la boîte de dialogue s’ouvre dans un tout nouveau contrôle d’affichage web, et non un iframe. Cela garantit qu’il peut ouvrir la page de connexion d’un fournisseur d’identité. Comme vous le verrez plus loin dans cet article, les caractéristiques de la boîte de dialogue Office ont des implications sur la façon dont vous utilisez les bibliothèques d’authentification ou d’autorisation telles que MSAL et Passport.
+Par défaut, la boîte de dialogue s’ouvre dans un nouveau contrôle d’affichage web, et non un iframe. Cela garantit qu’il peut ouvrir la page de connexion d’un fournisseur d’identité. Comme vous le verrez plus loin dans cet article, les caractéristiques de la boîte de dialogue Office ont des implications sur la façon dont vous utilisez les bibliothèques d’authentification ou d’autorisation telles que la Bibliothèque d’authentification Microsoft (MSAL) et Passport.
 
 > [!NOTE]
-> Pour configurer la boîte de dialogue pour qu’elle s’ouvre dans un iframe flottant, passez l’option `displayInIframe: true` dans l’appel à `displayDialogAsync`. Ne le faites *pas* lorsque vous utilisez l’API de boîte de dialogue Office pour la connexion.
+> Pour configurer la boîte de dialogue pour qu’elle s’ouvre dans un iframe flottant, passez l’`displayInIframe: true` option dans l’appel à `displayDialogAsync`. Ne le faites *pas* lorsque vous utilisez l’API de boîte de dialogue Office pour la connexion.
 
 ## <a name="authentication-flow-with-the-office-dialog-box"></a>Flux d’authentification avec la boîte de dialogue Office
 
@@ -61,13 +62,13 @@ Lorsqu’un utilisateur appelle une fonction dans l’application qui accède au
 Vous pouvez utiliser les API de dialogue Office pour gérer ce processus à l’aide d’un flux semblable à celui décrit pour la connexion des utilisateurs. Les seules différences sont les suivantes :
 
 - Si l’utilisateur n’a pas préalablement accordé à l’application les autorisations nécessaires, il est invité à le faire dans la boîte de dialogue après la connexion.
-- La fenêtre de la boîte de dialogue envoie le jeton d’accès vers la fenêtre hôte en utilisant `messageParent` pour envoyer le jeton d’accès converti en chaîne ou en stockant jeton d’accès à un emplacement où la fenêtre hôte peut le récupérer (et utilise `messageParent` pour indiquer à la fenêtre hôte que le jeton est disponible). Le jeton a une limite de temps, mais tant qu’elle n’est pas écoulée, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans demander d’autre confirmation.
+- Votre code dans la fenêtre de la boîte de dialogue envoie le jeton d’accès vers la fenêtre hôte en utilisant `messageParent` pour envoyer le jeton d’accès converti en chaîne ou en stockant jeton d’accès à un emplacement où la fenêtre hôte peut le récupérer (et en utilisant `messageParent` pour indiquer à la fenêtre hôte que le jeton est disponible). Le jeton a une limite de temps, mais tant qu’elle n’est pas écoulée, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans demander d’autre confirmation.
 
 Quelques exemples de compléments d’authentification qui utilisent l’API de boîte de dialogue Office à cet effet sont répertoriés dans les [exemples](#samples).
 
-## <a name="using-authentication-libraries-with-the-dialog-box"></a>Utilisation de bibliothèques d’authentification avec la boîte de dialogue
+## <a name="use-authentication-libraries-with-the-dialog-box"></a>Utiliser la bibliothèques d’authentification avec la boîte de dialogue
 
-Le fait que la boîte de dialogue Office et le volet des tâches s’exécutent dans différents navigateurs, et instances JavaScript Runtime, signifie que vous devez utiliser de nombreuses bibliothèques d’authentification et d’autorisation de manière différente que celle utilisée lorsque l’authentification et l’autorisation peuvent être effectuées dans la même fenêtre. Les sections suivantes décrivent les principales façons dont vous ne pouvez généralement pas utiliser ces bibliothèques et la façon dont vous *pouvez* les utiliser.
+Le fait que la boîte de dialogue Office et le volet des tâches s’exécutent dans différents navigateurs et instances JavaScript Runtime, signifie que vous devez utiliser des bibliothèques d’authentification et d’autorisation de manière différente de la façon dont elles sont utilisées lorsque l’authentification et l’autorisation ont lieu dans la même fenêtre. Les sections suivantes décrivent les façons dont vous pouvez et ne pouvez pas utiliser ces bibliothèques.
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>En général, vous ne pouvez pas utiliser le cache interne de la bibliothèque pour stocker des jetons
 

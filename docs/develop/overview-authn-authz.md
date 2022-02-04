@@ -1,77 +1,127 @@
 ---
 title: Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
-description: Demandez aux utilisateurs d’authentifier la connexion dans les applications Web et les Compléments Office.
-ms.date: 09/03/2021
+description: Découvrez le fonctionnement de l’authentification et de l’autorisation dans les compléments Office.
+ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa1a6c19a52f22271cbe1b6ec0bc54bcf15dd75e
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 1dab5e7e4cd1d5a32115bdecca3fa742699a53b9
+ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62073317"
+ms.lasthandoff: 02/02/2022
+ms.locfileid: "62320122"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
-Les applications Web et par conséquent les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de s’authentifier avec une connexion. Par exemple, vous pouvez exiger que vos utilisateurs soient connectés avec un compte Microsoft, un compte Microsoft 365 Education ou un compte de travail, ou un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
+Les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de se connecter pour utiliser votre complément avec un compte Microsoft, un compte Microsoft 365 Éducation ou professionnel ou un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
 
 Votre add-in peut également obtenir le consentement de l'utilisateur pour accéder à ses données Microsoft Graphique (telles que son profil Microsoft 365, ses fichiers OneDrive et ses données SharePoint) ou à des données d'autres sources externes telles que Google, Facebook, LinkedIn, SalesForce et GitHub. Cette tâche est appelée autorisation de complément (ou d’application), car il s’agit du *complément* qui est autorisé et non l’utilisateur.
 
-Vous avez le choix entre deux méthodes pour effectuer l’authentification et l’autorisation.
+## <a name="key-resources-for-authentication-and-authorization"></a>Ressources clés pour l’authentification et l’autorisation
 
-- **La connexion unique Office sur (SSO)**: Un système qui permet à la connexion Office d’un utilisateur de fonctionner également comme connexion au complément. Si vous le souhaitez, le complément peut également utiliser les informations d’identification Office de l’utilisateur pour autoriser le complément à accéder à Microsoft Graph. (Les sources non-Microsoft ne sont pas accessibles par ce biais.)
-- **Authentification et autorisation des applications web avec Azure Active Directory** : il ne s’agit pas d’une nouveauté, ni d’un comportement spécial. C’est la manière dont les compléments Office (et les autres applications web) authentifiait les utilisateurs et autorisait les applications avant l’arrivée d’un système d’authentification unique pour Office et elle reste utilisée dans les scénarios où l’authentification unique d’Office est impossible. Il existe également des scénarios dans lesquels vous voulez que vos utilisateurs se connectent à votre complément séparément, même lorsque l’authentification unique est disponible. Par exemple, si vous voulez qu’ils aient la possibilité de se connecter au complément avec un ID différent de celui avec lequel ils sont actuellement connectés à Office.
+Cette documentation explique comment créer et configurer des compléments Office pour implémenter correctement l’authentification et l’autorisation. Toutefois, de nombreux concepts et technologies de sécurité mentionnés ne sont pas concernés par cette documentation. Par exemple, les concepts de sécurité généraux tels que les flux OAuth, la mise en cache de jetons ou la gestion des identités ne sont pas expliqués ici. Cette documentation ne documente pas non plus quoi que ce soit spécifique à Microsoft Azure ou à la plateforme d’identités Microsoft. Nous vous recommandons de consulter les ressources suivantes si vous avez besoin d’informations supplémentaires dans ces domaines.
 
-L'organigramme suivant vous montre les décisions que vous devez prendre en tant que développeur de modules complémentaires. Les détails sont présentés plus loin dans cet article.
+- [Plateforme d’identité Microsoft](/azure/active-directory/develop)
+- [La prise en charge de la plateforme d’identités Microsoft et les options d’aide pour les développeurs](/azure/active-directory/develop/developer-support-help-options)
+- [Protocoles OAuth 2.0 et OpenID Connect sur la plateforme d’identités Microsoft](/azure/active-directory/develop/active-directory-v2-protocols)
 
-![Une image montrant un organigramme de décision pour activer l'authentification et l'autorisation dans les compléments Office.](../images/authflowchart.png)
+## <a name="sso-scenarios"></a>Scénarios d’authentification unique
 
-## <a name="user-authentication-without-sso"></a>Authentification utilisateur sans authentification unique
+L’utilisation de l’authentification unique (SSO) est pratique pour l’utilisateur, car il ne doit se connecter qu’une seule fois à Office. Ils n’ont pas besoin de se connecter séparément à votre complément. L’authentification unique n’étant pas prise en charge sur toutes les versions d’Office, vous devez toujours implémenter une autre approche de connexion, par [l’utilisation de la plateforme d’identités Microsoft](#authenticate-with-the-microsoft-identity-platform). Pour plus d’informations sur les versions d’Office prises en charge, consultez [Définir les conditions de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md)
 
-Vous pouvez authentifier un utilisateur dans un complément Office avec Azure Active Directory (AAD) comme vous le feriez dans d'autres applications web, à une exception près : AAD n’autorise pas la page de connexion à s’ouvrir dans un IFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet Office est un iFrame. Cela signifie que vous devez ouvrir l’écran de connexion Azure Active Directory dans une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a une incidence sur la manière dont vous utilisez les bibliothèques d’aide à l’authentification. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+### <a name="get-the-users-identity-through-sso"></a>Obtenir l’identité de l’utilisateur via l’authentification unique
 
-Pour plus d’informations sur la programmation de l’authentification avec Azure Active Directory, commencez par la [Vue d’ensemble de la plateforme d’identité Microsoft (v 2.0)](/azure/active-directory/develop/v2-overview) où se trouvent de nombreux didacticiels et guides, ainsi que des liens vers des exemples et bibliothèques pertinents. Comme expliqué dans [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md), vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office.
+Souvent, votre complément a uniquement besoin de l’identité de l’utilisateur. Par exemple, vous pouvez simplement personnaliser votre complément et afficher le nom de l’utilisateur dans le volet des tâches. Vous pouvez également souhaiter qu’un ID unique associe l’utilisateur à ses données dans votre base de données. Pour ce faire, il suffit d’obtenir le jeton d’accès pour l’utilisateur auprès d’Office.
 
-## <a name="access-to-microsoft-graph-without-sso"></a>Accès à Microsoft Graph sans authentification unique
+Pour obtenir l’identité de l’utilisateur via l’authentification unique, appelez la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). La méthode retourne un jeton d’accès qui est également un jeton d’identité contenant plusieurs revendications, unique à l’utilisateur connecté actuel, y compris `preferred_username`, `name`, `sub` et `oid`. Pour plus d’informations sur ces propriétés, consultez [jetons d’ID de la Plateforme d’identités Microsoft](/azure/active-directory/develop/id-tokens). Pour obtenir un exemple du jeton retourné par [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_), consultez [Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
 
-Vous pouvez obtenir l’autorisation d’accès aux données Microsoft Graph pour votre complément en obtenant un jeton d’accès auprès d’Azure Active Directory (AAD). Vous pouvez effectuer cette opération sans utiliser l’authentification unique d’Office. Pour plus d’informations sur la manière de procéder, voir [Accès à Microsoft Graph sans authentification unique](authorize-to-microsoft-graph-without-sso.md) qui contient davantage de détails et des liens vers des exemples.
+Si l’utilisateur n’est pas connecté, Office ouvrira une boîte de dialogue et utilise la plateforme d’identités Microsoft pour demander à l’utilisateur de se connecter. Ensuite, la méthode retournera un jeton d’accès ou génère une erreur si elle ne parvient pas à connecter l’utilisateur.
 
-## <a name="user-authentication-with-sso"></a>Authentification utilisateur avec authentification unique
+Dans un scénario où vous devez stocker des données pour l’utilisateur, reportez-vous à [jetons d’ID de la plateforme d’identités Microsoft](/azure/active-directory/develop/id-tokens) pour plus d’informations sur la façon d’obtenir une valeur à partir du jeton pour identifier l’utilisateur de manière unique. Utilisez cette valeur pour rechercher l’utilisateur dans une table utilisateur ou une base de données utilisateur que vous gérez. Utilisez la base de données pour stocker les informations relatives aux utilisateurs, comme les préférences utilisateur ou l’état du compte utilisateur. Étant donné que vous utilisez l’authentification unique, vos utilisateurs ne se connectent pas séparément à votre complément. vous n’avez donc pas besoin de stocker de mot de passe pour l’utilisateur.
 
-Pour authentifier l'utilisateur à l'aide de l’authentification unique, votre code dans un volet Office ou un fichier fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Si l’utilisateur n’est pas connecté, Office ouvre une boîte de dialogue et se redirige vers la page de connexion Azure Active Directory. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. (Voir [accès à Microsoft Graph sans authentification unique](#access-to-microsoft-graph-with-sso).) Il peut toutefois être utilisé en tant que jeton d’ID, car il contient plusieurs revendications uniques pour l’utilisateur actuel, notamment `preferred_username`, `name`, `sub` et `oid`. Pour obtenir des instructions sur la propriété à utiliser en tant qu’ID utilisateur final, voir [Jetons d’accès à la plateforme d’identité Microsoft](/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+Avant de commencer l’implémentation de l’authentification des utilisateurs avec l’authentification unique, assurez-vous que vous êtes familiarisé avec l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md).
 
-Une fois que votre code a extrait la revendication souhaitée du jeton, il utilise cette valeur pour rechercher l’utilisateur dans une table des utilisateurs ou une base de données des utilisateurs. Utilisez la base de données pour stocker les informations relatives aux utilisateurs, comme les préférences utilisateur ou l’état du compte utilisateur. Étant donné que vous utilisez l’authentification unique, vos utilisateurs ne se connectent pas séparément à votre complément. vous n’avez donc pas besoin de stocker de mot de passe pour l’utilisateur.
+### <a name="access-your-web-apis-through-sso"></a>Accéder à vos API Web via l’authentification unique
 
-Avant de commencer à implémenter l’authentification utilisateur avec l’authentification unique, veillez à bien connaître l’article [Activer l’authentification unique pour les compléments Office](sso-in-office-add-ins.md). Notez également les exemples suivants.
+Si votre complément a des API côté serveur qui nécessitent un utilisateur autorisé, appelez la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_) pour obtenir un jeton d’accès. Le jeton d’accès fournit l’accès à votre propre serveur web (configuré via un [inscription d’application Microsoft Azure ](register-sso-add-in-aad-v2.md).) Lorsque vous appelez des API sur votre serveur Web, vous transmettez également le jeton d’accès pour autoriser l’utilisateur.
 
-- [Complément Office NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO), en particulier le fichier [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
-- [Complément Office ASP.NET SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+Le code suivant montre comment construire une requête HTTPS GET vers l’API de serveur Web du complément pour obtenir des données. Le code s’exécute côté client, par exemple dans un volet Office. Il obtient d’abord le jeton d’accès en appelant `getAccessToken`. Il construit ensuite un appel AJAX avec l’en-tête et l’URL d’autorisation appropriés pour l’API serveur.
 
-Toutefois, ces exemples n’utilisent pas le jeton comme jeton d’identité. Ils l’utilisent pour obtenir l’accès à Microsoft Graph avec le flux **On Behalf Of**.
+```javascript
+function getOneDriveFileNames() {
 
-## <a name="access-to-microsoft-graph-with-sso"></a>Accès à Microsoft Graph avec l’authentification unique
+    let accessToken = await Office.auth.getAccessToken();
 
-Pour utiliser l’authentification unique afin d'accéder à Microsoft Graph, votre complément dans le volet Office ou dans un fichier fonction appelle la méthode [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Si l’utilisateur n’est pas connecté, Office ouvre une boîte de dialogue et la redirige vers la page de connexion Azure Active Directory. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès. Ce jeton est un jeton d’amorçage dans le flux **On Behalf Of**. Plus précisément, il possède une `scope`revendication avec la valeur `access_as_user`. Pour plus d’informations sur les revendications dans le jeton, voir [Jetons d’accès à la plateforme d’identité Microsoft](/azure/active-directory/develop/access-tokens#payload-claims). Pour obtenir un exemple d’un de ces jetons, consultez l’[Exemple de jeton d’accès](sso-in-office-add-ins.md#example-access-token).
+    $.ajax({
+        url: "/api/data",
+        headers: { "Authorization": "Bearer " + accessToken },
+        type: "GET"
+    })
+        .done(function (result) {
+            //... work with data from the result...
+        });
+}
+```
 
-Une fois que votre code a obtenu le jeton, il l’utilise dans le flux **On Behalf Of** pour obtenir un deuxième jeton : un jeton d’accès à Microsoft Graph.
+Le code suivant montre un exemple de gestionnaire /api/data pour l’appel REST à partir de l’exemple de code précédent. Le code est ASP.NET, code s’exécutant sur un serveur Web. L’attribut `[Authorize]` nécessitera qu’un jeton d’accès valide soit passé à partir du client, ou il retournera une erreur au client.
 
-Avant de commencer à implémenter l’authentification unique Office, assurez-vous que vous connaissez bien ces deux articles.
+```csharp
+    [Authorize]
+    // GET api/data
+    public async Task<HttpResponseMessage> Get()
+    {
+        //... obtain and return data to the client-side code...
+    }
+```
+
+### <a name="access-microsoft-graph-through-sso"></a>Accès Microsoft Graph via l’authentification unique
+
+Dans certains scénarios, non seulement vous avez besoin de l’identité de l’utilisateur, mais vous devez également accéder aux ressources [Microsoft Graph](/graph) pour le compte de l’utilisateur. Par exemple, vous devrez peut-être envoyer un e-mail ou créer une conversation dans Teams pour le compte de l’utilisateur. Ces actions, et bien plus encore, peuvent être effectuées via Microsoft Graph. Vous devrez suivre ces étapes :
+
+1. Obtenez le jeton d’accès pour l’utilisateur actuel via l’authentification unique en appelant [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#getAccessToken_options_). Si l’utilisateur n’est pas connecté, Office ouvrira une boîte de dialogue et connectera l’utilisateur avec la plateforme d’identités Microsoft. Une fois que l’utilisateur se connecte, ou si l’utilisateur est déjà connecté, la méthode retourne un jeton d’accès.
+1. Transmettez le jeton d’accès à votre code côté serveur.
+1. Du côté serveur, utilisez le [flux on-Behalf-Of OAuth 2.0 On-Behalf-Of](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) pour échanger le jeton d’accès contre un nouveau jeton d’accès contenant l’identité d’utilisateur déléguée et les autorisations nécessaires pour appeler Microsoft Graph.
+
+> [!NOTE]
+> Pour une sécurité optimale afin d’éviter toute fuite du jeton d’accès, effectuez toujours le flux On-Behalf-Of côté serveur. Appelez Microsoft Graph API à partir de votre serveur, et non du client. Ne retournez pas le jeton d’accès au code côté client.
+
+Avant de commencer à implémenter l’authentification unique pour accéder à Microsoft Graph dans votre complément, assurez-vous que vous connaissez bien les articles suivants.
 
 - [Activer l’authentification unique pour des compléments Office](sso-in-office-add-ins.md)
 - [Autoriser la connexion à Microsoft Graph avec l’authentification unique](authorize-to-microsoft-graph.md)
 
-Vous devez également lire au moins l’un des articles de procédure de procédure mentionnés ici. Même si vous ne suivez pas la procédure, celle-ci contient des informations utiles sur la façon dont vous implémentez l’authentification unique Office et le flux **On Behalf Of**.
+Vous devez également lire au moins l’un des articles suivants qui vous guideront dans la création d’un complément Office pour utiliser l’authentification unique et accéder à Microsoft Graph. Même si vous ne suivez pas la procédure, celles-ci contiennent des informations utiles sur la façon dont vous implémentez l’authentification unique et le flux On Behalf Of.
 
-- [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
-- [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
+- [Créez un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md) qui vous guide dans l’exemple de [complément Office ASP.NET d’authentification unique](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
+- [Créez un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md) qui vous guide dans l’exemple vers [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
 
-Notez également les exemples suivants.
+## <a name="non-sso-scenarios"></a>Scénarios autres que l’authentification unique
 
-- [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
-- [SSO ASP.NET pour complément Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
+Dans certains scénarios, vous ne souhaiterez peut-être pas utiliser l’authentification unique. Par exemple, vous devrez peut-être vous authentifier à l’aide d’un fournisseur d’identité différent de celui de la plateforme d’identités Microsoft. En outre, l’authentification unique n’est pas prise en charge dans tous les scénarios. Par exemple, les versions antérieures d’Office ne prennent pas en charge l’authentification unique. Dans ce cas, vous devez revenir à un autre système d’authentification pour votre complément.
 
-## <a name="access-to-non-microsoft-data-sources"></a>Accès à des sources de données non-Microsoft
+### <a name="authenticate-with-the-microsoft-identity-platform"></a>S’authentifier auprès de la Plateforme d’identités Microsoft.
+
+Votre complément peut connecter des utilisateurs à l’aide de la [Plateforme d’identités Microsoft](/azure/active-directory/develop) en tant que fournisseur d’authentification. Une fois que vous êtes connecté à l’utilisateur, vous pouvez utiliser la plateforme d’identités Microsoft pour autoriser le complément de [Microsoft Graph](/graph) ou d’autres services gérés par Microsoft. Utilisez cette approche comme autre méthode de connexion lorsque l’authentification unique via Office n’est pas disponible. Il existe également des scénarios dans lesquels vous voulez que vos utilisateurs se connectent à votre complément séparément, même lorsque l’authentification unique est disponible. Par exemple, si vous voulez qu’ils aient la possibilité de se connecter au complément avec un ID différent de celui avec lequel ils sont actuellement connectés à Office.
+
+Il est important de noter que la plateforme d’identités Microsoft n’autorise pas l’ouverture de sa page de connexion dans un iframe. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Cela signifie que vous devrez ouvrir la page de connexion à l’aide d’une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a une incidence sur la manière dont vous utilisez les bibliothèques d’aide à l’authentification. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+
+Pour plus d’informations sur l’implémentation de l’authentification avec la plateforme d’identités Microsoft, consultez la[vue d’ensemble de la Plateforme d’identités Microsoft (v2.0)](/azure/active-directory/develop/v2-overview). La documentation contient de nombreux didacticiels et guides, ainsi que des liens vers des exemples et des bibliothèques pertinents. Comme expliqué dans [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md), vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office.
+
+### <a name="access-to-microsoft-graph-without-sso"></a>Accès à Microsoft Graph sans authentification unique
+
+Vous pouvez obtenir l’autorisation données Microsoft Graph pour votre complément en obtenant un jeton d’accès pour Microsoft Graph à partir de la plateforme d’identités Microsoft. Vous pouvez le faire sans vous appuyer sur l’authentification unique via Office (ou si l’authentification unique a échoué ou n’est pas prise en charge). Pour plus d’informations sur la manière de procéder, consultez [Accès à Microsoft Graph sans authentification unique](authorize-to-microsoft-graph-without-sso.md) qui contient davantage de détails et des liens vers des exemples.
+
+### <a name="access-to-non-microsoft-data-sources"></a>Accès à des sources de données non-Microsoft
 
 Les services en ligne populaires, dont Google, Facebook, LinkedIn, SalesForce et GitHub, permettent aux développeurs d’accorder aux utilisateurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office. Pour obtenir une vue d’ensemble des méthodes que votre complément peut utiliser, voir [Autoriser des services externes dans votre complément Office](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Avant de commencer à coder, déterminez si la source de données autorise l’ouverture de son écran de connexion dans un IFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Si la source de données n’autorise pas l’ouverture de l’écran de connexion dans un IFrame, vous devez ouvrir l’écran de connexion dans une boîte de dialogue ouverte avec l’API de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+> Avant de commencer le codage, déterminez si la source de données autorise l’ouverture de sa page de connexion dans un IFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Si la source de données n’autorise pas l’ouverture de la page connexion dans un IFrame, vous devrez ouvrir la page de connexion dans une boîte de dialogue ouverte avec l’API de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Documentation de la plateforme d’identités Microsoft](/azure/active-directory/develop/)
+- [Jetons d’accès de plateforme d’identité Microsoft](/azure/active-directory/develop/access-tokens)
+- [Protocoles OAuth 2.0 et OpenID Connect sur la plateforme d’identités Microsoft](/azure/active-directory/develop/active-directory-v2-protocols)
+- [Plateforme d’identités Microsoft et flux OAuth 2.0 On-Behalf-Of](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
+- [Jeton Web JSON (JWT)](https://en.wikipedia.org/wiki/JSON_Web_Token)
+- [Visionneuse de jetons Web JSON](https://jwt.ms/)
