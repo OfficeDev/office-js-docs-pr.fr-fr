@@ -1,16 +1,11 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
-description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 05/12/2021
+description: 'Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d''un nouveau message.'
+ms.date: 01/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: d79089ee8b63883d0fe07a98042c8d683a8bfb43
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153408"
 ---
+
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
 Ce didacticiel vous apprend à créer un complément Outlook qui peut être utilisé pour dans le mode composer un message pour insérer du contenu dans le corps d’un message.
@@ -158,10 +153,9 @@ Effectuez les mises à jour suivantes dans le fichier **manifest.xml** pour spé
 
 Avant d’aller plus loin, nous allons tester le complément base créé par le générateur pour confirmer que le projet est correctement configuré.
 
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur Web local démarre et votre complément est chargé de manière indépendante.
 
     ```command&nbsp;line
     npm start
@@ -858,7 +852,7 @@ g.insertDefaultGist = insertDefaultGist;
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>Créer un fichier pour gérer les paramètres de configuration
 
-Le fichier fonction HTML fait référence à un fichier nommé **addin-config.js**, qui n’existe pas encore. Créez un fichier nommé **addin-config.js** dans le dossier **./src/helpers** et ajoutez le code suivant. Ce code utilise l’[objet RoamingSettings](/javascript/api/outlook/office.RoamingSettings) pour obtenir et définir les valeurs de configuration.
+Le fichier fonction HTML fait référence à un fichier nommé **addin-config.js**, qui n’existe pas encore. Créez un fichier nommé **addin-config.js** dans le dossier **./src/helpers** et ajoutez le code suivant. Ce code utilise l’[objet RoamingSettings](/javascript/api/outlook/office.roamingsettings) pour obtenir et définir les valeurs de configuration.
 
 ```js
 function getConfig() {
