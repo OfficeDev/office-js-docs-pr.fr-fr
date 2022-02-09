@@ -1,13 +1,18 @@
 ---
 title: Élément OverriddenByRibbonApi dans le fichier manifeste
-description: 'Découvrez comment spécifier qu’un onglet, un groupe, un contrôle ou un élément de menu personnalisé ne doit pas apparaître lorsqu’il fait également partie d’un onglet contextuel personnalisé.'
-ms.date: 02/02/2022
+description: Découvrez comment spécifier qu’un onglet, un groupe, un contrôle ou un élément de menu personnalisé ne doit pas apparaître lorsqu’il fait également partie d’un onglet contextuel personnalisé.
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 48977691ee4bf2ccd71bc146647dae452ce9e2fc
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467686"
 ---
-
 # <a name="overriddenbyribbonapi-element"></a>Élément OverriddenByRibbonApi
 
-Spécifie si un contrôle [groupe, bouton](group.md)[, menu](control.md#button-control) ou élément de menu sera masqué sur les combinaisons d’applications et de plateformes qui prendre en charge l’API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) qui installe des onglets contextuels personnalisés sur le ruban. [](control.md#menu-dropdown-button-controls)
+Spécifie si un contrôle [groupe, bouton](group.md)[, menu](control-button.md) ou élément de menu sera masqué sur les combinaisons d’applications et de plateformes qui prendre en charge l’API ([Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1))) qui installe des onglets contextuels personnalisés sur le ruban. [](control-menu.md)
 
 **Type de complément :** volet Office
 
@@ -38,7 +43,7 @@ L’objectif de cet élément est de créer une expérience de retour dans un ap
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom1">
-    <Group id="Contoso.CustomTab.group1">
+    <Group id="Contoso.CustomTab1.group1">
       <OverriddenByRibbonApi>true</OverriddenByRibbonApi>
       <Control  xsi:type="Button" id="Contoso.MyButton1">
         <!-- Child elements omitted. -->
@@ -70,7 +75,7 @@ L’objectif de cet élément est de créer une expérience de retour dans un ap
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom3">
-    <Group id="Contoso.CustomTab3.group3.">
+    <Group id="Contoso.CustomTab3.group3">
       <Control  xsi:type="Menu" id="Contoso.MyMenu">
         <!-- Other child elements omitted. -->
         <Items>

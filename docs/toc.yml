@@ -283,6 +283,8 @@ items:
               - name: Déboguer à l’aide de Visual Studio Code et de Edge Chromium WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
                 displayName: 'debug, windows'
+              - name: Déboguer avec Visual Studio Code et Edge Legacy WebView
+                href: testing/debug-with-vs-extension.md
               - name: Tester avec Internet Explorer 11
                 href: testing/ie-11-testing.md
           - name: Navigateur web
@@ -302,8 +304,6 @@ items:
             displayName: 'uninstall, sideload'
           - name: Déboguer avec la journalisation runtime
             href: testing/runtime-logging.md
-          - name: Extension de débogueur pour Visual Studio Code
-            href: testing/debug-with-vs-extension.md
           - name: Performances
             items:
               - name: Éviter d’utiliser la méthode context.sync dans des boucles
@@ -485,6 +485,12 @@ items:
                     href: reference/manifest/allformfactors.md
                   - name: Contrôle
                     href: reference/manifest/control.md
+                  - name: Contrôle (bouton)
+                    href: reference/manifest/control-button.md
+                  - name: Contrôle (menu)
+                    href: reference/manifest/control-menu.md
+                  - name: Contrôle (MobileButton)
+                    href: reference/manifest/control-mobilebutton.md
                   - name: CustomTab
                     href: reference/manifest/customtab.md
                   - name: DesktopFormFactor
@@ -513,6 +519,10 @@ items:
                     href: reference/manifest/hosts.md
                   - name: Icône
                     href: reference/manifest/icon.md
+                  - name: Item
+                    href: reference/manifest/item.md
+                  - name: Éléments
+                    href: reference/manifest/items.md
                   - name: LaunchEvent
                     href: reference/manifest/launchevent.md
                   - name: LaunchEvents

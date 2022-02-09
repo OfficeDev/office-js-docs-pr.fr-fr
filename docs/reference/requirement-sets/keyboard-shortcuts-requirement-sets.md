@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises pour les raccourcis clavier
 description: Informations sur l’ensemble de conditions requises pour les raccourcis clavier pour Office des modules complémentaires.
-ms.date: 11/22/2021
+ms.date: 02/07/2022
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 209cc46c37ac004422796e267a8c350e33ffc615
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 074460510e054cdcfbeca4676883c4180bb2202d
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153794"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467842"
 ---
 # <a name="keyboard-shortcuts-requirement-sets"></a>Ensembles de conditions requises pour les raccourcis clavier
 
@@ -19,7 +19,10 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 
 |  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| KeyboardShortcuts 1.1  | S/O | Version : 2111 (build 14701.10000) | S/O | 16.55 | Septembre 2021 |
+| KeyboardShortcuts 1.1  | N/A | Version : 2111 (build 14701.10000) | S/O | 16.55 | Septembre 2021 |
+
+> [!NOTE]
+> **L’ensemble de conditions requises KeyboardShortcuts 1.1** est pris en charge uniquement dans Excel.
 
 ## <a name="office-versions-and-build-numbers"></a>Numéros de version et de build d’Office
 
@@ -34,7 +37,7 @@ Pour plus d’informations sur les ensembles de conditions requises des API comm
 
 ## <a name="keyboardshortcuts-11"></a>KeyboardShortcuts 1.1
 
-Pour plus d’informations sur les API de cet ensemble de conditions requises, voir [Office.actions](/javascript/api/office/office.actions).
+Pour plus d’informations sur les API de cet ensemble de conditions requises, [voir Office.actions](/javascript/api/office/office.actions).
 
 ## <a name="see-also"></a>Voir aussi
 

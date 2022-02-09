@@ -1,13 +1,18 @@
 ---
 title: Élément Supertip dans le fichier manifest
 description: L’élément Supertip définit une boîte à outils enrichie (titre et description).
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: aab7ab3f17e772940403e75796346020b2b9aebe
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467856"
 ---
-
 # <a name="supertip"></a>Supertip
 
-Définit une info-bulle enrichie (titre et description). Il est utilisé par les contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).
+Définit une info-bulle enrichie (titre et description). Il est utilisé par les [contrôles Bouton et](control-button.md) [Menu](control-menu.md).
 
 **Type de add-in :** Volet De tâches, Courrier
 

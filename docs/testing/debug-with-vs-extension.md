@@ -1,89 +1,124 @@
 ---
-title: Complément Microsoft Office Extension de débogueur pour Visual Studio Code
-description: Utilisez l Visual Studio Code extension Microsoft Office déboguer votre Office de module.
-ms.date: 10/05/2021
+title: Déboguer des applications sur Windows l’Visual Studio Code et Microsoft Edge WebView hérité (EdgeHTML)
+description: Découvrez comment déboguer des Office qui utilisent Version antérieure de Microsoft Edge WebView (EdgeHTML) à l’aide de l’extension de déboguer du Office dans VS Code.
+ms.date: 02/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: edc780108cb304b6bfa15ba3d7850f394b863875
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 11b728f9b3f467017711c9d75cfd07767957deae
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081399"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467693"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
-L’extension de déboguer du Microsoft Office pour Visual Studio Code vous permet de déboguer votre Office Par rapport au Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). Pour obtenir des instructions sur le débogage Microsoft Edge WebView2 (basé sur Chromium web), consultez [cet article.](./debug-desktop-using-edge-chromium.md)
+Office les applications qui s’exécutent sur Windows peuvent utiliser l’extension de déboguer le déboguer de Office dans Visual Studio Code pour déboguer sur Version antérieure de Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). 
+
+> [!IMPORTANT]
+> Cet article s’applique uniquement lorsque Office exécute des applications dans le runtime WebView (EdgeHTML) d’origine, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office. Pour obtenir des instructions sur le débogage dans le code Visual Studio par rapport à Microsoft Edge WebView2 (basé sur Chromium), voir Microsoft Office [Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
+
+> [!TIP]
+> Si vous ne pouvez pas ou ne souhaitez pas déboguer à l’aide d’outils intégrés à Visual Studio Code ou si vous rencontrez un problème qui se produit uniquement lorsque le module est exécuté en dehors de Visual Studio Code, vous pouvez déboguer le runtime Edge Legacy (EdgeHTML) à l’aide des outils de développement edge hérités, comme décrit dans Débogage des applications à l’aide des [outils de développement dans Version antérieure de Microsoft Edge](debug-add-ins-using-devtools-edge-legacy.md).
 
 Ce mode de débogage est dynamique, ce qui vous permet de définir des points d’arrêt pendant l’exécution du code. Vous pouvez voir les modifications dans votre code immédiatement lorsque le déboguer est attaché, tout cela sans perdre votre session de débogage. Vos modifications de code sont également persistantes, afin que vous pouvez voir les résultats de plusieurs modifications apportées à votre code. L’image suivante illustre cette extension en action.
 
 ![Office extension déboguer une section de Excel de débogage.](../images/vs-debugger-extension-for-office-addins.jpg)
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
-- [Visual Studio Code](https://code.visualstudio.com/) (doit être exécuté en tant qu’administrateur)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
-- [Microsoft Edge](https://www.microsoft.com/edge)
-
-Ces instructions supposent que vous avez de l’expérience en utilisant la ligne de commande, que vous comprenez javaScript de base et que vous avez créé un projet de Office avant d’utiliser le générateur Yo Office. Si vous ne l’avez pas encore fait, envisagez de consulter l’un de nos didacticiels, comme Excel Office [didacticiel sur le add-in.](../tutorials/excel-tutorial.md)
+- [Microsoft Edge](https://www.microsoft.com/edge) Combinaison de plateforme et d’application Office qui prend en charge les Version antérieure de Microsoft Edge avec le webview d’origine (EdgeHTML), comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office de contenu.
 
 ## <a name="install-and-use-the-debugger"></a>Installer et utiliser le débogueur
 
-1. Si vous avez besoin de créer un projet de Office, utilisez le générateur [yo-Office pour en créer un.](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator) Suivez les invites de la ligne de commande pour configurer votre projet. Vous pouvez choisir n’importe quelle langue ou type de projet en fonction de vos besoins. Ce didacticiel utilise un Excel du volet Des tâches.
+Ces instructions supposent que vous avez de l’expérience en utilisant la ligne de commande, que vous comprenez javaScript de base et que vous avez créé un projet de Office avant d’utiliser le générateur Yo Office. Si vous ne l’avez pas fait auparavant, envisagez de consulter l’un de nos didacticiels, comme Excel Office [didacticiel sur le Excel Office de l’aide](../tutorials/excel-tutorial.md).
 
-    > [!NOTE]
-    > Si vous avez déjà un projet, ignorez l’étape 1 et passez à l’étape 2.
+1. La première étape dépend du projet et de la façon dont il a été créé.
 
-1. Ouvrez une invite de commandes en tant qu’administrateur.
-   ![Options d’invite de commandes, y compris « Exécuter en tant qu’administrateur » Windows 10 et 11.](../images/run-as-administrator-vs-code.jpg)
+   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez le générateur [Yeoman pour Office de recherche](https://github.com/OfficeDev/generator-office). Pour ce faire, utilisez l’un de nos guides de [](../quickstarts/outlook-quickstart.md)démarrage rapide, Outlook le démarrage rapide du Outlook. 
+   - Si vous souhaitez déboguer un projet existant créé avec Yo Office, passez à l’étape suivante.
+   - Si vous souhaitez déboguer un projet existant qui n’a pas été créé avec Yo Office, effectuez la procédure dans l’annexe, puis revenir à l’étape suivante de cette procédure.[](#appendix)
 
-1. Accédez au répertoire de votre projet.
 
-1. Exécutez la commande suivante pour ouvrir votre projet dans Visual Studio Code en tant qu’administrateur.
-
-    ```command&nbsp;line
-    code .
-    ```
-
-  Une Visual Studio Code est ouverte, accédez manuellement au dossier du projet.
-
-  > [!TIP]
-  > Pour ouvrir Visual Studio Code en tant qu’administrateur, sélectionnez **l’option** Exécuter en tant qu’administrateur lors de l’ouverture Visual Studio Code après l’avoir recherché dans Windows.
+1. Ouvrez VS Code et ouvrez votre projet dans ce dernier. 
 
 1. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de l’extension de module de 2013 » et installez-
 
-1. Dans le dossier .vscode de votre projet, ouvrez le fichier **launch.json**. Ajoutez le code suivant à la `configurations` section.
+1. Choose  **View > Run** or enter **Ctrl+Shift+D** to switch to debug view.
 
-    ```JSON
-    {
-      "type": "office-addin",
-      "request": "attach",
-      "name": "Attach to Office Add-ins",
-      "port": 9222,
-      "trace": "verbose",
-      "url": "https://localhost:3000/taskpane.html?_host_Info=HOST$Win32$16.01$en-US$$$$0",
-      "webRoot": "${workspaceFolder}",
-      "timeout": 45000
-    }
-    ```
+1. Dans les options **EXÉCUTER ET DÉBOGUER**, choisissez l’option Edge héritée pour votre application hôte, par exemple Outlook **Desktop (Edge Legacy).** Sélectionnez **F5** ou choisissez **Exécuter > Démarrer le débogage** dans le menu pour commencer le débogage. Cette action lance automatiquement un serveur local dans une fenêtre Node pour héberger votre complément, puis ouvre automatiquement l’application hôte, telle qu’Excel ou Word. Cela peut prendre plusieurs heures.
 
-1. Dans la section JSON que vous avez copiée, recherchez la `"url"` propriété. Dans cette URL, vous devez remplacer le texte **HOST** en minuscules par l’application qui héberge votre Office de messagerie. Par exemple, si votre Office est pour Excel, la valeur de votre URL est `"https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$\$\$\$0"` .
+1. Dans l’application hôte, votre complément est désormais prêt à être utilisé. Sélectionnez **Afficher le volet de tâches** ou exécutez toute autre commande de complément. Une boîte de dialogue s’affiche comme suit :
 
-1. Ouvrez l’invite de commandes et assurez-vous que vous êtes dans le dossier racine de votre projet. Exécutez la commande `npm start` pour démarrer le serveur dev. Lorsque votre application se charge dans l’application Office, ouvrez le volet Des tâches.
+   > Arrêter sur chargement WebView.
+   > Pour déboguer le WebView, attachez VS Code à l’instance WebView à l’aide du déboguer Microsoft pour l’extension Edge, puis cliquez sur **OK** pour continuer. Pour empêcher cette boîte de dialogue d’apparaître à l’avenir, cliquez sur **Annuler**.
 
-1. Revenir à Visual Studio Code et choisissez **Afficher >** Déboguer ou entrez **Ctrl+Shift+D** pour passer en mode Débogage.
+   Sélectionnez **OK**.
 
-1. Dans les options de débogage, sélectionnez Attacher aux Office de **travail.** Sélectionnez **F5** ou **sélectionnez Exécuter > démarrer le débogage** à partir du menu pour commencer le débogage.
+   > [!NOTE]
+   > Si vous sélectionnez **Annuler**, la boîte de dialogue ne s’affiche plus lors de l’exécution de cette instance du complément. Toutefois, si vous redémarrez votre complément, la boîte de dialogue s’affichera à nouveau.
 
-1. Définissez un point d’arrêt dans le fichier du volet Des tâches de votre projet. Vous pouvez définir des points d’arrêt Visual Studio Code en pointant à côté d’une ligne de code et en sélectionnant le cercle rouge qui s’affiche.
+1. Définissez un point d’arrêt dans le fichier du volet Des tâches de votre projet. Pour définir des points d’arrêt Visual Studio Code, pointez en face d’une ligne de code et sélectionnez le cercle rouge qui s’affiche.
 
     ![Un cercle rouge apparaît sur une ligne de code Visual Studio Code.](../images/set-breakpoint.jpg)
 
-1. Exécutez votre add-in. Vous verrez que les points d’arrêt ont été atteints et que vous pouvez inspecter les variables locales.
+1. Exécutez une fonctionnalité dans votre add-in qui appelle les lignes avec des points d’arrêt. Vous verrez que les points d’arrêt ont été atteints et que vous pouvez inspecter les variables locales.
+
+   > [!NOTE]
+   > Les points d’arrêt dans les appels de `Office.initialize` ou de `Office.onReady` sont ignorés. Pour plus d’informations sur ces méthodes, consultez [Initialiser votre complément Office](../develop/initialize-add-in.md).
+
+> [!IMPORTANT]
+> La meilleure façon d’arrêter une session de débogage consiste à sélectionner **Shift+F5** ou à choisir **Exécuter > Arrêter le débogage** dans le menu. Cette action doit fermer la fenêtre du serveur Node et tenter de fermer l’application hôte, mais une invite s’affiche sur l’application hôte vous demandant s’il faut enregistrer le document ou non. Faites un choix approprié et laissez l’application hôte se fermer. Évitez de fermer manuellement la fenêtre Node ou l’application hôte. Cela peut entraîner des bogues en particulier lorsque vous arrêtez et démarrez des sessions de débogage à plusieurs reprises.
+>
+> Si le débogage cesse de fonctionner ; par exemple, si les points d’arrêt sont ignorés ; arrêter le débogage. Ensuite, si nécessaire, fermez toutes les fenêtres d’application hôte et la fenêtre Nœud. Enfin, fermez Visual Studio Code et rouvrez-le.
+
+### <a name="appendix"></a>Annexe
+
+Si votre projet n’a pas été créé avec Yo Office, vous devez créer une configuration de débogage pour Visual Studio Code. 
+
+1. Créez un fichier nommé `launch.json` dans le dossier `\.vscode` du projet s’il n’en existe pas déjà un. 
+1. Assurez-vous que le fichier possède un `configurations` tableau. Voici un exemple simple d’un `launch.json`.
+
+    ```json
+    {
+      // other properities may be here.
+
+      "configurations": [
+
+        // configuration objects may be here.
+
+      ]
+
+      //other properies may be here.
+    }
+    ```
+
+1. Ajoutez l’objet suivant au `configurations` tableau.
+
+    ```json
+    {
+      "name": "$HOST$ Desktop (Edge Legacy)",
+      "type": "office-addin",
+      "request": "attach",
+      "url": "https://localhost:3000/taskpane.html?_host_Info=Excel$Win32$16.01$en-US$$$$0",
+      "port": 9222,
+      "timeout": 600000,
+      "webRoot": "${workspaceRoot}",
+      "preLaunchTask": "Debug: Excel Desktop",
+      "postDebugTask": "Stop Debug"
+    }
+    ```
+
+1. Remplacez l’espace `$HOST$` réservé par le nom de l’application Office dans qui s’exécute le add-in ; par exemple, `Outlook` ou `Word`.
+1. Enregistrez et fermez le fichier.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Test et débogage de compléments Office](test-debug-office-add-ins.md)
+- [Déboguer des Windows à l’Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)](debug-desktop-using-edge-chromium.md).
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
-- [Déboguer des applications à l’aide des outils de développement Microsoft Edge (Chromium base de données)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md)

@@ -1,10 +1,15 @@
 ---
 title: Test unitaire dans les Office de test
 description: Découvrez comment unitér le code de test qui appelle Office API JavaScript
-ms.date: 11/30/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 39bd49f52087433a7095d0949bf22abd10dd0bb6
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467756"
 ---
-
 # <a name="unit-testing-in-office-add-ins"></a>Test unitaire dans les Office de test
 
 Les tests unitaires vérifient les fonctionnalités de votre Office sans nécessiter de connexions réseau ou de service. Le code côté serveur de test unitaire et le code côté client qui n’appellent pas les API [JavaScript Office](../develop/understanding-the-javascript-api-for-office.md) sont les mêmes dans les applications Office que dans n’importe quelle application web, il ne nécessite donc aucune documentation spéciale. Toutefois, le code côté client qui appelle Office API JavaScript est difficile à tester. Pour résoudre ces problèmes, nous avons créé une bibliothèque pour simplifier la création d’objets Office facturants dans des tests unitaires : [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). La bibliothèque facilite les tests des manières suivantes :
@@ -20,7 +25,7 @@ La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisé
 
 Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha Office page d’accueil de la maquette de [Office-Addin- Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Conditions préalables
 
 Cet article part du principe que vous connaissez les concepts de base des tests unitaires et de la maquette, notamment la création et l’utilisation de fichiers de test, et que vous avez une certaine expérience avec une infrastructure de test unitaire.
 
@@ -185,6 +190,7 @@ module.exports = myOutlookAddinFeature;
 
 Le fichier de test, nommé `my-outlook-add-in-feature.test.js` , se trouve dans un sous-dossier, par rapport à l’emplacement du fichier de code du module. L’exemple suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `context`un [Office. Objet](/javascript/api/office/office.context) de contexte, de sorte que l’objet qui est en cours de maquette est le parent de cette propriété : [Office](/javascript/api/office) objet. Tenez compte des informations suivantes à propos de ce code :
 
+- La `host` propriété de l’objet mock est utilisée en interne par la bibliothèque de maquette pour identifier l’application Office de projet. Elle est obligatoire pour les Outlook. Il n’a actuellement aucune utilité pour toute autre application Office’application.
 - Étant donné que Office bibliothèque JavaScript n’est pas chargée dans le processus de nœud, `Office` l’objet référencé dans le code du module doit être déclaré et initialisé.
 
 ```javascript
@@ -193,6 +199,8 @@ const myOutlookAddinFeature = require("../my-outlook-add-in-feature");
 
 // Create the seed mock object.
 const mockData = {
+  // Identify the host to the mock library (required for Outlook).
+  host: "outlook",
   context: {
     mailbox: {
       item: {

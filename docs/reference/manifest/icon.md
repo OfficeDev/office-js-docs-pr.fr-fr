@@ -1,18 +1,18 @@
 ---
 title: Élément Icon dans le fichier manifeste
 description: Définit les éléments Image pour les contrôles de bouton ou de menu.
-ms.date: 10/30/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 54ae88e5dceeffa244780764711b263ceabd828d
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681725"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467728"
 ---
-# <a name="icon-element"></a>Icon, élément
+# <a name="icon-element"></a>Élément d’icône
 
-Définit les éléments **Image** pour les contrôles de [bouton](control.md#button-control) ou de [menu](control.md#menu-dropdown-button-controls).
+Définit les éléments **Image** pour les [contrôles Bouton et](control-button.md) [Menu](control-menu.md).
 
 ## <a name="attributes"></a>Attributs
 
@@ -28,7 +28,7 @@ Définit les éléments **Image** pour les contrôles de [bouton](control.md#but
 
 ### <a name="image"></a>Image
 
-Image du bouton. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un élément **Image** dans l’élément **Images** dans l’élément [Resources.](resources.md) L’attribut **size** indique la taille de l’image en pixels. Trois tailles d’image sont requises (16, 32 et 80 pixels) et cinq autres tailles sont prises en charge (20, 24, 40, 48 et 64 pixels).
+Image du bouton. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un élément **Image** dans l’élément **Images** dans [l’élément Resources](resources.md). L’attribut **size** indique la taille de l’image en pixels. Trois tailles d’image sont requises (16, 32 et 80 pixels) et cinq autres tailles sont prises en charge (20, 24, 40, 48 et 64 pixels).
 
 ```xml
 <Icon>
@@ -39,11 +39,11 @@ Image du bouton. **L’attribut resid** ne peut pas être plus de 32 caractères
 ```
 
 > [!IMPORTANT]
-> Si cette image est l’icône représentative de votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
+> Si cette image est l’icône représentative de votre application, voir Créer des [listes efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
 
 ## <a name="additional-requirements-for-mobile-form-factors"></a>Configuration requise supplémentaire pour les facteurs de forme pour environnement mobile
 
-Lorsque l’élément **Icon** parent est un descendant de l’élément [MobileFormFactor](mobileformfactor.md), la taille minimale requise est légèrement différente. Le manifeste doit fournir au minimum les tailles 25, 32 et 48 pixels. Chaque taille fournie doit apparaître trois fois, avec un ensemble d’attributs `scale` défini sur `1`, `2` ou `3`. Cet attribut spécifie la propriété `UIScreen.scale` pour les appareils iOS. Pour plus d’informations, voir [l’échelle.](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale)
+Lorsque l’élément **Icon** parent est un descendant de l’élément [MobileFormFactor](mobileformfactor.md), la taille minimale requise est légèrement différente. Le manifeste doit fournir au minimum les tailles 25, 32 et 48 pixels. Chaque taille fournie doit apparaître trois fois, avec un ensemble d’attributs `scale` défini sur `1`, `2` ou `3`. Cet attribut spécifie la propriété `UIScreen.scale` pour les appareils iOS. Pour plus d’informations, voir [l’échelle](https://developer.apple.com/documentation/uikit/uiscreen/1617836-scale).
 
 ```xml
 <Icon xsi:type="bt:MobileIconList">

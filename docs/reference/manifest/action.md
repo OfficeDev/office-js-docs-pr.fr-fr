@@ -1,18 +1,18 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
-ms.date: 06/08/2021
+ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fb213d8d2938d2d2c0654c1b3a7bf4f177931321
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5eee17864ecacf101d7fbfe3519b3da500768deb
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152198"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467870"
 ---
 # <a name="action-element"></a>Élément Action
 
-Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contrôle  [Bouton](control.md#button-control) [ou](control.md#menu-dropdown-button-controls) Menu.
+Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contrôle [Bouton ou](control-button.md) [Menu](control-menu.md).
 
 ## <a name="attributes"></a>Attributs
 
@@ -38,7 +38,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 - `ShowTaskpane`
 
 > [!IMPORTANT]
-> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) boîte [aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible lorsque **xsi:type** est `ExecuteFunction` .
+> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte aux lettres](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) et d’élément n’est pas disponible lorsque **xsi:type** est `ExecuteFunction`.
 
 ## <a name="functionname"></a>FunctionName
 
@@ -52,7 +52,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Élément obligatoire lorsque **xsi:type** est « ShowTaskpane ». Spécifie l’emplacement du fichier source pour cette action. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources.](resources.md)
+Élément obligatoire lorsque **xsi:type** est « ShowTaskpane ». Spécifie l’emplacement du fichier source pour cette action. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -109,7 +109,7 @@ Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneI
 > [!NOTE]
 > Cet élément enfant n’est pas pris en charge dans Outlook de développement.
 
-L’exemple suivant illustre une action qui utilise **l’élément Title.** Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
+L’exemple suivant montre une action qui utilise **l’élément Title** . Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -137,7 +137,7 @@ L’exemple suivant illustre une action qui utilise **l’élément Title.** Not
 Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
 
 > [!IMPORTANT]
-> Bien que l’élément a été introduit dans l’ensemble de conditions requises `SupportsPinning` [1.5,](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)il est actuellement uniquement pris en charge pour les abonnés Microsoft 365 utilisant les éléments suivants :
+> Bien que l’élément `SupportsPinning` a été introduit dans l’ensemble de conditions requises [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement pris en charge uniquement pour les abonnés Microsoft 365 utilisant les éléments suivants :
 >
 > - Outlook 2016 ou une Windows (build 7628.1000 ou ultérieure)
 > - Outlook 2016 ou une ultérieure sur Mac (build 16.13.503 ou ultérieure)

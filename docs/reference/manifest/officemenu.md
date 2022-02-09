@@ -1,10 +1,15 @@
 ---
 title: Élément OfficeMenu dans le fichier manifeste
 description: L’élément OfficeMenu définit une collection de contrôles à ajouter au menu context Office de travail.
-ms.date: 02/02/2022
+ms.date: 02/04/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 11b68edaef4044fb7ddde0d413debc0339b15c3a
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467742"
 ---
-
 # <a name="officemenu-element"></a>Élément OfficeMenu
 
 Définit un ensemble d’options à ajouter au menu contextuel Office. S’applique aux compléments Word, Excel, PowerPoint et OneNote.
@@ -42,7 +47,7 @@ Indique un menu prédéfini de l’application cliente Office sur laquelle ajout
 
 ## <a name="control"></a>Contrôle
 
-Chaque élément **OfficeMenu** requiert une ou plusieurs options de [menu](control.md#menu-dropdown-button-controls). 
+Chaque **élément OfficeMenu** nécessite un ou plusieurs contrôles [menu](control-menu.md). 
 
 ## <a name="example"></a>Exemple
 

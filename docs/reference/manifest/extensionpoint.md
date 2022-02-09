@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 09/29/2021
+ms.date: 02/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17e39cf85ef19516d4b2a04ba6b96cf97b32336b
-ms.sourcegitcommit: 489befc41e543a4fb3c504fd9b3f61322134c1ef
+ms.openlocfilehash: 279cc1b27f42d55e2ead00ee0c4df64afab16a3d
+ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2021
-ms.locfileid: "60138764"
+ms.lasthandoff: 02/09/2022
+ms.locfileid: "62467863"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -16,13 +16,13 @@ ms.locfileid: "60138764"
 
 **Type de add-in :** Volet De tâches, Courrier
 
-**Valide uniquement dans ces schémas VersionOverrides**:
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
 
 - Volet De tâches 1.0
 - Mail 1.0
 - Courrier 1.1
 
-Pour plus d’informations, voir [Remplacements de version dans le manifeste.](../../develop/add-in-manifests.md#version-overrides-in-the-manifest)
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ## <a name="attributes"></a>Attributs
 
@@ -83,16 +83,16 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
  
 |Élément|Description|
 |:-----|:-----|
-|**CustomTab**|Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. |
-|**OfficeTab**|Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface).** Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. Pour plus d’informations, voir [OfficeTab](officetab.md).|
-|**OfficeMenu**|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
-|**Group**|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. |
-|**Label**|Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un **élément String.** L’élément  **String** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Icon**|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un **élément Image.** L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
-|**Tooltip**|Facultatif. Info-bulle du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un **élément String.** L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|**Control**|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, reportez-vous aux sections [Contrôles de bouton](control.md#button-control) et [Contrôles de menu](control.md#menu-dropdown-button-controls).<br/>**Remarque :**  Pour faciliter la résolution des problèmes, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.|
-|**Script**|Liens vers le fichier JavaScript avec la définition de la fonction personnalisée et le code d’inscription. Cet élément n’est pas utilisé dans l’aperçu pour les développeurs. À la place, la page HTML est responsable du chargement de tous les fichiers JavaScript.|
-|**Page**|Liens vers la page HTML de vos fonctions personnalisées.|
+|[CustomTab](customtab.md)|Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. |
+|[OfficeTab](officetab.md)|Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**.|
+|[OfficeMenu](officemenu.md)|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
+|[Group](group.md)|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. |
+|**Label**|Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un **élément String**. L’élément  **String** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
+|[Icon](icon.md)|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un **élément Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
+|**Tooltip**|Facultatif. Info-bulle du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un **élément String**. L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
+|[Control](control.md)|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu pour** spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus [d’informations](control-button.md) , voir Contrôle de bouton et [Contrôle](control-menu.md) de menu.<br/>**Remarque :**  Pour faciliter la résolution des problèmes, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.|
+|[Script](script.md)|Liens vers le fichier JavaScript avec la définition de la fonction personnalisée et le code d’inscription. Cet élément n’est pas utilisé dans l’aperçu pour les développeurs. À la place, la page HTML est responsable du chargement de tous les fichiers JavaScript.|
+|[Page](page.md)|Liens vers la page HTML de vos fonctions personnalisées.|
 
 ## <a name="extension-points-for-outlook"></a>Points d’extension pour Outlook
 
@@ -236,7 +236,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 Ce point d’extension place des boutons sur le ruban pour l’extension de module.
 
 > [!IMPORTANT]
-> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+> L’inscription des [événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 #### <a name="child-elements"></a>Éléments enfants
 
@@ -274,12 +274,12 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 
 ### <a name="mobileonlinemeetingcommandsurface"></a>MobileOnlineMeetingCommandSurface
 
-Ce point d’extension place un basculement approprié en mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article Créer un Outlook mobile pour un fournisseur de réunion [en ligne.](../../outlook/online-meeting.md)
+Ce point d’extension place un basculement adapté au mode dans l’surface de commande d’un rendez-vous dans le facteur de forme mobile. Un organisateur de réunion peut créer une réunion en ligne. Un participant peut ensuite participer à la réunion en ligne. Pour en savoir plus sur ce scénario, consultez l’article [Créer un Outlook mobile pour](../../outlook/online-meeting.md) un fournisseur de réunion en ligne.
 
 > [!NOTE]
 > Ce point d’extension est uniquement pris en charge sur Android et iOS avec Microsoft 365 abonnement.
 >
-> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+> L’inscription des [événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 #### <a name="child-elements"></a>Éléments enfants
 
@@ -289,9 +289,9 @@ Ce point d’extension place un basculement approprié en mode dans l’surface 
 
 `ExtensionPoint` les éléments de ce type ne peuvent avoir qu’un seul élément enfant : un `Control` élément.
 
-L’attribut doit être attribué à l’élément contenu dans ce `Control` point `xsi:type` d’extension. `MobileButton`
+L’attribut `Control` doit être attribué à l’élément contenu dans ce point `xsi:type` d’extension `MobileButton`.
 
-Les images doivent être en échelles de gris à l’aide de code hex ou de son équivalent `Icon` `#919191` dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
+Les `Icon` images doivent être en échelles de gris à l’aide de code hex ou `#919191` de son équivalent dans [d’autres formats de couleur.](https://convertingcolors.com/hex-color-919191.html)
 
 #### <a name="example"></a>Exemple
 
@@ -319,10 +319,10 @@ Les images doivent être en échelles de gris à l’aide de code hex ou de son 
 
 ### <a name="launchevent"></a>LaunchEvent
 
-Ce point d’extension permet à un application de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Pour en savoir plus sur ce scénario et pour obtenir la liste complète des événements pris en charge, consultez l’article Configurer votre complément Outlook pour l’activation basée [sur des événements.](../../outlook/autolaunch.md)
+Ce point d’extension permet à un application de s’activer en fonction des événements pris en charge dans le facteur de forme de bureau. Pour en savoir plus sur ce scénario et pour obtenir la liste complète des événements pris en charge, consultez l’article Configurer votre complément [Outlook pour l’activation basée sur des événements](../../outlook/autolaunch.md).
 
 > [!IMPORTANT]
-> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+> L’inscription des [événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 #### <a name="child-elements"></a>Éléments enfants
 
@@ -346,10 +346,10 @@ Ce point d’extension permet à un application de s’activer en fonction des �
 
 ### <a name="events"></a>Événements
 
-Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié. Pour plus d’informations sur l’utilisation de ce point d’extension, consultez la fonctionnalité d’envoi [pour Outlook des modules complémentaires.](../../outlook/outlook-on-send-addins.md)
+Ce point d’extension ajoute un gestionnaire d’événements pour un événement spécifié. Pour plus d’informations sur l’utilisation de ce point d’extension, consultez la fonctionnalité d’envoi [Outlook des modules complémentaires](../../outlook/outlook-on-send-addins.md).
 
 > [!IMPORTANT]
-> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+> L’inscription des [événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 | Élément | Description  |
 |:-----|:-----|
@@ -368,7 +368,7 @@ Ce point d’extension ajoute un gestionnaire d’événements pour un événeme
 Ce point d’extension ajoute une activation de complément contextuel sur un type d’entité spécifié.
 
 > [!IMPORTANT]
-> L’inscription [des événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) aux lettres et d’élément n’est pas disponible avec ce point d’extension.
+> L’inscription des [événements de](../objectmodel/preview-requirement-set/office.context.mailbox.md#events) [boîte aux](../objectmodel/preview-requirement-set/office.context.mailbox.item.md#events) lettres et d’élément n’est pas disponible avec ce point d’extension.
 
 Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:type`l’attribut doit avoir la valeur `VersionOverridesV1_1`.
 
@@ -383,7 +383,7 @@ Pour les éléments [VersionOverrides](versionoverrides.md) la contenant, `xsi:t
 
 #### <a name="label"></a>Étiquette
 
-Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de l’attribut **id** d’un élément **String** dans l’élément **ShortStrings** dans l’élément [Resources.](resources.md)
+Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un élément **String** dans l’élément **ShortStrings** dans l’élément [Resources](resources.md).
 
 #### <a name="highlight-requirements"></a>Exigences relatives à la mise en surbrillance
 
