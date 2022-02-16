@@ -3,18 +3,18 @@ title: Exécuter un cote dans votre complément Office lors de l’ouverture du 
 description: Découvrez comment exécuter du code dans votre Office de votre add-in à l’ouverture du document.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 884409fb161970c57b32921192544592ca39bb2c
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990550"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855547"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Exécuter un cote dans votre complément Office lors de l’ouverture du document
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Vous pouvez configurer votre Office pour charger et exécuter du code dès que le document est ouvert. Cela est utile si vous devez inscrire des handlers d’événements, pré-charger des données pour le volet Des tâches, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le module ne soit visible.
+Vous pouvez configurer votre Office pour charger et exécuter le code dès que le document est ouvert. Cela est utile si vous devez inscrire des handlers d’événements, pré-charger des données pour le volet Des tâches, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le module ne soit visible.
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
@@ -31,7 +31,7 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 
 ## <a name="place-startup-code-in-officeinitialize"></a>Placer le code de démarrage dans Office.initialize
 
-Lorsque votre add-in est configuré pour se charger à l’ouverture du document, il s’exécute immédiatement. Le `Office.initialize` handler d’événements est appelé. Placez votre code de démarrage dans le `Office.initialize` ou le `Office.onReady` handler d’événements.
+Lorsque votre add-in est configuré pour se charger à l’ouverture du document, il s’exécute immédiatement. Le `Office.initialize` handler d’événements est appelé. Placez votre code de démarrage dans le ou `Office.initialize` le handler `Office.onReady` d’événements.
 
 Le code Excel de la feuille de calcul active montre comment inscrire un handler d’événements pour les événements de modification à partir de la feuille de calcul active. Si vous configurez votre add-in pour qu’il se charge sur le document ouvert, ce code enregistre le handler d’événements lors de l’ouverture du document. Vous pouvez gérer les événements de modification avant l’ouverture du volet Des tâches.
 
@@ -55,12 +55,11 @@ Office.initialize = () => {
  * @param event The event information from Excel
  */
 async function onChange(event) {
-  return Excel.run(function(context) {
-    return context.sync().then(function() {
-      console.log("Change type of event: " + event.changeType);
-      console.log("Address of event: " + event.address);
-      console.log("Source of event: " + event.source);
-    });
+    await Excel.run(async (context) => {    
+        await context.sync();
+        console.log("Change type of event: " + event.changeType);
+        console.log("Address of event: " + event.address);
+        console.log("Source of event: " + event.source);
   });
 }
 ```

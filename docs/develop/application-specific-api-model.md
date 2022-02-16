@@ -1,19 +1,24 @@
 ---
 title: Utilisation du modèle de l’API propre à l’application
-description: 'Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.'
-ms.date: 07/08/2021
+description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
+ms.date: 02/11/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2ffce8433be95de0bf75ec1cfba813f7d6cbf57f
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855582"
 ---
-
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
-Cet article décrit l’utilisation du modèle d’API pour la création de compléments dans Excel, Word et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
+Cet article explique comment utiliser le modèle API pour la création de Excel, Word, PowerPoint et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
 
 > [!NOTE]
 > Ce modèle n’est pas pris en charge par les clients Office 2013. Utilisez les [Modèles communs de l’API](office-javascript-api-object-model.md) pour fonctionner avec ces versions d’Office. Pour consulter les notes sur la disponibilité complète des plateformes, consultez les [disponibilités de l’application et de la plateforme cliente Office pour les compléments Office](../overview/office-add-in-availability.md).
 
 > [!TIP]
-> Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API JavaScript OneNote, Visio et Word.
+> Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API JavaScript OneNote, PowerPoint, Visio et Word.
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Nature asynchrone des API basées sur la promesse
 
@@ -90,18 +95,11 @@ La méthode `sync()` concernant le contexte de demande synchronise l’état ent
 L’exemple suivant montre une fonction de traitement par lot qui définit un objet proxy JavaScript local (`selectedRange`), charge une propriété de cet objet et utilise ensuite le modèle de promesses JavaScript pour appeler `context.sync()` afin de synchroniser l’état entre les objets proxy et les objets du document Excel.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
-    return context.sync()
-      .then(function () {
-        console.log('The selected range is: ' + selectedRange.address);
-    });
-}).catch(function (error) {
-    console.log('error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
+    console.log('The selected range is: ' + selectedRange.address);
 });
 ```
 
@@ -118,25 +116,18 @@ Dans l’API JavaScript Excel, `sync()` est la seule opération asynchrone et el
 Pour pouvoir lire les propriétés d’un objet proxy, vous devez charger explicitement les propriétés pour remplir l’objet proxy avec les données du document Office, puis effectuer l’appel `context.sync()`. Par exemple, si vous créez un objet proxy pour référencer une plage sélectionnée, puis que vous voulez lire la propriété `address` de la plage sélectionnée, vous devez charger la propriété `address` avant de la lire. Pour demander le chargement des propriétés d’un objet proxy, appelez la méthode `load()` de l’objet et spécifiez les propriétés à charger. L’exemple suivant illustre la propriété `Range.address` chargée pour `myRange`.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     var sheetName = 'Sheet1';
     var rangeAddress = 'A1:B2';
     var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
+    await context.sync();
+      
+    console.log (myRange.address);   // ok
+    //console.log (myRange.values);  // not ok as it was not loaded
 
-    return context.sync()
-      .then(function () {
-        console.log (myRange.address);   // ok
-        //console.log (myRange.values);  // not ok as it was not loaded
-        });
-    }).then(function () {
-        console.log('done');
-}).catch(function (error) {
-    console.log('Error: ' + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-    }
+    console.log('done');
 });
 ```
 
@@ -179,11 +170,10 @@ var tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
-return context.sync()
-    .then(function () {
-        // Trying to log the value before calling sync would throw an error.
-        console.log (tableCount.value);
-    });
+await context.sync();
+
+// Trying to log the value before calling sync would throw an error.
+console.log (tableCount.value);
 ```
 
 ### <a name="set"></a>set()
@@ -193,8 +183,8 @@ La définition de propriétés sur un objet avec des propriétés de navigation 
 L’exemple de code suivant définit plusieurs propriétés de mise en forme d’une plage en appelant la méthode `set()` et en transmettant un objet JavaScript avec des noms et des types de propriétés reflétant la structure des propriétés dans l’objet `Range`. Cet exemple part du principe que des données sont présentes dans la plage **B2:E2**.
 
 ```js
-Excel.run(function (ctx) {
-    var sheet = ctx.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    var sheet = context.workbook.worksheets.getItem("Sample");
     var range = sheet.getRange("B2:E2");
     range.set({
         format: {
@@ -209,12 +199,7 @@ Excel.run(function (ctx) {
     });
     range.format.autofitColumns();
 
-    return ctx.sync();
-}).catch(function(error) {
-    console.log("Error: " + error);
-    if (error instanceof OfficeExtension.Error) {
-        console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
+    await context.sync();
 });
 ```
 
@@ -250,20 +235,21 @@ Par exemple, vous pouvez appeler la méthode `getItemOrNullObject()` sur une col
 > [!NOTE]
 > Les variantes `*OrNullObject` ne renvoient jamais la valeur JavaScript `null`. Ils renvoient des objets proxy Office ordinaires. Si l’entité que l’objet représente n’existe pas, la propriété `isNullObject` de l’objet est définie sur `true`. Ne testez pas l’objet renvoyé pour nullité ou fausseté. Ce n’est jamais `null`, `false` ou `undefined`.
 
-L’exemple de code suivant tente de récupérer une feuille de calcul Excel nommée « Données » à l’aide de la méthode `getItemOrNullObject()`. Si une feuille de calcul avec ce nom n’existe pas, une nouvelle feuille est créée. Notez que le code ne charge pas la propriété `isNullObject`. Office charge automatiquement cette propriété lorsque `context.sync` est appelé. Vous n’avez donc pas besoin de la charger explicitement avec quelque chose comme `datasheet.load('isNullObject')`.
+L’exemple de code suivant tente de récupérer une feuille de calcul Excel nommée « Données » à l’aide de la méthode `getItemOrNullObject()`. Si une feuille de calcul avec ce nom n’existe pas, une nouvelle feuille est créée. Notez que le code ne charge pas la propriété `isNullObject`. Office charge automatiquement cette propriété lorsque `context.sync` est appelé. Vous n’avez donc pas besoin de la charger explicitement avec quelque chose comme `dataSheet.load('isNullObject')`.
 
 ```js
-var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
-
-return context.sync()
-    .then(function () {
-        if (dataSheet.isNullObject) {
-            dataSheet = context.workbook.worksheets.add("Data");
-        }
-
-        // Set `dataSheet` to be the second worksheet in the workbook.
-        dataSheet.position = 1;
-    });
+await Excel.run(async (context) => {
+    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    
+    await context.sync();
+    
+    if (dataSheet.isNullObject) {
+        dataSheet = context.workbook.worksheets.add("Data");
+    }
+    
+    // Set `dataSheet` to be the second worksheet in the workbook.
+    dataSheet.position = 1;
+});
 ```
 
 ## <a name="see-also"></a>Voir aussi

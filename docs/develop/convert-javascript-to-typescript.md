@@ -1,38 +1,38 @@
 ---
 title: Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 description: Découvrez comment convertir un projet de Office dans Visual Studio pour utiliser TypeScript.
-ms.date: 07/08/2021
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2771dbde52689200bc861aa208b33280776798b0
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 78a03c29662a981c51a93fcae0c61050a2007dda
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149135"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855568"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
 Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour créer un complément qui utilise JavaScript, puis convertir le projet de complément au format TypeScript. Cet article décrit ce processus de conversion pour un complément Excel. Vous pouvez utiliser le même processus pour convertir les autres types de projet de complément Office de JavaScript au format TypeScript dans Visual Studio.
 
 > [!IMPORTANT]
-> Cet article décrit  les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le mot clé et non avec `var` `let` un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code. 
+> Cet article décrit les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière secondaire dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le `var` `let` mot clé et non avec un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code.
 
 > [!NOTE]
 > Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs/) avec la charge de travail de **développement Office/SharePoint** installée
+- [Visual Studio 2019 ou](https://www.visualstudio.com/vs/) ultérieure avec la charge de travail **Office/SharePoint de développement** installée
 
     > [!TIP]
-    > Si vous avez déjà installé Visual Studio 2019, [utilisez Visual Studio Installer](/visualstudio/install/modify-visual-studio) pour vérifier que la charge de travail de **développement Office/SharePoint** est bien installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-workloads).
+    > Si vous avez déjà installé [Visual Studio, utilisez](/visualstudio/install/modify-visual-studio) le Visual Studio Installer pour vous assurer que la charge de travail Office **/SharePoint** de développement est installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio#modify-workloads).
 
-- Kit de développement logiciel (SDK) TypeScript 2.3 ou version ultérieure (pour Visual Studio 2019)
+- SDK TypeScript version 2.3 ou ultérieure.
 
     > [!TIP]
-    > Dans le [programme d’installation Visual Studio](/visualstudio/install/modify-visual-studio), sélectionnez l’onglet **Composants individuels**, puis faites défiler la page jusqu’à la section **SDK, bibliothèques et frameworks**. Dans cette section, vérifiez qu’au moins l’un des composants du **Kit de développement logiciel (SDK) TypeScript** (version 2.3 ou ultérieure) est sélectionné. Si aucun des composants du **SDK TypeScript** n’est sélectionné, sélectionnez  la dernière version disponible du SDK, puis choisissez Modifier pour installer ce [composant individuel.](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components)
+    > Dans le [programme d’installation Visual Studio](/visualstudio/install/modify-visual-studio), sélectionnez l’onglet **Composants individuels**, puis faites défiler la page jusqu’à la section **SDK, bibliothèques et frameworks**. Dans cette section, vérifiez qu’au moins l’un des composants du **Kit de développement logiciel (SDK) TypeScript** (version 2.3 ou ultérieure) est sélectionné. Si aucun des composants du **SDK TypeScript** n’est sélectionné, sélectionnez la dernière version disponible du SDK, puis  choisissez Modifier pour installer ce [composant individuel](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true#modify-individual-components).
 
-- Excel 2016 ou version ultérieure
+- Excel 2016 ou ultérieure.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -61,7 +61,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
     > [!NOTE]
     > Dans votre projet TypeScript, vous pouvez avoir un mélange de fichiers TypeScript et JavaScript, qui seront compilés. En effet, TypeScript est un sur-ensemble typé de code JavaScript compilé en code JavaScript.
 
-6. Dans **Home.ts,** recherchez la ligne et ajoutez une ligne immédiatement après elle pour `Office.initialize = function (reason) {` polyfill le `window.Promise` global, comme illustré ici.
+6. Dans **Home.ts**, recherchez la ligne `Office.initialize = function (reason) {` et ajoutez une ligne immédiatement après pour polyfill le global `window.Promise`, comme illustré ici.
 
     ```TypeScript
     Office.initialize = function (reason) {
@@ -70,7 +70,7 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
         ...
     ```
 
-7. Dans **Home.ts,** recherchez la fonction, remplacez la fonction entière par le `displaySelectedCells` code suivant, puis enregistrez le fichier.
+7. Dans **Home.ts**, recherchez la `displaySelectedCells` fonction, remplacez toute la fonction par le code suivant et enregistrez le fichier.
 
     ```TypeScript
     function displaySelectedCells() {
@@ -237,4 +237,4 @@ Par exemple, l’extrait de code suivant affiche le contenu du fichier **Home.ts
 ## <a name="see-also"></a>Voir aussi
 
 - [Discussion sur la mise en œuvre de promesses sur StackOverflow](https://stackoverflow.com/questions/44461312/office-addins-file-in-its-typescript-version-doesnt-work)
-- [Exemples de compléments Office sur GitHub](https://github.com/officedev)
+- [Exemples de compléments Office sur GitHub](https://github.com/OfficeDev/Office-Add-in-samples)

@@ -1,14 +1,14 @@
 ---
 title: Élément OfficeMenu dans le fichier manifeste
 description: L’élément OfficeMenu définit une collection de contrôles à ajouter au menu context Office de travail.
-ms.date: 02/04/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 11b68edaef4044fb7ddde0d413debc0339b15c3a
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: e09f5dfcba131912a1a2842bd88c9760a0992235
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467742"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855505"
 ---
 # <a name="officemenu-element"></a>Élément OfficeMenu
 
@@ -36,7 +36,7 @@ Pour plus d’informations, voir [Remplacements de version dans le manifeste](..
 
 |  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
-|  [Control](#control)    | Oui |  Ensemble d’un ou de plusieurs objets Control  |
+|  [Contrôle de type Menu](control-menu.md)    | Oui |  Ensemble d’un ou de plusieurs objets Control  |
 
 ## <a name="xsitype"></a>xsi:type
 
@@ -44,10 +44,6 @@ Indique un menu prédéfini de l’application cliente Office sur laquelle ajout
 
 - `ContextMenuText` -  Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur ouvre le menu contextuel (clique dessus avec le bouton droit de la souris) du texte sélectionné. S’applique à Word, Excel, PowerPoint et OneNote.
 - `ContextMenuCell` -  Affiche l’élément dans le menu contextuel lorsque l’utilisateur ouvre le menu contextuel (clique avec le bouton droit de la souris) dans une cellule de la feuille de calcul. S’applique à Excel.
-
-## <a name="control"></a>Contrôle
-
-Chaque **élément OfficeMenu** nécessite un ou plusieurs contrôles [menu](control-menu.md). 
 
 ## <a name="example"></a>Exemple
 

@@ -10,7 +10,7 @@ metadata:
   ms.topic: hub-page
   author: o365devx
   ms.author: o365devx
-  ms.date: 09/09/2021
+  ms.date: 02/10/2022
 highlightedContent:
   items:
     - itemType: overview
@@ -29,13 +29,13 @@ highlightedContent:
       title: Exemples de Office de recherche
       url: overview/office-add-in-code-samples.md
     - itemType: how-to-guide
-      title: Office Guide du débutant pour les add-ins
+      title: Office guide du débutant pour les add-ins
       url: overview/learning-path-beginner.md
     - itemType: reference
       title: Documentation référence de l’API JavaScript pour Office
       url: /javascript/api/overview
     - itemType: whats-new
-      title: Microsoft 365 Blog du développeur
+      title: blog Microsoft 365 développeur
       url: 'https://developer.microsoft.com/office/blogs/technology/office-add-ins'
 conceptualContent:
   title: Votre parcours de développeur
@@ -101,9 +101,12 @@ conceptualContent:
         - url: 'https://developer.microsoft.com/office'
           itemType: whats-new
           text: Rejoindre le programme pour les développeurs
-        - url: /answers/products/m365
+        - url: 'https://aka.ms/m365dev-suggestions'
           itemType: architecture
           text: Demander des fonctionnalités
+        - url: /answers/products/m365
+          itemType: reference
+          text: Poser des questions sur Office.js sur les questions microsoft&R
         - url: 'https://stackoverflow.com/questions/tagged/office-js'
           itemType: reference
           text: Poser des questions sur les Office.js sur Stack Overflow

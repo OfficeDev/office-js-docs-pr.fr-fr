@@ -1,14 +1,14 @@
 ---
 title: Élément Extension dans le fichier manifeste
 description: Définit l’emplacement où se trouvent les fonctionnalités d’un complément dans l’interface utilisateur Office.
-ms.date: 02/07/2022
+ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 279cc1b27f42d55e2ead00ee0c4df64afab16a3d
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 1f8ccc08a9c0d42edf89c904b8809a530239be4c
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467863"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855631"
 ---
 # <a name="extensionpoint-element"></a>Élément ExtensionPoint
 
@@ -28,71 +28,111 @@ Pour plus d’informations, voir [Remplacements de version dans le manifeste](..
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  **xsi:type**  |  Oui  | Type de point d’extension défini.|
+|  **xsi:type**  |  Oui  | Type de point d’extension défini. Les valeurs possibles dépendent de l Office’application hôte définie dans la valeur de **l’élément Host** très grande.|
 
-## <a name="extension-points-for-excel-only"></a>Points d’extension pour Excel uniquement
+## <a name="extension-points-for-excel-onenote-powerpoint-and-word-add-in-commands"></a>Points d’extension pour Excel, OneNote, PowerPoint et les commandes de modules supplémentaires Word
 
-- **CustomFunctions** – fonction personnalisée écrite en JavaScript pour Excel.
+Il existe trois types de points d’extension disponibles dans tout ou partie de ces hôtes.
 
-[L’exemple de code XML](https://github.com/OfficeDev/Excel-Custom-Functions/blob/master/manifest.xml) montre comment utiliser l’élément **ExtensionPoint** avec la valeur d’attribut **CustomFunctions** et les éléments enfants à utiliser.
+- [PrimaryCommandSurface](#primarycommandsurface) (valide pour Word, Excel, PowerPoint et OneNote) : ruban dans Office.
+- [ContextMenu](#contextmenu) (valide pour Word, Excel, PowerPoint et OneNote) : menu contextiqué qui s’affiche lorsque vous sélectionnez et maintenez (ou cliquez avec le bouton droit) dans l’interface utilisateur Office.
+- [CustomFunctions](#customfunctions) (valide uniquement pour Excel) : fonction personnalisée écrite en JavaScript pour Excel.
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Points d’extension pour les commandes de complément Word, Excel, PowerPoint et OneNote
+Consultez les sous-sections suivantes pour les éléments enfants et des exemples de ces types de points d’extension.
 
-- **PrimaryCommandSurface** : ruban dans Office.
-- **ContextMenu** : menu contextuel qui apparaît lorsque vous cliquez avec le bouton droit de la souris dans l’interface utilisateur Office.
+### <a name="primarycommandsurface"></a>PrimaryCommandSurface
 
-Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint** avec les valeurs d’attribut **PrimaryCommandSurface** et **ContextMenu**, ainsi que les éléments enfants qui doivent être utilisés avec chacune d’elles.
+La surface de commande principale dans Word, Excel, PowerPoint et OneNote est le ruban.
+
+#### <a name="child-elements"></a>Éléments enfants
+
+|Élément|Description|
+|:-----|:-----|
+|[CustomTab] (customtab.md|Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. |
+|[OfficeTab](officetab.md)|Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**.|
+
+#### <a name="example"></a>Exemple
+
+L’exemple suivant montre comment utiliser **l’élément ExtensionPoint** avec **PrimaryCommandSurface**. Il ajoute un onglet personnalisé au ruban.
 
 > [!IMPORTANT]
-> Pour les éléments qui contiennent un attribut ID, veillez à indiquer un ID unique. Nous vous recommandons d’utiliser le nom de votre organisation, ainsi que votre ID. Par exemple, utilisez le format suivant : `<CustomTab id="mycompanyname.mygroupname">`.
+> Pour les éléments qui contiennent un attribut ID, veillez à fournir un ID unique.
 
 ```XML
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
-          <CustomTab id="Contoso Tab">
-          <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
-            <!-- <OfficeTab id="TabData"> -->
-            <Label resid="residLabel4" />
-            <Group id="Group1Id12">
-              <Label resid="residLabel4" />
-              <Icon>
-                <bt:Image size="16" resid="icon1_32x32" />
-                <bt:Image size="32" resid="icon1_32x32" />
-                <bt:Image size="80" resid="icon1_32x32" />
-              </Icon>
-              <Tooltip resid="residToolTip" />
-              <Control xsi:type="Button" id="Button1Id1">
-
-                  <!-- information about the control -->
-              </Control>
-              <!-- other controls, as needed -->
-            </Group>
-          </CustomTab>
-        </ExtensionPoint>
-
-      <ExtensionPoint xsi:type="ContextMenu">
-        <OfficeMenu id="ContextMenuCell">
-          <Control xsi:type="Menu" id="ContextMenu2">
-                  <!-- information about the control -->
-          </Control>
-          <!-- other controls, as needed -->
-        </OfficeMenu>
-        </ExtensionPoint>
+  <CustomTab id="Contoso.MyTab1">
+    <Label resid="residLabel4" />
+    <Group id="Contoso.Group1">
+      <Label resid="residLabel4" />
+      <Icon>
+        <bt:Image size="16" resid="icon1_32x32" />
+        <bt:Image size="32" resid="icon1_32x32" />
+        <bt:Image size="80" resid="icon1_32x32" />
+      </Icon>
+      <Tooltip resid="residToolTip" />
+      <Control xsi:type="Button" id="Contoso.Button1">
+          <!-- information about the control -->
+      </Control>
+      <!-- other controls, as needed -->
+    </Group>
+  </CustomTab>
+</ExtensionPoint>
 ```
+
+### <a name="contextmenu"></a>ContextMenu
+
+Un menu contextiqué est un menu contextiqué qui s’affiche lorsque vous cliquez avec le bouton droit dans Office’interface utilisateur.
 
 #### <a name="child-elements"></a>Éléments enfants
  
 |Élément|Description|
 |:-----|:-----|
-|[CustomTab](customtab.md)|Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. |
-|[OfficeTab](officetab.md)|Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**.|
-|[OfficeMenu](officemenu.md)|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> - **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> - **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul.|
-|[Group](group.md)|Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. |
-|**Label**|Obligatoire. Libellé du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un **élément String**. L’élément  **String** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|[Icon](icon.md)|Obligatoire. Indique l’icône du groupe qui doit être utilisée sur les périphériques de petit facteur de forme ou lorsque les boutons sont affichés en trop grand nombre. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un **élément Image**. L’élément  **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément  **Resources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont obligatoires : 16, 32 et 80. Cinq tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64.|
-|**Tooltip**|Facultatif. Info-bulle du groupe. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un **élément String**. L’élément  **String** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément  **Resources**.|
-|[Control](control.md)|Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu pour** spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus [d’informations](control-button.md) , voir Contrôle de bouton et [Contrôle](control-menu.md) de menu.<br/>**Remarque :**  Pour faciliter la résolution des problèmes, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.|
-|[Script](script.md)|Liens vers le fichier JavaScript avec la définition de la fonction personnalisée et le code d’inscription. Cet élément n’est pas utilisé dans l’aperçu pour les développeurs. À la place, la page HTML est responsable du chargement de tous les fichiers JavaScript.|
-|[Page](page.md)|Liens vers la page HTML de vos fonctions personnalisées.|
+|[OfficeMenu](officemenu.md)|Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). **L’attribut id** doit être définie sur l’une des chaînes suivantes : <br/> - **ContextMenuText** si le menu contextuel doit s’ouvrir lorsqu’un utilisateur clique avec le bouton droit sur le texte sélectionné. <br/> - **ContextMenuCell** si le menu contextiqué doit s’ouvrir lorsque l’utilisateur clique avec le bouton droit sur une cellule d’Excel feuille de calcul.|
+
+#### <a name="example"></a>Exemple
+
+L’exemple suivant ajoute un menu contexté personnalisé aux cellules d’une feuille Excel feuille de calcul.
+
+```xml
+<ExtensionPoint xsi:type="ContextMenu">
+  <OfficeMenu id="ContextMenuCell">
+    <Control xsi:type="Menu" id="Contoso.ContextMenu2">
+            <!-- information about the control -->
+    </Control>
+    <!-- other controls, as needed -->
+  </OfficeMenu>
+</ExtensionPoint>
+```
+
+### <a name="customfunctions"></a>CustomFunctions
+
+Fonction personnalisée écrite en JavaScript ou TypeScript pour Excel.
+
+#### <a name="child-elements"></a>Éléments enfants
+
+|Élément|Description|
+|:-----|:-----|
+|[Script](script.md)|Obligatoire. Liens vers le fichier JavaScript avec la définition et le code d’inscription de la fonction personnalisée.|
+|[Page](page.md)|Obligatoire. Liens vers la page HTML de vos fonctions personnalisées.|
+|[MetaData](metadata.md)|Obligatoire. Définit les paramètres de script utilisés par une fonction personnalisée dans Excel.|
+|[Namespace](namespace.md)|Facultatif. Définit les paramètres de script utilisés par une fonction personnalisée dans Excel.|
+
+#### <a name="example"></a>Exemple
+
+```xml
+<ExtensionPoint xsi:type="CustomFunctions">
+  <Script>
+    <SourceLocation resid="Functions.Script.Url"/>
+  </Script>
+  <Page>
+    <SourceLocation resid="Shared.Url"/>
+  </Page>
+  <Metadata>
+    <SourceLocation resid="Functions.Metadata.Url"/>
+  </Metadata>
+  <Namespace resid="Functions.Namespace"/>
+</ExtensionPoint>
+```
 
 ## <a name="extension-points-for-outlook"></a>Points d’extension pour Outlook
 
@@ -132,7 +172,7 @@ Ce point d’extension place des boutons dans la surface de commande pour le mod
 
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom2">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -163,7 +203,7 @@ Ce point d’extension place des boutons sur le ruban pour les compléments à l
 
 ```xml
 <ExtensionPoint xsi:type="MessageComposeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom3">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -194,7 +234,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentOrganizerCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom4">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -225,7 +265,7 @@ Ce point d’extension place des boutons sur le ruban pour le formulaire qui est
 
 ```xml
 <ExtensionPoint xsi:type="AppointmentAttendeeCommandSurface">
-  <CustomTab id="TabCustom1">
+  <CustomTab id="Contoso.TabCustom5">
         <-- CustomTab Definition -->
   </CustomTab>
 </ExtensionPoint>
@@ -263,9 +303,9 @@ Pour les éléments **Control** contenus dans ce point d’extension, l’attrib
 
 ```xml
 <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-  <Group id="mobileGroupID">
+  <Group id="Contoso.mobileGroup1">
     <Label resid="residAppName"/>
-      <Control id="mobileButton1" xsi:type="MobileButton">
+      <Control  xsi:type="MobileButton id="Contoso.mobileButton1"">
         <!-- Control definition -->
       </Control>
   </Group>
@@ -297,7 +337,7 @@ Les `Icon` images doivent être en échelles de gris à l’aide de code hex ou 
 
 ```xml
 <ExtensionPoint xsi:type="MobileOnlineMeetingCommandSurface">
-  <Control xsi:type="MobileButton" id="onlineMeetingFunctionButton">
+  <Control xsi:type="MobileButton" id="Contoso.onlineMeetingFunctionButton1">
     <Label resid="residUILessButton0Name" />
     <Icon>
       <bt:Image resid="UiLessIcon" size="25" scale="1" />

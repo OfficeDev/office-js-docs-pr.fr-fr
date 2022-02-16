@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: Découvrez comment créer un complément simple de volet des tâches OneNote simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/13/2022
+ms.date: 02/11/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: e377f3f73f6879b374672157ebc127a0cf412830
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 7d806922785f97430619bd74eb04c7c42595aa4e
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222082"
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855575"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -29,7 +29,7 @@ Cet article décrit comment créer un complément du volet Office de OneNote.
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
 
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-onenote.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-onenote.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -50,7 +50,7 @@ Ouvrez le fichier **./src/taskpane/taskpane.js** dans l’éditeur de code et aj
 
 ```js
 try {
-    await OneNote.run(async context => {
+    await OneNote.run(async (context) => {
 
         // Get the current page.
         var page = context.application.getActivePage();
@@ -62,8 +62,8 @@ try {
         var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
-        // Run the queued commands, and return a promise to indicate task completion.
-        return context.sync();
+        // Run the queued commands.
+        await context.sync();
     });
 } catch (error) {
     console.log("Error: " + error);
@@ -78,20 +78,13 @@ try {
     cd "My Office Add-in"
     ```
 
-1. Démarrez le serveur web local et chargez indépendamment votre complément.
+1. Démarrez le serveur web local. Exécutez la commande suivante dans le répertoire racine de votre projet.
+
+    ```command&nbsp;line
+    npm run dev-server
+    ```
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-    > [!TIP]
-    > Si vous testez votre complément sur Mac, exécutez la commande suivante avant de continuer. Lorsque vous exécutez cette commande, le serveur web local démarre.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document OneNote sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous avez des autorisations.
-
-    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]`
 
 1. Dans [OneNote sur le web](https://www.onenote.com/notebooks), ouvrez un bloc-notes, puis créez une page.
 

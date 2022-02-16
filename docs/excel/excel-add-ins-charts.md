@@ -3,8 +3,13 @@ title: Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 description: Exemples de code illustrant les tâches graphiques à l’aide Excel’API JavaScript.
 ms.date: 11/29/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 31b65a6523753f47304adb4e007bb19e2e644c6d
+ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/16/2022
+ms.locfileid: "62855610"
 ---
-
 # <a name="work-with-charts-using-the-excel-javascript-api"></a>Utiliser des graphiques à l’aide de l’API JavaScript pour Excel
 
 Cet article fournit des exemples de code qui montrent comment effectuer des tâches courantes à l’aide de graphiques utilisant l’API JavaScript pour Excel.
@@ -228,8 +233,8 @@ La capture d’écran suivante montre la table de données créée par l’exemp
 Vous pouvez générer des graphiques sous forme d’images en dehors d’Excel. `Chart.getImage` renvoie le graphique en tant que chaîne codée en Base64 représentant le graphique sous forme d’image JPEG. Le code suivant montre comment obtenir la chaîne de l’image et l’enregistrer dans la console.
 
 ```js
-Excel.run(function (ctx) {
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+Excel.run(function (context) {
+    var chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
     var imageAsString = chart.getImage();
     return context.sync().then(function () {
         console.log(imageAsString.value);
