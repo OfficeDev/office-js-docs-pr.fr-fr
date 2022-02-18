@@ -1,10 +1,15 @@
 ---
-title: "Compléments Outlook pour Outlook\_Mobile"
+title: Compléments Outlook pour Outlook Mobile
 description: Outlook pour appareils mobiles sont pris en charge sur tous les Microsoft 365 d’entreprise et Outlook.com.
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 2894e85acccea9879d2c35b425ed8b3af5dfaf65
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892523"
 ---
-
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
 Les compléments fonctionnent désormais sur Outlook Mobile, avec les mêmes API que celles disponibles pour d’autres points de terminaison Outlook. Si vous avez déjà créé un complément pour Outlook, il est facile de le faire fonctionner sur Outlook Mobile.
@@ -64,7 +69,7 @@ Une fois que votre complément fonctionne, testez-le sur différentes tailles d�
 La résolution des problèmes sur les appareils mobiles peut être difficile, car vous n’avez peut-être pas les outils que vous avez l’habitude d’utiliser. Toutefois, une option de dépannage sur iOS consiste à utiliser Fiddler (consultez ce didacticiel sur son utilisation avec [un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 > [!NOTE]
-> Les applications ne fonctionnent pas dans les applications Outlook sur un navigateur web sur Android. Pour plus d’informations sur les appareils pris en charge, voir [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> Les Outlook sur le web modernes sur iPhone et les smartphones Android ne sont plus nécessaires ou disponibles pour le test Outlook des applications. Pour plus d’informations sur les appareils pris en charge, voir [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

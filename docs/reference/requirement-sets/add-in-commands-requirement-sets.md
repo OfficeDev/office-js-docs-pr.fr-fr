@@ -1,11 +1,16 @@
 ---
 title: Ensembles de conditions requises concernant les commandes de complément
 description: Vue d’Office ensembles de conditions requises des commandes de l’autre.
-ms.date: 01/20/2022
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: e35a36c10f9ca275d5dd969a3592df42a5e1000a
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892544"
 ---
-
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
@@ -17,9 +22,9 @@ Les commandes de complément sont des éléments d’interface utilisateur qui �
 
 La version initiale des commandes de add-in n’a pas d’ensemble de conditions requises correspondant (autrement dit, il n’existe pas d’ensemble de conditions requises AddinCommands 1.0). Le tableau suivant répertorie les applications clientes Office qui la prise en charge de la version initiale, ainsi que les versions ou le numéro de build de ces applications.  
 
-| Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
+| Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(abonnement)   |  Office sur iPad<br>(abonnement)  |  Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Commandes de complément (version initiale, aucune condition) | S/O | N/A | Version 1809 (build 10827.20150) ou version ultérieure| 16.0.14326.20454 ou ultérieur |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
+| Commandes de complément (version initiale, aucune condition) | N/A | N/A | Version 1809 (build 10827.20150) ou version ultérieure| 16.0.14326.20454 ou ultérieur |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
 
 L’ensemble de conditions requises des commandes de add-in **1.1** introduit la possibilité d’ouverture automatique d’un volet [De tâches avec des documents](../../develop/automatically-open-a-task-pane-with-a-document.md).
 
@@ -27,7 +32,7 @@ L’ensemble de conditions requises des commandes de l’ajout **1.3** introduit
 
 Le tableau suivant répertorie les ensembles de conditions requises des commandes de Office, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) |  Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365)   |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |  
+|  Ensemble de conditions requises  |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) |  Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(abonnement)   |  Office sur iPad<br>(abonnement)  |  Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 | AddinCommands 1.3  | N/A | N/A | N/A | N/A | Non prise en charge | N/A | Non prise en charge | Novembre 2020 |
 | AddinCommands 1.1  | N/A | N/A  | Version 1809 (build 10827.20150) ou version ultérieure&dagger; | 16.0.14326.20454 ou ultérieur&dagger; | Version 1705 (build 8121.1000) ou ultérieure&dagger; | N/A | 15.34 ou ultérieure&dagger;\*| Mai 2017 |

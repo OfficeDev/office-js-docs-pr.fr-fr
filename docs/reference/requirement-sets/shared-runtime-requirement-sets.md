@@ -1,30 +1,30 @@
 ---
-title: Ensembles de conditions requises pour l’runtime partagé
+title: Ensembles de conditions requises pour le runtime partagé
 description: Spécifie les plateformes et les applications Office qui la prise en charge des API SharedRuntime.
-ms.date: 11/03/2021
+ms.date: 02/05/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: a5f7d3c9394de047b358d7f190c5adae5b5199b1
-ms.sourcegitcommit: 210251da940964b9eb28f1071977ea1fe80271b4
+ms.openlocfilehash: 1f55f3e95ace9101f8545863cae0a05953522edb
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/05/2021
-ms.locfileid: "60793602"
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892530"
 ---
-# <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour l’runtime partagé
+# <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour le runtime partagé
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
-Les parties d’un Office qui exécutent du code JavaScript, telles que les volets des tâches, les fichiers de fonctions lancés à partir de commandes de Excel et les fonctions personnalisées de Excel, peuvent partager un runtime JavaScript unique. Cela permet à tous les composants de partager un ensemble de variables globales, de partager un ensemble de bibliothèques chargées et de communiquer entre eux sans avoir à passer de messages via un stockage persistant. Pour plus d’informations, voir Configurer votre Office pour utiliser un [runtime JavaScript partagé.](../../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+Les parties d’un Office qui exécutent du code JavaScript, telles que les volets Des tâches, les fichiers de fonctions lancés à partir de commandes de Excel et les fonctions personnalisées de Excel, peuvent partager un runtime JavaScript unique. Cela permet à tous les composants de partager un ensemble de variables globales, de partager un ensemble de bibliothèques chargées et de communiquer entre eux sans avoir à passer de messages via un stockage persistant. Pour plus d’informations, voir [Configurer votre Office pour utiliser un runtime JavaScript partagé](../../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime 1.1, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-| Ensemble de conditions requises | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) | Office sur iPad<br>(connecté à un abonnement Microsoft 365) | Office sur Mac<br>(connecté à un abonnement Microsoft 365) | Office sur le web | Office Online Server |
+| Ensemble de conditions requises | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) | Office sur iPad<br>(connecté à un abonnement Microsoft 365) | Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)  | Office sur le web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | N/A | 16.35 ou version ultérieure | Février 2020 | N/A |
 
 > [!IMPORTANT]
-> Le runtime partagé JavaScript n’est à l’heure actuelle pas pris en charge on iPad ou les versions en achat définitif d’Office 2019 ou versions antérieures. Pour plus d’informations sur le support, voir les sections suivantes.
+> Le runtime partagé JavaScript n’est à l’heure actuelle pas pris en charge on iPad ou les versions en achat définitif d’Office 2019 ou versions antérieures. Pour plus d’informations sur le support, consultez les sections suivantes.
 
 ## <a name="support-for-version-11-on-excel"></a>Prise en charge de la version 1.1 sur Excel
 
