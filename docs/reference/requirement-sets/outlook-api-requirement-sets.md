@@ -1,11 +1,16 @@
 ---
 title: Ensembles de conditions requises de l’API JavaScript pour Outlook
 description: En savoir plus sur les ensembles de conditions requises de l’API JavaScript pour Outlook.
-ms.date: 02/01/2022
+ms.date: 02/15/2022
 ms.prod: outlook
 ms.localizationpriority: high
+ms.openlocfilehash: 4398afa60c2a3a15571db2a706cb01811c9f41f7
+ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 02/18/2022
+ms.locfileid: "62892509"
 ---
-
 # <a name="outlook-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour Outlook
 
 Les versions API requises pour les compléments Outlook sont indiquées à l’aide de l’élément Requirements dans leur manifeste. Les compléments Outlook contiennent toujours un élément Set avec un attribut  défini sur  et un attribut  défini sur l’ensemble minimal de conditions requises de l’API qui prend en charge les scénarios du complément.
@@ -116,18 +121,9 @@ Les compléments sont pris en charge dans Outlook sur les plateformes suivantes.
 >
 > <sup>5</sup> actuellement, d’autres aspects sont à prendre en considération lors de la conception et de l’implémentation de compléments pour les clients mobiles. Par exemple, le seul mode pris en charge est lecture de message. Pour plus d’informations, voir considérations relatives au code [lors de l’ajout de la prise en charge des commandes de complément pour les](../../outlook/add-mobile-support.md#code-considerations)Outlook Mobile.
 >
-> <sup>6</sup> Les compléments ne fonctionnent pas dans Outlook moderne sur un navigateur web sous Android. Pour plus d’informations sur les appareils pris en charge, consultez [Configuration requise pour l’exécution des compléments Office](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> <sup>6</sup> compléments ne fonctionnent pas dans Outlook moderne sur le web sur les smartphones iPhone et Android. Pour plus d’informations sur les appareils pris en charge, consultez [Configuration requise pour l’exécution des compléments Office](../../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
-> [!TIP]
-> Vous pouvez faire la distinction entre les deux versions d’Outlook, classique et moderne, dans un navigateur Web en regardant la barre d’outils de votre boîte aux lettres.
->
-> **moderne**
->
-> ![Capture d'écran partielle de la barre d'outils moderne d' Outlook.](../../images/outlook-on-the-web-new-toolbar.png)
->
-> **classique**
->
-> ![Capture d’écran partielle de la barre d’outils Outlook classique.](../../images/outlook-on-the-web-classic-toolbar.png)
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## <a name="using-preview-apis"></a>Utilisation des API de préversion
 
