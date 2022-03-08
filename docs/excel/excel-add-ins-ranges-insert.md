@@ -1,19 +1,19 @@
 ---
-title: Insérer des plages à l’aide de Excel API JavaScript
-description: Découvrez comment insérer une plage de cellules à l’Excel API JavaScript.
-ms.date: 04/02/2021
+title: Insérer des plages à l’aide Excel API JavaScript
+description: Découvrez comment insérer une plage de cellules avec l’API Excel JavaScript.
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: e14aeb030e01dbf170d3acc1edd4952b4989a557
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0e1ed6d2302bcdb4a11688cd6d77448811f8a93b
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149260"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340546"
 ---
-# <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>Insérer une plage de cellules à l’aide de Excel API JavaScript
+# <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>Insérer une plage de cellules à l’aide de l Excel API JavaScript
 
-Cet article fournit un exemple de code qui insère une plage de cellules avec l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en charge, voir `Range` [la Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit un exemple de code qui insère une plage de cellules avec l Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, voir [la Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
@@ -22,14 +22,14 @@ Cet article fournit un exemple de code qui insère une plage de cellules avec l 
 L’exemple de code suivant insère une plage de cellules dans l’emplacement **B4:E4** et déplace les autres cellules vers le bas pour laisser de l’espace pour les nouvelles cellules.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B4:E4");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B4:E4");
 
     range.insert(Excel.InsertShiftDirection.down);
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-inserted"></a>Données avant l’insertion de la plage

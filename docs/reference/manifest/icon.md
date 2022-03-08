@@ -1,18 +1,34 @@
 ---
 title: Élément Icon dans le fichier manifeste
 description: Définit les éléments Image pour les contrôles de bouton ou de menu.
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ddacd3fdb8b9306e9f26b7bf2431f3564b579264
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 9eb4ccf394bb1c894f2b17f34038ca64fee09dc5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467728"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341064"
 ---
 # <a name="icon-element"></a>Élément d’icône
 
-Définit les éléments **Image** pour les [contrôles Bouton et](control-button.md) [Menu](control-menu.md).
+Définit un ensemble d’éléments **Image** pour les [contrôles Bouton](control-button.md) ou [Menu](control-menu.md) .
+
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) lorsque le parent **VersionOverrides** est de type Taskpane 1.0.
+- [Boîte aux lettres 1.3 lorsque](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) le parent **VersionOverrides** est de type Mail 1.0.
+- [Boîte aux lettres 1.5 lorsque](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) le parent **VersionOverrides** est de type Mail 1.1.
 
 ## <a name="attributes"></a>Attributs
 

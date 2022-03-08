@@ -1,10 +1,15 @@
 ---
 title: Utiliser des formes à l’aide Excel API JavaScript
 description: Découvrez comment Excel définit les formes comme n’importe quel objet qui se trouve sur la couche de dessin de Excel.
-ms.date: 01/14/2020
+ms.date: 02/17/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: e035774817c69f7672a2caeb109b9e2706a5efc8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341057"
 ---
-
 # <a name="work-with-shapes-using-the-excel-javascript-api"></a>Utiliser des formes à l’aide Excel API JavaScript
 
 Excel définit les formes comme n’importe quel objet qui se trouve sur la couche de dessin de Excel. Cela signifie que tout ce qui se trouve en dehors d’une cellule est une forme. Cet article explique comment utiliser des formes géométriques, des lignes et des images conjointement avec les API [Shape](/javascript/api/excel/excel.shape) et [ShapeCollection](/javascript/api/excel/excel.shapecollection) . [Les](/javascript/api/excel/excel.chart) graphiques sont traités dans leur propre article, [Work with charts using the Excel JavaScript API](excel-add-ins-charts.md).
@@ -35,16 +40,18 @@ L’exemple de code suivant crée un rectangle de 150 x 150 pixels nommé « **S
 ```js
 // This sample creates a rectangle positioned 100 pixels from the top and left sides
 // of the worksheet and is 150x150 pixels.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var rectangle = shapes.addGeometricShape(Excel.GeometricShapeType.rectangle);
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+
+    let rectangle = shapes.addGeometricShape(Excel.GeometricShapeType.rectangle);
     rectangle.left = 100;
     rectangle.top = 100;
     rectangle.height = 150;
     rectangle.width = 150;
     rectangle.name = "Square";
-    return context.sync();
-}).catch(errorHandlerFunction);
+
+    await context.sync();
+});
 ```
 
 ### <a name="images"></a>Des images
@@ -55,15 +62,15 @@ L’exemple de code suivant montre un fichier image chargé par [un FileReader](
 
 ```js
 // This sample creates an image as a Shape object in the worksheet.
-var myFile = document.getElementById("selectedFile");
-var reader = new FileReader();
+let myFile = document.getElementById("selectedFile");
+let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run(function (context) {
-        var startIndex = reader.result.toString().indexOf("base64,");
-        var myBase64 = reader.result.toString().substr(startIndex + 7);
-        var sheet = context.workbook.worksheets.getItem("MyWorksheet");
-        var image = sheet.shapes.addImage(myBase64);
+        let startIndex = reader.result.toString().indexOf("base64,");
+        let myBase64 = reader.result.toString().substr(startIndex + 7);
+        let sheet = context.workbook.worksheets.getItem("MyWorksheet");
+        let image = sheet.shapes.addImage(myBase64);
         image.name = "Image";
         return context.sync();
     }).catch(errorHandlerFunction);
@@ -78,13 +85,13 @@ reader.readAsDataURL(myFile.files[0]);
 Une ligne est créée avec `ShapeCollection.addLine`. Cette méthode a besoin des marges gauche et supérieure des points de début et de fin de la ligne. Il faut également une enum [ConnectorType](/javascript/api/excel/excel.connectortype) pour spécifier la façon dont la ligne se contorte entre les points de terminaison. L’exemple de code suivant crée une ligne droite sur la feuille de calcul.
 
 ```js
-// This sample creates a straight line from [200,50] to [300,150] on the worksheet
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var line = shapes.addLine(200, 50, 300, 150, Excel.ConnectorType.straight);
+// This sample creates a straight line from [200,50] to [300,150] on the worksheet.
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let line = shapes.addLine(200, 50, 300, 150, Excel.ConnectorType.straight);
     line.name = "StraightLine";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 Les lignes peuvent être connectées à d’autres objets Shape. Les `connectBeginShape` méthodes attachent `connectEndShape` le début et la fin d’une ligne aux formes aux points de connexion spécifiés. Les emplacements de ces points varient en fonction de la forme, `Shape.connectionSiteCount` mais ils peuvent être utilisés pour vous assurer que votre module ne se connecte pas à un point hors limites. Une ligne est déconnectée de toutes les formes attachées à l’aide des `disconnectBeginShape` méthodes et des `disconnectEndShape` méthodes.
@@ -93,13 +100,13 @@ L’exemple de code suivant connecte la ligne « **MyLine** » à deux formes no
 
 ```js
 // This sample connects a line between two shapes at connection points '0' and '3'.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var line = shapes.getItem("MyLine").line;
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let line = shapes.getItem("MyLine").line;
     line.connectBeginShape(shapes.getItem("LeftShape"), 0);
     line.connectEndShape(shapes.getItem("RightShape"), 3);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="move-and-resize-shapes"></a>Déplacer et re tailler des formes
@@ -118,17 +125,19 @@ L’exemple de code suivant montre une forme mise à l’échelle jusqu’à 1,2
 ```js
 // In this sample, the shape "Octagon" is rotated 30 degrees clockwise
 // and scaled 25% larger, with the upper-left corner remaining in place.
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("MyWorksheet");
-    var shape = sheet.shapes.getItem("Octagon");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("MyWorksheet");
+
+    let shape = sheet.shapes.getItem("Octagon");
     shape.incrementRotation(30);
     shape.lockAspectRatio = true;
     shape.scaleWidth(
         1.25,
         Excel.ShapeScaleType.currentSize,
         Excel.ShapeScaleFrom.scaleFromTopLeft);
-    return context.sync();
-}).catch(errorHandlerFunction);
+
+    await context.sync();
+});
 ```
 
 ## <a name="text-in-shapes"></a>Texte dans les formes
@@ -139,38 +148,41 @@ L’exemple de code suivant crée une forme géométrique nommée « Wave » ave
 
 ```js
 // This sample creates a light-blue wave shape and adds the purple text "Shape text" to the center.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var wave = shapes.addGeometricShape(Excel.GeometricShapeType.wave);
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let wave = shapes.addGeometricShape(Excel.GeometricShapeType.wave);
     wave.left = 100;
     wave.top = 400;
     wave.height = 50;
     wave.width = 150;
+
     wave.name = "Wave";
     wave.fill.setSolidColor("lightblue");
+
     wave.textFrame.textRange.text = "Shape text";
     wave.textFrame.textRange.font.color = "purple";
     wave.textFrame.horizontalAlignment = Excel.ShapeTextHorizontalAlignment.center;
-    return context.sync();
-}).catch(errorHandlerFunction);
+
+    await context.sync();
+});
 ```
 
-La `addTextBox` méthode de création `ShapeCollection` d’un `GeometricShape` type avec `Rectangle` un arrière-plan blanc et du texte noir. Ceci est identique à ce qui est créé par le bouton Zone de Excel  sous l’onglet Insertion. `addTextBox` Prend un argument de chaîne pour définir le texte du .`TextRange`
+La `addTextBox` méthode de création `ShapeCollection` d’un `GeometricShape` type avec `Rectangle` un arrière-plan blanc et du texte noir. Ceci est identique à ce qui est créé par le bouton Zone de Excel sous  l’onglet Insertion.  `addTextBox` Prend un argument de chaîne pour définir le texte du .`TextRange`
 
 L’exemple de code suivant montre la création d’une zone de texte avec le texte « Hello! ».
 
 ```js
 // This sample creates a text box with the text "Hello!" and sizes it appropriately.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var textbox = shapes.addTextBox("Hello!");
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let textbox = shapes.addTextBox("Hello!");
     textbox.left = 100;
     textbox.top = 100;
     textbox.height = 20;
     textbox.width = 45;
     textbox.name = "Textbox";
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ## <a name="shape-groups"></a>Groupes de formes
@@ -182,26 +194,26 @@ L’exemple de code suivant montre trois formes regroupées. L’exemple de code
 ```js
 // This sample takes three previously-created shapes ("Square", "Pentagon", and "Octagon")
 // and groups them into a single ShapeGroup.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var square = shapes.getItem("Square");
-    var pentagon = shapes.getItem("Pentagon");
-    var octagon = shapes.getItem("Octagon");
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let square = shapes.getItem("Square");
+    let pentagon = shapes.getItem("Pentagon");
+    let octagon = shapes.getItem("Octagon");
 
-    var shapeGroup = shapes.addGroup([square, pentagon, octagon]);
+    let shapeGroup = shapes.addGroup([square, pentagon, octagon]);
     shapeGroup.name = "Group";
     console.log("Shapes grouped");
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 
 // This sample moves the previously created shape group to the right by 50 pixels.
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var shapeGroup = sheet.shapes.getItem("Group");
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let shapeGroup = shapes.getItem("Group");
     shapeGroup.incrementLeft(50);
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 > [!IMPORTANT]
@@ -212,16 +224,16 @@ Excel.run(function (context) {
 Tout `Shape` objet peut être converti en image. [Shape.getAsImage](/javascript/api/excel/excel.shape#excel-excel-shape-getasimage-member(1)) renvoie une chaîne codée en base 64. Le format de l’image est spécifié en tant qu’enum [PictureFormat](/javascript/api/excel/excel.pictureformat) transmis à `getAsImage`.
 
 ```js
-Excel.run(function (context) {
-    var shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
-    var shape = sheet.shapes.getItem("Image");
-    var stringResult = shape.getAsImage(Excel.PictureFormat.png);
+await Excel.run(async (context) => {
+    let shapes = context.workbook.worksheets.getItem("MyWorksheet").shapes;
+    let shape = shapes.getItem("Image");
+    let stringResult = shape.getAsImage(Excel.PictureFormat.png);
 
-    return context.sync().then(function () {
-        console.log(stringResult.value);
-        // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    console.log(stringResult.value);
+    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+});
 ```
 
 ## <a name="delete-shapes"></a>Supprimer des formes
@@ -232,19 +244,20 @@ L’exemple de code suivant supprime toutes les formes de **MyWorksheet**.
 
 ```js
 // This deletes all the shapes from "MyWorksheet".
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("MyWorksheet");
-    var shapes = sheet.shapes;
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("MyWorksheet");
+    let shapes = sheet.shapes;
 
     // We'll load all the shapes in the collection without loading their properties.
     shapes.load("items/$none");
-    return context.sync().then(function () {
-        shapes.items.forEach(function (shape) {
-            shape.delete()
-        });
-        return context.sync();
-    }).catch(errorHandlerFunction);
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    shapes.items.forEach(function (shape) {
+        shape.delete();
+    });
+    
+    await context.sync();
+});
 ```
 
 ## <a name="see-also"></a>Voir aussi

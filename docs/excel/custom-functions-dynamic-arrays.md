@@ -3,16 +3,16 @@ ms.date: 05/11/2020
 description: Renvoyer plusieurs résultats à partir de votre fonction personnalisée dans un Office Excel de recherche.
 title: Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a9e74d311f26a618312a3ab7f81238cad69c21
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: afd4abb4de6d978c6fd69fd447fd29e94ba2e7d1
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149876"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340427"
 ---
 # <a name="return-multiple-results-from-your-custom-function"></a>Renvoyer plusieurs résultats à partir de votre fonction personnalisée
 
-Vous pouvez renvoyer plusieurs résultats à partir de votre fonction personnalisée qui sera renvoyée aux cellules voisines. Ce comportement est appelé débordement. Lorsque votre fonction personnalisée renvoie un tableau de résultats, elle est appelée formule de tableau dynamique. Pour plus d’informations sur les formules de tableau dynamique dans Excel, voir [Tableaux dynamiques et comportement de tableau déversé.](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
+Vous pouvez renvoyer plusieurs résultats à partir de votre fonction personnalisée qui sera renvoyée aux cellules voisines. Ce comportement est appelé débordement. Lorsque votre fonction personnalisée renvoie un tableau de résultats, elle est appelée formule de tableau dynamique. Pour plus d’informations sur les formules de tableau Excel dynamiques, voir [Tableaux dynamiques et comportement de tableau déversé](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531).
 
 L’image suivante montre comment la `SORT` fonction se renverse dans les cellules voisines. Votre fonction personnalisée peut également renvoyer plusieurs résultats comme celui-ci.
 
@@ -20,7 +20,7 @@ L’image suivante montre comment la `SORT` fonction se renverse dans les cellul
 
 Pour créer une fonction personnalisée qui est une formule de tableau dynamique, elle doit renvoyer un tableau à deux dimensions de valeurs. Si les résultats s’affichent dans des cellules voisines qui ont déjà des valeurs, la formule affiche une `#SPILL!` erreur.
 
-L’exemple suivant montre comment renvoyer un tableau dynamique qui se déverse vers le bas.
+L’exemple suivant montre comment renvoyer un tableau dynamique qui se renverse vers le bas.
 
 ```javascript
 /**
@@ -33,7 +33,7 @@ function spillDown() {
 }
 ```
 
-L’exemple suivant montre comment renvoyer un tableau dynamique qui se déborde à droite. 
+L’exemple suivant montre comment renvoyer un tableau dynamique qui se déborde à droite.
 
 ```javascript
 /**
@@ -46,7 +46,7 @@ function spillRight() {
 }
 ```
 
-L’exemple suivant montre comment renvoyer un tableau dynamique qui se déborde à la fois vers le bas et la droite.
+L’exemple suivant montre comment renvoyer un tableau dynamique qui se renverse à la fois vers le bas et la droite.
 
 ```javascript
 /**

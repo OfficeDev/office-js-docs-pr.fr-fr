@@ -2,10 +2,15 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 02/03/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340287"
 ---
-
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
 Sans la fonctionnalité d’activation basée sur des événements, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre application d’exécuter des tâches basées sur certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également intégrer le volet Des tâches et la fonctionnalité sans interface utilisateur.
@@ -20,7 +25,7 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 Le tableau suivant répertorie les événements actuellement disponibles et les clients pris en charge pour chaque événement. Lorsqu’un événement est élevé, le handler `event` reçoit un objet qui peut inclure des détails spécifiques au type d’événement. La **colonne Description** inclut un lien vers l’objet associé, le cas échéant.
 
 > [!IMPORTANT]
-> Les événements encore en prévisualisation peuvent uniquement être disponibles avec un abonnement Microsoft 365 et dans un ensemble limité de clients pris en charge, comme indiqué dans le tableau suivant. Pour plus d’informations sur la configuration du client, voir [La prévisualisation](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
+> Les événements encore en prévisualisation peuvent être disponibles uniquement avec un abonnement Microsoft 365 et dans un ensemble limité de clients pris en charge, comme indiqué dans le tableau suivant. Pour plus d’informations sur la configuration du client, voir [La prévisualisation](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
 
 |Événement|Description|Ensemble de conditions requises minimal et clients pris en charge|
 |---|---|---|
@@ -135,6 +140,9 @@ Pour activer l’activation basée sur des événements de votre complément, vo
             <LaunchEvents>
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onAppointmentComposeHandler"/>
+              
+              <!-- Other available events (currently released) -->
+              <!--
               <LaunchEvent Type="OnMessageAttachmentsChanged" FunctionName="onMessageAttachmentsChangedHandler" />
               <LaunchEvent Type="OnAppointmentAttachmentsChanged" FunctionName="onAppointmentAttachmentsChangedHandler" />
               <LaunchEvent Type="OnMessageRecipientsChanged" FunctionName="onMessageRecipientsChangedHandler" />
@@ -142,8 +150,13 @@ Pour activer l’activation basée sur des événements de votre complément, vo
               <LaunchEvent Type="OnAppointmentTimeChanged" FunctionName="onAppointmentTimeChangedHandler" />
               <LaunchEvent Type="OnAppointmentRecurrenceChanged" FunctionName="onAppointmentRecurrenceChangedHandler" />
               <LaunchEvent Type="OnInfoBarDismissClicked" FunctionName="onInfobarDismissClickedHandler" />
+              -->
+
+              <!-- Other available events (currently in preview) -->
+              <!--
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
               <LaunchEvent Type="OnAppointmentSend" FunctionName="onAppointmentSendHandler" SendMode="PromptUser" />
+              -->
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -162,7 +175,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
         <!-- Entry needed for Outlook Desktop. -->
-        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/src/commands/commands.js" />
+        <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Contoso Add-in"/>
@@ -181,7 +194,7 @@ Pour activer l’activation basée sur des événements de votre complément, vo
 Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web et sur le nouvel aperçu de l’interface utilisateur Mac utilisent un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références `Resources` à ces deux fichiers dans le nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser du code HTML ou JavaScript en fonction du client Outlook. En tant que tel, pour configurer la gestion des événements, fournissez l’emplacement du code HTML `Runtime` dans l’élément, puis, dans son élément enfant, `Override` fournissez l’emplacement du fichier JavaScript indiqué ou référencé par le code HTML.
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes de Outlook des Outlook, consultez la Outlook [des manifestes de ces derniers](manifests.md).
+> Pour en savoir plus sur les manifestes de Outlook des modules, voir Outlook [manifestes de ces derniers](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
@@ -189,11 +202,18 @@ Vous devez implémenter la gestion de vos événements sélectionnés.
 
 Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux éléments.
 
-1. À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.
+1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous **le répertoire /src** /.
 
-1. Après la `action` fonction, insérez les fonctions JavaScript suivantes.
+1. Dans le **dossier ./src/launchevent** , créez un fichier nommé **launchevent.js**.
+
+1. Ouvrez le fichier **./src/launchevent/launchevent.js** votre éditeur de code et ajoutez le code JavaScript suivant.
 
     ```js
+    /*
+    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+    * See LICENSE in the project root for license information.
+    */
+
     function onMessageComposeHandler(event) {
       setSubject(event);
     }
@@ -204,23 +224,19 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
       Office.context.mailbox.item.subject.setAsync(
         "Set by an event-based add-in!",
         {
-          "asyncContext" : event
+          "asyncContext": event
         },
         function (asyncResult) {
           // Handle success or error.
           if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
             console.error("Failed to set subject: " + JSON.stringify(asyncResult.error));
           }
-    
+
           // Call event.completed() after all work is done.
           asyncResult.asyncContext.completed();
         });
     }
-    ```
 
-1. Ajoutez le code JavaScript suivant à la fin du fichier.
-
-    ```js
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
     Office.actions.associate("onMessageComposeHandler", onMessageComposeHandler);
     Office.actions.associate("onAppointmentComposeHandler", onAppointmentComposeHandler);
@@ -231,10 +247,32 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 > [!IMPORTANT]
 > Windows : actuellement, les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements.
 
+## <a name="update-webpack-config-settings"></a>Mettre à jour les paramètres de configuration webapck
+
+Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et complétez les étapes suivantes.
+
+1. Recherchez `plugins` le tableau dans l’objet `config` et ajoutez ce nouvel objet au début du tableau.
+
+    ```js
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/launchevent/launchevent.js",
+          to: "launchevent.js",
+        },
+      ],
+    }),
+    ```
+
+1. Enregistrez vos modifications.
+
 ## <a name="try-it-out"></a>Try it out
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
+1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre application est rechargée de nouveau.
 
+    ```command&nbsp;line
+    npm run build
+    ```
     ```command&nbsp;line
     npm start
     ```
@@ -252,35 +290,18 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur Windows, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet définie sur composition.](../images/outlook-win-autolaunch.png)
+    ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet de la composition.](../images/outlook-win-autolaunch.png)
 
-    > [!NOTE]
-    > Si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{your-add-in-name-here}*. Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
-    >
-    > 1. Fermez Outlook.
-    > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que **le processusmsoadfsb.exe'est** pas en cours d’exécution.
-    > 1. Si vous utilisez ( `https://localhost` la version par défaut dans le manifeste), exécutez la commande suivante.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_https___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. Si vous utilisez, `http://localhost`exécutez la commande suivante.
-    >
-    >    ```command&nbsp;line
-    >    call %SystemRoot%\System32\CheckNetIsolation.exe LoopbackExempt -a -n=1_http___localhost_300004ACA5EC-D79A-43EA-AB47-E5
-    >    ```
-    >
-    > 1. Redémarrez Outlook.
+    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="debug"></a>Débogage
 
 Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [supprimez le add-in, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau.
+- Si vous avez mis à jour le manifeste, [supprimez le module, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) de nouveau. Si vous utilisez Outlook sur Windows, fermez-le et rouvrez-le.
 - Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
-Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir Déboguer votre complément basé sur [Outlook événements](debug-autolaunch.md).
+Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer votre complément basé sur Outlook événement](debug-autolaunch.md).
 
 La journalisation runtime est également disponible pour cette fonctionnalité sur Windows. Pour plus d’informations, voir [Déboguer votre add-in avec la journalisation runtime](../testing/runtime-logging.md#runtime-logging-on-windows).
 
@@ -290,7 +311,7 @@ Vous pouvez déployer des add-ins basés sur des événements en chargeant le ma
 
 ![Capture d’écran de la page Applications intégrées sur le Centre d'administration Microsoft 365, y compris l’action Télécharger d’applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
 
-AppSource et le Office Store dans l’application : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur des événements devrait être disponible prochainement.
+AppSource et le Office Store dans l’application : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur les événements devrait bientôt être disponible.
 
 > [!IMPORTANT]
 > Les add-ins basés sur des événements sont limités aux déploiements gérés par l’administrateur uniquement. Pour l’instant, les utilisateurs ne peuvent pas obtenir de add-ins basés sur des événements à partir d’AppSource ou dans l’Office Store. Pour en savoir plus, reportez-vous aux options de liste AppSource pour votre Outlook [d’événements](autolaunch-store-options.md).
@@ -340,5 +361,6 @@ La prise en charge complète de CORS sera bientôt disponible.
 - [Options de liste AppSource pour votre Outlook d’événements](autolaunch-store-options.md)
 - [Smart Alerts and OnMessageSend walkthrough](smart-alerts-onmessagesend-walkthrough.md)
 - Exemples PnP :
+  - [Utiliser l Outlook l’activation basée sur un événement pour chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications de date/heure de rendez-vous](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
-  - [Utiliser Outlook’activation basée sur un événement pour baliser des destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
+  - [Utiliser l’activation basée sur les événements Outlook pour marquer les destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)

@@ -1,40 +1,40 @@
 ---
 title: Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript
 description: Découvrez comment utiliser l’API JavaScript Excel pour définir et obtenir des valeurs de plage, du texte ou des formules.
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 8db6e66c5f8eff106225d59fc4b82c9d092c8ee1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0567e9033606461c85ba695b3be1dc39954cdb18
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152284"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340532"
 ---
 # <a name="set-and-get-range-values-text-or-formulas-using-the-excel-javascript-api"></a>Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript
 
-Cet article fournit des exemples de code qui définissent et obtiennent des valeurs de plage, du texte ou des formules avec Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit des exemples de code qui définissent et obtiennent des valeurs de plage, du texte ou des formules avec Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="set-values-or-formulas"></a>Définir des valeurs ou des formules
 
-Les exemples de code suivants définissent des valeurs et des formules pour une seule cellule ou une plage de cellules.
+Les exemples de code suivants définissent des valeurs et des formules pour une cellule unique ou une plage de cellules.
 
 ### <a name="set-value-for-a-single-cell"></a>Définir une valeur pour une cellule unique
 
 L’exemple de code suivant définit la valeur de la cellule **C3** sur « 5 », puis définit la largeur des colonnes pour mieux s’adapter aux données.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var range = sheet.getRange("C3");
+    let range = sheet.getRange("C3");
     range.values = [[ 5 ]];
     range.format.autofitColumns();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="data-before-cell-value-is-updated"></a>Données avant la mise à jour de la valeur de la cellule
@@ -50,24 +50,24 @@ Excel.run(function (context) {
 L’exemple de code suivant définit les valeurs des cellules de la plage **B5:D5**, puis définit la largeur des colonnes pour mieux s’adapter aux données.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var data = [
+    let data = [
         ["Potato Chips", 10, 1.80],
     ];
 
-    var range = sheet.getRange("B5:D5");
+    let range = sheet.getRange("B5:D5");
     range.values = data;
     range.format.autofitColumns();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="data-before-cell-values-are-updated"></a>Données avant la mise à jour des valeurs des cellules
 
-![Données dans les Excel avant la mise à jour des valeurs des cellules.](../images/excel-ranges-set-start.png)
+![Données dans Excel avant la mise à jour des valeurs des cellules.](../images/excel-ranges-set-start.png)
 
 #### <a name="data-after-cell-values-are-updated"></a>Données après la mise à jour des valeurs des cellules
 
@@ -78,46 +78,46 @@ Excel.run(function (context) {
 L’exemple de code suivant définit une formule pour la cellule **E3**, puis définit la largeur des colonnes pour mieux s’adapter aux données.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var range = sheet.getRange("E3");
+    let range = sheet.getRange("E3");
     range.formulas = [[ "=C3 * D3" ]];
     range.format.autofitColumns();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="data-before-cell-formula-is-set"></a>Données avant la définition de la formule de la cellule
 
-![Données dans les Excel la formule de la cellule est définie.](../images/excel-ranges-start-set-formula.png)
+![Données dans Excel la formule de la cellule est définie.](../images/excel-ranges-start-set-formula.png)
 
 #### <a name="data-after-cell-formula-is-set"></a>Données après la définition de la formule de la cellule
 
-![Données dans les Excel une fois la formule de cellule définie.](../images/excel-ranges-set-formula.png)
+![Données dans Excel une fois la formule de cellule définie.](../images/excel-ranges-set-formula.png)
 
 ### <a name="set-formulas-for-a-range-of-cells"></a>Définir des formules pour une plage de cellules
 
 L’exemple de code ci-dessous définit des formules pour les cellules de la plage **E2:E6**, puis définit la largeur des colonnes pour mieux s’adapter aux données.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    var data = [
+    let data = [
         ["=C3 * D3"],
         ["=C4 * D4"],
         ["=C5 * D5"],
         ["=SUM(E3:E5)"]
     ];
 
-    var range = sheet.getRange("E3:E6");
+    let range = sheet.getRange("E3:E6");
     range.formulas = data;
     range.format.autofitColumns();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="data-before-cell-formulas-are-set"></a>Données avant la définition des formules des cellules
@@ -134,19 +134,18 @@ Ces exemples de code obtiennent des valeurs, du texte et des formules à partir 
 
 ### <a name="get-values-from-a-range-of-cells"></a>Obtenir des valeurs à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6,** charge sa propriété et écrit les `values` valeurs dans la console. La `values` propriété d’une plage spécifie les valeurs brutes que contiennent les cellules. Même si certaines cellules d’une plage contiennent des formules, la propriété de la plage spécifie les valeurs brutes de ces cellules, et non l’une `values` des formules.
+L’exemple de code suivant obtient la plage **B2:E6**, charge sa `values` propriété et écrit les valeurs dans la console. La `values` propriété d’une plage spécifie les valeurs brutes que contiennent les cellules. Même si certaines cellules d’une plage contiennent des formules, `values` la propriété de la plage spécifie les valeurs brutes de ces cellules, et non l’une des formules.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E6");
-    range.load("values");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(JSON.stringify(range.values, null, 4));
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange("B2:E6");
+    range.load("values");
+    await context.sync();
+
+    console.log(JSON.stringify(range.values, null, 4));
+});
 ```
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
@@ -192,19 +191,18 @@ Excel.run(function (context) {
 
 ### <a name="get-text-from-a-range-of-cells"></a>Obtenir du texte à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6,** charge sa propriété `text` et l’écrit dans la console. La `text` propriété d’une plage spécifie les valeurs d’affichage des cellules de la plage. Même si certaines cellules d’une plage contiennent des formules, la propriété de la plage spécifie les valeurs d’affichage de ces cellules, et non des `text` formules.
+L’exemple de code suivant obtient la plage **B2:E6**, charge sa `text` propriété et l’écrit dans la console. La `text` propriété d’une plage spécifie les valeurs d’affichage des cellules de la plage. Même si certaines cellules d’une plage contiennent des formules, `text` la propriété de la plage spécifie les valeurs d’affichage de ces cellules, et non des formules.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E6");
-    range.load("text");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(JSON.stringify(range.text, null, 4));
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange("B2:E6");
+    range.load("text");
+    await context.sync();
+
+    console.log(JSON.stringify(range.text, null, 4));
+});
 ```
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)
@@ -250,19 +248,18 @@ Excel.run(function (context) {
 
 ### <a name="get-formulas-from-a-range-of-cells"></a>Obtenir des formules à partir d’une plage de cellules
 
-L’exemple de code suivant obtient la plage **B2:E6,** charge sa propriété `formulas` et l’écrit dans la console. La propriété d’une plage spécifie les formules des cellules de la plage qui contiennent des formules et les valeurs brutes des cellules de la plage qui ne contiennent pas `formulas` de formules.
+L’exemple de code suivant obtient la plage **B2:E6**, charge sa `formulas` propriété et l’écrit dans la console. La `formulas` propriété d’une plage spécifie les formules des cellules de la plage qui contiennent des formules et les valeurs brutes des cellules de la plage qui ne contiennent pas de formules.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E6");
-    range.load("formulas");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
 
-    return context.sync()
-        .then(function () {
-            console.log(JSON.stringify(range.formulas, null, 4));
-        });
-}).catch(errorHandlerFunction);
+    let range = sheet.getRange("B2:E6");
+    range.load("formulas");
+    await context.sync();
+
+    console.log(JSON.stringify(range.formulas, null, 4));
+});
 ```
 
 #### <a name="data-in-range-values-in-column-e-are-a-result-of-formulas"></a>Données de la plage (les valeurs de la colonne E sont le résultat des formules)

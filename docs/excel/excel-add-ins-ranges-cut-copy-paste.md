@@ -1,30 +1,35 @@
 ---
-title: 'Couper, copier et coller des plages à l’aide de l Excel API JavaScript'
-description: 'Découvrez comment couper, copier et coller des plages à l’aide de l Excel API JavaScript.'
-ms.date: 04/02/2021
+title: Couper, copier et coller des plages à l’aide de l’API JavaScript pour Excel
+description: Découvrez comment couper, copier et coller des plages à l’aide de l’API JavaScript pour Excel.
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1933807d90a03c2999eda4fa5cce635ab366c9fa
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340945"
 ---
+# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Couper, copier et coller des plages à l’aide de l’API JavaScript pour Excel
 
-# <a name="cut-copy-and-paste-ranges-using-the-excel-javascript-api"></a>Couper, copier et coller des plages à l’aide de l Excel API JavaScript
-
-Cet article fournit des exemples de code qui coupent, copient et collent des plages à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article fournit des exemples de code qui coupent, copient et collent des plages à l’aide de l’API JavaScript pour Excel. Pour obtenir la liste complète des propriétés et des méthodes que `Range` l’objet prend en charge, voir [la classe Excel.Range](/javascript/api/excel/excel.range).
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 
 ## <a name="copy-and-paste"></a>Copy and paste
 
-La [méthode Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1)) réplique **les actions** **Copier** et coller de l’interface Excel’utilisateur. La destination est l’objet `Range` qui `copyFrom` est appelé. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
+La [méthode Range.copyFrom](/javascript/api/excel/excel.range#excel-excel-range-copyfrom-member(1)) réplique **les actions** **Copier** et coller de l’interface utilisateur Excel. La destination est l’objet `Range` qui `copyFrom` est appelé. La source à copier est transmise en tant que plage ou qu’adresse de chaîne représentant une plage.
 
 L’exemple de code suivant copie les données de la plage **A1:E1** dans la plage commençant en **G1** (ce qui aboutit à un collage dans la plage **G1:K1**).
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1")
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy everything from "A1:E1" into "G1" and the cells afterwards ("G1:K1").
     sheet.getRange("G1").copyFrom("A1:E1");
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 `Range.copyFrom`dispose de trois paramètres facultatifs.
@@ -49,29 +54,29 @@ Une plage transposée est renversée le long de la diagonale principale, de sort
 L’exemple de code et les images suivants illustrent ce comportement dans un scénario simple.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    // copy a range, omitting the blank cells so existing data is not overwritten in those cells
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    // Copy a range, omitting the blank cells so existing data is not overwritten in those cells.
     sheet.getRange("D1").copyFrom("A1:C1",
         Excel.RangeCopyType.all,
         true, // skipBlanks
         false); // transpose
-    // copy a range, including the blank cells which will overwrite existing data in the target cells
+    // Copy a range, including the blank cells which will overwrite existing data in the target cells.
     sheet.getRange("D2").copyFrom("A2:C2",
         Excel.RangeCopyType.all,
         false, // skipBlanks
         false); // transpose
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="data-before-range-is-copied-and-pasted"></a>Données avant que la plage ne soit copiée et copiée
 
-![Données dans Excel la méthode de copie de plage a été exécuté.](../images/excel-range-copyfrom-skipblanks-before.png)
+![Données dans Excel avant l’exécutement de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-before.png)
 
 ### <a name="data-after-range-is-copied-and-pasted"></a>Données une fois la plage copiée et copiée
 
-![Données dans Excel une fois que la méthode de copie de plage a été exécuté.](../images/excel-range-copyfrom-skipblanks-after.png)
+![Données dans Excel après l’analyse de la méthode de copie de la plage.](../images/excel-range-copyfrom-skipblanks-after.png)
 
 ## <a name="cut-and-paste-move-cells"></a>Couper et coller (déplacer) des cellules
 
@@ -80,19 +85,19 @@ La [méthode Range.moveTo](/javascript/api/excel/excel.range#excel-excel-range-m
 L’exemple de code suivant déplace une plage avec la `Range.moveTo` méthode. Notez que si la plage de destination est plus petite que la source, elle sera étendue pour englober le contenu source.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.getRange("F1").values = [["Moved Range"]];
 
     // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
     sheet.getRange("A1:E1").moveTo("G1");
-    return context.sync();
+    await context.sync();
 });
 ```
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
-- [Supprimer les doublons à l’aide Excel API JavaScript](excel-add-ins-ranges-remove-duplicates.md)
+- [Utiliser des cellules à l’aide de l’API JavaScript pour Excel](excel-add-ins-cells.md)
+- [Supprimer les doublons à l’aide de l’API JavaScript pour Excel](excel-add-ins-ranges-remove-duplicates.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

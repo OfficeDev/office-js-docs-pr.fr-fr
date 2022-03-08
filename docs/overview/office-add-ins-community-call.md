@@ -1,14 +1,14 @@
 ---
 title: Microsoft Office de la communauté des add-ins
 description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 02/11/2022
+ms.date: 03/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f694d6e718f1e187a1e7b0314ddfa26a1d750a25
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 7cf5f15d44ddd24d9a34efc86ddac8b5a38e3005
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855554"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63341043"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des add-ins
 
@@ -16,12 +16,14 @@ L’appel de la communauté Microsoft Office compléments est un appel mensuel d
 
 ## <a name="agenda-for-march-9th-call"></a>Agenda de l’appel du 9 mars
 
-L’agenda de mars sera publié environ une semaine avant l’appel.
+- Utilisation de Graph services à l’aide de sso et CORS à partir de Outlook des modules.
+- Excel API 1.15.
 
 ## <a name="previous-calls"></a>Appels précédents
 
 Vous avez manqué un appel de la communauté précédent ? Consultez les ressources de blog suivantes pour découvrir la discussion !
 
+- [9 février 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
 - [12 janvier 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-january-12-2022/ba-p/3061097)
 - [8 décembre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-december-8-2021/ba-p/3032949)
 - [10 novembre 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-november-10-2021/ba-p/2983146)

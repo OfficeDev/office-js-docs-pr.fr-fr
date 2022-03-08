@@ -1,14 +1,14 @@
 ---
 title: Élément Host dans le fichier manifeste
 description: Spécifie un type d’application Office individuel dans lequel le complément doit s’activer.
-ms.date: 11/05/2019
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e262183f11361d02d1a710d1f442539a8e936bcd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ea0f5c8bc07c72c0c888fb56b40d98c6030c2ebc
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153523"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340686"
 ---
 # <a name="host-element"></a>Élément Host
 
@@ -53,17 +53,29 @@ Spécifie le type d’hôte ciblé par ce complément. La valeur doit être l’
 
 ## <a name="versionoverrides-node"></a>Nœud VersionOverrides
 
-Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d’hôte est déterminé par l’attribut `xsi:type`.
+Lorsqu’il est défini dans [VersionOverrides](versionoverrides.md), le type d’hôte est déterminé par l’attribut `xsi:type`. 
+
+Cet élément remplace **l’élément Hosts** dans le manifeste de base.
+
+**Type de add-in :** Volet De tâches, Courrier
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
 
 ### <a name="attributes"></a>Attributs
 
 |  Attribut  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|
-|  [xsi:type](#xsitype)  |  Oui  | Décrit l’application Office application dans laquelle ces paramètres s’appliquent.|
+|  [xsi:type](#xsitype)  |  Oui  | Spécifie l’Office application dans laquelle ces paramètres s’appliquent.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
-|  Élément |  Obligatoire  |  Description  |
+|  Élément |  Requis  |  Description  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](desktopformfactor.md)    |  Oui   |  Définit les paramètres pour le facteur de forme pour bureau. |
 |  [MobileFormFactor](mobileformfactor.md)    |  Non   |  Définit les paramètres pour le facteur de forme pour environnement mobile. **Remarque :** Cet élément est uniquement pris en charge dans Outlook sur iOS et Android. |

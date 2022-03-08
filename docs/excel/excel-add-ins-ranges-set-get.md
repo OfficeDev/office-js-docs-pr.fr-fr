@@ -1,11 +1,16 @@
 ---
 title: Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
 description: Découvrez comment utiliser l’API JavaScript Excel pour définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript.
-ms.date: 07/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: ff8690d1d79063114441320232bdef2000af71d5
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340728"
 ---
-
 # <a name="set-and-get-the-selected-range-using-the-excel-javascript-api"></a>Définir et obtenir la plage sélectionnée à l’aide de l Excel API JavaScript
 
 Cet article fournit des exemples de code qui définissent et obtiennent la plage sélectionnée avec Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
@@ -17,14 +22,14 @@ Cet article fournit des exemples de code qui définissent et obtiennent la plage
 L’exemple de code suivant sélectionne la plage **B2:E6** dans la feuille de calcul active.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var range = sheet.getRange("B2:E6");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let range = sheet.getRange("B2:E6");
 
     range.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 ### <a name="selected-range-b2e6"></a>Plage sélectionnée  B2:E6
@@ -36,15 +41,14 @@ Excel.run(function (context) {
 L’exemple de code suivant obtient la plage sélectionnée, charge sa `address` propriété et écrit un message dans la console.
 
 ```js
-Excel.run(function (context) {
-    var range = context.workbook.getSelectedRange();
+await Excel.run(async (context) => {
+    let range = context.workbook.getSelectedRange();
     range.load("address");
 
-    return context.sync()
-        .then(function () {
-            console.log(`The address of the selected range is "${range.address}"`);
-        });
-}).catch(errorHandlerFunction);
+    await context.sync();
+    
+    console.log(`The address of the selected range is "${range.address}"`);
+});
 ```
 
 ## <a name="select-the-edge-of-a-used-range"></a>Sélectionner le bord d’une plage utilisée
@@ -60,26 +64,26 @@ Dans la capture d’écran suivante, la plage utilisée est le tableau avec des 
 L’exemple de `Range.getRangeEdge` code suivant montre comment utiliser la méthode pour sélectionner la cellule au bord le plus proche de la plage utilisée actuelle, dans la direction vers le haut. Cette action correspond au résultat de l’utilisation du raccourci clavier de touche fléchée Ctrl+Haut pendant qu’une plage est sélectionnée.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Get the selected range.
-    var range = context.workbook.getSelectedRange();
+    let range = context.workbook.getSelectedRange();
 
     // Specify the direction with the `KeyboardDirection` enum.
-    var direction = Excel.KeyboardDirection.up;
+    let direction = Excel.KeyboardDirection.up;
 
     // Get the active cell in the workbook.
-    var activeCell = context.workbook.getActiveCell();
+    let activeCell = context.workbook.getActiveCell();
 
     // Get the top-most cell of the current used range.
     // This method acts like the Ctrl+Up arrow key keyboard shortcut while a range is selected.
-    var rangeEdge = range.getRangeEdge(
+    let rangeEdge = range.getRangeEdge(
       direction,
       activeCell
     );
     rangeEdge.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="before-selecting-the-cell-at-the-edge-of-the-used-range"></a>Avant de sélectionner la cellule au bord de la plage utilisée
@@ -99,26 +103,26 @@ La capture d’écran suivante montre le même tableau que la capture d’écran
 L’exemple de code `Range.getExtendedRange` suivant montre comment utiliser la méthode pour sélectionner toutes les cellules de la plage actuellement sélectionnée jusqu’au bord le plus proche de la plage utilisée, dans la direction vers le bas. Cette action correspond au résultat de l’utilisation du raccourci clavier avec touches de direction Ctrl+Shift+Bas pendant qu’une plage est sélectionnée.
 
 ```js
-Excel.run(function (context) {
+await Excel.run(async (context) => {
     // Get the selected range.
-    var range = context.workbook.getSelectedRange();
+    let range = context.workbook.getSelectedRange();
 
     // Specify the direction with the `KeyboardDirection` enum.
-    var direction = Excel.KeyboardDirection.down;
+    let direction = Excel.KeyboardDirection.down;
 
     // Get the active cell in the workbook.
-    var activeCell = context.workbook.getActiveCell();
+    let activeCell = context.workbook.getActiveCell();
 
     // Get all the cells from the currently selected range to the bottom-most edge of the used range.
     // This method acts like the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
-    var extendedRange = range.getExtendedRange(
+    let extendedRange = range.getExtendedRange(
       direction,
       activeCell
     );
     extendedRange.select();
 
-    return context.sync();
-}).catch(errorHandlerFunction);
+    await context.sync();
+});
 ```
 
 #### <a name="before-selecting-all-the-cells-from-the-current-range-to-the-edge-of-the-used-range"></a>Avant de sélectionner toutes les cellules de la plage actuelle au bord de la plage utilisée
@@ -136,6 +140,6 @@ La capture d’écran suivante montre le même tableau que la capture d’écran
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
 - [Définir et obtenir des valeurs de plage, du texte ou des formules à l’aide Excel API JavaScript](excel-add-ins-ranges-set-get-values.md)
 - [Définir le format de plage à l’aide Excel API JavaScript](excel-add-ins-ranges-set-format.md)

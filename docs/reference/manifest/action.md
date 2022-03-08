@@ -1,18 +1,32 @@
 ---
 title: Élément Action dans le fichier manifeste
 description: Cet élément spécifie l’action à effectuer lorsque l’utilisateur sélectionne un bouton ou un contrôle de menu.
-ms.date: 02/04/2022
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5eee17864ecacf101d7fbfe3519b3da500768deb
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 21c8f9a6345641f23aad70efed67c9c45f72a1c8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467870"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340413"
 ---
 # <a name="action-element"></a>Élément Action
 
-Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contrôle [Bouton ou](control-button.md) [Menu](control-menu.md).
+Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contrôle  [Bouton](control-button.md) [ou Menu](control-menu.md) .
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md) lorsque le parent **VersionOverrides** est de type Taskpane 1.0.
+- [Boîte aux lettres 1.3 lorsque](../../reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md) le parent **VersionOverrides** est de type Mail 1.0.
+- [Boîte aux lettres 1.5 lorsque](../../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md) le parent **VersionOverrides** est de type Mail 1.1.
 
 ## <a name="attributes"></a>Attributs
 
@@ -26,8 +40,8 @@ Spécifie l’action à effectuer lorsque l’utilisateur sélectionne un contr�
 |:-----|:-----|
 |  [FunctionName](#functionname) |    Spécifie le nom de la fonction à exécuter. |
 |  [SourceLocation](#sourcelocation) |    Spécifie l’emplacement du fichier source pour cette action. |
-|  [TaskpaneId](#taskpaneid) | Spécifie l’ID du conteneur de volet des tâches. Non pris en charge dans Outlook des modules.|
-|  [Title](#title) | Indique le titre personnalisé du volet Office. Non pris en charge dans Outlook des modules.|
+|  [TaskpaneId](#taskpaneid) | Spécifie l’ID du conteneur de volet des tâches. Non pris en charge dans Outlook’autres.|
+|  [Title](#title) | Indique le titre personnalisé du volet Office. Non pris en charge dans Outlook’autres.|
 |  [SupportsPinning](#supportspinning) | Indique qu’un volet des tâches prend en charge l’épinglage, ce qui conserve le volet des tâches ouvert lorsque l’utilisateur modifie la sélection.|
 
 ## <a name="xsitype"></a>xsi:type
@@ -42,7 +56,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="functionname"></a>FunctionName
 
-Élément obligatoire lorsque **xsi:type** est « ExecuteFunction ». Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](functionfile.md).
+Élément obligatoire lorsque **xsi:type** est `ExecuteFunction`. Indique le nom de la fonction à exécuter. La fonction est contenue dans le fichier indiqué dans l’élément [FunctionFile](functionfile.md).
 
 ```xml
 <Action xsi:type="ExecuteFunction">
@@ -52,7 +66,7 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="sourcelocation"></a>SourceLocation
 
-Élément obligatoire lorsque **xsi:type** est « ShowTaskpane ». Spécifie l’emplacement du fichier source pour cette action. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).
+Élément obligatoire lorsque **xsi:type** est `ShowTaskpane`. Spécifie l’emplacement du fichier source pour cette action. **L’attribut resid** ne peut pas être plus de 32 caractères et doit être définie sur la valeur de **l’attribut id** d’un élément **Url** dans l’élément **Urls** dans l’élément [Resources](resources.md).
 
 ```xml
 <Action xsi:type="ShowTaskpane">
@@ -62,7 +76,19 @@ Cet attribut indique le type d’action réalisée lorsque l’utilisateur séle
 
 ## <a name="taskpaneid"></a>TaskpaneId
 
-Élément facultatif quand **xsi:type** est « ShowTaskpane ». Spécifie l’ID du conteneur de volet des tâches. Lorsque vous avez plusieurs actions « ShowTaskpane », utilisez un autre **TaskpaneId** si vous souhaitez un volet indépendant pour chacun. Utilisez le même **TaskpaneId** pour différentes actions qui partagent le même volet. Lorsque les utilisateurs choisissent des commandes qui partagent le même **TaskpaneId**, le conteneur de volet reste ouvert, mais le contenu du volet sera remplacé par l’action correspondante « SourceLocation ».
+Élément facultatif lorsque  **xsi:type** est `ShowTaskpane`. Spécifie l’ID du conteneur de volet des tâches. Lorsque vous avez plusieurs `ShowTaskpane` actions, utilisez un **autre TaskpaneId** si vous souhaitez un volet indépendant pour chacune d’elles. Utilisez le même **TaskpaneId** pour différentes actions qui partagent le même volet. Lorsque les utilisateurs choisissent des commandes qui partagent le même **TaskpaneId**, le conteneur du volet reste ouvert, mais le contenu du volet est remplacé par l’action correspondante `SourceLocation`.
+
+**Type de complément :** volet Office
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
 > Cet élément n’est pas pris en charge dans Outlook.
@@ -104,10 +130,22 @@ Les exemples suivants montrent deux actions qui utilisent une valeur **TaskpaneI
 
 ## <a name="title"></a>Titre
 
-Élément facultatif quand **xsi:type** est « ShowTaskpane ». Indique le titre personnalisé du volet Office pour cette action.
+Élément facultatif lorsque  **xsi:type** est `ShowTaskpane`. Indique le titre personnalisé du volet Office pour cette action.
+
+**Type de complément :** volet Office
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [AddinCommands 1.1](../requirement-sets/add-in-commands-requirement-sets.md)
 
 > [!NOTE]
-> Cet élément enfant n’est pas pris en charge dans Outlook de développement.
+> Cet élément enfant n’est pas pris en charge dans Outlook les autres.
 
 L’exemple suivant montre une action qui utilise **l’élément Title** . Notez que vous n’affectez pas directement le **titre** à une chaîne. Au lieu de cela, vous lui affectez un ID de ressource (résident), qui est défini dans la section **Ressources** du manifeste et ne peut pas être plus de 32 caractères.
 
@@ -134,10 +172,22 @@ L’exemple suivant montre une action qui utilise **l’élément Title** . Note
 
 ## <a name="supportspinning"></a>SupportsPinning
 
-Élément facultatif quand **xsi:type** a la valeur « ShowTaskpane ». Les éléments [VersionOverrides](versionoverrides.md) le contenant doivent avoir une valeur d’attribut `xsi:type` de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
+Élément facultatif lorsque **xsi:type** est `ShowTaskpane`. Les éléments [VersionOverrides contenants](versionoverrides.md) doivent avoir une **valeur d’attribut xsi:type** de `VersionOverridesV1_1`. Incluez cet élément avec une valeur `true` pour prendre en charge l’épinglage du volet Office. L’utilisateur pourra alors « épingler » le volet Office qui restera ouvert pendant que la sélection est modifiée. Pour en savoir plus, consultez l’article relatif à l’[implémentation d’un volet Office épinglable dans Outlook](../../outlook/pinnable-taskpane.md).
+
+**Type de complément :** messagerie
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [Mailbox 1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)
 
 > [!IMPORTANT]
-> Bien que l’élément `SupportsPinning` a été introduit dans l’ensemble de conditions requises [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement pris en charge uniquement pour les abonnés Microsoft 365 utilisant les éléments suivants :
+> Bien que l’élément **SupportsPinning** a été introduit dans l’ensemble de conditions requises [1.5](../objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md), il est actuellement uniquement pris en charge pour les abonnés Microsoft 365 utilisant les éléments suivants :
 >
 > - Outlook 2016 ou une Windows (build 7628.1000 ou ultérieure)
 > - Outlook 2016 ou une ultérieure sur Mac (build 16.13.503 ou ultérieure)

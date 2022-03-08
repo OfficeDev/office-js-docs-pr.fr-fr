@@ -1,18 +1,33 @@
 ---
 title: Élément Scopes dans le fichier manifeste
 description: L’élément Scopes contient les autorisations dont le add-in a besoin pour se connecter à une ressource externe.
-ms.date: 10/25/2021
+ms.date: 02/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 16e8a19a7aa73efa6aac00c915fde8d2b8647bad
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: 883a1e318df7262bf8cdbd9d97b9d02d201066d8
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681534"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340399"
 ---
 # <a name="scopes-element"></a>Élément Scopes
 
 Contient les autorisations dont le add-in a besoin pour une ressource externe, telle que Microsoft Graph. Lorsque Microsoft Graph la ressource, AppSource utilise l’élément Scopes pour créer une boîte de dialogue de consentement. Lorsque les utilisateurs installent le complément à partir du Store, ils sont invités à lui accorder les autorisations spécifiées à leurs données Microsoft Graph.
+
+**Type de add-in :** Volet De tâches, Courrier, Contenu
+
+**Valide uniquement dans les schémas VersionOverrides ci-après** :
+
+- Volet De tâches 1.0
+- Contenu 1.0
+- Mail 1.0
+- Courrier 1.1
+
+Pour plus d’informations, voir [Remplacements de version dans le manifeste](../../develop/add-in-manifests.md#version-overrides-in-the-manifest).
+
+**Associés à ces ensembles de conditions requises** :
+
+- [IdentityAPI 1.3](../requirement-sets/identity-api-requirement-sets.md)
 
 **Scopes est** un élément enfant de [l’élément WebApplicationInfo](webapplicationinfo.md) dans le manifeste.
 

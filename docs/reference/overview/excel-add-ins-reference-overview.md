@@ -1,15 +1,15 @@
 ---
 title: Vue d’ensemble de l’API JavaScript pour Excel
 description: En savoir plus sur l’API JavaScript pour Excel
-ms.date: 04/05/2021
+ms.date: 02/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 4b512db9028d56e9de6dcb31d03ffb0cd0d83ea6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 2e2f26033d59def17ac19144da5434c622b9f7d2
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153564"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340826"
 ---
 # <a name="excel-javascript-api-overview"></a>Vue d’ensemble de l’API JavaScript pour Excel
 
@@ -36,6 +36,7 @@ Chaque fonctionnalité principale de l’API Excel inclut un article ou un ensem
 * [Mise en forme conditionnelle](../../excel/excel-add-ins-conditional-formatting.md)
 * [Fonctions personnalisées](../../excel/custom-functions-overview.md)
 * [Validation des données](../../excel/excel-add-ins-data-validation.md)
+* [Types de données](../../excel/excel-data-types-overview.md)
 * [Événements](../../excel/excel-add-ins-events.md)
 * [PivotTables](../../excel/excel-add-ins-pivottables.md)
 * [Plages](../../excel/excel-add-ins-ranges-get.md) et [Cellules](../../excel/excel-add-ins-cells.md)

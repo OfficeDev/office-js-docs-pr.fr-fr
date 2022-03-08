@@ -6,14 +6,14 @@ metadata:
   description: Ressources pour découvrir les compléments Excel.
   ms.prod: excel
   ms.topic: landing-page
-  ms.date: 03/29/2021
+  ms.date: 02/24/2022
   ms.localizationpriority: high
-  ms.openlocfilehash: 56d57a14b6f76c0a0b13574e261118d9e2d29d97
-  ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+  ms.openlocfilehash: e3003c4ed73413a4e5b786a0ec22fdd637197a9f
+  ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 09/12/2021
-  ms.locfileid: "59152268"
+  ms.lasthandoff: 03/08/2022
+  ms.locfileid: "63340931"
 landingContent:
 - title: À propos Excel des modules
   linkLists:
@@ -31,13 +31,15 @@ landingContent:
     links:
     - text: Utiliser l’API JavaScript Excel pour interagir avec les objets et le contenu du workbook
       url: ../reference/overview/excel-add-ins-reference-overview.md
+    - text: Utiliser des types de données dans un Excel de données (prévisualisation)
+      url: excel-data-types-overview.md
     - text: Ajouter des fonctions personnalisées à Excel
       url: custom-functions-overview.md
     - text: Tester et déboguer un Excel de test
       url: ../testing/test-debug-office-add-ins.md
     - text: Déployer et publier un Excel de publication
       url: ../publish/publish.md
-- title: Concepts clés Office des add-ins
+- title: Concepts clés Office des modules de développement
   linkLists:
   - linkListType: overview
     links:

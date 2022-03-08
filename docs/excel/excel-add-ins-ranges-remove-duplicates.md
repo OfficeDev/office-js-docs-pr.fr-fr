@@ -1,11 +1,16 @@
 ---
 title: Supprimer les doublons à l’aide Excel API JavaScript
 description: Découvrez comment utiliser l’API JavaScript Excel pour supprimer les doublons.
-ms.date: 04/02/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 80e1227e06f177d0e37cc2750a7830c727a59436
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340574"
 ---
-
 # <a name="remove-duplicates-using-the-excel-javascript-api"></a>Supprimer les doublons à l’aide Excel API JavaScript
 
 Cet article fournit un exemple de code qui supprime les entrées en double dans une plage à l’aide Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
@@ -24,23 +29,23 @@ Lorsque vous utilisez la méthode d’une `removeDuplicates` plage, gardez les c
 L’exemple de code suivant montre la suppression des entrées avec des valeurs en double dans la première colonne.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:D11");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("B2:D11");
 
-    var deleteResult = range.removeDuplicates([0],true);
+    let deleteResult = range.removeDuplicates([0],true);
     deleteResult.load();
 
-    return context.sync().then(function () {
-        console.log(deleteResult.removed + " entries with duplicate names removed.");
-        console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
-    });
-}).catch(errorHandlerFunction);
+    await context.sync();
+
+    console.log(deleteResult.removed + " entries with duplicate names removed.");
+    console.log(deleteResult.uniqueRemaining + " entries with unique names remain in the range.");
+});
 ```
 
 ### <a name="data-before-duplicate-entries-are-removed"></a>Données avant la suppression des entrées en double
 
-![Données dans Excel méthode de suppression des doublons de la plage a été exécuté.](../images/excel-ranges-remove-duplicates-before.png)
+![Données dans Excel avant l’exécute de la méthode des doublons de suppression de la plage.](../images/excel-ranges-remove-duplicates-before.png)
 
 ### <a name="data-after-duplicate-entries-are-removed"></a>Données après suppression des entrées en double
 
@@ -49,6 +54,6 @@ Excel.run(function (context) {
 ## <a name="see-also"></a>Voir aussi
 
 - [Modèle d’objet JavaScript Excel dans les compléments Office](excel-add-ins-core-concepts.md)
-- [Utiliser des cellules à l’aide de Excel API JavaScript](excel-add-ins-cells.md)
-- [Couper, copier et coller des plages à l’aide de l Excel API JavaScript](excel-add-ins-ranges-cut-copy-paste.md)
+- [Utiliser des cellules à l’aide Excel API JavaScript](excel-add-ins-cells.md)
+- [Couper, copier et coller des plages à l’aide Excel API JavaScript](excel-add-ins-ranges-cut-copy-paste.md)
 - [Travailler simultanément avec plusieurs plages dans des compléments Excel](excel-add-ins-multiple-ranges.md)

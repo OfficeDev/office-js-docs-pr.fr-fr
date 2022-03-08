@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Excel
 description: Le complément Excel vous permet d’étendre les fonctionnalités de l’application Excel sur plusieurs plateformes, notamment Windows, Mac et iPad, ainsi que dans un navigateur.
-ms.date: 10/14/2020
+ms.date: 02/16/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: f4141fb743e61605906d4460025f6570ce243480
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 84246ce43df4b442e32771ee36afe1309e95b7fb
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514088"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340868"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -61,8 +61,6 @@ En plus d’interagir avec le contenu du classeur, les compléments Excel peuven
 
 Les commandes de complément sont des éléments d’interface utilisateur qui étendent l’interface utilisateur Excel et lancent des actions dans votre complément. Vous pouvez utiliser les commandes de complément pour ajouter un bouton au ruban ou un élément à un menu contextuel dans Excel. Lorsque les utilisateurs sélectionnent une commande de complément, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage d’une page du complément dans un volet Office.
 
-**Commandes de complément**
-
 ![Commandes de complément dans Excel.](../images/excel-add-in-commands-script-lab.png)
 
 Pour plus d’informations sur les fonctionnalités des commandes, les plateformes prises en charge et les bonnes pratiques pour le développement de commandes, reportez-vous à la rubrique [Commandes de complément pour Excel, Word et PowerPoint](../design/add-in-commands.md).
@@ -70,8 +68,6 @@ Pour plus d’informations sur les fonctionnalités des commandes, les plateform
 ### <a name="task-panes"></a>Volets Office
 
 Les volets Office sont des surfaces d’interface qui s’affichent généralement sur le côté droit de la fenêtre dans Excel. Les volets Office permettent aux utilisateurs d’accéder à des contrôles d’interface qui exécutent du code pour modifier le document Excel ou afficher les données d’une source de données.
-
-**Volet Office**
 
 ![Complément du volet Office dans Excel.](../images/excel-add-in-task-pane-insights.png)
 
@@ -81,8 +77,6 @@ Pour plus d’informations sur les volets Office, reportez-vous à [Volets Offic
 
 Les fonctions personnalisées permettent aux développeurs d’ajouter de nouvelles fonctions dans Excel en définissant ces fonctions dans JavaScript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`.
 
-**Fonction personnalisée**
-
 ![Image animée montrant un utilisateur final insérant la fonction personnalisée MYFUNCTION.SPHEREVOLUME dans une cellule d’une feuille de calcul Excel.](../images/SphereVolumeNew.gif)
 
 Pour plus d’informations sur les fonctions personnalisées, voir [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md).
@@ -91,8 +85,6 @@ Pour plus d’informations sur les fonctions personnalisées, voir [Créer des f
 
 Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre active de l’application Excel. Vous pouvez utiliser les boîtes de dialogue pour des tâches comme l’affichage de pages de connexion impossibles à ouvrir directement dans un volet Office, les demandes de confirmation d’une action par l’utilisateur ou l’hébergement de vidéos pouvant être trop petites si elles sont limitées à un volet Office. Utilisez l’[API de dialogue](/javascript/api/office/office.ui) pour ouvrir des boîtes de dialogue dans votre complément Excel.
 
-**Boîte de dialogue**
-
 ![Boîte de dialogue de complément dans Excel.](../images/excel-add-in-dialog-choose-number.png)
 
 Pour plus d’informations sur les boîtes de dialogue et l’API de dialogue, reportez-vous aux rubriques [Boîtes de dialogue dans les compléments Office](../design/dialog-boxes.md) et [Utiliser l’API de dialogue dans vos compléments Office](../develop/dialog-api-in-office-add-ins.md).
@@ -100,8 +92,6 @@ Pour plus d’informations sur les boîtes de dialogue et l’API de dialogue, r
 ### <a name="content-add-ins"></a>Compléments de contenu
 
 Les compléments de contenu sont des surfaces que vous pouvez incorporer directement dans les documents Excel. Vous pouvez utiliser des compléments de contenu pour incorporer des objets riches, basés sur le web, tels que des graphiques, des visualisations de données ou des supports dans une feuille de calcul, ou autoriser l’accès des utilisateurs aux options d’interface qui exécutent le code pour modifier le document Excel ou afficher des données à partir d’une source de données. Utilisez les compléments de contenu lorsque vous souhaitez incorporer des fonctionnalités directement dans le document.
-
-**Complément de contenu**
 
 ![Complément de contenu dans Excel.](../images/excel-add-in-content-map.png)
 

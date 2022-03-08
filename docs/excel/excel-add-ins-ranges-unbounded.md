@@ -1,24 +1,28 @@
 ---
 title: Lire ou écrire dans une plage non limite à l’aide de l Excel API JavaScript
 description: Découvrez comment utiliser l’API JavaScript Excel pour lire ou écrire dans une plage non limite.
-ms.date: 04/05/2021
+ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: a7b2a564377d0dab73d4f3ad6d3aacf2219ddeae
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 6e9b0c56dfd04cd53e01c41fea23fbf826a6fa14
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152275"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340952"
 ---
 # <a name="read-or-write-to-an-unbounded-range-using-the-excel-javascript-api"></a>Lire ou écrire dans une plage non limite à l’aide de l Excel API JavaScript
 
-Cet article explique comment lire et écrire dans une plage non limite à l’Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que l’objet prend en `Range` charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
+Cet article explique comment lire et écrire dans une plage non limite à l’Excel API JavaScript. Pour obtenir la liste complète des propriétés et méthodes que `Range` l’objet prend en charge, [voir Excel. Classe Range](/javascript/api/excel/excel.range).
 
 Une adresse de plage non limite est une adresse de plage qui spécifie des colonnes entières ou des lignes entières. Par exemple :
 
-- Adresses de plage composées de colonnes entières :<ul><li>`C:C`</li><li>`A:F`</li></ul>
-- Adresses de plage composées de lignes entières :<ul><li>`2:2`</li><li>`1:4`</li></ul>
+- Adresses de plage composées de colonnes entières.
+  - `C:C`
+  - `A:F`
+- Adresses de plage composées de lignes entières.
+  - `2:2`
+  - `1:4`
 
 ## <a name="read-an-unbounded-range"></a>Lire une plage non liée
 
@@ -26,11 +30,11 @@ Lorsque l’API effectue une demande de récupération d’une plage non liée (
 
 ## <a name="write-to-an-unbounded-range"></a>Écrire dans une plage non liée
 
-Vous ne pouvez pas définir de propriétés au niveau de la cellule telles que , et sur une plage non limite, car la demande d’entrée `values` `numberFormat` est trop `formula` grande. Par exemple, l’exemple de code suivant n’est pas valide, car il tente de spécifier une plage `values` non limite. L’API renvoie une erreur si vous tentez de définir des propriétés au niveau de la cellule pour une plage non limite.
+Vous ne pouvez pas définir de `values`propriétés au niveau de la cellule telles que , `numberFormat`et `formula` sur une plage non limite, car la demande d’entrée est trop grande. Par exemple, l’exemple de code suivant n’est pas valide, car `values` il tente de spécifier une plage non limite. L’API renvoie une erreur si vous tentez de définir des propriétés au niveau de la cellule pour une plage non limite.
 
 ```js
 // Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
-var range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
+let range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
 range.values = 'Due Date';
 ```
 

@@ -1,14 +1,14 @@
 ---
 title: Travailler simultanément avec plusieurs plages dans des compléments Excel
 description: Découvrez comment la Excel JavaScript permet à votre add-in d’effectuer des opérations et de définir des propriétés simultanément sur plusieurs plages.
-ms.date: 04/01/2021
+ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 571e19814cb5f1b8d3117cd6cccbe18f584330d8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 75b1248a15c37c548b11fa8ac47a809b045571e4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150491"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340910"
 ---
 # <a name="work-with-multiple-ranges-simultaneously-in-excel-add-ins"></a>Travailler simultanément avec plusieurs plages dans des compléments Excel
 
@@ -16,7 +16,7 @@ La bibliothèque JavaScript Excel permet à votre complément d’effectuer des 
 
 ## <a name="rangeareas"></a>RangeAreas
 
-Un ensemble de plages (éventuellement peuigues) est représenté par un [objet RangeAreas.](/javascript/api/excel/excel.rangeareas) Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
+Un ensemble de plages (éventuellement nonigues) est représenté par un [objet RangeAreas](/javascript/api/excel/excel.rangeareas) . Il possède des propriétés et des méthodes similaires au type`Range` (bon nombre des noms identiques ou similaires,), mais les ajustements ont été apportées à:
 
 - Les types de données pour les propriétés et le comportement des méthodes et des getters.
 - Les types de données de paramètres et des comportements de la méthode.
@@ -31,9 +31,9 @@ Quelques exemples :
 - `RangeAreas.getEntireColumn` et `RangeAreas.getEntireRow` retourner un autre`RangeAreas` objet qui représente toutes les colonnes (ou lignes) dans toutes les plages dans la `RangeAreas`. Par exemple, si le`RangeAreas` représente « A1 : C4 » et « F14:L15 », puis `RangeAreas.getEntireColumn` renvoie un`RangeAreas` objet qui représente « A:C » et « F:L ».
 - `RangeAreas.copyFrom` peut prendre soit un`Range` ou d’un`RangeAreas` paramètre représentant la ou les plage(s) source de l’opération de copie.
 
-#### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>La liste complète des membres plage sont également disponibles sur RangeAreas
+### <a name="complete-list-of-range-members-that-are-also-available-on-rangeareas"></a>La liste complète des membres plage sont également disponibles sur RangeAreas
 
-##### <a name="properties"></a>Propriétés
+#### <a name="properties"></a>Propriétés
 
 Être familiarisé avec[Lire les propriétés de RangeAreas](#read-properties-of-rangeareas) avant d’écrire de code qui lit les propriétés répertoriées. Il existe des subtilités sur ce qui est renvoyé.
 
@@ -49,7 +49,7 @@ Quelques exemples :
 - `style`
 - `worksheet`
 
-##### <a name="methods"></a>Méthodes
+#### <a name="methods"></a>Méthodes
 
 - `calculate()`
 - `clear()`
@@ -60,12 +60,12 @@ Quelques exemples :
 - `getEntireRow()`
 - `getIntersection()`
 - `getIntersectionOrNullObject()`
-- `getOffsetRange()` (nommé `getOffsetRangeAreas` sur `RangeAreas` l’objet)
+- `getOffsetRange()` (nommé `getOffsetRangeAreas` sur l’objet `RangeAreas` )
 - `getSpecialCells()`
 - `getSpecialCellsOrNullObject()`
 - `getTables()`
-- `getUsedRange()` (nommé `getUsedRangeAreas` sur `RangeAreas` l’objet)
-- `getUsedRangeOrNullObject()` (nommé `getUsedRangeAreasOrNullObject` sur `RangeAreas` l’objet)
+- `getUsedRange()` (nommé `getUsedRangeAreas` sur l’objet `RangeAreas` )
+- `getUsedRangeOrNullObject()` (nommé `getUsedRangeAreasOrNullObject` sur l’objet `RangeAreas` )
 - `load()`
 - `set()`
 - `setDirty()`
@@ -79,7 +79,7 @@ Le `RangeAreas` type possède des propriétés et des méthodes qui ne sont pas 
 
 - `areas`: A`RangeCollection` objet qui contient toutes les plages représentées par l’ `RangeAreas`objet. L’`RangeCollection`objet est également nouveau et est semblable à d’autres objets de collection de sites Excel. Il possède une`items`propriété est une matrice d’`Range` objets représentant les plages.
 - `areaCount`: Le nombre total de plages dans le`RangeAreas`.
-- `getOffsetRangeAreas`: Fonctionne comme[Range.getOffsetRange](/javascript/api/excel/excel.range#getOffsetRange_rowOffset__columnOffset_), sauf qu’une `RangeAreas` est renvoyée et il contient des plages sont en décalage avec des plages du fichier d’origine`RangeAreas`.
+- `getOffsetRangeAreas`: Fonctionne comme[Range.getOffsetRange](/javascript/api/excel/excel.range#excel-excel-range-getoffsetrange-member(1)), sauf qu’une `RangeAreas` est renvoyée et il contient des plages sont en décalage avec des plages du fichier d’origine`RangeAreas`.
 
 ## <a name="create-rangeareas"></a>Créer l’objet RangeAreas
 
@@ -103,13 +103,13 @@ Paramétrer une propriété sur un objet `RangeAreas` établit une propriété c
 Ce qui suit est un exemple de paramétrage d’une propriété sur des plages multiples. La fonction surligne les plages **F3:F5** and **H3:H5**.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H3:H5");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H3:H5");
     rangeAreas.format.fill.color = "pink";
 
-    return context.sync();
-})
+    await context.sync();
+});
 ```
 
 Cet exemple s’applique aux scénarios dans lesquels vous pouvez coder en dur les adresses de plage que vous passez à`getRanges`ou facilement les calculer à l’exécution. Certains des scénarios dans lesquels ceci peut s’appliquer incluent:
@@ -119,7 +119,7 @@ Cet exemple s’applique aux scénarios dans lesquels vous pouvez coder en dur l
 
 ## <a name="get-special-cells-from-multiple-ranges"></a>Obtenir des cellules spéciales à partir de plusieurs plages
 
-Les méthodes `getSpecialCells` et `getSpecialCellsOrNullObject` sur l’objet `RangeAreas` fonctionnent de manière analogue aux méthodes du même nom sur l’objet `Range`. Ces méthodes retournent les cellules disposant de la caractéristique spécifiée à partir de toutes les plages dans la collection `RangeAreas.areas`. Pour plus d’informations sur les cellules spéciales, voir [Rechercher des cellules spéciales dans une plage.](excel-add-ins-ranges-special-cells.md)
+Les méthodes `getSpecialCells` et `getSpecialCellsOrNullObject` sur l’objet `RangeAreas` fonctionnent de manière analogue aux méthodes du même nom sur l’objet `Range`. Ces méthodes retournent les cellules disposant de la caractéristique spécifiée à partir de toutes les plages dans la collection `RangeAreas.areas`. Pour plus d’informations sur les cellules spéciales, voir [Rechercher des cellules spéciales dans une plage](excel-add-ins-ranges-special-cells.md).
 
 Lors de l’appel de la méthode `getSpecialCells` ou `getSpecialCellsOrNullObject` sur un objet `RangeAreas` :
 
@@ -128,25 +128,22 @@ Lors de l’appel de la méthode `getSpecialCells` ou `getSpecialCellsOrNullObje
 
 ## <a name="read-properties-of-rangeareas"></a>Lire les propriétés de RangeAreas
 
-La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car une propriété donnée peut avoir des valeurs différentes pour des plages différentes au sein du`RangeAreas`. La règle générales est que si une valeur consistante *peut* être renvoyée, elle sera renvoyée. Par exemple, dans le code suivant, le code RVB pour rose ( ) et sera enregistré dans la console car les deux plages de l’objet ont un remplissage rose et les deux sont des `#FFC0CB` `true` colonnes `RangeAreas` entières.
+La lecture des valeurs de propriété de `RangeAreas` nécessite un soin, car une propriété donnée peut avoir des valeurs différentes pour des plages différentes au sein du`RangeAreas`. La règle générales est que si une valeur consistante *peut* être renvoyée, elle sera renvoyée. Par exemple, dans le code suivant, le code RVB pour rose (`#FFC0CB`) `true` et sera enregistré dans la console car les deux plages de l’objet ont un remplissage rose et sont toutes les deux des colonnes entières `RangeAreas` .
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // The ranges are the F column and the H column.
-    var rangeAreas = sheet.getRanges("F:F, H:H");  
+    let rangeAreas = sheet.getRanges("F:F, H:H");  
     rangeAreas.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // #FFC0CB
-            console.log(rangeAreas.isEntireColumn); // true
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // #FFC0CB
+    console.log(rangeAreas.isEntireColumn); // true
+});
 ```
 
 Les choses se compliquent lorsque la consistance est impossible. Le comportement de propriétés`RangeAreas` suit ces trois principes:
@@ -158,23 +155,20 @@ Les choses se compliquent lorsque la consistance est impossible. Le comportement
 Par exemple, le code suivante crée un`RangeAreas`dans lequel seule une plage est une colonne entière et seule une est remplie de rose. La console s’affichera`null`pour un remplissage de couleur,`false`pour la propriété`isEntireRow` et «Sheet1!F3:F5, Sheet1!H:H» (en présumant que la feuille de calcule soit «Sheet1») pour la propriété`address`.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var rangeAreas = sheet.getRanges("F3:F5, H:H");
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let rangeAreas = sheet.getRanges("F3:F5, H:H");
 
-    var pinkColumnRange = sheet.getRange("H:H");
+    let pinkColumnRange = sheet.getRange("H:H");
     pinkColumnRange.format.fill.color = "pink";
 
     rangeAreas.load("format/fill/color, isEntireColumn, address");
+    await context.sync();
 
-    return context.sync()
-        .then(function () {
-            console.log(rangeAreas.format.fill.color); // null
-            console.log(rangeAreas.isEntireColumn); // false
-            console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
-        })
-        .then(context.sync);
-})
+    console.log(rangeAreas.format.fill.color); // null
+    console.log(rangeAreas.isEntireColumn); // false
+    console.log(rangeAreas.address); // "Sheet1!F3:F5, Sheet1!H:H"
+});
 ```
 
 ## <a name="see-also"></a>Voir aussi
