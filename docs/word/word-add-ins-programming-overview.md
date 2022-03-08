@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Word
 description: Découvrez les concepts de base des compléments Word.
-ms.date: 10/14/2020
+ms.date: 02/24/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 488b009861349940c7ccc69a720139c2c3599ee1
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: d298caa78dab205740723998c1fa7ed42c821c66
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514144"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340644"
 ---
 # <a name="word-add-ins-overview"></a>Présentation des compléments Word
 
@@ -26,16 +26,16 @@ La figure suivante montre un exemple d’un complément Word qui s’exécute da
 
 ![Complément exécuté dans un volet Office de Word.](../images/word-add-in-show-host-client.png)
 
-Le complément Word (1) peut envoyer des demandes dans le document Word (2) et utiliser JavaScript pour accéder à l’objet de paragraphe et mettre à jour, supprimer ou déplacer le paragraphe. Par exemple, le code suivant montre comment ajouter une nouvelle phrase à ce paragraphe.
+Le complément Word peut (1) envoyer des demandes dans le document Word et (2) utiliser JavaScript pour accéder à l’objet de paragraphe et mettre à jour, supprimer ou déplacer le paragraphe. Par exemple, le code suivant montre comment ajouter une nouvelle phrase à ce paragraphe.
 
 ```js
-Word.run(function (context) {
-    var paragraphs = context.document.getSelection().paragraphs;
+await Word.run(async (context) => {
+    const paragraphs = context.document.getSelection().paragraphs;
     paragraphs.load();
-    return context.sync().then(function () {
-        paragraphs.items[0].insertText(' New sentence in the paragraph.',
+    await context.sync();
+    paragraphs.items[0].insertText(' New sentence in the paragraph.',
                                        Word.InsertLocation.end);
-    }).then(context.sync);
+    await context.sync();
 });
 
 ```

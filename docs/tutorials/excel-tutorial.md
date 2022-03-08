@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Créez un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 01/13/2022
+ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b4bbc96f03b19b0212f65f9f6688272545b4cab9
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222180"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340875"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -54,7 +54,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
 1. Ouvrez le projet dans votre éditeur de code.
 
-1. Ouvrez le fichier **./src/taskpane/taskpane.html**.  Ce fichier contient la balise HTML du volet des tâches.
+1. Ouvrez le fichier **./src/taskpane/taskpane.html**.  Ce fichier contient le balisage HTML du volet des tâches.
 
 1. Recherchez l’élément `<main>` et supprimez toutes les lignes qui apparaissent après la balise `<main>` d’ouverture et avant la balise `</main>` de fermeture.
 
@@ -64,7 +64,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
+1. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
 1. Supprimez toutes les références au bouton `run` et à la fonction `run()` en procédant comme suit :
 
@@ -72,7 +72,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
     - Recherchez et supprimez la fonction `run()` entière.
 
-1. Au sein de l’appel de méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
+1. Dans l’appel de la méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
 
     - La première partie de ce code détermine si la version d' Excel de l'utilisateur prend en charge une version d'Excel.js qui inclut toutes les API que cette série de tutoriels utilisera. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l'interface utilisateur qui appellerait les API non prises en charge. Cela permettra à l'utilisateur de continuer à utiliser les parties du complément qui sont prises en charge par sa version d' Excel.
 
@@ -88,17 +88,17 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     document.getElementById("create-table").onclick = createTable;
     ```
 
-1. Ajoutez la fonction suivante à la fin du fichier. Remarque :
+1. Ajoutez la fonction suivante à la fin du fichier. Remarque :
 
     - Votre logique métier Excel.js est ajoutée à la fonction qui est transmise à `Excel.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
 
     - La méthode `context.sync` envoie toutes les commandes en file d’attente vers Excel pour exécution.
 
-    - L’élément `Excel.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre. 
+    - L’élément `Excel.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre.
 
     ```js
-    function createTable() {
-        Excel.run(function (context) {
+    async function createTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue table creation logic here.
 
@@ -106,7 +106,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
             // TODO3: Queue commands to format the table.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -126,8 +126,8 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     - Les noms de tableau doivent être uniques dans l’ensemble du classeur, pas uniquement dans la feuille de calcul.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.add("A1:D1", true /*hasHeaders*/);
     expensesTable.name = "ExpensesTable";
     ```
 
@@ -227,13 +227,13 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function filterTable() {
-        Excel.run(function (context) {
+    async function filterTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to filter out all expense categories except
             //        Groceries and Education.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -251,9 +251,9 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
    - La méthode `applyValuesFilter` est l’une des nombreuses méthodes de filtrage sur l’objet `Filter`.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var categoryFilter = expensesTable.columns.getItem('Category').filter;
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const categoryFilter = expensesTable.columns.getItem('Category').filter;
     categoryFilter.applyValuesFilter(['Education', 'Groceries']);
     ```
 
@@ -278,12 +278,12 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function sortTable() {
-        Excel.run(function (context) {
+    async function sortTable() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to sort the table by Merchant name.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -303,9 +303,9 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
    - Le membre `sort` d’un objet `Table` est un objet `TableSort`, et non une méthode. Les objets `SortField` sont transmis à la méthode `apply` de l’objet `TableSort`.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var sortFields = [
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const sortFields = [
         {
             key: 1,            // Merchant column
             ascending: false,
@@ -354,8 +354,8 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function createChart() {
-        Excel.run(function (context) {
+    async function createChart() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to get the range of data to be charted.
 
@@ -363,7 +363,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
             // TODO3: Queue commands to position and format the chart.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -377,12 +377,12 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 1. À l’intérieur de la fonction `createChart()`, remplacez `TODO1` par le code suivant. Pour exclure la ligne d’en-tête, le code utilise la méthode `Table.getDataBodyRange` pour obtenir la plage de données à représenter sous forme de graphique à la place de la méthode `getRange`.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
-    var expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
-    var dataRange = expensesTable.getDataBodyRange();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const expensesTable = currentWorksheet.tables.getItem('ExpensesTable');
+    const dataRange = expensesTable.getDataBodyRange();
     ```
 
-1. À l’intérieur de la fonction `createChart()`, remplacez `TODO2` par le code suivant. Notez les paramètres suivants.
+1. Dans la fonction `createChart()`, remplacez `TODO2` par le code suivant. Notez les paramètres suivants.
 
    - Le premier paramètre transmis à la méthode `add` spécifie le type de graphique. Il en existe plusieurs dizaines de types.
 
@@ -391,7 +391,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
    - Le troisième paramètre détermine si une série de points de données de la table doit être représentée par ligne ou par colonne. L’option `auto` indique à Excel de décider de la meilleure méthode.
 
     ```js
-    var chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
+    const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
 1. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
@@ -449,12 +449,12 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function freezeHeader() {
-        Excel.run(function (context) {
+    async function freezeHeader() {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to keep the header visible when the user scrolls.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -472,7 +472,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
    - La méthode `freezeRows` prend comme paramètre le nombre de lignes, à partir du haut, qui doivent être épinglées. `1` est transmis pour épingler la première rangée.
 
     ```js
-    var currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
+    const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
     currentWorksheet.freezePanes.freezeRows(1);
     ```
 
@@ -601,12 +601,12 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 1. Ajoutez la fonction suivante immédiatement après la fonction `action`. Notez que nous spécifions un paramètre `args` pour la fonction et que la toute dernière ligne de la fonction appelle `args.completed`. Il s’agit d’une condition requise pour toutes les commandes de type **ExecuteFunction**. Elle signale à l’application cliente Office que la fonction est terminée et que l’interface utilisateur est à nouveau réactive.
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
 
             // TODO1: Queue commands to reverse the protection status of the current worksheet.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -627,7 +627,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 1. À l’intérieur de la fonction `toggleProtection`, remplacez `TODO1` par le code suivant. Ce code utilise la propriété de protection de l’objet de feuille de calcul dans un modèle de bouton bascule standard. L’élément `TODO2` sera expliqué dans la section suivante.
 
     ```js
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // TODO2: Queue command to load the sheet's "protection.protected" property from
     //        the document and re-synchronize the document and task pane.
@@ -655,53 +655,30 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
    - Chaque objet Excel possède une méthode `load`. Vous spécifiez les propriétés de l’objet que vous voulez lire dans le paramètre en tant que chaîne de noms séparés par des virgules. Dans ce cas, la propriété que vous devez lire est une sous-propriété de la propriété `protection`. Pour référence la sous-propriété, procédez presque exactement de la même façon que vous le feriez à n’importe quel autre emplacement de votre code, sauf que vous devez utiliser une barre oblique (« / ») au lieu d’un point « . ».
 
-   - Pour être sûr que la logique de bouton bascule, qui lit `sheet.protection.protected`, ne s’exécute pas tant que la synchronisation (`sync`) n’est pas terminée et que l’élément `sheet.protection.protected` n’a pas été affecté à la valeur correcte récupérée à partir du document, elle sera déplacée (à l’étape suivante) dans une fonction `then` qui ne s’exécutera pas tant que la synchronisation (`sync`) ne sera pas terminée.
+   - Pour être sûr que la logique de basculement, qui lit la propriété `sheet.protection.protected`, ne s’exécute pas tant que la méthode `sync` n’est pas terminée et que la propriété `sheet.protection.protected` n’est pas affectée à la valeur adéquate récupérée dans le document, cette logique doit être effectuée une fois que l’opérateur `await` a vérifié que la méthode `sync` est terminée.
 
     ```js
     sheet.load('protection/protected');
-    return context.sync()
-        .then(
-            function() {
-                // TODO3: Move the queued toggle logic here.
-            }
-        )
-        // TODO4: Move the final call of `context.sync` here and ensure that it
-        //        does not run until the toggle logic has been queued.
-    ```
-
-1. Il n’est pas possible que deux instructions `return` se trouvent dans le même chemin de code, donc supprimez la dernière ligne `return context.sync();` à la fin de la fonction `Excel.run`. Vous ajouterez un nouvel élément final `context.sync` dans une étape ultérieure.
-
-1. Coupez la structurer `if ... else` dans la fonction `toggleProtection` et collez-la à la place de `TODO3`.
-
-1. Remplacez `TODO4` par le code suivant. Veuillez noter les informations suivantes :
-
-   - Le fait de transmettre la méthode `sync` à une fonction `then` permet de s’assurer qu’elle n’est pas exécutée tant que `sheet.protection.unprotect()` ou `sheet.protection.protect()` n’a pas été mis en file d’attente.
-
-   - La méthode `then` appelle n’importe quelle fonction qui lui est transmise, et vous ne souhaitez pas appeler `sync` deux fois, donc omettez les parenthèses « () » à la fin de `context.sync`.
-
-    ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
    Lorsque vous avez terminé, la fonction entière doit ressembler à ce qui suit :
 
     ```js
-    function toggleProtection(args) {
-        Excel.run(function (context) {
-          var sheet = context.workbook.worksheets.getActiveWorksheet();
-          sheet.load('protection/protected');
+    async function toggleProtection(args) {
+        await Excel.run(async (context) => {
+            const sheet = context.workbook.worksheets.getActiveWorksheet();
+            sheet.load('protection/protected');
 
-          return context.sync()
-              .then(
-                  function() {
-                    if (sheet.protection.protected) {
-                        sheet.protection.unprotect();
-                    } else {
-                        sheet.protection.protect();
-                    }
-                  }
-              )
-              .then(context.sync);
+            await context.sync();
+
+            if (sheet.protection.protected) {
+                sheet.protection.unprotect();
+            } else {
+                sheet.protection.protect();
+            }
+            
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -828,11 +805,11 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
     document.getElementById("ok-button").onclick = sendStringToParentPage;
     ```
 
-1. Remplacez `TODO2` par le code suivant. La méthode `messageParent` transmet son paramètre à la page parent, qui est, dans ce cas, la page dans le volet Office. Le paramètre peut être une chaîne qui inclut tous les éléments qui peuvent être sérialisés en tant que chaîne, au format XML ou JSON, ou tout type pouvant être converti en chaîne.
+1. Remplacez `TODO2` par le code suivant. La méthode `messageParent` transmet son paramètre à la page parente, qui est, dans ce cas, la page dans le volet des tâches. Le paramètre doit être une chaîne qui inclut tous les éléments qui peuvent être sérialisés en tant que chaîne, au format XML ou JSON, ou tout type pouvant être converti en chaîne.
 
     ```js
     function sendStringToParentPage() {
-        var userName = document.getElementById("name-box").value;
+        const userName = document.getElementById("name-box").value;
         Office.context.ui.messageParent(userName);
     }
     ```
@@ -926,7 +903,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `freeze-header`, puis ajoutez le code suivant après cette ligne. Vous créerez la méthode `openDialog` lors d’une étape ultérieure.
+1. Dans l’appel de la méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `freeze-header` et ajoutez le code suivant après cette ligne. Vous allez créer la méthode `openDialog` lors d’une étape ultérieure.
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;
@@ -935,7 +912,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 1. Ajoutez la déclaration suivante à la fin du fichier. Cette variable est utilisée pour contenir un objet dans le contexte d'exécution de la page parent qui agit comme un intermédiaire vers le contexte d'exécution de la page de dialogue.
 
     ```js
-    var dialog = null;
+    let dialog = null;
     ```
 
 1. Ajoutez la fonction suivante à la fin du fichier (après la déclaration de `dialog`). Le plus important à remarquer à propos de ce code est ce qui ne s’y trouve *pas* : il n’y a aucun appel de `Excel.run`. Cela est dû au fait que l’API d’ouverture d’une boîte de dialogue est partagée par toutes les applications Office, elle fait donc partie de l’API commune JavaScript Office, pas de l’API propre à Excel.
@@ -965,7 +942,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 ### <a name="process-the-message-from-the-dialog-and-close-the-dialog"></a>Traitement du message à partir de la boîte de dialogue et fermeture de la boîte de dialogue
 
-1. Dans la fonction `openDialog` dans le fichier **./src/taskpane/taskpane.js**, remplacez `TODO2` par le code suivant. Remarque :
+1. Dans la fonction `openDialog` du fichier **./src/taskpane/taskpane.js**, remplacez `TODO2` par le code suivant. Remarque :
 
    - Le rappel est exécuté immédiatement après que la boîte de dialogue s’est ouverte correctement et avant que l’utilisateur a pris une quelconque action dans la boîte de dialogue.
 
