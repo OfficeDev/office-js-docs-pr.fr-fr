@@ -252,8 +252,6 @@ items:
                   - name: Vue d’ensemble
                     href: develop/develop-add-ins-visual-studio.md
                     displayName: Visual Studio
-                  - name: Déboguer des compléments Office dans Visual Studio
-                    href: develop/debug-office-add-ins-in-visual-studio.md
                   - name: Obtenir JavaScript IntelliSense dans Visual Studio
                     href: develop/get-javascript-intellisense-in-visual-studio.md
                   - name: Convertir des projets JavaScript en TypeScript
@@ -282,9 +280,10 @@ items:
                 href: testing/debug-add-ins-using-devtools-edge-chromium.md
               - name: Déboguer à l’aide de Visual Studio Code et de Edge Chromium WebView2
                 href: testing/debug-desktop-using-edge-chromium.md
-                displayName: 'debug, windows'
               - name: Déboguer avec Visual Studio Code et Edge Legacy WebView
                 href: testing/debug-with-vs-extension.md
+              - name: Déboguer des compléments Office dans Visual Studio
+                href: develop/debug-office-add-ins-in-visual-studio.md
               - name: Tester avec Internet Explorer 11
                 href: testing/ie-11-testing.md
           - name: Navigateur web
@@ -841,7 +840,7 @@ items:
       - name: Documentation sur les compléments OneNote
         href: onenote/index.yml
         displayName: OneNote
-      - name: Vue d'ensemble
+      - name: Vue d’ensemble
         href: onenote/onenote-add-ins-programming-overview.md
         displayName: OneNote
       - name: Créer votre premier complément OneNote
