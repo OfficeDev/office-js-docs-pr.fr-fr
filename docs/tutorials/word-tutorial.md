@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 7a83eb3d8ca35c8d29cf795db1906a7f9594e2e8
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222292"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340168"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -39,7 +39,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -53,7 +53,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 1. Ouvrez le projet dans votre éditeur de code.
 
-1. Ouvrez le fichier **./src/taskpane/taskpane.html**. Ce fichier contient la balise HTML du volet des tâches.
+1. Ouvrez le fichier **./src/taskpane/taskpane.html**. Ce fichier contient le balisage HTML pour le volet Office.
 
 1. Recherchez l’élément `<main>` et supprimez toutes les lignes qui apparaissent après la balise `<main>` d’ouverture et avant la balise `</main>` de fermeture.
 
@@ -63,7 +63,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-1. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code de l’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
+1. Ouvrez le fichier **./src/taskpane/taskpane.js**. Ce fichier contient le code API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
 
 1. Supprimez toutes les références au bouton `run` et à la fonction `run()` en procédant comme suit :
 
@@ -71,7 +71,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
     - Recherchez et supprimez la fonction `run()` entière.
 
-1. Au sein de l’appel de méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Word) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
+1. Dans l’appel de la méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Word) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
 
     - La première partie de ce code détermine si la version de Word de l’utilisateur prend en charge une version de Word.js qui inclut toutes les API utilisées à toutes les étapes de ce didacticiel. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l’interface utilisateur qui appellerait des API non prises en charge. Cela permet à l’utilisateur d’utiliser toujours les parties du complément prises en charge par sa version de Word.
     - La deuxième partie de ce code ajoute un gestionnaire d’événements pour le bouton `insert-paragraph`.
@@ -86,7 +86,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
     document.getElementById("insert-paragraph").onclick = insertParagraph;
     ```
 
-1. Ajoutez la fonction suivante à la fin du fichier. Remarque :
+1. Ajoutez la fonction suivante à la fin du fichier. Remarque :
 
    - Votre logique métier Word.js est ajoutée à la fonction qui est transmise à `Word.run`. Cette logique n’est pas exécutée immédiatement. Au lieu de cela, elle est ajoutée à une file d’attente de commandes.
 
@@ -95,12 +95,12 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
    - L’élément `Word.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre.
 
     ```js
-    function insertParagraph() {
-        Word.run(function (context) {
+    async function insertParagraph() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a paragraph into the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -118,7 +118,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
    - Le deuxième paramètre correspond à l’emplacement dans le corps où sera inséré le paragraphe. Les autres options d’insertion de paragraphe, lorsque l’objet parent est le corps, sont « Fin » et « Remplacer ».
 
     ```js
-    var docBody = context.document.body;
+    const docBody = context.document.body;
     docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
                             "Start");
     ```
@@ -156,7 +156,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
 1. Apportez une modification au paragraphe.
 
-1. Cliquez de nouveau sur le bouton **Insérer un paragraphe**. Remarque : le nouveau paragraphe apparaît au-dessus du précédent, car la méthode `insertParagraph` effectue l’insertion au début du corps du document.
+1. Sélectionnez à nouveau le bouton **Insérer un paragraphe** . Notez que le nouveau paragraphe apparaît au-dessus du paragraphe précédent, car la méthode `insertParagraph` est insérée au début du corps du document.
 
     ![Capture d’écran montrant le bouton Insérer un paragraphe dans le complément.](../images/word-tutorial-insert-paragraph-2.png)
 
@@ -185,12 +185,12 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function applyStyle() {
-        Word.run(function (context) {
+    async function applyStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to style text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -201,10 +201,10 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     }
     ```
 
-1. À l’intérieur de la fonction `applyStyle()`, remplacez `TODO1` par le code suivant. Le code applique un style à un paragraphe, mais les styles peuvent également être appliqués aux plages de texte.
+1. Dans la fonction `applyStyle()` , remplacez `TODO1` par le code suivant. Notez que le code applique un style à un paragraphe, mais que les styles peuvent également être appliqués à des plages de texte.
 
     ```js
-    var firstParagraph = context.document.body.paragraphs.getFirst();
+    const firstParagraph = context.document.body.paragraphs.getFirst();
     firstParagraph.styleBuiltIn = Word.Style.intenseReference;
     ```
 
@@ -229,12 +229,12 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function applyCustomStyle() {
-        Word.run(function (context) {
+    async function applyCustomStyle() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply the custom style.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -245,10 +245,10 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     }
     ```
 
-1. À l’intérieur de la fonction `applyCustomStyle()`, remplacez `TODO1` par le code suivant. Le code applique un style personnalisé qui n’existe pas encore. Vous allez créer un style nommé **MyCustomStyle** lors de l’étape [Test du complément](#test-the-add-in-1).
+1. Dans la fonction `applyCustomStyle()` , remplacez `TODO1` par le code suivant. Notez que le code applique un style personnalisé qui n’existe pas encore. Vous allez créer un style portant le nom **MyCustomStyle** à l’étape [Tester le complément](#test-the-add-in-1) .
 
     ```js
-    var lastParagraph = context.document.body.paragraphs.getLast();
+    const lastParagraph = context.document.body.paragraphs.getLast();
     lastParagraph.style = "MyCustomStyle";
     ```
 
@@ -275,12 +275,12 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function changeFont() {
-        Word.run(function (context) {
+    async function changeFont() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to apply a different font.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -291,10 +291,10 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
     }
     ```
 
-1. À l’intérieur de la fonction `changeFont()`, remplacez `TODO1` par le code suivant. Le code obtient une référence au deuxième paragraphe en utilisant la méthode `ParagraphCollection.getFirst` chaînée à la méthode `Paragraph.getNext`.
+1. Dans la fonction `changeFont()`, remplacez `TODO1` par le code suivant. Notez que le code obtient une référence au deuxième paragraphe à l’aide de la méthode `ParagraphCollection.getFirst` chaînée à la méthode `Paragraph.getNext` .
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     secondParagraph.font.set({
             name: "Courier New",
             bold: true,
@@ -310,7 +310,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 1. Si le volet des tâches du complément n’est pas déjà ouvert dans Word, sélectionnez l’onglet **Accueil**, puis cliquez sur le bouton **Afficher le volet de tâches** du ruban pour l’ouvrir.
 
-1. Assurez-vous qu’il existe au moins trois paragraphes dans le document. Vous pouvez cliquez trois fois sur le bouton **Insérer un paragraphe**. *Vérifiez attentivement qu’aucun paragraphe vide n’apparaît à la fin du document. S’il y en a un, supprimez-le.*
+1. Assurez-vous qu’il y a au moins trois paragraphes dans le document. Vous pouvez choisir le bouton **Insérer un paragraphe** trois fois. *Vérifiez soigneusement qu’il n’y a pas de paragraphe vide à la fin du document. Si c’est le cas, supprimez-le.*
 
 1. Dans Word, créez un [style personnalisé](https://support.microsoft.com/office/d38d6e47-f6fc-48eb-a607-1eb120dec563) nommé « MyCustomStyle ». Vous pouvez y appliquer la mise en forme que vous souhaitez.
 
@@ -347,8 +347,8 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function insertTextIntoRange() {
-        Word.run(function (context) {
+    async function insertTextIntoRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert text into a selected range.
 
@@ -358,7 +358,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
             // TODO3: Queue commands to repeat the text of the original
             //        range at the end of the document.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -382,12 +382,12 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
    - Vous avez vu lors d’une étape précédente du didacticiel que les méthodes insert* de l’objet corps ne disposent pas des options « Avant » et « Après ». Cela est dû au fait que vous ne pouvez pas placer de contenu en dehors du corps du document.
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText(" (C2R)", "End");
     ```
 
-1. Nous ignorerons `TODO2` jusqu’à la section suivante. À l’intérieur de la fonction `insertTextIntoRange()`, remplacez `TODO3` par le code suivant. Ce code est similaire au code que vous avez créé lors de la première phase du didacticiel, sauf que, maintenant, vous insérez un nouveau paragraphe à la fin du document plutôt qu’au début. Ce nouveau paragraphe montre que le nouveau texte fait désormais partie de la plage d’origine.
+1. Nous allons ignorer `TODO2` jusqu’à la section suivante. Dans la fonction `insertTextIntoRange()` , remplacez `TODO3` par le code suivant. Ce code est similaire au code que vous avez créé à la première étape du didacticiel, sauf que vous insérez maintenant un nouveau paragraphe à la fin du document plutôt qu’au début. Ce nouveau paragraphe montre que le nouveau texte fait désormais partie de la plage d’origine.
 
     ```js
     doc.body.insertParagraph("Original range: " + originalRange.text, "End");
@@ -395,7 +395,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
 
-Dans l’ensemble des fonctions précédentes de cette série de didacticiels, vous avez mis en file d’attente des commandes pour écrire (*write*) dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()` qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Cependant, le code que vous avez ajouté dans la dernière étape appelle la propriété `originalRange.text` et c’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `originalRange` est uniquement un objet de proxy qui existe dans le script de votre volet Office. Il ne connaît pas le texte réel de la plage dans le document, donc sa propriété `text` ne peut pas contenir de valeur réelle. Il est nécessaire de récupérer d’abord la valeur de texte de la plage à partir du document, puis de l’utiliser pour définir la valeur de `originalRange.text`. Seulement ensuite, la propriété `originalRange.text` peut être appelée sans générer d’exception. Ce processus de récupération comporte trois étapes.
+Dans toutes les fonctions précédentes de cette série de didacticiels, vous avez mis en file d’attente des commandes pour *écrire* dans le document Office. Chaque fonction s’est terminée par un appel à la méthode `context.sync()` qui envoie les commandes mises en file d’attente au document à exécuter. Toutefois, le code que vous avez ajouté à la dernière étape appelle la propriété `originalRange.text` , ce qui est une différence significative par rapport aux fonctions précédentes que vous avez écrites, car l’objet `originalRange` est uniquement un objet proxy qui existe dans le script de votre volet Office. Il ne sait pas quel est le texte réel de la plage dans le document, donc sa propriété `text` ne peut pas avoir une valeur réelle. Il est nécessaire d’extraire d’abord la valeur de texte de la plage du document et de l’utiliser pour définir la valeur de `originalRange.text`. Ce n’est qu’à ce point que vous pouvez `originalRange.text` être appelé sans provoquer la levée d’une exception. Ce processus de récupération comporte trois étapes.
 
    1. Mettez en file d’attente une commande de chargement (c’est-à-dire, fetch) des propriétés que votre code doit lire.
 
@@ -409,45 +409,33 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
   
     ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO4: Move the doc.body.insertParagraph line here.
-        })
-        // TODO5: Move the final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
-    ```
+    await context.sync();
 
-1. Il est impossible que deux instructions `return` se trouvent dans le même chemin de code, supprimez donc la dernière ligne `return context.sync();` à la fin de la fonction `Word.run`. Vous ajouterez une nouvelle ligne finale `context.sync` par la suite dans ce didacticiel.
+    // TODO4: Move the doc.body.insertParagraph line here.
+
+    // TODO5: Move the final call of context.sync here and ensure
+    //        that it does not run until the insertParagraph has
+    //        been queued.
+    ```
 
 1. Coupez la ligne `doc.body.insertParagraph` et collez-la à la place de `TODO4`.
-
-1. Remplacez `TODO5` par le code suivant. Remarque :
-
-   - Le fait de transmettre la méthode `sync` à une fonction `then` permet de s’assurer qu’elle n’est pas exécutée tant que la logique `insertParagraph` n’a pas été mise en file d’attente.
-
-   - La méthode `then` appelle n’importe quelle fonction qui lui est transmise, et vous ne souhaitez pas appeler `sync` deux fois, donc omettez les parenthèses « () » à la fin de context.sync.
-
-    ```js
-    .then(context.sync);
-    ```
 
 Lorsque vous avez terminé, la fonction entière doit ressembler à ce qui suit :
 
 ```js
-function insertTextIntoRange() {
-    Word.run(function (context) {
+async function insertTextIntoRange() {
+    await Word.run(async (context) => {
 
-        var doc = context.document;
-        var originalRange = doc.getSelection();
+        const doc = context.document;
+        const originalRange = doc.getSelection();
         originalRange.insertText(" (C2R)", "End");
 
         originalRange.load("text");
-        return context.sync()
-            .then(function() {
-                doc.body.insertParagraph("Current text of original range: " + originalRange.text, "End");
-            })
-            .then(context.sync);
+        await context.sync();
+
+        doc.body.insertParagraph("Original range: " + originalRange.text, "End");
+
+        await context.sync();
     })
     .catch(function (error) {
         console.log("Error: " + error);
@@ -479,8 +467,8 @@ function insertTextIntoRange() {
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function insertTextBeforeRange() {
-        Word.run(function (context) {
+    async function insertTextBeforeRange() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a new range before the
             //        selected range.
@@ -507,8 +495,8 @@ function insertTextIntoRange() {
    - Le deuxième paramètre spécifie l’emplacement où le texte supplémentaire doit être inséré dans la plage. Pour plus d’informations sur les options d’emplacement, reportez-vous à la discussion précédente sur la fonction `insertTextIntoRange`.
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("Office 2019, ", "Before");
     ```
 
@@ -516,14 +504,13 @@ function insertTextIntoRange() {
 
      ```js
     originalRange.load("text");
-    return context.sync()
-        .then(function() {
-            // TODO3: Queue commands to insert the original range as a
-            //        paragraph at the end of the document.
-        })
-        // TODO4: Make a final call of context.sync here and ensure
-        //        that it does not run until the insertParagraph has
-        //        been queued.
+    await context.sync();
+
+    // TODO3: Queue commands to insert the original range as a
+    //        paragraph at the end of the document.
+
+    // TODO4: Make a final call of context.sync here and ensure
+    //        that it runs after the insertParagraph has been queued.
     ```
 
 1. Remplacez `TODO3` par le code suivant. Ce nouveau paragraphe montre que le nouveau texte n’entre ***pas*** dans la plage sélectionnée d’origine. La plage d’origine contient toujours le texte qu’elle contenait lorsqu’elle avait été sélectionnée uniquement.
@@ -535,7 +522,7 @@ function insertTextIntoRange() {
 1. Remplacez `TODO4` par le code suivant.
 
     ```js
-    .then(context.sync);
+    await context.sync();
     ```
 
 ### <a name="replace-the-text-of-a-range"></a>Remplacer le texte d’une plage
@@ -559,12 +546,12 @@ function insertTextIntoRange() {
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function replaceText() {
-        Word.run(function (context) {
+    async function replaceText() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -575,11 +562,11 @@ function insertTextIntoRange() {
     }
     ```
 
-1. À l’intérieur de la fonction `replaceText()`, remplacez `TODO1` par le code suivant. La méthode est destinée à remplacer la chaîne « several » (plusieurs) par la chaîne « many » (beaucoup). Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+1. Dans la fonction `replaceText()`, remplacez `TODO1` par le code suivant. Notez que la méthode est destinée à remplacer la chaîne « plusieurs » par la chaîne « beaucoup ». Cela simplifie l’hypothèse que la chaîne est présente et que l’utilisateur l’a sélectionnée.
 
     ```js
-    var doc = context.document;
-    var originalRange = doc.getSelection();
+    const doc = context.document;
+    const originalRange = doc.getSelection();
     originalRange.insertText("many", "Replace");
     ```
 
@@ -601,7 +588,7 @@ function insertTextIntoRange() {
 
 1. Sélectionnez le bouton **Ajouter les informations de version**. L’expression « Office 2019 » est insérée entre « Office 2016 » et « Microsoft 365 ». Notez également qu’en bas du document, un nouveau paragraphe est ajouté. Celui-ci contient uniquement le texte sélectionné à l’origine, car la nouvelle chaîne est devenue une nouvelle plage plutôt que d’être ajoutée à la plage d’origine.
 
-1. Dans le document, sélectionnez l’expression « several » (plusieurs). *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
+1. Dans le document, sélectionnez le mot « plusieurs ». *Veillez à ne pas inclure l’espace précédent ou suivant dans la sélection.*
 
 1. Sélectionnez le bouton **Modifier la condition de quantité**. Notez que « beaucoup » remplace le texte sélectionné.
 
@@ -651,12 +638,12 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function insertImage() {
-        Word.run(function (context) {
+    async function insertImage() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert an image.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -667,7 +654,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
     }
     ```
 
-1. À l’intérieur de la fonction `insertImage()`, remplacez `TODO1` par le code suivant. Cette ligne insère l’image encodée en base 64 à la fin du document. (L’objet `Paragraph` contient également une méthode `insertInlinePictureFromBase64` et d’autres méthodes `insert*`. Reportez-vous à la section Insérer du code HTML suivante pour consulter un exemple.)
+1. Dans la fonction `insertImage()`, remplacez `TODO1` par le code suivant. Notez que cette ligne insère l’image encodée en base 64 à la fin du document. (L’objet `Paragraph` a également une méthode `insertInlinePictureFromBase64` et d’autres méthodes `insert*` . Pour obtenir un exemple, consultez la section insertHTML suivante.)
 
     ```js
     context.document.body.insertInlinePictureFromBase64(base64Image, "End");
@@ -694,12 +681,12 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function insertHTML() {
-        Word.run(function (context) {
+    async function insertHTML() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to insert a string of HTML.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -717,7 +704,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
    - La deuxième ligne insère une chaîne de code HTML à la fin du paragraphe. Plus précisément, deux paragraphes : un paragraphe avec la police Verdana, et l’autre avec le style par défaut du document Word. (Comme pour la méthode `insertImage` précédente, l’objet `context.document.body` contient également les méthodes `insert*`.)
 
     ```js
-    var blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
+    const blankParagraph = context.document.body.paragraphs.getLast().insertParagraph("", "After");
     blankParagraph.insertHtml('<p style="font-family: verdana;">Inserted HTML.</p><p>Another paragraph</p>', "End");
     ```
 
@@ -742,15 +729,15 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function insertTable() {
-        Word.run(function (context) {
+    async function insertTable() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to get a reference to the paragraph
             //        that will proceed the table.
 
             // TODO2: Queue commands to create a table and populate it with data.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -761,10 +748,10 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
     }
     ```
 
-1. À l’intérieur de la fonction `insertTable()`, remplacez `TODO1` par le code suivant. Cette ligne utilise la méthode `ParagraphCollection.getFirst` pour obtenir une référence au premier paragraphe, puis utilise la méthode `Paragraph.getNext` pour obtenir une référence au deuxième paragraphe.
+1. Dans la fonction `insertTable()`, remplacez `TODO1` par le code suivant. Notez que cette ligne utilise la méthode `ParagraphCollection.getFirst` pour obtenir une référence au premier paragraphe, puis utilise la méthode `Paragraph.getNext` pour obtenir une référence au deuxième paragraphe.
 
     ```js
-    var secondParagraph = context.document.body.paragraphs.getFirst().getNext();
+    const secondParagraph = context.document.body.paragraphs.getFirst().getNext();
     ```
 
 1. Dans la fonction `insertTable()`, remplacez `TODO2` par le code suivant. Remarque :
@@ -778,7 +765,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
    - Le tableau aura un style par défaut brut, mais la méthode `insertTable` renvoie un objet `Table` avec de nombreux membres, dont certains sont utilisés pour définir le style du tableau.
 
     ```js
-    var tableData = [
+    const tableData = [
             ["Name", "ID", "Birth City"],
             ["Bob", "434", "Chicago"],
             ["Sue", "719", "Havana"],
@@ -834,12 +821,12 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function createContentControl() {
-        Word.run(function (context) {
+    async function createContentControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to create a content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -863,8 +850,8 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
    - La propriété `ContentControl.color` spécifie la couleur des balises ou la bordure du cadre englobant.
 
     ```js
-    var serviceNameRange = context.document.getSelection();
-    var serviceNameContentControl = serviceNameRange.insertContentControl();
+    const serviceNameRange = context.document.getSelection();
+    const serviceNameContentControl = serviceNameRange.insertContentControl();
     serviceNameContentControl.title = "Service Name";
     serviceNameContentControl.tag = "serviceName";
     serviceNameContentControl.appearance = "Tags";
@@ -892,13 +879,13 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 1. Ajoutez la fonction suivante à la fin du fichier.
 
     ```js
-    function replaceContentInControl() {
-        Word.run(function (context) {
+    async function replaceContentInControl() {
+        await Word.run(async (context) => {
 
             // TODO1: Queue commands to replace the text in the Service Name
             //        content control.
 
-            return context.sync();
+            await context.sync();
         })
         .catch(function (error) {
             console.log("Error: " + error);
@@ -914,7 +901,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
     - La méthode `ContentControlCollection.getByTag` renvoie un élément `ContentControlCollection` comprenant tous les contrôles de contenu de la balise spécifiée. Nous utilisons `getFirst` pour obtenir une référence pour le contrôle souhaité.
 
     ```js
-    var serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
+    const serviceNameContentControl = context.document.contentControls.getByTag("serviceName").getFirst();
     serviceNameContentControl.insertText("Fabrikam Online Productivity Suite", "Replace");
     ```
 
@@ -928,7 +915,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 1. Dans le volet des tâches, cliquez sur le bouton **Insérer un paragraphe** pour vous assurer qu’il existe un paragraphe contenant « Microsoft 365 » en haut du document.
 
-1. Dans le document, sélectionnez le texte « Microsoft 365 », puis sélectionnez le bouton **Créer un contrôle de contenu**. L’expression est intégrée dans des balises nommées « Service name » (Nom de service).
+1. Dans le document, sélectionnez le texte « Microsoft 365 », puis choisissez le bouton **Créer un contrôle de contenu**. Notez que l’expression est encapsulée dans des balises étiquetées « Nom du service ».
 
 1. Sélectionnez le bouton **Renommer le service** et notez que le texte du contrôle de contenu devient « Fabrikam Online Productivity Suite ».
 
