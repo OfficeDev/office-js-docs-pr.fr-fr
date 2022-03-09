@@ -2,14 +2,14 @@
 title: Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 description: Découvrez comment gérer l’événement d’envoi de message dans Outlook complément à l’aide de l’activation basée sur un événement.
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dba12ba6ae667f3f5db740495a58ffc425d3aef3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b57cd683dd344d61ebcf7cf957a60522ed9c69da
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340847"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63400007"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 
@@ -20,7 +20,7 @@ L’événement tire parti des alertes intelligentes qui vous permettent d’ex�
 > [!IMPORTANT]
 > Les `OnMessageSend` événements `OnAppointmentSend` et les événements sont disponibles uniquement en prévisualisation avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, voir [Comment prévisualiser](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
 
-## <a name="prerequisites"></a>Conditions requises
+## <a name="prerequisites"></a>Conditions préalables
 
 L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur des événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, les événements disponibles, comment afficher un aperçu de cet événement, le débogage, les limitations de fonctionnalités, etc., reportez-vous à Configurer votre complément [Outlook pour l’activation](autolaunch.md) basée sur des événements.
 
@@ -146,7 +146,7 @@ Vous devez implémenter la gestion de l’événement sélectionné.
 
 Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Votre add-in recherche certains mots clés dans le message. Si l’un de ces mots clés est trouvé, il vérifie s’il existe des pièces jointes. S’il n’existe aucune pièce jointe, votre add-in recommande à l’utilisateur d’ajouter la pièce jointe éventuellement manquante.
 
-1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous **le répertoire /src** /.
+1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous **le répertoire ./src** .
 
 1. Dans le **dossier ./src/launchevent** , créez un fichier nommé **launchevent.js**.
 
@@ -161,50 +161,64 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
     function onMessageSendHandler(event) {
       Office.context.mailbox.item.body.getAsync(
         "text",
-        { "asyncContext": event },
-        function (asyncResult) {
-          let event = asyncResult.asyncContext;
-          let body = "";
-          let matches;
-          if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
-            body = asyncResult.value;
-          }
+        { asyncContext: event },
+        getBodyCallback
+      );
+    }
 
-          const arrayOfTerms = ["send", "picture", "document", "attachment"];
-          for (let index = 0; index < arrayOfTerms.length; index++) {
-            let term = arrayOfTerms[index].trim();
-            const regex = RegExp(term, 'i');
-            if (regex.test(body)) {
-              matches.push(term);
-            }
-          }
+    function getBodyCallback(asyncResult){
+      let event = asyncResult.asyncContext;
+      let body = "";
+      if (asyncResult.status !== Office.AsyncResultStatus.Failed && asyncResult.value !== undefined) {
+        body = asyncResult.value;
+      } else {
+        let message = "Failed to get body text";
+        console.error(message);
+        event.completed({ allowEvent: false, errorMessage: message });
+        return;
+      }
 
-          if (matches.length > 0) {
-            // Let's verify if there's an attachment!
-            Office.context.mailbox.item.getAttachmentsAsync(
-              { "asyncContext": event },
-              function(result) {
-                let event = result.asyncContext;
-                if (result.value.length <= 0) {
-                  const message = "Looks like you're forgetting to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                } else {
-                  for (let i = 0; i < result.value.length; i++) {
-                    if (result.value[i].isInline == false) {
-                      event.completed({ allowEvent: true });
-                      return;
-                    }
-                  }
-      
-                  const message = "Looks like you forgot to include an attachment?";
-                  event.completed({ allowEvent: false, errorMessage: message });
-                }
-              });
-            } else {
-              event.completed({ allowEvent: true });
-            }
+      let matches = hasMatches(body);
+      if (matches) {
+        Office.context.mailbox.item.getAttachmentsAsync(
+          { asyncContext: event },
+          getAttachmentsCallback);
+      } else {
+        event.completed({ allowEvent: true });
+      }
+    }
+
+    function hasMatches(body) {
+      if (body == null || body == "") {
+        return false;
+      }
+
+      const arrayOfTerms = ["send", "picture", "document", "attachment"];
+      for (let index = 0; index < arrayOfTerms.length; index++) {
+        const term = arrayOfTerms[index].trim();
+        const regex = RegExp(term, 'i');
+        if (regex.test(body)) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function getAttachmentsCallback(asyncResult) {
+      let event = asyncResult.asyncContext;
+      if (asyncResult.value.length > 0) {
+        for (let i = 0; i < asyncResult.value.length; i++) {
+          if (asyncResult.value[i].isInline == false) {
+            event.completed({ allowEvent: true });
+            return;
           }
-        );
+        }
+
+        event.completed({ allowEvent: false, errorMessage: "Looks like you forgot to include an attachment?" });
+      } else {
+        event.completed({ allowEvent: false, errorMessage: "Looks like you're forgetting to include an attachment?" });
+      }
     }
 
     // 1st parameter: FunctionName of LaunchEvent in the manifest; 2nd parameter: Its implementation in this .js file.
@@ -213,12 +227,9 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Enregistrez vos modifications.
 
-> [!IMPORTANT]
-> Windows : actuellement, les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements.
-
 ## <a name="update-webpack-config-settings"></a>Mettre à jour les paramètres de configuration webapck
 
-Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et complétez les étapes suivantes.
+1. Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et complétez les étapes suivantes.
 
 1. Recherchez `plugins` le tableau dans l’objet `config` et ajoutez ce nouvel objet au début du tableau.
 
@@ -235,7 +246,7 @@ Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre application est rechargée de nouveau.
 
@@ -251,9 +262,10 @@ Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et
 
 1. Dans Outlook sur Windows, créez un message et définissez l’objet. Dans le corps, ajoutez du texte tel que « Hey, regardez cette image de mon chien ! ».
 1. Envoyez le message. Une boîte de dialogue doit s’ouvrir avec une recommandation pour ajouter une pièce jointe.
-1. Ajoutez une pièce jointe, puis renvoyez le message. Il ne doit pas y avoir d’alerte cette fois.
 
-[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
+    ![Capture d’écran d’une fenêtre de message Outlook sur Windows boîte de dialogue.](../images/outlook-win-smart-alert.png)
+
+1. Ajoutez une pièce jointe, puis renvoyez le message. Il ne doit pas y avoir d’alerte cette fois.
 
 ## <a name="see-also"></a>Voir aussi
 

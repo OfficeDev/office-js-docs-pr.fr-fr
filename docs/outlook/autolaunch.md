@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur des événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur des événements.
 ms.topic: article
-ms.date: 03/03/2022
+ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d63e814875ee36a24bf7a919da0b62562433af0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7c3445199098efc95ed54b20105418502368bc16
+ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340287"
+ms.lasthandoff: 03/09/2022
+ms.locfileid: "63399998"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -48,17 +48,12 @@ Nous vous invitons à tester les événements maintenant en prévisualisation ! 
 Pour afficher un aperçu de ces événements lorsqu’ils sont disponibles :
 
 - Pour Outlook sur le web :
-  - [Configurez la version ciblée sur votre Microsoft 365 client](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center).
+  - [Configurez la version ciblée sur votre Microsoft 365 client.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez **la bibliothèque** bêta sur le CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur la nouvelle prévisualisation de l’interface utilisateur Mac :
   - La build minimale requise est de 16,54 (21101001). Rejoignez le [Office Insider et](https://insider.office.com/join/Mac) choisissez le canal **bêta** pour accéder Office versions bêta.
 - Pour Outlook sur Windows :
   - La build minimale requise est 16.0.14511.10000. Rejoignez le [Office Insider et](https://insider.office.com/join/windows) choisissez le canal **bêta** pour accéder Office versions bêta.
-  - Configurez le Registre. Outlook inclut une copie locale des versions de production et bêta de Office.js au lieu de charger à partir du réseau de distribution de contenu (CDN). Par défaut, la copie de production locale de l’API est référencé. Pour basculer vers la copie bêta locale des API JavaScript Outlook, vous devez ajouter cette entrée de Registre, sinon les API bêta risquent de ne pas être trouvées.
-    1. Créez la clé de Registre `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`.
-    1. Ajoutez une entrée nommée `EnableBetaAPIsInJavaScript` et définissez la valeur sur `1`. L’image suivante indique à quoi doit ressembler le registre.
-
-        ![Capture d’écran de l’éditeur du Registre avec une valeur de clé de Registre EnableBetaAPIsInJavaScript.](../images/outlook-beta-registry-key.png)
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -202,7 +197,7 @@ Vous devez implémenter la gestion de vos événements sélectionnés.
 
 Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux éléments.
 
-1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous **le répertoire /src** /.
+1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous **le répertoire ./src** .
 
 1. Dans le **dossier ./src/launchevent** , créez un fichier nommé **launchevent.js**.
 
@@ -247,9 +242,21 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 > [!IMPORTANT]
 > Windows : actuellement, les importations ne sont pas pris en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur des événements.
 
+## <a name="update-the-commands-html-file"></a>Mettre à jour le fichier HTML des commandes
+
+1. Dans le **dossier ./src/commands** , ouvrez **commands.html**.
+
+1. Juste avant la balise **d’en-tête** de fermeture (`<\head>`), ajoutez une entrée de script pour inclure le code JavaScript de gestion des événements.
+
+    ```html
+    <script type="text/javascript" src="../launchevent/launchevent.js"></script>
+    ```
+
+1. Enregistrez vos modifications.
+
 ## <a name="update-webpack-config-settings"></a>Mettre à jour les paramètres de configuration webapck
 
-Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et complétez les étapes suivantes.
+1. Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et complétez les étapes suivantes.
 
 1. Recherchez `plugins` le tableau dans l’objet `config` et ajoutez ce nouvel objet au début du tableau.
 
@@ -292,8 +299,6 @@ Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et
 
     ![Capture d’écran d’une fenêtre de message Outlook sur Windows avec l’objet de la composition.](../images/outlook-win-autolaunch.png)
 
-    [!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
-
 ## <a name="debug"></a>Débogage
 
 Lorsque vous modifiez la gestion des événements de lancement dans votre add-in, vous devez savoir que :
@@ -304,6 +309,8 @@ Lorsque vous modifiez la gestion des événements de lancement dans votre add-in
 Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des instructions sur le débogage de l’activation de complément basée sur des événements, voir [Déboguer votre complément basé sur Outlook événement](debug-autolaunch.md).
 
 La journalisation runtime est également disponible pour cette fonctionnalité sur Windows. Pour plus d’informations, voir [Déboguer votre add-in avec la journalisation runtime](../testing/runtime-logging.md#runtime-logging-on-windows).
+
+[!INCLUDE [Loopback exemption note](../includes/outlook-loopback-exemption.md)]
 
 ## <a name="deploy-to-users"></a>Déployer pour les utilisateurs
 

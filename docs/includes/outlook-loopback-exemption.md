@@ -1,5 +1,5 @@
 > [!NOTE]
-> Si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{your-add-in-name-here}*. Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
+> Outlook sur Windows : si vous exécutez votre add-in à partir de localhost et que vous voyez l’erreur « Nous sommes désolés, nous n’avons pas pu accéder à *{your-add-in-name-here}*. Assurez-vous que vous avez une connexion réseau. Si le problème persiste, veuillez essayer à nouveau plus tard. », vous devrez peut-être activer une exemption de bouclisation.
 >
 > 1. Fermez Outlook.
 > 1. Ouvrez **le Gestionnaire des tâches** et assurez-vous que **le processusmsoadfsb.exe'est** pas en cours d’exécution.
