@@ -1,15 +1,15 @@
 ---
 title: Modèle d’objet JavaScript Excel dans les compléments Office
 description: Découvrez les types d’objets clés dans les API JavaScript Excel et comment les utiliser pour créer des compléments Excel.
-ms.date: 04/05/2021
+ms.date: 02/16/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f301c69a60305dd204ff9e2c2d034899704b8a78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d2972a3cc30b899340cc47c24c6792eb3e5d202c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149101"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340819"
 ---
 # <a name="excel-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Excel dans les compléments Office
 
@@ -51,49 +51,49 @@ Pour comprendre les API Excel, vous devez connaître la manière dont les compos
 
 Une plage est un groupe de cellules contiguës dans le classeur. Les compléments utilisent généralement la notation de style A1 (par exemple : **B3** pour la cellule unique de la colonne **B** et de la ligne **3** ou **C2:F4** pour les cellules des colonnes **C** à **F** et des lignes **2** à **4**) pour définir les plages.
 
-Les plages comportent trois propriétés principales : `values`, `formulas`et `format`. Ces propriétés obtiennent ou définissent les valeurs des cellules, les formules à évaluer et la mise en forme visuelle des cellules.
+Les plages ont trois propriétés principales : `values`, `formulas` et `format`. Ces propriétés obtiennent ou définissent les valeurs de cellule, les formules à évaluer et la mise en forme visuelle des cellules.
 
 #### <a name="range-sample"></a>Exemple de plage
 
 L’exemple de code suivant montre comment créer des registres des ventes. Cette fonction utilise les objets `Range` pour déterminer les valeurs, les formules et les formats.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Create the headers and format them to stand out.
-    var headers = [
+    let headers = [
       ["Product", "Quantity", "Unit Price", "Totals"]
     ];
-    var headerRange = sheet.getRange("B2:E2");
+    let headerRange = sheet.getRange("B2:E2");
     headerRange.values = headers;
     headerRange.format.fill.color = "#4472C4";
     headerRange.format.font.color = "white";
 
     // Create the product data rows.
-    var productData = [
+    let productData = [
       ["Almonds", 6, 7.5],
       ["Coffee", 20, 34.5],
       ["Chocolate", 10, 9.56],
     ];
-    var dataRange = sheet.getRange("B3:D5");
+    let dataRange = sheet.getRange("B3:D5");
     dataRange.values = productData;
 
     // Create the formulas to total the amounts sold.
-    var totalFormulas = [
+    let totalFormulas = [
       ["=C3 * D3"],
       ["=C4 * D4"],
       ["=C5 * D5"],
       ["=SUM(E3:E5)"]
     ];
-    var totalRange = sheet.getRange("E3:E6");
+    let totalRange = sheet.getRange("E3:E6");
     totalRange.formulas = totalFormulas;
     totalRange.format.font.bold = true;
 
     // Display the totals as US dollar amounts.
     totalRange.numberFormat = [["$0.00"]];
 
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -114,10 +114,10 @@ Créez des tableaux à l’aide de plages remplies de données. Les contrôles d
 L’exemple suivant crée un tableau à l’aide des plages de l’exemple précédent.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     sheet.tables.add("B2:E5", true);
-    return context.sync();
+    await context.sync();
 });
 ```
 
@@ -134,11 +134,11 @@ Vous pouvez créer un graphique pour visualiser les données d’une plage. Les 
 L’exemple suivant crée un histogramme pour trois éléments et place celui-ci 100 pixels en dessous de la partie supérieure de la feuille de calcul.
 
 ```js
-Excel.run(function (context) {
-    var sheet = context.workbook.worksheets.getActiveWorksheet();
-    var chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let chart = sheet.charts.add(Excel.ChartType.columnStacked, sheet.getRange("B3:C5"));
     chart.top = 100;
-    return context.sync();
+    await context.sync();
 });
 ```
 
