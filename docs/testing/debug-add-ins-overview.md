@@ -1,14 +1,14 @@
 ---
 title: Débogage des compléments Office
 description: Recherchez les Office de débogage des modules pour votre environnement de développement.
-ms.date: 01/27/2022
+ms.date: 02/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 490d2d786bbd7e3169e7202dbbd70e81f9525e41
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 67afa308625c4f18775c3470c2bc2410af37905c
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263057"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340378"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Vue d’ensemble du débogage Office des modules
 
@@ -42,9 +42,9 @@ Pour trouver des conseils pour le débogage du code côté client, la première 
 
 L’exemple suivant fournit des instructions générales sur le débogage sur Windows. Il existe des instructions spéciales pour le débogage de fonctions personnalisées sans interface utilisateur dans des Excel et des Outlook. Consultez [les cas particuliers Windows](#special-cases-in-windows) plus loin dans cette section. Le débogage sur Windows dépend de votre IDE :
 
-- **Visual Studio**: Déboguer à l’aide du déboguer interne Afficher [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
+- **Visual Studio** : Déboguer à l’aide des outils F12 du navigateur. Afficher [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - **Visual Studio Code**: Déboguer à l’aide [de l’extension de déboguer de Visual Studio Code](debug-with-vs-extension.md).
-- **Tout autre IDE** (ou que vous ne souhaitez pas déboguer à l’intérieur de votre IDE) : utilisez les outils de développement associés au runtime du navigateur que les compléments utilisent sur votre ordinateur de développement. Consultez l’une des rubriques suivantes :
+- **Tout autre** IDE (ou vous ne voulez pas déboguer dans votre IDE) : Utilisez les outils de développement qui sont associés au moteur d'exécution du navigateur que les compléments utilisent sur votre ordinateur de développement. Voir l'un des documents suivants :
 
     - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
     - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
@@ -74,7 +74,7 @@ Pour déboguer des fonctions personnalisées sans interface utilisateur sur Mac,
 
 ## <a name="debug-on-linux"></a>Débogage sur Linux
 
-Il n’existe aucune version de bureau de Office pour [ Linux. Vous devrez donc recharger une version test du Office sur le Web](sideload-office-add-ins-for-testing.md) pour le tester et le déboguer. Les conseils de [débogage se trouve dans les compléments de débogage Office sur le Web](debug-add-ins-in-office-online.md).
+Il n'existe pas de version de bureau d'Office pour Linux. Vous devrez donc charger [le complément dans Office on the web](sideload-office-add-ins-for-testing.md) pour le tester et le déboguer. Vous trouverez des conseils sur le débogage dans [Debug des compléments dans Office on the web](debug-add-ins-in-office-online.md).
 
 > [!NOTE]
 > Nous vous déconseillons de développer des compléments Office sur un ordinateur Linux, sauf dans le cas inhabituel où vous pouvez vous assurer que tous les utilisateurs du module accéderont au module par le biais de Office sur le Web à partir d’un ordinateur Linux.

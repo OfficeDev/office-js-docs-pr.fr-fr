@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Word
 description: Découvrez comment créer un complément de volet des tâches Word simple à l’aide de l’API JavaScript pour Office.
-ms.date: 01/13/2022
+ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 55a54dd08d18204bfe4d821ba9403e3a3d9c09a1
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222212"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340448"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -39,7 +39,7 @@ Cet article décrit comment créer un complément du volet des tâches de Word.
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -88,7 +88,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ### <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé un complément du volet des tâches de Word ! Maintenant, découvrez les fonctionnalités d’un complément Word et créez un complément plus complexe en suivant le [didacticiel dédié](../tutorials/word-tutorial.md).
+Félicitations, vous avez réussi à créer un complément pour le volet des tâches de Word ! Ensuite, apprenez-en davantage sur les capacités d'un complément [Word et créez un complément plus complexe en suivant le tutoriel sur les compléments Word](../tutorials/word-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -164,24 +164,23 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! M
             });
         });
 
-        function insertEmersonQuoteAtSelection() {
-            Word.run(function (context) {
+        async function insertEmersonQuoteAtSelection() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document.
-                var thisDocument = context.document;
+                const thisDocument = context.document;
 
                 // Queue a command to get the current selection.
                 // Create a proxy range object for the selection.
-                var range = thisDocument.getSelection();
+                const range = thisDocument.getSelection();
 
                 // Queue a command to replace the selected text.
                 range.insertText('"Hitch your wagon to a star."\n', Word.InsertLocation.replace);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Ralph Waldo Emerson.');
-                });
+                await context.sync();
+                console.log('Added a quote from Ralph Waldo Emerson.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -191,20 +190,19 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! M
             });
         }
 
-        function insertChekhovQuoteAtTheBeginning() {
-            Word.run(function (context) {
+        async function insertChekhovQuoteAtTheBeginning() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the start of the document body.
                 body.insertText('"Knowledge is of no value unless you put it into practice."\n', Word.InsertLocation.start);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from Anton Chekhov.');
-                });
+                await context.sync();
+                console.log('Added a quote from Anton Chekhov.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -214,20 +212,19 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! M
             });
         }
 
-        function insertChineseProverbAtTheEnd() {
-            Word.run(function (context) {
+        async function insertChineseProverbAtTheEnd() {
+            await Word.run(async (context) => {
 
                 // Create a proxy object for the document body.
-                var body = context.document.body;
+                const body = context.document.body;
 
                 // Queue a command to insert text at the end of the document body.
                 body.insertText('"To know the road ahead, ask those coming back."\n', Word.InsertLocation.end);
 
                 // Synchronize the document state by executing the queued commands,
                 // and return a promise to indicate task completion.
-                return context.sync().then(function () {
-                    console.log('Added a quote from a Chinese proverb.');
-                });
+                await context.sync();
+                console.log('Added a quote from a Chinese proverb.');
             })
             .catch(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
@@ -290,9 +287,9 @@ Félicitations, vous avez créé un complément du volet des tâches de Word ! M
     ...
     ```
 
-### <a name="try-it-out"></a>Essayez
+### <a name="try-it-out"></a>Try it out
 
-1. À l’aide de Visual Studio, testez le nouveau complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Word avec le bouton du complément **Show Taskpane**(Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
+1. À l'aide de Visual Studio, testez le complément Word nouvellement créé en appuyant sur **F5** ou en choisissant **Debug** > **Start Debugging** pour lancer Word avec le bouton du complément Show Taskpane **affiché dans le ruban**. Le module complémentaire sera hébergé localement sur IIS.
 
 2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version Microsoft 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
 
