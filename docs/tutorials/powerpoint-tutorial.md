@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments PowerPoint
 description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
-ms.date: 05/12/2021
+ms.date: 02/18/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: efddb10e0d72ad79b5da10c3e9b5e7c8d24ecf54
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 38430240b768709d0c6d1bca12c91ebbf019a662
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153404"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340161"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -41,6 +41,11 @@ Procédez comme suit pour créer un projet complément PowerPoint à l’aide de
 5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
      ![Capture d’écran de la fenêtre de l’Explorateur de solutions Visual Studio montrant HelloWorld et HelloWorldWeb, les 2 projets de la solution HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
+
+6. Les packages NuGet suivants doivent être installés. Installez-les à l’aide de la **Gestionnaire de package NuGet** dans Visual Studio. Consultez l’aide Visual Studio pour obtenir des instructions. Le deuxième peut être installé automatiquement lorsque vous installez le premier.
+
+   - Microsoft.AspNet.WebApi.WebHost
+   - Microsoft.AspNet.WebApi.Core
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
@@ -243,7 +248,7 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
 
 1. Dans le fichier **Home.html**, remplacez `TODO2` par le balisage suivant pour ajouter une section d’en-tête et un titre au volet Office. Remarque :
 
-    - Les styles qui commencent par `ms-`sont définis par[ Fabric Core dans les modules complémentaires d'Office](../design/fabric-core.md), une structure frontale JavaScript permettant de créer des expériences utilisateur pour Office. Le fichier **Home.html** inclut une référence à la feuille de style Fabric Core.
+    - Les styles qui commencent par `ms-` sont définis par [Fabric Core dans les compléments Office](../design/fabric-core.md), une infrastructure frontale JavaScript permettant de créer des expériences utilisateur pour Office. Le fichier **Home.html** inclut une référence à la feuille de style Fabric Core.
 
     ```html
     <div id="content-header">
@@ -259,7 +264,7 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
     ![Capture d’écran du bouton Démarrer mis en évidence dans Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -311,7 +316,7 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
     ![Capture d’écran de Visual Studio avec le bouton Démarrer mis en évidence.](../images/powerpoint-tutorial-start.png)
 
@@ -370,7 +375,7 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
     ![Capture d’écran de Visual Studio avec le bouton Démarrer mis en évidence.](../images/powerpoint-tutorial-start.png)
 
@@ -470,7 +475,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 
 ### <a name="test-the-add-in"></a>Test du complément
 
-1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS.
+1. À l’aide de Visual Studio, testez le complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
     ![Capture d’écran du bouton Démarrer mis en évidence dans la barre d’outils de Visual Studio.](../images/powerpoint-tutorial-start.png)
 

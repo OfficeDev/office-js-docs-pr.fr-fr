@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 description: Apprenez à déboguer les modules complémentaires Office qui utilisent Microsoft Edge WebView2 (basé sur Chromium) dans VS Code.
-ms.date: 02/01/2022
+ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 90e7bef4d3902f0282a739569a87b8ca57095f50
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467702"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63340154"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
@@ -68,8 +68,7 @@ Ces instructions supposent que vous avez de l'expérience dans l'utilisation de 
 
    Sélectionnez **OK**.
 
-   > [!NOTE]
-   > Si vous sélectionnez **Annuler**, la boîte de dialogue ne s’affiche plus lors de l’exécution de cette instance du complément. Toutefois, si vous redémarrez votre complément, la boîte de dialogue s’affichera à nouveau.
+   [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
 
 1. Vous pourrez définir des points d’arrêt dans le code de votre projet, puis déboguer. Pour définir des points d'arrêt dans Visual Studio Code, passez la souris à côté d'une ligne de code et sélectionnez le cercle rouge qui apparaît.
 
@@ -132,7 +131,7 @@ Si votre projet n’a pas été créé avec Yo Office, vous devez créer une con
 1. Fermez la fenêtre Nœud sur laquelle le serveur local est en cours d’exécution, s’il ne se ferme pas automatiquement.
 1. Fermez l'application Office si elle ne se ferme pas automatiquement.
 1. Ouvrez le fichier `\.vscode\launch.json` dans le projet. 
-1. Dans le tableau `configurations`, il existe plusieurs objets de configuration. Trouvez celui dont le nom présente le motif `$HOST$ Desktop (Edge Chromium)`, où $HOST$ est une application Office dans laquelle votre module complémentaire s'exécute ; par exemple, `Outlook Desktop (Edge Chromium)` ou `Word Desktop (Edge Chromium)`. 
+1. Dans le tableau `configurations`, il existe plusieurs objets de configuration. Recherchez celui dont le nom a le modèle `$HOST$ Desktop (Edge Chromium)` où $HOST$ est une application Office dans laquelle votre complément s’exécute ; par exemple, `Outlook Desktop (Edge Chromium)` ou `Word Desktop (Edge Chromium)`. 
 1. Modifiez la valeur de la propriété de `"type"` par `"edge"` ou `"pwa-msedge"`.
 1. Changez la valeur de la propriété `"useWebView"` de la chaîne `"advanced"` par la chaîne de caractères au booléen `true` (notez qu'il n'y a pas de guillemets autour du `true`).
 1. Enregistrez le fichier.
