@@ -1,53 +1,39 @@
 ---
 title: Débogage de compléments dans Office sur le web
 description: Découvrez comment utiliser Office sur le web pour tester et déboguer vos compléments.
-ms.date: 12/02/2021
+ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fddafa5b7c2fe7a24ab8befa1ead31a56f9c3ac
-ms.sourcegitcommit: 33824aa3995a2e0bcc6d8e67ada46f296c224642
+ms.openlocfilehash: 5a07185c064d65432c7a3afce1e9f32e99034c3e
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2022
-ms.locfileid: "61765905"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63435689"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Débogage de compléments dans Office sur le web
 
-Vous pouvez créer et déboguer des compléments sur un ordinateur n’exécutant pas Windows, ou le client de bureau Office 2013 ou Office 2016 (par exemple, si vous développez sur un Mac). Cet article décrit la procédure d’utilisation d’Office Online dans le but de tester et de déboguer vos compléments. Cet article décrit comment utiliser Office sur le web pour tester et déboguer vos compléments. 
+Cet article explique comment utiliser Office sur le Web pour déboguer vos modules. Utilisez cette technique :
 
-## <a name="prerequisites"></a>Conditions préalables
+- Pour déboguer des applications sur un ordinateur qui n’exécute pas Windows ou le client&mdash; de bureau Office par exemple, si vous développez sur un Mac ou Linux.
+- Autre processus de débogage si vous ne pouvez pas ou ne le souhaitez pas, déboguer dans un IDE, tel que Visual Studio ou Visual Studio Code.
 
-Mise en route :
+Cet article suppose que vous avez un projet de add-in qui doit être déboité. Si vous souhaitez simplement pratique le débogage sur le web, créez un projet à l’aide de l’un des démarrages rapides pour des applications Office spécifiques, telles que ce démarrage rapide [pour Word](../quickstarts/word-quickstart.md).
 
-- Obtenez un Microsoft 365 développeur si vous n’en avez pas déjà un ou si vous avez accès à un site SharePoint web.
-
-  > [!NOTE]
-  > Pour obtenir un abonnement gratuit de 90 jours renouvelable Microsoft 365 développeur, rejoignez [notre programme Microsoft 365 développeur.](https://developer.microsoft.com/office/dev-program) Consultez [la documentation du](/office/developer-program/office-365-developer-program) Microsoft 365 développeur pour obtenir des instructions détaillées sur la façon de rejoindre le programme Microsoft 365 développeur et de configurer votre abonnement.
-
-- Configurer un catalogue d’applications sur SharePoint Online. Un catalogue d’applications est une collection de sites dédiée dans SharePoint Online qui héberge des bibliothèques de documents pour Office des applications. Si vous avez votre propre site SharePoint, vous pouvez configurer une bibliothèque de documents de catalogue d’applications. Pour plus d’informations, voir Publier des [modules complémentaires](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)de contenu et du volet Des tâches dans un catalogue d’applications SharePoint .
-
-
-## <a name="debug-your-add-in-from-excel-or-word-on-the-web"></a>Débogage de compléments à partir d’Excel ou de Word sur le web
+## <a name="debug-your-add-in"></a>Déboguer votre complément
 
 Pour déboguer votre complément à l’aide d’Office sur le web, procédez comme suit :
 
-1. Déployez votre complément vers un serveur prenant en charge le protocole SSL.
+1. Exécutez le projet sur localhost et chargez-le dans un document dans Office sur le Web. Pour obtenir des instructions détaillées sur le chargement d’une version de version Office des applications sur [le web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
 
-    > [!NOTE]
-    > Nous vous recommandons d’utiliser le [générateur Yeoman](https://github.com/OfficeDev/generator-office) pour créer et héberger votre complément.
+2. Ouvrez les outils de développement du navigateur. Pour ce faire, il s’agit généralement d’appuyer sur F12. Ouvrez l’outil débogger et utilisez-le pour définir des points d’arrêt et observer des variables. Pour obtenir de l’aide détaillée sur l’utilisation de l’outil de votre navigateur, consultez l’une des informations suivantes.  
 
-2. Dans le [fichier manifeste de votre complément](../develop/add-in-manifests.md), mettez à jour la valeur de l’élément **SourceLocation** afin d’inclure un URI absolu, plutôt que relatif. Par exemple :
+   - [Firefox](https://developer.mozilla.org/en-US/docs/Tools)
+   - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
+   - [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
+   - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
 
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:44300/App/Home/Home.html" />
-    ```
-
-3. Téléchargez le manifeste dans la bibliothèque de compléments Office du catalogue d’applications sur SharePoint.
-
-4. Lancez Excel ou Word sur le web à partir du lanceur d’applications Microsoft 365 et ouvrez un nouveau document.
-
-5. Sur l’onglet Insérer, sélectionnez **Mes compléments** ou **Compléments Office** pour insérer votre complément et le tester dans l’application.
-
-6. Utilisez l’outil de débogage de votre navigateur pour déboguer votre add-in. Elle est généralement ouverte en appuyant sur F12.
+   > [!NOTE]
+   > Office sur le Web ne s’ouvre pas dans Internet Explorer.
 
 ## <a name="potential-issues"></a>Problèmes potentiels
 
@@ -57,11 +43,9 @@ Voici quelques problèmes que vous pouvez rencontrer lors du débogage.
 
 - Le navigateur peut afficher une erreur relative à un certificat non valide que vous devrez contourner. Le processus d’exécution de cette opération varie en fonction du navigateur et des interfaces utilisateur des différents navigateurs permettant d’effectuer cette modification régulièrement. Vous devez effectuer une recherche dans l’aide du navigateur ou rechercher des instructions en ligne. (Par exemple, recherchez « Avertissement de certificat Microsoft Edge non valide ».) La plupart des navigateurs, sur la page d’avertissement, comportent un lien qui vous permet d’accéder à la page du complément. Par exemple, Microsoft Edge comporte un lien « Accéder à la page web (non recommandé) ». En général, vous devez passer par ce lien chaque fois que le complément est rechargé. Pour un contournement plus long, consultez l’aide comme suggéré.
 
-- Si vous définissez des points d’arrêt dans votre code, Office sur le web peut générer une erreur indiquant qu’il ne peut pas effectuer d’enregistrement.
+- Si vous définissez des points d’arrêt dans votre code, Office sur le Web risque de créer une erreur indiquant qu’il est impossible d’enregistrer.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Bonnes pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
-- [Stratégies de validation AppSource](/legal/marketplace/certification-policies)  
-- [Création d’applications et de compléments AppSource efficaces](/office/dev/store/create-effective-office-store-listings)  
-- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](testing-and-troubleshooting.md)
+- [Meilleures pratiques en matière de développement de compléments Office](../concepts/add-in-development-best-practices.md)
+- [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](testing-and-troubleshooting.md)
