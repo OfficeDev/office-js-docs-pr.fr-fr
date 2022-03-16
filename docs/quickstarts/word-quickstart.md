@@ -4,16 +4,14 @@ description: Découvrez comment créer un complément de volet des tâches Word 
 ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: b79ace7495d782cd245c26a5167add46eb668ab9
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0c6a12cc84f35ceb04e26df8be4635bddd42ca04
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340448"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511333"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
-
-_S’applique à : Word 2016 ou version ultérieure sur Windows, et Word sur iPad et Mac_
 
 Cet article décrit comment créer un complément du volet des tâches de Word.
 
@@ -139,6 +137,8 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
     ```
 
 2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

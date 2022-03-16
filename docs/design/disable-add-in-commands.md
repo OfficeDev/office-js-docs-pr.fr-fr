@@ -1,14 +1,14 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ee45e606b8b8981550cab7439eb526ec641ac9
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 2a2f2521b47a304fb358a33068bcccb425fd1a64
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855561"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511349"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -23,16 +23,16 @@ Vous pouvez également spécifier si la commande est activée ou désactivée lo
 
 ## <a name="office-application-and-platform-support-only"></a>Office prise en charge des applications et des plateformes uniquement
 
-Les API décrites dans cet article sont disponibles uniquement dans Excel sur toutes les plateformes et PowerPoint sur le web.
+Les API décrites dans cet article sont disponibles uniquement dans Excel, PowerPoint et Word.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Office les add-ins utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’runtime pour déterminer si une combinaison d’application Office et de plateforme prend en charge les API requises par un application. Pour plus d’informations, [voir Office versions et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Office les add-ins utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’runtime pour déterminer si une combinaison d’application Office et de plateforme prend en charge les API requises par un add-in. Pour plus d’informations, [voir Office versions et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
 
 Les API d’activer/désactiver appartiennent à [l’ensemble de conditions requises RibbonApi 1.1](../reference/requirement-sets/ribbon-api-requirement-sets.md) .
 
 > [!NOTE]
-> L’ensemble de conditions requises **RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste. Vous ne pouvez donc pas le spécifier dans la section **Conditions** requises du manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Si, *et uniquement si*, cet appel renvoie `true`, votre code peut appeler les API d’activer/désactiver. Si l’appel de `isSetSupported` renvoie `false`, toutes les commandes de modules sont activées en temps réel. Vous devez concevoir votre application de production, ainsi que les instructions dans l’application, pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et d’exemples `isSetSupported`d’utilisation, voir [Spécifier Office applications](../develop/specify-office-hosts-and-api-requirements.md) et les conditions requises de l’API, en particulier les vérifications runtime de la prise en charge des méthodes et des ensembles [de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La section [Spécifier les Office et les plateformes](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) qui peuvent héberger votre application dans cet article ne s’appliquent pas au Ruban 1.1.)
+> L’ensemble de conditions requises **RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste. Vous ne pouvez donc pas le spécifier dans la section **Conditions** requises du manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Si, *et uniquement si*, cet appel renvoie `true`, votre code peut appeler les API d’activer/désactiver. Si l’appel de `isSetSupported` renvoie `false`, toutes les commandes de modules sont activées en temps réel. Vous devez concevoir votre application de production, ainsi que les instructions dans l’application, pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et d’exemples `isSetSupported`d’utilisation, voir [Spécifier Office applications](../develop/specify-office-hosts-and-api-requirements.md) et les conditions requises des API, en particulier les vérifications runtime de la prise en charge des méthodes et des ensembles [de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La section [Spécifier les Office et les plateformes](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) qui peuvent héberger votre application dans cet article ne s’appliquent pas au Ruban 1.1.)
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
@@ -164,7 +164,7 @@ Quatrièmement, définissez le gestionnaire `disableChartFormat`. Il est identiq
 
 ### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer la visibilité de l’onglet et l’état activé d’un bouton en même temps
 
-La **méthode requestUpdate** est également utilisée pour faire bascule la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur ce code et sur l’exemple de code, voir [Créer des onglets contextuels personnalisés dans Office des modules.](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time)
+La **méthode requestUpdate** est également utilisée pour faire bascule la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur ce code et un exemple de code, voir [Créer des onglets contextuels personnalisés dans Office de recherche](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Pratiques recommandées : test pour les erreurs de contrôle d'état
 

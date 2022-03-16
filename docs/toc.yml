@@ -115,6 +115,8 @@ items:
                 href: develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md
               - name: ITP et cookies tiers
                 href: develop/itp-and-third-party-cookies.md
+              - name: Traiter les limites de stratégie de même origine
+                href: develop/addressing-same-origin-policy-limitations.md
           - name: Authentification et autorisation
             items:
               - name: Présentation
@@ -554,8 +556,6 @@ items:
                     href: reference/manifest/supportssharedfolders.md
                   - name: WebApplicationInfo
                     href: reference/manifest/webapplicationinfo.md
-          - name: Traiter les limites de stratégie de même origine
-            href: develop/addressing-same-origin-policy-limitations.md
           - name: Navigateurs utilisés par les compléments Office
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'

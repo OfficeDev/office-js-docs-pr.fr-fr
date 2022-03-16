@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises pour le runtime partagé
 description: Spécifie les plateformes et les applications Office qui la prise en charge des API SharedRuntime.
-ms.date: 02/05/2022
+ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f55f3e95ace9101f8545863cae0a05953522edb
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 462a1248acadb35d4a4040fe9b997ede46844e4e
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892530"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511281"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour le runtime partagé
 
@@ -37,6 +37,8 @@ Le tableau suivant répertorie les builds d’application supplémentaires qui p
 |Application Office |Créer |
 |-------------------|------|
 |PowerPoint sur Windows |Build 16.0.13218.10000 ou ultérieure |
+|PowerPoint sur Mac |Build 16.46.207.0 ou ultérieure |
+|PowerPoint sur le web | Février 2022 |
 |Word sur Windows |Build 16.0.13218.10000 ou ultérieure |
 |Word sur Mac |Build 16.46.207.0 ou ultérieure |
 

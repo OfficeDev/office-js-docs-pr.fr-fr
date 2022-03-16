@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: Découvrez comment créer un complément simple de volet des tâches Project à l’aide de l’API JavaScript pour Office.
-ms.date: 08/04/2021
+ms.date: 01/06/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: cb291a76a97c6cf3c7d816c7c2019337132aecc8
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9c80769d0116186c574b6e4fa86e89eadfadc410
+ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152973"
+ms.lasthandoff: 01/19/2022
+ms.locfileid: "63511367"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -31,7 +31,7 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
 
-![Capture d'écran montrant les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
+![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -98,8 +98,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Démarrez le serveur web local.
 
-    > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre.
 

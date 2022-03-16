@@ -1,13 +1,18 @@
 ---
 title: Outlook prévisualisation de l’API du add-in
 description: Fonctionnalités et API actuellement en prévisualisation pour Outlook de recherche.
-ms.date: 11/01/2021
+ms.date: 03/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 714be93351ff67ad49cd07154f145f19949efa68
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511277"
 ---
-
 # <a name="outlook-add-in-api-preview-requirement-set"></a>Outlook prévisualisation de l’API du add-in
 
-Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook de gestion.
 
 > [!IMPORTANT]
 > Cette documentation a trait à un [ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) en **préversion**. Ces conditions n’ont pas encore été toutes implémentées, par conséquent les clients ne pourront pas demander une aide précise concernant ces conditions. Vous ne devez pas spécifier cet ensemble de conditions dans le manifeste de votre complément.
@@ -29,7 +34,7 @@ Les fonctionnalités suivantes sont disponibles en aperçu.
 
 Les add-ins peuvent désormais être activés sur les éléments protégés par IRM. Pour activer cette fonctionnalité, `OBJMODEL` un administrateur client doit activer le droit d’utilisation en paramètres  de stratégie personnalisée Autoriser l’accès par programme dans Office. Pour plus [d’informations, voir droits d’utilisation et descriptions](/azure/information-protection/configure-usage-rights#usage-rights-and-descriptions) .
 
-**Disponible dans** : Outlook sur Windows, à partir de la build 13229.10000 (connectée à un abonnement Microsoft 365)
+**Disponible dans** : Outlook sur Windows, à partir de la build 13229.10000 (connectée à Microsoft 365 abonnement)
 
 <br>
 
@@ -98,6 +103,12 @@ Ajout d’un nouvel objet qui vous permet de gérer la date et l’heure de remi
 ### <a name="event-based-activation"></a>Activation basée sur un événement
 
 Cette fonctionnalité a été publiée dans [l’ensemble de conditions requises 1.10](../requirement-set-1.10/outlook-requirement-set-1.10.md). Toutefois, des événements supplémentaires sont désormais disponibles en prévisualisation. Pour en savoir plus, reportez-vous aux [événements pris en charge](../../../outlook/autolaunch.md#supported-events).
+
+**Disponible dans** : Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
+
+#### <a name="officeaddincommandseventcompletedoptionserrormessage"></a>[Office. AddinCommands.EventCompletedOptions.errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions?view=outlook-js-preview&preserve-view=true#office-office-addincommands-eventcompletedoptions-errormessage-member)
+
+Ajout d’une nouvelle propriété pour afficher un message d’erreur à l’utilisateur si l’événement géré ne peut pas continuer à s’exécuter. Pour obtenir un exemple, reportez-vous à la [walkthrough Smart Alerts](../../../outlook/smart-alerts-onmessagesend-walkthrough.md).
 
 **Disponible dans** : Outlook sur Windows (connecté à un abonnement Microsoft 365 abonnement)
 

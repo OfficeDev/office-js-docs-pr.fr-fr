@@ -1,14 +1,14 @@
 ---
 title: Développement d’un complément Office avec Visual Studio Code
 description: Comment développer un complément Office avec Visual Studio Code.
-ms.date: 10/14/2020
+ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: cca8ad4e07e08553841f4cef5699ee0312d7ccde
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 6710884a9bc751e6a94607581223dabaea0bce3b
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149118"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511299"
 ---
 # <a name="develop-office-add-ins-with-visual-studio-code"></a>Développement d’un complément Office avec Visual Studio Code
 
@@ -25,16 +25,15 @@ Cet article explique comment utiliser [Visual Studio Code (VS Code)](https://cod
 
 ## <a name="create-the-add-in-project-using-the-yeoman-generator"></a>Créez le projet de complément à l’aide du générateur Yeoman
 
-Si vous utilisez le VS Code comme environnement de développement intégré (IDE), vous devez créer le projet de complément Office avec le [genérateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office). Le générateur Yeoman crée un projet Node js qui peut être géré avec VS Code ou n’importe quel autre éditeur. 
+Si vous utilisez le VS Code comme environnement de développement intégré (IDE), vous devez créer le projet de complément Office avec le [genérateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office). Le générateur Yeoman crée un projet Node js qui peut être géré avec VS Code ou n’importe quel autre éditeur.
 
 Pour créer un complément Office avec le générateur Yeoman, suivez les instructions dans le [démarrage rapide de 5 minutes](../index.yml) qui correspond au type de complément que vous voulez créer.
 
 ## <a name="develop-the-add-in-using-vs-code"></a>Développer le complément à l’aide de VS Code
 
-Lorsque le générateur Yeoman a terminé de créer le projet de complément, ouvrez le dossier racine du projet avec VS Code. 
+Lorsque le générateur Yeoman a terminé de créer le projet de complément, ouvrez le dossier racine du projet avec VS Code.
 
-> [!TIP]
-> Dans Windows, vous pouvez accéder au répertoire racine du projet via la ligne de commande, puis entrer `code .` pour ouvrir ce dossier dans VS Code. Sur Mac, vous devez [ajouter la commande `code` au chemin d’accès](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) avant de pouvoir utiliser cette commande pour ouvrir le dossier de projet dans VS Code.
+[!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
 
 Le générateur Yeoman crée un complément de base avec une fonctionnalité limitée. Vous pouvez personnaliser le complément en modifiant le [manifeste](add-in-manifests.md), HTML, JavaScript ou TypeScript et des fichiers CSS dans VS Code. Pour obtenir une description générale de la structure de projet et des fichiers dans le projet de complément que le générateur Yeoman crée, consultez les instructions du générateur Yeoman dans le [démarrage rapide de 5 minutes](../index.yml) qui correspond au type de complément que vous avez créé.
 

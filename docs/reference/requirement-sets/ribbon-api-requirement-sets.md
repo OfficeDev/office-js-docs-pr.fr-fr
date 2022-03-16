@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises des API ruban
 description: Spécifie les plateformes Office et les builds qui la prise en charge des API du ruban dynamique.
-ms.date: 02/23/2022
+ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f6bbd955c9133677a54f4bd754c376546ed6e7e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 7dfce106eeb563fce59ccb998878f47f874b0ff9
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340434"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511351"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
@@ -24,7 +24,7 @@ Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tab
 
 |  Ensemble de conditions requises  | Office 2021 ou une Windows\*<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | N/A | Non prise en charge | Mai 2021 | N/A|
+| RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | N/A | 16.53.806.0 | Mai 2021 | N/A|
 | RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
 
 > **&#42;** L’API ruban est prise en charge uniquement dans Excel.
@@ -36,11 +36,11 @@ La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en cha
 |Canal | Version | Build|
 |:-----|:-----|:-----|
 |Canal actuel | 2006 ou supérieure | 20266.20266 ou supérieur|
-|Canal Entreprise mensuel | 2005 ou supérieure | 12827.20538 ou supérieur|
+|Canal mensuel des entreprises | 2005 ou supérieure | 12827.20538 ou supérieur|
 |Canal Entreprise mensuel | 2004 | 12730.20602 ou supérieur|
 |Canal Entreprise semestriel | 2002 ou supérieure | 12527.20880 ou supérieur|
 
-## <a name="more-information"></a>Plus d’informations
+## <a name="more-information"></a>Informations supplémentaires
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 

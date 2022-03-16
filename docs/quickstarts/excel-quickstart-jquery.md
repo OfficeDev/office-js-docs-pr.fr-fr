@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 02/25/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 1a4639aaa49ed06acb3f24bbd8cb132577670bae
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: bd503b9f51bb4c97bc8d0cfa144d448bb4ea649d
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63341022"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511391"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -116,6 +116,8 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
     ```
 
 2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     'use strict';

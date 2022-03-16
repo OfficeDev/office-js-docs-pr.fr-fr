@@ -1,18 +1,18 @@
 ---
 title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
-ms.date: 02/11/2022
+ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bf359c29552a7ca64e9d14a6b40aa5dc671bbb6d
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 285a73b144470798e20d6d4ca374fb8a1655db2b
+ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855589"
+ms.lasthandoff: 03/16/2022
+ms.locfileid: "63511272"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
-Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui est affiché dans la ligne d’onglet lorsqu’un événement spécifié se produit dans le document Office document. Par exemple, **l’onglet Création** de table qui apparaît sur le Excel lorsqu’un tableau est sélectionné. Vous incluez des onglets contextuels personnalisés dans votre Office et spécifiez quand ils sont visibles ou masqués en créant des handlers d’événements qui modifient la visibilité. (Toutefois, les onglets contextuels personnalisés ne répondent pas aux changements de focus.)
+Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui est affiché dans la ligne d’onglet lorsqu’un événement spécifié se produit dans le document Office document. Par exemple, **l’onglet Création** de table qui apparaît sur Excel ruban lorsqu’un tableau est sélectionné. Vous incluez des onglets contextuels personnalisés dans votre Office et spécifiez quand ils sont visibles ou masqués en créant des handlers d’événements qui modifient la visibilité. (Toutefois, les onglets contextuels personnalisés ne répondent pas aux changements de focus.)
 
 > [!NOTE]
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
@@ -23,6 +23,7 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 > Les onglets contextuels personnalisés sont actuellement uniquement pris en charge sur Excel et uniquement sur ces plateformes et builds.
 >
 > - Excel sur Windows (abonnement Microsoft 365 uniquement) : version 2102 (build 13801.20294) ou ultérieure.
+> - Excel mac : version 16.53.806.0 ou ultérieure.
 > - Excel sur le web
 
 > [!NOTE]
@@ -35,7 +36,7 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 
 ## <a name="behavior-of-custom-contextual-tabs"></a>Comportement des onglets contextuels personnalisés
 
-L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets Office contextuels. Voici les principes de base pour l’emplacement des onglets contextuels personnalisés.
+L’expérience utilisateur pour les onglets contextuels personnalisés suit le modèle des onglets Office contextuels intégrés. Voici les principes de base pour l’emplacement des onglets contextuels personnalisés.
 
 - Lorsqu’un onglet contextuel personnalisé est visible, il apparaît à l’extrémité droite du ruban.
 - Si un ou plusieurs onglets contextuels intégrés et un ou plusieurs onglets contextuels personnalisés des modules sont visibles en même temps, les onglets contextuels personnalisés sont toujours à droite de tous les onglets contextuels intégrés.
@@ -117,7 +118,7 @@ Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas.
     - Toutes les propriétés sont requises.
     - La `id` propriété doit être unique parmi tous les groupes dans le manifeste. Utilisez un bref ID descriptif de 125 caractères au plus.
     - Il `label` s’agit d’une chaîne conviviale qui sert d’étiquette au groupe.
-    - La `icon` valeur de la propriété est un tableau d’objets qui spécifient les icônes que le groupe aura sur le ruban en fonction de la taille du ruban et de la fenêtre d’application Office’application.
+    - La `icon` valeur de la propriété est un tableau d’objets qui spécifient les icônes que le groupe aura sur le ruban en fonction de la taille du ruban et de la fenêtre d’application Office.
     - La `controls` valeur de la propriété est un tableau d’objets qui spécifient les boutons et les menus du groupe. Il doit y en avoir au moins un.
 
     > [!IMPORTANT]
@@ -252,7 +253,7 @@ Voici l’exemple complet du blob JSON.
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Inscrire l’onglet contextuel Office avec requestCreateControls
 
-L’onglet contextuel est inscrit auprès Office en appelant [la méthode Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)). Cette tâche est généralement effectuée dans la fonction affectée `Office.initialize` à la méthode ou avec celle-ci `Office.onReady` . Pour plus d’informations sur ces méthodes et l’initialisation du Office, voir [Initialize your Office Add-in](../develop/initialize-add-in.md). Vous pouvez toutefois appeler la méthode à tout moment après l’initialisation.
+L’onglet contextuel est inscrit auprès Office en appelant [la méthode Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)). Cette tâche est généralement effectuée dans la fonction affectée `Office.initialize` à la méthode ou avec celle-ci `Office.onReady` . Pour plus d’informations sur ces méthodes et sur l’initialisation du Office, voir [Initialize your Office Add-in](../develop/initialize-add-in.md). Vous pouvez toutefois appeler la méthode à tout moment après l’initialisation.
 
 > [!IMPORTANT]
 > La `requestCreateControls` méthode ne peut être appelée qu’une seule fois dans une session donnée d’un add-in. Une erreur est lancée si elle est appelée à nouveau.
@@ -471,7 +472,7 @@ Pour ouvrir un volet De tâches qui n’est pas le volet Des tâches par défaut
 
 ## <a name="localize-the-json-text"></a>Localiser le texte JSON
 
-Le blob `requestCreateControls` JSON transmis n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés (qui est décrit dans la localisation du contrôle à partir du [manifeste](../develop/localization.md#control-localization-from-the-manifest)). Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser une `switch` instruction qui teste [la Office.context.displayLanguage](/javascript/api/office/office.context#office-office-context-displaylanguage-member). Voici un exemple.
+Le blob `requestCreateControls` JSON transmis n’est pas localisée de la même façon que le marques de manifeste pour les onglets principaux personnalisés (qui est décrit dans la localisation du contrôle à partir du [manifeste](../develop/localization.md#control-localization-from-the-manifest)). Au lieu de cela, la localisation doit se produire lors de l’runtime à l’aide de blobs JSON distincts pour chaque paramètre régional. Nous vous suggérons d’utiliser une `switch` instruction qui teste [la propriété Office.context.displayLanguage](/javascript/api/office/office.context#office-office-context-displaylanguage-member). Voici un exemple.
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
@@ -525,7 +526,7 @@ var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 
 ### <a name="implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported"></a>Implémenter une autre expérience d’interface utilisateur lorsque les onglets contextuels personnalisés ne sont pas pris en charge
 
-Certaines combinaisons de plateforme, Office application et de build Office ne sont pas prise en charge`requestCreateControls`. Votre add-in doit être conçu pour offrir une expérience de remplacement aux utilisateurs qui exécutent le module sur l’une de ces combinaisons. Les sections suivantes décrivent deux façons de fournir une expérience de retour.
+Certaines combinaisons de plateforme, Office application et de Office build ne sont pas prise en charge`requestCreateControls`. Votre add-in doit être conçu pour offrir une expérience de remplacement aux utilisateurs qui exécutent le module sur l’une de ces combinaisons. Les sections suivantes décrivent deux façons de fournir une expérience de retour.
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>Utiliser des onglets ou des contrôles nontexte
 
@@ -569,7 +570,7 @@ Lorsqu’un groupe parent ou un menu `<OverriddenByRibbonApi>true</OverriddenByR
 
 #### <a name="use-apis-that-show-or-hide-a-task-pane-in-specified-contexts"></a>Utiliser des API qui montrent ou masquent un volet Des tâches dans des contextes spécifiés
 
-En remplacement de **OverriddenByRibbonApi**, votre add-in peut définir un volet Des tâches avec des contrôles d’interface utilisateur qui dupliquent la fonctionnalité des contrôles dans un onglet contextuel personnalisé. Utilisez ensuite les [méthodes Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-showastaskpane-member(1)) et [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-hide-member(1)) pour afficher le volet Des tâches lorsque l’onglet contextuel aurait été affiché s’il était pris en charge. Pour plus d’informations sur l’utilisation de ces méthodes, voir Afficher ou masquer le volet Des tâches de [votre Office de recherche](../develop/show-hide-add-in.md).
+En remplacement de **OverriddenByRibbonApi**, votre add-in peut définir un volet Des tâches avec des contrôles d’interface utilisateur qui dupliquent la fonctionnalité des contrôles dans un onglet contextuel personnalisé. Utilisez ensuite les [méthodes Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-showastaskpane-member(1)) et [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-hide-member(1)) pour afficher le volet Des tâches lorsque l’onglet contextuel aurait été affiché s’il était pris en charge. Pour plus d’informations sur l’utilisation de ces méthodes, voir Afficher ou masquer le volet Des tâches de [votre Office de travail](../develop/show-hide-add-in.md).
 
 ### <a name="handle-the-hostrestartneeded-error"></a>Gérer l’erreur HostRestartNeeded
 
