@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 08/04/2021
+ms.date: 02/28/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 51ec95f49ef89f21aaf6a776115f8754c4a87c78
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
+ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153371"
+ms.lasthandoff: 03/08/2022
+ms.locfileid: "63511399"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -25,16 +25,11 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 
-- [Node.js](https://nodejs.org/) (la dernière version [LTS](https://nodejs.org/about/releases))
+[!INCLUDE [Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- La dernière version de[Yeoman](https://github.com/yeoman/yo) et du [Générateur Yeoman Générateur de compléments Office](https://github.com/OfficeDev/generator-office). Pour installer ces outils globalement, exécutez la commande suivante via l’invite de commande.
+- [Visual Studio Code (VS Code)](https://code.visualstudio.com/) ou votre éditeur de code préféré
 
-    ```command&nbsp;line
-    npm install -g yo generator-office
-    ```
-
-    > [!NOTE]
-    > Même si vous avez précédemment installé le générateur Yeoman, nous vous recommandons de mettre à jour votre package vers la dernière version de npm.
+- Outlook 2016 ou plus récent sur Windows (connecté à un compte Microsoft 365) ou Outlook sur le web
 
 ### <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -71,7 +66,10 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 ### <a name="update-the-code"></a>Mettre à jour le code
 
-1. Dans votre éditeur de code, ouvrez le fichier **./src/taskpane/taskpane.html** et remplacez l’élément `<main>` (dans l’élément `<body>`) par le balisage suivant. Ce nouveau balisage ajoute une étiquette à l’emplacement où le script dans **./src/taskpane/taskpane.js** écrira des données.
+1. Ouvrez votre projet dans VS Code ou votre éditeur de code préféré.
+   [!INCLUDE [Instructions for opening add-in project in VS Code via command line](../includes/vs-code-open-project-via-command-line.md)]
+
+1. Ouvrez le fichier **./src/taskpane/taskpane.html** et remplacez tout **\<main\>** l'élément (dans **\<body\>** l'élément) par le balisage suivant. Ce nouveau balisage ajoute une étiquette à l’emplacement où le script dans **./src/taskpane/taskpane.js** écrira des données.
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">
@@ -83,7 +81,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     </main>
     ```
 
-1. Ouvrez le fichier **./src/taskpane/taskpane.js** dans l’éditeur de code et ajoutez le code suivant à la fonction `run`. Ce code utilise l’API JavaScript pour Office afin d’obtenir une référence au message en cours et écrire sa valeur de propriété `subject` dans le volet Office.
+1. Dans votre éditeur de code, ouvrez le fichier **./src/taskpane/taskpane.js** et ajoutez le code suivant à la fonction **run**. Ce code utilise l'API Office JavaScript pour obtenir une référence au message actuel et écrire la valeur de sa propriété **objet** dans le volet des tâches.
 
     ```js
     // Get a reference to the current message
@@ -93,18 +91,15 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
     ```
 
-### <a name="try-it-out"></a>Essayez !
+### <a name="try-it-out"></a>Essayez
 
-> [!NOTE]
-> Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande suivante, acceptez d’installer le certificat fourni par le générateur Yeoman. Il se peut également que vous deviez exécuter votre invite de commande ou votre terminal en tant qu'administrateur pour que les modifications soient effectuées.
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé.
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre et votre complément est chargé en mode [sideload](../outlook/sideload-outlook-add-ins-for-testing.md).
 
     ```command&nbsp;line
     npm start
     ```
-
-1. Suivez les instructions indiquées dans l’article [Chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md) pour charger le complément dans Outlook.
 
 1. Sur Outlook, affichez un message dans le [volet de lecture](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0)ou ouvrez le message dans sa propre fenêtre.
 
@@ -115,6 +110,10 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     > [!NOTE]
     > Si le message d’erreur « Désolé... nous ne pouvons pas ouvrir ce complément à partir de localhost » s’affiche dans le volet Office, suivez les étapes décrites dans l’[article résolution des problèmes](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
+1. Lorsque la boîte de dialogue **WebView Stop On Load** apparaît, sélectionnez **OK**.
+
+    [!INCLUDE [Cancelling the WebView Stop On Load dialog box](../includes/webview-stop-on-load-cancel-dialog.md)]
+
 1. Faites défiler vers le bas du volet Office et sélectionnez le lien **Exécuter** pour écrire l’objet du message dans le volet Office.
 
     ![Capture d’écran illustrant le volet Office du complément avec le lien d’exécution mis en évidence.](../images/quick-start-task-pane-2.png)
@@ -123,7 +122,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
 ### <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez créé votre premier complément de volet de tâches Outlook ! Ensuite, découvrez les fonctionnalités d’un complément Outlook et créez-en un plus complexe en suivant le [didacticiel pour complément Outlook](../tutorials/outlook-tutorial.md).
+Félicitations, vous avez réussi à créer votre premier complément de volet de tâches Outlook ! Ensuite, apprenez-en davantage sur les capacités d'un complément Outlook et créez un complément plus complexe en suivant le [tutoriel sur les compléments Outlook](../tutorials/outlook-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -147,9 +146,9 @@ Félicitations, vous avez créé votre premier complément de volet de tâches O
 
 1. Nommez le projet, puis cliquez sur **OK**.
 
-1. Visual Studio crée une solution et ses deux projets apparaissent dans l’**Explorateur de solutions**. Le fichier **MessageRead.html** s’ouvre dans Visual Studio.
+1. Visual Studio crée une solution et ses deux projets apparaissent dans **Solution Explorer** . Le **fichier MessageRead.html** s'ouvre dans Visual Studio.
 
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qui contient deux projets.
 
@@ -160,7 +159,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. **MessageRead.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **MessageRead.html**, remplacez l’élément `<body>` par les marques suivantes et enregistrez le fichier.
+1. **MessageRead.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **MessageRead.html** , remplacez **\<body\>** l'élément par le balisage suivant et enregistrez le fichier.
  
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -196,7 +195,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
     </body>
     ```
 
-1. Ouvrez le fichier **MessageRead.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+1. Ouvrez le fichier **MessageRead.js** à la racine du projet d'application Web. Ce fichier spécifie le script de ce complément. Remplacez l'ensemble du contenu par le code suivant et enregistrez le fichier.
 
     ```js
     'use strict';
@@ -221,7 +220,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
     })();
     ```
 
-1. Ouvrez le fichier **MessageRead.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+1. Ouvrez le fichier **MessageRead.css** à la racine du projet d'application Web. Ce fichier spécifie les styles personnalisés pour le module d'extension. Remplacez l'ensemble du contenu par le code suivant et enregistrez le fichier.
 
     ```CSS
     html,
@@ -245,11 +244,11 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 
 1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
 
-1. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+1. L'élément **ProviderName** a une valeur de type placeholder. Remplacez-la par votre nom.
 
-1. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par `My Office Add-in`.
+1. L'attribut **DefaultValue** de l'élément **DisplayName** comporte un espace réservé. Remplacez-le par `My Office Add-in`.
 
-1. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par `My First Outlook add-in`.
+1. L'attribut **DefaultValue** de l'élément **Description** contient un caractère générique. Remplacez-le par`My First Outlook add-in`.
 
 1. Enregistrez le fichier.
 

@@ -4,12 +4,12 @@ description: Créez un complément Excel qui crée, remplit, filtre et trie un t
 ms.date: 02/26/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: ad7a0332d303b7f774c394340fba303fcb3e782e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: f8d21b0003f24b1b216e0e6823d1962778e18223
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340875"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511305"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -30,6 +30,11 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 ## <a name="prerequisites"></a>Configuration requise
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- Office connecté à un abonnement Microsoft 365 (y compris Office on the web).
+
+    > [!NOTE]
+    > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.
 
 ## <a name="create-your-add-in-project"></a>Créer votre projet de complément
 
@@ -95,6 +100,8 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
     - La méthode `context.sync` envoie toutes les commandes en file d’attente vers Excel pour exécution.
 
     - L’élément `Excel.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre.
+
+    [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function createTable() {
@@ -300,7 +307,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
    - La propriété `key` d’un objet `SortField` est l’index de la colonne utilisée pour le tri. Les lignes du tableau sont triées sur la base des valeurs de la colonne référencée.
 
-   - Le membre `sort` d’un objet `Table` est un objet `TableSort`, et non une méthode. Les objets `SortField` sont transmis à la méthode `apply` de l’objet `TableSort`.
+   - Le `sort`membre de a `Table`est un`TableSort` objet, pas une méthode. Les `SortField`s sont passés à la `TableSort`méthode de l'objet`apply`.
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -374,7 +381,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     }
     ```
 
-1. À l’intérieur de la fonction `createChart()`, remplacez `TODO1` par le code suivant. Pour exclure la ligne d’en-tête, le code utilise la méthode `Table.getDataBodyRange` pour obtenir la plage de données à représenter sous forme de graphique à la place de la méthode `getRange`.
+1. Dans la `createChart()`fonction, remplacez-la`TODO1` par le code suivant. Notez qu'afin d'exclure la ligne d'en-tête, le code utilise la `Table.getDataBodyRange`méthode pour obtenir la plage de données que vous souhaitez mettre en graphique au lieu de la `getRange`méthode .
 
     ```js
     const currentWorksheet = context.workbook.worksheets.getActiveWorksheet();
@@ -394,7 +401,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
     const chart = currentWorksheet.charts.add('ColumnClustered', dataRange, 'Auto');
     ```
 
-1. À l’intérieur de la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majeure partie du code est explicite. Remarque :
+1. Dans la fonction `createChart()`, remplacez `TODO3` par le code suivant. La majorité de ce code est explicite. Remarque :
 
    - Les paramètres de la méthode `setPosition` spécifient les cellules situées en haut à gauche et en bas à droite de la zone de feuille de calcul devant contenir le graphique. Excel peut ajuster des éléments, tels que la largeur de ligne pour que le graphique s’affiche correctement dans l’espace attribué.
 
@@ -502,7 +509,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 
 1. Ouvrez le fichier manifeste **./manifest.xml**.
 
-1. Recherchez l’élément `<Control>`. Cet élément définit le bouton **Afficher le volet des pages** sur le ruban **Accueil** que vous utilisez pour lancer le complément. Nous allons ajouter un deuxième bouton au même groupe sur le ruban **Accueil**. Dans la balise de `</Control>` de fermeture et la balise de `</Group>` de fermeture, ajoutez la balise suivante.
+1. Localisez `<Control>`l'élément. Cet élément définit le bouton **Afficher le volet** des tâches sur le ruban **Accueil** que vous avez utilisé pour lancer le module complémentaire. Nous allons ajouter un deuxième bouton au même groupe sur le ruban **Accueil**. Entre la balise de fermeture et la `</Control>`balise de fermeture`</Group>`, ajoutez le balisage suivant.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -528,7 +535,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     <Control xsi:type="Button" id="ToggleProtection">
     ```
 
-1. Les trois `TODO`s suivantes définissent les ID de ressource ou `resid`s. Une ressource est une chaîne (d’une longueur maximale de 32 caractères). Vous allez créer ces trois chaînes lors d’une étape ultérieure. Pour l’instant, vous devez attribuer des ID aux ressources. L’étiquette du bouton doit indiquer « Toggle Protection », mais l’*ID* de cette chaîne doit être « ProtectionButtonLabel », donc l’élément `Label` doit ressembler à ceci :
+1. Les trois `TODO`s suivants définissent les ID des ressources`resid`, ou s. Une ressource est une chaîne (d'une longueur maximale de 32 caractères), et vous créerez ces trois chaînes dans une étape ultérieure. Pour l'instant, vous devez donner des *ID* aux ressources. Le libellé du bouton doit être « Toggle Protection», mais l'ID de cette chaîne doit être « ProtectionButtonLabel », de sorte que `Label`l'élément doit ressembler à ceci :
 
     ```xml
     <Label resid="ProtectionButtonLabel" />
@@ -546,7 +553,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
    > [!NOTE]
    > Dans un complément de production, vous n’utiliseriez pas la même icône pour deux boutons différents, mais pour simplifier ce didacticiel, nous allons le faire. Par conséquent, le balisage `Icon` de notre nouvel élément `Control` est simplement une copie de l’élément `Icon` provenant de l’élément `Control` existant.
 
-1. Le type de l’élément `Action` se trouvant à l’intérieur de l’élément `Control` d’origine est défini sur `ShowTaskpane`, mais notre nouveau bouton ne va pas ouvrir un volet Office, il va exécuter une fonction personnalisée que vous allez créer à une étape ultérieure. Remplacez donc `TODO5` par `ExecuteFunction`, qui correspond au type d’action des boutons qui déclenchent des fonctions personnalisées. Létiquette d’ouverture de l’élément `Action` doit ressembler à ceci :
+1. Le type de `Action`l'élément situé à l'intérieur de l'élément d'origine`Control` est défini sur`ShowTaskpane` , mais notre nouveau bouton ne va pas ouvrir un volet de tâches ; il va exécuter une fonction personnalisée que vous créerez dans une étape ultérieure. Il faut donc le remplacer `TODO5`par`ExecuteFunction` , qui est le type d'action des boutons qui déclenchent des fonctions personnalisées. La balise d'ouverture de`Action` l'élément doit ressembler à ceci :
 
     ```xml
     <Action xsi:type="ExecuteFunction">
@@ -624,7 +631,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
     g.toggleProtection = toggleProtection;
     ```
 
-1. À l’intérieur de la fonction `toggleProtection`, remplacez `TODO1` par le code suivant. Ce code utilise la propriété de protection de l’objet de feuille de calcul dans un modèle de bouton bascule standard. L’élément `TODO2` sera expliqué dans la section suivante.
+1. Dans la fonction `toggleProtection`, remplacez `TODO1` par le code suivant. Ce code utilise la propriété de protection de l’objet de feuille de calcul dans un modèle de bascule standard. La tâche `TODO2` sera expliquée dans la section suivante.
 
     ```js
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -641,7 +648,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 
 ### <a name="add-code-to-fetch-document-properties-into-the-task-panes-script-objects"></a>Ajoutez du code pour récupérer des propriétés de document dans les objets de script du volet Office
 
-Dans chaque fonction que vous avez créée dans ce didacticiel jusqu’à présent, vous avez mis en file d’attente les commandes pour *écrire* dans le document Office. Chaque fonction se terminait par un appel de la méthode `context.sync()`, qui envoie les commandes en file d’attente au document pour qu’elles soient exécutées. Toutefois, le code que vous avez ajouté dans la dernière étape appelle la `sheet.protection.protected property`. C’est une différence significative par rapport aux fonctions antérieures que vous avez écrites, car l’objet `sheet` est uniquement un objet de proxy qui existe dans le script de votre volet Office. L’objet proxy ne connaît pas l’état réel de la protection du document. par conséquent, sa propriété `protection.protected` ne peut pas avoir de valeur réelle. Pour éviter une erreur d’exception, vous devez d’abord récupérer l’état de protection du document et l’utiliser pour déterminer la valeur de `sheet.protection.protected`. Ce processus de récupération comporte trois étapes.
+Dans chaque fonction que vous avez créée dans ce tutoriel jusqu'à présent, vous avez mis en file d'attente des commandes à *écrire* dans le document Office. Chaque fonction se terminait par un appel à la `context.sync()`méthode, qui envoyait les commandes mises en file d'attente au document pour qu'elles soient exécutées. Toutefois, le code que vous avez ajouté à la dernière étape appelle la méthode`sheet.protection.protected property`. C'est une différence importante par rapport aux fonctions précédentes que vous avez écrites, car `sheet`l'objet n'est qu'un objet proxy qui existe dans le script de votre volet de tâches. L'objet proxy ne connaît pas l'état de protection réel du document, et sa`protection.protected` propriété ne peut donc pas avoir de valeur réelle. Pour éviter une erreur d'exception, vous devez d'abord récupérer l'état de protection du document et l'utiliser pour définir la valeur de . `sheet.protection.protected`Ce processus de récupération comporte trois étapes.
 
    1. Mettez en file d’attente une commande de chargement (c’est-à-dire, fetch) des propriétés que votre code doit lire.
 
@@ -728,7 +735,7 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
 
         Pour utiliser votre complément, ouvrez un document dans Microsoft Excel sur le web, puis chargez votre complément en suivant les instructions de la section [Charger des compléments Office dans Office sur le Web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web).
 
-1. Sous l’onglet **Accueil** d’Excel, sélectionnez le bouton **Activer/désactiver la protection de la feuille de calcul**. Notez que la plupart des contrôles figurant sur le ruban sont désactivés (et visuellement grisés) comme on peut le voir dans la capture d’écran suivante.
+1. Dans l'onglet **Accueil** d' Excel, cliquez **sur le bouton Afficher la protection de la feuille de** travail. Notez que la plupart des commandes du ruban sont désactivées (et visuellement grisées) comme le montre la capture d'écran suivante.
 
     ![Capture d’écran du ruban Excel avec le bouton de protection de la feuille de calcul activé mis en évidence. La plupart des autres boutons apparaissent grisés et désactivés.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
 
@@ -895,7 +902,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     <button class="ms-Button" id="open-dialog">Open Dialog</button><br/><br/>
     ```
 
-1. La boîte de dialogue invitera l’utilisateur à saisir son nom et transmettra ce nom au volet Office. Le volet Office s’affichera dans une étiquette. Immédiatement après la valeur `button` que vous venez d’ajouter, ajoutez le balisage suivant.
+1. La boîte de dialogue invite l'utilisateur à saisir un nom et transmet le nom de l'utilisateur au volet des tâches. Le volet des tâches l'affichera dans une étiquette. Immédiatement après `button`ce que vous venez d'ajouter, ajoutez la balise suivante.
 
     ```html
     <label id="user-name"></label><br/><br/>
@@ -978,7 +985,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 1. Lorsque la boîte de dialogue est ouverte, faites-la glisser et redimensionnez-la. Notez que vous pouvez interagir avec la feuille de calcul et appuyer sur d'autres boutons du volet des tâches, mais que vous ne pouvez pas lancer une deuxième boîte de dialogue à partir de la même page du volet des tâches.
 
-1. Dans la boîte de dialogue, entrez un nom et appuyez sur le bouton **OK**. Ce nom apparaît sur le volet Office et la boîte de dialogue se ferme.
+1. Dans la boîte de dialogue, entrez un nom et sélectionnez le bouton **OK**. Le nom apparaît dans le volet des tâches et la boîte de dialogue se ferme.
 
 1. Si vous le souhaitez, vous pouvez commenter la ligne `dialog.close();` dans la fonction `processMessage`. Ensuite, répétez les étapes de cette section. La boîte de dialogue reste ouverte et vous pouvez modifier le nom. Vous pouvez la fermer manuellement en appuyant sur la croix (**X**) en haut à droite.
 

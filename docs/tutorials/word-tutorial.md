@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 13378646671698dadc74cc2e1c4aada5bc2b0e6a
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
+ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340168"
+ms.lasthandoff: 03/11/2022
+ms.locfileid: "63511251"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -29,6 +29,11 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 ## <a name="prerequisites"></a>Conditions préalables
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
+
+- Office connecté à un abonnement Microsoft 365 (y compris Office on the web).
+
+    > [!NOTE]
+    > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.
 
 ## <a name="create-your-add-in-project"></a>Créer votre projet de complément
 
@@ -93,6 +98,8 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
    - La méthode `context.sync` envoie toutes les commandes en file d’attente vers Word pour exécution.
 
    - L’élément `Word.run` est suivi par un bloc `catch`. Il s’agit d’une meilleure pratique que vous devez toujours suivre.
+
+   [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
     ```js
     async function insertParagraph() {
@@ -584,7 +591,7 @@ async function insertTextIntoRange() {
 
 1. Sélectionnez le bouton **Insérer une abréviation**. L’abréviation « (C2R) » est ajoutée. Notez également qu’en bas du document, un nouveau paragraphe est ajouté avec l’intégralité du texte développé, car la nouvelle chaîne a été ajoutée à la plage existante.
 
-1. Dans le document, sélectionnez l’expression « Microsoft 365 ». *Veillez à ne pas inclure tout espace précédent ou suivant dans la sélection.*
+1. Dans le document, sélectionnez l'expression « Microsoft 365 ». *Veillez à ne pas inclure l'espace précédent ou suivant dans la sélection.*
 
 1. Sélectionnez le bouton **Ajouter les informations de version**. L’expression « Office 2019 » est insérée entre « Office 2016 » et « Microsoft 365 ». Notez également qu’en bas du document, un nouveau paragraphe est ajouté. Celui-ci contient uniquement le texte sélectionné à l’origine, car la nouvelle chaîne est devenue une nouvelle plage plutôt que d’être ajoutée à la plage d’origine.
 
