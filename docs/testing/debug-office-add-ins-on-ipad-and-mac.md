@@ -1,14 +1,14 @@
 ---
 title: Déboguer des compléments Office sur un Mac
 description: Découvrez comment utiliser un Mac pour déboguer des Office des macros.
-ms.date: 10/16/2020
+ms.date: 03/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 46104e5cbd9c81e56c1a83b6f49ae5883097b3e5
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc9017eb7bd27ee0bc22d3ad448e5996895c5eee
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150460"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711205"
 ---
 # <a name="debug-office-add-ins-on-a-mac"></a>Déboguer des compléments Office sur un Mac
 
@@ -18,7 +18,7 @@ ms.locfileid: "59150460"
 
 Si votre complément affiche une interface utilisateur dans un volet des tâches ou dans un complément de contenu, vous pouvez déboguer un complément Office à l’aide de avec l’inspecteur web Safari.
 
-Pour pouvoir déboguer des Office sur Mac, vous devez avoir Mac OS High Sierra et Mac Office version 16.9.1 (build 18012504) ou une version ultérieure. Si vous n’avez pas de build Office Mac, vous pouvez en obtenir une en rejoignant le programme [Microsoft 365 développeur.](https://developer.microsoft.com/office/dev-program)
+Pour pouvoir déboguer des Office sur Mac, vous devez avoir Mac OS High Sierra et Mac Office version 16.9.1 (build 18012504) ou version ultérieure. Si vous n’avez pas de build Mac Office, vous pouvez en obtenir une en rejoignant le programme Microsoft 365 [développeur](https://developer.microsoft.com/office/dev-program).
 
 Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAddinDeveloperExtras` pour l’application Office pertinente comme suit :
 
@@ -31,7 +31,7 @@ Pour commencer, ouvrez un terminal, puis définissez la propriété `OfficeWebAd
 - `defaults write com.microsoft.Outlook OfficeWebAddinDeveloperExtras -bool true`
 
     > [!IMPORTANT]
-    > Les builds d’applications du Mac App Store Office ne pas la prise en charge de `OfficeWebAddinDeveloperExtras` l’indicateur.
+    > Les builds d’applications du Mac App Store Office ne pas la prise en charge de l’indicateur`OfficeWebAddinDeveloperExtras`.
 
 Ensuite, ouvrez l’application Office et[insérez votre complément](sideload-an-office-add-in-on-ipad-and-mac.md). Cliquez sur le complément. Vous devriez voir l’option **Inspecter l’élément** s’afficher dans le menu contextuel. Sélectionnez cette option pour afficher l’inspecteur dans lequel vous pouvez définir des points d’arrêt et déboguer votre complément.
 

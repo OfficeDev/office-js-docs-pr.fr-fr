@@ -1,14 +1,14 @@
 ---
 title: Chargement de Office pour les tester à partir d’un partage réseau
-description: Découvrez comment chargement de version test d’un Office pour le test à partir d’un partage réseau
+description: Découvrez comment recharger une version test d Office pour le test à partir d’un partage réseau
 ms.date: 06/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b9c1034bbd7df011501338209e7b5a83ce976dd9
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0427e279b1c969227b43a1983701e685782e5922
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153683"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711181"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de Office pour les tester à partir d’un partage réseau
 
@@ -17,13 +17,13 @@ Vous pouvez tester un Office dans un client Office qui se trouve sur Windows en 
 > [!IMPORTANT]
 > Le déploiement par partage réseau n’est pas pris en charge pour les modules de production. Cette méthode présente les limitations suivantes.
 >
-> - Le module peut uniquement être installé sur Windows ordinateurs.
+> - Le add-in peut uniquement être installé sur Windows ordinateurs.
 > - Si une nouvelle version d’un add-in change le ruban, chaque utilisateur devra réinstaller le module.
 
 > [!NOTE]
-> Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
+> Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
-Cet article s’applique uniquement aux tests de Excel, de PowerPoint et de Project et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un Outlook, consultez l’une des rubriques suivantes pour le chargement de version test de votre module.
+Cet article s’applique uniquement aux tests de Excel, PowerPoint, et Project et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un Outlook, consultez l’une des rubriques suivantes pour le chargement de version test de votre module.
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -73,7 +73,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
     ![Boîte de dialogue Centre de confiance avec le catalogue sélectionné.](../images/sideload-windows-trust-center-dialog.png)
 
-1. Sélectionnez le **bouton OK** pour fermer la boîte de dialogue **Options.**
+1. Sélectionnez le **bouton OK** pour fermer la **boîte de dialogue Options** .
 
 1. Fermez et ouvrez de nouveau l’application Office afin que vos modifications prennent effet.
 
@@ -131,7 +131,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Vous pouvez supprimer un add-in précédemment chargé de nouveau en effantant le cache Office sur votre ordinateur. Vous pouvez trouver des détails sur la façon de effacer le cache sur Windows dans l’article Effacer [le cache Office cache.](clear-cache.md#clear-the-office-cache-on-windows)
+Vous pouvez supprimer un add-in précédemment chargé de nouveau en effasant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon d’effacer le cache sur Windows, voir l’article Effacer [le cache Office cache.](clear-cache.md#clear-the-office-cache-on-windows)
 
 ## <a name="see-also"></a>Voir aussi
 

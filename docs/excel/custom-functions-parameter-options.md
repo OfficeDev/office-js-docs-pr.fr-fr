@@ -1,10 +1,15 @@
 ---
 ms.date: 03/08/2021
-description: 'Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, tels que les plages Excel, les paramètres facultatifs, le contexte d’appel, etc.'
+description: Découvrez comment utiliser différents paramètres dans vos fonctions personnalisées, tels que les plages Excel, les paramètres facultatifs, le contexte d’appel, etc.
 title: Options pour Excel fonctions personnalisées
 ms.localizationpriority: medium
+ms.openlocfilehash: 2cc0c825932afe3a70d0f9ab6483327051c199fd
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711020"
 ---
-
 # <a name="custom-functions-parameter-options"></a>Options des paramètres de fonctions personnalisées
 
 Les fonctions personnalisées sont configurables avec de nombreuses options de paramètre différentes.
@@ -112,7 +117,7 @@ function getWeatherReport(zipCode?: number, dayOfWeek?: string): string {
 
 ## <a name="range-parameters"></a>Paramètres de plage
 
-Votre fonction personnalisée peut accepter une plage de données de cellule comme paramètre d’entrée. Une fonction peut également renvoyer une plage de données. Excel transmettrea une plage de données de cellule sous forme de tableau à deux dimensions.
+Votre fonction personnalisée peut accepter une plage de données de cellule comme paramètre d’entrée. Une fonction peut également renvoyer une plage de données. Excel passe une plage de données de cellule sous forme de tableau à deux dimensions.
 
 Par exemple, supposons que votre fonction renvoie la seconde valeur la plus élevée à partir d’une plage de nombres stockés dans Excel. La fonction suivante accepte le `values`paramètre et la syntaxe `number[][]` `dimensionality` `matrix` JSDOC définit la propriété du paramètre dans les métadonnées JSON pour cette fonction. 
 
@@ -257,7 +262,7 @@ En combinaison avec le paramètre [d’appel](#invocation-parameter), vous pouve
 Cela est utile dans les scénarios où les types de données d’entrée peuvent varier. L’adresse d’un paramètre d’entrée peut être utilisée pour vérifier le format numérique de la valeur d’entrée. Le format numérique peut ensuite être ajusté avant l’entrée, si nécessaire. L’adresse d’un paramètre d’entrée peut également être utilisée pour détecter si la valeur d’entrée possède des propriétés associées qui peuvent être pertinentes pour les calculs suivants. 
 
 >[!NOTE]
-> Si vous travaillez avec des métadonnées [JSON](custom-functions-json.md) créées manuellement pour renvoyer des adresses de paramètre au lieu du générateur Yo Office, `options` `requiresParameterAddresses` `true`l’objet doit avoir la propriété définie sur , `result` `dimensionality` `matrix`et l’objet doit avoir la propriété définie sur .
+> Si vous travaillez avec des métadonnées [JSON](custom-functions-json.md) créées manuellement pour renvoyer des adresses de paramètre au lieu du générateur [Yeoman pour les modules](../develop/yeoman-generator-overview.md) de Office, `options` `requiresParameterAddresses` `true`l’objet doit avoir la propriété définie sur , `result` `dimensionality` `matrix`et l’objet doit avoir la propriété définie sur .
 
 La fonction personnalisée suivante prend trois paramètres d’entrée, `parameterAddresses` `Invocation` récupère la propriété de l’objet pour chaque paramètre, puis renvoie les adresses. 
 

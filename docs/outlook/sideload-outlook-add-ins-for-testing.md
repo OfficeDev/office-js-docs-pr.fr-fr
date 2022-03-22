@@ -3,36 +3,36 @@ title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 ms.date: 10/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43007ece67d85f584a682b7503f1b59e0d19ad5b
-ms.sourcegitcommit: e4d98eb90e516b9c90e3832f3212caf48691acf6
+ms.openlocfilehash: 971df0f2e151181f1d595cb0fcd0c0f82b26d759
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2021
-ms.locfileid: "60537505"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711244"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
 Vous pouvez utiliser le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
 
 > [!IMPORTANT]
-> Si votre Outlook prend en charge les appareils mobiles, chargez une version test du manifeste à l’aide des instructions de cet article pour votre client Outlook sur le web, Windows ou Mac, puis suivez les **instructions** de la section Test de vos macros sur mobile de l’article [Add-ins for Outlook Mobile.](outlook-mobile-addins.md#testing-your-add-ins-on-mobile)
+> Si votre Outlook prend en charge les appareils mobiles, chargez une version test du manifeste à l’aide des instructions de cet article pour votre client Outlook sur le web, Windows ou Mac, puis suivez les **instructions** de la section Test de vos macros supplémentaires sur mobile de l’article Sur les [macros pour Outlook Mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile).
 
-## <a name="sideload-automatically"></a>Chargement de version de version de version automatique
+## <a name="sideload-automatically"></a>Chargement de version de version automatique
 
-Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](https://github.com/OfficeDev/generator-office)pour les Office, il est préférable de recharger une version de version par le biais de la ligne de commande Windows. Cela tirera parti de nos outils et de notre chargement de version de version sur tous vos appareils pris en charge dans une seule commande.
+Si vous avez créé votre Outlook à l’aide du générateur [Yeoman](../develop/yeoman-generator-overview.md) pour les Office, il est préférable de recharger une version de version par le biais de la ligne de commande Windows. Cela tirera parti de nos outils et chargements de version de version sur tous vos appareils pris en charge dans une seule commande.
 
 1. Sur Windows, ouvrez une invite de commandes et accédez au répertoire racine de votre projet de add-in généré par Yeoman. Exécutez la commande `npm start`.
 
-1. Votre Outlook de bureau est automatiquement chargé de manière Outlook sur votre ordinateur de bureau. Une boîte de dialogue s’affiche, indiquant qu’il y a une tentative de chargement de version de chargement du module, répertoriant le nom et l’emplacement du fichier manifeste. Sélectionnez **OK,** qui enregistre le manifeste.
+1. Votre Outlook de bureau est automatiquement chargé de manière Outlook sur votre ordinateur de bureau. Une boîte de dialogue s’affiche, indiquant qu’il y a une tentative de chargement de version de chargement du module, répertoriant le nom et l’emplacement du fichier manifeste. **Sélectionnez OK**, qui enregistre le manifeste.
 
     > [!IMPORTANT]
     > Si le manifeste contient une erreur ou si le chemin d’accès au manifeste n’est pas valide, vous recevrez un message d’erreur.
 
-1. Si votre manifeste ne contient pas d’erreurs et que le chemin d’accès est valide, votre application est désormais rechargée de côté et disponible à la fois sur votre bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
+1. Si votre manifeste ne contient aucune erreur et que le chemin d’accès est valide, votre application est désormais rechargée de côté et disponible à la fois sur votre bureau et dans Outlook sur le web. Il sera également installé sur tous vos appareils pris en charge.
 
-## <a name="sideload-manually"></a>Chargement manuel d’une version de version
+## <a name="sideload-manually"></a>Chargement de version de version manuelle
 
-Bien que nous recommandions vivement le chargement de version secondaire automatiquement via la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de Outlook basée sur le client Outlook.
+Bien que nous recommandions vivement le chargement d’une version de version secondaire automatiquement par le biais de la ligne de commande comme abordé dans la section précédente, vous pouvez également charger manuellement une version de version de chargement de version de version de base d’un Outlook basé sur le client Outlook.
 
 ### <a name="outlook-on-the-web"></a>Outlook sur le web
 
@@ -79,7 +79,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. Sur la page **Gérer les compléments**, sélectionnez **Compléments**, puis **Mes compléments**.
 
-    ![Outlook sur le web dans la boîte de dialogue Du store avec mes applications sélectionnées.](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook sur le web dans la boîte de dialogue du Store avec Mes applications sélectionnée.](../images/outlook-sideload-store-select-add-ins.png)
 
 1. Recherchez la section **Compléments personnalisés** en bas de la boîte de dialogue. Sélectionnez le lien **Ajouter un complément personnalisé**, puis sélectionnez **Ajouter à partir d’un fichier**.
 
@@ -91,7 +91,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 ### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
 
-1. Ouvrez Outlook 2016 ou ultérieurement sur Windows ou Mac.
+1. Ouvrez Outlook 2016 ou une ultérieure sur Windows mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
@@ -104,11 +104,11 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
     >
     >   OR
     >
-    > - **Menu** Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations** pour ouvrir la boîte de dialogue Des Outlook sur le web. <br>Vous pouvez en savoir plus sur l’expérience web dans la section précédente chargement de version de chargement d’un [Outlook sur le web](#outlook-on-the-web).
+    > - **Menu** Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations** pour ouvrir la boîte de dialogue Des Outlook sur le web.<br>Vous pouvez en savoir plus sur l’expérience web dans la section précédente chargement de version de chargement d’un [Outlook sur le web](#outlook-on-the-web).
 
 1. S’il existe des onglets en haut de la boîte de dialogue, **assurez-vous** que l’onglet Des applications est sélectionné. Choose **My add-ins**.
 
-    ![Outlook 2016 dans la boîte de dialogue Du store avec mes applications sélectionnées.](../images/outlook-sideload-store-select-add-ins.png)
+    ![Outlook 2016 dans la boîte de dialogue Du store avec Mes applications sélectionnée.](../images/outlook-sideload-store-select-add-ins.png)
 
 1. Recherchez la section **Compléments personnalisés** en bas de la boîte de dialogue. Sélectionnez le lien **Ajouter un complément personnalisé**, puis sélectionnez **Ajouter à partir d’un fichier**.
 
@@ -120,17 +120,17 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. Ouvrez Outlook 2013 sur Windows.
 
-1. Sélectionnez **le** menu Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations.** Outlook ouvre la version web dans un navigateur.
+1. Sélectionnez **le** menu Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations**. Outlook ouvre la version web dans un navigateur.
 
-1. Suivez les étapes de la section [Sideload d’un Outlook sur le web](#outlook-on-the-web) en fonction de votre version de Outlook sur le web.
+1. Suivez les étapes de la section [Chargement de version de version](#outlook-on-the-web) Outlook sur le web en fonction de votre version de Outlook sur le web.
 
 ## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
 
-Sur toutes les versions de Outlook, la clé de la suppression  d’un module de chargement de version ultérieure est la boîte de dialogue Mes applications qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le `...` add-in, puis sélectionnez **Supprimer**.
+Sur toutes les versions de Outlook, la clé de la suppression d’un module de chargement de version ultérieure est  la boîte de dialogue Mes applications qui répertorie vos applications installées. Choisissez les ellipses (`...`) du module, puis sélectionnez **Supprimer**.
 
-Pour accéder à la boîte de dialogue Mes applications pour votre client Outlook, [](#sideload-manually) utilisez les dernières **étapes** répertoriées pour le chargement de version manuelle dans les sections précédentes de cet article.
+Pour accéder à la boîte de dialogue Mes applications pour votre client Outlook, utilisez les dernières **étapes** répertoriées pour le chargement de version [](#sideload-manually) manuelle dans les sections précédentes de cet article.
 
-Pour supprimer un **add-in** chargé de Outlook, utilisez les étapes décrites précédemment dans cet article pour trouver le module dans la section Des applications personnalisées de la boîte de dialogue qui répertorie vos applications installées. Choisissez les ellipses ( ) pour le module, puis choisissez Supprimer pour `...` supprimer ce dernier.  Fermez la boîte de dialogue.
+Pour supprimer un add-in chargé de Outlook, utilisez les étapes décrites précédemment dans cet article pour rechercher le module dans la section Custom **add-ins** de la boîte de dialogue qui répertorie vos applications installées. Choisissez les ellipses (`...`) du module, puis choisissez **Supprimer** pour supprimer ce dernier. Fermez la boîte de dialogue.
 
 ## <a name="see-also"></a>Voir aussi
 

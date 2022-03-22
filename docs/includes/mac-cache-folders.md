@@ -1,4 +1,4 @@
-Les macros sont souvent mises en cache dans Office mac pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
+Les macros sont souvent mises en cache Office sur Mac pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
 
 Vous pouvez vider le cache à l’aide du menu personnalité de n’importe quel complément du volet Office.
 
@@ -8,12 +8,14 @@ Vous pouvez vider le cache à l’aide du menu personnalité de n’importe quel
 
     ![Capture d'écran de l'option « Effacer le cache Web » dans le menu « Personnalité ».](../images/mac-clear-cache-menu.png)
 
-Vous pouvez également effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`.
+Vous pouvez également effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Recherchez ce dossier via terminal.
 
 > [!NOTE]
-> Si ce dossier n’existe pas, recherchez les dossiers suivants et, le cas échéant, supprimez le contenu du dossier.
+> Si ce dossier n’existe pas, recherchez les dossiers suivants via le terminal et, si ce dossier est trouvé, supprimez le contenu du dossier.
 >
 > - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` où `{host}` est l’application Office (par exemple, `Excel`)
 > - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` où `{host}` est l’application Office (par exemple, `Excel`)
 > - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 > - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
+>
+> Pour rechercher ces dossiers via Finder, vous devez définir Finder pour afficher les fichiers masqués. Finder affiche les dossiers à l’intérieur du répertoire containers par nom de produit,  par exemple Microsoft Excel au lieu de **com.microsoft.Excel**.

@@ -3,12 +3,12 @@ title: Valider un manifeste de complément Office
 description: Découvrez comment valider le manifeste d’un Office à l’aide du schéma XML et d’autres outils.
 ms.date: 10/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e9b7e868b55489c70a5abe067a262b0ea73fbae8
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 89335ffb670f6bb9a41f2d29f300123e1ea78397
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081420"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711258"
 ---
 # <a name="validate-an-office-add-ins-manifest"></a>Valider un manifeste de complément Office
 
@@ -19,20 +19,20 @@ Vous souhaitez peut-être valider le fichier manifeste de votre complément pour
 
 ## <a name="validate-your-manifest-with-the-yeoman-generator-for-office-add-ins"></a>Valider votre manifeste avec le générateur Yeoman pour les compléments Office
 
-Si vous avez utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet.
+Si vous avez utilisé [le générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) pour créer votre complément, vous pouvez également l’utiliser pour valider le fichier manifeste de votre projet. Exécutez la commande suivante dans le répertoire racine de votre projet.
 
 ```command&nbsp;line
 npm run validate
 ```
 
-![Image GIF animée qui montre le validateur Office Yo exécuté sur la ligne de commande et générant des résultats qui indiquent Validation Passed.](../images/yo-office-validator.gif)
+![Image GIF animée qui montre le validateur Yo Office exécuté sur la ligne de commande et générant des résultats qui indiquent validation transmise.](../images/yo-office-validator.gif)
 
 > [!NOTE]
-> Pour accéder à cette fonctionnalité, votre projet de complément doit être créé à l’aide du [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) (version 1.1.17 ou ultérieure).
+> Pour accéder à cette fonctionnalité, votre projet de add-in doit être créé à l’aide du générateur [Yeoman pour Office Add-ins](../develop/yeoman-generator-overview.md) version 1.1.17 ou ultérieure.
 
 ## <a name="validate-your-manifest-with-office-addin-manifest"></a>Valider votre manifeste avec office-addin-manifest
 
-Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
+Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) pour créer votre complément, vous pouvez valider le fichier manifeste à l’aide de [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Installez [Node.js](https://nodejs.org/download/).
 
@@ -42,14 +42,14 @@ Si vous n’avez pas utilisé [le générateur Yeoman pour les compléments Offi
     npm install -g office-addin-manifest
     ```
 
-1. Exécutez la commande suivante *dans le répertoire racine de votre projet.*
+1. Exécutez la commande suivante *dans le répertoire racine de votre projet*.
 
     ```command&nbsp;line
     npm run validate
     ```
 
     > [!NOTE]
-    > Si cette commande n’est pas disponible ou ne fonctionne pas, exécutez la commande suivante à la place pour forcer l’utilisation de la dernière version de l’outil de manifeste du addin office (en remplaçant par le nom du fichier `MANIFEST_FILE` manifeste).
+    > Si cette commande n’est pas disponible ou ne fonctionne pas, exécutez la commande suivante à la place pour forcer l’utilisation de la dernière version de l’outil de manifeste du addin office ( `MANIFEST_FILE` en remplaçant par le nom du fichier manifeste).
     >
     > ```command&nbsp;line
     > npx office-addin-manifest validate MANIFEST_FILE
@@ -77,4 +77,4 @@ Vous pouvez valider le fichier manifeste par rapport aux fichiers de [définitio
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
-- [Déboguer des applications à l’aide des outils de développement Microsoft Edge (Chromium base de données)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)

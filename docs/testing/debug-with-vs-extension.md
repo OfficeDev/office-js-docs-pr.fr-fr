@@ -3,22 +3,22 @@ title: Déboguer les add-ins sur Windows à l'aide de Visual Studio Code et du W
 description: Découvrez comment déboguer des Office qui utilisent Version antérieure de Microsoft Edge WebView (EdgeHTML) à l’aide de l’extension de déboguer du Office dans VS Code.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0e8c072e7b08182f9028414a9321bf78a049b1
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 98ac2fc4eab8ef20ddc416b299fde88095ef4fb4
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892537"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63710943"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
-Office les applications qui s’exécutent sur Windows peuvent utiliser l’extension de déboguer le déboguer de Office dans Visual Studio Code pour déboguer sur Version antérieure de Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). 
+Office les applications qui s’exécutent sur Windows peuvent utiliser l’extension déboguer le déboguer de Office dans Visual Studio Code pour déboguer sur Version antérieure de Microsoft Edge avec le runtime WebView d’origine (EdgeHTML). 
 
 > [!IMPORTANT]
 > Cet article s’applique uniquement lorsque Office exécute des applications dans le runtime WebView (EdgeHTML) d’origine, comme expliqué dans les [navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office. Pour obtenir des instructions sur le débogage dans le code Visual Studio par rapport à Microsoft Edge WebView2 (basé sur Chromium), voir Microsoft Office [Add-in Debugger Extension for Visual Studio Code](debug-desktop-using-edge-chromium.md).
 
 > [!TIP]
-> Si vous ne pouvez pas ou ne souhaitez pas déboguer à l’aide d’outils intégrés à Visual Studio Code ou si vous rencontrez un problème qui se produit uniquement lorsque le module est exécuté en dehors de Visual Studio Code, vous pouvez déboguer le runtime Edge Legacy (EdgeHTML) à l’aide des outils de développement edge hérités, comme décrit dans Débogage des applications à l’aide des [outils de développement dans Version antérieure de Microsoft Edge](debug-add-ins-using-devtools-edge-legacy.md).
+> Si vous ne pouvez pas ou ne souhaitez pas déboguer à l’aide d’outils intégrés à Visual Studio Code ; ou si vous rencontrez un problème qui se produit uniquement lorsque le module est exécuté en dehors de Visual Studio Code, vous pouvez déboguer le runtime Edge Legacy (EdgeHTML) à l’aide des outils de développement edge hérités, comme décrit dans Débogage des applications à l’aide des [outils de développement dans Version antérieure de Microsoft Edge](debug-add-ins-using-devtools-edge-legacy.md).
 
 Ce mode de débogage est dynamique et vous permet de définir des points d'arrêt pendant l'exécution du code. Vous pouvez voir les modifications dans votre code immédiatement lorsque le déboguer est attaché, tout cela sans perdre votre session de débogage. Vos modifications de code sont également persistantes, afin que vous pouvez voir les résultats de plusieurs modifications apportées à votre code. L’image suivante illustre cette extension en action.
 
@@ -33,18 +33,18 @@ Ce mode de débogage est dynamique et vous permet de définir des points d'arrê
 
 ## <a name="install-and-use-the-debugger"></a>Installer et utiliser le débogueur
 
-Ces instructions supposent que vous avez de l'expérience dans l'utilisation de la ligne de commande, que vous comprenez les bases de JavaScript et que vous avez créé un projet de module complémentaire Office avant d'utiliser le générateur Yo Office. Si vous ne l’avez pas fait auparavant, envisagez de consulter l’un de nos didacticiels, comme Excel Office [didacticiel sur le Excel Office de l’aide](../tutorials/excel-tutorial.md).
+Ces instructions supposent que vous avez de l’expérience en utilisant la ligne de commande, que vous comprenez javaScript de base et que vous avez créé un projet de Office Add-in avant d’utiliser le générateur [Yeoman](../develop/yeoman-generator-overview.md) pour les Office. Si vous ne l’avez pas encore fait, envisagez de consulter l’un de nos didacticiels, comme Excel Office [didacticiel sur le Excel Office de l’aide](../tutorials/excel-tutorial.md).
 
 1. La première étape dépend du projet et de la façon dont il a été créé.
 
-   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez [le générateur Yeoman pour les modules complémentaires Office](https://github.com/OfficeDev/generator-office). Pour ce faire, utilisez l'un de nos guides de démarrage rapide, tel que [le guide de démarrage rapide du module complémentaire Outlook](../quickstarts/outlook-quickstart.md). 
+   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez [le générateur Yeoman pour les modules complémentaires Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l'un de nos guides de démarrage rapide, tel que [le guide de démarrage rapide du module complémentaire Outlook](../quickstarts/outlook-quickstart.md). 
    - Si vous souhaitez déboguer un projet existant créé avec Yo Office, passez à l’étape suivante.
    - Si vous souhaitez déboguer un projet existant qui n’a pas été créé avec Yo Office, effectuez la procédure dans l’annexe, puis revenir à l’étape suivante de cette procédure.[](#appendix)
 
 
 1. Ouvrez VS Code et ouvrez votre projet dans celui-ci. 
 
-1. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de l’extension de module de 2013 » et installez-
+1. Dans VS Code, sélectionnez **Ctrl + Shift + X** pour ouvrir la barre Extensions. Recherchez l’extension « Microsoft Office débompeur de l’extension de la mise en Microsoft Office » et installez-la.
 
 1. Choisissez **View > Run** ou entrez **Ctrl+Shift+D** pour passer en mode débogage.
 

@@ -3,12 +3,12 @@ title: Conversion d’un projet de complément Office dans Visual Studio au form
 description: Découvrez comment convertir un projet de Office dans Visual Studio pour utiliser TypeScript.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 78a03c29662a981c51a93fcae0c61050a2007dda
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 02ff765533edbd8e3cdd4dba246afed78948c0d2
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855568"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711167"
 ---
 # <a name="convert-an-office-add-in-project-in-visual-studio-to-typescript"></a>Conversion d’un projet de complément Office dans Visual Studio au format TypeScript
 
@@ -18,14 +18,14 @@ Vous pouvez utiliser le modèle de complément Office dans Visual Studio pour cr
 > Cet article décrit les étapes minimales nécessaires pour vous assurer que, lorsque vous appuyez sur F5, le code est transpilé en JavaScript qui est ensuite chargé de manière secondaire dans Office. Toutefois, le code n’est pas très « TypeScripty ». Par exemple, les variables sont déclarées avec le `var` `let` mot clé et non avec un type spécifié. Pour tirer pleinement parti de la forte typage de TypeScript, envisagez d’apporter d’autres modifications au code.
 
 > [!NOTE]
-> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) vous y invite.
+> Pour créer un projet TypeScript de complément Office sans utiliser Visual Studio, suivez les instructions de la section « Générateur Yeoman » d’un [démarrage rapide en 5 minutes](../index.yml), puis sélectionnez `TypeScript` quand le [générateur Yeoman pour les compléments Office](yeoman-generator-overview.md) vous y invite.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 - [Visual Studio 2019 ou](https://www.visualstudio.com/vs/) ultérieure avec la charge de travail **Office/SharePoint de développement** installée
 
     > [!TIP]
-    > Si vous avez déjà installé [Visual Studio, utilisez](/visualstudio/install/modify-visual-studio) le Visual Studio Installer pour vous assurer que la charge de travail Office **/SharePoint** de développement est installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio#modify-workloads).
+    > Si vous avez déjà installé Visual Studio, [utilisez le programme d'installation de Visual Studio](/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Office/SharePoint** est installée. Si cette charge de travail n’est pas encore installée, utilisez Visual Studio Installer pour l’[installer](/visualstudio/install/modify-visual-studio#modify-workloads).
 
 - SDK TypeScript version 2.3 ou ultérieure.
 

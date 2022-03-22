@@ -4,12 +4,12 @@ title: Configurez votre complément Office pour utiliser un runtime JavaScript p
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: f11c2060d48dc30f2403fd16f1d7d10481107f75
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: 6d3eeef198ca7b5b99a9a459a3094e5c6a3d6707
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081427"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711174"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -19,7 +19,7 @@ Vous pouvez configurer votre complément Office pour exécuter la totalité de s
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Si vous démarrez un nouveau projet, suivez ces étapes pour utiliser le [générateur Yeoman pour compléments Office](https://github.com/OfficeDev/generator-office) et créer le projet de complément Excel ou PowerPoint.
+Si vous démarrez un nouveau projet, suivez ces étapes pour utiliser le [générateur Yeoman pour compléments Office](yeoman-generator-overview.md) et créer le projet de complément Excel ou PowerPoint.
 
 Effectuez l'une des opérations suivantes :
 
@@ -36,7 +36,7 @@ Le générateur crée le projet et installe les composants de nœud de la prise 
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Procédez comme suit pour configurer un projet nouveau ou existant de manière à utiliser un runtime partagé. Ces étapes supposent que vous avez créé votre projet à l’aide du [générateur Yeoman pour compléments Office](https://github.com/OfficeDev/generator-office).
+Procédez comme suit pour configurer un projet nouveau ou existant de manière à utiliser un runtime partagé. Ces étapes supposent que vous avez créé votre projet à l’aide du [générateur Yeoman pour compléments Office](yeoman-generator-overview.md).
 
 1. Démarrez Visual Studio Code, puis ouvrez le projet de complément Excel ou PowerPoint créé.
 1. Ouvrez le fichier **manifest.xml**.

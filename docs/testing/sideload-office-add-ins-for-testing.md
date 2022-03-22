@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Office dans Office sur le web
-description: Testez votre Office dans Office sur le Web chargement de version test.
+description: Testez votre Office dans votre Office sur le Web par chargement de version test.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8c2a9cc30093f6b307239367b9d81d31b2caf8
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 8b525074b16372093d400c8d9bf42553678dbc40
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855617"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711195"
 ---
 # <a name="sideload-office-add-ins-in-office-on-the-web-for-testing"></a>Chargement de version test des compléments Office dans Office sur le web
 
@@ -23,9 +23,9 @@ Le chargement de version secondaire varie d’une application hôte à l’autre
 
 ## <a name="sideload-an-office-add-in-in-office-on-the-web"></a>Chargement de version test d’un complément Office dans Office sur le web
 
-Ce processus est pris en charge **pour Excel**, **OneNote**, **PowerPoint** et **Word** uniquement. Pour les autres applications hôtes, consultez les instructions de chargement de version de version manuelle dans la section suivante. Cet exemple de projet suppose que vous utilisez un projet créé avec le générateur [Yeoman pour Office de recherche](https://github.com/OfficeDev/generator-office).
+Ce processus est pris en charge **pour Excel**, **OneNote**, **PowerPoint** et **Word** uniquement. Pour les autres applications hôtes, consultez les instructions de chargement de version de version manuelle dans la section suivante. Cet exemple de projet suppose que vous utilisez un projet créé avec le générateur [Yeoman pour Office de recherche](../develop/yeoman-generator-overview.md).
 
-1. Ouvrez [Office sur le Web](https://office.live.com/). À **l’aide de l’option** Créer, créez un document **dans Excel**, **OneNote**, **PowerPoint** ou **Word**. Dans ce nouveau document, **sélectionnez Partager** dans le ruban, **sélectionnez Copier** le lien et copiez l’URL.
+1. [Ouvrez Office sur le Web](https://office.live.com/). À **l’aide de l’option** Créer, créez un document **dans Excel**, **OneNote**, **PowerPoint** ou **Word**. Dans ce nouveau document, **sélectionnez Partager** dans le ruban, **sélectionnez Copier** le lien et copiez l’URL.
 
 1. Dans le répertoire racine de vos fichiers de projet Yo Office, ouvrez le **fichier package.json** . Dans la section **de config** de ce fichier, créez une `"document"` propriété. Collez l’URL que vous avez copiée comme valeur pour la `"document"` propriété. Par exemple, le vôtre ressemblera à ceci :
 
@@ -56,13 +56,13 @@ Ce processus est pris en charge **pour Excel**, **OneNote**, **PowerPoint** et *
 
 1. Votre add-in est installé. S’il s’agit d’une commande de add-in, elle doit apparaître dans le ruban ou le menu contexto. S’il s’agit d’un add-in du volet Des tâches, celui-ci doit apparaître.
 
-## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>Chargement de version Office de votre Office sur le Web manuellement
+## <a name="sideload-an-office-add-in-in-office-on-the-web-manually"></a>Chargement de version Office un Office sur le Web manuellement
 
 Cette méthode n’utilise pas la ligne de commande et peut être accomplie à l’aide de commandes uniquement dans l’application hôte (par exemple, Excel).
 
-1. Ouvrez [Office sur le Web](https://office.com/). Ouvrez un document **dans Excel**, **OneNote**, **PowerPoint** ou **Word**. Sous **l’onglet** Insérer dans le ruban de **la section Des** Office, sélectionnez **Ajouter**.
+1. [Ouvrez Office sur le Web](https://office.com/). Ouvrez un document **dans Excel**, **OneNote**, **PowerPoint** ou **Word**. Sous **l’onglet** Insérer dans le ruban de **la section Des** Office, sélectionnez **Ajouter**.
 
-1. Dans **la boîte Office** de dialogue Des Office, sélectionnez l’onglet  MES APPLICATIONS, choisissez Gérer mes **modules**, puis Télécharger **Mon add-in**.
+1. Dans **la boîte Office** de dialogue Des Office, sélectionnez l’onglet MES **MODULES**. Sélectionnez Gérer mes **applications, puis** Télécharger Mon **add-in**.
 
     ![La boîte de dialogue Office des applications avec une zone de texte dans le coin supérieur droit de la lecture « Gérer mes applications » et une zone de texte en dessous avec l’option « Télécharger Mon add-in ».](../images/office-add-ins-my-account.png)
 
@@ -73,13 +73,13 @@ Cette méthode n’utilise pas la ligne de commande et peut être accomplie à l
 1. Vérifiez que votre complément est installé. S’il s’agit d’une commande de complément, elle doit apparaître dans le ruban ou dans le menu contextuel. S’il s’agit d’un complément du volet Office, le volet doit apparaître.
 
 > [!NOTE]
-> Pour tester votre complément Office avec Microsoft Edge webview d’origine (EdgeHTML), une étape de configuration supplémentaire est requise. Dans une invite Windows commande, exécutez la ligne suivante : `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` Cela n’est pas nécessaire lorsque Office utilise Chromium WebView2 Edge basé sur Chromium web. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
+> Pour tester votre complément Office avec Microsoft Edge webview d’origine (EdgeHTML), une étape de configuration supplémentaire est requise. Dans une invite Windows commande, exécutez la ligne suivante : `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes` Cela n’est pas nécessaire lorsque Office utilise l’Chromium WebView2 edge basé sur Chromium. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
 ## <a name="sideload-an-office-add-in"></a>Chargement de version Office un module
 
-1. Connectez-vous à Microsoft 365 compte.
+1. Connectez-vous à votre Microsoft 365 client.
 
 1. Ouvrez le Lanceur App à l’extrémité gauche de la barre d’outils, sélectionnez **Excel**, **PowerPoint** ou **Word**, puis créez un document.
 

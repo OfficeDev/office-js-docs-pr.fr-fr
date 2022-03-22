@@ -3,19 +3,19 @@ title: Test unitaire dans les Office de test
 description: Découvrez comment unitér le code de test qui appelle Office API JavaScript
 ms.date: 02/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 39bd49f52087433a7095d0949bf22abd10dd0bb6
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: e7debe376ccd180549fec9c21f4bda970b88004e
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467756"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711188"
 ---
 # <a name="unit-testing-in-office-add-ins"></a>Test unitaire dans les Office de test
 
-Les tests unitaires vérifient les fonctionnalités de votre Office sans nécessiter de connexions réseau ou de service. Le code côté serveur de test unitaire et le code côté client qui n’appellent pas les API [JavaScript Office](../develop/understanding-the-javascript-api-for-office.md) sont les mêmes dans les applications Office que dans n’importe quelle application web, il ne nécessite donc aucune documentation spéciale. Toutefois, le code côté client qui appelle Office API JavaScript est difficile à tester. Pour résoudre ces problèmes, nous avons créé une bibliothèque pour simplifier la création d’objets Office facturants dans des tests unitaires : [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). La bibliothèque facilite les tests des manières suivantes :
+Les tests unitaires vérifient les fonctionnalités de votre application sans nécessiter de connexions réseau ou de service, y compris les connexions à Office application. Le code côté serveur de test unitaire et le code côté client qui n’appellent pas les API [JavaScript Office](../develop/understanding-the-javascript-api-for-office.md) sont les mêmes dans les applications Office que dans n’importe quelle application web. Il ne nécessite donc aucune documentation spéciale. Toutefois, le code côté client qui appelle Office API JavaScript est difficile à tester. Pour résoudre ces problèmes, nous avons créé une bibliothèque pour simplifier la création d’objets Office facturants dans des tests unitaires : [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). La bibliothèque facilite les tests des manières suivantes :
 
-- Les API JavaScript Office doivent s’initialiser dans un contrôle webview dans le contexte d’une application Office (Excel, Word, etc.), de sorte qu’elles ne peuvent pas être chargées dans le processus dans lequel les tests unitaires s’exécutent sur votre ordinateur de développement. La bibliothèque Office-Addin-Mock peut être importée dans vos fichiers de test, ce qui permet la simulation d’API JavaScript Office à l’intérieur du processus node.js dans lequel les tests s’exécutent.
-- Les [API spécifiques à l’application](../develop/understanding-the-javascript-api-for-office.md#api-models) ont [](../develop/application-specific-api-model.md#sync) des méthodes de chargement et de synchronisation qui doivent être appelées dans un ordre particulier par rapport à d’autres fonctions et entre elles.[](../develop/application-specific-api-model.md#load) En outre, `load` la méthode doit être appelée avec certains paramètres en fonction des propriétés des objets Office qui seront lues *par code* ultérieurement dans la fonction testée. Toutefois, les frameworks de test d’unité sont intrinsèquement sans état, `load` `sync` de sorte qu’ils ne peuvent pas garder un enregistrement de l’appel ou de l’appel des paramètres qui ont été passés à `load`. Les objets facturants que vous créez avec la bibliothèque Office-Addin-Mock ont un état interne qui assure le suivi de ces éléments. Cela permet aux objets facturables d’émuler le comportement d’erreur des objets Office réels. Par exemple, si la fonction testée tente de lire une propriété qui n’a `load`pas été passée pour la première fois, le test retourne une erreur semblable à ce que Office renvoyait.
+- Les API JavaScript Office doivent s’initialiser dans un contrôle webview dans le contexte d’une application Office (Excel, Word, etc.), de sorte qu’elles ne peuvent pas être chargées dans le processus dans lequel les tests unitaires s’exécutent sur votre ordinateur de développement. La bibliothèque Office-Addin-Mock peut être importée dans vos fichiers de test, ce qui permet la simulation des API JavaScript Office à l’intérieur du processus node.js dans lequel les tests s’exécutent.
+- Les [API spécifiques à l’application](../develop/understanding-the-javascript-api-for-office.md#api-models) ont [](../develop/application-specific-api-model.md#sync) des méthodes de chargement et de synchronisation qui doivent être appelées dans un ordre particulier par rapport à d’autres fonctions et entre elles.[](../develop/application-specific-api-model.md#load) En outre, `load` la méthode doit être appelée avec certains paramètres en fonction des propriétés des objets Office qui seront lues *par code* ultérieurement dans la fonction testée. Toutefois, les frameworks de test d’unité sont intrinsèquement sans état, `load` `sync` de sorte qu’ils ne peuvent pas garder un enregistrement de l’appel ou de l’appel des paramètres qui ont été passés à `load`. Les objets facturants que vous créez avec la bibliothèque Office-Addin-Mock ont un état interne qui assure le suivi de ces éléments. Cela permet aux objets facturables d’émuler le comportement d’erreur des objets Office réels. Par exemple, si la fonction en cours de test tente de lire une propriété qui n’a `load`pas été passée pour la première fois, le test retourne une erreur semblable à ce que Office renvoyait.
 
 La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisée avec n’importe quelle infrastructure de test d’unité JavaScript, telle que :
 
@@ -23,7 +23,7 @@ La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisé
 - [Mocha](https://mochajs.org/)
 - [Tso](https://jasmine.github.io/)
 
-Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha Office page d’accueil de la maquette de [Office-Addin- Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
+Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha sur Office page d’accueil [de l’outil -Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -54,7 +54,7 @@ npm install office-addin-mock --save-dev
    const myOfficeAddinFeature = require("../my-office-add-in");
    ```
 
-1. Créez un objet de données qui possède les propriétés et sous-propriétés dont vous avez besoin pour tester la fonction. Voici un exemple d’objet qui se Excel la propriété [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) et la méthode [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)). Il ne s’agit pas de l’objet mock final. Pensez-le comme un objet de début utilisé pour `OfficeMockObject` créer l’objet mock final.
+1. Créez un objet de données qui possède les propriétés et sous-propriétés dont vous avez besoin pour tester la fonction. Voici un exemple d’objet qui se Excel propriété [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) et la méthode [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)). Il ne s’agit pas de l’objet mock final. Pensez-le comme un objet de début utilisé pour `OfficeMockObject` créer l’objet mock final.
 
    ```javascript
    const mockData = {
@@ -109,7 +109,7 @@ npm install office-addin-mock --save-dev
 
 Les exemples de cette section utilisent Jest avec ses paramètres par défaut. Ces paramètres prise en charge les modules CommonJS. Consultez [la documentation de Jest](https://jestjs.io/docs/getting-started) pour savoir comment configurer Jest et node.js pour prendre en charge les modules ECMAScript et TypeScript. Pour exécuter l’un de ces exemples, exécutez les étapes suivantes.
 
-1. Créez un Office pour l’application Office hôte appropriée (par exemple, Excel ou Word). Une façon de le faire rapidement consiste à utiliser [l’outil Office Yo](https://github.com/OfficeDev/generator-office).
+1. Créez un Office pour l’application Office hôte appropriée (par exemple, Excel ou Word). Une façon de le faire rapidement consiste à utiliser le générateur [Yeoman pour Office de recherche](../develop/yeoman-generator-overview.md).
 1. À la racine du projet, [installez Jest](https://jestjs.io/docs/getting-started).
 1. [Installez l’outil office-addin-mock](#install-the-tool).
 1. Créez un fichier exactement comme le premier fichier de l’exemple et ajoutez-le au dossier qui contient les autres fichiers sources du projet, souvent appelés `\src`.

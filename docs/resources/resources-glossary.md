@@ -3,12 +3,12 @@ title: Office glossaire des termes des compléments
 description: Glossaire des termes couramment utilisés dans la documentation Office compléments.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c83f056f4eea9c8750bbf4c2d47a2888af96ec2
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 327c7a8bcc8c3ab21c437c50003e57d34fb933e0
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855727"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711216"
 ---
 # <a name="office-add-ins-glossary"></a>Office glossaire des compléments
 
@@ -22,13 +22,13 @@ Office les applications sont différentes de VBA, COM et VSTO, car elles offrent
 
 ## <a name="add-in-commands"></a>commandes de add-in
 
-**Les commandes de add-in** sont des éléments d’interface utilisateur, tels que des boutons et des menus, qui étendent Office’interface utilisateur de votre module. Lorsque les utilisateurs sélectionnent un élément de commande de add-in, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage du module dans un volet De tâches. Les commandes de votre add-in vous donnent l’apparence d’une partie de votre Office, ce qui donne aux utilisateurs davantage de confiance dans votre module. Pour en savoir plus, consultez les commandes de Excel[, PowerPoint, word](../design/add-in-commands.md) et de Outlook pour en [](../outlook/add-in-commands-for-outlook.md) savoir plus.
+**Les commandes de add-in** sont des éléments d’interface utilisateur, tels que des boutons et des menus, qui étendent Office’interface utilisateur de votre module. Lorsque les utilisateurs sélectionnent un élément de commande de add-in, ils lancent des actions telles que l’exécution de code JavaScript ou l’affichage du module dans un volet De tâches. Les commandes de votre Office, ce qui donne aux utilisateurs davantage de confiance dans votre add-in. Pour en savoir plus, consultez les commandes de Excel[, PowerPoint, word](../design/add-in-commands.md) et de Outlook pour [](../outlook/add-in-commands-for-outlook.md) en savoir plus.
 
 Voir aussi : [ruban, bouton du ruban](#ribbon-ribbon-button).
 
 ## <a name="application"></a>application
 
-**L’application** fait référence à une Office application. Les applications Office qui Office les Excel sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
+**L’application** fait référence à une Office application. Les applications Office qui Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
 
 Voir aussi : [client](#client), [hôte](#host), [Office application, Office client](#office-application-office-client).
 
@@ -40,7 +40,7 @@ Voir aussi : [API communes](#common-api).
 
 ## <a name="client"></a>client
 
-**Le** client fait généralement référence à une application Office client. Les applications Office, ou clients, qui Office les Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
+**Le client** fait généralement référence à une application Office client. Les applications Office, ou clients, qui prisent en charge les Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
 
 Voir aussi : [application](#application), [hôte](#host), [Office application, Office client](#office-application-office-client).
 
@@ -48,7 +48,7 @@ Voir aussi : [application](#application), [hôte](#host), [Office application, O
 
 Les API communes sont utilisées pour accéder à des fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres clients qui sont communs à plusieurs applications Office client. Ce modèle d’API utilise des[rappels](https://developer.mozilla.org/docs/Glossary/Callback_function), qui vous permettent de spécifier une seule opération dans chaque demande envoyée à l’application Office.
 
-Les API courantes ont été introduites Office 2013 et sont utilisées pour interagir avec Office 2013 ou ultérieure. Certaines API communes sont des API héritées du début des années 2010. Excel, PowerPoint et Word ont tous des fonctionnalités d’API communes, mais la plupart de ces fonctionnalités ont été remplacées ou remplacées par le modèle d’API propre à l’application. Les API spécifiques à l’application sont privilégiées lorsque cela est possible.
+Les API courantes ont été introduites avec Office 2013 et sont utilisées pour interagir avec Office 2013 ou ultérieure. Certaines API communes sont des API héritées du début des années 2010. Excel, PowerPoint et Word ont tous des fonctionnalités d’API communes, mais la plupart de ces fonctionnalités ont été remplacées ou remplacées par le modèle d’API propre à l’application. Les API spécifiques à l’application sont privilégiées lorsque cela est possible.
 
 D’autres API communes, telles que les API communes liées à Outlook, l’interface utilisateur et l’authentification, sont les API modernes et préférées à ces fins. Pour plus d’informations sur le modèle objet d’API commune, voir [Modèle d’objet API JavaScript commun](../develop/office-javascript-api-object-model.md).
 
@@ -56,13 +56,13 @@ Voir aussi : [API spécifique à l’application](#application-specific-api).
 
 ## <a name="content-add-in"></a>add-in de contenu
 
-**Les add-ins de** contenu sont des vues web ou des vues de navigateur web qui sont incorporées directement dans Excel, OneNote ou PowerPoint documents. Les compléments de contenu permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données. Utilisez les compléments de contenu lorsque vous souhaitez incorporer des fonctionnalités directement dans le document. Pour [en savoir plus, consultez](../design/content-add-ins.md) La Office de contenu.
+**Les add-ins de** contenu sont des vues web ou des vues de navigateur web qui sont incorporées directement dans Excel, OneNote ou PowerPoint documents. Les compléments de contenu permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données. Utilisez les compléments de contenu lorsque vous souhaitez incorporer des fonctionnalités directement dans le document. Pour [plus d’informations, voir Office de contenu](../design/content-add-ins.md).
 
 Voir aussi : [webview](#webview).
 
 ## <a name="content-delivery-network-cdn"></a>réseau de distribution de contenu (CDN)
 
-Un **réseau ou un CDN** de distribution **de contenu est** un réseau distribué de serveurs et de centres de données. Il offre généralement une disponibilité et des performances des ressources plus élevées par rapport à un seul serveur ou centre de données.
+Un **réseau ou un CDN** de distribution de contenu est un réseau distribué de serveurs et de centres de données. Il offre généralement une disponibilité et des performances des ressources plus élevées par rapport à un seul serveur ou centre de données.
 
 ## <a name="contoso"></a>Contoso
 
@@ -80,7 +80,7 @@ Voir aussi : [runtime JavaScript](#javascript-runtime), [runtime JavaScript part
 
 ## <a name="host"></a>host
 
-**L’hôte** fait généralement référence à une application Office’application. Les Office applications ou hôtes de Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
+**L’hôte** fait généralement référence à une application Office’application. Les applications Office, ou hôtes, qui prisent en charge les Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
 
 Voir aussi : [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
@@ -92,17 +92,17 @@ Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), 
 
 ## <a name="office-application-office-client"></a>Office application, client Office client
 
-**Office client fait** référence à une application Office client. Les applications Office, ou clients, qui Office les Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
+**Office client fait** référence à une application Office client. Les applications Office, ou clients, qui prisent en charge les Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
 
 Voir aussi : [application](#application), [client](#client), [hôte](#host).
 
 ## <a name="platform"></a>platform
 
-Une **plateforme** fait généralement référence au système d’exploitation qui exécute Office application. Les plateformes qui Office les Windows, Mac, iPad et les navigateurs web.
+Une **plateforme** fait généralement référence au système d’exploitation qui exécute l Office application. Les plateformes qui Office les Windows, Mac, iPad et les navigateurs web.
 
 ## <a name="quick-start"></a>démarrage rapide
 
-Un **démarrage rapide** est une description de haut niveau des compétences clés et des connaissances requises pour le fonctionnement de base d’un programme particulier. Dans la documentation Office, un démarrage rapide est une introduction au développement d’un application spécifique, telle que Outlook. Un démarrage rapide contient une série d’étapes qu’un développeur de compl?ment peut effectuer en environ 5 minutes, ce qui a pour effet de d finir un environnement de d veloppeur fonctionnel et de compl?ment fonctionnel.
+Un **démarrage rapide** est une description de haut niveau des compétences clés et des connaissances requises pour le fonctionnement de base d’un programme particulier. Dans la documentation Office de l’application, un démarrage rapide est une introduction au développement d’un module pour une application particulière, telle que Outlook. Un démarrage rapide contient une série d’étapes qu’un développeur de compl?ment peut effectuer en environ 5 minutes, ce qui a pour effet de d finir un environnement de d veloppeur fonctionnel et de compl?ment fonctionnel.
 
 Voir aussi : [didacticiel](#tutorial).
 
@@ -120,7 +120,7 @@ Voir : [Runtime JavaScript](#javascript-runtime).
 
 ## <a name="shared-javascript-runtime-shared-runtime"></a>runtime JavaScript partagé, runtime partagé
 
-Un **runtime JavaScript** partagé, ou **runtime** partagé, permet à tout le code de votre module, y compris le volet Des tâches, les commandes de add-in et les fonctions personnalisées, de s’exécuter dans le même runtime JavaScript et de continuer à s’exécuter même lorsque le volet Des tâches est fermé. Pour en savoir plus, voir Configurer votre Office pour utiliser un [runtime JavaScript](../develop/configure-your-add-in-to-use-a-shared-runtime.md) partagé et des Astuces pour utiliser le [runtime JavaScript](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) partagé dans votre Office.
+Un **runtime JavaScript** partagé, ou **runtime** partagé, permet à tout le code de votre module, y compris le volet Des tâches, les commandes de add-in et les fonctions personnalisées, de s’exécuter dans le même runtime JavaScript et de continuer à s’exécuter même lorsque le volet Des tâches est fermé. Pour en savoir plus, voir Configurer votre Office de Office pour utiliser un [runtime JavaScript](../develop/configure-your-add-in-to-use-a-shared-runtime.md) et un Astuces partagés pour utiliser le [runtime JavaScript](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) partagé dans votre Office.
 
 Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), [runtime JavaScript](#javascript-runtime).
 
@@ -132,7 +132,7 @@ Voir aussi : [webview](#webview).
 
 ## <a name="tutorial"></a>didacticiel
 
-Un **didacticiel** est un aide pédagogique conçu pour aider les personnes à apprendre à utiliser un produit ou une procédure. Dans le contexte des Office, un didacticiel guide un développeur de compl?ments tout au long du processus de d veloppe de compl?ment pour une application en particulier, par exemple Excel. Cela implique le suivi de 20 étapes ou plus et est un plus grand investissement en temps [qu’un démarrage rapide](#quick-start).
+Un **didacticiel** est un aide pédagogique conçu pour aider les personnes à apprendre à utiliser un produit ou une procédure. Dans le Office des applications, un didacticiel guide un développeur de compl?ments tout au long du processus de d veloppe de compl?ment pour une application en particulier, par exemple Excel. Cela implique le suivi de 20 étapes ou plus et est un plus grand investissement en temps [qu’un démarrage rapide](#quick-start).
 
 Voir aussi : [démarrage rapide](#quick-start).
 
@@ -162,7 +162,7 @@ Voir aussi : [fonction personnalisée](#custom-function).
 
 ## <a name="yeoman-generator-yo-office"></a>Générateur Yeoman, yo office
 
-Le [générateur Yeoman pour les Office](https://github.com/OfficeDev/generator-office) utilise l’outil [open source Yeoman](https://github.com/yeoman/yo) pour générer un Office par le biais de la ligne de commande. `yo office`est la commande qui exécute le générateur Yeoman pour Office de recherche. Les Office des modules et didacticiels utilisent le générateur Yeoman.
+Le [générateur Yeoman pour les Office utilise](../develop/yeoman-generator-overview.md) l’outil [open source Yeoman](https://github.com/yeoman/yo) pour générer un Office par le biais de la ligne de commande. `yo office`est la commande qui exécute le générateur Yeoman pour Office de recherche. Les Office des modules et didacticiels utilisent le générateur Yeoman.
 
 ## <a name="see-also"></a>Voir aussi
 
