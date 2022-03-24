@@ -1,16 +1,21 @@
 ---
-title: "Résolution des erreurs rencontrées par l’utilisateur avec des compléments\_Office"
-description: Découvrez comment résoudre les erreurs de développement dans Office des modules.
+title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
+description: Découvrez comment résoudre les erreurs de développement dans Office de développement.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c804f4e73dc28e6f401aca01cea68e6d2ce30917
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747103"
 ---
-
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
 Voici une liste des problèmes courants que vous pouvez rencontrer lors du développement d’un Office de développement.
 
 > [!TIP]
-> L’effacement Office cache de données résout souvent les problèmes liés au code obsolète. Cela garantit que le dernier manifeste est téléchargé, à l’aide des noms de fichiers actuels, du texte du menu et d’autres éléments de commande. Pour plus d’informations, voir [Effacer le cache Office cache.](clear-cache.md)
+> L’effacement Office cache de données résout souvent les problèmes liés au code obsolète. Cela garantit que le dernier manifeste est téléchargé, à l’aide des noms de fichiers actuels, du texte du menu et d’autres éléments de commande. Pour plus d’informations, voir [Effacer Office cache](clear-cache.md).
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>Le complément ne se charge pas dans le volet des tâches ou d’autres problèmes existent avec le manifeste du complément
 
@@ -58,7 +63,7 @@ myChart.id = "5";
 
 Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres causes, indiquez-nous l’outil de commentaires en bas de la page.
 
-- Si vous utilisez Visual Studio, il se peut qu’il y a un problème avec le chargement de version secondaire. Fermez toutes les instances de l’hôte Office et des Visual Studio. Redémarrez Visual Studio puis réessayez d’appuyer sur F5.
+- Si vous utilisez Visual Studio, il se peut qu’il y a un problème avec le chargement de version secondaire. Fermez toutes les instances de l’Office et des Visual Studio. Redémarrez Visual Studio puis réessayez d’appuyer sur F5.
 - Le manifeste du add-in a été supprimé de son emplacement de déploiement, tel qu’un déploiement centralisé, un catalogue SharePoint ou un partage réseau.
 - La valeur de [l’élément ID](../reference/manifest/id.md) dans le manifeste a été modifiée directement dans la copie déployée. Si, pour une raison quelconque, vous souhaitez modifier cet ID, supprimez d’abord le module de l’hôte Office, puis remplacez le manifeste d’origine par le manifeste modifié. Vous devez effacer le cache Office pour supprimer toutes les traces de l’original. Consultez [l’article Effacer Office cache pour](clear-cache.md) obtenir des instructions sur l’effacement du cache pour votre système d’exploitation.
 - Le manifeste du add-in a un qui n’est pas défini n’importe où dans la section [Resources](../reference/manifest/resources.md) du manifeste, ou il y a `resid` `resid` `<Resources>` une insmatance dans l’orthographe de l’endroit où il est utilisé et où il est défini dans la section.
@@ -79,7 +84,7 @@ Si vous utilisez des fonctionnalités plus nouvelles qui nécessitent des modifi
 
 **L’élément « Host » dans l’espace de noms 'http://schemas.microsoft.com/office/taskpaneappversionoverrides ' a l’élément enfant ' Runtimes' non valide dans l’espace de noms 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
-Si cela se produit, vous pouvez mettre à jour les fichiers XSD Visual Studio aux dernières versions. Les versions de schéma les plus récentes sont à l'[ [MS-APPENDIXMXML]: Appendix A: Full XML Schema](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
+Si cela se produit, vous pouvez mettre à jour les fichiers XSD Visual Studio les versions les plus récentes. Les versions de schéma les plus récentes sont à l'[ [MS-APPENDIXMXML]: Appendix A: Full XML Schema](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
 
 ### <a name="locate-the-xsd-files"></a>Rechercher les fichiers XSD
 

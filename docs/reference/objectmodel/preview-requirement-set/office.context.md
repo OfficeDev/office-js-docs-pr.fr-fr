@@ -1,20 +1,20 @@
 ---
-title: 'Office.context : ensemble de conditions requises de prévisualisation'
+title: Office.context - ensemble de conditions requises de prévisualisation
 description: Office. Membres d’objet de contexte disponibles pour Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres.
 ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: c418c3acb4b02c11f56e87d3a27745111c3e968e
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: a7013f37a1b9de698b1e03c3cc1099684ed8d972
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237755"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746125"
 ---
 # <a name="context-mailbox-preview-requirement-set"></a>context (ensemble de conditions requises d’aperçu de boîte aux lettres)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context fournit des interfaces partagées qui sont utilisées par les modules de Office applications. Cette liste ne documente que les interfaces utilisées par les Outlook les autres. Pour obtenir la liste complète de l’espace Office.context, voir la référence [Office.context dans l’API commune.](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true)
+Office.context fournit des interfaces partagées qui sont utilisées par les modules de Office applications. Cette liste ne documente que les interfaces utilisées par les Outlook les autres. Pour obtenir une liste complète de l’espace Office.context, voir la référence [Office.context dans l’API commune](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true).
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -28,12 +28,12 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
 | [auth](#auth-auth) | Composition<br>Lecture | [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true) | [IdentityAPI 1.3](../../requirement-sets/identity-api-requirement-sets.md) |
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-preview&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [officeTheme](#officetheme-officetheme) | Composition<br>Lecture | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
+| [mailbox](office.context.mailbox.md) | Composition<br>Lire | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [officeTheme](#officetheme-officetheme) | Composition<br>Lire | [OfficeTheme](/javascript/api/office/office.officetheme?view=outlook-js-preview&preserve-view=true) | [Aperçu](../preview-requirement-set/outlook-requirement-set-preview.md) |
 | [platform](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-preview&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [requirements](#requirements-requirementsetsupport) | Composition<br>Lecture | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Lecture | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -43,7 +43,7 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 
 #### <a name="auth-auth"></a>auth: [Auth](/javascript/api/office/office.auth?view=outlook-js-preview&preserve-view=true)
 
-Prend en charge l' [sign-on unique (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) en fournissant une méthode qui permet à l’application Office d’obtenir un jeton d’accès à l’application web du module. Indirectement, ceci active également le complément pour accéder aux données de Microsoft Graph de l’utilisateur sans que l’utilisateur ne doive se connecter une deuxième fois.
+Prend [en charge l’sign-on unique (SSO)](../../../outlook/authenticate-a-user-with-an-sso-token.md) en fournissant une méthode qui permet à l’application Office d’obtenir un jeton d’accès à l’application web du module. Indirectement, ceci active également le complément pour accéder aux données de Microsoft Graph de l’utilisateur sans que l’utilisateur ne doive se connecter une deuxième fois.
 
 ##### <a name="type"></a>Type
 
@@ -78,7 +78,7 @@ Office.context.auth.getAccessTokenAsync(function(result) {
 
 Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour la modification de l’élément.
 
-La valeur reflète le paramètre de langue d’édition actuel spécifié avec > Options d'> langue dans `contentLanguage` l’application cliente Office’édition.  
+La `contentLanguage` valeur reflète le paramètre **de** langue d’édition actuel spécifié avec > Options d'> **langue** dans l’application Office client.
 
 ##### <a name="type"></a>Type
 
@@ -150,7 +150,7 @@ console.log("Platform: " + contextInfo.platform);
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifié par l’utilisateur pour l’interface utilisateur de l’application Office client.
 
-La valeur reflète le paramètre de langue d’affichage actuel spécifié avec > Options d'> langue dans `displayLanguage` l’application cliente Office..  
+La `displayLanguage` valeur reflète le paramètre **de** langue d’affichage actuel spécifié avec > Options de > **langue** dans l’application cliente Office client.
 
 ##### <a name="type"></a>Type
 
@@ -225,7 +225,7 @@ Permet d’accéder aux propriétés pour les couleurs du thème Office.
 > [!NOTE]
 > Ce membre est uniquement pris en charge dans Outlook sur Windows.
 
-L’utilisation de couleurs de thème Office vous permet de coordonner le modèle de couleurs de votre application avec le thème Office actuel sélectionné par l’utilisateur avec l’interface utilisateur de thème du compte **> Office**> Office, qui est appliquée à toutes les applications clientes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
+L’utilisation de couleurs de thème Office vous permet de coordonner le modèle de couleurs de votre application avec le thème Office actuel sélectionné par l’utilisateur avec l’interface utilisateur de thème Du compte **> Office** de > Office, qui est appliquée à toutes les applications clientes Office. Les couleurs du thème Office s’utilisent avec les compléments de messagerie et du volet Office.
 
 ##### <a name="type"></a>Type
 
@@ -235,7 +235,7 @@ L’utilisation de couleurs de thème Office vous permet de coordonner le modèl
 
 |Nom| Type| Description|
 |---|---|---|
-|`bodyBackgroundColor`| String|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
+|`bodyBackgroundColor`| Chaîne|Obtient la couleur d’arrière-plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`bodyForegroundColor`| String|Obtient la couleur de premier plan du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlBackgroundColor`| String|Obtient la couleur d’arrière-plan du contrôle du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
 |`controlForegroundColor`| String|Obtient la couleur du contrôle du corps du thème Office sous la forme d’un triplet hexadécimal de couleurs.|
@@ -298,7 +298,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 #### <a name="requirements-requirementsetsupport"></a>requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-preview&preserve-view=true)
 
-Fournit une méthode pour déterminer quels ensembles de conditions requises sont pris en charge sur l’application et la plateforme actuelles.
+Fournit une méthode permettant de déterminer les ensembles de conditions requises pris en charge sur l’application et la plateforme actuelles.
 
 ##### <a name="type"></a>Type
 
@@ -326,7 +326,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
-L’objet vous permet de stocker et d’accéder aux données d’un module de messagerie stocké dans la boîte aux lettres d’un utilisateur, afin qu’il soit disponible pour ce dernier lorsqu’il est en cours d’exécution à partir d’un client Outlook utilisé pour accéder à cette boîte aux `RoamingSettings` lettres.
+`RoamingSettings` L’objet vous permet de stocker et d’accéder aux données d’un add-in de messagerie stocké dans la boîte aux lettres d’un utilisateur, afin qu’il soit disponible pour ce dernier lorsqu’il est en cours d’exécution à partir d’un client Outlook utilisé pour accéder à cette boîte aux lettres.
 
 ##### <a name="type"></a>Type
 

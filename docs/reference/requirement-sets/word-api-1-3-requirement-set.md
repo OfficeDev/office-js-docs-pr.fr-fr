@@ -4,8 +4,13 @@ description: Détails sur l’ensemble de conditions requises WordApi 1.3.
 ms.date: 03/09/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: d9e0d450b601845d4e11e0fd74652c4e167f802c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746035"
 ---
-
 # <a name="whats-new-in-word-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Word
 
 WordApi 1.3 a ajouté une prise en charge supplémentaire des contrôles de contenu et des paramètres au niveau du document.
@@ -19,7 +24,7 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 |[Application](/javascript/api/word/word.application)|[createDocument(base64File?: string)](/javascript/api/word/word.application#word-word-application-createdocument-member(1))|Crée un document à l’aide d’un fichier .docx encodé en base 64 facultatif.|
 |[Corps](/javascript/api/word/word.body)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.body#word-word-body-getrange-member(1))|Obtient la totalité du corps, ou le point de début ou de fin du corps, sous la forme d’une plage.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.body#word-word-body-inserttable-member(1))|Insère un tableau avec le nombre spécifié de lignes et de colonnes.|
-||[lists](/javascript/api/word/word.body#word-word-body-lists-member)|Obtient la collection d’objets list dans le corps.|
+||[list](/javascript/api/word/word.body#word-word-body-lists-member)|Obtient la collection d’objets list dans le corps.|
 ||[parentBody](/javascript/api/word/word.body#word-word-body-parentbody-member)|Obtient le corps parent du corps.|
 ||[parentBodyOrNullObject](/javascript/api/word/word.body#word-word-body-parentbodyornullobject-member)|Obtient le corps parent du corps.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.body#word-word-body-parentcontentcontrolornullobject-member)|Obtient le contrôle de contenu qui contient le corps.|
@@ -31,7 +36,7 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 |[ContentControl](/javascript/api/word/word.contentcontrol)|[getRange(rangeLocation?: Word.RangeLocation)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-getrange-member(1))|Obtient le contrôle de contenu entier, ou le point de début ou de fin du contrôle de contenu, sous la forme d’une plage.|
 ||[getTextRanges(endingMarks: string[], trimSpacing?: boolean)](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-gettextranges-member(1))|Obtient les plages de texte dans le contrôle de contenu à l’aide de signes de ponctuation et/ou d’autres marques de fin.|
 ||[insertTable(rowCount: number, columnCount: number, insertLocation: Word.InsertLocation, values?: string[][])](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-inserttable-member(1))|Insère un tableau avec le nombre spécifié de lignes et de colonnes dans un contrôle de contenu ou à proximité de celui-ci.|
-||[lists](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|Obtient la collection d’objets list du contrôle de contenu.|
+||[list](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-lists-member)|Obtient la collection d’objets list du contrôle de contenu.|
 ||[parentBody](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentbody-member)|Obtient le corps parent du contrôle de contenu.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parentcontentcontrolornullobject-member)|Obtient le contrôle de contenu qui contient le contrôle de contenu spécifié.|
 ||[parentTable](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-parenttable-member)|Obtient le tableau qui contient le contrôle de contenu.|
@@ -158,7 +163,7 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[intersectWith(range: Word.Range)](/javascript/api/word/word.range#word-word-range-intersectwith-member(1))|Retourne une nouvelle plage en tant qu’intersection de cette plage avec une autre.|
 ||[intersectWithOrNullObject(range: Word.Range)](/javascript/api/word/word.range#word-word-range-intersectwithornullobject-member(1))|Retourne une nouvelle plage en tant qu’intersection de cette plage avec une autre.|
 ||[isEmpty](/javascript/api/word/word.range#word-word-range-isempty-member)|Vérifie si la longueur de la plage est zéro.|
-||[lists](/javascript/api/word/word.range#word-word-range-lists-member)|Obtient la collection d’objets de liste figurant dans la plage.|
+||[list](/javascript/api/word/word.range#word-word-range-lists-member)|Obtient la collection d’objets de liste figurant dans la plage.|
 ||[parentBody](/javascript/api/word/word.range#word-word-range-parentbody-member)|Obtient le corps parent de la plage.|
 ||[parentContentControlOrNullObject](/javascript/api/word/word.range#word-word-range-parentcontentcontrolornullobject-member)|Obtient le contrôle de contenu qui contient la plage.|
 ||[parentTable](/javascript/api/word/word.range#word-word-range-parenttable-member)|Obtient le tableau qui contient la plage.|

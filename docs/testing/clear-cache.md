@@ -1,14 +1,14 @@
 ---
 title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
-ms.date: 01/27/2022
+ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2c2b22ececbf293578c9467269c4ad6779eb9aea
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 04a329e9e7289f90b02b9307c67eef2818191221
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263092"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711230"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -21,11 +21,11 @@ En outre, si vous apportez des modifications au manifeste de votre complément (
 
 ## <a name="clear-the-office-cache-on-windows"></a>Vider le cache Office sur Windows
 
-Il existe trois façons d’effacer le cache Office sur un ordinateur Windows : automatiquement, manuellement et à l’aide des outils de développement Microsoft Edge. Les méthodes sont décrites dans les sous-sections suivantes.
+Il existe trois façons d’effacer le cache Office sur un ordinateur Windows : automatiquement, manuellement et à l’aide des outils de développement Microsoft Edge. Les méthodes sont décrites dans les sous-sections suivantes.
 
 ### <a name="automatically"></a>Automatiquement
 
-Cette méthode est recommandée pour les ordinateurs liés au développement de compléments. Si votre version d’Office sur Windows est 2108 ou ultérieure, les étapes suivantes configurent le cache Office pour qu’il soit effacé lors de la prochaine réouverture d’Office.
+Cette méthode est recommandée pour les ordinateurs de développement de complément. Si votre version d’Office sur Windows est 2108 ou ultérieure, les étapes suivantes configurent le cache Office pour qu’il soit effacé lors de la prochaine réouverture d’Office.
 
 > [!NOTE]
 > La méthode automatique n’est pas prise en charge pour Outlook.

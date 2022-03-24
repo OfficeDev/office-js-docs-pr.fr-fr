@@ -3,23 +3,23 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.2
 description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.2.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 75acb3ae5122c4edb8d0661b3cb08a5cc4d4d15a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 14f94bf8b1a1b3560e46f5d4d75955606af8cab7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152868"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743676"
 ---
 # <a name="outlook-add-in-api-requirement-set-12"></a>Ensemble de conditions requises de l’API du complément Outlook 1.2
 
-Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook de gestion.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-12"></a>Nouveautés de la version 1.2
 
-L’ensemble de conditions requises 1.2 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md). Désormais, les compléments peuvent insérer du texte au niveau du curseur de l’utilisateur, soit dans l’objet ou le corps du message.
+L’ensemble de conditions requises 1.2 inclut toutes les fonctionnalités de l’ensemble [de conditions requises 1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md). Désormais, les compléments peuvent insérer du texte au niveau du curseur de l’utilisateur, soit dans l’objet ou le corps du message.
 
 ### <a name="change-log"></a>Journal des modifications
 

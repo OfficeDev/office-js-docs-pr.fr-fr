@@ -3,8 +3,13 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: c84a5cd9079b1af754375dfc803284165ccea6e9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743829"
 ---
-
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
 Vous pouvez utiliser l’[API de dialogue Office](/javascript/api/office/office.ui) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
@@ -81,7 +86,7 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 > [!NOTE]
 >
 > - Pour plus de clarté, dans cette section, nous appelons le message cible la *page* hôte, mais à proprement parler, les messages sont dirigés vers le *runtime JavaScript* dans le volet Des tâches (ou le runtime qui héberge un fichier de [fonction).](../reference/manifest/functionfile.md) La distinction n’est significative que dans le cas de la messagerie entre domaines. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](#cross-domain-messaging-to-the-host-runtime).
-> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque d’API JavaScript Office est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit initialiser le module. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
+> - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Des tâches, sauf si la bibliothèque Office API JavaScript est chargée dans la page. (Comme pour toute page qui utilise la bibliothèque Office API JavaScript, le script de la page doit initialiser le module. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).)
 
 Le code de la boîte de dialogue utilise [la fonction messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un blob XML, un JSON stringified ou toute autre chaîne qui peut être sérialisée en chaîne ou castée en chaîne. Voici un exemple.
 
@@ -93,7 +98,7 @@ if (loginSuccess) {
 
 > [!IMPORTANT]
 > - La `messageParent` fonction est l’une *des* deux seules OFFICE JS qui peuvent être appelées dans la boîte de dialogue.
-> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported`. Pour plus d’informations à ce sujet, voir [Spécifier les Office applications et les api requises](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans Outlook 2016'achat à prix seul (c’est-à-dire, la version MSI).
+> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported`. Pour plus d’informations à ce sujet, voir [Spécifier les Office applications et les api requises](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge Outlook 2016'achat à prix seul (c’est-à-dire, la version MSI).
 
 Dans l’exemple suivant, `googleProfile` est une version convertie en chaîne du profil Google de l’utilisateur.
 
@@ -294,7 +299,7 @@ Office.onReady()
     });
 ```
 
-Ensuite, définissez le `onMessageFromParent` handler. Le code suivant poursuit l’exemple de la section précédente. Notez Office passe un argument au handler `message` et que la propriété de l’objet argument contient la chaîne de la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue afin qu’il corresponde au nouveau nom de feuille de calcul.
+Ensuite, définissez le `onMessageFromParent` handler. Le code suivant poursuit l’exemple de la section précédente. Notez Office transmet un argument au handler `message` et que la propriété de l’objet argument contient la chaîne de la page hôte. Dans cet exemple, le message est reconverti en objet et jQuery est utilisé pour définir le titre supérieur de la boîte de dialogue afin qu’il corresponde au nouveau nom de feuille de calcul.
 
 ```javascript
 function onMessageFromParent(arg) {
@@ -423,7 +428,7 @@ Voir [Gestion des erreurs et des événements dans la boîte de dialogue Office]
 
 Découvrez les pièges et pratiques recommandées pour l’API de boîte de dialogue Office dans les [Meilleures pratiques et règles pour l’API de boîte de dialogue Office](dialog-best-practices.md).
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>Échantillons
 
 Tous les exemples suivants utilisent `displayDialogAsync`. Certains ont des serveurs NodeJS et d’autres des serveurs basés sur ASP.NET/IIS, mais la logique d’utilisation de la méthode est la même quelle que soit la façon dont le côté serveur du module est implémenté.
 
@@ -438,13 +443,13 @@ Tous les exemples suivants utilisent `displayDialogAsync`. Certains ont des serv
 - [Complément Office Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
 - [SSO NodeJS pour complément Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 - [Office’ssO ASPNET du add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-- [Office exemple de monétisation SAAS de l’AAS](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
+- [Office l’exemple de monétisation SAAS d’un add-in](https://github.com/OfficeDev/office-add-in-saas-monetization-sample)
 - [Outlook de microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)
-- [Outlook’SSO du module de 2013](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Outlook’sso du add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Outlook visionneuse de jetons de add-in](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlook message actionnable du add-in](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook partage de OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
-- [PowerPoint de microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [PowerPoint d’insertion du Graph ASPNET](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
 - [Excel scénario d’runtime partagé](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)
 - [Excel des quickBooks ASPNET de la solution de recherche](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
 - [Word Add-in JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact)
@@ -452,4 +457,4 @@ Tous les exemples suivants utilisent `displayDialogAsync`. Certains ont des serv
 - [Word Add-in AngularJS Client OAuth](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
 - [Complément Office dans Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 - [Office de OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
-- [Office code de modèles de conception de l’UX de l’UX de l’autre](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+- [Office code de modèles de conception de l’UX de l’UX de l’ajout](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)

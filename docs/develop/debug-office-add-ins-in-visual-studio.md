@@ -1,16 +1,16 @@
 ---
 title: Déboguer des compléments Office dans Visual Studio
-description: Utiliser Visual Studio pour déboguer des compléments Office dans le client de bureau Office sous Windows
+description: Utilisez Visual Studio pour déboguer des Office dans le client de bureau Office sur Windows.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 08f8b48666955db413e3bdaa6c329326f80bdb07
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340259"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743524"
 ---
-# <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
+# <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
 Cet article explique comment déboguer du code côté client dans des modules de Office qui sont créés avec l’un des modèles de projet de Office Add-in dans Visual Studio 2022.  Pour plus d’informations sur le débogage de code côté serveur dans les Office, voir Vue d’ensemble du débogage de Office [Add-ins - Côté serveur ou côté client](../testing/debug-add-ins-overview.md#server-side-or-client-side) ?
 

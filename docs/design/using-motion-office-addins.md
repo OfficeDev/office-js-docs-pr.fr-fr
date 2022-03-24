@@ -3,12 +3,12 @@ title: Utilisation du mouvement dans les compléments Office
 description: Obtenez les meilleures pratiques en matière d’utilisation des transitions, du mouvement ou de l’animation dans Office des modules.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c0b9af5c11c6b2363b6198fc0ebeaf4cb524820
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3d5d67e50f3e1d2a0883c35bf65d23098dda6868
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150080"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743139"
 ---
 # <a name="using-motion-in-office-add-ins"></a>Utilisation du mouvement dans les compléments Office
 
@@ -33,7 +33,7 @@ Les éléments standard utilisés dans un complément peuvent intégrer du mouve
 
 ## <a name="use-expected-motions"></a>Utiliser des mouvements attendus
 
-Nous vous recommandons d’utiliser [Fluent](https://developer.microsoft.com/fluentui#/) interface utilisateur pour créer une connexion visuelle avec la plateforme Office, et nous encourageons également l’utilisation [d’animations](https://developer.microsoft.com/fluentui#/styles/web/motion) d’interface utilisateur Fluent pour créer des mouvements qui s’alignent sur le langage de mouvement Fabric.
+Nous vous recommandons d’utiliser [l’interface](https://developer.microsoft.com/fluentui#/) utilisateur Fluent pour créer une connexion visuelle avec la plateforme Office, et nous encourageons également l’utilisation [d’animations](https://developer.microsoft.com/fluentui#/styles/web/motion) d’interface utilisateur Fluent pour créer des mouvements qui s’alignent sur le langage de mouvement Fabric.
 
 Elle permet l’intégration en toute transparence dans Office. Elle vous aide à créer des expériences davantage ressenties qu’observées. Les classes CSS d’animation fournissent des informations de direction, d’entrée/sortie et de durée qui renforcent les modèles mentaux d’Office et offrent aux clients la possibilité d’apprendre à interagir avec votre complément.
 
@@ -58,9 +58,9 @@ Prenez en compte la taille de la zone de dessin HTML (volet des tâches, boîte 
 | Utilisez les [durées recommandées de mouvement](https://developer.microsoft.com/fluentui#/styles/web/motion). | N’utilisez pas trop d’animations. Évitez de créer des expériences qui enjolivent seulement l’interface utilisateur et détournent l’attention de vos clients.
 | Suivez [les courbes d’accélération recommandées](/windows/uwp/design/motion/timing-and-easing#easing-in-fluent-motion).  |Ne mettez pas en mouvement les éléments de manière saccadée ou décousue. Évitez les anticipations, les rebonds, les élastiques ou autres effets qui émulent la physique du monde naturel.|
 
-![IMAGE GIF qui affiche le chargement des vignettes à l’aide d’une fondue légère à côté d’une image GIF qui affiche le chargement des vignettes avec rebond.](../images/add-in-motion-character.gif)
+![GIF qui affiche le chargement des vignettes à l’aide d’une fondue légère à côté d’une image GIF qui affiche le chargement des vignettes avec rebond.](../images/add-in-motion-character.gif)
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Fluent Recommandations en matière d’animation d’interface utilisateur](https://developer.microsoft.com/fluentui#/styles/web/motion)
+* [Fluent’animation de l’interface utilisateur](https://developer.microsoft.com/fluentui#/styles/web/motion)
 * [Mouvement pour les applications de la plateforme Windows universelle](/windows/uwp/design/motion)

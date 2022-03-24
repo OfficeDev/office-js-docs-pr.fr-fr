@@ -3,12 +3,12 @@ title: Chargement du DOM et de l’environnement d’exécution
 description: Chargez le DOM et Office’environnement d’runtime des add-ins.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: db6b8667678e6a38c0932faf66fc2b0b63cc7a9b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 1dac1980c5f5068451893d24e24d0e0c3da3a6f5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150026"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743783"
 ---
 # <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
 
@@ -18,7 +18,7 @@ Un complément doit s’assurer que le DOM et l’environnement d’exécution d
 
 La figure suivante illustre le flux des événements impliqués au démarrage d’un complément de contenu ou du volet Office dans Excel, PowerPoint, Project ou Word.
 
-![Flow événements lors du démarrage d’un module de contenu ou du volet Des tâches.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
+![Flow d’événements lors du démarrage d’un module de contenu ou du volet Des tâches.](../images/office15-app-sdk-loading-dom-agave-runtime.png)
 
 Les événements suivants se produisent lors du démarrage d’un module de contenu ou du volet Des tâches.
 
@@ -30,9 +30,9 @@ Les événements suivants se produisent lors du démarrage d’un module de cont
 
     Les deux étapes suivantes, 4 et 5, se produisent de manière asynchrone et parallèlement. C’est pour cela que le code de votre complément doit veiller à ce que le chargement du DOM et de l’environnement d’exécution du complément soit terminé avant de continuer.
 
-4. Le contrôle de navigateur charge le DOM et le corps HTML, puis appelle le responsable de l’événement `window.onload` pour l’événement.
+4. Le contrôle de navigateur charge le DOM et le corps HTML, puis appelle le responsable de l’événement pour l’événement `window.onload` .
 
-5. L’application cliente Office charge l’environnement d’utilisation, qui télécharge et met en cache les fichiers de bibliothèque d’API JavaScript Office à partir du serveur de réseau de distribution de contenu (CDN), puis appelle le responsable des événements du module pour [l’événement d’initialisation](/javascript/api/office#Office_initialize_reason_) de l’objet [Office,](/javascript/api/office) si un handler lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady` , voir [Initialiser votre add-in](initialize-add-in.md).
+5. L’application cliente Office charge l’environnement d’utilisation, qui télécharge et met en cache les fichiers de bibliothèque d’API JavaScript Office à partir du serveur de réseau de distribution de contenu (CDN), puis appelle le responsable des événements du module pour [l’événement d’initialisation](/javascript/api/office#Office_initialize_reason_) de l’objet [Office](/javascript/api/office), si un responsable lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady`, voir [Initialiser votre add-in](initialize-add-in.md).
 
 6. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
 
@@ -42,7 +42,7 @@ La figure suivante illustre le flux des événements impliqués au démarrage d�
 
 ![Flow d’événements au démarrage Outlook de votre module.](../images/outlook15-loading-dom-agave-runtime.png)
 
-Les événements suivants se produisent lorsqu’un Outlook démarre.
+Les événements suivants se produisent lorsqu’un Outlook de démarrage.
 
 1. Lorsqu’Outlook démarre, il lit les manifestes XML pour les compléments Outlook qui ont été installés pour le compte de messagerie de l’utilisateur.
 
@@ -52,9 +52,9 @@ Les événements suivants se produisent lorsqu’un Outlook démarre.
 
 4. Si l’utilisateur clique sur le bouton pour démarrer le complément Outlook, Outlook ouvre la page HTML dans un contrôle de navigateur. Les deux étapes suivantes, 5 et 6, se produisent en parallèle.
 
-5. Le contrôle de navigateur charge le DOM et le corps HTML, puis appelle le responsable de l’événement `onload` pour l’événement.
+5. Le contrôle de navigateur charge le DOM et le corps HTML, puis appelle le responsable de l’événement pour l’événement `onload` .
 
-6. Outlook charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](/javascript/api/office#Office_initialize_reason_) de l’objet [Office](/javascript/api/office) du complément si un gestionnaire lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady` , voir [Initialiser votre add-in](initialize-add-in.md).
+6. Outlook charge l’environnement d’exécution, lequel télécharge et met en cache l’API JavaScript pour les fichiers de bibliothèque JavaScript à partir du serveur de réseau de distribution de contenu, puis appelle le gestionnaire d’événements du complément pour l’événement [initialize](/javascript/api/office#Office_initialize_reason_) de l’objet [Office](/javascript/api/office) du complément si un gestionnaire lui a été affecté. Il vérifie alors également si des rappels (ou des fonctions `then()` chaînées) ont été transmis (ou chaînées) au gestionnaire `Office.onReady`. Pour plus d’informations sur la distinction entre `Office.initialize` et `Office.onReady`, voir [Initialiser votre add-in](initialize-add-in.md).
 
 7. Lorsque le chargement du DOM et du corps HTML est terminé et que le complément finit de s’initialiser, la fonction principale du complément peut poursuivre.
 

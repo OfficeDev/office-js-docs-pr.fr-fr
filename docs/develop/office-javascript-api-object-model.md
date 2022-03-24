@@ -1,10 +1,15 @@
 ---
 title: Modèle d’objet d’API JavaScript courant
-description: En savoir plus sur le modèle Office’objet API courant JavaScript
+description: Découvrez le modèle Office’objet API courant JavaScript.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 381d3089b47fe04f403459ecae249bf68f7ca872
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743774"
 ---
-
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
@@ -59,7 +64,7 @@ Pour vous aider à comprendre comment fonctionnent les méthodes d’accès aux 
 
  **S’applique à :** types de complément de contenu et du volet Office
 
-Pour créer des extensions qui fonctionnent en toute transparence sur différents documents Office, l’API JavaScript Office extrait les particularités de chaque application Office par le biais de types de données courants et la possibilité de forcer différents contenus de document en trois types de données courants.
+Pour créer des extensions qui fonctionnent de façon transparente sur différents documents Office, l’API JavaScript Office extrait les particularités de chaque application Office par le biais de types de données courants et la possibilité de forcer différents contenus de document en trois types de données courants.
 
 #### <a name="common-data-types"></a>Type de données communs
 

@@ -1,11 +1,16 @@
 ---
-title: Excel’ensemble de conditions requises de l’API JavaScript 1.12
+title: Excel l’ensemble de conditions requises de l’API JavaScript 1.12
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.12.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 3c88f8c472ba2ac08ad8c96128616b290dcbb1f1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747065"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-112"></a>Nouveautés de l Excel API JavaScript 1.12
 
 ExcelApi 1.12 a augmenté la prise en charge des formules dans les plages en ajoutant des API pour suivre les tableaux dynamiques et trouver les antécédents directs d’une formule. Il a également ajouté le contrôle API des filtres de tableau croisé dynamique. Des améliorations ont également été apportées dans les zones de fonctionnalités de commentaires, de paramètres de culture et de propriétés personnalisées.

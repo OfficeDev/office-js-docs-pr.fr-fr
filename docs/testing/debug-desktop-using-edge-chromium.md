@@ -3,12 +3,12 @@ title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code 
 description: Apprenez à déboguer les modules complémentaires Office qui utilisent Microsoft Edge WebView2 (basé sur Chromium) dans VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5e2a3622537702be48ac1653a336f6cf0f0d2485
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340154"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711013"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
@@ -33,11 +33,11 @@ Ce mode de débogage est dynamique et vous permet de définir des points d'arrê
 
 ## <a name="use-the-visual-studio-code-debugger"></a>Utiliser le débogueur de Visual Studio Code
 
-Ces instructions supposent que vous avez de l'expérience dans l'utilisation de la ligne de commande, que vous comprenez les bases de JavaScript et que vous avez créé un projet de module complémentaire Office avant d'utiliser le générateur Yo Office. Si vous ne l'avez jamais fait auparavant, envisagez de consulter l'un de nos didacticiels, comme [le didacticiel sur le complément Office Excel](../tutorials/excel-tutorial.md).
+Ces instructions supposent que vous avez l’expérience de l’utilisation de la ligne de commande, que vous comprenez JavaScript de base et que vous avez créé un projet de complément Office avant d’utiliser le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md). Si vous ne l’avez pas encore fait, consultez l’un de nos didacticiels, comme le didacticiel [complément Excel Office](../tutorials/excel-tutorial.md).
 
 1. La première étape dépend du projet et de la façon dont il a été créé.
 
-   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez [le générateur Yeoman pour les modules complémentaires Office](https://github.com/OfficeDev/generator-office). Pour ce faire, utilisez l'un de nos guides de démarrage rapide, tel que [le guide de démarrage rapide du module complémentaire Outlook](../quickstarts/outlook-quickstart.md). 
+   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez [le générateur Yeoman pour les modules complémentaires Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l'un de nos guides de démarrage rapide, tel que [le guide de démarrage rapide du module complémentaire Outlook](../quickstarts/outlook-quickstart.md). 
    - Si vous souhaitez déboguer un projet existant créé avec Yo Office, passez à l’étape suivante.
    - Si vous souhaitez déboguer un projet existant qui n'a pas été créé avec Yo Office, suivez la procédure de [l'annexe A](#appendix-a), puis revenez à l'étape suivante de cette procédure.
 

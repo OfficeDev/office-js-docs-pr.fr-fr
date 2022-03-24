@@ -3,12 +3,12 @@ title: Exécuter un cote dans votre complément Office lors de l’ouverture du 
 description: Découvrez comment exécuter du code dans votre Office de votre add-in à l’ouverture du document.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b14d6e9d03bdb9dcec57f76e4ad6b8dbfbc66fe4
-ms.sourcegitcommit: 61c183a5d8a9d889b6934046c7e4a217dc761b80
+ms.openlocfilehash: 20cd7a90f34c0141ca166119ceae92960a904595
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/16/2022
-ms.locfileid: "62855547"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744078"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Exécuter un cote dans votre complément Office lors de l’ouverture du document
 

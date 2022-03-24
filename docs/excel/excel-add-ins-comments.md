@@ -3,12 +3,12 @@ title: Utiliser des commentaires à l’aide de l Excel API JavaScript
 description: Informations sur l’utilisation des API pour ajouter, supprimer et modifier des commentaires et des threads de commentaires.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bcf364d120693e503eb74b6ea6744265fec0008c
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 2b8994ed9941eec1321b4fbc5029388cd82a65fc
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340133"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744812"
 ---
 # <a name="work-with-comments-using-the-excel-javascript-api"></a>Utiliser des commentaires à l’aide de l Excel API JavaScript
 

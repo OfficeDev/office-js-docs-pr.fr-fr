@@ -3,8 +3,13 @@ title: Insérer des diapositives dans une présentation PowerPoint présentation
 description: Découvrez comment insérer des diapositives d’une présentation dans une autre.
 ms.date: 03/07/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: b08dd8bd82e5d4f4f86114630e9238b6c43b6ae7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747027"
 ---
-
 # <a name="insert-slides-in-a-powerpoint-presentation"></a>Insérer des diapositives dans une présentation PowerPoint présentation
 
 Un PowerPoint peut insérer des diapositives d’une présentation dans la présentation actuelle à l’aide PowerPoint bibliothèque JavaScript propre à l’application. Vous pouvez contrôler si les diapositives insérées conservent la mise en forme de la présentation source ou la mise en forme de la présentation cible.
@@ -70,7 +75,7 @@ Il existe de nombreuses façons de convertir un fichier en base64. Le langage de
 
 ## <a name="insert-slides-with-insertslidesfrombase64"></a>Insérer des diapositives avec insertSlidesFromBase64
 
-Votre add-in insère des diapositives d’une autre PowerPoint présentation dans la présentation actuelle à l’aide de la méthode [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)). Voici un exemple simple dans lequel toutes les diapositives de la présentation source sont insérées au début de la présentation en cours et les diapositives insérées conservent la mise en forme du fichier source. Notez qu’il `chosenFileBase64` s’agit d’une variable globale qui contient une version codée en base 64 d’PowerPoint de présentation.
+Votre add-in insère des diapositives d’une autre PowerPoint dans la présentation actuelle à l’aide de la méthode [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)). Voici un exemple simple dans lequel toutes les diapositives de la présentation source sont insérées au début de la présentation en cours et les diapositives insérées conservent la mise en forme du fichier source. Notez qu’il `chosenFileBase64` s’agit d’une variable globale qui contient une version codée en base 64 d’PowerPoint de présentation.
 
 ```javascript
 async function insertAllSlides() {

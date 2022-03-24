@@ -1,19 +1,19 @@
 ---
 title: Authentifier un utilisateur avec un jeton identité dans un complément
 description: Découvrez comment utiliser le jeton d’identité fourni par un complément Outlook pour implémenter l’authentification unique SSO dans votre service.
-ms.date: 10/31/2019
+ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff51cd4759d4b6e59fd18d6a613a4e6a85f2e152
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153204"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744620"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Authentifier un utilisateur avec un jeton d’identité pour Exchange
 
 Les jetons d’identité d’utilisateur Exchange sont un moyen pour vos compléments d'identifier leurs utilisateurs de manière unique.
- En établissant l’identité de l’utilisateur, vous pouvez implémenter un schéma d’authentification unique (SSO) pour votre service back-end qui permet aux clients qui utilisent des applications Outlook de se connecter à votre service sans se connecter. Pour plus d’informations sur l’utilisation de ce type de jeton, voir [Jeton d’identité d’utilisateur Exchange](authentication.md#exchange-user-identity-token). Dans cet article, nous allons examiner une méthode simple pour authentifier un utilisateur sur votre back end à l’aide d’un jeton d’identité Exchange.
+ En établissant l’identité de l’utilisateur, vous pouvez implémenter un schéma d’authentification unique (SSO) pour votre service back-end qui permet aux clients qui utilisent des modules complémentaires Outlook de se connecter à votre service sans se connecter. Pour plus d’informations sur l’utilisation de ce type de jeton, voir [Jeton d’identité d’utilisateur Exchange](authentication.md#exchange-user-identity-token). Dans cet article, nous allons examiner une méthode simple pour authentifier un utilisateur sur votre back end à l’aide d’un jeton d’identité Exchange.
 
 
 > [!IMPORTANT]
@@ -52,7 +52,7 @@ Votre service principal peut calculer un ID d’utilisateur unique à partir du 
 
 ### <a name="generate-a-unique-id"></a>Génération d’un ID unique
 
-Nous vous recommandons d’utiliser une combinaison des propriétés `msexchuid` et `amurl`. Par exemple, vous pouvez concaténer les deux valeurs et générer une chaîne codée au format base64. Cette valeur peut être générée en toute fiabilité à partir du jeton à chaque fois. Ainsi, vous pouvez mapper un jeton d’identité d’utilisateur Exchange à l’utilisateur dans votre système.
+Utilisez une combinaison des propriétés `msexchuid` et des `amurl` propriétés. Par exemple, vous pouvez concaténer les deux valeurs et générer une chaîne codée au format base64. Cette valeur peut être générée en toute fiabilité à partir du jeton à chaque fois. Ainsi, vous pouvez mapper un jeton d’identité d’utilisateur Exchange à l’utilisateur dans votre système.
 
 ### <a name="check-the-user"></a>Vérification de l’utilisateur
 

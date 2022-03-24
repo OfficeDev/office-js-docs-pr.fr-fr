@@ -1,12 +1,17 @@
 ---
-title: Excel conditions requises de l’API JavaScript 1.8
+title: Excel l’ensemble de conditions requises de l’API JavaScript 1.8
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.8.
 ms.date: 03/19/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 39f3a5daf89849d3f8517794ab8cd4214309a667
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746853"
 ---
-
-# <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l Excel API JavaScript 1.8
+# <a name="whats-new-in-excel-javascript-api-18"></a>Nouveautés de l’API JavaScript Excel 1.8
 
 L’ensemble de conditions requises Excel JavaScript API 1.8 incluent des API pour les tableaux croisés dynamiques, validation des données, graphiques, les événements pour les diagrammes, les options de performances et création de classeur.
 
@@ -143,7 +148,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[fill](/javascript/api/excel/excel.charttrendlinelabelformat#excel-excel-charttrendlinelabelformat-fill-member)|Spécifie le format de remplissage de l’étiquette de tendances du graphique actuel.|
 ||[police](/javascript/api/excel/excel.charttrendlinelabelformat#excel-excel-charttrendlinelabelformat-font-member)|Spécifie les attributs de police (tels que le nom de la police, la taille et la couleur) d’une étiquette de tendances de graphique.|
 |[CustomDataValidation](/javascript/api/excel/excel.customdatavalidation)|[formula](/javascript/api/excel/excel.customdatavalidation#excel-excel-customdatavalidation-formula-member)|Une formule de validation des données personnalisée.|
-|[DataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|[field](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-field-member)|Renvoie les PivotFields associés à la DataPivotHierarchy.|
+|[DataPivotHierarchy](/javascript/api/excel/excel.datapivothierarchy)|[champ](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-field-member)|Renvoie les PivotFields associés à la DataPivotHierarchy.|
 ||[id](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-id-member)|ID de la DataPivotHierarchy.|
 ||[name](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-name-member)|Nom de la DataPivotHierarchy.|
 ||[numberFormat](/javascript/api/excel/excel.datapivothierarchy#excel-excel-datapivothierarchy-numberformat-member)|Format de nombre de la DataPivotHierarchy.|

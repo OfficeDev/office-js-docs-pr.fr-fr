@@ -1,11 +1,15 @@
 ---
 title: Créer un complément dictionnaire du volet Office
-description: Découvrez comment créer un add-in de volet de tâches de dictionnaire
+description: Découvrez comment créer un add-in de volet de tâches de dictionnaire.
 ms.date: 09/26/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 2f8eebf7f42073bd144ab3b3010c67c9ece1e8bd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746718"
 ---
-
-
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
 

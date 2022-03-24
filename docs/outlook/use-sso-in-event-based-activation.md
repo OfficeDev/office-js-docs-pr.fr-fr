@@ -3,12 +3,12 @@ title: Activer l’sign-on unique (SSO) dans Outlook compléments qui utilisent 
 description: Découvrez comment activer l’utilisateur unique lorsque vous travaillez dans un complément d’activation basé sur des événements.
 ms.date: 03/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bb52678356fe0cf456cbbf023febee738cccdb31
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 38c717e0d626f4c135f76350e30398db26cac24f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63710929"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746539"
 ---
 # <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Activer l’sign-on unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur des événements
 

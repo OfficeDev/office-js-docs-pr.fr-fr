@@ -1,13 +1,18 @@
 ---
 title: Activer l’authentification unique (SSO) dans un complément Office
-description: 'Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.'
+description: Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: aec2e9affa1037638fad07192e9d6b69e3f158d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744256"
 ---
-
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Activer l’authentification unique (SSO) dans un complément Office
 
-Les utilisateurs se connectent à Office (plateformes en ligne, mobiles et de bureau) à l’aide de leur compte Microsoft personnel, de leur compte professionnel, ou scolaire (Office 365). Profitez-en et utilisez l’authentification unique (SSO) pour authentifier et autoriser l’utilisateur à accéder à votre complément sans l’obliger à se connecter une deuxième fois.
+Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou Microsoft 365 Éducation. Profitez-en et utilisez l’authentification unique (SSO) pour authentifier et autoriser l’utilisateur à accéder à votre complément sans l’obliger à se connecter une deuxième fois.
 
 ![Image illustrant le processus de connexion pour un complément.](../images/sso-for-office-addins.png)
 
@@ -102,7 +107,7 @@ Voici un exemple de marques de révision.
 
 ### <a name="include-the-identity-api-requirement-set"></a>Inclure l’ensemble d’exigences de l’API Identity
 
-Pour utiliser SSO, votre complément nécessite l’ensemble d’exigences Identity API 1.3. Pour plus d’informations, consultez [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
+Pour utiliser SSO, votre complément nécessite l’ensemble d’exigences Identity API 1.3. Pour plus d’informations, consultez [IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md).
 
 ### <a name="add-client-side-code"></a>Ajouter du code côté client
 
@@ -200,7 +205,7 @@ Pour plus d’informations sur la validation des jetons, consultez [Jetons d’a
 
 #### <a name="use-the-access-token-as-an-identity-token"></a>Utiliser le jeton d'accès comme jeton d’identité
 
-Si votre complément doit vérifier l’identité de l’utilisateur, le jeton d’accès renvoyé par `getAccessToken()` contient des informations qui peuvent être utilisées pour établir l’identité. Les revendications suivantes présentes dans le jeton concernent l’identité de l’utilisateur.
+Si votre complément doit vérifier l’identité de l’utilisateur, le jeton d’accès retourné par `getAccessToken()` contient des informations qui peuvent être utilisées pour établir l’identité. Les revendications suivantes présentes dans le jeton concernent l’identité de l’utilisateur.
 
 - `name`: le nom d’affichage de l’utilisateur.
 - `preferred_username`: l’adresse de messagerie de l’utilisateur.

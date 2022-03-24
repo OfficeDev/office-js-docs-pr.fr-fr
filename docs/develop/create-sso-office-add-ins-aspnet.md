@@ -3,17 +3,17 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas sur la création (ou la conversion) d’un Office add-in avec un système ASP.NET backend pour utiliser l’sign-on unique (SSO).
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8d2cd20e9ad47e18ff6ee84cbd45c27f89d537c
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: e6d758ad52a4342db40b52162b454e2f112f9ec2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320255"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743534"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
 Lorsque les utilisateurs sont connectés à Office, votre complément peut utiliser les mêmes informations d’identification pour permettre aux utilisateurs d’accéder à plusieurs applications sans avoir à se connecter une deuxième fois. Pour obtenir une vue d’ensemble, consultez la rubrique [Activer l’authentification unique dans un complément Office](sso-in-office-add-ins.md).
-Cet article vous explique tout au long du processus d’activation de l’sign-on unique (SSO) dans un ASP.NET.
+Cet article vous explique tout au long du processus d’activation de l’sign-on unique (SSO) dans un add-in créé avec ASP.NET.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -41,12 +41,12 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 
 ## <a name="register-the-add-in-through-an-app-registration"></a>Inscription du module par le biais de l’inscription d’une application
 
-Tout d’abord, complétez les étapes du démarrage rapide : inscrivez une [application auprès de la Plateforme d'identités Microsoft](/azure/active-directory/develop/quickstart-register-app) pour inscrire le compl?ment.
+Tout d’abord, complétez les étapes du démarrage rapide : inscrivez une [application auprès Plateforme d'identités Microsoft](/azure/active-directory/develop/quickstart-register-app) pour inscrire le module.
 
 Utilisez les paramètres suivants pour l’inscription de votre application.
 
 * Nom : `Office-Add-in-ASPNET-SSO`
-* Types de comptes pris en charge : comptes dans n’importe quel annuaire d’organisation (n’importe quel annuaire **Azure AD - multi-client) et comptes Microsoft personnels (par exemple, Skype, Xbox)**
+* Types de comptes pris en charge : comptes dans n’importe quel répertoire d’organisation (n’importe quel annuaire **Azure AD - multi-client) et comptes Microsoft personnels (par exemple, Skype, Xbox)**
 
     > [!NOTE]
     >  Si vous souhaitez que le complément soit utilisable uniquement par les utilisateurs de la location où vous l’enregistrez, vous pouvez choisir Comptes dans cet annuaire d’organisation uniquement... à la place, mais vous devrez suivre quelques **étapes** de configuration supplémentaires. Voir **le programme d’installation pour un seul client** plus loin dans cet article.
@@ -67,7 +67,7 @@ Utilisez les paramètres suivants pour l’inscription de votre application.
     |Champ          |Valeur  |
     |---------------|---------|
     |**Nom de l'étendue** | `access_as_user`|
-    |**Qui consentement** | **Administrateurs et utilisateurs**|
+    |**Qui peut consentir** | **Administrateurs et utilisateurs**|
     |**Nom complet du consentement de l’administrateur** | Office peut agir en tant qu’utilisateur.|
     |**Description du consentement de l’administrateur** | Activez Office pour appeler les API web du add-in avec les mêmes droits que l’utilisateur actuel.|
     |**Nom complet du consentement de l’utilisateur** | Office pouvez agir comme vous.|
@@ -222,7 +222,7 @@ Si vous avez choisi « Comptes dans cet annuaire d’organisation uniquement » 
 
     * `allowSignInPrompt` est définie sur true. Cela indique Office à l’utilisateur de se connecter si l’utilisateur n’est pas déjà Office.
     * `allowConsentPrompt` est définie sur true. Cela indique Office à l’utilisateur de donner son consentement pour permettre au add-in d’accéder au profil Microsoft Azure Active Directory de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte ne *permet pas* à l’utilisateur d’autoriser les étendues Graph Microsoft.)
-    * `forMSGraphAccess` est définie sur true. Cela informe Office renvoyer une erreur (code 13012) si l’utilisateur ou l’administrateur n’Graph pas donné son consentement aux étendues du module. Pour accéder à Microsoft Graph le add-in doit échanger le jeton d’accès contre un nouveau jeton d’accès via le flux « de la part de ». Définir `forMSGraphAccess` la valeur true permet d’éviter le scénario dans lequel **getAccessToken()** réussit, mais le flux de la part de échoue ultérieurement pour Microsoft Graph. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours.
+    * `forMSGraphAccess` est définie sur true. Cela Office de renvoyer une erreur (code 13012) si l’utilisateur ou l’administrateur n’Graph pas donné son consentement pour les étendues du module. Pour accéder à Microsoft Graph le add-in doit échanger le jeton d’accès contre un nouveau jeton d’accès via le flux « de la part de ». Définir `forMSGraphAccess` la valeur true permet d’éviter le scénario dans lequel **getAccessToken()** réussit, mais le flux de la part de échoue ultérieurement pour Microsoft Graph. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours.
 
     Notez également le code suivant :
 
@@ -492,7 +492,7 @@ Si vous avez choisi « Comptes dans cet annuaire d’organisation uniquement » 
 
 1. Juste au-dessus de la ligne qui déclare `ValuesController`, ajoutez l’attribut `[Authorize]`. Cela permet de s’assurer que votre complément exécutera le processus d’autorisation que vous avez configuré dans la dernière procédure chaque fois qu’une méthode de contrôleur est appelée. Seuls les appelants avec un jeton d’accès valide à votre complément peuvent ainsi appeler les méthodes du contrôleur.
 
-1. Ajoutez la méthode suivante à `ValuesController`. Vous remarquerez que la valeur renvoyée est `Task<HttpResponseMessage>` et non `Task<IEnumerable<string>>`, laquelle serait plus courante pour une méthode `GET api/values`. Il s’agit d’un effet secondaire du fait que la logique d’autorisation OAuth doit se trouver dans le contrôleur, et non dans un filtre ASP.NET. Certaines conditions d’erreur dans cette logique nécessitent qu’un objet de réponse HTTP soit envoyé au client du complément.
+1. Ajoutez la méthode suivante à `ValuesController`. Vous remarquerez que la valeur renvoyée est `Task<HttpResponseMessage>` et non `Task<IEnumerable<string>>`, laquelle serait plus courante pour une méthode `GET api/values`. Il s’agit d’un effet secondaire du fait que la logique d’autorisation OAuth doit se trouver dans le contrôleur, et non dans un filtre ASP.NET.. Certaines conditions d’erreur dans cette logique nécessitent qu’un objet de réponse HTTP soit envoyé au client du complément.
 
     ```csharp
     // GET api/values
@@ -525,7 +525,7 @@ Si vous avez choisi « Comptes dans cet annuaire d’organisation uniquement » 
     * Votre application ne joue plus le rôle d’une ressource (ou d’une audience) à laquelle l’Office et l’utilisateur ont besoin d’accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
     * À partir de MSAL.NET 3. x. x, le `bootstrapContext` est simplement le jeton d’amorçage.
     * L’autorité provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
-    * MSAL lève une erreur si votre code `profile`demande, ce qui est vraiment utilisé uniquement lorsque l’application cliente Office obtient le jeton pour l’application web de votre application. Seul `Files.Read.All` est demandé explicitement.
+    * MSAL lève une erreur si votre code `profile`demande, ce qui est uniquement utilisé lorsque l’application cliente Office obtient le jeton pour l’application web de votre application. Seul `Files.Read.All` est demandé explicitement.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();

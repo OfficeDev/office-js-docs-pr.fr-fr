@@ -1,14 +1,18 @@
 ---
 title: Conditions particulières pour les compléments sur iPad
-description: Découvrez quelques conditions requises pour créer un Office qui s’exécute sur une iPad.
+description: Découvrez quelques conditions requises pour créer un Office qui s’exécute sur un iPad.
 ms.date: 09/03/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: 9b10d48ebc5ef1d292b2d697ab242162e76f3e8e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743820"
 ---
-
-
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>Conditions particulières pour les compléments sur iPad
 
-Si votre application utilise uniquement Office API qui sont pris en charge sur le iPad, les clients peuvent l’installer sur iPad. (Pour plus [d’informations, voir Spécifier Office applications et les exigences d’API](specify-office-hosts-and-api-requirements.md).) Si le complément est commercialisé via *[AppSource](https://appsource.microsoft.com)*, vous devez suivre certaines pratiques pour les compléments qui peuvent être installés sur iPad, en plus des meilleures pratiques qui s’appliquent à tous les [compléments Office](../concepts/add-in-development-best-practices.md).
+Si votre application utilise uniquement Office API qui sont pris en charge sur le iPad, les clients peuvent l’installer sur iPad. (Pour plus [d’informations, Office spécifier les applications et les api](specify-office-hosts-and-api-requirements.md) requises.) Si le complément est commercialisé via *[AppSource](https://appsource.microsoft.com)*, vous devez suivre certaines pratiques pour les compléments qui peuvent être installés sur iPad, en plus des meilleures pratiques qui s’appliquent à tous les [compléments Office](../concepts/add-in-development-best-practices.md).
 
 Le tableau suivant répertorie les tâches à effectuer.
 
@@ -38,10 +42,10 @@ Le tableau suivant répertorie les tâches à effectuer.
 
 Appliquez les meilleures pratiques suivantes pour le développement de iPad.
 
--  **Développez et déboguer le add-in sur Windows mac et chargez-le sur un iPad.**
+-  **Développez et déboguer le Windows sur mac et chargez-le sur une iPad.**
 
-    Vous ne pouvez pas développer le add-in directement sur un iPad, mais vous pouvez le développer et le déboguer sur un ordinateur Windows ou Mac et le recharger de manière test sur un iPad. Étant donné qu’un add-in qui s’exécute dans Office sur iOS ou Mac prend en charge les mêmes API qu’un module de Office sur Windows, le code de votre add-in doit s’exécuter de la même manière sur ces plateformes. Pour plus d’informations, voir Tester et déboguer [des](../testing/test-debug-office-add-ins.md) Office et chargement de version test des Office sur [iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md) pour les tests.
+    Vous ne pouvez pas développer le add-in directement sur un iPad, mais vous pouvez le développer et le déboguer sur un ordinateur Windows ou Mac et le recharger de manière test sur un iPad. Étant donné qu’un add-in qui s’exécute dans Office sur iOS ou Mac prend en charge les mêmes API qu’un add-in s’exécutant dans Office sur Windows, le code de votre add-in doit s’exécuter de la même manière sur ces plateformes. Pour plus d’informations, voir Tester et déboguer [des](../testing/test-debug-office-add-ins.md) Office et chargement de version test des Office sur [iPad et Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md) pour les tests.
 
 -  **Précisez les conditions de fonctionnement de l’API dans le manifeste de votre complément ou avec des vérifications à l’exécution.**
 
-    Lorsque vous spécifiez des conditions requises pour l’API dans le manifeste de votre Office, l’application cliente Office prend en charge ces membres d’API. Si les membres de l’API sont disponibles dans l’application, votre application sera disponible. Vous pouvez également effectuer une vérification à l’runtime pour déterminer si une méthode est disponible dans l’application avant de l’utiliser dans votre application. Les vérifications à l’runtime garantissent que votre complément est toujours disponible dans l’application et fournissent des fonctionnalités supplémentaires si les méthodes sont disponibles. Pour plus d’informations, voir [Spécifier les Office applications et les api requises](specify-office-hosts-and-api-requirements.md).
+    Lorsque vous spécifiez des conditions requises pour l’API dans le manifeste de votre Office, Office si l’application cliente Office prend en charge ces membres d’API. Si les membres de l’API sont disponibles dans l’application, votre application sera disponible. Vous pouvez également effectuer une vérification à l’runtime pour déterminer si une méthode est disponible dans l’application avant de l’utiliser dans votre application. Les vérifications à l’runtime garantissent que votre complément est toujours disponible dans l’application et fournissent des fonctionnalités supplémentaires si les méthodes sont disponibles. Pour plus d’informations, voir [Spécifier les Office applications et les api requises](specify-office-hosts-and-api-requirements.md).

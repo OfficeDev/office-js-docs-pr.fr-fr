@@ -3,12 +3,12 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e135ef051b79fcfba7aac1252d10ec1109f25d
-ms.sourcegitcommit: 997a20f9fb011b96a50ceb04a4b9943d92d6ecf4
+ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2021
-ms.locfileid: "61081441"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745867"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
@@ -145,4 +145,4 @@ Vous pouvez afficher des messages dans le fichier journal qui sont source de con
 - [Chargement de la version test des compléments Office](sideload-office-add-ins-for-testing.md)
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
-- [Déboguer des applications à l’aide des outils de développement Microsoft Edge (Chromium base de données)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md) 

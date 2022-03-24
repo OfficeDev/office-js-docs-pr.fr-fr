@@ -1,6 +1,6 @@
-Si votre projet est basé sur node.js (c’est-à-dire, non développé avec Visual Studio et internet Information Server (IIS), vous pouvez forcer Office sur Windows à utiliser l’hérité Edge ou Internet Explorer pour exécuter des modules complémentaires, même si vous avez une combinaison de versions de Windows et de Office qui utilisent normalement un navigateur plus récent. Pour plus d’informations sur les navigateurs utilisés par différentes combinaisons de versions Windows et Office, voir Navigateurs utilisés par les Office de [recherche.](../concepts/browsers-used-by-office-web-add-ins.md)
+Si votre projet est basé sur node.js (c’est-à-dire, non développé avec Visual Studio et le serveur d’informations Internet (IIS), vous pouvez forcer Office sur Windows à utiliser edge hérité ou Internet Explorer pour exécuter des modules complémentaires, même si vous avez une combinaison de versions de Windows et de Office qui utiliserait normalement un navigateur plus récent. Pour plus d’informations sur les navigateurs utilisés par différentes combinaisons de versions Windows et Office, voir [Navigateurs](../concepts/browsers-used-by-office-web-add-ins.md) utilisés par les Office de recherche.
 
-1. Si votre projet *n’a* pas été créé avec l’outil Yo Office, vous devez installer l’outil office-addin-dev-settings. Exécutez la commande suivante dans une invite de commandes.
+1. Si votre projet n’a pas été créé avec le générateur [Yeoman pour l’outil Office Add-ins](../develop/yeoman-generator-overview.md), vous devez installer l’outil office-addin-dev-settings. Exécutez la commande suivante dans une invite de commandes.
 
     ```command&nbsp;line
     npm install office-addin-dev-settings --save-dev
@@ -8,7 +8,7 @@ Si votre projet est basé sur node.js (c’est-à-dire, non développé avec Vis
 
     [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
-1. Spécifiez le navigateur que vous Office utiliser avec la commande suivante dans une invite de commandes à la racine du projet. Remplacez par le chemin d’accès relatif, qui est simplement le nom du fichier manifeste s’il se trouve à la `<path-to-manifest>` racine du projet. Remplacez `<webview>` par l’un `ie` ou `edge-legacy` l’autre .
+1. Spécifiez le navigateur que vous Office utiliser avec la commande suivante dans une invite de commandes à la racine du projet. Remplacez `<path-to-manifest>` par le chemin d’accès relatif, qui est simplement le nom du fichier manifeste s’il se trouve à la racine du projet. Remplacez `<webview>` par l’un ou `ie` l’autre .`edge-legacy`
 
     ```command&nbsp;line
     npx office-addin-dev-settings webview <path-to-manifest> <webview>

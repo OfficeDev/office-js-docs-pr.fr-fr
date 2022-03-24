@@ -1,18 +1,18 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.1
-description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de l’API de boîte aux lettres 1.1.
+description: Fonctionnalités et API introduites pour les Outlook et les API JavaScript Office dans le cadre de Mailbox API 1.1.
 ms.date: 12/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 57abdcfc5cc4974e315284357e85c94045885479
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 74a6b2561cf7d0ec28d97810d7337fe909a30837
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152871"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746673"
 ---
 # <a name="outlook-add-in-api-requirement-set-11"></a>Ensemble de conditions requises de l’API du complément Outlook 1.1
 
-Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook. Outlook L’API JavaScript 1.1 (Mailbox 1.1) est la première version de l’API.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook de gestion. Outlook’API JavaScript 1.1 (Mailbox 1.1) est la première version de l’API.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.

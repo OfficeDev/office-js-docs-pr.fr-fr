@@ -3,12 +3,12 @@ title: Office de noms - ensemble de conditions requises 1.11
 description: Office’espace de noms disponible pour les Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.11.
 ms.date: 11/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b45b2afaebb0edafc41641ddc9da7bbb0de2734
-ms.sourcegitcommit: 23ce57b2702aca19054e31fcb2d2f015b4183ba1
+ms.openlocfilehash: a32a828a2b74520294d8bef5dab06841c2a8cf00
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/02/2021
-ms.locfileid: "60681760"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746975"
 ---
 # <a name="office-mailbox-requirement-set-111"></a>Office (ensemble de conditions requises de boîte aux lettres 1.11)
 
@@ -32,13 +32,13 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 | Énumération | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
 | [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [CoercionType](#coerciontype-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [EventType](#eventtype-string) | Composition<br>Lecture | Chaîne | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Espaces de noms
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.11&preserve-view=true): inclut un certain nombre d’Outlook spécifiques à l’utilisateur, par exemple, `ItemType` , , , et `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` .
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.11&preserve-view=true) : inclut un certain nombre d’Outlook spécifiques à l’utilisateur, par exemple, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`et `ResponseType``ItemNotificationMessageType`.
 
 ## <a name="enumeration-details"></a>Détails de l’éumération
 
@@ -54,7 +54,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| String|L’appel a réussi.|
+|`Succeeded`| Chaîne|L’appel a réussi.|
 |`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise

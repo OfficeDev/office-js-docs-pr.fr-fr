@@ -3,12 +3,12 @@ title: Instructions relatives au ton pour les compléments Office
 description: Découvrez les meilleures pratiques en matière d’écriture de l’aide de l’utilisateur et d’autres chaînes pour Office de contenu.
 ms.date: 07/08/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fb96b70c1a5319c4dcefd99bc982c6db50d8812
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 4cf7d6a58c33df116e7776589f581fdd191abd56
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149175"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743094"
 ---
 # <a name="voice-guidelines"></a>Conseils sur le ton
 

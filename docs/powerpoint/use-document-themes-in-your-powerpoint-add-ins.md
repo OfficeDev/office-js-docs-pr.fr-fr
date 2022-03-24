@@ -3,18 +3,18 @@ title: Utiliser des thèmes de document dans vos compléments PowerPoint
 description: Découvrez comment coordonner visuellement les thèmes tels que les polices et les couleurs à appliquer aux présentations, documents, feuilles de calcul et e-mails.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 49a61844351114f396c35cba5cf8b24539483a4d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 679dc91c773306f782274b437aa25c925af2e2d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153459"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747157"
 ---
 # <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Utiliser des thèmes de document dans vos compléments PowerPoint
 
 Un [thème Office](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) est constitué, en partie, d’un jeu de polices et de couleurs visuellement assortis que vous pouvez appliquer à des présentations, des documents, des feuilles de calcul et des courriers électroniques. Pour appliquer ou personnaliser le thème d’une présentation dans PowerPoint, utilisez les groupes **Thèmes** et **Variantes** dans l’onglet **Conception** du ruban. PowerPoint affecte le **thème Office** par défaut à chaque nouvelle présentation vierge, mais vous pouvez choisir parmi les autres thèmes disponibles dans l’onglet **Conception**, télécharger des thèmes supplémentaires à partir d’Office.com, ou créer et personnaliser votre propre thème.
 
-À l’aide d’OfficeThemes.css, concevez des PowerPoint de deux manières.
+À l’aide d’OfficeThemes.css, concevez des modules de PowerPoint de deux manières.
 
 - **Dans les compléments de contenu pour PowerPoint**. Utilisez les classes de thèmes du document d’OfficeThemes.css pour spécifier les polices et les couleurs correspondant au thème de la présentation dans laquelle votre contenu complément est inséré ; ces polices et couleurs seront mises à jour dynamiquement si un utilisateur modifie ou personnalise le thème de la présentation.
     
@@ -26,7 +26,7 @@ Chaque thème de document Office définit 12 couleurs. Dix de ces couleurs sont
 
 ![Palette de couleurs.](../images/office15-app-color-palette.png)
 
-Pour afficher ou personnaliser l’ensemble complet de 12 couleurs de thème  dans PowerPoint,  dans le groupe Variantes de l’onglet Création, cliquez sur la liste plus , puis sélectionnez Couleurs personnaliser les couleurs pour afficher la boîte de dialogue Créer de nouvelles **couleurs** de  >   thème. 
+Pour afficher ou personnaliser l’ensemble complet de 12 couleurs de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet Création, cliquez sur  la liste plus , puis sélectionnez   CouleursCustomize  >  pour afficher la boîte de dialogue Créer de nouvelles couleurs de thème.
 
 ![Boîte de dialogue Créer des couleurs de thème.](../images/office15-app-create-new-theme-colors.png)
 
@@ -38,13 +38,13 @@ Chaque thème de document Office définit également deux polices : une pour les
 
 ![S sélectionneur de polices.](../images/office15-app-font-picker.png)
 
-Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le  groupe **Variantes** de l’onglet Création, cliquez sur la zone de texte Plus, puis sélectionnez Personnaliser les  **polices** pour afficher la boîte de dialogue Créer des  >   **polices** de thème.
+Pour afficher ou personnaliser les polices de thème dans PowerPoint, dans le groupe **Variantes** de l’onglet Création, cliquez sur  la zone de texte Plus, puis sélectionnez **PolicesCustomize** >  pour afficher la boîte de dialogue Créer des **polices** de thème.
 
 ![Boîte de dialogue Créer des polices de thème.](../images/office15-app-create-new-theme-fonts.png)
 
 ### <a name="office-ui-theme-fonts-and-colors"></a>Couleurs et polices de thème de l’interface utilisateur Office
 
-Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, vous utilisez le **compte** de Office le thème (à partir de  >    >   n’importe Office application).
+Office vous permet également de choisir entre plusieurs thèmes prédéfinis qui spécifient certaines des couleurs et des polices utilisées dans l’interface utilisateur de toutes les applications Office. Pour ce faire, vous utilisez la Office de thème **FileAccount** >  >  (à partir de Office application).
 
 ![Office de thème.](../images/office15-app-office-theme-picker.png)
 
@@ -131,7 +131,7 @@ Suivez la procédure suivante pour ajouter et référencer le fichier OfficeThem
 
 ## <a name="reference-officethemescss-in-your-add-ins-html-pages"></a>Référencer OfficeThemes.css dans les pages HTML de votre application
 
-Pour utiliser le fichier OfficeThemes.css dans votre projet de add-in, ajoutez une balise qui fait référence au fichier OfficeThemes.css à l’intérieur de la balise des pages web (telles qu’un `<link>` `<head>` fichier .html, .aspx ou .php) qui implémentent l’interface utilisateur de votre application dans ce format.
+Pour utiliser le fichier OfficeThemes.css dans votre projet de add-in, `<link>` ajoutez une balise qui fait référence au fichier OfficeThemes.css `<head>` à l’intérieur de la balise des pages web (telles qu’un fichier .html, .aspx ou .php) qui implémentent l’interface utilisateur de votre application dans ce format.
 
 ```HTML
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
@@ -149,7 +149,7 @@ Pour effectuer cette opération dans Visual Studio, procédez comme suit.
 
 4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-5. Dans les pages HTML qui implémentent l’interface utilisateur de votre application, telles que Home.html dans le modèle par défaut, ajoutez la balise suivante à l’intérieur de la balise qui fait référence au fichier `<link>` `<head>` OfficeThemes.css.
+5. Dans les pages HTML qui implémentent l’interface utilisateur de votre application, telles que Home.html dans le modèle par défaut, `<link>` `<head>` ajoutez la balise suivante à l’intérieur de la balise qui fait référence au fichier OfficeThemes.css.
     
     ```HTML
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
@@ -184,7 +184,7 @@ Si vous modifiez la présentation afin d’utiliser un autre thème ou de person
 
 ![Application de contenu en cours d’exécution avec le thème Facette.](../images/office15-app-content-app-facet-theme.png)
 
-### <a name="use-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>Utiliser OfficeThemes.css Office classes de thème de l’interface utilisateur dans la page HTML de votre module de volet Office
+### <a name="use-officethemescss-office-ui-theme-classes-in-your-task-pane-add-ins-html-page"></a>Utiliser OfficeThemes.css Office classes de thème de l’interface utilisateur dans la page HTML de votre application du volet Office
 
 Outre le thème du document, les utilisateurs peuvent personnaliser le modèle de couleurs de l’interface utilisateur Office de toutes les applications Office à l’aide de la zone de liste déroulante **Fichier** > **Compte** > **Thème Office**.
 
@@ -268,7 +268,7 @@ Le fichier OfficeThemes.css fournit des classes qui correspondent aux 12 couleu
 
 La capture d’écran suivante montre des exemples de toutes les classes de couleurs de thème (sauf pour les deux couleurs de lien hypertexte) affectées à du texte d’complément lorsque vous utilisez le thème Office par défaut.
 
-![Exemple Office couleurs de thème par défaut.](../images/office15-app-default-office-theme-colors.png)
+![Exemple de couleurs Office thème par défaut.](../images/office15-app-default-office-theme-colors.png)
 
 ### <a name="theme-classes-for-task-pane-add-ins"></a>Classes de thèmes pour les compléments du volet Office
 

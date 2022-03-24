@@ -4,12 +4,12 @@ description: Spécifie les plateformes et les applications Office qui la prise e
 ms.date: 03/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 462a1248acadb35d4a4040fe9b997ede46844e4e
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: ef4bb9aebea8ee6f9c316a68cac784c20c4db160
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511281"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746309"
 ---
 # <a name="shared-runtime-requirement-sets"></a>Ensembles de conditions requises pour le runtime partagé
 
@@ -21,7 +21,7 @@ Le tableau suivant répertorie l’ensemble de conditions requises SharedRuntime
 
 | Ensemble de conditions requises | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) | Office sur iPad<br>(connecté à un abonnement Microsoft 365) | Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)  | Office sur le web | Office Online Server |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | N/A | 16.35 ou version ultérieure | Février 2020 | N/A |
+| SharedRuntime 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 2002 (build 12527.20092) ou version ultérieure | S/O | 16.35 ou version ultérieure | Février 2020 | S/O |
 
 > [!IMPORTANT]
 > Le runtime partagé JavaScript n’est à l’heure actuelle pas pris en charge on iPad ou les versions en achat définitif d’Office 2019 ou versions antérieures. Pour plus d’informations sur le support, consultez les sections suivantes.

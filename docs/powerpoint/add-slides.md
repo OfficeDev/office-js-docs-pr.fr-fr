@@ -3,12 +3,12 @@ title: Ajouter et supprimer des diapositives dans PowerPoint
 description: Découvrez comment ajouter et supprimer des diapositives et spécifier le maître et la mise en page des nouvelles diapositives.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 915409c83e4eee2028a02f921e87065ee824bd7d
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: b14323a13332f2b1c9e26991c2446549ff78e745
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514109"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747012"
 ---
 # <a name="add-and-delete-slides-in-powerpoint"></a>Ajouter et supprimer des diapositives dans PowerPoint
 
@@ -18,7 +18,7 @@ Les API d’ajout de diapositives sont principalement utilisées dans les scéna
 
 ## <a name="add-a-slide-with-slidecollectionadd"></a>Ajouter une diapositive avec SlideCollection.add
 
-Ajoutez des diapositives avec [la méthode SlideCollection.add.](/javascript/api/powerpoint/powerpoint.slidecollection#add_options_) Voici un exemple simple dans lequel une diapositive qui utilise le maître des diapositives par défaut de la présentation et la première mise en page de ce maître est ajoutée. La méthode ajoute toujours de nouvelles diapositives à la fin de la présentation. Voici un exemple.
+Ajoutez des diapositives avec [la méthode SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) . Voici un exemple simple dans lequel une diapositive qui utilise le maître des diapositives par défaut de la présentation et la première mise en page de ce maître est ajoutée. La méthode ajoute toujours de nouvelles diapositives à la fin de la présentation. Voici un exemple.
 
 ```javascript
 async function addSlide() {
@@ -34,12 +34,12 @@ async function addSlide() {
 
 Utilisez le [paramètre AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions) pour contrôler le maître des diapositives qui est utilisé pour la nouvelle diapositive et la mise en page dans le master. Voici un exemple. Tenez compte du code suivant :
 
-- Vous pouvez inclure l’une ou l’autre des propriétés de l’objet ou les `AddSlideOptions` deux.
+- Vous pouvez inclure l’une ou l’autre des propriétés de l’objet ou les deux `AddSlideOptions` .
 - Si les deux propriétés sont utilisées, la disposition spécifiée doit appartenir à la forme de base spécifiée ou une erreur est lancée.
-- Si la propriété n’est pas présente (ou si sa valeur est une chaîne vide), le curseur de diapositive par défaut est utilisé et doit être une mise en page de `masterId` `layoutId` ce dernier.
+- Si la `masterId` propriété n’est pas présente (ou si sa valeur est une chaîne vide), `layoutId` le curseur de diapositive par défaut est utilisé et doit être une mise en page de ce dernier.
 - Le maître des diapositives par défaut est celui utilisé par la dernière diapositive de la présentation. (Dans le cas rare où il n’y a actuellement aucune diapositive dans la présentation, le maître des diapositives par défaut est le premier maître des diapositives de la présentation.)
-- Si la propriété n’est pas présente (ou si sa valeur est une chaîne vide), la première disposition de la forme de base spécifiée par la forme de base `layoutId` `masterId` est utilisée.
-- Les deux propriétés sont des chaînes de l’une des trois formes possibles : ***nnnnnnnnnn*#**, * *#* mmmmmmmmmmm*** ou **_nnnnnnnnnn_ #* mmmmmmmmm***, où *nnnnnnnnnn* est l’ID de la forme de base ou de la disposition (généralement 10 chiffres) et *mmmmmmmmmmm* est l’ID de création de la forme de base ou de la disposition (généralement 6 à 10 chiffres). Voici quelques exemples `2147483690#2908289500` : `2147483690#` , et `#2908289500` .
+- Si la `layoutId` propriété n’est pas présente (ou si sa valeur est une chaîne vide), `masterId` la première disposition de la forme de base spécifiée par la forme de base est utilisée.
+- Les deux propriétés sont des chaînes de l’une des trois formes possibles : ***nnnnnnnnnn*#**, **#* mmmmmmmmmmm*** ou **_nnnnnnnnnnmm_#****, où *nnnnnnnnnn* est l’ID de la forme de base ou de la disposition (généralement 10 chiffres) et *mmmmmmmmmmm* est l’ID de création de la forme de base ou de la disposition (généralement 6 à 10 chiffres). Voici quelques exemples `2147483690#2908289500`: , `2147483690#`et `#2908289500`.
 
 ```javascript
 async function addSlide() {
@@ -54,20 +54,20 @@ async function addSlide() {
 }
 ```
 
-Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’un curseur de diapositive ou d’une mise en page. Pour cette raison, vous ne pouvez utiliser le paramètre que lorsque vous connaissez les ID au moment du codage ou que votre application peut les découvrir au moment de `AddSlideOptions` l’utilisation. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par son nom ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
+Il n’existe aucun moyen pratique pour les utilisateurs de découvrir l’ID ou l’ID de création d’un curseur de diapositive ou d’une mise en page. Pour cette raison, `AddSlideOptions` vous ne pouvez utiliser le paramètre que lorsque vous connaissez les ID au moment du codage ou que votre application peut les découvrir au moment de l’utilisation. Étant donné que les utilisateurs ne sont pas censés mémoriser les ID, vous avez également besoin d’un moyen pour permettre à l’utilisateur de sélectionner des diapositives, par exemple par son nom ou par une image, puis de corréler chaque titre ou image avec l’ID de la diapositive.
 
-Par conséquent, le paramètre est principalement utilisé dans les scénarios dans lesquels le module est conçu pour fonctionner avec un ensemble spécifique de formes de base et de mises en page dont les ID sont `AddSlideOptions` connus. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (tel que le maître des diapositives et les noms ou images de mise en page) avec les ID ou les ID de création correspondants.
+Par conséquent, `AddSlideOptions` le paramètre est principalement utilisé dans les scénarios dans lesquels le module est conçu pour fonctionner avec un ensemble spécifique de formes de base et de mises en page dont les ID sont connus. Dans ce cas, vous ou le client devez créer et gérer une source de données qui met en corrélation un critère de sélection (tel que le maître des diapositives et les noms ou images de mise en page) avec les ID ou les ID de création correspondants.
 
 #### <a name="have-the-user-choose-a-matching-slide"></a>Faire en cas de choix d’une diapositive correspondante par l’utilisateur
 
-Si votre add-in peut être utilisé dans des scénarios où la nouvelle diapositive doit  utiliser la même combinaison de formes de base et de mise en page que celle utilisée par une diapositive existante, votre add-in peut (1) invite l’utilisateur à sélectionner une diapositive et (2) lit les ID du maître et de la mise en page des diapositives. Les étapes suivantes montrent comment lire les ID et ajouter une diapositive avec une forme de base et une disposition correspondantes.
+Si votre add-in peut être utilisé dans des scénarios où la nouvelle diapositive doit utiliser la même combinaison de formes de base et de mise en  page que celle utilisée par une diapositive existante, votre add-in peut (1) invite l’utilisateur à sélectionner une diapositive et (2) lit les ID du maître et de la mise en page des diapositives. Les étapes suivantes montrent comment lire les ID et ajouter une diapositive avec une forme de base et une disposition correspondantes.
 
 1. Créez une méthode pour obtenir l’index de la diapositive sélectionnée. Voici un exemple. Tenez compte du code suivant :
 
-    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#getSelectedDataAsync_coercionType__callback_) des API JavaScript communes.
-    - L’appel `getSelectedDataAsync` est incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) des API JavaScript communes.
+    - L’appel est `getSelectedDataAsync` incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
     - `getSelectedDataAsync` renvoie un tableau car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’en a sélectionné qu’une seule, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
-    - La valeur de la diapositive est la valeur 1 que l’utilisateur voit à côté de la diapositive dans le volet de `index` miniatures.
+    - La `index` valeur de la diapositive est la valeur 1 que l’utilisateur voit à côté de la diapositive dans le volet de miniatures.
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -88,7 +88,7 @@ Si votre add-in peut être utilisé dans des scénarios où la nouvelle diaposit
     }
     ```
 
-2. Appelez votre nouvelle fonction à [l’PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) de la fonction principale qui ajoute la diapositive. Voici un exemple.
+2. Appelez votre nouvelle fonction dans [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) de la fonction principale qui ajoute la diapositive. Voici un exemple.
 
     ```javascript
     async function addSlideWithMatchingLayout() {

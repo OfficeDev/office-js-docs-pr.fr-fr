@@ -5,12 +5,12 @@ ms.date: 08/04/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 44509ab9188d812cf85c9ffa25534444f4d66fe5
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: d3866c5091c586c039029cab205a5ae0519e992b
+ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074216"
+ms.lasthandoff: 03/22/2022
+ms.locfileid: "63711034"
 ---
 # <a name="create-custom-functions-in-excel"></a>Créer des fonctions personnalisées dans Excel
 
@@ -40,7 +40,7 @@ function sphereVolume(radius) {
 
 ## <a name="how-a-custom-function-is-defined-in-code"></a>Comment une fonction personnalisée est définie dans le code
 
-Si vous utilisez le [générateur de Yo Office](https://github.com/OfficeDev/generator-office) pour créer un projet de complément de fonctions personnalisées Excel, il crée des fichiers qui contrôlent totalement vos fonctions, et volet des tâches. Nous allons nous concentrer sur les fichiers qui sont importants pour les fonctions personnalisées.
+Si vous utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) pour créer un projet de complément de fonctions personnalisées Excel, il crée des fichiers qui contrôlent vos fonctions et le volet Office. Nous allons nous concentrer sur les fichiers qui sont importants pour les fonctions personnalisées.
 
 | Fichier | Format de fichier | Description |
 |------|-------------|-------------|
@@ -70,15 +70,15 @@ function add(first, second){
 
 ### <a name="manifest-file"></a>Fichier manifeste
 
-Le fichier manifeste XML d’un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet créé par le générateur Yo Office) effectue plusieurs opérations.
+Le fichier manifeste XML d’un complément qui définit des fonctions personnalisées (**./manifest.xml** dans le projet que le générateur [Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) crée) effectue plusieurs opérations.
 
 - Définit l’espace de noms pour vos fonctions personnalisées. Un espace de noms s’ajoute à vos fonctions personnalisées pour aider les clients à identifier vos fonctions dans le cadre de votre complément.
 - Utilise les éléments `<ExtensionPoint>` et `<Resources>` qui sont propres à un manifeste de fonctions personnalisées. Ces éléments contiennent les informations relatives aux emplacements des fichiers JavaScript, JSON et HTML.
 - Spécifie le runtime à utiliser pour votre fonction personnalisée. Nous vous recommandons de toujours utiliser une exécution partagée, sauf si vous avez un besoin spécifique d’autre runtime, car un runtime partagé autorise le partage de données entre les fonctions et le volet Office.
 
-Si vous utilisez le générateur Yo Office pour créer des fichiers, nous vous recommandons d’ajuster votre manifeste pour utiliser un runtime partagé, car il ne s’agit pas de la valeur par défaut pour ces fichiers. Pour modifier votre manifeste, suivez les instructions dans [Configurer votre complément Excel pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Si vous utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) pour créer des fichiers, nous vous recommandons d’ajuster votre manifeste pour utiliser un runtime partagé, car il ne s’agit pas de la valeur par défaut pour ces fichiers. Pour modifier votre manifeste, suivez les instructions dans [Configurer votre complément Excel pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
-Pour afficher un manifeste de travail complet à partir d’un exemple de complément, consultez [ce référentiel GitHub](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
+Pour afficher un manifeste de travail complet à partir d’un exemple de complément, consultez le manifeste dans le [l’un de nos exemples de dépôts Github de complément Office](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
@@ -90,7 +90,7 @@ Pour plus d’informations sur la co-création, voir [À propos de la co-créati
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Vous voulez essayer les fonctions personnalisées ? Consultez la documentation sur le [démarrage rapide de fonction personnalisée](../quickstarts/excel-custom-functions-quickstart.md) ou le [didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
+Vous voulez essayer des fonctions personnalisées ? Si ce n’est déjà fait, consultez le [démarrage rapide des fonctions personnalisées ](../quickstarts/excel-custom-functions-quickstart.md)simples ou le didacticiel plus détaillé [fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
 
 Un autre moyen simple d’essayer des fonctions personnalisées consiste à utiliser [Script Lab](https://appsource.microsoft.com/product/office/WA104380862?src=office&corrid=1ada79ac-6392-438d-bb16-fce6994a2a7e&omexanonuid=f7b03101-ec22-4270-a274-bcf16c762039&referralurl=https%3a%2f%2fgithub.com%2fofficedev%2fscript-lab), un complément qui vous permet d’expérimenter des fonctions personnalisées directement dans Excel. Vous pouvez essayer de créer votre propre fonction personnalisée ou utiliser les exemples fournis.
 

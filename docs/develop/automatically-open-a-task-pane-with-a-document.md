@@ -3,18 +3,18 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d753e7d661c5134a25f6255a017c5bf1cb9b385d
-ms.sourcegitcommit: 6fa846ecad6ba3fd6e6137b7ffaeadf9efc0c472
+ms.openlocfilehash: 3febafa3e762a7ba98ff50479ad3c5d677e5edd6
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "59326764"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743074"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser les commandes de votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
-Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1,](../reference/requirement-sets/add-in-commands-requirement-sets.md)pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
+Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md), pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
@@ -112,7 +112,7 @@ Le composant `webextension` comprend également une référence au store ou au c
 |`storeType`valeur|`id` value|`store` value|`version`valeur|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|ID d’actif AppSource du add-in (voir Remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|Version dans le catalogue AppSource (voir Remarque).|
-|WOPICatalog (hôtes [WOPI tiers)](/microsoft-365/cloud-storage-partner-program/online/)| ID d’actif AppSource du add-in (voir Remarque). | « wopicatalog « . Utilisez cette valeur pour les applications publiées dans app Source et installées dans des hôtes WOPI tiers. Pour plus d’informations, [voir Intégration à Office Online.](/microsoft-365/cloud-storage-partner-program/online/overview) | La version dans le manifeste de complément.|
+|WOPICatalog (hôtes [WOPI tiers](/microsoft-365/cloud-storage-partner-program/online/) )| ID d’actif AppSource du add-in (voir Remarque). | « wopicatalog ». Utilisez cette valeur pour les applications publiées dans app Source et installées dans des hôtes WOPI tiers. Pour plus d’informations, [voir Intégration à Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | La version dans le manifeste de complément.|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
 |EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les add-ins qui utilisent le déploiement centralisé dans le Centre d'administration Microsoft 365.|La version dans le manifeste de complément.|
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
@@ -139,7 +139,7 @@ Définir `visibility` sur « 1 » est un bon choix lorsque le complément et l
 > [!NOTE]
 > Si vous voulez distribuer votre complément avec le document, pour que les utilisateurs soient invités à l’installer, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’Open XML.
 
-Un moyen simple d’écrire le XML consiste à d’abord exécuter votre add-in et baliser le document côté [client](#tag-the-document-on-the-client-side) pour écrire la valeur, puis enregistrer le document et inspecter le XML qui est généré. Office détecter et fournir les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité du [SDK Open XML](https://www.nuget.org/packages/Open-XML-SDK) pour générer du code C# pour ajouter par programme le code basé sur le code XML que vous générez.
+Un moyen simple d’écrire le XML consiste à d’abord exécuter votre add-in et baliser le [document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, puis enregistrer le document et inspecter le XML qui est généré. Office détectera et fournira les valeurs d’attribut appropriées. Vous pouvez également utiliser l’outil de productivité du [SDK Open XML](https://www.nuget.org/packages/Open-XML-SDK) pour générer C# code pour ajouter par programme le code basé sur le code XML que vous générez.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Tester et vérifier l’ouverture des volets Office
 

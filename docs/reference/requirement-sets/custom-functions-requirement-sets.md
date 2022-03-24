@@ -4,12 +4,12 @@ description: Détails sur les ensembles de conditions requises fonctions personn
 ms.date: 02/15/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7558035b6b151977e985ec04ed1fa84c116f0886
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 3f8e66932d6f960898dc2185299fcbe58324f281
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892516"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746219"
 ---
 # <a name="custom-functions-requirement-sets"></a>Ensembles de conditions requises fonctions personnalisées
 

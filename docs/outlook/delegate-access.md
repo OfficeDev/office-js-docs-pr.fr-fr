@@ -3,17 +3,22 @@ title: Activer les dossiers partagés et les scénarios de boîtes aux lettres p
 description: Explique comment configurer la prise en charge des modules de prise en charge des dossiers partagés (c’est-à-dire accès délégué) et boîtes aux lettres partagées.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745850"
 ---
-
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
-Cet article explique comment activer les scénarios de dossiers partagés (également appelés accès [délégué) et](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) de boîtes aux lettres partagées (désormais en prévisualisation) dans votre application Outlook, y compris les autorisations que l’API JavaScript Office prend en charge.
+Cet article explique comment activer les scénarios de dossiers partagés (également appelés accès [délégué) et](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) de boîtes aux lettres partagées (désormais en prévisualisation) dans votre application Outlook, notamment les autorisations que l’API JavaScript Office prend en charge.
 
 ## <a name="supported-clients-and-platforms"></a>Clients et plateformes pris en charge
 
 Le tableau suivant présente les combinaisons client-serveur pris en charge pour cette fonctionnalité, y compris la mise à jour cumulative minimale requise, le cas échéant. Les combinaisons exclues ne sont pas pris en charge.
 
-| Client | Exchange Online | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2013 en local |
+| Client | Exchange Online | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2013 en local |
 |---|:---:|:---:|:---:|:---:|
 |Windows :<br>version 1910 (build 12130.20272) ou version ultérieure|Oui|Non|Non|Non|
 |Mac :<br>build 16.47 ou ultérieure|Oui|Oui|Oui|Oui|
@@ -27,7 +32,7 @@ Le tableau suivant présente les combinaisons client-serveur pris en charge pour
 
 Les sections suivantes décrivent les configurations prise en charge pour les boîtes aux lettres partagées (désormais en prévisualisation) et les dossiers partagés. Les API de fonctionnalité peuvent ne pas fonctionner comme prévu dans d’autres configurations. Sélectionnez la plateforme que vous souhaitez apprendre à configurer.
 
-### <a name="windows"></a>[Windows](#tab/windows)
+### <a name="windows"></a>[Fenêtres](#tab/windows)
 
 #### <a name="shared-folders"></a>Dossiers partagés
 
@@ -103,7 +108,7 @@ Le tableau suivant décrit les autorisations que l’API JavaScript Office prend
 
 Les mises à jour d’un délégué vers la boîte aux lettres du propriétaire sont généralement synchronisées immédiatement entre les boîtes aux lettres.
 
-Toutefois, si des opérations REST ou Exchange Web Services (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons plutôt d’utiliser [l’objet CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter ce délai. Pour en savoir plus, consultez la [section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) des propriétés personnalisées de l’article « Obtenir et définir des métadonnées dans un Outlook de données ».
+Toutefois, si des opérations REST ou Exchange Web Services (EWS) ont été utilisées pour définir une propriété étendue sur un élément, la synchronisation de ces modifications peut prendre quelques heures. Nous vous recommandons plutôt d’utiliser [l’objet CustomProperties](/javascript/api/outlook/office.customproperties) et les API associées pour éviter ce délai. Pour en savoir plus, consultez la [section des](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) propriétés personnalisées de l’article « Obtenir et définir des métadonnées dans un Outlook de données ».
 
 > [!IMPORTANT]
 > Dans un scénario de délégué, vous ne pouvez pas utiliser EWS avec les jetons actuellement fournis par office.js API.
@@ -217,7 +222,7 @@ if (item.getSharedPropertiesAsync) {
 }
 ```
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 Selon les scénarios de votre add-in, il existe quelques limitations à prendre en compte lors de la gestion de dossiers partagés ou de situations de boîtes aux lettres partagées.
 

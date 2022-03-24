@@ -3,16 +3,16 @@ title: Référencement de la bibliothèque de l’API JavaScript Office
 description: Découvrez comment référencer la bibliothèque Office’API JavaScript et les définitions de type dans votre application.
 ms.date: 02/18/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 134b3de88218101761c3f25c897ea67c2eb3d68c
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 514959c7aa703172c61bcf061a9c1f047858caa4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149969"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743689"
 ---
 # <a name="referencing-the-office-javascript-api-library"></a>Référencement de la bibliothèque de l’API JavaScript Office
 
-La [Office’API JavaScript](../reference/javascript-api-for-office.md) fournit les API que votre application peut utiliser pour interagir avec l’application Office web. Le moyen le plus simple de référencer la bibliothèque consiste à utiliser le réseau de distribution de contenu (CDN) en ajoutant la balise suivante dans la `<script>` section de votre page `<head>` HTML.
+La [Office’API JavaScript](../reference/javascript-api-for-office.md) fournit les API que votre application peut utiliser pour interagir avec l’application Office web. Le moyen le plus simple de référencer la bibliothèque consiste à utiliser le réseau de distribution de contenu (CDN) `<script>` `<head>` en ajoutant la balise suivante dans la section de votre page HTML.
 
 ```html
 <head>
@@ -24,11 +24,11 @@ La [Office’API JavaScript](../reference/javascript-api-for-office.md) fournit 
 Cela permet de télécharger et de mettre en cache les fichiers de l’API JavaScript Office la première fois que votre application se charge pour s’assurer qu’elle utilise l’implémentation la plus à jour de Office.js et de ses fichiers associés pour la version spécifiée.
 
 > [!IMPORTANT]
-> Vous devez référencer l’API JavaScript Office à partir de la section de la page pour vous assurer que l’API est entièrement initialisée avant les éléments `<head>` body.
+> Vous devez référencer l’API JavaScript Office à `<head>` partir de la section de la page pour vous assurer que l’API est entièrement initialisée avant les éléments body.
 
 ## <a name="api-versioning-and-backward-compatibility"></a>Gestion des versions d’API et compatibilité avec les versions antérieures
 
-Dans l’extrait de code HTML précédent, l’URL avant de l’CDN spécifie la dernière version incrémentielle dans la version 1 de `/1/` `office.js` Office.js. Étant donné que Office API JavaScript maintient la compatibilité ascendante, la dernière version continuera à prendre en charge les membres d’API qui ont été introduits précédemment dans la version 1. Si vous avez besoin de mettre à niveau un projet existant, voir Mettre à jour la version de votre API JavaScript Office fichiers de schéma de manifeste et de [l’API JavaScript.](update-your-javascript-api-for-office-and-manifest-schema-version.md) 
+Dans l’extrait de code HTML précédent, `/1/` `office.js` l’URL frontale de la CDN spécifie la dernière version incrémentielle dans la version 1 de Office.js. Étant donné que Office API JavaScript maintient la compatibilité ascendante, la dernière version continuera à prendre en charge les membres d’API qui ont été introduits précédemment dans la version 1. Si vous avez besoin de mettre à niveau un projet existant, voir Mettre à jour la version de votre [API JavaScript Office fichiers de schéma de manifeste et de l’API JavaScript.](update-your-javascript-api-for-office-and-manifest-schema-version.md) 
 
 Si vous envisagez de publier votre complément Office à partir d’AppSource, vous devez utiliser cette référence au CDN. Les références locales sont adaptées uniquement au développement interne et au débogage des scénarios.
 

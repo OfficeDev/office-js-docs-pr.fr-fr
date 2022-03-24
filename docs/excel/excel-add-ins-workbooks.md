@@ -4,12 +4,12 @@ description: Découvrez comment effectuer des tâches courantes avec des workboo
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e07ac7ba679a7016ce19bfbce1b7570ddf29ee5
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: f003c59ab3fcd029d16bde2ca95cd3a4fdbd15b9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340553"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745469"
 ---
 # <a name="work-with-workbooks-using-the-excel-javascript-api"></a>Utiliser les classeurs utilisant l’API JavaScript Excel
 

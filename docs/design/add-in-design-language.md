@@ -3,12 +3,12 @@ title: Langage de création d’un complément Office
 description: Découvrez comment faire en sorte que votre Office soit visuellement compatible avec Office.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a945cdbe4ba50bc00d9334492ccbd280b93a2487
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a7623b305ec7857957ce1215574ea5cdee70b3d7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149176"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742794"
 ---
 # <a name="office-add-in-design-language"></a>Langage de création d’un complément Office
 

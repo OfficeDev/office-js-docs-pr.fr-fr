@@ -1,14 +1,14 @@
 ---
 title: Modèles de navigation pour les compléments Office
-description: Découvrez les meilleures pratiques d’utilisation des barres de commandes, des barres de tabulation et des boutons arrière pour concevoir la navigation d’un Office de commande.
+description: Découvrez les meilleures pratiques en matière d’utilisation des barres de commandes, des barres de tabulation et des boutons Arrière pour concevoir la navigation d’un Office de commande.
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6e725ac482245f18d65a5eda3bb8573a1a4f926
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: dc7d75c9e914cf6294409590783e5ef73670dcc5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150086"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743227"
 ---
 # <a name="navigation-patterns"></a>Modèles de navigation
 
@@ -23,9 +23,9 @@ Les principales fonctionnalités d’un complément sont accessibles via les typ
 
 ## <a name="command-bar"></a>Barre de commandes
 
-CommandBar est une surface du volet Des tâches qui héberge les commandes qui opèrent sur le contenu de la fenêtre, du panneau ou de la région parente qu’il se trouve au-dessus. Exemples de fonctionnalités facultatives : point d’accès au menu « hamburger », recherche et commandes sur le côté.
+CommandBar est une surface dans le volet Des tâches qui héberge les commandes qui opèrent sur le contenu de la fenêtre, du panneau ou de la région parente qu’il se trouve au-dessus. Exemples de fonctionnalités facultatives : point d’accès au menu « hamburger », recherche et commandes sur le côté.
 
-![Illustration montrant une barre de commandes dans un volet Office’application de bureau. Cet exemple montre une barre de commandes juste en dessous du nom du module qui inclut un menu hamburger et une recherche.](../images/add-in-command-bar.png)
+![Illustration montrant une barre de commandes dans un volet Office’application de bureau. Cet exemple montre une barre de commandes immédiatement en dessous du nom du add-in qui inclut un menu hamburger et une recherche.](../images/add-in-command-bar.png)
 
 ## <a name="tab-bar"></a>Barre d’onglets
 

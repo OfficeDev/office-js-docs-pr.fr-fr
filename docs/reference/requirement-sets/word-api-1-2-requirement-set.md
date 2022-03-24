@@ -1,11 +1,16 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Word 1.2
-description: Détails sur l’ensemble de conditions requises WordApi 1.2
+description: Détails sur l’ensemble de conditions requises WordApi 1.2.
 ms.date: 11/09/2020
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: 1a5af83615786b241c43ecb07ee0d23b3758cfc8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744218"
 ---
-
 # <a name="whats-new-in-word-javascript-api-12"></a>Nouveautés de l’API JavaScript 1.2 pour Word
 
 WordApi 1.2 a ajouté la prise en charge des images en ligne.

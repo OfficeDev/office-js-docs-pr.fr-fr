@@ -1,6 +1,6 @@
 ### YamlMime:Hub
 title: Documentation pour compléments Office
-summary: 'Utilisez la plateforme des Office pour créer des solutions qui étendent les applications Office et interagissent avec du contenu dans des documents Office et dans des messages Outlook et des éléments de calendrier. Avec Office, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer des solutions qui peuvent s’exécuter dans Office sur le Web, Windows, Mac et mobile.'
+summary: 'Utilisez la plateforme des Office pour créer des solutions qui étendent les applications Office et interagissent avec le contenu dans les documents Office et dans les messages Outlook et les éléments de calendrier. Avec Office, vous pouvez utiliser des technologies web familières telles que HTML, CSS et JavaScript pour créer des solutions qui peuvent s’exécuter dans Office sur le Web, Windows, Mac et mobile.'
 brand: office
 metadata:
   title: Documentation pour compléments Office
@@ -109,7 +109,7 @@ conceptualContent:
           text: Poser des questions sur Office.js sur les questions microsoft&R
         - url: 'https://stackoverflow.com/questions/tagged/office-js'
           itemType: reference
-          text: Poser des questions sur les Office.js sur Stack Overflow
+          text: Poser des questions sur Office.js sur Stack Overflow
         - url: 'https://github.com/OfficeDev/office-js/issues'
           itemType: reference
           text: Signaler un bogue ou un problème

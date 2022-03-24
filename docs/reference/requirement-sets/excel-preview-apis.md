@@ -4,8 +4,13 @@ description: Détails sur les API JavaScript Excel à venir.
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f15a72631f83a5102fb4e042cc1357d179d1fa3d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747176"
 ---
-
 # <a name="excel-javascript-preview-apis"></a>Version d’évaluation API JavaScript Excel
 
 Les nouvelles Excel JavaScript APIs introduits dans « Aperçu » et versions ultérieures deviennent partie intégrante d’une exigence spécifique, numérotée définie après que test suffisantes se produit et les commentaires des utilisateurs sont acquis.
@@ -26,7 +31,7 @@ Le tableau suivant fournit un résumé concis des API, tandis que le tableau de 
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), consultez toutes Excel [API JavaScript.](/javascript/api/excel?view=excel-js-preview&preserve-view=true)
+Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualisation. Pour obtenir la liste complète de toutes les API JavaScript Excel (y compris les API de prévisualisation et les API publiées précédemment), consultez toutes les API [JavaScript Excel de prévisualisation](/javascript/api/excel?view=excel-js-preview&preserve-view=true).
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -265,7 +270,7 @@ Le tableau suivant répertorie les EXCEL JavaScript actuellement en prévisualis
 ||[basicValue](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-basicvalue-member)|Représente la valeur renvoyée par une `Range.values` cellule avec cette valeur.|
 ||[errorSubType](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-errorsubtype-member)|Représente le type de `SpillErrorCellValue`.|
 ||[errorType](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-errortype-member)|Représente le type de `ErrorCellValue`.|
-||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledcolumns-member)|Représente le nombre de colonnes qui seraient déversées en l’absence de #SPILL ! erreur.|
+||[spilledColumns](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledcolumns-member)|Représente le nombre de colonnes qui seraient déversées s’il n’y avait #SPILL ! erreur.|
 ||[spilledRows](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-spilledrows-member)|Représente le nombre de lignes qui seraient surdessin s’il n’y avait #SPILL ! erreur.|
 ||[type](/javascript/api/excel/excel.spillerrorcellvalue#excel-excel-spillerrorcellvalue-type-member)|Représente le type de cette valeur de cellule.|
 |[StringCellValue](/javascript/api/excel/excel.stringcellvalue)|[basicType](/javascript/api/excel/excel.stringcellvalue#excel-excel-stringcellvalue-basictype-member)|Représente la valeur renvoyée par une `Range.valueTypes` cellule avec cette valeur.|

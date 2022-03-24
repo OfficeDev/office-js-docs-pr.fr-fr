@@ -1,18 +1,18 @@
 ---
 ms.date: 07/08/2021
-description: Utiliser les balises JSDOC pour créer dynamiquement vos fonctions personnalisées de métadonnées JSON.
+description: Utilisez des balises JSDoc pour créer dynamiquement vos métadonnées JSON de fonctions personnalisées.
 title: Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: c5047fb48fe30ba5fdeb69cef46b3a2178ca2343
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c14196da1d686beb32b31589187e57b2b6f2616d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150343"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744547"
 ---
 # <a name="autogenerate-json-metadata-for-custom-functions"></a>Générer automatiquement des métadonnées JSON pour des fonctions personnalisées
 
-Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les [balises JSDoc](https://jsdoc.app/) pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le fichier de métadonnées JSON. L’utilisation de balises JSDoc vous permet d’éviter de modifier manuellement le fichier de métadonnées [JSON.](custom-functions-json.md)
+Si vous écrivez une fonction Excel personnalisée en JavaScript ou TypeScript, vous pouvez utiliser les [balises JSDoc](https://jsdoc.app/) pour la détailler en ajoutant des informations supplémentaires. Les balises JSDoc sont ensuite utilisées lors de la génération pour créer le fichier de métadonnées JSON. L’utilisation de balises JSDoc vous permet d’éviter de modifier manuellement le fichier de métadonnées [JSON](custom-functions-json.md).
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -56,7 +56,7 @@ Les balises JSDoc suivantes sont pris en charge Excel fonctions personnalisées.
 
 Indique qu’une fonction personnalisée effectue une action lorsque la fonction est annulée.
 
-Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`. La fonction peut affecter une fonction à la propriété pour indiquer le `oncanceled` résultat lorsque la fonction est annulée.
+Le dernier paramètre de la fonction doit être de type `CustomFunctions.CancelableInvocation`. La fonction peut affecter une fonction à la propriété `oncanceled` pour indiquer le résultat lorsque la fonction est annulée.
 
 Si le dernier paramètre de fonction est de type `CustomFunctions.CancelableInvocation`, il sera considéré comme `@cancelable`, même si la balise n’apparaît pas.
 
@@ -138,7 +138,7 @@ Syntaxe: @urlaide _url_
 
 L’_url_ fournie est affichée dans Excel.
 
-Dans l’exemple suivant, il `helpurl` s’agit `www.contoso.com/weatherhelp` de .
+Dans l’exemple suivant, il s’agit `helpurl` de `www.contoso.com/weatherhelp`.
 
 ```js
 /**
@@ -218,9 +218,9 @@ function add(first: number, second: number): number {
 
 Indique que l’adresse de la cellule dans laquelle la fonction est évaluée doit être fournie.
 
-Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à `@requiresAddress` utiliser. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
+Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à utiliser `@requiresAddress`. Lorsque la fonction est appelée, la propriété `address` contiendra l’adresse.
 
-L’exemple suivant montre comment utiliser le paramètre en combinaison avec pour renvoyer l’adresse de la cellule `invocation` qui a appelé votre fonction `@requiresAddress` personnalisée. Pour plus [d’informations,](custom-functions-parameter-options.md#invocation-parameter) voir paramètre Invocation.
+L’exemple suivant montre comment utiliser le `invocation` paramètre en combinaison `@requiresAddress` avec pour renvoyer l’adresse de la cellule qui a appelé votre fonction personnalisée. Pour plus [d’informations,](custom-functions-parameter-options.md#invocation-parameter) voir paramètre Invocation.
 
 ```js
 /**
@@ -242,11 +242,11 @@ function getAddress(first, second, invocation) {
 
 Indique que la fonction doit renvoyer les adresses des paramètres d’entrée. 
 
-Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à  `@requiresParameterAddresses` utiliser. Le commentaire JSDoc doit également inclure une balise spécifiant que la valeur de retour est `@returns` une matrice, par exemple `@returns {string[][]}` ou `@returns {number[][]}` . Pour [plus d’informations,](#matrix-type) voir Types de matrices. 
+Le dernier paramètre de fonction doit être de type `CustomFunctions.Invocation` ou un type dérivé à utiliser  `@requiresParameterAddresses`. Le commentaire JSDoc doit également inclure une `@returns` balise spécifiant que la valeur de retour est une matrice, par exemple `@returns {string[][]}` ou `@returns {number[][]}`. Pour [plus d’informations](#matrix-type) , voir Types de matrices. 
 
 Lorsque la fonction est appelée, la `parameterAddresses` propriété contient les adresses des paramètres d’entrée.
 
-L’exemple suivant montre comment utiliser le paramètre en combinaison avec pour renvoyer les `invocation` `@requiresParameterAddresses` adresses de trois paramètres d’entrée. Pour [plus d’informations, voir Détecter l’adresse d’un](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) paramètre. 
+L’exemple suivant montre comment utiliser le paramètre `invocation` en combinaison avec `@requiresParameterAddresses` pour renvoyer les adresses de trois paramètres d’entrée. Pour [plus d’informations, voir Détecter l’adresse d’un](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) paramètre. 
 
 ```js
 /**
@@ -298,8 +298,8 @@ function add(first: number, second: number): number {
 
 Utilisé pour indiquer qu’une fonction personnalisée est une fonction diffusion en continu. 
 
-Le dernier paramètre est de type `CustomFunctions.StreamingInvocation<ResultType>` .
-La fonction renvoie `void` .
+Le dernier paramètre est de type `CustomFunctions.StreamingInvocation<ResultType>`.
+La fonction renvoie `void`.
 
 Les fonctions de diffusion en continu ne retournent pas de valeurs directement, mais elles appellent à `setResult(result: ResultType)` l’aide du dernier paramètre.
 
@@ -339,7 +339,7 @@ Une valeur unique peut être représentée à l’aide d’un des types suivants
 
 ### <a name="matrix-type"></a>Type matrice
 
-Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs. Par exemple, le type `number[][]` indique une matrice de nombres et une matrice de `string[][]` chaînes.
+Utilisez une matrice à deux dimensions pour que le paramètre ou la valeur renvoyée soit une matrice de valeurs. Par exemple, le type `number[][]` indique une matrice de nombres et `string[][]` une matrice de chaînes.
 
 ### <a name="error-type"></a>Type d’erreur
 

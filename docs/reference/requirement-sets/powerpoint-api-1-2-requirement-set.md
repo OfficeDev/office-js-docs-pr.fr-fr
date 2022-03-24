@@ -4,8 +4,13 @@ description: Détails sur l’ensemble de conditions requises PowerPointApi 1.2.
 ms.date: 01/27/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 0e8ae36a7a137db1645051628aa90a451caf4d56
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744228"
 ---
-
 # <a name="whats-new-in-powerpoint-javascript-api-12"></a>Nouveautés de l PowerPoint API JavaScript 1.2
 
 PowerPointApi 1.2 a ajouté la prise en charge de l’insertion de diapositives d’une autre présentation dans la présentation actuelle et de la suppression des diapositives.

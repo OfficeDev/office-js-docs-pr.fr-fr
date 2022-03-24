@@ -3,12 +3,12 @@ title: Instructions concernant les îcones pour les compléments Office
 description: Obtenez une vue d’ensemble de la conception des icônes et des styles de conception Fresh et Monoline pour les commandes de add-in.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 0eeed616651535dfd20b6ac443a76fb1138ff51d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 930035dffcbb9c1815c042518a76cace25251710
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150188"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742978"
 ---
 # <a name="icons"></a>Icônes
 
@@ -22,8 +22,8 @@ De nombreux conteneurs HTML contiennent des contrôles avec iconographie. Utilis
 
 [Commandes de complément](add-in-commands.md) Ajoutez des boutons, du texte et des icônes à l’interface utilisateur Office. Vos boutons de commande de complément doivent fournir des icônes significatives et des étiquettes qui identifient clairement l’action que l’utilisateur effectue lorsqu’il utilise une commande. Les articles suivants fournissent des instructions stylistiques et de production pour vous aider à concevoir des icônes qui s’intègrent parfaitement à Office.
 
-- Pour le style Monoline de Microsoft 365, voir recommandations en matière d’icônes de [style Monoline pour Office des modules.](add-in-icons-monoline.md)
-- Pour obtenir le style Fresh de la Office 2013+, consultez les instructions relatives aux icônes de style Fresh pour Office [des modules.](add-in-icons-fresh.md)
+- Pour le style Monoline de Microsoft 365, voir Recommandations en matière d’icônes de [style Monoline pour Office des modules.](add-in-icons-monoline.md)
+- Pour obtenir le nouveau style d’Office 2013+ sans abonnement, consultez les [instructions relatives aux icônes de style Fresh pour Office des modules.](add-in-icons-fresh.md)
 
 > [!NOTE]
 > Vous devez choisir un style ou l’autre et votre add-in utilisera les mêmes icônes qu’il soit en cours d’exécution dans Microsoft 365 ou sans abonnement Office.

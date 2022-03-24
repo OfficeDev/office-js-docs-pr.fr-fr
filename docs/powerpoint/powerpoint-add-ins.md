@@ -1,12 +1,17 @@
 ---
 title: Compléments PowerPoint
-description: 'Découvrez comment utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur.'
+description: Découvrez comment utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations sur différentes plateformes, notamment Windows, iPad et Mac, ainsi que dans un navigateur.
 ms.date: 10/14/2020
 ms.topic: overview
-ms.custom: 'scenarios:getting-started'
+ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ms.openlocfilehash: a1bfa8f17f6a63896025a374a9fe8a6bdbf36f55
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746994"
 ---
-
 # <a name="powerpoint-add-ins"></a>Compléments PowerPoint
 
 Vous pouvez utiliser des compléments PowerPoint afin de créer des solutions attrayantes pour les présentations de vos utilisateurs sur toutes les plateformes, y compris Windows, iPad, Mac et dans un navigateur. Vous pouvez créer deux types de complément PowerPoint :

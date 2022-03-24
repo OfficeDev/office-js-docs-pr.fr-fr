@@ -3,12 +3,12 @@ title: Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des tableaux à l’aide Excel API JavaScript.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f383209d8c267757fa39b8a4da539adb24e78e
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: b4ea42468c9cc64682ab02423f7df4813333edc7
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340266"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745235"
 ---
 # <a name="work-with-tables-using-the-excel-javascript-api"></a>Utilisation de tableaux à l’aide de l’API JavaScript pour Excel
 

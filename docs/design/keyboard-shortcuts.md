@@ -1,11 +1,16 @@
 ---
 title: Raccourcis clavier personnalisés dans Office des modules
-description: 'Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.'
+description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 11/22/2021
 localization_priority: Normal
+ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743230"
 ---
-
-# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de travail
+# <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de commande
 
 Les raccourcis clavier, également appelés combinaisons de touches, permettent aux utilisateurs de votre module de travailler plus efficacement. Les raccourcis clavier améliorent également l’accessibilité du module pour les utilisateurs présentant un handicap en offrant une alternative à la souris.
 
@@ -125,7 +130,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     });
     ```
 
-La suite des étapes précédentes permet à votre add-in de faire tourner la visibilité du volet Des tâches en appuyant sur **Ctrl+Alt+Haut** et **Ctrl+Alt+Bas**. Le même comportement est illustré dans [l’exemple de raccourcis clavier Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) dans le Office PnP des GitHub.
+La suite des étapes précédentes permet à votre add-in de faire tourner la visibilité du volet Des tâches en appuyant sur **Ctrl+Alt+Haut** et **Ctrl+Alt+Bas**. Le même comportement est illustré dans [l’exemple de raccourcis clavier Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) dans le Office PnP des Office dans GitHub.
 
 ## <a name="details-and-restrictions"></a>Détails et restrictions
 
@@ -203,7 +208,7 @@ En cas de conflit, l’utilisateur voit une boîte de dialogue la première fois
 
 ![Illustration montrant un conflit modal avec deux actions différentes pour un seul raccourci.](../images/add-in-shortcut-conflict-modal.png)
 
-L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences, il peut appeler la commande  Réinitialiser les préférences de raccourci des Office dans la zone de recherche Rechercher. L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle.
+L’utilisateur peut sélectionner l’action que le raccourci clavier va prendre. Après avoir fait la sélection, la préférence est enregistrée pour les futures utilisations du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences, il peut appeler la commande  Réinitialiser les préférences de raccourci des Office dans la zone de recherche  Rechercher. L’appel de la commande permet d’effacer toutes les préférences de raccourci de l’utilisateur et l’utilisateur sera de nouveau invité à utiliser la boîte de dialogue de conflit la prochaine fois qu’il tentera d’utiliser un raccourci conflictuelle.
 
 ![La zone de recherche Rechercher dans Excel affiche la réinitialisation Office’action de préférence de raccourci de l’ajout.](../images/add-in-reset-shortcuts-action.png)
 
@@ -306,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-Comme décrit dans [Éviter les combinaisons de touches](#avoid-key-combinations-in-use-by-other-add-ins) en cours d’utilisation par d’autres modules, il est bon d’éviter les conflits dans les raccourcis. Pour découvrir si une ou plusieurs combinaisons de touches sont déjà utilisées, passez-les en tant que tableau de chaînes à la méthode [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member). La méthode renvoie un rapport contenant des combinaisons de touches qui sont déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}`. La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Shift+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie `true`sur . Par exemple, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
+Comme décrit dans [Éviter les combinaisons de touches](#avoid-key-combinations-in-use-by-other-add-ins) en cours d’utilisation par d’autres modules, il est bon d’éviter les conflits dans les raccourcis. Pour découvrir si une ou plusieurs combinaisons de touches sont déjà utilisées, passez-les en tant que tableau de chaînes à la [méthode Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member). La méthode renvoie un rapport contenant des combinaisons de touches qui sont déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}`. La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Shift+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie `true`sur . Par exemple, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];

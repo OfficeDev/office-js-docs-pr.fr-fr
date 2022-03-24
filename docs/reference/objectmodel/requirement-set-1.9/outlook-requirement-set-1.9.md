@@ -3,11 +3,16 @@ title: Outlook l’ensemble de conditions requises de l’API du add-in 1.9
 description: Ensemble de conditions requises 1.9 pour Outlook API de votre application.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: c98db3909400a01ffa12d75acf4ee3c4a7752bf1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745335"
 ---
-
 # <a name="outlook-add-in-api-requirement-set-19"></a>Outlook l’ensemble de conditions requises de l’API du add-in 1.9
 
-Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook de gestion.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.

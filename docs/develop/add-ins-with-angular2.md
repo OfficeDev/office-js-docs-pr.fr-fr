@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Angular
 description: Utilisez Angular pour créer un Office en tant qu’application à page unique.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 87d63fb8cc6c78d791ca9f5f9231abf375a7b2a1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: daaeac63055edeadc12dcff727f63b19ffd5a00a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149172"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743647"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -29,7 +29,7 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>L’amorçage doit s’effectuer à l’intérieur d’Office.initialize
 
-Dans une page qui appelle les API Office, Word ou Excel JavaScript, votre code doit d’abord attribuer une méthode à la propriété `Office.initialize`. (Si vous ne possédez aucun code d’initialisation, le corps de la méthode peut contenir simplement des symboles «`{}`» vides, mais vous ne devez pas laisser la propriété `Office.initialize` non définie. Pour plus d’informations, [voir Initialize your Office Add-in](initialize-add-in.md).) Office appelle cette méthode immédiatement après l’initialisation Office bibliothèques JavaScript.
+Dans une page qui appelle les API Office, Word ou Excel JavaScript, votre code doit d’abord attribuer une méthode à la propriété `Office.initialize`. (Si vous ne possédez aucun code d’initialisation, le corps de la méthode peut contenir simplement des symboles «`{}`» vides, mais vous ne devez pas laisser la propriété `Office.initialize` non définie. Pour plus d’informations, voir [Initialize your Office Add-in](initialize-add-in.md).) Office appelle cette méthode immédiatement après l’initialisation Office bibliothèques JavaScript.
 
 **Votre code d’amorçage Angular doit être appelé à l’intérieur de la méthode que vous affectez à `Office.initialize`** pour vous assurer que les bibliothèques JavaScript Office ont été initialisées en premier. Voici un exemple simple qui montre comment procéder. Ce code doit figurer dans le fichier main.ts du projet.
 
@@ -76,13 +76,13 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="use-the-office-dialog-api-with-angular"></a>Utiliser l’API Office dialogue avec Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>Utiliser l’API Office boîte de dialogue avec Angular
 
 L’API de boîte de dialogue du complément Office permet à votre complément d’ouvrir une page dans une boîte de dialogue non modale dans laquelle vous pouvez échanger des informations avec la page principale, qui se trouve généralement dans un volet Office.
 
 La méthode [displayDialogAsync](/javascript/api/office/office.ui) accepte un paramètre qui indique l’URL de la page qui doit s’ouvrir dans la boîte de dialogue. Votre complément peut avoir une autre page HTML (différente de la page de base) pour passer à ce paramètre, ou vous pouvez passer l’URL d’un itinéraire dans votre application Angular.
 
-Il est important de ne pas oublier, si vous passez un itinéraire, que la boîte de dialogue crée une nouvelle fenêtre avec son propre contexte d’exécution. Votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application monopage dans la boîte de dialogue. Le code qui modifie des variables dans la boîte de dialogue ne change pas la version du volet Office des mêmes variables. De même, la boîte de dialogue possède son propre stockage de session (propriété [Window.sessionStorage),](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) qui n’est pas accessible à partir du code dans le volet Des tâches.  
+Il est important de ne pas oublier, si vous passez un itinéraire, que la boîte de dialogue crée une nouvelle fenêtre avec son propre contexte d’exécution. Votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application monopage dans la boîte de dialogue. Le code qui modifie des variables dans la boîte de dialogue ne change pas la version du volet Office des mêmes variables. De même, la boîte de dialogue possède son propre stockage de session (propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), qui n’est pas accessible à partir du code dans le volet Des tâches.  
 
 ## <a name="trigger-the-ui-update"></a>Déclencher la mise à jour de l’interface utilisateur
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Prise en charge d’Internet Explorer si vous chargez dynamiquement Office.js
 
-En fonction de la version Windows et du client de bureau Office sur lequel votre application est en cours d’exécution, il se peut que votre application utilise Internet Explorer 11. (Pour plus d’informations, voir [Browsers used by Office Add-ins.)](../concepts/browsers-used-by-office-web-add-ins.md) Angular dépend de quelques API, mais ces API ne fonctionnent pas dans le runtime d’IE incorporé dans Windows `window.history` clients de bureau. Lorsque ces API ne fonctionnent pas, il se peut que votre add-in ne fonctionne pas correctement, par exemple, qu’il charge un volet De tâches vide. Pour atténuer ce risque, Office.js annule ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant d'Office.js. Dans ce cas, vous devez désactiver les API en ajoutant le code suivant à la pageindex.html`window.history` de **votre** index.html.
+En fonction de la version Windows et du client de bureau Office sur lequel votre application est en cours d’exécution, il se peut que votre application utilise Internet Explorer 11. (Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular dépend de quelques-uns `window.history` Les API, mais ces API ne fonctionnent pas dans le runtime IE incorporé dans Windows clients de bureau. Lorsque ces API ne fonctionnent pas, il se peut que votre add-in ne fonctionne pas correctement, par exemple, qu’il charge un volet De tâches vide. Pour atténuer ce risque, Office.js annule ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant Office.js. Dans ce cas, vous devez désactiver `window.history` les API en ajoutant le code suivant à la page d'index.htmlde **votre** module.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

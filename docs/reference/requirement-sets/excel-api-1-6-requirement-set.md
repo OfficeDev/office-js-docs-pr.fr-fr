@@ -1,11 +1,16 @@
 ---
-title: Excel conditions requises de l’API JavaScript 1.6
+title: Excel l’ensemble de conditions requises de l’API JavaScript 1.6
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.6.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: d68bfae3494ec21df1eee5909ac2df532a0537b9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745839"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-16"></a>Nouveautés de l’API JavaScript 1.6 pour Excel
 
 ## <a name="conditional-formatting"></a>Mise en forme conditionnelle
@@ -27,7 +32,7 @@ De plus :
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.6. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.6 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true) ou une version antérieure.
+Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.6. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.6 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.6](/javascript/api/excel?view=excel-js-1.6&preserve-view=true) ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|

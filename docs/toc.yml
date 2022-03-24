@@ -243,13 +243,15 @@ items:
                 href: develop/show-hide-add-in.md
               - name: Localisation
                 href: develop/localization.md
-          - name: Infrastructures et IDE
+          - name: 'Frameworks, IDE et autres outils'
             items:
               - name: Développement de compléments avec Angular
                 href: develop/add-ins-with-angular2.md
+              - name: Créer des compléments avec yeoman Generator
+                href: develop/yeoman-generator-overview.md
               - name: Développement d’un complément avec Visual Studio Code
                 href: develop/develop-add-ins-vscode.md
-              - name: Développement d’un complément avec Visual Studio
+              - name: Créer et développer des compléments avec Visual Studio
                 items:
                   - name: Vue d’ensemble
                     href: develop/develop-add-ins-visual-studio.md

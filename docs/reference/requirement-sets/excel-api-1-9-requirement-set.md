@@ -1,11 +1,16 @@
 ---
-title: Excel l’ensemble de conditions requises de l’API JavaScript 1.9
+title: Excel conditions requises de l’API JavaScript 1.9
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.9.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f34b109f95f013cf27f0abfca9c2a8c6b1e4e7c9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746696"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-19"></a>Nouveautés de l Excel API JavaScript 1.9
 
 Plus de 500 nouvelles API Excel ont été ajoutés avec l’ensemble de conditions requises 1.9. Le premier tableau fournit un résumé concis des API, tandis que le tableau suivant fournit une liste détaillée.
@@ -24,7 +29,7 @@ Plus de 500 nouvelles API Excel ont été ajoutés avec l’ensemble de conditio
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.9. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.9 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.9](/javascript/api/excel?view=excel-js-1.9&preserve-view=true) ou une version antérieure.
+Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.9. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.9 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.9](/javascript/api/excel?view=excel-js-1.9&preserve-view=true) ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -386,7 +391,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[type](/javascript/api/excel/excel.shapedeactivatedeventargs#excel-excel-shapedeactivatedeventargs-type-member)|Obtient le type de l’événement.|
 ||[worksheetId](/javascript/api/excel/excel.shapedeactivatedeventargs#excel-excel-shapedeactivatedeventargs-worksheetid-member)|Obtient l’ID de la feuille de calcul dans laquelle la forme est désactivée.|
 |[ShapeFill](/javascript/api/excel/excel.shapefill)|[clear()](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-clear-member(1))|Renvoie la mise en forme de remplissage de cette forme.|
-||[foregroundColor](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-foregroundcolor-member)|Représente la couleur de premier plan de remplissage de la forme au format HTML, sous la forme #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
+||[foregroundColor](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-foregroundcolor-member)|Représente la couleur de premier plan de remplissage de la forme au format HTML, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[setSolidColor(color: string)](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-setsolidcolor-member(1))|Définit le format de remplissage d’un élément de graphique sur une couleur unie.|
 ||[Transparency](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-transparency-member)|Spécifie le pourcentage de transparence du remplissage sous la forme d’une valeur entre 0.0 (opaque) et 1.0 (clair).|
 ||[type](/javascript/api/excel/excel.shapefill#excel-excel-shapefill-type-member)|Renvoie le type de remplissage de la forme.|
@@ -394,7 +399,7 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[color](/javascript/api/excel/excel.shapefont#excel-excel-shapefont-color-member)|Représentation de code couleur HTML de la couleur du texte (par exemple, « #FF0000 » représente le rouge).|
 ||[italic](/javascript/api/excel/excel.shapefont#excel-excel-shapefont-italic-member)|Représente le format de police Italique.|
 ||[name](/javascript/api/excel/excel.shapefont#excel-excel-shapefont-name-member)|Représente le nom de la police (par exemple, « Calibri »).|
-||[size](/javascript/api/excel/excel.shapefont#excel-excel-shapefont-size-member)|Représente la taille de police en points (par exemple, 11).|
+||[taille](/javascript/api/excel/excel.shapefont#excel-excel-shapefont-size-member)|Représente la taille de police en points (par exemple, 11).|
 ||[underline](/javascript/api/excel/excel.shapefont#excel-excel-shapefont-underline-member)|Type de soulignement appliqué à la police.|
 |[ShapeGroup](/javascript/api/excel/excel.shapegroup)|[id](/javascript/api/excel/excel.shapegroup#excel-excel-shapegroup-id-member)|Spécifie l’identificateur de forme.|
 ||[shape](/javascript/api/excel/excel.shapegroup#excel-excel-shapegroup-shape-member)|Renvoie l’objet `Shape` associé au groupe.|

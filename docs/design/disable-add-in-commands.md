@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2f2521b47a304fb358a33068bcccb425fd1a64
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: b50311b814f91d44792325fce408d58e80e68a1f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511349"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743209"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 

@@ -1,10 +1,15 @@
 ---
-title: "Meilleures pratiques en matière de développement de compléments\_Office"
+title: Meilleures pratiques en matière de développement de compléments Office
 description: Appliquez les meilleures pratiques lors du développement pour créer des Office de développement.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 32aaedea3ec4d8b0f1a68efdc5cbc4adf0429551
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742845"
 ---
-
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
 Des compléments efficaces proposent des fonctionnalités uniques et attrayantes qui étendent les applications Office d’une manière visuellement attractive. Pour créer un complément intéressant, offrez une première expérience attractive à vos utilisateurs, concevez une interface utilisateur de premier choix et optimisez les performances de votre complément. Appliquez les meilleures pratiques décrites dans cet article pour créer des compléments permettant aux utilisateurs d’accomplir leurs tâches rapidement et efficacement.

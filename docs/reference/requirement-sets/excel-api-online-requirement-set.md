@@ -4,8 +4,13 @@ description: Détails sur l’ensemble de conditions requises ExcelApiOnline.
 ms.date: 10/29/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: f3ec510e889ecfe565767352c59cd349e0701830
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746608"
 ---
-
 # <a name="excel-javascript-api-online-only-requirement-set"></a>Excel conditions requises de l’API JavaScript en ligne uniquement
 
 L’ensemble `ExcelApiOnline` de conditions requises est un ensemble de conditions requises spécial qui inclut des fonctionnalités qui ne sont disponibles que pour Excel sur le Web. Les API de cet ensemble de conditions requises sont considérées comme des API de production (non sujettes à des modifications comportementales ou structurelles nondocumentées) pour l’application Excel sur le Web de production. `ExcelApiOnline`Les API sont considérées comme des API « d’aperçu » pour d’autres plateformes (Windows, Mac, iOS) et peuvent ne pas être pris en charge par l’une de ces plateformes.

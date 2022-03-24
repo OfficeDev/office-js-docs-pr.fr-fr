@@ -1,11 +1,16 @@
 ---
 title: Authentifier un utilisateur avec un jeton à authentification unique
-description: "Découvrez comment utiliser le jeton d’authentification unique fourni par un complément\_Outlook pour implémenter l’authentification unique (SSO) sur votre service."
+description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 108b11327087972ac064420357c822ff5bfe67d8
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745831"
 ---
-
-# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook’authentification unique
+# <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook d’authentification unique
 
 L’authentification unique (SSO) permet à votre complément d’authentifier les utilisateurs en toute transparence (et éventuellement d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview)).
 
@@ -18,7 +23,7 @@ Pour une vue d’ensemble de l’authentification unique dans les compléments O
 
 ## <a name="enable-modern-authentication-in-your-microsoft-365-tenancy"></a>Activer l’authentification moderne dans Microsoft 365 location
 
-Pour utiliser l’authentification Outlook un Outlook, vous devez activer l’authentification moderne pour le Microsoft 365 location. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+Pour utiliser l’authentification Outlook un Outlook, vous devez activer l’authentification moderne pour la location Microsoft 365 de données. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="register-your-add-in"></a>Inscription de votre complément
 

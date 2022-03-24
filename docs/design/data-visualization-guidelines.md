@@ -3,18 +3,18 @@ title: Règles de style de visualisation de données pour les compléments Offic
 description: Obtenez quelques bonnes pratiques pour visualiser des données dans un Office de recherche.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3c743e3a793c4d4fdc2639313eb40a01923ada
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 173416be6ac3346ede19737939b00c7a437f6588
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150140"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743267"
 ---
 # <a name="data-visualization-style-guidelines-for-office-add-ins"></a>Règles de style de visualisation de données pour les compléments Office
 
 Une bonne visualisation des données permet aux utilisateurs de rechercher des informations dans leurs données. Ils peuvent utiliser ces informations pour raconter des histoires qui informent et persuadent. Cet article fournit des instructions pour vous aider à créer des visualisations de données efficaces dans vos compléments pour Excel et d’autres applications Office.
 
-Nous vous recommandons d’utiliser [Fluent’interface utilisateur pour](../design/add-in-design.md) créer le chrome pour vos visualisations de données. Fluent L’interface utilisateur inclut des styles et des composants qui s’intègrent parfaitement à l’Office l’apparence.
+Nous vous recommandons d’utiliser [Fluent’interface utilisateur pour](../design/add-in-design.md) créer le chrome pour vos visualisations de données. Fluent’interface utilisateur inclut des styles et des composants qui s’intègrent parfaitement à Office l’apparence.
 
 ## <a name="data-visualization-elements"></a>Éléments de visualisation de données
 
@@ -28,14 +28,14 @@ Suivez ces instructions pour les titres de graphique.
 
 - Faites en sorte que vos titres de graphique soient lisibles. Positionnez-les pour créer une hiérarchie visuelle claire par rapport au reste du graphique.
 - En règle générale, utilisez la mise en majuscule de phrase (premier mot en majuscule). Pour créer un contraste ou accentuer des hiérarchies, vous pouvez mettre tout en majuscules, mais faites-le avec parcimonie.
-- Incorporez la [Fluent de type](https://developer.microsoft.com/fluentui#/styles/web/typography) d’interface utilisateur pour rendre vos graphiques cohérents avec Office’interface utilisateur, qui utilise Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
+- Incorporez [la Fluent de type](https://developer.microsoft.com/fluentui#/styles/web/typography) d’interface utilisateur pour rendre vos graphiques cohérents avec Office’interface utilisateur, qui utilise Segoe. Vous pouvez également utiliser une autre police pour différencier le contenu du graphique de l’interface utilisateur.
 - Utilisez des polices sans-serif avec des compteurs de grande taille.
 
 ### <a name="axis-labels"></a>Étiquettes d’axe
 
 Rendez vos étiquettes d’axe suffisamment foncées pour qu’elles soient lisibles, avec des taux de contraste adéquats entre les couleurs de texte et d’arrière-plan. Veillez à ce qu’elles ne soient pas trop foncées pour ne pas se confondre avec l’encre de données.
 
-Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez l’interface Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
+Les nuances de gris clair sont les plus efficaces pour les étiquettes d’axe. Si vous utilisez Fluent’interface utilisateur, consultez la [palette Couleurs neutres](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals).
 
 ### <a name="data-ink"></a>Encre de données
 
@@ -55,11 +55,11 @@ Pour des recommandations sur l’utilisation des couleurs dans les visualisation
 
 Le quadrillage est souvent nécessaire pour une lecture précise d’un graphique, mais il doit être présenté comme un élément visuel secondaire, qui améliore l’encre de données, sans se confondre avec elle. Créez un quadrillage statique fin et léger, sauf s’il est conçu spécifiquement pour un contraste élevé. Vous pouvez également utiliser une interaction pour créer un quadrillage dynamique ponctuel qui s’affiche dans le contexte lorsqu’un utilisateur interagit avec un graphique.
 
-Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez l’interface Fluent, consultez la [palette Couleurs neutres.](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals)
+Les nuances de gris clair sont les plus efficaces pour les quadrillages. Si vous utilisez Fluent’interface utilisateur, consultez la [palette Couleurs neutres](https://developer.microsoft.com/fluentui#/styles/web/colors/neutrals).
 
 L’image suivante montre une visualisation de données avec le quadrillage.
 
-![Visualisation des données d’un graphique en lignes avec un quadrillage.](../images/data-visualization.png)
+![Visualisation des données du graphique en lignes avec quadrillage.](../images/data-visualization.png)
 
 ### <a name="legends"></a>Légendes
 

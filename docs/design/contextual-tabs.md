@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 285a73b144470798e20d6d4ca374fb8a1655db2b
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: aa301996d653170d02280efbdb7e94733b5dd924
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511272"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742930"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 

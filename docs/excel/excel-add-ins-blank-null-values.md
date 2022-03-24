@@ -3,12 +3,12 @@ title: Valeurs vides et null dans les compléments Excel
 description: Découvrez comment travailler avec des valeurs nulles vides dans Excel méthodes et propriétés du modèle objet.
 ms.date: 09/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ca231e367219eb381ab33d159f8afc0ed3e1594a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: a7024d00c113f53e887f9bd6de013581e11011ea
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150452"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744775"
 ---
 # <a name="blank-and-null-values-in-excel-add-ins"></a>Valeurs vides et null dans les compléments Excel
 

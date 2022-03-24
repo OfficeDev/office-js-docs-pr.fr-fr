@@ -4,12 +4,12 @@ description: Spécifie les plateformes Office et les builds qui la prise en char
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dfce106eeb563fce59ccb998878f47f874b0ff9
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511351"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746687"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
@@ -22,10 +22,10 @@ L’ensemble d’API du Ruban prend en charge le contrôle par programme du mome
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API du ruban, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2021 ou une Windows\*<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web\*  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2021 ou une Windows\*<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le Web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | N/A | 16.53.806.0 | Mai 2021 | N/A|
-| RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
+| RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | S/O | 16.53.806.0 | Mai 2021 | S/O|
+| RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | S/O | 16.38 | Novembre 2020 | S/O|
 
 > **&#42;** L’API ruban est prise en charge uniquement dans Excel.
 
@@ -40,7 +40,7 @@ La version 1.1 de l’ensemble de conditions requises RibbonApi est prise en cha
 |Canal Entreprise mensuel | 2004 | 12730.20602 ou supérieur|
 |Canal Entreprise semestriel | 2002 ou supérieure | 12527.20880 ou supérieur|
 
-## <a name="more-information"></a>Informations supplémentaires
+## <a name="more-information"></a>Plus d’informations
 
 Pour en savoir plus sur les versions, les numéros de build et Office Online Server, voir :
 

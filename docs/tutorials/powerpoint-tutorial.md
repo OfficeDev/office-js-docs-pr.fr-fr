@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément PowerPoint qu
 ms.date: 02/18/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 38430240b768709d0c6d1bca12c91ebbf019a662
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: a42d7e0187779687fa179252879d969ea8c0828e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340161"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745085"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 

@@ -1,10 +1,15 @@
 ---
 title: Limites des ressources et optimisation des performances pour les compléments Office
-description: 'Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.'
+description: Découvrez les limites de ressources de la plateforme de Office, y compris le processeur et la mémoire.
 ms.date: 08/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: bc32b547ddfc68eb4028b944d92f0efb36dbc6f5
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742823"
 ---
-
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
 Afin d’offrir la meilleure expérience utilisateur, assurez-vous que votre complément Office fonctionne dans les limites prévues en matière d’utilisation du cœur du processeur et de la mémoire, ainsi qu’en matière de fiabilité et, pour les compléments Outlook, de temps de réponse lors de l’évaluation des expressions régulières. Ces limites propres à l’utilisation des ressources d’exécution s’appliquent aux compléments exécutés sur des clients Office sous Windows et OS X mais pas sur des applications mobiles, ni dans un navigateur.
@@ -44,7 +49,7 @@ Outre les règles de cœur de processeur, de mémoire et de fiabilité, Outlook 
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
-- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le module Outlook. Le Centre d’administration Exchange affiche l’état désactivé, et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que les Outlook sur le web et les appareils mobiles.
+- **Réévaluation des expressions régulières** : limite par défaut de trois fois pour Outlook réévaluer toutes les expressions régulières dans un manifeste. Si l’évaluation échoue à trois reprises en dépassant le seuil applicable (qui est la valeur par défaut de 1 000 millisecondes ou une valeur spécifiée par **OutlookActivationAlertThreshold**, si ce paramètre existe dans le Registre Windows), Outlook désactive le module Outlook. Le Exchange Admin Center affiche l’état désactivé, et le module est désactivé pour être utilisé dans les clients Outlook riches, ainsi que sur les Outlook sur le web et les appareils mobiles.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster ce nombre de tentatives d’évaluation dans le paramètre **OutlookActivationManagerRetryLimit**.
 
@@ -88,7 +93,7 @@ Le tableau suivant répertorie les événements que le journal de télémétrie 
 |9 |Impossible d’analyser le balisage du complément|Critique|L Office’application a chargé Office manifeste de l’application, mais n’a pas pu lire le code HTML de l’application.|
 |10|Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
 |15 |Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
-|18 |Le complément a été fermé||L Office’application a pu fermer le Office le module.|
+|18 |Le complément a été fermé||L Office’application a pu fermer Office le module.|
 |19|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l'Complément Office n'ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 

@@ -3,12 +3,12 @@ title: Boîtes de dialogue dans les compléments Office
 description: Découvrez les meilleures pratiques pour la conception visuelle des boîtes de dialogue dans Office des applications.
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e3dff8249e7d198712c0058f9876aa4806c7e08
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 623a94b5cd0fdd398de2e61cb779f5d256c46d76
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150131"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743253"
 ---
 # <a name="dialog-boxes-in-office-add-ins"></a>Boîtes de dialogue dans les compléments Office
 
@@ -16,7 +16,7 @@ Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre 
 
 *Figure 1. Mise en page type pour une boîte de dialogue*
 
-![Disposition type d’une boîte de dialogue affichée dans une application Office’application.](../images/overview-with-app-dialog.png)
+![Disposition type d’une boîte de dialogue affichée dans une application Office application.](../images/overview-with-app-dialog.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 

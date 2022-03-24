@@ -1,10 +1,15 @@
 ---
-title: 'Utiliser des balises personnalisées sur les présentations, diapositives et formes dans PowerPoint'
-description: 'Découvrez comment utiliser des balises pour des métadonnées personnalisées sur les présentations, les diapositives et les formes.'
+title: Utiliser des balises personnalisées sur les présentations, diapositives et formes dans PowerPoint
+description: Découvrez comment utiliser des balises pour des métadonnées personnalisées sur les présentations, les diapositives et les formes.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 01c8ce5c5e3689ef6bd2131334363b3a77710cac
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746968"
 ---
-
 # <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Utiliser des balises personnalisées pour les présentations, diapositives et formes dans PowerPoint
 
 Un add-in peut joindre des métadonnées personnalisées, sous la forme de paires clé-valeur, appelées « balises », à des présentations, des diapositives spécifiques et des formes spécifiques sur une diapositive.

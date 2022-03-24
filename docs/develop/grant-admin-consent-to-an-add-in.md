@@ -1,14 +1,14 @@
 ---
 title: Octroi du consentement administrateur pour le complément
-description: Découvrez comment accorder le consentement de l’administrateur à votre add-in
+description: Découvrez comment accorder le consentement de l’administrateur à votre add-in.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3a82db390ed28c1eb8194a78f2c9fa787aeede
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 85a230ffd3769b0013081067c88d65d38d43b760
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320129"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743782"
 ---
 # <a name="grant-administrator-consent-to-the-add-in"></a>Octroi du consentement administrateur pour le complément
 
@@ -21,7 +21,7 @@ Effectuez cette procédure *une fois* [que vous avez inscrit le module.](../deve
 
 1. Connectez-vous avec ***les informations d’identification*** d’administrateur à Microsoft 365 location. Par exemple, MonNom@contoso.onmicrosoft.com.
 
-1. Sélectionnez l’application avec le **nom $ADD-IN-NAME$**.
+1. Sélectionnez l’application avec le **nom complet $ADD-IN-NAME$**.
 
 1. Sur la page **$ADD-IN-NAME$** , sélectionnez les **autorisations d’API** , puis, sous la section **Autorisations configurées** , choisissez Accorder le consentement administrateur pour [nom du **client].**. **Sélectionnez Oui** pour la confirmation qui s’affiche.
 

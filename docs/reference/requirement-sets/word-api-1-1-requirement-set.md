@@ -1,11 +1,16 @@
 ---
 title: Ensemble de conditions requises de l’API JavaScript pour Word 1.1
-description: Détails sur l’ensemble de conditions requises WordApi 1.1
+description: Détails sur l’ensemble de conditions requises WordApi 1.1.
 ms.date: 11/01/2021
 ms.prod: word
 ms.localizationpriority: medium
+ms.openlocfilehash: dfcb1954cd9522de6165130cc115fddbb5f3ec45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744212"
 ---
-
 # <a name="whats-new-in-word-javascript-api-11"></a>Nouveautés de l’API JavaScript 1.1 pour Word
 
 WordApi 1.1 est le premier ensemble de conditions requises de l’API JavaScript pour Word. Il s’agit du seul ensemble de conditions requises de l’API Word pris en charge par Word 2016.
@@ -95,7 +100,7 @@ Le tableau suivant répertorie les API de l’ensemble de conditions requises de
 ||[highlightColor](/javascript/api/word/word.font#word-word-font-highlightcolor-member)|Obtient ou définit la couleur de surbrillage.|
 ||[italic](/javascript/api/word/word.font#word-word-font-italic-member)|Obtient ou définit une valeur qui indique si la police est en italique.|
 ||[name](/javascript/api/word/word.font#word-word-font-name-member)|Obtient ou définit une valeur qui représente le nom de la police.|
-||[size](/javascript/api/word/word.font#word-word-font-size-member)|Obtient ou définit une valeur qui représente la taille de police en points.|
+||[taille](/javascript/api/word/word.font#word-word-font-size-member)|Obtient ou définit une valeur qui représente la taille de police en points.|
 ||[strikeThrough](/javascript/api/word/word.font#word-word-font-strikethrough-member)|Obtient ou définit une valeur qui indique si la police a un strikethrough.|
 ||[Subscript](/javascript/api/word/word.font#word-word-font-subscript-member)|Obtient ou définit une valeur qui indique si la police correspond à du texte mis en indice.|
 ||[superscript](/javascript/api/word/word.font#word-word-font-superscript-member)|Obtient ou définit une valeur qui indique si la police correspond à du texte en exposant.|

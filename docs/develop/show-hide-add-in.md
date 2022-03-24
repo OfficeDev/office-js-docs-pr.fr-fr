@@ -3,8 +3,13 @@ title: Afficher ou masquer le volet des tâches de votre complément Office
 description: Découvrez comment masquer ou afficher par programme l’interface utilisateur d’un add-in pendant qu’il s’exécute en continu.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7e881f5fc0d5258aa886709a0aee2eee5836feef
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743958"
 ---
-
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Afficher ou masquer le volet des tâches de votre complément Office
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
@@ -54,13 +59,13 @@ Envisagez le scénario suivant : un volet Des tâches est conçu avec des onglet
 
 En outre, tous les écouteurs d’événements inscrits dans le volet Des tâches continuent de s’exécuter même lorsque le volet Des tâches est masqué.
 
-Envisagez le scénario suivant : le volet Des tâches dispose `Worksheet.onActivated` `Worksheet.onDeactivated` d’un Excel et d’événements pour une feuille nommée **Sheet1**. Le handler activé entraîne l’apparition d’un point vert dans le volet Des tâches. Le handler désactivé transforme le point en rouge (qui est son état par défaut). Supposons alors que le code appelle `hide()` **lorsque la feuille Sheet1 n’est** pas activée et que le point est rouge. Bien que le volet Des tâches soit masqué, **la feuille Sheet1** est activée. Appels de code ultérieurs `showAsTaskpane()` en réponse à un événement. Lorsque le volet Des tâches s’ouvre, le point est vert, car les écouteurs et les handlers d’événements s’ouvrent même si le volet Des tâches a été masqué.
+Envisagez le scénario suivant : le volet Des tâches possède un handler `Worksheet.onActivated` `Worksheet.onDeactivated` inscrit pour les Excel et les événements d’une feuille nommée **Sheet1**. Le handler activé entraîne l’apparition d’un point vert dans le volet Des tâches. Le handler désactivé transforme le point en rouge (qui est son état par défaut). Supposons alors que le code appelle `hide()` **lorsque la feuille Sheet1 n’est** pas activée et que le point est rouge. Bien que le volet Des tâches soit masqué, **la feuille Sheet1** est activée. Appels de code ultérieurs `showAsTaskpane()` en réponse à un événement. Lorsque le volet Des tâches s’ouvre, le point est vert, car les écouteurs et les handlers d’événements s’ouvrent même si le volet Des tâches a été masqué.
 
 ## <a name="handle-the-visibility-changed-event"></a>Gérer l’événement de changement de visibilité
 
 Lorsque votre code modifie la visibilité du volet Des `showAsTaskpane()` `hide()`tâches avec ou, Office déclenche l’événement`VisibilityModeChanged`. Il peut être utile de gérer cet événement. Par exemple, supposons que le volet Des tâches affiche une liste de toutes les feuilles d’un workbook. Si une nouvelle feuille de calcul est ajoutée alors que le volet Des tâches est masqué, le fait de rendre le volet Des tâches visible n’ajoute pas en soi le nouveau nom de feuille de calcul à la liste. Toutefois, votre code `VisibilityModeChanged` peut répondre à l’événement pour recharger la propriété [Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de toutes les feuilles de calcul de la collection [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , comme illustré dans l’exemple de code ci-dessous.
 
-Pour inscrire un handler pour l’événement, vous n’utilisez pas de méthode « add handler » comme vous le feriez dans la plupart Office contextes JavaScript. Au lieu de cela, il existe une fonction spéciale à laquelle vous passez votre [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Voici un exemple. Notez que la `args.visibilityMode` propriété est de type [VisibilityMode](/javascript/api/office/office.visibilitymode).
+Pour inscrire un handler pour l’événement, vous n’utilisez pas de méthode « add handler » comme vous le feriez dans la plupart Office contextes JavaScript. Au lieu de cela, il existe une fonction spéciale à laquelle vous passez votre [Office:Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Voici un exemple. Notez que la `args.visibilityMode` propriété est de type [VisibilityMode](/javascript/api/office/office.visibilitymode).
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {

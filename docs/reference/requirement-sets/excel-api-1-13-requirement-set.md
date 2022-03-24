@@ -1,11 +1,16 @@
 ---
-title: Excel conditions requises de l’API JavaScript 1.13
+title: Excel l’ensemble de conditions requises de l’API JavaScript 1.13
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.13.
 ms.date: 07/09/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 5d7358c35dc4560bf5478bb9ad9970fc364a1b6a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747045"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-113"></a>Nouveautés de l Excel API JavaScript 1.13
 
 ExcelApi 1.13 a ajouté une méthode pour insérer des feuilles de calcul dans un workbook à partir d’une chaîne encodée en Base64 et un événement pour détecter l’activation du workbook. Il a également augmenté la prise en charge des formules dans les plages en ajoutant des API pour suivre les modifications apportées aux formules et localiser les cellules dépendantes directes d’une formule. En outre, il a étendu la prise en charge du tableau croisé dynamique en ajoutant des API PivotLayout pour le texte de alt, le style et la gestion des cellules vides.
@@ -19,7 +24,7 @@ ExcelApi 1.13 a ajouté une méthode pour insérer des feuilles de calcul dans u
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.13. Pour afficher la Excel documentation de référence de l’API pour toutes les API prise en charge par l’ensemble de conditions requises de l’API JavaScript 1.13 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.13](/javascript/api/excel?view=excel-js-1.13&preserve-view=true) ou une version antérieure.
+Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.13. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.13 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.13](/javascript/api/excel?view=excel-js-1.13&preserve-view=true) ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -37,11 +42,11 @@ Le tableau suivant répertorie les API de Excel l’ensemble de conditions requi
 ||[showFieldHeaders](/javascript/api/excel/excel.pivotlayout#excel-excel-pivotlayout-showfieldheaders-member)|Spécifie si le tableau croisé dynamique affiche les en-têtes de champ (légendes de champ et les drop-downs de filtre).|
 |[PivotTable](/javascript/api/excel/excel.pivottable)|[refreshOnOpen](/javascript/api/excel/excel.pivottable#excel-excel-pivottable-refreshonopen-member)|Spécifie si le tableau croisé dynamique est actualisé à l’ouverture du manuel.|
 |[Range](/javascript/api/excel/excel.range)|[getDirectDependents()](/javascript/api/excel/excel.range#excel-excel-range-getdirectdependents-member(1))|Renvoie un `WorkbookRangeAreas` objet qui représente la plage contenant tous les dépendants directs d’une cellule dans la même feuille de calcul ou dans plusieurs feuilles de calcul.|
-||[getExtendedRange(direction : Excel. KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#excel-excel-range-getextendedrange-member(1))|Renvoie un objet de plage qui inclut la plage actuelle et jusqu’au bord de la plage, en fonction de la direction fournie.|
+||[getExtendedRange(direction: Excel. KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#excel-excel-range-getextendedrange-member(1))|Renvoie un objet de plage qui inclut la plage actuelle et jusqu’au bord de la plage, en fonction de la direction fournie.|
 ||[getMergedAreasOrNullObject()](/javascript/api/excel/excel.range#excel-excel-range-getmergedareasornullobject-member(1))|Renvoie un objet RangeAreas qui représente les zones fusionnées dans cette plage.|
 ||[getRangeEdge(direction: Excel. KeyboardDirection, activeCell?: Range \| string)](/javascript/api/excel/excel.range#excel-excel-range-getrangeedge-member(1))|Renvoie un objet de plage qui est la cellule edge de la zone de données qui correspond au sens fourni.|
 |[Table](/javascript/api/excel/excel.table)|[resize(newRange: Range \| string)](/javascript/api/excel/excel.table#excel-excel-table-resize-member(1))|Resize the table to the new range.|
-|[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: string, options?: Excel. InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#excel-excel-workbook-insertworksheetsfrombase64-member(1))|Insère les feuilles de calcul spécifiées à partir d’un workbook source dans le workbook actuel.|
+|[Workbook](/javascript/api/excel/excel.workbook)|[insertWorksheetsFromBase64(base64File: chaîne, options ? : Excel. InsertWorksheetOptions)](/javascript/api/excel/excel.workbook#excel-excel-workbook-insertworksheetsfrombase64-member(1))|Insère les feuilles de calcul spécifiées à partir d’un workbook source dans le workbook actuel.|
 ||[onActivated](/javascript/api/excel/excel.workbook#excel-excel-workbook-onactivated-member)|Se produit lorsque le workbook est activé.|
 |[WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs)|[type](/javascript/api/excel/excel.workbookactivatedeventargs#excel-excel-workbookactivatedeventargs-type-member)|Obtient le type de l’événement.|
 |[Worksheet](/javascript/api/excel/excel.worksheet)|[onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member)|Se produit lorsqu’une ou plusieurs formules sont modifiées dans cette feuille de calcul.|

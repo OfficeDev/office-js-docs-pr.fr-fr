@@ -3,18 +3,18 @@ title: Office.context - ensemble de conditions requises 1.8
 description: Office. Membres d’objet de contexte disponibles pour Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.8.
 ms.date: 12/03/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 94fc4e17064c6e18ec301afcb6b813fb3b0cc0c3
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 69901e67796e187db937e40359cfebffaed0e9b9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237727"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745041"
 ---
 # <a name="context-mailbox-requirement-set-18"></a>context (ensemble de conditions requises de boîte aux lettres 1.8)
 
 ### <a name="officecontext"></a>[Office](office.md).context
 
-Office.context fournit des interfaces partagées qui sont utilisées par les modules de Office applications. Cette liste ne documente que les interfaces utilisées par les Outlook les autres. Pour obtenir la liste complète de l’espace Office.context, voir la référence [Office.context dans l’API commune.](/javascript/api/office/office.context?view=outlook-js-1.8&preserve-view=true)
+Office.context fournit des interfaces partagées qui sont utilisées par les modules de Office applications. Cette liste ne documente que les interfaces utilisées par les Outlook les autres. Pour obtenir une liste complète de l’espace Office.context, voir la référence [Office.context dans l’API commune](/javascript/api/office/office.context?view=outlook-js-1.8&preserve-view=true).
 
 ##### <a name="requirements"></a>Configuration requise
 
@@ -27,11 +27,11 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 
 | Propriété | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [diagnostics](#diagnostics-contextinformation) | Composition<br>Lecture | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [contentLanguage](#contentlanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [diagnostics](#diagnostics-contextinformation) | Composition<br>Lire | [ContextInformation](/javascript/api/office/office.contextinformation?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [displayLanguage](#displaylanguage-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [host](#host-hosttype) | Composition<br>Lecture | [HostType](/javascript/api/office/office.hosttype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [mailbox](office.context.mailbox.md) | Composition<br>Lecture | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [mailbox](office.context.mailbox.md) | Composition<br>Lire | [Boîte aux lettres](/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [platform](#platform-platformtype) | Composition<br>Lecture | [PlatformType](/javascript/api/office/office.platformtype?view=outlook-js-1.8&preserve-view=true) | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
 | [requirements](#requirements-requirementsetsupport) | Composition<br>Lecture | [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [roamingSettings](#roamingsettings-roamingsettings) | Composition<br>Lecture | [RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-1.8&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
@@ -43,7 +43,7 @@ Office.context fournit des interfaces partagées qui sont utilisées par les mod
 
 Obtient les paramètres régionaux (langue) spécifiés par l’utilisateur pour la modification de l’élément.
 
-La valeur reflète le paramètre de langue d’édition actuel spécifié avec > Options de > langue dans l Office `contentLanguage` application cliente.  
+La `contentLanguage` valeur reflète le paramètre **de** langue d’édition actuel spécifié avec > Options d'> **langue** dans l’application Office client.
 
 ##### <a name="type"></a>Type
 
@@ -115,7 +115,7 @@ console.log("Platform: " + contextInfo.platform);
 
 Obtient les paramètres régionaux (langue) au format de balise de langue RFC 1766 spécifié par l’utilisateur pour l’interface utilisateur de l’application Office client.
 
-La valeur reflète le paramètre de langue d’affichage actuel spécifié avec > Options d'> langue dans `displayLanguage` l’application cliente Office’affichage.  
+La `displayLanguage` valeur reflète le paramètre **de** langue d’affichage actuel spécifié avec > Options de > **langue** dans l’application cliente Office client.
 
 ##### <a name="type"></a>Type
 
@@ -214,7 +214,7 @@ console.log(JSON.stringify(Office.context.platform));
 
 #### <a name="requirements-requirementsetsupport"></a>requirements: [RequirementSetSupport](/javascript/api/office/office.requirementsetsupport?view=outlook-js-1.8&preserve-view=true)
 
-Fournit une méthode pour déterminer quels ensembles de conditions requises sont pris en charge sur l’application et la plateforme actuelles.
+Fournit une méthode permettant de déterminer les ensembles de conditions requises pris en charge sur l’application et la plateforme actuelles.
 
 ##### <a name="type"></a>Type
 
@@ -242,7 +242,7 @@ console.log(JSON.stringify(Office.context.requirements.isSetSupported("mailbox",
 
 Obtient un objet qui représente les paramètres personnalisés ou l’état d’un complément de messagerie enregistrés dans la boîte aux lettres d’un utilisateur.
 
-L’objet vous permet de stocker et d’accéder aux données d’un module de messagerie stocké dans la boîte aux lettres d’un utilisateur, afin qu’il soit disponible pour ce dernier lorsqu’il est en cours d’exécution à partir d’un client Outlook utilisé pour accéder à cette boîte aux `RoamingSettings` lettres.
+`RoamingSettings` L’objet vous permet de stocker et d’accéder aux données d’un add-in de messagerie stocké dans la boîte aux lettres d’un utilisateur, afin qu’il soit disponible pour ce dernier lorsqu’il est en cours d’exécution à partir d’un client Outlook utilisé pour accéder à cette boîte aux lettres.
 
 ##### <a name="type"></a>Type
 

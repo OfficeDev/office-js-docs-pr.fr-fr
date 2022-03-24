@@ -1,11 +1,16 @@
 ---
 title: Séries de conditions requises pour ouvrir une fenêtre de navigateur
 description: Spécifie les plateformes Office et les builds qui ouvrent la prise en charge de l’API openBrowserWindow.
-ms.date: 10/05/2021
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
+ms.openlocfilehash: 3162315b7d90a416d0b847d796a2a45876f102df
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746413"
 ---
-
 # <a name="open-browser-window-api-requirement-sets"></a>Ouvrir les ensembles de conditions requises de l’API Fenêtre du navigateur
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si un hôte Office prend en charge les API requises par le complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
@@ -14,9 +19,9 @@ L’ensemble d’API OpenBrowserWindow permet aux applications d’ouvrir un nav
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API OpenBrowserWindow, les applications hôtes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Microsoft 365) |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à l’abonnement Microsoft 365)  | Office sur le web  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2021 ou une Windows<br>(achat définitif) | Office pour Windows<br>(connecté à l’abonnement Microsoft 365) |  Office sur iPad<br>(connecté à l’abonnement Microsoft 365)  |  Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| OpenBrowserWindowApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 1810 (build 16.0.11001.20074) ou version ultérieure | 16.0.0.0 ou ultérieur | 16.0.0.0 ou ultérieur | N/A | N/A|
+| OpenBrowserWindowApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Version 1810 (build 16.0.11001.20074) ou version ultérieure | 16.0.0.0 ou ultérieur | 16.0.0.0 ou ultérieur | N/A | S/O|
 
 > [!NOTE]
 > L’ensemble de conditions requises OpenBrowserWindowApi est disponible uniquement comme suit :

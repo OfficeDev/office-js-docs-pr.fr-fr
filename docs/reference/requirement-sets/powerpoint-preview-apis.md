@@ -1,14 +1,19 @@
 ---
-title: PowerPoint d’aperçu JavaScript
+title: PowerPoint api d’aperçu JavaScript
 description: Détails sur les API JavaScript PowerPoint à venir.
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 2d43ca19d36b9f30e8699370bc97ecf194395d06
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742949"
 ---
+# <a name="powerpoint-javascript-preview-apis"></a>PowerPoint api d’aperçu JavaScript
 
-# <a name="powerpoint-javascript-preview-apis"></a>PowerPoint d’aperçu JavaScript
-
-Les nouvelles API JavaScript PowerPoint sont d’abord introduites dans « aperçu », puis font partie d’un ensemble de conditions requises numérotées spécifiques une fois que des tests suffisants ont eu lieu et que les commentaires des utilisateurs ont été acquis.
+De PowerPoint api JavaScript sont d’abord introduites dans l'« aperçu », puis font partie d’un ensemble de conditions requises numérotées spécifiques une fois que des tests suffisants ont eu lieu et que les commentaires des utilisateurs ont été acquis.
 
 Le premier tableau fournit un résumé concis des API, tandis que le tableau suivant fournit une liste détaillée.
 
@@ -53,7 +58,7 @@ Le tableau suivant répertorie les POWERPOINT JavaScript actuellement en prévis
 ||[color](/javascript/api/powerpoint/powerpoint.shapefont#powerpoint-powerpoint-shapefont-color-member)|Représentation de code couleur HTML de la couleur du texte (par exemple, « #FF0000 » représente le rouge).|
 ||[italic](/javascript/api/powerpoint/powerpoint.shapefont#powerpoint-powerpoint-shapefont-italic-member)|Représente le format de police Italique.|
 ||[name](/javascript/api/powerpoint/powerpoint.shapefont#powerpoint-powerpoint-shapefont-name-member)|Représente le nom de la police (par exemple, « Calibri »).|
-||[size](/javascript/api/powerpoint/powerpoint.shapefont#powerpoint-powerpoint-shapefont-size-member)|Représente la taille de police en points (par exemple, 11).|
+||[taille](/javascript/api/powerpoint/powerpoint.shapefont#powerpoint-powerpoint-shapefont-size-member)|Représente la taille de police en points (par exemple, 11).|
 ||[underline](/javascript/api/powerpoint/powerpoint.shapefont#powerpoint-powerpoint-shapefont-underline-member)|Type de soulignement appliqué à la police.|
 |[ShapeLineFormat](/javascript/api/powerpoint/powerpoint.shapelineformat)|[color](/javascript/api/powerpoint/powerpoint.shapelineformat#powerpoint-powerpoint-shapelineformat-color-member)|Représente la couleur de trait au format HTML, au format #RRGGBB (par exemple, « FFA500 ») ou sous forme de couleur HTML nommée (par exemple, « orange »).|
 ||[dashStyle](/javascript/api/powerpoint/powerpoint.shapelineformat#powerpoint-powerpoint-shapelineformat-dashstyle-member)|Représente le style de tiret de la ligne.|

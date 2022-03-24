@@ -3,12 +3,12 @@ title: Office de noms - ensemble de conditions requises 1.8
 description: Office’espace de noms disponible pour les Outlook à l’aide de l’ensemble de conditions requises de l’API de boîte aux lettres 1.8.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9275d4552de9b057f0b45c89abca9ff4225941
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 0866439c6dedc8672b0ac058e8d1ef8654215f26
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237720"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745227"
 ---
 # <a name="office-mailbox-requirement-set-18"></a>Office (ensemble de conditions requises de boîte aux lettres 1.8)
 
@@ -31,14 +31,14 @@ L’espace de noms Office fournit des interfaces partagées qui sont utilisées 
 
 | Énumération | Modes | Type de retour | Minimum<br>ensemble de conditions requises |
 |---|---|---|:---:|
-| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [AsyncResultStatus](#asyncresultstatus-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | [CoercionType](#coerciontype-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| [EventType](#eventtype-string) | Composition<br>Lecture | String | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
-| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| [EventType](#eventtype-string) | Composition<br>Lecture | Chaîne | [1.5](../requirement-set-1.5/outlook-requirement-set-1.5.md) |
+| [SourceProperty](#sourceproperty-string) | Composition<br>Lecture | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 
 ## <a name="namespaces"></a>Espaces de noms
 
-[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true): inclut un certain nombre d’Outlook spécifiques à l’utilisateur, par exemple, `ItemType` , , , et `EntityType` `AttachmentType` `RecipientType` `ResponseType` `ItemNotificationMessageType` .
+[MailboxEnums](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat?view=outlook-js-1.8&preserve-view=true) : inclut un certain nombre d’Outlook spécifiques à l’utilisateur, par exemple, `ItemType`, `EntityType`, `AttachmentType`, `RecipientType`et `ResponseType``ItemNotificationMessageType`.
 
 ## <a name="enumeration-details"></a>Détails de l’éumération
 
@@ -54,7 +54,7 @@ Spécifie le résultat d’un appel asynchrone.
 
 |Nom| Type| Description|
 |---|---|---|
-|`Succeeded`| String|L’appel a réussi.|
+|`Succeeded`| Chaîne|L’appel a réussi.|
 |`Failed`| String|L’appel n’a pas réussi.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -81,7 +81,7 @@ Indique comment forcer le type des données retournées ou définies par la mét
 
 |Nom| Type| Description|
 |---|---|---|
-|`Html`| String|Demande que les données soient renvoyées au format HTML.|
+|`Html`| Chaîne|Demande que les données soient renvoyées au format HTML.|
 |`Text`| String|Demande que les données soient renvoyées au format texte.|
 
 ##### <a name="requirements"></a>Configuration requise
@@ -110,7 +110,7 @@ spécifie l’événement associé à un gestionnaire d’événements.
 |---|---|---|:---:|
 |`AppointmentTimeChanged`| Chaîne | La date ou l’heure de la série ou du rendez-vous sélectionné a été modifiée. | 1.7 |
 |`AttachmentsChanged`| Chaîne | Une pièce jointe a été ajoutée à l’élément ou supprimée de celui-ci. | 1.8 |
-|`EnhancedLocationsChanged`| String | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
+|`EnhancedLocationsChanged`| Chaîne | L’emplacement du rendez-vous sélectionné a changé. | 1.8 |
 |`ItemChanged`| Chaîne | Un autre élément Outlook est sélectionné pour consultation pendant que le volet Office est épinglé. | 1,5 |
 |`RecipientsChanged`| Chaîne | La liste des destinataires de l’élément sélectionné ou du lieu de rendez-vous a été modifié. | 1.7 |
 |`RecurrenceChanged`| Chaîne | La périodicité de la série sélectionnée a été modifiée. | 1.7 |

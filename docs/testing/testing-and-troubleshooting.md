@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
-description: Découvrez comment résoudre les erreurs de l’utilisateur dans Office des modules.
+description: Découvrez comment résoudre les erreurs des utilisateurs dans les Office des modules.
 ms.date: 09/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d5664ab702b205a0002201a223a72154a3c69be
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990543"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746391"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -40,7 +40,7 @@ Vous pouvez également nous adresser des commentaires : si vous utilisez Excel 
 
 Si un complément Outlook s’exécutant sous Windows et [à l’aide d’Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer.
 
-- Go to Tools > **Internet Options**  >  **Advanced**.
+- Go to Tools > **Internet** **OptionsAdvanced** > .
 - Sous **Parcourir**, décochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
 
 Nous vous recommandons de décocher ces paramètres uniquement pour résoudre le problème. Si vous ne les réactivez pas, vous recevrez des invites. Une fois que le problème est résolu, recochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
@@ -67,9 +67,9 @@ Lorsqu’un utilisateur utilise un complément Office, il est invité à autoris
 
 |**Navigateurs concernés**|**Plateformes concernées**|
 |:--------------------|:---------------------|
-|Microsoft Edge|Office sur le web|
+|Microsoft Edge|Office sur le web|
 
-Pour résoudre le problème, les utilisateurs finaux ou les administrateurs peuvent ajouter le domaine du module à la liste des sites de confiance dans Microsoft Edge navigateur.
+Pour résoudre le problème, les utilisateurs finaux ou les administrateurs peuvent ajouter le domaine du module à la liste des sites de confiance dans le Microsoft Edge navigateur.
 
 > [!IMPORTANT]
 > n’ajoutez pas l’URL d’un complément à votre liste de sites de confiance si vous ne faites pas confiance au complément.

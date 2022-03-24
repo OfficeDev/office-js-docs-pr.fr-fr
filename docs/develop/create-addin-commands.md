@@ -3,12 +3,12 @@ title: Créer des commandes complémentaires dans votre formulaire pour Excel, P
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
 ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a239d6b5b33d2244c6a172c2c61baa894535ab7
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: 7fde330cb33018f33e5de156e5b15dd1f1819efa
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467749"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743919"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
@@ -31,11 +31,11 @@ Cet article explique comment modifier un manifeste pour définir des commandes d
 
 L’image ci-après est une présentation des éléments de commandes de complément dans le fichier manifeste.
 
-![Vue d’ensemble des éléments de commandes de add-in dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes et les ressources enfants. Les sous Hôtes sont Host, puis DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Sous ExtensionPoint sont CustomTab ou OfficeTab et Office Menu. Sous CustomTab ou Office tabulation sont Group puis Control then Action. Sous Office Menu, contrôle puis action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
+![Vue d’ensemble des éléments de commandes de add-in dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes et les ressources enfants. Les sous Hôtes sont Host, puis DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Sous ExtensionPoint sont CustomTab ou OfficeTab et Office Menu. Sous CustomTab ou Office tabulation sont Group puis Control then Action. Sous Office menu, contrôle puis action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
 
 ## <a name="step-1-create-the-project"></a>Étape 1 : Créer le projet
 
-Nous vous recommandons de créer un projet en suivant l’un des démarrages rapides, par exemple créer un Excel [du](../quickstarts/excel-quickstart-jquery.md) volet Des tâches. Chaque démarrage rapide pour Excel, Word et PowerPoint génère un projet qui contient déjà une commande de add-in (bouton) pour afficher le volet Des tâches. Assurez-vous que vous avez lu les commandes de Excel[, Word et PowerPoint](../design/add-in-commands.md) avant d’utiliser les commandes de add-in.
+Nous vous recommandons de créer un projet en suivant l’un des démarrages rapides, par exemple créer un Excel [du volet](../quickstarts/excel-quickstart-jquery.md) Des tâches. Chaque démarrage rapide pour Excel, Word et PowerPoint génère un projet qui contient déjà une commande de add-in (bouton) pour afficher le volet Des tâches. Assurez-vous que vous avez lu les commandes de Excel[, Word et PowerPoint](../design/add-in-commands.md) avant d’utiliser les commandes de add-in.
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Étape 2 : créer un complément de volet Office
 
@@ -203,7 +203,7 @@ Le code suivant montre comment implémenter la fonction utilisée par **Function
 
 ## <a name="step-6-add-extensionpoint-elements"></a>Etape 6 : ajouter des éléments ExtensionPoint
 
-**L’élément ExtensionPoint** définit l’endroit où les commandes de Office utilisateur. Vous pouvez définir **des éléments ExtensionPoint** avec ces **valeurs xsi:type** .
+**L’élément ExtensionPoint** définit l’endroit où les commandes de Office’interface utilisateur. Vous pouvez définir **des éléments ExtensionPoint** avec ces **valeurs xsi:type** .
 
 - **PrimaryCommandSurface**, qui fait référence au ruban dans Office.
 

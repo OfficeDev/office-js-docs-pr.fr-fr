@@ -2,7 +2,7 @@
 
 L’inscription de votre application (le Plateforme d'identités Microsoft) établit une relation d’Plateforme d'identités Microsoft. L’relation d’confiance est unidirectionnelle : votre Plateforme d'identités Microsoft et non l’inverse.
 
-1. Connectez-vous au [portail Azure avec](https://portal.azure.com/) les informations d’identification ***admin** _ à Microsoft 365 client. Par exemple, _*MyName@contoso.onmicrosoft.com**.
+1. Connectez-vous au [portail Azure avec](https://portal.azure.com/) les informations d’identification ***admin** _ à votre client Microsoft 365 client. Par exemple, _*MyName@contoso.onmicrosoft.com**.
 1. Sous **Gérer**, sélectionnez **Inscriptions de l’applicationNouveau** >  **inscription**. Sur la page **Inscrire une application**, définissez les valeurs comme suit.
 
     * Définissez le **Nom** sur `<add-in-name>`.
@@ -66,7 +66,7 @@ Parfois appelée mot de _passe d’application_, une question secrète client es
     * `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook sur le web)
 
     > [!NOTE]
-    > L’ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` inclut tous les autres ID répertoriés et peut être utilisé de manière unique pour pré-autoriser tous les points de terminaison hôtes Office à utiliser avec votre service dans le flux d’utilisateur unique du Office.
+    > L’ID `ea5a67f6-b6f3-4338-b240-c655ddc3cc8e` inclut tous les autres ID répertoriés et peut être utilisé de manière unique pour pré-autoriser tous les points de terminaison hôtes Office à utiliser avec votre service dans le flux d’ssO du Office Add-in.
 
     Pour chaque ID, prenez les mesures suivantes.
 

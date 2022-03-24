@@ -1,10 +1,15 @@
 ---
-title: 'Office.context.mailbox.item : ensemble de conditions requises de prévisualisation'
+title: 'Office.context.mailbox.item : ensemble de conditions requises d’aperçu'
 description: Outlook’ensemble de conditions requises de l’API de boîte aux lettres du modèle objet Item.
 ms.date: 11/01/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 93196690dd0216a2a151d58b0caff3563321ac03
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745399"
 ---
-
 # <a name="item-mailbox-preview-requirement-set"></a>élément (ensemble de conditions requises d’aperçu de boîte aux lettres)
 
 ### <a name="officecontextmailboxitem"></a>[Office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item
@@ -58,17 +63,17 @@ ms.localizationpriority: medium
 | isAllDayEvent | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-isalldayevent-member) | [IsAllDayEvent](/javascript/api/outlook/office.isalldayevent?view=outlook-js-preview&preserve-view=true) | [Aperçu](outlook-requirement-set-preview.md) |
 | | | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-isalldayevent-member) | Boolean | [Aperçu](outlook-requirement-set-preview.md) |
 | itemClass | ReadItem | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-itemclass-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-itemclass-member) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-itemclass-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | itemId | ReadItem | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-itemid-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-itemid-member) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-itemid-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | itemType | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-itemtype-member) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-itemtype-member) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-itemtype-member) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-itemtype-member) | [MailboxEnums.ItemType](/javascript/api/outlook/office.mailboxenums.itemtype?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| emplacement | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) | [Location](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| location | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-location-member) | [Location](/javascript/api/outlook/office.location?view=outlook-js-preview&preserve-view=true) | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-location-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-location-member)<br>(Demande de réunion) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
-| normalizedSubject | ReadItem | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-normalizedsubject-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
+| normalizedSubject | ReadItem | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-normalizedsubject-member) | String | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-normalizedsubject-member) | Chaîne | [1.1](../requirement-set-1.1/outlook-requirement-set-1.1.md) |
 | notificationMessages | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-notificationmessages-member) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-preview&preserve-view=true) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
 | | | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-notificationmessages-member) | [NotificationMessages](/javascript/api/outlook/office.notificationmessages?view=outlook-js-preview&preserve-view=true) | [1.3](../requirement-set-1.3/outlook-requirement-set-1.3.md) |
@@ -88,7 +93,7 @@ ms.localizationpriority: medium
 | | | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-sensitivity-member) | [MailboxEnums.AppointmentSensitivityType](/javascript/api/outlook/office.mailboxenums.appointmentsensitivitytype?view=outlook-js-preview&preserve-view=true) | [Aperçu](outlook-requirement-set-preview.md) |
 | seriesId | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-seriesid-member) | Chaîne | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [Participant au rendez-vous](/javascript/api/outlook/office.appointmentread?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentread-seriesid-member) | Chaîne | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
-| | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-seriesid-member) | String | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
+| | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-seriesid-member) | Chaîne | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | | | [Message lu](/javascript/api/outlook/office.messageread?view=outlook-js-preview&preserve-view=true#outlook-office-messageread-seriesid-member) | Chaîne | [1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md) |
 | sessionData | ReadItem | [Organisateur de rendez-vous](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-sessiondata-member) | [SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true) | [1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md) |
 | | | [Composer un message](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-sessiondata-member) | [SessionData](/javascript/api/outlook/office.sessiondata?view=outlook-js-preview&preserve-view=true) | [1.11](../requirement-set-1.11/outlook-requirement-set-1.11.md) |

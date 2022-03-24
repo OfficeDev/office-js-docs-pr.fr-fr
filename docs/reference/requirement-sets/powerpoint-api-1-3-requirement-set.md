@@ -4,8 +4,13 @@ description: Détails sur l’ensemble de conditions requises PowerPointApi 1.3.
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: medium
+ms.openlocfilehash: 185ece64559d124d8af7c4051d54267da7b11542
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746484"
 ---
-
 # <a name="whats-new-in-powerpoint-javascript-api-13"></a>Nouveautés de l PowerPoint API JavaScript 1.3
 
 PowerPointApi 1.3 a ajouté une prise en charge supplémentaire pour la gestion des diapositives et le marquage personnalisé.
@@ -26,10 +31,10 @@ Le tableau suivant répertorie PowerPoint l’ensemble de conditions requises de
 |[AddSlideOptions](/javascript/api/powerpoint/powerpoint.addslideoptions)|[layoutId](/javascript/api/powerpoint/powerpoint.addslideoptions#powerpoint-powerpoint-addslideoptions-layoutid-member)|Spécifie l’ID d’une mise en page des diapositives à utiliser pour la nouvelle diapositive.|
 ||[slideMasterId](/javascript/api/powerpoint/powerpoint.addslideoptions#powerpoint-powerpoint-addslideoptions-slidemasterid-member)|Spécifie l’ID d’un curseur de diapositive à utiliser pour la nouvelle diapositive.|
 |[Presentation](/javascript/api/powerpoint/powerpoint.presentation)|[slideMasters](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-slidemasters-member)|Renvoie la collection d’objets `SlideMaster` qui se retrouvent dans la présentation.|
-||[tags](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-tags-member)|Renvoie une collection de balises attachées à la présentation.|
+||[étiquettes](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-tags-member)|Renvoie une collection de balises attachées à la présentation.|
 |[Shape](/javascript/api/powerpoint/powerpoint.shape)|[delete()](/javascript/api/powerpoint/powerpoint.shape#powerpoint-powerpoint-shape-delete-member(1))|Supprime la forme de la collection de formes.|
 ||[id](/javascript/api/powerpoint/powerpoint.shape#powerpoint-powerpoint-shape-id-member)|Obtient l’ID unique de la forme.|
-||[tags](/javascript/api/powerpoint/powerpoint.shape#powerpoint-powerpoint-shape-tags-member)|Renvoie une collection de balises dans la forme.|
+||[étiquettes](/javascript/api/powerpoint/powerpoint.shape#powerpoint-powerpoint-shape-tags-member)|Renvoie une collection de balises dans la forme.|
 |[ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection)|[getCount()](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-getcount-member(1))|Obtient le nombre de formes dans la collection.|
 ||[getItem(key: string)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-getitem-member(1))|Obtient une forme à l’aide de son ID unique.|
 ||[getItemAt(index: number)](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-getitemat-member(1))|Obtient une forme à l’aide de son index de base zéro dans la collection.|
@@ -38,7 +43,7 @@ Le tableau suivant répertorie PowerPoint l’ensemble de conditions requises de
 |[Slide](/javascript/api/powerpoint/powerpoint.slide)|[disposition](/javascript/api/powerpoint/powerpoint.slide#powerpoint-powerpoint-slide-layout-member)|Obtient la mise en page de la diapositive.|
 ||[Formes](/javascript/api/powerpoint/powerpoint.slide#powerpoint-powerpoint-slide-shapes-member)|Renvoie une collection de formes dans la diapositive.|
 ||[slideMaster](/javascript/api/powerpoint/powerpoint.slide#powerpoint-powerpoint-slide-slidemaster-member)|Obtient `SlideMaster` l’objet qui représente le contenu par défaut de la diapositive.|
-||[tags](/javascript/api/powerpoint/powerpoint.slide#powerpoint-powerpoint-slide-tags-member)|Renvoie une collection de balises dans la diapositive.|
+||[étiquettes](/javascript/api/powerpoint/powerpoint.slide#powerpoint-powerpoint-slide-tags-member)|Renvoie une collection de balises dans la diapositive.|
 |[SlideCollection](/javascript/api/powerpoint/powerpoint.slidecollection)|[add(options?: PowerPoint. AddSlideOptions)](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1))|Ajoute une nouvelle diapositive à la fin de la collection.|
 |[SlideLayout](/javascript/api/powerpoint/powerpoint.slidelayout)|[id](/javascript/api/powerpoint/powerpoint.slidelayout#powerpoint-powerpoint-slidelayout-id-member)|Obtient l’ID unique de la mise en page des diapositives.|
 ||[name](/javascript/api/powerpoint/powerpoint.slidelayout#powerpoint-powerpoint-slidelayout-name-member)|Obtient le nom de la mise en page des diapositives.|

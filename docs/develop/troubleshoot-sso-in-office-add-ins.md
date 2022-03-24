@@ -3,8 +3,13 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: Recommandations sur la façon de résoudre les problèmes liés à l’signature unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744188"
 ---
-
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
 Cet article fournit des conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office, et explique comment faire en sorte que votre complément gère correctement les conditions particulières ou les erreurs.

@@ -1,11 +1,15 @@
 ---
 title: Co-création dans des macros complémentaires Excel
-description: 'Apprenez à co-Excel un OneDrive, OneDrive Entreprise ou SharePoint Online.'
+description: Apprenez à co-Excel un Excel stocké dans OneDrive, OneDrive Entreprise ou SharePoint Online.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7fd2e2846c4256e7aac1ffa7263b4aa57b744d21
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744383"
 ---
-
-
 # <a name="coauthoring-in-excel-add-ins"></a>Co-création dans des macros complémentaires Excel  
 
 Avec la [co-création](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104), plusieurs personnes peuvent travailler ensemble et modifier simultanément le même classeur Excel. Tous les co-auteurs d’un classeur peuvent voir les modifications d’un autre co-auteur dès que ce co-auteur enregistre le classeur. Pour co-créer un classeur Excel, le classeur doit être enregistré dans OneDrive, OneDrive Entreprise ou SharePoint Online.

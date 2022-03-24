@@ -1,14 +1,14 @@
 ---
 title: Utiliser des tableaux croisés dynamiques à l’aide Excel API JavaScript
 description: Utilisez l Excel API JavaScript pour créer des tableaux croisés dynamiques et interagir avec leurs composants.
-ms.date: 02/16/2022
+ms.date: 03/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a47baf51a371a388959acbc56778e04f72bcd57
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 5e05e4feaa5cbc9e21279332c07ffa7e22420d9e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340371"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745175"
 ---
 # <a name="work-with-pivottables-using-the-excel-javascript-api"></a>Utiliser des tableaux croisés dynamiques à l’aide Excel API JavaScript
 
@@ -21,6 +21,8 @@ Voir [Créer un tableau croisé dynamique pour analyser les](https://support.mic
 > Les tableaux croisés dynamiques créés avec OLAP ne sont actuellement pas pris en charge. Il n’existe pas non plus de prise en charge de Power Pivot.
 
 ## <a name="object-model"></a>Modèle d’objet
+
+:::image type="content" source="../images/pivottable-object-model.png" alt-text="Diagramme montrant la relation entre les types d’objets pour les tableaux croisés dynamiques, comme décrit dans la liste suivante et la documentation de référence associée.":::
 
 Le [tableau croisé dynamique](/javascript/api/excel/excel.pivottable) est l’objet central des tableaux croisés dynamiques dans l Office API JavaScript.
 

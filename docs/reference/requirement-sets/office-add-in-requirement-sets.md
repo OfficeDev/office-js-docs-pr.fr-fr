@@ -4,19 +4,19 @@ description: En savoir plus sur les ensembles Office conditions requises d’API
 ms.date: 11/22/2021
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: 65ab09d62a3ca551cb1295744f88ff2fd095861a
-ms.sourcegitcommit: b3ddc1ddf7ee810e6470a1ea3a71efd1748233c9
+ms.openlocfilehash: 743473566e632022946bdc2b7e372b5bb6fede49
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/24/2021
-ms.locfileid: "61153469"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744111"
 ---
 # <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 > [!TIP]
-> Vous recherchez les ensembles *de conditions requises* de l’API spécifiques à l’application ? Consultez les ensembles de conditions requises de l’API suivants.
+> Vous recherchez les ensembles *de conditions requises de l’API* spécifiques à l’application ? Consultez les ensembles de conditions requises de l’API suivants.
 >
 > - [Ensembles de conditions requises de l’API JavaScript pour Excel](excel-api-requirement-sets.md) (ExcelApi)
 > - [Ensembles de conditions requises de l’API JavaScript pour Word](word-api-requirement-sets.md) (WordApi)
@@ -32,7 +32,7 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 Les sections suivantes listent les ensembles de conditions requises d’API communes, les méthodes de chaque ensemble et les applications clientes Office qui la prise en charge. Tous ces ensembles de conditions requises d’API sont à la version 1.1., sauf indication contraire.
 
 > [!TIP]
-> Vous avez besoin d’informations sur l’endroit où les modules complémentaires et les ensembles de conditions requises sont pris en charge par Office’application et la version ? Consultez Office disponibilité des applications clientes et de la [plateforme pour Office des applications.](../../overview/office-add-in-availability.md)
+> Vous avez besoin d’informations sur l’endroit où les modules complémentaires et les ensembles de conditions requises sont pris en charge par Office’application et la version ? [Consultez Office disponibilité des applications clientes et de la plateforme pour Office des applications.](../../overview/office-add-in-availability.md)
 
 ### <a name="activeview"></a>ActiveView
 
@@ -84,7 +84,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Voir [ensembles de conditions requises d’origine de la boîte de dialogue.](dialog-origin-requirement-sets.md) | Prise en charge entre domaines pour :<br>UI.messageParent<br>Interface utilisateur. Dialog.messageChild |
+| Voir [ensembles de conditions requises d’origine de la boîte de dialogue](dialog-origin-requirement-sets.md). | Prise en charge entre domaines pour :<br>UI.messageParent<br>Interface utilisateur. Dialog.messageChild |
 
 ---
 
@@ -132,7 +132,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Voir ensembles de conditions [requises raccourcis clavier.](keyboard-shortcuts-requirement-sets.md) | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
+| Voir [ensembles de conditions requises pour les raccourcis clavier](keyboard-shortcuts-requirement-sets.md). | Office.actions.areShortcutsInUse<br>Office.actions.getShortcuts<br>Office.actions.replaceShortcuts |
 
 ---
 
@@ -172,7 +172,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Hôtes Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Voir [ensembles de conditions requises de l’API Ouvrir la fenêtre du navigateur.](open-browser-window-api-requirement-sets.md) | Office.context.ui.openBrowserWindow |
+| Voir [ensembles de conditions requises de l’API Ouvrir la fenêtre du navigateur](open-browser-window-api-requirement-sets.md). | Office.context.ui.openBrowserWindow |
 
 ---
 
@@ -196,7 +196,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Voir [ensembles de conditions requises de l’API du ruban.](ribbon-api-requirement-sets.md) | Office.ribbon.requestUpdate |
+| Voir [ensembles de conditions requises de l’API du ruban](ribbon-api-requirement-sets.md). | Office.ribbon.requestUpdate |
 
 ---
 
@@ -220,7 +220,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 |**Applications Office**|**Méthodes dans l’ensemble**|
 |:-----|:-----|
-| Voir [ensembles de conditions requises pour le runtime partagé.](shared-runtime-requirement-sets.md) | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
+| Voir [ensembles de conditions requises pour le runtime partagé](shared-runtime-requirement-sets.md). | Office.addin.getStartupBehavior<br>Office.addin.hide<br>Office.addin.onVisibilityModeChanged<br>Office.addin.setStartupBehavior<br>Office.addin.showAsTaskpane<br> |
 
 ---
 
@@ -266,7 +266,7 @@ Consultez la rubrique [Exigences relatives aux commandes de complément](add-in-
 
 ## <a name="methods-that-arent-part-of-a-requirement-set"></a>Méthodes qui ne font pas partie d’un ensemble de conditions requises
 
-Les méthodes suivantes dans l Office API JavaScript ne font pas partie d’un ensemble de conditions requises. Si votre complément requiert l’une de ces méthodes, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’ils sont requis ou effectuez la vérification de l’exécution à l’aide d’une instruction `if`. Pour plus d’informations, voir [Spécifier les Office applications et les api requises.](../../develop/specify-office-hosts-and-api-requirements.md)
+Les méthodes suivantes dans l Office API JavaScript ne font pas partie d’un ensemble de conditions requises. Si votre complément requiert l’une de ces méthodes, utilisez les éléments **Methods** et **Method** dans le manifeste du complément afin de déclarer qu’ils sont requis ou effectuez la vérification de l’exécution à l’aide d’une instruction `if`. Pour plus d’informations, voir [Spécifier les Office applications et les api requises](../../develop/specify-office-hosts-and-api-requirements.md).
 
 |**Nom de la méthode**|**Office prise en charge des applications**|
 |:-----|:-----|

@@ -1,17 +1,22 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
-description: En savoir plus sur les exigences de client et de serveur dont un utilisateur final a besoin pour exécuter Office de recherche.
-ms.date: 02/01/2022
+description: Découvrez les exigences de client et de serveur dont un utilisateur final a besoin pour exécuter des Office de messagerie.
+ms.date: 02/15/2022
 ms.localizationpriority: medium
+ms.openlocfilehash: 6e1bd7eb5f2949d6b0c70654c3aa3a276a3ee83c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742830"
 ---
-
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
 Cet article décrit la configuration logicielle et matérielle requise pour l’exécution des compléments Office.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Pour obtenir une vue d’Office les applications Office sont actuellement pris en charge, voir Office application cliente et disponibilité de plateforme pour les Office [de recherche](../overview/office-add-in-availability.md).
+Pour obtenir une vue d’Office l’endroit où les Office sont actuellement pris en charge, voir Office application cliente et disponibilité de plateforme pour les Office [de recherche](../overview/office-add-in-availability.md).
 
 ## <a name="server-requirements"></a>Exigences en matière de serveur
 
@@ -24,7 +29,7 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 > [!TIP]
 > lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
-Pour les applications clientes de contenu et de volet de tâches, dans les applications clientes Office pris en charge (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un catalogue d’applications sur SharePoint [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) pour télécharger le fichier manifeste XML du module, ou vous devez déployer le module à l’aide des applications intégrées[.](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+Pour les applications clientes de contenu et de volet de tâches, dans les applications clientes Office pris en charge (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un catalogue d’applications sur [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) SharePoint pour télécharger le fichier manifeste XML du module, ou vous devez déployer le module à l’aide [d’applications](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) intégrées.
 
 Pour tester et exécuter un Outlook, le compte de messagerie Outlook de l’utilisateur doit résider sur Exchange 2013 ou une ultérieure, qui est disponible via Microsoft 365, Exchange Online ou via une installation sur site. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
 
@@ -51,7 +56,7 @@ Le logiciel suivant est requis pour le développement d’un Office pour les cli
 
 ## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
-Outlook sur Mac, qui est distribué dans le cadre de Microsoft 365, prend en charge Outlook des macros. L’exécution de Outlook dans Outlook sur Mac présente les mêmes exigences que Outlook sur Mac lui-même : le système d’exploitation doit être au moins OS X v10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
+Outlook mac, distribué dans le cadre de Microsoft 365, prend en charge Outlook des macros. L’exécution de Outlook dans Outlook sur Mac présente les mêmes exigences que Outlook sur Mac lui-même : le système d’exploitation doit être au moins OS X v10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
 
 Les versions de client minimales d’Office pour Mac prenant en charge les compléments Office sont les suivantes.
 
@@ -63,22 +68,23 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 
 Tout navigateur, à l’exception d’Internet Explorer, qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel que Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
-
-## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de client : smartphones et tablettes autres que Windows
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de clients : smartphones Windows et tablettes non mobiles
 
 Plus particulièrement pour les Outlook s’exécutant sur des smartphones et des tablettes non Windows, les logiciels suivants sont requis pour tester et Outlook des applications.
 
 | Application Office | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook sur Android|Tablettes et smartphones Android|Android KitKat 4.4 et version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Application native pour Android ; navigateur non applicable|
-|Outlook sur iOS|Tablettes iPad, smartphones iPhone|iOS 11 ou version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Application native pour iOS ; navigateur non applicable|
-|Outlook sur le web|iPhone 4, iPad 2, iPod Touch 4 (ou version ultérieure de ces appareils)|iOS 5 ou version ultérieure|Sur Microsoft 365, Exchange Online, ou en local sur Exchange Server 2013 ou ultérieure|Safari|
+|Outlook sur Android|- Tablettes Android<br>- Smartphones Android|- Android 4.4 KitKat ou version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour Android. <sup>1</sup>|
+|Outlook sur iOS|- iPad tablettes<br>- iPhone smartphones|- iOS 11 ou ultérieur|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour iOS. <sup>1</sup>|
+|Outlook sur le web (moderne)<sup>2</sup>|- iPad 2 ou ultérieure<br>- Tablettes Android |- iOS 5 ou ultérieur<br>- Android 4.4 KitKat ou version ultérieure|Sur Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook sur le web (classique)|- iPhone 4 ou ultérieure<br>- iPad 2 ou ultérieure<br>- iPod Touch 4 ou ultérieur|- iOS 5 ou ultérieur|En local Exchange Server 2013 ou ultérieure|- Safari|
 
-> [!IMPORTANT]
-> Les informations suivantes ne sont plus requises ou disponibles pour le test Outlook des modules.
+> [!NOTE]
+> <sup>1 OWA</sup> pour Android, OWA pour iPad et OWA pour iPhone applications natives ont [été supprimés](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 >
-> - Navigateurs web sur Android.
-> - Les applications natives OWA pour Android, OWA pour iPad et OWA pour iPhone : elles ont [été dépréciées](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+> <sup>2 Les</sup> Outlook sur le web modernes sur iPhone et les smartphones Android ne sont plus nécessaires ou disponibles pour tester Outlook des applications.
+
+[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../includes/classic-versus-modern-Outlook-on-the-web.md)]
 
 ## <a name="see-also"></a>Voir aussi
 

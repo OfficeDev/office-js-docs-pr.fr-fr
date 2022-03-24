@@ -3,12 +3,12 @@ title: Élément Enabled dans le fichier manifeste
 description: Découvrez comment spécifier qu’une commande de add-in est désactivée au lancement du module.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc635e91b005eb51c70e8517058fc03fa4f26c6c
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: 75a2664143e29c86a05aaf039b0ea7bce659cef9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511266"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744761"
 ---
 # <a name="enabled-element"></a>Élément Enabled
 

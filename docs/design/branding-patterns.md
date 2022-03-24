@@ -1,14 +1,14 @@
 ---
 title: Instructions de conception de modèles de personnalisation pour les compléments Office
-description: Découvrez comment brander votre Office tout en restant compatible avec la conception visuelle de Office.
+description: Découvrez comment  brander votre Office tout en restant compatible avec la conception visuelle de Office.
 ms.date: 06/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fb9a7bb186d5f65c5a372427b9a02bb002855541
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 529daa6b6e78f1cff1ea7ea3c61efb40f8e4eb60
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150179"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742941"
 ---
 # <a name="branding-patterns"></a>Modèles de personnalisation
 

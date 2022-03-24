@@ -3,12 +3,12 @@ title: Volets des tâches dans les compléments Office
 description: Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 352874739b0a7c5aa2caaa930aaeb1562c065454
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: c7994073dde86c76368f0a0e6ea4a4b71b8ca71b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150083"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743242"
 ---
 # <a name="task-panes-in-office-add-ins"></a>Volets des tâches dans les compléments Office
 
@@ -59,7 +59,7 @@ Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
 *Figure 4. Menu Caractéristique sur Windows*
 
-![Diagramme montrant le menu De la personnalité sur Windows bureau.](../images/personality-menu-win.png)
+![Diagramme montrant le menu Personnalité sur Windows bureau.](../images/personality-menu-win.png)
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace à 34 x 32 pixels, comme illustré.
 

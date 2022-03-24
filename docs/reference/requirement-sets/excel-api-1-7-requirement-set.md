@@ -4,8 +4,13 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.7.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: cd8f0f333b76306a6feecff95b9ba8831428606a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744527"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-17"></a>Nouveautés de l’API JavaScript 1.7 pour Excel
 
 Les fonctionnalités Excel JavaScript API ensemble de conditions 1.7 incluent des API pour les graphiques, événements, feuilles de calcul, plages, propriétés de document, éléments nommés, options de protection et styles.
@@ -60,7 +65,7 @@ De plus :
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.7. Pour afficher la Excel documentation de référence de l’API pour toutes les API prise en charge par l’ensemble de conditions requises de l’API JavaScript 1.7 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.7](/javascript/api/excel?view=excel-js-1.7&preserve-view=true) ou une version antérieure.
+Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.7. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.7 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.7](/javascript/api/excel?view=excel-js-1.7&preserve-view=true) ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|
@@ -119,7 +124,7 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 ||[weight](/javascript/api/excel/excel.chartlineformat#excel-excel-chartlineformat-weight-member)|Représente l’épaisseur de bordure, en points.|
 |[ChartPoint](/javascript/api/excel/excel.chartpoint)|[dataLabel](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-datalabel-member)|Renvoie l’étiquette de données d’un point du graphique.|
 ||[hasDataLabel](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-hasdatalabel-member)|Indique si un point de données possède une étiquette de données.|
-||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerbackgroundcolor-member)|Représentation de code couleur HTML de la couleur d’arrière-plan du marqueur d’un point de données (par exemple, #FF0000 représente le rouge).|
+||[markerBackgroundColor](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerbackgroundcolor-member)|Représentation de code couleur HTML de la couleur d’arrière-plan de marque d’un point de données (par exemple, #FF0000 représente le rouge).|
 ||[markerForegroundColor](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerforegroundcolor-member)|Représentation de code couleur HTML de la couleur de premier plan du marqueur d’un point de données (par exemple, #FF0000 représente le rouge).|
 ||[markerSize](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markersize-member)|Représente la taille du marqueur d’un point de données.|
 ||[markerStyle](/javascript/api/excel/excel.chartpoint#excel-excel-chartpoint-markerstyle-member)|Représente le style du marqueur du point de données de graphique.|
@@ -257,7 +262,7 @@ Le tableau suivant répertorie les API Excel l’ensemble de conditions requises
 |[WorkbookProtection](/javascript/api/excel/excel.workbookprotection)|[protect(password?: string)](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-protect-member(1))|Protège un classeur.|
 ||[protected](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-protected-member)|Spécifie si le workbook est protégé.|
 ||[unprotect(password?: string)](/javascript/api/excel/excel.workbookprotection#excel-excel-workbookprotection-unprotect-member(1))|Annule la protection un classeur.|
-|[Worksheet](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel. WorksheetPositionType, relativeTo?: Excel. Feuille de calcul)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-copy-member(1))|Copie une feuille de calcul et la place à la position spécifiée.|
+|[Worksheet](/javascript/api/excel/excel.worksheet)|[copy(positionType?: Excel. WorksheetPositionType, relativeTo? : Excel. Feuille de calcul)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-copy-member(1))|Copie une feuille de calcul et la place à la position spécifiée.|
 ||[freezePanes](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-freezepanes-member)|Obtient un objet qui peut être utilisé pour manipuler des volets figés dans la feuille de calcul.|
 ||[getRangeByIndexes(startRow: number, startColumn: number, rowCount: number, columnCount: number)](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrangebyindexes-member(1))|Obtient l’objet `Range` qui commence à un index de ligne et un index de colonne particuliers et s’étend sur un certain nombre de lignes et de colonnes.|
 ||[onActivated](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onactivated-member)|Se produit lorsque la feuille de calcul est activée.|

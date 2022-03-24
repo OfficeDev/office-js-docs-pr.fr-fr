@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: d158a4067a4492901128438392cd1607ad851bcf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: b7d4cc9605d330bade217f43958b0c2fcb37c724
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150173"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742953"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -25,7 +25,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 ## <a name="variants"></a>Variantes
 
-Les tailles de contenu des Excel et PowerPoint dans Office bureau et Microsoft 365 sont spécifiées par l’utilisateur.
+Les tailles des Excel de contenu PowerPoint dans Office bureau et Microsoft 365 sont spécifiées par l’utilisateur.
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
@@ -49,7 +49,7 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
 
-- Vérifiez si votre Office fonctionne sur une application ou une plateforme [Office spécifique.](../overview/office-add-in-availability.md)
+- Vérifiez si votre Office fonctionne sur une application ou une plateforme [Office spécifique](../overview/office-add-in-availability.md).
 - Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
 - Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 

@@ -4,12 +4,12 @@ description: Vue d’Office ensembles de conditions requises des commandes de l�
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: fe0f3d7849886fa9d58b1fd2508f5de5bf97b488
-ms.sourcegitcommit: 856f057a8c9b937bfb37e7d81a6b71dbed4b8ff4
+ms.openlocfilehash: 799511ad85e8e04422cc52e38ffc2a4278410e4e
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/16/2022
-ms.locfileid: "63511376"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745532"
 ---
 # <a name="add-in-commands-requirement-sets"></a>Ensembles de conditions requises concernant les commandes de complément
 
@@ -24,7 +24,7 @@ La version initiale des commandes de add-in n’a pas d’ensemble de conditions
 
 | Version   |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) | Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(abonnement)   |  Office sur iPad<br>(abonnement)  |  Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| Commandes de complément (version initiale, aucune condition) | N/A | N/A | Version 1809 (build 10827.20150) ou version ultérieure| 16.0.14326.20454 ou ultérieur |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
+| Commandes de complément (version initiale, aucune condition) | S/O | S/O | Version 1809 (build 10827.20150) ou version ultérieure| 16.0.14326.20454 ou ultérieur |Version 1603 (build 6769.0000) ou ultérieure | S/O | 15.33 ou version ultérieure| Janvier 2016 |
 
 L’ensemble de conditions requises des commandes de add-in **1.1** introduit la possibilité d’ouverture automatique d’un volet [De tâches avec des documents](../../develop/automatically-open-a-task-pane-with-a-document.md).
 
@@ -34,8 +34,8 @@ Le tableau suivant répertorie les ensembles de conditions requises pour les com
 
 |  Ensemble de conditions requises  |  Office 2013 sur Windows<br>(achat définitif) | Office 2016 sur Windows<br>(achat définitif) | Office 2019 sur Windows<br>(achat définitif) |  Office 2021 sur Windows<br>(achat définitif) | Office pour Windows<br>(abonnement)   |  Office sur iPad<br>(abonnement)  |  Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web  |  
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| AddinCommands 1.3  | N/A | N/A | N/A | N/A | Version 2204 (build 14827.10000) ou version ultérieure | N/A | 16.57.105.0 ou ultérieur | Novembre 2020 |
-| AddinCommands 1.1  | N/A | N/A  | Version 1809 (build 10827.20150) ou version ultérieure&dagger; | 16.0.14326.20454 ou ultérieur&dagger; | Version 1705 (build 8121.1000) ou ultérieure&dagger; | N/A | 15.34 ou ultérieure&dagger;\*| Mai 2017 |
+| AddinCommands 1.3  | N/A | N/A | N/A | S/O | Version 2204 (build 14827.10000) ou version ultérieure | S/O | 16.57.105.0 ou ultérieur | Novembre 2020 |
+| AddinCommands 1.1  | S/O | S/O  | Version 1809 (build 10827.20150) ou version ultérieure&dagger; | 16.0.14326.20454 ou ultérieur&dagger; | Version 1705 (build 8121.1000) ou ultérieure&dagger; | S/O | 15.34 ou ultérieure&dagger;\*| Mai 2017 |
 
 \* La méthode [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#office-office-requirementsetsupport-issetsupported-member(1)) renverra `false` par erreur pour les versions 16.9 &ndash; 16.14 (incluse), mais l’ensemble de conditions requises *est* pris en charge sur ces versions.
 

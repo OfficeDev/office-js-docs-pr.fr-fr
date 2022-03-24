@@ -4,12 +4,12 @@ title: Configurez votre complément Office pour utiliser un runtime JavaScript p
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: 6d3eeef198ca7b5b99a9a459a3094e5c6a3d6707
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: db4ed73459c76089c67820cbf3099c071ad01ad2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711174"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743925"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 

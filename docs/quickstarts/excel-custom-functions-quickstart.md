@@ -1,27 +1,29 @@
 ---
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 2f15be99499e42c0598d70ae91b937c6637c0149
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222303"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746403"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
-Avec les fonctions personnalisées, les développeurs peuvent désormais ajouter de nouvelles fonctions dans Excel en les définissant dans JavaScript ou Typescript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`.
+Avec les fonctions personnalisées, les développeurs peuvent ajouter de nouvelles fonctions dans Excel en les définissant dans JavaScript ou TypeScript dans le cadre d’un complément. Les utilisateurs d’Excel peuvent accéder aux fonctions personnalisées comme ils le feraient pour n’importe quelle fonction native d’Excel, telle que `SUM()`.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-- Excel sur Windows (version 1904 ou ultérieure) ou Excel sur le Web.
-- Les fonctions personnalisées d’Excel sont prises en charge dans Office sur Mac (connecté à un abonnement Office 365). Une mise à jour de ce didacticiel est bientôt prévue.
+- Office connecté à un abonnement Microsoft 365 (y compris Office on the web).
+
+  > [!NOTE]
+  > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.
 
 ## <a name="build-your-first-custom-functions-project"></a>Créer votre premier projet de fonctions personnalisées
 
@@ -49,11 +51,11 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     npm run build
     ```
 
-1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou Windows. Vous serez peut-être invité à ouvrir le volet Office du complément, même si ce n’est pas obligatoire. Vous pouvez continuer à exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
+1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel. Vous serez peut-être invité à ouvrir le volet Office du complément, même si ce n’est pas obligatoire. Vous pouvez continuer à exécuter vos fonctions personnalisées sans ouvrir le volet Office de votre complément.
 
-# <a name="excel-on-windows"></a>[Excel sur Windows](#tab/excel-windows)
+# <a name="excel-on-windows-or-mac"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
-Pour tester votre complément dans Excel sur Windows, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Excel s’ouvrent avec votre complément chargé.
+Pour tester votre complément dans Excel sur Windows ou Mac, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local et Excel s’ouvrent avec votre complément chargé.
 
 ```command&nbsp;line
 npm run start:desktop
@@ -68,18 +70,6 @@ Pour tester votre complément dans Excel sur le web, exécutez la commande suiva
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-Pour utiliser votre complément de fonctions personnalisées, ouvrez un nouveau classeur dans Excel sur un navigateur. Dans ce classeur, procédez comme suit pour charger une version test de votre complément.
-
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
-
-   ![Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence.](../images/excel-cf-online-register-add-in-1.png)
-
-1. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
-
-1. Sélectionnez **Parcourir...** et accédez au répertoire racine du projet créé par le Générateur de Yo Office.
-
-1. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
 ---
 

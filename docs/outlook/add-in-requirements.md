@@ -3,12 +3,12 @@ title: Conditions requises pour les compléments Outlook
 description: Pour que les compléments Outlook se chargent et fonctionnent correctement, les serveurs et les clients doivent répondre à plusieurs conditions.
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 33e24c731b78f302b6fe655c15ddc683343afe88
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 0946cf6841fd46957b21b0d24698042e8d3fcb8c
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153212"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746198"
 ---
 # <a name="outlook-add-in-requirements"></a>Conditions requises pour les compléments Outlook
 

@@ -1,20 +1,20 @@
 ---
-title: Recommandations en matière d’icônes de style Office des produits
+title: Recommandations en matière d’icônes de style Office pour les modules
 description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e7281304ca448ed498b0ab20422af3688a24336
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: f3d2a78a72ea2540b297821323e0337d3a1ddcd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150200"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743100"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office des produits
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office pour les modules
 
-Les Office versions 2013 et 2013 (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, voir recommandations en matière d’icônes de style Monoline pour Office les [modules.](add-in-icons-monoline.md)
+Les Office versions 2013 et ultérieures (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, consultez les instructions relatives aux icônes de [style Monoline pour Office les modules.](add-in-icons-monoline.md)
 
-## <a name="office-fresh-visual-style"></a>Office Style visuel à nouveau
+## <a name="office-fresh-visual-style"></a>Office style visuel Fresh
 
 Les icônes Fresh incluent uniquement les éléments de communication essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux s’adapter Office clients sans abonnement.
 
@@ -46,7 +46,7 @@ Les icônes du bureau Office sont des images bitmap. Différentes tailles appara
 - 80 px (obligatoire)
 
 > [!IMPORTANT]
-> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des listes efficaces dans [AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
+> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des [listes efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
 
@@ -105,20 +105,20 @@ Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs r
 |Gris foncé 32|128, 128, 128|#808080| ![Gris foncé pour 32 px et plus.](../images/color-dark-gray-32.png) |32 px et supérieures|
 |Gris moyen 32|158, 158, 158|#9E9E9E| ![Gris moyen pour 32 px et plus.](../images/color-medium-gray-32.png) |32 px et supérieures|
 |TOUT gris clair|179, 179, 179|#B3B3B3| ![Gris clair pour toutes les tailles d’image.](../images/color-light-gray-all.png) |Toutes les tailles|
-|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins.](../images/color-dark-gray-16.png) |16 px et au-dessous|
+|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins.](../images/color-dark-gray-16.png) |16 px et inférieur|
 |Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit.](../images/color-medium-gray-16.png) |16 et moins|
 |Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus.](../images/color-blue-32.png) |32 px et supérieures|
-|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et au-dessous|
-|TOUT jaune|234, 194, 130|#EAC282| ![Jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
+|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et inférieur|
+|TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
 |Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus.](../images/color-orange-32.png) |32 px et supérieures|
-|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et au-dessous|
+|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et inférieur|
 |TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image.](../images/color-pink-all.png) |Toutes les tailles|
 |Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus.](../images/color-green-32.png) |32 px et supérieures|
-|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et au-dessous|
+|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et inférieur|
 |Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus.](../images/color-red-32.png) |32 px et supérieures|
-|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et au-dessous|
+|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et inférieur|
 |Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus.](../images/color-purple-32.png) |32 px et supérieures|
-|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et moins.](../images/color-purple-16.png) |16 px et au-dessous|
+|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et plus petit.](../images/color-purple-16.png) |16 px et inférieur|
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 

@@ -3,32 +3,32 @@ title: Ensemble de conditions requises de l’API du complément Outlook 1.8
 description: Ensemble de conditions requises 1.8 pour Outlook API de votre application.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 956bf1ed7109ce274d47ad6f2fda3999d1db913b
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: b8edd22cfd0b6c7febc369b183f2d8807810f7e2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237762"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745223"
 ---
 # <a name="outlook-add-in-api-requirement-set-18"></a>Ensemble de conditions requises de l’API du complément Outlook 1.8
 
-Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook de gestion.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-18"></a>Nouveautés de la version 1.8
 
-L’ensemble de conditions requises 1.8 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). Les fonctionnalités suivantes ont été ajoutées.
+L’ensemble de conditions requises 1.8 inclut toutes les fonctionnalités de l’ensemble [de conditions requises 1.7](../requirement-set-1.7/outlook-requirement-set-1.7.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Ajout de nouvelles fonctionnalités d’API pour les pièces jointes, de catégories, d’accès délégué, d’emplacement amélioré, d’en-têtes Internet et de blocage d’envoi.
 - Ajout d’un paramètre `options` facultatif à Event.completed.
-- Prise en charge et `AttachmentsChanged` `EnhancedLocationsChanged` événements ajoutés.
+- Prise en charge et événements `AttachmentsChanged` `EnhancedLocationsChanged` ajoutés.
 
 ### <a name="change-log"></a>Journal des modifications
 
 - Ajout d’[AttachmentContent](/javascript/api/outlook/office.attachmentcontent?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant le contenu d’une pièce jointe.
-- Ajout de [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true): ajoute un nouvel objet qui représente les détails d’une pièce jointe en mode composition.
+- Ajout de [AttachmentDetailsCompose](/javascript/api/outlook/office.attachmentdetailscompose?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet qui représente les détails d’une pièce jointe en mode composition.
 - Ajout de [Categories](/javascript/api/outlook/office.categories?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant les catégories d’un élément.
 - Ajout de [CategoryDetails](/javascript/api/outlook/office.categorydetails?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant les détails d’une catégorie (son nom et la couleur associée).
 - Ajout d’[EnhancedLocation](/javascript/api/outlook/office.enhancedlocation?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant l’ensemble des lieux pour un rendez-vous.
@@ -36,7 +36,7 @@ L’ensemble de conditions requises 1.8 inclut toutes les fonctionnalités de l�
 - Ajout de [LocationDetails](/javascript/api/outlook/office.locationdetails?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant un lieu. En lecture seule.
 - Ajout de [LocationIdentifier](/javascript/api/outlook/office.locationidentifier?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant l’ID d’un lieu.
 - Ajout de [MasterCategories](/javascript/api/outlook/office.mastercategories?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet représentant la liste principale des catégories d’une boîte aux lettres.
-- Ajout de [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true): ajoute un nouvel objet qui représente les propriétés d’un élément de rendez-vous ou de message dans un dossier partagé.
+- Ajout de [SharedProperties](/javascript/api/outlook/office.sharedproperties?view=outlook-js-1.8&preserve-view=true) : ajoute un nouvel objet qui représente les propriétés d’un élément de rendez-vous ou de message dans un dossier partagé.
 - Ajout d’un [élément de manifeste SupportsSharedFolders](../../manifest/supportssharedfolders.md) : ajoute un élément enfant à l’élément de manifeste [DesktopFormFactor](../../manifest/desktopformfactor.md). Définit si le complément est disponible dans les scénarios de délégué.
 - Ajout d’[Office.context.mailbox.masterCategories](office.context.mailbox.md#properties) : ajoute une nouvelle propriété représentant la liste principale des catégories d’une boîte aux lettres.
 - Ajout d’[Office.context.mailbox.item.categories](office.context.mailbox.item.md#properties) : ajoute une nouvelle propriété représentant l’ensemble des catégories d’une boîte aux lettres.

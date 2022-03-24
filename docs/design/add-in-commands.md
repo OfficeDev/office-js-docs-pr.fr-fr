@@ -3,12 +3,12 @@ title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
 ms.date: 12/13/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ac79355e916e27ce945d773a580f7ac5d101c67d
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: f5acefe4023a37e04b56cc6e27346965a6e39774
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514116"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63742815"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 

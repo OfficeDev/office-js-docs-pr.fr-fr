@@ -1,11 +1,16 @@
 ---
-title: Excel conditions requises de l’API JavaScript 1.11
+title: Excel l’ensemble de conditions requises de l’API JavaScript 1.11
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.11.
 ms.date: 04/01/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: ce900104d301fed1038fa1ede78fe661f7257e0f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745604"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-111"></a>Nouveautés de l Excel API JavaScript 1.11
 
 ExcelApi 1.11 a amélioré la prise en charge des commentaires et des contrôles au niveau du workbook (par exemple, l’enregistrement et la fermeture du manuel). Il a également ajouté l’accès aux paramètres de culture pour prendre en compte la localisation.
@@ -21,7 +26,7 @@ ExcelApi 1.11 a amélioré la prise en charge des commentaires et des contrôles
 
 ## <a name="api-list"></a>Liste des API
 
-Le tableau suivant répertorie les API de Excel l’ensemble de conditions requises de l’API JavaScript 1.11. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.11 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true) ou une version antérieure.
+Le tableau suivant répertorie les API Excel l’ensemble de conditions requises de l’API JavaScript 1.11. Pour afficher la documentation de référence de l’API pour toutes les API prise en charge par Excel l’ensemble de conditions requises de l’API JavaScript 1.11 ou une version antérieure, voir les API Excel dans l’ensemble de conditions requises [1.11](/javascript/api/excel?view=excel-js-1.11&preserve-view=true) ou une version antérieure.
 
 | Classe | Champs | Description |
 |:---|:---|:---|

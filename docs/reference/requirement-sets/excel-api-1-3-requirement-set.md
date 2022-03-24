@@ -4,8 +4,13 @@ description: Détails sur l’ensemble de conditions requises ExcelApi 1.3.
 ms.date: 11/09/2020
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 1bf8bc604c2c770f517878193994c1ed32640da1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745339"
 ---
-
 # <a name="whats-new-in-excel-javascript-api-13"></a>Nouveautés de l’API JavaScript 1.3 pour Excel
 
 ExcelApi 1.3 a ajouté la prise en charge de la liaison de données et de l’accès de base au tableau croisé dynamique.

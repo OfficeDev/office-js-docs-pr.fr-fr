@@ -1,21 +1,21 @@
 ---
 title: Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
-description: Activer la compatibilité avec Excel fonctions XLL définies par l’utilisateur qui ont des fonctionnalités équivalentes à vos fonctions personnalisées
+description: Activez la compatibilité avec Excel fonctions XLL définies par l’utilisateur qui ont des fonctionnalités équivalentes à vos fonctions personnalisées.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d1120e68a69bee74a6fe1911bbd8d3ccb3fb00
-ms.sourcegitcommit: 517786511749c9910ca53e16eb13d0cee6dbfee6
+ms.openlocfilehash: dac6cdceb65f27c7246afe17721ba4d11bbf18ab
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2021
-ms.locfileid: "59990711"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745649"
 ---
 # <a name="extend-custom-functions-with-xll-user-defined-functions"></a>Étendre des fonctions personnalisées avec des fonctions XLL définies par l’utilisateur
 
 > [!NOTE]
-> Un Excel XLL est un fichier de Excel avec l’extension **de fichier .xll**. Un fichier XLL est un type de fichier de bibliothèque de liens dynamiques (DLL) qui ne peut être ouvert qu’Excel. Les fichiers de add-in XLL doivent être écrits en C ou C++. Voir [Développement Excel XLs pour](/office/client-developer/excel/developing-excel-xlls) en savoir plus.
+> Un Excel XLL est un fichier de Excel avec l’extension **de fichier .xll**. Un fichier XLL est un type de fichier de bibliothèque de liens dynamiques (DLL) qui ne peut être ouvert qu’Excel. Les fichiers de add-in XLL doivent être écrits en C ou C++. Pour [en savoir plus, Excel développement de XLS](/office/client-developer/excel/developing-excel-xlls).
 
-Si vous disposez de Excel XLL, vous pouvez créer des macros supplémentaires de fonction personnalisée équivalentes à l’aide de l’API JavaScript Excel pour étendre les fonctionnalités de votre solution à d’autres plateformes, telles que Excel sur le Web ou sur un Mac. Toutefois, Excel’API JavaScript ne disposent pas de toutes les fonctionnalités disponibles dans les add-ins XLL. Selon les fonctionnalités que votre solution utilise, le add-in XLL peut offrir une meilleure expérience que le Excel de l’API JavaScript dans Excel sur Windows.
+Si vous disposez de Excel XLL, vous pouvez créer des macros supplémentaires de fonction personnalisée équivalentes à l’aide de l’API JavaScript Excel pour étendre vos fonctionnalités de solution à d’autres plateformes, telles que Excel sur le Web ou sur un Mac. Toutefois, Excel’API JavaScript ne disposent pas de toutes les fonctionnalités disponibles dans les add-ins XLL. En fonction des fonctionnalités que votre solution utilise, le add-in XLL peut offrir une meilleure expérience que le Excel de l’API JavaScript dans Excel sur Windows.
 
 [!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
@@ -23,9 +23,9 @@ Si vous disposez de Excel XLL, vous pouvez créer des macros supplémentaires de
 
 Pour activer la compatibilité avec un compl?ment XLL existant, identifiez le compl?ment XLL équivalent dans le manifeste de votre compl?ment d’API JavaScript Excel. Excel utilisera ensuite les fonctions du add-in XLL au lieu de vos fonctions personnalisées d’API JavaScript Excel lors de l’exécution sur Windows.
 
-Pour définir le add-in XLL équivalent pour vos fonctions personnalisées, spécifiez le `FileName` fichier XLL. Lorsque l’utilisateur ouvre un classez avec des fonctions à partir du fichier XLL, Excel convertit les fonctions en fonctions compatibles. Le classez utilise ensuite le fichier XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre application api JavaScript Excel lorsqu’il est ouvert sur le web ou sur un Mac.
+Pour définir le modèle XLL équivalent pour vos fonctions personnalisées, spécifiez le `FileName` fichier XLL. Lorsque l’utilisateur ouvre un classez avec des fonctions à partir du fichier XLL, Excel convertit les fonctions en fonctions compatibles. Le classez utilise ensuite le fichier XLL lorsqu’il est ouvert dans Excel sur Windows et utilise des fonctions personnalisées à partir de votre add-in d’API JavaScript Excel lorsqu’il est ouvert sur le web ou sur un Mac.
 
-L’exemple suivant montre comment spécifier un compl?ment COM et un compl?ment XLL en tant qu’équivalents dans un fichier manifeste de l’API JavaScript Excel. Souvent, vous spécifiez les deux. Pour plus d’complétance, cet exemple montre les deux en contexte. Ils sont identifiés par `ProgId` leur `FileName` et, respectivement. `EquivalentAddins`L’élément doit être placé immédiatement avant la balise de `VersionOverrides` fermeture. Pour plus d’informations sur la compatibilité des applications COM, voir Rendre votre Office compatible avec un compl?ment [COM existant.](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+L’exemple suivant montre comment spécifier un compl?ment COM et un compl?ment XLL en tant qu’équivalents dans un fichier manifeste de l’API JavaScript Excel. Souvent, vous spécifiez les deux. Pour plus d’complétance, cet exemple montre les deux en contexte. Ils sont identifiés par leur et `ProgId` `FileName` , respectivement. L’élément `EquivalentAddins` doit être placé immédiatement avant la balise de `VersionOverrides` fermeture. Pour plus d’informations sur la compatibilité des applications COM, voir Rendre votre Office compatible avec un compl?ment [COM existant](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
@@ -53,7 +53,7 @@ Les fonctions XLL d’un add-in sont converties en fonctions personnalisées com
 
 Le tableau suivant compare les fonctionnalités entre les fonctions XLL définies par l’utilisateur, les fonctions personnalisées compatibles XLL et Excel fonctions personnalisées de l’API JavaScript.
 
-|         |Fonction XLL définie par l’utilisateur |Fonctions personnalisées compatibles XLL |Excel Fonction personnalisée de l’API JavaScript |
+|         |Fonction XLL définie par l’utilisateur |Fonctions personnalisées compatibles XLL |Excel fonction personnalisée de l’API JavaScript |
 |---------|---------|---------|---------|
 | **Plateformes prises en charge** | Windows | Windows, macOS, navigateur web | Windows, macOS, navigateur web |
 | **Formats de fichiers pris en charge** | XLSX, XLSB, XLSM, XLS | XLSX, XLSB, XLSM | XLSX, XLSB, XLSM |

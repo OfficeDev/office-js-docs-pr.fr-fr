@@ -1,25 +1,25 @@
 ---
 title: Ensemble de conditions requises de l’API du complément Outlook 1.7
-description: Vue d’ensemble Outlook API du module de mise en Outlook (ensemble de conditions requises 1.7)
+description: Vue d’ensemble Outlook API du module de mise en Outlook (ensemble de conditions requises 1.7).
 ms.date: 05/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 51cd018d5e4438daf76b53e00195671b63afd50f
-ms.sourcegitcommit: efd0966f6400c8e685017ce0c8c016a2cbab0d5c
+ms.openlocfilehash: 1b84043f03d0d08ace420ac6f32a97aad975e92f
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/08/2021
-ms.locfileid: "60237342"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746466"
 ---
 # <a name="outlook-add-in-api-requirement-set-17"></a>Ensemble de conditions requises de l’API du complément Outlook 1.7
 
-Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook.
+Le sous-ensemble d’API de Outlook de l’API JavaScript Office inclut des objets, des méthodes, des propriétés et des événements que vous pouvez utiliser dans un Outlook de gestion.
 
 > [!NOTE]
 > Dans cette documentation, l’[ensemble de conditions requises](../../requirement-sets/outlook-api-requirement-sets.md) présenté est différent de l’ensemble de conditions requises de la version précédente.
 
 ## <a name="whats-new-in-17"></a>Nouveautés de la version 1.7
 
-L’ensemble de conditions requises 1.7 inclut toutes les fonctionnalités de l’ensemble de conditions [requises 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). Les fonctionnalités suivantes ont été ajoutées.
+L’ensemble de conditions requises 1.7 inclut toutes les fonctionnalités de l’ensemble [de conditions requises 1.6](../requirement-set-1.6/outlook-requirement-set-1.6.md). Les fonctionnalités suivantes ont été ajoutées.
 
 - Nouvelles API ajoutées concernant la périodicité sur les messages et rendez-vous qui sont des demandes de réunion.
 - Modification de la propriété item.from pour également être disponibles en mode Composer.

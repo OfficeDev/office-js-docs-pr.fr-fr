@@ -1,12 +1,17 @@
 ---
-title: Excel’ensemble de conditions requises de l’API JavaScript 1.14
+title: Excel conditions requises de l’API JavaScript 1.14
 description: Détails sur l’ensemble de conditions requises ExcelApi 1.14.
 ms.date: 12/08/2021
 ms.prod: excel
 ms.localizationpriority: medium
+ms.openlocfilehash: 93b1690a3c03e51dadb2110ec6382ca6ee86cfe1
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747016"
 ---
-
-# <a name="whats-new-in-excel-javascript-api-114"></a>Nouveautés de l Excel API JavaScript 1.14
+# <a name="whats-new-in-excel-javascript-api-114"></a>Nouveautés de l’API JavaScript Excel 1.14
 
 ExcelApi 1.14 a ajouté des objets pour contrôler la fonctionnalité de table de données d’un graphique, une méthode pour localiser toutes les cellules précédentes d’une formule et des événements de protection de feuille de calcul pour suivre les modifications apportées à l’état de protection d’une feuille de calcul. Il a également ajouté plusieurs méthodes [`getItemOrNullObject`](../../develop/application-specific-api-model.md#ornullobject-methods-and-properties) pour des objets tels `CommentCollection`que , et `ShapeCollection`pour `StyleCollection` améliorer la gestion des erreurs.
 

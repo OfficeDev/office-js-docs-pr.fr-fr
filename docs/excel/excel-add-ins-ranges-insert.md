@@ -4,12 +4,12 @@ description: Découvrez comment insérer une plage de cellules avec l’API Exce
 ms.date: 02/17/2022
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e1ed6d2302bcdb4a11688cd6d77448811f8a93b
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: ce559d0726b7d69c5f4c8c6d00a4e714c04df735
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340546"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745212"
 ---
 # <a name="insert-a-range-of-cells-using-the-excel-javascript-api"></a>Insérer une plage de cellules à l’aide de l Excel API JavaScript
 

@@ -1,18 +1,18 @@
 ---
 title: Autorisation avec des fournisseurs d’identité non Microsoft
-description: Obtenir l’autorisation pour les sources de données autres que Microsoft à l’aide d’OAuth 2.0, du code d’autorisation et des flux implicites.
+description: Obtenir l’autorisation pour les sources de données autres que Microsoft à l’aide d’OAuth 2.0 et du code d’autorisation et des flux implicites.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c79dc84522ddabd69f5a713cde43ec4a195a6fd9
-ms.sourcegitcommit: 57e15f0787c0460482e671d5e9407a801c17a215
+ms.openlocfilehash: 873bf0ad86490670db7a4733db971e377748babf
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2022
-ms.locfileid: "62320429"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743638"
 ---
 # <a name="authorization-with-non-microsoft-identity-providers"></a>Autorisation avec des fournisseurs d’identité non Microsoft
 
-Il existe de nombreux services de fourniture d’identités populaires, en plus des Plateforme d'identités Microsoft, que vous pouvez utiliser dans votre complément. Ils donnent aux utilisateurs, et aux applications telles que Office votre application, l’accès aux comptes des utilisateurs dans d’autres applications.
+Il existe de nombreux services de fourniture d’identités populaires, en plus des Plateforme d'identités Microsoft, que vous pouvez utiliser dans votre complément. Ils donnent aux utilisateurs et aux applications telles que votre Office, l’accès aux comptes des utilisateurs dans d’autres applications.
 
 L’infrastructure standard dans le secteur permettant d’activer l’accès d’une application web à un service en ligne est appelée **OAuth 2.0**. En règle générale, vous n’avez pas besoin de connaître les détails du fonctionnement de l’infrastructure pour pouvoir l’utiliser dans votre complément. Ces détails sont simplifiés pour vous dans de nombreuses bibliothèques disponibles.
 

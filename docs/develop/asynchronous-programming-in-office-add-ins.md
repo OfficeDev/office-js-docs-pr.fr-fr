@@ -1,15 +1,20 @@
 ---
 title: Programmation asynchrone dans des compléments Office
-description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans Office’applications.
+description: Découvrez comment la bibliothèque JavaScript Office la programmation asynchrone dans Office des applications.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: eae14e015d10c31ba531325f15cb8465fae76725
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743930"
 ---
-
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Pourquoi l’API de Compléments Office a-t-elle recours à la programmation asynchrone ? JavaScript étant un langage monothread, si le script appelle un processus synchrone de longue durée, toute exécution de script ultérieure sera bloquée tant que ce processus ne sera pas terminé. Étant donné que certaines opérations sur les clients web Office (mais également sur les clients riches) peuvent bloquer l’exécution si elles sont exécutées de manière synchrone, la plupart des API JavaScript Office sont conçues pour s’exécuter de manière asynchrone. Cela permet de s’assurer Office les modules sont réactifs et rapides. Vous devez donc fréquemment écrire des fonctions de rappel lorsque vous utilisez ces méthodes asynchrones.
+Pourquoi l’API de Compléments Office a-t-elle recours à la programmation asynchrone ? JavaScript étant un langage monothread, si le script appelle un processus synchrone de longue durée, toute exécution de script ultérieure sera bloquée tant que ce processus ne sera pas terminé. Étant donné que certaines opérations sur les clients web Office (mais également sur les clients riches) peuvent bloquer l’exécution si elles sont exécutées de manière synchrone, la plupart des API JavaScript Office sont conçues pour s’exécuter de manière asynchrone. Cela permet de s’Office que les Office sont réactifs et rapides. Vous devez donc fréquemment écrire des fonctions de rappel lorsque vous utilisez ces méthodes asynchrones.
 
 Les noms de toutes les méthodes asynchrones dans l’API se terminent par « Async `Document.getSelectedDataAsync`», par exemple, ou `Item.loadCustomPropertiesAsync` `Binding.getDataAsync`les méthodes. Lorsqu’une méthode « Async » est appelée, elle est exécutée immédiatement et toute exécution de script ultérieure peut se poursuivre normalement. La fonction de rappel facultative que vous transmettez à une méthode « Async » s’exécute dès que l’opération demandée ou les données sont prêtes. L’opération est généralement rapide, mais le retour pourrait présenter un léger retard.
 
@@ -106,7 +111,7 @@ La programmation asynchrone à l’aide des fonctions de rappel nécessite que v
 L’utilisation des rappels imbriqués est un modèle de programmation familier pour la plupart des développeurs JavaScript, mais le code contenant des rappels fortement imbriqués peut être difficile à lire et à comprendre. En remplacement des rappels imbrmbrés, l’API JavaScript Office prend également en charge une implémentation du modèle de promesses.
 
 > [!NOTE]
-> Dans la version actuelle de l’API JavaScript *Office, la* prise en charge intégrée du modèle de promesses fonctionne uniquement avec du code pour les [liaisons dans les feuilles](bind-to-regions-in-a-document-or-spreadsheet.md) de calcul Excel et les documents Word. Toutefois, vous pouvez encapsuler d’autres fonctions qui ont des rappels à l’intérieur de votre propre fonction de renvoi de promesse personnalisée. Pour plus d’informations, voir [Wrap Common APIs in Promise-returning functions](#wrap-common-apis-in-promise-returning-functions).
+> Dans la version actuelle de l’API JavaScript *Office, la* prise en charge intégrée du modèle de promesses fonctionne uniquement avec le code pour les [liaisons dans les feuilles](bind-to-regions-in-a-document-or-spreadsheet.md) de calcul Excel et les documents Word. Toutefois, vous pouvez encapsuler d’autres fonctions qui ont des rappels à l’intérieur de votre propre fonction de renvoi de promesse personnalisée. Pour plus d’informations, voir [Wrap Common APIs in Promise-returning functions](#wrap-common-apis-in-promise-returning-functions).
 
 ### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programmation asynchrone utilisant des fonctions de rappel imbriquées
 

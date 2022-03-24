@@ -3,13 +3,18 @@ title: Appeler Excel API JavaScript à partir d’une fonction personnalisée
 description: Découvrez les Excel JavaScript que vous pouvez appeler à partir de votre fonction personnalisée.
 ms.date: 08/30/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63744395"
 ---
-
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler Excel API JavaScript à partir d’une fonction personnalisée
 
 Appelez Excel API JavaScript à partir de vos fonctions personnalisées pour obtenir des données de plage et obtenir plus de contexte pour vos calculs. Appeler Excel API JavaScript par le biais d’une fonction personnalisée peut être utile lorsque :
 
-- Une fonction personnalisée doit obtenir des informations de la Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de Excel des informations spécifiques.
+- Une fonction personnalisée doit obtenir des informations de la Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de Excel informations spécifiques.
 - Une fonction personnalisée définira le format numérique de la cellule pour les valeurs de retour après le calcul.
 
 > [!IMPORTANT]
@@ -52,9 +57,9 @@ N’appelez pas Excel API JavaScript à partir d’une fonction personnalisée q
 - Ajoutez des noms à un workbook.
 - Définissez des propriétés ou exécutez la plupart des méthodes.
 
-Le Excel peut entraîner des performances médiocres, des délai d’exécution et des boucles infinies. Les calculs de fonction personnalisée ne doivent pas s’exécuter pendant Excel recalcul est en cours, car il se traduit par des résultats imprévisibles.
+La modification Excel d’exécution peut entraîner des performances médiocres, des temps d’insérez et des boucles infinies. Les calculs de fonction personnalisée ne doivent pas s’exécuter pendant Excel recalcul est en cours, car il se traduit par des résultats imprévisibles.
 
-A la place, a apporté des modifications Excel à partir du contexte d’un bouton de ruban ou d’un volet De tâches.
+A la place, modifiez les Excel à partir du contexte d’un bouton de ruban ou d’un volet De tâches.
 
 ## <a name="next-steps"></a>Prochaines étapes
 

@@ -1,14 +1,14 @@
 ---
 title: Chargement de version test des compléments Outlook
 description: Utilisez le chargement de version test pour installer un complément Outlook sans avoir à le placer au préalable dans un catalogue de compléments.
-ms.date: 10/22/2021
+ms.date: 03/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 971df0f2e151181f1d595cb0fcd0c0f82b26d759
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 5f9a76aec20574b5397df9fcfd18e4714e5c8dd4
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711244"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745717"
 ---
 # <a name="sideload-outlook-add-ins-for-testing"></a>Chargement de version test des compléments Outlook
 
@@ -49,7 +49,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 > [!NOTE]
 > Si votre organisation a inclus son logo dans la barre d’outils de boîte aux lettres, le rendu sera peut-être légèrement différent de celui figurant dans les images précédentes.
 
-### <a name="new-outlook-on-the-web"></a>Nouvelle Outlook sur le web
+#### <a name="new-outlook-on-the-web"></a>Nouvelle Outlook sur le web
 
 1. Accédez à [Outlook sur le web](https://outlook.office.com).
 
@@ -69,7 +69,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-### <a name="classic-outlook-on-the-web"></a>Modèle Outlook sur le web
+#### <a name="classic-outlook-on-the-web"></a>Modèle Outlook sur le web
 
 1. Accédez à [Outlook sur le web](https://outlook.office.com).
 
@@ -89,22 +89,44 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 ### <a name="outlook-on-the-desktop"></a>Outlook sur le bureau
 
-### <a name="outlook-2016-or-later"></a>Outlook 2016 ou ultérieure
+#### <a name="outlook-2016-or-later-on-windows-or-mac"></a>Outlook 2016 ou ultérieur sur Windows ou Mac
 
 1. Ouvrez Outlook 2016 ou une ultérieure sur Windows mac.
 
 1. Cliquez sur le bouton **Obtenir des compléments** du ruban.
 
-    ![Outlook 2016 ruban pointant vers le bouton Obtenir des modules.](../images/outlook-sideload-desktop-store.png)
+    # <a name="windows"></a>[Fenêtres](#tab/windows)
+
+    ![Outlook sur Windows ruban pointant vers le bouton Obtenir des modules.](../images/outlook-sideload-desktop-windows.png)
+
+    # <a name="mac"></a>[Mac](#tab/mac)
+
+    ![Outlook ruban Mac pointant vers le bouton Obtenir des macros.](../images/outlook-sideload-mac-classic.png)
+
+    ---
 
     > [!IMPORTANT]
-    > Si vous ne voyez pas le bouton Obtenir **des** Outlook, sélectionnez :
+    > Si vous ne voyez pas le bouton Obtenir des Outlook, faites l’une des **choses** suivantes :
     >
-    > - **Bouton Stocker** sur le ruban, si disponible.
+    > # <a name="windows"></a>[Fenêtres](#tab/windows)
     >
-    >   OR
+    > - Si vous avez configuré la disposition du ruban sur Ruban simplifié, sélectionnez le bouton de sélection (`...`) dans le ruban, puis sélectionnez Obtenir **des modules.**
     >
-    > - **Menu** Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet **Informations** pour ouvrir la boîte de dialogue Des Outlook sur le web.<br>Vous pouvez en savoir plus sur l’expérience web dans la section précédente chargement de version de chargement d’un [Outlook sur le web](#outlook-on-the-web).
+    >   ![Outlook sur Windows pointant vers le bouton Obtenir des modules à partir du bouton de points de suite.](../images/outlook-sideload-simplified-ribbon.png)
+    >
+    > - Sélectionnez **le bouton Store** sur le ruban, si disponible.
+    >
+    > - Sélectionnez **le** menu Fichier, puis sélectionnez le bouton Gérer les **modules complémentaires** sous l’onglet  **Informations** pour ouvrir la boîte de dialogue Des Outlook sur le web. Vous pouvez en savoir plus sur l’expérience web dans la section précédente chargement de version de chargement d’un [Outlook sur le web](#outlook-on-the-web).
+    >
+    > # <a name="mac"></a>[Mac](#tab/mac)
+    >
+    > - Sélectionnez le bouton de sélection (`...`) dans le ruban, puis **sélectionnez Obtenir des modules.**
+    >
+    >   ![Outlook mac pointant vers le bouton Obtenir des macros à partir du bouton de points de suite.](../images/outlook-sideload-deskop-mac.png)
+    >
+    > - Sélectionnez **le bouton Store** sur le ruban, si disponible.
+    >
+    > ---
 
 1. S’il existe des onglets en haut de la boîte de dialogue, **assurez-vous** que l’onglet Des applications est sélectionné. Choose **My add-ins**.
 
@@ -116,7 +138,7 @@ Le processus de chargement d’une version de version Outlook sur le web dépend
 
 1. Localisez le fichier manifeste de votre complément personnalisé et installez-le. Acceptez toutes les invites pendant l’installation.
 
-### <a name="outlook-2013"></a>Outlook 2013
+#### <a name="outlook-2013-on-windows"></a>Outlook 2013 sous Windows
 
 1. Ouvrez Outlook 2013 sur Windows.
 

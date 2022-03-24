@@ -1,15 +1,15 @@
 ---
 title: Ensembles de conditions requises pour les raccourcis clavier
 description: Informations sur l’ensemble de conditions requises pour les raccourcis clavier pour Office des modules complémentaires.
-ms.date: 02/07/2022
+ms.date: 02/15/2022
 ms.prod: non-product-specific
 localization_priority: Normal
-ms.openlocfilehash: 074460510e054cdcfbeca4676883c4180bb2202d
-ms.sourcegitcommit: d01aa8101630031515bf27f14361c5a3062c3ec4
+ms.openlocfilehash: bf7cd3cb8e0a6054f3e279e148e4b47c480e28fb
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2022
-ms.locfileid: "62467842"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745904"
 ---
 # <a name="keyboard-shortcuts-requirement-sets"></a>Ensembles de conditions requises pour les raccourcis clavier
 
@@ -17,9 +17,9 @@ Les ensembles de conditions requises sont des groupes nommés de membres d’API
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises pour les raccourcis clavier, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(connecté à un abonnement Microsoft 365)  | Office sur le web  |
+|  Ensemble de conditions requises  | Office 2013 ou version ultérieure sous Windows<br>(achat définitif) | Office pour Windows<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| KeyboardShortcuts 1.1  | N/A | Version : 2111 (build 14701.10000) | S/O | 16.55 | Septembre 2021 |
+| KeyboardShortcuts 1.1  | S/O | Version : 2111 (build 14701.10000) | S/O | 16.55 | Septembre 2021 |
 
 > [!NOTE]
 > **L’ensemble de conditions requises KeyboardShortcuts 1.1** est pris en charge uniquement dans Excel.
