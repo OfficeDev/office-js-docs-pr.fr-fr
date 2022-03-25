@@ -3,12 +3,12 @@ title: Exemples de code Office
 description: Une liste d Office exemples de code pour vous aider à apprendre et à créer vos propres modules.
 ms.date: 02/17/2022
 localization_priority: high
-ms.openlocfilehash: 81d82b2ff2624836d6f298e55618a0c5b0d172bb
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: e727e1df0bfb02eade1133e575234554f7c2b144
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892551"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745965"
 ---
 # <a name="office-add-in-code-samples"></a>Exemples de code Office
 
@@ -36,7 +36,7 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 | [Ouvrir dans Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Créez une feuille Excel feuille de calcul Microsoft Teams contenant les données que vous définissez.|
 | [Insérez un fichier Excel externe et remplissez-le avec des données JSON](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | Insérez un modèle existant à partir d'un fichier Excel externe dans le classeur Excel actuellement ouvert. Ensuite, remplissez le modèle avec les données d'un service Web JSON. |
 | [Créer des onglets contextuels personnalisés sur le ruban](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Créez un onglet contextuel personnalisé sur le ruban dans l’interface de l’utilisateur Office. L’exemple crée un tableau et lorsque l’utilisateur déplace le focus à l’intérieur du tableau, l’onglet personnalisé s’affiche. Lorsque l’utilisateur se déplace en dehors du tableau, l’onglet personnalisé est masqué. |
-| [Utiliser des raccourcis clavier pour les actions Office de la recherche](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) | Configurer un projet de Excel de base qui utilise des raccourcis clavier |
+| [Utiliser des raccourcis clavier pour les actions du complément Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) | Configurer un projet de Excel de base qui utilise des raccourcis clavier |
 | [Exemple de fonction personnalisée utilisant le service web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/web-worker) | Utilisez les web workers dans les fonctions personnalisées pour éviter de bloquer l'interface utilisateur de votre module complémentaire Office. |
 | [Utiliser des techniques de stockage pour accéder aux données à partir d’un Office lorsqu’il est hors connexion](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin) | Implémentez le stockage local pour activer des fonctionnalités limitées pour votre Office lorsqu’un utilisateur subit une perte de connexion. |
 | [Modèle de traitement par lots de fonctions personnalisées](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)| Traitement par lots de plusieurs appels en un seul appel pour réduire le nombre d’appels réseau vers un service distant.|
@@ -45,7 +45,7 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 
 | Nom                | Description         |
 |:--------------------|:--------------------|
-| [Chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications de date/heure de rendez-vous](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments). | Utilisez l’activation basée sur un événement pour chiffrer les pièces jointes lorsqu’elles sont ajoutées par l’utilisateur. Utilisez également la gestion des événements pour les destinataires modifiés dans une demande de réunion et les modifications apportées à la date ou à l’heure de début ou de fin d’une demande de réunion. |
+| [Chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications de date/heure de rendez-vous](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments). | Utilisez l’activation basée sur les événements pour chiffrer les pièces jointes lorsqu'elles sont ajoutées par l’utilisateur. Utilisez également la gestion des événements pour les destinataires modifiés dans une demande de réunion et les modifications apportées à la date ou à l’heure de début ou de fin dans une demande de réunion. |
 | [Utiliser l’activation basée sur les événements Outlook pour marquer les destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Utilisez l’activation basée sur des événements pour exécuter Outlook complément lorsque l’utilisateur modifie des destinataires lors de la composition d’un message. Le complément utilise également `appendOnSendAsync` l’API pour ajouter une clause d’exclusion de responsabilité. |
 | [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Utilisez l'activation basée sur des événements pour exécuter un module complémentaire Outlook lorsque l'utilisateur crée un nouveau message ou un rendez-vous. Le module peut répondre aux événements, même lorsque le volet Tâches n’est pas ouvert. Il utilise également `setSignatureAsync` l’API. |
 

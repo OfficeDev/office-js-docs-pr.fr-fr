@@ -3,12 +3,12 @@ title: Développement de compléments Office
 description: Présentation du développement de compléments Office.
 ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: aa56af832d1be3d868700ec4fae731ec55507579
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: e5f053535afd852b2c71edcfa52d8b4f4a1e54dd
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711160"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743523"
 ---
 # <a name="develop-office-add-ins"></a>Développement de compléments Office
 
@@ -23,7 +23,7 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
 ### <a name="yeoman-generator"></a>Générateur Yeoman
 
-Le générateur Yeoman pour les compléments Office peut être utilisé pour créer un projet de complément Office Node.js qui peut être géré avec Visual Studio Code ou tout autre éditeur. Le générateur peut créer des compléments Office pour l’une des opérations suivantes :
+Le générateur Yeoman pour les compléments Office peut être utilisé pour créer un projet de complément Node.js Office pouvant être géré avec Visual Studio Code ou tout autre éditeur. Le générateur peut créer des compléments Office pour l’un des éléments suivants :
 
 - Excel
 - OneNote
@@ -33,7 +33,7 @@ Le générateur Yeoman pour les compléments Office peut être utilisé pour cr�
 - Word
 - Fonctions personnalisées dans Excel
 
-Créez votre projet à l’aide de HTML, CSS et JavaScript (ou TypeScript), ou à l’aide d’Angular ou React. Pour l’infrastructure de votre choix, vous pouvez également choisir entre JavaScript et Typescript . Pour plus d’informations sur la création de compléments avec le générateur, consultez [générateur Yeoman pour les compléments Office](yeoman-generator-overview.md).
+Créez votre projet en utilisant HTML, CSS et JavaScript (ou TypeScript), ou en utilisant Angular ou React. Pour l’infrastructure de votre choix, vous pouvez également choisir entre JavaScript et Typescript . Pour plus d’informations sur la création de compléments avec le générateur, voir [Générateur Yeoman pour compléments Office](yeoman-generator-overview.md).
 
 ### <a name="visual-studio"></a>Visual Studio
 

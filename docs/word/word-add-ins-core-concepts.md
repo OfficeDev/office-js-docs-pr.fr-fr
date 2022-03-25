@@ -1,14 +1,14 @@
 ---
 title: Modèle d’objet JavaScript Word dans les compléments Office
-description: Découvrez les classes les plus importantes dans le modèle objet JavaScript spécifique à Word.
+description: Découvrez les composants clés dans le modèle objet JavaScript spécifique à Word.
 ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c0e601c75bdf4f163118de93d0c06d4668594c4b
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: d3c2a43e2febbf31fe132dfb5c220bffcc7a1fef
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63710936"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746101"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Word dans les compléments Office
 
@@ -19,16 +19,16 @@ Cet article décrit les concepts fondamentaux de l’utilisation de l’[API Jav
 
 ## <a name="officejs-apis-for-word"></a>API Office.js pour Word
 
-Un complément Word interagit avec des objets dans Word à l’aide de l’API JavaScript Office. Cela inclut deux modèles objet JavaScript :
+Un complément Word interagit avec des objets dans Word à l’aide de l’API JavaScript Office. Cela inclut deux modèles objet JavaScript :
 
-* **API JavaScript Word** : l’[API JavaScript Word](/javascript/api/word) fournit des objets fortement typés qui fonctionnent avec le document, les plages, les tables, les listes, la mise en forme, etc.
+* **API JavaScript Word** : l’[API JavaScript Word](/javascript/api/word) fournit des objets fortement typés qui fonctionnent avec le document, les plages, les tables, les listes, la mise en forme, etc.
 
-* **API communes**: les [API communes](/javascript/api/office)donnent accès à des fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client communs à plusieurs applications Office.
+* **API communes** : les [API communes](/javascript/api/office)donnent accès à des fonctionnalités telles que l’interface utilisateur, les boîtes de dialogue et les paramètres client communs à plusieurs applications Office.
 
 Vous utiliserez probablement l’API JavaScript Word pour développer la majorité des fonctionnalités des compléments destinés à Word, vous utiliserez également des objets dans l’API commune. Par exemple :
 
-* [office.context](/javascript/api/office/office.context): l’objet `Context` représente l’environnement d’exécution du complément et donne accès aux objets clés de l’API. Il se compose de détails sur la configuration du document comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode`requirements.isSetSupported()`, que vous pouvez utiliser pour vérifier si un ensemble de conditions requises spécifié est pris en charge par l’application Word dans laquelle le complément est en cours d’exécution.
-* [Office.Document](/javascript/api/office/office.document): l’objet `Office.Document` fournit la méthode `getFileAsync()` , que vous pouvez utiliser pour télécharger le fichier Word dans lequel le complément est en cours d’exécution. Il est distinct de l’objet [Word.Document](/javascript/api/word/word.document).
+* [Office.Context](/javascript/api/office/office.context) : l’objet `Context` représente l’environnement d’exécution du complément et donne accès aux objets clés de l’API. Il se compose de détails sur la configuration du document comme `contentLanguage` et `officeTheme`, et fournit des informations sur l’environnement d’exécution du complément comme `host` et `platform`. En outre, il fournit la méthode`requirements.isSetSupported()`, que vous pouvez utiliser pour vérifier si un ensemble de conditions requises spécifié est pris en charge par l’application Word dans laquelle le complément est en cours d’exécution.
+* [Office.Document](/javascript/api/office/office.document) : l’objet `Office.Document` fournit la méthode `getFileAsync()`, que vous pouvez utiliser pour télécharger le fichier Word dans lequel le complément est en cours d’exécution. Il est distinct de l’objet [Word.Document](/javascript/api/word/word.document).
 
 ![Différences entre l’API JS Word et les API courantes.](../images/word-js-api-common-api.png)
 

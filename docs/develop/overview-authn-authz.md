@@ -3,13 +3,18 @@ title: Vue d’ensemble de l’authentification et de l’autorisation dans les 
 description: Découvrez le fonctionnement de l’authentification et de l’autorisation dans les compléments Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: b0bd85ae144f45554a48e05d7fad866c3f67fe6b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743701"
 ---
-
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
 Les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de se connecter pour utiliser votre complément avec un compte Microsoft, un compte Microsoft 365 Éducation ou professionnel ou un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
 
-Votre add-in peut également obtenir le consentement de l'utilisateur pour accéder à ses données Microsoft Graphique (telles que son profil Microsoft 365, ses fichiers OneDrive et ses données SharePoint) ou à des données d'autres sources externes telles que Google, Facebook, LinkedIn, SalesForce et GitHub. Cette tâche est appelée autorisation de complément (ou d’application), car il s’agit du *complément* qui est autorisé et non l’utilisateur.
+Votre complément peut également obtenir le consentement de l’utilisateur pour accéder à ses données Microsoft Graph (telles que son profil Microsoft 365, ses fichiers OneDrive et ses données SharePoint) ou à des données d’autres sources externes telles que Google, Facebook, LinkedIn, SalesForce et GitHub. . Cette tâche est appelée autorisation de complément (ou d'application), car c’est le *complément* qui est autorisé, et non l’utilisateur.
 
 ## <a name="key-resources-for-authentication-and-authorization"></a>Ressources clés pour l’authentification et l’autorisation
 

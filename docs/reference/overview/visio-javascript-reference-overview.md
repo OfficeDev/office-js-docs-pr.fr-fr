@@ -1,17 +1,17 @@
 ---
 title: Présentation des API JavaScript pour Visio
-description: Vue d’ensemble de l’API JavaScript pour Visio
+description: Présentation de l’API JavaScript Visio.
 ms.date: 06/03/2020
 ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61a835ac425d862ed417b3b47a892e963b6a1b27
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: ccd09288d3f6e7fff4b102743391efc8f6e75e4b
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514123"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743360"
 ---
 # <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 
@@ -68,7 +68,7 @@ function hideToolbars() {
 
 ## <a name="proxy-objects"></a>Objets de proxy
 
-Les objets JavaScript pour Visio déclarés et utilisés dans une session intégrée sont des objets de proxy correspondant aux objets réels d’un document Visio. Toutes les actions effectuées sur les objets de proxy ne sont pas réalisées dans Visio et l’état du document Visio n’est pas répercuté sur les objets de proxy tant que cet état n’a pas été synchronisé. L’état de document est synchronisé lors de l’exécution de la méthode `context.sync()`.
+Les objets Visio JavaScript déclarés et utilisés dans une session intégrée sont des objets proxy pour les objets réels d’un document Visio. Toutes les actions effectuées sur les objets proxy ne sont pas réalisées dans Visio et l’état du document Visio n’est pas réalisé dans les objets proxy tant que l’état du document n’a pas été synchronisé. L’état du document est synchronisé lors de `context.sync()` son exécution.
 
 Par exemple, l’objet JavaScript local getActivePage est déclaré pour référencer la page sélectionnée. Cela permet par exemple de mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. Les actions appliquées à ces objets ne sont pas réalisées jusqu’à l’exécution de la méthode `sync()`.
 
@@ -78,11 +78,11 @@ var activePage = context.document.getActivePage();
 
 ## <a name="sync"></a>Sync()
 
-La méthode `sync()` synchronise l’état des objets de proxy JavaScript et des objets réels de Visio en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés pour les utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue à la fin de la synchronisation.
+La méthode `sync()` synchronise l’état entre les objets proxy JavaScript et les objets réels dans Visio en exécutant les instructions mises en file d’attente sur le contexte et en récupérant les propriétés des objets Office chargés à utiliser dans votre code. Cette méthode renvoie une promesse, qui est résolue lorsque la synchronisation est terminée.
 
 ## <a name="load"></a>load()
 
-La méthode `load()` permet de remplir les objets de proxy créés dans le calque JavaScript. Lorsque vous essayez de récupérer un objet, comme un document, un objet de proxy local est d’abord créé dans le calque JavaScript. Cet objet peut être utilisé pour mettre en file d’attente la valeur de ses propriétés et méthodes d’appel. Toutefois, pour la lecture des propriétés ou des relations de l’objet, les méthodes `load()` et `sync()` doivent d’abord être appelées. La méthode chargement() utilise les propriétés et les relations à charger lors de l’appel de la méthode `sync()`.
+La méthode `load()` est utilisée pour remplir les objets proxy créés dans la couche JavaScript. Lorsque vous essayez de récupérer un objet tel qu’un document, un objet proxy local est d’abord créé dans la couche JavaScript. Un tel objet peut être utilisé pour mettre en file d’attente le paramétrage de ses propriétés et invoquer des méthodes. Cependant, pour lire les propriétés ou les relations d’un objet, les méthodes `load()` et `sync()` doivent d’abord être appelées. La méthode load() prend en compte les propriétés et les relations qui doivent être chargées lorsque la méthode `sync()` est appelée.
 
 L’exemple suivant montre la syntaxe de la méthode `load()`.
 

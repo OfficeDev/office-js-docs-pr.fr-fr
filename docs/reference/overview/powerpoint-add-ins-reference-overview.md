@@ -1,15 +1,15 @@
 ---
 title: API JavaScript pour PowerPoint
-description: Vue d’ensemble de l’API JavaScript pour PowerPoint
+description: Présentation de l’API JavaScript de PowerPoint.
 ms.date: 07/05/2019
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 37220f11aae6b2740c8d9c3105fc0345f8d396cd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 406c22c3f35e5e749aabbbed9631dbb3b82cd4d9
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153695"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746877"
 ---
 # <a name="javascript-api-for-powerpoint"></a>API JavaScript pour PowerPoint
 

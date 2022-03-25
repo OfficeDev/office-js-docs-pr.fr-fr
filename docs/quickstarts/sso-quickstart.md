@@ -4,12 +4,12 @@ description: Utiliser le générateur Yeoman pour créer un complément Office N
 ms.date: 01/25/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: fba13fbef0c9e40b913c97885a67fef5adc11223
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711237"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63747189"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>Démarrage rapide de l’authentification unique (SSO)
 
@@ -75,7 +75,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
     ```
 
     > [!WARNING]
-    > Cette commande échoue si votre locataire est configuré pour exiger une authentification à deux facteurs. Dans ce scénario, vous devez effectuer manuellement les étapes d’inscription des applications Azure et de configuration de l’authentification unique, comme décrit dans le tutoriel[Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).
+    > Cette commande échouera si votre locataire est configuré pour exiger une authentification à deux facteurs. Dans ce scénario, vous devrez effectuer manuellement les étapes d’enregistrement de l’application Azure et de configuration SSO, comme décrit dans le didacticiel [Créer un complément Node.js Office qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md).
 
 3. Une fenêtre de navigateur web s’ouvre et vous invite à vous connecter à Azure. Connectez-vous à Azure à l’aide de vos informations d’identification d’administrateur Microsoft 365. Ces informations d’identification sont utilisées pour inscrire une nouvelle application dans Azure et configurer les paramètres requis par l’authentification unique.
 
@@ -100,9 +100,9 @@ Pour tester un complément Excel, Word ou PowerPoint, procédez comme suit.
     npm start
     ```
 
-2. Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (par exemple, Excel, Word ou PowerPoint), vérifiez que vous êtes connecté avec un utilisateur membre de la même organisation Microsoft 365 que le compte d’administrateur Microsoft 365 que vous avez utilisé pour vous connecter à Azure lors de la configuration de l’authentification unique à l’étape 3 de la [section précédente](#configure-sso). Cela permet d’établir les conditions appropriées pour que l’authentification unique réussisse.
+2. Dans l’application cliente Office qui s’ouvre lorsque vous exécutez la commande précédente (c’est-à-dire Excel, Word ou PowerPoint), assurez-vous que vous êtes connecté avec un utilisateur membre de la même organisation Microsoft 365 que le compte administrateur Microsoft 365 qui vous avez utilisé pour vous connecter à Azure lors de la configuration de SSO à l’étape 3 de la [section précédente](#configure-sso). Cela établit les conditions appropriées pour que l’authentification unique réussisse.
 
-3. Dans l’application cliente Office, choisissez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément. L’image suivante montre ce bouton dans Excel.
+3. Dans l’application cliente Office, choisissez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet des tâches** dans le ruban pour ouvrir le volet des tâches du complément. L’image suivante montre ce bouton dans Excel.
 
     ![Bouton complément Excel.](../images/excel-quickstart-addin-3b.png)
 

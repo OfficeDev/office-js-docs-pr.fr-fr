@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 ms.localizationpriority: high
-ms.openlocfilehash: 76b9e49adcf5954f50794aaae2fdf740c436c480
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 58400dfd1772ff5c3adbd846dd44c9cb0d57fff2
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711251"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63746088"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -50,8 +50,8 @@ Pour la configuration de votre environnement de développement :
 
 Vous devez également disposer des éléments ci-après :
 
-- Un compte Microsoft 365. Vous pouvez rejoindre le [programme Microsoft 365 développeur](https://aka.ms/devprogramsignup) qui fournit un abonnement Microsoft 365 de 90 jours renouvelable incluant des applications Office.
-- Un locataire Microsoft Azure. Un abonnement d’évaluation peut être acquis ici : [Microsoft Azure](https://account.windowsazure.com/SignUp).
+- Un compte Microsoft 365. Vous pouvez rejoindre le [programme pour développeurs Microsoft 365](https://aka.ms/devprogramsignup) qui fournit un abonnement Microsoft 365 renouvelable de 90 jours qui inclut les applications Office.
+- Un locataire Microsoft Azure. Un abonnement d’essai peut être acquis ici : [Microsoft Azure](https://account.windowsazure.com/SignUp).
 
 ## <a name="the-cell-analyzer-vsto-add-in"></a>Le composant VSTO d’analyseur de cellule
 
@@ -66,7 +66,7 @@ Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VS
 1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellule**, puis choisissez **Propriétés**.
 1. Sélectionnez la catégorie de **Signature** dans les propriétés.
 1. Sélectionnez **Signer des manifestes ClickOnce**, puis choisissez **Créer un certificat de test**.
-1. Dans la boîte de dialogue **Créer un certificat de test**, entrez et confirmez un mot de passe. Choisissez ensuite **OK**.
+1. Dans la boîte de dialogue **Créer un certificat de test**, saisissez et confirmez un mot de passe. Choisissez ensuite **OK**.
 
 Le complément est un volet de tâche personnalisé Office pour Excel. Vous pouvez sélectionner n’importe quelle cellule contenant un texte, puis choisissez le bouton **Afficher les Unicodes**. Dans la section **Résultat** , le complément affiche une liste de chaque caractère du texte, ainsi que leur nombre Unicode correspondant.
 

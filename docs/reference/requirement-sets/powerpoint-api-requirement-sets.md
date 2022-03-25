@@ -4,12 +4,12 @@ description: En savoir plus sur les ensembles de conditions requises de l’API 
 ms.date: 12/14/2021
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 2381252ef0d0a4e5b757b38534a826c77108a380
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 1002c5338d4c9a3b8fe650d29d68a46c0c987d5d
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514004"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745982"
 ---
 # <a name="powerpoint-javascript-api-requirement-sets"></a>Séries de conditions requises de l’API JavaScript pour PowerPoint
 
@@ -76,7 +76,7 @@ L’exemple de code suivant montre l’élément `Requirements` dans un manifest
 
 ## <a name="office-common-api-requirement-sets"></a>Séries de conditions requises des API communes pour Office
 
-La plupart des fonctionnalités du complément PowerPoint proviennent de la série courante d’API. Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
+La plupart des fonctionnalités du complément PowerPoint proviennent de l’ensemble d’API communes. Pour plus d’informations sur les ensembles de conditions requises des API communes, voir [Ensembles de conditions requises des API communes pour Office](office-add-in-requirement-sets.md).
 
 ## <a name="see-also"></a>Voir aussi
 

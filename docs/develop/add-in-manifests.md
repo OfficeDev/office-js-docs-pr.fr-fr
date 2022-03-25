@@ -3,8 +3,13 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 09/28/2021
 ms.localizationpriority: high
+ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743692"
 ---
-
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
 Le fichier manifeste XML d’un complément Office la manière dont votre complément doit être activé lorsqu’un utilisateur final l’installe et l’utilise avec des documents et des applications Office.
@@ -152,7 +157,7 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 
 Certains éléments descendants `VersionOverrides` ont des valeurs qui remplacent les valeurs de l’élément `OfficeApp` parent. Par exemple, `Hosts` l’élément dans `VersionOverrides` remplace `Hosts` l’élément dans `OfficeApp` .
 
-L’élément possède son propre schéma, en fait quatre d’entre eux, en fonction du type de complément et des fonctionnalités `VersionOverrides` qu’il utilise. Les schémas sont :
+L’élément `VersionOverrides` a son propre schéma, en fait quatre schémas, selon le type de complément et les fonctionnalités qu’il utilise. Les schémas sont :
 
 - [Volet De tâches 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [Contenu 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)

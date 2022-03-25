@@ -1,10 +1,15 @@
 ---
 title: Authentifier et autoriser avec l’API de dialogue Office
-description: 'Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu''à d’autres services protégés par la plateforme Microsoft Identity.'
+description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
 ms.date: 01/25/2022
 ms.localizationpriority: high
+ms.openlocfilehash: 4788fbf42870c6b23faa4cd89c74a8547cb1a7bc
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743631"
 ---
-
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
 Utilisez toujours l’API de boîte de dialogue Office pour authentifier et autoriser les utilisateurs avec votre complément Office. Vous devez également utiliser l’API de boîte de dialogue Office si vous implémentez l’authentification de secours lorsque l’authentification unique (SSO) ne peut pas être utilisée.
@@ -37,7 +42,7 @@ Voici un flux d’authentification classique.
 
 1. La première page qui s’ouvre dans la boîte de dialogue est une page (ou toute autre ressource) qui est hébergée dans le domaine du complément ; autrement dit, le même domaine que la fenêtre du volet des tâches. Cette page peut avoir une interface utilisateur qui indique uniquement « Veuillez patienter, nous vous redirigeons vers la page où vous pouvez vous connecter à *NAME-OF-PROVIDER*. » Le code de cette page construit l’URL de la page de connexion du fournisseur d’identité avec des informations transmises à la boîte de dialogue comme décrit dans [Transmettre des informations à la boîte de dialogue](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) ou est codée en dur dans un fichier de configuration du complément, tel qu’un fichier web.config.
 2. La fenêtre de la boîte de dialogue redirige alors l’utilisateur vers la page de connexion. L’URL inclut un paramètre de requête qui indique au fournisseur d’identité de rediriger la fenêtre de la boîte de dialogue une fois que l’utilisateur s’est connecté à une page spécifique. Nous allons appeler cette page **redirectPage.html** dans cet article. Les résultats de la tentative de connexion peuvent être transmis au volet Office avec un appel de `messageParent` sur cette page. *Nous recommandons que ce soit une page dans le même domaine que la fenêtre hôte*.
-3. Le service du fournisseur d’identité traite la requête GET entrante à partir de la fenêtre de la boîte de dialogue. Si l’utilisateur est déjà connecté, il redirige immédiatement la fenêtre vers **redirectPage.html** et inclut les données utilisateur sous la forme d’un paramètre de requête. Si l’utilisateur n’est pas déjà connecté, la page de connexion du fournisseur s’affiche dans la fenêtre et l’utilisateur se connecte. Pour la plupart des fournisseurs, si l’utilisateur ne peut pas se connecter correctement, le fournisseur affiche une page d’erreur dans la fenêtre de boîte de dialogue et ne redirige pas vers **redirectPage.html**. L’utilisateur doit fermer la fenêtre en sélectionnant le **X** dans le coin. Si l’utilisateur se connecte avec succès, la fenêtre de la boîte de dialogue est redirigée vers **redirectPage.html** et les données utilisateur sont incluses sous la forme d’un paramètre de requête.
+3. Le service du fournisseur d’identité traite la demande GET entrante à partir de la fenêtre de la boîte de dialogue. Si l’utilisateur est déjà connecté, il redirige immédiatement la fenêtre vers **redirectPage.html** et inclut les données utilisateur comme paramètre de requête. Si l’utilisateur n’est pas déjà connecté, la page de connexion du fournisseur s’affiche dans la fenêtre et l’utilisateur se connecte. Pour la plupart des fournisseurs, si l’utilisateur ne parvient pas à se connecter, le fournisseur affiche une page d’erreur dans la boîte de dialogue boîte de dialogue et ne redirige pas vers **redirectPage.html**. L’utilisateur doit fermer la fenêtre en sélectionnant le **X** dans le coin. Si l’utilisateur se connecte avec succès, la fenêtre de la boîte de dialogue est redirigée vers **redirectPage.html** et les données utilisateur sont incluses en tant que paramètre de requête.
 4. Lorsque la page **redirectPage.html** s’ouvre, elle appelle`messageParent` pour indiquer le succès ou l’échec au volet des tâches et éventuellement indiquer également des données utilisateur ou des données d’erreur. Les autres messages possibles incluent le passage d’un jeton d’accès ou le volet des tâches dans lequel le jeton est stocké.
 5. L’événement `DialogMessageReceived` se déclenche dans le volet des tâches, et son gestionnaire ferme la fenêtre de la boîte de dialogue et effectue éventuellement d’autres traitements du message.
 
@@ -57,7 +62,7 @@ Lorsqu’un utilisateur appelle une fonction dans l’application qui accède au
 Vous pouvez utiliser les API de dialogue Office pour gérer ce processus à l’aide d’un flux semblable à celui décrit pour la connexion des utilisateurs. Les seules différences sont les suivantes :
 
 - Si l’utilisateur n’a pas préalablement accordé à l’application les autorisations nécessaires, il est invité à le faire dans la boîte de dialogue après la connexion.
-- Votre code dans la fenêtre de la boîte de dialogue envoie le jeton d’accès vers la fenêtre hôte en utilisant `messageParent` pour envoyer le jeton d’accès converti en chaîne ou en stockant jeton d’accès à un emplacement où la fenêtre hôte peut le récupérer (et en utilisant `messageParent` pour indiquer à la fenêtre hôte que le jeton est disponible). Le jeton a une limite de temps, mais tant qu’elle n’est pas écoulée, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans demander d’autre confirmation.
+- Votre code dans la fenêtre de la boîte de dialogue envoie le jeton d’accès à la fenêtre hôte soit en utilisant `messageParent` pour envoyer le jeton d’accès sous forme de chaîne, soit en stockant le jeton d’accès là où la fenêtre hôte peut le récupérer (et en utilisant `messageParent` pour indiquer à la fenêtre hôte que le jeton est disponible ). Le jeton a une limite de temps, mais tant qu’il dure, la fenêtre hôte peut l’utiliser pour accéder directement aux ressources de l’utilisateur sans autre invite.
 
 Quelques exemples de compléments d’authentification qui utilisent l’API de boîte de dialogue Office à cet effet sont répertoriés dans les [exemples](#samples).
 
@@ -74,7 +79,7 @@ Ceci est lié au fait qu’une bibliothèque fournit généralement des méthode
 En guise d’alternative, l’instance de navigateur de la boîte de dialogue de votre complément peut appeler directement la méthode interactive de la bibliothèque. Lorsque cette méthode renvoie un jeton, votre code doit stocker de manière explicite le jeton à l’endroit où l’instance de navigateur du volet des tâches peut le récupérer (par exemple, stockage local\* ou une base de données côté serveur). Une autre option consiste à transmettre le jeton au volet des tâches avec la méthode`messageParent`. Cette alternative est uniquement possible si la méthode interactive stocke le jeton d’accès à un endroit où votre code peut le lire. Parfois, la méthode interactive d’une bibliothèque est conçue pour stocker le jeton dans une propriété privée d’un objet qui n’est pas accessible à votre code.
 
 > [!NOTE]
-> \* Un bogue peut affecter votre stratégie de gestion des jetons. Si le complément s’exécute dans **Office sur le web** dans le navigateur Safari ou Edge, la boîte de dialogue et le volet Office ne partagent pas le même stockage local. Il ne peut donc pas être utilisé pour communiquer entre eux.
+> \* Il y a un bogue qui affectera votre stratégie de gestion des jetons. Si le complément s’exécute dans **Office sur le Web** dans le navigateur Safari ou Edge, la boîte de dialogue et le volet Office ne partagent pas le même stockage local, il ne peut donc pas être utilisé pour communiquer entre eux.
 
 ### <a name="you-usually-cannot-use-the-librarys-auth-context-object"></a>En général, vous ne pouvez pas utiliser l’objet «contexte d’authentification» de la bibliothèque.
 

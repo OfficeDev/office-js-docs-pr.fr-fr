@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 01/13/2022
+ms.date: 03/18/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b211369735e986ae4cf32d61e2a549e06ab083ed
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62222254"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63745578"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -17,7 +17,7 @@ Les fonctions personnalisées vous permettent d’ajouter de nouvelles fonctions
 
 Dans ce didacticiel, vous allez :
 > [!div class="checklist"]
-> - Créer un complément de fonction personnalisée à l’aide la [Générateur Yeoman de compléments Office](https://www.npmjs.com/package/generator-office).
+> - Créer un complément de fonction personnalisée à l’aide la [Générateur Yeoman de compléments Office](../develop/yeoman-generator-overview.md).
 > - Utiliser une fonction personnalisée prédéfinie pour effectuer un calcul simple.
 > - Créer une fonction personnalisée qui demande les données à partir du web.
 > - Créer une fonction personnalisée qui diffuse les données en temps réel à partir du web.
@@ -26,14 +26,17 @@ Dans ce didacticiel, vous allez :
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
-* Excel sur Windows (version 1904 ou ultérieure) ou Excel sur le Web.
+- Office connecté à un abonnement Microsoft 365 (y compris Office on the web).
+
+  > [!NOTE]
+  > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.
 
 ## <a name="create-a-custom-functions-project"></a>Créer un projet de fonctions personnalisées
 
- Pour commencer, créez le projet de code pour créer votre complément de fonction personnalisé. Le [générateur Yeoman pour les compléments Office](https://www.npmjs.com/package/generator-office) configurera votre projet avec des fonctions personnalisées prédéfinies que vous pouvez essayer. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) à la place.
+ Pour commencer, créez le projet de code pour créer votre complément de fonction personnalisé. Le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) configurera votre projet avec des fonctions personnalisées prédéfinies que vous pouvez essayer. Si vous avez déjà exécuté le démarrage rapide des fonctions personnalisées et généré un projet, continuez à utiliser ce projet et passez à [cette étape](#create-a-custom-function-that-requests-data-from-the-web) à la place.
 
 > [!NOTE]
-> Il se peut que vous receviez une erreur si vous recréez le projet office yo car le cache Office possède déjà une instance d’une fonction du même nom. Vous pouvez éviter cela en [effaçant le cache Office](../testing/clear-cache.md) avant d’exécuter `npm run start`.
+> Si vous recréez le projet yo office, vous pouvez obtenir une erreur car le cache Office a déjà une instance d’une fonction portant le même nom. Vous pouvez éviter cela en [vidant le cache Office](../testing/clear-cache.md) avant l’exécution `npm run start`.
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
@@ -62,7 +65,7 @@ Dans ce didacticiel, vous allez :
     > [!NOTE]
     > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
 
-1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez tester le complément de fonction personnalisée dans Excel sur le web ou sur Windows.
+1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel.
 
 # <a name="excel-on-windows-or-mac"></a>[Excel sur Windows ou Mac](#tab/excel-windows)
 
@@ -72,11 +75,15 @@ Pour tester votre complément dans Excel sur Windows ou Mac, exécutez la comman
 npm run start:desktop
 ```
 
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
+
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-Pour tester votre complément dans Excel sur un navigateur, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document Excel sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous disposez d’autorisations.
+Pour tester votre complément dans Excel sur le web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document Excel sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous disposez d’autorisations.
 
 [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+
+[!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 ---
 

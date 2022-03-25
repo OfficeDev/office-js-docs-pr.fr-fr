@@ -3,21 +3,21 @@ title: Développement de compléments Office avec Visual Studio
 description: Comment développer un complément Office à l’aide de Visual Studio.
 ms.date: 01/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 26fd9d138dc05f7e0ca2961591b9d45b21a9dbe6
-ms.sourcegitcommit: e837f966d7360ed11b3ff9363ff20380f7d0c45e
+ms.openlocfilehash: 52740e16363e3e038269e08a9e50e0f08877db66
+ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2022
-ms.locfileid: "62263043"
+ms.lasthandoff: 03/23/2022
+ms.locfileid: "63743839"
 ---
 # <a name="develop-office-add-ins-with-visual-studio"></a>Développement de compléments Office avec Visual Studio
 
 Cet article explique comment utiliser Visual Studio pour développer votre complément Office. Si votre complément est déjà créé, vous pouvez passer directement à la section [Développer le complément à l’aide de Visual Studio](#develop-the-add-in-using-visual-studio).
 
 > [!NOTE]
-> À la place de Visual Studio, vous pouvez choisir d’utiliser le générateur Yeoman pour compléments Office et le code VS afin de créer un complément. Pour en savoir plus sur cette option, voir [Création d’un complément Office](../develop/develop-overview.md#create-an-office-add-in).
+> Au lieu d’utiliser Visual Studio, vous pouvez choisir d’utiliser le générateur Yeoman pour les compléments Office et VS Code pour créer un complément Office. Pour plus d’informations sur ce choix, voir [Création d’un complément Office](../develop/develop-overview.md#create-an-office-add-in).
 
-## <a name="create-the-add-in-project-using-visual-studio"></a>Créer un projet de complément Office à l’aide de Visual Studio
+## <a name="create-the-add-in-project-using-visual-studio"></a>Créer un projet de complément Office à l’aide de Visual Studio
 
 Visual Studio peut être utilisé pour créer des compléments Office pour Excel, Outlook, Word et PowerPoint. Un projet de complément Office est créé dans le cadre d’une solution Visual Studio et utilise HTML, CSS et JavaScript. Pour créer un complément Office avec Visual Studio, suivez les instructions du guide de démarrage rapide correspondant au complément que vous souhaitez créer.
 
@@ -26,7 +26,7 @@ Visual Studio peut être utilisé pour créer des compléments Office pour Excel
 - [Démarrage rapide Word](../quickstarts/word-quickstart.md?tabs=visualstudio)
 - [Démarrage rapide PowerPoint](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
 
-Visual Studio ne prend pas en charge la création de compléments Office pour OneNote ou Project. Pour créer des compléments Office pour l’une de ces applications, vous devrez utiliser le générateur Yeoman pour compléments Office, comme décrit dans le [Démarrage rapide OneNote](../quickstarts/onenote-quickstart.md) ou le [Démarrage rapide Project](../quickstarts/project-quickstart.md).
+Visual Studio ne prend pas en charge la création de compléments Office pour OneNote ou Project. Pour créer des compléments Office pour l'une de ces applications, vous devez utiliser le générateur Yeoman pour les compléments Office, comme décrit dans le [démarrage rapide de OneNote](../quickstarts/onenote-quickstart.md) ou le [démarrage rapide de Project](../quickstarts/project-quickstart.md).
 
 ## <a name="develop-the-add-in-using-visual-studio"></a>Développer votre complément à l’aide de Visual Studio
 
