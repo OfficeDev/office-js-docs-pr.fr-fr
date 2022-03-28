@@ -3,12 +3,12 @@ title: Utilisation des substitutions étendues du manifeste
 description: Découvrez comment configurer des fonctionnalités d’extensibilité avec des substitutions étendues du manifeste.
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 43a922f559100157dbdacbb401d38c4d9ba22010
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 34002ffcb621fad9f318aad80b32feb22ac45f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743795"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483715"
 ---
 # <a name="work-with-extended-overrides-of-the-manifest"></a>Utilisation des substitutions étendues du manifeste
 
@@ -30,7 +30,7 @@ Le schéma qui définit le format JSON est [un schéma de manifeste étendu](htt
 
 ## <a name="tell-office-where-to-find-the-json-file"></a>Indiquer Office où trouver le fichier JSON
 
-Utilisez le manifeste pour indiquer Office où trouver le fichier JSON. Juste *en dessous* (pas à l’intérieur) `<VersionOverrides>` de l’élément dans le manifeste, ajoutez [un élément ExtendedOverrides](../reference/manifest/extendedoverrides.md) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON. Voici un exemple de l’élément le plus simple possible `<ExtendedOverrides>` .
+Utilisez le manifeste pour indiquer Office où trouver le fichier JSON. Juste *en dessous* (pas à l’intérieur) `<VersionOverrides>` de l’élément dans le manifeste, ajoutez [un élément ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON. Voici un exemple de l’élément le plus simple possible `<ExtendedOverrides>` .
 
 ```xml
     ...

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Word 
 ms.date: 02/23/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 0c6a12cc84f35ceb04e26df8be4635bddd42ca04
-ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
+ms.openlocfilehash: c88f8b2b90c4078c4ba10e1ce37aec3a20e9639c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "63511333"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484342"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -104,7 +104,7 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
 
 4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
@@ -146,12 +146,12 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
     (function () {
 
         Office.onReady(function() {
-            // Office is ready
+            // Office is ready.
             $(document).ready(function () {
-                // The document is ready
+                // The document is ready.
                 // Use this to check whether the API is supported in the Word client.
                 if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
-                    // Do something that is only available via the new APIs
+                    // Do something that is only available via the new APIs.
                     $('#emerson').click(insertEmersonQuoteAtSelection);
                     $('#checkhov').click(insertChekhovQuoteAtTheBeginning);
                     $('#proverb').click(insertChineseProverbAtTheEnd);

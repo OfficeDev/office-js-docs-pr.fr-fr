@@ -3,11 +3,16 @@ title: Obtenir et définir des en-têtes Internet
 description: Comment obtenir et définir des en-têtes Internet sur un message dans un Outlook de recherche.
 ms.date: 04/28/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: ddbb555f8901e1b244fb3e30682d73c21928963e
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484001"
 ---
-
 # <a name="get-and-set-internet-headers-on-a-message-in-an-outlook-add-in"></a>Obtenir et définir des en-têtes Internet sur un message dans un Outlook de recherche
 
-## <a name="background"></a>Contexte
+## <a name="background"></a>Arrière-plan
 
 Une exigence courante dans Outlook développement de add-ins consiste à stocker les propriétés personnalisées associées à un add-in à différents niveaux. Actuellement, les propriétés personnalisées sont stockées au niveau de l’élément ou de la boîte aux lettres.
 
@@ -23,10 +28,10 @@ Bien qu’il existe un moyen de définir les en-têtes Internet par le biais de 
 
 ## <a name="purpose-of-the-internet-headers-api"></a>Objectif de l’API d’en-têtes Internet
 
-Introduites dans [l’ensemble de conditions requises 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md), les API d’en-têtes Internet permettent aux développeurs de :
+Introduites dans [l’ensemble de conditions requises 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), les API d’en-têtes Internet permettent aux développeurs de :
 
 - Marquez les informations d’un e-mail qui persistent après son Exchange tous les clients.
-- Lire les informations d’un e-mail qui ont persisté une fois qu’il a été laissé Exchange tous les clients dans les scénarios de lecture de courrier.
+- Lire les informations d’un e-mail qui ont persisté après qu’il a Exchange sur tous les clients dans les scénarios de lecture de courrier.
 - Accéder à l’intégralité de l’en-tête MIME de l’e-mail.
 
 ![Diagramme des en-têtes Internet. Texte : l’utilisateur 1 envoie un e-mail. Le add-in gère les en-têtes Internet personnalisés pendant que l’utilisateur compose des messages électroniques. L’utilisateur 2 reçoit le message électronique. Le add-in obtient les en-têtes Internet provenant du courrier électronique reçu, puis il parcourt et utilise des en-têtes personnalisés.](../images/outlook-internet-headers.png)

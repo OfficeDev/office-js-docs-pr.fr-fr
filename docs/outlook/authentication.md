@@ -3,8 +3,13 @@ title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 ms.date: 09/03/2021
 ms.localizationpriority: high
+ms.openlocfilehash: 4f3195b8275d9befcd5b4e35c25ae93a2d188da9
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: HT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484535"
 ---
-
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
 Votre complément Outlook peut accéder à des informations à partir de n’importe quel emplacement sur Internet, qu’il s’agisse du serveur qui héberge le complément, de votre réseau interne ou du cloud. Si ces informations sont protégées, votre complément doit trouver un moyen d’authentifier votre utilisateur. Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
@@ -14,8 +19,7 @@ Votre complément Outlook peut accéder à des informations à partir de n’imp
 Les jetons d’accès à authentification unique permettent à votre complément de s’authentifier en toute transparence et d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview). Cette fonctionnalité réduit la friction étant donné que l’utilisateur n’a pas besoin de saisir ses informations d’identification.
 
 > [!NOTE]
-> La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
-> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’emplacement où l’API d’authentification unique est actuellement prise en charge, consultez [ensembles de conditions requises IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la procédure à suivre, consultez [Exchange Online : comment activer votre locataire pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Vous pouvez utiliser des jetons d’accès d’authentification unique si votre complément :
 
@@ -57,8 +61,8 @@ Grâce à cette méthode, votre complément invite l’utilisateur à se connect
 
 ## <a name="callback-tokens"></a>Jetons de rappel
 
-Les jetons de rappel permettent d’accéder à la boîte aux lettres de l’utilisateur à partir de votre serveur principal à l’aide d’[Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) ou de l’[API REST Outlook](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Vous pouvez utiliser les jetons de rappel si votre complément :
+Les jetons de rappel fournissent l’accès à la boîte aux lettres de l’utilisateur à partir de votre serveur principal, à l’aide des [Services web Exchange (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) ou de l’[API REST Outlook](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Envisagez d’utiliser des jetons de rappel si votre complément :
 
 - Doit accéder à la boîte aux lettres de l’utilisateur à partir de votre serveur principal.
 
-Les compléments obtiennent des jetons de rappel à l’aide d’une méthode [getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods). Le niveau d’accès est contrôlé par les autorisations spécifiées dans le manifeste du complément.
+Les compléments obtiennent des jetons de rappel à l’aide d’une méthode [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods). Le niveau d’accès est contrôlé par les autorisations spécifiées dans le manifeste du complément.

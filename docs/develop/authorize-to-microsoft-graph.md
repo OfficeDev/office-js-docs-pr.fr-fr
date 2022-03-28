@@ -3,12 +3,12 @@ title: Autoriser la connexion à Microsoft Graph avec l’authentification uniqu
 description: Découvrez comment les utilisateurs d’un Office peuvent utiliser l’sign-on unique (SSO) pour extraire des données de Microsoft Graph.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfdfda7ff01f07873da7bd5dd32a5878c29a88b1
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 07655b270e4de96656b7ed2930fdf4fd6cc6c97d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743545"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483793"
 ---
 # <a name="authorize-to-microsoft-graph-with-sso"></a>Autoriser la connexion à Microsoft Graph avec l’authentification unique
 
@@ -82,4 +82,4 @@ Pour Outlook des applications, assurez-vous d’activer l’authentification mod
 
 * [Jeton OAuth2 Exchange](https://tools.ietf.org/html/draft-ietf-oauth-token-exchange-02)
 * [Plateforme d’identités Microsoft et flux OAuth 2.0 On-Behalf-Of](/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow)
-* [Ensembles de conditions requises IdentityAPI](../reference/requirement-sets/identity-api-requirement-sets.md)
+* [Ensembles de conditions requises IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)

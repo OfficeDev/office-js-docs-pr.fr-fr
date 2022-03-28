@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton identité dans un complément
 description: Découvrez comment utiliser le jeton d’identité fourni par un complément Outlook pour implémenter l’authentification unique SSO dans votre service.
 ms.date: 10/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f4dd8345de0edaaef333ee2b01890e876e049a6
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4f2a24bb918cc55527adfb7b789004d3dd15d839
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744620"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484386"
 ---
 # <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Authentifier un utilisateur avec un jeton d’identité pour Exchange
 
@@ -21,7 +21,7 @@ Les jetons d’identité d’utilisateur Exchange sont un moyen pour vos complé
 
 ## <a name="send-the-id-token-with-each-request"></a>Envoyer le jeton d’ID avec chaque requête
 
-La première étape concerne votre complément qui doit obtenir du serveur le jeton d’identité d’utilisateur Exchange en appelant la méthode [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods). Le complément envoie ensuite ce jeton avec chaque requête effectuée à votre serveur principal. Cela peut se faire dans un en-tête ou dans le corps de la requête.
+La première étape concerne votre complément qui doit obtenir du serveur le jeton d’identité d’utilisateur Exchange en appelant la méthode [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods). Le complément envoie ensuite ce jeton avec chaque requête effectuée à votre serveur principal. Cela peut se faire dans un en-tête ou dans le corps de la requête.
 
 ## <a name="validate-the-token"></a>Valider le jeton
 

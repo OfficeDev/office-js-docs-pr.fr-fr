@@ -3,18 +3,18 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 3febafa3e762a7ba98ff50479ad3c5d677e5edd6
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 29fd772fe201a568e7507235805f4b570bf1adb1
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743074"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483789"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser les commandes de votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
-Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1](../reference/requirement-sets/add-in-commands-requirement-sets.md), pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
+Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1](/javascript/api/requirement-sets/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
@@ -56,7 +56,7 @@ Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionna
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet des tâches à ouvrir
 
-Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](../reference/manifest/action.md#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
+Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](/javascript/api/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
 
 L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTaskpaneWithDocument.
 

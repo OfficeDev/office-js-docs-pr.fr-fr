@@ -3,12 +3,12 @@ title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Utilisez différentes API de pièce jointe pour gérer les fichiers ou Outlook éléments joints à l’élément que l’utilisateur compose.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebecb1b0674641b58c20c0d8d78681f2bbf48110
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: bf49b5ad099541602d94dea0cab5869dbd54a960
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744343"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483958"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition Outlook
 
@@ -18,9 +18,9 @@ L Office API JavaScript fournit plusieurs API que vous pouvez utiliser pour gér
 
 Vous pouvez joindre un fichier ou un Outlook à un formulaire de composition à l’aide de la méthode appropriée pour le type de pièce jointe.
 
-- [addFileAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) : joindre un fichier
-- [addFileAttachmentFromBase64Async](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) : joindre un fichier à l’aide de sa chaîne base64
-- [addItemAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) : joindre un Outlook’élément
+- [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) : joindre un fichier
+- [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) : joindre un fichier à l’aide de sa chaîne base64
+- [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) : joindre un Outlook’élément
 
 Il s’agit de méthodes asynchrones, ce qui signifie que l’exécution peut continuer sans attendre la fin de l’action. Selon l’emplacement d’origine et la taille de la pièce jointe ajoutée, l’appel asynchrone peut prendre un certain temps.
 
@@ -81,7 +81,7 @@ function write(message){
 
 ### <a name="attach-an-outlook-item"></a>Joindre un Outlook’élément
 
-Vous pouvez joindre un élément Outlook (par exemple, un e-mail, un calendrier ou un élément de contact) à un message ou un rendez-vous dans un formulaire de composition en spécifiant l’ID `addItemAttachmentAsync` Exchange Web Services (EWS) de l’élément et en utilisant la méthode. Vous pouvez obtenir l’ID EWS d’un élément de messagerie, de calendrier, de contact ou de tâche dans la boîte aux lettres de l’utilisateur à l’aide de la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) et en accédant à l’opération EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). La propriété [item.itemId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) fournit également l’ID EWS d’un élément existant dans un formulaire de lecture.
+Vous pouvez joindre un élément Outlook (par exemple, un e-mail, un calendrier ou un élément de contact) à un message ou un rendez-vous dans un formulaire de composition en spécifiant l’ID `addItemAttachmentAsync` Exchange Web Services (EWS) de l’élément et en utilisant la méthode. Vous pouvez obtenir l’ID EWS d’un élément de messagerie, de calendrier, de contact ou de tâche dans la boîte aux lettres de l’utilisateur à l’aide de la méthode [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) et en accédant à l’opération EWS [FindItem](/exchange/client-developer/web-service-reference/finditem-operation). La propriété [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) fournit également l’ID EWS d’un élément existant dans un formulaire de lecture.
 
 La fonction JavaScript suivante, `addItemAttachment`étend le premier exemple ci-dessus et ajoute un élément en tant que pièce jointe au message électronique ou au rendez-vous en cours de composition. La fonction prend comme argument l’ID EWS de l’élément qui doit être joint. Si l’attachement réussit, il obtient l’ID de pièce jointe pour un traitement ultérieur, y compris la suppression de cette pièce jointe dans la même session.
 
@@ -116,14 +116,14 @@ function addItemAttachment(itemId) {
 
 ## <a name="get-attachments"></a>Obtention de pièces jointes
 
-Les API pour obtenir des pièces jointes en mode composition sont disponibles à partir de [l’ensemble de conditions requises 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md).
+Les API pour obtenir des pièces jointes en mode composition sont disponibles à partir de [l’ensemble de conditions requises 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8).
 
-- [getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
 
-Vous pouvez utiliser la [méthode getAttachmentsAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) pour obtenir les pièces jointes du message ou du rendez-vous en cours de composition.
+Vous pouvez utiliser la [méthode getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) pour obtenir les pièces jointes du message ou du rendez-vous en cours de composition.
 
-Pour obtenir le contenu d’une pièce jointe, vous pouvez utiliser la [méthode getAttachmentContentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Les formats pris en charge sont répertoriés dans [l’énumérer AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) .
+Pour obtenir le contenu d’une pièce jointe, vous pouvez utiliser la [méthode getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) . Les formats pris en charge sont répertoriés dans [l’énumérer AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) .
 
 Vous devez fournir une méthode de rappel pour vérifier `AsyncResult` l’état et toute erreur à l’aide de l’objet paramètre de sortie. Vous pouvez également transmettre des paramètres supplémentaires à la méthode de rappel à l’aide du paramètre `asyncContext` facultatif.
 
@@ -165,7 +165,7 @@ function handleAttachmentsCallback(result) {
 
 ## <a name="remove-an-attachment"></a>Supprimer une pièce jointe
 
-Vous pouvez supprimer un fichier ou une pièce jointe d’un élément de message ou de rendez-vous dans un formulaire de composition en spécifiant l’ID de pièce jointe correspondant lors de l’utilisation de la méthode [removeAttachmentAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) .
+Vous pouvez supprimer un fichier ou une pièce jointe d’un élément de message ou de rendez-vous dans un formulaire de composition en spécifiant l’ID de pièce jointe correspondant lors de l’utilisation de la méthode [removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) .
 
 > [!IMPORTANT]
 > Si vous utilisez l’ensemble de conditions requises 1.7 ou une précédente, vous devez uniquement supprimer les pièces jointes ajoutées par le même module dans la même session.

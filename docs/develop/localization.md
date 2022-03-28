@@ -3,12 +3,12 @@ title: Localisation des compléments Office
 description: Utilisez l’API JavaScript Office pour déterminer un paramètre local et afficher des chaînes en fonction des paramètres régionaux de l’application Office, ou pour interpréter ou afficher des données en fonction des paramètres régionaux des données.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 049cf3c8e6f0d498e6d4a0f9ca223499635cd5ab
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d82b4408f55ee94fe1fe27bfb00b335cb08b85bd
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743411"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483673"
 ---
 # <a name="localization-for-office-add-ins"></a>Localisation des compléments Office
 
@@ -144,9 +144,9 @@ Les utilisateurs de chaque paramètre régional que vous spécifiez peuvent acc�
 
 ## <a name="localize-extended-overrides"></a>Localiser les substitutions étendues
 
-Certaines fonctionnalités d’extensibilité des modules de Office, telles que les raccourcis clavier, sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module. Cette section suppose que vous êtes familiarisé avec les substitutions étendues. Voir [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](../reference/manifest/extendedoverrides.md) element.
+Certaines fonctionnalités d’extensibilité des modules de Office, telles que les raccourcis clavier, sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module. Cette section suppose que vous êtes familiarisé avec les substitutions étendues. Voir [Work with extended overrides of the manifest](extended-overrides.md) and [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
 
-Utilisez l’attribut `ResourceUrl` de [l’élément ExtendedOverrides](../reference/manifest/extendedoverrides.md) pour pointer Office vers un fichier de ressources localisées. Voici un exemple.
+Utilisez l’attribut `ResourceUrl` de [l’élément ExtendedOverrides](/javascript/api/manifest/extendedoverrides) pour pointer Office vers un fichier de ressources localisées. Voici un exemple.
 
 ```xml
     ...
@@ -493,17 +493,17 @@ Le complément de volet de tâches est chargé dans Word 2013 et les chaînes d
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Instructions de conception pour les compléments Office](/previous-versions/office/office-2013-resource-kit/cc179219(v=office.15))
 
-[DefaultLocale]:         ../reference/manifest/defaultlocale.md
-[Description]:           ../reference/manifest/description.md
-[DisplayName]:           ../reference/manifest/displayname.md
-[IconUrl]:               ../reference/manifest/iconurl.md
-[HighResolutionIconUrl]: ../reference/manifest/highresolutioniconurl.md
-[Resources]:             ../reference/manifest/resources.md
-[SourceLocation]:        ../reference/manifest/sourcelocation.md
-[Override]:              ../reference/manifest/override.md
-[DesktopSettings]:       ../reference/manifest/desktopsettings.md
-[TabletSettings]:        ../reference/manifest/tabletsettings.md
-[PhoneSettings]:         ../reference/manifest/phonesettings.md
+[DefaultLocale]:         /javascript/api/manifest/defaultlocale
+[Description]:           /javascript/api/manifest/description
+[DisplayName]:           /javascript/api/manifest/displayname
+[IconUrl]:               /javascript/api/manifest/iconurl
+[HighResolutionIconUrl]: /javascript/api/manifest/highresolutioniconurl
+[Resources]:             /javascript/api/manifest/resources
+[SourceLocation]:        /javascript/api/manifest/sourcelocation
+[Override]:              /javascript/api/manifest/override
+[DesktopSettings]:       /javascript/api/manifest/desktopsettings
+[TabletSettings]:        /javascript/api/manifest/tabletsettings
+[PhoneSettings]:         /javascript/api/manifest/phonesettings
 [displayLanguage]:       /javascript/api/office/office.context#displayLanguage
 [contentLanguage]:       /javascript/api/office/office.context#contentLanguage
 [RFC 3066]:              https://www.rfc-editor.org/info/rfc3066

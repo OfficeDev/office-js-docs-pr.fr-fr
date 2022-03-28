@@ -3,12 +3,12 @@ title: Manifestes des compléments Outlook
 description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 1b89a351ad19c6038c4ffe0942e5b7335c4206b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 837ceac37375052b31acb0c243f4d5b2e2601511
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149099"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484211"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
@@ -386,7 +386,7 @@ Pour plus d’informations, voir [Spécifier les domaines que vous souhaitez ouv
 
 ## <a name="permissions"></a>Autorisations
 
-L’élément **Permissions** contient les autorisations requises pour le complément. Généralement, vous devez spécifier l’autorisation nécessaire minimale dont votre complément a besoin selon la méthode exacte que vous prévoyez d’utiliser. Par exemple, un complément de messagerie qui s’active dans les formulaires de composition et qui lit uniquement mais n’écrit pas dans les propriétés de l’élément comme [item.requiredAttendees](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties), et qui n’appelle pas [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour accéder aux opérations liées aux services web Exchange doit spécifier l’autorisation **ReadItem**. Pour plus de détails sur les autorisations disponibles, reportez-vous à l’article [Présentation des autorisations de complément Outlook](understanding-outlook-add-in-permissions.md).
+L’élément **Permissions** contient les autorisations requises pour le complément. Généralement, vous devez spécifier l’autorisation nécessaire minimale dont votre complément a besoin selon la méthode exacte que vous prévoyez d’utiliser. Par exemple, un complément de messagerie qui s’active dans les formulaires de composition et qui lit uniquement mais n’écrit pas dans les propriétés de l’élément comme [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), et qui n’appelle pas [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour accéder aux opérations liées aux services web Exchange doit spécifier l’autorisation **ReadItem**. Pour plus de détails sur les autorisations disponibles, reportez-vous à l’article [Présentation des autorisations de complément Outlook](understanding-outlook-add-in-permissions.md).
 
 **Modèle d’autorisations à 4 niveaux pour les compléments de messagerie**
 

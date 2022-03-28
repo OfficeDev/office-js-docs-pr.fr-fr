@@ -3,8 +3,13 @@ title: Gestion des valeurs de date dans les compléments Outlook
 description: L Office API JavaScript utilise l’objet Date JavaScript pour la majeure partie du stockage et de la récupération des dates et heures.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: adcf7cebd93a5881094a843d19fd65f95ae459a3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484491"
 ---
-
 # <a name="tips-for-handling-date-values-in-outlook-add-ins"></a>Conseils pour la gestion des valeurs de date dans les compléments Outlook
 
 L Office API JavaScript utilise l’objet [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) JavaScript pour la majeure partie du stockage et de la récupération des dates et heures. 
@@ -33,7 +38,7 @@ Bien que vous pouvez utiliser l’objet JavaScript `Date` pour obtenir une valeu
 
 ## <a name="date-related-features-for-outlook-add-ins"></a>Fonctionnalités liées à la date pour les compléments Outlook
 
-La limitation JavaScript susmentionnée a une incidence sur vous, lorsque vous utilisez l’API JavaScript Office pour gérer les valeurs de date ou d’heure dans les applications de Outlook qui s’exécutent dans un client riche Outlook et sur des appareils mobiles ou Outlook sur le web.
+La limitation JavaScript susmentionnée a une incidence sur vous, lorsque vous utilisez l’API JavaScript Office pour gérer les valeurs de date ou d’heure dans les applications Outlook qui s’exécutent dans un client riche Outlook et sur des appareils mobiles ou Outlook sur le web.
 
 
 ### <a name="time-zones-for-outlook-clients"></a>Fuseaux horaires pour les clients Outlook
@@ -50,18 +55,18 @@ Pour clarifier les choses, définissons les fuseaux horaires en question.
 
 ### <a name="date-related-api"></a>API liée à la date
 
-Voici les propriétés et méthodes de l’API JavaScript Office prise en charge des fonctionnalités liées à la date.
+Les propriétés et méthodes de l’API JavaScript Office prise en charge des fonctionnalités liées à la date sont les suivantes.
 
 |Membre de l'API|Représentation du fuseau horaire|Exemple dans un client riche Outlook|Exemple dans Outlook sur le web appareils mobiles ou mobiles|
 |--------------|----------------------------|-------------------------------------|-------------------|
 |[Office.context.mailbox.userProfile.timeZone](/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true#outlook-office-userprofile-timezone-member)|Dans un client riche Outlook, cette propriété renvoie le fuseau horaire de l’ordinateur client. Dans Outlook sur le web appareils mobiles et mobiles, cette propriété renvoie le fuseau horaire EAC. |EST|PST|
-|[Office.context.mailbox.item.dateTimeCreated](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) et [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)|Chacune de ces propriétés renvoie un objet JavaScript `Date` . Cette `Date` valeur est correcte au niveau UTC, `myUTCDate` comme illustré dans l’exemple suivant , a la même valeur dans un client riche Outlook, des Outlook sur le web et des appareils mobiles.<br/><br/>`var myDate = Office.mailbox.item.dateTimeCreated;`<br/>`var myUTCDate = myDate.getUTCDate;`<br/><br/>Toutefois, `myDate.getDate` l’appel renvoie une valeur de date dans le fuseau horaire de l’ordinateur client, qui est cohérente avec le fuseau horaire utilisé pour afficher les valeurs d’heure dans l’interface client enrichie Outlook, mais peut être différent du fuseau horaire EAC utilisé par Outlook sur le web et les appareils mobiles dans son interface utilisateur.|Si l’élément est créé à 9 h 00 UTC :<br/><br/>`Office.mailbox.item.`<br/>`dateTimeCreated.getHours` renvoie 4 h 00 EST.<br/><br/>Si l’élément est modifié à 11 h 00 UTC :<br/><br/>`Office.mailbox.item.`<br/>`dateTimeModified.getHours` renvoie 6 h 00 EST.|Si l’élément est créé à 9 h 00 UTC :<br/><br/>`Office.mailbox.item.`</br>`dateTimeCreated.getHours` renvoie 4 h 00 EST.<br/><br/>Si l’élément est modifié à 11 h 00 UTC :<br/><br/>`Office.mailbox.item.`</br>`dateTimeModified.getHours` renvoie 6 h 00 EST.<br/><br/>Notez que si vous souhaitez afficher l’heure de création ou de modification dans l’interface utilisateur, vous pouvez d’abord convertir l’heure au format PST pour rester cohérent avec le reste de l’interface utilisateur.|
-|[Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)|Chacun des paramètres  _Start_ et _End_ requiert un objet JavaScript `Date` . Les arguments doivent être corrects en UTC, quel que soit le fuseau horaire utilisé dans l’interface utilisateur d’un client Outlook riche, ou Outlook sur le web appareils mobiles ou mobiles.|Si les heures de début et de fin du formulaire de rendez-vous sont 9h00 UTC et 11h00 UTC, vous devez vous assurer que les arguments `start` et `end` sont conformes au format UTC, autrement dit :<br/><br/><ul><li>`start.getUTCHours` renvoie 9 h 00 UTC</li><li>`end.getUTCHours` renvoie 11 h 00 UTC</li></ul>|Si les heures de début et de fin du formulaire de rendez-vous sont 9h00 UTC et 11h00 UTC, vous devez vous assurer que les arguments `start` et `end` sont conformes au format UTC, autrement dit :<br/><br/><ul><li>`start.getUTCHours` renvoie 9 h 00 UTC</li><li>`end.getUTCHours` renvoie 11 h 00 UTC</li></ul>|
+|[Office.context.mailbox.item.dateTimeCreated](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) et [Office.context.mailbox.item.dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|Chacune de ces propriétés renvoie un objet JavaScript `Date` . Cette `Date` valeur est correcte au niveau UTC, `myUTCDate` comme illustré dans l’exemple suivant , a la même valeur dans un client riche Outlook, des Outlook sur le web et des appareils mobiles.<br/><br/>`var myDate = Office.mailbox.item.dateTimeCreated;`<br/>`var myUTCDate = myDate.getUTCDate;`<br/><br/>Toutefois, `myDate.getDate` l’appel renvoie une valeur de date dans le fuseau horaire de l’ordinateur client, qui est cohérente avec le fuseau horaire utilisé pour afficher les valeurs d’heure dans l’interface client enrichie Outlook, mais peut être différent du fuseau horaire EAC utilisé par Outlook sur le web et les appareils mobiles dans son interface utilisateur.|Si l’élément est créé à 9 h 00 UTC :<br/><br/>`Office.mailbox.item.`<br/>`dateTimeCreated.getHours` renvoie 4 h 00 EST.<br/><br/>Si l’élément est modifié à 11 h 00 UTC :<br/><br/>`Office.mailbox.item.`<br/>`dateTimeModified.getHours` renvoie 6 h 00 EST.|Si l’élément est créé à 9 h 00 UTC :<br/><br/>`Office.mailbox.item.`</br>`dateTimeCreated.getHours` renvoie 4 h 00 EST.<br/><br/>Si l’élément est modifié à 11 h 00 UTC :<br/><br/>`Office.mailbox.item.`</br>`dateTimeModified.getHours` renvoie 6 h 00 EST.<br/><br/>Notez que si vous souhaitez afficher l’heure de création ou de modification dans l’interface utilisateur, vous pouvez d’abord convertir l’heure au format PST pour rester cohérent avec le reste de l’interface utilisateur.|
+|[Office.context.mailbox.displayNewAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)|Chacun des paramètres  _Start_ et _End_ requiert un objet JavaScript `Date` . Les arguments doivent être corrects en UTC, quel que soit le fuseau horaire utilisé dans l’interface utilisateur d’un client Outlook riche, ou Outlook sur le web appareils mobiles ou mobiles.|Si les heures de début et de fin du formulaire de rendez-vous sont 9h00 UTC et 11h00 UTC, vous devez vous assurer que les arguments `start` et `end` sont conformes au format UTC, autrement dit :<br/><br/><ul><li>`start.getUTCHours` renvoie 9 h 00 UTC</li><li>`end.getUTCHours` renvoie 11 h 00 UTC</li></ul>|Si les heures de début et de fin du formulaire de rendez-vous sont 9h00 UTC et 11h00 UTC, vous devez vous assurer que les arguments `start` et `end` sont conformes au format UTC, autrement dit :<br/><br/><ul><li>`start.getUTCHours` renvoie 9 h 00 UTC</li><li>`end.getUTCHours` renvoie 11 h 00 UTC</li></ul>|
 
 ## <a name="helper-methods-for-date-related-scenarios"></a>Méthodes d’assistance pour les scénarios liés à la date
 
 
-Comme décrit dans les sections précédentes, étant donné que l'« heure locale » d’un utilisateur dans Outlook sur le web ou les appareils mobiles peut être différente sur un client riche Outlook, mais que l’objet **Date** JavaScript prend en charge la conversion au fuseau horaire de l’ordinateur client ou UTC, l’API JavaScript Office fournit deux méthodes d’aide : [Office .context.mailbox.convertToLocalClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) [et Office.context.mailbox.convertToUtcClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
+Comme décrit dans les sections précédentes, étant donné que l'« heure locale » pour un utilisateur dans Outlook sur le web ou les appareils mobiles peut être différente sur un client riche Outlook, mais que l’objet **Date** JavaScript prend en charge la conversion au fuseau horaire de l’ordinateur client ou UTC uniquement, l’API JavaScript Office fournit deux méthodes d’aide : [Office .context.mailbox.convertToLocalClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) [et Office.context.mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods).
 
 Ces méthodes d’aide s’occupent de n’importe quel besoin de gérer différemment la date ou l’heure pour les deux scénarios suivants liés à la date, dans un client riche Outlook, des Outlook sur le web et des appareils mobiles, ce qui renforce l'« écriture une seule fois » pour les différents clients de votre application.
 
@@ -88,12 +93,12 @@ document.write ("The item was created at " + myLocalDictionaryDate["hours"] +
     ":" + myLocalDictionaryDate["minutes"]);)
 ```
 
-Notez qu’il `convertToLocalClientTime` s’agit de la différence entre un client Outlook riche et des Outlook sur le web ou mobiles :
+Notez qu’il `convertToLocalClientTime` s’agit de la différence entre un client Outlook riche et des Outlook sur le web ou des appareils mobiles :
 
 
 - Si `convertToLocalClientTime` elle détecte que l’application actuelle est un client riche, `Date` la méthode convertit la représentation en représentation de dictionnaire dans le même fuseau horaire de l’ordinateur client, en accord avec le reste de l’interface utilisateur du client riche.
     
-- `convertToLocalClientTime` Si elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit la représentation UTC `Date` correcte au format de dictionnaire dans le fuseau horaire du CENTRE D’EAC, en accord avec le reste de l’interface utilisateur Outlook sur le web ou des appareils mobiles.
+- `convertToLocalClientTime` Si elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit la représentation UTC `Date` correcte au format de dictionnaire dans le fuseau horaire du CENTRE D’EAC, cohérente avec le reste de l’interface utilisateur Outlook sur le web ou des appareils mobiles.
     
 
 ### <a name="scenario-b-displaying-start-and-end-dates-in-a-new-appointment-form"></a>Scénario B : affichage des dates de début et de fin dans un formulaire de nouveau rendez-vous
@@ -110,12 +115,12 @@ var myUTCCorrectEndDate = Office.context.mailbox.convertToUtcClientTime(myLocalD
 
 Les valeurs qui en résultent, `myUTCCorrectStartDate` et `myUTCCorrectEndDate`, sont au format UTC. Passez ensuite ces objets en `Date` tant qu’arguments pour les paramètres  `Mailbox.displayNewAppointmentForm` _Début_ et Fin de la méthode pour afficher le nouveau formulaire de rendez-vous.
 
-Notez qu’il `convertToUtcClientTime` s’agit de la différence entre un client Outlook riche et des Outlook sur le web ou mobiles :
+Notez qu’il `convertToUtcClientTime` s’agit de la différence entre un client Outlook riche et des Outlook sur le web ou des appareils mobiles :
 
 
 - Si `convertToUtcClientTime` elle détecte que l’application actuelle est Outlook client riche, la méthode convertit simplement la représentation de dictionnaire en `Date` objet. Cet `Date` objet est au UTC correct, comme prévu par `displayNewAppointmentForm`.
     
-- Si `convertToUtcClientTime` elle détecte que l’application actuelle est Outlook sur le web ou appareils mobiles, la méthode convertit le format de dictionnaire des valeurs de date et d’heure exprimées dans le fuseau horaire EAC `Date` en objet. Cet `Date` objet est au UTC correct, comme prévu par `displayNewAppointmentForm`.
+- Si `convertToUtcClientTime` elle détecte que l’application actuelle est Outlook sur le web ou les appareils mobiles, la méthode convertit le format de dictionnaire des valeurs de date et d’heure exprimées dans le fuseau horaire EAC `Date` en objet. Cet `Date` objet est au UTC correct, comme prévu par `displayNewAppointmentForm`.
     
 ## <a name="see-also"></a>Voir aussi
 

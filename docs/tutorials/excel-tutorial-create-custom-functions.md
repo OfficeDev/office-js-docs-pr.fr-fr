@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: c6121b4d2041e04cdd5c978b1d8d2a1ba6f5cf5a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745578"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404729"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -44,7 +44,7 @@ Dans ce didacticiel, vous allez :
     - **Sélectionnez un type de script :** `JavaScript`
     - **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.":::
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
@@ -63,7 +63,7 @@ Dans ce didacticiel, vous allez :
     ```
 
     > [!NOTE]
-    > Les compléments Office doivent utiliser le protocole HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté `npm run build`, acceptez d’installer le certificat fourni par le générateur Yeoman.
+    > Les compléments Office doivent utiliser HTTPS, et non HTTP, même lorsque vous développez. Si vous êtes invité à installer un certificat après avoir exécuté la commande,`npm run build`acceptez l’invite d’installation du certificat fourni par le générateur Yeoman.
 
 1. Démarrez le serveur web local qui est exécuté dans Node.js. Vous pouvez essayer le complément de fonction personnalisée dans Excel.
 
@@ -98,6 +98,8 @@ Ensuite, essayez la `ADD` fonction personnalisée en effectuant les étapes suiv
 1. Exécutez la`CONTOSO.ADD` fonction, avec les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
 
 Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés et renvoie le résultat **210** .
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## <a name="create-a-custom-function-that-requests-data-from-the-web"></a>Créer une fonction personnalisée qui demande les données à partir du web
 
@@ -145,14 +147,19 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 1. Fermez Excel, puis rouvrez-le.
 
-1. Dans Excel, sélectionnez l’onglet **insérer**, puis cliquez sur la flèche vers le bas située à droite de **Mes compléments**.  ![Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas de Mes compléments mise en évidence.](../images/select-insert.png)
+1. Dans Excel, choisissez l’onglet **Insérer**, puis la flèche vers le bas située à droite de **Mes compléments**.
+
+    :::image type="content" source="../images/select-insert.png" alt-text="Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas mes compléments mise en surbrillance.":::
 
 1. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
-    ![Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.](../images/list-starcount.png)
+
+    :::image type="content" source="../images/list-starcount.png" alt-text="Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.":::
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
-1. Dans Excel, sélectionnez l’onglet **Insertion**, puis sélectionnez **Compléments**.  ![Capture d’écran du ruban insérer dans Excel sur le Web, avec le bouton Mes compléments en surbrillance.](../images/excel-cf-online-register-add-in-1.png)
+1. Dans Excel, sélectionnez l’onglet **Insertion**, puis **Compléments**.
+
+    :::image type="content" source="../images/excel-cf-online-register-add-in-1.png" alt-text="Capture d’écran du ruban Insertion dans Excel sur le web, avec le bouton Mes compléments mise en évidence.":::
 
 1. Sélectionnez **Gérer mes Compléments** et sélectionnez **Télécharger mon complément**.
 
@@ -160,7 +167,7 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
 1. Sélectionnez le fichier **manifest.xml** puis sélectionnez **Ouvrir**, puis sélectionnez **Télécharger**.
 
-5. Essayez la nouvelle fonction. Dans la cellule **B1**, tapez le texte **=CONTOSO. GETSTARCOUNT(« OfficeDev », « Excel-Custom-Functions »)**, puis appuyez sur Entrée. Le résultat dans la cellule **B1** doit correspondre au nombre d’étoiles actuellement attribuées au [référentiel GitHub Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. Essayez la nouvelle fonction. Dans la cellule **B1**, tapez le texte **=CONTOSO. GETSTARCOUNT(« OfficeDev », « Excel-Custom-Functions »)**, puis appuyez sur Entrée. Le résultat dans la cellule **B1** doit correspondre au nombre d’étoiles actuellement attribuées au [référentiel GitHub Excel-Custom-Functions](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 

@@ -3,12 +3,12 @@ title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: f9c9fa23dc59a36bee608fe8115b3ad77cfab623
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 7d612fcfa8f5bb79cded469e203371a499703ad0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150416"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484422"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
@@ -24,7 +24,7 @@ Dans le cadre du processus de développement d’un complément Outlook, vous se
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>Création d’un fichier manifeste pour le complément
 
-Chaque complément est décrit par un manifeste XML, un document qui fournit au serveur des informations sur le complément, décrit le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier ou un serveur local, tant que l’emplacement est accessible par le serveur Exchange de la boîte aux lettres que vous testez. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, voir [Manifestes des compléments Outlook](manifests.md).
+Chaque complément est décrit par un manifeste XML, un document qui fournit au serveur des informations sur le complément, fournit des informations descriptives sur le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier ou un serveur local, tant que l’emplacement est accessible par le serveur Exchange de la boîte aux lettres que vous testez. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, consultez [manifestes de complément Outlook](manifests.md).
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Déploiement d’un complément sur un serveur web
 
@@ -76,7 +76,7 @@ Le choix des versions du client Outlook à tester dépend de vos besoins en mati
 
 - Si vous développez un complément pour une utilisation privée ou uniquement pour les membres de votre organisation, il est important de tester les versions d’Outlook utilisées par votre entreprise. N’oubliez pas que certains utilisateurs peuvent utiliser Outlook sur le web. Il est donc également important de tester les versions de navigateur standard de votre entreprise.
 
-- Si vous développez un complément à répertorier dans [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises comme spécifié dans les [stratégies de certification de la place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut les opérations suivantes :
+- Si vous développez un complément pour [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises tel que spécifié dans les [Stratégies de certification de la Place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut notamment :
   - la dernière et avant-dernière version d’Outlook sur Windows ;
   - la dernière version d’Outlook sur Mac ;
   - la dernière version d’Outlook sur iOS et Android (si votre complément [prend en charge le facteur de forme pour mobile](add-mobile-support.md)) ;
@@ -96,7 +96,7 @@ Autrement, vous pouvez également choisir de payer et d'utiliser un service qui 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-En outre, si vous ne souhaitez pas que vos add-ins soient disponibles pour les utilisateurs qui sont connectés à l'échange sur site, vous pouvez définir le [exigences fixées](../reference/requirement-sets/outlook-api-requirement-sets.md#exchange-server-support) dans le manifeste de l'add-in à 1,6 ou plus. Ces add-ins ne seront pas testés ou validés sur l'interface utilisateur classique de Outlook on the web.
+En outre, si vous ne souhaitez pas que vos add-ins soient disponibles pour les utilisateurs qui sont connectés à l'échange sur site, vous pouvez définir le [exigences fixées](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support) dans le manifeste de l'add-in à 1,6 ou plus. Ces add-ins ne seront pas testés ou validés sur l'interface utilisateur classique de Outlook on the web.
 
 ## <a name="see-also"></a>Voir aussi
 

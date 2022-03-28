@@ -3,12 +3,12 @@ title: Créer des compléments Outlook pour les formulaires de composition
 description: Découvrez les scénarios et fonctionnalités des compléments Outlook pour les formulaires de composition.
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 7f34c46c720a650890d2b991cb539862e3cb8187
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 4dd39bd73cbc1c37783c13adb9b4f9f98925b9cf
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746783"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484008"
 ---
 # <a name="create-outlook-add-ins-for-compose-forms"></a>Créer des compléments Outlook pour les formulaires de composition
 
@@ -39,10 +39,10 @@ La figure suivante présente le volet de sélection des compléments constitué 
 
 ## <a name="types-of-add-ins-available-in-compose-mode"></a>Types de complément disponibles en mode composition
 
-Les compléments de composition sont implémentés en tant que [Commandes de complément pour Outlook](add-in-commands-for-outlook.md). Pour activer les compléments pour la rédaction d’un e-mail ou de réponses à une demande de réunion, les compléments incluent un [élément de point d’extension MessageComposeCommandSurface](../reference/manifest/extensionpoint.md#messagecomposecommandsurface) dans le manifeste. Pour activer les compléments pour composer ou modifier des rendez-vous ou des réunions dans lesquels l’utilisateur est l’organisateur, les compléments incluent un [élément de point d’extension AppointmentOrganizerCommandSurface](../reference/manifest/extensionpoint.md#appointmentorganizercommandsurface).
+Les compléments de composition sont implémentés en tant que [Commandes de complément pour Outlook](add-in-commands-for-outlook.md). Pour activer les compléments pour la rédaction d’un e-mail ou de réponses à une demande de réunion, les compléments incluent un [élément de point d’extension MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) dans le manifeste. Pour activer les compléments pour composer ou modifier des rendez-vous ou des réunions dans lesquels l’utilisateur est l’organisateur, les compléments incluent un [élément de point d’extension AppointmentOrganizerCommandSurface](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface).
 
 > [!NOTE]
-> Les compléments développés pour des serveurs ou des clients ne prenant pas en charge les commandes de complément se servent de [règles d’activation](activation-rules.md) dans un élément [Règle](../reference/manifest/rule.md) contenu dans l’élément [OfficeApp](../reference/manifest/officeapp.md). À moins que le complément ne soit développé spécifiquement pour des serveurs et clients plus anciens, les nouveaux compléments doivent utiliser les commandes de complément.
+> Les compléments développés pour des serveurs ou des clients ne prenant pas en charge les commandes de complément se servent de [règles d’activation](activation-rules.md) dans un élément [Règle](/javascript/api/manifest/rule) contenu dans l’élément [OfficeApp](/javascript/api/manifest/officeapp). À moins que le complément ne soit développé spécifiquement pour des serveurs et clients plus anciens, les nouveaux compléments doivent utiliser les commandes de complément.
 
 ## <a name="api-features-available-to-compose-add-ins"></a>Fonctionnalités de l’API disponibles pour les compléments de composition
 

@@ -4,12 +4,12 @@ description: Découvrez comment gérer l’événement d’envoi de message dans
 ms.topic: article
 ms.date: 03/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b57cd683dd344d61ebcf7cf957a60522ed9c69da
-ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
+ms.openlocfilehash: 2a9d44844c7fff3d5305de53f57c2950ae1909fb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "63400007"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484503"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
 
@@ -137,7 +137,7 @@ L’événement `OnMessageSend` est disponible via la fonctionnalité d’activa
 
 > [!TIP]
 >
-> - Pour **les options SendMode** disponibles avec l’événement `OnMessageSend` , reportez-vous [aux options SendMode disponibles](../reference/manifest/launchevent.md#available-sendmode-options-preview).
+> - Pour **les options SendMode** disponibles avec l’événement `OnMessageSend` , reportez-vous [aux options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
 > - Pour en savoir plus sur les manifestes de Outlook des modules, voir Outlook [manifestes de ces derniers](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
@@ -246,7 +246,7 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre application est rechargée de nouveau.
 

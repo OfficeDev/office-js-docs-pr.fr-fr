@@ -3,19 +3,19 @@ title: Obtenir et définir des catégories
 description: Comment gérer les catégories sur la boîte aux lettres et l’élément.
 ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 93f9167fcc31110543d08019e5428952beab0ccc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3f39fba37e209b4f23955aebb54e8f88807f24dd
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746300"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484522"
 ---
 # <a name="get-and-set-categories"></a>Obtenir et définir des catégories
 
 Dans Outlook, un utilisateur peut appliquer des catégories aux messages et aux rendez-vous pour organiser ses données de boîte aux lettres. L’utilisateur définit la liste principale des catégories codées en couleur pour sa boîte aux lettres, puis peut appliquer une ou plusieurs de ces catégories à n’importe quel élément de message ou de rendez-vous. Chaque [catégorie](/javascript/api/outlook/office.categorydetails) de la liste principale est représentée par le nom et la [couleur](/javascript/api/outlook/office.mailboxenums.categorycolor) spécifiés par l’utilisateur. Vous pouvez utiliser l’API JavaScript Office pour gérer la liste principale des catégories sur la boîte aux lettres et les catégories appliquées à un élément.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.8. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.8. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="manage-categories-in-the-master-list"></a>Gérer les catégories dans la liste principale
 
@@ -141,4 +141,4 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## <a name="see-also"></a>Voir aussi
 
 - [Outlook d’autorisations](understanding-outlook-add-in-permissions.md)
-- [Élément Permissions dans le manifeste](../reference/manifest/permissions.md)
+- [Élément Permissions dans le manifeste](/javascript/api/manifest/permissions)

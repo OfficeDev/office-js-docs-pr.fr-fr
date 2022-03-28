@@ -1,24 +1,24 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
-description: Outlook pour appareils mobiles sont pris en charge sur tous les Microsoft 365 d’entreprise et Outlook.com.
+description: Outlook pour appareils mobiles sont pris en charge sur tous les comptes Microsoft 365 entreprise et Outlook.com.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2894e85acccea9879d2c35b425ed8b3af5dfaf65
-ms.sourcegitcommit: 789545a81bd61ec2e7adef2bc24c06b5be113b00
+ms.openlocfilehash: 90e88b3b3596f2b11718b9fcf1af7402d7594fe7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/18/2022
-ms.locfileid: "62892523"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483991"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
 Les compléments fonctionnent désormais sur Outlook Mobile, avec les mêmes API que celles disponibles pour d’autres points de terminaison Outlook. Si vous avez déjà créé un complément pour Outlook, il est facile de le faire fonctionner sur Outlook Mobile.
 
-Outlook pour appareils mobiles sont pris en charge sur tous les Microsoft 365 d’entreprise et Outlook.com. Toutefois, la prise en charge n’est pas disponible actuellement sur les comptes Gmail.
+Outlook pour appareils mobiles sont pris en charge sur tous les comptes Microsoft 365 entreprise et Outlook.com. Toutefois, la prise en charge n’est pas disponible actuellement sur les comptes Gmail.
 
 **Exemple de volet Office dans Outlook sur iOS**
 
-![Capture d’écran d’un volet Des tâches Outlook sur iOS.](../images/outlook-mobile-addin-taskpane.png)
+![Capture d’écran d’un volet De tâches Outlook sur iOS.](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
@@ -32,13 +32,13 @@ Outlook pour appareils mobiles sont pris en charge sur tous les Microsoft 365 d�
   - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
   - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface). Pour plus [d’informations sur ce scénario](online-meeting.md), consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
+- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Pour plus [d’informations sur ce scénario](online-meeting.md), consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
 
-- L’API [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
+- L’API [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 
-- Lorsque vous soumettez votre complément dans le magasin avec l’élément [MobileFormFactor](../reference/manifest/mobileformfactor.md) dans le manifeste, vous devez accepter notre addendum pour les développeurs de compléments sur iOS, et envoyer votre ID de développeur Apple pour vérification.
+- Lorsque vous soumettez votre complément dans le magasin avec l’élément [MobileFormFactor](/javascript/api/manifest/mobileformfactor) dans le manifeste, vous devez accepter notre addendum pour les développeurs de compléments sur iOS, et envoyer votre ID de développeur Apple pour vérification.
 
-- Enfin, votre manifeste devra déclarer l’élément `MobileFormFactor`, et inclure les types de [contrôles](../reference/manifest/control.md) et de [tailles d’icône](../reference/manifest/icon.md) corrects.
+- Enfin, votre manifeste devra déclarer l’élément `MobileFormFactor`, et inclure les types de [contrôles](/javascript/api/manifest/control) et de [tailles d’icône](/javascript/api/manifest/icon) corrects.
 
 ## <a name="what-makes-a-good-scenario-for-mobile-add-ins"></a>Qu’est-ce qu’un bon scénario pour les compléments mobiles ?
 

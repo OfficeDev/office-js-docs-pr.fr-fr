@@ -3,20 +3,20 @@ title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: a2f93059f9082bc5a53c07159c9356a41cf16729
-ms.sourcegitcommit: 3fe9e06a52c57532e7968dc007726f448069f48d
+ms.openlocfilehash: b960cdda4f44b4e67ce3f0582b6c7a31d967d030
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2021
-ms.locfileid: "59445718"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483502"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
-En cas de problème pendant l’utilisation de votre fonction personnalisée, renvoyez une erreur pour informer l’utilisateur. Si vous avez des exigences spécifiques en matière de paramètres, telles que des nombres positifs uniquement, testez les paramètres et lancez une erreur s’ils ne sont pas corrects. Vous pouvez également utiliser un bloc pour capturer les erreurs qui se produisent pendant [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) l’utilisation de votre fonction personnalisée.
+Si un problème se passe pendant l’utilisation de votre fonction personnalisée, renvoyez une erreur pour en informer l’utilisateur. Si vous avez des exigences spécifiques en matière de paramètres, telles que des nombres positifs uniquement, testez les paramètres et lancez une erreur s’ils ne sont pas corrects. Vous pouvez également utiliser un bloc pour [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) capturer les erreurs qui se produisent pendant l’utilisation de votre fonction personnalisée.
 
 ## <a name="detect-and-throw-an-error"></a>Détecter et générer une erreur
 
-Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le bon format pour que la fonction personnalisée fonctionne. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. Si le format du code postal est correct, il recherche la ville à l’aide d’une autre fonction et retourne la valeur. Si le format n’est pas valide, la fonction renvoie une `#VALUE!` erreur à la cellule.
+Examinons un cas où vous devez vous assurer qu’un paramètre de code postal est dans le bon format pour que la fonction personnalisée fonctionne. La fonction personnalisée suivante utilise une expression régulière pour vérifier le code postal. Si le format du code postal est correct, il recherche la ville à l’aide d’une autre fonction et retourne la valeur. Si le format n’est pas valide, la fonction renvoie une erreur `#VALUE!` à la cellule.
 
 ```typescript
 /**
@@ -54,7 +54,7 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidNumber);
 throw error;
 ```
 
-Les `#VALUE!` `#N/A` erreurs et les erreurs sont également des messages d’erreur personnalisés. Les messages d’erreur personnalisés sont affichés dans le menu indicateur d’erreur, accessible en pointant sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec `#VALUE!` l’erreur.
+Les erreurs `#VALUE!` et les `#N/A` erreurs sont également en charge des messages d’erreur personnalisés. Les messages d’erreur personnalisés sont affichés dans le menu indicateur d’erreur, accessible en pointant sur l’indicateur d’erreur sur chaque cellule avec une erreur. L’exemple suivant montre comment renvoyer un message d’erreur personnalisé avec l’erreur `#VALUE!` .
 
 ```typescript
 // You can only return a custom error message with the #VALUE! and #N/A errors.
@@ -62,9 +62,9 @@ let error = new CustomFunctions.Error(CustomFunctions.ErrorCode.invalidValue, "T
 throw error;
 ```
 
-### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lorsque vous travaillez avec des tableaux dynamiques
+### <a name="handle-errors-when-working-with-dynamic-arrays"></a>Gérer les erreurs lors de l’travail avec des tableaux dynamiques
 
-En plus de renvoyer une seule erreur, une fonction personnalisée peut créer un tableau dynamique qui inclut une erreur. Par exemple, une fonction personnalisée peut créer le `[1],[#NUM!],[3]` tableau. L’exemple de code suivant montre comment entrer trois paramètres dans une fonction personnalisée, remplacer l’un des paramètres d’entrée par une erreur, puis renvoyer un tableau à deux dimensions avec les résultats du traitement de chaque paramètre `#NUM!` d’entrée.
+En plus de renvoyer une seule erreur, une fonction personnalisée peut créer un tableau dynamique qui inclut une erreur. Par exemple, une fonction personnalisée peut créer le tableau `[1],[#NUM!],[3]`. L’exemple de code suivant montre comment entrer trois paramètres dans une fonction personnalisée, remplacer l’un des paramètres `#NUM!` d’entrée par une erreur, puis renvoyer un tableau à deux dimensions avec les résultats du traitement de chaque paramètre d’entrée.
 
 ```js
 /**
@@ -96,16 +96,16 @@ function returnInvalidNumberError(first, second, third) {
 
 Une fonction personnalisée peut être évaluée même si la plage d’entrées contient une erreur. Par exemple, une fonction personnalisée peut prendre la plage **A2:A7** comme entrée, même si **A6:A7** contient une erreur.
 
-Pour traiter les entrées qui contiennent des erreurs, une fonction personnalisée doit avoir la propriété de métadonnées JSON `allowErrorForDataTypeAny` définie sur `true` . Pour [plus d’informations, voir Créer manuellement des métadonnées JSON pour les fonctions](custom-functions-json.md#metadata-reference) personnalisées.
+Pour traiter les entrées qui contiennent des erreurs, une fonction personnalisée doit avoir la propriété de métadonnées `allowErrorForDataTypeAny` JSON définie sur `true`. Pour [plus d’informations, voir Créer manuellement des métadonnées JSON pour les fonctions](custom-functions-json.md#metadata-reference) personnalisées.
 
 > [!IMPORTANT]
-> La `allowErrorForDataTypeAny` propriété ne peut être utilisée qu’avec des [métadonnées JSON créées manuellement.](custom-functions-json.md) Cette propriété ne fonctionne pas avec le processus de métadonnées JSON automatiquementgentées.
+> La `allowErrorForDataTypeAny` propriété ne peut être utilisée qu’avec [des métadonnées JSON créées manuellement](custom-functions-json.md). Cette propriété ne fonctionne pas avec le processus de métadonnées JSON automatiquementgentées.
 
 ## <a name="use-trycatch-blocks"></a>Utiliser des `try...catch` blocs
 
-En règle générale, utilisez [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) des blocs dans votre fonction personnalisée pour capturer les erreurs potentielles qui se produisent. Si vous ne traitez pas les exceptions dans votre code, elles sont renvoyées à Excel. Par défaut, Excel renvoie `#VALUE!` les erreurs ou les exceptions nonhandées.
+En règle générale, utilisez des [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) blocs dans votre fonction personnalisée pour capturer les erreurs potentielles qui se produisent. Si vous ne traitez pas les exceptions dans votre code, elles sont renvoyées à Excel. Par défaut, Excel renvoie les `#VALUE!` erreurs ou les exceptions nonhandées.
 
-Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si cela se produit, la fonction personnalisée revient pour `#N/A` indiquer que l’appel web a échoué.
+Dans l’exemple de code suivant, la fonction personnalisée effectue un appel d’extraction à un service REST. Il est possible que l’appel échoue, par exemple, si le service REST retourne une erreur ou si le réseau est défaillant. Si cela se produit, la fonction personnalisée revient `#N/A` pour indiquer que l’appel web a échoué.
 
 ```typescript
 /**
@@ -135,5 +135,5 @@ Découvrez comment [résoudre les problèmes liés à vos fonctions personnalis�
 ## <a name="see-also"></a>Voir aussi
 
 * [Débogage des fonctions personnalisées](custom-functions-debugging.md)
-* [Ensembles de besoins de fonctions personnalisées](../reference/requirement-sets/custom-functions-requirement-sets.md)
+* [Ensembles de besoins de fonctions personnalisées](/javascript/api/requirement-sets/custom-functions-requirement-sets)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

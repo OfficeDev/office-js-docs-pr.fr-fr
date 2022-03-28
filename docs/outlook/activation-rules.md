@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d59b6afa9140ad0aa4d362cf8dc82a8d2144f5e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 6af5003108efede78fa06b220abe3c89d472c6e5
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746905"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484118"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -24,17 +24,17 @@ La figure suivante illustre les compléments Outlook activés dans la barre des
 
 Pour que Outlook activer un complément pour des conditions spécifiques, spécifiez des règles d’activation dans le manifeste du complément à l’aide de l’un des éléments suivants`Rule`.
 
-- [Élément de règle (MailApp complexType)](../reference/manifest/rule.md) : spécifie une règle individuelle.
-- [Élément de règle (RuleCollection complexType)](../reference/manifest/rule.md#rulecollection) : combine plusieurs règles à l’aide d’opérations logiques.
+- [Élément de règle (MailApp complexType)](/javascript/api/manifest/rule) : spécifie une règle individuelle.
+- [Élément de règle (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) : combine plusieurs règles à l’aide d’opérations logiques.
 
 
  > [!NOTE]
- > L’élément `Rule` que vous utilisez pour spécifier une règle individuelle est du type complexe [Rule](../reference/manifest/rule.md) abstrait. Chacun des types de règles suivants étend ce `Rule` type complexe abstrait. Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
+ > L’élément `Rule` que vous utilisez pour spécifier une règle individuelle est du type complexe [Rule](/javascript/api/manifest/rule) abstrait. Chacun des types de règles suivants étend ce `Rule` type complexe abstrait. Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
  > 
- > Par exemple, la règle suivante définit une [règle ItemIs](../reference/manifest/rule.md#itemis-rule) .
+ > Par exemple, la règle suivante définit une [règle ItemIs](/javascript/api/manifest/rule#itemis-rule) .
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
  > 
- > L’attribut `FormType` s’applique aux règles d’activation dans le manifeste v1.1, mais n’est pas défini dans `VersionOverrides` la v1.0. Il ne peut donc pas être utilisé lorsque [itemIs](../reference/manifest/rule.md#itemis-rule) est utilisé dans le `VersionOverrides` nœud.
+ > L’attribut `FormType` s’applique aux règles d’activation dans le manifeste v1.1, mais n’est pas défini dans `VersionOverrides` la v1.0. Il ne peut donc pas être utilisé lorsque [itemIs](/javascript/api/manifest/rule#itemis-rule) est utilisé dans le `VersionOverrides` nœud.
 
 Le tableau suivant répertorie les types de règle disponibles. Vous trouverez plus d’informations dans le tableau et dans les articles indiqués sous [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md).
 
@@ -67,7 +67,7 @@ L’attribut `FormType` permet de spécifier le mode (lecture ou composition) da
  > [!NOTE]
  > L’attribut ItemIs `FormType` est défini dans les schémas v1.1 et ultérieur, mais pas dans `VersionOverrides` la v1.0. N’incluez pas l’attribut `FormType` lors de la définition des commandes de add-in.
 
-Une fois qu’un complément est activé, vous pouvez utiliser la propriété [mailbox.item](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md) pour obtenir l’élément actuellement sélectionné dans Outlook, et la propriété [item.itemType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) pour obtenir le type de l’élément actuel.
+Une fois qu’un complément est activé, vous pouvez utiliser la propriété [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) pour obtenir l’élément actuellement sélectionné dans Outlook, et la propriété [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour obtenir le type de l’élément actuel.
 
 Vous pouvez éventuellement `ItemClass` utiliser l’attribut pour spécifier la classe de message de l’élément et `IncludeSubClasses` l’attribut pour spécifier si la règle doit être **true** lorsque l’élément est une sous-classe de la classe spécifiée.
 

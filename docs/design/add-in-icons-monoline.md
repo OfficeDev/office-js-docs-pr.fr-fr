@@ -3,12 +3,12 @@ title: Instructions relatives aux icônes de style monoligne pour Office de rech
 description: Recommandations en matière d’utilisation d’icônes de style Monoline dans Office des modules.
 ms.date: 03/30/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 10c6f2d11384a900e994a574f7a567684c5f4054
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8c076bae2efd15cdc927f65804f33096fd6ecacb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743041"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483972"
 ---
 # <a name="monoline-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style monoligne pour Office de recherche
 
@@ -197,7 +197,7 @@ Utilisez **un gris moyen** pour le « contenu » intérieur, tel que les lignes 
 
 Lorsque des lignes de texte sont dans un « conteneur » (par exemple, du texte sur un document), utilisez un gris moyen. Les lignes de texte qui ne sont pas dans un conteneur doivent être **gris foncé**.
 
-### <a name="text"></a>Text
+### <a name="text"></a>Texte
 
 Évitez d’utiliser des caractères de texte dans les icônes. Étant donné Office produits sont utilisés dans le monde entier, nous voulons conserver les icônes aussi neutres que possible en langage.
 
@@ -209,7 +209,7 @@ Les icônes finales doivent être enregistrées sous forme .png fichiers image. 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Élément de manifeste d’icône](../reference/manifest/icon.md)
-- [Élément manifeste IconUrl](../reference/manifest/iconurl.md)
-- [Élément manifeste HighResolutionIconUrl](../reference/manifest/highresolutioniconurl.md)
+- [Élément de manifeste d’icône](/javascript/api/manifest/icon)
+- [Élément manifeste IconUrl](/javascript/api/manifest/iconurl)
+- [Élément manifeste HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl)
 - [Créer une icône pour votre add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

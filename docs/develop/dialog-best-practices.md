@@ -3,12 +3,12 @@ title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des meilleures pratiques pour Office API de boîte de dialogue, telles que les meilleures pratiques pour une application mono-page (SPA).
 ms.date: 07/22/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 773edd6b041ad6e49b479b3705ebcdea1875e561
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a9d9dcbbeeb52aa8d05c27c3cd823ce336c71233
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743502"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483734"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -23,7 +23,7 @@ Cet article fournit des règles, des gotchas et des meilleures pratiques pour l�
 
 - La boîte de dialogue peut uniquement accéder aux URL HTTPS, et non à HTTP.
 - L’URL transmise à la [méthode displayDialogAsync](/javascript/api/office/office.ui) doit se trouver exactement dans le même domaine que le add-in lui-même. Il ne peut pas s’agit d’un sous-domaine. Toutefois, la page qui lui est transmise peut rediriger vers une page d’un autre domaine.
-- Une fenêtre hôte, qui peut être un volet Des tâches ou le fichier de fonction sans interface [](../reference/manifest/functionfile.md) utilisateur d’une commande de add-in, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.
+- Une fenêtre hôte, qui peut être un volet Des tâches ou le fichier de fonction sans interface [](/javascript/api/manifest/functionfile) utilisateur d’une commande de add-in, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.
 - Seules deux Office API peuvent être appelées dans la boîte de dialogue :
   - Fonction [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) .
   - `Office.context.requirements.isSetSupported`(Pour plus d’informations, voir [Spécifier les Office applications et les api requises](specify-office-hosts-and-api-requirements.md).)

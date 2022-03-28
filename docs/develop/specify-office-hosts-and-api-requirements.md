@@ -3,12 +3,12 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1df753dfe3e5c517f49d597f9298744cf0c79f52
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e4533f1de76b8d40c5b9c938ff0e113529d73d95
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744062"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483592"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -27,7 +27,7 @@ Il existe également des scénarios dans lesquels vous souhaitez contrôler les 
 Cet article vous aidera à comprendre les options que vous devez choisir afin de vous assurer que votre complément fonctionne comme prévu et atteint l’audience la plus large possible.
 
 > [!NOTE]
-> Pour obtenir une vue d’Office sur les applications Office actuellement pris en charge, consultez la page sur la disponibilité de [l’application cliente Office](../overview/office-add-in-availability.md) et de la plateforme pour les Office.
+> Pour obtenir une vue d’Office sur les applications Office actuellement pris en charge, consultez la page sur la disponibilité de [l’application cliente Office](/javascript/api/requirement-sets) et de la plateforme pour les Office.
 
 > [!TIP]
 > Bon nombre des tâches décrites dans cet article sont réalisées pour vous, entièrement ou en partie, lorsque vous créez votre projet de add-in à l’aide d’un outil, tel que le générateur [Yeoman](yeoman-generator-overview.md) pour les Office Ou l’un des modèles de modules de Office Dans Visual Studio. Dans ce cas, interprétez la tâche comme si vous devait vérifier qu’elle a été effectuée.
@@ -44,7 +44,7 @@ Votre application doit charger la version la plus récente de la bibliothèque d
 
 Par défaut, un add-in est installable dans toutes les applications Office pris en charge par le type de add-in spécifié (c’est-à-dire, Mail, Task pane ou Content). Par exemple, un add-in du volet Des tâches est installable par défaut sur Access, Excel, OneNote, PowerPoint, Project et Word. 
 
-Pour vous assurer que votre application est installable dans un sous-ensemble d’applications Office, utilisez les éléments [Hosts](../reference/manifest/hosts.md) et [Host](../reference/manifest/host.md) dans le manifeste.
+Pour vous assurer que votre application est installable dans un sous-ensemble d’applications Office, utilisez les éléments [Hosts](/javascript/api/manifest/hosts) et [Host](/javascript/api/manifest/host) dans le manifeste.
 
 Par exemple, la déclaration **Hosts** et **Host** suivante spécifie que le add-in peut être installé sur n’importe quelle version de Excel, qui inclut Excel sur le Web, Windows et iPad, mais ne peut pas être installé sur une autre application Office.
 
@@ -67,7 +67,7 @@ Par exemple, la déclaration **Hosts** et **Host** suivante spécifie que le add
 | Classeur      | Excel sur le Web, Windows, Mac, iPad           | Volet De tâches, Contenu     |
 
 > [!NOTE]
-> Office applications sont pris en charge sur différentes plateformes et s’exécutent sur des ordinateurs de bureau, des navigateurs web, des tablettes et des appareils mobiles. En règle générale, vous ne pouvez pas spécifier la plateforme qui peut être utilisée pour exécuter votre add-in. Par exemple, si vous spécifiez `Workbook`, les deux Excel sur le Web et sur Windows peuvent être utilisés pour exécuter votre add-in. Toutefois, si vous spécifiez `Mailbox`, votre application ne s’exécutera pas sur Outlook clients mobiles, sauf si vous définissez le [point d’extension mobile](../reference/manifest/extensionpoint.md#mobilemessagereadcommandsurface).
+> Office applications sont pris en charge sur différentes plateformes et s’exécutent sur des ordinateurs de bureau, des navigateurs web, des tablettes et des appareils mobiles. En règle générale, vous ne pouvez pas spécifier la plateforme qui peut être utilisée pour exécuter votre add-in. Par exemple, si vous spécifiez `Workbook`, les deux Excel sur le Web et sur Windows peuvent être utilisés pour exécuter votre add-in. Toutefois, si vous spécifiez `Mailbox`, votre application ne s’exécutera pas sur Outlook clients mobiles, sauf si vous définissez le [point d’extension mobile](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface).
 
 > [!NOTE]
 > Il n’est pas possible qu’un manifeste de add-in s’applique à plusieurs types : courrier, volet Des tâches ou Contenu. Cela signifie que si vous souhaitez que votre application soit installable sur Outlook et sur l’une des autres applications Office, vous devez créer deux applications, l’une avec un manifeste de type messagerie et l’autre avec un manifeste de type de contenu ou de volet De tâches.
@@ -91,7 +91,7 @@ Les ensembles de conditions requises sont en version. Par exemple, les API qui l
 La prise en charge de l’ensemble de conditions requises varie selon Office application, la version de l’application Office et la plateforme sur laquelle elle est en cours d’exécution. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions d’achat one-time de Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions d’achat à prix simple antérieures à Office 2013. Vous souhaitez que votre add-in soit installable sur chaque combinaison de plateforme et de version Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises par votre add-in. Pour plus d’informations sur la façon de le faire, voir plus loin dans cet article.
 
 > [!TIP]
-> Pour plus d’informations sur le contrôle de version des ensembles de conditions requises, voir Office [la](../reference/requirement-sets/office-add-in-requirement-sets.md) disponibilité des ensembles de conditions requises [et pour](office-versions-and-requirement-sets.md#office-requirement-sets-availability) obtenir la liste complète des ensembles de conditions requises et des informations sur les API dans chacune d’elles, commencez par les ensembles de conditions requises du Office. Les rubriques de référence pour la plupart Office.js API spécifient également l’ensemble de conditions requises à qui elles appartiennent (le cas nécessaire).
+> Pour plus d’informations sur le contrôle de version des ensembles de conditions requises, voir Office [la](/javascript/api/requirement-sets/office-add-in-requirement-sets) disponibilité des ensembles de conditions requises [et pour](office-versions-and-requirement-sets.md#office-requirement-sets-availability) obtenir la liste complète des ensembles de conditions requises et des informations sur les API dans chacune d’elles, commencez par les ensembles de conditions requises du Office. Les rubriques de référence pour la plupart Office.js API spécifient également l’ensemble de conditions requises à qui elles appartiennent (le cas nécessaire).
 
 > [!NOTE]
 > Certains ensembles de conditions requises sont également associés à des éléments de manifeste. Voir [Spécification des conditions requises dans un élément VersionOverrides](#specify-requirements-in-a-versionoverrides-element) pour plus d’informations sur la pertinence de ce fait pour la conception de votre add-in.
@@ -102,12 +102,12 @@ Toutes les API des modèles spécifiques de l’application sont dans des ensemb
 
 ### <a name="requirements-element"></a>Élément Requirements
 
-Utilisez [l’élément Requirements](../reference/manifest/requirements.md) et ses éléments enfants [Sets](../reference/manifest/sets.md) and Methods pour spécifier les [ensembles de conditions requises](../reference/manifest/methods.md) minimum ou les membres d’API qui doivent être pris en charge par l’application Office pour installer votre application. 
+Utilisez [l’élément Requirements](/javascript/api/manifest/requirements) et ses éléments enfants [Sets](/javascript/api/manifest/sets) and Methods pour spécifier les [ensembles de conditions requises](/javascript/api/manifest/methods) minimum ou les membres d’API qui doivent être pris en charge par l’application Office pour installer votre application. 
 
 Si l’application ou la plateforme Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API **spécifiés** dans l’élément **Requirements**, le module ne s’exécutera pas dans cette application ou plateforme et ne s’affichera pas dans Mes applications.
 
 > [!NOTE]
-> **L’élément Requirements** est facultatif pour tous les Outlook, à l’exception des autres. Lorsque l’attribut `xsi:type` de `OfficeApp` `MailBox`l’élément racine est , il doit y avoir un élément **Requirements** qui spécifie la version minimale de l’ensemble de conditions requises mailBox requise par le module. Pour plus d’informations, [voir Outlook conditions requises de l’API JavaScript](../reference/requirement-sets/outlook-api-requirement-sets.md).
+> **L’élément Requirements** est facultatif pour tous les Outlook, à l’exception des autres. Lorsque l’attribut `xsi:type` de `OfficeApp` `MailBox`l’élément racine est , il doit y avoir un élément **Requirements** qui spécifie la version minimale de l’ensemble de conditions requises mailBox requise par le module. Pour plus d’informations, [voir Outlook conditions requises de l’API JavaScript](/javascript/api/requirement-sets/outlook-api-requirement-sets).
 
 L’exemple de code suivant montre comment configurer un add-in installable dans toutes les applications Office qui prendre en charge les applications suivantes :
 
@@ -134,15 +134,15 @@ Notez ce qui suit à propos de cet exemple.
 
 - **L’élément Requirements** contient les **éléments enfants Sets** et **Methods**.
 - **L’élément Sets** peut contenir un ou plusieurs **éléments Set**. `DefaultMinVersion` spécifie la valeur par défaut `MinVersion` de tous les éléments **Set** enfants.
-- Un [élément Set](../reference/manifest/set.md) spécifie un ensemble de conditions requises que l’application Office doit prendre en charge pour rendre le module installable. L’attribut `Name` spécifie le nom de l’ensemble de conditions requises. Spécifie `MinVersion` la version minimale de l’ensemble de conditions requises. `MinVersion`remplace la valeur de l’attribut `DefaultMinVersion` dans les **jeux parents.**
-- **L’élément Methods** peut contenir un ou plusieurs [éléments Method](../reference/manifest/method.md). Vous ne pouvez pas utiliser l’élément **Methods** avec des compléments Outlook.
+- Un [élément Set](/javascript/api/manifest/set) spécifie un ensemble de conditions requises que l’application Office doit prendre en charge pour rendre le module installable. L’attribut `Name` spécifie le nom de l’ensemble de conditions requises. Spécifie `MinVersion` la version minimale de l’ensemble de conditions requises. `MinVersion`remplace la valeur de l’attribut `DefaultMinVersion` dans les **jeux parents.**
+- **L’élément Methods** peut contenir un ou plusieurs [éléments Method](/javascript/api/manifest/method). Vous ne pouvez pas utiliser l’élément **Methods** avec des compléments Outlook.
 - **L’élément** Method spécifie une méthode individuelle que l’application Office doit prendre en charge pour rendre le module installable. L’attribut `Name` est obligatoire et spécifie le nom de la méthode qualifiée avec son objet parent.
 
 ## <a name="design-for-alternate-experiences"></a>Conception pour d’autres expériences
 
 Les fonctionnalités d’extensibilité que la plateforme de Office de service fournit peuvent être divisées en trois types :
 
-- Fonctionnalités d’extensibilité disponibles immédiatement après l’installation du module. Vous pouvez utiliser ce type de fonctionnalité en configurant un [élément VersionOverrides](../reference/manifest/versionoverrides.md) dans le manifeste. Un exemple de ce type de fonctionnalité est [l’utilisation](../design/add-in-commands.md) des commandes de modules, qui sont des menus et des boutons de ruban personnalisés.
+- Fonctionnalités d’extensibilité disponibles immédiatement après l’installation du module. Vous pouvez utiliser ce type de fonctionnalité en configurant un [élément VersionOverrides](/javascript/api/manifest/versionoverrides) dans le manifeste. Un exemple de ce type de fonctionnalité est [l’utilisation](../design/add-in-commands.md) des commandes de modules, qui sont des menus et des boutons de ruban personnalisés.
 - Fonctionnalités d’extensibilité qui sont disponibles uniquement lorsque le module est en cours d’exécution et qui sont implémentées avec Office.js API JavaScript ; par exemple, [Boîtes de dialogue](../design/dialog-boxes.md).
 - Fonctionnalités d’extensibilité disponibles uniquement au moment de l’exécution, mais implémentées avec une combinaison de javascript Office.js et de configuration dans un **élément VersionOverrides** . Voici quelques exemples [Excel fonctions personnalisées](../excel/custom-functions-overview.md), [l’personnalisation de l’personnalisation](sso-in-office-add-ins.md) et des [onglets contextuels](../design/contextual-tabs.md).
 
@@ -167,7 +167,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 ```
 Tenez compte du code suivant :
 
-- Le premier paramètre est obligatoire. Il s’agit d’une chaîne qui représente le nom de l’ensemble de conditions requises. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](../reference/requirement-sets/office-add-in-requirement-sets.md).
+- Le premier paramètre est obligatoire. Il s’agit d’une chaîne qui représente le nom de l’ensemble de conditions requises. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](/javascript/api/requirement-sets/office-add-in-requirement-sets).
 - Le deuxième paramètre est facultatif. Il s’agit d’une chaîne qui spécifie la version minimale de l’ensemble de conditions requises que l’application Office doit prendre en charge pour que le code `if` de l’instruction s’exécute (par exemple, « **1.9** »). S’il n’est pas utilisé, la version « 1.1 » est supposée.
 
 > [!WARNING]
@@ -199,7 +199,7 @@ else
 > [!NOTE] 
 > La `isSetSupported` méthode et les ensembles de conditions requises pour ces applications sont disponibles dans le dernier fichier Office.js sur le CDN. Si vous n’utilisez pas Office.js du CDN, votre module peut générer des exceptions si vous utilisez une ancienne version `isSetSupported` de la bibliothèque dans laquelle il n’est pas définie. Pour plus d’informations, [voir Utiliser la dernière Office’API JavaScript](#use-the-latest-office-javascript-api-library).
 
-Lorsque votre application dépend d’une méthode qui ne fait pas partie d’un ensemble de conditions requises, utilisez la vérification à l’runtime pour déterminer si la méthode est prise en charge par l’application Office, comme illustré dans l’exemple de code suivant. Pour consulter la liste complète des méthodes qui n’appartiennent pas à un ensemble de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](../reference/requirement-sets/office-add-in-requirement-sets.md#methods-that-arent-part-of-a-requirement-set).
+Lorsque votre application dépend d’une méthode qui ne fait pas partie d’un ensemble de conditions requises, utilisez la vérification à l’runtime pour déterminer si la méthode est prise en charge par l’application Office, comme illustré dans l’exemple de code suivant. Pour consulter la liste complète des méthodes qui n’appartiennent pas à un ensemble de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](/javascript/api/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > Nous vous recommandons de limiter l’utilisation de ce type de vérification à l’exécution dans le code de votre complément.
@@ -215,9 +215,9 @@ if (Office.context.document.setSelectedDataAsync)
 
 ### <a name="specify-requirements-in-a-versionoverrides-element"></a>Spécifier les conditions requises dans un élément VersionOverrides
 
-[L’élément VersionOverrides](../reference/manifest/versionoverrides.md) a été ajouté au schéma de manifeste principalement, mais pas exclusivement, pour prendre en charge les fonctionnalités qui doivent être disponibles immédiatement après l’installation d’un module, telles que les commandes de add-in (boutons et menus personnalisés du ruban). Office connaître ces fonctionnalités lorsqu’il pare le manifeste du add-in. 
+[L’élément VersionOverrides](/javascript/api/manifest/versionoverrides) a été ajouté au schéma de manifeste principalement, mais pas exclusivement, pour prendre en charge les fonctionnalités qui doivent être disponibles immédiatement après l’installation d’un module, telles que les commandes de add-in (boutons et menus personnalisés du ruban). Office connaître ces fonctionnalités lorsqu’il pare le manifeste du add-in. 
 
-Supposons que votre add-in utilise l’une de ces fonctionnalités, mais qu’il est utile et qu’il doit être installable, même sur les versions Office qui ne la prend pas en charge. Dans ce scénario, identifiez la fonctionnalité à l’aide d’un élément [Requirements](../reference/manifest/requirements.md) (et de ses éléments [Sets](../reference/manifest/sets.md) et [Methods](../reference/manifest/methods.md) enfants) que vous incluez en tant qu’enfant de l’élément **VersionOverrides lui-même** plutôt qu’en tant qu’enfant de l’élément de base `OfficeApp` . Cela a pour effet que Office autorise l’installation du module, mais Office ignore certains des éléments enfants de l’élément **VersionOverrides** sur les versions Office où la fonctionnalité n’est pas prise en charge.
+Supposons que votre add-in utilise l’une de ces fonctionnalités, mais qu’il est utile et qu’il doit être installable, même sur les versions Office qui ne la prend pas en charge. Dans ce scénario, identifiez la fonctionnalité à l’aide d’un élément [Requirements](/javascript/api/manifest/requirements) (et de ses éléments [Sets](/javascript/api/manifest/sets) et [Methods](/javascript/api/manifest/methods) enfants) que vous incluez en tant qu’enfant de l’élément **VersionOverrides lui-même** plutôt qu’en tant qu’enfant de l’élément de base `OfficeApp` . Cela a pour effet que Office autorise l’installation du module, mais Office ignore certains des éléments enfants de l’élément **VersionOverrides** sur les versions Office où la fonctionnalité n’est pas prise en charge.
 
 Plus précisément, les éléments enfants de **VersionOverrides** qui remplacent les éléments dans le manifeste de base, tels qu’un élément **Hosts** , sont ignorés et les éléments correspondants du manifeste de base sont utilisés à la place. Toutefois, il peut y avoir des éléments enfants dans **une VersionOverrides** qui implémentent des fonctionnalités supplémentaires plutôt que de remplacer les paramètres dans le manifeste de base. Deux exemples sont les `WebApplicationInfo` suivants `EquivalentAddins`: Ces parties de **VersionOverrides** ne seront  pas ignorées, en supposant que la plateforme et la version Office la fonctionnalité correspondante.  
 
@@ -253,5 +253,5 @@ Voici un exemple.
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifeste XML des compléments Office](add-in-manifests.md)
-- [Ensembles de conditions requises pour les compléments Office](../reference/requirement-sets/office-add-in-requirement-sets.md)
+- [Ensembles de conditions requises pour les compléments Office](/javascript/api/requirement-sets/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

@@ -3,12 +3,12 @@ title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 07/07/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 52c1bda4a21fba869d67cb3a15d9573d660b8471
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745766"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483526"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -28,7 +28,7 @@ Les commandes de complément sont uniquement disponibles pour les compléments q
 
 ## <a name="creating-the-add-in-command"></a>Création d’une commande de complément
 
-Les commandes de complément sont déclarées dans le manifeste de complément dans l’[élément VersionOverrides](../reference/manifest/versionoverrides.md). Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge `VersionOverrides`, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
+Les commandes de complément sont déclarées dans le manifeste de complément dans l’[élément VersionOverrides](/javascript/api/manifest/versionoverrides). Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge `VersionOverrides`, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
 
 Les entrées de manifeste `VersionOverrides` spécifient plusieurs éléments pour le complément, notamment l’application, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
 

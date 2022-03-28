@@ -4,19 +4,19 @@ description: Découvrez comment implémenter la fonctionnalité d’ajout à l�
 ms.topic: article
 ms.date: 02/01/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ff3411ba2527e0b6c99e5e5674811ff76e240ccf
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 3054742a90f66e9ee1bfc75bded5090bd18947f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153207"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484165"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter l’ajout à l’envoi dans votre Outlook de messagerie
 
 À la fin de cette walkthrough, vous aurez un Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -24,15 +24,15 @@ ms.locfileid: "59153207"
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer la fonctionnalité d’ajout à l’envoi dans votre add-in, vous devez inclure l’autorisation dans la `AppendOnSend` collection [de ExtendedPermissions](../reference/manifest/extendedpermissions.md).
+Pour activer la fonctionnalité d’ajout à l’envoi dans votre application, `AppendOnSend` vous devez inclure l’autorisation dans la collection [extendedPermissions](/javascript/api/manifest/extendedpermissions).
 
-Pour ce scénario, au lieu d’exécuter la fonction sur le bouton Effectuer une action, vous exécuterez `action` la  `appendOnSend` fonction.
+Pour ce scénario, au lieu `action` d’exécuter la fonction sur le bouton Effectuer une **action** , vous exécuterez la `appendOnSend` fonction.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
 1. Ouvrez **lemanifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le `<VersionOverrides>` par le code XML suivant.
+1. Sélectionnez l’intégralité `<VersionOverrides>` du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,14 +120,14 @@ Pour ce scénario, au lieu d’exécuter la fonction sur le bouton Effectuer une
     ```
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes de Outlook de votre Outlook, consultez la Outlook [des manifestes de modules.](manifests.md)
+> Pour en savoir plus sur les manifestes de Outlook des modules, voir Outlook [manifestes de ces derniers](manifests.md).
 
 ## <a name="implement-append-on-send-handling"></a>Implémenter la gestion de l’envoi
 
-Ensuite, implémentez l’appending sur l’événement d’envoi.
+Ensuite, implémentez l’application sur l’événement d’envoi.
 
 > [!IMPORTANT]
-> Si votre add-in implémente également la gestion des [événements `ItemSend` ](outlook-on-send-addins.md)d’envoi à l’aide de , l’appel dans le handler d’envoi renvoie une erreur, car ce scénario `AppendOnSendAsync` n’est pas pris en charge.
+> Si votre application implémente également la gestion des [événements `ItemSend`](outlook-on-send-addins.md)d’envoi à l’aide de , `AppendOnSendAsync` l’appel dans le handler d’envoi renvoie une erreur, car ce scénario n’est pas pris en charge.
 
 Pour ce scénario, vous allez implémenter l’application d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur l’envoie.
 
@@ -173,11 +173,11 @@ Pour ce scénario, vous allez implémenter l’application d’une clause d’ex
     npm start
     ```
 
-1. Créez un message et ajoutez-vous à la **ligne À.**
+1. Créez un message et ajoutez-vous à la **ligne À** .
 
-1. Dans le ruban ou le menu de dépassement, choisissez **Effectuer une action.**
+1. Dans le ruban ou le menu de dépassement, **sélectionnez Effectuer une action**.
 
-1. Envoyez le message, puis  ouvrez-le à partir de votre boîte de réception ou du dossier Éléments envoyés pour afficher la clause d’exclusion de responsabilité. 
+1. Envoyez le message, puis ouvrez-le à  partir de votre  boîte de réception ou dossier Éléments envoyés pour afficher la clause d’exclusion de responsabilité.
 
     ![Capture d’écran d’un exemple de message avec la clause d’exclusion de responsabilité à l’envoi Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
 

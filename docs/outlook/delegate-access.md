@@ -3,16 +3,16 @@ title: Activer les dossiers partagés et les scénarios de boîtes aux lettres p
 description: Explique comment configurer la prise en charge des modules de prise en charge des dossiers partagés (c’est-à-dire accès délégué) et boîtes aux lettres partagées.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e949f4f3c1800a2c1fa83ba8bdf6df17e1ed5498
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745850"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484659"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
-Cet article explique comment activer les scénarios de dossiers partagés (également appelés accès [délégué) et](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#shared-mailboxes) de boîtes aux lettres partagées (désormais en prévisualisation) dans votre application Outlook, notamment les autorisations que l’API JavaScript Office prend en charge.
+Cet article explique comment activer les scénarios de dossiers partagés (également appelés accès [délégué) et](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#shared-mailboxes) de boîtes aux lettres partagées (désormais en prévisualisation) dans votre application Outlook, notamment les autorisations que l’API JavaScript Office prend en charge.
 
 ## <a name="supported-clients-and-platforms"></a>Clients et plateformes pris en charge
 
@@ -26,7 +26,7 @@ Le tableau suivant présente les combinaisons client-serveur pris en charge pour
 |Navigateur Web :<br>interface utilisateur Outlook classique|Non applicable|Non|Non|Non|
 
 > [!IMPORTANT]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises [1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md) (pour plus d’informations, reportez-vous [aux clients et aux plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (pour plus d’informations, reportez-vous [aux clients et aux plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
 
 ## <a name="supported-setups"></a>Configurations prise en charge
 
@@ -115,9 +115,9 @@ Toutefois, si des opérations REST ou Exchange Web Services (EWS) ont été util
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans votre add-in, vous devez définir l’élément [SupportsSharedFolders](../reference/manifest/supportssharedfolders.md) `true` dans le manifeste sous l’élément parent `DesktopFormFactor`. Pour l’instant, les autres facteurs de forme ne sont pas pris en charge.
+Pour activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans votre add-in, vous devez définir l’élément [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) `true` dans le manifeste sous l’élément parent `DesktopFormFactor`. Pour l’instant, les autres facteurs de forme ne sont pas pris en charge.
 
-Pour prendre en charge les appels REST d’un délégué, définissez le nœud [Autorisations](../reference/manifest/permissions.md) dans le manifeste sur `ReadWriteMailbox`.
+Pour prendre en charge les appels REST d’un délégué, définissez le nœud [Autorisations](/javascript/api/manifest/permissions) dans le manifeste sur `ReadWriteMailbox`.
 
 L’exemple suivant montre l’ensemble `SupportsSharedFolders` d’éléments dans `true` une section du manifeste.
 
@@ -148,7 +148,7 @@ L’exemple suivant montre l’ensemble `SupportsSharedFolders` d’éléments d
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>Effectuer une opération en tant qu’utilisateur de boîte aux lettres déléguée ou partagée
 
-Vous pouvez obtenir les propriétés partagées d’un élément en mode Composition ou Lecture en appelant la méthode [item.getSharedPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) . Cela renvoie un [objet SharedProperties](/javascript/api/outlook/office.sharedproperties) qui fournit actuellement les autorisations de l’utilisateur, l’adresse e-mail du propriétaire, l’URL de base de l’API REST et la boîte aux lettres cible.
+Vous pouvez obtenir les propriétés partagées d’un élément en mode Composition ou Lecture en appelant la méthode [item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) . Cela renvoie un [objet SharedProperties](/javascript/api/outlook/office.sharedproperties) qui fournit actuellement les autorisations de l’utilisateur, l’adresse e-mail du propriétaire, l’URL de base de l’API REST et la boîte aux lettres cible.
 
 L’exemple suivant montre comment obtenir les propriétés partagées d’un message ou d’un rendez-vous, vérifier  si le délégué ou l’utilisateur de boîte aux lettres partagée dispose d’une autorisation d’écriture et passer un appel REST.
 

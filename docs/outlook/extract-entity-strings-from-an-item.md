@@ -3,8 +3,13 @@ title: Extraire des chaînes d’entités d’un élément Outlook
 description: Découvrez comment extraire des chaînes d’entités d’un élément Outlook dans un complément Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: 3270409dcd24cb0cde4f0e7693400e49efb5c868
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484484"
 ---
-
 # <a name="extract-entity-strings-from-an-outlook-item"></a>Extraire des chaînes d’entité d’un élément Outlook
 
 Cet article décrit comment créer un complément Outlook pour l’**affichage des entités** qui extrait des instances de chaînes d’entités connues prises en charge dans l’objet et le corps de l’élément Outlook sélectionné. Cet élément peut être un rendez-vous, un message électronique ou encore une demande, une réponse ou une annulation de réunion.
@@ -200,7 +205,7 @@ Les sections suivantes expliquent comment l’exemple suivant (le fichier defaul
 
 ## <a name="extracting-entities-upon-initialization"></a>Extraction d’entités lors de l’initialisation
 
-Lors de l’événement [Office.initialize](/javascript/api/office#Office_initialize_reason_), le complément pour entités appelle la méthode [getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) de l’élément actuel. La `getEntities` méthode renvoie à la variable globale `_MyEntities` un tableau d’instances d’entités pris en charge. Le code JavaScript associé est présenté ci-dessous.
+Lors de l’événement [Office.initialize](/javascript/api/office#Office_initialize_reason_), le complément pour entités appelle la méthode [getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) de l’élément actuel. La `getEntities` méthode renvoie à la variable globale `_MyEntities` un tableau d’instances d’entités pris en charge. Le code JavaScript associé est présenté ci-dessous.
 
 
 ```js
@@ -825,4 +830,4 @@ function myGetUrls()
 
 - [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md)
 - [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md)
-- Méthode [item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- Méthode [item.getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)

@@ -3,12 +3,12 @@ title: Tests d’utilisation pour les compléments Office
 description: Découvrez comment tester la conception de votre add-in avec des utilisateurs réels.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ebfde462bcfd2e3b6536a97dc45cba9dbf98415c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: fbdb8f7474412e95aba03d2a409ac2e5bc4b25a6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744416"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483511"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Tests d’utilisation pour les compléments Office
 
@@ -25,7 +25,7 @@ Ces services de test vous aident à simplifier la création d’un plan de test 
 Vous avez seulement besoin de cinq participants pour révéler la plupart des problèmes d’utilisation dans votre conception. Incorporez régulièrement des petits tests dans votre cycle de développement pour vous assurer que votre produit est centré sur l’utilisateur.
 
 > [!NOTE]
-> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](/office/dev/store/submit-to-appsource-via-partner-center), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](../overview/office-add-in-availability.md).
+> Nous vous recommandons de tester l’utilisation de votre complément sur plusieurs plateformes. Pour [publier votre complément dans AppSource](/office/dev/store/submit-to-appsource-via-partner-center), il doit fonctionner sur toutes les [plateformes qui prennent en charge les méthodes que vous définissez](/javascript/api/requirement-sets).
 
 ## <a name="1-sign-up-for-a-testing-service"></a>1. S’inscrire à un service de test
 

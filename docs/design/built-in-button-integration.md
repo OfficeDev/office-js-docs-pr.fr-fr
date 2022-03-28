@@ -3,12 +3,12 @@ title: Intégrer des boutons de Office intégrés dans des onglets et des groupe
 description: Découvrez comment inclure des boutons de Office intégrés dans vos groupes de commandes et onglets personnalisés sur Office ruban.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b9f334bdc84353409c81059a3f5cfd60bbb4c0fa
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 98a40b7c455cf56457595ae55f8d7d2799b270b4
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743084"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483924"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>Intégrer des boutons de Office intégrés dans des onglets et des groupes de contrôles personnalisés
 
@@ -24,7 +24,7 @@ Vous pouvez insérer des boutons Office intégrés dans vos groupes de contrôle
 
 ## <a name="insert-a-built-in-control-group-into-a-custom-tab"></a>Insérer un groupe de contrôles intégré dans un onglet personnalisé
 
-Pour insérer un groupe de contrôles Office dans un onglet, ajoutez un élément [OfficeGroup](../reference/manifest/customtab.md#officegroup) en tant qu’élément enfant dans l’élément **CustomTab** parent. L’attribut `id` de **l’élément OfficeGroup** est définie sur l’ID du groupe intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles](#find-the-ids-of-controls-and-control-groups).
+Pour insérer un groupe de contrôles Office dans un onglet, ajoutez un élément [OfficeGroup](/javascript/api/manifest/customtab#officegroup) en tant qu’élément enfant dans l’élément **CustomTab** parent. L’attribut `id` de **l’élément OfficeGroup** est définie sur l’ID du groupe intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles](#find-the-ids-of-controls-and-control-groups).
 
 L’exemple de marques de Office ajoute le groupe de contrôles Paragraph à un onglet personnalisé et le positionnait pour qu’il apparaisse juste après un groupe personnalisé.
 
@@ -42,7 +42,7 @@ L’exemple de marques de Office ajoute le groupe de contrôles Paragraph à un 
 
 ## <a name="insert-a-built-in-control-into-a-custom-group"></a>Insérer un contrôle intégré dans un groupe personnalisé
 
-Pour insérer un contrôle Office dans un groupe personnalisé, ajoutez un élément [OfficeControl](../reference/manifest/group.md#officecontrol) en tant qu’élément enfant dans l’élément **Group** parent. L’attribut `id` de **l’élément OfficeControl** est définie sur l’ID du contrôle intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles](#find-the-ids-of-controls-and-control-groups).
+Pour insérer un contrôle Office dans un groupe personnalisé, ajoutez un élément [OfficeControl](/javascript/api/manifest/group#officecontrol) en tant qu’élément enfant dans l’élément **Group** parent. L’attribut `id` de **l’élément OfficeControl** est définie sur l’ID du contrôle intégré. Voir [Rechercher les ID des contrôles et des groupes de contrôles](#find-the-ids-of-controls-and-control-groups).
 
 L’exemple de marques de Office suivant ajoute le contrôle Superscript à un groupe personnalisé et le place pour qu’il apparaisse juste après un bouton personnalisé.
 
@@ -76,4 +76,4 @@ Les ID des contrôles et des groupes de contrôles pris en charge se font dans l
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportement sur les plateformes non pris en place
 
-Si votre add-in est installé sur une plateforme qui ne prend pas en charge l’ensemble de conditions [requises AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), le markup décrit dans cet article est ignoré et les contrôles/groupes Office intégrés n’apparaissent pas dans vos groupes/onglets personnalisés. Pour empêcher l’installation de votre add-in sur des plateformes qui ne le supportent pas, ajoutez une référence à l’ensemble de conditions requises dans **la section Conditions** requises du manifeste. Pour obtenir des instructions, voir [Spécifier Office versions et plateformes peuvent héberger votre module.](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) Vous pouvez également concevoir votre add-in pour une expérience lorsque **AddinCommands 1.3** n’est pas pris en charge, comme décrit dans La conception pour [d’autres expériences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Par exemple, si votre add-in contient des instructions qui supposent que les boutons intégrés se trouveront dans vos groupes personnalisés, vous pouvez concevoir une version qui suppose que les boutons intégrés se trouveront uniquement à leurs endroits habituels.
+Si votre add-in est installé sur une plateforme qui ne prend pas en charge l’ensemble de conditions [requises AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets), le markup décrit dans cet article est ignoré et les contrôles/groupes Office intégrés n’apparaissent pas dans vos groupes/onglets personnalisés. Pour empêcher l’installation de votre add-in sur des plateformes qui ne le supportent pas, ajoutez une référence à l’ensemble de conditions requises dans **la section Conditions** requises du manifeste. Pour obtenir des instructions, voir [Spécifier Office versions et plateformes peuvent héberger votre module.](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) Vous pouvez également concevoir votre add-in pour une expérience lorsque **AddinCommands 1.3** n’est pas pris en charge, comme décrit dans La conception pour [d’autres expériences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Par exemple, si votre add-in contient des instructions qui supposent que les boutons intégrés se trouveront dans vos groupes personnalisés, vous pouvez concevoir une version qui suppose que les boutons intégrés se trouveront uniquement à leurs endroits habituels.

@@ -4,12 +4,12 @@ description: Découvrez comment partager des données et des événements entre 
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 8bc2ea45588c7e10cd4fbd2fc32ff88a6c3233a2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746470"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484137"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -33,7 +33,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
 
 1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
 1. Ouvrez le fichier **manifest.xml**.
-1. Remplacez (ou ajoutez) `<Requirements>` la section XML suivante pour exiger [l'ensemble d'exigences d'exécution partagé](../reference/requirement-sets/shared-runtime-requirement-sets.md).
+1. Remplacez (ou ajoutez) `<Requirements>` la section XML suivante pour exiger [l'ensemble d'exigences d'exécution partagé](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
     ```
     
     > [!NOTE]
-    > Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](../reference/manifest/runtimes.md) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
+    > Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Trouvez `<Page>` l'élément. Modifiez ensuite l'emplacement source de **Functions.Page.Url** en **Taskpane.Url**.
 

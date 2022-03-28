@@ -4,8 +4,13 @@ description: Explique comment configurer un Outlook mobile pour un fournisseur d
 ms.topic: article
 ms.date: 07/09/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 2ba2d3b9889bd07065aca584d72f8213739c3532
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484359"
 ---
-
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un Outlook mobile pour un fournisseur de réunion en ligne
 
 La configuration d’une réunion en ligne est une expérience essentielle pour un utilisateur Outlook et il est facile de créer une réunion Teams avec [Outlook mobile.](/microsoftteams/teams-add-in-for-outlook) Toutefois, la création d’une réunion en Outlook avec un service non-Microsoft peut être fastidieuse. En implémentant cette fonctionnalité, les fournisseurs de services peuvent simplifier l’expérience de création de réunions en ligne pour Outlook utilisateurs de leur application.
@@ -21,7 +26,7 @@ Dans cet article, vous allez apprendre à configurer votre Outlook pour permettr
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour permettre aux utilisateurs de créer des réunions en ligne avec votre application, vous devez configurer le [point d’extension MobileOnlineMeetingCommandSurface](../reference/manifest/extensionpoint.md#mobileonlinemeetingcommandsurface) dans le manifeste sous l’élément parent `MobileFormFactor`. Les autres facteurs de forme ne sont pas pris en charge.
+Pour permettre aux utilisateurs de créer des réunions en ligne avec votre application, vous devez configurer le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) dans le manifeste sous l’élément parent `MobileFormFactor`. Les autres facteurs de forme ne sont pas pris en charge.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
@@ -244,7 +249,7 @@ Les API suivantes sont disponibles pour cette fonctionnalité.
   - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Heure](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Objet](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.roamingSettings](../reference/objectmodel/preview-requirement-set/office.context.md?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
+  - [Office.context.roamingSettings](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context?view=outlook-js-preview&preserve-view=true#roamingsettings-roamingsettings) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings?view=outlook-js-preview&preserve-view=true))
 - Gérer le flux d’th
   - [API de boîte de dialogue](../develop/dialog-api-in-office-add-ins.md)
 

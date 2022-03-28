@@ -3,12 +3,12 @@ title: Vider le cache Office
 description: Découvrez comment effacer le cache Office sur votre ordinateur.
 ms.date: 03/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: f0264ff5d8dd58419ede370cb28a2ceec888cd13
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 87cffbe8d28961f8469fbe149ece029bcaaa481d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746251"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484033"
 ---
 # <a name="clear-the-office-cache"></a>Vider le cache Office
 
@@ -63,7 +63,7 @@ Pour effacer le cache Office sur Windows 10 lorsque le complément s’exécute
 > Si vous souhaitez que le complément chargé indépendamment reflète les modifications récentes apportées à ses fichiers sources HTML ou JavaScript, vous n’avez normalement pas besoin de vider le cache. Il vous suffit, au lieu de cela, d’insérer le focus dans le volet de tâches du complément (en cliquant n’importe où dans le volet), puis d’appuyer sur **Ctrl+F5** pour recharger le complément.
 
 > [!NOTE]
-> Pour effacer le cache d'Office à l'aide des étapes suivantes, votre module complémentaire doit disposer d'un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](../outlook/outlook-on-send-addins.md), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](../reference/manifest/sourcelocation.md), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
+> Pour effacer le cache d'Office à l'aide des étapes suivantes, votre module complémentaire doit disposer d'un volet de tâches. Si vous avez un complément UI-less, par exemple un complément qui utilise la fonctionnalité [on-send](../outlook/outlook-on-send-addins.md), vous devez ajouter un volet de tâches à votre complément qui utilise le même domaine pour [SourceLocation](/javascript/api/manifest/sourcelocation), avant de pouvoir utiliser les étapes suivantes pour vider le cache.
 
 1. Installez [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj).
 

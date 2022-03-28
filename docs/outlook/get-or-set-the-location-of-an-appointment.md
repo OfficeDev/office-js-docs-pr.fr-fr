@@ -3,14 +3,19 @@ title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: d409019dd5d99a27c030bea825c108f65fc35567
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484591"
 ---
-
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
 L Office API JavaScript fournit des propriétés et des méthodes pour gérer l’emplacement d’un rendez-vous que l’utilisateur compose. Actuellement, il existe deux propriétés qui fournissent l’emplacement d’un rendez-vous :
 
-- [item.location](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) : API de base qui vous permet d’obtenir et de définir l’emplacement.
-- [item.enhancedLocation](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) : API améliorée qui vous permet d’obtenir et de définir l’emplacement, et inclut la spécification du [type d’emplacement](/javascript/api/outlook/office.mailboxenums.locationtype). Le type est si `LocationType.Custom` vous définissez l’emplacement à l’aide de `item.location`.
+- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) : API de base qui vous permet d’obtenir et de définir l’emplacement.
+- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) : API améliorée qui vous permet d’obtenir et de définir l’emplacement, et inclut la spécification du [type d’emplacement](/javascript/api/outlook/office.mailboxenums.locationtype). Le type est si `LocationType.Custom` vous définissez l’emplacement à l’aide de `item.location`.
 
 Le tableau suivant répertorie les API d’emplacement et les modes (c’est-à-dire, composer ou lire) où elles sont disponibles.
 
@@ -23,7 +28,7 @@ Le tableau suivant répertorie les API d’emplacement et les modes (c’est-à-
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
 
-Pour utiliser les méthodes disponibles uniquement pour composer des add-ins, configurez le manifeste du add-in pour activer le module en mode Organisateur/Composition. Pour [plus d’Outlook,](compose-scenario.md) voir Créer des Outlook pour les formulaires de composition.
+Pour utiliser les méthodes disponibles uniquement pour composer des add-ins, configurez le manifeste du add-in pour activer le module en mode Organisateur/Composition. Pour [plus d Outlook,](compose-scenario.md) voir Créer des Outlook pour les formulaires de composition.
 
 ## <a name="use-the-enhancedlocation-api"></a>Utiliser l’API `enhancedLocation`
 

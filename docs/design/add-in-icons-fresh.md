@@ -3,12 +3,12 @@ title: Recommandations en matière d’icônes de style Office pour les modules
 description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d2a78a72ea2540b297821323e0337d3a1ddcd4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: aa5e93eeced9a2accb6ad9f1f6dc32a72f9386e7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743100"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483543"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office pour les modules
 
@@ -132,7 +132,7 @@ Les icônes Office sont conçues pour un rendu correct en mode de contraste éle
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Élément de manifeste d’icône](../reference/manifest/icon.md)
-- [Élément manifeste IconUrl](../reference/manifest/iconurl.md)
-- [Élément manifeste HighResolutionIconUrl](../reference/manifest/highresolutioniconurl.md)
+- [Élément de manifeste d’icône](/javascript/api/manifest/icon)
+- [Élément manifeste IconUrl](/javascript/api/manifest/iconurl)
+- [Élément manifeste HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl)
 - [Créer une icône pour votre add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

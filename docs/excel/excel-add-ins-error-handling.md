@@ -3,12 +3,12 @@ title: Gestion des erreurs avec l Excel API JavaScript
 description: En savoir plus sur Excel logique de gestion des erreurs de l’API JavaScript pour prendre en compte les erreurs d’utilisation.
 ms.date: 02/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 829e8ccc947ffd7997146de1aafaf517fd7ebf06
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: f826968ae5137931fc334e62c9594461850cf649
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744973"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484072"
 ---
 # <a name="error-handling-with-the-excel-javascript-api"></a>Gestion des erreurs avec l Excel API JavaScript
 
@@ -63,12 +63,12 @@ Lorsqu’une Excel’API JavaScript échoue, l’API renvoie un objet d’erreur
 
 Le tableau suivant contient la liste des erreurs que l’API peut renvoyer.
 
-|Code d’erreur | Message d’erreur | Remarques |
+|Code d’erreur | Message d’erreur | Notes |
 |:----------|:--------------|:------|
 |`AccessDenied` |Vous ne pouvez pas effectuer l’opération demandée.| |
 |`ActivityLimitReached`|La limite d’activité a été atteinte.| |
 |`ApiNotAvailable`|L’API demandée n’est pas disponible.| |
-|`ApiNotFound`|L’API que vous essayez d’utiliser est in trouver. Il peut être disponible dans une version plus récente de Excel. Pour plus [d’informations, voir Excel’ensembles de conditions requises de l’API JavaScript](../reference/requirement-sets/excel-api-requirement-sets.md).| |
+|`ApiNotFound`|L’API que vous essayez d’utiliser est in trouver. Il peut être disponible dans une version plus récente de Excel. Pour plus [d’informations, voir Excel’ensembles de conditions requises de l’API JavaScript](/javascript/api/requirement-sets/excel-api-requirement-sets).| |
 |`BadPassword`|Le mot de passe que vous avez fourni est incorrect.| |
 |`Conflict`|La demande n’a pas pu être traitée en raison d’un conflit.| |
 |`ContentLengthRequired`|Un en-tête `Content-length` HTTP est manquant.| |

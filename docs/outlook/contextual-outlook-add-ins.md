@@ -3,12 +3,12 @@ title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f343f48f0c49de2b322cb737c5896df2f130ec9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0f85716feb31284492ae2faba1981d1b1ba12f1c
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747197"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484685"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
@@ -24,11 +24,11 @@ Voici des exemples de add-ins contextuels.
 > [!NOTE]
 > Les compléments contextuels ne sont pas disponibles actuellement dans Outlook pour Android et iOS. Cette fonctionnalité sera disponible ultérieurement.
 >
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.6. Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.6. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Création d’un complément contextuel
 
-Le manifeste d’un complément contextuel doit inclure un élément [ExtensionPoint](../reference/manifest/extensionpoint.md#detectedentity) avec une attribut `xsi:type` défini sur `DetectedEntity`. Au sein de l’élément **ExtensionPoint**, le complément spécifie les entités ou l’expression régulière qui peuvent l’activer. Si une entité est spécifiée, il peut s’agir d’une des propriétés de l’objet [Entités](/javascript/api/outlook/office.entities).
+Le manifeste d’un complément contextuel doit inclure un élément [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) avec une attribut `xsi:type` défini sur `DetectedEntity`. Au sein de l’élément **ExtensionPoint**, le complément spécifie les entités ou l’expression régulière qui peuvent l’activer. Si une entité est spécifiée, il peut s’agir d’une des propriétés de l’objet [Entités](/javascript/api/outlook/office.entities).
 
 Par conséquent, le manifeste du complément doit contenir un type de règle **ItemHasKnownEntity** ou **Itemhasregularexpressionmatch**. L’exemple suivant montre comment spécifier qu’un add-in doit s’activer sur les messages avec une entité détectée qui est un numéro de téléphone.
 

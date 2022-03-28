@@ -3,16 +3,16 @@ title: Présentation du jeton d’identité Exchange dans un complément Outlook
 description: Découvrez le contenu d’un jeton d’identité d’utilisateur Exchange généré à partir d’un complément Outlook.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c8b42d5c9d3cd08bc229acb55963b115fd16234a
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150479"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484053"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Présentation du jeton d’identité Exchange
 
-Le jeton d’identité d’utilisateur Exchange renvoyé par la méthode [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) permet au code du complément d’inclure l’identité de l’utilisateur avec des appels à votre service principal. Cet article présente le format et le contenu du jeton.
+Le jeton d’identité d’utilisateur Exchange renvoyé par la méthode [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) permet au code du complément d’inclure l’identité de l’utilisateur avec des appels à votre service principal. Cet article présente le format et le contenu du jeton.
 
 Un jeton d’identité d’utilisateur Exchange est une chaîne d’URL encodée au format base64 signée par le serveur Exchange qui l’a envoyée. Le jeton n’est pas chiffré et la clé publique qui permet de valider la signature est stockée sur le serveur Exchange qui a émis le jeton. Le jeton comporte trois parties : un en-tête, une charge utile et une signature. Dans la chaîne du jeton, les parties sont séparées par un point (`.`) pour faciliter le fractionnement du jeton.
 
@@ -66,7 +66,7 @@ Le tableau suivant répertorie les différentes parties de la charge utile du je
 
 | Revendication | Description |
 |:-----|:-----|
-| `aud` | L’URL du complément ayant demandé le jeton. Un jeton est valide uniquement s’il est envoyé par le complément en cours d’exécution dans le navigateur du client. Si le complément utilise la version 1.1 du schéma des manifestes des compléments Office, cette URL correspond à celle indiquée dans le premier élément `SourceLocation`, sous le type de formulaire `ItemRead` ou `ItemEdit`, selon celui qui apparaît en premier dans l’élément [FormSettings](../reference/manifest/formsettings.md) du manifeste de complément. |
+| `aud` | L’URL du complément ayant demandé le jeton. Un jeton est valide uniquement s’il est envoyé par le complément en cours d’exécution dans le navigateur du client. Si le complément utilise la version 1.1 du schéma des manifestes des compléments Office, cette URL correspond à celle indiquée dans le premier élément `SourceLocation`, sous le type de formulaire `ItemRead` ou `ItemEdit`, selon celui qui apparaît en premier dans l’élément [FormSettings](/javascript/api/manifest/formsettings) du manifeste de complément. |
 | `iss` | Un identificateur unique du serveur Exchange qui a émis le jeton. Tous les jetons émis par ce serveur Exchange auront le même identificateur. |
 | `nbf` | La date et l’heure de début de validité du jeton. La valeur correspond au nombre de secondes depuis le 1er janvier 1970. |
 | `exp` | La date et l’heure de fin de validité du jeton. La valeur correspond au nombre de secondes depuis le 1er janvier 1970. |

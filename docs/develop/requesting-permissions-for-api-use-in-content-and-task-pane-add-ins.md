@@ -3,12 +3,12 @@ title: Demande d’autorisations d’utilisation de l’API dans des complément
 description: Découvrez les différents niveaux d’autorisation à déclarer dans le manifeste d’un application de contenu ou du volet Des tâches pour spécifier le niveau d’accès à l’API JavaScript.
 ms.date: 03/19/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b9fa0276c7ec130621affdcd6070e034cd30b79
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1e4f0bf7f9f8d1142f5fa4f252a6d1f0a11c4aa3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743979"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483613"
 ---
 # <a name="requesting-permissions-for-api-use-in-add-ins"></a>Demande d’autorisations d’utilisation de l’API dans des compléments
 
@@ -22,7 +22,7 @@ Le modèle d’autorisations d’accès de l’API JavaScript à cinq niveaux fo
 
 ![Niveaux d’autorisations pour les applications de volet de tâches.](../images/office15-app-sdk-task-pane-app-permission.png)
 
-Ces autorisations spécifient le sous-ensemble de l’API auquel votre complément de contenu ou du volet Office est autorisé à accéder par l’environnement d’exécution lorsqu’un utilisateur insère, puis active (approuve) votre complément. Pour déclarer le niveau d’autorisation nécessaire à votre complément de contenu ou du volet Office, indiquez l’une des valeurs de texte d’autorisation dans l’élément [Permissions](../reference/manifest/permissions.md) du manifeste de votre complément. L’exemple suivant demande l’autorisation **WriteDocument**, laquelle n’autorise que les méthodes pouvant écrire dans le document (et non le lire).
+Ces autorisations spécifient le sous-ensemble de l’API auquel votre complément de contenu ou du volet Office est autorisé à accéder par l’environnement d’exécution lorsqu’un utilisateur insère, puis active (approuve) votre complément. Pour déclarer le niveau d’autorisation nécessaire à votre complément de contenu ou du volet Office, indiquez l’une des valeurs de texte d’autorisation dans l’élément [Permissions](/javascript/api/manifest/permissions) du manifeste de votre complément. L’exemple suivant demande l’autorisation **WriteDocument**, laquelle n’autorise que les méthodes pouvant écrire dans le document (et non le lire).
 
 ```XML
 <Permissions>WriteDocument</Permissions>

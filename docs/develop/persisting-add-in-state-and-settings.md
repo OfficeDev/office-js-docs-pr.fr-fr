@@ -3,12 +3,12 @@ title: Persist add-in state and settings
 description: Apprenez à faire persister des données dans Office applications web de recherche de contenu s’exécutant dans l’environnement sans état d’un contrôle de navigateur.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b09520d997354e5acc7ec68e3408d97230e4c9dc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 512d23a361239399c77dba9bb831f1b630aa6796
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743683"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483650"
 ---
 # <a name="persist-add-in-state-and-settings"></a>Persist add-in state and settings
 
@@ -28,7 +28,7 @@ Cet article se concentre sur l’utilisation de l Office’API JavaScript pour r
 
 ## <a name="persist-add-in-state-and-settings-with-the-office-javascript-api"></a>Persist add-in state and settings with the Office JavaScript API
 
-L’API JavaScript Office fournit les objets [Paramètres](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
+L’API JavaScript Office fournit les objets [Paramètres](/javascript/api/office/office.settings), [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](/javascript/api/manifest/id) du complément qui les a créées.
 
 |**Objet**|**Type de complément**|**Emplacement de stockage**|**Office prise en charge des applications**|
 |:-----|:-----|:-----|:-----|

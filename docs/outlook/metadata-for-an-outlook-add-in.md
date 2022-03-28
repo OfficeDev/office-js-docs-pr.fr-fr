@@ -3,8 +3,13 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 10/31/2019
 ms.localizationpriority: medium
+ms.openlocfilehash: b07322733f741747568fd57a99f03dc2d3e4d3bb
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484144"
 ---
-
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
 Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant une des solutions suivantes :
@@ -113,7 +118,7 @@ Ces propriétés personnalisées spécifiques à un élément et spécifiques au
 
 ### <a name="using-custom-properties"></a>Utilisation de propriétés personnalisées
 
-Avant de pouvoir utiliser les propriétés personnalisées, vous devez les charger en appelant la méthode [loadCustomPropertiesAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods). Après avoir créé le conteneur de propriétés, vous pouvez utiliser les méthodes [Définir](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) et [Obtenir](/javascript/api/outlook/office.customproperties) pour ajouter et récupérer des propriétés personnalisées. Vous devez utiliser la méthode[saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) pour enregistrer les modifications que vous apportez au conteneur de propriétés.
+Avant de pouvoir utiliser les propriétés personnalisées, vous devez les charger en appelant la méthode [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods). Après avoir créé le conteneur de propriétés, vous pouvez utiliser les méthodes [Définir](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) et [Obtenir](/javascript/api/outlook/office.customproperties) pour ajouter et récupérer des propriétés personnalisées. Vous devez utiliser la méthode[saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) pour enregistrer les modifications que vous apportez au conteneur de propriétés.
 
 
  > [!NOTE]
@@ -196,7 +201,7 @@ Les propriétés personnalisées définies par un complément ne sont pas équiv
 
 #### <a name="get-custom-properties-using-ews"></a>Obtenir des propriétés personnalisées à l’aide de EWS
 
-Votre add-in de messagerie peut obtenir `CustomProperties` la propriété étendue basée sur MAPI à l’aide de l’opération [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) EWS. Accès `GetItem` côté serveur à l’aide d’un jeton de rappel ou côté client à l’aide de la méthode [mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) . Dans la `GetItem` demande, `CustomProperties` spécifiez la propriété basée sur MAPI dans son jeu de propriétés à l’aide des détails fournis dans la section précédente Comment les propriétés personnalisées sont stockées [sur un élément](#how-custom-properties-are-stored-on-an-item).
+Votre add-in de messagerie peut obtenir `CustomProperties` la propriété étendue basée sur MAPI à l’aide de l’opération [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) EWS. Accès `GetItem` côté serveur à l’aide d’un jeton de rappel ou côté client à l’aide de la méthode [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) . Dans la `GetItem` demande, `CustomProperties` spécifiez la propriété basée sur MAPI dans son jeu de propriétés à l’aide des détails fournis dans la section précédente Comment les propriétés personnalisées sont stockées [sur un élément](#how-custom-properties-are-stored-on-an-item).
 
 L’exemple suivant montre comment obtenir un élément et ses propriétés personnalisées.
 

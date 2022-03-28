@@ -3,12 +3,12 @@ title: Déboguer des compléments Office dans Visual Studio
 description: Utilisez Visual Studio pour déboguer des Office dans le client de bureau Office sur Windows.
 ms.date: 02/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 49d52bd9b34b6f03dcf8b333cff816632c47c1c9
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c0f5d0545c67ee64de40fa27c8bf3ae34fa62414
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743524"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483777"
 ---
 # <a name="debug-office-add-ins-in-visual-studio"></a>Déboguer des compléments Office dans Visual Studio
 
@@ -88,7 +88,7 @@ Lorsque Visual Studio crée le projet, il effectue les tâches suivantes :
 
 Visual Studio effectue ensuite les actions suivantes :
 
-1. Modifie l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste XML (qui a été copié `_ProjectName_\bin\Debug\OfficeAppManifests` dans le répertoire) `~remoteAppUrl` en remplaçant le jeton par l’adresse complète de la page de démarrage (par exemple, `https://localhost:44302/Home.html`).
+1. Modifie l’élément [SourceLocation](/javascript/api/manifest/sourcelocation) du fichier manifeste XML (qui a été copié `_ProjectName_\bin\Debug\OfficeAppManifests` dans le répertoire) `~remoteAppUrl` en remplaçant le jeton par l’adresse complète de la page de démarrage (par exemple, `https://localhost:44302/Home.html`).
 
 2. Il démarre le projet d’application web dans IIS Express.
 
@@ -144,7 +144,7 @@ Lorsque Visual Studio crée le projet, il effectue les tâches suivantes.
 
 Visual Studio effectue ensuite les actions suivantes :
 
-1. Modifie l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste XML (qui a été copié `_ProjectName_\bin\Debug\OfficeAppManifests` dans le répertoire) `~remoteAppUrl` en remplaçant le jeton par l’adresse complète de la page de démarrage (par exemple, `https://localhost:44302/Home.html`).
+1. Modifie l’élément [SourceLocation](/javascript/api/manifest/sourcelocation) du fichier manifeste XML (qui a été copié `_ProjectName_\bin\Debug\OfficeAppManifests` dans le répertoire) `~remoteAppUrl` en remplaçant le jeton par l’adresse complète de la page de démarrage (par exemple, `https://localhost:44302/Home.html`).
 
 2. Il démarre le projet d’application web dans IIS Express.
 

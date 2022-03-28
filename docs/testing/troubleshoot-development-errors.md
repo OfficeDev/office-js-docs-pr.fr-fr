@@ -3,12 +3,12 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: Découvrez comment résoudre les erreurs de développement dans Office de développement.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c804f4e73dc28e6f401aca01cea68e6d2ce30917
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b16dbcbb9bf1c80e9d82f96fb0e6fa317b364840
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747103"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484326"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -65,10 +65,10 @@ Voici quelques-unes des causes de cette erreur. Si vous découvrez d’autres ca
 
 - Si vous utilisez Visual Studio, il se peut qu’il y a un problème avec le chargement de version secondaire. Fermez toutes les instances de l’Office et des Visual Studio. Redémarrez Visual Studio puis réessayez d’appuyer sur F5.
 - Le manifeste du add-in a été supprimé de son emplacement de déploiement, tel qu’un déploiement centralisé, un catalogue SharePoint ou un partage réseau.
-- La valeur de [l’élément ID](../reference/manifest/id.md) dans le manifeste a été modifiée directement dans la copie déployée. Si, pour une raison quelconque, vous souhaitez modifier cet ID, supprimez d’abord le module de l’hôte Office, puis remplacez le manifeste d’origine par le manifeste modifié. Vous devez effacer le cache Office pour supprimer toutes les traces de l’original. Consultez [l’article Effacer Office cache pour](clear-cache.md) obtenir des instructions sur l’effacement du cache pour votre système d’exploitation.
-- Le manifeste du add-in a un qui n’est pas défini n’importe où dans la section [Resources](../reference/manifest/resources.md) du manifeste, ou il y a `resid` `resid` `<Resources>` une insmatance dans l’orthographe de l’endroit où il est utilisé et où il est défini dans la section.
+- La valeur de [l’élément ID](/javascript/api/manifest/id) dans le manifeste a été modifiée directement dans la copie déployée. Si, pour une raison quelconque, vous souhaitez modifier cet ID, supprimez d’abord le module de l’hôte Office, puis remplacez le manifeste d’origine par le manifeste modifié. Vous devez effacer le cache Office pour supprimer toutes les traces de l’original. Consultez [l’article Effacer Office cache pour](clear-cache.md) obtenir des instructions sur l’effacement du cache pour votre système d’exploitation.
+- Le manifeste du add-in a un qui n’est pas défini n’importe où dans la section [Resources](/javascript/api/manifest/resources) du manifeste, ou il y a `resid` `resid` `<Resources>` une insmatance dans l’orthographe de l’endroit où il est utilisé et où il est défini dans la section.
 - Il existe un attribut `resid` quelque part dans le manifeste avec plus de 32 caractères. Un `resid` attribut et l’attribut `id` de la ressource correspondante dans la `<Resources>` section ne peuvent pas être plus de 32 caractères.
-- Le add-in possède une commande de add-in personnalisée, mais vous essayez de l’exécuter sur une plateforme qui ne les prend pas en charge. Pour plus d’informations, voir [ensembles de conditions requises pour les commandes de module complémentaire](../reference/requirement-sets/add-in-commands-requirement-sets.md).
+- Le add-in possède une commande de add-in personnalisée, mais vous essayez de l’exécuter sur une plateforme qui ne les prend pas en charge. Pour plus d’informations, voir [ensembles de conditions requises pour les commandes de module complémentaire](/javascript/api/requirement-sets/add-in-commands-requirement-sets).
 
 ## <a name="add-in-doesnt-work-on-edge-but-it-works-on-other-browsers"></a>Le add-in ne fonctionne pas sur Edge, mais il fonctionne sur d’autres navigateurs
 

@@ -3,19 +3,19 @@ title: Résolution des problèmes de messages d’erreur pour l’authentificati
 description: Recommandations sur la façon de résoudre les problèmes liés à l’signature unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 181eeb5f45884c2f54b90a07578a5c2844cc17dd
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dd32fb1ff3b3f0522085f9940b91f7e01dde21ab
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744188"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483524"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
 Cet article fournit des conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office, et explique comment faire en sorte que votre complément gère correctement les conditions particulières ou les erreurs.
 
 > [!NOTE]
-> La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
+> La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/identity-api-requirement-sets).
 > Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 ## <a name="debugging-tools"></a>Outils de débogage
@@ -36,7 +36,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 L’API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) n’est pas prise en charge par le complément ou la version d’Office.
 
 - La version d’Office ne prend pas en charge la SSO. La version requise est Microsoft 365 abonnement, dans n’importe quel canal mensuel.
-- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](../reference/manifest/webapplicationinfo.md) appropriée.
+- Le manifeste de complément n’inclut pas la section [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) appropriée.
 
 Votre complément doit corriger cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
@@ -98,7 +98,7 @@ L’utilisateur exécute le Office sur Microsoft Edge. Le domaine de Microsoft 3
 
 Il existe plusieurs causes possibles.
 
-- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir aussi les [ensembles de conditions requises de l’API d’identité](../reference/requirement-sets/identity-api-requirement-sets.md).
+- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir aussi les [ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/identity-api-requirement-sets).
 - L’option `forMSGraphAccess` a été transmise à l’appel à `getAccessToken` et l’utilisateur a obtenu le complément à partir d’AppSource. Dans ce scénario, l’administrateur du client n’a pas donné son accord au complément pour les étendues Microsoft Graph (autorisations) dont il a besoin. Le fait de rappeler `getAccessToken` avec le `allowConsentPrompt` ne résoudra pas le problème, car Office est autorisé à inviter l’utilisateur à donner l’autorisation uniquement à l’étendue de `profile` AAD.
 
 Votre code doit basculer vers un autre système d’authentification des utilisateurs.
@@ -140,7 +140,7 @@ Si le complément a besoin d’étendues Microsoft Graph qui ne peuvent être en
 Ce type d’erreur ne doit apparaître qu’en développement.
 
 - Votre code côté serveur doit envoyer une réponse `403 Forbidden` au client qui doit consigner l’erreur dans la console ou l’enregistrer dans un journal.
-- Assurez-vous que la section [Scopes](../reference/manifest/scopes.md) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
+- Assurez-vous que la section [Scopes](/javascript/api/manifest/scopes) du manifeste de votre complément indique toutes les autorisations nécessaires. Vérifiez également que l’alignement du service web de votre complément spécifie les mêmes autorisations. Vérifiez les fautes d’orthographe. Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 
 ### <a name="invalid-audience-error-in-the-access-token-for-microsoft-graph"></a>Erreur d’audience non valide dans le jeton d’accès pour Microsoft Graph
 

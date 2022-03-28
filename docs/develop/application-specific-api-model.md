@@ -3,19 +3,19 @@ title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
 ms.date: 02/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 39a89ad869305d88736c72619f9f86ecd7121437
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743643"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483824"
 ---
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
 Cet article explique comment utiliser le modèle API pour la création de Excel, Word, PowerPoint et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
 
 > [!NOTE]
-> Ce modèle n’est pas pris en charge par les clients Office 2013. Utilisez les [Modèles communs de l’API](office-javascript-api-object-model.md) pour fonctionner avec ces versions d’Office. Pour consulter les notes sur la disponibilité complète des plateformes, consultez les [disponibilités de l’application et de la plateforme cliente Office pour les compléments Office](../overview/office-add-in-availability.md).
+> Ce modèle n’est pas pris en charge par les clients Office 2013. Utilisez les [Modèles communs de l’API](office-javascript-api-object-model.md) pour fonctionner avec ces versions d’Office. Pour consulter les notes sur la disponibilité complète des plateformes, consultez les [disponibilités de l’application et de la plateforme cliente Office pour les compléments Office](/javascript/api/requirement-sets).
 
 > [!TIP]
 > Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API JavaScript OneNote, PowerPoint, Visio et Word.

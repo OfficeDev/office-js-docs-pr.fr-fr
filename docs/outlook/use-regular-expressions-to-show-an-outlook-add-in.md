@@ -3,18 +3,18 @@ title: Utiliser les règles d’activation d’expression régulière afin d’a
 description: Découvrez comment utiliser les règles d’activation d’expression régulière pour les compléments contextuels Outlook.
 ms.date: 07/28/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f56d973ed3470b70bdfe834f9adc8a15a7623f0b
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: cdf15fd2ab46fbad679ea6214cde9b9da50a0cfc
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149076"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484417"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
 Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios dans Outlook n’active pas les modules, par exemple, les éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
 
-Vous pouvez spécifier une expression régulière dans le cadre d’une règle [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) ou [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) dans le manifeste XML du complément. Les règles sont spécifiées dans un point d’extension [DetectedEntity](../reference/manifest/extensionpoint.md#detectedentity).
+Vous pouvez spécifier une expression régulière dans le cadre d’une règle [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) dans le manifeste XML du complément. Les règles sont spécifiées dans un point d’extension [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
 Outlook évalue les expressions régulières en fonction des règles définies pour l’interpréteur JavaScript utilisé par le navigateur de l’ordinateur client. Outlook prend en charge la même liste de caractères spéciaux que tous les processeurs XML. Le tableau suivant répertorie ces caractères spéciaux. Vous pouvez les utiliser dans une expression régulière en spécifiant la séquence d’échappement pour le caractère correspondant, comme décrit dans le tableau suivant.
 
@@ -44,7 +44,7 @@ Une règle `ItemHasRegularExpressionMatch` est utile dans le contrôle de l’ac
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Meilleures pratiques pour l’utilisation d’expressions régulières dans les règles
 
-Prêtez une attention particulière aux questions suivantes lorsque vous utilisez des expressions régulières.
+Prêtez une attention particulière aux choses suivantes lorsque vous utilisez des expressions régulières.
 
 - Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour le corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour essayer d’obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.
 - Le corps en texte brut renvoyé sur un navigateur peut être légèrement différent sur un autre. Si vous utilisez une règle `ItemHasRegularExpressionMatch` avec `BodyAsPlaintext` comme attribut `PropertyName`, testez votre expression régulière sur tous les navigateurs pris en charge par votre complément.
@@ -126,11 +126,11 @@ La règle `ItemHasKnownEntity` suivante active le complément chaque fois qu’u
 
 Vous pouvez obtenir des correspondances avec une expression régulière en utilisant les méthodes suivantes sur l’élément actuel.
 
-- [getRegExMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) renvoie les correspondances dans l’élément actuel pour toutes les expressions régulières spécifiées dans les règles `ItemHasRegularExpressionMatch` et `ItemHasKnownEntity` du complément.
+- [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) renvoie les correspondances dans l’élément actuel pour toutes les expressions régulières spécifiées dans les règles `ItemHasRegularExpressionMatch` et `ItemHasKnownEntity` du complément.
 
-- [getRegExMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) renvoie les correspondances dans l’élément actuel pour l’expression régulière identifiée, spécifiée dans une règle `ItemHasRegularExpressionMatch` du complément.
+- [getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) renvoie les correspondances dans l’élément actuel pour l’expression régulière identifiée, spécifiée dans une règle `ItemHasRegularExpressionMatch` du complément.
 
-- [getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) renvoie les instances complètes des entités qui contiennent des correspondances avec l’expression régulière identifiée, spécifiée dans une règle `ItemHasKnownEntity` du complément.
+- [getFilteredEntitiesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) renvoie les instances complètes des entités qui contiennent des correspondances avec l’expression régulière identifiée, spécifiée dans une règle `ItemHasKnownEntity` du complément.
 
 Lorsque les expressions régulières sont évaluées, les correspondances sont renvoyées vers votre complément dans un objet tableau. Pour `getRegExMatches`, cet objet a un identifiant correspondant au nom de l’expression régulière.
 

@@ -3,12 +3,12 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8fbc6635e568cc6a9e8888ed52f0877f817320
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 451476e9cd7eda9902ad156966558c182752547f
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745966"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484303"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -16,7 +16,7 @@ L’utilisation des commandes de Outlook Mobile permet à vos utilisateurs d’a
 
 ## <a name="updating-the-manifest"></a>Mise à jour du manifeste
 
-La première étape de l’activation des commandes de complément dans Outlook Mobile est de les définir dans le manifeste du complément. Le schéma [VersionOverrides](../reference/manifest/versionoverrides.md) v1.1 définit un nouveau facteur de forme pour les versions mobiles, [MobileFormFactor](../reference/manifest/mobileformfactor.md).
+La première étape de l’activation des commandes de complément dans Outlook Mobile est de les définir dans le manifeste du complément. Le schéma [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 définit un nouveau facteur de forme pour les versions mobiles, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
 
 Cet élément contient toutes les informations pour charger le complément dans des clients mobiles. Cela vous permet de définir entièrement différents éléments de l’interface utilisateur et fichiers JavaScript pour l’expérience mobile.
 
@@ -56,12 +56,12 @@ L’exemple suivant montre un bouton de volet de tâches unique dans un `MobileF
 </VersionOverrides>
 ```
 
-Cet exemple est semblable aux éléments qui apparaissent dans un élément [DesktopFormFactor](../reference/manifest/desktopformfactor.md), avec toutefois quelques différences importantes.
+Cet exemple est semblable aux éléments qui apparaissent dans un élément [DesktopFormFactor](/javascript/api/manifest/desktopformfactor), avec toutefois quelques différences importantes.
 
-- L’élément [OfficeTab](../reference/manifest/officetab.md) n’est pas utilisé.
-- L’élément [ExtensionPoint](../reference/manifest/extensionpoint.md) doit avoir un seul élément enfant. Si le complément ajoute uniquement un bouton, l’élément enfant doit être un élément [Control](../reference/manifest/control.md). Si le complément ajoute plusieurs boutons, l’élément enfant doit être un élément [Group](../reference/manifest/group.md) qui contient plusieurs éléments `Control`.
+- L’élément [OfficeTab](/javascript/api/manifest/officetab) n’est pas utilisé.
+- L’élément [ExtensionPoint](/javascript/api/manifest/extensionpoint) doit avoir un seul élément enfant. Si le complément ajoute uniquement un bouton, l’élément enfant doit être un élément [Control](/javascript/api/manifest/control). Si le complément ajoute plusieurs boutons, l’élément enfant doit être un élément [Group](/javascript/api/manifest/group) qui contient plusieurs éléments `Control`.
 - Il n’existe aucun équivalent de type `Menu` pour l’élément `Control`.
-- L’élément [Supertip](../reference/manifest/supertip.md) n’est pas utilisé.
+- L’élément [Supertip](/javascript/api/manifest/supertip) n’est pas utilisé.
 - Les tailles d’icône requises sont différentes. Au minimum, les compléments mobiles doivent prendre en charge les icônes 25 x 25, 32 x 32 et 48 x 48 pixels.
 
 ## <a name="code-considerations"></a>Éléments à prendre en compte pour le code
@@ -70,9 +70,9 @@ La conception d’un complément pour mobile implique certaines considérations 
 
 ### <a name="use-rest-instead-of-exchange-web-services"></a>Utiliser REST plutôt que les services web Exchange
 
-La méthode [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
+La méthode [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
 
-L’ensemble de conditions requises de la boîte aux lettres 1.5 a introduit une nouvelle version de [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) qui peut demander un jeton d’accès compatible avec les API REST et une nouvelle propriété [Office.context.mailbox.restUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
+L’ensemble de conditions requises de la boîte aux lettres 1.5 a introduit une nouvelle version de [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) qui peut demander un jeton d’accès compatible avec les API REST et une nouvelle propriété [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
 
 ### <a name="pinch-zoom"></a>Pincer pour zoomer
 
@@ -90,23 +90,23 @@ Actuellement, les compléments dans Outlook Mobile ne peuvent être activés que
 
 Les API introduites dans l’ensemble de conditions requises 1.6 ou ultérieure ne sont pas Outlook Mobile. Les API suivantes des ensembles de conditions requises antérieures ne sont pas non plus pris en charge.
 
-- [Office.context.officeTheme](../reference/objectmodel/preview-requirement-set/office.context.md#officetheme-officetheme)
-- [Office.context.mailbox.ewsUrl](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#properties)
-- [Office.context.mailbox.convertToEwsId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.convertToRestId](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.displayAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.displayMessageForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.displayNewAppointmentForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)
-- [Office.context.mailbox.item.dateTimeModified](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties)
-- [Office.context.mailbox.item.displayReplyAllForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.displayReplyForm](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getEntities](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getEntitiesByType](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getFilteredEntitiesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getRegexMatches](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
-- [Office.context.mailbox.item.getRegexMatchesByName](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods)
+- [Office.context.officeTheme](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context#officetheme-officetheme)
+- [Office.context.mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)
+- [Office.context.mailbox.convertToEwsId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.convertToRestId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.displayMessageForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.displayNewAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
+- [Office.context.mailbox.item.dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+- [Office.context.mailbox.item.displayReplyAllForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.displayReplyForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getEntities](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getEntitiesByType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getFilteredEntitiesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getRegexMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- [Office.context.mailbox.item.getRegexMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
 
 ## <a name="see-also"></a>Voir aussi
 
-[Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

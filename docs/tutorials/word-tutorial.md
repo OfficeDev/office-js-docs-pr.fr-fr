@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: ccea2575e62a433ae2d6d2fe541a33e90d53f031
-ms.sourcegitcommit: 3d7792b1f042db589edb74a895fcf6d7ced63903
+ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/11/2022
-ms.locfileid: "63511251"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484028"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -404,11 +404,11 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
 Dans toutes les fonctions précédentes de cette série de didacticiels, vous avez mis en file d’attente des commandes pour *écrire* dans le document Office. Chaque fonction s’est terminée par un appel à la méthode `context.sync()` qui envoie les commandes mises en file d’attente au document à exécuter. Toutefois, le code que vous avez ajouté à la dernière étape appelle la propriété `originalRange.text` , ce qui est une différence significative par rapport aux fonctions précédentes que vous avez écrites, car l’objet `originalRange` est uniquement un objet proxy qui existe dans le script de votre volet Office. Il ne sait pas quel est le texte réel de la plage dans le document, donc sa propriété `text` ne peut pas avoir une valeur réelle. Il est nécessaire d’extraire d’abord la valeur de texte de la plage du document et de l’utiliser pour définir la valeur de `originalRange.text`. Ce n’est qu’à ce point que vous pouvez `originalRange.text` être appelé sans provoquer la levée d’une exception. Ce processus de récupération comporte trois étapes.
 
-   1. Mettez en file d’attente une commande de chargement (c’est-à-dire, fetch) des propriétés que votre code doit lire.
+1. Mettez en file d’attente une commande pour charger (autrement dit, récupérer) les propriétés que votre code doit lire.
 
-   1. Appelez la méthode `sync` de l’objet de contexte pour envoyer la commande mise en file d’attente vers le document pour exécution, et renvoyez les informations demandées.
+1. Appelez la méthode `sync` de l’objet de contexte pour envoyer la commande mise en file d’attente vers le document pour exécution, et renvoyez les informations demandées.
 
-   1. Étant donné que la méthode `sync` est asynchrone, assurez-vous qu’elle est terminée avant que votre code appelle les propriétés qui ont été récupérées.
+1. Étant donné que la méthode `sync` est asynchrone, assurez-vous qu’elle est terminée avant que votre code appelle les propriétés qui ont été récupérées.
 
 Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*read*) des informations provenant du document Office.
 
@@ -587,7 +587,7 @@ async function insertTextIntoRange() {
 
 1. Dans le volet Office, cliquez sur le bouton **Insérer un paragraphe** pour vous assurer qu’un paragraphe apparaît au début du document.
 
-1. Dans le document, sélectionnez l’expression « Click-to-Run » (Démarrer en un clic). *Veillez à ne pas inclure l’espace précédent ou la virgule suivante dans la sélection.*
+1. Dans le document, sélectionnez l’expression « Démarrer en un clic ». *Veillez à ne pas inclure l’espace précédent ou la virgule suivante dans la sélection.*
 
 1. Sélectionnez le bouton **Insérer une abréviation**. L’abréviation « (C2R) » est ajoutée. Notez également qu’en bas du document, un nouveau paragraphe est ajouté avec l’intégralité du texte développé, car la nouvelle chaîne a été ajoutée à la plage existante.
 
@@ -755,7 +755,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
     }
     ```
 
-1. Dans la fonction `insertTable()`, remplacez `TODO1` par le code suivant. Notez que cette ligne utilise la méthode `ParagraphCollection.getFirst` pour obtenir une référence au premier paragraphe, puis utilise la méthode `Paragraph.getNext` pour obtenir une référence au deuxième paragraphe.
+1. Dans la fonction `insertTable()` , remplacez `TODO1` par le code suivant. Notez que cette ligne utilise la méthode `ParagraphCollection.getFirst` pour obtenir une référence au premier paragraphe, puis utilise la méthode `Paragraph.getNext` pour obtenir une référence au deuxième paragraphe.
 
     ```js
     const secondParagraph = context.document.body.paragraphs.getFirst().getNext();

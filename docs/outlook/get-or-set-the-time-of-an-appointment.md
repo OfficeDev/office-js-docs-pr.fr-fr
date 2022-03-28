@@ -3,13 +3,18 @@ title: Obtenir ou définir l’heure de rendez-vous dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’heure de début et de fin d’un rendez-vous dans un complément Outlook.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: f2f7a0956d7e355389c4cbe08a866686288ced66
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484335"
 ---
-
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’heure lors de la composition d’un rendez-vous dans Outlook
 
-L’API JavaScript Office fournit des méthodes asynchrones ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) et [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) pour obtenir et définir l’heure de début ou de fin d’un rendez-vous que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour les modules de composition. Pour utiliser ces méthodes, [assurez-vous](compose-scenario.md) que vous avez correctement installé le manifeste de la Outlook afin d’activer le add-in dans les formulaires de composition, comme décrit dans Créer des Outlook pour les formulaires de composition.
+L’API JavaScript Office fournit des méthodes asynchrones ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) et [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) pour obtenir et définir l’heure de début ou de fin d’un rendez-vous que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour les modules de composition. Pour utiliser ces méthodes, [assurez-vous](compose-scenario.md) que vous avez correctement installé le manifeste de la Outlook pour activer le add-in dans les formulaires de composition, comme décrit dans Créer des Outlook pour les formulaires de composition.
 
-Les propriétés [start](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) et [end](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) sont disponibles pour les rendez-vous dans les formulaires de lecture et de composition. Dans un formulaire de lecture, vous pouvez accéder aux propriétés directement dans l’objet parent, comme dans :
+Les propriétés [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) et [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) sont disponibles pour les rendez-vous dans les formulaires de lecture et de composition. Dans un formulaire de lecture, vous pouvez accéder aux propriétés directement dans l’objet parent, comme dans :
 
 ```js
 item.start
@@ -91,7 +96,7 @@ Cette section présente un exemple de code qui définit l’heure de début du r
 
 Comme dans l’exemple précédent, cet exemple de code suppose l’existence d’une règle dans le manifeste de complément qui active le complément dans un formulaire de composition pour un rendez-vous.
 
-Pour utiliser les éléments **item.start.setAsync** ou **item.end.setAsync**, spécifiez une valeur **Date** au format UTC dans le paramètre _dateTime_. Si vous obtenez une date basée sur une entrée effectuée par l’utilisateur sur le client, vous pouvez utiliser [mailbox.convertToUtcClientTime](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour convertir la valeur en objet **Date** au format UTC. Vous pouvez indiquer une méthode de rappel facultative, ainsi que les arguments associés, dans le paramètre _asyncContext_. Vous devez vérifier l’état, le résultat et tous les messages d’erreur dans le paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, la méthode **setAsync** insère la chaîne représentant l’heure de début ou de fin spécifiée en tant que texte brut et remplace l’heure de début ou de fin existante pour cet élément.
+Pour utiliser les éléments **item.start.setAsync** ou **item.end.setAsync**, spécifiez une valeur **Date** au format UTC dans le paramètre _dateTime_. Si vous obtenez une date basée sur une entrée effectuée par l’utilisateur sur le client, vous pouvez utiliser [mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour convertir la valeur en objet **Date** au format UTC. Vous pouvez indiquer une méthode de rappel facultative, ainsi que les arguments associés, dans le paramètre _asyncContext_. Vous devez vérifier l’état, le résultat et tous les messages d’erreur dans le paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, la méthode **setAsync** insère la chaîne représentant l’heure de début ou de fin spécifiée en tant que texte brut et remplace l’heure de début ou de fin existante pour cet élément.
 
 
 

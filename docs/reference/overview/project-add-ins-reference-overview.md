@@ -4,12 +4,12 @@ description: Présentation de l’API JavaScript du projet.
 ms.date: 07/05/2019
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 5823c2978fffe71c1ea083c2653e9556c71b739d
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 9da3a4e19e20dae30dff8b04bd9596893298711d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744121"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484621"
 ---
 # <a name="javascript-api-for-project"></a>API JavaScript pour Project
 
@@ -24,4 +24,4 @@ Pour une expérience pratique de l’utilisation de l’API commune pour interag
 - [Documentation sur les compléments Project](../../project/index.yml)
 - [Vue d’ensemble des compléments Project](../../project/project-add-ins.md)
 - [Documentation de référence de l’API](../javascript-api-for-office.md)
-- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](../../overview/office-add-in-availability.md)
+- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](/javascript/api/requirement-sets)

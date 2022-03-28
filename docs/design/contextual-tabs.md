@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa301996d653170d02280efbdb7e94733b5dd924
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742930"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483895"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
@@ -29,8 +29,8 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 > [!NOTE]
 > Les onglets contextuels personnalisés fonctionnent uniquement sur les plateformes qui supportent les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et sur la façon de les utiliser, voir [Spécifier Office applications et les conditions requises des API](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [RibbonApi 1.2](../reference/requirement-sets/ribbon-api-requirement-sets.md)
-> - [SharedRuntime 1.1](../reference/requirement-sets/shared-runtime-requirement-sets.md)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
 >
 > Vous pouvez utiliser les vérifications à l’runtime dans votre code pour tester si la combinaison hôte et plateforme de l’utilisateur prend en charge ces ensembles de conditions requises comme décrit dans les vérifications runtime pour la prise en charge des méthodes et des ensembles de [conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La technique de spécification des ensembles de conditions requises dans le manifeste, également décrite dans cet article, ne fonctionne actuellement pas pour RibbonApi 1.2.) Vous pouvez également implémenter [une autre expérience d’interface utilisateur lorsque les onglets contextuels personnalisés ne sont pas pris en charge](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 
@@ -62,7 +62,7 @@ L’ajout d’onglets contextuels personnalisés nécessite que votre add-in uti
 Contrairement aux onglets principaux personnalisés, qui sont définis avec du XML dans le manifeste, les onglets contextuels personnalisés sont définis lors de l’runtime avec un blob JSON. Votre code parse le blob dans un objet JavaScript, puis passe l’objet à la [méthode Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)). Les onglets contextuels personnalisés sont uniquement présents dans les documents sur lesquels votre module est en cours d’exécution. Cela est différent des onglets principaux personnalisés qui sont ajoutés au ruban de l’application Office lorsque le module est installé et restent présents à l’ouverture d’un autre document. En outre, la `requestCreateControls` méthode ne peut être exécuté qu’une seule fois dans une session de votre add-in. Si elle est appelée à nouveau, une erreur est lancée.
 
 > [!NOTE]
-> La structure des propriétés et sous-propriétés de l’objet blob JSON (et les noms clés) est à peu près parallèle à la structure de l’élément [CustomTab](../reference/manifest/customtab.md) et de ses éléments descendants dans le manifeste XML.
+> La structure des propriétés et sous-propriétés de l’objet blob JSON (et les noms clés) est à peu près parallèle à la structure de l’élément [CustomTab](/javascript/api/manifest/customtab) et de ses éléments descendants dans le manifeste XML.
 
 Nous allons créer un exemple d’objet blob JSON onglets contextuel pas à pas. Le schéma complet de l’onglet contextuel JSON se trouve [à dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). Si vous travaillez dans Visual Studio Code, vous pouvez utiliser ce fichier pour obtenir IntelliSense et valider votre JSON. Pour plus d’informations, voir [Modification de JSON Visual Studio Code - Schémas et paramètres JSON](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
@@ -530,9 +530,9 @@ Certaines combinaisons de plateforme, Office application et de Office build ne s
 
 #### <a name="use-noncontextual-tabs-or-controls"></a>Utiliser des onglets ou des contrôles nontexte
 
-Il existe un élément manifeste, [OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md), conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés.
+Il existe un élément manifeste, [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi), conçu pour créer une expérience de base dans un application qui implémente des onglets contextuels personnalisés lorsque le module est en cours d’exécution sur une application ou une plateforme qui ne prend pas en charge les onglets contextuels personnalisés.
 
-La stratégie la plus simple pour utiliser cet élément consiste à définir un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés *non* contextuels) dans le manifeste qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Toutefois, vous ajoutez `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` en tant que premier élément enfant des éléments [Group](../reference/manifest/group.md), [Control](../reference/manifest/control.md) et **Menu Item** dupliqués dans les onglets principaux personnalisés. L’effet de cette utilisation est le suivant :
+La stratégie la plus simple pour utiliser cet élément consiste à définir un ou plusieurs onglets principaux personnalisés (c’est-à-dire, des onglets personnalisés *non* contextuels) dans le manifeste qui dupliquent les personnalisations du ruban des onglets contextuels personnalisés dans votre application. Toutefois, vous ajoutez `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` en tant que premier élément enfant des éléments [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control) et **Menu Item** dupliqués dans les onglets principaux personnalisés. L’effet de cette utilisation est le suivant :
 
 - Si le add-in s’exécute sur une application et une plateforme qui prend en charge les onglets contextuels personnalisés, les groupes et contrôles principaux personnalisés n’apparaissent pas sur le ruban. Au lieu de cela, l’onglet contextuel personnalisé est créé lorsque le add-in appelle la `requestCreateControls` méthode.
 - Si le add-in *s’exécute* `requestCreateControls`sur une application ou une plateforme qui ne prend pas en charge, les éléments apparaissent dans les onglets principaux personnalisés.
@@ -561,7 +561,7 @@ Voici un exemple. Notez que « MyButton » apparaît sur l’onglet principal pe
 </OfficeApp>
 ```
 
-Pour plus d’exemples, [voir OverriddenByRibbonApi](../reference/manifest/overriddenbyribbonapi.md).
+Pour plus d’exemples, [voir OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi).
 
 Lorsqu’un groupe parent ou un menu `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`est marqué avec, il n’est pas visible et tous ses marques enfants sont ignorés lorsque les onglets contextuels personnalisés ne sont pas pris en charge. Ainsi, peu importe si l’un de ces éléments enfants a l’élément **OverriddenByRibbonApi** ou sa valeur. En conséquence, si un élément de menu ou un contrôle doit être visible dans tous les contextes, non seulement il ne doit pas être marqué avec, `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`mais son *menu* ancêtre et son groupe ne doivent pas non plus être marqués de cette façon.
 

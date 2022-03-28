@@ -3,8 +3,13 @@ title: Résolution des problèmes d’activation de complément contextuel Outlo
 description: Raisons possibles pour lesquelles votre add-in ne s’active pas comme prévu.
 ms.date: 09/02/2020
 ms.localizationpriority: medium
+ms.openlocfilehash: d5f52f9697b33711a69a9d07b831229a26c7d450
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484555"
 ---
-
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
 Outlook’activation de complément contextuelle est basée sur les règles d’activation dans le manifeste du complément. Lorsque les conditions de l’élément actuellement sélectionné répondent aux règles d’activation du complément, l’application s’active et affiche le bouton du complément dans l’interface utilisateur Outlook (volet de sélection de complément pour les compléments de composition, barre de compléments pour les compléments de lecture). Toutefois, si votre complément ne s’active pas comme prévu, essayez d’en déterminer les raisons à partir des points suivants.
@@ -65,14 +70,14 @@ Utilisez l’une des approches suivantes pour vérifier si un add-in est désact
 
 Si votre complément Outlook est un complément de lecture et est supposé être activé lorsque l’utilisateur visualise un message (y compris les esmails, les demandes de réunions, les réponses et les annulations) ou un rendez-vous, même si ces éléments prennent en charge les compléments de manière générale, il existe des exceptions. Vérifiez si l’élément sélectionné est l’un de ceux[ répertoriés pour lesquels les compléments Outlook ne s’activent pas](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
-En outre, les rendez-vous étant toujours enregistrés au format RTF, une règle [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) qui spécifie une valeur **PropertyName** de **BodyAsHTML** n’active pas de complément pour un rendez-vous ou un message enregistré au format texte brut ou RTF.
+En outre, les rendez-vous étant toujours enregistrés au format RTF, une règle [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) qui spécifie une valeur **PropertyName** de **BodyAsHTML** n’active pas de complément pour un rendez-vous ou un message enregistré au format texte brut ou RTF.
 
 Même si un élément de messagerie ne correspond pas à l’un des types ci-dessus, si cet élément n’a pas été remis par une version d’Exchange Server correspondant au minimum à Exchange 2013, les entités et les propriétés connues telles que l’adresse SMTP de l’expéditeur ne sont pas identifiées pour l’élément. Les règles d’activation qui dépendent de ces entités ou propriétés ne sont pas satisfaites et le complément n’est pas activé.
 
 Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM. Toutefois, il existe quelques exceptions.
 
 1. Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
-1. Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en prévisualisation, voir Activation de compléments sur des éléments protégés par la Gestion des droits de [l’information (IRM).](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm)
+1. Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en prévisualisation, voir Activation de compléments sur des éléments protégés par la Gestion des droits de [l’information (IRM).](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 
@@ -158,7 +163,7 @@ Consultez la rubrique relative à la [validation et à la résolution des probl�
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>Utilisez-vous les règles d’activation appropriées ?
 
-À partir de la version 1.1 du schéma des manifestes des Compléments Office, vous pouvez créer des compléments qui sont activés lorsque l’utilisateur se trouve dans un formulaire de composition (compléments de composition) ou de lecture (compléments de lecture). Assurez-vous que vous spécifiez les règles d’activation appropriées pour chaque type de formulaire dans lequel votre complément est censé être activé. Par exemple, vous ne pouvez activer des compléments de composition qu’à l’aide des règles [ItemIs](../reference/manifest/rule.md#itemis-rule) avec l’attribut **FormType** défini sur **Edit** ou **ReadOrEdit** et vous ne pouvez utiliser aucun autre type de règle, comme les règles [ItemHasKnownEntity](../reference/manifest/rule.md#itemhasknownentity-rule) et [ItemHasRegularExpressionMatch](../reference/manifest/rule.md#itemhasregularexpressionmatch-rule) pour les compléments de composition. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](activation-rules.md).
+À partir de la version 1.1 du schéma des manifestes des Compléments Office, vous pouvez créer des compléments qui sont activés lorsque l’utilisateur se trouve dans un formulaire de composition (compléments de composition) ou de lecture (compléments de lecture). Assurez-vous que vous spécifiez les règles d’activation appropriées pour chaque type de formulaire dans lequel votre complément est censé être activé. Par exemple, vous ne pouvez activer des compléments de composition qu’à l’aide des règles [ItemIs](/javascript/api/manifest/rule#itemis-rule) avec l’attribut **FormType** défini sur **Edit** ou **ReadOrEdit** et vous ne pouvez utiliser aucun autre type de règle, comme les règles [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) et [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) pour les compléments de composition. Pour plus d’informations, voir [Règles d’activation pour les compléments Outlook](activation-rules.md).
 
 ## <a name="if-you-use-a-regular-expression-is-it-properly-specified"></a>Si vous utilisez une expression régulière, est-elle correctement spécifiée ?
 
@@ -234,7 +239,7 @@ Après avoir vérifié la valeur de propriété, vous pouvez utiliser un outil d
 
 Cette section s’applique à toutes les règles d’activation qui utilisent des expressions régulières ; en particulier, celles appliquées au corps d’élément, qui peut être volumineux et demander plus de temps pour l’évaluation des correspondances. Vous devez savoir que même si la propriété d’élément dont dépend une règle d’activation a la valeur que vous attendez, Outlook peut ne pas être en mesure d’évaluer toutes les expressions régulières sur l’ensemble de la valeur de la propriété d’élément. Pour fournir des performances raisonnables et contrôler l’utilisation excessive des ressources par un complément de lecture, Outlook observe les limites suivantes concernant le traitement des expressions régulières dans les règles d’activation au moment de l’exécution.
 
-- Taille du corps d’élément évalué : il existe des limites à la partie d’un corps d’élément sur laquelle Outlook une expression régulière. Ces limites dépendent de la Outlook client, du facteur de forme et du format du corps de l’élément. Consultez les détails du tableau 2 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- Taille du corps d’élément évalué : il existe des limites à la partie d’un corps d’élément sur laquelle Outlook une expression régulière. Ces limites dépendent du Outlook client, du facteur de forme et du format du corps de l’élément. Consultez les détails du tableau 2 dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 - Nombre de correspondances d’expression régulière : les clients riches Outlook, Outlook sur le web et sur appareils mobiles renvoient chacun un nombre maximal de 50 correspondances d’expressions régulières. Ces correspondances sont uniques et les correspondances en double ne sont pas prises en compte par rapport à cette limite. Ne partez pas du principe que les correspondances renvoyées sont classées dans un ordre précis, ni que l’ordre dans un client riche Outlook est le même que celle dans Outlook sur le web et sur appareils mobiles. Si vous attendez de nombreuses correspondances pour des expressions régulières dans vos règles d’activation et qu’il manque une correspondance, il est possible que vous ayez dépassé cette limite.
 

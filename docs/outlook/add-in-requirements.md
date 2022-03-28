@@ -3,12 +3,12 @@ title: Conditions requises pour les compléments Outlook
 description: Pour que les compléments Outlook se chargent et fonctionnent correctement, les serveurs et les clients doivent répondre à plusieurs conditions.
 ms.date: 02/09/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 0946cf6841fd46957b21b0d24698042e8d3fcb8c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0b163c7c90cd430a4502800e7e39fe474b188a44
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746198"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483462"
 ---
 # <a name="outlook-add-in-requirements"></a>Conditions requises pour les compléments Outlook
 
@@ -44,5 +44,5 @@ Les fichiers du complément (HTML, JavaScript, etc.) peuvent être hébergés su
 ## <a name="see-also"></a>Voir aussi
 
 - [Configuration requise pour exécuter des compléments Office](../concepts/requirements-for-running-office-add-ins.md)
-- [Application cliente Office et disponibilité de la plateforme pour les compléments Office (section Outlook)](../overview/office-add-in-availability.md#outlook)
-- [Prise en charge des ensembles de conditions requises de l’API JavaScript pour Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+- [Application cliente Office et disponibilité de la plateforme pour les compléments Office (section Outlook)](/javascript/api/requirement-sets#outlook)
+- [Prise en charge des ensembles de conditions requises de l’API JavaScript pour Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

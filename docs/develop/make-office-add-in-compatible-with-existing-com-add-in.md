@@ -3,12 +3,12 @@ title: Rendre votre complément Office compatible avec un complément COM exista
 description: Activez la compatibilité entre votre Office et votre équivalent COM.
 ms.date: 09/24/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f78f41532f916dc5df43cf5a6d4e455b6f16864f
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d6c2b891fa12f4ec79b52bbff8cac02a8eb45861
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743798"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483666"
 ---
 # <a name="make-your-office-add-in-compatible-with-an-existing-com-add-in"></a>Rendre votre complément Office compatible avec un complément COM existant
 
@@ -27,7 +27,7 @@ Vous pouvez configurer votre compl?ment Office de sorte que lorsque le compl?men
 
 Pour activer la compatibilité entre votre Office et votre compl?ment COM, identifiez le compl?ment COM équivalent dans le manifeste de votre compl?[](add-in-manifests.md)ment Office.com. Ensuite, Office sur Windows utilisera le compl?ment COM au lieu du compl?ment Office, s’ils sont tous les deux install s.
 
-L’exemple suivant montre la partie du manifeste qui spécifie un compl?ment COM en tant que compl?ment équivalent. La valeur de l’élément `ProgId` identifie le add-in COM et l’élément [EquivalentAddins](../reference/manifest/equivalentaddins.md) doit être placé immédiatement avant la balise de `VersionOverrides` fermeture.
+L’exemple suivant montre la partie du manifeste qui spécifie un compl?ment COM en tant que compl?ment équivalent. La valeur de l’élément `ProgId` identifie le add-in COM et l’élément [EquivalentAddins](/javascript/api/manifest/equivalentaddins) doit être placé immédiatement avant la balise de `VersionOverrides` fermeture.
 
 ```xml
 <VersionOverrides>

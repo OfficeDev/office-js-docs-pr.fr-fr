@@ -3,12 +3,12 @@ title: Valider un jeton d’identité de complément Outlook
 description: Votre complément Outlook peut vous envoyer un jeton d’identité d’utilisateur Exchange, mais avant de faire confiance à la requête, vous devez valider le jeton pour vous assurer qu’il provient du serveur Exchange attendu.
 ms.date: 10/11/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c22c174e6783a53e856e11e4338d0168cb974a20
-ms.sourcegitcommit: 3b187769e86530334ca83cfdb03c1ecfac2ad9a8
+ms.openlocfilehash: 6b903b582fee59fd1c5ff0aa949d614c4ee1dff7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2021
-ms.locfileid: "60367480"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484411"
 ---
 # <a name="validate-an-exchange-identity-token"></a>Valider un jeton d’identité Exchange
 
@@ -18,7 +18,7 @@ Nous vous suggérons d’utiliser un processus en quatre étapes pour valider le
 
 ## <a name="extract-the-json-web-token"></a>Extraction du jeton Web JSON
 
-Le jeton renvoyé par [getUserIdentityTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) est une représentation de chaîne encodée du jeton. Dans ce formulaire, conformément au document RFC 7519, tous les jetons JWT se composent de trois parties, séparées par un point. Le format est comme suit.
+Le jeton renvoyé par [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) est une représentation de chaîne encodée du jeton. Dans ce formulaire, conformément au document RFC 7519, tous les jetons JWT se composent de trois parties, séparées par un point. Le format est comme suit.
 
 ```json
 {header}.{payload}.{signature}
@@ -35,27 +35,27 @@ Une fois les trois composants décodés, vous pouvez poursuivre avec la validati
 Pour valider le contenu du jeton, vous devez vérifier les éléments suivants :
 
 - Vérifiez l’en-tête et vérifiez que :
-  - `typ` est définie sur `JWT` .
-  - `alg` est définie sur `RS256` .
+  - `typ` est définie sur `JWT`.
+  - `alg` est définie sur `RS256`.
   - `x5t` est présente.
 
 - Vérifiez la charge utile et vérifiez que :
-  - `amurl` est définie sur l’emplacement d’un fichier manifeste de clé de signature de jetons `appctx` autorisé. Par exemple, la valeur `amurl` attendue pour Microsoft 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1 . Voir la section suivante [Vérifier le domaine pour](#verify-the-domain) plus d’informations.
-  - L’heure actuelle se trouve entre les heures spécifiées dans les `nbf` `exp` revendications. La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
+  - `amurl` est définie `appctx` sur l’emplacement d’un fichier manifeste de clé de signature de jetons autorisé. Par exemple, la valeur attendue `amurl` pour Microsoft 365 est https://outlook.office365.com:443/autodiscover/metadata/json/1. Voir la section suivante [Vérifier le domaine pour](#verify-the-domain) plus d’informations.
+  - L’heure actuelle se trouve entre les heures spécifiées dans les `nbf` revendications `exp` . La revendication `nbf` spécifie le début de la période où le jeton est considéré comme valide et la revendication `exp` spécifie le délai d’expiration pour le jeton. Ceci est recommandé pour permettre certains écarts dans les paramètres de l’horloge entre les serveurs.
   - `aud` est l’URL attendue pour votre add-in.
-  - `version` à `appctx` l’intérieur de la revendication est définie sur `ExIdTok.V1` .
+  - `version` à l’intérieur de `appctx` la revendication est définie sur `ExIdTok.V1`.
 
 ### <a name="verify-the-domain"></a>Vérifier le domaine
 
-Lorsque vous implémentez la logique de vérification décrite dans la section précédente, vous devez également exiger que le domaine de la revendication corresponde au domaine de découverte automatique `amurl` de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique [pour Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
+Lorsque vous implémentez la logique de vérification décrite dans la section précédente, `amurl` vous devez également exiger que le domaine de la revendication corresponde au domaine de découverte automatique de l’utilisateur. Pour ce faire, vous devez utiliser ou implémenter la découverte automatique pour [Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
 
-- Par Exchange Online, confirmez qu’il s’agit d’un domaine connu ( ou qu’il appartient à un cloud spécifique à la géo ou à la spécialité ( Office 365 URL et `amurl` https://outlook.office365.com:443/autodiscover/metadata/json/1) plages d’adresses[IP](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)).
+- Par Exchange Online, `amurl` confirmez qu’il s’agit d’un domaine connu (https://outlook.office365.com:443/autodiscover/metadata/json/1)ou qu’il appartient à un cloud spécifique à une géo ou à un nuage de spécialités (URL Office 365 et [plages d’adresses IP](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)).
 
-- Si votre service de add-in dispose d’une configuration qui existe déjà avec le client de l’utilisateur, vous pouvez établir si cette configuration `amurl` est fiable.
+- Si votre service de add-in dispose d’une configuration qui existe déjà avec le client de l’utilisateur, vous pouvez établir si cette `amurl` configuration est fiable.
 
-- Pour un [déploiement Exchange hybride,](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true)utilisez la découverte automatique basée sur OAuth pour vérifier le domaine attendu pour l’utilisateur. Toutefois, alors que l’utilisateur devra s’authentifier dans le cadre du flux de découverte automatique, votre module de découverte automatique ne doit jamais collecter les informations d’identification de l’utilisateur et s’authentifier de base.
+- Pour un [Exchange hybride](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true), utilisez la découverte automatique basée sur OAuth pour vérifier le domaine attendu pour l’utilisateur. Toutefois, alors que l’utilisateur devra s’authentifier dans le cadre du flux de découverte automatique, votre module de découverte automatique ne doit jamais collecter les informations d’identification de l’utilisateur et s’authentifier de base.
 
-Si votre application ne peut pas vérifier l’utilisation de l’une de ces options, vous pouvez choisir de l’arrêter normalement avec une notification appropriée à l’utilisateur si l’authentification est nécessaire pour le flux de travail du `amurl` module.
+Si votre application ne peut pas vérifier l’utilisation de l’une de ces options, vous pouvez choisir de l’arrêter normalement avec une notification appropriée à l’utilisateur `amurl` si l’authentification est nécessaire pour le flux de travail du module.
 
 ## <a name="validate-the-identity-token-signature"></a>Validation de la signature du jeton d’identité
 
@@ -110,11 +110,11 @@ Une fois que vous avez trouvé la bonne clé publique, vérifiez la signature. L
 
 ## <a name="compute-the-unique-id-for-an-exchange-account"></a>Calculer l’ID unique d’un compte Exchange
 
-Créez un identificateur unique pour un compte Exchange en concatenant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange pour le compte. Lorsque vous avez cet identificateur unique, utilisez-le pour créer un système d' sign-on unique (SSO) pour Outlook service web de votre application. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, consultez la section [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
+Créez un identificateur unique pour un compte Exchange en concatenant l’URL du document de métadonnées d’authentification avec l’identificateur Exchange pour le compte. Lorsque vous avez cet identificateur unique, utilisez-le pour créer un système d’sign-on unique (SSO) pour Outlook service web de votre application. Pour plus d’informations sur l’utilisation de l’identificateur unique pour l’authentification unique, consultez la section [Authentifier un utilisateur avec un jeton d’identité pour Exchange](authenticate-a-user-with-an-identity-token.md).
 
 ## <a name="use-a-library-to-validate-the-token"></a>Utiliser une bibliothèque pour valider le jeton
 
-Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft fournit la bibliothèque qui peut être utilisée pour valider les `System.IdentityModel.Tokens.Jwt` jetons Exchange’identité de l’utilisateur.
+Il existe un certain nombre de bibliothèques qui permettent une analyse et une validation générales du jeton JWT. Microsoft fournit la bibliothèque `System.IdentityModel.Tokens.Jwt` qui peut être utilisée pour valider les jetons d’Exchange’utilisateur.
 
 > [!IMPORTANT]
 > Nous ne recommandons plus l’API gérée des services web Exchange, car la Microsoft.Exchange.WebServices.Auth.dll, bien que toujours disponible, est désormais obsolète et s’appuie sur des bibliothèques non pris en charge telles que Microsoft.IdentityModel.Extensions.dll.

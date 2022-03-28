@@ -3,12 +3,12 @@ title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b5b770d36177307989500db89f1f4f8ca859ec
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745686"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484302"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > Ces vérifications ne sont pas nécessaires pour les API appartenant à l’ensemble de conditions requises dont la version est la même que celle spécifiée dans le manifeste.
 
-Spécifiez l’ensemble de conditions requises minimal prenant en charge l’ensemble d’API critique pour votre scénario, sans lequel les fonctionnalités de votre complément ne fonctionneront pas. Spécifiez l’ensemble de conditions requises dans le manifeste dans l’élément `<Requirements>`. Pour plus d’informations, consultez les rubriques [Manifestes des compléments Outlook](manifests.md) et [Présentation de l’ensemble de conditions requises pour les API Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md).
+Spécifiez l’ensemble de conditions requises minimal prenant en charge l’ensemble d’API critique pour votre scénario, sans lequel les fonctionnalités de votre complément ne fonctionneront pas. Spécifiez l’ensemble de conditions requises dans le manifeste dans l’élément `<Requirements>`. Pour plus d’informations, consultez les rubriques [Manifestes des compléments Outlook](manifests.md) et [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets).
 
 L’élément `<Methods>` ne s’applique pas aux compléments Outlook. Vous ne pouvez donc pas déclarer la prise en charge de méthodes spécifiques.
 
@@ -63,7 +63,7 @@ Votre complément requiert les autorisations appropriées pour utiliser les API 
 | **Restricted** | Permet l’utilisation d’entités, mais pas d’expressions régulières. |
 | **Lire l’élément** | En plus des autorisations indiquées dans **Restricted**, il autorise :<ul><li>expressions régulières</li><li>l’accès en lecture de l’API du complément Outlook</li><li>l’obtention des propriétés de l’élément et du jeton de rappel</li></ul> |
 | **Lecture/Écriture** | En plus des autorisations indiquées dans **Read item**, il autorise :<ul><li>l’accès total à l’API du complément Outlook, à l’exception de `makeEwsRequestAsync`</li><li>la définition des propriétés de l’élément</li></ul> |
-| **Lire/écrire dans la boîte aux lettres** | En plus des autorisations indiquées dans **Read/write**, il autorise :<ul><li>la création, la lecture, l’écriture d’éléments et de dossiers</li><li>l’envoi d’éléments</li><li>l’appel de [makeEwsRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods)</li></ul> |
+| **Lire/écrire dans la boîte aux lettres** | En plus des autorisations indiquées dans **Read/write**, il autorise :<ul><li>la création, la lecture, l’écriture d’éléments et de dossiers</li><li>l’envoi d’éléments</li><li>l’appel de [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
 En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, voir [Confidentialité et sécurité pour les Office de sécurité](../concepts/privacy-and-security.md).
 
@@ -74,5 +74,5 @@ En général, vous devez spécifier l’autorisation minimum nécessaire pour vo
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifestes de complément Outlook](manifests.md)
-- [Présentation de l’ensemble de conditions requises pour les API Outlook](../reference/requirement-sets/outlook-api-requirement-sets.md)
+- [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets)
 - [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)

@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 5282d803900e3f18ecbf8799520eae71779f8f73
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743230"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483869"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de commande
 
@@ -35,7 +35,7 @@ L’ajout de raccourcis clavier personnalisés nécessite que votre add-in utili
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Lier le fichier de mappage au manifeste
 
-Juste *en dessous* (pas à l’intérieur) `<VersionOverrides>` de l’élément dans le manifeste, ajoutez [un élément ExtendedOverrides](../reference/manifest/extendedoverrides.md) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON dans votre projet que vous créerez à une étape ultérieure.
+Juste *en dessous* (pas à l’intérieur) `<VersionOverrides>` de l’élément dans le manifeste, ajoutez [un élément ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON dans votre projet que vous créerez à une étape ultérieure.
 
 ```xml
     ...
@@ -46,7 +46,7 @@ Juste *en dessous* (pas à l’intérieur) `<VersionOverrides>` de l’élément
 
 ## <a name="create-or-edit-the-shortcuts-json-file"></a>Créer ou modifier le fichier JSON de raccourcis
 
-Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès au fichier correspond `Url` à l’emplacement que vous avez spécifié pour l’attribut de l’élément [ExtendedOverrides](../reference/manifest/extendedoverrides.md) . Ce fichier décrit vos raccourcis clavier et les actions qu’ils appelleront.
+Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès au fichier correspond `Url` à l’emplacement que vous avez spécifié pour l’attribut de l’élément [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Ce fichier décrit vos raccourcis clavier et les actions qu’ils appelleront.
 
 1. Le fichier JSON se trouve à l’intérieur de deux tableaux. Le tableau d’actions contient des objets qui définissent les actions à appeler et le tableau de raccourcis contient des objets qui maient des combinaisons de touches sur des actions. Voici un exemple.
     ```json
@@ -270,7 +270,7 @@ Votre add-in peut permettre aux utilisateurs de réaffecter les actions du modul
 > Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Microsoft 365. Si vous n’avez pas déjà d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
-> Les API décrites dans cette section nécessitent [l’ensemble de conditions requises KeyboardShortcuts 1.1](../reference/requirement-sets/keyboard-shortcuts-requirement-sets.md) .
+> Les API décrites dans cette section nécessitent [l’ensemble de conditions requises KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) .
 
 Utilisez la [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) pour affecter les combinaisons de clavier personnalisées d’un utilisateur à vos actions de modules. La méthode prend un paramètre de type `{[actionId:string]: string|null}`, `actionId`où les s sont un sous-ensemble des ID d’action qui doivent être définis dans le manifeste JSON étendu du module. Les valeurs sont les combinaisons de touches préférées de l’utilisateur. La valeur peut également `null`être , `actionId` ce qui permet de supprimer toute personnalisation pour cela et de revenir à la combinaison de clavier par défaut définie dans le manifeste JSON étendu du module.
 
@@ -311,7 +311,7 @@ Office.actions.getShortcuts()
 
 ```
 
-Comme décrit dans [Éviter les combinaisons de touches](#avoid-key-combinations-in-use-by-other-add-ins) en cours d’utilisation par d’autres modules, il est bon d’éviter les conflits dans les raccourcis. Pour découvrir si une ou plusieurs combinaisons de touches sont déjà utilisées, passez-les en tant que tableau de chaînes à la [méthode Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member). La méthode renvoie un rapport contenant des combinaisons de touches qui sont déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}`. La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Shift+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie `true`sur . Par exemple, `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
+Comme décrit dans [Éviter les combinaisons de touches](#avoid-key-combinations-in-use-by-other-add-ins) en cours d’utilisation par d’autres modules, il est bon d’éviter les conflits dans les raccourcis. Pour découvrir si une ou plusieurs combinaisons de touches sont déjà utilisées, passez-les en tant que tableau de chaînes à la [méthode Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member). La méthode renvoie un rapport contenant des combinaisons de touches qui sont déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}`. La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Shift+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie `true`sur . Par exemple : `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];

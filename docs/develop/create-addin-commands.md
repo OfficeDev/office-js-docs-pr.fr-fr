@@ -3,16 +3,16 @@ title: Créer des commandes complémentaires dans votre formulaire pour Excel, P
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
 ms.date: 02/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fde330cb33018f33e5de156e5b15dd1f1819efa
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 248fd3cf36e27cfbb345a5379591b30619584d6b
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743919"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483778"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
-Utilisez **[VersionOverrides](../reference/manifest/versionoverrides.md)** dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
+Utilisez **[VersionOverrides](/javascript/api/manifest/versionoverrides)** dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
 
 - créer des éléments d’interface utilisateur ou des points d’entrée qui facilitent l’utilisation des fonctionnalités de votre complément ;
 - ajouter des boutons ou une liste déroulante de boutons sur le ruban ;
@@ -146,7 +146,7 @@ L’exemple suivant illustre l’utilisation des éléments **Hôtes**, **Hôte*
 
 ## <a name="step-5-add-the-functionfile-element"></a>Étape 5 : ajouter l’élément FunctionFile
 
-L’élément **FunctionFile** définit un fichier qui contient du code JavaScript à exécuter lorsqu’une commande de complément utilise une action **ExecuteFunction** (reportez-vous à [Contrôles de bouton](../reference/manifest/control-button.md) pour obtenir une description). L’attribut **resid** de l’élément **FunctionFile** est défini sur un fichier HTML qui inclut tous les fichiers JavaScript requis par vos commandes de complément. Vous ne pouvez pas créer une liaison directe vers un fichier JavaScript. Vous pouvez uniquement créer une liaison vers un fichier HTML. Le nom du fichier est indiqué en tant qu’élément **Url** dans l’élément **Resources**.
+L’élément **FunctionFile** définit un fichier qui contient du code JavaScript à exécuter lorsqu’une commande de complément utilise une action **ExecuteFunction** (reportez-vous à [Contrôles de bouton](/javascript/api/manifest/control-button) pour obtenir une description). L’attribut **resid** de l’élément **FunctionFile** est défini sur un fichier HTML qui inclut tous les fichiers JavaScript requis par vos commandes de complément. Vous ne pouvez pas créer une liaison directe vers un fichier JavaScript. Vous pouvez uniquement créer une liaison vers un fichier HTML. Le nom du fichier est indiqué en tant qu’élément **Url** dans l’élément **Resources**.
 
 Vous trouverez ci-dessous un exemple de l’élément **FunctionFile**.
   
@@ -164,7 +164,7 @@ Vous trouverez ci-dessous un exemple de l’élément **FunctionFile**.
 > [!IMPORTANT]
 > Assurez-vous que votre code JavaScript appelle `Office.initialize`.
 
-Le code JavaScript dans le fichier HTML référencé par l’élément **FunctionFile** doit appeler `Office.initialize`. L’élément **FunctionName** (reportez-vous à [Contrôles de bouton](../reference/manifest/control-button.md) pour obtenir une description) utilise les fonctions de **FunctionFile**.
+Le code JavaScript dans le fichier HTML référencé par l’élément **FunctionFile** doit appeler `Office.initialize`. L’élément **FunctionName** (reportez-vous à [Contrôles de bouton](/javascript/api/manifest/control-button) pour obtenir une description) utilise les fonctions de **FunctionFile**.
 
 Le code suivant montre comment implémenter la fonction utilisée par **FunctionName**.
 
@@ -249,13 +249,13 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 |Élément|Description|
 |:-----|:-----|
 |**CustomTab** <br/> |Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. <br/> |
-|**OfficeTab** <br/> |Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. <br/> Pour plus d’informations sur les valeurs d’onglet à utiliser avec **l’attribut id**, voir Valeurs de tabulation pour les [onglets application Office ruban par défaut](../reference/manifest/officetab.md).  <br/> |
+|**OfficeTab** <br/> |Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. <br/> Pour plus d’informations sur les valeurs d’onglet à utiliser avec **l’attribut id**, voir Valeurs de tabulation pour les [onglets application Office ruban par défaut](/javascript/api/manifest/officetab).  <br/> |
 |**OfficeMenu** <br/> | Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul. <br/> |
 |**Group** <br/> |Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. <br/> |
 |**Label** <br/> |Obligatoire. L’étiquette du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
 |**Icon** <br/> |Obligatoire. Spécifie l’icône du groupe à utiliser sur de petits appareils, ou lorsqu’un nombre trop important de boutons est affiché. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément **Ressources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’images sont obligatoires : 16, 32 et 80. 5 tailles facultatives sont également prises en charge : 20, 24, 40, 48 et 64. <br/> |
 |**Tooltip** <br/> |Facultatif. Info-bulle du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
-|**Control** <br/> |Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus [d’informations](../reference/manifest/control-button.md) , voir Contrôles de bouton et [contrôles](../reference/manifest/control-menu.md) de menu. <br/>**Remarque :** pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.          |
+|**Control** <br/> |Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus [d’informations](/javascript/api/manifest/control-button) , voir Contrôles de bouton et [contrôles](/javascript/api/manifest/control-menu) de menu. <br/>**Remarque :** pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.          |
 
 ### <a name="button-controls"></a>Contrôles de bouton
 
@@ -380,7 +380,7 @@ L’exemple de code ci-dessous indique comment définir un élément de menu com
 |**Tooltip** <br/> |Facultatif. Info-bulle du menu. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
 |**Info-bulle améliorée** <br/> | Obligatoire. Info-bulle multiligne associée au menu, qui est définie de la façon suivante : <br/> **Titre** <br/>  Obligatoire. Texte de l’info-bulle améliorée. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> **Description** <br/>  Obligatoire. Description de l’info-bulle. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
 |**Icon** <br/> | Obligatoire. Contient les éléments **Image** du menu. Les fichiers image doivent être au format .png. <br/> **Image** <br/>  Image du menu. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément **Ressources**. L’attribut **size** indique la taille, en pixels, de l’image. Trois tailles d’image, en pixels, sont nécessaires : 16, 32 et 80. 5 tailles facultatives, en pixels, sont également prises en charge : 20, 24, 40, 48 et 64. <br/> |
-|**Éléments** <br/> |Obligatoire. Contient les éléments **Élément** pour chaque élément de sous-menu. Chaque élément **Élément** contient les mêmes éléments enfants que les [contrôles de bouton](../reference/manifest/control-button.md).  <br/> |
+|**Éléments** <br/> |Obligatoire. Contient les éléments **Élément** pour chaque élément de sous-menu. Chaque élément **Élément** contient les mêmes éléments enfants que les [contrôles de bouton](/javascript/api/manifest/control-button).  <br/> |
 
 ## <a name="step-7-add-the-resources-element"></a>Étape 7 : ajouter l’élément Resources
 

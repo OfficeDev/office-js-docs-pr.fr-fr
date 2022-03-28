@@ -4,16 +4,16 @@ description: Spécifie les plateformes Office et les builds qui la prise en char
 ms.date: 03/12/2022
 ms.prod: non-product-specific
 ms.localizationpriority: medium
-ms.openlocfilehash: e399fe14626da2abd688b0e486454908ce1e9f91
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8dc590471433f1a98e6a653cb167bac70e1cbf1a
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746687"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404660"
 ---
 # <a name="ribbon-api-requirement-sets"></a>Ensembles de conditions requises des API ruban
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’exécution pour déterminer si une application Office prend en charge les API qu’ils nécessitent. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés des membres de l’API. Les compléments Office utilisent les ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification de l’exécution pour déterminer si une application Office prend en charge les API requises par un complément. Pour plus d’informations, consultez la rubrique [Versions d’Office et ensembles de conditions requises](../../develop/office-versions-and-requirement-sets.md).
 
 L’ensemble d’API du Ruban prend en charge le contrôle par programme du moment où les commandes de module personnalisées (c’est-à-dire, les boutons de ruban personnalisés et les éléments de menu) sont activés et désactivés, et lorsque des onglets contextuels apparaissent sur le ruban.
 
@@ -22,12 +22,12 @@ L’ensemble d’API du Ruban prend en charge le contrôle par programme du mome
 
 Les compléments Office s’exécutent sur plusieurs versions d’Office. Le tableau suivant répertorie les ensembles de conditions requises de l’API du ruban, les applications clientes Office qui la prise en charge, ainsi que les numéros de build ou de version de l’application Office.
 
-|  Ensemble de conditions requises  | Office 2021 ou une Windows\*<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le Web\*  |  Office Online Server  |
+|  Ensemble de conditions requises  | Office 2021 ou une Windows\*<br>(achat définitif) | Office pour Windows\*<br>(connecté à un abonnement Microsoft 365) |  Office sur iPad<br>(connecté à un abonnement Microsoft 365)  |  Office sur Mac\*<br>(les deux abonnements<br> et achat Office sur Mac 2019 et ultérieur)   | Office sur le web\*  |  Office Online Server  |
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-| RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | S/O | 16.53.806.0 | Mai 2021 | S/O|
-| RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | S/O | 16.38 | Novembre 2020 | S/O|
+| RibbonApi 1.2  | Build 16.0.14326.20454 ou ultérieure | 2102 (build 13801.20294) | N/A | 16.53.806.0 | Mai 2021 | N/A|
+| RibbonApi 1.1  | Build 16.0.14326.20454 ou ultérieure | Voir la prise en charge<br>section ci-dessous | N/A | 16.38 | Novembre 2020 | N/A|
 
-> **&#42;** L’API ruban est prise en charge uniquement dans Excel.
+> **&#42;** L’API ruban est prise en charge pour les modules de production uniquement dans Excel. Il est disponible en prévisualisation dans PowerPoint et Word, mais uniquement dans Office sur Windows (abonnement) et Mac. 
 
 ## <a name="support-for-version-11-on-office-on-windows-subscription"></a>Prise en charge de la version 1.1 sur Office sur Windows (abonnement)
 

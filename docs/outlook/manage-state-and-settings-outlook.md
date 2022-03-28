@@ -1,16 +1,21 @@
 ---
 title: Gérer l’état et les paramètres d’un Outlook de gestion
-description: Découvrez comment rendre persistants l’état et les paramètres d’un Outlook un autre.
+description: Découvrez comment faire persister l’état et les paramètres d’un Outlook un autre.
 ms.date: 05/17/2021
 ms.localizationpriority: medium
+ms.openlocfilehash: 896c473baad95515b199d8934c81745c619374a0
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.translationtype: MT
+ms.contentlocale: fr-FR
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484674"
 ---
-
 # <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’état et les paramètres d’un Outlook de gestion
 
 > [!NOTE]
 > Veuillez consulter [l’état et les paramètres persistants](../develop/persisting-add-in-state-and-settings.md) du module de mise en place dans la section **Concepts** de base de cette documentation avant de lire cet article.
 
-Pour les Outlook, l’API JavaScript Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour l’enregistrement de l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](../reference/manifest/id.md) du complément qui les a créées.
+Pour les Outlook, l’API JavaScript Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour l’enregistrement de l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](/javascript/api/manifest/id) du complément qui les a créées.
 
 |**Objet**|**Emplacement de stockage**|
 |:-----|:-----|
@@ -132,7 +137,7 @@ function saveCallback(asyncResult) {
 
 ### <a name="platform-behavior-in-emails"></a>Comportement de la plateforme dans les e-mails
 
-Le tableau suivant récapitule le comportement des propriétés personnalisées enregistrées dans les e-mails pour Outlook clients.
+Le tableau suivant récapitule le comportement des propriétés personnalisées enregistrées dans les messages électroniques pour Outlook clients.
 
 |Scénario|Windows|Web|Mac|
 |---|---|---|---|

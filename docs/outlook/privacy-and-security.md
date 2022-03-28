@@ -3,12 +3,12 @@ title: Confidentialité, autorisations et sécurité pour les compléments Outlo
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
 ms.date: 07/27/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 594c5715336533931d68acaffc5b8688cf1a40a1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 07f1565432d5b6b1e0371e9238fffb835b7d8931
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150423"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484669"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -81,7 +81,7 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
   > [!IMPORTANT]
   > - Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
   >
-  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, voir [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, voir [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - Avant d’installer un complément de AppSource, les utilisateurs finals peuvent voir l’accès dont peut disposer le complément, ainsi que les actions qu’il peut effectuer sur leurs données, et doivent explicitement confirmer qu’ils veulent poursuivre. Aucun complément Outlook n’est automatiquement transmis sur un ordinateur client sans une validation manuelle par l’utilisateur ou l’administrateur.
 
@@ -119,7 +119,7 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
 
 - Les développeurs demandent un niveau approprié d’autorisation pour un complément Outlook en fonction de la manière dont il doit être activé, et de son besoin de lire ou d’écrire certaines propriétés d’un élément, ou de créer et d’envoyer un élément.
 
-- Les développeurs demandent une autorisation en utilisant l’élément [Permissions](../reference/manifest/permissions.md) dans le manifeste du complément Outlook, en affectant une valeur **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox**, selon le cas.
+- Les développeurs demandent une autorisation en utilisant l’élément [Permissions](/javascript/api/manifest/permissions) dans le manifeste du complément Outlook, en affectant une valeur **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox**, selon le cas.
 
   > [!NOTE]
   > Notez que l’autorisation **ReadWriteItem** est disponible à partir du schéma de manifeste version 1.1.
@@ -148,7 +148,7 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
 
 - Les développeurs doivent demander l’autorisation **Lire/écrire dans l’élément** si le complément Outlook doit écrire dans les propriétés de l’élément composé, comme les noms des destinataires, les adresses de messagerie, le corps et l’objet, ou s’il a besoin d’ajouter ou de supprimer des pièces jointes d’élément.
 
-- Les développeurs demandent l’autorisation **Lire/écrire dans la boîte aux lettres** uniquement si le complément Outlook doit effectuer une ou plusieurs des actions suivantes à l’aide de la méthode [mailbox.makeEWSRequestAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods).
+- Les développeurs demandent l’autorisation **Lire/écrire dans la boîte aux lettres** uniquement si le complément Outlook doit effectuer une ou plusieurs des actions suivantes à l’aide de la méthode [mailbox.makeEWSRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods).
 
   - Lire ou écrire des propriétés d’éléments dans la boîte aux lettres.
   - Créer, lire, écrire ou envoyer des éléments dans la boîte aux lettres.

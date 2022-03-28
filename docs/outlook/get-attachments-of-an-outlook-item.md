@@ -3,12 +3,12 @@ title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ae6d635535e9d8882877a6567160fa540c138310
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: b8f851eba0eae9373d751b63e37c35db5f5ead3a
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "62074349"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484263"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
@@ -18,21 +18,21 @@ Vous pouvez obtenir les pièces jointes d’un Outlook de deux façons, mais l�
 
     Votre application peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
 
-1. Utilisez [l’API getAttachmentContentAsync,](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#methods) disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge [: AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+1. Utilisez [l’API getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) , disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge [: AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
-    Cette API peut être pratique si EWS/REST n’est pas disponible (par exemple, en raison de la configuration d’administration de votre serveur Exchange) ou si votre application souhaite utiliser le contenu base64 directement en HTML ou JavaScript. En outre, l’API est disponible dans les scénarios de composition où la pièce jointe n’a peut-être pas encore été synchronisée avec Exchange ; pour plus d’informations, voir Gérer les pièces `getAttachmentContentAsync` [jointes d’un](add-and-remove-attachments-to-an-item-in-a-compose-form.md) élément dans un formulaire de composition dans Outlook.
+    Cette API peut être pratique si EWS/REST n’est pas disponible (par exemple, en raison de la configuration d’administration de votre serveur Exchange) ou si votre application souhaite utiliser le contenu base64 directement en HTML ou JavaScript. En outre, `getAttachmentContentAsync` l’API est disponible dans les scénarios de composition où la pièce jointe n’a peut-être pas encore été synchronisée avec Exchange . Pour plus d’informations, voir Gérer les pièces [jointes d’un](add-and-remove-attachments-to-an-item-in-a-compose-form.md) élément dans un formulaire de composition dans Outlook.
 
 Cet article traite de la première option. Pour envoyer des informations de pièce jointe au service distant, utilisez les propriétés et la fonction suivantes.
 
 - Propriété [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) &ndash; fournit l’URL des services web Exchange (EWS) sur le serveur Exchange qui héberge la boîte aux lettres. Votre service utilise cette URL pour appeler la méthode [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) ou l’opération EWS [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation).
 
-- Propriété [Office.context.mailbox.item.attachments](../reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md#properties) &ndash; obtient un tableau d’objets [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails), un pour chaque pièce jointe de l’élément.
+- Propriété [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) &ndash; obtient un tableau d’objets [AttachmentDetails](/javascript/api/outlook/office.attachmentdetails), un pour chaque pièce jointe de l’élément.
 
-- Fonction [Office.context.mailbox.getCallbackTokenAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) &ndash; réalise un appel asynchrone vers le serveur Exchange hébergeant la boîte aux lettres pour obtenir un jeton de rappel que le serveur renvoie au serveur Exchange afin d’authentifier une demande de pièce jointe.
+- Fonction [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) &ndash; réalise un appel asynchrone vers le serveur Exchange hébergeant la boîte aux lettres pour obtenir un jeton de rappel que le serveur renvoie au serveur Exchange afin d’authentifier une demande de pièce jointe.
 
 ## <a name="using-the-attachments-api"></a>Utilisation de l’API de pièces jointes
 
-Pour utiliser l’API de pièces jointes afin d’obtenir des pièces jointes à partir d Exchange boîte aux lettres, effectuez les étapes suivantes.
+Pour utiliser l’API de pièces jointes afin d’obtenir des pièces jointes à partir d’Exchange boîte aux lettres, effectuez les étapes suivantes.
 
 1. Affichez le complément lorsque l’utilisateur visualise un message ou un rendez-vous qui contient une pièce jointe.
 
@@ -49,7 +49,7 @@ Chacune de ces étapes est décrite en détail dans les sections suivantes à l�
 
 ## <a name="get-a-callback-token"></a>Obtenir un jeton de rappel
 
-L’objet [Office.context.mailbox](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md) fournit la fonction `getCallbackTokenAsync` afin d’obtenir un jeton dont peut se servir le serveur distant pour vous authentifier avec le serveur Exchange. Le code suivant montre une fonction dans un complément qui démarre la demande asynchrone pour obtenir le jeton de rappel, et la fonction de rappel qui récupère la réponse. Le jeton de rappel est stocké dans l’objet de demande de service défini dans la section suivante.
+L’objet [Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) fournit la fonction `getCallbackTokenAsync` afin d’obtenir un jeton dont peut se servir le serveur distant pour vous authentifier avec le serveur Exchange. Le code suivant montre une fonction dans un complément qui démarre la demande asynchrone pour obtenir le jeton de rappel, et la fonction de rappel qui récupère la réponse. Le jeton de rappel est stocké dans l’objet de demande de service défini dans la section suivante.
 
 ```js
 function getAttachmentToken() {
@@ -420,4 +420,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md)
 - [Explorer l’API managée EWS, EWS et les services web dans Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Prise en main des applications clientes d'API managée EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook' SSO du module de 2013](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Outlook’sso du add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)

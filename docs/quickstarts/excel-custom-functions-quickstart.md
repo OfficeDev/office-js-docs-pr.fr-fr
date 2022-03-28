@@ -1,15 +1,15 @@
 ---
-ms.date: 03/18/2022
+ms.date: 03/23/2022
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 920575a1976248be2cbc0ad945654cec63f542ab
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
+ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746403"
+ms.lasthandoff: 03/25/2022
+ms.locfileid: "64404704"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -35,7 +35,7 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
     - **Sélectionnez un type de script :** `JavaScript`
     - **Comment souhaitez-vous nommer votre complément ?** `starcount`
 
-    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.](../images/starcountPrompt.png)
+    :::image type="content" source="../images/starcountPrompt.png" alt-text="Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.":::
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
@@ -62,7 +62,7 @@ npm run start:desktop
 ```
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-    
+
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
 Pour tester votre complément dans Excel sur le web, exécutez la commande suivante. Lorsque vous exécutez cette commande, le serveur web local démarre. Remplacez « {url} » par l’URL d’un document Excel sur votre OneDrive ou une bibliothèque SharePoint sur laquelle vous disposez d’autorisations.
@@ -84,6 +84,8 @@ Dans votre classeur Excel, essayez la fonction personnalisée `ADD` en effectuan
 1. Exécutez la`CONTOSO.ADD` fonction, en utilisant les nombres `10` et `200` comme paramètres d’entrée, en spécifiant la valeur`=CONTOSO.ADD(10,200)`suivante dans la cellule et appuyez sur entrée.
 
 Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez spécifiés comme paramètres d’entrée. La saisie de`=CONTOSO.ADD(10,200)` doit générer le résultat **210** dans la cellule une fois que vous appuyez sur ENTRÉE.
+
+[!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
 ## <a name="next-steps"></a>Étapes suivantes
 

@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 03/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c3445199098efc95ed54b20105418502368bc16
-ms.sourcegitcommit: 7f4794f73ca3b6090619f790adb4a97c80b9c056
+ms.openlocfilehash: cf3454f68c76b40392ddd49586585d09a32a30e7
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/09/2022
-ms.locfileid: "63399998"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484280"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur des événements
 
@@ -18,7 +18,7 @@ Sans la fonctionnalité d’activation basée sur des événements, un utilisate
 À la fin de cette walkthrough, vous aurez un add-in qui s’exécute chaque fois qu’un nouvel élément est créé et définit l’objet.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md). Voir [les clients et les plateformes](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="supported-events"></a>Événements pris en charge
 
@@ -29,17 +29,17 @@ Le tableau suivant répertorie les événements actuellement disponibles et les 
 
 |Événement|Description|Ensemble de conditions requises minimal et clients pris en charge|
 |---|---|---|
-|`OnNewMessageCompose`|Lors de la composition d’un nouveau message (y compris répondre, répondre à tous et transmettre), mais pas lors de la modification, par exemple, d’un brouillon.|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>- Windows<br>- Navigateur Web<br>- Prévisualisation de l’interface utilisateur pour Mac|
-|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas de la modification d’un rendez-vous existant.|[1.10](../reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md)<br><br>- Windows<br>- Navigateur Web<br>- Prévisualisation de l’interface utilisateur pour Mac|
-|`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.<br><br>Objet de données spécifique à un événement [: AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à un événement [: AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement [: RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnAppointmentAttendeesChanged`|Lors de l’ajout ou de la suppression de participants lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement [: RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnAppointmentTimeChanged`|Lors de la modification de la date et de l’heure lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement [: AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnAppointmentRecurrenceChanged`|Lors de l’ajout, de la modification ou de la suppression des détails de la récurrence lors de la composition d’un rendez-vous. Si la date/l’heure est modifiée, l’événement `OnAppointmentTimeChanged` est également déclenché.<br><br>Objet de données spécifique à un événement [: RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnInfoBarDismissClicked`|Lors du rejet d’une notification lors de la composition d’un élément de message ou de rendez-vous. Seul le add-in qui a ajouté la notification sera averti.<br><br>Objet de données spécifique à [l’événement : InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](../reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md)<br><br>- Windows<br>- Navigateur Web|
-|`OnMessageSend`|Lors de l’envoi d’un élément de message. Pour en savoir plus, reportez-vous à la [walkthrough Smart Alerts](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>- Windows|
-|`OnAppointmentSend`|Lors de l’envoi d’un élément de rendez-vous. Pour en savoir plus, reportez-vous à la [walkthrough Smart Alerts](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md)<br><br>- Windows|
+|`OnNewMessageCompose`|Lors de la composition d’un nouveau message (y compris répondre, répondre à tous et transmettre), mais pas lors de la modification, par exemple, d’un brouillon.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<br>- Navigateur Web<br>- Prévisualisation de l’interface utilisateur pour Mac|
+|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas de la modification d’un rendez-vous existant.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<br>- Navigateur Web<br>- Prévisualisation de l’interface utilisateur pour Mac|
+|`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.<br><br>Objet de données spécifique à un événement [: AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à un événement [: AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement [: RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnAppointmentAttendeesChanged`|Lors de l’ajout ou de la suppression de participants lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement [: RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnAppointmentTimeChanged`|Lors de la modification de la date et de l’heure lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement [: AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnAppointmentRecurrenceChanged`|Lors de l’ajout, de la modification ou de la suppression des détails de la récurrence lors de la composition d’un rendez-vous. Si la date/l’heure est modifiée, l’événement `OnAppointmentTimeChanged` est également déclenché.<br><br>Objet de données spécifique à un événement [: RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnInfoBarDismissClicked`|Lors du rejet d’une notification lors de la composition d’un élément de message ou de rendez-vous. Seul le add-in qui a ajouté la notification sera averti.<br><br>Objet de données spécifique à [l’événement : InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<br>- Navigateur Web|
+|`OnMessageSend`|Lors de l’envoi d’un élément de message. Pour en savoir plus, reportez-vous à la [walkthrough Smart Alerts](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows|
+|`OnAppointmentSend`|Lors de l’envoi d’un élément de rendez-vous. Pour en savoir plus, reportez-vous à la [walkthrough Smart Alerts](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows|
 
 ### <a name="how-to-preview"></a>Comment prévisualiser
 
@@ -61,7 +61,7 @@ Pour afficher un aperçu de ces événements lorsqu’ils sont disponibles :
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer l’activation basée sur des événements de votre complément, vous devez configurer l’élément [Runtimes](../reference/manifest/runtimes.md) et le point `VersionOverridesV1_1` d’extension [LaunchEvent](../reference/manifest/extensionpoint.md#launchevent) dans le nœud du manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
+Pour activer l’activation basée sur des événements de votre complément, vous devez configurer l’élément [Runtimes](/javascript/api/manifest/runtimes) et le point `VersionOverridesV1_1` d’extension [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) dans le nœud du manifeste. Pour l’instant, `DesktopFormFactor` est le seul facteur de forme pris en charge.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 

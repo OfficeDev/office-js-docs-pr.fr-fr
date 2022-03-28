@@ -3,12 +3,12 @@ title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e418ba10fa5c0b35406b5b105fd1e97599323bc1
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: ab14f121c9f4e9ae32fc5b26740da80a0df72ce3
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150424"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64484149"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 
@@ -17,9 +17,9 @@ La commande de forme UX [taskpane](add-in-commands-for-outlook.md#launching-a-ta
 Toutefois, par défaut, si un utilisateur a un complément de volet Office ouvert pour un message dans le volet de lecture et sélectionne un nouveau message, le volet Office est automatiquement fermé. Pour un complément très sollicité, l’utilisateur peut préférer conserver ce volet ouvert, supprimant ainsi le besoin de réactiver le complément sur chaque message. Avec les volets Office épinglables, votre complément peut donner à l’utilisateur cette option.
 
 > [!NOTE]
-> Bien que la fonctionnalité des volets des tâches épinglables soit une nouveauté de l’ensemble de conditions requises [1.5,](../reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md)elle n’est actuellement disponible que pour les abonnés Microsoft 365 utilisant ce qui suit :
+> Bien que la fonctionnalité des volets des tâches épinglables soit une nouveauté de l’ensemble de conditions requises [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), elle n’est actuellement disponible que pour les abonnés Microsoft 365 utilisant ce qui suit :
 >
-> - Outlook 2016 ou version ultérieure sur Windows (build 7668.2000 ou ultérieure pour les utilisateurs des canaux Insider actuels ou Office, build 7900.xxxx ou version ultérieure pour les utilisateurs dans les canaux différés)
+> - Outlook 2016 ou version ultérieure sur Windows (build 7668.2000 ou ultérieure pour les utilisateurs des canaux Insider actuels ou Office, build 7900.xxxx ou version ultérieure pour les utilisateurs des canaux différés)
 > - Outlook 2016 version ultérieure sur Mac (version 16.13.503 ou ultérieure)
 > - Outlook moderne sur le web
 
@@ -31,9 +31,9 @@ Toutefois, par défaut, si un utilisateur a un complément de volet Office ouver
 
 ## <a name="support-task-pane-pinning"></a>Prise en charge de l’épinglage des volets des tâches
 
-La première étape consiste à ajouter une prise en charge de l’épinglage, ce qui est effectué dans le [manifeste](manifests.md) du complément. Cette opération est effectuée en ajoutant l’élément [SupportsPinning](../reference/manifest/action.md#supportspinning) à l’élément `Action` qui décrit le bouton du volet Office.
+La première étape consiste à ajouter une prise en charge de l’épinglage, ce qui est effectué dans le [manifeste](manifests.md) du complément. Cette opération est effectuée en ajoutant l’élément [SupportsPinning](/javascript/api/manifest/action#supportspinning) à l’élément `Action` qui décrit le bouton du volet Office.
 
-L’élément `SupportsPinning` est défini dans le schéma VersionOverrides v1.1, vous devez donc inclure un élément [VersionOverrides](../reference/manifest/versionoverrides.md) pour les versions 1.0 et 1.1.
+L’élément `SupportsPinning` est défini dans le schéma VersionOverrides v1.1, vous devez donc inclure un élément [VersionOverrides](/javascript/api/manifest/versionoverrides) pour les versions 1.0 et 1.1.
 
 > [!NOTE]
 > Si vous envisagez de [publier](../publish/publish.md) votre complément Outlook sur [AppSource](https://appsource.microsoft.com), lorsque vous utilisez l’élément **SupportsPinning** afin d’obtenir la [validation d’AppSource](/legal/marketplace/certification-policies), le contenu de votre complément ne doit pas être statique et doit afficher clairement les données liées au message qui est ouvert ou sélectionné dans la boîte aux lettres.
@@ -89,7 +89,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>Enregistrement du gestionnaire d’événements
 
-Utilisez la méthode [Office.context.mailbox.addHandlerAsync](../reference/objectmodel/preview-requirement-set/office.context.mailbox.md#methods) pour inscrire votre gestionnaire d’événements pour l’événement `Office.EventType.ItemChanged`. Cette opération doit être effectuée dans la fonction `Office.initialize` de votre volet Office.
+Utilisez la méthode [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour inscrire votre gestionnaire d’événements pour l’événement `Office.EventType.ItemChanged`. Cette opération doit être effectuée dans la fonction `Office.initialize` de votre volet Office.
 
 ```js
 Office.initialize = function (reason) {

@@ -2,4 +2,4 @@
 
 Votre complément peut utiliser des ensembles de conditions requises pour déterminer si l’application Office prend en charge les membres d’API nécessaires. Pour plus d’informations à ce sujet, consultez [les applications Office Spécifier et les conditions requises d’API](../develop/specify-office-hosts-and-api-requirements.md).
 
-Pour plus d’informations sur les plateformes, les ensembles de conditions requises et les API communes prises en charge par chaque application Office, consultez la rubrique [Disponibilité de la plateforme et de l’application cliente pour les compléments Office](../overview/office-add-in-availability.md).
+Pour plus d’informations sur les plateformes, les ensembles de conditions requises et les API communes prises en charge par chaque application Office, consultez la rubrique [Disponibilité de la plateforme et de l’application cliente pour les compléments Office](/javascript/api/requirement-sets).

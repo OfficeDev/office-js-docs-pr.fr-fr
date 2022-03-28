@@ -3,12 +3,12 @@ title: Positionner un onglet personnalisé sur le ruban
 description: Découvrez comment contrôler l’endroit où un onglet personnalisé apparaît sur Office ruban et s’il a le focus par défaut.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a3d5dd4e1268fdb7b596aa8b258666f16e65f10c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 0e1309e0e12817b9a1434f7865b1a578b3aba3f1
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743342"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483852"
 ---
 # <a name="position-a-custom-tab-on-the-ribbon"></a>Positionner un onglet personnalisé sur le ruban
 
@@ -22,7 +22,7 @@ Vous pouvez spécifier l’endroit où vous souhaitez que l’onglet personnalis
 > - La fonctionnalité et le markup du add-in décrits dans cet article sont disponibles *uniquement dans PowerPoint sur le web*.
 > - Le markup décrit dans cet article fonctionne uniquement sur les plateformes qui supportent l’ensemble de conditions **requises AddinCommands 1.3**. Voir [Comportement sur les plateformes non pris en cas de problème ci-dessous](#behavior-on-unsupported-platforms) .
 
-Spécifiez l’endroit où vous souhaitez qu’un onglet personnalisé apparaisse en identifiant l’onglet Office intégré à côté de celui-ci et en spécifiant s’il doit se trouver à gauche ou à droite de l’onglet intégré. Définissez ces spécifications en incluant un élément [InsertBefore](../reference/manifest/customtab.md#insertbefore) (gauche) ou [InsertAfter](../reference/manifest/customtab.md#insertafter) (droite) dans l’élément [CustomTab](../reference/manifest/customtab.md) du manifeste de votre add-in. (Vous ne pouvez pas avoir les deux éléments.)
+Spécifiez l’endroit où vous souhaitez qu’un onglet personnalisé apparaisse en identifiant l’onglet Office intégré à côté de celui-ci et en spécifiant s’il doit se trouver à gauche ou à droite de l’onglet intégré. Définissez ces spécifications en incluant un élément [InsertBefore](/javascript/api/manifest/customtab#insertbefore) (gauche) ou [InsertAfter](/javascript/api/manifest/customtab#insertafter) (droite) dans l’élément [CustomTab](/javascript/api/manifest/customtab) du manifeste de votre add-in. (Vous ne pouvez pas avoir les deux éléments.)
 
 Dans l’exemple suivant, l’onglet personnalisé est configuré pour apparaître juste *après* **l’onglet** Révision. Notez que la valeur de **l’élément InsertAfter** est l’ID de l’onglet Office intégré. 
 
@@ -55,4 +55,4 @@ Office toujours le focus par défaut sur l’onglet qui se trouve immédiatement
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportement sur les plateformes non pris en place
 
-Si votre add-in est installé sur une plateforme qui ne prend pas en charge l’ensemble de conditions [requises AddinCommands 1.3](../reference/requirement-sets/add-in-commands-requirement-sets.md), le markup décrit dans cet article est ignoré et votre onglet personnalisé apparaît en tant qu’onglet le plus à droite sur le ruban. Pour empêcher l’installation de votre add-in sur des plateformes qui ne le supportent pas, ajoutez une référence à l’ensemble de conditions requises dans **la section Conditions** requises du manifeste. Pour obtenir des instructions, voir [Spécifier Office versions et plateformes peuvent héberger votre module.](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) Vous pouvez également concevoir votre add-in pour qu’il offre une autre expérience lorsque **AddinCommands 1.3** n’est pas pris en charge, comme décrit dans La conception pour les expériences [alternatives](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Par exemple, si votre add-in contient des instructions qui supposent que l’onglet personnalisé est l’endroit où vous le souhaitez, vous pouvez avoir une autre version qui suppose que l’onglet est le plus à droite.
+Si votre add-in est installé sur une plateforme qui ne prend pas en charge l’ensemble de conditions [requises AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets), le markup décrit dans cet article est ignoré et votre onglet personnalisé apparaît en tant qu’onglet le plus à droite sur le ruban. Pour empêcher l’installation de votre add-in sur des plateformes qui ne le supportent pas, ajoutez une référence à l’ensemble de conditions requises dans **la section Conditions** requises du manifeste. Pour obtenir des instructions, voir [Spécifier Office versions et plateformes peuvent héberger votre module.](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) Vous pouvez également concevoir votre add-in pour qu’il offre une autre expérience lorsque **AddinCommands 1.3** n’est pas pris en charge, comme décrit dans La conception pour les expériences [alternatives](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Par exemple, si votre add-in contient des instructions qui supposent que l’onglet personnalisé est l’endroit où vous le souhaitez, vous pouvez avoir une autre version qui suppose que l’onglet est le plus à droite.

@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b7d4cc9605d330bade217f43958b0c2fcb37c724
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: ea167f338834245975f2e752803e264ddb8da5e6
+ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742953"
+ms.lasthandoff: 03/26/2022
+ms.locfileid: "64483931"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -49,13 +49,13 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
 
-- Vérifiez si votre Office fonctionne sur une application ou une plateforme [Office spécifique](../overview/office-add-in-availability.md).
+- Vérifiez si votre Office fonctionne sur une application ou une plateforme [Office spécifique](/javascript/api/requirement-sets).
 - Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
 - Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](../overview/office-add-in-availability.md)
+- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](/javascript/api/requirement-sets)
 - [Cœur de fabric dans les modules](fabric-core.md)
 - [Modèles de conception de l’expérience utilisateur pour les compléments Office](../design/ux-design-pattern-templates.md)
 - [Demande d’autorisations d’utilisation de l’API dans des compléments](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
