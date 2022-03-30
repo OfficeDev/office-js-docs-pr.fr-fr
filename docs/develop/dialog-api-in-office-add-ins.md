@@ -3,19 +3,19 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un Office de recherche.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f1972524db31226d3e850deb4f6a73057487fa7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 03859956fbc005f33212343b83470d4f91ef65ee
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483750"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496830"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
 Vous pouvez utiliser l’[API de dialogue Office](/javascript/api/office/office.ui) pour ouvrir des boîtes de dialogue dans votre complément Office. Cet article fournit des conseils concernant l’utilisation de l’API de dialogue dans votre complément Office.
 
 > [!NOTE]
-> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](/javascript/api/requirement-sets/dialog-api-requirement-sets). L’API de dialogue est actuellement prise en charge pour Excel, PowerPoint et Word. Outlook prise en charge est incluse dans différents&mdash; ensembles de conditions requises de boîte aux lettres. Pour plus d’informations, voir la référence d’API.
+> Pour plus d’informations sur les compléments où l’API de dialogue est actuellement prise en charge, consultez la rubrique relative aux [ensembles de conditions requises de l’API de dialogue](/javascript/api/requirement-sets/common/dialog-api-requirement-sets). L’API de dialogue est actuellement prise en charge pour Excel, PowerPoint et Word. Outlook prise en charge est incluse dans différents&mdash; ensembles de conditions requises de boîte aux lettres. Pour plus d’informations, voir la référence d’API.
 
 Un scénario principal pour l’API de dialogue consiste à activer l’authentification à l'aide d'une ressource telle que Google, Facebook, ou Microsoft Graph. Pour plus d’informations, voir [S’authentifier auprès de l'API de boîte de dialogue Office](auth-with-office-dialog-api.md) *une fois* que vous êtes familiarisé(e) avec cet article.
 
@@ -218,7 +218,7 @@ function processMessage(arg) {
 La boîte de dialogue ou le runtime JavaScript parent (soit dans un volet Des tâches, soit dans un runtime sans interface utilisateur qui héberge un fichier de fonction) peut être éloigné du domaine du module après l’ouverture de la boîte de dialogue. Si l’un de ces événements s’est produit, `messageParent` un appel échouera, sauf si votre code spécifie le domaine du runtime parent. Pour ce faire, ajoutez [un paramètre DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageParent`. Cet objet possède une `targetOrigin` propriété qui spécifie le domaine auquel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que la boîte de dialogue héberge actuellement.
 
 > [!NOTE]
-> L’utilisation `messageParent` pour envoyer un message entre domaines nécessite l’ensemble [de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures de Office qui ne prisent pas en charge l’ensemble de conditions requises, de sorte que le comportement de la méthode n’est pas affecté si vous le passez.
+> L’utilisation `messageParent` pour envoyer un message entre domaines nécessite l’ensemble [de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures de Office qui ne prisent pas en charge l’ensemble de conditions requises, de sorte que le comportement de la méthode n’est pas affecté si vous le passez.
 
 Voici un exemple d’utilisation pour `messageParent` envoyer un message entre domaines.
 
@@ -331,17 +331,17 @@ function onRegisterMessageComplete(asyncResult) {
 Étant donné `messageChild` que vous pouvez effectuer plusieurs appels à partir de la page hôte, `DialogParentMessageReceived` mais que vous n’avez qu’un seul responsable dans la boîte de dialogue pour l’événement, le responsable doit utiliser une logique conditionnelle pour distinguer les différents messages. Vous pouvez le faire d’une manière qui est précisément parallèle à la façon dont vous structureriez la messagerie conditionnelle lorsque la boîte de dialogue envoie un message à la page hôte, comme décrit dans la messagerie [conditionnelle](#conditional-messaging).
 
 > [!NOTE]
-> Dans certains cas, l’API `messageChild` , qui fait partie de l’ensemble de conditions [requises DialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets), peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte](parent-to-dialog.md).
+> Dans certains cas, l’API `messageChild` , qui fait partie de l’ensemble de conditions [requises DialogApi 1.2](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), peut ne pas être prise en charge. D’autres méthodes de messagerie de parent à boîte de dialogue sont décrites de manière alternative pour transmettre des messages à une boîte de dialogue à partir de [sa page hôte](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> [L’ensemble de conditions requises DialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets) ne peut pas être spécifié dans la section **Conditions** requises d’un manifeste de add-in. Vous devez vérifier la prise en charge de DialogApi 1.2 à l’runtime `isSetSupported` à l’aide de la méthode décrite dans les vérifications runtime pour la prise en charge de la méthode et de [l’ensemble de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). La prise en charge des exigences de manifeste est en cours de développement.
+> [L’ensemble de conditions requises DialogApi 1.2](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) ne peut pas être spécifié dans la section **Conditions** requises d’un manifeste de add-in. Vous devez vérifier la prise en charge de DialogApi 1.2 à l’runtime `isSetSupported` à l’aide de la méthode décrite dans les vérifications runtime pour la prise en charge de la méthode et de [l’ensemble de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). La prise en charge des exigences de manifeste est en cours de développement.
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Messagerie entre domaines à l’runtime de la boîte de dialogue
 
 La boîte de dialogue ou le runtime JavaScript parent (soit dans un volet Des tâches, soit dans un runtime sans interface utilisateur qui héberge un fichier de fonction) peut être éloigné du domaine du module après l’ouverture de la boîte de dialogue. Si l’un de ces événements s’est produit, `messageChild` un appel échouera, sauf si votre code spécifie le domaine du runtime de la boîte de dialogue. Pour ce faire, ajoutez [un paramètre DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild`. Cet objet possède une `targetOrigin` propriété qui spécifie le domaine auquel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que le runtime parent héberge actuellement. 
 
 > [!NOTE]
-> L’utilisation `messageChild` pour envoyer un message entre domaines nécessite l’ensemble [de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures de Office qui ne prisent pas en charge l’ensemble de conditions requises, de sorte que le comportement de la méthode n’est pas affecté si vous le passez.
+> L’utilisation `messageChild` pour envoyer un message entre domaines nécessite l’ensemble [de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures de Office qui ne prisent pas en charge l’ensemble de conditions requises, de sorte que le comportement de la méthode n’est pas affecté si vous le passez.
 
 Voici un exemple d’utilisation pour `messageChild` envoyer un message entre domaines.
 

@@ -3,12 +3,12 @@ title: Intégrer des boutons de Office intégrés dans des onglets et des groupe
 description: Découvrez comment inclure des boutons de Office intégrés dans vos groupes de commandes et onglets personnalisés sur Office ruban.
 ms.date: 01/22/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a40b7c455cf56457595ae55f8d7d2799b270b4
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 91e64e3939ea83c6468b1f8b35ac189ad7d3d373
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483924"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496725"
 ---
 # <a name="integrate-built-in-office-buttons-into-custom-control-groups-and-tabs"></a>Intégrer des boutons de Office intégrés dans des onglets et des groupes de contrôles personnalisés
 
@@ -76,4 +76,4 @@ Les ID des contrôles et des groupes de contrôles pris en charge se font dans l
 
 ## <a name="behavior-on-unsupported-platforms"></a>Comportement sur les plateformes non pris en place
 
-Si votre add-in est installé sur une plateforme qui ne prend pas en charge l’ensemble de conditions [requises AddinCommands 1.3](/javascript/api/requirement-sets/add-in-commands-requirement-sets), le markup décrit dans cet article est ignoré et les contrôles/groupes Office intégrés n’apparaissent pas dans vos groupes/onglets personnalisés. Pour empêcher l’installation de votre add-in sur des plateformes qui ne le supportent pas, ajoutez une référence à l’ensemble de conditions requises dans **la section Conditions** requises du manifeste. Pour obtenir des instructions, voir [Spécifier Office versions et plateformes peuvent héberger votre module.](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) Vous pouvez également concevoir votre add-in pour une expérience lorsque **AddinCommands 1.3** n’est pas pris en charge, comme décrit dans La conception pour [d’autres expériences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Par exemple, si votre add-in contient des instructions qui supposent que les boutons intégrés se trouveront dans vos groupes personnalisés, vous pouvez concevoir une version qui suppose que les boutons intégrés se trouveront uniquement à leurs endroits habituels.
+Si votre add-in est installé sur une plateforme qui ne prend pas en charge l’ensemble de conditions [requises AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), le markup décrit dans cet article est ignoré et les contrôles/groupes Office intégrés n’apparaissent pas dans vos groupes/onglets personnalisés. Pour empêcher l’installation de votre add-in sur des plateformes qui ne le supportent pas, ajoutez une référence à l’ensemble de conditions requises dans **la section Conditions** requises du manifeste. Pour obtenir des instructions, voir [Spécifier Office versions et plateformes peuvent héberger votre module.](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) Vous pouvez également concevoir votre add-in pour une expérience lorsque **AddinCommands 1.3** n’est pas pris en charge, comme décrit dans La conception pour [d’autres expériences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). Par exemple, si votre add-in contient des instructions qui supposent que les boutons intégrés se trouveront dans vos groupes personnalisés, vous pouvez concevoir une version qui suppose que les boutons intégrés se trouveront uniquement à leurs endroits habituels.

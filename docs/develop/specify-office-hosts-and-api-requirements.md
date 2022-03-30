@@ -3,12 +3,12 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e4533f1de76b8d40c5b9c938ff0e113529d73d95
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7e43aa05d543eb55f10c6e700b5011733792a401
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483592"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496802"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -91,7 +91,7 @@ Les ensembles de conditions requises sont en version. Par exemple, les API qui l
 La prise en charge de l’ensemble de conditions requises varie selon Office application, la version de l’application Office et la plateforme sur laquelle elle est en cours d’exécution. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions d’achat one-time de Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions d’achat à prix simple antérieures à Office 2013. Vous souhaitez que votre add-in soit installable sur chaque combinaison de plateforme et de version Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises par votre add-in. Pour plus d’informations sur la façon de le faire, voir plus loin dans cet article.
 
 > [!TIP]
-> Pour plus d’informations sur le contrôle de version des ensembles de conditions requises, voir Office [la](/javascript/api/requirement-sets/office-add-in-requirement-sets) disponibilité des ensembles de conditions requises [et pour](office-versions-and-requirement-sets.md#office-requirement-sets-availability) obtenir la liste complète des ensembles de conditions requises et des informations sur les API dans chacune d’elles, commencez par les ensembles de conditions requises du Office. Les rubriques de référence pour la plupart Office.js API spécifient également l’ensemble de conditions requises à qui elles appartiennent (le cas nécessaire).
+> Pour plus d’informations sur le contrôle de version des ensembles de conditions requises, voir Office [la](/javascript/api/requirement-sets/common/office-add-in-requirement-sets) disponibilité des ensembles de conditions requises [et pour](office-versions-and-requirement-sets.md#office-requirement-sets-availability) obtenir la liste complète des ensembles de conditions requises et des informations sur les API dans chacune d’elles, commencez par les ensembles de conditions requises du Office. Les rubriques de référence pour la plupart Office.js API spécifient également l’ensemble de conditions requises à qui elles appartiennent (le cas nécessaire).
 
 > [!NOTE]
 > Certains ensembles de conditions requises sont également associés à des éléments de manifeste. Voir [Spécification des conditions requises dans un élément VersionOverrides](#specify-requirements-in-a-versionoverrides-element) pour plus d’informations sur la pertinence de ce fait pour la conception de votre add-in.
@@ -107,7 +107,7 @@ Utilisez [l’élément Requirements](/javascript/api/manifest/requirements) et 
 Si l’application ou la plateforme Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API **spécifiés** dans l’élément **Requirements**, le module ne s’exécutera pas dans cette application ou plateforme et ne s’affichera pas dans Mes applications.
 
 > [!NOTE]
-> **L’élément Requirements** est facultatif pour tous les Outlook, à l’exception des autres. Lorsque l’attribut `xsi:type` de `OfficeApp` `MailBox`l’élément racine est , il doit y avoir un élément **Requirements** qui spécifie la version minimale de l’ensemble de conditions requises mailBox requise par le module. Pour plus d’informations, [voir Outlook conditions requises de l’API JavaScript](/javascript/api/requirement-sets/outlook-api-requirement-sets).
+> **L’élément Requirements** est facultatif pour tous les Outlook, à l’exception des autres. Lorsque l’attribut `xsi:type` de `OfficeApp` `MailBox`l’élément racine est , il doit y avoir un élément **Requirements** qui spécifie la version minimale de l’ensemble de conditions requises mailBox requise par le module. Pour plus d’informations, [voir Outlook conditions requises de l’API JavaScript](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 L’exemple de code suivant montre comment configurer un add-in installable dans toutes les applications Office qui prendre en charge les applications suivantes :
 
@@ -167,7 +167,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 ```
 Tenez compte du code suivant :
 
-- Le premier paramètre est obligatoire. Il s’agit d’une chaîne qui représente le nom de l’ensemble de conditions requises. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](/javascript/api/requirement-sets/office-add-in-requirement-sets).
+- Le premier paramètre est obligatoire. Il s’agit d’une chaîne qui représente le nom de l’ensemble de conditions requises. Pour plus d’informations concernant les ensembles de conditions requises disponibles, voir [Ensembles de conditions requises pour complément Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets).
 - Le deuxième paramètre est facultatif. Il s’agit d’une chaîne qui spécifie la version minimale de l’ensemble de conditions requises que l’application Office doit prendre en charge pour que le code `if` de l’instruction s’exécute (par exemple, « **1.9** »). S’il n’est pas utilisé, la version « 1.1 » est supposée.
 
 > [!WARNING]
@@ -199,7 +199,7 @@ else
 > [!NOTE] 
 > La `isSetSupported` méthode et les ensembles de conditions requises pour ces applications sont disponibles dans le dernier fichier Office.js sur le CDN. Si vous n’utilisez pas Office.js du CDN, votre module peut générer des exceptions si vous utilisez une ancienne version `isSetSupported` de la bibliothèque dans laquelle il n’est pas définie. Pour plus d’informations, [voir Utiliser la dernière Office’API JavaScript](#use-the-latest-office-javascript-api-library).
 
-Lorsque votre application dépend d’une méthode qui ne fait pas partie d’un ensemble de conditions requises, utilisez la vérification à l’runtime pour déterminer si la méthode est prise en charge par l’application Office, comme illustré dans l’exemple de code suivant. Pour consulter la liste complète des méthodes qui n’appartiennent pas à un ensemble de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](/javascript/api/requirement-sets/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
+Lorsque votre application dépend d’une méthode qui ne fait pas partie d’un ensemble de conditions requises, utilisez la vérification à l’runtime pour déterminer si la méthode est prise en charge par l’application Office, comme illustré dans l’exemple de code suivant. Pour consulter la liste complète des méthodes qui n’appartiennent pas à un ensemble de conditions requises, voir [Ensemble de conditions requises pour les compléments Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets#methods-that-arent-part-of-a-requirement-set).
 
 > [!NOTE]
 > Nous vous recommandons de limiter l’utilisation de ce type de vérification à l’exécution dans le code de votre complément.
@@ -253,5 +253,5 @@ Voici un exemple.
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifeste XML des compléments Office](add-in-manifests.md)
-- [Ensembles de conditions requises pour les compléments Office](/javascript/api/requirement-sets/office-add-in-requirement-sets)
+- [Ensembles de conditions requises pour les compléments Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)

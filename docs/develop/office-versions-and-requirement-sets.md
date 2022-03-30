@@ -3,12 +3,12 @@ title: Versions d’Office et ensembles de conditions requises
 description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 62dbac6c5f08596792c29ce5451cdaca077ddcdb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483658"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496816"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -36,18 +36,18 @@ En outre, d’autres fonctionnalités telles que les commandes de complément (e
 
 Un complément peut utiliser uniquement des API dans les ensembles de conditions requises qui sont prises en charge par la version de l’application Office sur laquelle le complément est exécuté. Pour savoir exactement quels ensembles de conditions requises sont disponibles pour une version spécifique de l’application Office, reportez-vous aux articles suivants sur les ensembles de conditions requises propres aux applications.
 
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](/javascript/api/requirement-sets/excel-api-requirement-sets) (ExcelApi)
-- [Ensembles de conditions requises de l’API JavaScript pour Word](/javascript/api/requirement-sets/word-api-requirement-sets) (WordApi)
-- [Ensembles de conditions requises de l’API JavaScript pour OneNote](/javascript/api/requirement-sets/onenote-api-requirement-sets) (OneNoteApi)
-- [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](/javascript/api/requirement-sets/powerpoint-api-requirement-sets) (PowerPointApi)
-- [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets) (Mailbox)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](/javascript/api/requirement-sets/excel/excel-api-requirement-sets) (ExcelApi)
+- [Ensembles de conditions requises de l’API JavaScript pour Word](/javascript/api/requirement-sets/word/word-api-requirement-sets) (WordApi)
+- [Ensembles de conditions requises de l’API JavaScript pour OneNote](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets) (OneNoteApi)
+- [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets) (PowerPointApi)
+- [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) (Mailbox)
 
 Certains ensembles de conditions requises contiennent des API qui peuvent être utilisées par n’importe quelle application Office. Pour plus d’informations sur ces ensembles de conditions requises, reportez-vous aux articles suivants.
 
-- [Ensembles de conditions requises communes pour Office](/javascript/api/requirement-sets/office-add-in-requirement-sets)
-- [Ensembles de conditions requises concernant les commandes de complément](/javascript/api/requirement-sets/add-in-commands-requirement-sets)
-- [Ensembles de conditions requises de l’API de boîte de dialogue](/javascript/api/requirement-sets/dialog-api-requirement-sets)
-- [Ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [Ensembles de conditions requises communes pour Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
+- [Ensembles de conditions requises concernant les commandes de complément](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
+- [Ensembles de conditions requises de l’API de boîte de dialogue](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 
 Le numéro de version d’un ensemble de conditions requises, par exemple « 1.1 » dans `ExcelApi 1.1`, est défini par rapport à l’application Office. Le numéro de version d’un ensemble donné de conditions requises (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js, ni aux ensembles de conditions requises pour d’autres applications Office (comme Word, Outlook, etc.).  Les ensembles de conditions requises pour les différentes applications Office sont publiés à des rythmes différents. Par exemple, `ExcelApi 1.5` a été publié avant l’ensemble de conditions requises `WordApi 1.3`.
 

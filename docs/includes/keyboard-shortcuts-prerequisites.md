@@ -8,5 +8,5 @@
 > [!NOTE]
 > Les raccourcis clavier fonctionnent uniquement sur les plateformes qui supportent les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et sur la façon de les utiliser, voir [Spécifier Office applications et les conditions requises des API](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
-> - Également nécessaire si le add-in permet à l’utilisateur de personnaliser les raccourcis clavier : [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
+> - Également nécessaire si le add-in permet à l’utilisateur de personnaliser les raccourcis clavier : [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)

@@ -3,12 +3,12 @@ title: Vue d’ensemble de l’authentification et de l’autorisation dans les 
 description: Découvrez le fonctionnement de l’authentification et de l’autorisation dans les compléments Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: ba7f55a0b8ca163b994bcfb91879c675b777a7c9
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b3bab99be6c1218d3caa32fab522cf2d7fcbda44
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483644"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496752"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
@@ -26,7 +26,7 @@ Cette documentation explique comment créer et configurer des compléments Offic
 
 ## <a name="sso-scenarios"></a>Scénarios d’authentification unique
 
-L’utilisation de l’authentification unique (SSO) est pratique pour l’utilisateur, car il ne doit se connecter qu’une seule fois à Office. Ils n’ont pas besoin de se connecter séparément à votre complément. L’authentification unique n’étant pas prise en charge sur toutes les versions d’Office, vous devez toujours implémenter une autre approche de connexion, par [l’utilisation de la plateforme d’identités Microsoft](#authenticate-with-the-microsoft-identity-platform). Pour plus d’informations sur les versions d’Office prises en charge, consultez [Définir les conditions de l’API d’identité](/javascript/api/requirement-sets/identity-api-requirement-sets)
+L’utilisation de l’authentification unique (SSO) est pratique pour l’utilisateur, car il ne doit se connecter qu’une seule fois à Office. Ils n’ont pas besoin de se connecter séparément à votre complément. L’authentification unique n’étant pas prise en charge sur toutes les versions d’Office, vous devez toujours implémenter une autre approche de connexion, par [l’utilisation de la plateforme d’identités Microsoft](#authenticate-with-the-microsoft-identity-platform). Pour plus d’informations sur les versions d’Office prises en charge, consultez [Définir les conditions de l’API d’identité](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 
 ### <a name="get-the-users-identity-through-sso"></a>Obtenir l’identité de l’utilisateur via l’authentification unique
 

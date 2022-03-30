@@ -3,12 +3,12 @@ title: Installer la dernière version d’Office
 description: Découvrez comment s’inscrire afin d’obtenir les dernières versions d’Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: c558da4540638c91ed3519685de007379d1e1061
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d5579026eeb74080ab7fd1f165b021b4d2cf457c
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483662"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496760"
 ---
 # <a name="install-the-latest-version-of-office"></a>Installer la dernière version d’Office
 
@@ -39,10 +39,10 @@ Une fois le processus d’installation terminé, les dernières applications d�
 
 ## <a name="minimum-office-builds-for-office-javascript-api-requirement-sets"></a>Builds Office minimum pour les ensembles de conditions requises pour l’API JavaScript pour Office
 
-- [Ensembles de conditions requises de l’API JavaScript pour Excel](/javascript/api/requirement-sets/excel-api-requirement-sets)
-- [Ensembles de conditions requises de l’API JavaScript pour OneNote](/javascript/api/requirement-sets/onenote-api-requirement-sets)
-- [Ensembles de conditions requises de l’API JavaScript pour Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets)
-- [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](/javascript/api/requirement-sets/powerpoint-api-requirement-sets)
-- [Ensembles de conditions requises de l’API JavaScript pour Word](/javascript/api/requirement-sets/word-api-requirement-sets)
-- [Ensembles de conditions requises de l’API de boîte de dialogue](/javascript/api/requirement-sets/dialog-api-requirement-sets)
-- [Ensembles de conditions requises des API communes pour Office](/javascript/api/requirement-sets/office-add-in-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour Excel](/javascript/api/requirement-sets/excel/excel-api-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour OneNote](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour PowerPoint](/javascript/api/requirement-sets/powerpoint/powerpoint-api-requirement-sets)
+- [Ensembles de conditions requises de l’API JavaScript pour Word](/javascript/api/requirement-sets/word/word-api-requirement-sets)
+- [Ensembles de conditions requises de l’API de boîte de dialogue](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Ensembles de conditions requises des API communes pour Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)

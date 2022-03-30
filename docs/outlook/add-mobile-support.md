@@ -3,12 +3,12 @@ title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 ms.date: 07/16/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 451476e9cd7eda9902ad156966558c182752547f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484303"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496970"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -109,4 +109,4 @@ Les API introduites dans l’ensemble de conditions requises 1.6 ou ultérieure 
 
 ## <a name="see-also"></a>Voir aussi
 
-[Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)
+[Ensembles de conditions requises pris en charge par les serveurs Exchange et les clients Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)

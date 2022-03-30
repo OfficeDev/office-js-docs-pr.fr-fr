@@ -3,12 +3,12 @@ title: Activer l’authentification unique (SSO) dans un complément Office
 description: Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 50adb80137cc01db2ee0f36587e1b7a4cc359237
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483604"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496326"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Activer l’authentification unique (SSO) dans un complément Office
 
@@ -107,7 +107,7 @@ Voici un exemple de marques de révision.
 
 ### <a name="include-the-identity-api-requirement-set"></a>Inclure l’ensemble d’exigences de l’API Identity
 
-Pour utiliser SSO, votre complément nécessite l’ensemble d’exigences Identity API 1.3. Pour plus d’informations, consultez [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets).
+Pour utiliser SSO, votre complément nécessite l’ensemble d’exigences Identity API 1.3. Pour plus d’informations, consultez [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 
 ### <a name="add-client-side-code"></a>Ajouter du code côté client
 
@@ -248,4 +248,4 @@ Il existe quelques différences mineures, mais importantes, en ce qui concerne l
 
 - [Documentation de la plateforme d’identités Microsoft](/azure/active-directory/develop/)
 - [Ensembles de conditions requises](specify-office-hosts-and-api-requirements.md)
-- [IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)

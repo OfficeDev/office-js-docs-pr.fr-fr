@@ -1,15 +1,15 @@
 ---
-ms.date: 10/05/2021
+ms.date: 03/23/2022
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: db4ed73459c76089c67820cbf3099c071ad01ad2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 58715c7c7eaf89dd4ce6bc3545121be03f12af78
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743925"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496854"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -23,11 +23,14 @@ Si vous démarrez un nouveau projet, suivez ces étapes pour utiliser le [géné
 
 Effectuez l'une des opérations suivantes :
 
-- Pour créer un complément Excel avec fonctions personnalisées, exécutez la commande `yo office --projectType excel-functions --name 'Excel shared runtime add-in' --host excel --js true`.
+- Pour créer un complément Excel avec fonctions personnalisées, exécutez la commande `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`.
 
     ou
 
-- Pour créer un complément PowerPoint, exécutez la commande `yo office --projectType taskpane --name 'PowerPoint shared runtime add-in' --host powerpoint --js true`.
+- Pour créer un complément PowerPoint, exécutez la commande `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`.
+
+> [!IMPORTANT]
+> La valeur de l’argument `--name` doit être entre guillemets doubles, même si elle n’a pas d’espace.
 
 Le générateur crée le projet et installe les composants de nœud de la prise en charge.
 
@@ -40,7 +43,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 
 1. Démarrez Visual Studio Code, puis ouvrez le projet de complément Excel ou PowerPoint créé.
 1. Ouvrez le fichier **manifest.xml**.
-1. Si vous avez généré un complément Excel, mettez à jour la section des exigences pour utiliser le [ de runtime partagé](../reference/requirement-sets/shared-runtime-requirement-sets.md)au lieu du runtime de fonction personnalisé. Le code XML doit apparaître comme suit.
+1. Si vous avez généré un complément Excel, mettez à jour la section des exigences pour utiliser le [ de runtime partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)au lieu du runtime de fonction personnalisé. Le code XML doit apparaître comme suit.
 
     ```xml
     <Hosts>
@@ -200,7 +203,7 @@ Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une dur
 ```
 
 > [!NOTE]
-> Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](../reference/manifest/runtimes.md) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
+> Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## <a name="about-the-shared-javascript-runtime"></a>À propos du runtime JavaScript partagé
 

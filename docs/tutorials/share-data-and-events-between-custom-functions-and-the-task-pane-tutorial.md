@@ -4,12 +4,12 @@ description: Découvrez comment partager des données et des événements entre 
 ms.date: 11/29/2021
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7ff1c7cf217e855eb8c9d208ae7d3ca4deca0659
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484137"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496914"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -33,7 +33,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
 
 1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
 1. Ouvrez le fichier **manifest.xml**.
-1. Remplacez (ou ajoutez) `<Requirements>` la section XML suivante pour exiger [l'ensemble d'exigences d'exécution partagé](/javascript/api/requirement-sets/shared-runtime-requirement-sets).
+1. Remplacez (ou ajoutez) `<Requirements>` la section XML suivante pour exiger [l'ensemble d'exigences d'exécution partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>

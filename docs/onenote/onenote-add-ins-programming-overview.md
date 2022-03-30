@@ -5,12 +5,12 @@ ms.date: 10/14/2020
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 67f2e5f5e8d3645c44c8eab4c6a1a168ac05e924
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 938a9f6a954162c8774cfeea970596b41afb79ee
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746712"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496319"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -52,7 +52,7 @@ Utilisez l’objet `Application` pour accéder aux objets OneNote tels que **Not
 
 4. Appelez la méthode `context.sync` pour exécuter toutes les commandes en attente dans l’ordre dans lequel elles ont été mises en file d’attente. Cela permet de synchroniser l’état entre votre script d’exécution et les objets réels, en récupérant les propriétés des objets OneNote chargés à utiliser dans vos scripts. Vous pouvez utiliser l’objet Promise renvoyé pour créer une chaîne avec les actions supplémentaires.
 
-Par exemple :
+Par exemple :
 
 ```js
 async function getPagesInSection() {
@@ -83,7 +83,7 @@ Vous pouvez déterminer les objets et les opérations OneNote pris en charge dan
 
 #### <a name="onenote-javascript-api-requirement-sets"></a>Ensembles de conditions requises de l’API JavaScript pour OneNote
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification d’exécution pour déterminer si une application Office prend en charge les API dont un complément a besoin. Pour plus d’informations sur les ensembles de conditions requises de l’API JavaScript OneNote, consultez [ensembles de conditions requises de l’API JavaScript OneNote](../reference/requirement-sets/onenote-api-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification d’exécution pour déterminer si une application Office prend en charge les API dont un complément a besoin. Pour plus d’informations sur les ensembles de conditions requises de l’API JavaScript OneNote, consultez [ensembles de conditions requises de l’API JavaScript OneNote](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
 ### <a name="accessing-the-common-api-through-the-document-object"></a>Accès à l’API commune via l’objet *Document*
 

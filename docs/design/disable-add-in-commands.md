@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5530e1a2acc21ffbf3f2bb0c9a16aa178141202c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1e5699c8ab6a817f604da1b1dbb58924242cb2ed
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483858"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496732"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -29,7 +29,7 @@ Les API décrites dans cet article sont disponibles uniquement dans Excel, Power
 
 Les ensembles de conditions requises sont des groupes nommés de membres d’API. Office les add-ins utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’runtime pour déterminer si une combinaison d’application Office et de plateforme prend en charge les API requises par un add-in. Pour plus d’informations, [voir Office versions et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
 
-Les API d’activer/désactiver appartiennent à [l’ensemble de conditions requises RibbonApi 1.1](/javascript/api/requirement-sets/ribbon-api-requirement-sets) .
+Les API d’activer/désactiver appartiennent à [l’ensemble de conditions requises RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) .
 
 > [!NOTE]
 > L’ensemble de conditions requises **RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste. Vous ne pouvez donc pas le spécifier dans la section **Conditions** requises du manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Si, *et uniquement si*, cet appel renvoie `true`, votre code peut appeler les API d’activer/désactiver. Si l’appel de `isSetSupported` renvoie `false`, toutes les commandes de modules sont activées en temps réel. Vous devez concevoir votre application de production, ainsi que les instructions dans l’application, pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et d’exemples `isSetSupported`d’utilisation, voir [Spécifier Office applications](../develop/specify-office-hosts-and-api-requirements.md) et les conditions requises des API, en particulier les vérifications runtime de la prise en charge des méthodes et des ensembles [de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La section [Spécifier les Office et les plateformes](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) qui peuvent héberger votre application dans cet article ne s’appliquent pas au Ruban 1.1.)

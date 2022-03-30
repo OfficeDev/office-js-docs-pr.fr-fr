@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans Office des modules
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre Office de clavier.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: 98d799f62710b124b8836583d2d30cac7976100d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 69fbc94c0d0cda700ae3362168cc02a055c0e521
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483869"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496777"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos Office de commande
 
@@ -270,7 +270,7 @@ Votre add-in peut permettre aux utilisateurs de réaffecter les actions du modul
 > Un bon moyen de tester les fonctionnalités en préversion consiste à utiliser un abonnement Microsoft 365. Si vous n’avez pas déjà d’abonnement Microsoft 365, vous pouvez en obtenir un gratuitement en rejoignant le [Programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 > [!NOTE]
-> Les API décrites dans cette section nécessitent [l’ensemble de conditions requises KeyboardShortcuts 1.1](/javascript/api/requirement-sets/keyboard-shortcuts-requirement-sets) .
+> Les API décrites dans cette section nécessitent [l’ensemble de conditions requises KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) .
 
 Utilisez la [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) pour affecter les combinaisons de clavier personnalisées d’un utilisateur à vos actions de modules. La méthode prend un paramètre de type `{[actionId:string]: string|null}`, `actionId`où les s sont un sous-ensemble des ID d’action qui doivent être définis dans le manifeste JSON étendu du module. Les valeurs sont les combinaisons de touches préférées de l’utilisateur. La valeur peut également `null`être , `actionId` ce qui permet de supprimer toute personnalisation pour cela et de revenir à la combinaison de clavier par défaut définie dans le manifeste JSON étendu du module.
 

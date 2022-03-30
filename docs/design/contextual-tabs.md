@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans Office de recherche
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre Office de recherche.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3591c320fbe0c2ade41725ef2da32c31b059ac7d
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 57d95db1e425f1ca4f5111a79d99de44f8f09e31
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483895"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496746"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans Office de recherche
 
@@ -29,8 +29,8 @@ Un onglet contextuel est un contrôle onglet masqué dans le ruban Office qui es
 > [!NOTE]
 > Les onglets contextuels personnalisés fonctionnent uniquement sur les plateformes qui supportent les ensembles de conditions requises suivants. Pour plus d’informations sur les ensembles de conditions requises et sur la façon de les utiliser, voir [Spécifier Office applications et les conditions requises des API](../develop/specify-office-hosts-and-api-requirements.md).
 >
-> - [RibbonApi 1.2](/javascript/api/requirement-sets/ribbon-api-requirement-sets)
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/shared-runtime-requirement-sets)
+> - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 >
 > Vous pouvez utiliser les vérifications à l’runtime dans votre code pour tester si la combinaison hôte et plateforme de l’utilisateur prend en charge ces ensembles de conditions requises comme décrit dans les vérifications runtime pour la prise en charge des méthodes et des ensembles de [conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La technique de spécification des ensembles de conditions requises dans le manifeste, également décrite dans cet article, ne fonctionne actuellement pas pour RibbonApi 1.2.) Vous pouvez également implémenter [une autre expérience d’interface utilisateur lorsque les onglets contextuels personnalisés ne sont pas pris en charge](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-are-not-supported).
 

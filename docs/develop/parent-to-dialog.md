@@ -3,16 +3,16 @@ title: Autres méthodes de transmission de messages à une boîte de dialogue à
 description: Découvrez les solutions de contournement à utiliser lorsque la méthode messageChild n’est pas prise en charge.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 36500ac554c9e96de2c20ba76f80dd9dcb628a5a
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 94b002970084a13fe69e1469aa26577039600989
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483631"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496809"
 ---
 # <a name="alternative-ways-of-passing-messages-to-a-dialog-box-from-its-host-page"></a>Autres méthodes de transmission de messages à une boîte de dialogue à partir de sa page hôte
 
-La méthode recommandée pour transmettre des données et des messages d’une page `messageChild` parent à une boîte de dialogue enfant est d’utiliser la méthode décrite dans [l’API](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) de boîte de dialogue Office dans vos Office. Si votre module complémentaire est en cours d’exécution sur une plateforme ou un hôte qui ne prend pas en charge l’ensemble de conditions [requises DialogApi 1.2](/javascript/api/requirement-sets/dialog-api-requirement-sets), vous pouvez transmettre des informations à la boîte de dialogue de deux autres façons.
+La méthode recommandée pour transmettre des données et des messages d’une page `messageChild` parent à une boîte de dialogue enfant est d’utiliser la méthode décrite dans [l’API](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box) de boîte de dialogue Office dans vos Office. Si votre module complémentaire est en cours d’exécution sur une plateforme ou un hôte qui ne prend pas en charge l’ensemble de conditions [requises DialogApi 1.2](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), vous pouvez transmettre des informations à la boîte de dialogue de deux autres façons.
 
 - ajouter des paramètres de requête à l’URL qui est transmise à `displayDialogAsync` ;
 - stocker les informations à un emplacement auquel à la fois la fenêtre hôte et la boîte de dialogue ont accès. Les deux fenêtres ne partagent pas un stockage de session commun (propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)), mais s’ils ont le même *domaine (y* compris le numéro de port, le cas [Stockage.](https://www.w3schools.com/html/html5_webstorage.asp)\*

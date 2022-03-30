@@ -3,12 +3,12 @@ title: Conception de lignes directrices relatives à l’authentification pour l
 ms.date: 02/09/2021
 description: Découvrez comment concevoir visuellement une page d’sign-on ou d’inscription dans un Office de recherche.
 ms.localizationpriority: medium
-ms.openlocfilehash: 0188487f7a4a32bf16c00eed3f151d0a9a52be87
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4973ba8f81ff075d7db8021b15fdfe0f8f0683c4
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483938"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496788"
 ---
 # <a name="authentication-patterns"></a>Modèles d’authentification
 
@@ -49,7 +49,7 @@ Des compléments peuvent exiger que des utilisateurs se connectent ou s’inscri
 ## <a name="single-sign-on-authentication-flow"></a>Flux d’authentification Sign-On unique
 
 > [!NOTE]
-> L’API d’sign-on unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’sign-on unique, voir [ensembles de conditions requises IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets). Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’sign-on unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur la prise en charge de l’sign-on unique, voir [ensembles de conditions requises IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets). Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Utilisez l’sign-on unique pour une expérience utilisateur plus fluide. L’identité de l’utilisateur Office (un compte Microsoft ou une identité Microsoft 365) est utilisée pour se connecter à votre module. Par conséquent, les utilisateurs ne se connectent qu’une seule fois. Cela permet d’éliminer les frictions dans l’expérience, en facilitant la prise en main pour vos clients.
 

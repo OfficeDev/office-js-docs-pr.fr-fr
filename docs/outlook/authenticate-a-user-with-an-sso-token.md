@@ -3,12 +3,12 @@ title: Authentifier un utilisateur avec un jeton à authentification unique
 description: Découvrez comment utiliser le jeton d’authentification unique fourni par un complément Outlook pour implémenter l’authentification unique (SSO) sur votre service.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 278c00a5add972aa527582a3b2031435c78a1281
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4b98a11786b4fdaa7ecb1e7b1924c18b706ba637
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483378"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496963"
 ---
 # <a name="authenticate-a-user-with-a-single-sign-on-token-in-an-outlook-add-in"></a>Authentifier un utilisateur avec un jeton d’authentification unique dans un Outlook d’authentification unique
 
@@ -57,5 +57,5 @@ Des étapes supplémentaires sont à suivre si votre complément utilise l’act
 - [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1))
 - Pour obtenir un exemple Outlook qui utilise le jeton sso pour accéder à l’API Microsoft Graph, voir Outlook [SSO du Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [Référence d’API SSO](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
-- [Ensemble d’exigences IdentityAPI](/javascript/api/requirement-sets/identity-api-requirement-sets)
+- [Ensemble d’exigences IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 - [Activer l’sign-on unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur des événements](use-sso-in-event-based-activation.md)

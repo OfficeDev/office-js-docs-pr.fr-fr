@@ -5,12 +5,12 @@ ms.date: 07/16/2021
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: cfda46d5006b8ff351fcd339c601ef3e22613519
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 1f1d909f655558dd96705cc83ea2996cd21d6c85
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514137"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496305"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -52,7 +52,7 @@ Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un 
   >
   > - Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
   >
-  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, reportez-vous à [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](../reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md#add-in-activation-on-items-protected-by-information-rights-management-irm).
+  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, reportez-vous à [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
 
 - un rapport ou une notification de remise qui a la classe de message IPM.Report.* (notamment les rapports de remise et les notifications d’échec de remise, ainsi que les notifications de lecture, de non-lecture et de retard) ;
 
@@ -63,19 +63,19 @@ Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un 
 - Dans une [boîte aux lettres de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), dans une boîte aux lettres partagée\*, dans la boîte aux lettres d’un autre utilisateur\*, dans une [boîte aux lettres d’archivage](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), ou dans un dossier public.
 
   > [!IMPORTANT]
-  > \* La prise en charge des scénarios d’accès délégué (par exemple, les dossiers partagés à partir de la boîte aux lettres d’un autre utilisateur) a été introduite dans [ensemble de conditions requises 1.8](../reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md). La prise en charge des boîtes aux lettres partagées est désormais disponible en préversion. Pour plus d’informations, consultez [Activer les dossiers partagés et les scénarios de boîte aux lettres partagées](delegate-access.md).
+  > \* La prise en charge des scénarios d’accès délégué (par exemple, les dossiers partagés à partir de la boîte aux lettres d’un autre utilisateur) a été introduite dans [ensemble de conditions requises 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). La prise en charge des boîtes aux lettres partagées est désormais disponible en préversion. Pour plus d’informations, consultez [Activer les dossiers partagés et les scénarios de boîte aux lettres partagées](delegate-access.md).
 
 - utilise un formulaire personnalisé.
 
 - Créé via [Simple MAPI](https://support.microsoft.com/topic/a3d3f856-eaf6-b6d8-3617-186c0a1123c5). Simple MAPI est utilisé lorsqu'un utilisateur d'Office crée ou envoie un courriel à partir d'une application Office sur Windows pendant qu'Outlook est fermé. Par exemple, un utilisateur peut créer un courrier Outlook tout en travaillant dans Word, ce qui déclenche une fenêtre de composition Outlook sans lancer l’application Outlook complète. Toutefois, si Outlook est déjà en cours d’exécution lorsque l’utilisateur crée l’e-mail à partir de Word, ce n’est pas un scénario Simple MAPI. Les compléments Outlook fonctionnent donc dans le formulaire de composition tant que d’autres exigences d’activation sont remplies.
 
-En général, Outlook peut activer des compléments sous forme de lecture pour les éléments dans le dossier Éléments envoyés, à l'exception des compléments qui s’activent en fonction des correspondances de chaînes d'entités connues. Pour plus d'informations sur les raisons de ce problème, reportez-vous à la rubrique "Prise en charge pour les entités connues" dans [Faire correspondre des chaînes dans un élément Outlook en tant qu'entités connues](match-strings-in-an-item-as-well-known-entities.md).
+En général, Outlook peut activer des compléments sous forme de lecture pour les éléments du dossier Éléments envoyés, à l’exception des compléments qui s’activent en fonction des correspondances de chaîne d’entités connues. Pour plus d’informations sur les raisons de ce problème, consultez « Prise en charge des entités connues » dans [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md).
 
 Il existe actuellement des considérations supplémentaires lors de la conception et de l’implémentation de compléments pour les clients mobiles. Pour plus d’informations, reportez-vous à [Ajouter une prise en charge mobile à un complément Outlook](add-mobile-support.md#compose-mode-and-appointments).
 
 ## <a name="supported-clients"></a>Clients pris en charge
 
-Les add-ins Outlook sont pris en charge dans Outlook 2013 ou plus récent sur Windows, Outlook 2016 ou plus récent sur Mac, Outlook sur le web pour Exchange 2013 sur site et versions ultérieures, Outlook sur iOS, Outlook sur Android, et Outlook sur le web et Outlook.com. Les fonctionnalités les plus récentes ne sont pas toutes prises en charge dans tous les [clients](../reference/requirement-sets/outlook-api-requirement-sets.md#requirement-sets-supported-by-exchange-servers-and-outlook-clients) à la fois. Reportez-vous aux articles et références API relatives à ces fonctionnalités pour savoir dans quels applications elles peuvent ou non être prises en charge.
+Les add-ins Outlook sont pris en charge dans Outlook 2013 ou plus récent sur Windows, Outlook 2016 ou plus récent sur Mac, Outlook sur le web pour Exchange 2013 sur site et versions ultérieures, Outlook sur iOS, Outlook sur Android, et Outlook sur le web et Outlook.com. Les fonctionnalités les plus récentes ne sont pas toutes prises en charge dans tous les [clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) à la fois. Reportez-vous aux articles et références API relatives à ces fonctionnalités pour savoir dans quels applications elles peuvent ou non être prises en charge.
 
 ## <a name="get-started-building-outlook-add-ins"></a>Commencer à créer des compléments Outlook
 

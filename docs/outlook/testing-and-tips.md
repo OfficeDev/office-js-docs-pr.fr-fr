@@ -3,12 +3,12 @@ title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 7d612fcfa8f5bb79cded469e203371a499703ad0
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b627dbf4b32daee4327cb139db58a56c4a704580
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484422"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496879"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
@@ -96,7 +96,7 @@ Autrement, vous pouvez également choisir de payer et d'utiliser un service qui 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)
 
-En outre, si vous ne souhaitez pas que vos add-ins soient disponibles pour les utilisateurs qui sont connectés à l'échange sur site, vous pouvez définir le [exigences fixées](/javascript/api/requirement-sets/outlook-api-requirement-sets#exchange-server-support) dans le manifeste de l'add-in à 1,6 ou plus. Ces add-ins ne seront pas testés ou validés sur l'interface utilisateur classique de Outlook on the web.
+En outre, si vous ne souhaitez pas que vos add-ins soient disponibles pour les utilisateurs qui sont connectés à l'échange sur site, vous pouvez définir le [exigences fixées](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#exchange-server-support) dans le manifeste de l'add-in à 1,6 ou plus. Ces add-ins ne seront pas testés ou validés sur l'interface utilisateur classique de Outlook on the web.
 
 ## <a name="see-also"></a>Voir aussi
 

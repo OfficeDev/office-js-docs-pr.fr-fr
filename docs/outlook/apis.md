@@ -3,12 +3,12 @@ title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
 ms.date: 01/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dffc494778d02feaedb302a4c42ca843637caa71
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484302"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496312"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
@@ -48,7 +48,7 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > Ces vérifications ne sont pas nécessaires pour les API appartenant à l’ensemble de conditions requises dont la version est la même que celle spécifiée dans le manifeste.
 
-Spécifiez l’ensemble de conditions requises minimal prenant en charge l’ensemble d’API critique pour votre scénario, sans lequel les fonctionnalités de votre complément ne fonctionneront pas. Spécifiez l’ensemble de conditions requises dans le manifeste dans l’élément `<Requirements>`. Pour plus d’informations, consultez les rubriques [Manifestes des compléments Outlook](manifests.md) et [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets).
+Spécifiez l’ensemble de conditions requises minimal prenant en charge l’ensemble d’API critique pour votre scénario, sans lequel les fonctionnalités de votre complément ne fonctionneront pas. Spécifiez l’ensemble de conditions requises dans le manifeste dans l’élément `<Requirements>`. Pour plus d’informations, consultez les rubriques [Manifestes des compléments Outlook](manifests.md) et [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 L’élément `<Methods>` ne s’applique pas aux compléments Outlook. Vous ne pouvez donc pas déclarer la prise en charge de méthodes spécifiques.
 
@@ -74,5 +74,5 @@ En général, vous devez spécifier l’autorisation minimum nécessaire pour vo
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifestes de complément Outlook](manifests.md)
-- [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook-api-requirement-sets)
+- [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md)

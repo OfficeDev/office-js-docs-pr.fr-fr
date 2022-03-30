@@ -3,12 +3,12 @@ title: Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 description: 'Gérer et retourner des erreurs comme #NULL! à partir de votre fonction personnalisée.'
 ms.date: 08/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b960cdda4f44b4e67ce3f0582b6c7a31d967d030
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c8f2667f47c1c983b135f38ce2c67ad1f31502c9
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483502"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496291"
 ---
 # <a name="handle-and-return-errors-from-your-custom-function"></a>Gérer et renvoyer des erreurs à partir de votre fonction personnalisée
 
@@ -135,5 +135,5 @@ Découvrez comment [résoudre les problèmes liés à vos fonctions personnalis�
 ## <a name="see-also"></a>Voir aussi
 
 * [Débogage des fonctions personnalisées](custom-functions-debugging.md)
-* [Ensembles de besoins de fonctions personnalisées](/javascript/api/requirement-sets/custom-functions-requirement-sets)
+* [Ensembles de besoins de fonctions personnalisées](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)

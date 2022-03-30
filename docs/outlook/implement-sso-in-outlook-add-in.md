@@ -3,12 +3,12 @@ title: 'Scénario: implémenter l’authentification unique dans votre service'
 description: Découvrez comment utiliser le jeton d’authentification unique et le jeton d’identité Exchange fournis par un complément Outlook afin d’implémenter l’authentification unique (SSO) pour votre service.
 ms.date: 09/03/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cc13b13b0ba3469fe1bfd1a02689f39a28c4b0a6
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2b9c4031a0011d2333582b4a10abe42f6844f763
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484593"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496921"
 ---
 # <a name="scenario-implement-single-sign-on-to-your-service-in-an-outlook-add-in"></a>Scénario : Implémenter l’authentification unique sur votre service dans un complément Outlook
 
@@ -18,8 +18,7 @@ Pour obtenir un exemple de add-in qui implémente les idées de cet article, voi
 
 
 > [!NOTE]
-> La connexion unique sur API est actuellement prise en charge pour Word, Excel et PowerPoint. Pour plus d’informations sur l’endroit où l’API d’authentification unique est actuellement prise en charge, consultez la rubrique [Ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/identity-api-requirement-sets).
-> Si vous travaillez avec un add-in Outlook, assurez-vous d'activer l'authentification moderne pour la location de Microsoft 365. Pour plus d’informations sur la manière de procéder, consultez la rubrique [Exchange Online : Activation de votre client pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> L’API d’authentification unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’emplacement où l’API d’authentification unique est actuellement prise en charge, consultez [ensembles de conditions requises IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la procédure à suivre, consultez [Exchange Online : comment activer votre locataire pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 
 ## <a name="why-use-the-sso-access-token"></a>Pourquoi utiliser le jeton d’accès SSO ?

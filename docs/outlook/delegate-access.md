@@ -3,12 +3,12 @@ title: Activer les dossiers partagés et les scénarios de boîtes aux lettres p
 description: Explique comment configurer la prise en charge des modules de prise en charge des dossiers partagés (c’est-à-dire accès délégué) et boîtes aux lettres partagées.
 ms.date: 10/05/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: e359f4b63aec979d68b0798866fb06bf559a0f67
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8ff71ad12fc3c0488c8c73040b125a1ae4674d88
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484659"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496928"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîtes aux lettres partagées dans un Outlook de messagerie
 
@@ -26,7 +26,7 @@ Le tableau suivant présente les combinaisons client-serveur pris en charge pour
 |Navigateur Web :<br>interface utilisateur Outlook classique|Non applicable|Non|Non|Non|
 
 > [!IMPORTANT]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (pour plus d’informations, reportez-vous [aux clients et aux plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (pour plus d’informations, reportez-vous [aux clients et aux plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
 
 ## <a name="supported-setups"></a>Configurations prise en charge
 

@@ -3,12 +3,12 @@ title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f85716feb31284492ae2faba1981d1b1ba12f1c
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484685"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496900"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
@@ -24,7 +24,7 @@ Voici des exemples de add-ins contextuels.
 > [!NOTE]
 > Les compléments contextuels ne sont pas disponibles actuellement dans Outlook pour Android et iOS. Cette fonctionnalité sera disponible ultérieurement.
 >
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.6. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.6. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Création d’un complément contextuel
 

@@ -3,19 +3,19 @@ title: Obtenir et définir la récurrence dans un complément Outlook
 description: Cette rubrique vous explique comment utiliser l’API JavaScript Office pour obtenir et définir différentes propriétés de récurrence d’un élément dans un complément Outlook.
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c763abd238d007fd397c17278472db1fb97e04e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7ebdce8236d55fc6569756aa88fb721d8e6ec9f1
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484664"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496284"
 ---
 # <a name="get-and-set-recurrence"></a>Obtenir et définir la récurrence
 
 Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript Office pour gérer les modèles de récurrence d’une série de rendez-vous dans votre application.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.7. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.7. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="available-recurrence-patterns"></a>Modèles de récurrence disponibles
 
@@ -201,7 +201,7 @@ var recurrenceType = recurrence.recurrenceType;
 [Événement RecurrenceChanged](/javascript/api/office/office.eventtype)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item.md#properties
+[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
 [setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
 [dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth

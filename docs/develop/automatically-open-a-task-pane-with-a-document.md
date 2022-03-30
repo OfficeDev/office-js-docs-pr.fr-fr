@@ -3,18 +3,18 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 29fd772fe201a568e7507235805f4b570bf1adb1
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 71834e1bd47e09e4ace5ac4b81d6018eea66f634
+ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483789"
+ms.lasthandoff: 03/28/2022
+ms.locfileid: "64496837"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser les commandes de votre Office pour étendre l’interface utilisateur Office en ajoutant des boutons au application Office ruban. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
-Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1](/javascript/api/requirement-sets/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
+Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité d’ouverture automatique du volet Des tâches, introduite dans l’ensemble de conditions [AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Des tâches lorsque votre scénario l’exige.
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
