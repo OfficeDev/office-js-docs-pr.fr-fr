@@ -3,12 +3,12 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les conditions requises de l’API pour que votre module fonctionne comme prévu.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e43aa05d543eb55f10c6e700b5011733792a401
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 9f08a4c5f52d52022b33285faf3d3914056a03e2
+ms.sourcegitcommit: f32123f2b7254e76965dc95c21108f081507feed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496802"
+ms.lasthandoff: 03/30/2022
+ms.locfileid: "64536544"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -88,7 +88,7 @@ Pour simplifier le processus de spécification des API requises par votre Office
 
 Les ensembles de conditions requises sont en version. Par exemple, les API qui la prise en charge [des boîtes de](../design/dialog-boxes.md) dialogue sont dans l’ensemble de conditions requises DialogApi 1.1. Lorsque des API supplémentaires qui activent la messagerie à partir d’un volet Des tâches vers une boîte de dialogue ont été publiées, elles ont été regroupées dans DialogApi 1.2, ainsi que toutes les API de DialogApi 1.1. *Chaque version d’un ensemble de conditions requises est un sur-ensemble de toutes les versions antérieures.*
 
-La prise en charge de l’ensemble de conditions requises varie selon Office application, la version de l’application Office et la plateforme sur laquelle elle est en cours d’exécution. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions d’achat one-time de Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions d’achat à prix simple antérieures à Office 2013. Vous souhaitez que votre add-in soit installable sur chaque combinaison de plateforme et de version Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises par votre add-in. Pour plus d’informations sur la façon de le faire, voir plus loin dans cet article.
+La prise en charge de l’ensemble de conditions requises varie selon Office application, la version de l’application Office et la plateforme sur laquelle elle est en cours d’exécution. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions d’achat Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions d’achat à prix simple antérieures à Office 2013. Vous souhaitez que votre add-in soit installable sur chaque combinaison de plateforme et de version Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises par votre add-in. Pour plus d’informations sur la façon de le faire, voir plus loin dans cet article.
 
 > [!TIP]
 > Pour plus d’informations sur le contrôle de version des ensembles de conditions requises, voir Office [la](/javascript/api/requirement-sets/common/office-add-in-requirement-sets) disponibilité des ensembles de conditions requises [et pour](office-versions-and-requirement-sets.md#office-requirement-sets-availability) obtenir la liste complète des ensembles de conditions requises et des informations sur les API dans chacune d’elles, commencez par les ensembles de conditions requises du Office. Les rubriques de référence pour la plupart Office.js API spécifient également l’ensemble de conditions requises à qui elles appartiennent (le cas nécessaire).
@@ -104,7 +104,7 @@ Toutes les API des modèles spécifiques de l’application sont dans des ensemb
 
 Utilisez [l’élément Requirements](/javascript/api/manifest/requirements) et ses éléments enfants [Sets](/javascript/api/manifest/sets) and Methods pour spécifier les [ensembles de conditions requises](/javascript/api/manifest/methods) minimum ou les membres d’API qui doivent être pris en charge par l’application Office pour installer votre application. 
 
-Si l’application ou la plateforme Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API **spécifiés** dans l’élément **Requirements**, le module ne s’exécutera pas dans cette application ou plateforme et ne s’affichera pas dans Mes applications.
+Si l’application ou la plateforme Office ne prend pas en charge les ensembles de conditions requises ou les membres d’API spécifiés dans l’élément **Requirements**, le module ne s’exécute pas dans cette application ou plateforme et ne s’affiche pas dans Mes **applications.**
 
 > [!NOTE]
 > **L’élément Requirements** est facultatif pour tous les Outlook, à l’exception des autres. Lorsque l’attribut `xsi:type` de `OfficeApp` `MailBox`l’élément racine est , il doit y avoir un élément **Requirements** qui spécifie la version minimale de l’ensemble de conditions requises mailBox requise par le module. Pour plus d’informations, [voir Outlook conditions requises de l’API JavaScript](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
