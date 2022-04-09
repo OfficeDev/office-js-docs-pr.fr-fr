@@ -1,15 +1,15 @@
 ---
-ms.date: 03/23/2022
+ms.date: 04/04/2022
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: 58715c7c7eaf89dd4ce6bc3545121be03f12af78
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: b91fffdd79053a600a52086021cbd9712beb7df1
+ms.sourcegitcommit: 82ef88cbdc7c1b77ffa5b624c0c010bd32212692
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496854"
+ms.lasthandoff: 04/08/2022
+ms.locfileid: "64715529"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -19,31 +19,28 @@ Vous pouvez configurer votre complément Office pour exécuter la totalité de s
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
-Si vous démarrez un nouveau projet, suivez ces étapes pour utiliser le [générateur Yeoman pour compléments Office](yeoman-generator-overview.md) et créer le projet de complément Excel ou PowerPoint.
+Si vous démarrez un nouveau projet, utilisez le [Générateur Yeoman pour compléments Office](yeoman-generator-overview.md) pour créer le projet de complément Excel, PowerPoint ou Word.
 
-Effectuez l'une des opérations suivantes :
+Exécutez la commande `yo office --projectType taskpane --name "my office add in" --host <host> --js true`, où `<host>` est l’une des valeurs suivantes.
 
-- Pour créer un complément Excel avec fonctions personnalisées, exécutez la commande `yo office --projectType excel-functions --name "NAME OF YOUR PROJECT HERE" --host excel --js true`.
-
-    ou
-
-- Pour créer un complément PowerPoint, exécutez la commande `yo office --projectType taskpane --name "NAME OF YOUR PROJECT HERE" --host powerpoint --js true`.
+- excel
+- powerpoint
+- word
 
 > [!IMPORTANT]
 > La valeur de l’argument `--name` doit être entre guillemets doubles, même si elle n’a pas d’espace.
 
-Le générateur crée le projet et installe les composants de nœud de la prise en charge.
+Vous pouvez utiliser différentes options pour les options de ligne de commande **--projecttype**, **--name** et **--js**. Pour obtenir la liste complète des options, consultez [Générateur Yeoman pour compléments Office](https://github.com/OfficeDev/generator-office).
 
-> [!NOTE]
-> Vous pouvez également utiliser les étapes décrites dans cet article pour mettre à jour un projet Visual Studio existant afin d’utiliser le runtime partagé. Toutefois, vous devrez peut-être mettre à jour les schémas XML pour le manifeste. Pour plus d’informations, consultez [Résoudre les erreurs de développement avec les compléments Office](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+Le générateur crée le projet et installe les composants de nœud de la prise en charge. Vous pouvez également utiliser les étapes décrites dans cet article pour mettre à jour un projet Visual afin d’utiliser le runtime partagé. Toutefois, vous devrez peut-être mettre à jour les schémas XML pour le manifeste. Pour plus d’informations, consultez [Résoudre les erreurs de développement avec les compléments Office](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
 Procédez comme suit pour configurer un projet nouveau ou existant de manière à utiliser un runtime partagé. Ces étapes supposent que vous avez créé votre projet à l’aide du [générateur Yeoman pour compléments Office](yeoman-generator-overview.md).
 
-1. Démarrez Visual Studio Code, puis ouvrez le projet de complément Excel ou PowerPoint créé.
+1. Démarrez Visual Studio Code, puis ouvrez votre projet de complément.
 1. Ouvrez le fichier **manifest.xml**.
-1. Si vous avez généré un complément Excel, mettez à jour la section des exigences pour utiliser le [ de runtime partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)au lieu du runtime de fonction personnalisé. Le code XML doit apparaître comme suit.
+1. Pour un complément Excel ou PowerPoint, mettez à jour la section des conditions requises pour inclure le [runtime partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). Veillez à supprimer la condition requise `CustomFunctionsRuntime` si elle est présente. Le XML s’affiche comme suit.
 
     ```xml
     <Hosts>
@@ -57,7 +54,10 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
     <DefaultSettings>
     ```
 
-1. Recherchez la `<VersionOverrides>` section et ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section ` <bt:Urls>` près du bas du fichier **manifest.xml**.
+    > [!NOTE]
+    > N’ajoutez pas l’ensemble de conditions requises `SharedRuntime` au manifeste pour un complément Word. Cela génère une erreur lors du chargement du complément, qui est un problème connu pour l’instant.
+
+1. Recherchez la `<VersionOverrides>` section et ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section `<bt:Urls>` près du bas du fichier **manifest.xml**.
 
     > [!IMPORTANT]
     > La `<Runtimes>` section doit être entrée après `<Host>` l’élément dans l’ordre exact indiqué dans le XML suivant.
@@ -99,7 +99,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 
 Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous devez le modifier pour charger uniquement le runtime JavaScript partagé via le fichier **taskpane.html**.
 
-1. Démarrez Visual Studio Code, puis ouvrez le projet de complément Excel ou PowerPoint créé.
+1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
 1. Ouvrez le fichier **webpack.config.js**.
 1. Si votre fichier **webpack.config.js** a le code plug-in **functions.html**, supprimez-le.
 
@@ -144,40 +144,29 @@ Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous de
 
 Vous pouvez confirmer que vous utilisez correctement le runtime JavaScript partagé en utilisant les instructions suivantes.
 
-1. Ouvrez le fichier **manifest.xml**.
-1. Recherchez la section `<Control xsi:type="Button" id="TaskpaneButton">`, puis modifiez le XML `<Action ...>` suivant.
-
-    de :
-
-    ```xml
-    <Action xsi:type="ShowTaskpane">
-      <TaskpaneId>ButtonId1</TaskpaneId>
-      <SourceLocation resid="Taskpane.Url"/>
-    </Action>
-    ```
-
-    à :
-
-    ```xml
-    <Action xsi:type="ExecuteFunction">
-      <FunctionName>action</FunctionName>
-    </Action>
-    ```
-
-1. Ouvrez le fichier **./src/commands/commands.js**.
-1. Remplacez la fonction **action** existante par le code suivant. Cette action mettra à jour la fonction pour ouvrir et modifier le bouton de volet des tâches pour incrémenter un compteur. L’ouverture et l’accès au volet des tâches DOM à partir d’une commande ne fonctionne qu’avec le runtime JavaScript partagé.
+1. Ouvrez le fichier **taskpane.js**.
+1. Remplacez tout le contenu du fichier par le code suivant. Le nombre de fois où le volet Office a été ouvert s’affiche. L’ajout de l’événement onVisibilityModeChanged est uniquement pris en charge dans un runtime JavaScript partagé.
 
     ```javascript
-    var _count=0;
-    
-    function action(event) {
-      // Your code goes here.
+    /*global document, Office*/
+
+    var _count = 0;
+
+    Office.onReady(() => {
+      document.getElementById("sideload-msg").style.display = "none";
+      document.getElementById("app-body").style.display = "flex";
+
+      updateCount(); // Update count on first open.
+      Office.addin.onVisibilityModeChanged(function (args) {
+        if (args.visibilityMode === "Taskpane") {
+          updateCount(); // Update count on subsequent opens.
+        }
+      });
+    });
+
+    function updateCount() {
       _count++;
-      Office.addin.showAsTaskpane();
-      document.getElementById("run").textContent="Go"+_count;
-    
-      // Be sure to indicate when the add-in command function is complete.
-      event.completed();
+      document.getElementById("run").textContent = "Task pane opened " + _count + " times.";
     }
     ```
 
@@ -187,14 +176,14 @@ Vous pouvez confirmer que vous utilisez correctement le runtime JavaScript parta
    npm start
    ```
 
-Chaque fois que vous sélectionnez le bouton de complément, il changera le texte du bouton **exécuter** par **accéder** et incrémentera un compteur après celui-ci.
+Chaque fois que vous ouvrez le volet Office, le nombre de fois où il a été ouvert est incrémenté. La valeur de **_count** ne sera pas perdue, car le runtime partagé maintient votre code en cours d’exécution même lorsque le volet Office est fermé.
 
 ## <a name="runtime-lifetime"></a>Durée de vie de l’exécution
 
 Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une durée de vie avec la valeur `long` ou `short`. Définissez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, la poursuite de l’exécution du code après la fermeture du volet Office ou l’utilisation de CORS et DOM à partir de fonctions personnalisées.
 
 > [!NOTE]
-> La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément Excel démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
+> La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel, PowerPoint et Word. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
 
 ```xml
 <Runtimes>
@@ -213,13 +202,13 @@ Vous pouvez toutefois configurer votre complément Office pour partager un code 
 
 La configuration d’un runtime partagé permet les scénarios suivants.
 
-- Votre complément Office peut utiliser des fonctionnalités d’interface utilisateur supplémentaires :
-  - [Ajouter des raccourcis clavier personnalisés à votre complément Office (préversion)](../design/keyboard-shortcuts.md)
-  - [Créer des onglets contextuels personnalisés dans des compléments Office (préversion)](../design/contextual-tabs.md)
+- Votre complément Office peut utiliser des fonctionnalités d’interface utilisateur supplémentaires.
   - [Activer et désactiver des commandes de complément](../design/disable-add-in-commands.md)
   - [Exécuter un cote dans votre complément Office lors de l’ouverture du document](run-code-on-document-open.md)
   - [Afficher ou masquer le volet des tâches de votre complément Office](show-hide-add-in.md)
-- Pour les compléments Excel :
+- Les éléments suivants sont disponibles uniquement pour les compléments Excel.
+  - [Ajouter des raccourcis clavier personnalisés à votre complément Office (préversion)](../design/keyboard-shortcuts.md)
+  - [Créer des onglets contextuels personnalisés dans des compléments Office (préversion)](../design/contextual-tabs.md)
   - Les fonctions personnalisées bénéficieront d'une prise en charge complète de CORS.
   - Les fonctions personnalisées peuvent appeler les API Office.js pour lire les données d’un document feuille de calcul.
 
@@ -234,10 +223,6 @@ Lors de l’utilisation d’un runtime partagé, vous ne pouvez pas utiliser Vis
 ### <a name="multiple-task-panes"></a>Multiples volets des tâches
 
 Ne concevez pas votre complément pour utiliser plusieurs volets des tâches si vous envisagez d’utiliser un runtime partagé. Un runtime partagé prend uniquement en charge l’utilisation d’un volet des tâches. Notez que tout volet des tâches sans `<TaskpaneID>` est considéré comme un volet des tâches différent.
-
-## <a name="give-us-feedback"></a>Faites-nous part de vos commentaires
-
-Nous aimerions connaître vos commentaires sur cette fonctionnalité. Si vous trouvez des bogues, des problèmes ou des demandes sur cette fonctionnalité, faites-le nous savoir en créant un problème GitHub dans le dépôt [office-js](https://github.com/OfficeDev/office-js).
 
 ## <a name="see-also"></a>Voir aussi
 
