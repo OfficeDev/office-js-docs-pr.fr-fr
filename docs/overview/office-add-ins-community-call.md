@@ -1,26 +1,28 @@
 ---
-title: Microsoft Office de la communauté des add-ins
-description: L’agenda Microsoft Office d’appel de la communauté des Microsoft Office, la planification et les ressources.
-ms.date: 03/28/2022
+title: appel de la communauté des compléments Microsoft Office
+description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
+ms.date: 04/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4572c1fd7c3b65a07eb2d655ab94a74c4980a80a
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 225d3aa87101ba1c168435be7f27fb741e54a7e1
+ms.sourcegitcommit: 87f6a53a4df3966ff0dc1e12903198b2b94e9662
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496844"
+ms.lasthandoff: 04/09/2022
+ms.locfileid: "64743882"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Microsoft Office de la communauté des add-ins
+# <a name="microsoft-office-add-ins-community-call"></a>appel de la communauté des compléments Microsoft Office
 
-L’appel de la communauté Microsoft Office compléments est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office compléments. L’appel de la communauté a lieu le deuxième mercredi de chaque mois à 8 h 00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier sur https://aka.ms/officeaddinscommunitycall.
+L’appel communautaire Microsoft Office compléments est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de Office compléments. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-april-13th-call"></a>Agenda de l’appel du 13 avril
+## <a name="agenda-for-april-13th-call"></a>Ordre du jour de l’appel du 13 avril
 
-L’agenda d’avril sera publié environ une semaine avant l’appel.
+- Mises à jour de l’API du ruban
+- API de sélection PowerPoint
+- Compléments sur rendez-vous lus sur Outlook Mobile
 
 ## <a name="previous-calls"></a>Appels précédents
 
-Vous avez manqué un appel de la communauté précédent ? Consultez les ressources de blog suivantes pour découvrir la discussion !
+Vous avez manqué un appel de communauté précédent ? Consultez les ressources de blog suivantes pour reprendre la discussion!
 
 - [9 mars 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-9-2022/ba-p/3255173)
 - [9 février 2022](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-february-9-2022/ba-p/3164559)
@@ -35,13 +37,13 @@ Vous avez manqué un appel de la communauté précédent ? Consultez les ressour
 - [12 mai 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-may-2021/ba-p/2369804)
 - [14 avril 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-april-14-2021/ba-p/2318886)
 - [10 mars 2021](https://techcommunity.microsoft.com/t5/microsoft-365-pnp-blog/office-add-ins-community-call-march-10-2021/ba-p/2205369)
-- [Appels de Office de la communauté des Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
+- [Appels de la communauté de compléments Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Invitation périodique, mensuelle à un calendrier d’appel de la communauté](https://aka.ms/officeaddinscommunitycall)
-- [Community et questions sur les sujets d’appel](https://aka.ms/officeaddinsform)
-- [Microsoft 365 canal YouTube pour les développeurs](https://aka.ms/m365devyoutube)
-- [Microsoft 365 de la communauté YouTube](https://aka.ms/m365pnp/videos )
-- [Microsoft 365 PnP sur Tech Community](https://aka.ms/m365pnp/community)
-- [Microsoft 365 de la communauté technique PnP](https://aka.ms/m365pnp/community/blog)
+- [Invitation périodique et mensuelle au calendrier d’appel de la communauté](https://aka.ms/officeaddinscommunitycall)
+- [Community demandes et questions relatives aux rubriques d’appel](https://aka.ms/officeaddinsform)
+- [canal YouTube du développeur Microsoft 365](https://aka.ms/m365devyoutube)
+- [Microsoft 365 chaîne YouTube de la communauté](https://aka.ms/m365pnp/videos )
+- [Microsoft 365 PnP sur tech Community](https://aka.ms/m365pnp/community)
+- [blog de la communauté technique Microsoft 365 PnP](https://aka.ms/m365pnp/community/blog)
