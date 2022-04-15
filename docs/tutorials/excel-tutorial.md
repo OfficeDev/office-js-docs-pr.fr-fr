@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Créez un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 02/26/2022
+ms.date: 04/13/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5ca9ea0fdc600d6044cf3a5ef405dd0f3a98e2b3
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
+ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746414"
+ms.lasthandoff: 04/15/2022
+ms.locfileid: "64863286"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -717,7 +717,11 @@ Ces étapes doivent être effectuées à chaque fois que votre code doit lire (*
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
       >  - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
-1. Si le serveur web local est déjà en cours d’exécution, arrêtez-le en fermant la fenêtre de commande du nœud.
+1. Si le serveur web local est déjà en cours d’exécution, arrêtez-le en entrant la commande suivante dans l’invite de commandes. Cela doit fermer la fenêtre de commande du nœud.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Étant donné que votre fichier manifeste a été mis à jour, vous devez à nouveau charger une version test du complément à l’aide du fichier manifeste mis à jour. Démarrez le serveur web local et chargez indépendamment votre complément :
 
@@ -884,7 +888,11 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     ],
     ```
 
-1. Si le serveur web local est en cours d’exécution, arrêtez-le en fermant la fenêtre de commande du nœud.
+1. Si le serveur web local est en cours d’exécution, arrêtez-le en entrant la commande suivante dans l’invite de commandes. Cela doit fermer la fenêtre de commande du nœud.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 1. Exécutez la commande suivante pour regénérer le projet.
 
