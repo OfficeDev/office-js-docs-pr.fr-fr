@@ -1,30 +1,30 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
-description: Outlook pour appareils mobiles sont pris en charge sur tous les comptes Microsoft 365 entreprise et Outlook.com.
-ms.date: 02/15/2022
+description: Outlook compléments mobiles sont pris en charge sur tous les comptes professionnels Microsoft 365 et les comptes Outlook.com.
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 90e88b3b3596f2b11718b9fcf1af7402d7594fe7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2ceddbe4947a4818c90a517712bc8fa58376f72a
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483991"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963483"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
 Les compléments fonctionnent désormais sur Outlook Mobile, avec les mêmes API que celles disponibles pour d’autres points de terminaison Outlook. Si vous avez déjà créé un complément pour Outlook, il est facile de le faire fonctionner sur Outlook Mobile.
 
-Outlook pour appareils mobiles sont pris en charge sur tous les comptes Microsoft 365 entreprise et Outlook.com. Toutefois, la prise en charge n’est pas disponible actuellement sur les comptes Gmail.
+Outlook compléments mobiles sont pris en charge sur tous les comptes professionnels Microsoft 365 et les comptes Outlook.com. Toutefois, la prise en charge n’est actuellement pas disponible sur les comptes Gmail.
 
 **Exemple de volet Office dans Outlook sur iOS**
 
-![Capture d’écran d’un volet De tâches Outlook sur iOS.](../images/outlook-mobile-addin-taskpane.png)
+![Capture d’écran d’un volet Office dans Outlook sur iOS.](../images/outlook-mobile-addin-taskpane.png)
 
 <br/>
 
 **Exemple de volet Office dans Outlook sur Android**
 
-![Capture d’écran d’un volet Des tâches Outlook sur Android.](../images/outlook-mobile-addin-taskpane-android.png)
+![Capture d’écran d’un volet Office dans Outlook sur Android.](../images/outlook-mobile-addin-taskpane-android.png)
 
 ## <a name="whats-different-on-mobile"></a>Qu’est-ce qui est différent sur mobile ?
 
@@ -32,7 +32,7 @@ Outlook pour appareils mobiles sont pris en charge sur tous les comptes Microsof
   - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
   - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
 
-- En règle générale, seul le mode lecture de message est pris en charge pour le moment. Cela signifie `MobileMessageReadCommandSurface` qu’il s’agit du seul [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les applications intégrées du fournisseur de réunions en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Pour plus [d’informations sur ce scénario](online-meeting.md), consultez l’article Créer un Outlook mobile pour un fournisseur de réunion en ligne.
+- En général, seul le mode lecture des messages est pris en charge pour l’instant. Cela signifie qu’il `MobileMessageReadCommandSurface` s’agit du seul [Point d’extension](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, le mode Organisateur de rendez-vous est pris en charge pour les compléments intégrés du fournisseur de réunion en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Pour plus d’informations sur ce scénario, consultez l’article [Créer un complément mobile Outlook pour un fournisseur de réunions en ligne](online-meeting.md).
 
 - L’API [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
 
@@ -52,24 +52,24 @@ Voici quelques exemples de scénarios pertinents dans Outlook Mobile.
 
 **Exemple d’interaction utilisateur pour créer une carte Trello à partir d’un message électronique sur iOS**
 
-![Gif animé montrant l’interaction utilisateur avec un Outlook mobile sur iOS.](../images/outlook-mobile-addin-interaction.gif)
+![GIF animé montrant l’interaction utilisateur avec un complément Outlook Mobile sur iOS.](../images/outlook-mobile-addin-interaction.gif)
 
 <br/>
 
 **Exemple d’interaction utilisateur pour créer une carte Trello à partir d’un message électronique sur Android**
 
-![Gif animé montrant l’interaction utilisateur avec un Outlook mobile sur Android.](../images/outlook-mobile-addin-interaction-android.gif)
+![GIF animé montrant l’interaction utilisateur avec un complément Outlook Mobile sur Android.](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## <a name="testing-your-add-ins-on-mobile"></a>Test de vos compléments sur mobile
 
-Pour tester un compl?ment sur Outlook Mobile, chargez tout d’abord une version test d’un compl?ment vers un compte Microsoft 365 ou Outlook.com sur le web, Windows ou Mac.[](sideload-outlook-add-ins-for-testing.md) Assurez-vous que votre manifeste est correctement formaté `MobileFormFactor` pour contenir ou qu’il ne sera pas chargé dans votre client Outlook sur mobile.
+Pour tester un complément sur Outlook Mobile, commencez par [charger un complément](sideload-outlook-add-ins-for-testing.md) sur un compte Microsoft 365 ou Outlook.com sur le web, Windows ou Mac. Assurez-vous que votre manifeste est correctement mis en forme pour contenir `MobileFormFactor` ou qu’il ne se charge pas dans votre client Outlook sur mobile.
 
 Une fois que votre complément fonctionne, testez-le sur différentes tailles d’écran, y compris sur des téléphones et des tablettes. Vous devez vous assurer qu’il respecte les instructions d’accessibilité en matière de contraste, de taille de police et de couleur, et qu’il peut être utilisé avec un lecteur d’écran comme VoiceOver sur iOS ou TalkBack sur Android.
 
-La résolution des problèmes sur les appareils mobiles peut être difficile, car vous n’avez peut-être pas les outils que vous avez l’habitude d’utiliser. Toutefois, une option de dépannage sur iOS consiste à utiliser Fiddler (consultez ce didacticiel sur son utilisation avec [un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
+La résolution des problèmes sur les appareils mobiles peut être difficile, car vous n’avez peut-être pas les outils auxquels vous êtes habitué. Toutefois, une option de résolution des problèmes sur iOS consiste à utiliser Fiddler (consultez [ce tutoriel sur son utilisation avec un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
 > [!NOTE]
-> Les Outlook sur le web modernes sur iPhone et les smartphones Android ne sont plus nécessaires ou disponibles pour le test Outlook des applications. Pour plus d’informations sur les appareils pris en charge, voir [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
+> Les Outlook sur le web modernes sur les smartphones iPhone et Android ne sont plus nécessaires ni disponibles pour tester Outlook compléments. En outre, les compléments ne sont pas pris en charge dans Outlook sur Android, sur iOS et le web mobile moderne avec des comptes Exchange locaux. Certains appareils iOS prennent toujours en charge les compléments lors de l’utilisation de comptes Exchange locaux avec des Outlook sur le web classiques. Pour plus d’informations sur les appareils pris en charge, consultez [Configuration requise pour l’exécution des compléments Office](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

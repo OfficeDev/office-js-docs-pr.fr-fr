@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
-description: Découvrez les exigences de client et de serveur dont un utilisateur final a besoin pour exécuter des Office de messagerie.
-ms.date: 02/15/2022
+description: Découvrez les exigences du client et du serveur qu’un utilisateur final doit exécuter Office compléments.
+ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e1bd7eb5f2949d6b0c70654c3aa3a276a3ee83c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63742830"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963490"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -16,7 +16,7 @@ Cet article décrit la configuration logicielle et matérielle requise pour l’
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-Pour obtenir une vue d’Office l’endroit où les Office sont actuellement pris en charge, voir Office application cliente et disponibilité de plateforme pour les Office [de recherche](../overview/office-add-in-availability.md).
+Pour obtenir une vue générale de l’emplacement de prise en charge des compléments Office, consultez [Office disponibilité des applications clientes et de la plateforme pour Office compléments](/javascript/api/requirement-sets).
 
 ## <a name="server-requirements"></a>Exigences en matière de serveur
 
@@ -29,22 +29,22 @@ Pour tous les types de complément (compléments de contenu, Outlook et volet Of
 > [!TIP]
 > lorsque vous développez et déboguez un complément dans Visual Studio, Visual Studio déploie et exécute les fichiers de page web de votre complément localement avec IIS Express et ne nécessite aucun serveur web supplémentaires.
 
-Pour les applications clientes de contenu et de volet de tâches, dans les applications clientes Office pris en charge (Excel, PowerPoint, Project ou Word), vous avez également besoin d’un catalogue d’applications sur [](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) SharePoint pour télécharger le fichier manifeste XML du module, ou vous devez déployer le module à l’aide [d’applications](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) intégrées.
+Pour les compléments de contenu et de volet Office, dans les applications clientes Office prises en charge ( Excel, PowerPoint, Project ou Word ), vous avez également besoin d’un [catalogue d’applications](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) sur SharePoint pour charger le fichier manifeste XML du complément, ou vous devez déployer le complément à l’aide [d’applications intégrées](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
-Pour tester et exécuter un Outlook, le compte de messagerie Outlook de l’utilisateur doit résider sur Exchange 2013 ou une ultérieure, qui est disponible via Microsoft 365, Exchange Online ou via une installation sur site. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
+Pour tester et exécuter un complément Outlook, le compte de messagerie Outlook de l’utilisateur doit résider sur Exchange 2013 ou une version ultérieure, qui est disponible via Microsoft 365, Exchange Online ou via une installation locale. L’utilisateur ou l’administrateur installe les fichiers manifeste pour les compléments Outlook sur ce serveur.
 
 > [!NOTE]
 > Les comptes de messagerie POP et IMAP dans Outlook ne prennent pas en charge les compléments Office.
 
 ## <a name="client-requirements-windows-desktop-and-tablet"></a>Exigences en matière de client : ordinateur de bureau et tablette Windows
 
-Le logiciel suivant est requis pour le développement d’un Office pour les clients de bureau ou les clients web Office pris en charge qui s’exécutent sur un ordinateur de bureau, un ordinateur portable ou une tablette Windows.
+Le logiciel suivant est requis pour développer un complément Office pour les clients de bureau ou les clients web Office pris en charge qui s’exécutent sur Windows ordinateurs de bureau, ordinateurs portables ou tablettes.
 
 - Pour les ordinateurs de bureau Windows x86 et x64 et les tablettes telles que Surface Pro :
   - La version 32 bits ou 64 bits d’Office 2013 ou une version ultérieure s’exécutant sur Windows 7 ou une version ultérieure.
   - Excel 2013, Outlook 2013, PowerPoint 2013, Project Professionnel 2013, Project 2013 SP1 ou Word 2013, ou une version ultérieure du client Office, si vous testez ou exécutez un Complément Office, notamment pour l’un de ces clients de bureau Office. Les clients de bureau Office peuvent être installés sur site ou par le biais de « Démarrer en un clic » sur l’ordinateur client.
 
-  Si vous avez un abonnement Microsoft 365 valide et que vous n’avez pas accès au client Office, vous pouvez télécharger et installer la dernière [version de Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
+  Si vous disposez d’un abonnement Microsoft 365 valide et que vous n’avez pas accès au client Office, vous pouvez [télécharger et installer la dernière version de Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Internet Explorer 11 ou Microsoft Edge (selon les versions de Windows et Office) doit être installé, sans être nécessairement le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office servant d’hôte utilise des composants de navigateur faisant partie d’Internet Explorer 11 ou de Microsoft Edge. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md).
 
@@ -56,7 +56,7 @@ Le logiciel suivant est requis pour le développement d’un Office pour les cli
 
 ## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
-Outlook mac, distribué dans le cadre de Microsoft 365, prend en charge Outlook des macros. L’exécution de Outlook dans Outlook sur Mac présente les mêmes exigences que Outlook sur Mac lui-même : le système d’exploitation doit être au moins OS X v10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
+Outlook sur Mac, qui est distribué dans le cadre de Microsoft 365, prend en charge Outlook compléments. L’exécution Outlook compléments dans Outlook sur Mac a les mêmes exigences que Outlook sur Mac lui-même : le système d’exploitation doit être au moins OS X v10.10 « Yosemite ». Comme Outlook sur Mac utilise WebKit comme moteur de disposition pour restituer les pages de complément, il n’existe pas de dépendance de navigateur supplémentaire.
 
 Les versions de client minimales d’Office pour Mac prenant en charge les compléments Office sont les suivantes.
 
@@ -66,28 +66,39 @@ Les versions de client minimales d’Office pour Mac prenant en charge les compl
 
 ## <a name="client-requirements-browser-support-for-office-web-clients-and-sharepoint"></a>Exigences en matière de client : prise en charge du navigateur pour les clients web Office et SharePoint
 
-Tout navigateur, à l’exception d’Internet Explorer, qui prend en charge ECMAScript 5.1, HTML5 et CSS3, tel que Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
+Tout navigateur, à l’exception d’Internet Explorer, qui prend en charge ECMAScript 5.1, HTML5 et CSS3, comme Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 
-## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences en matière de clients : smartphones Windows et tablettes non mobiles
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Exigences du client : Smartphone et tablette non Windows
 
-Plus particulièrement pour les Outlook s’exécutant sur des smartphones et des tablettes non Windows, les logiciels suivants sont requis pour tester et Outlook des applications.
+Spécifiquement pour Outlook s’exécutant sur des smartphones et des tablettes non Windows, les logiciels suivants sont nécessaires pour tester et exécuter Outlook compléments.
 
 | Application Office | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook sur Android|- Tablettes Android<br>- Smartphones Android|- Android 4.4 KitKat ou version ultérieure|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour Android. <sup>1</sup>|
-|Outlook sur iOS|- iPad tablettes<br>- iPhone smartphones|- iOS 11 ou ultérieur|Sur la dernière mise à jour Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour iOS. <sup>1</sup>|
-|Outlook sur le web (moderne)<sup>2</sup>|- iPad 2 ou ultérieure<br>- Tablettes Android |- iOS 5 ou ultérieur<br>- Android 4.4 KitKat ou version ultérieure|Sur Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
-|Outlook sur le web (classique)|- iPhone 4 ou ultérieure<br>- iPad 2 ou ultérieure<br>- iPod Touch 4 ou ultérieur|- iOS 5 ou ultérieur|En local Exchange Server 2013 ou ultérieure|- Safari|
+|Outlook sur Android|- Tablettes Android<br>- Smartphones Android|- Android 4.4 KitKat ou version ultérieure|Sur la dernière mise à jour de Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour Android. <sup>1</sup>|
+|Outlook sur iOS|- iPad tablettes<br>- smartphones iPhone|- iOS 11 ou version ultérieure|Sur la dernière mise à jour de Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour iOS. <sup>1</sup>|
+|Outlook sur le web (moderne)<sup>2</sup>|- iPad 2 ou version ultérieure<br>- Tablettes Android |- iOS 5 ou version ultérieure<br>- Android 4.4 KitKat ou version ultérieure|Sur Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook sur le web (classique)|- iPhone 4 ou version ultérieure<br>- iPad 2 ou version ultérieure<br>- iPod Touch 4 ou version ultérieure|- iOS 5 ou version ultérieure|Localement Exchange Server 2013 ou version <sup>ultérieure3</sup>|- Safari|
 
 > [!NOTE]
-> <sup>1 OWA</sup> pour Android, OWA pour iPad et OWA pour iPhone applications natives ont [été supprimés](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+> <sup>1</sup> OWA pour Android, OWA pour iPad et OWA pour iPhone applications natives ont été [dépréciées](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 >
-> <sup>2 Les</sup> Outlook sur le web modernes sur iPhone et les smartphones Android ne sont plus nécessaires ou disponibles pour tester Outlook des applications.
+> <sup>2</sup> Les Outlook sur le web modernes sur les smartphones iPhone et Android ne sont plus nécessaires ni disponibles pour les tests Outlook compléments.
+>
+> <sup>3</sup> Les compléments ne sont pas pris en charge dans Outlook sur Android, sur iOS et le web mobile moderne avec des comptes Exchange locaux.
 
-[!INCLUDE [How to distinguish between classic and modern Outlook on the web](../includes/classic-versus-modern-Outlook-on-the-web.md)]
+> [!TIP]
+> Vous pouvez faire la distinction entre les deux versions d’Outlook, classique et moderne, dans un navigateur Web en regardant la barre d’outils de votre boîte aux lettres.
+>
+> **moderne**
+>
+> ![Capture d'écran partielle de la barre d'outils moderne d' Outlook.](../images/outlook-on-the-web-new-toolbar.png)
+>
+> **classique**
+>
+> ![Capture d’écran partielle de la barre d’outils Outlook classique.](../images/outlook-on-the-web-classic-toolbar.png)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la plateforme des compléments Office](../overview/office-add-ins.md)
-- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](../overview/office-add-in-availability.md)
+- [Application cliente Office et disponibilité de la plateforme pour les compléments Office](/javascript/api/requirement-sets)
 - [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md)

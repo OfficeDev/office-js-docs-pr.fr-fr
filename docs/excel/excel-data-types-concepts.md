@@ -1,17 +1,17 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 02/15/2022
+ms.date: 04/19/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: b0827509c4592958a9529af20e3a76da4a4008be
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: eb1d459a75ef0268cc7ffa68153613aa975e5fe6
+ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743352"
+ms.lasthandoff: 04/20/2022
+ms.locfileid: "64963469"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -29,7 +29,24 @@ Cet article explique comment utiliser [l’API JavaScript Excel pour](../referen
 
 ## <a name="core-concepts"></a>Concepts de base
 
-Utilisez la [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) propriété pour utiliser des valeurs de type de données. Cette propriété est similaire à [Range.values,](/javascript/api/excel/excel.range#excel-excel-range-values-member)mais renvoie uniquement les quatre types de base : `Range.values` chaîne, nombre, booléen ou valeurs d’erreur. `Range.valuesAsJson` peut renvoyer des informations étendues sur les quatre types de base, et cette propriété peut renvoyer des types de données tels que des valeurs numériques formatées, des entités et des images web.
+Utilisez la [`Range.valuesAsJson`](/javascript/api/excel/excel.range#excel-excel-range-valuesasjson-member) propriété pour utiliser des valeurs de type de données. Cette propriété est similaire à [Range.values,](/javascript/api/excel/excel.range#excel-excel-range-values-member)mais renvoie uniquement les quatre types de base : `Range.values` chaîne, nombre, booléen ou valeurs d’erreur. `Range.valuesAsJson` renvoie des informations étendues sur les quatre types de base, et cette propriété peut renvoyer des types de données tels que des valeurs numériques formatées, des entités et des images web.
+
+La `valuesAsJson` propriété renvoie un alias de type [CellValue](/javascript/api/excel/excel.cellvalue), qui est une [union](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types) des types de données suivants.
+
+- [ArrayCellValue](/javascript/api/excel/excel.arraycellvalue)
+- [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
+- [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
+- [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
+- [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
+- [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
+- [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
+- [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
+- [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue)
+- [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
+- [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
+- [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue)
+
+L’objet [CellValueExtraProperties](/javascript/api/excel/excel.cellvalueextraproperties) est une [intersection](https://www.typescriptlang.org/docs/handbook/2/objects.html#intersection-types) avec le reste des types `*CellValue`. Il ne s’agit pas d’un type de données lui-même. Les propriétés de l’objet `CellValueExtraProperties` sont utilisées avec tous les types de données pour spécifier des détails liés au remplacement des valeurs de cellule.
 
 ### <a name="json-schema"></a>Schéma JSON
 
