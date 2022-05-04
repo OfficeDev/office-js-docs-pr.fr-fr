@@ -1,14 +1,14 @@
 ---
 title: Utilisation d’options de recherche pour trouver du texte dans votre complément Word
-description: Apprenez à utiliser les options de recherche dans votre add-in Word.
+description: Découvrez comment utiliser les options de recherche dans votre complément Word.
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: baebde4cb288ac872f29531023db4c9500383bc7
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: e8f9dd2605af9307a49fabfafdecb0df4e97fe9f
+ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340420"
+ms.lasthandoff: 05/04/2022
+ms.locfileid: "65187342"
 ---
 # <a name="use-search-options-to-find-text-in-your-word-add-in"></a>Utilisation d’options de recherche pour trouver du texte dans votre complément Word
 
@@ -21,13 +21,13 @@ Les options de recherche sont une collection de valeurs booléennes qui définis
 
 | Propriété       | Description|
 |:---------------|:----|
-|ignorePunct|Obtient ou définit une valeur indiquant s’il faut ignorer tous les caractères de ponctuation entre les mots. Correspond à la case à cocher « Ignorer les caractères de ponctuation » dans la boîte de dialogue Rechercher et remplacer.|
-|ignoreSpace|Obtient ou définit une valeur indiquant s’il faut ignorer tous les espaces entre les mots. Correspond à la case à cocher « Ignorer les caractères d’espacement » dans la boîte de dialogue Rechercher et remplacer.|
-|matchCase|Obtient ou définit une valeur indiquant si la recherche respecte la casse. Correspond à la case à cocher « Respecter la casse » dans la boîte de dialogue Rechercher et remplacer.|
-|matchPrefix|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui commencent par la chaîne entrée. Correspond à la case à cocher « Préfixe » dans la boîte de dialogue Rechercher et remplacer.|
-|matchSuffix|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui se terminent par la chaîne entrée. Correspond à la case à cocher « Suffixe » dans la boîte de dialogue Rechercher et remplacer.|
-|matchWholeWord|Obtient ou définit une valeur indiquant si la recherche doit porter uniquement sur les mots complets et non pas sur du texte qui fait partie d’un mot plus long. Correspond à la case à cocher « Mot entier » dans la boîte de dialogue Rechercher et remplacer.|
-|matchWildCards|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case « Utiliser les caractères génériques » dans la boîte de dialogue Rechercher et remplacer.|
+|ignorePunct|Obtient ou définit une valeur indiquant s’il faut ignorer tous les caractères de ponctuation entre les mots. Correspond à la case à cocher « Ignorer les caractères de ponctuation » dans la boîte de dialogue **Rechercher et remplacer** .|
+|ignoreSpace|Obtient ou définit une valeur indiquant s’il faut ignorer tous les espaces entre les mots. Correspond à la case à cocher « Ignorer les espaces blancs » dans la boîte de dialogue **Rechercher et remplacer** .|
+|matchCase|Obtient ou définit une valeur indiquant s’il faut effectuer une recherche respectant la casse. Correspond à la case à cocher « Cas de correspondance » dans la boîte de dialogue **Rechercher et remplacer** .|
+|matchPrefix|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui commencent par la chaîne entrée. Correspond à la case à cocher « Mettre en correspondance le préfixe » dans la boîte de dialogue **Rechercher et remplacer** .|
+|matchSuffix|Obtient ou définit une valeur indiquant si la recherche doit porter sur les mots qui se terminent par la chaîne entrée. Correspond à la case à cocher « Mettre en correspondance le suffixe » dans la boîte de dialogue **Rechercher et remplacer** .|
+|matchWholeWord|Obtient ou définit une valeur indiquant si la recherche doit porter uniquement sur les mots complets et non pas sur du texte qui fait partie d’un mot plus long. Correspond à la case à cocher « Rechercher des mots entiers uniquement » dans la boîte de dialogue **Rechercher et remplacer** .|
+|matchWildCards|Obtient ou définit une valeur indiquant si la recherche est effectuée à l’aide d’opérateurs de recherche spéciaux. Correspond à la case à cocher « Utiliser des caractères génériques » dans la boîte de dialogue **Rechercher et remplacer** .|
 
 ## <a name="wildcard-guidance"></a>Aide concernant les caractères génériques
 
@@ -35,21 +35,21 @@ Le tableau suivant fournit une aide concernant les caractères génériques de l
 
 | Pour trouver :         | Caractère générique |  Exemple |
 |:-----------------|:--------|:----------|
-| Un seul caractère| ? |s?t trouve sot et set. |
+|Un seul caractère| ? |s?t trouve sot et set. |
 |Une chaîne de caractères| * |s*n son et solution.|
 |Début d’un mot|< |<(intér) trouve intéressant et intérieur, mais pas désintéressé.|
 |Fin d’un mot |> |(in)> trouve fin et besoin, mais pas origine.|
 |Un des caractères spécifiés|[ ] |l[ea]s trouve les et las.|
 |Tout caractère de cette plage| [-] |[b-d]arder trouve barder, carder et darder. Les plages doivent être définies dans l’ordre alphabétique ou croissant.|
 |Tout caractère à l’exception de ceux de la plage entre les crochets|[!x-z] |p[!a-m]re trouve pore et pure, mais pas pare et pire.|
-|Exactement n occurrences de l’expression ou du caractère précédent|n |bal{2}ade trouve ballade mais pas balade.|
-|Au moins n occurrences de l’expression ou du caractère précédent|{n,} |bal{1,}ade recherche balade et ballade.|
-|Entre n et m occurrences de l’expression ou du caractère précédent|{n,m} |10{1,3} trouve 10, 100 et 1 000.|
+|Exactement *n* occurrences du caractère ou de l’expression précédent|n |bal{2}ade trouve ballade mais pas balade.|
+|Au moins *n* occurrences du caractère ou de l’expression précédent|{n,} |bal{1,}ade recherche balade et ballade.|
+|De *n* à *m* occurrences du caractère ou de l’expression précédent|{n,m} |10{1,3} trouve 10, 100 et 1 000.|
 |Une ou plusieurs occurrences de l’expression ou du caractère précédent|@ |mar@e trouve mare et marre.|
 
-### <a name="escaping-the-special-characters"></a>Échappement des caractères spéciaux
+### <a name="escaping-special-characters"></a>Échappement de caractères spéciaux
 
-La recherche avec des caractères génériques est essentiellement la même que la recherche sur une expression régulière. Il existe des caractères spéciaux dans les expressions régulières, notamment « [ », « ] », « ( »,« ) », « { », « } », « \* », « ? », « < », « > », « ! » et « @ ». Si l’un de ces caractères fait partie de la chaîne littérale que recherche le code, il doit être échappé, afin que Word sache qu’il faut le traiter littéralement et non dans le cadre de la logique de l’expression régulière. Pour échapper un caractère dans la fonction de recherche de l’interface utilisateur de Word, faites-le précéder d’un « \' », mais pour un échappement par programme, placez-le entre les caractères « [] ». Par exemple, « [\*]\* » recherche une chaîne qui commence par « \* », suivie d’autres caractères.
+La recherche par caractères génériques est essentiellement la même que la recherche sur une expression régulière. Il existe des caractères spéciaux dans les expressions régulières, notamment « [ », « ] », « ( », « ( », « { », « } », « »,\* « ? », « < », « > », « ! » et « @ ». Si l’un de ces caractères fait partie de la chaîne littérale que le code recherche, il doit être placé dans une séquence d’échappement, afin que Word sache qu’il doit être traité littéralement et non dans le cadre de la logique de l’expression régulière. Pour échapper un caractère dans la recherche de l’interface utilisateur Word, vous le précédez d’un caractère de barre oblique inverse («\\ ») mais pour l’échapper par programmation, placez-le entre des caractères « [] ». Par exemple, « [\*]\* » recherche une chaîne commençant par un «\* » suivi d’un nombre quelconque d’autres caractères.
 
 ## <a name="examples"></a>Exemples
 
