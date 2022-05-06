@@ -1,36 +1,36 @@
 ---
-title: Implémenter l’ajout à l’envoi dans votre Outlook de messagerie
-description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre Outlook de messagerie.
+title: Implémenter append-on-send dans votre complément Outlook
+description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 02/01/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a7ec463c3998d9f85f1a085b6b28c43637651bd
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 968b730aca1fc36640e43ff45404c8d4c7b92d47
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496893"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244834"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter l’ajout à l’envoi dans votre Outlook de messagerie
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter append-on-send dans votre complément Outlook
 
-À la fin de cette walkthrough, vous aurez un Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
+À la fin de cette procédure pas à pas, vous disposerez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
 
 > [!NOTE]
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-[Complétez Outlook démarrage](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rapide qui crée un projet de compl?ment avec le générateur Yeoman pour Office compl?ments.
+Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour Office compléments.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer la fonctionnalité d’ajout à l’envoi dans votre application, `AppendOnSend` vous devez inclure l’autorisation dans la collection [extendedPermissions](/javascript/api/manifest/extendedpermissions).
+Pour activer la fonctionnalité d’ajout à l’envoi dans votre complément, vous devez inclure l’autorisation `AppendOnSend` dans la collection de [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
-Pour ce scénario, au lieu `action` d’exécuter la fonction sur le bouton Effectuer une **action** , vous exécuterez la `appendOnSend` fonction.
+Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du bouton **Exécuter une action** , vous allez exécuter la `appendOnSend` fonction.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
-1. Ouvrez **lemanifest.xml** situé à la racine de votre projet.
+1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
 1. Sélectionnez l’intégralité `<VersionOverrides>` du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
 
@@ -120,16 +120,16 @@ Pour ce scénario, au lieu `action` d’exécuter la fonction sur le bouton Effe
     ```
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes de Outlook des modules, voir Outlook [manifestes de ces derniers](manifests.md).
+> Pour en savoir plus sur les manifestes pour Outlook compléments, consultez [Outlook manifestes de complément](manifests.md).
 
-## <a name="implement-append-on-send-handling"></a>Implémenter la gestion de l’envoi
+## <a name="implement-append-on-send-handling"></a>Implémenter la gestion des ajouts sur l’envoi
 
-Ensuite, implémentez l’application sur l’événement d’envoi.
+Ensuite, implémentez l’ajout sur l’événement d’envoi.
 
 > [!IMPORTANT]
-> Si votre application implémente également la gestion des [événements `ItemSend`](outlook-on-send-addins.md)d’envoi à l’aide de , `AppendOnSendAsync` l’appel dans le handler d’envoi renvoie une erreur, car ce scénario n’est pas pris en charge.
+> Si votre complément implémente également la [gestion des événements lors de l’envoi à l’aide `ItemSend`](outlook-on-send-addins.md), l’appel `AppendOnSendAsync` dans le gestionnaire d’envoi retourne une erreur, car ce scénario n’est pas pris en charge.
 
-Pour ce scénario, vous allez implémenter l’application d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur l’envoie.
+Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur l’envoie.
 
 1. À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.
 
@@ -158,28 +158,28 @@ Pour ce scénario, vous allez implémenter l’application d’une clause d’ex
       event.completed();
     }
     ```
-
-1. À la fin du fichier, ajoutez l’instruction suivante.
+    
+1. Juste en dessous de la fonction, ajoutez la ligne suivante pour inscrire la fonction.
 
     ```js
-    g.appendDisclaimerOnSend = appendDisclaimerOnSend;
+    Office.actions.associate("appendDisclaimerOnSend", appendDisclaimerOnSend);
     ```
 
 ## <a name="try-it-out"></a>Essayez
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et que votre application est rechargée de nouveau. 
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et que votre complément est chargé de manière indépendante. 
 
     ```command&nbsp;line
     npm start
     ```
 
-1. Créez un message et ajoutez-vous à la **ligne À** .
+1. Créez un message et ajoutez-vous à la ligne **À** .
 
-1. Dans le ruban ou le menu de dépassement, **sélectionnez Effectuer une action**.
+1. Dans le menu du ruban ou du dépassement de capacité, choisissez **Effectuer une action**.
 
-1. Envoyez le message, puis ouvrez-le à  partir de votre  boîte de réception ou dossier Éléments envoyés pour afficher la clause d’exclusion de responsabilité.
+1. Envoyez le message, puis ouvrez-le à partir de votre dossier **Boîte de réception** ou **Éléments envoyés** pour afficher la clause d’exclusion de responsabilité ajoutée.
 
-    ![Capture d’écran d’un exemple de message avec la clause d’exclusion de responsabilité à l’envoi Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
+    ![Capture d’écran d’un exemple de message avec l’exclusion de responsabilité ajoutée lors de l’envoi Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>Voir aussi
 

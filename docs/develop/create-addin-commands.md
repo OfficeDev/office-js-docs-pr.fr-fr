@@ -1,24 +1,24 @@
 ---
 title: Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
-description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 02/04/2022
+description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 248fd3cf36e27cfbb345a5379591b30619584d6b
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 047e9a0d8704d076fe8e6a02d8ca1e443a3b88ce
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483778"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244757"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
-Utilisez **[VersionOverrides](/javascript/api/manifest/versionoverrides)** dans votre manifeste pour définir des commandes de Excel, PowerPoint et Word. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
+Utilisez **[VersionOverrides](/javascript/api/manifest/versionoverrides)** dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Vous pouvez utiliser les commandes de complément pour :
 
 - créer des éléments d’interface utilisateur ou des points d’entrée qui facilitent l’utilisation des fonctionnalités de votre complément ;
 - ajouter des boutons ou une liste déroulante de boutons sur le ruban ;
 - ajouter des options de menu individuelles (pouvant chacune contenir des sous-menus) à des menus contextuels spécifiques ;
 - exécuter des actions lorsque vous avez choisi une commande de complément. Vous pouvez effectuer les opérations suivantes :
-  - afficher des compléments de volet de tâches avec lesquels les utilisateurs peuvent interagir. À l’intérieur de votre application du volet Des tâches, vous pouvez afficher du code HTML qui utilise Fluent’interface utilisateur pour créer une interface utilisateur personnalisée.
+  - afficher des compléments de volet de tâches avec lesquels les utilisateurs peuvent interagir. Dans votre complément du volet Office, vous pouvez afficher du code HTML qui utilise Fluent’interface utilisateur pour créer une interface utilisateur personnalisée.
 
      *ou*
 
@@ -27,19 +27,19 @@ Utilisez **[VersionOverrides](/javascript/api/manifest/versionoverrides)** dans 
 Cet article explique comment modifier un manifeste pour définir des commandes de complément. Le schéma suivant illustre la hiérarchie des éléments utilisés pour définir des commandes de complément. Ces éléments sont décrits plus en détail dans cet article.
 
 > [!NOTE]
-> Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, [voir Commandes de Outlook](../outlook/add-in-commands-for-outlook.md)
+> Les commandes de complément sont actuellement prises en charge dans Outlook. Pour plus d’informations, consultez [les commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md)
 
 L’image ci-après est une présentation des éléments de commandes de complément dans le fichier manifeste.
 
-![Vue d’ensemble des éléments de commandes de add-in dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes et les ressources enfants. Les sous Hôtes sont Host, puis DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Sous ExtensionPoint sont CustomTab ou OfficeTab et Office Menu. Sous CustomTab ou Office tabulation sont Group puis Control then Action. Sous Office menu, contrôle puis action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
+![Vue d’ensemble des éléments de commandes de complément dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes enfants et les ressources. Sous Hosts se trouvent Host, puis DesktopFormFactor. Sous DesktopFormFactor se trouvent FunctionFile et ExtensionPoint. Sous ExtensionPoint, vous pouvez trouver CustomTab ou OfficeTab et Office Menu. Sous CustomTab ou Office onglet sont Groupe, puis Contrôle puis Action. Sous Office menu sont Contrôle, puis Action. Sous Ressources (enfant de VersionOverrides) se trouvent images, URL, ShortStrings et LongStrings.](../images/version-overrides.png)
 
 ## <a name="step-1-create-the-project"></a>Étape 1 : Créer le projet
 
-Nous vous recommandons de créer un projet en suivant l’un des démarrages rapides, par exemple créer un Excel [du volet](../quickstarts/excel-quickstart-jquery.md) Des tâches. Chaque démarrage rapide pour Excel, Word et PowerPoint génère un projet qui contient déjà une commande de add-in (bouton) pour afficher le volet Des tâches. Assurez-vous que vous avez lu les commandes de Excel[, Word et PowerPoint](../design/add-in-commands.md) avant d’utiliser les commandes de add-in.
+Nous vous recommandons de créer un projet en suivant l’un des démarrages rapides tels que [Créer un complément du volet Office Excel](../quickstarts/excel-quickstart-jquery.md). Chaque démarrage rapide pour Excel, Word et PowerPoint génère un projet qui contient déjà une commande de complément (bouton) pour afficher le volet Office. Vérifiez que vous avez lu [des commandes de complément pour Excel, Word et PowerPoint](../design/add-in-commands.md) avant d’utiliser des commandes de complément.
 
 ## <a name="step-2-create-a-task-pane-add-in"></a>Étape 2 : créer un complément de volet Office
 
-Pour commencer à utiliser des commandes de add-in, vous devez d’abord créer un add-in du volet Des tâches, puis modifier le manifeste du add-in comme décrit dans cet article. Vous ne pouvez pas utiliser de commandes de add-in avec des modules de contenu. Si vous met à jour un manifeste existant, vous devez ajouter les **espaces de noms XML appropriés** , ainsi que l’élément **VersionOverrides** au manifeste, comme décrit à l’étape 3 : ajouter l’élément [VersionOverrides](#step-3-add-versionoverrides-element).
+Pour commencer à utiliser des commandes de complément, vous devez d’abord créer un complément du volet Office, puis modifier le manifeste du complément comme décrit dans cet article. Vous ne pouvez pas utiliser de commandes de complément avec des compléments de contenu. Si vous mettez à jour un manifeste existant, vous devez ajouter les **espaces de noms XML appropriés** et ajouter l’élément **VersionOverrides** au manifeste, comme décrit à l’étape [3 : Ajouter l’élément VersionOverrides](#step-3-add-versionoverrides-element).
 
 L’exemple suivant illustre le manifeste d’un complément Office 2013. Ce manifeste ne contient pas de commande de complément car il n’y a pas d’élément **VersionOverrides**. Office 2013 ne prend pas en charge les commandes de complément mais, en ajoutant **VersionOverrides** à ce manifeste, votre complément s’exécute dans Office 2013 et Office 2016. Dans Office 2013, votre complément n’affiche pas les commandes de complément et utilise la valeur **SourceLocation** pour exécuter votre complément sous la forme d’un complément de volet de tâches unique. Dans Office 2016, si aucun élément **VersionOverrides** n’est inclus, **SourceLocation** est utilisé pour exécuter votre complément. Cependant, si vous incluez **VersionOverrides**, votre complément affiche uniquement les commandes de complément et n’affiche pas votre complément sous la forme d’un complément de volet de tâches unique.
   
@@ -86,8 +86,8 @@ Le tableau suivant présente les éléments enfants de **VersionOverrides**.
 |Élément|Description|
 |:-----|:-----|
 |**Description** <br/> |Facultatif. Décrit le complément. Cet élément **Description** enfant remplace un élément **Description** précédent dans la partie parent du manifeste. L’attribut **resid** pour cet élément **Description** est défini sur l’**id** d’un élément **Chaîne**. L’élément **Chaîne** contient le texte pour la **description**. <br/> |
-|**Configuration requise** <br/> |Facultatif. Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cet élément **Configuration requise** enfant remplace l’élément **Configuration requise** dans la partie parent du manifeste. Pour plus d’informations, voir [Spécifier les Office applications et les api requises](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
-|**Hôtes** <br/> |Obligatoire. Spécifie une collection d’applications Office de données. L’élément **Hôtes** enfant remplace l’élément **Hôtes** dans la partie parent du manifeste. Vous devez inclure un ensemble d’attributs **xsi:type** à « Classeur » ou « Document ». <br/> |
+|**Configuration requise** <br/> |Facultatif. Spécifie l’ensemble de conditions requises minimal et la version d’Office.js qui doit être activée par le complément Office. Cet élément **Configuration requise** enfant remplace l’élément **Configuration requise** dans la partie parent du manifeste. Pour plus d’informations, consultez [Spécifier Office applications et les exigences d’API](../develop/specify-office-hosts-and-api-requirements.md).  <br/> |
+|**Hôtes** <br/> |Obligatoire. Spécifie une collection d’applications Office. L’élément **Hôtes** enfant remplace l’élément **Hôtes** dans la partie parent du manifeste. Vous devez inclure un ensemble d’attributs **xsi:type** à « Classeur » ou « Document ». <br/> |
 |**Ressources** <br/> |Définit une collection de ressources (chaînes, URL et images) qui sont référencées par d’autres éléments de manifeste. Par exemple, la valeur de l’élément **Description** fait référence à un élément enfant dans **Ressources**. L’élément **Ressources** est décrit à l’[étape 7 : ajouter l’élément Ressources](#step-7-add-the-resources-element), plus loin dans cet article. <br/> |
 
 L’exemple suivant montre comment utiliser l’élément **VersionOverrides** et ses éléments enfants.
@@ -118,7 +118,7 @@ L’exemple suivant montre comment utiliser l’élément **VersionOverrides** e
 
 ## <a name="step-4-add-hosts-host-and-desktopformfactor-elements"></a>Étape 4 : ajouter des éléments Hosts, Host et DesktopFormFactor
 
-L’élément **Hôtes** contient un ou plusieurs éléments **Hôte**. Un **élément Host** spécifie une application Office spécifique. **L’élément Host** contient des éléments enfants qui spécifient les commandes de add-in à afficher après l’installation de votre Office application. Pour afficher les mêmes commandes de Office applications différentes, vous devez dupliquer les éléments enfants dans chaque **hôte**.
+L’élément **Hôtes** contient un ou plusieurs éléments **Hôte**. Un élément **Host** spécifie une application Office particulière. L’élément **Host** contient des éléments enfants qui spécifient les commandes de complément à afficher après l’installation de votre complément dans cette application Office. Pour afficher les mêmes commandes de complément dans deux ou plusieurs applications Office différentes, vous devez dupliquer les éléments enfants dans chaque **hôte**.
 
 L’élément **DesktopFormFactor** spécifie les paramètres d’un complément exécuté dans Office sur le web (dans un navigateur) et Windows.
 
@@ -177,7 +177,7 @@ Le code suivant montre comment implémenter la fonction utilisée par **Function
         };
     })();
 
-    // Your function must be in the global namespace.
+    // Define the function.
     function writeText(event) {
 
         // Implement your custom code here. The following code is a simple example.  
@@ -195,6 +195,9 @@ Le code suivant montre comment implémenter la fonction utilisée par **Function
         // Calling event.completed is required. event.completed lets the platform know that processing has completed.
         event.completed();
     }
+    
+    // You must register the function with the following line.
+    Office.actions.associate("writeText", writeText);
 </script>
 ```
 
@@ -203,7 +206,7 @@ Le code suivant montre comment implémenter la fonction utilisée par **Function
 
 ## <a name="step-6-add-extensionpoint-elements"></a>Etape 6 : ajouter des éléments ExtensionPoint
 
-**L’élément ExtensionPoint** définit l’endroit où les commandes de Office’interface utilisateur. Vous pouvez définir **des éléments ExtensionPoint** avec ces **valeurs xsi:type** .
+L’élément **ExtensionPoint** définit l’endroit où les commandes de complément doivent apparaître dans l’interface utilisateur Office. Vous pouvez définir des éléments **ExtensionPoint** avec ces valeurs **xsi:type** .
 
 - **PrimaryCommandSurface**, qui fait référence au ruban dans Office.
 
@@ -249,13 +252,13 @@ Les exemples suivants montrent comment utiliser l’élément **ExtensionPoint**
 |Élément|Description|
 |:-----|:-----|
 |**CustomTab** <br/> |Obligatoire si vous souhaitez ajouter un onglet personnalisé au ruban (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **CustomTab**, vous ne pouvez pas utiliser l’élément **OfficeTab**. L’attribut **id** est obligatoire. <br/> |
-|**OfficeTab** <br/> |Obligatoire si vous souhaitez étendre un onglet application Office ruban par défaut (à l’aide de **PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. <br/> Pour plus d’informations sur les valeurs d’onglet à utiliser avec **l’attribut id**, voir Valeurs de tabulation pour les [onglets application Office ruban par défaut](/javascript/api/manifest/officetab).  <br/> |
+|**OfficeTab** <br/> |Obligatoire si vous souhaitez étendre un onglet de ruban application Office par défaut (à l’aide **de PrimaryCommandSurface**). Si vous utilisez l’élément **OfficeTab**, vous ne pouvez pas utiliser l’élément **CustomTab**. <br/> Pour plus de valeurs d’onglet à utiliser avec l’attribut **d’ID**, consultez [les valeurs Tab pour les onglets de ruban application Office par défaut](/javascript/api/manifest/officetab).  <br/> |
 |**OfficeMenu** <br/> | Obligatoire pour ajouter des commandes de complément à un menu contextuel par défaut (en utilisant **ContextMenu**). L’attribut **id** doit être défini sur : <br/> **ContextMenuText** pour Excel ou Word. Affiche l’élément dans le menu contextuel lorsque du texte est sélectionné et que l’utilisateur clique dessus avec le bouton droit de la souris. <br/> **ContextMenuCell** pour Excel. Affiche l’élément dans le menu contextuel lorsque l’utilisateur clique avec le bouton droit de la souris dans une cellule de la feuille de calcul. <br/> |
 |**Group** <br/> |Groupe de points d’extension de l’interface utilisateur sur un onglet. Un groupe peut contenir jusqu’à six contrôles. L’attribut **id** est obligatoire. Il s’agit d’une chaîne avec un maximum de 125 caractères. <br/> |
 |**Label** <br/> |Obligatoire. L’étiquette du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **ShortStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
 |**Icon** <br/> |Obligatoire. Spécifie l’icône du groupe à utiliser sur de petits appareils, ou lorsqu’un nombre trop important de boutons est affiché. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Image**. **Image** est un enfant de l’élément **Images**, qui est lui-même un enfant de l’élément **Ressources**. L’attribut **size** donne la taille, en pixels, de l’image. Trois tailles d’images sont obligatoires : 16, 32 et 80. 5 tailles facultatives sont également prises en charge : 20, 24, 40, 48 et 64. <br/> |
 |**Tooltip** <br/> |Facultatif. Info-bulle du groupe. L’attribut **resid** doit être défini sur la valeur de l’attribut **id** d’un élément **Chaîne**. **Chaîne** est un enfant de l’élément **LongStrings**, qui est lui-même un enfant de l’élément **Ressources**. <br/> |
-|**Control** <br/> |Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus [d’informations](/javascript/api/manifest/control-button) , voir Contrôles de bouton et [contrôles](/javascript/api/manifest/control-menu) de menu. <br/>**Remarque :** pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.          |
+|**Control** <br/> |Chaque groupe requiert au moins un contrôle. Un élément **Control** peut être de type **Button** ou **Menu**. Utilisez **Menu** pour spécifier une liste déroulante de contrôles de bouton. Actuellement, seuls les boutons et les menus sont pris en charge. Pour plus d’informations, consultez [Contrôles bouton](/javascript/api/manifest/control-button) et [contrôles de menu](/javascript/api/manifest/control-menu) . <br/>**Remarque :** pour faciliter les opérations de dépannage, nous vous recommandons d’ajouter un élément **Control** et les éléments enfants **Resources** associés un par un.          |
 
 ### <a name="button-controls"></a>Contrôles de bouton
 
@@ -429,7 +432,7 @@ L’exemple suivant montre un exemple de l’utilisation de l’élément **Ress
 > [!NOTE]
 > Vous devez utiliser le protocole SSL (Secure Sockets Layer) pour toutes les URL dans les éléments **Image** et **Url**.
 
-### <a name="tab-values-for-default-office-app-ribbon-tabs"></a>Valeurs d’onglet pour les onglets application Office ruban par défaut
+### <a name="tab-values-for-default-office-app-ribbon-tabs"></a>Valeurs de tabulation pour les onglets de ruban application Office par défaut
 
 Dans Excel et Word, vous pouvez ajouter vos commandes de complément au ruban en utilisant les onglets de l’interface utilisateur Office par défaut. Le tableau ci-dessous contient les valeurs que vous pouvez utiliser pour l’attribut **id** de l’élément **OfficeTab**. Les valeurs des onglets respectent la casse.
 
@@ -442,6 +445,6 @@ Dans Excel et Word, vous pouvez ajouter vos commandes de complément au ruban en
 ## <a name="see-also"></a>Voir aussi
 
 - [Commandes de complément pour Excel, PowerPoint et Word](../design/add-in-commands.md)
-- [Exemple : Créer un Excel avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
-- [Exemple : Créer un add-in Word avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
-- [Exemple : Créer un PowerPoint avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)
+- [Exemple : Créer un complément Excel avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/excel)
+- [Exemple : Créer un complément Word avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/word)
+- [Exemple : Créer un complément PowerPoint avec des boutons de commande](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands/powerpoint)

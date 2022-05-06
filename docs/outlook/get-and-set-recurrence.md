@@ -3,19 +3,19 @@ title: Obtenir et définir la récurrence dans un complément Outlook
 description: Cette rubrique vous explique comment utiliser l’API JavaScript Office pour obtenir et définir différentes propriétés de récurrence d’un élément dans un complément Outlook.
 ms.date: 08/18/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ebdce8236d55fc6569756aa88fb721d8e6ec9f1
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 17c774b9a9b0bb87dd158e18114c18dd745f64fc
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496284"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244743"
 ---
 # <a name="get-and-set-recurrence"></a>Obtenir et définir la récurrence
 
-Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript Office pour gérer les modèles de récurrence d’une série de rendez-vous dans votre application.
+Vous devez parfois créer et mettre à jour un rendez-vous périodique, par exemple une réunion hebdomadaire pour un projet d’équipe ou un rappel anniversaire annuel. Vous pouvez utiliser l’API JavaScript Office pour gérer les modèles de périodicité d’une série de rendez-vous dans votre complément.
 
 > [!NOTE]
-> La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.7. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
+> La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.7](/javascript/api/requirement-sets/outlook/requirement-set-1.7/outlook-requirement-set-1.7). Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="available-recurrence-patterns"></a>Modèles de récurrence disponibles
 
@@ -76,9 +76,9 @@ function callback(asyncResult)
 }
 ```
 
-## <a name="change-recurrence-as-the-organizer"></a>Modifier la récurrence en tant qu’organisateur
+## <a name="change-recurrence-as-the-organizer"></a>Modifier la périodicité en tant qu’organisateur
 
-Dans l’exemple suivant, en mode composition, l’organisateur de rendez-vous obtient l’objet de récurrence d’une série de rendez-vous en fonction de la série ou d’une instance de cette série, puis définit une nouvelle durée de récurrence.
+Dans l’exemple suivant, en mode composition, l’organisateur de rendez-vous obtient l’objet de périodicité d’une série de rendez-vous en fonction de la série ou d’une instance de cette série, puis définit une nouvelle durée de périodicité.
 
 ```js
 Office.context.mailbox.item.recurrence.getAsync(callback);
@@ -121,7 +121,7 @@ function callback(asyncResult){
 L’exemple suivant montre les résultats de l’appel `getAsync` qui récupère la récurrence d’une série.
 
 > [!NOTE]
-> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les méthodes [`SeriesTime`][SeriesTime link] pour obtenir les propriétés de date et d’heure de récurrence.
+> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les [`SeriesTime`][SeriesTime link] méthodes pour obtenir les propriétés de date et d’heure de périodicité.
 
 ```json
 {
@@ -158,7 +158,7 @@ function outputRecurrence(item) {
 L’exemple suivant montre la valeur de la `item.recurrence` propriété pour une série de rendez-vous.
 
 > [!NOTE]
-> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les méthodes [`SeriesTime`][SeriesTime link] pour obtenir les propriétés de date et d’heure de récurrence.
+> Dans cet exemple, `seriesTimeObject` est un espace réservé pour JSON représentant la `recurrence.seriesTime` propriété. Vous devez utiliser les [`SeriesTime`][SeriesTime link] méthodes pour obtenir les propriétés de date et d’heure de périodicité.
 
 ```json
 {

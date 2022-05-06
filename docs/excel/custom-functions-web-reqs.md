@@ -1,18 +1,18 @@
 ---
-ms.date: 07/08/2021
-description: Demandez, diffusez et annulez la diffusion en continu de données externes dans votre workbook avec des fonctions personnalisées Excel.
+ms.date: 05/02/2022
+description: Demandez, diffusez et annulez la diffusion en continu de données externes vers votre classeur avec des fonctions personnalisées dans Excel.
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: 641c6da717ede364d59591838849cd47d887f63c
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744651"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244848"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
-L’une des façon dont les fonctions personnalisées améliorent la puissance d’Excel est qu’elles reçoivent des données en provenance d’emplacements autres que le classeur, par exemple, le web ou un serveur (via WebSockets). Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
+L’une des façons dont les fonctions personnalisées améliorent la puissance de Excel consiste à recevoir des données à partir d’emplacements autres que le classeur, tels que le web ou un serveur (via [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -22,22 +22,23 @@ L’une des façon dont les fonctions personnalisées améliorent la puissance d
 
 Si une fonction personnalisée récupère des données d’une source externe comme le web, elle doit :
 
-1. Renvoyer une promesse JavaScript à Excel.
-2. Résoudre la promesse avec la valeur finale à l’aide de la fonction de rappel.
+1. Renvoyer un [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) à Excel.
+2. Résolvez la `Promise` valeur finale à l’aide de la fonction de rappel.
 
 ### <a name="fetch-example"></a>Exemple de récupération
 
-Dans l’exemple de code suivant, `webRequest` la fonction atteint l’API hypothétique Contoso « Nombre de personnes dans l’espace », qui suit le nombre de personnes actuellement sur la station spatiale internationale. La fonction renvoie une promesse JavaScript et utilise la récupération pour demander des informations à l’API. Les données obtenues sont transformées en JSON et la `names` propriété est convertie en chaîne, ce qui permet de résoudre la promesse.
+Dans l’exemple de code suivant, la `webRequest` fonction accède à une API externe hypothétique qui suit le nombre de personnes actuellement sur la Station spatiale internationale. La fonction retourne un Code JavaScript `Promise` et l’utilise pour demander des `fetch` informations à partir de l’API hypothétique. Les données obtenues sont transformées en JSON et la `names` propriété est convertie en chaîne, qui est utilisée pour résoudre la promesse.
 
 Lorsque vous développez vos propres fonctions, vous souhaitez peut-être effectuer une action si la requête Web ne se termine pas en temps voulu ou envisager de [regrouper plusieurs demandes API](custom-functions-batching.md).
 
 ```JS
 /**
- * Requests the names of the people currently on the International Space Station from a hypothetical API.
+ * Requests the names of the people currently on the International Space Station.
+ * Note: This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
  * @customfunction
  */
 function webRequest() {
-  let url = "https://www.contoso.com/NumberOfPeopleInSpace";
+  let url = "https://www.contoso.com/NumberOfPeopleInSpace"; // This is a hypothetical URL.
   return new Promise(function (resolve, reject) {
     fetch(url)
       .then(function (response){
@@ -52,11 +53,11 @@ function webRequest() {
 ```
 
 > [!NOTE]
-> L’utilisation de `Fetch` permet d’éviter les rappels imbriqués et peut être préférable à XHR dans certains cas.
+> L’utilisation de `fetch` permet d’éviter les rappels imbriqués et peut être préférable à XHR dans certains cas.
 
 ### <a name="xhr-example"></a>Exemple avec XHR
 
-Dans l’exemple de code suivant, `getStarCount` la fonction appelle l’API Github pour découvrir la quantité d’étoiles données au référentiel d’un utilisateur particulier. Il s’agit d’une fonction asynchrone qui renvoie une promesse JavaScript. Lorsque des données sont obtenues à partir de l’appel Web, la promesse est résolue et renvoie les données à la cellule.
+Dans l’exemple de code suivant, la `getStarCount` fonction appelle l’API Github pour découvrir la quantité d’étoiles donnée au référentiel d’un utilisateur particulier. Il s’agit d’une fonction asynchrone qui retourne un Code JavaScript `Promise`. Lorsque des données sont obtenues à partir de l’appel web, la promesse est résolue, ce qui retourne les données à la cellule.
 
 ```TS
 /**
@@ -99,17 +100,17 @@ async function getStarCount(userName: string, repoName: string) {
 
 Les fonctions personnalisées de diffusion vous aident à copier des données vers des cellules à plusieurs reprises, sans exiger qu’un utilisateur actualise explicitement quoi que ce soit. Cela peut s’avérer utile pour vérifier les données actives d’un service en ligne, comme la fonction dans le [didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md).
 
-Pour déclarer une fonction de diffusion en continu, vous pouvez utiliser :
+Pour déclarer une fonction de diffusion en continu, vous pouvez utiliser l’une des deux options suivantes.
 
 - Balise `@streaming` .
-- Paramètre `CustomFunctions.StreamingInvocation` d’appel.
+- Paramètre d’appel `CustomFunctions.StreamingInvocation` .
 
 L’exemple de code suivant est une fonction personnalisée qui ajoute un nombre au résultat chaque seconde. Notez ce qui suit à propos de ce code.
 
 - Excel affiche chaque nouvelle valeur automatiquement à l’aide de la méthode `setResult`.
-- Le deuxième paramètre d’entrée, l’invocation, n’est pas visible aux utilisateurs finaux dans Excel lorsqu’ils sélectionnent la fonction à partir du menu de saisie semi-automatique.
-- Le rappel `onCanceled` définit la fonction qui s’exécute lorsque la fonction est annulée.
-- La diffusion en continu n’est pas nécessairement liée à la création d’une requête Web : dans ce cas, la fonction ne crée pas de requête Web, mais continue d’obtenir des données à intervalles définis, de sorte qu’elle nécessite l’utilisation du paramètre `invocation` de diffusion en continu.
+- Le deuxième paramètre d’entrée `invocation`, n’est pas visible aux utilisateurs finaux dans Excel lorsqu’ils sélectionnent la fonction à partir du menu de saisie semi-automatique.
+- Le `onCanceled` rappel définit la fonction qui s’exécute lorsque la fonction est annulée.
+- La diffusion en continu n’est pas nécessairement liée à la création d’une requête web. Dans ce cas, la fonction n’effectue pas de requête web, mais reçoit toujours des données à intervalles définis. Elle nécessite donc l’utilisation du paramètre de streaming `invocation` .
 
 ```JS
 /**
@@ -141,17 +142,18 @@ Excel annule l’exécution d’une fonction dans les situations suivantes.
 
 Vous pouvez également définir une valeur de diffusion en continu par défaut pour gérer les cas lorsqu’une demande est effectuée, mais que vous êtes en mode hors connexion.
 
-Notez qu’il existe également une catégorie de fonctions appelée fonctions annulables, qui ne sont _pas_ liées à des fonctions de diffusion en continu. Seules les fonctions personnalisées asynchrones qui retournent une valeur sont annulables. Les fonctions annulables permettent de mettre fin à une requête web au milieu d’une demande, en utilisant une commande [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) pour décider de l’action à effectuer lors de l’annulation. Déclarez une fonction annulable à l’aide de la balise `@cancelable`.
+> [!NOTE]
+> Il existe également une catégorie de fonctions appelées fonctions annulables, qui ne sont _pas_ liées aux fonctions de diffusion en continu. Seules les fonctions personnalisées asynchrones qui retournent une valeur sont annulables. Les fonctions annulables permettent de mettre fin à une requête web au milieu d’une demande, en utilisant une commande [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation) pour décider de l’action à effectuer lors de l’annulation. Déclarez une fonction annulable à l’aide de la balise `@cancelable`.
 
 ### <a name="use-an-invocation-parameter"></a>Utiliser un paramètre d’appel
 
-Par défaut, le paramètre `invocation` est le dernier de toute fonction personnalisée. Le `invocation` paramètre donne un contexte sur la cellule (par exemple, son adresse et son contenu) et vous permet d’utiliser et `setResult` des `onCanceled` méthodes. Ces méthodes définissent l’action d’une fonction quand elle diffuse (`setResult`) ou est annulée (`onCanceled`).
+Par défaut, le paramètre `invocation` est le dernier de toute fonction personnalisée. Le `invocation` paramètre donne un contexte sur la cellule (par exemple son adresse et son contenu) et vous permet d’utiliser `setResult` et `onCanceled` de méthodes. Ces méthodes définissent l’action d’une fonction quand elle diffuse (`setResult`) ou est annulée (`onCanceled`).
 
-Si vous utilisez TypeScript, le handler d’appel doit être de type ou [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
+Si vous utilisez TypeScript, le gestionnaire d’appel doit être de type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) ou [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
 
 ## <a name="receiving-data-via-websockets"></a>Réception de données via WebSockets
 
-Dans une fonction personnalisée, vous pouvez utiliser WebSockets afin d’échanger des données avec un serveur via une connexion permanente. À l’aide des WebSockets, votre fonction personnalisée peut ouvrir une connexion avec un serveur, puis recevoir automatiquement des messages à partir du serveur lorsque certains événements se produisent, sans avoir à interrogé explicitement le serveur pour obtenir des données.
+Dans une fonction personnalisée, vous pouvez utiliser [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) afin d’échanger des données avec un serveur via une connexion permanente. À l’aide de WebSockets, votre fonction personnalisée peut ouvrir une connexion avec un serveur, puis recevoir automatiquement des messages du serveur lorsque certains événements se produisent, sans avoir à interroger explicitement le serveur pour obtenir des données.
 
 ### <a name="websockets-example"></a>Exemple avec WebSockets
 
@@ -178,6 +180,6 @@ ws.onerror(error){
 
 - [Valeurs volatiles dans les fonctions](custom-functions-volatile.md)
 - [Créer des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
-- [Créer manuellement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md)
+- [Créer manuellement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json.md)
 - [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 - [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -3,12 +3,12 @@ title: Configuration requise pour exécuter des compléments Office
 description: Découvrez les exigences du client et du serveur qu’un utilisateur final doit exécuter Office compléments.
 ms.date: 04/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9bc093b3e04dd1a67ba63bebbe2e44acf5137a07
-ms.sourcegitcommit: 9795f671cacaa0a9b03431ecdfff996f690e30ed
+ms.openlocfilehash: fc13f28f1d0ae22307b4add6f0367bc1fee211bd
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/20/2022
-ms.locfileid: "64963490"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244771"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -52,7 +52,7 @@ Le logiciel suivant est requis pour développer un complément Office pour les c
   > La Configuration de sécurité renforcée d’Internet Explorer (ESC) doit être désactivée pour que les compléments web Office fonctionnent. Si vous utilisez un ordinateur Windows Server comme votre client lors du développement des compléments, notez qu’ESC est activée par défaut dans Windows Server.
 
 - L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
-- Un éditeur HTML et JavaScript tel que le Bloc-notes, [Visual Studio et les outils de développement Office ](https://www.visualstudio.com/features/office-tools-vs) ou un outil de développement web tiers.
+- Un éditeur HTML et JavaScript tel que [Visual Studio Code](https://code.visualstudio.com/), [Visual Studio et les outils](https://www.visualstudio.com/features/office-tools-vs) de développement Microsoft, ou un outil de développement web non Microsoft.
 
 ## <a name="client-requirements-os-x-desktop"></a>Exigences en matière de client : ordinateur de bureau OS X
 
