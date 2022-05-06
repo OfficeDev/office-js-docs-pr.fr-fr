@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur le complément Excel
 description: Créez un complément Excel qui crée, remplit, filtre et trie un tableau, crée un graphique, fige un en-tête de tableau, protège une feuille de calcul et ouvre une boîte de dialogue.
-ms.date: 04/13/2022
+ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d0308468ace3612a69c3059c730fd56e8f61a39f
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
+ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863286"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244799"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -42,7 +42,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `JavaScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office.](../images/yo-office-excel.png)
@@ -624,11 +624,11 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
         args.completed();
     }
     ```
-
-1. Ajoutez la ligne suivante à la fin du fichier :
+    
+1. Ajoutez la ligne suivante juste en dessous de la fonction afin de l’inscrire.
 
     ```js
-    g.toggleProtection = toggleProtection;
+    Office.actions.associate("toggleProtection", toggleProtection);
     ```
 
 1. Dans la fonction `toggleProtection`, remplacez `TODO1` par le code suivant. Ce code utilise la propriété de protection de l’objet de feuille de calcul dans un modèle de bascule standard. La tâche `TODO2` sera expliquée dans la section suivante.
@@ -888,7 +888,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
     ],
     ```
 
-1. Si le serveur web local est en cours d’exécution, arrêtez-le en entrant la commande suivante dans l’invite de commandes. Cela doit fermer la fenêtre de commande du nœud.
+1. Si le serveur web local est en cours d’exécution, arrêtez-le en entrant la commande suivante dans l’invite de commandes. Cela fermera la fenêtre de commande du nœud.
 
     ```command&nbsp;line
     npm stop

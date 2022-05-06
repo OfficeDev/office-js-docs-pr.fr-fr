@@ -3,16 +3,16 @@ title: Conception des compléments Outlook
 description: Les instructions suivantes vous aideront à concevoir et à créer un complément attrayant, qui apportera le meilleur de votre application directement dans Outlook sur Windows, le web, iOS, Mac et Android.
 ms.date: 08/12/2021
 ms.localizationpriority: high
-ms.openlocfilehash: d18c361f0c33275f588d7fb2157f870c4ed3de57
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 486913934be9be5c1150a2037d8a913ac234c645
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149094"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244827"
 ---
 # <a name="outlook-add-in-design-guidelines"></a>Instructions de création d’un complément Outlook
 
-Les compléments sont un excellent moyen pour les partenaires d’étendre les fonctionnalités d’Outlook au-delà de notre ensemble de fonctionnalités de base. Les compléments permettent aux utilisateurs d’accéder à des expériences, des tâches et du contenu de tiers sans avoir à quitter leur boîte de réception. Une fois installés, les compléments Outlook sont disponibles sur toutes les plateformes et tous les appareils.  
+Les compléments sont un excellent moyen pour les partenaires d’étendre les fonctionnalités d’Outlook au-delà de notre ensemble de fonctionnalités de base. Les compléments permettent aux utilisateurs d’accéder à des expériences, des tâches et du contenu externes sans avoir à quitter leur boîte de réception. Une fois installés, les compléments Outlook sont disponibles sur toutes les plateformes et tous les appareils.  
 
 Les instructions de haut niveau suivantes vous aideront à concevoir et à créer un complément attrayant, qui apportera le meilleur de votre application directement dans Outlook&mdash; sur Windows, le web, iOS, Mac et Android.
 
