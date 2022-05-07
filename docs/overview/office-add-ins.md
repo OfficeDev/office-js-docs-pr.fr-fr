@@ -1,28 +1,28 @@
 ---
 title: Vue d’ensemble de la plateforme de compléments pour Office
 description: Utilisez des technologies web que vous connaissez, telles que le code HTML, CSS et JavaScript, pour étendre Word, Excel, PowerPoint, OneNote, Project et Outlook, et interagir avec ces programmes.
-ms.date: 10/14/2020
+ms.date: 04/14/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 237650f1ee3b2577a51bb4e6625b96be54a11838
-ms.sourcegitcommit: e44a8109d9323aea42ace643e11717fb49f40baa
+ms.openlocfilehash: 8216abbce1147280c722b2ac8450379e2425172b
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2021
-ms.locfileid: "61514102"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244855"
 ---
 # <a name="office-add-ins-platform-overview"></a>Vue d’ensemble de la plateforme de compléments pour Office
 
-La plateforme des compléments Office permet de créer des solutions qui étendent des applications Office et interagissent avec du contenu dans des documents Office. Les compléments Office vous permettent d’utiliser des technologies web que vous connaissez, telles que le code HTML, CSS et JavaScript, pour étendre Word, Excel, PowerPoint, OneNote, Project et Outlook, et interagir avec ces programmes. Votre solution peut être exécutée dans Office sur plusieurs plateformes, notamment Windows, Mac et iPad, ainsi que dans un navigateur.
+La plateforme des compléments Office permet de créer des solutions qui étendent des applications Office et interagissent avec du contenu dans des documents Office. Les compléments Office vous permettent d’utiliser des technologies web que vous connaissez, telles que le code HTML, CSS et JavaScript pour étendre et interagir avec Outlook, Excel, Word, PowerPoint, OneNote et Project. Votre solution peut être exécutée dans Office sur plusieurs plateformes, notamment Windows, Mac, iPad et un navigateur.
 
 ![L’application Office et un site web incorporé (complément) offrent des possibilités d’extensibilité infinies.](../images/addins-overview.png)
 
 Les compléments Office offrent presque les mêmes possibilités qu’une page web dans un navigateur. Vous pouvez utiliser la plateforme des compléments Office pour :
 
--  **Ajout de nouvelles fonctionnalités à des clients Office :** vous pouvez importer des données externes dans Office, automatiser des documents Office, exposer des fonctionnalités tierces dans des clients Office et bien plus encore. Par exemple, vous pouvez utiliser l’API Microsoft Graph pour établir une connexion vers des données qui améliorent la productivité.
+- **Ajout de nouvelles fonctionnalités à des clients Office** : vous pouvez importer des données externes dans Office, automatiser des documents Office, exposer des fonctionnalités à partir de Microsoft et d’autres dans des clients Office et bien plus encore. Par exemple, vous pouvez utiliser l’API Microsoft Graph pour établir une connexion vers des données qui améliorent la productivité.
 
--  **Créer de nouveaux objets interactifs et enrichis qui peuvent être incorporés dans des documents Office :** vous pouvez incorporer des cartes, des graphiques et des visualisations interactives que les utilisateurs peuvent ajouter à leurs feuilles de calcul Excel et présentations PowerPoint.
+- **Créer de nouveaux objets interactifs et enrichis qui peuvent être incorporés dans des documents Office :** vous pouvez incorporer des cartes, des graphiques et des visualisations interactives que les utilisateurs peuvent ajouter à leurs feuilles de calcul Excel et présentations PowerPoint.
 
 ## <a name="how-are-office-add-ins-different-from-com-and-vsto-add-ins"></a>En quoi les compléments Office sont-ils différents des compléments COM et VSTO ?
 
@@ -58,8 +58,6 @@ Le manifeste est un fichier XML qui spécifie les paramètres et les fonctionnal
 
 Le complément Office le plus simple est composé d’une page HTML statique qui est affichée dans une application Office, mais qui n’interagit pas avec le document Office ou une autre ressource Internet. Toutefois, pour créer un complément qui interagit avec des documents Office ou permet à l’utilisateur d’interagir avec les ressources en ligne à partir d’une application cliente Office, vous pouvez utiliser n’importe quelle technologie, aussi bien côté client que serveur, prise en charge par votre fournisseur d’hébergement (par exemple, ASP.NET, PHP ou Node.js). Pour interagir avec des clients et des documents Office, vous pouvez utiliser les API JavaScript Office.js.
 
-*Figure 2. Composants d’un complément Office Hello World*
-
 ![Composants d’un complément Hello World.](../images/about-addins-componentshelloworldoffice.png)
 
 ## <a name="extending-and-interacting-with-office-clients"></a>Extension des clients Office et interaction avec ces clients
@@ -69,7 +67,7 @@ Les compléments Office offrent les possibilités suivantes dans une application
 - Étendre les fonctionnalités (toutes les applications Office)
 
 - Créer de nouveaux objets (Excel ou PowerPoint)
- 
+
 ### <a name="extend-office-functionality"></a>Étendre les fonctionnalités d’Office
 
 Vous pouvez ajouter de nouvelles fonctionnalités aux applications Office via les éléments d’interface suivants :  
@@ -84,15 +82,11 @@ Les éléments d’interface personnalisés et les volets Office sont définis d
 
 Vous pouvez ajouter des éléments de menu et des boutons de ruban personnalisé au ruban d’Office sur le web et sur Windows. Les utilisateurs peuvent ainsi accéder à votre complément directement à partir de leur application Office. Les boutons de commande peuvent lancer différentes actions, par exemple afficher un volet Office comportant du contenu HTML personnalisé ou exécuter une fonction JavaScript.  
 
-*Figure 3. Commandes des compléments dans le ruban*
-
 ![Boutons personnalisés et commandes de menu.](../images/about-addins-addincommands.png)
 
 #### <a name="task-panes"></a>Volets Office  
 
 Vous pouvez utiliser des volets Office en plus des commandes de complément pour permettre aux utilisateurs d’interagir avec votre solution. Les clients qui ne prennent pas en charge les commandes de complément (Office 2013 et Office sur iPad) exécutent votre complément sous la forme d’un volet Office. Les utilisateurs lancent les compléments de volet Office via le bouton **Mes compléments** situé dans l’onglet **Insertion**.
-
-*Figure 4. Volet Office*
 
 ![Utilisez des volets de tâches en plus des commandes de complément.](../images/about-addins-taskpane.png)
 
@@ -107,8 +101,6 @@ Pour accéder à une vue d’ensemble des compléments Outlook, reportez-vous à
 ### <a name="create-new-objects-in-office-documents"></a>Création d’objets dans des documents Office
 
 Vous pouvez incorporer des objets web, appelés compléments de contenu, dans des documents Excel et PowerPoint. Ces compléments de contenu vous permettent d’intégrer des visualisations de données web enrichies, du contenu multimédia (comme un lecteur vidéo YouTube ou une galerie d’images) et d’autres types de contenu externe.
-
-*Figure 5. Complément de contenu*
 
 ![Incorporer des objets web appelés compléments de contenu.](../images/about-addins-contentaddin.png)
 
