@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 02/23/2022
+ms.date: 05/01/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 987084c16f3e8f1af1809866ac248b4f1a4995b0
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511385"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244792"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -99,7 +99,7 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
     - **Sélectionnez un type de script** - `JavaScript`
 
-    - **Comment souhaitez-vous nommer votre complément ?** - `Git the gist`
+    - **Comment souhaitez-vous nommer votre complément ?** - `Git the gist`
 
     - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
@@ -175,7 +175,7 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
 
 ## <a name="define-buttons"></a>Définir des boutons
 
-À présent que vous avez vérifié que le complément base fonctionne, vous pouvez le personnaliser pour ajouter davantage de fonctionnalités. Par défaut, le manifeste définit uniquement les boutons de la fenêtre de lecture de message. Nous allons mettre à jour le manifeste pour supprimer les boutons de la fenêtre de lecture de message et définir deux nouveaux boutons pour la fenêtre composer un message :
+À présent que vous avez vérifié que le complément base fonctionne, vous pouvez le personnaliser pour ajouter davantage de fonctionnalités. Par défaut, le manifeste définit uniquement les boutons de la fenêtre de lecture de message. Nous allons mettre à jour le manifeste pour supprimer les boutons de la fenêtre de lecture de message et définir deux nouveaux boutons pour la fenêtre composer un message :
 
 - **Insérer un gist**: bouton qui ouvre un le volet des tâches
 
@@ -527,7 +527,7 @@ Enfin, ouvrez le fichier **webpack.config.js** qui se trouve dans le répertoire
     dialog: "./src/settings/dialog.js",
     ```
 
-    Lorsque c’est chose faite, le nouvel objet `entry` se présente comme suit :
+    Lorsque c’est chose faite, le nouvel objet `entry` se présente comme suit :
 
     ```js
     entry: {
@@ -538,7 +538,7 @@ Enfin, ouvrez le fichier **webpack.config.js** qui se trouve dans le répertoire
     },
     ```
 
-1. Recherchez la matrice `plugins` au sein de l’objet `config`. Dans `patterns`le tableau de `new CopyWebpackPlugin`l'objet, ajoutez de nouvelles entrées pour **taskpane.css** et **dialog.css**.
+1. Localisez le `plugins`tableau dans`config` l'objet. Dans le `patterns`tableau de `new CopyWebpackPlugin`l'objet, ajoutez de nouvelles entrées pour **taskpane.css** et **dialog.css**.
 
     ```js
     {
@@ -833,6 +833,9 @@ function insertDefaultGist(event) {
   }
 }
 
+// Register the function.
+Office.actions.associate("insertDefaultGist", insertDefaultGist);
+
 function receiveMessage(message) {
   config = JSON.parse(message.message);
   setConfig(config, function(result) {
@@ -848,18 +851,6 @@ function dialogClosed(message) {
   btnEvent.completed();
   btnEvent = null;
 }
-
-function getGlobal() {
-  return (typeof self !== "undefined") ? self :
-    (typeof window !== "undefined") ? window :
-    (typeof global !== "undefined") ? global :
-    undefined;
-}
-
-var g = getGlobal();
-
-// The add-in command functions need to be available in global scope.
-g.insertDefaultGist = insertDefaultGist;
 ```
 
 ### <a name="create-a-file-to-manage-configuration-settings"></a>Créer un fichier pour gérer les paramètres de configuration

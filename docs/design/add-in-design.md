@@ -3,16 +3,16 @@ title: Concevoir l'interface utilisateur des modules complémentaires d'Office
 description: Apprenez les meilleures pratiques pour la conception visuelle des compléments d'Office.
 ms.date: 07/08/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 77e54e39531ef6308fdc79d73ed3bc3ef2d3a0ae
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efbb0ee5f0ba75170b8bd4343392c07d9eda8501
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743062"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244750"
 ---
 # <a name="design-the-ui-of-office-add-ins"></a>Concevoir l'interface utilisateur des modules complémentaires d'Office
 
-Les compléments Office prolongent les fonctionnalités d’Office en offrant des fonctions contextuelles auxquelles les utilisateurs peuvent accéder au sein de clients Office. Les compléments permettent aux utilisateurs d’être plus productifs en leur donnant accès à des fonctionnalités tierces au sein d’Office, sans avoir à gérer de coûteux changements de contexte.
+Les compléments Office prolongent les fonctionnalités d’Office en offrant des fonctions contextuelles auxquelles les utilisateurs peuvent accéder au sein de clients Office. Les compléments permettent aux utilisateurs d’être plus productifs en leur donnant accès à des fonctionnalités externes au sein d’Office, sans avoir à gérer de coûteux changements de contexte.
 
 Votre conception d’interface utilisateur de complément doit s’intégrer en toute transparence à Office afin de fournir une interaction efficace et naturelle à vos utilisateurs. Tirez parti des [commandes de complément](add-in-commands.md) pour fournir l’accès à votre complément et appliquer les meilleures pratiques que nous vous recommandons lorsque vous créez une interface utilisateur HTML personnalisée.
 

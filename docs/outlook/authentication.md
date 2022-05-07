@@ -3,12 +3,12 @@ title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: dc5920408af4f5fd48e13a30741321269fe07a58
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 71b6a8a270bd044a972356db4e6d4394a01d8ace
+ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496298"
+ms.lasthandoff: 05/06/2022
+ms.locfileid: "65244841"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
@@ -53,9 +53,9 @@ Votre complément peut appeler la méthode [getUserIdentityTokenAsync](/javascri
 
 ## <a name="access-tokens-obtained-via-oauth2-flows"></a>Jetons d’accès obtenus via les flux OAuth2
 
-Les compléments peuvent également accéder à des services tiers qui prennent en charge les flux OAuth2 pour l’autorisation. Vous pouvez utiliser les jetons OAuth2 si votre complément :
+Les compléments peuvent également accéder à des services de Microsoft et d’autres entreprises qui prennent en charge OAuth2 pour l’autorisation. Vous pouvez utiliser les jetons OAuth2 si votre complément :
 
-- doit accéder à un service tiers en dehors de votre contrôle.
+- Doit accéder à un service en dehors de votre contrôle.
 
 Grâce à cette méthode, votre complément invite l’utilisateur à se connecter au service à l’aide de la méthode [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) pour initialiser le flux OAuth2 ou à l’aide de la bibliothèque [office-js-helpers](https://github.com/OfficeDev/office-js-helpers) pour le flux implicite OAuth2.
 
