@@ -1,14 +1,14 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 12/13/2021
+ms.date: 05/10/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 620452cee57532eee02c72d32dcbd4854b3ae909
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483405"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313190"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -64,14 +64,14 @@ Vous pouvez spécifier l’emplacement où s’affiche un onglet personnalisé s
 > [!NOTE]
 > Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni dans tous les scénarios. Pour plus d’informations, voir [Positionner un onglet personnalisé sur le ruban](custom-tab-placement.md).
 
-### <a name="integration-of-built-in-office-buttons-preview"></a>Intégration des boutons Office prédéfinis (aperçu)
+### <a name="integration-of-built-in-office-buttons"></a>Intégration des boutons Office intégrés
 
 Vous pouvez insérer les boutons prédéfinis du ruban Office dans vos groupes personnalisés de commandes et onglets personnalisés du ruban.
 
 > [!NOTE]
 > Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni dans tous les scénarios. Pour plus d’informations, voir [Intégrer des boutons prédéfinis Office dans les onglets personnalisés](built-in-button-integration.md).
 
-### <a name="contextual-tabs-preview"></a>Onglets contextuels (préversion)
+### <a name="contextual-tabs"></a>Onglets contextuels
 
 Vous pouvez spécifier qu’un onglet n’est visible que dans le ruban dans certains contextes, par exemple lorsque vous sélectionnez un graphique dans Excel.
 
