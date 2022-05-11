@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 10/22/2021
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 38eefad27511935289d74a06744d1afc686dc5b7
-ms.sourcegitcommit: c1a41d3c52a1d3bd7ef8bebff257777bcde15e0a
+ms.openlocfilehash: 5e563c836b48a16f572aca492fa39f33b9661052
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/13/2022
-ms.locfileid: "64822401"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313183"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -22,10 +22,13 @@ Le navigateur utilisé dépend de ce qui suit :
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les compléments Office**
 >
-> Microsoft met fin à la prise en charge d’Internet Explorer, mais cela n’affecte pas considérablement Office compléments. Certaines combinaisons de plateformes et de versions Office, y compris les versions à achat unique jusqu’à Office 2019, continueront d’utiliser le contrôle webview fourni avec Internet Explorer 11 pour héberger des compléments, comme expliqué dans cet article. En outre, la prise en charge de ces combinaisons, et donc d’Internet Explorer, est toujours requise pour les compléments soumis à [AppSource](/office/dev/store/submit-to-appsource-via-partner-center). Deux choses *changent* :
+> Certaines combinaisons de plateformes et de versions Office, y compris les versions à achat unique via Office 2019, utilisent toujours le contrôle webview fourni avec Internet Explorer 11 pour héberger des compléments, comme expliqué dans cet article. Nous vous recommandons (mais n’exigez pas) de continuer à prendre en charge ces combinaisons, du moins d’une manière minimale, en fournissant aux utilisateurs de votre complément un message d’échec approprié lorsque votre complément est lancé dans la vue web d’Internet Explorer. Gardez à l’esprit ces points supplémentaires :
 >
-> - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, AppSource ne teste plus les compléments dans Office sur le Web à l’aide d’Internet Explorer comme navigateur. Toutefois, AppSource teste toujours les combinaisons *de versions de* plateforme et de bureau Office qui utilisent Internet Explorer.
+> - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ne teste plus les compléments dans Office sur le Web à l’aide d’Internet Explorer comme navigateur.
+> - AppSource teste toujours les combinaisons *de versions de* plateforme et de bureau Office qui utilisent Internet Explorer, mais elle émet uniquement un avertissement lorsque le complément ne prend pas en charge Internet Explorer ; le complément n’est pas rejeté par AppSource.
 > - [L’outil Script Lab](../overview/explore-with-script-lab.md) ne prend plus en charge Internet Explorer.
+>
+> Pour plus d’informations sur la prise en charge d’Internet Explorer et la configuration d’un message d’échec approprié sur votre complément, consultez [Support Internet Explorer 11](../develop/support-ie-11.md).
 
 Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes et systèmes d’exploitation.
 
@@ -44,7 +47,7 @@ Le tableau ci-dessous répertorie le navigateur utilisé selon les plateformes e
 |Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Fenêtre 11 | Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.204242<sup></sup>| Non |Microsoft Edge <sup>1, 3</sup> avec WebView d’origine (EdgeHTML)|
 |Windows 8.1<br>Windows 10,<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.204242<sup></sup>| <sup>Oui4</sup>|  Microsoft Edge <sup>1</sup> avec WebView2 (basé sur Chromium) |
 
-<sup>1</sup> Lorsque Microsoft Edge est utilisé, le Narrateur Windows (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
+<sup>1</sup> Lorsque Microsoft Edge est utilisé, le Windows Narrateur (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Si Internet Explorer 11 est utilisé, le Narrateur lit la barre de titre du volet Office, qui provient de la valeur `<DisplayName>` du manifeste du complément.
 
 <sup>2</sup> Pour plus d’informations, consultez la page historique des [mises à jour](/officeupdates/update-history-office365-proplus-by-date) et comment [trouver votre version du client Office et le canal de mise à jour](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 

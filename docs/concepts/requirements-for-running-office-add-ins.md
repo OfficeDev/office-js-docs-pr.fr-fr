@@ -1,14 +1,14 @@
 ---
 title: Configuration requise pour exécuter des compléments Office
 description: Découvrez les exigences du client et du serveur qu’un utilisateur final doit exécuter Office compléments.
-ms.date: 04/14/2022
+ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc13f28f1d0ae22307b4add6f0367bc1fee211bd
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: a9a86c7a68282135904dba981eeecb27a28e94e5
+ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244771"
+ms.lasthandoff: 05/11/2022
+ms.locfileid: "65313197"
 ---
 # <a name="requirements-for-running-office-add-ins"></a>Configuration requise pour exécuter des compléments Office
 
@@ -46,10 +46,12 @@ Le logiciel suivant est requis pour développer un complément Office pour les c
 
   Si vous disposez d’un abonnement Microsoft 365 valide et que vous n’avez pas accès au client Office, vous pouvez [télécharger et installer la dernière version de Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
-- Internet Explorer 11 ou Microsoft Edge (selon les versions de Windows et Office) doit être installé, sans être nécessairement le navigateur par défaut. Pour prendre en charge les compléments Office, le client Office servant d’hôte utilise des composants de navigateur faisant partie d’Internet Explorer 11 ou de Microsoft Edge. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md).
+- Microsoft Edge doit être installé, mais ne doit pas nécessairement être le navigateur par défaut. Pour prendre en charge Office compléments, le client Office qui agit en tant qu’hôte utilise des composants de navigateur qui font partie de Microsoft Edge.
 
   > [!NOTE]
-  > La Configuration de sécurité renforcée d’Internet Explorer (ESC) doit être désactivée pour que les compléments web Office fonctionnent. Si vous utilisez un ordinateur Windows Server comme votre client lors du développement des compléments, notez qu’ESC est activée par défaut dans Windows Server.
+  > - À proprement parler, il est possible de développer des compléments sur un ordinateur sur lequel Internet Explorer 11 est installé, mais pas Microsoft Edge. Toutefois, Internet Explorer est utilisé pour exécuter des compléments uniquement sur certaines combinaisons plus anciennes de Windows et de versions Office. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](browsers-used-by-office-web-add-ins.md). Nous vous déconseillons d’utiliser des environnements tels que votre environnement de développement de complément principal. Toutefois, si vous êtes susceptible d’avoir des clients de votre complément qui fonctionnent dans ces combinaisons plus anciennes, nous vous recommandons de prendre en charge Internet Explorer. Pour plus d’informations, consultez [Support Internet Explorer 11](../develop/support-ie-11.md).
+  > 
+  > - La Configuration de sécurité renforcée d’Internet Explorer (ESC) doit être désactivée pour que les compléments web Office fonctionnent. Si vous utilisez un ordinateur Windows Server comme votre client lors du développement des compléments, notez qu’ESC est activée par défaut dans Windows Server.
 
 - L’un des éléments suivants en tant que navigateur par défaut : Internet Explorer 11 ou la dernière version de Microsoft Edge, Chrome, Firefox ou Safari (Mac OS).
 - Un éditeur HTML et JavaScript tel que [Visual Studio Code](https://code.visualstudio.com/), [Visual Studio et les outils](https://www.visualstudio.com/features/office-tools-vs) de développement Microsoft, ou un outil de développement web non Microsoft.
@@ -74,15 +76,15 @@ Spécifiquement pour Outlook s’exécutant sur des smartphones et des tablettes
 
 | Application Office | Appareil | Système d’exploitation | Compte Exchange | Navigateur mobile |
 |:-----|:-----|:-----|:-----|:-----|
-|Outlook sur Android|- Tablettes Android<br>- Smartphones Android|- Android 4.4 KitKat ou version ultérieure|Sur la dernière mise à jour de Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour Android. <sup>1</sup>|
-|Outlook sur iOS|- iPad tablettes<br>- smartphones iPhone|- iOS 11 ou version ultérieure|Sur la dernière mise à jour de Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour iOS. <sup>1</sup>|
-|Outlook sur le web (moderne)<sup>2</sup>|- iPad 2 ou version ultérieure<br>- Tablettes Android |- iOS 5 ou version ultérieure<br>- Android 4.4 KitKat ou version ultérieure|Sur Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
+|Outlook sur Android|- Android tablettes<br>- smartphones Android|- Android 4.4 KitKat ou version ultérieure|Sur la dernière mise à jour de Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour Android.<sup> 1</sup>|
+|Outlook sur iOS|- iPad tablettes<br>- smartphones iPhone|- iOS 11 ou version ultérieure|Sur la dernière mise à jour de Applications Microsoft 365 pour les PME ou Exchange Online|Navigateur non applicable. Utilisez l’application native pour iOS.<sup> 1</sup>|
+|Outlook sur le web (moderne)<sup>2</sup>|- iPad 2 ou version ultérieure<br>- Android tablettes |- iOS 5 ou version ultérieure<br>- Android 4.4 KitKat ou version ultérieure|Sur Microsoft 365, Exchange Online|- Microsoft Edge<br>- Chrome<br>- Firefox<br>- Safari|
 |Outlook sur le web (classique)|- iPhone 4 ou version ultérieure<br>- iPad 2 ou version ultérieure<br>- iPod Touch 4 ou version ultérieure|- iOS 5 ou version ultérieure|Localement Exchange Server 2013 ou version <sup>ultérieure3</sup>|- Safari|
 
 > [!NOTE]
-> <sup>1</sup> OWA pour Android, OWA pour iPad et OWA pour iPhone applications natives ont été [dépréciées](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
+> <sup>1</sup> OWA pour Android, OWA pour iPad et OWA pour iPhone applications natives ont été [déconseillés](https://support.microsoft.com/office/076ec122-4576-4900-bc26-937f84d25a4b).
 >
-> <sup>2</sup> Les Outlook sur le web modernes sur les smartphones iPhone et Android ne sont plus nécessaires ni disponibles pour les tests Outlook compléments.
+> <sup>2</sup> Les Outlook sur le web modernes sur les smartphones iPhone et Android ne sont plus nécessaires ni disponibles pour tester Outlook compléments.
 >
 > <sup>3</sup> Les compléments ne sont pas pris en charge dans Outlook sur Android, sur iOS et le web mobile moderne avec des comptes Exchange locaux.
 
