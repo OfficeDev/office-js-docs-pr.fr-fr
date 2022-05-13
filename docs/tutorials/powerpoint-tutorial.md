@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments PowerPoint
 description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
-ms.date: 02/18/2022
+ms.date: 05/11/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: a42d7e0187779687fa179252879d969ea8c0828e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: fc5709e77dd123ed94808a86d49c15309205e0d8
+ms.sourcegitcommit: bc9beb8d82e1901e641f57d2dc5f087999ce7d12
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745085"
+ms.lasthandoff: 05/13/2022
+ms.locfileid: "65393931"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -24,7 +24,19 @@ Dans ce didacticiel, vous utiliserez Visual Studio pour créer un complément de
 
 ## <a name="prerequisites"></a>Conditions requises
 
-[!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
+- [Visual Studio 2019, *version 16.10.3 ou antérieure*, ou Visual Studio 2022](https://www.visualstudio.com/vs/), avec la charge de travail de **développement Office/SharePoint** installée. 
+
+    > [!IMPORTANT]
+    > Certaines versions de Visual Studio 2019 après la version 16.10.3 ont un bogue qui empêche la fin de ce didacticiel. Utilisez une version antérieure de Visual Studio 2019 ou utilisez Visual Studio 2022.
+
+    > [!NOTE]
+    > Si vous avez déjà installé Visual Studio, [utilisez le programme d'installation de Visual Studio](/visualstudio/install/modify-visual-studio) pour vous assurer que la charge de travail de **développement Office/SharePoint** est installée.
+
+- Office connecté à un abonnement Microsoft 365 (y compris Office on the web).
+
+    > [!NOTE]
+    > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.
+
 
 ## <a name="create-your-add-in-project"></a>Créer votre projet de complément
 
@@ -124,6 +136,9 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 3. Dans la fenêtre de boîte de dialogue **Ajouter une structure**, sélectionnez **Contrôleur Web API 2 - Vide** et choisissez le bouton **Ajouter**. 
 
 4. Dans la fenêtre de boîte de dialogue **Ajouter un contrôleur**, saisissez **PhotoController** pour le nom du contrôleur, puis sélectionnez le bouton **Ajouter**. Visual Studio crée et ouvre le fichier **PhotoController.cs**.
+
+    > [!NOTE]
+    > Le processus de génération de modèles automatique ne se termine pas correctement sur certaines versions de Visual Studio 2019 après la version 16.10.3. Visual Studio 2022 n’est pas impacté.
 
 5. Remplacez tout le contenu du fichier **PhotoController.cs** par le code suivant qui appelle le service Bing pour récupérer la photo du jour en tant que chaîne encodée en base 64. Lorsque vous utilisez l’API JavaScript Office pour insérer une image dans un document, les données de l’image doivent être spécifiées en tant que chaîne encodée en base 64.
 
@@ -238,7 +253,7 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 
     ![Capture d’écran de PowerPoint avec le bouton Insérer une image mis en évidence dans le complément.](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. Dans Visual Studio, arrêtez le complément en appuyant sur **Shift + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+4. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
     ![Capture d’écran du bouton Arrêter mis en évidence dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
@@ -276,7 +291,7 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
 
     ![Capture d’écran du complément PowerPoint avec le bouton Insérer une image.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. Dans Visual Studio, arrêtez le complément en appuyant sur **Shift + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+4. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
     ![Capture d’écran du bouton Arrêter mis en évidence dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
@@ -332,7 +347,7 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
 
     ![Capture d’écran de PowerPoint avec le bouton Insérer du texte mis en évidence dans le complément.](../images/powerpoint-tutorial-insert-text.png)
 
-5. Dans Visual Studio, arrêtez le complément en appuyant sur **Shift + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+5. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
     ![Capture d’écran de Visual Studio avec le bouton Arrêter mis en évidence.](../images/powerpoint-tutorial-stop.png)
 
@@ -387,7 +402,7 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
 
     ![Capture d’écran de PowerPoint avec le bouton Obtenir les métadonnées de la diapositive mis en évidence dans le complément.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. Dans Visual Studio, arrêtez le complément en appuyant sur **Shift + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+4. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
     ![Capture d’écran de Visual Studio avec le bouton Arrêter mis en évidence.](../images/powerpoint-tutorial-stop.png)
 
@@ -433,7 +448,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la fonction `goToByIdAsync` pour sélectionner une diapositive en fonction de sa position dans le document (première, dernière, précédente, suivante).
+3. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la fonction `goToByIdAsync` pour sélectionner une diapositive suivant sa position dans le document (première, dernière, précédente et suivante).
 
     ```js
     function goToFirstSlide() {
@@ -501,7 +516,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 
     ![Capture d’écran de PowerPoint avec le bouton Aller à la dernière diapositive mis en évidence dans le complément.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. Dans Visual Studio, arrêtez le complément en appuyant sur **Shift + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+8. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
     ![Capture d’écran du bouton Arrêter mis en évidence dans la barre d’outils de Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
