@@ -1,14 +1,14 @@
 ---
 title: Activer l’authentification unique (SSO) dans un complément Office
 description: Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.
-ms.date: 01/25/2022
+ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 517677b01254862f29011a7773e3953fc59f4baa
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
+ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496326"
+ms.lasthandoff: 05/17/2022
+ms.locfileid: "65432206"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Activer l’authentification unique (SSO) dans un complément Office
 
@@ -20,7 +20,7 @@ Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bu
 
 Le diagramme suivant illustre le mode de fonctionnement du processus d’authentification unique SSO. Les éléments bleus représentent Office ou la plateforme d’identité Microsoft. Les éléments gris représentent le code que vous écrivez et incluent le code côté client (volet des tâches) et le code côté serveur de votre complément.
 
-![Un diagramme illustrant le processus d’authentification unique.](../images/sso-overview-diagram.svg)
+:::image type="content" source="../images/sso-overview-diagram.svg" alt-text="Un diagramme illustrant le processus d’authentification unique." border="false":::
 
 1. Dans le complément, votre code JavaScript appelle l’API Office.js [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)). Si l’utilisateur est déjà connecté à Office, l’hôte Office renverra le jeton d’accès avec les revendications de l’utilisateur connecté.
 2. Si l’utilisateur n’est pas connecté, l’application hôte Office ouvre une boîte de dialogue permettant à l’utilisateur de se connecter. Office redirige vers la plateforme d’identité Microsoft pour terminer le processus de connexion.
@@ -85,7 +85,7 @@ Ajoutez un nouveau balisage au manifeste du complément.
 - **Scopes**: le parent d’un ou plusieurs éléments **Scope**.
 - **Étendue** – Spécifie une autorisation dont le complément a besoin. Les autorisations `profile` et `openID` sont toujours nécessaires et peuvent être les seules autorisations nécessaires. Si votre complément a besoin d’accéder à Microsoft Graph ou à d’autres ressources Microsoft 365, vous aurez besoin d’éléments d’**étendue** supplémentaires. Par exemple, pour les autorisations Microsoft Graph, vous pouvez demander les étendues `User.Read` et `Mail.Read`. Les biblioth?ques que vous utilisez dans votre code pour acc?der ? Microsoft Graph peuvent avoir des besoin d'autorisations suppl?mentaires. Pour plus d'informations, voir [Autoriser Microsoft Graph ? partir d'un compl?ment Office](authorize-to-microsoft-graph.md).
 
-Pour les compléments Word, Excel et PowerPoint, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour les compléments Outlook, ajoutez le balisage à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
+Pour les compléments Word, Excel et PowerPoint, ajoutez la balise à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour les compléments Outlook, ajoutez la balise à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 
 Voici un exemple de marques de révision.
 
