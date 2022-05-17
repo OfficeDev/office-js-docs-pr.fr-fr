@@ -24,8 +24,8 @@ Nous vous encourageons également à apporter les modifications et à générer 
 Si votre problème n’est pas lié à la documentation des Office, publiez-le sur l’un des canaux suivants à la place.
 
 - Pour poser une question sur l’utilisation de l’API Office.js, publiez votre question sur Stack Overflow et marquez-la avec la balise « office-js » ( http://stackoverflow.com/questions/tagged/office-js) .
-- Pour signaler un problème avec l’API ou la plateforme Office.js, créez le problème dans le référentiel OfficeDev/office-js ( , que les membres de l’équipe produit surveillent pour les problèmes signalés par le https://github.com/OfficeDev/office-js) client.
-- Pour envoyer une demande de fonctionnalité pour l’API ou la plateforme Office.js, publiez votre idée sur le Community tech de plateforme de développement [Microsoft 365](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform)ou, si la demande de fonctionnalité existe déjà, ajoutez votre vote pour cette demande.
+- Pour signaler un problème avec l'API ou la plateforme Office.js, créez le problème dans le référentiel OfficeDev/office-js (https://github.com/OfficeDev/office-js), que les membres de l'équipe produit surveillent pour les problèmes-client signalés.
+- Pour envoyer une demande de fonctionnalité pour l’API ou la plateforme Office.js, publiez votre idée sur le Community tech de la plateforme de développement [Microsoft 365](https://techcommunity.microsoft.com/t5/microsoft-365-developer-platform/idb-p/Microsoft365DeveloperPlatform) ou, si la demande de fonctionnalité existe déjà, ajoutez votre vote pour cette demande.
 
 ## <a name="join-the-microsoft-365-developer-program"></a>Rejoignez le programme Développeur de Microsoft 365
 
