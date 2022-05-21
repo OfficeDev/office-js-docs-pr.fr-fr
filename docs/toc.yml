@@ -230,9 +230,7 @@ items:
                     href: design/content-add-ins.md
                   - name: Boîtes de dialogue
                     items:
-                      - name: Présentation
-                        href: design/dialog-boxes.md
-                      - name: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
+                      - name: Utiliser l’API de dialogue dans vos compléments Office
                         href: develop/dialog-api-in-office-add-ins.md
                       - name: Pratiques recommandées et règles pour l’API de dialogue Office
                         href: develop/dialog-best-practices.md
@@ -413,6 +411,9 @@ items:
                 displayName: Excel
               - name: Concepts (aperçu)
                 href: excel/excel-data-types-concepts.md
+                displayName: Excel
+              - name: Cartes de valeurs d'entités (aperçu)
+                href: excel/excel-data-types-entity-card.md
                 displayName: Excel
           - name: Validation de données
             href: excel/excel-add-ins-data-validation.md
