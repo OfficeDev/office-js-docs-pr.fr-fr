@@ -1,14 +1,14 @@
 ---
 title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier Office applications et les exigences d’API pour que votre complément fonctionne comme prévu.
-ms.date: 04/04/2022
+ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 090557aca861e0d71ec011ed6d1d55c9a1f1df4c
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 60ad00c918b04b6f12ecb6eec6c40772448b2ab8
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682223"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628046"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
@@ -86,7 +86,7 @@ Vous ne pouvez pas spécifier explicitement les versions et builds Office ou les
 
 Pour simplifier le processus de spécification des API dont votre complément a besoin, Office regroupe la plupart des API dans des *ensembles de conditions requises*. Les API du [modèle objet d’API commune](understanding-the-javascript-api-for-office.md#api-models) sont regroupées par la fonctionnalité de développement qu’elles prennent en charge. Par exemple, toutes les API connectées aux liaisons de table se trouvent dans l’ensemble de conditions requises appelé « TableBindings 1.1 ». Les API des [modèles objet spécifiques à l’application](understanding-the-javascript-api-for-office.md#api-models) sont regroupées lorsqu’elles ont été publiées pour être utilisées dans les compléments de production.
 
-Les ensembles de conditions requises sont versionnées. Par exemple, les API qui prennent en charge [les boîtes de dialogue](../design/dialog-boxes.md) se trouvent dans l’ensemble de conditions requises DialogApi 1.1. Lorsque des API supplémentaires qui activent la messagerie d’un volet Office vers une boîte de dialogue ont été publiées, elles ont été regroupées dans DialogApi 1.2, ainsi que toutes les API dans DialogApi 1.1. *Chaque version d’un ensemble de conditions requises est un sur-ensemble de toutes les versions antérieures.*
+Les ensembles de conditions requises sont versionnées. Par exemple, les API qui prennent en charge [les boîtes de dialogue](../develop/dialog-api-in-office-add-ins.md) se trouvent dans l’ensemble de conditions requises DialogApi 1.1. Lorsque des API supplémentaires qui activent la messagerie d’un volet Office vers une boîte de dialogue ont été publiées, elles ont été regroupées dans DialogApi 1.2, ainsi que toutes les API dans DialogApi 1.1. *Chaque version d’un ensemble de conditions requises est un sur-ensemble de toutes les versions antérieures.*
 
 La prise en charge de l’ensemble de conditions requises varie selon Office application, la version de l’application Office et la plateforme sur laquelle elle s’exécute. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions d’achat uniques de Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions d’achat à usage unique à Office 2013. Vous souhaitez que votre complément soit installable sur chaque combinaison de plateforme et de version Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises requise par votre complément. Vous trouverez plus d’informations sur la procédure à suivre plus loin dans cet article.
 
@@ -143,7 +143,7 @@ Notez ce qui suit à propos de cet exemple.
 Les fonctionnalités d’extensibilité fournies par la plateforme de complément Office peuvent être utilement divisées en trois types :
 
 - Fonctionnalités d’extensibilité disponibles immédiatement après l’installation du complément. Vous pouvez utiliser ce type de fonctionnalité en configurant un élément [VersionOverrides](/javascript/api/manifest/versionoverrides) dans le manifeste. Les commandes de complément, qui sont [des boutons](../design/add-in-commands.md) et des menus personnalisés du ruban, sont un exemple de ce type de fonctionnalité.
-- Fonctionnalités d’extensibilité qui sont disponibles uniquement lorsque le complément est en cours d’exécution et qui sont implémentées avec Office.js API JavaScript ; par exemple, [boîtes de dialogue](../design/dialog-boxes.md).
+- Fonctionnalités d’extensibilité qui sont disponibles uniquement lorsque le complément est en cours d’exécution et qui sont implémentées avec Office.js API JavaScript ; par exemple, [boîtes de dialogue](../develop/dialog-api-in-office-add-ins.md).
 - Fonctionnalités d’extensibilité disponibles uniquement au moment de l’exécution, mais implémentées avec une combinaison de Office.js JavaScript et de configuration dans un élément **VersionOverrides** . Par exemple, [Excel fonctions personnalisées](../excel/custom-functions-overview.md), [l’authentification unique](sso-in-office-add-ins.md) et [les onglets contextuels personnalisés](../design/contextual-tabs.md).
 
 Si votre complément utilise une fonctionnalité d’extensibilité spécifique pour certaines de ses fonctionnalités, mais possède d’autres fonctionnalités utiles qui ne nécessitent pas la fonctionnalité d’extensibilité, vous devez concevoir le complément afin qu’il soit installable sur la plateforme et Office combinaisons de versions qui ne prennent pas en charge la fonctionnalité d’extensibilité. Il peut fournir une expérience précieuse, bien que diminuée, sur ces combinaisons. 
