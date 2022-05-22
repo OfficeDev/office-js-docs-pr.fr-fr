@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Excel
 description: Le complément Excel vous permet d’étendre les fonctionnalités de l’application Excel sur plusieurs plateformes, notamment Windows, Mac et iPad, ainsi que dans un navigateur.
-ms.date: 02/16/2022
+ms.date: 05/19/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: db4b26ed605a50c1d127c6b37f9022294e49d420
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a95a49d386cfd1c57d007f4728f716c32db11d5c
+ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745082"
+ms.lasthandoff: 05/21/2022
+ms.locfileid: "65628102"
 ---
 # <a name="excel-add-ins-overview"></a>Présentation des compléments Excel
 
@@ -87,7 +87,7 @@ Les boîtes de dialogue sont des surfaces qui flottent au-dessus de la fenêtre 
 
 ![Boîte de dialogue de complément dans Excel.](../images/excel-add-in-dialog-choose-number.png)
 
-Pour plus d’informations sur les boîtes de dialogue et l’API de dialogue, reportez-vous aux rubriques [Boîtes de dialogue dans les compléments Office](../design/dialog-boxes.md) et [Utiliser l’API de dialogue dans vos compléments Office](../develop/dialog-api-in-office-add-ins.md).
+Pour plus d’informations sur les boîtes de dialogue et l’API de dialogue, consultez [Utilisez l’API de boîte de dialogue dans vos compléments Office](../develop/dialog-api-in-office-add-ins.md).
 
 ### <a name="content-add-ins"></a>Compléments de contenu
 
