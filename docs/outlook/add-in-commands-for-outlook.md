@@ -1,14 +1,14 @@
 ---
 title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
-ms.date: 07/07/2020
+ms.date: 05/19/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 41e1b3d200e75b214a8619021b2ccf5514e30055
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 4d4ffc8e518e5a8d11b3a45630b1a7b42e6bee13
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483526"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650611"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -120,3 +120,5 @@ Quand vous utilisez une extension de module, les commandes de complément appara
 
 - [Démonstration de la commande de l'add-in Add-in Outlook](https://github.com/officedev/outlook-add-in-command-demo)
 - [Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word](../develop/create-addin-commands.md)
+- [Déboguer votre complément Outlook sans interface utilisateur](debug-ui-less.md)
+- [Didacticiel : créer un complément de composition de message Outlook](../tutorials/outlook-tutorial.md)
