@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 05/01/2022
+ms.date: 05/19/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a143ff743c5dfb692709d0291534fd060352f264
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 22d650d7727c4fdaf099e3ed49d7cd8390deea9d
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244792"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650639"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -1309,3 +1309,10 @@ Ce didacticiel vous a appris à créer un complément Outlook qui peut être uti
 
 > [!div class="nextstepaction"]
 > [API de complément Outlook](../outlook/apis.md)
+
+## <a name="see-also"></a>Voir aussi
+
+- [Manifestes de complément Outlook](../outlook/manifests.md)
+- [Instructions de création d’un complément Outlook](../outlook/outlook-addin-design.md)
+- [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md)
+- [Déboguer votre complément Outlook sans interface utilisateur](../outlook/debug-ui-less.md)

@@ -3,16 +3,16 @@ title: Activer l’authentification unique (SSO) dans un complément Office
 description: Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0f969b59c718eea0b011fee4ef1b30db021e0571
-ms.sourcegitcommit: e63d8e32b25a9987f4a39b92a342a82b37a3404c
+ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
+ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/17/2022
-ms.locfileid: "65432206"
+ms.lasthandoff: 05/24/2022
+ms.locfileid: "65650597"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Activer l’authentification unique (SSO) dans un complément Office
 
-Les utilisateurs se connectent à Office (plateformes en ligne, mobiles ou de bureau) à l’aide de leur compte Microsoft personnel ou de leur compte professionnel ou Microsoft 365 Éducation. Profitez-en et utilisez l’authentification unique (SSO) pour authentifier et autoriser l’utilisateur à accéder à votre complément sans l’obliger à se connecter une deuxième fois.
+Les utilisateurs se connectent à Office à l’aide de leur compte Microsoft personnel ou de leur compte Microsoft 365 Education ou professionnel Profitez-en et utilisez l’authentification unique (SSO) pour authentifier et autoriser l’utilisateur à2 accéder à votre complément sans l’obliger à se connecter une deuxième fois.
 
 ![Image illustrant le processus de connexion pour un complément.](../images/sso-for-office-addins.png)
 
