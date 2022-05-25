@@ -105,6 +105,9 @@ items:
             items:
               - name: Présentation
                 href: develop/add-in-manifests.md
+              - name: Manifeste Teams pour les compléments Office
+                href: develop/json-manifest-overview.md
+                displayName: preview
               - name: Référence du manifeste
                 href: reference/manifest-reference.md
               - name: Remplacements étendus
@@ -404,17 +407,18 @@ items:
           - name: Commentaires
             href: excel/excel-add-ins-comments.md
             displayName: Excel
-          - name: Types de données (aperçu)
+          - name: Types de données
+            displayName: preview
             items:
-              - name: Vue d’ensemble (aperçu)
+              - name: Vue d’ensemble
                 href: excel/excel-data-types-overview.md
-                displayName: Excel
-              - name: Concepts (aperçu)
+                displayName: 'Excel, preview'
+              - name: Concepts
                 href: excel/excel-data-types-concepts.md
-                displayName: Excel
-              - name: Cartes de valeurs d'entités (aperçu)
+                displayName: 'Excel, preview'
+              - name: Cartes de valeur d’entité
                 href: excel/excel-data-types-entity-card.md
-                displayName: Excel
+                displayName: 'Excel, preview'
           - name: Validation de données
             href: excel/excel-add-ins-data-validation.md
             displayName: Excel
@@ -532,9 +536,9 @@ items:
           - name: Générer automatiquement des métadonnées JSON
             href: excel/custom-functions-json-autogeneration.md
             displayName: 'Excel, Custom Functions'
-          - name: Types de données (aperçu)
+          - name: Types de données
             href: excel/custom-functions-data-types-concepts.md
-            displayName: 'Excel, Custom Functions'
+            displayName: 'Excel, Custom Functions, preview'
           - name: Appeler des APIs JavaScript Excel
             href: excel/call-excel-apis-from-custom-function.md
             displayName: 'Excel, Custom Functions'
@@ -603,6 +607,9 @@ items:
       - name: Création de votre premier complément Outlook
         href: quickstarts/outlook-quickstart.md
         displayName: Outlook
+      - name: Créer un complément Outlook avec un manifeste Teams
+        href: quickstarts/outlook-quickstart-json-manifest.md
+        displayName: 'Outlook, preview'
       - name: Didacticiel sur le complément Outlook
         href: tutorials/outlook-tutorial.md
         displayName: Outlook

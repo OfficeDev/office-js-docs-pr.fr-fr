@@ -1,18 +1,21 @@
 ---
 title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
-ms.date: 09/28/2021
+ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d1e644b73b11f32edebcb74d85e8cf52e66ce479
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
+ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743692"
+ms.lasthandoff: 05/25/2022
+ms.locfileid: "65672058"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
 Le fichier manifeste XML d’un complément Office la manière dont votre complément doit être activé lorsqu’un utilisateur final l’installe et l’utilise avec des documents et des applications Office.
+
+> [!TIP]
+> Cet article décrit le manifeste au format XML actuel. Il existe également un manifeste Teams au format JSON qui est disponible en préversion. Pour plus d’informations, consultez [Manifeste Teams pour les compléments Office (préversion).](json-manifest-overview.md)
 
 Un fichier de manifeste XML permet à un Complément Office d’effectuer les opérations suivantes :
 
@@ -70,53 +73,53 @@ _\*\* SupportUrl n’est obligatoire que pour les compléments distribués via A
 
 <!-- Links for above table -->
 
-[officeapp]: ../reference/manifest/officeapp.md
-[id]: ../reference/manifest/id.md
-[version]: ../reference/manifest/version.md
-[providername]: ../reference/manifest/providername.md
-[defaultlocale]: ../reference/manifest/defaultlocale.md
-[displayname]: ../reference/manifest/displayname.md
-[description]: ../reference/manifest/description.md
-[iconurl]: ../reference/manifest/iconurl.md
-[supporturl]: ../reference/manifest/supporturl.md
-[defaultsettings (contentapp)]: ../reference/manifest/defaultsettings.md
-[defaultsettings (taskpaneapp)]: ../reference/manifest/defaultsettings.md
-[sourcelocation (contentapp)]: ../reference/manifest/sourcelocation.md
-[sourcelocation (taskpaneapp)]: ../reference/manifest/sourcelocation.md
+[officeapp]: /javascript/api/manifest/officeapp
+[id]: /javascript/api/manifest/id
+[version]: /javascript/api/manifest/version
+[providername]: /javascript/api/manifest/providername
+[defaultlocale]: /javascript/api/manifest/defaultlocale
+[displayname]: /javascript/api/manifest/displayname
+[description]: /javascript/api/manifest/description
+[iconurl]: /javascript/api/manifest/iconurl
+[supporturl]: /javascript/api/manifest/supporturl
+[defaultsettings (contentapp)]: /javascript/api/manifest/defaultsettings
+[defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
+[sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
+[sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
 [desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
 [sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
-[permissions (contentapp)]: ../reference/manifest/permissions.md
-[permissions (taskpaneapp)]: ../reference/manifest/permissions.md
-[permissions (mailapp)]: ../reference/manifest/permissions.md
-[rule (rulecollection)]: ../reference/manifest/rule.md
-[rule (mailapp)]: ../reference/manifest/rule.md
-[requirements (mailapp)*]: ../reference/manifest/requirements.md
-[set*]: ../reference/manifest/set.md
-[sets (mailapprequirements)*]: ../reference/manifest/sets.md
-[form*]: ../reference/manifest/form.md
-[formsettings*]: ../reference/manifest/formsettings.md
-[sets (requirements)*]: ../reference/manifest/sets.md
-[hosts*]: ../reference/manifest/hosts.md
+[permissions (contentapp)]: /javascript/api/manifest/permissions
+[permissions (taskpaneapp)]: /javascript/api/manifest/permissions
+[permissions (mailapp)]: /javascript/api/manifest/permissions
+[rule (rulecollection)]: /javascript/api/manifest/rule
+[rule (mailapp)]: /javascript/api/manifest/rule
+[requirements (mailapp)*]: /javascript/api/manifest/requirements
+[set*]: /javascript/api/manifest/set
+[sets (mailapprequirements)*]: /javascript/api/manifest/sets
+[form*]: /javascript/api/manifest/form
+[formsettings*]: /javascript/api/manifest/formsettings
+[sets (requirements)*]: /javascript/api/manifest/sets
+[hosts*]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
 Tous les URI des images, tels que ceux utilisés pour les [commandes de complément](create-addin-commands.md), doivent prendre en charge la mise en cache. Le serveur qui héberge l’image ne doit pas renvoyer d’en-tête `Cache-Control` spécifiant `no-cache`, `no-store` ou des options similaires dans la réponse HTTP.
 
-Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
+Toutes les URL, telles que les emplacements des fichiers source spécifiés dans l’élément [SourceLocation](/javascript/api/manifest/sourcelocation), doivent être **sécurisées par une protection SSL (HTTPS)**. [!include[HTTPS guidance](../includes/https-guidance.md)]
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Bonnes pratiques pour l’envoi dans AppSource
 
 Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique.
 
-Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](../reference/manifest/supporturl.md). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](/legal/marketplace/certification-policies).
+Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](/javascript/api/manifest/supporturl). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](/legal/marketplace/certification-policies).
 
-Utilisez uniquement l’élément [AppDomains](../reference/manifest/appdomains.md) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) pour les scénarios d’authentification.
+Utilisez uniquement l’élément [AppDomains](/javascript/api/manifest/appdomains) pour spécifier des domaines différents de celui spécifié dans l’élément [SourceLocation](/javascript/api/manifest/sourcelocation) pour les scénarios d’authentification.
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Lors de l’exécution d’Office sur le web, votre volet des tâches peut naviguer vers des URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application Office.
+Lors de l’exécution d’Office sur le web, votre volet des tâches peut naviguer vers des URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](/javascript/api/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application Office.
 
-Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](../reference/manifest/appdomains.md) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
+Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](/javascript/api/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
 
 > [!NOTE]
 > Il existe deux exceptions à ce comportement.
@@ -124,7 +127,7 @@ Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque
 > - Cela s’applique uniquement au volet racine du complément. S’il existe un iframe incorporé dans la page de complément, l’iframe peut être dirigé vers n’importe quelle URL, qu’elle figure dans la liste des **AppDomains** ou non, y compris dans la version de bureau d’Office.
 > - Lorsqu’une boîte de dialogue est ouverte avec l’API [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)), l’URL transmise à la méthode doit se trouver dans le même domaine que le complément, mais la boîte de dialogue peut ensuite être redirigée vers n’importe quelle URL, même si elle est répertoriée dans **AppDomains**, y compris dans la version de bureau d’Office.
 
-L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](../reference/manifest/appdomain.md) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, même dans la version de bureau Office.
+L’exemple de manifeste XML suivant héberge sa page de complément principale dans le domaine `https://www.contoso.com` comme indiqué dans l’élément **SourceLocation**. Il indique également le domaine `https://www.northwindtraders.com` dans un élément [AppDomain](/javascript/api/manifest/appdomain) au sein de la liste d’éléments **AppDomains**. Si le complément ouvre une page dans le domaine `www.northwindtraders.com`, cette page s’ouvre dans le volet de complément, même dans la version de bureau Office.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -149,7 +152,7 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 
 ## <a name="version-overrides-in-the-manifest"></a>Élément version dans le fichier manifeste
 
-[L’élément Facultatif VersionOverrides est](../reference/manifest/versionoverrides.md) une mention spéciale. Il contient des marques enfants qui activent des fonctionnalités de complément supplémentaires. Certains d’entre eux sont les suivants :
+[L’élément Facultatif VersionOverrides est](/javascript/api/manifest/versionoverrides) une mention spéciale. Il contient des marques enfants qui activent des fonctionnalités de complément supplémentaires. Certains d’entre eux sont les suivants :
 
  - Personnalisation du Office et des menus.
  - Personnalisation du fonctionnement Office avec le runtime de navigateur incorporé dans lequel les compléments s’exécutent.
@@ -200,7 +203,7 @@ Pour obtenir un exemple de manifeste qui inclut un élément, voir les exemples 
 
 ## <a name="specify-domains-from-which-officejs-api-calls-are-made"></a>Spécifier les domaines à partir desquels les appels d’API Office.js sont effectués
 
-Votre complément peut effectuer des appels d’API Office.js à partir du domaine référencé dans l’élément [SourceLocation](../reference/manifest/sourcelocation.md) du fichier manifeste. Si votre complément comporte d’autres IFrames qui nécessitent un accès aux API Office.js, ajoutez le domaine de cette URL source à la liste spécifiée dans l’élément [AppDomains](../reference/manifest/appdomains.md) du fichier manifeste. Si un IFrame associé à une source qui ne figure pas dans la liste `AppDomains` tente d’effectuer un appel d’API Office.js, le complément reçoit une [erreur d’autorisation refusée](../reference/javascript-api-for-office-error-codes.md).
+Votre complément peut effectuer des appels d’API Office.js à partir du domaine référencé dans l’élément [SourceLocation](/javascript/api/manifest/sourcelocation) du fichier manifeste. Si votre complément comporte d’autres IFrames qui nécessitent un accès aux API Office.js, ajoutez le domaine de cette URL source à la liste spécifiée dans l’élément [AppDomains](/javascript/api/manifest/appdomains) du fichier manifeste. Si un IFrame associé à une source qui ne figure pas dans la liste `AppDomains` tente d’effectuer un appel d’API Office.js, le complément reçoit une [erreur d’autorisation refusée](../reference/javascript-api-for-office-error-codes.md).
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemples et schémas de fichier XML manifeste version 1.1
 
