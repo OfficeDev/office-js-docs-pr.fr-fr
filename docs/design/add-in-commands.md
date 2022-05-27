@@ -1,14 +1,14 @@
 ---
 title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
-ms.date: 05/10/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 5d08ba9958d8c2f7002e32f726b087a15dbf27e0
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 8a0d2c425b8603ea5aae30f6e92fdff37c3f54f5
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313190"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752854"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -37,7 +37,7 @@ Les fonctionnalités de commande suivantes sont actuellement prises en charge.
 
 ### <a name="extension-points"></a>Points d’extension
 
-- Onglets de ruban - Permet d’étendre les onglets prédéfinis ou de créer un onglet personnalisé.
+- Onglets du ruban : étendez les onglets intégrés ou créez un onglet personnalisé. Un complément ne peut avoir qu’un seul onglet personnalisé.
 - Menus contextuels - Permet d’étendre les menus contextuels sélectionnés.
 
 ### <a name="control-types"></a>Types de contrôles
@@ -66,7 +66,7 @@ Vous pouvez spécifier l’emplacement où s’affiche un onglet personnalisé s
 
 ### <a name="integration-of-built-in-office-buttons"></a>Intégration des boutons Office intégrés
 
-Vous pouvez insérer les boutons prédéfinis du ruban Office dans vos groupes personnalisés de commandes et onglets personnalisés du ruban.
+Vous pouvez insérer les boutons prédéfinis du ruban Office dans vos groupes personnalisés de commandes et votre onglet personnalisé du ruban.
 
 > [!NOTE]
 > Cette fonctionnalité n’est pas prise en charge dans toutes les applications Office ni dans tous les scénarios. Pour plus d’informations, voir [Intégrer des boutons prédéfinis Office dans les onglets personnalisés](built-in-button-integration.md).

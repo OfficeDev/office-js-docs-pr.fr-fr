@@ -1,29 +1,29 @@
 ---
-title: Chargement de Office pour les tester à partir d’un partage réseau
-description: Découvrez comment recharger une version test d Office pour le test à partir d’un partage réseau.
-ms.date: 06/02/2020
+title: Chargement indépendant des compléments Office à des fins de test à partir d’un partage réseau
+description: Découvrez comment charger une version test d’un complément Office à des fins de test à partir d’un partage réseau.
+ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 839caa3c693682c06071d13b7fc2bde8a131636e
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745658"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752882"
 ---
-# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement de Office pour les tester à partir d’un partage réseau
+# <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement indépendant des compléments Office à des fins de test à partir d’un partage réseau
 
-Vous pouvez tester un Office dans un client Office qui se trouve sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le module à partir d’un serveur non local ou d’un compte cloud.
+Vous pouvez tester un complément Office dans un client Office qui est sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le complément à partir d’un serveur non local ou d’un compte cloud.
 
 > [!IMPORTANT]
-> Le déploiement par partage réseau n’est pas pris en charge pour les modules de production. Cette méthode présente les limitations suivantes.
+> Le déploiement par partage réseau n’est pas pris en charge pour les compléments de production. Cette méthode présente les limitations suivantes.
 >
-> - Le add-in peut uniquement être installé sur Windows ordinateurs.
-> - Si une nouvelle version d’un add-in change le ruban, chaque utilisateur devra réinstaller le module.
+> - Le complément ne peut être installé que sur Windows ordinateurs.
+> - Si une nouvelle version d’un complément modifie le ruban, par exemple en y ajoutant un onglet personnalisé ou un bouton personnalisé, chaque utilisateur doit réinstaller le complément.
 
 > [!NOTE]
 > Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
-Cet article s’applique uniquement aux tests de Excel, PowerPoint, et Project et uniquement sur Windows. Si vous souhaitez tester sur une autre plateforme ou tester un Outlook, consultez l’une des rubriques suivantes pour le chargement de version test de votre module.
+Cet article s’applique uniquement au test de compléments Word, Excel, PowerPoint et Project et uniquement sur Windows. Si vous souhaitez effectuer un test sur une autre plateforme ou si vous souhaitez tester un complément Outlook, consultez l’une des rubriques suivantes pour charger de manière indépendante votre complément.
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -41,13 +41,13 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 1. Dans la boîte de dialogue **Propriétés**, ouvrez l’onglet **Partage**, puis choisissez le bouton **Partager**.
 
-    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le bouton Partager mis en évidence.](../images/sideload-windows-properties-dialog.png)
+    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le bouton Partager mis en surbrillance.](../images/sideload-windows-properties-dialog.png)
 
 1. Dans la boîte de dialogue **Accès réseau**, ajoutez-vous ainsi que les autres utilisateurs et/ou groupes avec lesquels vous souhaitez partager votre complément. Vous aurez besoin d’au moins une autorisation d’accès en **lecture/écriture** au dossier. Une fois que vous avez choisi les utilisateurs avec lesquels vous souhaitez effectuer le partage, sélectionnez le bouton **Partager**.
 
 1. Lorsqu’un message de confirmation indiquant que **votre dossier est partagé** apparaît, notez le chemin d’accès complet du réseau qui s’affiche juste après le nom du dossier. (Vous devrez entrer cette valeur comme **URL du catalogue** lorsque vous [spécifierez le dossier partagé comme un catalogue approuvé](#specify-the-shared-folder-as-a-trusted-catalog), tel que décrit dans la section suivante de cet article.) Sélectionnez le bouton **Terminé** pour fermer la boîte de dialogue **Accès réseau**.
 
-   ![Boîte de dialogue Accès réseau avec le chemin d’accès du partage mis en évidence.](../images/sideload-windows-network-access-dialog.png)
+   ![Boîte de dialogue d’accès réseau avec le chemin d’accès du partage mis en surbrillance.](../images/sideload-windows-network-access-dialog.png)
 
 1. Choisissez le bouton **Fermer** pour fermer la boîte de dialogue **Propriétés**.
 
@@ -65,15 +65,15 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 1. Dans la zone **URL du catalogue**, entrez le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante.
 
-    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès réseau mis en évidence.](../images/sideload-windows-properties-dialog-2.png)
+    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès réseau mis en surbrillance.](../images/sideload-windows-properties-dialog-2.png)
 
 1. Après avoir entré le chemin d’accès complet du réseau du dossier dans la zone **URL du catalogue**, choisissez le bouton **Ajouter un catalogue**.
 
 1. Cochez la case **Afficher dans le menu** pour l’élément nouvellement ajouté, puis choisissez le bouton **OK** pour fermer la boîte de dialogue **Centre de gestion de la confidentialité**. 
 
-    ![Boîte de dialogue Centre de confiance avec le catalogue sélectionné.](../images/sideload-windows-trust-center-dialog.png)
+    ![Boîte de dialogue Centre de gestion de la confidentialité avec le catalogue sélectionné.](../images/sideload-windows-trust-center-dialog.png)
 
-1. Sélectionnez le **bouton OK** pour fermer la **boîte de dialogue Options** .
+1. Choisissez le bouton **OK** pour fermer la fenêtre de boîte de dialogue **Options** .
 
 1. Fermez et ouvrez de nouveau l’application Office afin que vos modifications prennent effet.
 
@@ -96,7 +96,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 1. Remplacez la valeur`Url`, par le chemin d’accès complet du réseau vers le dossier que vous avez [partagé](#share-a-folder) précédemment. (Notez que les caractères `\` de l’URL doivent être doublés) Si vous n’avez pas noté le chemin d’accès complet du réseau lorsque vous avez partagé le dossier, vous pouvez le récupérer dans la boîte de dialogue **Propriétés** du dossier, comme illustré dans la capture d’écran suivante.
 
-    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès réseau mis en évidence.](../images/sideload-windows-properties-dialog-2.png)
+    ![Boîte de dialogue Propriétés du dossier avec l’onglet Partage et le chemin d’accès réseau mis en surbrillance.](../images/sideload-windows-properties-dialog-2.png)
 
 1. Le fichier doit désormais se présenter comme suit. Enregistrez-le.
 
@@ -121,7 +121,7 @@ La vidéo suivante présente la procédure de chargement de version test de votr
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > Pour Visual Studio projets, utilisez le manifeste créé par le projet dans le `{projectfolder}\bin\Debug\OfficeAppManifests` dossier.
+    > Pour Visual Studio projets, utilisez le manifeste généré par le projet dans le `{projectfolder}\bin\Debug\OfficeAppManifests` dossier.
 
 1. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban. Dans Project, sélectionnez **Mes compléments** sous l’onglet **Project** du ruban.
 
@@ -129,9 +129,9 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 1. Sélectionnez le nom du complément, puis choisissez **OK** pour insérer celui-ci.
 
-## <a name="remove-a-sideloaded-add-in"></a>Supprimer un add-in chargé de nouveau
+## <a name="remove-a-sideloaded-add-in"></a>Supprimer un complément chargé de manière indépendante
 
-Vous pouvez supprimer un add-in précédemment chargé de nouveau en effasant le cache Office sur votre ordinateur. Pour plus d’informations sur la façon d’effacer le cache sur Windows, voir l’article Effacer [le cache Office cache.](clear-cache.md#clear-the-office-cache-on-windows)
+Vous pouvez supprimer un complément précédemment chargé en désactivant le cache Office sur votre ordinateur. Pour plus d’informations sur l’effacement du cache sur Windows, consultez l’article [Effacer le cache Office](clear-cache.md#clear-the-office-cache-on-windows).
 
 ## <a name="see-also"></a>Voir aussi
 

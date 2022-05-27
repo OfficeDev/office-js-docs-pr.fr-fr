@@ -1,14 +1,14 @@
 ---
 title: Versions d’Office et ensembles de conditions requises
 description: Plateformes Office.js prises en charge à l'aide de l'API JavaScript.
-ms.date: 07/08/2021
+ms.date: 05/26/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 956a58433aca10895a1badeb0492a2c7b0883679
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: bedf4378c60d39a121f4d9b7031d5a6aba7e44b8
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496816"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752847"
 ---
 # <a name="office-versions-and-requirement-sets"></a>Versions d’Office et ensembles de conditions requises
 
@@ -47,7 +47,13 @@ Certains ensembles de conditions requises contiennent des API qui peuvent être 
 - [Ensembles de conditions requises communes pour Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
 - [Ensembles de conditions requises concernant les commandes de complément](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets)
 - [Ensembles de conditions requises de l’API de boîte de dialogue](/javascript/api/requirement-sets/common/dialog-api-requirement-sets)
+- [Ensembles de conditions requises d’origine de boîte de dialogue](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets)
 - [Ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
+- [Ensembles de conditions requises de coercition d’image](/javascript/api/requirement-sets/common/image-coercion-requirement-sets)
+- [Ensembles de conditions requises pour les raccourcis clavier](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
+- [Séries de conditions requises pour ouvrir une fenêtre de navigateur](/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets)
+- [Ensembles de conditions requises des API ruban](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+- [Ensembles de conditions requises d'exécution partagés](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 
 Le numéro de version d’un ensemble de conditions requises, par exemple « 1.1 » dans `ExcelApi 1.1`, est défini par rapport à l’application Office. Le numéro de version d’un ensemble donné de conditions requises (par exemple, `ExcelApi 1.1`) ne correspond pas au numéro de version d’Office.js, ni aux ensembles de conditions requises pour d’autres applications Office (comme Word, Outlook, etc.).  Les ensembles de conditions requises pour les différentes applications Office sont publiés à des rythmes différents. Par exemple, `ExcelApi 1.5` a été publié avant l’ensemble de conditions requises `WordApi 1.3`.
 
