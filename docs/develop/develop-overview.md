@@ -1,14 +1,14 @@
 ---
 title: Développement de compléments Office
 description: Présentation du développement de compléments Office.
-ms.date: 05/19/2022
+ms.date: 05/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 1ea32ff4a77116c922b36257048b99a70e5fe304
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 012060c2326192329a53c4d6056a1978fe6d60c2
+ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628067"
+ms.lasthandoff: 05/27/2022
+ms.locfileid: "65752875"
 ---
 # <a name="develop-office-add-ins"></a>Développement de compléments Office
 
@@ -58,7 +58,7 @@ Un manifeste de complément Office (fichier XML) définit les paramètres et les
 - Métadonnées décrivant le complément (par exemple, ID, version, description, nom complet, paramètres régionaux par défaut).
 - Les applications Office dans lesquelles le complément s’exécute.
 - Autorisations nécessaires au complément.
-- La manière dont le complément est intégré à Office, y compris toute interface utilisateur personnalisée créée par le complément (par exemple, onglets personnalisés, boutons du ruban).
+- Comment le complément s’intègre à Office, y compris toute interface utilisateur personnalisée créée par le complément (par exemple, des onglets personnalisés ou des boutons du ruban personnalisés).
 - L’emplacement des images que le complément utilise pour la personnalisation et l'iconographie des commandes.
 - Dimensions du complément (par exemple, dimensions pour les compléments de contenu, la hauteur demandée pour des compléments Outlook).
 - Règles qui spécifient le moment où le complément est activé dans le contexte d’un message ou d’un rendez-vous (pour les compléments Outlook uniquement).
