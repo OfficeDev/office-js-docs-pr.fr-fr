@@ -1,81 +1,102 @@
 ---
 title: Configuration de votre environnement de développement
-description: Configurer votre environnement de développement pour créer des Office de développement.
-ms.date: 10/26/2021
+description: Configurez votre environnement de développeur pour créer Office compléments.
+ms.date: 05/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1fc265640b6fb5931ba2086cc61784e94365c1
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 01b9fe0aff2696a521266bb3175ea0f61d891aa4
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63710922"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833884"
 ---
 # <a name="set-up-your-development-environment"></a>Configuration de votre environnement de développement
 
-Ce guide vous aide à configurer des outils pour créer des Office en suivant nos démarrages rapides ou didacticiels. Vous devez installer les outils à partir de la liste ci-dessous. Si ces derniers sont déjà installés, vous êtes prêt à commencer un démarrage rapide, tel que [celui-Excel React démarrage rapide](../quickstarts/excel-quickstart-react.md).
+Ce guide vous aide à configurer des outils afin de pouvoir créer des compléments Office en suivant nos guides de démarrage rapide ou nos didacticiels. Si vous les avez déjà installés, vous êtes prêt à commencer rapidement, par exemple, ce [Excel React démarrage rapide](../quickstarts/excel-quickstart-react.md).
+
+## <a name="get-microsoft-365"></a>Obtenir Microsoft 365
+
+Vous avez besoin d’un compte Microsoft 365. Vous pouvez bénéficier d’un abonnement gratuit de 90 jours renouvelable Microsoft 365 qui inclut toutes les applications Office en rejoignant le [programme de développement Microsoft 365](https://developer.microsoft.com/office/dev-program).
+
+## <a name="install-the-environment"></a>Installer l’environnement
+
+Il existe deux types d’environnements de développement parmi lesquels choisir. La structure de Office projets de complément créés dans les deux environnements est différente. Par conséquent, si plusieurs personnes travaillent sur un projet de complément, elles doivent toutes utiliser le même environnement. 
+
+- **environnementNode.js** : recommandé. Dans cet environnement, vos outils sont installés et exécutés sur une ligne de commande. Le côté serveur de la partie application web du complément est écrit en JavaScript ou TypeScript et est hébergé dans un runtime Node.js. Il existe de nombreux outils de développement de compléments utiles dans cet environnement, tels qu’un linter Office et un bundler/task-runner appelé WebPack. L’outil de création et de génération de modèles automatiques de projet, Yo Office, est fréquemment mis à jour.
+- **Visual Studio environnement** : choisissez cet environnement uniquement si votre ordinateur de développement est Windows et que vous souhaitez développer le côté serveur du complément avec un langage et une infrastructure .NET, tels que ASP.NET. Les modèles de projet de complément dans Visual Studio ne sont pas mis à jour aussi fréquemment que ceux de l’environnement Node.js. Le code côté client ne peut pas être débogué avec le débogueur intégré Visual Studio, mais vous pouvez déboguer du code côté client avec les outils de développement de votre navigateur. Plus d’informations plus loin dans l’onglet **Visual Studio environnement**.
+
+> [!NOTE]
+> Visual Studio pour Mac n’inclut pas les modèles de structure de projet pour Office compléments. Par conséquent, si votre ordinateur de développement est un Mac, vous devez utiliser l’environnement Node.js.
+
+Sélectionnez l’onglet de l’environnement que vous choisissez. 
+
+# <a name="nodejs-environment"></a>[ environnementNode.js](#tab/yeomangenerator)
+
+Les principaux outils à installer sont les suivants :
 
 - Node.js
 - npm
-- Un Microsoft 365 qui inclut la version d’abonnement de Office
 - Éditeur de code de votre choix
-- Le Office JavaScript
+- Yo Office
+- Linter JavaScript Office
 
-Ce guide suppose que vous savez utiliser un outil de ligne de commande.
+Ce guide part du principe que vous savez comment utiliser un outil en ligne de commande.
 
-## <a name="install-nodejs"></a>Installer Node.js.
+### <a name="install-nodejs-and-npm"></a>Installer Node.js et npm
 
-Node.js est un runtime JavaScript dont vous aurez besoin pour développer des Office modernes.
+Node.js est un runtime JavaScript que vous utilisez pour développer des compléments Office modernes.
 
-Installez Node.js en [téléchargeant la dernière version recommandée à partir de leur site web](https://nodejs.org). Suivez les instructions d’installation de votre système d’exploitation.
+Installez Node.js [en téléchargeant la dernière version recommandée à partir de son site web](https://nodejs.org). Suivez les instructions d’installation de votre système d’exploitation.
 
-## <a name="install-npm"></a>Installer npm
-
-npm est un registre logiciel open source à partir duquel télécharger les packages utilisés dans le développement de Office de développement.
-
-Pour installer npm, exécutez la commande suivante dans la ligne de commande.
-
-```command&nbsp;line
-    npm install npm -g
-```
-
-Pour vérifier si npm est déjà installé et voir la version installée, exécutez la commande suivante dans la ligne de commande.
+npm est un registre de logiciels open source à partir duquel télécharger les packages utilisés pour développer des compléments Office. Il est généralement installé automatiquement lorsque vous installez Node.js. Pour vérifier si vous avez déjà npm installé et voir la version installée, exécutez la commande suivante dans la ligne de commande.
 
 ```command&nbsp;line
 npm -v
 ```
 
-Vous pouvez utiliser un gestionnaire de version Node pour vous permettre de basculer entre plusieurs versions de Node.js et npm, mais cela n’est pas strictement nécessaire. Pour plus d’informations sur la façon de le faire, [voir les instructions de npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+Si, pour une raison quelconque, vous souhaitez l’installer manuellement, exécutez ce qui suit dans la ligne de commande.
 
-## <a name="get-microsoft-365"></a>Obtenir Microsoft 365
+```command&nbsp;line
+npm install npm -g
+```
 
-Si vous n’avez pas encore de compte Microsoft 365, vous pouvez obtenir un abonnement Microsoft 365 renouvelable gratuit de 90 jours qui inclut toutes les applications Office en rejoignant le programme Microsoft 365 [développeur.](https://developer.microsoft.com/office/dev-program)
+> [!TIP]
+> Vous pouvez utiliser un gestionnaire de versions de nœud pour vous permettre de basculer entre plusieurs versions de Node.js et npm, mais cela n’est pas strictement nécessaire. Pour plus d’informations sur la procédure à suivre, [consultez les instructions de npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-## <a name="install-a-code-editor"></a>Installer un éditeur de code
+### <a name="install-a-code-editor"></a>Installer un éditeur de code
 
 Vous pouvez utiliser n’importe quel éditeur de code ou IDE qui prend en charge le développement côté client pour créer votre composant WebPart, par exemple :
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [code Visual Studio](https://code.visualstudio.com/) (recommandé)
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-## <a name="install-and-use-the-office-javascript-linter"></a>Installer et utiliser le Office JavaScript
+### <a name="install-the-yeoman-generator-mdash-yo-office"></a>Installer le générateur &mdash; Yeoman Yo Office
 
-Microsoft fournit un linter JavaScript pour vous aider à capturer les erreurs courantes lors de l’utilisation Office bibliothèque JavaScript. Pour installer le linter, exécutez les deux commandes suivantes (après avoir installé [Node.jset ](#install-nodejs) [npm](#install-npm)).
+L’outil de création et de génération de modèles automatiques de projet est générateur [Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md), communément appelé **Yo Office**. Vous devez installer la dernière version de [Yeoman](https://github.com/yeoman/yo) et Yo Office. Pour installer ces outils globalement, exécutez la commande suivante via l’invite de commandes.
+
+  ```command&nbsp;line
+  npm install -g yo generator-office
+  ```
+
+### <a name="install-and-use-the-office-javascript-linter"></a>Installer et utiliser le linter JavaScript Office
+
+Microsoft fournit un linter JavaScript pour vous aider à intercepter les erreurs courantes lors de l’utilisation de la bibliothèque JavaScript Office. Pour installer le linter, exécutez les deux commandes suivantes (après avoir [installé Node.js et npm](#install-nodejs-and-npm)).
 
 ```command&nbsp;line
 npm install office-addin-lint --save-dev
 npm install eslint-plugin-office-addins --save-dev
 ```
 
-Si vous créez un projet de Office avec le générateur [Yeoman pour l’outil Office Add-ins](../develop/yeoman-generator-overview.md), le reste de la configuration est terminé pour vous. Exécutez le linter avec la commande suivante dans le terminal d’un éditeur, par exemple Visual Studio Code, ou dans une invite de commandes. Les problèmes trouvés par le linter apparaissent dans le terminal ou l’invite, et apparaissent également directement dans le code lorsque vous utilisez un éditeur qui prend en charge les messages linter, tels que Visual Studio Code. (Pour plus d’informations sur l’installation du générateur Yeoman, voir [générateur Yeoman pour les Office des modules complémentaires](../develop/yeoman-generator-overview.md).)
+Si vous créez un projet de complément Office avec le [générateur Yeoman pour Office’outil Compléments](../develop/yeoman-generator-overview.md), le reste de la configuration est effectué pour vous. Exécutez le linter avec la commande suivante dans le terminal d’un éditeur, tel que Visual Studio Code, ou dans une invite de commandes. Les problèmes détectés par le linter apparaissent dans le terminal ou l’invite, et apparaissent également directement dans le code lorsque vous utilisez un éditeur qui prend en charge les messages linter, tels que Visual Studio Code. (Pour plus d’informations sur l’installation du générateur Yeoman, consultez [yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).)
 
 ```command&nbsp;line
 npm run lint
 ```
 
-Si votre projet de add-in a été créé d’une autre façon, prenez les mesures suivantes.
+Si votre projet de complément a été créé d’une autre façon, procédez comme suit.
 
-1. À la racine du projet, créez un fichier texte nommé **.eslintrc.json**, s’il n’en existe pas déjà un. Assurez-vous qu’il possède des propriétés nommées `plugins` et `extends`, les deux types de tableau. Le `plugins` tableau doit inclure et `"office-addins"` le tableau `extends` doit inclure `"plugin:office-addins/recommended"`. Voici un exemple simple. Votre **fichier .eslintrc.json** peut avoir des propriétés supplémentaires et des membres supplémentaires des deux tableaux.
+1. À la racine du projet, créez un fichier texte nommé **.eslintrc.json**, s’il n’en existe pas déjà un. Assurez-vous qu’il a des propriétés nommées `plugins` et `extends`, les deux, de tableau de type. Le `plugins` tableau doit inclure `"office-addins"` et le `extends` tableau doit inclure `"plugin:office-addins/recommended"`. Voici un exemple simple. Votre fichier **.eslintrc.json** peut avoir des propriétés supplémentaires et des membres supplémentaires des deux tableaux.
 
    ```json
    {
@@ -88,21 +109,39 @@ Si votre projet de add-in a été créé d’une autre façon, prenez les mesure
    }
    ```
 
-1. À la racine du projet, ouvrez le **fichier package.json** `scripts` et assurez-vous que le tableau possède le membre suivant.
+1. À la racine du projet, ouvrez le fichier **package.json** et assurez-vous que le `scripts` tableau a le membre suivant.
 
    ```json
    "lint": "office-addin-lint check",
    ```
 
-1. Exécutez le linter avec la commande suivante dans le terminal d’un éditeur, par exemple Visual Studio Code, ou dans une invite de commandes. Les problèmes trouvés par le linter apparaissent dans le terminal ou l’invite, et apparaissent également directement dans le code lorsque vous utilisez un éditeur qui prend en charge les messages linter, tels que Visual Studio Code.
+1. Exécutez le linter avec la commande suivante dans le terminal d’un éditeur, tel que Visual Studio Code, ou dans une invite de commandes. Les problèmes détectés par le linter apparaissent dans le terminal ou l’invite, et apparaissent également directement dans le code lorsque vous utilisez un éditeur qui prend en charge les messages linter, tels que Visual Studio Code.
 
    ```command&nbsp;line
    npm run lint
    ```
 
+# <a name="visual-studio-environment"></a>[environnement Visual Studio](#tab/visualstudio)
+
+### <a name="install-visual-studio"></a>Installer Visual Studio
+
+Si vous n’avez pas installé Visual Studio 2017 (pour Windows) ou version ultérieure, installez la dernière version à partir de [Visual Studio Téléchargements](https://visualstudio.microsoft.com/downloads/). Veillez à inclure la charge de travail de **développement Office/SharePoint** lorsque le programme d’installation vous demande de spécifier des charges de travail. Les autres charges de travail dont vous pouvez avoir besoin sont les **outils de développement Web pour** la **prise en charge du langage .NET, JavaScript et TypeScript** (pour le codage côté client du complément) et les charges de travail liées à la ASP.NET.
+
+> [!TIP]
+> Depuis l’été 2022, les schémas XML du manifeste de complément Office installés avec Visual Studio ne sont pas la dernière version. Cela peut affecter les compléments, selon les fonctionnalités de complément qu’ils utilisent. Vous devrez peut-être mettre à jour les schémas XML pour le manifeste. Pour plus d’informations, consultez [Les erreurs de validation de schéma de manifeste dans Visual Studio projets](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+
+> [!NOTE]
+> Pour plus d’informations sur le débogage du code côté client lorsque vous utilisez l’environnement Visual Studio, consultez [Déboguer Office compléments dans Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Déboguez le code côté serveur de la même façon que n’importe quelle application web créée dans Visual Studio. Voir [côté client ou côté serveur](../testing/debug-add-ins-overview.md#server-side-or-client-side).
+
+---
+
+## <a name="install-script-lab"></a>Installer Script Lab
+
+Script Lab est un outil de prototypage rapide de code qui appelle les API de bibliothèque JavaScript Office. Script Lab est lui-même un complément Office et peut être installé à partir d’AppSource à [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). Il existe une version pour Excel, PowerPoint et Word, et une version distincte pour Outlook. Pour plus d’informations sur l’utilisation de Script Lab, consultez [Explorer Office’API JavaScript à l’aide de Script Lab](explore-with-script-lab.md).
+
 ## <a name="next-steps"></a>Prochaines étapes
 
-Essayez de créer votre propre Script Lab pour essayer des exemples intégrés.
+Essayez de créer votre propre complément ou utilisez [Script Lab](explore-with-script-lab.md) pour essayer des exemples intégrés.
 
 ### <a name="create-an-office-add-in"></a>Créer un complément Office
 

@@ -1,40 +1,40 @@
 ---
-title: Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
-description: Découvrez comment gérer l’événement d’envoi de message dans Outlook complément à l’aide de l’activation basée sur un événement.
+title: Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
+description: Découvrez comment gérer les événements en envoi dans votre complément Outlook à l’aide de l’activation basée sur les événements.
 ms.topic: article
-ms.date: 03/07/2022
+ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a9d44844c7fff3d5305de53f57c2950ae1909fb
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484503"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833926"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-event-in-your-outlook-add-in-preview"></a>Utiliser les alertes intelligentes et l’événement OnMessageSend dans votre Outlook de gestion (aperçu)
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
 
-L’événement tire parti des alertes intelligentes qui vous permettent d’exécuter la logique après qu’un utilisateur a sélectionné Envoyer Outlook message. `OnMessageSend` Votre handler d’événements vous permet de donner à vos utilisateurs la possibilité d’améliorer leurs e-mails avant qu’ils ne soit envoyés. L’événement `OnAppointmentSend` est similaire mais s’applique à un rendez-vous.
+Les `OnMessageSend` événements et `OnAppointmentSend` les alertes actives tirent parti des alertes intelligentes, qui vous permettent d’exécuter la logique après qu’un utilisateur a sélectionné **Envoyer** dans son message ou rendez-vous Outlook. Votre gestionnaire d’événements vous permet de donner à vos utilisateurs la possibilité d’améliorer leurs e-mails et invitations aux réunions avant qu’ils ne soient envoyés.
 
-À la fin de cette walkthrough, vous aurez un module qui s’exécute chaque fois qu’un message est envoyé et vérifie si l’utilisateur a oublié d’ajouter un document ou une image qu’il a mentionnés dans son e-mail.
+La procédure pas à pas suivante utilise l’événement `OnMessageSend` . À la fin de cette procédure pas à pas, vous disposerez d’un complément qui s’exécute chaque fois qu’un message est envoyé et vérifie si l’utilisateur a oublié d’ajouter un document ou une image qu’il a mentionné dans son e-mail.
 
 > [!IMPORTANT]
-> Les `OnMessageSend` événements `OnAppointmentSend` et les événements sont disponibles uniquement en prévisualisation avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, voir [Comment prévisualiser](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les modules de production.
+> Les `OnMessageSend` événements et `OnAppointmentSend` les événements sont disponibles uniquement en préversion avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, consultez [La préversion](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les compléments de production.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur des événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, les événements disponibles, comment afficher un aperçu de cet événement, le débogage, les limitations de fonctionnalités, etc., reportez-vous à Configurer votre complément [Outlook pour l’activation](autolaunch.md) basée sur des événements.
+L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur les événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, utilisez d’autres événements disponibles, configurez la préversion pour cet événement, déboguez votre complément, etc., [reportez-vous à Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md).
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-[Complétez Outlook démarrage](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) rapide qui crée un projet de compl?ment avec le générateur Yeoman pour Office compl?ments.
+Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), qui crée un projet de complément avec le générateur Yeoman pour Office compléments.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
-1. Ouvrez **lemanifest.xml** situé à la racine de votre projet.
+1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez **l’intégralité du nœud VersionOverrides** (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant, puis enregistrez vos modifications.
+1. Sélectionnez l’intégralité du nœud **VersionOverrides** (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant, puis enregistrez vos modifications.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -137,20 +137,20 @@ L’événement `OnMessageSend` est disponible via la fonctionnalité d’activa
 
 > [!TIP]
 >
-> - Pour **les options SendMode** disponibles avec l’événement `OnMessageSend` , reportez-vous [aux options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
-> - Pour en savoir plus sur les manifestes de Outlook des modules, voir Outlook [manifestes de ces derniers](manifests.md).
+> - Pour **les options SendMode** disponibles avec les événements et `OnAppointmentSend` les `OnMessageSend` événements, reportez-vous aux [options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
+> - Pour en savoir plus sur les manifestes pour Outlook compléments, consultez [Outlook manifestes de complément](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
-Vous devez implémenter la gestion de l’événement sélectionné.
+Vous devez implémenter la gestion de votre événement sélectionné.
 
-Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Votre add-in recherche certains mots clés dans le message. Si l’un de ces mots clés est trouvé, il vérifie s’il existe des pièces jointes. S’il n’existe aucune pièce jointe, votre add-in recommande à l’utilisateur d’ajouter la pièce jointe éventuellement manquante.
+Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Votre complément recherche certains mots clés dans le message. Si l’un de ces mots clés est trouvé, il vérifie s’il existe des pièces jointes. S’il n’existe aucune pièce jointe, votre complément recommande à l’utilisateur d’ajouter la pièce jointe éventuellement manquante.
 
-1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous **le répertoire ./src** .
+1. À partir du même projet de démarrage rapide, créez un dossier nommé **launchevent** sous le répertoire **./src** .
 
-1. Dans le **dossier ./src/launchevent** , créez un fichier nommé **launchevent.js**.
+1. Dans le dossier **./src/launchevent** , créez un fichier nommé **launchevent.js**.
 
-1. Ouvrez le fichier **./src/launchevent/launchevent.js** votre éditeur de code et ajoutez le code JavaScript suivant.
+1. Ouvrez le fichier **./src/launchevent/launchevent.js** dans votre éditeur de code et ajoutez le code JavaScript suivant.
 
     ```js
     /*
@@ -229,9 +229,9 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 ## <a name="update-webpack-config-settings"></a>Mettre à jour les paramètres de configuration webapck
 
-1. Ouvrez **lewebpack.config.js** recherche dans le répertoire racine du projet et complétez les étapes suivantes.
+1. Ouvrez le fichier **webpack.config.js** trouvé dans le répertoire racine du projet et effectuez les étapes suivantes.
 
-1. Recherchez `plugins` le tableau dans l’objet `config` et ajoutez ce nouvel objet au début du tableau.
+1. Recherchez le `plugins` tableau dans l’objet `config` et ajoutez ce nouvel objet au début du tableau.
 
     ```js
     new CopyWebpackPlugin({
@@ -246,30 +246,84 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
-1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre application est rechargée de nouveau.
+1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé de manière indépendante.
 
     ```command&nbsp;line
     npm run build
     ```
+
     ```command&nbsp;line
     npm start
     ```
 
     > [!NOTE]
-    > Si votre application [n’a](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) pas été automatiquement rechargée de manière test, suivez les instructions du chargement de version test des Outlook pour tester le chargement de version test du Outlook.
+    > Si votre complément n’a pas été chargé automatiquement, suivez les instructions de chargement indépendant [Outlook compléments à tester pour](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) charger manuellement le complément dans Outlook.
 
-1. Dans Outlook sur Windows, créez un message et définissez l’objet. Dans le corps, ajoutez du texte tel que « Hey, regardez cette image de mon chien ! ».
-1. Envoyez le message. Une boîte de dialogue doit s’ouvrir avec une recommandation pour ajouter une pièce jointe.
+1. Dans Outlook sur Windows, créez un message et définissez l’objet. Dans le corps, ajoutez un texte tel que « Hey, regardez cette photo de mon chien ! ».
+1. Envoyez le message. Une boîte de dialogue doit s’afficher avec une recommandation vous permettant d’ajouter une pièce jointe.
 
-    ![Capture d’écran d’une fenêtre de message Outlook sur Windows boîte de dialogue.](../images/outlook-win-smart-alert.png)
+    ![Boîte de dialogue recommandant que l’utilisateur inclue une pièce jointe.](../images/outlook-win-smart-alert.png)
 
 1. Ajoutez une pièce jointe, puis renvoyez le message. Il ne doit pas y avoir d’alerte cette fois.
+
+## <a name="smart-alerts-feature-behavior-and-scenarios"></a>Comportement et scénarios des fonctionnalités d’alertes intelligentes
+
+Les descriptions des options **SendMode** et les recommandations relatives au moment de leur utilisation sont détaillées dans les [options SendMode disponibles](/javascript/api/manifest/launchevent). L’article suivant décrit le comportement de la fonctionnalité pour certains scénarios.
+
+### <a name="add-in-is-unavailable"></a>Le complément n’est pas disponible
+
+Si le complément n’est pas disponible lors de l’envoi d’un message ou d’un rendez-vous (par exemple, une erreur se produit qui empêche le chargement du complément), l’utilisateur est alerté. Les options disponibles pour l’utilisateur varient en fonction de l’option **SendMode** appliquée au complément.
+
+Si l’option ou `SoftBlock` l’option `PromptUser` est utilisée, l’utilisateur peut choisir **Envoyer quand même** pour envoyer l’élément sans que le complément ne l’vérifie, ou **essayer plus tard** de laisser l’élément être vérifié par le complément lorsqu’il redevient disponible.
+
+![Boîte de dialogue qui avertit l’utilisateur que le complément n’est pas disponible et donne à l’utilisateur la possibilité d’envoyer l’élément maintenant ou ultérieurement.](../images/outlook-soft-block-promptUser-unavailable.png)
+
+Si l’option `Block` est utilisée, l’utilisateur ne peut pas envoyer l’élément tant que le complément n’est pas disponible.
+
+![Boîte de dialogue qui avertit l’utilisateur que le complément n’est pas disponible. L’utilisateur ne peut envoyer l’élément que lorsque le complément est à nouveau disponible.](../images/outlook-hard-block-unavailable.png)
+
+### <a name="long-running-add-in-operations"></a>Opérations de complément de longue durée
+
+Si le complément s’exécute pendant plus de cinq secondes, mais moins de cinq minutes, l’utilisateur est averti que le complément prend plus de temps que prévu pour traiter le message ou le rendez-vous.
+
+Si l’option `PromptUser` est utilisée, l’utilisateur peut choisir **Envoyer quand même** pour envoyer l’élément sans que le complément termine sa vérification. L’utilisateur peut également sélectionner **Ne pas envoyer** pour arrêter le traitement du complément.
+
+![Boîte de dialogue qui avertit l’utilisateur que le complément prend plus de temps que prévu pour traiter l’élément. L’utilisateur peut choisir d’envoyer l’élément sans que le complément termine sa vérification ou d’empêcher le complément de traiter l’élément.](../images/outlook-promptUser-long-running.png)
+
+Toutefois, si l’option ou `Block` l’option `SoftBlock` est utilisée, l’utilisateur ne peut pas envoyer l’élément tant que le complément n’a pas terminé son traitement.
+
+![Boîte de dialogue qui avertit l’utilisateur que le complément prend plus de temps que prévu pour traiter l’élément. L’utilisateur doit attendre que le complément termine le traitement de l’élément avant de pouvoir l’envoyer.](../images/outlook-soft-hard-block-long-running.png)
+
+`OnMessageSend` et `OnAppointmentSend` les compléments doivent être de courte durée et légers. Pour éviter la boîte de dialogue d’opération de longue durée, utilisez d’autres événements pour traiter les vérifications conditionnelles avant l’activation de l’événement`OnMessageSend`.`OnAppointmentSend` Par exemple, si l’utilisateur est tenu de chiffrer les pièces jointes pour chaque message ou rendez-vous, envisagez d’utiliser le ou `OnAppointmentAttachmentsChanged` l’événement `OnMessageAttachmentsChanged` pour effectuer la vérification.
+
+### <a name="add-in-timed-out"></a>Délai d’expiration du complément
+
+Si le complément s’exécute pendant cinq minutes ou plus, il expire. Si l’option `PromptUser` est utilisée, l’utilisateur peut choisir **Envoyer quand même** pour envoyer l’élément sans que le complément termine sa vérification. L’utilisateur peut également choisir **Ne pas envoyer**.
+
+![Boîte de dialogue qui avertit l’utilisateur que le processus de complément a expiré. L’utilisateur peut choisir d’envoyer l’élément sans que le complément termine sa vérification, ou de ne pas envoyer l’élément.](../images/outlook-promptUser-timeout.png)
+
+Si l’option ou `Block` l’option `SoftBlock` est utilisée, l’utilisateur ne peut pas envoyer l’élément tant que le complément n’a pas terminé sa vérification. L’utilisateur doit réessayer d’envoyer l’élément pour réactiver le complément.
+
+![Boîte de dialogue qui avertit l’utilisateur que le processus de complément a expiré. L’utilisateur doit réessayer d’envoyer l’élément pour activer le complément avant de pouvoir envoyer le message ou le rendez-vous.](../images/outlook-soft-hard-block-timeout.png)
+
+## <a name="limitations"></a>Limites
+
+Étant donné que les événements et `OnAppointmentSend` les `OnMessageSend` événements sont pris en charge par le biais de la fonctionnalité d’activation basée sur les événements, les mêmes limitations de fonctionnalité s’appliquent aux compléments qui s’activent à la suite de ces événements. Pour obtenir une description de ces limitations, [reportez-vous au comportement et aux limitations de l’activation basée sur les événements](autolaunch.md#event-based-activation-behavior-and-limitations).
+
+En plus de ces contraintes, une seule instance de l’événement `OnMessageSend` peut `OnAppointmentSend` être déclarée dans le manifeste. Si vous avez besoin de plusieurs `OnMessageSend` événements, `OnAppointmentSend` vous devez les déclarer dans un manifeste ou un complément distinct.
+
+Bien qu’un message de boîte de dialogue Alertes intelligentes puisse être modifié en fonction de votre scénario de complément à l’aide de la [propriété errorMessage](/javascript/api/office/office.addincommands.eventcompletedoptions) de la méthode event.completed, les éléments suivants ne peuvent pas être personnalisés.
+
+- Barre de titre de la boîte de dialogue. Le nom de votre complément s’y affiche toujours.
+- Format du message. Par exemple, vous ne pouvez pas modifier la taille et la couleur de police du texte ou insérer une liste à puces.
+- Options de la boîte de dialogue. Par exemple, les options **Envoyer quand même** et **Ne pas envoyer** sont fixes et dépendent de [l’option SendMode](/javascript/api/manifest/launchevent) que vous sélectionnez.
+- Boîtes de dialogue d’informations sur le traitement et la progression de l’activation basée sur les événements. Par exemple, le texte et les options qui apparaissent dans les dialogues d’expiration et d’opération de longue durée ne peuvent pas être modifiés.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Manifestes de complément Outlook](manifests.md)
-- [Configurer votre complément Outlook pour l’activation basée sur des événements](autolaunch.md)
-- [Comment déboguer des add-ins basés sur des événements](debug-autolaunch.md)
-- [Options de liste AppSource pour votre Outlook d’événements](autolaunch-store-options.md)
+- [Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md)
+- [Comment déboguer des compléments basés sur des événements](debug-autolaunch.md)
+- [Options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md)
