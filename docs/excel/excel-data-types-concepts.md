@@ -1,17 +1,17 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 05/18/2022
+ms.date: 05/26/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 61485451bf5e0d7dff96a5f4f215def49425e571
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 2259d28bc87e6452e526786c0b32135e4bb27d45
+ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628084"
+ms.lasthandoff: 06/02/2022
+ms.locfileid: "65833905"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -91,6 +91,10 @@ const myEntity: Excel.EntityCellValue = {
 ```
 
 Les valeurs d’entité offrent également une propriété `layouts` qui crée une carte pour l’entité. La carte s’affiche sous forme de fenêtre modale dans l’interface utilisateur Excel et peut afficher des informations supplémentaires contenues dans la valeur de l’entité, au-delà de ce qui est visible dans la cellule. Pour plus d’informations, consultez [Utiliser des cartes avec des types de données de valeur d’entité](excel-data-types-entity-card.md).
+
+### <a name="linked-entities"></a>Entités liées
+
+Les valeurs d’entité liées, ou objets [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) sont un type de valeur d’entité. Ces objets intègrent les données fournies par un service externe et peuvent afficher ces données sous la forme d’une [carte d’entité](excel-data-types-entity-card.md), comme des valeurs d’entité régulières. Les [types de données Actions et Géographie](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) disponibles via l’interface utilisateur Excel sont des valeurs d’entité liées.
 
 ## <a name="web-image-values"></a>Valeurs d’image Web
 
