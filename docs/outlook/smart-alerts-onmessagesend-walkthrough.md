@@ -2,14 +2,14 @@
 title: Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
 description: Découvrez comment gérer les événements en envoi dans votre complément Outlook à l’aide de l’activation basée sur les événements.
 ms.topic: article
-ms.date: 05/26/2022
+ms.date: 06/02/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0174d766423a9b70c67b0c2cf559f5b1ea24c9fe
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 1adced1e138ad41cef38947ddb3ffe8c273be871
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833926"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872007"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
 
@@ -20,7 +20,7 @@ La procédure pas à pas suivante utilise l’événement `OnMessageSend` . À l
 > [!IMPORTANT]
 > Les `OnMessageSend` événements et `OnAppointmentSend` les événements sont disponibles uniquement en préversion avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, consultez [La préversion](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les compléments de production.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur les événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, utilisez d’autres événements disponibles, configurez la préversion pour cet événement, déboguez votre complément, etc., [reportez-vous à Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md).
 
@@ -327,3 +327,4 @@ Bien qu’un message de boîte de dialogue Alertes intelligentes puisse être mo
 - [Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md)
 - [Comment déboguer des compléments basés sur des événements](debug-autolaunch.md)
 - [Options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md)
+- [Exemple de code de compléments Office : Utiliser Outlook alertes intelligentes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
