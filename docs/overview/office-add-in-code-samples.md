@@ -1,14 +1,14 @@
 ---
 title: Exemples de code Office
 description: Une liste d Office exemples de code pour vous aider à apprendre et à créer vos propres modules.
-ms.date: 02/17/2022
+ms.date: 06/02/2022
 localization_priority: high
-ms.openlocfilehash: e727e1df0bfb02eade1133e575234554f7c2b144
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1ad5fcb3ed860832b093dc6aef212e9d1176f298
+ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745965"
+ms.lasthandoff: 06/03/2022
+ms.locfileid: "65872014"
 ---
 # <a name="office-add-in-code-samples"></a>Exemples de code Office
 
@@ -48,6 +48,7 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 | [Chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications de date/heure de rendez-vous](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments). | Utilisez l’activation basée sur les événements pour chiffrer les pièces jointes lorsqu'elles sont ajoutées par l’utilisateur. Utilisez également la gestion des événements pour les destinataires modifiés dans une demande de réunion et les modifications apportées à la date ou à l’heure de début ou de fin dans une demande de réunion. |
 | [Utiliser l’activation basée sur les événements Outlook pour marquer les destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Utilisez l’activation basée sur des événements pour exécuter Outlook complément lorsque l’utilisateur modifie des destinataires lors de la composition d’un message. Le complément utilise également `appendOnSendAsync` l’API pour ajouter une clause d’exclusion de responsabilité. |
 | [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Utilisez l'activation basée sur des événements pour exécuter un module complémentaire Outlook lorsque l'utilisateur crée un nouveau message ou un rendez-vous. Le module peut répondre aux événements, même lorsque le volet Tâches n’est pas ouvert. Il utilise également `setSignatureAsync` l’API. |
+| [Utiliser Alertes intelligentes d’Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories) | Utilisez les alertes intelligentes d'Outlook pour vérifier que les catégories de couleurs requises sont appliquées à un nouveau message ou rendez-vous avant qu'il ne soit envoyé. |
 
 ## <a name="word"></a>Word
 
