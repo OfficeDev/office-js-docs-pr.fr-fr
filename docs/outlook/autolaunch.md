@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 06/02/2022
+ms.date: 06/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ce15f2b0f64459280714fc9e7734c9b7e52a6a1
-ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
+ms.openlocfilehash: 2565c1938071918d15731606c16833be3b9c8982
+ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "65872021"
+ms.lasthandoff: 06/10/2022
+ms.locfileid: "66019618"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur les événements
 
@@ -29,8 +29,8 @@ Le tableau suivant répertorie les événements actuellement disponibles et les 
 
 |Événement|Description|Ensemble minimal de conditions requises et clients pris en charge|
 |---|---|---|
-|`OnNewMessageCompose`|Lors de la rédaction d’un nouveau message (y compris la réponse, répondre à tous et transférer), mais pas lors de la modification, par exemple, d’un brouillon.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Navigateur web<br>- Nouvelle préversion de l’interface utilisateur Mac|
-|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas lors de la modification d’un rendez-vous existant.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Navigateur web<br>- Nouvelle préversion de l’interface utilisateur Mac|
+|`OnNewMessageCompose`|Lors de la rédaction d’un nouveau message (y compris la réponse, répondre à tous et transférer), mais pas lors de la modification, par exemple, d’un brouillon.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Navigateur web<br>- Nouvelle interface utilisateur Mac |
+|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas lors de la modification d’un rendez-vous existant.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Navigateur web<br>- Nouvelle interface utilisateur Mac |
 |`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement : [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
 |`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
 |`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement : [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
@@ -42,7 +42,7 @@ Le tableau suivant répertorie les événements actuellement disponibles et les 
 |`OnAppointmentSend`|Lors de l’envoi d’un élément de rendez-vous. Pour plus d’informations, reportez-vous à la [procédure pas à pas des alertes intelligentes](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
 
 > [!NOTE]
-> <sup>1</sup> Les compléments basés sur les événements dans Outlook sur Windows nécessitent Windows 10 version 1809 (build 17763.2989) ou ultérieure pour s’exécuter.
+> <sup>1</sup> Compléments basés sur des événements dans Outlook sur Windows nécessitent un minimum de Windows 10 version 1903 (build 18362) ou Windows Server 2019 version 1903 pour s’exécuter.
 
 ### <a name="how-to-preview"></a>Guide pratique pour afficher un aperçu
 
@@ -53,7 +53,7 @@ Pour afficher un aperçu de ces événements, le cas échéant :
 - Pour Outlook sur le web :
   - [Configurez la version ciblée sur votre locataire Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez la bibliothèque **bêta** sur le CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
-- Pour Outlook sur la nouvelle préversion de l’interface utilisateur Mac :
+- Pour Outlook sur la nouvelle interface utilisateur Mac :
   - La build minimale requise est 16,54 (21101001). Rejoignez le [programme Office Insider](https://insider.office.com/join/Mac) et choisissez le **canal bêta** pour accéder à Office versions bêta.
 - Pour Outlook sur Windows :
   - La build minimale requise est 16.0.14511.10000. Rejoignez le [programme Office Insider](https://insider.office.com/join/windows) et choisissez le **canal bêta** pour accéder à Office versions bêta.
@@ -85,7 +85,7 @@ Pour activer l’activation basée sur les événements de votre complément, vo
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web and Outlook on the new Mac UI preview. -->
+               This is used by Outlook on the web and Outlook on the new Mac UI. -->
           <Runtime resid="WebViewRuntime.Url">
             <!-- JavaScript file containing event handlers. This is used by Outlook Desktop. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
@@ -189,7 +189,7 @@ Pour activer l’activation basée sur les événements de votre complément, vo
 </VersionOverrides>
 ```
 
-Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web et sur la nouvelle préversion de l’interface utilisateur Mac utilisent un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le `Resources` nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser html ou JavaScript en fonction du client Outlook. Par conséquent, pour configurer la gestion des événements, indiquez l’emplacement du code HTML dans l’élément `Runtime` , puis, dans son `Override` élément enfant, indiquez l’emplacement du fichier JavaScript incorporé ou référencé par le code HTML.
+Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web et sur la nouvelle interface utilisateur Mac utilisent un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le `Resources` nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser html ou JavaScript en fonction du client Outlook. Par conséquent, pour configurer la gestion des événements, indiquez l’emplacement du code HTML dans l’élément `Runtime` , puis, dans son `Override` élément enfant, indiquez l’emplacement du fichier JavaScript incorporé ou référencé par le code HTML.
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes pour Outlook compléments, consultez [Outlook manifestes de complément](manifests.md).
@@ -292,15 +292,15 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Dans Outlook sur le web, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec l’objet défini sur composer.](../images/outlook-web-autolaunch-1.png)
+    ![Fenêtre de message dans Outlook sur le web avec l’objet défini sur composer.](../images/outlook-web-autolaunch-1.png)
 
-1. Dans Outlook sur la nouvelle préversion de l’interface utilisateur Mac, créez un message.
+1. Dans Outlook sur la nouvelle interface utilisateur Mac, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur la nouvelle préversion de l’interface utilisateur Mac avec l’objet défini sur composer.](../images/outlook-mac-autolaunch.png)
+    ![Fenêtre de message dans Outlook sur la nouvelle interface utilisateur Mac avec l’objet défini sur composer.](../images/outlook-mac-autolaunch.png)
 
 1. Dans Outlook sur Windows, créez un message.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur Windows avec l’objet défini sur composer.](../images/outlook-win-autolaunch.png)
+    ![Fenêtre de message dans Outlook sur Windows avec l’objet défini sur composer.](../images/outlook-win-autolaunch.png)
 
 ## <a name="debug"></a>Débogage
 
@@ -374,4 +374,4 @@ La prise en charge complète de CORS sera bientôt disponible.
   - [Utiliser Outlook activation basée sur les événements pour chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications apportées à la date/l’heure du rendez-vous](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [Utiliser l’activation basée sur les événements Outlook pour marquer les destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
-  - [Utiliser Outlook alertes intelligentes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+  - [Utiliser Alertes intelligentes d’Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
