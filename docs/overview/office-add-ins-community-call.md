@@ -1,23 +1,22 @@
 ---
-title: Appel de la communauté des compléments Microsoft Office
+title: appel de la communauté des compléments Microsoft Office
 description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
-ms.date: 06/03/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b3ece7a43eef1ae8823975fdb185c81cf2503de2
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 4c3cdcb49aef2fce79eb761be3962084519594e9
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891941"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090837"
 ---
-# <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
+# <a name="microsoft-office-add-ins-community-call"></a>appel de la communauté des compléments Microsoft Office
 
-L’appel de la communauté des compléments Microsoft Office est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
+L’appel communautaire Microsoft Office compléments est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de Office compléments. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-june-8th-call"></a>Ordre du jour de l’appel du 8 juin
+## <a name="agenda-for-july-13th-call"></a>Ordre du jour de l’appel du 13 juillet
 
-- Exemple d’alertes intelligentes Outlook.
-- Démonstration du complément Excel à l’aide de .NET Blazor.
+L’ordre du jour de juillet sera affiché environ une semaine avant l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 
@@ -38,13 +37,13 @@ Vous avez manqué un appel de communauté précédent ? Consultez les ressources
 - [12 mai 2021](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-may-2021/)
 - [14 avril 2021](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-april-14-2021/)
 - [10 mars 2021](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-march-10-2021/)
-- [Appels de la communauté des compléments Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
+- [Appels de la communauté de compléments Office archivés – 10 juin 2020 - 10 février 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Invitation périodique et mensuelle au calendrier d’appel de la communauté](https://aka.ms/officeaddinscommunitycall)
-- [Demandes et questions relatives aux rubriques d’appel de la communauté](https://aka.ms/officeaddinsform)
-- [Canal YouTube du développeur Microsoft 365](https://aka.ms/m365devyoutube)
-- [Canal YouTube de la communauté Microsoft 365](https://aka.ms/m365pnp/videos)
-- [Site de la communauté Microsoft 365](https://aka.ms/m365pnp/community)
-- [Blog de la communauté Microsoft 365](https://aka.ms/m365pnp/community/blog)
+- [Community demandes et questions relatives aux rubriques d’appel](https://aka.ms/officeaddinsform)
+- [canal YouTube du développeur Microsoft 365](https://aka.ms/m365devyoutube)
+- [Microsoft 365 chaîne YouTube de la communauté](https://aka.ms/m365pnp/videos)
+- [Microsoft 365 site de la communauté](https://aka.ms/m365pnp/community)
+- [blog de la communauté Microsoft 365](https://aka.ms/m365pnp/community/blog)

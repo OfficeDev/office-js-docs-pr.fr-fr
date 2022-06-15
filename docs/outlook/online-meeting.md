@@ -2,21 +2,21 @@
 title: Créer un complément mobile Outlook pour un fournisseur de réunions en ligne
 description: Explique comment configurer un complément mobile Outlook pour un fournisseur de services de réunion en ligne.
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ada539c323ce6fdf578c26c221eb6090280b5a0a
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 3a8f21caf40b9a0b9a351e4ac6a405201923335b
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244862"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091117"
 ---
 # <a name="create-an-outlook-mobile-add-in-for-an-online-meeting-provider"></a>Créer un complément mobile Outlook pour un fournisseur de réunions en ligne
 
 La configuration d’une réunion en ligne est une expérience essentielle pour un utilisateur Outlook, et il est facile de [créer une réunion Teams avec Outlook](/microsoftteams/teams-add-in-for-outlook) mobile. Toutefois, la création d’une réunion en ligne dans Outlook avec un service non Microsoft peut être fastidieuse. En implémentant cette fonctionnalité, les fournisseurs de services peuvent simplifier l’expérience de création de réunions en ligne pour leurs utilisateurs de complément Outlook.
 
 > [!IMPORTANT]
-> Cette fonctionnalité est uniquement prise en charge sur Android et iOS avec un abonnement Microsoft 365.
+> Cette fonctionnalité est prise en charge uniquement sur Android et iOS avec un abonnement Microsoft 365.
 
 Dans cet article, vous allez apprendre à configurer votre complément mobile Outlook pour permettre aux utilisateurs d’organiser et de participer à une réunion à l’aide de votre service de réunion en ligne. Tout au long de cet article, nous allons utiliser un fournisseur de services de réunion en ligne fictif, « Contoso ».
 
@@ -194,34 +194,33 @@ Dans cette section, découvrez comment votre script de complément peut mettre �
 
 ## <a name="testing-and-validation"></a>Test et validation
 
-Suivez les instructions habituelles pour [tester et valider votre complément](testing-and-tips.md). Après [le chargement indépendant](sideload-outlook-add-ins-for-testing.md) dans Outlook sur le web, Windows ou Mac, redémarrez Outlook sur votre appareil mobile Android ou iOS. Ensuite, sur un nouvel écran de réunion, vérifiez que le bouton bascule Microsoft Teams ou Skype est remplacé par le vôtre.
+Suivez les instructions habituelles pour [tester et valider votre complément](testing-and-tips.md). Après [le chargement](sideload-outlook-add-ins-for-testing.md) indépendant dans Outlook sur le web, Windows ou Mac, redémarrez Outlook sur votre Android ou iOS appareil mobile. Ensuite, sur un nouvel écran de réunion, vérifiez que le bouton bascule Microsoft Teams ou Skype est remplacé par le vôtre.
 
 ### <a name="create-meeting-ui"></a>Créer une interface utilisateur de réunion
 
 En tant qu’organisateur de réunion, vous devez voir des écrans similaires aux trois images suivantes lorsque vous créez une réunion.
 
-[![Écran de création de réunion sur Android - Contoso désactivé.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Écran de création d’une réunion sur Android - chargement du bouton bascule Contoso.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Écran de création de réunion sur Android - Contoso activé.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[![Écran de création de réunion sur Android avec le bouton bascule Contoso désactivé.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![Écran de création de réunion sur Android avec un bouton bascule Contoso de chargement.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![Écran de création de réunion sur Android avec le bouton bascule Contoso activé.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### <a name="join-meeting-ui"></a>Participer à l’interface utilisateur de la réunion
 
 En tant que participant à la réunion, vous devez voir un écran similaire à l’image suivante lorsque vous affichez la réunion.
 
-[![Capture d’écran de l’écran de participation à la réunion sur Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[![Écran de participation à la réunion sur Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > Si vous ne voyez pas le lien **Joindre** , il se peut que le modèle de réunion en ligne de votre service ne soit pas inscrit sur nos serveurs. Pour plus d’informations, consultez la section [Inscrire votre modèle de réunion en ligne](#register-your-online-meeting-template) .
 
 ## <a name="register-your-online-meeting-template"></a>Inscrire votre modèle de réunion en ligne
 
-Si vous souhaitez inscrire le modèle de réunion en ligne pour votre service, vous pouvez créer un problème de GitHub avec les détails. Après cela, nous vous contacterons pour coordonner la chronologie de l’inscription.
+L’inscription de votre complément de réunion en ligne est facultative. Elle s’applique uniquement si vous souhaitez afficher le bouton **Rejoindre** dans les réunions, en plus du lien de réunion. Une fois que vous avez développé votre complément de réunion en ligne et que vous souhaitez l’inscrire, créez un problème de GitHub à l’aide des conseils suivants. Nous vous contacterons pour coordonner une chronologie d’inscription.
 
-1. Accédez à la section **Commentaires** à la fin de cet article.
-1. Appuyez sur le lien **de cette page** .
+1. Créez un [problème de GitHub](https://github.com/OfficeDev/office-js/issues/new).
 1. Définissez le **titre** du nouveau problème sur « Inscrire le modèle de réunion en ligne pour mon service », en remplacement de `my-service` votre nom de service.
-1. Dans le corps du problème, remplacez la chaîne « [Entrez les commentaires ici] » par la chaîne que vous avez définie dans la `newBody` variable ou une variable similaire de la section [Implémenter l’ajout de détails de réunion en ligne](#implement-adding-online-meeting-details) plus haut dans cet article.
+1. Dans le corps du problème, remplacez le texte existant par la chaîne que vous avez définie dans la `newBody` variable ou une variable similaire de la section [Implémenter l’ajout de détails de réunion en ligne](#implement-adding-online-meeting-details) plus haut dans cet article.
 1. Cliquez sur **Envoyer un nouveau problème**.
 
-![capture d’écran du nouvel écran de problème GitHub avec l’exemple de contenu Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
+![Un nouvel écran de problème GitHub avec l’exemple de contenu Contoso.](../images/outlook-request-to-register-online-meeting-template.png)
 
 ## <a name="available-apis"></a>API disponibles
 

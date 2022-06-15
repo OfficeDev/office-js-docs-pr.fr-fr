@@ -1,14 +1,14 @@
 ---
-ms.date: 03/30/2021
-description: Résolution des problèmes courants liés Excel fonctions personnalisées.
+ms.date: 06/09/2022
+description: Résoudre les problèmes courants liés à Excel fonctions personnalisées.
 title: Résoudre des problèmes de fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: e2332d6e7696ba630953f4fd69154a9bb736c229
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744482"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090886"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -17,6 +17,12 @@ Dans le cadre du développement de fonctions personnalisées, vous pouvez rencon
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 Pour résoudre des problèmes, vous pouvez [activer la journalisation du runtime pour capturer les erreurs](#enable-runtime-logging) et vous référer aux [messages d’erreur natifs d’Excel](#check-for-excel-error-messages). Recherchez également des erreurs courantes telles que l’[abandon de promesses non résolues](#ensure-promises-return).
+
+## <a name="debugging-custom-functions"></a>Débogage de fonctions personnalisées
+
+Pour déboguer des compléments de fonctions personnalisées qui utilisent un runtime partagé, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé : Déboguer](../develop/configure-your-add-in-to-use-a-shared-runtime.md#debug).
+
+Pour déboguer des compléments de fonctions personnalisées qui n’utilisent pas de runtime partagé, consultez [Débogage des fonctions personnalisées](custom-functions-debugging.md).
 
 ## <a name="enable-runtime-logging"></a>Activer la journalisation du runtime
 
@@ -37,11 +43,11 @@ En règle générale, ces erreurs correspondent aux erreurs que vous devez déj�
 
 Les informations relatives aux fonctions personnalisées sont mises en cache par Office. Lorsque vous développez et rechargez de manière répétée un complément avec des fonctions personnalisées, il peut arriver que modifications n’apparaissent pas. Pour y remédier, videz le cache Office. Pour plus d’informations, voir [Vider le cache Office](../testing/clear-cache.md).
 
-## <a name="common-problems-and-solutions"></a>Problèmes courants et solutions
+## <a name="common-problems-and-solutions"></a>Problèmes et solutions courants
 
-### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>Can’t open add-in from localhost: Use a local loopback exemption
+### <a name="cant-open-add-in-from-localhost-use-a-local-loopback-exemption"></a>Impossible d’ouvrir le complément à partir de localhost : utiliser une exemption de bouclage local
 
-Si l’erreur « Nous ne pouvons pas ouvrir ce module à partir de localhost » s’est produite, vous devez activer une exemption de bouclisation locale. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
+Si vous voyez l’erreur « Nous ne pouvons pas ouvrir ce complément à partir de localhost », vous devez activer une exemption de bouclage locale. Pour plus d’informations sur la façon de procéder, voir [cet article du support Microsoft](/office/troubleshoot/office-suite-issues/cannot-open-add-in-from-localhost).
 
 ### <a name="runtime-logging-reports-typeerror-network-request-failed-on-excel-on-windows"></a>Rapports de journalisation d’exécution « TypeError: Network request failed » (« TypeError : échec de la requête réseau ») dans Excel sur Windows
 
@@ -53,7 +59,7 @@ Quand Excel attend la fin de l’exécution d’une fonction personnalisée, il 
 
 ### <a name="error-the-dev-server-is-already-running-on-port-3000"></a>Erreur : le serveur de développement est déjà en cours d’exécution sur le port 3000
 
-Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de développement est déjà en cours d’exécution sur le port 3000 (ou le port utilisé par votre complément) peut s’afficher. Vous pouvez arrêter le serveur de développement en exécutant `npm stop` ou en fermant la fenêtre Node.js. Dans certains cas, l’exécution du serveur dev peut prendre quelques minutes.
+Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de développement est déjà en cours d’exécution sur le port 3000 (ou le port utilisé par votre complément) peut s’afficher. Vous pouvez arrêter le serveur de développement en exécutant `npm stop` ou en fermant la fenêtre Node.js. Dans certains cas, l’arrêt de l’exécution du serveur de développement peut prendre quelques minutes.
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Mon fonctions ne se chargent pas : associer les fonctions
 
@@ -76,11 +82,11 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-Pour plus d’informations sur ce processus, voir [Associating function names with JSON metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+Pour plus d’informations sur ce processus, consultez [Association de noms de fonctions avec des métadonnées JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
 ## <a name="known-issues"></a>Problèmes détectés
 
-Les problèmes connus sont suivis et signalés dans le [Excel fonctions personnalisées GitHub référentiel](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Les problèmes connus sont suivis et signalés dans le [dépôt Excel Fonctions personnalisées GitHub](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 
@@ -95,9 +101,11 @@ Si vous utilisez Excel sur Windows ou Mac, vous pouvez adresser un commentaire �
 N’hésitez pas à signaler un problème rencontré via la fonctionnalité « Commentaires sur le contenu » accessible au bas de chaque page de documentation, ou en [déclarant un nouveau problème directement dans le référentiel de fonctions personnalisées](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="next-steps"></a>Étapes suivantes
+
 Découvrez comment [rendre vos fonctions personnalisées compatibles avec les fonctions XLL définies par l’utilisateur](make-custom-functions-compatible-with-xll-udf.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
-* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
+- [Générer automatiquement des métadonnées JSON pour des fonctions personnalisées](custom-functions-json-autogeneration.md)
+- [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
+- [Débogage des fonctions personnalisées](custom-functions-debugging.md)

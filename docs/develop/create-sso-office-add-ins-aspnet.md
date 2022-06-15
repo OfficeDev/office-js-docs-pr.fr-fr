@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: Guide pas à pas pour créer (ou convertir) un complément Office avec un back-end ASP.NET pour utiliser l’authentification unique (SSO).
-ms.date: 03/28/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b948b6beb22437b3b9bf7e6472c6e00e4bed7a0a
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 66ddd0e7bb4db54b48b56b493f3818523d7eb76c
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682251"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090893"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -46,14 +46,14 @@ Tout d’abord, suivez les étapes décrites dans démarrage [rapide : Inscrire 
 Utilisez les paramètres suivants pour l’inscription de votre application.
 
 * Nom : `Office-Add-in-ASPNET-SSO`
-* Types de comptes pris en charge : **comptes dans n’importe quel annuaire organisationnel (répertoire Azure AD - multilocataire) et comptes Microsoft personnels (par exemple, Skype, Xbox)**
+* Types de comptes pris en charge : **comptes dans n’importe quel annuaire organisationnel (tout annuaire Azure AD - multilocataire) et comptes Microsoft personnels (par exemple, Skype, Xbox)**
 
     > [!NOTE]
     >  Si vous souhaitez que le complément soit utilisable uniquement par les utilisateurs de la location où vous l’inscrivez, vous pouvez choisir **comptes dans cet annuaire organisationnel uniquement...** mais vous devez suivre quelques étapes de configuration supplémentaires. Consultez **le programme d’installation pour un locataire unique** plus loin dans cet article.
 
 * Plateforme : **Web**
 * URI de redirection : **https://localhost:44355/AzureADAuth/Authorize**
-* Clé secrète client : `*********` (enregistrez cette valeur après sa création , elle n’est affichée qu’une seule fois)
+* Clé secrète client : `*********` (l’application web utilise la clé secrète client pour prouver son identité lorsqu’elle demande des jetons. *Enregistrez cette valeur pour une utilisation ultérieure : elle ne s’affiche qu’une seule fois.*)
 
 ### <a name="expose-a-web-api"></a>Exposer une API web
 
@@ -68,8 +68,8 @@ Utilisez les paramètres suivants pour l’inscription de votre application.
     |---------------|---------|
     |**Nom de l'étendue** | `access_as_user`|
     |**Qui peut consentir** | **Administrateurs et utilisateurs**|
-    |**Nom d’affichage du consentement de l’administrateur** | Office peut agir en tant qu’utilisateur.|
-    |**Description du consentement de l’administrateur** | Activez Office pour appeler les API web du complément avec les mêmes droits que l’utilisateur actuel.|
+    |**Administration nom d’affichage du consentement** | Office peut agir en tant qu’utilisateur.|
+    |**Administration description du consentement** | Activez Office pour appeler les API web du complément avec les mêmes droits que l’utilisateur actuel.|
     |**Nom d’affichage du consentement de l’utilisateur** | Office pouvez agir comme vous.|
     |**Description du consentement de l’utilisateur** | Activez Office pour appeler les API web du complément avec les mêmes droits que vous.|
 
@@ -535,7 +535,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     string[] graphScopes = { "https://graph.microsoft.com/Files.Read.All" };
     ```
 
-1. Remplacez `TODO 3` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO 3` par le code suivant. Tenez compte du code suivant :
 
     * La méthode `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` recherchera tout d’abord dans le cache MSAL, c’est-à-dire en mémoire, un jeton d’accès correspondant. Uniquement s’il n’existe pas, elle lance le flux « de la part de » avec le point de terminaison Azure AD V2.
     * Les exceptions qui ne sont pas de type `MsalServiceException` ne sont intentionnellement pas capturées afin d’être propagées au client sous la forme de messages `500 Server Error`.
@@ -558,7 +558,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-1. Remplacez `TODO 3a` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO 3a` par le code suivant. Tenez compte du code suivant :
 
     * Si l’authentification multifacteur est requise par la ressource Microsoft Graph et que l’utilisateur ne l'a pas encore fournie, Azure AD renvoie « 400 : emande incorrecte » avec l’erreur `AADSTS50076` et une propriété **Claims**. MSAL génère une exception **MsalUiRequiredException** (qui hérite de **MsalServiceException**) avec ces informations.
     * La valeur de la propriété **Claims** doit être transmise au client qui doit la transmettre à l’application Office, qui l’inclut ensuite dans une demande de nouveau jeton d’amorçage. Azure AD demandera à l’utilisateur d’accepter tous les formulaires d’authentification requis.
@@ -573,7 +573,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-1. Remplacez `TODO 3b` par le code suivant. Tenez compte des informations suivantes :
+1. Remplacez `TODO 3b` par le code suivant. Tenez compte du code suivant :
 
     * Si l’appel à Azure AD contenait au moins une étendue (autorisation) pour laquelle ni l’utilisateur, ni un administrateur client a consenti (ou pour laquelle le consentement a été révoqué), Azure AD renvoie « 400 demande incorrecte » avec une erreur `AADSTS65001` MSAL génère une exception **MsalUiRequiredException** avec ces informations.
     * Si l’appel à Azure AD contenait au moins une étendue non reconnue par Azure AD, AAD renvoie « 400 Demande incorrecte » avec l’erreur `AADSTS70011`. MSAL génère une exception **MsalUiRequiredException** avec ces informations.

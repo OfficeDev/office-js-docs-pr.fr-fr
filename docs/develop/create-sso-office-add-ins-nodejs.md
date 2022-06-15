@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Découvrez comment créer un complément basé sur Node.js qui utilise Office’authentification unique.
-ms.date: 03/28/2022
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e03d023d6050f6b74ba401b1f2e0a5ed87a5cc0f
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 8670a079ad735154143458be7b0fd267a59ad998
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682244"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090732"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -74,8 +74,10 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Sélectionnez **Enregistrer** en haut du formulaire.
 
-1. Sélectionnez **Certificats et secrets** sous **Gérer**. Sélectionnez le bouton **Nouveau secret client**. Entrer une valeur pour **Description** puis sélectionnez une option appropriée pour **Expire le** puis **Ajouter**. *Copier la valeur secrète client immédiatement et enregistrez-la avec l’ID d’application* avant de continuer car vous en aurez besoin dans une procédure plus loin.
-
+1. Sélectionnez **Certificats et secrets** sous **Gérer**. Sélectionnez le bouton **Nouveau secret client**. Entrer une valeur pour **Description** puis sélectionnez une option appropriée pour **Expire le** puis **Ajouter**.
+    
+    L’application web utilise la clé secrète client pour prouver son identité quand elle demande des jetons. *Enregistrez cette valeur pour une utilisation ultérieure . Elle ne s’affiche qu’une seule fois.*
+    
 1. Sélectionnez **Exposer une API** sous **Gérer**. Sélectionnez le lien **Définir** . Cela génère l’URI d’ID d’application sous la forme « api://$App ID GUID$ », où $App ID GUID$ est **l’ID d’application (client**).
 
 1. Dans l’ID généré, insérez `localhost:44355/` (notez la barre oblique « / » ajoutée à la fin) entre les barres obliques doubles et le GUID. Lorsque vous avez terminé, l’ID entier doit avoir le formulaire `api://localhost:44355/$App ID GUID$`, par exemple `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
@@ -86,7 +88,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 1. Renseignez les champs permettant de configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application cliente Office d’utiliser les API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
-    * **Nom d’affichage du consentement de** l’administrateur : Office pouvez agir en tant qu’utilisateur.
+    * **Administration nom d’affichage du consentement** : Office peut agir en tant qu’utilisateur.
     * **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
     * **Nom d’affichage du consentement de** l’utilisateur : Office pouvez agir comme vous.
     * **Description du consentement de l’utilisateur** : activez Office pour appeler les API web du complément avec les mêmes droits que vous.
@@ -254,7 +256,7 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
     }
     ```
 
-1. En dessous de la méthode `getGraphData`, ajoutez la fonction suivante. Notez qu’il `/auth` s’agit d’un itinéraire Express côté serveur qui échange le jeton d’amorçage avec Azure AD pour un jeton d’accès avec des autorisations à Microsoft Graph.
+1. En dessous de la méthode `getGraphData`, ajoutez la fonction suivante. Notez qu’il `/auth` s’agit d’un itinéraire Express côté serveur qui échange le jeton d’amorçage avec Azure AD contre un jeton d’accès avec des autorisations à Microsoft Graph.
 
     ```javascript
     async function getGraphToken(bootstrapToken) {
@@ -471,7 +473,7 @@ Pour plus d’informations sur ces erreurs, reportez-vous à [Résoudre les prob
     * Il s’agit du début d’un long `else` bloc, mais la fermeture `}` n’est pas encore terminée car vous y ajouterez d’autres codes.
     * La chaîne de `authorization` est « Porteur » suivi du jeton de démarrage, de sorte que la première ligne du bloc `else` attribue le jeton à la `jwt`. (« JWT » signifie « jeton Web JSON »).
     * Les deux valeurs `process.env.*` sont les constantes que vous avez attribuées lors de la configuration du complément.
-    * Le paramètre de formulaire `requested_token_use` est paramétré sur « On_behalt_of ». Cela indique Azure AD que le complément demande un jeton d’accès à Microsoft Graph à l’aide du flux On-Behalf-Of (OBO). Azure répond en validant que le jeton d’amorçage, qui est affecté au `assertion` paramètre de formulaire, a une `scp` propriété définie sur `access-as-user`.
+    * Le paramètre de formulaire `requested_token_use` est paramétré sur « On_behalt_of ». Cela indique à Azure AD que le complément demande un jeton d’accès à Microsoft Graph à l’aide du flux On-Behalf-Of (OBO). Azure répond en validant que le jeton d’amorçage, qui est affecté au `assertion` paramètre de formulaire, a une `scp` propriété définie sur `access-as-user`.
     * Le paramètre de formulaire `scope` est défini sur « Files.Read.All », qui est la seule étendue Microsoft Graph dont le complément a besoin.
 
     ```javascript

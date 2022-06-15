@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
-description: Découvrez comment résoudre les erreurs des utilisateurs dans les Office des modules.
-ms.date: 09/23/2021
+description: Découvrez comment résoudre les erreurs des utilisateurs dans Office compléments.
+ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0afef158938818a85ac0ac7ac79596f5911c0c45
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 8b8be1c092bf18ae806e6dcd1b0462fba9193edd
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746391"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091145"
 ---
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -30,8 +30,8 @@ Le tableau suivant répertorie les messages d’erreur courants que les utilisat
 ## <a name="when-installing-an-add-in-you-see-error-loading-add-in-in-the-status-bar"></a>Lors de l’installation d’un complément, le message « Erreur lors du chargement du complément » s’affiche dans la barre d’état
 
 1. Fermez Office.
-1. Vérifiez que le manifeste est valide.
-1. Redémarrez le complément.
+1. Vérifiez que le manifeste est valide. Consultez [Valider le manifeste d’un complément Office](troubleshoot-manifest.md).
+1. Redémarrer le complément.
 1. Réinstallez le complément.
 
 Vous pouvez également nous adresser des commentaires : si vous utilisez Excel sur Windows ou Mac, vous pouvez adresser un commentaire à l’équipe chargée de l’extensibilité d’Office directement à partir d’Excel. Pour ce faire, sélectionnez **Fichier** | **Commentaires** | **Envoyer un smiley mécontent**. Envoyer un smiley mécontent fournit les journaux nécessaires pour comprendre le problème.
@@ -40,14 +40,14 @@ Vous pouvez également nous adresser des commentaires : si vous utilisez Excel 
 
 Si un complément Outlook s’exécutant sous Windows et [à l’aide d’Internet Explorer](../concepts/browsers-used-by-office-web-add-ins.md) ne fonctionne pas correctement, essayez d’activer le débogage de script dans Internet Explorer.
 
-- Go to Tools > **Internet** **OptionsAdvanced** > .
+- Accédez à Outils > **Options Internet avancées** > .
 - Sous **Parcourir**, décochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
 
 Nous vous recommandons de décocher ces paramètres uniquement pour résoudre le problème. Si vous ne les réactivez pas, vous recevrez des invites. Une fois que le problème est résolu, recochez les cases **Désactiver le débogage des scripts (Internet Explorer)** et **Désactiver le débogage des scripts (autres applications)**.
 
 ## <a name="add-in-doesnt-activate-in-office-2013"></a>Le complément ne s’active pas dans Office 2013
 
-Si le add-in ne s’active pas lorsque l’utilisateur effectue les étapes suivantes.
+Si le complément ne s’active pas lorsque l’utilisateur effectue les étapes suivantes.
 
 1. connexion à son compte Microsoft dans Office 2013 ;
 
@@ -69,7 +69,7 @@ Lorsqu’un utilisateur utilise un complément Office, il est invité à autoris
 |:--------------------|:---------------------|
 |Microsoft Edge|Office sur le web|
 
-Pour résoudre le problème, les utilisateurs finaux ou les administrateurs peuvent ajouter le domaine du module à la liste des sites de confiance dans le Microsoft Edge navigateur.
+Pour résoudre le problème, les utilisateurs finaux ou les administrateurs peuvent ajouter le domaine du complément à la liste des sites approuvés dans le navigateur Microsoft Edge.
 
 > [!IMPORTANT]
 > n’ajoutez pas l’URL d’un complément à votre liste de sites de confiance si vous ne faites pas confiance au complément.

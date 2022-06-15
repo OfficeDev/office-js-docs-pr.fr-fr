@@ -559,9 +559,6 @@ items:
               - name: Authentification des fonctions personnalisées sans interface utilisateur
                 href: excel/custom-functions-authentication.md
                 displayName: 'Excel, Custom Functions'
-              - name: Débogage des fonctions sans interface utilisateur
-                href: excel/custom-functions-debugging.md
-                displayName: 'Excel, Custom Functions'
               - name: Runtime
                 href: excel/custom-functions-runtime.md
                 displayName: 'Excel, Custom Functions'
@@ -570,6 +567,9 @@ items:
             displayName: 'Excel, Custom Functions'
           - name: Requêtes web
             href: excel/custom-functions-web-reqs.md
+            displayName: 'Excel, Custom Functions'
+          - name: Débogage
+            href: excel/custom-functions-debugging.md
             displayName: 'Excel, Custom Functions'
           - name: Résolution des problèmes
             href: excel/custom-functions-troubleshooting.md
