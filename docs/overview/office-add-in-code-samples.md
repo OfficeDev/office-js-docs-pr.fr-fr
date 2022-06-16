@@ -1,14 +1,14 @@
 ---
 title: Exemples de code Office
 description: Une liste d Office exemples de code pour vous aider à apprendre et à créer vos propres modules.
-ms.date: 06/02/2022
+ms.date: 06/10/2022
 localization_priority: high
-ms.openlocfilehash: 1ad5fcb3ed860832b093dc6aef212e9d1176f298
-ms.sourcegitcommit: 5e678f87b6b886949cc0fcec73468a41fa39fd06
+ms.openlocfilehash: 9accbb7e0e5297af3dd4481b5f239af2710d601f
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/03/2022
-ms.locfileid: "65872014"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091026"
 ---
 # <a name="office-add-in-code-samples"></a>Exemples de code Office
 
@@ -28,6 +28,11 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 ---
 
 ---
+
+## <a name="blazor-webassembly"></a>Blazor WebAssembly
+
+- [Créer un complément Blazor WebAssembly Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Créer un complément Blazor WebAssembly Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## <a name="excel"></a>Excel
 

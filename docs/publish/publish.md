@@ -1,14 +1,14 @@
 ---
 title: Déployer et publier des compléments Office
 description: Méthodes et options pour déployer votre complément Office à des fins de test ou de distribution auprès des utilisateurs.
-ms.date: 12/07/2021
+ms.date: 06/13/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 81c02a36becb9ef3244f7754dda44d064cdd9925
-ms.sourcegitcommit: e392e7f78c9914d15c4c2538c00f115ee3d38a26
+ms.openlocfilehash: c6a6410ac2466995ceaf723d08a8735a3c4886c2
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2021
-ms.locfileid: "61331077"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091131"
 ---
 # <a name="deploy-and-publish-office-add-ins"></a>Déployer et publier des compléments Office
 
@@ -18,7 +18,7 @@ Vous pouvez utiliser l’une des méthodes pour déployer votre complément Offi
 |:---------|:------------|
 |[Chargement de version test](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|Dans le cadre de votre processus de développement, pour tester votre complément exécuté sur Windows, iPad, Mac ou dans un navigateur. (Pas pour les compléments de production.)|
 |[Partage réseau](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|Dans le cadre de votre processus de développement, pour tester votre complément exécuté sur Windows après avoir publié le complément sur un serveur autre que l’hôte local. (ne convient pas pour les compléments de production ou pour les tests sur iPad, Mac ou le web.)|
-|[AppSource](/office/dev/store/submit-to-appsource-via-partner-center)|Pour distribuer publiquement votre complément auprès des utilisateurs.|
+|[AppSource][AppSource]|Pour distribuer publiquement votre complément auprès des utilisateurs.|
 |[Centre d’administration Microsoft 365](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|Dans un environnement de cloud, utilisez cette méthode pour distribuer votre complément auprès des utilisateurs de votre organisation à l’aide du Centre d’administration Microsoft 365. Cela s’effectue à travers les [applications intégrées](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) ou le [déploiement centralisé](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
 |[Catalogue SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|Dans un environnement local, pour distribuer votre complément auprès des utilisateurs de votre organisation.|
 |[Serveur Exchange](#outlook-add-in-deployment)|Dans un environnement local ou en ligne, pour distribuer des compléments Outlook à des utilisateurs.|
@@ -33,9 +33,9 @@ Les options de déploiement disponibles dépendent de l’application Office que
 
 | Point d’extension | Chargement d’une version test | Partage réseau | AppSource | Centre d’administration Microsoft 365 | Catalogue SharePoint\* |
 |:----------------|:-----------:|:-------------:|:---------:|:--------------------------:|:--------------------:|
-| Contenu         | X           | X             | X         | X                          | X                    |
-| Volet Office       | X           | X             | X         | X                          | X                    |
-| Commande         | X           | X             | X         | X                          |                      |
+| Contenu         | Pris en charge   | Pris en charge     | Pris en charge | Pris en charge                  | Pris en charge            |
+| Volet de tâches       | Pris en charge   | Pris en charge     | Pris en charge | Pris en charge                  | Pris en charge            |
+| Commande         | Pris en charge   | Pris en charge     | Pris en charge | Pris en charge                  | Non disponible        |
 
 &#42; Les catalogues SharePoint ne prennent pas en charge Office sur Mac.
 
@@ -43,8 +43,8 @@ Les options de déploiement disponibles dépendent de l’application Office que
 
 | Point d’extension | Chargement d’une version test | AppSource | Serveur Exchange |
 |:----------------|:-----------:|:---------:|:---------------:|
-| Application de messagerie        | X           | X         | X               |
-| Commande         | X           | X         | X               |
+| Application de messagerie        | Pris en charge   | Pris en charge | Pris en charge       |
+| Commande         | Pris en charge   | Pris en charge | Pris en charge       |
 
 ## <a name="production-deployment-methods"></a>Méthodes de déploiement de production
 
@@ -87,9 +87,11 @@ Pour attribuer des compléments aux locataires, utilisez le centre d'administrat
 
 - [Chargement de version test des compléments Outlook pour les tester](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 - [Envoyer à AppSource][AppSource]
+- [AppSource](https://appsource.microsoft.com/marketplace/apps?src=office&page=1)
 - [Instructions de conception pour les compléments Office](../design/add-in-design.md)
 - [Création de descriptions efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](../testing/testing-and-troubleshooting.md)
 - [Qu’est-ce que la Place de marché commerciale Microsoft ?](/azure/marketplace/overview)
+- [Page de publication d’applications du Centre de développement Microsoft](https://developer.microsoft.com/microsoft-teams/app-publishing)
 
 [AppSource]: /office/dev/store/submit-to-appsource-via-partner-center

@@ -1,15 +1,15 @@
 ---
 title: Démarrage rapide de l’authentification unique (SSO)
 description: Utiliser le générateur Yeoman pour créer un complément Office Node.js qui utilise la connexion unique.
-ms.date: 01/25/2022
+ms.date: 06/10/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 86094d4aea8addc4dee670845f33b24a6f31d84a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 852cd9057d8f215f8ff3d637ea344c6f5c879eda
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63747189"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091110"
 ---
 # <a name="single-sign-on-sso-quick-start"></a>Démarrage rapide de l’authentification unique (SSO)
 
@@ -43,7 +43,7 @@ Le générateur Yeoman simplifie le processus de création d’un complément d�
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project supporting single sign-on`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My SSO Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My SSO Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-sso-excel.png)
@@ -162,3 +162,4 @@ Félicitations, vous avez créé un complément de volet Office qui utilise l’
 - [Personnaliser votre complément compatible avec l’authentification unique Node.js](sso-quickstart-customize.md)
 - [Créer un complément Office Node.js qui utilise l’authentification unique](../develop/create-sso-office-add-ins-nodejs.md)
 - [Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
