@@ -1,15 +1,15 @@
 ---
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 description: Développement de fonctions personnalisées dans le Guide de démarrage rapide d’Excel.
 title: Démarrage rapide des fonctions personnalisées
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: cac81cb25b9880a3057e2246d39ac226666a4cb4
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: aa44caf014a6d617112a616e96e1c67079c4c385
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404704"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091082"
 ---
 # <a name="get-started-developing-excel-custom-functions"></a>Prise en main du développement des fonctions personnalisées Excel
 
@@ -33,16 +33,16 @@ Pour commencer, vous utiliserez le Yeoman Générateur pour créer le projet de 
 
     - **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     - **Sélectionnez un type de script :** `JavaScript`
-    - **Comment souhaitez-vous nommer votre complément ?** `starcount`
+    - **Comment souhaitez-vous nommer votre complément ?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.":::
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
 1. Le générateur Yeoman vous fournit des instructions dans votre ligne de commande sur la procédure à suivre pour le projet, mais ignorez-les et continuez de suivre nos instructions. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. Créez le projet.
@@ -105,3 +105,4 @@ Vous pouvez rencontrer des problèmes si vous exécutez le démarrage rapide plu
 - [Vue d’ensemble des fonctions personnalisées](../excel/custom-functions-overview.md)
 - [Métadonnées fonctions personnalisées](../excel/custom-functions-json.md)
 - [Exécution de fonctions personnalisées Excel](../excel/custom-functions-runtime.md)
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

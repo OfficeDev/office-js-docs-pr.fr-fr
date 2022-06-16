@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 02/28/2022
+ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 356373320919507b81c69cca323965c4d087c7d4
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63511399"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091096"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -17,7 +17,7 @@ Dans cet article, vous découvrirez comment créer un complément du volet Offic
 
 ## <a name="create-the-add-in"></a>Créer le complément
 
-Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pour les compléments Office](https://github.com/OfficeDev/generator-office) ou de Visual Studio. Le générateur Yeoman crée un projet Node.js qui peut être géré avec du Visual Studio Code ou n’importe quel autre éditeur, alors que Visual Studio crée une solution Visual Studio. Sélectionnez l’onglet correspondant à votre choix, puis suivez les instructions de création de votre complément et testez-le localement.
+Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) ou de Visual Studio. Le générateur Yeoman crée un projet Node.js qui peut être géré avec du Visual Studio Code ou n’importe quel autre éditeur, alors que Visual Studio crée une solution Visual Studio. Sélectionnez l’onglet correspondant à votre choix, puis suivez les instructions de création de votre complément et testez-le localement.
 
 # <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
 
@@ -39,7 +39,7 @@ Vous pouvez créer un complément Office à l’aide du [générateur Yeoman pou
 
     - **Sélectionnez un type de script** - `JavaScript`
 
-    - **Comment souhaitez-vous nommer votre complément ?** - `My Office Add-in`
+    - **Comment souhaitez-vous nommer votre complément ?** - `My Office Add-in`
 
     - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
@@ -293,3 +293,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 Félicitations, vous avez créé votre premier complément de volet de tâches Outlook ! Ensuite, en savoir plus sur la [création de compléments Office avec Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ---
+
+## <a name="see-also"></a>Voir aussi
+
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

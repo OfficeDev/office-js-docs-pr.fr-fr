@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: Découvrez comment créer un complément simple de volet des tâches Project à l’aide de l’API JavaScript pour Office.
-ms.date: 01/06/2022
+ms.date: 06/10/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 9c80769d0116186c574b6e4fa86e89eadfadc410
-ms.sourcegitcommit: 45f7482d5adcb779a9672669360ca4d8d5c85207
+ms.openlocfilehash: 486752d53b49d305ed4cc52c07fd8043264f1e58
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2022
-ms.locfileid: "63511367"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091040"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -28,7 +28,7 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
 
 ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
@@ -127,3 +127,4 @@ Félicitations, vous avez créé un complément de volet de tâches Project ! À
 
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Concepts de base pour les compléments Office](../overview/core-concepts-office-add-ins.md)
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

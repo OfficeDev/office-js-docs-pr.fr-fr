@@ -1,15 +1,15 @@
 ---
 title: Didacticiel de fonctions personnalisées Excel
 description: Dans ce didacticiel, vous allez créer un complément Excel qui contient une fonction personnalisée qui effectue des calculs, requiert des données web ou lance un flux de données web.
-ms.date: 03/23/2022
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 984a2090a70360af4f361bb531190a7ee2a05c4c
-ms.sourcegitcommit: 64942cdd79d7976a0291c75463d01cb33a8327d8
+ms.openlocfilehash: 9550986edcbbed56c69e25e183c304ebe6f6cc07
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/25/2022
-ms.locfileid: "64404729"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091061"
 ---
 # <a name="tutorial-create-custom-functions-in-excel"></a>Didacticiel : créer des fonctions personnalisées dans Excel
 
@@ -42,9 +42,9 @@ Dans ce didacticiel, vous allez :
 
     - **Sélectionnez un type de projet :** `Excel Custom Functions Add-in project`
     - **Sélectionnez un type de script :** `JavaScript`
-    - **Comment souhaitez-vous nommer votre complément ?** `starcount`
+    - **Comment souhaitez-vous nommer votre complément ?** `My custom functions add-in`
 
-    :::image type="content" source="../images/starcountPrompt.png" alt-text="Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.":::
+    :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.":::
 
     Le générateur crée le projet et installe les composants Node.js de la prise en charge.
 
@@ -53,7 +53,7 @@ Dans ce didacticiel, vous allez :
 1. Accédez au dossier racine du projet.
 
     ```command&nbsp;line
-    cd starcount
+    cd "My custom functions add-in"
     ```
 
 1. Créez le projet.
@@ -105,7 +105,7 @@ Le `ADD` fonction personnalisée calcule la somme des deux nombres que vous avez
 
 Intégration de données à partir du Web est un excellent moyen pour étendre Excel via les fonctions personnalisées. Vous allez ensuite créer une fonction personnalisée nommée `getStarCount` qui affiche le nombre d’étoiles attribuées à un référentiel GitHub donné.
 
-1. Dans le projet **starcount**, recherchez le fichier **./src/functions/functions.js** et ouvrez-le dans votre éditeur de code.
+1. Dans le projet de **complément Mes fonctions personnalisées** , recherchez le fichier **./src/functions/functions.js** et ouvrez-le dans votre éditeur de code.
 
 1. Dans le fichier **function.js**, ajoutez le code suivant.
 
@@ -151,9 +151,9 @@ Intégration de données à partir du Web est un excellent moyen pour étendre E
 
     :::image type="content" source="../images/select-insert.png" alt-text="Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas mes compléments mise en surbrillance.":::
 
-1. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
+1. Dans la liste des compléments disponibles, recherchez la section **Compléments** développeur et sélectionnez **Mes fonctions personnalisées** pour l’inscrire.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Capture d’écran du ruban Insérer dans Excel sur Windows, avec le complément Fonctions personnalisées Excel mis en surbrillance dans la liste Mes compléments.":::
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 
@@ -177,7 +177,7 @@ La fonction `getStarCount` renvoie le nombre d’étoiles attribuées à un réf
 
 Vous remarquerez que l’exemple de code suivant inclut deux fonctions (`currentTime` et `clock`). `currentTime` est une fonction statique qui n’utilise pas la diffusion en continu. Elle renvoie la date sous la forme d’une chaîne. La fonction `clock` utilise la fonction `currentTime` pour fournir la nouvelle heure toutes les secondes à une cellule dans Excel. Elle utilise `invocation.setResult` pour communiquer l’heure à la cellule Excel et `invocation.onCanceled` pour gérer le résultat de l’annulation de la fonction. 
 
-Le projet **starcount** contient déjà les deux fonctions suivantes dans le fichier **./src/functions/functions.js** .
+Le projet de **complément Mes fonctions personnalisées** contient déjà les deux fonctions suivantes dans le fichier **./src/functions/functions.js** .
 
 ```JS
 /**

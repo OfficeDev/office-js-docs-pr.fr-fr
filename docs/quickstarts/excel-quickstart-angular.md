@@ -1,15 +1,15 @@
 ---
 title: Utiliser Angular pour créer un complément de volet Office Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et d’Angular pour Office.
-ms.date: 08/04/2021
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: f7c4ff77833d4eabc854718c9156a4da0c6e7cc3
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 372649188d8f617f65e0c2eddc4d758047b1a2cc
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153384"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091152"
 ---
 # <a name="use-angular-to-build-an-excel-task-pane-add-in"></a>Utiliser Angular pour créer un complément de volet Office Excel
 
@@ -26,7 +26,7 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using Angular framework`
 - **Sélectionnez un type de script :** `TypeScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office, avec l’option type de projet réglée sur l’infrastructure Angular.](../images/yo-office-excel-angular-2.png)
@@ -78,3 +78,4 @@ Félicitations, vous avez créé un complément du volet Office Excel à l’aid
 - [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 - [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

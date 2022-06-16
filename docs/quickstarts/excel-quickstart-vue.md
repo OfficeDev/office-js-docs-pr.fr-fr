@@ -1,15 +1,15 @@
 ---
 title: Utiliser Vue pour créer un complément du volet de tâches Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et de Vue pour Office.
-ms.date: 08/04/2021
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 7a463ab61b90914c6fcaebff42599723a3a7e9ee
-ms.sourcegitcommit: 8f7d84c33c61c9f724f956740ced01a83f62ddc6
+ms.openlocfilehash: 57f87d12a5712fb329726a0f405e17b69eddb865
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/01/2022
-ms.locfileid: "64605527"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090858"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Utiliser Vue pour créer un complément du volet de tâches Excel
 
@@ -58,7 +58,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     Lorsque vous y êtes invité, fournissez les informations suivantes pour créer votre projet de complément.
 
     - **Sélectionnez un type de projet :** `Office Add-in project containing the manifest only`
-    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+    - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
     ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.](../images/yo-office-manifest-only-vue.png)
@@ -240,3 +240,4 @@ Félicitations, vous avez créé un complément du volet Office Excel à l’aid
 - [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 - [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

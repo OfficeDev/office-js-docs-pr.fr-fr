@@ -6,9 +6,9 @@ Si l’espace de noms `CONTOSO` n’est pas disponible dans le menu de saisie se
 
     :::image type="content" source="../images/select-insert.png" alt-text="Capture d’écran du ruban Insérer dans Excel sur Windows, avec la flèche vers le bas mes compléments mise en surbrillance.":::
 
-1. Dans la liste des compléments disponibles, recherchez la section **Compléments de développeur**, puis sélectionnez le complément **starcount** pour effectuer cette opération.
+1. Dans la liste des compléments disponibles, recherchez la section **Compléments** développeur et sélectionnez **Mes fonctions personnalisées** pour l’inscrire.
 
-    :::image type="content" source="../images/list-starcount.png" alt-text="Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.":::
+    :::image type="content" source="../images/excel-cf-tutorial-register.png" alt-text="Capture d’écran du ruban Insérer dans Excel sous Windows, avec le complément Fonctions personnalisées Excel mis en évidence dans la liste Mes compléments.":::
 
 # <a name="excel-on-the-web"></a>[Excel sur le web](#tab/excel-online)
 

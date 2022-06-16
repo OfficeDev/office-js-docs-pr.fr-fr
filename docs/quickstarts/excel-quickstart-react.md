@@ -1,15 +1,15 @@
 ---
 title: Utiliser React pour créer un complément du volet Office Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et de React pour Office.
-ms.date: 08/04/2021
+ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b97bd4cdf2190f23a99b9fba314906f4cac35aad
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 08b857b2e6f998d0fe097dee03b5a8a98e32d1cf
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153379"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66091159"
 ---
 # <a name="use-react-to-build-an-excel-task-pane-add-in"></a>Utiliser React pour créer un complément du volet Office Excel
 
@@ -26,7 +26,7 @@ Cet article décrit le processus de création d’un complément de volet de tâ
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project using React framework`
 - **Sélectionnez un type de script :** `TypeScript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
 ![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office, avec le type de projet défini sur l’infrastructure React.](../images/yo-office-excel-react-2.png)
@@ -77,3 +77,4 @@ Félicitations, vous avez créé un complément du volet Office Excel à l’aid
 - [Modèle d’objet JavaScript Excel dans les compléments Office](../excel/excel-add-ins-core-concepts.md)
 - [Exemples de code pour les compléments Excel](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Référence de l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
+- [Utilisation de Visual Studio Code pour publier](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: cf24d7db9a3c6b26c080020b3cc31a6b3916561a
-ms.sourcegitcommit: d06a37cd52f7389435bbbb3da3a90815ca2dce4a
+ms.openlocfilehash: a89207dc575e103ca7b29fa1ce69ca18aba2c0c0
+ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/25/2022
-ms.locfileid: "65672058"
+ms.lasthandoff: 06/15/2022
+ms.locfileid: "66090956"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -19,17 +19,17 @@ Le fichier manifeste XML d’un complément Office la manière dont votre compl�
 
 Un fichier de manifeste XML permet à un Complément Office d’effectuer les opérations suivantes :
 
-* Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
+- Se décrire en fournissant un ID, une version, une description, un nom d’affichage et un paramètre régional par défaut.
 
-* Précisez les images utilisées pour l'image de marque du complément et l'iconographie utilisée pour [commandes complémentaires](create-addin-commands.md) dans le ruban d'application de l'Office.
+- Précisez les images utilisées pour l'image de marque du complément et l'iconographie utilisée pour [commandes complémentaires](create-addin-commands.md) dans le ruban d'application de l'Office.
 
-* Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
+- Spécifier comment le complément s’intègre à Office, y compris les interfaces utilisateur personnalisées, telles que les boutons du ruban créés par le complément.
 
-* Spécifier les dimensions par défaut demandées pour des compléments de contenu, et la hauteur demandée pour des compléments Outlook.
+- Spécifier les dimensions par défaut demandées pour des compléments de contenu, et la hauteur demandée pour des compléments Outlook.
 
-* Déclarer les autorisations que le Complément Office nécessite, par exemple la lecture du document ou l’écriture dans celui-ci.
+- Déclarer les autorisations que le Complément Office nécessite, par exemple la lecture du document ou l’écriture dans celui-ci.
 
-* Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
+- Pour des compléments Outlook, définir la ou les règles qui spécifient le contexte dans lequel ils seront activés et seront en interaction avec un message, un rendez-vous ou un élément de demande de réunion.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -44,28 +44,26 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 
 ### <a name="required-elements-by-office-add-in-type"></a>Éléments requis par type de complément Office
 
-| Élément                                                                                      | Contenu | Volet de tâches | Outlook |
-| :------------------------------------------------------------------------------------------- | :-----: | :-------: | :-----: |
-| [OfficeApp][]                                                                                |    X    |     X     |    X    |
-| [Id][]                                                                                       |    X    |     X     |    X    |
-| [Version][]                                                                                  |    X    |     X     |    X    |
-| [ProviderName][]                                                                             |    X    |     X     |    X    |
-| [DefaultLocale][]                                                                            |    X    |     X     |    X    |
-| [DisplayName][]                                                                              |    X    |     X     |    X    |
-| [Description][]                                                                              |    X    |     X     |    X    |
-| [IconUrl][]                                                                                  |    X    |     X     |    X    |
-| [SupportUrl][]\*\*                                                                           |    X    |     X     |    X    |
-| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       |    X    |     X     |         |
-| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]                         |    X    |     X     |         |
-| [DesktopSettings][]                                                                          |         |           |    X    |
-| [SourceLocation (MailApp)][]                                                                 |         |           |    X    |
-| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] |    X    |     X     |    X    |
-| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             |         |           |    X    |
-| [Requirements (MailApp)][]                                                                  |         |           |    X    |
-| [Set*][]<br/>[Sets (MailAppRequirements)*][]                                                 |         |           |    X    |
-| [Form*][]<br/>[FormSettings*][]                                                              |         |           |    X    |
-| [Sets (Requirements)*][]                                                                     |    X    |     X     |         |
-| [Hosts*][]                                                                                   |    X    |     X     |         |
+| Élément                                                                                      | Contenu    | Volet de tâches    | Outlook      |
+| :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
+| [OfficeApp][]                                                                                | Obligatoire   | Obligatoire     | Obligatoire     |
+| [Id][]                                                                                       | Obligatoire   | Obligatoire     | Obligatoire     |
+| [Version][]                                                                                  | Obligatoire   | Obligatoire     | Obligatoire     |
+| [ProviderName][]                                                                             | Obligatoire   | Obligatoire     | Obligatoire     |
+| [DefaultLocale][]                                                                            | Obligatoire   | Obligatoire     | Obligatoire     |
+| [DisplayName][]                                                                              | Obligatoire   | Obligatoire     | Obligatoire     |
+| [Description][]                                                                              | Obligatoire   | Obligatoire     | Obligatoire     |
+| [IconUrl][]                                                                                  | Obligatoire   | Obligatoire     | Obligatoire     |
+| [SupportUrl][]\*\*                                                                           | Obligatoire   | Obligatoire     | Obligatoire     |
+| [DefaultSettings (ContentApp)][]<br/>[DefaultSettings (TaskPaneApp)][]                       | Obligatoire   | Obligatoire     | Non disponible|
+| [SourceLocation (ContentApp)][]<br/>[SourceLocation (TaskPaneApp)][]<br/>[SourceLocation (MailApp)][]| Obligatoire | Obligatoire | Obligatoire   |
+| [DesktopSettings][]                                                                          | Non disponible | Non disponible | Requis |
+| [Permissions (ContentApp)][]<br/>[Permissions (TaskPaneApp)][]<br/>[Permissions (MailApp)][] | Obligatoire   | Obligatoire     | Obligatoire     |
+| [Rule (RuleCollection)][]<br/>[Rule (MailApp)][]                                             | Non disponible | Non disponible | Requis |
+| [Configuration requise (MailApp)][]\*                                                                 | Non applicable| Non disponible | Requis |
+| [Définir][]\*<br/>[Ensembles (exigences)][]\*<br/>[Ensembles (MailAppRequirements)][]\*                 | Obligatoire   | Obligatoire     | Obligatoire     |
+| [Formulaire][]\*<br/>[FormSettings][]\*                                                            | Non disponible | Non disponible | Requis |
+| [Hôtes][]\*                                                                                  | Obligatoire   | Obligatoire     | Facultatif     |
 
 _\*Ajouté dans le schéma de manifeste du complément Office version 1.1._
 
@@ -86,20 +84,20 @@ _\*\* SupportUrl n’est obligatoire que pour les compléments distribués via A
 [defaultsettings (taskpaneapp)]: /javascript/api/manifest/defaultsettings
 [sourcelocation (contentapp)]: /javascript/api/manifest/sourcelocation
 [sourcelocation (taskpaneapp)]: /javascript/api/manifest/sourcelocation
-[desktopsettings]: /previous-versions/office/fp179684%28v=office.15%29
-[sourcelocation (mailapp)]: /previous-versions/office/fp123668%28v=office.15%29
+[sourcelocation (mailapp)]: /javascript/api/manifest/sourcelocation
+[desktopsettings]: /javascript/api/manifest/desktopsettings
 [permissions (contentapp)]: /javascript/api/manifest/permissions
 [permissions (taskpaneapp)]: /javascript/api/manifest/permissions
 [permissions (mailapp)]: /javascript/api/manifest/permissions
 [rule (rulecollection)]: /javascript/api/manifest/rule
 [rule (mailapp)]: /javascript/api/manifest/rule
-[requirements (mailapp)*]: /javascript/api/manifest/requirements
-[set*]: /javascript/api/manifest/set
-[sets (mailapprequirements)*]: /javascript/api/manifest/sets
-[form*]: /javascript/api/manifest/form
-[formsettings*]: /javascript/api/manifest/formsettings
-[sets (requirements)*]: /javascript/api/manifest/sets
-[hosts*]: /javascript/api/manifest/hosts
+[Configurations requises (mailapp)]: /javascript/api/manifest/requirements
+[set]: /javascript/api/manifest/set
+[ensembles (mailapprequirements)]: /javascript/api/manifest/sets
+[Formulaire]: /javascript/api/manifest/form
+[formsettings]: /javascript/api/manifest/formsettings
+[ensembles (configurations requises)]: /javascript/api/manifest/sets
+[hôtes]: /javascript/api/manifest/hosts
 
 ## <a name="hosting-requirements"></a>Configuration requise pour l’hébergement
 
@@ -154,9 +152,9 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 
 [L’élément Facultatif VersionOverrides est](/javascript/api/manifest/versionoverrides) une mention spéciale. Il contient des marques enfants qui activent des fonctionnalités de complément supplémentaires. Certains d’entre eux sont les suivants :
 
- - Personnalisation du Office et des menus.
- - Personnalisation du fonctionnement Office avec le runtime de navigateur incorporé dans lequel les compléments s’exécutent.
- - Configuration de la façon dont le complément interagit avec Azure Active Directory et Microsoft Graph pour l’authentification unique.
+- Personnalisation du Office et des menus.
+- Personnalisation du fonctionnement Office avec le runtime de navigateur incorporé dans lequel les compléments s’exécutent.
+- Configuration de la façon dont le complément interagit avec Azure Active Directory et Microsoft Graph pour l’authentification unique.
 
 Certains éléments descendants `VersionOverrides` ont des valeurs qui remplacent les valeurs de l’élément `OfficeApp` parent. Par exemple, `Hosts` l’élément dans `VersionOverrides` remplace `Hosts` l’élément dans `OfficeApp` .
 
@@ -548,12 +546,12 @@ Pour plus d’informations sur la validation d’un manifeste par rapport à la 
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md)
-* [Création de commandes de complément dans votre manifeste](create-addin-commands.md)
-* [Spécifier les exigences en matière d’applications Office et de l’API](specify-office-hosts-and-api-requirements.md)
-* [Localisation des compléments Office](localization.md)
-* [Référence de schéma pour les manifestes des compléments Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-* [Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)
-* [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
-* [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
-* [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md)
+- [Comment trouver l’ordre approprié d’éléments manifeste](manifest-element-ordering.md)
+- [Création de commandes de complément dans votre manifeste](create-addin-commands.md)
+- [Spécifier les exigences en matière d’applications Office et de l’API](specify-office-hosts-and-api-requirements.md)
+- [Localisation des compléments Office](localization.md)
+- [Référence de schéma pour les manifestes des compléments Office](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
+- [Mettre à jour la version du manifeste et de l’API](update-your-javascript-api-for-office-and-manifest-schema-version.md)
+- [Identifier un complément COM équivalent](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Demande d’autorisations d’utilisation de l’API dans des compléments](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
+- [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md)
