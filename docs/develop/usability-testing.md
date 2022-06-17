@@ -1,20 +1,20 @@
 ---
 title: Tests d’utilisation pour les compléments Office
-description: Découvrez comment tester la conception de votre add-in avec des utilisateurs réels.
+description: Découvrez comment tester votre conception de complément avec des utilisateurs réels.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fbdb8f7474412e95aba03d2a409ac2e5bc4b25a6
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b884ae8232360b8778b832b8ded90f3d3a857911
+ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483511"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "66136327"
 ---
 # <a name="usability-testing-for-office-add-ins"></a>Tests d’utilisation pour les compléments Office
 
 Une excellente conception de complément tient compte des comportements des utilisateurs. Étant donné que vos propres idées préconçues influenceront vos décisions de conception, il est important de tester les conceptions avec des utilisateurs réels pour vous assurer que vos compléments fonctionnent correctement pour vos clients.
 
-Vous pouvez exécuter les tests d’utilisation de différentes façons. Pour de nombreux développeurs de compléments, les études d’utilisation à distance sans modérateur sont les plus rentables et les plus rapides. Plusieurs services de test populaires le rendent facile . Voici quelques exemples.
+Vous pouvez exécuter les tests d’utilisation de différentes façons. Pour de nombreux développeurs de compléments, les études d’utilisation à distance sans modérateur sont les plus rentables et les plus rapides. Plusieurs services de test populaires facilitent cette tâche; Voici quelques exemples.
 
 - [UserTesting.com](https://www.UserTesting.com)
 - [Optimalworkshop.com](https://www.Optimalworkshop.com)
@@ -48,7 +48,7 @@ Voici quelques exemples de questions de recherche.
 - Les utilisateurs comprennent-ils la signification des icônes dans notre barre de commandes avant de cliquer dessus ?
 - Le menu des paramètres est-il facilement accessible pour les utilisateurs ?
 
-Il est important d’obtenir des données sur l’intégralité du parcours des utilisateurs, de la découverte de votre complément jusqu’à son installation et son utilisation. Prenez en compte les questions de recherche qui abordent les aspects suivants de l’expérience utilisateur du add-in.
+Il est important d’obtenir des données sur l’intégralité du parcours des utilisateurs, de la découverte de votre complément jusqu’à son installation et son utilisation. Tenez compte des questions de recherche qui traitent des aspects suivants de l’expérience utilisateur du complément.
 
 - Recherche de votre complément dans AppSource
 - Décision d’installation de votre complément
@@ -108,7 +108,7 @@ Vous pouvez faire tester votre complément déjà en ligne ou vous pouvez faire 
 
 En moyenne, aider un utilisateur à installer un complément prend environ 5 minutes. Voici un exemple d’étapes d’installation claires et concises. Modifiez-les en fonction des caractéristiques propres à votre test.
 
-**Installez le module (insérez le nom de votre PowerPoint), en suivant les instructions ci-après.**
+**Installez le complément (insérez votre nom de complément ici) pour PowerPoint, en suivant les instructions suivantes.**
 
 1. Ouvrez Microsoft PowerPoint.
 1. Sélectionnez **Nouvelle présentation**.
@@ -140,5 +140,5 @@ En règle générale, soyez prudent lorsque vous utilisez vos données pour tire
 ## <a name="see-also"></a>Voir aussi
 
 - [Réalisation de tests d’utilisation](https://whatpixel.com/howto-conduct-usability-testing/)  
-- [Meilleures pratiques pour les tests d’utilisation](https://help.usertesting.com/hc/en-us/articles/115003370231-Best-practices-for-UserTesting)  
+- [Meilleures pratiques pour les tests d’utilisation](https://help.usertesting.com/hc/articles/115003370231-Best-practices-for-UserTesting)  
 - [Réduction de la subjectivité](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  

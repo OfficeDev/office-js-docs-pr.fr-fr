@@ -3,12 +3,12 @@ title: Prise en charge d’Internet Explorer 11
 description: Découvrez comment prendre en charge Internet Explorer 11 et ES5 Javascript dans votre complément.
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70fea604c17525836857b7cff4c8670da757f2a6
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: 1cb641f1ed1a75fcff23291d1fa566bbf6dc008b
+ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313176"
+ms.lasthandoff: 06/17/2022
+ms.locfileid: "66136424"
 ---
 # <a name="support-internet-explorer-11"></a>Prise en charge d’Internet Explorer 11
 
@@ -79,9 +79,9 @@ if (navigator.userAgent.indexOf("Trident") === -1) {
 ```
 
 > [!IMPORTANT]
-> Il n’est généralement pas recommandé de lire la `userAgent` propriété. Assurez-vous que vous connaissez bien l’article, la [détection du navigateur à l’aide de l’agent utilisateur](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent), y compris les recommandations et les alternatives à la lecture `userAgent`. En particulier, si vous prenez l’option 1 dans la clause ci-dessus, envisagez d’utiliser la `else` détection des fonctionnalités au lieu de tester l’agent utilisateur.
+> Il n’est généralement pas recommandé de lire la `userAgent` propriété. Assurez-vous que vous connaissez bien l’article, la [détection du navigateur à l’aide de l’agent utilisateur](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent), y compris les recommandations et les alternatives à la lecture `userAgent`. En particulier, si vous prenez l’option 1 dans la clause ci-dessus, envisagez d’utiliser la `else` détection des fonctionnalités au lieu de tester l’agent utilisateur.
 >
-> Depuis le 30 septembre 2021, le texte de la section [Quelle partie de l’agent utilisateur contient les informations que vous recherchez ?](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) Dates d’avant la publication d’Internet Explorer 11. Il est toujours généralement précis et les *tableaux* de la section de la version anglaise de l’article sont à jour. De même, le texte, et dans la plupart des cas les tableaux, dans les versions non anglaises de l’article sont obsolètes.
+> Depuis le 30 septembre 2021, le texte de la section [Quelle partie de l’agent utilisateur contient les informations que vous recherchez ?](https://developer.mozilla.org/docs/Web/HTTP/Browser_detection_using_the_user_agent#which_part_of_the_user_agent_contains_the_information_you_are_looking_for) Dates d’avant la publication d’Internet Explorer 11. Il est toujours généralement précis et les *tableaux* de la section de la version anglaise de l’article sont à jour. De même, le texte, et dans la plupart des cas les tableaux, dans les versions non anglaises de l’article sont obsolètes.
 
 ## <a name="test-an-add-in-on-internet-explorer"></a>Tester un complément sur Internet Explorer
 
