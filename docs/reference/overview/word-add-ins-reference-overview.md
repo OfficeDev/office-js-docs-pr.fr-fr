@@ -4,12 +4,12 @@ description: Présentation de l’API Word JavaScript.
 ms.date: 09/04/2020
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: df250b282c01501155b7e9bd67822dbefb4da84e
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 2bb9b016b8711822164bccbcae45cdc8eb822a8e
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484627"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229721"
 ---
 # <a name="word-javascript-api-overview"></a>Présentation des APIs JavaScript pour Word
 
@@ -27,7 +27,7 @@ Voir [Modèle d’objet JavaScript Excel dans les compléments Office](../../wor
 
 ## <a name="learn-about-api-capabilities"></a>En savoir plus sur les fonctionnalités des API
 
-Reportez-vous aux autres articles présents dans cette section de la documentation pour découvrir comment [obtenir l’ensemble d’un document à partir d’un complément](../../word/get-the-whole-document-from-an-add-in-for-word.md), [utiliser les options de recherche pour trouver du texte dans votre complément Word](../../word/search-option-guidance.md), etc.
+Utilisez d’autres articles de cette section de la documentation pour découvrir comment [obtenir l’intégralité du document à partir d’un complément](../../word/get-the-whole-document-from-an-add-in-for-word.md), [utiliser les options de recherche dans votre complément Word pour rechercher du texte](../../word/search-option-guidance.md), etc. Reportez-vous à la table des matières pour obtenir la liste complète des articles disponibles.
 
 Pour apprendre à utiliser l’API JavaScript pour Word afin d’accéder à des objets dans Word, suivez le [didacticiel sur les compléments Word](../../tutorials/word-tutorial.md).
 

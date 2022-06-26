@@ -1,14 +1,14 @@
 ---
 title: Manifeste Teams pour les compléments Office (préversion)
 description: Obtenez une vue d’ensemble du manifeste JSON en préversion.
-ms.date: 05/24/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8a40f28674892545dee00e5a3138b55400d04352
-ms.sourcegitcommit: 35e7646c5ad0d728b1b158c24654423d999e0775
+ms.openlocfilehash: 7ecf985d63601f032c1296ffe0c1ba73fb7e25cc
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/02/2022
-ms.locfileid: "65833898"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229637"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifeste Teams pour les compléments Office (préversion)
 
@@ -108,7 +108,7 @@ Le tableau suivant montre un mappage de certaines propriétés enfants de haut n
 | « étendues des conditions » | Identifie les applications Office dans lesquelles le complément peut être installé. | **Hôtes** |  |
 | « rubans » | Rubans personnalisés par le complément. | **Hôtes**, **ExtensionPoints** et divers éléments **\*FormFactor** | La propriété « rubans » est un tableau d’objets anonymes qui fusionnent chacun les objectifs de ces trois éléments. Consultez le [tableau « rubans](#ribbons-table) ».|
 | « alternatives » | Spécifie la compatibilité descendante avec un complément COM équivalent, XLL ou les deux. | **EquivalentAddins** | Consultez [EquivalentAddins - Consultez également](/javascript/api/manifest/equivalentaddins#see-also) pour obtenir des informations générales. |
-| « runtimes »  | Configure différents types de compléments sans interface utilisateur, tels que des fonctions personnalisées et des fonctions exécutées directement à partir de boutons de ruban personnalisés. | **Runtimes**. **FunctionFile** et **ExtensionPoint** (de type CustomFunctions) |  |
+| « runtimes »  | Configure différents types de compléments sans interface utilisateur, tels que les compléments et fonctions fonction uniquement personnalisés, exécutés directement à partir des boutons du ruban personnalisé. | **Runtimes**. **FunctionFile** et **ExtensionPoint** (de type CustomFunctions) |  |
 | « AutoRunEvents » | Configure un gestionnaire d’événements pour un événement spécifié. | **Événement** et **ExtensionPoint** (de type Événements) |  |
 
 ##### <a name="ribbons-table"></a>Tableau « rubans »

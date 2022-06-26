@@ -1,19 +1,19 @@
 ---
 title: 'Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office'
 description: Découvrez comment partager des données et des événements entre des fonctions personnalisées et le volet Office dans Excel.
-ms.date: 11/29/2021
+ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 012112ff97ba1b9941674fb0c0f35536b04c8a92
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 5491624934d2d3f3b209f92e37c9c033d6a3c879
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496914"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229714"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
-Partagez des données globales et envoyez des événements entre le volet Office et les fonctions personnalisées de votre complément Excel avec un runtime partagé. Nous vous recommandons d'utiliser un environnement d'exécution partagé pour la plupart des scénarios de fonctions personnalisées, à moins que vous n'ayez une raison spécifique d'utiliser une fonction personnalisée sans volet des tâches (sans interface utilisateur). Ce didacticiel suppose que vous êtes familiarisé avec l’utilisation du générateur [Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) pour créer des projets de compléments. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
+Partagez des données globales et envoyez des événements entre le volet Office et les fonctions personnalisées de votre complément Excel avec un runtime partagé. Nous vous recommandons d’utiliser un runtime partagé pour la plupart des scénarios de fonctions personnalisées, sauf si vous avez une raison spécifique d’utiliser un complément de fonction uniquement personnalisé. Ce didacticiel suppose que vous êtes familiarisé avec l’utilisation du générateur [Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) pour créer des projets de compléments. Envisagez d’effectuer le [Didacticiel sur les fonctions Excel personnalisées](excel-tutorial-create-custom-functions.md), si ce n’est déjà fait.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
