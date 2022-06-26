@@ -1,18 +1,18 @@
 ---
-ms.date: 05/17/2020
-description: Authentifier les utilisateurs à l’aide de fonctions Excel qui n’utilisent pas le volet Des tâches.
-title: Authentification pour les fonctions personnalisées sans interface utilisateur
+ms.date: 06/15/2022
+description: Authentifier les utilisateurs à l’aide de fonctions personnalisées qui n’utilisent pas de runtime partagé.
+title: Authentification pour les fonctions personnalisées sans runtime partagé
 ms.localizationpriority: medium
-ms.openlocfilehash: 946800cf884f903e0794702d32ffb7e1075e1ca3
-ms.sourcegitcommit: 7b6ee73fa70b8e0ff45c68675dd26dd7a7b8c3e9
+ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2022
-ms.locfileid: "63340273"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229679"
 ---
-# <a name="authentication-for-ui-less-custom-functions"></a>Authentification pour les fonctions personnalisées sans interface utilisateur
+# <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>Authentification pour les fonctions personnalisées sans runtime partagé
 
-Dans certains scénarios, votre fonction personnalisée qui n’utilise pas de volet de tâches ou d’autres éléments d’interface utilisateur (fonction personnalisée sans interface utilisateur) devra authentifier l’utilisateur pour accéder aux ressources protégées. N’ignorez pas que les fonctions personnalisées sans interface utilisateur s’exécutent dans un runtime JavaScript uniquement. Pour cette raison, vous devez transmettre des données entre le runtime JavaScript uniquement et le runtime `OfficeRuntime.storage` de moteur de navigateur standard utilisé par la plupart des applications à l’aide de l’objet et de l’API de dialogue.
+Dans certains scénarios, une fonction personnalisée qui n’utilise pas de runtime partagé doit authentifier l’utilisateur pour accéder aux ressources protégées. Fonctions personnalisées qui n’utilisent pas d’exécution partagée dans un runtime JavaScript uniquement. Pour cette raison, si le complément a un volet Office, vous devez passer des données entre le runtime JavaScript uniquement et le runtime html utilisé par le volet Office. Pour ce faire, utilisez l’objet [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) et une API de dialogue spéciale.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -20,34 +20,34 @@ Dans certains scénarios, votre fonction personnalisée qui n’utilise pas de v
 
 ## <a name="officeruntimestorage-object"></a>Objet OfficeRuntime.storage
 
-Le runtime JavaScript uniquement utilisé par les fonctions personnalisées sans interface utilisateur n’a `localStorage` pas d’objet disponible dans la fenêtre globale, où vous stockez généralement des données. Au lieu de cela, vous devez partager des données entre des fonctions personnalisées sans interface utilisateur et des volets Office à l’aide [d’OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) pour définir et obtenir des données.
+Le runtime JavaScript uniquement n’a pas d’objet `localStorage` disponible dans la fenêtre globale, où vous stockez généralement des données. Au lieu de cela, votre code doit partager des données entre des fonctions personnalisées et des volets Office à l’aide de l’utilisation `OfficeRuntime.storage` pour définir et obtenir des données.
 
 ### <a name="suggested-usage"></a>Utilisation suggérée
 
-Lorsque vous devez vous authentifier à partir d’une fonction personnalisée sans interface utilisateur, `storage` vérifiez si le jeton d’accès a déjà été acquis. Si ce n’est pas le cas, utilisez l’API de boîte de dialogue pour authentifier l’utilisateur, récupérer le jeton d’accès, puis stocker le jeton dans `storage`pour une utilisation ultérieure.
+Lorsque vous devez vous authentifier à partir d’un complément de fonction personnalisée qui n’utilise pas de runtime partagé, votre code doit vérifier `OfficeRuntime.storage` si le jeton d’accès a déjà été acquis. Si ce n’est pas le cas, utilisez [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) pour authentifier l’utilisateur, récupérer le jeton d’accès, puis stocker le jeton pour `OfficeRuntime.storage` une utilisation ultérieure.
 
 ## <a name="dialog-api"></a>API de boîte de dialogue
 
-Si un jeton n’existe pas, vous devez utiliser l’API de boîte de dialogue pour demander à l’utilisateur de se connecter. Une fois qu’un utilisateur a entré ses informations d’identification, le jeton d’accès résultant peut être stocké dans `storage`.
+S’il n’existe pas de jeton, vous devez utiliser l’API `OfficeRuntime.dialog` pour demander à l’utilisateur de se connecter. Une fois qu’un utilisateur a entré ses informations d’identification, le jeton d’accès résultant peut être stocké en tant qu’élément dans `OfficeRuntime.storage`.
 
 > [!NOTE]
-> Le runtime JavaScript uniquement utilise un objet Dialog légèrement différent de l’objet Dialog dans le runtime du moteur de navigateur utilisé par les volets Des tâches. Ils sont tous deux appelés « API `OfficeRuntime.Dialog` de boîte de dialogue », mais utilisés pour authentifier les utilisateurs dans le runtime JavaScript uniquement.
+> Le runtime JavaScript uniquement utilise un objet de boîte de dialogue légèrement différent de l’objet de dialogue dans le runtime du moteur de navigateur utilisé par les volets office. Ils sont tous deux appelés « API de dialogue », mais utilisent [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) pour authentifier les utilisateurs dans le runtime JavaScript uniquement, *et non* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
 
-Le diagramme suivant décrit ce processus de base. La ligne en pointillés indique que les fonctions personnalisées sans interface utilisateur et le volet Des tâches de votre add-in font tous deux partie de votre module, bien qu’elles utilisent des runtimes distincts.
+Le diagramme suivant décrit ce processus de base. La ligne en pointillés indique que les fonctions personnalisées et le volet Office de votre complément font tous les deux partie de votre complément dans son ensemble, bien qu’ils utilisent des runtimes distincts.
 
-1. Vous émettrez un appel de fonction personnalisée sans interface utilisateur à partir d’une cellule dans un Excel de travail.
-2. La fonction personnalisée sans interface utilisateur utilise `Dialog` pour transmettre vos informations d’identification utilisateur à un site web.
-3. Ce site web renvoie ensuite un jeton d’accès à la fonction personnalisée sans interface utilisateur.
-4. Votre fonction personnalisée sans interface utilisateur définit ensuite ce jeton d’accès sur le `storage`.
-5. Le volet de tâches de votre complément accède au jeton à partir de`storage`.
+1. Vous émettez un appel de fonction personnalisée à partir d’une cellule d’un classeur Excel.
+2. La fonction personnalisée utilise `OfficeRuntime.dialog` pour transmettre vos informations d’identification d’utilisateur à un site Web.
+3. Ce site Web renvoie ensuite un jeton d’accès à la fonction personnalisée.
+4. Votre fonction personnalisée définit ensuite ce jeton d’accès sur un élément dans le `OfficeRuntime.storage`.
+5. Le volet de tâches de votre complément accède au jeton à partir de`OfficeRuntime.storage`.
 
-![Diagramme de la fonction personnalisée à l’aide de l’API de boîte de dialogue pour obtenir un jeton d’accès, puis partagez le jeton avec le volet Office via l’API OfficeRuntime.storage.](../images/authentication-diagram.png "Diagramme d’authentification.")
+![Diagramme de fonction personnalisée utilisant l’API de boîte de dialogue pour obtenir le jeton d’accès, puis partagez le jeton avec le volet Office via l’API OfficeRuntime.storage.](../images/authentication-diagram.png "Diagramme d’authentification.")
 
 ## <a name="storing-the-token"></a>Stockage du jeton
 
-Les exemples suivants s’appliquent à partir de l’exemple de code[utilisation d’OfficeRuntime.storage dans les fonctions personnalisées](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage). Reportez-vous à cet exemple de code pour obtenir un exemple complet de partage de données entre des fonctions personnalisées sans interface utilisateur et le volet Des tâches.
+Les exemples suivants s’appliquent à partir de l’exemple de code[utilisation d’OfficeRuntime.storage dans les fonctions personnalisées](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage). Reportez-vous à cet exemple de code pour obtenir un exemple complet de partage de données entre des fonctions personnalisées et le volet Office dans les compléments qui n’utilisent pas de runtime partagé.
 
-Si la fonction personnalisée sans interface utilisateur s’authentifiera, elle reçoit le jeton d’accès et devra le stocker dans `storage`. L’exemple de code suivant montre comment appeler la méthode`storage.setItem` pour stocker une valeur. La `storeValue` fonction est une fonction personnalisée sans interface utilisateur qui, par exemple, stocke une valeur de l’utilisateur. Vous pouvez modifier cette valeur pour stocker les valeurs de jeton dont vous avez besoin.
+Si la fonction personnalisée s’authentifie, elle reçoit le jeton d’accès et doit la stocker dans `OfficeRuntime.storage`. L’exemple de code suivant montre comment appeler la méthode`storage.setItem` pour stocker une valeur. La `storeValue` fonction est une fonction personnalisée qui stocke une valeur de l’utilisateur. Vous pouvez modifier cette valeur pour stocker les valeurs de jeton dont vous avez besoin.
 
 ```js
 /**
@@ -65,7 +65,7 @@ function storeValue(key, value) {
 }
 ```
 
-Lorsque le volet de tâches a besoin du jeton d’accès, il peut récupérer le jeton à partir de `storage`. L’exemple de code suivant montre comment utiliser la méthode`storage.getItem` pour récupérer le jeton.
+Lorsque le volet Office a besoin du jeton d’accès, il peut récupérer le jeton à partir de l’élément `OfficeRuntime.storage` . L’exemple de code suivant montre comment utiliser la méthode`storage.getItem` pour récupérer le jeton.
 
 ```js
 /**
@@ -86,20 +86,20 @@ function receiveTokenFromCustomFunction() {
 
 ## <a name="general-guidance"></a>Instructions générales
 
-Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe aucun modèle ou méthode particulier que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées sans interface utilisateur. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](../develop/auth-external-add-ins.md).  
+Les compléments Office sont basés sur le Web et vous pouvez utiliser n’importe quelle technique d’authentification Web. Il n’existe pas de modèle ou de méthode spécifique que vous devez suivre pour implémenter votre propre authentification avec des fonctions personnalisées. Vous pouvez consulter la documentation relative à différents modèles d’authentification, en commençant par[cet article sur l’autorisation d’accès via les services externes](../develop/auth-external-add-ins.md).  
 
-Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées : .
+Évitez d’utiliser les emplacements suivants pour stocker des données lors du développement de fonctions personnalisées :
 
-- `localStorage`: les fonctions personnalisées sans interface utilisateur n’ont pas accès à l’objet global `window` et, par conséquent, n’ont pas accès aux données stockées dans `localStorage`.
-- `Office.context.document.settings`: Cet emplacement n’est pas sécurisé et les informations peuvent être extraites par toute personne utilisant le complément.
+- `localStorage`: les fonctions personnalisées qui n’utilisent pas de runtime partagé n’ont pas accès à l’objet global `window` et n’ont donc pas accès aux données stockées dans `localStorage`.
+- `Office.context.document.settings`: cet emplacement n’est pas sécurisé et les informations peuvent être extraites par toute personne utilisant le complément.
 
 ## <a name="dialog-box-api-example"></a>Exemple d’API de boîte de dialogue
 
-Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la `Dialog` fonction de l’API `displayWebDialogOptions` pour afficher une boîte de dialogue. Cet exemple est fourni pour montrer les fonctionnalités de l’objet `Dialog` , et non pour montrer comment s’authentifier.
+Dans l’exemple de code suivant, la fonction `getTokenViaDialog` utilise la `OfficeRuntime.displayWebDialog` fonction pour afficher une boîte de dialogue. Cet exemple est fourni pour montrer les fonctionnalités de la méthode, et non pour montrer comment s’authentifier.
 
 ```JavaScript
 /**
- * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this is not a sufficient example of authentication but is intended to show the capabilities of the Dialog object.
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this isn't a sufficient example of authentication but is intended to show the capabilities of the displayWebDialog method.
  * @param {string} url URL for a stored token.
  */
 function getTokenViaDialog(url) {
@@ -143,9 +143,9 @@ function getTokenViaDialog(url) {
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Découvrez comment [déboguer des fonctions personnalisées sans interface utilisateur](custom-functions-debugging.md).
+Découvrez comment [déboguer des fonctions personnalisées](custom-functions-debugging.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur](custom-functions-runtime.md)
+* [Runtime JavaScript uniquement pour les fonctions personnalisées](custom-functions-runtime.md)
 * [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

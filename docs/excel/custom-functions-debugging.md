@@ -1,14 +1,14 @@
 ---
 title: Débogage des fonctions personnalisées
 description: Découvrez comment déboguer vos Excel fonctions personnalisées qui n’utilisent pas de runtime partagé.
-ms.date: 06/09/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b29f2f2cc08839d1d9d58fcff59ebe37d1089d1
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 1c53d73a0356d4f5f9af9bebbb6c34b99dbeb395
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090913"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229686"
 ---
 # <a name="custom-functions-debugging"></a>Débogage des fonctions personnalisées
 
@@ -186,9 +186,9 @@ Vous pouvez utiliser les tâches suivantes pour démarrer le débogage sur le bu
 - `npm run start:web -- --document {url}`(où `{url}` se trouve l’URL d’un fichier Excel sur OneDrive ou SharePoint) : démarre Excel sur le Web et charge de manière indépendante votre complément.
 - `npm run stop`: arrête Excel et le débogage.
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
-Découvrez les [pratiques d’authentification pour les fonctions personnalisées sans interface utilisateur](custom-functions-authentication.md).
+Découvrez [l’authentification pour les fonctions personnalisées sans runtime partagé](custom-functions-authentication.md).
 
 ## <a name="see-also"></a>Voir aussi
 

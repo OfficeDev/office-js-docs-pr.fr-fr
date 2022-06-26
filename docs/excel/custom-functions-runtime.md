@@ -1,42 +1,42 @@
 ---
-ms.date: 07/08/2021
-description: Comprendre Excel fonctions personnalisées qui n’utilisent pas de volet de tâches et leur runtime JavaScript spécifique.
-title: Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
+ms.date: 06/15/2022
+description: Comprendre Excel fonctions personnalisées qui n’utilisent pas de runtime partagé et leur runtime JavaScript spécifique.
+title: Runtime JavaScript uniquement pour les fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: 491e47674d87d99d0adeda952ee65ffc24dff2bd
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 614e96937c769307b58e66943caa499f1f12d92c
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59149115"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229665"
 ---
-# <a name="runtime-for-ui-less-excel-custom-functions"></a>Runtime pour les fonctions personnalisées sans interface Excel’interface utilisateur
+# <a name="javascript-only-runtime-for-custom-functions"></a>Runtime JavaScript uniquement pour les fonctions personnalisées
 
-Les fonctions personnalisées qui n’utilisent pas de volet de tâches (fonctions personnalisées sans interface utilisateur) utilisent un runtime JavaScript conçu pour optimiser les performances des calculs.
+Les fonctions personnalisées qui n’utilisent pas de runtime partagé utilisent un runtime JavaScript uniquement conçu pour optimiser les performances des calculs.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
-Ce runtime JavaScript permet d’accéder aux API de l’espace de noms qui peuvent être utilisées par les fonctions personnalisées sans interface utilisateur et le volet Des tâches pour stocker `OfficeRuntime` des données.
+Ce runtime JavaScript permet d’accéder aux API de l’espace `OfficeRuntime` de noms qui peuvent être utilisées par les fonctions personnalisées et le volet Office (qui s’exécute dans un autre runtime) pour stocker les données.
 
 ## <a name="request-external-data"></a>Demander des données externes
 
-Dans une fonction personnalisée sans interface utilisateur, vous pouvez demander des données externes à l’aide d’une API telle que [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou en utilisant [XmlHttpRequest (XHR),](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest)une API web standard qui émettre des demandes HTTP pour interagir avec les serveurs.
+Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme [Récupérer](https://developer.mozilla.org/docs/Web/API/Fetch_API) ou de [XmlHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
 
-N’ignorez pas que les fonctions sans interface utilisateur doivent utiliser des mesures [](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) de sécurité supplémentaires lors de la génération de XmlHttpRequests, nécessitant une stratégie d’origine identique et [un CORS](https://www.w3.org/TR/cors/)simple.
+N’oubliez pas que les fonctions personnalisées doivent utiliser des mesures de sécurité supplémentaires lors de la création de XmlHttpRequests, nécessitant la [même stratégie d’origine](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) et [un CORS](https://www.w3.org/TR/cors/) simple.
 
-Une implémentation CORS simple ne peut pas utiliser de cookies et prend uniquement en charge les méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un `Content-Type` en-tête dans CORS simple, à condition que le type de contenu `application/x-www-form-urlencoded` soit , ou `text/plain` `multipart/form-data` .
+Une implémentation CORS simple ne peut pas utiliser de cookies et prend uniquement en charge des méthodes simples (GET, HEAD, POST). Le simple CORS accepte des en-têtes simples avec des noms de champs `Accept`, `Accept-Language`, `Content-Language`. Vous pouvez également utiliser un `Content-Type` en-tête dans CORS simple, à condition que le type de contenu soit `application/x-www-form-urlencoded`, `text/plain`ou `multipart/form-data`.
 
 ## <a name="store-and-access-data"></a>Stocker et accéder aux données
 
-Dans une fonction personnalisée sans interface utilisateur, vous pouvez stocker et accéder aux données à l’aide de `OfficeRuntime.storage` l’objet. `Storage` est un système de stockage persistant, non chiffré et à valeur clé qui fournit une alternative à [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé par des fonctions personnalisées sans interface utilisateur. `Storage` offre 10 Mo de données par domaine. Les domaines peuvent être partagés par plusieurs modules.
+Dans une fonction personnalisée qui n’utilise pas de runtime partagé, vous pouvez stocker et accéder aux données à l’aide de l’objet [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) . L’objet `Storage` est un système de stockage persistant, non chiffré et clé-valeur qui fournit une alternative à [localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), qui ne peut pas être utilisé par les fonctions personnalisées qui utilisent le runtime JavaScript uniquement. L’objet `Storage` offre 10 Mo de données par domaine. Les domaines peuvent être partagés par plusieurs compléments.
 
-`Storage` est conçu comme une solution de stockage partagé, ce qui signifie que plusieurs parties d’un complément ont accès aux mêmes données. Par exemple, les jetons pour l’authentification des utilisateurs peuvent être stockés, car ils sont accessibles à la fois par une fonction personnalisée sans interface utilisateur et par des éléments d’interface utilisateur de add-in tels qu’un volet Des `storage` tâches. De même, si deux modules complémentaires partagent le même domaine (par exemple, , ), ils sont également autorisés à partager des informations entre `www.contoso.com/addin1` `www.contoso.com/addin2` `storage` eux. Notez que les add-ins qui ont différents sous-domaine auront différentes instances `storage` de (par exemple, `subdomain.contoso.com/addin1` , `differentsubdomain.contoso.com/addin2` ).
+L’objet `Storage` est une solution de stockage partagé, ce qui signifie que plusieurs parties d’un complément peuvent accéder aux mêmes données. Par exemple, les jetons pour l’authentification utilisateur peuvent être stockés dans l’objet, car il est accessible à la `Storage` fois par une fonction personnalisée (à l’aide du runtime JavaScript uniquement) et un volet Office (à l’aide d’un runtime webview complet). De même, si deux compléments partagent le même domaine (par exemple, `www.contoso.com/addin1`, `www.contoso.com/addin2`), ils sont également autorisés à partager des informations par le biais de l’objet `Storage` . Notez que les compléments qui ont des sous-domaines différents auront des instances différentes de `Storage` (par exemple, `subdomain.contoso.com/addin1`, `differentsubdomain.contoso.com/addin2`).
 
-Comme `storage` peut être un emplacement partagé, il est important de savoir qu’il est possible de remplacer des paires clé-valeur.
+Étant donné que l’objet `Storage` peut être un emplacement partagé, il est important de se rendre compte qu’il est possible de remplacer les paires clé-valeur.
 
-Les méthodes suivantes sont disponibles sur `storage` l’objet.
+Les méthodes suivantes sont disponibles sur l’objet `Storage` .
 
 - `getItem`
 - `getItems`
@@ -47,11 +47,11 @@ Les méthodes suivantes sont disponibles sur `storage` l’objet.
 - `getKeys`
 
 > [!NOTE]
-> Il n’existe aucune méthode pour effacer toutes les informations (par `clear` exemple). À la place, vous devez utiliser l’objet `removeItems` pour supprimer plusieurs entrées à la fois.
+> Il n’existe aucune méthode pour effacer toutes les informations (telles que `clear`). À la place, vous devez utiliser l’objet `removeItems` pour supprimer plusieurs entrées à la fois.
 
 ### <a name="officeruntimestorage-example"></a>Exemple OfficeRuntime.storage
 
-L’exemple de code suivant appelle `OfficeRuntime.storage.setItem` la fonction pour définir une clé et une valeur dans `storage` .
+L’exemple de code suivant appelle la `OfficeRuntime.storage.setItem` fonction pour définir une clé et une valeur dans `storage`.
 
 ```js
 function StoreValue(key, value) {
@@ -64,16 +64,12 @@ function StoreValue(key, value) {
 }
 ```
 
-## <a name="additional-considerations"></a>Considérations supplémentaires
-
-Si votre add-in utilise uniquement des fonctions personnalisées sans interface utilisateur, notez que vous ne pouvez pas accéder au modèle DOM (Document Object Model) avec des fonctions personnalisées sans interface utilisateur ou utiliser des bibliothèques telles que jQuery qui reposent sur le DOM.
-
 ## <a name="next-steps"></a>Étapes suivantes
 
-Découvrez comment [déboguer des](custom-functions-debugging.md)fonctions personnalisées sans interface utilisateur.
+Découvrez comment [déboguer des fonctions personnalisées](custom-functions-debugging.md).
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Authentifier les fonctions personnalisées sans interface utilisateur](custom-functions-authentication.md)
+* [Authentification pour les fonctions personnalisées sans runtime partagé](custom-functions-authentication.md)
 * [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
 * [Didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md)

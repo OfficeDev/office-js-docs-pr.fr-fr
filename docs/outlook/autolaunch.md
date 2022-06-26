@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 06/09/2022
+ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2565c1938071918d15731606c16833be3b9c8982
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 0329817cc4906becdbaa1bb9d25ae34af5ea7719
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019618"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229693"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur les événements
 
@@ -276,7 +276,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé de manière indépendante.
 
@@ -319,7 +319,7 @@ La journalisation d’exécution est également disponible pour cette fonctionna
 
 Vous pouvez déployer des compléments basés sur des événements en chargeant le manifeste via le Centre d'administration Microsoft 365. Dans le portail d’administration, développez la section **Paramètres** dans le volet de navigation, puis sélectionnez **Applications intégrées**. Dans la page **Applications intégrées**, choisissez **l’action Télécharger applications personnalisées**.
 
-![Capture d’écran de la page Applications intégrées sur le Centre d'administration Microsoft 365, y compris l’action Télécharger applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
+![Page Applications intégrées sur le Centre d'administration Microsoft 365, y compris l’action Télécharger applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource et Office Store dans l’application : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur les événements devrait être bientôt disponible.
 
@@ -342,7 +342,7 @@ Certaines API Office.js qui modifient ou modifient l’interface utilisateur ne 
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > `OfficeRuntime.auth` est pris en charge. Pour plus d’informations, consultez Activer l’authentification [unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur les événements](use-sso-in-event-based-activation.md).
+    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) est pris en charge dans toutes les versions Outlook qui prennent en charge l’activation basée sur les événements et l’authentification unique (SSO), tandis que [Office.auth](/javascript/api/office/office.auth) est uniquement pris en charge dans certaines builds Outlook. Pour plus d’informations, consultez Activer l’authentification [unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur les événements](use-sso-in-event-based-activation.md).
 - Sous `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`

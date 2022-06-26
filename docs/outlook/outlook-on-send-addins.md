@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 05/19/2022
+ms.date: 06/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e167c5611e2c3950a4f8f20119fc4a4483d1d779
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: ae4149afd5bb6303706fec7288441727f09d6bcd
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650604"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229651"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -25,7 +25,7 @@ Pour en savoir plus sur les limites de la fonctionnalité d’envoi, consultez l
 
 Le tableau suivant présente les combinaisons client-serveur prises en charge pour la fonctionnalité d’envoi, y compris la mise à jour cumulative minimale requise, le cas échéant. Les combinaisons exclues ne sont pas prises en charge.
 
-| Client | Exchange Online | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) |
+| Client | Exchange Online | Exchange 2016 en local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 en local<br>(Mise à jour cumulative 1 ou ultérieure) |
 |---|:---:|:---:|:---:|
 |Windows :<br>version 1910 (build 12130.20272) ou ultérieure|Oui|Oui|Oui|
 |Mac:<br>build 16.47 ou ultérieure|Oui|Oui|Oui|
@@ -53,11 +53,11 @@ La validation est effectuée côté client dans Outlook lorsque l’événement 
 
 La capture d’écran suivante montre une barre d’informations invitant l’expéditeur à renseigner l’objet du message.
 
-![Capture d’écran montrant un message d’erreur invitant l’utilisateur à entrer une ligne d’objet manquante.](../images/block-on-send-subject-cc-inforbar.png)
+![Message d’erreur invitant l’utilisateur à entrer une ligne d’objet manquante.](../images/block-on-send-subject-cc-inforbar.png)
 
 La capture d’écran suivante montre une barre d’informations informant l’expéditeur que des mots bloqués ont été trouvés.
 
-![Capture d’écran montrant un message d’erreur indiquant à l’utilisateur que des mots bloqués ont été trouvés.](../images/block-on-send-body.png)
+![Message d’erreur indiquant à l’utilisateur que des mots bloqués ont été trouvés.](../images/block-on-send-body.png)
 
 ## <a name="limitations"></a>Limites
 
@@ -300,7 +300,7 @@ Par défaut, la stratégie d’envoi est désactivée. Les administrateurs peuv
 
 1. Téléchargez l’[outil de modèles d’administration](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Ouvrez l’éditeur de stratégie de groupe local (**gpedit.msc**).
-1. Accédez à **User** **ConfigurationAdministrative** >  **TemplatesMicrosoft**  >  Outlook 2016  > **SecurityTrust** >  Center.
+1. Accédez aux **modèles d’administration** de **configuration** >  utilisateur **Microsoft**  >  Outlook 2016  > **Security** > **Trust Center**.
 1. Sélectionnez **l’option Bloquer l’envoi lorsque les compléments web ne peuvent pas charger** le paramètre.
 1. Ouvrir le lien pour modifier le paramètre de stratégie.
 1. Dans la fenêtre **Bloquer l’envoi lorsque les compléments web ne peuvent pas charger** la fenêtre de dialogue, **sélectionnez Activé** ou **Désactivé** le cas échéant, puis sélectionnez **OK** ou **Appliquer** pour mettre la mise à jour en vigueur.
@@ -332,6 +332,12 @@ Pour des raisons de conformité, il se peut que les administrateurs doivent s’
 ## <a name="on-send-feature-scenarios"></a>Scénarios de la fonctionnalité d’envoi
 
 Voici tous les scénarios pris en charge et non pour les compléments qui utilisent la fonctionnalité d’envoi.
+
+### <a name="event-handlers-are-dynamically-defined"></a>Les gestionnaires d’événements sont définis dynamiquement
+
+Les gestionnaires d’événements de votre complément doivent être définis à l’heure `Office.initialize` ou `Office.onReady()` appelés (pour plus d’informations, voir [Démarrage d’un complément Outlook](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) et [initialiser votre complément Office](../develop/initialize-add-in.md)). Si votre code de gestionnaire est défini dynamiquement par certaines circonstances lors de l’initialisation, vous devez créer une fonction stub pour appeler le gestionnaire une fois qu’il est complètement défini. La fonction stub doit être référencée dans l’attribut de `FunctionName` l’élément **Event** de votre manifeste. Cette solution de contournement garantit que votre gestionnaire est défini et prêt à être référencé une fois `Office.initialize` ou `Office.onReady()` s’exécute.
+
+Si votre gestionnaire n’est pas défini une fois que votre complément est initialisé, l’expéditeur est averti que « La fonction de rappel est inaccessible » via une barre d’informations dans l’élément de messagerie.
 
 ### <a name="user-mailbox-has-the-on-send-add-in-feature-enabled-but-no-add-ins-are-installed"></a>La fonctionnalité d’envoi est activée sur la boîte aux lettres de l’utilisateur, mais aucun complément n’est installé.
 
@@ -606,6 +612,9 @@ Pour savoir comment ajouter un destinataire à la ligne Cc et vérifier que le 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>Déboguer Outlook compléments qui utilisent l’envoi
 
 Pour obtenir des instructions sur le débogage de votre complément en envoi, reportez-vous à [Déboguer votre complément sans interface utilisateur Outlook](debug-ui-less.md).
+
+> [!TIP]
+> Si l’erreur « La fonction de rappel est inaccessible » s’affiche lorsque vos utilisateurs exécutent votre complément et que le gestionnaire d’événements de votre complément est défini dynamiquement, vous devez créer une fonction stub comme solution de contournement. Pour plus d’informations, consultez la [définition dynamique des gestionnaires](#event-handlers-are-dynamically-defined) d’événements.
 
 ## <a name="see-also"></a>Voir aussi
 

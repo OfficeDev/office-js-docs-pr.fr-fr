@@ -1,16 +1,16 @@
 ---
-title: Créer de meilleurs compléments pour Word avec Office Open XML
-description: Vue d’ensemble de l’amélioration de votre complément Word avec Office Open XML.
+title: Comprendre quand et comment utiliser Office Open XML dans votre complément Word
+description: Vue d’ensemble du moment et de la façon d’utiliser Office Open XML dans votre complément Word.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e127eb7a05e513daa38f65ea092e7ede8a3133c5
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: aa78a530e32dfc07f1f885c3bbdbc5cf74a0e213
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187328"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229735"
 ---
-# <a name="create-better-add-ins-for-word-with-office-open-xml"></a>Créer de meilleurs compléments pour Word avec Office Open XML
+# <a name="understand-when-and-how-to-use-office-open-xml-in-your-word-add-in"></a>Comprendre quand et comment utiliser Office Open XML dans votre complément Word
 
 **Fourni par :**    Stephanie Krieger Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
@@ -192,7 +192,7 @@ Vous avez modifié l’exemple Office Open XML présenté ici, comme décrit dan
 ```
 
 > [!NOTE]
-> Si vous ajoutez le balisage représenté ici à un fichier XML avec les balises de déclaration XML pour version et mso-application au début du fichier (figure 13), vous pouvez l’ouvrir dans Word comme un document Word. Ou, sans ces balises, vous pouvez toujours l’ouvrir à l’aide **de** **FileOpen** >  dans Word. Vous verrez le **mode de compatibilité** dans la barre de titre dans Word, car vous avez supprimé les paramètres qui indiquent à Word qu’il s’agit d’un document Word. Étant donné que vous ajoutez ce balisage à un document Word existant, cela n’affecte pas du tout votre contenu.
+> Si vous ajoutez le balisage représenté ici à un fichier XML avec les balises de déclaration XML pour version et mso-application au début du fichier (figure 13), vous pouvez l’ouvrir dans Word comme un document Word. Ou, sans ces balises, vous pouvez toujours l’ouvrir à l’aide **d’Ouvrir** un **fichier** >  dans Word. Vous verrez le **mode de compatibilité** dans la barre de titre dans Word, car vous avez supprimé les paramètres qui indiquent à Word qu’il s’agit d’un document Word. Étant donné que vous ajoutez ce balisage à un document Word existant, cela n’affecte pas du tout votre contenu.
 
 ### <a name="javascript-for-using-setselecteddataasync"></a>JavaScript pour l’utilisation de setSelectedDataAsync
 
