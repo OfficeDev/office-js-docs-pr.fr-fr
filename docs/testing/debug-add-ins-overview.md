@@ -1,14 +1,14 @@
 ---
 title: Débogage des compléments Office
 description: Recherchez les conseils de débogage des compléments Office pour votre environnement de développement.
-ms.date: 02/17/2022
+ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 87265e8aeb760aa9449c86a7991b3ad6ed8943ee
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
+ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744705"
+ms.lasthandoff: 06/25/2022
+ms.locfileid: "66229700"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Vue d’ensemble du débogage Office des modules
 
@@ -40,7 +40,7 @@ Pour trouver des conseils pour le débogage du code côté client, la première 
 
 ## <a name="debug-on-windows"></a>Débogage sur Windows
 
-L’exemple suivant fournit des instructions générales sur le débogage sur Windows. Il existe des instructions spéciales pour le débogage de fonctions personnalisées sans interface utilisateur dans des Excel et des Outlook. Consultez [les cas particuliers Windows](#special-cases-in-windows) plus loin dans cette section. Le débogage sur Windows dépend de votre IDE :
+L’exemple suivant fournit des instructions générales sur le débogage sur Windows. Il existe des instructions spéciales pour le débogage des fonctions personnalisées dans Excel et des modules complémentaires basés sur des événements dans Outlook. Consultez [les cas particuliers Windows](#special-cases-in-windows) plus loin dans cette section. Le débogage sur Windows dépend de votre IDE :
 
 - **Visual Studio** : Déboguer à l’aide des outils F12 du navigateur. Afficher [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - **Visual Studio Code**: Déboguer à l’aide [de l’extension de déboguer de Visual Studio Code](debug-with-vs-extension.md).
@@ -57,7 +57,7 @@ Pour plus d’informations sur le runtime du navigateur utilisé, voir Navigateu
 
 ### <a name="special-cases-in-windows"></a>Cas particuliers dans Windows
 
-Pour déboguer des fonctions personnalisées sans interface utilisateur Windows, voir débogage de fonctions personnalisées sans interface [utilisateur.](../excel/custom-functions-debugging.md)
+Pour déboguer des fonctions personnalisées sans runtime partagé sur Windows, consultez [Débogage des fonctions personnalisées](../excel/custom-functions-debugging.md).
 
 Pour déboguer des compléments basés sur des événements dans Outlook, consultez [Déboguer votre Outlook d’événement.](../outlook/debug-autolaunch.md) Le processus nécessite une Visual Studio Code.
 
@@ -70,7 +70,7 @@ L’exemple suivant fournit des instructions générales sur le débogage sur Ma
 
 ### <a name="special-cases-in-mac"></a>Cas particuliers dans Mac
 
-Pour déboguer des fonctions personnalisées sans interface utilisateur sur Mac, afficher [débogage des fonctions personnalisées sans interface utilisateur.](../excel/custom-functions-debugging.md)
+Pour déboguer des fonctions personnalisées sans runtime partagé sur Mac, consultez [Débogage des fonctions personnalisées](../excel/custom-functions-debugging.md).
 
 ## <a name="debug-on-linux"></a>Débogage sur Linux
 
