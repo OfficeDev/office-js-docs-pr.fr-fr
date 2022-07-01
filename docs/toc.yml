@@ -632,7 +632,7 @@ items:
             href: outlook/extension-module-outlook-add-ins.md
           - name: Compléments pour Outlook Mobile
             href: outlook/outlook-mobile-addins.md
-          - name: Réunion en ligne sur un appareil mobile
+          - name: Créer un complément de réunion en ligne
             href: outlook/online-meeting.md
           - name: Ajouts à l'envoi
             href: outlook/outlook-on-send-addins.md
