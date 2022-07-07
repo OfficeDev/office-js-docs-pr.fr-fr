@@ -3,12 +3,12 @@ title: Créer un complément dictionnaire du volet Office
 description: Découvrez comment créer un complément de volet office de dictionnaire.
 ms.date: 09/26/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b6df6ec5e3fc90899475e3fd089a8e5c0ca766b
-ms.sourcegitcommit: 5bf28c447c5b60e2cc7e7a2155db66cd9fe2ab6b
+ms.openlocfilehash: 755b98ec2e3d5e032ca5adbf349b61a583a03ccd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2022
-ms.locfileid: "65187321"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660059"
 ---
 # <a name="create-a-dictionary-task-pane-add-in"></a>Créer un complément dictionnaire du volet Office
 
@@ -250,11 +250,11 @@ Spécifie les paramètres pour les compléments de dictionnaire.
 
 **Élément parent**
 
-`<OfficeApp>`
+**\<OfficeApp\>**
 
 **Éléments enfants**
 
-`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<DictionaryName>`, `<DictionaryHomePage>`
+**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
 
 **Remarques**
 
@@ -266,11 +266,11 @@ Indique les langues régionales prises en charge par ce dictionnaire. Requis pou
 
 **Élément parent**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Élément enfant**
 
-`<TargetDialect>`
+**\<TargetDialect\>**
 
 **Remarques**
 
@@ -307,7 +307,7 @@ Spécifie une langue régionale prise en charge par ce dictionnaire. Requis pour
 
 **Élément parent**
 
-`<TargetDialects>`
+**\<TargetDialects\>**
 
 **Remarques**
 
@@ -325,7 +325,7 @@ Spécifie le point d’extrémité pour le service de requête de dictionnaire. 
 
 **Élément parent**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarques**
 
@@ -343,7 +343,7 @@ Spécifie le texte à utiliser dans les citations. Requis pour les compléments 
 
 **Élément parent**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarques**
 
@@ -363,7 +363,7 @@ Spécifie le nom de ce dictionnaire. Requis pour les compléments de dictionnair
 
 **Élément parent**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarques**
 
@@ -383,7 +383,7 @@ Spécifie l’URL de la page d’accueil pour le dictionnaire. Requis pour les c
 
 **Élément parent**
 
-`<Dictionary>`
+**\<Dictionary\>**
 
 **Remarques**
 

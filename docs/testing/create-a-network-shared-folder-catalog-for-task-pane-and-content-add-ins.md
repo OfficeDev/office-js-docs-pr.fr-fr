@@ -1,29 +1,29 @@
 ---
 title: Chargement indépendant des compléments Office à des fins de test à partir d’un partage réseau
-description: Découvrez comment charger une version test d’un complément Office à des fins de test à partir d’un partage réseau.
+description: Découvrez comment charger une version test d’un complément Office à partir d’un partage réseau.
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a8b6e61464633a18e29c72b9e983368ea803b258
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752882"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659835"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement indépendant des compléments Office à des fins de test à partir d’un partage réseau
 
-Vous pouvez tester un complément Office dans un client Office qui est sur Windows en publiant le manifeste sur un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le complément à partir d’un serveur non local ou d’un compte cloud.
+Vous pouvez tester un complément Office dans un client Office qui se trouve sur Windows en publiant le manifeste dans un partage de fichiers réseau (instructions ci-dessous). Cette option de déploiement est destinée à être utilisée lorsque vous avez terminé le développement et le test sur un localhost et que vous souhaitez tester le complément à partir d’un serveur non local ou d’un compte cloud.
 
 > [!IMPORTANT]
 > Le déploiement par partage réseau n’est pas pris en charge pour les compléments de production. Cette méthode présente les limitations suivantes.
 >
-> - Le complément ne peut être installé que sur Windows ordinateurs.
+> - Le complément ne peut être installé que sur les ordinateurs Windows.
 > - Si une nouvelle version d’un complément modifie le ruban, par exemple en y ajoutant un onglet personnalisé ou un bouton personnalisé, chaque utilisateur doit réinstaller le complément.
 
 > [!NOTE]
 > Si votre projet de complément a été créé avec une version suffisamment récente du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md), le complément se charge automatiquement en version de test dans le client de bureau Office lors de l’exécution de `npm start`.
 
-Cet article s’applique uniquement au test de compléments Word, Excel, PowerPoint et Project et uniquement sur Windows. Si vous souhaitez effectuer un test sur une autre plateforme ou si vous souhaitez tester un complément Outlook, consultez l’une des rubriques suivantes pour charger de manière indépendante votre complément.
+Cet article s’applique uniquement au test des compléments Word, Excel, PowerPoint et Project, et uniquement sur Windows. Si vous souhaitez effectuer des tests sur une autre plateforme ou tester un complément Outlook, consultez l’une des rubriques suivantes pour charger votre complément de manière indépendante.
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 - [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
@@ -115,13 +115,13 @@ La vidéo suivante présente la procédure de chargement de version test de votr
 
 ## <a name="sideload-your-add-in"></a>Charger une version test de votre complément
 
-1. Placez le fichier XML manifeste d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web sur un serveur web. Veillez à spécifier l’URL dans l’élément **SourceLocation** du fichier manifeste.
+1. Placez le fichier XML manifeste d’un complément en cours de test dans le catalogue de dossiers partagés. Notez que vous déployez l’application web sur un serveur web. Veillez à spécifier l’URL dans l’élément **\<SourceLocation\>** du fichier manifeste.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
-    > Pour Visual Studio projets, utilisez le manifeste généré par le projet dans le `{projectfolder}\bin\Debug\OfficeAppManifests` dossier.
+    > Pour les projets Visual Studio, utilisez le manifeste généré par le projet dans le `{projectfolder}\bin\Debug\OfficeAppManifests` dossier.
 
 1. Dans Excel, Word ou PowerPoint, sélectionnez **Mes compléments** dans l’onglet **Insérer** du ruban. Dans Project, sélectionnez **Mes compléments** sous l’onglet **Project** du ruban.
 

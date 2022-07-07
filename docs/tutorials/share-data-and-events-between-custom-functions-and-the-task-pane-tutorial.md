@@ -4,12 +4,12 @@ description: Découvrez comment partager des données et des événements entre 
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 5491624934d2d3f3b209f92e37c9c033d6a3c879
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0afb6bcd46873dd968c242e57ac1a6f8d7f41627
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229714"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659926"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -33,7 +33,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
 
 1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
 1. Ouvrez le fichier **manifest.xml**.
-1. Remplacez (ou ajoutez) `<Requirements>` la section XML suivante pour exiger [l'ensemble d'exigences d'exécution partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Remplacer (ou ajouter) la section suivante XML **\<Requirements\>** pour exiger l'[ensemble d'exigences d'exécution partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -57,7 +57,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
     <DefaultSettings>
     ```
 
-1. Recherchez la `<VersionOverrides>` section et ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section `<bt:Urls>` près du bas du fichier **manifest.xml**.
+1. Recherchez la section **\<VersionOverrides\>** et ajoutez la section **\<Runtimes\>** suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section `<bt:Urls>` près du bas du fichier **manifest.xml**.
     
     ```xml
     <Runtimes>
@@ -66,7 +66,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
     ```
     
     > [!IMPORTANT]
-    > La `<Runtimes>` section doit être entrée après `<Host xsi:type="...">` l’élément dans l’ordre exact indiqué dans le XML suivant.
+    > La section **\<Runtimes\>** doit être entrée après l’élément `<Host xsi:type="...">` dans l’ordre exact indiqué dans le code XML suivant.
 
     ```xml
     <VersionOverrides ...>
@@ -82,7 +82,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
     > [!NOTE]
     > Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
 
-1. Trouvez `<Page>` l'élément. Modifiez ensuite l'emplacement source de **Functions.Page.Url** en **Taskpane.Url**.
+1. Recherchez l’élément **\<Page\>** . Puis remplacez l’emplacement de la source **Functions.Page.Url** par **TaskPane.Url**.
 
    ```xml
    <AllFormFactors>

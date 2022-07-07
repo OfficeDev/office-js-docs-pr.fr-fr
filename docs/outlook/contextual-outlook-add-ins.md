@@ -3,18 +3,18 @@ title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
 ms.date: 04/09/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb39c4ffd1a1bed3af23d6127f4fdef03187af10
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496900"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660136"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
 Les compléments contextuels sont des compléments Outlook qui s’activent en fonction du texte d’un message ou d’un rendez-vous. Grâce aux compléments contextuels, vous pouvez initier des tâches associées à un message sans avoir à quitter ce dernier. L’expérience utilisateur en est ainsi facilitée et enrichie.
 
-Voici des exemples de add-ins contextuels.
+Voici des exemples de compléments contextuels.
 
 - Choix d’une adresse à ouvrir dans un plan du lieu.
 - Choix d’une chaîne ouvrant un complément de suggestion de réunion.
@@ -28,9 +28,9 @@ Voici des exemples de add-ins contextuels.
 
 ## <a name="how-to-make-a-contextual-add-in"></a>Création d’un complément contextuel
 
-Le manifeste d’un complément contextuel doit inclure un élément [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) avec une attribut `xsi:type` défini sur `DetectedEntity`. Au sein de l’élément **ExtensionPoint**, le complément spécifie les entités ou l’expression régulière qui peuvent l’activer. Si une entité est spécifiée, il peut s’agir d’une des propriétés de l’objet [Entités](/javascript/api/outlook/office.entities).
+Le manifeste d’un complément contextuel doit inclure un élément [ExtensionPoint](/javascript/api/manifest/extensionpoint#detectedentity) avec une attribut `xsi:type` défini sur `DetectedEntity`. Dans l’élément **\<ExtensionPoint\>** , le complément spécifie les entités ou l’expression régulière qui peuvent l’activer. Si une entité est spécifiée, il peut s’agir d’une des propriétés de l’objet [Entités](/javascript/api/outlook/office.entities).
 
-Par conséquent, le manifeste du complément doit contenir un type de règle **ItemHasKnownEntity** ou **Itemhasregularexpressionmatch**. L’exemple suivant montre comment spécifier qu’un add-in doit s’activer sur les messages avec une entité détectée qui est un numéro de téléphone.
+Par conséquent, le manifeste du complément doit contenir un type de règle **ItemHasKnownEntity** ou **Itemhasregularexpressionmatch**. L’exemple suivant montre comment spécifier qu’un complément doit s’activer sur les messages avec une entité détectée qui est un numéro de téléphone.
 
 ```XML
 <ExtensionPoint xsi:type="DetectedEntity">
@@ -64,7 +64,7 @@ Un utilisateur lance un complément contextuel par le biais du texte, une entit�
 
 **Exemple de texte avec l’entité (une adresse) en surbrillance**
 
-![Affiche l’entité en surbrillant dans un e-mail.](../images/outlook-detected-entity-highlight.png)
+![Affiche l’entité mise en surbrillance dans un e-mail.](../images/outlook-detected-entity-highlight.png)
     
 Lorsque plusieurs entités ou compléments contextuels sont présents dans un message, l’interaction avec l’utilisateur a lieu comme suit :
 
@@ -84,7 +84,7 @@ Pour fermer la carte et quitter le complément, il suffit de cliquer n’importe
 
 ## <a name="current-contextual-add-ins"></a>Compléments contextuels actuels
 
-Les add-ins contextuels suivants sont installés par défaut pour les utilisateurs Outlook les autres.
+Les compléments contextuels suivants sont installés par défaut pour les utilisateurs disposant de compléments Outlook.
 
 - Plans Bing
 - Réunions suggérées

@@ -4,12 +4,12 @@ description: Créez un complément Excel qui crée, remplit, filtre et trie un t
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: bcec39ef8cbdeb92636cc57abe8f007e56bbfbe2
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244799"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659716"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -509,7 +509,7 @@ Au cours de cette étape, vous allez ajouter un bouton au ruban pour activer ou 
 
 1. Ouvrez le fichier manifeste **./manifest.xml**.
 
-1. Localisez `<Control>`l'élément. Cet élément définit le bouton **Afficher le volet** des tâches sur le ruban **Accueil** que vous avez utilisé pour lancer le module complémentaire. Nous allons ajouter un deuxième bouton au même groupe sur le ruban **Accueil**. Entre la balise de fermeture et la `</Control>`balise de fermeture`</Group>`, ajoutez le balisage suivant.
+1. Recherchez l’élément **\<Control\>** . Cet élément définit le bouton **Afficher le volet des pages** sur le ruban **Accueil** que vous utilisez pour lancer le complément. Nous allons ajouter un deuxième bouton au même groupe sur le ruban **Accueil**. Entre la balise **\</Control\>** de fermeture et la balise **\</Group\>** de fermeture, ajoutez le balisage suivant.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">

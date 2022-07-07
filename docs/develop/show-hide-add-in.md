@@ -1,20 +1,20 @@
 ---
 title: Afficher ou masquer le volet des tâches de votre complément Office
-description: Découvrez comment masquer ou afficher par programme l’interface utilisateur d’un add-in pendant qu’il s’exécute en continu.
+description: Découvrez comment masquer ou afficher par programmation l’interface utilisateur d’un complément pendant son exécution continue.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e881f5fc0d5258aa886709a0aee2eee5836feef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743958"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660129"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Afficher ou masquer le volet des tâches de votre complément Office
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Vous pouvez afficher le volet Des tâches de votre Office en appelant la `Office.addin.showAsTaskpane()` fonction.
+Vous pouvez afficher le volet Office de votre complément Office en appelant la `Office.addin.showAsTaskpane()` fonction.
 
 ```javascript
 function onCurrentQuarter() {
@@ -26,9 +26,9 @@ function onCurrentQuarter() {
 }
 ```
 
-Le code précédent suppose un scénario dans lequel il existe une feuille de Excel nommée **CurrentQuarterSales**. Le add-in rend le volet Des tâches visible chaque fois que cette feuille de calcul est activée. La méthode `onCurrentQuarter` est un handler pour le [Office. Événement Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) qui a été inscrit pour la feuille de calcul.
+Le code précédent suppose un scénario dans lequel il existe une feuille de calcul Excel nommée **CurrentQuarterSales**. Le complément rend le volet Office visible chaque fois que cette feuille de calcul est activée. La méthode `onCurrentQuarter` est un gestionnaire pour l’événement [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) qui a été inscrit pour la feuille de calcul.
 
-Vous pouvez également masquer le volet Des tâches en appelant la `Office.addin.hide()` fonction.
+Vous pouvez également masquer le volet Office en appelant la `Office.addin.hide()` fonction.
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -36,36 +36,36 @@ function onCurrentQuarterDeactivated() {
 }
 ```
 
-Le code précédent est un handler inscrit pour le [Office. Événement Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-ondeactivated-member).
+Le code précédent est un gestionnaire inscrit pour l’événement [Office.Worksheet.onDeactivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-ondeactivated-member) .
 
-## <a name="additional-details-on-showing-the-task-pane"></a>Détails supplémentaires sur l’affichage du volet Des tâches
+## <a name="additional-details-on-showing-the-task-pane"></a>Détails supplémentaires sur l’affichage du volet Office
 
-Lorsque vous appelez `Office.addin.showAsTaskpane()`, Office affiche dans un volet Des tâches le fichier que vous avez affecté en tant que valeur d’ID de ressource (`resid`) du volet De tâches. Cette `resid` valeur peut être affectée ou modifiée en ouvrant votre fichier **manifest.xml** et en le localisant `<SourceLocation>` à l’intérieur de l’élément `<Action xsi:type="ShowTaskpane">` .
-(Pour [plus d’informations, voir Configurer Office complément](configure-your-add-in-to-use-a-shared-runtime.md) pour utiliser un runtime partagé.)
+Lorsque vous appelez `Office.addin.showAsTaskpane()`, Office affiche dans un volet Office le fichier que vous avez affecté en tant que valeur d’ID de ressource (`resid`) du volet Office. Cette `resid` valeur peut être affectée ou modifiée en ouvrant votre fichier **manifest.xml** et en se trouvant à l’intérieur de **\<SourceLocation\>** l’élément `<Action xsi:type="ShowTaskpane">` .
+(Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md) .)
 
-Étant `Office.addin.showAsTaskpane()` donné qu’il s’agit d’une méthode asynchrone, votre code continue d’être en cours d’exécution jusqu’à ce que la fonction soit terminée. Attendez cette fin avec le mot `await` clé ou `then()` une méthode, en fonction de la syntaxe JavaScript que vous utilisez.
+Étant donné `Office.addin.showAsTaskpane()` qu’il s’agit d’une méthode asynchrone, votre code continue à s’exécuter jusqu’à ce que la fonction soit terminée. Attendez cette fin avec le `await` mot clé ou une `then()` méthode, en fonction de la syntaxe JavaScript que vous utilisez.
 
-## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurer votre add-in pour utiliser le runtime partagé
+## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurer votre complément pour utiliser le runtime partagé
 
-Pour utiliser les méthodes `showAsTaskpane()` et les `hide()` méthodes, votre add-in doit utiliser le runtime partagé. Pour plus d’informations, voir [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md).
+Pour utiliser les méthodes et `hide()` les `showAsTaskpane()` méthodes, votre complément doit utiliser le runtime partagé. Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md).
 
-## <a name="preservation-of-state-and-event-listeners"></a>Conservation des écouteurs d’état et d’événements
+## <a name="preservation-of-state-and-event-listeners"></a>Préservation de l’état et des écouteurs d’événements
 
-Les `hide()` méthodes `showAsTaskpane()` et les méthodes modifient uniquement *la visibilité* du volet Des tâches. Ils ne le déchargent pas, ne le rechargent pas (ou ne réinitialisent pas son état).
+Les `hide()` méthodes et `showAsTaskpane()` les méthodes modifient uniquement la *visibilité* du volet Office. Ils ne le déchargent pas ou ne le rechargent pas (ni ne réinitialisent son état).
 
-Envisagez le scénario suivant : un volet Des tâches est conçu avec des onglets. **L’onglet** Accueil est ouvert lors du premier lancement du module. Supposons qu’un utilisateur ouvre **l’onglet Paramètres** et, plus tard, le code `hide()` dans les appels du volet Des tâches en réponse à un événement. Appels de code ultérieurs en `showAsTaskpane()` réponse à un autre événement. Le volet Des tâches réapparaît et **l’onglet Paramètres** est toujours sélectionné.
+Prenons le scénario suivant : un volet Office est conçu avec des onglets. L’onglet **Accueil** est ouvert lors du premier lancement du complément. Supposons qu’un utilisateur ouvre l’onglet **Paramètres** et, plus tard, que le code du volet Office appelle `hide()` en réponse à un événement. Des appels de code encore ultérieurs `showAsTaskpane()` en réponse à un autre événement. Le volet Office réapparaît et l’onglet **Paramètres** est toujours sélectionné.
 
-![Capture d’écran du volet Des tâches avec quatre onglets étiquetés Accueil, Paramètres, Favoris et Comptes.](../images/TaskpaneWithTabs.png)
+![Capture d’écran du volet Office avec quatre onglets intitulés Accueil, Paramètres, Favoris et Comptes.](../images/TaskpaneWithTabs.png)
 
-En outre, tous les écouteurs d’événements inscrits dans le volet Des tâches continuent de s’exécuter même lorsque le volet Des tâches est masqué.
+De plus, tous les écouteurs d’événements inscrits dans le volet Office continuent à s’exécuter même lorsque le volet Office est masqué.
 
-Envisagez le scénario suivant : le volet Des tâches possède un handler `Worksheet.onActivated` `Worksheet.onDeactivated` inscrit pour les Excel et les événements d’une feuille nommée **Sheet1**. Le handler activé entraîne l’apparition d’un point vert dans le volet Des tâches. Le handler désactivé transforme le point en rouge (qui est son état par défaut). Supposons alors que le code appelle `hide()` **lorsque la feuille Sheet1 n’est** pas activée et que le point est rouge. Bien que le volet Des tâches soit masqué, **la feuille Sheet1** est activée. Appels de code ultérieurs `showAsTaskpane()` en réponse à un événement. Lorsque le volet Des tâches s’ouvre, le point est vert, car les écouteurs et les handlers d’événements s’ouvrent même si le volet Des tâches a été masqué.
+Prenons le scénario suivant : le volet Office comporte un gestionnaire inscrit pour Excel `Worksheet.onActivated` et `Worksheet.onDeactivated` des événements pour une feuille nommée **Sheet1**. Le gestionnaire activé provoque l’apparition d’un point vert dans le volet Office. Le gestionnaire désactivé transforme le point en rouge (qui est son état par défaut). Supposons que le code appelle `hide()` lorsque **sheet1** n’est pas activé et que le point est rouge. Bien que le volet Office soit masqué, **la feuille Sheet1** est activée. Appels `showAsTaskpane()` de code ultérieurs en réponse à un événement. Lorsque le volet Office s’ouvre, le point est vert, car les écouteurs et gestionnaires d’événements ont été exécutés même si le volet Office était masqué.
 
 ## <a name="handle-the-visibility-changed-event"></a>Gérer l’événement de changement de visibilité
 
-Lorsque votre code modifie la visibilité du volet Des `showAsTaskpane()` `hide()`tâches avec ou, Office déclenche l’événement`VisibilityModeChanged`. Il peut être utile de gérer cet événement. Par exemple, supposons que le volet Des tâches affiche une liste de toutes les feuilles d’un workbook. Si une nouvelle feuille de calcul est ajoutée alors que le volet Des tâches est masqué, le fait de rendre le volet Des tâches visible n’ajoute pas en soi le nouveau nom de feuille de calcul à la liste. Toutefois, votre code `VisibilityModeChanged` peut répondre à l’événement pour recharger la propriété [Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de toutes les feuilles de calcul de la collection [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , comme illustré dans l’exemple de code ci-dessous.
+Lorsque votre code modifie la visibilité du volet Office avec `showAsTaskpane()` ou `hide()`, Office déclenche l’événement `VisibilityModeChanged` . Il peut être utile de gérer cet événement. Par exemple, supposons que le volet Office affiche une liste de toutes les feuilles d’un classeur. Si une nouvelle feuille de calcul est ajoutée pendant que le volet Office est masqué, rendre le volet Office visible n’ajouterait pas en soi le nouveau nom de feuille de calcul à la liste. Toutefois, votre code peut répondre à l’événement `VisibilityModeChanged` pour recharger la propriété [Worksheet.name](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-name-member) de toutes les feuilles de calcul de la collection [Workbook.worksheets](/javascript/api/excel/excel.workbook#excel-excel-workbook-worksheets-member) , comme indiqué dans l’exemple de code ci-dessous.
 
-Pour inscrire un handler pour l’événement, vous n’utilisez pas de méthode « add handler » comme vous le feriez dans la plupart Office contextes JavaScript. Au lieu de cela, il existe une fonction spéciale à laquelle vous passez votre [Office:Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Voici un exemple. Notez que la `args.visibilityMode` propriété est de type [VisibilityMode](/javascript/api/office/office.visibilitymode).
+Pour inscrire un gestionnaire pour l’événement, vous n’utilisez pas de méthode « ajouter un gestionnaire » comme vous le feriez dans la plupart des contextes JavaScript Office. Au lieu de cela, il existe une fonction spéciale à laquelle vous passez votre gestionnaire : [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). Voici un exemple. Notez que la `args.visibilityMode` propriété est de type [VisibilityMode](/javascript/api/office/office.visibilitymode).
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
@@ -77,7 +77,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 });
 ```
 
-La fonction renvoie une autre fonction *qui désinsère* le handler. Voici un exemple simple, mais non robuste.
+La fonction retourne une autre fonction qui *désinscrit* le gestionnaire. Voici un exemple simple, mais pas robuste.
 
 ```javascript
 var removeVisibilityModeHandler =
@@ -92,7 +92,7 @@ var removeVisibilityModeHandler =
 removeVisibilityModeHandler();
 ```
 
-La `onVisibilityModeChanged` méthode est asynchrone et renvoie une promesse, ce qui signifie que votre code doit attendre la fin de la promesse avant de pouvoir appeler le sous-enregistré.
+La `onVisibilityModeChanged` méthode est asynchrone et retourne une promesse, ce qui signifie que votre code doit attendre la réalisation de la promesse avant de pouvoir appeler le gestionnaire **de désinscription** .
 
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
@@ -105,7 +105,7 @@ var removeVisibilityModeHandler =
     });
 ```
 
-La fonction d’agrégation est également asynchrone et renvoie une promesse. Ainsi, si vous avez du code qui ne doit pas s’exécuter tant que l’agrégation n’est pas terminée, vous devez attendre la promesse renvoyée par la fonction d’agrégation.
+La fonction de désinscription est également asynchrone et retourne une promesse. Par conséquent, si vous avez du code qui ne doit pas s’exécuter tant que la désinscription n’est pas terminée, vous devez attendre la promesse retournée par la fonction de désinscription.
 
 ```javascript
 // await the promise from the deregister handler before continuing

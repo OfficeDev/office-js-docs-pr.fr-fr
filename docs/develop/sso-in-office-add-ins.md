@@ -3,12 +3,12 @@ title: Activer l’authentification unique (SSO) dans un complément Office
 description: Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 14b65da74cf627b7830ef013580558e8e6097ed1
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650597"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659968"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Activer l’authentification unique (SSO) dans un complément Office
 
@@ -79,11 +79,11 @@ Pour plus de détails sur ce processus, voir [Inscrire un complément Office qui
 
 Ajoutez un nouveau balisage au manifeste du complément.
 
-- **WebApplicationInfo**: le parent des éléments suivants.
-- **ID** : ID d’application (client) que vous avez reçu lorsque vous avez enregistré le complément auprès de la plateforme d’identité Microsoft. Pour plus d’informations, voir [Inscrire un complément Office qui utilise l’authentification unique avec la plateforme d’identité Microsoft](register-sso-add-in-aad-v2.md).
-- **Ressource** : URI du complément. Il s’agit du même URI (y compris le protocole `api:` ) que vous avez utilisé lors de l’enregistrement du complément auprès de la plateforme d’identité Microsoft. La partie domaine de cet URI doit correspondre au domaine, y compris tous les sous-domaines, utilisés dans les URL de la section `<Resources>` du manifeste du complément et l’URI doit se terminer par l’ID client spécifié dans l’élément `<Id>`.
-- **Scopes**: le parent d’un ou plusieurs éléments **Scope**.
-- **Étendue** – Spécifie une autorisation dont le complément a besoin. Les autorisations `profile` et `openID` sont toujours nécessaires et peuvent être les seules autorisations nécessaires. Si votre complément a besoin d’accéder à Microsoft Graph ou à d’autres ressources Microsoft 365, vous aurez besoin d’éléments d’**étendue** supplémentaires. Par exemple, pour les autorisations Microsoft Graph, vous pouvez demander les étendues `User.Read` et `Mail.Read`. Les biblioth?ques que vous utilisez dans votre code pour acc?der ? Microsoft Graph peuvent avoir des besoin d'autorisations suppl?mentaires. Pour plus d'informations, voir [Autoriser Microsoft Graph ? partir d'un compl?ment Office](authorize-to-microsoft-graph.md).
+- **\<WebApplicationInfo\>** : parent des éléments suivants.
+- **\<Id\>** : ID d’application (client) que vous avez reçu lorsque vous avez inscrit le complément auprès de la plateforme d’identités Microsoft. Pour plus d’informations, voir [Inscrire un complément Office qui utilise l’authentification unique avec la plateforme d’identité Microsoft](register-sso-add-in-aad-v2.md).
+- **\<Resource\>** : URI du complément. Il s’agit du même URI (y compris le protocole `api:` ) que vous avez utilisé lors de l’enregistrement du complément auprès de la plateforme d’identité Microsoft. La partie domaine de cet URI doit correspondre au domaine, y compris tous les sous-domaines, utilisés dans les URL de la section **\<Resources\>** du manifeste du complément et l’URI doit se terminer par l’ID client spécifié dans l’élément **\<Id\>** .
+- **\<Scopes\>** : parent d’un ou de plusieurs éléments **\<Scope\>** .
+- **\<Scope\>** : spécifie une autorisation dont le complément a besoin. Les autorisations `profile` et `openID` sont toujours nécessaires et peuvent être les seules autorisations nécessaires. Si votre complément a besoin d’accéder à Microsoft Graph ou à d’autres ressources Microsoft 365, vous aurez besoin d’éléments **\<Scope\>** supplémentaires. Par exemple, pour les autorisations Microsoft Graph, vous pouvez demander les étendues `User.Read` et `Mail.Read`. Les biblioth?ques que vous utilisez dans votre code pour acc?der ? Microsoft Graph peuvent avoir des besoin d'autorisations suppl?mentaires. Pour plus d'informations, voir [Autoriser Microsoft Graph ? partir d'un compl?ment Office](authorize-to-microsoft-graph.md).
 
 Pour les compléments Word, Excel et PowerPoint, ajoutez la balise à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_0">`. Pour les compléments Outlook, ajoutez la balise à la fin de la section `<VersionOverrides ... xsi:type="VersionOverridesV1_1">`.
 

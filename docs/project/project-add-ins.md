@@ -5,12 +5,12 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: ba6c01ea05174e9d965032c02c403c1bfe121dac
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744287"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659933"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
@@ -68,7 +68,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
 
 ### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procédure 1. Créer le fichier manifeste du complément pour Bing Search
 
-- Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément **OfficeApp**, et ses éléments enfants, qui sont décrits dans [Manifeste XML des compléments Office](../develop/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
+- Créez un fichier XML dans un répertoire local. Le fichier XML inclut l’élément **\<OfficeApp\>** et les éléments enfants, qui sont [décrits dans le manifeste XML des compléments Office](../develop/add-in-manifests.md). Par exemple, créez un fichier nommé BingSearch.xml qui contient le code XML suivant.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -99,16 +99,16 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
     ```
 
 - Les éléments suivants sont requis dans le manifeste du complément.
-  - Dans l’élément **OfficeApp**, l’attribut `xsi:type="TaskPaneApp"` spécifie que le complément est de type volet Office.
-  - L’élément **Id** est un UUID et doit être unique.
-  - L’élément **Version** indique la version du complément. L’élément **ProviderName** correspond au nom de l’entreprise ou du développeur qui fournit le complément. L’élément **DefaultLocale** spécifie les paramètres régionaux par défaut pour les chaînes du manifeste.
-  - L’élément **DisplayName** correspond au nom qui s’affiche dans la liste déroulante **Complément du volet Office** de l’onglet **AFFICHAGE**, dans le ruban de Project 2013. La valeur du nom peut contenir jusqu’à 32 caractères.
-  - L’élément **Description** contient la description du complément pour les paramètres régionaux par défaut. La valeur peut contenir jusqu’à 2000 caractères.
+  - Dans l’élément **\<OfficeApp\>** , l’attribut `xsi:type="TaskPaneApp"` spécifie que le complément est un type de volet Office.
+  -  **L’élément\<Id\>** est un UUID et doit être unique.
+  -  **L’élément\<Version\>** est la version du complément.  **L’élément\<ProviderName\>** est le nom de la société ou du développeur qui fournit le complément.  **L’élément\<DefaultLocale\>** spécifie les paramètres régionaux par défaut pour les chaînes dans le manifeste.
+  -  **L’élément\<DisplayName\>** est le nom qui s’affiche dans la liste **déroulante complément du volet Office** sous l’onglet **VIEW** du ruban dans Project 2013. La valeur du nom peut contenir jusqu’à 32 caractères.
+  -  **L’élément\<Description\>** contient la description du complément pour les paramètres régionaux par défaut. La valeur peut contenir jusqu’à 2 000 caractères.
   - L’élément **Capacités** contient un ou plusieurs éléments enfants **Capacité** qui spécifient l’application Office.
-  - L’élément **DefaultSettings** inclut l’élément **SourceLocation**, qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page web que le complément utilise. Un complément du volet Office ignore l’élément **RequestedHeight** et l’élément **RequestedWidth**.
-  - L’élément **IconUrl** est facultatif. Il peut être une icône sur un partage de fichiers ou l’URL d’une icône dans une application web.
+  -  **L’élément\<DefaultSettings\>** inclut l’élément **\<SourceLocation\>** , qui spécifie le chemin d’accès d’un fichier HTML sur un partage de fichiers ou l’URL d’une page web utilisée par le complément. Un complément du volet Office ignore l’élément **\<RequestedHeight\>** et l’élément **\<RequestedWidth\>** .
+  -  **L’élément\<IconUrl\>** est facultatif. Il peut être une icône sur un partage de fichiers ou l’URL d’une icône dans une application web.
 
-- (Facultatif) Ajoutez des éléments **Override** qui ont des valeurs pour les autres paramètres régionaux. Par exemple, le manifeste suivant fournit des éléments **Override** pour les valeurs françaises de **DisplayName**, **Description**, **IconUrl** et **SourceLocation**.
+- (Facultatif) Ajoutez **\<Override\>** éléments qui ont des valeurs pour d’autres paramètres régionaux. Par exemple, le manifeste suivant fournit **des éléments\<Override\>** pour Français valeurs de **\<DisplayName\>**, **\<Description\>**, **\<IconUrl\>** et **\<SourceLocation\>**.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -146,7 +146,7 @@ Le fichier manifeste spécifie l’URL de la page web du complément ou l’appl
 
 Dans Project 2013, vous pouvez installer des compléments comme solutions autonomes sur un partage de fichiers ou dans un catalogue de compléments privé. Vous pouvez également consulter et acheter des compléments dans AppSource.
 
-Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des catalogues et des emplacements de répertoire manifeste à l’aide de l’onglet **Catalogues de compléments approuvés** dans la boîte de dialogue **Centre de gestion de la confidentialité** dans Project 2013. Pour afficher un complément dans Project, l’élément **SourceLocation** dans un manifeste doit pointer vers un site web existant ou un fichier source HTML.
+Un partage de fichiers peut contenir plusieurs fichiers manifestes XML de complément et sous-répertoires. Vous pouvez ajouter ou supprimer des emplacements et des catalogues de répertoires de manifeste à l’aide de l’onglet **Catalogues de compléments approuvés** de la boîte de dialogue **Centre** de gestion de la confidentialité de Project 2013. Pour afficher un complément dans Project, l’élément **\<SourceLocation\>** d’un manifeste doit pointer vers un site web existant ou un fichier source HTML.
 
 > [!NOTE]
 > Si vous développez sur un ordinateur Windows, Internet Explorer ou Microsoft Edge doit être installé. Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).

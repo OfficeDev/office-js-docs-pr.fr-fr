@@ -4,12 +4,12 @@ title: Configurez votre complément Office pour utiliser un runtime JavaScript p
 ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
 ms.localizationpriority: high
-ms.openlocfilehash: b91fffdd79053a600a52086021cbd9712beb7df1
-ms.sourcegitcommit: 82ef88cbdc7c1b77ffa5b624c0c010bd32212692
+ms.openlocfilehash: 3ca5358071d495c409d2a4ece98e600f367b8675
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/08/2022
-ms.locfileid: "64715529"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659842"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -57,10 +57,10 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
     > [!NOTE]
     > N’ajoutez pas l’ensemble de conditions requises `SharedRuntime` au manifeste pour un complément Word. Cela génère une erreur lors du chargement du complément, qui est un problème connu pour l’instant.
 
-1. Recherchez la `<VersionOverrides>` section et ajoutez la section `<Runtimes>` suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section `<bt:Urls>` près du bas du fichier **manifest.xml**.
+1. Recherchez la section **\<VersionOverrides\>** et ajoutez la section **\<Runtimes\>** suivante. La durée de vie doit être **longue** afin que votre code de complément puisse s’exécuter même quand le volet Office est fermé. La valeur `resid` est **Taskpane.Url** qui se réfère à l’emplacement du fichier **taskpane.html** spécifiée dans la section `<bt:Urls>` près du bas du fichier **manifest.xml**.
 
     > [!IMPORTANT]
-    > La `<Runtimes>` section doit être entrée après `<Host>` l’élément dans l’ordre exact indiqué dans le XML suivant.
+    > La section **\<Runtimes\>** doit être entrée après l’élément **\<Host\>** dans l’ordre exact indiqué dans le XML suivant.
 
    ```xml
    <VersionOverrides ...>
@@ -73,7 +73,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
        </Host>
    ```
 
-1. Si vous avez créé un complément Excel avec des fonctions personnalisées, recherchez l’élément `<Page>`. Puis remplacez l’emplacement de la source **Functions.Page.Url** par **TaskPane.Url**.
+1. Si vous avez créé un complément Excel avec des fonctions personnalisées, recherchez l’élément **\<Page\>**. Puis remplacez l’emplacement de la source **Functions.Page.Url** par **TaskPane.Url**.
 
    ```xml
    <AllFormFactors>
@@ -84,7 +84,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
    ...
    ```
 
-1. Recherchez la balise `<FunctionFile ...>` et remplacez le `resid` de **Commands.Url** par **Taskpane.Url**. Veuillez noter que si vous n'avez pas de commandes d'action, vous ne disposerez pas d'entrée **FunctionFile**. Vous pouvez par conséquent ignorer cette étape.
+1. Recherchez la balise **\<FunctionFile\>**, puis remplacez le `resid` de **Commands.Url** par **Taskpane.Url**. Veuillez noter que si vous n'avez pas de commandes d'action, vous ne disposerez pas de l'entrée **\<FunctionFile\>**. Vous pouvez par conséquent ignorer cette étape.
 
     ```xml
     </GetStarted>

@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0329817cc4906becdbaa1bb9d25ae34af5ea7719
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 04f2dc7e6c2745df9394135b46dbd4d99b6d790a
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229693"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660080"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur les événements
 
@@ -25,24 +25,24 @@ Sans la fonctionnalité d’activation basée sur les événements, un utilisate
 Le tableau suivant répertorie les événements actuellement disponibles et les clients pris en charge pour chaque événement. Lorsqu’un événement est déclenché, le gestionnaire reçoit un `event` objet qui peut inclure des détails spécifiques au type d’événement. La colonne **Description** inclut un lien vers l’objet associé, le cas échéant.
 
 > [!IMPORTANT]
-> Les événements toujours en préversion ne peuvent être disponibles qu’avec un abonnement Microsoft 365 et dans un ensemble limité de clients pris en charge, comme indiqué dans le tableau suivant. Pour plus d’informations sur la configuration du client, consultez [La préversion](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les compléments de production.
+> Les événements toujours en préversion peuvent uniquement être disponibles avec un abonnement Microsoft 365 et dans un ensemble limité de clients pris en charge, comme indiqué dans le tableau suivant. Pour plus d’informations sur la configuration du client, consultez [La préversion](#how-to-preview) dans cet article. Les événements d’aperçu ne doivent pas être utilisés dans les compléments de production.
 
 |Événement|Description|Ensemble minimal de conditions requises et clients pris en charge|
 |---|---|---|
-|`OnNewMessageCompose`|Lors de la rédaction d’un nouveau message (y compris la réponse, répondre à tous et transférer), mais pas lors de la modification, par exemple, d’un brouillon.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Navigateur web<br>- Nouvelle interface utilisateur Mac |
-|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas lors de la modification d’un rendez-vous existant.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows <sup>1</sup><br>- Navigateur web<br>- Nouvelle interface utilisateur Mac |
-|`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement : [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement : [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnAppointmentAttendeesChanged`|Lors de l’ajout ou de la suppression de participants lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnAppointmentTimeChanged`|Lors de la modification de la date/heure lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnAppointmentRecurrenceChanged`|Lors de l’ajout, de la modification ou de la suppression des détails de périodicité lors de la rédaction d’un rendez-vous. Si la date/heure est modifiée, l’événement `OnAppointmentTimeChanged` est également déclenché.<br><br>Objet de données spécifique à l’événement : [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnInfoBarDismissClicked`|Lors du rejet d’une notification lors de la composition d’un message ou d’un élément de rendez-vous. Seul le complément qui a ajouté la notification est averti.<br><br>Objet de données spécifique à l’événement : [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows <sup>1</sup><br>- Navigateur web|
-|`OnMessageSend`|Lors de l’envoi d’un élément de message. Pour plus d’informations, reportez-vous à la [procédure pas à pas des alertes intelligentes](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
-|`OnAppointmentSend`|Lors de l’envoi d’un élément de rendez-vous. Pour plus d’informations, reportez-vous à la [procédure pas à pas des alertes intelligentes](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows <sup>1</sup>|
+|`OnNewMessageCompose`|Lors de la rédaction d’un nouveau message (y compris la réponse, répondre à tous et transférer), mais pas lors de la modification, par exemple, d’un brouillon.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Navigateur web<br>- Nouvelle interface utilisateur Mac |
+|`OnNewAppointmentOrganizer`|Lors de la création d’un rendez-vous, mais pas lors de la modification d’un rendez-vous existant.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><br>- Windows<sup>1</sup><br>- Navigateur web<br>- Nouvelle interface utilisateur Mac |
+|`OnMessageAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement : [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnAppointmentAttachmentsChanged`|Lors de l’ajout ou de la suppression de pièces jointes lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnMessageRecipientsChanged`|Lors de l’ajout ou de la suppression de destinataires lors de la composition d’un message.<br><br>Objet de données spécifique à l’événement : [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnAppointmentAttendeesChanged`|Lors de l’ajout ou de la suppression de participants lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnAppointmentTimeChanged`|Lors de la modification de la date/heure lors de la composition d’un rendez-vous.<br><br>Objet de données spécifique à l’événement : [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnAppointmentRecurrenceChanged`|Lors de l’ajout, de la modification ou de la suppression des détails de périodicité lors de la rédaction d’un rendez-vous. Si la date/heure est modifiée, l’événement `OnAppointmentTimeChanged` est également déclenché.<br><br>Objet de données spécifique à l’événement : [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnInfoBarDismissClicked`|Lors du rejet d’une notification lors de la composition d’un message ou d’un élément de rendez-vous. Seul le complément qui a ajouté la notification est averti.<br><br>Objet de données spécifique à l’événement : [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><br>- Windows<sup>1</sup><br>- Navigateur web|
+|`OnMessageSend`|Lors de l’envoi d’un élément de message. Pour plus d’informations, reportez-vous à la [procédure pas à pas des alertes intelligentes](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
+|`OnAppointmentSend`|Lors de l’envoi d’un élément de rendez-vous. Pour plus d’informations, reportez-vous à la [procédure pas à pas des alertes intelligentes](smart-alerts-onmessagesend-walkthrough.md).|[Aperçu](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<br><br>- Windows<sup>1</sup>|
 
 > [!NOTE]
-> <sup>1</sup> Compléments basés sur des événements dans Outlook sur Windows nécessitent un minimum de Windows 10 version 1903 (build 18362) ou Windows Server 2019 version 1903 pour s’exécuter.
+> <sup>1 Les</sup> compléments basés sur les événements dans Outlook sur Windows nécessitent un minimum de Windows 10 version 1903 (build 18362) ou Windows Server 2019 version 1903 pour s’exécuter.
 
 ### <a name="how-to-preview"></a>Guide pratique pour afficher un aperçu
 
@@ -54,13 +54,13 @@ Pour afficher un aperçu de ces événements, le cas échéant :
   - [Configurez la version ciblée sur votre locataire Microsoft 365.](/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide&preserve-view=true#set-up-the-release-option-in-the-admin-center)
   - Référencez la bibliothèque **bêta** sur le CDN (https://appsforoffice.microsoft.com/lib/beta/hosted/office.js). Le [fichier de définition de](https://appsforoffice.microsoft.com/lib/beta/hosted/office.d.ts) type pour la compilation et la IntelliSense TypeScript se trouve aux CDN et [DefinitelyTyped](https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/master/types/office-js-preview/index.d.ts). Vous pouvez installer ces types avec `npm install --save-dev @types/office-js-preview` .
 - Pour Outlook sur la nouvelle interface utilisateur Mac :
-  - La build minimale requise est 16,54 (21101001). Rejoignez le [programme Office Insider](https://insider.office.com/join/Mac) et choisissez le **canal bêta** pour accéder à Office versions bêta.
+  - La build minimale requise est 16,54 (21101001). Rejoignez le [programme Office Insider](https://insider.office.com/join/Mac) et choisissez le **canal bêta** pour accéder aux versions bêta d’Office.
 - Pour Outlook sur Windows :
-  - La build minimale requise est 16.0.14511.10000. Rejoignez le [programme Office Insider](https://insider.office.com/join/windows) et choisissez le **canal bêta** pour accéder à Office versions bêta.
+  - La build minimale requise est 16.0.14511.10000. Rejoignez le [programme Office Insider](https://insider.office.com/join/windows) et choisissez le **canal bêta** pour accéder aux versions bêta d’Office.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour Office compléments.
+Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -70,7 +70,7 @@ Pour activer l’activation basée sur les événements de votre complément, vo
 
 1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité `<VersionOverrides>` du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant, puis enregistrez vos modifications.
+1. Sélectionnez l’intégralité **\<VersionOverrides\>** du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant, puis enregistrez vos modifications.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -192,7 +192,7 @@ Pour activer l’activation basée sur les événements de votre complément, vo
 Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web et sur la nouvelle interface utilisateur Mac utilisent un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le `Resources` nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser html ou JavaScript en fonction du client Outlook. Par conséquent, pour configurer la gestion des événements, indiquez l’emplacement du code HTML dans l’élément `Runtime` , puis, dans son `Override` élément enfant, indiquez l’emplacement du fichier JavaScript incorporé ou référencé par le code HTML.
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes pour Outlook compléments, consultez [Outlook manifestes de complément](manifests.md).
+> Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
@@ -243,7 +243,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 1. Enregistrez vos modifications.
 
 > [!IMPORTANT]
-> Windows : À l’heure actuelle, les importations ne sont pas prises en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur les événements.
+> Windows : à l’heure actuelle, les importations ne sont pas prises en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur les événements.
 
 ## <a name="update-the-commands-html-file"></a>Mettre à jour le fichier HTML des commandes
 
@@ -288,7 +288,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
     ```
 
     > [!NOTE]
-    > Si votre complément n’a pas été chargé automatiquement, suivez les instructions de chargement indépendant [Outlook compléments à tester pour](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) charger manuellement le complément dans Outlook.
+    > Si votre complément n’a pas été chargé automatiquement, suivez les instructions [fournies dans Chargement indépendant des compléments Outlook à des fins de test pour](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) charger manuellement le complément dans Outlook.
 
 1. Dans Outlook sur le web, créez un message.
 
@@ -306,7 +306,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 Lorsque vous apportez des modifications à la gestion des événements de lancement dans votre complément, vous devez savoir que :
 
-- Si vous avez mis à jour le manifeste, [supprimez le complément, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) à nouveau. Si vous utilisez Outlook sur Windows, fermez-le et rouvrez-le.
+- Si vous avez mis à jour le manifeste, [supprimez le complément, puis chargez-le](sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in) à nouveau. Si vous utilisez Outlook sur Windows, fermez et rouvrez-le.
 - Si vous avez apporté des modifications à des fichiers autres que le manifeste, fermez et rouvrez Outlook sur Windows, ou actualisez l’onglet du navigateur en cours d’exécution Outlook sur le web.
 
 Lors de l’implémentation de vos propres fonctionnalités, vous devrez peut-être déboguer votre code. Pour obtenir des conseils sur le débogage de l’activation de compléments basés sur des événements, consultez [Déboguer votre complément Outlook basé sur les événements](debug-autolaunch.md).
@@ -317,22 +317,22 @@ La journalisation d’exécution est également disponible pour cette fonctionna
 
 ## <a name="deploy-to-users"></a>Déployer sur les utilisateurs
 
-Vous pouvez déployer des compléments basés sur des événements en chargeant le manifeste via le Centre d'administration Microsoft 365. Dans le portail d’administration, développez la section **Paramètres** dans le volet de navigation, puis sélectionnez **Applications intégrées**. Dans la page **Applications intégrées**, choisissez **l’action Télécharger applications personnalisées**.
+Vous pouvez déployer des compléments basés sur des événements en chargeant le manifeste via le Centre d'administration Microsoft 365. Dans le portail d’administration, développez la section **Paramètres** dans le volet de navigation, puis sélectionnez **Applications intégrées**. Dans la page **Applications intégrées** , choisissez l’action **Charger des applications personnalisées** .
 
-![Page Applications intégrées sur le Centre d'administration Microsoft 365, y compris l’action Télécharger applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
+![Page Applications intégrées sur le Centre d'administration Microsoft 365, y compris l’action Charger des applications personnalisées.](../images/outlook-deploy-event-based-add-ins.png)
 
 AppSource et Office Store dans l’application : la possibilité de déployer des compléments basés sur des événements ou de mettre à jour des compléments existants pour inclure la fonctionnalité d’activation basée sur les événements devrait être bientôt disponible.
 
 > [!IMPORTANT]
-> Les compléments basés sur des événements sont limités aux déploiements gérés par l’administrateur uniquement. Pour l’instant, les utilisateurs ne peuvent pas obtenir de compléments basés sur des événements à partir d’AppSource ou de Office Store dans l’application. Pour en savoir plus, [reportez-vous aux options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md).
+> Les compléments basés sur des événements sont limités aux déploiements gérés par l’administrateur uniquement. Pour l’instant, les utilisateurs ne peuvent pas obtenir de compléments basés sur des événements à partir d’AppSource ou d’Office Store dans l’application. Pour plus d’informations, [reportez-vous aux options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md).
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur les événements
 
 Les gestionnaires d’événements de lancement de complément sont censés être de courte durée, légers et aussi peuvasifs que possible. Après l’activation, votre complément expire dans un délai d’environ 300 secondes, soit la durée maximale autorisée pour l’exécution de compléments basés sur des événements. Pour signaler que votre complément a terminé le traitement d’un événement de lancement, nous vous recommandons d’appeler la `event.completed` méthode par le gestionnaire associé. (Notez que l’exécution du code inclus après l’instruction `event.completed` n’est pas garantie.) Chaque fois qu’un événement que vos handles de complément déclenchent, le complément est réactivé et exécute le gestionnaire d’événements associé, et la fenêtre de délai d’expiration est réinitialisée. Le complément se termine après son expiration, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
 
-Si l’utilisateur a plusieurs compléments qui se sont abonnés au même événement, la plateforme Outlook lance les compléments sans ordre particulier. Actuellement, seuls cinq compléments basés sur des événements peuvent être en cours d’exécution active.
+Si l’utilisateur a plusieurs compléments qui se sont abonnés au même événement, la plateforme Outlook lance les compléments dans un ordre particulier. Actuellement, seuls cinq compléments basés sur des événements peuvent être en cours d’exécution active.
 
-L’utilisateur peut basculer ou s’éloigner de l’élément de messagerie actuel où le complément a commencé à s’exécuter. Le complément qui a été lancé termine son opération en arrière-plan.
+Dans tous les clients Outlook pris en charge, l’utilisateur doit rester sur l’élément de messagerie actuel où le complément a été activé pour qu’il s’exécute. La navigation loin de l’élément actif (par exemple, le passage à une autre fenêtre de composition ou un autre onglet) met fin à l’opération de complément. Le complément cesse également de fonctionner lorsque l’utilisateur envoie le message ou le rendez-vous qu’il compose.
 
 Les importations ne sont pas prises en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur les événements dans le client Windows.
 
@@ -342,7 +342,7 @@ Certaines API Office.js qui modifient ou modifient l’interface utilisateur ne 
   - `getAccessToken`
   - `getAccessTokenAsync`
     > [!NOTE]
-    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) est pris en charge dans toutes les versions Outlook qui prennent en charge l’activation basée sur les événements et l’authentification unique (SSO), tandis que [Office.auth](/javascript/api/office/office.auth) est uniquement pris en charge dans certaines builds Outlook. Pour plus d’informations, consultez Activer l’authentification [unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur les événements](use-sso-in-event-based-activation.md).
+    > [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) est pris en charge dans toutes les versions d’Outlook qui prennent en charge l’activation basée sur les événements et l’authentification unique (SSO), tandis [qu’Office.auth](/javascript/api/office/office.auth) est uniquement pris en charge dans certaines builds Outlook. Pour plus d’informations, consultez Activer l’authentification [unique (SSO) dans les compléments Outlook qui utilisent l’activation basée sur les événements](use-sso-in-event-based-activation.md).
 - Sous `Office.context.mailbox`:
   - `displayAppointmentForm`
   - `displayMessageForm`
@@ -370,8 +370,8 @@ La prise en charge complète de CORS sera bientôt disponible.
 - [Comment déboguer des compléments basés sur des événements](debug-autolaunch.md)
 - [Options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md)
 - [Procédure pas à pas sur les alertes intelligentes et OnMessageSend](smart-alerts-onmessagesend-walkthrough.md)
-- Office exemples de code de compléments :
-  - [Utiliser Outlook activation basée sur les événements pour chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications apportées à la date/l’heure du rendez-vous](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
+- Exemples de code de compléments Office :
+  - [Utiliser l’activation basée sur les événements Outlook pour chiffrer les pièces jointes, traiter les participants aux demandes de réunion et réagir aux modifications apportées à la date/l’heure du rendez-vous](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
   - [Utiliser l’activation Outlook basée sur un événement pour définir la signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
   - [Utiliser l’activation basée sur les événements Outlook pour marquer les destinataires externes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
   - [Utiliser Alertes intelligentes d’Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)

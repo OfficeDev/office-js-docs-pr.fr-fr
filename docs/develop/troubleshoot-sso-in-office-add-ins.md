@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
-description: Recommandations sur la façon de résoudre les problèmes liés à l’signature unique (SSO) dans les Office et de gérer des conditions ou des erreurs spéciales.
+description: Conseils sur la résolution des problèmes liés à l’authentification unique (SSO) dans les compléments Office et la gestion de conditions ou d’erreurs spéciales.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e0607a059ec0ab14dc987d7703b7162330c58c44
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: e155b1da472e9e9e081bf43b1660996583f97cc1
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496795"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659949"
 ---
 # <a name="troubleshoot-error-messages-for-single-sign-on-sso"></a>Résolution des problèmes de messages d’erreur pour l’authentification unique (SSO)
 
@@ -34,7 +34,7 @@ Pour consulter des exemples de la gestion des erreurs décrite dans cette sectio
 
 L’API [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) n’est pas prise en charge par le complément ou la version d’Office.
 
-- La version d’Office ne prend pas en charge la SSO. La version requise est Microsoft 365 abonnement, dans n’importe quel canal mensuel.
+- La version d’Office ne prend pas en charge la SSO. La version requise est l’abonnement Microsoft 365, dans n’importe quel canal mensuel.
 - Le manifeste de complément n’inclut pas la section [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) appropriée.
 
 Votre complément doit corriger cette erreur en basculant vers un autre système d’authentification des utilisateurs. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
@@ -58,11 +58,11 @@ L’utilisateur a annulé la connexion ou l’autorisation, par exemple, en choi
 
 ### <a name="13003"></a>13003
 
-Type d’utilisateur non pris en charge. L’utilisateur n’est pas Office avec un compte Microsoft valide, un compte Microsoft 365 Éducation ou un compte de travail. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Dans Outlook, cette erreur peut également se produire si l’authentification moderne est désactivée pour le client de l’utilisateur dans Exchange Online.[](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
+Type d’utilisateur non pris en charge. L’utilisateur n’est pas connecté à Office avec un compte Microsoft valide ou un compte Microsoft 365 Éducation ou professionnel. Cela peut se produire si Office est exécuté avec un compte de domaine en local, par exemple. Votre code doit basculer vers un autre système d’authentification des utilisateurs. Dans Outlook, cette erreur peut également se produire si [l’authentification moderne est désactivée](/exchange/clients-and-mobile-in-exchange-online/enable-or-disable-modern-authentication-in-exchange-online) pour le locataire de l’utilisateur dans Exchange Online. Pour plus d’informations, voir [Meilleures Pratiques et Conditions Requises](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
 ### <a name="13004"></a>13004
 
-Ressource non valide. (Cette erreur ne doit être visible qu’en cours de développement.) Le manifeste du add-in n’a pas été configuré correctement. Mettez à jour le manifeste. Pour en savoir plus, consultez [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md). Le problème le plus courant est que l’élément **Resource** (dans l’élément **WebApplicationInfo**) a un domaine qui ne correspond pas au domaine du complément. Bien que la partie protocole de la valeur Resource devrait être « api » et non « https », toutes les autres parties du nom de domaine (dont le port éventuel) doivent être identiques à ceux du complément.
+Ressource non valide. (Cette erreur ne doit être visible qu’en développement.) Le manifeste du complément n’a pas été configuré correctement. Mettez à jour le manifeste. Pour en savoir plus, consultez [Valider le manifeste d’un complément Office](../testing/troubleshoot-manifest.md). Le problème le plus courant est que l’élément **\<Resource\>** (dans l’élément **\<WebApplicationInfo\>** ) a un domaine qui ne correspond pas au domaine du complément. Bien que la partie protocole de la valeur Resource devrait être « api » et non « https », toutes les autres parties du nom de domaine (dont le port éventuel) doivent être identiques à ceux du complément.
 
 ### <a name="13005"></a>13005
 
@@ -76,12 +76,12 @@ Erreur du client. Cette erreur apparaît uniquement dans **Office sur le web**. 
 
 ### <a name="13007"></a>13007
 
-L Office’application n’a pas pu obtenir un jeton d’accès au service web du module.
+L’application Office n’a pas pu obtenir de jeton d’accès au service web du complément.
 
 - Si cette erreur se produit en cours de développement, assurez-vous que l’enregistrement de votre complément, ainsi que son manifeste, spécifient l’autorisation `profile` (et l’autorisation `openid` si vous utilisez MSAL.NET). Pour plus d’informations, voir [Inscrire votre complément avec le point de terminaison Azure AD v2.0](register-sso-add-in-aad-v2.md).
 - En production, plusieurs causes peuvent entraîner cette erreur. En voici certaines :
   - L’utilisateur a une identité de compte Microsoft.
-  - Certaines situations qui provoqueraient l’une des autres erreurs 13xxx avec un compte Microsoft 365 Éducation ou de travail entraînent un 13007 lorsqu’un compte MSA est utilisé.
+  - Certaines situations qui entraîneraient l’une des autres erreurs 13xxx avec un Microsoft 365 Éducation ou un compte professionnel entraînent un 13007 lorsqu’un MSA est utilisé.
 
   Dans tous ces cas, votre code doit basculer vers un autre système d’authentification des utilisateurs.
 
@@ -91,13 +91,13 @@ L’utilisateur a déclenché une opération qui appelle `getAccessToken` avant 
 
 ### <a name="13010"></a>13010
 
-L’utilisateur exécute le Office sur Microsoft Edge. Le domaine de Microsoft 365 utilisateur et `login.microsoftonline.com` le domaine se sont dans une zone de sécurité différente dans les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
+L’utilisateur exécute le complément dans Office sur Microsoft Edge. Le domaine Microsoft 365 de l’utilisateur et le `login.microsoftonline.com` domaine se trouvent dans des zones de sécurité différentes dans les paramètres du navigateur. Cette erreur apparaît uniquement dans **Office sur le web**. Si cette erreur est renvoyée, l’utilisateur a déjà vu une erreur expliquant cela et menant vers une page sur la modification de la configuration de la zone. Si votre complément fournit des fonctions qui ne nécessitent pas que l’utilisateur soit connecté, votre code doit intercepter cette erreur et autoriser l’exécution du complément.
 
 ### <a name="13012"></a>13012
 
 Il existe plusieurs causes possibles.
 
-- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Voir aussi les [ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+- Le complément est en cours d’exécution sur une plateforme qui ne prend pas en charge l’API `getAccessToken`. Par exemple, elle n’est pas compatible avec iPad. Consultez également [les ensembles de conditions requises de l’API d’identité](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 - L’option `forMSGraphAccess` a été transmise à l’appel à `getAccessToken` et l’utilisateur a obtenu le complément à partir d’AppSource. Dans ce scénario, l’administrateur du client n’a pas donné son accord au complément pour les étendues Microsoft Graph (autorisations) dont il a besoin. Le fait de rappeler `getAccessToken` avec le `allowConsentPrompt` ne résoudra pas le problème, car Office est autorisé à inviter l’utilisateur à donner l’autorisation uniquement à l’étendue de `profile` AAD.
 
 Votre code doit basculer vers un autre système d’authentification des utilisateurs.
@@ -106,7 +106,7 @@ En développement, le complément est sideloaded dans Outlook et l’option `for
 
 ### <a name="13013"></a>13013
 
-Le `getAccessToken` nombre d’appels a été trop élevé en peu de temps, Office a donc limitée l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios dans le cas où le rappel de la méthode est conseillé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification des utilisateurs. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée [ dansHomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
+L’appel `getAccessToken` a été appelé trop de fois dans un court laps de temps, office a donc limité l’appel le plus récent. Cela est généralement dû à une boucle infinie d’appels à la méthode. Il existe des scénarios lorsque le rappel de la méthode est recommandé. Toutefois, votre code doit utiliser un compteur ou une variable d’indicateur pour vous assurer que la méthode n’est pas rappelée à plusieurs reprises. Si le même chemin d’accès de code « nouvelle tentative » s’exécute à nouveau, le code doit revenir à un autre système d’authentification utilisateur. Pour obtenir un exemple de code, voir comment la `retryGetAccessToken` variable est utilisée dans [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNET-SSO-WebAPI/Scripts/HomeES6.js) ou [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### <a name="50001"></a>50001
 
@@ -122,11 +122,11 @@ Pour plus d’exemples de la gestion des erreurs décrite dans cette section, re
 
 ### <a name="conditional-access--multifactor-authentication-errors"></a>Erreurs d’accès conditionnel / authentification multifacteur
 
-Dans certaines configurations d’identité dans AAD et Microsoft 365, il est possible pour certaines ressources accessibles avec Microsoft Graph d’exiger une authentification multifacteur (MFA), même lorsque le client Microsoft 365 de l’utilisateur ne le fait pas. Lorsqu’AAD reçoit une requête pour obtenir un jeton d’accès à la ressource protégée par AMF via le flux « de la part de », il renvoie au service web de votre complément un message JSON contenant une propriété `claims`. La propriété de revendication comporte des informations sur les facteurs d’authentification supplémentaires nécessaires.
+Dans certaines configurations d’identité dans AAD et Microsoft 365, il est possible que certaines ressources accessibles avec Microsoft Graph nécessitent une authentification multifacteur (MFA), même si la location Microsoft 365 de l’utilisateur ne le fait pas. Lorsqu’AAD reçoit une requête pour obtenir un jeton d’accès à la ressource protégée par AMF via le flux « de la part de », il renvoie au service web de votre complément un message JSON contenant une propriété `claims`. La propriété de revendication comporte des informations sur les facteurs d’authentification supplémentaires nécessaires.
 
 Votre code doit tester cette propriété `claims`. En fonction de l’architecture de votre complément, vous pouvez le tester côté client, ou le tester sur le serveur et le relayer sur le client. Il vous faut ces informations dans le client, car Office gère l’authentification des compléments SSO. Si vous le relayez côté serveur, le message adressé au client peut être une erreur (telle que `500 Server Error` ou `401 Unauthorized`) ou se trouver dans le corps d’une réponse de succès (telle que `200 OK`). Dans les deux cas, le rappel (réussite ou échec) de l’appel AJAX de votre code côté client à l’API web de votre complément devra tester cette réponse.
 
-Quelle que soit votre architecture, si la valeur de revendications a été envoyée à partir de AAD, votre code `getAccessToken` doit rappeler et transmettre l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
+Quelle que soit votre architecture, si la valeur des revendications a été envoyée à partir d’AAD, votre code doit rappeler `getAccessToken` et passer l’option `authChallenge: CLAIMS-STRING-HERE` dans le `options` paramètre. Lorsqu’AAD voit cette chaîne, il demande le(s) facteur(s) supplémentaire(s) à l’utilisateur, puis renvoie un nouveau jeton d’accès qui sera accepté dans le flux « de la part de ».
 
 ### <a name="consent-missing-errors"></a>Erreurs de consentement manquant
 

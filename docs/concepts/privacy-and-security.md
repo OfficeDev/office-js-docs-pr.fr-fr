@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme de compléments Office.
 ms.date: 01/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b473c6981e5dd1782e059a73393dc82ff919f8
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891948"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659667"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -87,7 +87,7 @@ Cette section décrit la protection offerte par la plateforme des compléments 
 Les compléments Office sont créés à l’aide de technologies web qui sont exécutées dans un contrôle de navigateur ou un composant **iframe**. C’est la raison pour laquelle l’utilisation de compléments est semblable à la navigation sur les sites web, que ce soit sur Internet ou sur l’intranet. Les compléments peuvent être externes à une organisation (si le complément est acquis à partir d’AppSource) ou internes (si le complément est acquis à partir d’un catalogue de compléments Exchange Server, d’un catalogue d’applications SharePoint ou d’un partage de fichiers sur le réseau d’une organisation). Les compléments ont un accès limité au réseau et la plupart d’entre eux peuvent effectuer des opérations de lecture ou d’écriture dans le document ou l’élément de messagerie actif. La plateforme du complément applique certaines contraintes avant qu’un utilisateur ou un administrateur installe ou démarre ce complément. Mais, comme pour tout modèle d’extensibilité, les utilisateurs doivent faire preuve de prudence avant de lancer un complément inconnu.
 
 > [!NOTE]
-> Les utilisateurs peuvent voir une invite de sécurité pour approuver le domaine la première fois qu’un complément est chargé. Cela se produit si l’hôte de domaine du complément est en dehors du domaine d’Exchange local ou d’Office Online Server.
+> Les utilisateurs peuvent voir une invite de sécurité pour approuver le domaine la première fois qu’un complément est chargé. Cela se produit si l’hôte de domaine du complément est en dehors du domaine d’Exchange local ou Office Online Server.
 
 La plateforme de complément répond aux préoccupations des utilisateurs finaux en matière de confidentialité des manières suivantes.
 
@@ -232,9 +232,9 @@ Les développeurs doivent également prendre note des pratiques de sécurité su
 
 - Les développeurs ne doivent pas utiliser les contrôles ActiveX dans les compléments Office car les contrôles ActiveX ne prennent pas en charge la nature multiplateforme de la plateforme du complément.
 
-- Les compléments de contenu et du volet des tâches adoptent les mêmes paramètres SSL que les paramètres par défaut dans le navigateur, ce qui permet à la plupart des contenus d’être fournis uniquement par SSL. Les compléments Outlook nécessitent que le contenu soit fourni par SSL. Les développeurs doivent spécifier dans l’élément **SourceLocation** du manifeste de complément une URL qui utilise le protocole HTTPS pour identifier l’emplacement du fichier HTML du complément.
+- Les compléments de contenu et de volet Office supposent les mêmes paramètres SSL que ceux utilisés par défaut par le navigateur, et autorisent la plupart du contenu à être remis uniquement par SSL. Les compléments Outlook nécessitent que le contenu soit fourni par SSL. Les développeurs doivent spécifier dans l’élément **\<SourceLocation\>** du manifeste de complément une URL qui utilise HTTPS pour identifier l’emplacement du fichier HTML pour le complément.
 
-  Pour s’assurer que les compléments ne fournissent pas de contenu à l’aide du protocole HTTP, lors du test des compléments, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans **Les options Internet** dans le **Panneau de configuration** et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
+  Pour s’assurer que les compléments ne fournissent pas de contenu à l’aide du protocole HTTP, lors du test des compléments, les développeurs doivent s’assurer que les paramètres suivants sont sélectionnés dans **Les options Internet** dans **Panneau de configuration** et qu’aucun avertissement de sécurité n’apparaît dans leurs scénarios de test.
 
   - Assurez-vous que le paramètre de sécurité, **Afficher un contenu mixte**, pour la zone **Internet** est défini sur **Demander**. Pour ce faire, sélectionnez les éléments suivants dans **Options Internet** : sous l’onglet **Sécurité** , sélectionnez la zone **Internet** , sélectionnez **Niveau personnalisé**, faites défiler pour rechercher **le contenu mixte d’affichage**, puis sélectionnez **Invite** si elle n’est pas déjà sélectionnée.
 

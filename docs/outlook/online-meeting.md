@@ -4,12 +4,12 @@ description: Explique comment configurer un complément Outlook pour un fourniss
 ms.topic: article
 ms.date: 06/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 884e27b75f3fc44a645021f8211d7aaf748f3a1d
-ms.sourcegitcommit: e8ce48605f7f33bc5c9af8bfd75d54d4b6b15039
+ms.openlocfilehash: ad96cbd385f53959501dcb5ac8b7e9be22d4585a
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2022
-ms.locfileid: "66574424"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660276"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Créer un complément Outlook pour un fournisseur de réunions en ligne
 
@@ -26,7 +26,7 @@ Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer le nœud **VersionOverrides** dans le manifeste. Si vous créez un complément qui ne sera pris en charge que dans Outlook sur le web, Windows et Mac, sélectionnez l’onglet **Windows, Mac et web** pour obtenir des conseils. Toutefois, si votre complément est également pris en charge dans Outlook sur Android et iOS, sélectionnez l’onglet **Mobile** .
+Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer le **\<VersionOverrides\>** nœud dans le manifeste. Si vous créez un complément qui ne sera pris en charge que dans Outlook sur le web, Windows et Mac, sélectionnez l’onglet **Windows, Mac et web** pour obtenir des conseils. Toutefois, si votre complément est également pris en charge dans Outlook sur Android et iOS, sélectionnez l’onglet **Mobile** .
 
 # <a name="windows-mac-web"></a>[Windows, Mac, web](#tab/non-mobile)
 
@@ -34,7 +34,7 @@ Pour permettre aux utilisateurs de créer des réunions en ligne avec votre comp
 
 1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité du nœud **VersionOverrides** (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
+1. Sélectionnez l’intégralité **\<VersionOverrides\>** du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -100,13 +100,13 @@ Pour permettre aux utilisateurs de créer des réunions en ligne avec votre comp
 
 # <a name="mobile"></a>[Mobile](#tab/mobile)
 
-Pour permettre aux utilisateurs de créer une réunion en ligne à partir de leur appareil mobile, le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) est configuré dans le manifeste sous l’élément parent **MobileFormFactor**. Ce point d’extension n’est pas pris en charge dans d’autres facteurs de forme.
+Pour permettre aux utilisateurs de créer une réunion en ligne à partir de leur appareil mobile, le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) est configuré dans le manifeste sous l’élément **\<MobileFormFactor\>** parent. Ce point d’extension n’est pas pris en charge dans d’autres facteurs de forme.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide Outlook que vous avez créé.
 
 1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité du nœud **VersionOverrides** (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
+1. Sélectionnez l’intégralité **\<VersionOverrides\>** du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

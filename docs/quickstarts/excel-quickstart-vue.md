@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 57f87d12a5712fb329726a0f405e17b69eddb865
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 8fb4bd545e1fab44884dd4a5dc388910d71c8336
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090858"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659793"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Utiliser Vue pour créer un complément du volet de tâches Excel
 
@@ -112,7 +112,7 @@ Le projet de complément que vous avez créé avec le générateur Yeoman contie
    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
    ```
 
-1. Ouvrez **manifest.xml** et recherchez les balises `<bt:Urls>` dans la balise `<Resources>` . Recherchez la balise `<bt:Url>` avec l’ID `Taskpane.Url` et mettez à jour son attribut `DefaultValue`. La nouvelle `DefaultValue` est `https://localhost:3000/index.html`. La balise mise à jour entière doit correspondre à la ligne suivante.
+1. Ouvrez **manifest.xml**, puis recherchez les balises `<bt:Urls>` dans la balise **\<Resources\>**. Recherchez la balise `<bt:Url>` avec l’ID `Taskpane.Url` et mettez à jour son attribut `DefaultValue`. La nouvelle `DefaultValue` est `https://localhost:3000/index.html`. La balise mise à jour entière doit correspondre à la ligne suivante.
 
    ```html
    <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/index.html" />

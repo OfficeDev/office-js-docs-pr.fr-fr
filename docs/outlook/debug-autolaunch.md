@@ -1,22 +1,22 @@
 ---
-title: Déboguer votre complément Outlook basé sur des événements
+title: Déboguer votre complément Outlook basé sur les événements
 description: Découvrez comment déboguer votre complément Outlook qui implémente l’activation basée sur les événements.
 ms.topic: article
 ms.date: 04/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f779ab2bc8776d0926e1a5eb615f77107d7ac1e
-ms.sourcegitcommit: 1de45dec4fc2b0bc962e344bbb7f53ae95cfb515
+ms.openlocfilehash: 8dbd74036cf56b5ff492315f928324a3aa1e7312
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/29/2022
-ms.locfileid: "65128090"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659681"
 ---
-# <a name="debug-your-event-based-outlook-add-in"></a>Déboguer votre complément Outlook basé sur des événements
+# <a name="debug-your-event-based-outlook-add-in"></a>Déboguer votre complément Outlook basé sur les événements
 
 Cet article fournit des conseils de débogage lorsque vous implémentez [l’activation basée sur les événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur les événements a été introduite dans [l’ensemble de conditions requises 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) avec des événements supplémentaires désormais disponibles en préversion. Pour plus d’informations, [reportez-vous aux événements pris en charge](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
-> Cette fonctionnalité de débogage est prise en charge uniquement dans Outlook sur Windows avec un abonnement Microsoft 365.
+> Cette fonctionnalité de débogage est uniquement prise en charge dans Outlook sur Windows avec un abonnement Microsoft 365.
 
 Dans cet article, nous abordons les étapes clés pour activer le débogage.
 
@@ -25,11 +25,11 @@ Dans cet article, nous abordons les étapes clés pour activer le débogage.
 - [Attacher Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-Vous disposez de plusieurs options pour créer votre projet de complément. Selon l’option que vous utilisez, les étapes peuvent varier. Dans ce cas, si vous avez utilisé le générateur Yeoman pour Office compléments pour créer votre projet de complément (par exemple, en effectuant la [procédure pas à pas d’activation basée sur les événements](autolaunch.md)), suivez les étapes de **yo office**, sinon suivez les **autres** étapes. Visual Studio Code doit être au moins la version 1.56.1.
+Vous disposez de plusieurs options pour créer votre projet de complément. Selon l’option que vous utilisez, les étapes peuvent varier. Dans ce cas, si vous avez utilisé le générateur Yeoman pour compléments Office pour créer votre projet de complément (par exemple, en effectuant la procédure pas à pas sur [l’activation basée sur les événements](autolaunch.md)), suivez les étapes de **yo-office** , sinon suivez les **autres** étapes. Visual Studio Code doit être au moins version 1.56.1.
 
 ## <a name="mark-your-add-in-for-debugging"></a>Marquer votre complément pour le débogage
 
-1. Définissez la clé `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`de Registre . `[Add-in ID]` est **l’ID** dans le manifeste du complément.
+1. Définissez la clé `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`de Registre . `[Add-in ID]` est le **\<Id\>** manifeste du complément.
 
     **yo office** : dans une fenêtre de ligne de commande, accédez à la racine de votre dossier de complément, puis exécutez la commande suivante.
 
@@ -39,11 +39,11 @@ Vous disposez de plusieurs options pour créer votre projet de complément. Selo
 
     En plus de générer le code et de démarrer le serveur local, cette commande doit définir la `UseDirectDebugger` clé de Registre pour ce complément `1`sur .
 
-    **Autre** : ajoutez la clé de `UseDirectDebugger` Registre sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Remplacez `[Add-in ID]` par **l’ID** du manifeste du complément. Définissez la clé `1`de Registre sur .
+    **Autre** : ajoutez la clé de `UseDirectDebugger` Registre sous `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\`. Remplacez `[Add-in ID]` par le **\<Id\>** manifeste du complément. Définissez la clé `1`de Registre sur .
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. Démarrez Outlook bureau (ou redémarrez Outlook s’il est déjà ouvert).
+1. Démarrez le bureau Outlook (ou redémarrez Outlook s’il est déjà ouvert).
 1. Composez un nouveau message ou rendez-vous. La boîte de dialogue suivante doit s’afficher. *N’interagissez pas* encore avec la boîte de dialogue.
 
     ![Capture d’écran de la boîte de dialogue Gestionnaire basé sur les événements de débogage.](../images/outlook-win-autolaunch-debug-dialog.png)
@@ -72,11 +72,11 @@ Vous disposez de plusieurs options pour créer votre projet de complément. Selo
     }
     ```
 
-### <a name="other"></a>Autres
+### <a name="other"></a>Autre
 
 1. Créez un dossier appelé **Débogage** (peut-être dans votre dossier **Bureau** ).
 1. Ouvrez Visual Studio Code.
-1. Accédez au **dossier FileOpen** > , accédez au dossier que vous venez de créer, puis **sélectionnez Sélectionner un dossier**.
+1. Accédez au **dossier Ouvrir** un **fichier** > , accédez au dossier que vous venez de créer, puis **sélectionnez Sélectionner un dossier**.
 1. Dans la barre d’activité, sélectionnez l’élément **de débogage** (Ctrl+Maj+D).
 
     ![Capture d’écran de l’icône Déboguer dans la barre d’activité.](../images/vs-code-debug.png)
@@ -102,7 +102,7 @@ Vous disposez de plusieurs options pour créer votre projet de complément. Selo
 
 ## <a name="attach-visual-studio-code"></a>Attacher Visual Studio Code
 
-1. Pour rechercher le **bundle.js** du complément, ouvrez le dossier suivant dans Windows Explorer et recherchez **l’ID** de votre complément (trouvé dans le manifeste).
+1. Pour trouver le **bundle.js** du complément, ouvrez le dossier suivant dans l’Explorateur Windows et recherchez celui de **\<Id\>** votre complément (trouvé dans le manifeste).
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef
@@ -115,19 +115,19 @@ Vous disposez de plusieurs options pour créer votre projet de complément. Selo
 1. Placez les points d’arrêt dans bundle.js où vous souhaitez que le débogueur s’arrête.
 1. Dans la liste **déroulante DEBUG** , sélectionnez le nom **Débogage direct**, puis sélectionnez **Exécuter**.
 
-    ![Capture d’écran de la sélection du débogage direct dans les options de configuration dans la liste déroulante Visual Studio Code Débogage.](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Capture d’écran de la sélection du débogage direct dans les options de configuration dans la liste déroulante Débogage Visual Studio Code.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Débogage
 
-1. Après avoir confirmé que le débogueur est attaché, revenez à Outlook et, dans la boîte de dialogue **Gestionnaire d’événements de débogage**, choisissez **OK**.
+1. Après avoir confirmé que le débogueur est attaché, revenez à Outlook et, dans la boîte **de dialogue Gestionnaire d’événements de débogage** , choisissez **OK** .
 
 1. Vous pouvez maintenant atteindre vos points d’arrêt dans Visual Studio Code, ce qui vous permet de déboguer votre code d’activation basé sur les événements.
 
 ## <a name="stop-debugging"></a>Arrêter le débogage
 
-Pour arrêter le débogage pour le reste de la session de bureau Outlook actuelle, dans la boîte **de dialogue Gestionnaire d’événements de débogage**, choisissez **Annuler**. Pour réactiver le débogage, redémarrez Outlook bureau.
+Pour arrêter le débogage pour le reste de la session de bureau Outlook actuelle, dans la boîte de dialogue **Gestionnaire d’événements de débogage** , choisissez **Annuler**. Pour réactiver le débogage, redémarrez le bureau Outlook.
 
-Pour empêcher le débogage de la boîte de dialogue Gestionnaire **d’événements** de s’afficher et arrêter le débogage pour les sessions Outlook suivantes, supprimez la clé de Registre associée ou définissez sa valeur sur `0`: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`
+Pour empêcher que la boîte de dialogue gestionnaire **basé sur les événements de débogage** ne se déclenche et arrête le débogage pour les sessions Outlook suivantes, supprimez la clé de Registre associée ou définissez sa valeur `0`sur : `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`
 
 ## <a name="see-also"></a>Voir aussi
 

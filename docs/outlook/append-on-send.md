@@ -4,23 +4,23 @@ description: Découvrez comment implémenter la fonctionnalité d’ajout à l�
 ms.topic: article
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 968b730aca1fc36640e43ff45404c8d4c7b92d47
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244834"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659828"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter append-on-send dans votre complément Outlook
 
-À la fin de cette procédure pas à pas, vous disposerez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
+À la fin de cette procédure pas à pas, vous disposerez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.
 
 > [!NOTE]
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour Office compléments.
+Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -32,7 +32,7 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du b
 
 1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité `<VersionOverrides>` du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
+1. Sélectionnez l’intégralité **\<VersionOverrides\>** du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -120,7 +120,7 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du b
     ```
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes pour Outlook compléments, consultez [Outlook manifestes de complément](manifests.md).
+> Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).
 
 ## <a name="implement-append-on-send-handling"></a>Implémenter la gestion des ajouts sur l’envoi
 

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 56f43e157db9875165689af59ade50b0752fe8dc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091096"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660150"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -244,11 +244,11 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 
 1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
 
-1. L'élément **ProviderName** a une valeur de type placeholder. Remplacez-la par votre nom.
+1. L’élément **\<ProviderName\>** possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
-1. L'attribut **DefaultValue** de l'élément **DisplayName** comporte un espace réservé. Remplacez-le par `My Office Add-in`.
+1. L'attribut **DefaultValue** de l'élément **\<DisplayName\>** comporte un espace réservé. Remplacez-le par `My Office Add-in`.
 
-1. L'attribut **DefaultValue** de l'élément **Description** contient un caractère générique. Remplacez-le par`My First Outlook add-in`.
+1. L'attribut **DefaultValue** de l'élément **\<Description\>** comporte un espace réservé. Remplacez-le par `My First Outlook add-in`.
 
 1. Enregistrez le fichier.
 

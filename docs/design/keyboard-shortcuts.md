@@ -3,12 +3,12 @@ title: Raccourcis clavier personnalisés dans les compléments Office
 description: Découvrez comment ajouter des raccourcis clavier personnalisés, également appelés combinaisons de touches, à votre complément Office.
 ms.date: 11/22/2021
 localization_priority: Normal
-ms.openlocfilehash: bd3131ea8e5f0c2f1caadca58ab2e47f588fbfc6
-ms.sourcegitcommit: 690c1cc5f9027fd9859e650f3330801fe45e6e67
+ms.openlocfilehash: 5e813e1f4af040bb546f60eb2db40862ba1a237e
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/27/2022
-ms.locfileid: "65752868"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659982"
 ---
 # <a name="add-custom-keyboard-shortcuts-to-your-office-add-ins"></a>Ajouter des raccourcis clavier personnalisés à vos compléments Office
 
@@ -17,7 +17,7 @@ Les raccourcis clavier, également appelés combinaisons de touches, permettent 
 [!include[Keyboard shortcut prerequisites](../includes/keyboard-shortcuts-prerequisites.md)]
 
 > [!NOTE]
-> Pour commencer avec une version opérationnelle d’un complément avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple [Excel Raccourcis clavier](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre complément, passez à cet article.
+> Pour commencer avec une version opérationnelle d’un complément avec des raccourcis clavier déjà activés, clonez et exécutez l’exemple de [raccourcis clavier Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). Lorsque vous êtes prêt à ajouter des raccourcis clavier à votre propre complément, passez à cet article.
 
 Il existe trois étapes pour ajouter des raccourcis clavier à un complément.
 
@@ -35,7 +35,7 @@ L’ajout de raccourcis clavier personnalisés nécessite que votre complément 
 
 ### <a name="link-the-mapping-file-to-the-manifest"></a>Lier le fichier de mappage au manifeste
 
-Immédiatement *en dessous* (pas à l’intérieur) de l’élément `<VersionOverrides>` dans le manifeste, ajoutez un élément [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON dans votre projet que vous allez créer à une étape ultérieure.
+Immédiatement *en dessous* (pas à l’intérieur) de l’élément **\<VersionOverrides\>** dans le manifeste, ajoutez un élément [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON dans votre projet que vous allez créer à une étape ultérieure.
 
 ```xml
     ...
@@ -89,7 +89,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
 
 ## <a name="create-a-mapping-of-actions-to-their-functions"></a>Créer un mappage d’actions à leurs fonctions
 
-1. Dans votre projet, ouvrez le fichier JavaScript chargé par votre page HTML dans l’élément `<FunctionFile>` .
+1. Dans votre projet, ouvrez le fichier JavaScript chargé par votre page HTML dans l’élément **\<FunctionFile\>** .
 1. Dans le fichier JavaScript, utilisez l’API [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) pour mapper chaque action que vous avez spécifiée dans le fichier JSON à une fonction JavaScript. Ajoutez le Code JavaScript suivant au fichier. Notez ce qui suit concernant le code.
 
     - Le premier paramètre est l’une des actions du fichier JSON.
@@ -130,7 +130,7 @@ Créez un fichier JSON dans votre projet. Assurez-vous que le chemin d’accès 
     });
     ```
 
-En suivant les étapes précédentes, votre complément peut activer la visibilité du volet Office en appuyant sur **Ctrl+Alt+Haut** et **Ctrl+Alt+Bas**. Le même comportement s’affiche dans l’exemple [de raccourcis clavier Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) dans le dépôt PnP des compléments Office dans GitHub.
+En suivant les étapes précédentes, votre complément peut activer la visibilité du volet Office en appuyant sur **Ctrl+Alt+Haut** et **Ctrl+Alt+Bas**. Le même comportement s’affiche dans l’exemple de [raccourcis clavier Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) dans le référentiel PnP des compléments Office dans GitHub.
 
 ## <a name="details-and-restrictions"></a>Détails et restrictions
 
@@ -198,7 +198,7 @@ Voici un exemple.
 Le schéma complet pour les raccourcis JSON se trouve à [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!NOTE]
-> Les touches d’accès, également appelées raccourcis clés séquentiels, tels que le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H**, ne sont pas prises en charge dans Office compléments.
+> Les touches d’accès, également appelées raccourcis clés séquentiels, comme le raccourci Excel pour choisir une couleur de remplissage **Alt+H, H**, ne sont pas prises en charge dans les compléments Office.
 
 ## <a name="avoid-key-combinations-in-use-by-other-add-ins"></a>Éviter les combinaisons de touches utilisées par d’autres compléments
 
@@ -208,9 +208,9 @@ En cas de conflit, l’utilisateur voit une boîte de dialogue la première fois
 
 ![Illustration montrant un conflit modal avec deux actions différentes pour un raccourci unique.](../images/add-in-shortcut-conflict-modal.png)
 
-L’utilisateur peut sélectionner l’action que le raccourci clavier effectuera. Une fois la sélection effectuée, la préférence est enregistrée pour les utilisations futures du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences, il peut appeler la commande **Réinitialiser les préférences de raccourci des compléments Office** à partir de la zone de recherche **Rechercher**. L’appel de la commande efface toutes les préférences de raccourci de complément de l’utilisateur et l’utilisateur est à nouveau invité à entrer la boîte de dialogue de conflit la prochaine fois qu’il tente d’utiliser un raccourci en conflit.
+L’utilisateur peut sélectionner l’action que le raccourci clavier effectuera. Une fois la sélection effectuée, la préférence est enregistrée pour les utilisations futures du même raccourci. Les préférences de raccourci sont enregistrées par utilisateur, par plateforme. Si l’utilisateur souhaite modifier ses préférences, il peut appeler la commande **de raccourci Réinitialiser les compléments Office à** partir de la zone de recherche **Rechercher** . L’appel de la commande efface toutes les préférences de raccourci de complément de l’utilisateur et l’utilisateur est à nouveau invité à entrer la boîte de dialogue de conflit la prochaine fois qu’il tente d’utiliser un raccourci en conflit.
 
-![La zone de recherche Rechercher dans Excel montrant l’action de réinitialisation Office les préférences de raccourci de complément.](../images/add-in-reset-shortcuts-action.png)
+![Zone de recherche Dites-moi dans Excel montrant l’action de réinitialisation des préférences de raccourci du complément Office.](../images/add-in-reset-shortcuts-action.png)
 
 Pour une expérience utilisateur optimale, nous vous recommandons de réduire les conflits avec Excel avec ces bonnes pratiques.
 
@@ -288,10 +288,10 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
     });
 ```
 
-Pour savoir quels raccourcis sont déjà utilisés pour l’utilisateur, appelez la méthode [Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member). Cette méthode retourne un objet de type `[actionId:string]:string|null}`, où les valeurs représentent la combinaison de clavier actuelle que l’utilisateur doit utiliser pour appeler l’action spécifiée. Les valeurs peuvent provenir de trois sources différentes :
+Pour savoir quels raccourcis sont déjà utilisés pour l’utilisateur, appelez la méthode [Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) . Cette méthode retourne un objet de type `[actionId:string]:string|null}`, où les valeurs représentent la combinaison de clavier actuelle que l’utilisateur doit utiliser pour appeler l’action spécifiée. Les valeurs peuvent provenir de trois sources différentes :
 
 - En cas de conflit avec le raccourci et que l’utilisateur a choisi d’utiliser une autre action (native ou un autre complément) pour cette combinaison de clavier, la valeur retournée est `null` puisque le raccourci a été remplacé et qu’il n’existe aucune combinaison de clavier que l’utilisateur peut actuellement utiliser pour appeler cette action de complément.
-- Si le raccourci a été personnalisé à l’aide de la méthode [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member), la valeur retournée est la combinaison de clavier personnalisée.
+- Si le raccourci a été personnalisé à l’aide de la méthode [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) , la valeur retournée est la combinaison de clavier personnalisée.
 - Si le raccourci n’a pas été remplacé ou personnalisé, il retourne la valeur du code JSON du manifeste étendu du complément.
 
 Voici un exemple.
@@ -307,7 +307,7 @@ Office.actions.getShortcuts()
 
 ```
 
-Comme décrit dans [Éviter les combinaisons de touches utilisées par d’autres compléments](#avoid-key-combinations-in-use-by-other-add-ins), il est recommandé d’éviter les conflits dans les raccourcis. Pour déterminer si une ou plusieurs combinaisons de clés sont déjà utilisées, passez-les en tant que tableau de chaînes à la méthode [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member). La méthode retourne un rapport contenant des combinaisons de clés déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}`. La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Maj+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie sur `true`. Par exemple : `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
+Comme décrit dans [Éviter les combinaisons de touches utilisées par d’autres compléments](#avoid-key-combinations-in-use-by-other-add-ins), il est recommandé d’éviter les conflits dans les raccourcis. Pour déterminer si une ou plusieurs combinaisons de clés sont déjà utilisées, passez-les en tant que tableau de chaînes à la méthode [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) . La méthode retourne un rapport contenant des combinaisons de clés déjà utilisées sous la forme d’un tableau d’objets de type `{shortcut: string, inUse: boolean}`. La `shortcut` propriété est une combinaison de touches, telle que « Ctrl+Maj+1 ». Si la combinaison est déjà inscrite dans une autre action, la `inUse` propriété est définie sur `true`. Par exemple : `[{shortcut: "CTRL+SHIFT+1", inUse: true}, {shortcut: "CTRL+SHIFT+2", inUse: false}]`. L’extrait de code suivant est un exemple :
 
 ```javascript
 const shortcuts = ["CTRL+SHIFT+1", "CTRL+SHIFT+2"];
@@ -323,5 +323,5 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- Consultez [l’exemple de complément Excel raccourcis clavier](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts).
+- Consultez l’exemple de complément de [raccourcis clavier Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts) .
 - Obtenez une vue d’ensemble de l’utilisation des remplacements étendus dans [Work avec des remplacements étendus du manifeste](../develop/extended-overrides.md).

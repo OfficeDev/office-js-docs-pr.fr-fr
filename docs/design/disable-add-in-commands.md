@@ -3,52 +3,52 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 03/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e5699c8ab6a817f604da1b1dbb58924242cb2ed
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: ca9e35026acb91a54affa8215178f2eaa6cbd4c9
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496732"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659821"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
 Lorsque seulement quelques fonctionnalités de votre complément doivent être disponibles dans certains contextes, vous pouvez activer ou désactiver vos commandes de complément personnalisées par programme. Par exemple, une fonction qui modifie l’en-tête d’un tableau doit être uniquement activée lorsque le curseur se trouve dans un tableau.
 
-Vous pouvez également spécifier si la commande est activée ou désactivée lorsque l’application Office client s’ouvre.
+Vous pouvez également spécifier si la commande est activée ou désactivée lorsque l’application cliente Office s’ouvre.
 
 > [!NOTE]
 > Cet article suppose que vous connaissez la documentation décrite ci-après. Étudiez-la si vous n’avez pas récemment utilisé les commandes de complément (éléments de menu et boutons de ruban personnalisés).
 >
 > - [Concepts basiques pour les commandes de complément](add-in-commands.md)
 
-## <a name="office-application-and-platform-support-only"></a>Office prise en charge des applications et des plateformes uniquement
+## <a name="office-application-and-platform-support-only"></a>Prise en charge des applications et plateformes Office uniquement
 
 Les API décrites dans cet article sont disponibles uniquement dans Excel, PowerPoint et Word.
 
 ### <a name="test-for-platform-support-with-requirement-sets"></a>Effectuez un test pour la prise en charge des plateformes avec les ensembles de conditions requises
 
-Les ensembles de conditions requises sont des groupes nommés de membres d’API. Office les add-ins utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification à l’runtime pour déterminer si une combinaison d’application Office et de plateforme prend en charge les API requises par un add-in. Pour plus d’informations, [voir Office versions et ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
+Les ensembles de conditions requises sont des groupes nommés de membres d’API. Les compléments Office utilisent des ensembles de conditions requises spécifiés dans le manifeste ou utilisent une vérification d’exécution pour déterminer si une combinaison d’applications et de plateformes Office prend en charge les API dont un complément a besoin. Pour plus d’informations, consultez [les versions d’Office et les ensembles de conditions requises](../develop/office-versions-and-requirement-sets.md).
 
-Les API d’activer/désactiver appartiennent à [l’ensemble de conditions requises RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) .
+Les API enable/disable appartiennent à l’ensemble de conditions requises [RibbonApi 1.1](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets) .
 
 > [!NOTE]
-> L’ensemble de conditions requises **RibbonApi 1.1** n’est pas encore pris en charge dans le manifeste. Vous ne pouvez donc pas le spécifier dans la section **Conditions** requises du manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Si, *et uniquement si*, cet appel renvoie `true`, votre code peut appeler les API d’activer/désactiver. Si l’appel de `isSetSupported` renvoie `false`, toutes les commandes de modules sont activées en temps réel. Vous devez concevoir votre application de production, ainsi que les instructions dans l’application, pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et d’exemples `isSetSupported`d’utilisation, voir [Spécifier Office applications](../develop/specify-office-hosts-and-api-requirements.md) et les conditions requises des API, en particulier les vérifications runtime de la prise en charge des méthodes et des ensembles [de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La section [Spécifier les Office et les plateformes](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) qui peuvent héberger votre application dans cet article ne s’appliquent pas au Ruban 1.1.)
+> L’ensemble de conditions requises **RibbonApi 1.1** n’étant pas encore pris en charge dans le manifeste, vous ne pouvez pas le spécifier dans la section du **\<Requirements\>** manifeste. Pour tester la prise en charge, votre code doit appeler `Office.context.requirements.isSetSupported('RibbonApi', '1.1')`. Si, *et seulement si*, cet appel est retourné `true`, votre code peut appeler les API enable/disable. Si l’appel de `isSetSupported` retours `false`est retourné, toutes les commandes de complément personnalisées sont activées tout le temps. Vous devez concevoir votre complément de production et toutes les instructions dans l’application pour prendre en compte son fonctionnement lorsque l’ensemble de conditions requises **RibbonApi 1.1** n’est pas pris en charge. Pour plus d’informations et des exemples d’utilisation `isSetSupported`, consultez [Spécifier les applications Office et les exigences d’API](../develop/specify-office-hosts-and-api-requirements.md), en particulier les [vérifications runtime pour la prise en charge de la méthode et de l’ensemble de conditions requises](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (La section [Spécifier les versions et plateformes Office pouvant héberger votre complément](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in) de cet article ne s’applique pas au ruban 1.1.)
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
-Les API et balisages de manifeste décrits dans cet article exigent que le manifeste du complément spécifie la nécessité d’utiliser un runtime partagé. Pour ce faire, prenez les mesures suivantes.
+Les API et balisages de manifeste décrits dans cet article exigent que le manifeste du complément spécifie la nécessité d’utiliser un runtime partagé. Pour ce faire, procédez comme suit.
 
-1. Dans l'élément [Runtimes du manifeste](/javascript/api/manifest/runtimes), ajoutez l’élément enfant suivant : `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (S’il n’existe pas encore d’élément **Runtimes** dans le manifeste, créez-le en tant que premier enfant sous l’élément **Host** dans la section **VersionOverrides** .)
+1. Dans l'élément [Runtimes du manifeste](/javascript/api/manifest/runtimes), ajoutez l’élément enfant suivant : `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (S’il n’existe pas encore d’élément **\<Runtimes\>** dans le manifeste, créez-le en tant que premier enfant sous l’élément **\<Host\>** de la **\<VersionOverrides\>** section.)
 2. Dans la section [Resources.Urls](/javascript/api/manifest/resources) du manifeste, ajoutez l’élément enfant suivant : `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, où `{MyDomain}` est le domaine du complément et `{path-to-start-page}` le chemin d’accès de la page de démarrage du complément. par exemple : `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.
-3. Selon que votre add-in contient un volet Des tâches, un fichier de fonction ou une fonction personnalisée Excel, vous devez faire une ou plusieurs des trois étapes suivantes.
+3. Selon que votre complément contient un volet Office, un fichier de fonction ou une fonction personnalisée Excel, vous devez effectuer une ou plusieurs des trois étapes suivantes.
 
-    - Si le add-in contient un volet Des tâches, définissez l’attribut `resid` de [l’action](/javascript/api/manifest/action).[ Élément SourceLocation](/javascript/api/manifest/sourcelocation) exactement la même `resid` chaîne que vous avez utilisée pour l’élément **Runtime** à l’étape 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Si le add-in contient une Excel personnalisée, définissez l’attribut `resid` de la [page](/javascript/api/manifest/page).[ Élément SourceLocation](/javascript/api/manifest/sourcelocation) exactement la même `resid` chaîne que vous avez utilisée pour l’élément **Runtime** à l’étape 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
-    - Si le add-in contient un fichier de fonction, `resid` définissez l’attribut de l’élément [FunctionFile](/javascript/api/manifest/functionfile) `resid` sur exactement la même chaîne que vous avez utilisée pour l’élément **Runtime** à l’étape 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
+    - Si le complément contient un volet Office, définissez l’attribut `resid` de [l’action](/javascript/api/manifest/action).[ Élément SourceLocation](/javascript/api/manifest/sourcelocation) à exactement la même chaîne que vous avez utilisée pour l’élément `resid` à l’étape **\<Runtime\>** 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Si le complément contient une fonction personnalisée Excel, définissez l’attribut `resid` de la [page](/javascript/api/manifest/page).[ Élément SourceLocation](/javascript/api/manifest/sourcelocation) exactement la même chaîne que vous avez utilisée pour l’élément `resid` à l’étape **\<Runtime\>** 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<SourceLocation resid="Contoso.SharedRuntime.Url"/>`.
+    - Si le complément contient un fichier de fonction, définissez l’attribut `resid` de l’élément [FunctionFile](/javascript/api/manifest/functionfile) sur exactement la même chaîne que celle que vous avez utilisée pour l’élément `resid` à l’étape **\<Runtime\>** 1 ; par exemple, `Contoso.SharedRuntime.Url`. Le fichier doit ressembler à ceci : `<FunctionFile resid="Contoso.SharedRuntime.Url"/>`.
 
 ## <a name="set-the-default-state-to-disabled"></a>Configurer l'état par défaut sur désactivé
 
-Les commandes de complément sont activées par défaut au démarrage de l’application Office. Si vous souhaitez qu’un bouton ou un élément de menu personnalisé soit désactivé au démarrage de l’application Office, vous devez le spécifier dans le manifeste. Il vous suffit d’ajouter un élément [activé](/javascript/api/manifest/enabled) (avec la valeur `false`) juste *au-dessous* (non à l’intérieur) de l'élément [Action](/javascript/api/manifest/action) dans la déclaration du contrôle. L’exemple suivant illustre la structure de base.
+Les commandes de complément sont activées par défaut au démarrage de l’application Office. Si vous souhaitez qu’un bouton ou un élément de menu personnalisé soit désactivé au démarrage de l’application Office, vous devez le spécifier dans le manifeste. Il vous suffit d’ajouter un élément [activé](/javascript/api/manifest/enabled) (avec la valeur `false`) juste *au-dessous* (non à l’intérieur) de l'élément [Action](/javascript/api/manifest/action) dans la déclaration du contrôle. L’exemple suivant montre la structure de base.
 
 ```xml
 <OfficeApp ...>
@@ -76,7 +76,7 @@ Les commandes de complément sont activées par défaut au démarrage de l’app
 
 Les principales étapes pour modifier l’état activé d’une commande de complément sont les suivantes :
 
-1. Créez [un objet RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande, ainsi que son groupe parent et l’onglet, par leur ID comme déclaré dans le manifeste ; et (2) spécifie l’état activé ou désactivé de la commande.
+1. Créez un objet [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) qui (1) spécifie la commande, ainsi que son groupe parent et son onglet, par leurs ID déclarés dans le manifeste ; et (2) spécifie l’état activé ou désactivé de la commande.
 2. Transmettez l’objet **RibbonUpdaterData** à la méthode [Office.ribbon.requestUpdate ()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)).
 
 Voici un exemple simple. Notez que « MyButton », « OfficeAddinTab1 » et « CustomGroup111 » sont copiés à partir du manifeste.
@@ -116,7 +116,7 @@ const enableButton = async () => {
 }
 ```
 
-Vous pouvez `await` appeler **requestUpdate()** si la fonction parent est asynchrone, mais notez que l’application Office contrôle quand elle met à jour l’état du ruban. La méthode **requestUpdate()** met en file d’attente une demande de mise à jour. La méthode résout l’objet promise dès qu’elle a mis la demande en file d’attente, et non lorsque le ruban est réellement mis à jour.
+Vous pouvez `await` appeler **requestUpdate()** si la fonction parente est asynchrone, mais notez que l’application Office contrôle quand elle met à jour l’état du ruban. La méthode **requestUpdate()** met en file d’attente une demande de mise à jour. La méthode résout l’objet de promesse dès qu’il a mis en file d’attente la requête, et non quand le ruban est réellement mis à jour.
 
 ## <a name="change-the-state-in-response-to-an-event"></a>Modifier l’état en réponse à un événement
 
@@ -162,13 +162,13 @@ function enableChartFormat() {
 
 Quatrièmement, définissez le gestionnaire `disableChartFormat`. Il est identique à `enableChartFormat`, sauf que la propriété **activé** de l’objet bouton a la valeur `false`.
 
-### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer la visibilité de l’onglet et l’état activé d’un bouton en même temps
+### <a name="toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time"></a>Activer simultanément la visibilité de l’onglet et l’état activé d’un bouton
 
-La **méthode requestUpdate** est également utilisée pour faire bascule la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur ce code et un exemple de code, voir [Créer des onglets contextuels personnalisés dans Office de recherche](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
+La méthode **requestUpdate** est également utilisée pour désactiver la visibilité d’un onglet contextuel personnalisé. Pour plus d’informations sur ce code et l’exemple de code, consultez [Créer des onglets contextuels personnalisés dans les compléments Office](contextual-tabs.md#toggle-tab-visibility-and-the-enabled-status-of-a-button-at-the-same-time).
 
 ## <a name="best-practice-test-for-control-status-errors"></a>Pratiques recommandées : test pour les erreurs de contrôle d'état
 
-Le ruban ne se redessine pas, dans certains cas, une fois que `requestUpdate` est appelé, de sorte que l’état du contrôle cliquable ne change pas. Il est pour cette raison recommandé de suivre l'état des contrôles du complément. Le add-in doit respecter les règles suivantes.
+Le ruban ne se redessine pas, dans certains cas, une fois que `requestUpdate` est appelé, de sorte que l’état du contrôle cliquable ne change pas. Il est pour cette raison recommandé de suivre l'état des contrôles du complément. Le complément doit respecter les règles suivantes.
 
 1. Lorsque `requestUpdate` est appelé, le code doit enregistrer l’état prévu des boutons et éléments de menu personnalisés.
 2. Lorsque l’utilisateur clique sur un contrôle personnalisé, le premier code dans le gestionnaire doit vérifier si le bouton aurait dû être cliquable. Dans la négative, le code doit signaler une erreur ou consigner une erreur et réessayer de définir les boutons de l'état prévu.

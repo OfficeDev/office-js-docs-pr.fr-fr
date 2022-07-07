@@ -1,36 +1,36 @@
 ---
-title: Utilisation des substitutions étendues du manifeste
-description: Découvrez comment configurer des fonctionnalités d’extensibilité avec des substitutions étendues du manifeste.
+title: Utiliser des remplacements étendus du manifeste
+description: Découvrez comment configurer des fonctionnalités d’extensibilité avec des remplacements étendus du manifeste.
 ms.date: 02/23/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 34002ffcb621fad9f318aad80b32feb22ac45f67
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 43e9820f54f2812130f7f86529c52b20b92811a0
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483715"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659950"
 ---
-# <a name="work-with-extended-overrides-of-the-manifest"></a>Utilisation des substitutions étendues du manifeste
+# <a name="work-with-extended-overrides-of-the-manifest"></a>Utiliser des remplacements étendus du manifeste
 
-Certaines fonctionnalités d’extensibilité des Office Sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du module.
+Certaines fonctionnalités d’extensibilité des compléments Office sont configurées avec des fichiers JSON hébergés sur votre serveur, et non avec le manifeste XML du complément.
 
 > [!NOTE]
-> Cet article suppose que vous êtes familiarisé avec les manifestes de Office et leur rôle dans les add-ins. Veuillez lire [Office manifeste XML des add-ins](add-in-manifests.md), si ce n’est pas le cas récemment.
+> Cet article part du principe que vous êtes familiarisé avec les manifestes de complément Office et leur rôle dans les compléments. Veuillez lire le [manifeste XML des compléments Office](add-in-manifests.md), si ce n’est pas le cas récemment.
 
-Le tableau suivant spécifie les fonctionnalités d’extensibilité qui nécessitent une substitution étendue, ainsi que des liens vers la documentation de la fonctionnalité.
+Le tableau suivant spécifie les fonctionnalités d’extensibilité qui nécessitent un remplacement étendu, ainsi que des liens vers la documentation de la fonctionnalité.
 
 | Fonctionnalité | Instructions de développement |
 | :----- | :----- |
-| Raccourcis clavier | [Ajouter des raccourcis clavier personnalisés à vos Office de commande](../design/keyboard-shortcuts.md) |
+| Raccourcis clavier | [Ajouter des raccourcis clavier personnalisés à vos compléments Office](../design/keyboard-shortcuts.md) |
 
 Le schéma qui définit le format JSON est [un schéma de manifeste étendu](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 > [!TIP]
-> Cet article est quelque peu abstrait. Envisagez de lire l’un des articles du tableau pour clarifier les concepts.
+> Cet article est un peu abstrait. Envisagez de lire l’un des articles du tableau pour clarifier les concepts.
 
-## <a name="tell-office-where-to-find-the-json-file"></a>Indiquer Office où trouver le fichier JSON
+## <a name="tell-office-where-to-find-the-json-file"></a>Indiquer à Office où trouver le fichier JSON
 
-Utilisez le manifeste pour indiquer Office où trouver le fichier JSON. Juste *en dessous* (pas à l’intérieur) `<VersionOverrides>` de l’élément dans le manifeste, ajoutez [un élément ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON. Voici un exemple de l’élément le plus simple possible `<ExtendedOverrides>` .
+Utilisez le manifeste pour indiquer à Office où trouver le fichier JSON. Immédiatement *en dessous* (pas à l’intérieur) de l’élément **\<VersionOverrides\>** dans le manifeste, ajoutez un élément [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) . Définissez l’attribut `Url` sur l’URL complète d’un fichier JSON. Voici un exemple de l’élément le plus simple possible **\<ExtendedOverrides\>** .
 
 ```xml
     ...
@@ -39,7 +39,7 @@ Utilisez le manifeste pour indiquer Office où trouver le fichier JSON. Juste *e
 </OfficeApp>
 ```
 
-Voici un exemple de fichier JSON de remplacements étendu très simple. Il affecte le raccourci clavier Ctrl+Shift+A à une fonction (définie ailleurs) qui ouvre le volet Des tâches du module.
+Voici un exemple d’un fichier JSON de remplacements étendus très simple. Il affecte le raccourci clavier Ctrl+Maj+A à une fonction (définie ailleurs) qui ouvre le volet Office du complément.
 
 ```json
 {
@@ -61,9 +61,9 @@ Voici un exemple de fichier JSON de remplacements étendu très simple. Il affec
 }
 ```
 
-## <a name="localize-the-extended-overrides-file"></a>Localiser le fichier de remplacements étendu
+## <a name="localize-the-extended-overrides-file"></a>Localiser le fichier de remplacements étendus
 
-Si votre add-in prend en charge plusieurs paramètres régionaux, `ResourceUrl` `<ExtendedOverrides>` vous pouvez utiliser l’attribut de l’élément pour pointer Office vers un fichier de ressources localisées. Voici un exemple.
+Si votre complément prend en charge plusieurs paramètres régionaux, vous pouvez utiliser l’attribut `ResourceUrl` de l’élément **\<ExtendedOverrides\>** pour pointer Office vers un fichier de ressources localisées. Voici un exemple.
 
 ```xml
     ...
@@ -74,4 +74,4 @@ Si votre add-in prend en charge plusieurs paramètres régionaux, `ResourceUrl` 
 </OfficeApp>
 ```
 
-Pour plus d’informations sur la création et l’utilisation du fichier de ressources, sur la façon de faire référence à ses ressources dans le fichier de remplacements étendu et pour les options supplémentaires non abordées ici, voir [Localize extended overrides](localization.md#localize-extended-overrides).
+Pour plus d’informations sur la création et l’utilisation du fichier de ressources, sur la façon de faire référence à ses ressources dans le fichier de remplacements étendus et sur les options supplémentaires qui ne sont pas abordées ici, consultez [Localiser les remplacements étendus](localization.md#localize-extended-overrides).

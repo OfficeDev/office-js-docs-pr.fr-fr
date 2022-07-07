@@ -3,12 +3,12 @@ title: Présentation des autorisations de complément Outlook
 description: Les compléments Outlook spécifient le niveau d’autorisation requis dans leur manifeste (Restricted, ReadItem, ReadWriteItem ou ReadWriteMailbox).
 ms.date: 02/19/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 6350e0d3aed499d831c13e440945fda1f60742ca
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: b515ef470331a513d6b57007f372b3e4dec1d25b
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484188"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660227"
 ---
 # <a name="understanding-outlook-add-in-permissions"></a>Présentation des autorisations de complément Outlook
 
@@ -30,7 +30,7 @@ L’autorisation **Restricted** est la plus basique. Indiquez **Restricted** dan
 
 ### <a name="cant-do"></a>Vous ne pouvez pas :
 
-- Utilisez une [règle ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) sur le contact, l’adresse e-mail, la suggestion de réunion ou l’entité de suggestion de tâche.
+- Utilisez une règle [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) sur le contact, l’adresse e-mail, la suggestion de réunion ou l’entité de suggestion de tâche.
 
 - Utiliser la règle [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) ou [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule).
 
@@ -63,7 +63,7 @@ L’autorisation **Restricted** est la plus basique. Indiquez **Restricted** dan
 
 ## <a name="readitem-permission"></a>Autorisation ReadItem
 
-L’autorisation **ReadItem** est le niveau suivant dans le modèle d’autorisations. Indiquez **ReadItem** dans l’élément **Permissions** du manifeste pour demander cette autorisation.
+L’autorisation **ReadItem** est le niveau suivant dans le modèle d’autorisations. Spécifiez **ReadItem** dans l’élément **\<Permissions\>** du manifeste pour demander cette autorisation.
 
 ### <a name="can-do"></a>Vous pouvez :
 
@@ -75,7 +75,7 @@ L’autorisation **ReadItem** est le niveau suivant dans le modèle d’autorisa
 
 - [Obtenir toutes les entités existantes connues](match-strings-in-an-item-as-well-known-entities.md), et pas seulement un sous-ensemble, à partir de l’objet ou du corps de l’élément.
 
-- Utiliser toutes les [entités connues](activation-rules.md#itemhasknownentity-rule) dans les règles [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ou les [expressions régulières](activation-rules.md#itemhasregularexpressionmatch-rule) dans les règles [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule). L’exemple suivant suit le schéma version 1.1. Il affiche une règle qui active le add-in si une ou plusieurs des entités connues sont trouvées dans l’objet ou le corps du message sélectionné.
+- Utiliser toutes les [entités connues](activation-rules.md#itemhasknownentity-rule) dans les règles [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) ou les [expressions régulières](activation-rules.md#itemhasregularexpressionmatch-rule) dans les règles [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule). L’exemple suivant suit le schéma version 1.1. Il affiche une règle qui active le complément si une ou plusieurs des entités connues se trouvent dans l’objet ou le corps du message sélectionné.
 
   ```XML
     <Permissions>ReadItem</Permissions>
@@ -127,7 +127,7 @@ L’autorisation **ReadItem** est le niveau suivant dans le modèle d’autorisa
 
 ## <a name="readwriteitem-permission"></a>Autorisation ReadWriteItem
 
-Vous pouvez indiquer **ReadWriteItem** dans l’élément **Permissions** du manifeste pour demander cette autorisation. Les compléments de messagerie activés dans des formulaires de composition et utilisant des méthodes d’écriture (par exemple, **Message.to.addAsync** ou **Message.to.setAsync**) doivent utiliser au moins ce niveau d’autorisation.
+Spécifiez **ReadWriteItem** dans l’élément **\<Permissions\>** du manifeste pour demander cette autorisation. Les compléments de messagerie activés dans des formulaires de composition et utilisant des méthodes d’écriture (par exemple, **Message.to.addAsync** ou **Message.to.setAsync**) doivent utiliser au moins ce niveau d’autorisation.
 
 ### <a name="can-do"></a>Vous pouvez :
 
@@ -135,7 +135,7 @@ Vous pouvez indiquer **ReadWriteItem** dans l’élément **Permissions** du man
 
 - [Ajouter ou supprimer des pièces jointes](add-and-remove-attachments-to-an-item-in-a-compose-form.md) de cet élément.
 
-- Utilisez tous les autres membres de l’API JavaScript Office qui s’appliquent aux modules de messagerie, à l’exception de **Mailbox.makeEWSRequestAsync**.
+- Utilisez tous les autres membres de l’API JavaScript Office applicables aux compléments de messagerie, à l’exception de **Mailbox.makeEWSRequestAsync**.
 
 ### <a name="cant-do"></a>Vous ne pouvez pas :
 
@@ -147,7 +147,7 @@ Vous pouvez indiquer **ReadWriteItem** dans l’élément **Permissions** du man
 
 ## <a name="readwritemailbox-permission"></a>Autorisation ReadWriteMailbox
 
-L’autorisation **ReadWriteMailbox** correspond au plus haut niveau d’autorisation. Indiquez **ReadWriteMailbox** dans l’élément **Permissions** du manifeste pour demander cette autorisation.
+L’autorisation **ReadWriteMailbox** correspond au plus haut niveau d’autorisation. Spécifiez **ReadWriteMailbox** dans l’élément **\<Permissions\>** du manifeste pour demander cette autorisation.
 
 En plus des actions prises en charge par l’autorisation **ReadWriteItem**, le jeton fourni par **mailbox.getCallbackTokenAsync** fournit un accès aux opérations des services web Exchange ou à l’API REST Outlook pour effectuer les opérations suivantes :
 
@@ -155,7 +155,7 @@ En plus des actions prises en charge par l’autorisation **ReadWriteItem**, le 
 - Créer, lire et écrire dans tous les dossiers ou tous les éléments de cette boîte aux lettres.
 - Envoyer un élément depuis cette boîte aux lettres.
 
-Par **le biais de mailbox.makeEWSRequestAsync**, vous pouvez accéder aux opérations EWS suivantes.
+Par le biais de **mailbox.makeEWSRequestAsync**, vous pouvez accéder aux opérations EWS suivantes.
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)

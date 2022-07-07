@@ -1,22 +1,22 @@
 ---
 title: API de complément Outlook
 description: Découvrez comment faire référence aux API de complément Outlook et déclarer des autorisations dans votre complément Outlook.
-ms.date: 01/14/2022
+ms.date: 06/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c3f1d445ca86c04caa3950a05278fe309ff2af5
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 583d2b07a0590e7a04b052d5675320b8ea73a61f
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496312"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660255"
 ---
 # <a name="outlook-add-in-apis"></a>API de complément Outlook
 
-Pour utiliser des API dans votre complément Outlook, vous devez spécifier l’emplacement de la bibliothèque Office.js, l’ensemble des conditions requises, le schéma et les autorisations. Vous utiliserez principalement les API JavaScript Office par le biais de l’objet [Mailbox](#mailbox-object).
+Pour utiliser des API dans votre complément Outlook, vous devez spécifier l’emplacement de la bibliothèque Office.js, l’ensemble des conditions requises, le schéma et les autorisations. Vous allez principalement utiliser les API JavaScript Office exposées via l’objet [Mailbox](#mailbox-object) .
 
 ## <a name="officejs-library"></a>Bibliothèque Office.js
 
-Pour interagir avec l’API du complément Outlook, vous devez utiliser les API JavaScript dans Office.js. Le réseau de distribution de contenu (CDN) de la bibliothèque est `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Les compléments soumis à AppSource doivent faire référence à Office.js par le biais de ce CDN et ne peuvent pas utiliser de référence locale.
+Pour interagir avec [l’API de complément Outlook](/javascript/api/outlook), vous devez utiliser les API JavaScript dans Office.js. Le réseau de distribution de contenu (CDN) de la bibliothèque est `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Les compléments soumis à AppSource doivent faire référence à Office.js par le biais de ce CDN et ne peuvent pas utiliser de référence locale.
 
 Référencez le CDN dans une `<script>`balise`<head>` de la page web (fichier .html, .aspx ou .php) qui implémente l’interface utilisateur de votre complément.
 
@@ -27,11 +27,11 @@ Référencez le CDN dans une `<script>`balise`<head>` de la page web (fichier .h
 L’ajout de nouvelles API ne modifie pas l’URL vers Office.js. La version de l’URL sera modifiée uniquement si un comportement d’API existant est interrompu.
 
 > [!IMPORTANT]
-> Lors du développement d’un application Office client, référencez l’API JavaScript Office à `<head>` partir de l’intérieur de la section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body.
+> Lors du développement d’un complément pour une application cliente Office, référencez l’API JavaScript Office à partir de la `<head>` section de la page. Ainsi, l’API est entièrement initialisée avant les éléments Body.
 
 ## <a name="requirement-sets"></a>Ensembles de conditions requises
 
-Toutes les API Outlook appartiennent à l’ensemble de conditions requises `Mailbox`. L’ensemble de conditions requises `Mailbox` possède plusieurs versions, et chaque nouvel ensemble d’API publié appartient à une version supérieure de l’ensemble. Tous les clients Outlook ne prendront pas en charge l’ensemble d’API le plus récent lors de sa publication, mais si un client Outlook prend en charge un ensemble de conditions requises, toutes les API comprises dans cet ensemble seront également prises en charge.
+Toutes les API Outlook appartiennent à [l’ensemble de conditions requises de boîte aux lettres](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets). L’ensemble de conditions requises `Mailbox` possède plusieurs versions, et chaque nouvel ensemble d’API publié appartient à une version supérieure de l’ensemble. Tous les clients Outlook ne prendront pas en charge l’ensemble d’API le plus récent lors de sa publication, mais si un client Outlook prend en charge un ensemble de conditions requises, toutes les API comprises dans cet ensemble seront également prises en charge.
 
 Pour savoir dans quels clients Outlook le complément s’affiche, indiquez la version de l’ensemble de conditions requises dans le manifeste. Par exemple, si vous indiquez la version 1.3 de l’ensemble de conditions requises, le complément n’apparaîtra pas dans les clients Outlook qui ne prennent pas en charge la version minimale 1.3.
 
@@ -48,9 +48,9 @@ if (item.somePropertyOrFunction) {
 > [!NOTE]
 > Ces vérifications ne sont pas nécessaires pour les API appartenant à l’ensemble de conditions requises dont la version est la même que celle spécifiée dans le manifeste.
 
-Spécifiez l’ensemble de conditions requises minimal prenant en charge l’ensemble d’API critique pour votre scénario, sans lequel les fonctionnalités de votre complément ne fonctionneront pas. Spécifiez l’ensemble de conditions requises dans le manifeste dans l’élément `<Requirements>`. Pour plus d’informations, consultez les rubriques [Manifestes des compléments Outlook](manifests.md) et [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+Spécifiez l’ensemble de conditions requises minimal prenant en charge l’ensemble d’API critique pour votre scénario, sans lequel les fonctionnalités de votre complément ne fonctionneront pas. Vous spécifiez l’ensemble de conditions requises dans le manifeste de l’élément **\<Requirements\>** . Pour plus d’informations, consultez les rubriques [Manifestes des compléments Outlook](manifests.md) et [Présentation de l’ensemble de conditions requises pour les API Outlook](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
-L’élément `<Methods>` ne s’applique pas aux compléments Outlook. Vous ne pouvez donc pas déclarer la prise en charge de méthodes spécifiques.
+L’élément **\<Methods\>** ne s’applique pas aux compléments Outlook. Vous ne pouvez donc pas déclarer la prise en charge de méthodes spécifiques.
 
 ## <a name="permissions"></a>Autorisations
 
@@ -65,7 +65,7 @@ Votre complément requiert les autorisations appropriées pour utiliser les API 
 | **Lecture/Écriture** | En plus des autorisations indiquées dans **Read item**, il autorise :<ul><li>l’accès total à l’API du complément Outlook, à l’exception de `makeEwsRequestAsync`</li><li>la définition des propriétés de l’élément</li></ul> |
 | **Lire/écrire dans la boîte aux lettres** | En plus des autorisations indiquées dans **Read/write**, il autorise :<ul><li>la création, la lecture, l’écriture d’éléments et de dossiers</li><li>l’envoi d’éléments</li><li>l’appel de [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul> |
 
-En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément `<Permissions>` dans le manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, voir [Confidentialité et sécurité pour les Office de sécurité](../concepts/privacy-and-security.md).
+En général, vous devez spécifier l’autorisation minimum nécessaire pour votre complément. Les autorisations sont déclarées dans l’élément **\<Permissions\>** du manifeste. Pour plus d’informations, consultez la rubrique [Manifestes des compléments Outlook](manifests.md). Pour plus d’informations sur les problèmes de sécurité, consultez [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md).
 
 ## <a name="mailbox-object"></a>Objet Mailbox
 

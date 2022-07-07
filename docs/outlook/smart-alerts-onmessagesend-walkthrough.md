@@ -4,12 +4,12 @@ description: Découvrez comment gérer les événements en envoi dans votre comp
 ms.topic: article
 ms.date: 06/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ed1ce7e1c05bec9a09eefd36e935d1037cf80d98
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 00afc7614da18ed90808bd64b72ae0e3e1aab852
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019611"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66660248"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
 
@@ -20,13 +20,13 @@ La procédure pas à pas suivante utilise l’événement `OnMessageSend` . À l
 > [!IMPORTANT]
 > Les `OnMessageSend` événements et `OnAppointmentSend` les événements sont disponibles uniquement en préversion avec un abonnement Microsoft 365 dans Outlook sur Windows. Pour plus d’informations, consultez [La préversion](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les compléments de production.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables
 
 L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur les événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, utilisez d’autres événements disponibles, configurez la préversion pour cet événement, déboguez votre complément, etc., [reportez-vous à Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md).
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), qui crée un projet de complément avec le générateur Yeoman pour Office compléments.
+Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -34,7 +34,7 @@ Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tab
 
 1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité du nœud **VersionOverrides** (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant, puis enregistrez vos modifications.
+1. Sélectionnez l’intégralité **\<VersionOverrides\>** du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant, puis enregistrez vos modifications.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -138,7 +138,7 @@ Terminez le [Outlook démarrage rapide](../quickstarts/outlook-quickstart.md?tab
 > [!TIP]
 >
 > - Pour **les options SendMode** disponibles avec les événements et `OnAppointmentSend` les `OnMessageSend` événements, reportez-vous aux [options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
-> - Pour en savoir plus sur les manifestes pour Outlook compléments, consultez [Outlook manifestes de complément](manifests.md).
+> - Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
 
@@ -246,7 +246,7 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé de manière indépendante.
 
@@ -259,7 +259,7 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
     ```
 
     > [!NOTE]
-    > Si votre complément n’a pas été chargé automatiquement, suivez les instructions de chargement indépendant [Outlook compléments à tester pour](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) charger manuellement le complément dans Outlook.
+    > Si votre complément n’a pas été chargé automatiquement, suivez les instructions [fournies dans Chargement indépendant des compléments Outlook à des fins de test pour](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) charger manuellement le complément dans Outlook.
 
 1. Dans Outlook sur Windows, créez un message et définissez l’objet. Dans le corps, ajoutez un texte tel que « Hey, regardez cette photo de mon chien ! ».
 1. Envoyez le message. Une boîte de dialogue doit s’afficher avec une recommandation vous permettant d’ajouter une pièce jointe.
@@ -327,4 +327,4 @@ Bien qu’un message de boîte de dialogue Alertes intelligentes puisse être mo
 - [Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md)
 - [Comment déboguer des compléments basés sur des événements](debug-autolaunch.md)
 - [Options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md)
-- [Exemple de code de compléments Office : Utiliser Outlook alertes intelligentes](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+- [Exemple de code de compléments Office : Utiliser des alertes intelligentes Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
