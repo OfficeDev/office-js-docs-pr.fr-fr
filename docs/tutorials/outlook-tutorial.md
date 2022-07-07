@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Outlook qui i
 ms.date: 06/10/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: a24ac28c5b1cc44e4ba6563106c5b805b3376191
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
+ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091089"
+ms.lasthandoff: 07/06/2022
+ms.locfileid: "66659702"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -139,13 +139,13 @@ Le manifeste d’un complément contrôle la manière dont il apparaît dans Out
 
 Effectuez les mises à jour suivantes dans le fichier **manifest.xml** pour spécifier les informations de base du complément.
 
-1. Localisez l'élément **ProviderName** et remplacez la valeur par défaut par le nom de votre entreprise.
+1. Recherchez l’élément **\<ProviderName\>** et remplacez la valeur par défaut par le nom de votre société.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Localisez l'élément **Description**, remplacez la valeur par défaut par une description du complément, puis enregistrez le fichier.
+1. Recherchez l’élément **\<Description\>**, remplacez la valeur par défaut avec une description du complément et enregistrez le fichier.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -183,21 +183,21 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
 
 ### <a name="remove-the-messagereadcommandsurface-extension-point"></a>Supprimer le point d’extension MessageReadCommandSurface
 
-Ouvrez le fichier **manifest.xml** et localisez l'élément **ExtensionPoint** de type **MessageReadCommandSurface**. Supprimez cet élément **ExtensionPoint** (y compris sa balise de fermeture) pour retirer les boutons de la fenêtre du message de lecture.
+Ouvrez le fichier **manifest.xml** et localisez l'élément **\<ExtensionPoint\>** de type **MessageReadCommandSurface**. Supprimer cet élément **\<ExtensionPoint\>** (y compris sa balise de fermeture) pour supprimer les boutons de la fenêtre de lecture de message.
 
 ### <a name="add-the-messagecomposecommandsurface-extension-point"></a>Supprimer le point d’extension MessageComposeCommandSurface
 
 Recherchez la ligne dans le manifeste qui lit `</DesktopFormFactor>`. Situé immédiatement avant cette ligne, insérez le balisage XML suivant. Notez les points suivants concernant ce balisage.
 
-- Le **point d'extension** avec `xsi:type="MessageComposeCommandSurface"`indique que vous définissez des boutons à ajouter à la fenêtre de composition des messages.
+- L’élément **\<ExtensionPoint\>** avec `xsi:type="MessageComposeCommandSurface"` indique que vous définissez des boutons à ajouter à la fenêtre de composition d’un message.
 
-- En utilisant un élément **OfficeTab** avec`id="TabDefault"` , vous indiquez que vous voulez ajouter les boutons à l'onglet par défaut du ruban.
+- En utilisant un élément **\<OfficeTab\>** avec `id="TabDefault"`, vous indiquez que vous voulez ajouter des boutons à l’onglet par défaut dans le ruban.
 
-- L'élément **Group** définit le regroupement des nouveaux boutons, avec une étiquette définie par la ressource **groupLabel**.
+- L'élément **\<Group\>** définit le regroupement des nouveaux boutons, avec une étiquette définie par la ressource **groupLabel**.
 
-- Le premier élément **Control** contient un élément **Action** avec`xsi:type="ShowTaskPane"` , de sorte que ce bouton ouvre un volet de tâches.
+- Le premier élément **\<Control\>** contient un élément **\<Action\>** avec `xsi:type="ShowTaskPane"`, afin que le bouton ouvre un volet des tâches.
 
-- Le deuxième élément **Control** contient un élément **Action** avec`xsi:type="ExecuteFunction"` , de sorte que ce bouton invoque une fonction JavaScript contenue dans le fichier de fonction.
+- Le deuxième élément **\<Control\>** contient un élément **\<Action\>** avec `xsi:type="ExecuteFunction"`, afin que le bouton appelle une fonction JavaScript contenue dans le fichier de fonction.
 
 ```xml
 <!-- Message Compose -->
@@ -242,11 +242,11 @@ Recherchez la ligne dans le manifeste qui lit `</DesktopFormFactor>`. Situé imm
 
 ### <a name="update-resources-in-the-manifest"></a>Ressources de mise à jour dans le fichier manifeste
 
-Le code précédent fait référence à des étiquettes, des info-bulles et des URL que vous devez définir avant que le manifeste ne soit valide. Vous préciserez ces informations dans la section **Ressources** du manifeste.
+Le code précédent fait référence à des étiquettes, des info-bulles et des URL que vous devez définir avant que le manifeste ne soit valide. Vous devez spécifier ces informations dans la section **\<Resources\>** du manifeste.
 
-1. Localisez l'élément **Resources** dans le fichier manifeste et supprimez l'élément entier (y compris sa balise de fermeture).
+1. Recherchez l’élément **\<Resources\>** dans le fichier manifeste, puis supprimez entièrement l’élément (balise de fermeture comprise).
 
-1. Au même endroit, ajoutez le balisage suivant pour remplacer l'élément **Resources** que vous venez de supprimer.
+1. À ce même emplacement, ajoutez le balisage suivant pour remplacer l’élément **\<Resources\>** que vous venez de supprimer.
 
     ```xml
     <Resources>
@@ -731,7 +731,7 @@ Le bouton **Insérer gist par défaut** de ce complément est un bouton sans int
 
 ### <a name="update-the-function-file-html"></a>Mettre à jour le fichier de fonction (HTML)
 
-Une fonction invoquée par un bouton sans interface utilisateur doit être définie dans le fichier spécifié par l'élément **FunctionFile** dans le manifeste du facteur de forme correspondant. Le manifeste de ce complément spécifie`https://localhost:3000/commands.html` le fichier de fonction.
+Une fonction appelée par un bouton sans interface utilisateur doit être définie dans le fichier de fonction spécifié par l’élément **\<FunctionFile\>** dans le manifeste pour le facteur de formulaire correspondant. Le manifeste de ce complément spécifie `https://localhost:3000/commands.html` comme fichier de fonction.
 
 Ouvrez le fichier **./src/commands/commands.html** et remplacez tout le contenu par le balisage suivant.
 
