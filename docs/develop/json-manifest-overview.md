@@ -3,12 +3,12 @@ title: Manifeste Teams pour les compléments Office (préversion)
 description: Obtenez une vue d’ensemble du manifeste JSON en préversion.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c739ace05992812e0de733edea2f60cf393f3c48
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
+ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659639"
+ms.lasthandoff: 07/08/2022
+ms.locfileid: "66689382"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifeste Teams pour les compléments Office (préversion)
 
@@ -108,7 +108,7 @@ Le tableau suivant montre un mappage de certaines propriétés enfants de haut n
 | « étendues des conditions » | Identifie les applications Office dans lesquelles le complément peut être installé. | **\<Hosts\>** |  |
 | « rubans » | Rubans personnalisés par le complément. | **\<Hosts\>**, **ExtensionPoints**, et divers **\*éléments** FormFactor | La propriété « rubans » est un tableau d’objets anonymes qui fusionnent chacun les objectifs de ces trois éléments. Consultez le [tableau « rubans](#ribbons-table) ».|
 | « alternatives » | Spécifie la compatibilité descendante avec un complément COM équivalent, XLL ou les deux. | **\<EquivalentAddins\>** | Consultez [EquivalentAddins - Consultez également](/javascript/api/manifest/equivalentaddins#see-also) pour obtenir des informations générales. |
-| « runtimes »  | Configure différents types de compléments sans interface utilisateur, tels que les compléments et fonctions fonction uniquement personnalisés, exécutés directement à partir des boutons du ruban personnalisé. | **\<Runtimes\>**. **\<FunctionFile\>**, et **\<ExtensionPoint\>** (de type CustomFunctions) |  |
+| « runtimes »  | Configure différents types de compléments qui ont peu ou pas d’interface utilisateur, tels que des compléments de fonction uniquement personnalisés et [commandes de fonction](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, et **\<ExtensionPoint\>** (de type CustomFunctions) |  |
 | « AutoRunEvents » | Configure un gestionnaire d’événements pour un événement spécifié. | **\<Event\>** et **\<ExtensionPoint\>** (de type Événements) |  |
 
 ##### <a name="ribbons-table"></a>Tableau « rubans »
