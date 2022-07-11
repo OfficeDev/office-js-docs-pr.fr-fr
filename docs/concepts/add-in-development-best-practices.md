@@ -3,12 +3,12 @@ title: Meilleures pratiques en matière de développement de compléments Offic
 description: Appliquez les meilleures pratiques lors du développement pour créer des compléments Office.
 ms.date: 05/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 251bb17507e2d54a2442b568673f0fe73ec98a1f
-ms.sourcegitcommit: fd04b41f513dbe9e623c212c1cbd877ae2285da0
+ms.openlocfilehash: aab262f2f5020e7dc95ee8f716f0de40d2140291
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/11/2022
-ms.locfileid: "65313204"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712957"
 ---
 # <a name="best-practices-for-developing-office-add-ins"></a>Meilleures pratiques en matière de développement de compléments Office
 
@@ -21,7 +21,7 @@ Des compléments efficaces proposent des fonctionnalités uniques et attrayantes
 - Créez des compléments qui aident les utilisateurs à réaliser des tâches rapidement et efficacement. Concentrez-vous sur des scénarios adaptés aux applications Office. Par exemple :
   - Réalisez des tâches de création essentielles plus rapidement et plus facilement, avec moins d’interruptions.
   - Développez de nouveaux scénarios dans Office.
-  - Incorporer des services complémentaires dans Office applications.
+  - Incorporer des services complémentaires dans des applications Office.
   - Améliorez l’expérience Office pour accroître la productivité.
 - Assurez-vous que la valeur de votre complément apparaîtra clairement aux utilisateurs dès la première utilisation en créant une [première expérience enrichissante](#create-an-engaging-first-run-experience).
 - Rédigez une [description claire pour AppSource](/office/dev/store/create-effective-office-store-listings). Soulignez les avantages de votre complément dans votre titre et votre description. Ne comptez pas sur votre marque pour communiquer sur les fonctionnalités de votre complément.
@@ -87,10 +87,10 @@ Pour les modèles de conception à appliquer lors du développement de votre pre
 
 - Assurez-vous que votre complément fonctionne dans les modes portrait et paysage. Gardez à l’esprit qu’une partie de votre complément pourrait être masquée par le clavier virtuel sur les appareils tactiles.
 
-- Testez votre complément sur un véritable appareil en utilisant le [chargement de version test](../testing/sideload-an-office-add-in-on-ipad-and-mac.md).
+- Testez votre complément sur un véritable appareil en utilisant le [chargement de version test](../testing/sideload-an-office-add-in-on-ipad.md).
 
 > [!NOTE]
-> Si vous utilisez [Fluent React d’interface utilisateur](../design/using-office-ui-fabric-react.md) pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
+> Si vous utilisez [Fluent UI React](../design/using-office-ui-fabric-react.md) pour vos éléments de conception, la plupart de ces éléments sont intégrés au système de conception.
 
 ## <a name="optimize-and-monitor-add-in-performance"></a>Optimisation et contrôle des performances du complément
 

@@ -1,25 +1,25 @@
 ---
-title: Gérer l’état et les paramètres d’un Outlook de gestion
-description: Découvrez comment faire persister l’état et les paramètres d’un Outlook un autre.
-ms.date: 05/17/2021
+title: Gérer l’état et les paramètres d’un complément Outlook
+description: Découvrez comment conserver l’état et les paramètres d’un complément Outlook.
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 896c473baad95515b199d8934c81745c619374a0
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7fc283588d2d5425fbf57b16b199dcd797f3893a
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484674"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713083"
 ---
-# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’état et les paramètres d’un Outlook de gestion
+# <a name="manage-state-and-settings-for-an-outlook-add-in"></a>Gérer l’état et les paramètres d’un complément Outlook
 
 > [!NOTE]
-> Veuillez consulter [l’état et les paramètres persistants](../develop/persisting-add-in-state-and-settings.md) du module de mise en place dans la section **Concepts** de base de cette documentation avant de lire cet article.
+> Veuillez consulter [l’état et les paramètres persistants du complément](../develop/persisting-add-in-state-and-settings.md) dans la section **Concepts de base** de cette documentation avant de lire cet article.
 
-Pour les Outlook, l’API JavaScript Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour l’enregistrement de l’état du add-in entre les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](/javascript/api/manifest/id) du complément qui les a créées.
+Pour les compléments Outlook, l’API JavaScript Office fournit des objets [RoamingSettings](/javascript/api/outlook/office.roamingsettings) et [CustomProperties](/javascript/api/outlook/office.customproperties) pour enregistrer l’état du complément dans les sessions, comme décrit dans le tableau suivant. Dans tous les cas, les valeurs de paramètre enregistrées sont associées à l’[ID](/javascript/api/manifest/id) du complément qui les a créées.
 
 |**Objet**|**Emplacement de stockage**|
 |:-----|:-----|
-|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Étant donné que ces paramètres sont stockés dans la boîte aux lettres du serveur de l’utilisateur, ils peuvent « se déplacer » avec l’utilisateur et sont disponibles pour le module lorsqu’il est en cours d’exécution dans le contexte d’un client pris en charge accédant à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|
+|[RoamingSettings](/javascript/api/outlook/office.roamingsettings)|Boîte aux lettres de serveur Exchange de l’utilisateur où le complément est installé. Étant donné que ces paramètres sont stockés dans la boîte aux lettres du serveur de l’utilisateur, ils peuvent « errer » avec l’utilisateur et sont disponibles pour le complément lorsqu’il s’exécute dans le contexte de tout client pris en charge accédant à la boîte aux lettres de cet utilisateur.<br/><br/> Seul le complément qui a créé les paramètres d’itinérance du complément Outlook peut y accéder, et uniquement dans la boîte aux lettres où le complément est installé.|
 |[CustomProperties](/javascript/api/outlook/office.customproperties)|Élément de message, de rendez-vous ou de demande de réunion qu’utilise le complément. Seul le complément qui a créé les propriétés personnalisées d’élément de complément Outlook peut y accéder, et uniquement dans l’élément où elles sont enregistrées.|
 
 ## <a name="how-to-save-settings-in-the-users-mailbox-for-outlook-add-ins-as-roaming-settings"></a>Enregistrement des paramètres en tant que paramètres d’itinérance dans la boîte aux lettres de l’utilisateur pour les compléments Outlook
@@ -31,7 +31,7 @@ Un complément Outlook peut utiliser l’objet [RoamingSettings](/javascript/api
 L’exemple de code JavaScript suivant explique comment charger des paramètres d’itinérance existants.
 
 ```js
-var _settings = Office.context.roamingSettings;
+const _settings = Office.context.roamingSettings;
 ```
 
 ### <a name="creating-or-assigning-a-roaming-setting"></a>Création ou affectation d’un paramètre d’itinérance
@@ -81,7 +81,7 @@ L’exemple suivant illustre un ensemble simplifié des fonctions pour un compl�
 Un complément Outlook qui utilise ces fonctions récupère toutes les propriétés personnalisées en appelant la méthode **get** sur la variable `_customProps`, comme le montre l’exemple suivant.
 
 ```js
-var property = _customProps.get("propertyName");
+const property = _customProps.get("propertyName");
 ```
 
 Cet exemple inclut les fonctions suivantes.
@@ -95,11 +95,11 @@ Cet exemple inclut les fonctions suivantes.
 | `saveCallback`|Rappel pour les appels à la méthode **saveAsync** dans les fonctions`updateProperty` et `removeProperty`.|
 
 ```js
-var _mailbox;
-var _customProps;
+let _mailbox;
+let _customProps;
 
 // The initialize function is required for all add-ins.
-Office.initialize = function (reason) {
+Office.initialize = function () {
     // Checks for the DOM to load using the jQuery ready function.
     $(document).ready(function () {
     // After the DOM is loaded, add-in-specific code can run.
@@ -137,7 +137,7 @@ function saveCallback(asyncResult) {
 
 ### <a name="platform-behavior-in-emails"></a>Comportement de la plateforme dans les e-mails
 
-Le tableau suivant récapitule le comportement des propriétés personnalisées enregistrées dans les messages électroniques pour Outlook clients.
+Le tableau suivant récapitule le comportement des propriétés personnalisées enregistrées dans les e-mails pour différents clients Outlook.
 
 |Scénario|Windows|Web|Mac|
 |---|---|---|---|
@@ -145,14 +145,14 @@ Le tableau suivant récapitule le comportement des propriétés personnalisées 
 |Répondre, répondre à tous|null|null|null|
 |Transférer|Charge les propriétés du parent|null|null|
 |Élément envoyé à partir d’une nouvelle composition|null|null|null|
-|Élément envoyé à partir de la réponse ou de la réponse à tous|null|null|null|
-|Élément envoyé de l’avant|Supprime les propriétés du parent s’il n’est pas enregistré|null|null|
+|Élément envoyé à partir d’une réponse ou d’une réponse à tous|null|null|null|
+|Élément envoyé à partir de l’avant|Supprime les propriétés du parent s’il n’est pas enregistré|null|null|
 
-Pour gérer la situation sur les Windows :
+Pour gérer la situation sur Windows :
 
-1. Recherchez les propriétés existantes lors de l’initialisation de votre add-in, et conservez-les ou déséchantez-les selon vos besoins.
-1. Lorsque vous définirez des propriétés personnalisées, incluez une propriété supplémentaire pour indiquer si les propriétés personnalisées ont été ajoutées lors de la lecture du message ou par mode lecture du complément. Cela vous permettra de différencier si la propriété a été créée au cours de la composition ou héritée du parent.
-1. Pour vérifier si l’utilisateur envoie un e-mail ou répond, vous pouvez utiliser [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (disponible à partir de l’ensemble de conditions requises 1.10).
+1. Recherchez les propriétés existantes lors de l’initialisation de votre complément, puis conservez-les ou effacez-les en fonction des besoins.
+1. Lorsque vous définissez des propriétés personnalisées, incluez une propriété supplémentaire pour indiquer si les propriétés personnalisées ont été ajoutées lors de la lecture du message ou en mode lecture du complément. Cela vous permet de différencier si la propriété a été créée pendant la composition ou héritée du parent.
+1. Pour vérifier si l’utilisateur transfère un e-mail ou répond, vous pouvez utiliser [item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-messagecompose-getcomposetypeasync-member(1)) (disponible à partir de l’ensemble de conditions requises 1.10).
 
 ## <a name="see-also"></a>Voir aussi
 

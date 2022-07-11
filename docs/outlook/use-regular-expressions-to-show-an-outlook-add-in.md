@@ -1,24 +1,22 @@
 ---
 title: Utiliser les règles d’activation d’expression régulière afin d’afficher un complément
 description: Découvrez comment utiliser les règles d’activation d’expression régulière pour les compléments contextuels Outlook.
-ms.date: 07/28/2020
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cdf15fd2ab46fbad679ea6214cde9b9da50a0cfc
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: f145df063f550351941eee5132a7b6b9d3267c04
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484417"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713069"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
-Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios dans Outlook n’active pas les modules, par exemple, les éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
+Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels sont activés uniquement en mode lecture. Outlook n’active pas de compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios où Outlook n’active pas les compléments, par exemple, les éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
 
 Vous pouvez spécifier une expression régulière dans le cadre d’une règle [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) dans le manifeste XML du complément. Les règles sont spécifiées dans un point d’extension [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
 Outlook évalue les expressions régulières en fonction des règles définies pour l’interpréteur JavaScript utilisé par le navigateur de l’ordinateur client. Outlook prend en charge la même liste de caractères spéciaux que tous les processeurs XML. Le tableau suivant répertorie ces caractères spéciaux. Vous pouvez les utiliser dans une expression régulière en spécifiant la séquence d’échappement pour le caractère correspondant, comme décrit dans le tableau suivant.
-
-<br/>
 
 |Caractère|Description|Séquence d’échappement à utiliser|
 |:-----|:-----|:-----|
@@ -32,8 +30,6 @@ Outlook évalue les expressions régulières en fonction des règles définies p
 
 Une règle `ItemHasRegularExpressionMatch` est utile dans le contrôle de l’activation d’un complément basé sur les valeurs spécifiques d’une propriété prise en charge. La règle `ItemHasRegularExpressionMatch` contient les attributs suivants.
 
-<br/>
-
 |Nom de l’attribut|Description|
 |:-----|:-----|
 |`RegExName`|Spécifie le nom de l’expression régulière afin que vous puissiez vous référer à l’expression dans le code de votre complément.|
@@ -44,7 +40,7 @@ Une règle `ItemHasRegularExpressionMatch` est utile dans le contrôle de l’ac
 
 ### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Meilleures pratiques pour l’utilisation d’expressions régulières dans les règles
 
-Prêtez une attention particulière aux choses suivantes lorsque vous utilisez des expressions régulières.
+Accordez une attention particulière aux éléments suivants lorsque vous utilisez des expressions régulières.
 
 - Si vous spécifiez une règle `ItemHasRegularExpressionMatch` pour le corps d’un élément, l’expression régulière doit filtrer davantage le corps. Par ailleurs, elle ne doit pas tenter de renvoyer l’intégralité du corps de l’élément. L’utilisation d’une expression régulière telle que `.*` pour essayer d’obtenir l’intégralité du corps d’un élément ne renvoie pas toujours les résultats attendus.
 - Le corps en texte brut renvoyé sur un navigateur peut être légèrement différent sur un autre. Si vous utilisez une règle `ItemHasRegularExpressionMatch` avec `BodyAsPlaintext` comme attribut `PropertyName`, testez votre expression régulière sur tous les navigateurs pris en charge par votre complément.
@@ -53,7 +49,7 @@ Prêtez une attention particulière aux choses suivantes lorsque vous utilisez d
 
 - Le corps HTML d’un élément est légèrement différent entre un client riche Outlook et Outlook sur le web ou Outlook Mobile. Définissez attentivement vos expressions régulières.
 
-- Selon le client Outlook, le type d’appareil ou la propriété sur qui une expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chacun des clients que vous devez connaître lors de la conception d’expressions régulières en tant que règles d’activation. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
+- Selon le client Outlook, le type d’appareil ou la propriété sur lequel une expression régulière est appliquée, il existe d’autres meilleures pratiques et limites pour chacun des clients que vous devez connaître lors de la conception d’expressions régulières en tant que règles d’activation. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 ### <a name="examples"></a>Exemples
 
@@ -67,8 +63,6 @@ La règle `ItemHasRegularExpressionMatch` suivante active le complément chaque 
 />
 ```
 
-<br/>
-
 L’exemple suivant montre une autre manière de spécifier la même expression régulière à l’aide de l’attribut `IgnoreCase`.
 
 ```XML
@@ -79,8 +73,6 @@ L’exemple suivant montre une autre manière de spécifier la même expression 
     IgnoreCase="true"
 />
 ```
-
-<br/>
 
 La règle `ItemHasRegularExpressionMatch` suivante active le complément chaque fois qu’un symbole de valeur est inclus dans le corps de l’élément actuel.
 
@@ -100,8 +92,6 @@ Une règle `ItemHasKnownEntity` active un complément en fonction de l'existence
 > Outlook peut extraire uniquement des chaînes d’entité en anglais, indépendamment des paramètres régionaux par défaut spécifiés dans le manifeste. Seuls les messages prennent en charge le type d’entité `MeetingSuggestion`. Ce n’est pas le cas des rendez-vous. Vous ne pouvez pas extraire les entités des éléments figurant dans le dossier **Éléments envoyés**, ni utiliser une règle `ItemHasKnownEntity` afin d’activer un complément pour les éléments du dossier **Éléments envoyés**.
 
 La règle `ItemHasKnownEntity` prend en charge les attributs dans le tableau suivant. Notez que, bien que la spécification d’une expression régulière soit facultative dans une règle `ItemHasKnownEntity`, si vous choisissez d’utiliser une expression régulière comme filtre d’entité, vous devez spécifier à la fois l’attribut `RegExFilter` et `FilterName`.
-
-<br/>
 
 |Nom de l’attribut|Description|
 |:-----|:-----|
@@ -124,7 +114,7 @@ La règle `ItemHasKnownEntity` suivante active le complément chaque fois qu’u
 
 ## <a name="using-regular-expression-results-in-code"></a>Utilisation des résultats d’expressions régulières dans le code
 
-Vous pouvez obtenir des correspondances avec une expression régulière en utilisant les méthodes suivantes sur l’élément actuel.
+Vous pouvez obtenir des correspondances avec une expression régulière à l’aide des méthodes suivantes sur l’élément actif.
 
 - [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) renvoie les correspondances dans l’élément actuel pour toutes les expressions régulières spécifiées dans les règles `ItemHasRegularExpressionMatch` et `ItemHasKnownEntity` du complément.
 
@@ -148,38 +138,32 @@ L’exemple suivant montre un regroupement de règles qui contient une règle `I
 </Rule>
 ```
 
-<br/>
-
 L’exemple suivant utilise `getRegExMatches` dans l’élément actuel pour définir une variable `videos` pour les résultats de la règle `ItemHasRegularExpressionMatch` précédente.
 
 ```js
-var videos = Office.context.mailbox.item.getRegExMatches().videoURL;
+const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
-
-<br/>
 
 Plusieurs correspondances sont stockées comme éléments d’un tableau dans cet objet. L’exemple de code suivant montre comment réaliser une itération sur les correspondances pour une expression régulière nommée  `reg1` pour construire une chaîne à afficher sous la forme HTML.
 
 ```js
 function initDialer()
 {
-    var myEntities;
-    var myString;
-    var myCell;
+    let myEntities;
+    let myString;
+    let myCell;
     myEntities = Office.context.mailbox.item.getRegExMatches();
 
     myString = "";
     myCell = document.getElementById('dialerholder');
     // Loop over the myEntities collection.
-    for (var i in myEntities.reg1) {
+    for (let i in myEntities.reg1) {
         myString += "<p><a href='callto:tel:" + myEntities.reg1[i] + "'>" + myEntities.reg1[i] + "</a></p>";
     }
 
     myCell.innerHTML = myString;
 }
 ```
-
-<br/>
 
 Voici un exemple de règle `ItemHasKnownEntity` qui spécifie l’entité `MeetingSuggestion` et une expression régulière nommée `CampSuggestion`. Outlook active le complément s’il détecte que l’élément sélectionné contient une suggestion de réunion, et que l’objet ou le corps contient le terme `WonderCamp`.
 
@@ -191,12 +175,10 @@ Voici un exemple de règle `ItemHasKnownEntity` qui spécifie l’entité `Meeti
     IgnoreCase="false"/>
 ```
 
-<br/>
-
 L’exemple de code suivant utilise `getFilteredEntitiesByName` sur l’élément actuel pour définir une variable `suggestions` pour un tableau des suggestions de réunion détectées pour la règle `ItemHasKnownEntity` précédente.
 
 ```js
-var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
+const suggestions = Office.context.mailbox.item.getFilteredEntitiesByName("CampSuggestion");
 ```
 
 ## <a name="see-also"></a>Voir aussi

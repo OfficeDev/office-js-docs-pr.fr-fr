@@ -3,12 +3,12 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: Découvrez comment résoudre les erreurs de développement dans les compléments Office.
 ms.date: 06/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 427d35d49339c1130733a3b33aa1bfedc1bd8317
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 3fb077802ab48c257911c10627308a606630cbb6
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660073"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712761"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -113,7 +113,8 @@ Lorsque vous chargez la bibliothèque JavaScript Office à partir d’une copie 
 ## <a name="see-also"></a>Voir également
 
 - [Débogage de compléments dans Office sur le web](debug-add-ins-in-office-online.md)
-- [Charger une version test d’un complément Office sur iPad ou Mac](sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Charger une version test d’un complément Office sur Mac](sideload-an-office-add-in-on-mac.md)  
+- [Charger une version test d’un complément Office sur iPad](sideload-an-office-add-in-on-ipad.md)  
 - [Déboguer des compléments Office sur un Mac](debug-office-add-ins-on-ipad-and-mac.md)  
 - [Complément Microsoft Office Extension de débogueur pour Visual Studio Code](debug-with-vs-extension.md)
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)

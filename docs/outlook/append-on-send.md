@@ -2,14 +2,14 @@
 title: Implémenter append-on-send dans votre complément Outlook
 description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 05/01/2022
+ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ea493f4d6b395b2e2f3e596435f15adbfc600dd
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 762d8d14bb09d50c836b9a097534d1d23c493e66
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659828"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712971"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter append-on-send dans votre complément Outlook
 
@@ -137,7 +137,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
 
     ```js
     function appendDisclaimerOnSend(event) {
-      var appendText =
+      const appendText =
         '<p style = "color:blue"> <i>This and subsequent emails on the same topic are for discussion and information purposes only. Only those matters set out in a fully executed agreement are legally binding. This email may contain confidential information and should not be shared with any third party without the prior written agreement of Contoso. If you are not the intended recipient, take no action and contact the sender immediately.<br><br>Contoso Limited (company number 01624297) is a company registered in England and Wales whose registered office is at Contoso Campus, Thames Valley Park, Reading RG6 1WG</i></p>';  
       /**
         *************************************************************
@@ -158,7 +158,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
       event.completed();
     }
     ```
-    
+
 1. Juste en dessous de la fonction, ajoutez la ligne suivante pour inscrire la fonction.
 
     ```js
@@ -167,7 +167,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
 
 ## <a name="try-it-out"></a>Essayez
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et que votre complément est chargé de manière indépendante. 
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et que votre complément est chargé de manière indépendante.
 
     ```command&nbsp;line
     npm start
@@ -179,7 +179,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
 
 1. Envoyez le message, puis ouvrez-le à partir de votre dossier **Boîte de réception** ou **Éléments envoyés** pour afficher la clause d’exclusion de responsabilité ajoutée.
 
-    ![Capture d’écran d’un exemple de message avec l’exclusion de responsabilité ajoutée lors de l’envoi Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
+    ![Exemple de message avec l’exclusion de responsabilité ajoutée lors de l’envoi de Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>Voir aussi
 

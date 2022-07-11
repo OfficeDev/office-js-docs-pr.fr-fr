@@ -1,28 +1,28 @@
 ---
 title: Obtenir des pièces jointes dans un complément Outlook
 description: Votre complément peut utiliser les API de pièces jointes pour envoyer des informations sur les pièces jointes à un service distant.
-ms.date: 09/03/2021
+ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f851eba0eae9373d751b63e37c35db5f5ead3a
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 14329134513718ad4025c27abf7621a8ebf4b18f
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484263"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66713104"
 ---
 # <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtenir des pièces jointes d’un élément Outlook à partir du serveur
 
-Vous pouvez obtenir les pièces jointes d’un Outlook de deux façons, mais l’option que vous utilisez dépend de votre scénario.
+Vous pouvez obtenir les pièces jointes d’un élément Outlook de deux manières, mais l’option que vous utilisez dépend de votre scénario.
 
 1. Envoyez les informations de pièce jointe à votre service distant.
 
-    Votre application peut utiliser l’API de pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
+    Votre complément peut utiliser l’API pièces jointes pour envoyer des informations sur les pièces jointes au service distant. Le service peut alors contacter directement le serveur Exchange pour récupérer les pièces jointes.
 
-1. Utilisez [l’API getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) , disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge [: AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
+1. Utilisez l’API [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) , disponible à partir de l’ensemble de conditions requises 1.8. Formats pris en charge : [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat).
 
-    Cette API peut être pratique si EWS/REST n’est pas disponible (par exemple, en raison de la configuration d’administration de votre serveur Exchange) ou si votre application souhaite utiliser le contenu base64 directement en HTML ou JavaScript. En outre, `getAttachmentContentAsync` l’API est disponible dans les scénarios de composition où la pièce jointe n’a peut-être pas encore été synchronisée avec Exchange . Pour plus d’informations, voir Gérer les pièces [jointes d’un](add-and-remove-attachments-to-an-item-in-a-compose-form.md) élément dans un formulaire de composition dans Outlook.
+    Cette API peut être pratique si EWS/REST n’est pas disponible (par exemple, en raison de la configuration administrateur de votre serveur Exchange) ou si votre complément souhaite utiliser le contenu base64 directement en HTML ou JavaScript. En outre, l’API `getAttachmentContentAsync` est disponible dans les scénarios de composition où la pièce jointe n’a peut-être pas encore été synchronisée avec Exchange. Pour plus [d’informations, consultez Gérer les pièces jointes d’un élément dans un formulaire de composition dans Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md) .
 
-Cet article traite de la première option. Pour envoyer des informations de pièce jointe au service distant, utilisez les propriétés et la fonction suivantes.
+Cet article explique en détail la première option. Pour envoyer des informations de pièce jointe au service distant, utilisez les propriétés et la fonction suivantes.
 
 - Propriété [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) &ndash; fournit l’URL des services web Exchange (EWS) sur le serveur Exchange qui héberge la boîte aux lettres. Votre service utilise cette URL pour appeler la méthode [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) ou l’opération EWS [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation).
 
@@ -32,7 +32,7 @@ Cet article traite de la première option. Pour envoyer des informations de piè
 
 ## <a name="using-the-attachments-api"></a>Utilisation de l’API de pièces jointes
 
-Pour utiliser l’API de pièces jointes afin d’obtenir des pièces jointes à partir d’Exchange boîte aux lettres, effectuez les étapes suivantes.
+Pour utiliser l’API pièces jointes pour obtenir des pièces jointes à partir d’une boîte aux lettres Exchange, effectuez les étapes suivantes.
 
 1. Affichez le complément lorsque l’utilisateur visualise un message ou un rendez-vous qui contient une pièce jointe.
 
@@ -78,21 +78,19 @@ Le service distant appelé par votre complément définit les informations spéc
 // Initialize a context object for the add-in.
 //   Set the fields that are used on the request
 //   object to default values.
- var serviceRequest = {
+ const serviceRequest = {
     attachmentToken: '',
     ewsUrl         : Office.context.mailbox.ewsUrl,
     attachments    : []
  };
 ```
 
-<br/>
-
 La propriété `Office.context.mailbox.item.attachments` inclut une collection d’objets `AttachmentDetails`, un par pièce jointe pour l’élément. Dans la plupart des cas, le complément peut passer uniquement l’ID de propriété de pièce jointe d’un objet `AttachmentDetails` au service distant.  Si le service distant a besoin de détails supplémentaires sur la pièce jointe, vous pouvez passer l’intégralité ou des parties de l’objet `AttachmentDetails`. Le code suivant définit une méthode qui place l’intégralité du tableau `AttachmentDetails` dans l’objet `serviceRequest` et envoie une demande au service distant.
 
 ```js
 function makeServiceRequest() {
   // Format the attachment details for sending.
-  for (var i = 0; i < mailbox.item.attachments.length; i++) {
+  for (let i = 0; i < mailbox.item.attachments.length; i++) {
     serviceRequest.attachments[i] = JSON.parse(JSON.stringify(mailbox.item.attachments[i]));
   }
 
@@ -103,12 +101,12 @@ function makeServiceRequest() {
     contentType: 'application/json;charset=utf-8'
   }).done(function (response) {
     if (!response.isError) {
-      var names = "<h2>Attachments processed using " +
+      const names = "<h2>Attachments processed using " +
                     serviceRequest.service +
                     ": " +
                     response.attachmentsProcessed +
                     "</h2>";
-      for (i = 0; i < response.attachmentNames.length; i++) {
+      for (let i = 0; i < response.attachmentNames.length; i++) {
         names += response.attachmentNames[i] + "<br />";
       }
       document.getElementById("names").innerHTML = names;
@@ -220,7 +218,6 @@ private AttachmentSampleServiceResponse GetAtttachmentsFromExchangeServerUsingEW
 
 Si vous utilisez EWS dans votre service distant, vous devez construire une demande SOAP [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) pour obtenir les pièces jointes à partir du serveur Exchange. Le code suivant renvoie une chaîne qui fournit la demande SOAP. Le service distant utilise la méthode `String.Format` pour insérer l’ID d’une pièce jointe dans la chaîne.
 
-
 ```cs
 private const string GetAttachmentSoapRequest =
 @"<?xml version=""1.0"" encoding=""utf-8""?>
@@ -242,8 +239,6 @@ xmlns:t=""http://schemas.microsoft.com/exchange/services/2006/types"">
   </soap:Body>
 </soap:Envelope>";
 ```
-
-<br/>
 
 Enfin, la méthode suivante utilise une demande `GetAttachment` EWS pour obtenir les pièces jointes à partir du serveur Exchange.  Cette implémentation effectue une demande individuelle pour chaque pièce jointe et renvoie le nombre de pièces jointes traitées.  Chaque réponse est traitée dans une méthode `ProcessXmlResponse` distincte, définie ci-après.
 
@@ -319,8 +314,6 @@ private AttachmentSampleServiceResponse GetAttachmentsFromExchangeServerUsingEWS
   return response;
 }
 ```
-
-<br/>
 
 Chaque réponse de l’opération `GetAttachment` est envoyée à la méthode `ProcessXmlResponse`. Cette méthode consulte la réponse à la recherche d’erreurs. Si elle ne trouve pas d’erreur, elle traite les fichiers joints et les éléments joints. La méthode `ProcessXmlResponse` effectue l’essentiel du traitement de la pièce jointe.
 
@@ -420,4 +413,4 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 - [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md)
 - [Explorer l’API managée EWS, EWS et les services web dans Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Prise en main des applications clientes d'API managée EWS](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)
-- [Outlook’sso du add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Authentification unique du complément Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)

@@ -3,12 +3,12 @@ title: Chargement indépendant des compléments Office à des fins de test à pa
 description: Découvrez comment charger une version test d’un complément Office à partir d’un partage réseau.
 ms.date: 05/26/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e32e91a542ec4c3557ff945b93d69fc12eac766c
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 87bdeb6cbd33bcd9b1828c7afa0a9f879d4c05e4
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659835"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712775"
 ---
 # <a name="sideload-office-add-ins-for-testing-from-a-network-share"></a>Chargement indépendant des compléments Office à des fins de test à partir d’un partage réseau
 
@@ -26,7 +26,8 @@ Vous pouvez tester un complément Office dans un client Office qui se trouve sur
 Cet article s’applique uniquement au test des compléments Word, Excel, PowerPoint et Project, et uniquement sur Windows. Si vous souhaitez effectuer des tests sur une autre plateforme ou tester un complément Outlook, consultez l’une des rubriques suivantes pour charger votre complément de manière indépendante.
 
 - [Chargement de versions test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
-- [Chargement de version test des compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Chargement indépendant des compléments Office sur Mac à des fins de test](sideload-an-office-add-in-on-mac.md)
+- [Chargement indépendant des compléments Office sur iPad à des fins de test](sideload-an-office-add-in-on-ipad.md)
 - [Chargement de version test des compléments Outlook pour les tester](../outlook/sideload-outlook-add-ins-for-testing.md)
 
 La vidéo suivante présente la procédure de chargement de version test de votre complément dans Office sur le web ou le bureau à l’aide d’un catalogue de dossiers partagés.  
