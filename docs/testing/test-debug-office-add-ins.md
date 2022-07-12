@@ -3,12 +3,12 @@ title: Test des compléments Office
 description: Découvrez comment tester votre complément Office.
 ms.date: 12/02/2021
 ms.localizationpriority: high
-ms.openlocfilehash: ab730a9acc141195c378a490c670fada82ecc90f
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: d69d57e677e7f06457f49fef60df63bc6f9577fa
+ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484553"
+ms.lasthandoff: 07/11/2022
+ms.locfileid: "66712733"
 ---
 # <a name="test-office-add-ins"></a>Test des compléments Office
 
@@ -34,7 +34,9 @@ Vous pouvez utiliser le chargement indépendant pour installer un complément Of
 
 - [Chargement de version test des compléments Office dans Office sur le web](sideload-office-add-ins-for-testing.md)
 
-- [Chargement de version test de compléments Office sur iPad et Mac](sideload-an-office-add-in-on-ipad-and-mac.md)
+- [Chargement de versions test de compléments Office sur Mac](sideload-an-office-add-in-on-mac.md)
+
+- [Chargement de versions test de compléments Office sur iPad](sideload-an-office-add-in-on-ipad.md)
 
 - [Chargement de version test des compléments Outlook](../outlook/sideload-outlook-add-ins-for-testing.md)
 

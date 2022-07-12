@@ -81,8 +81,6 @@ items:
                 href: develop/persisting-add-in-state-and-settings.md
               - name: Lier des régions dans un document ou une feuille de calcul
                 href: develop/bind-to-regions-in-a-document-or-spreadsheet.md
-              - name: Codes d’erreur d’API courants
-                href: reference/javascript-api-for-office-error-codes.md
           - name: Configurer et exécuter votre complément
             items:
               - name: Référencer Office.js
@@ -308,8 +306,10 @@ items:
                 href: testing/debug-add-ins-in-office-online.md
           - name: iPad et Mac
             items:
-              - name: Chargement de versions test de compléments Office sur iPad et Mac
-                href: testing/sideload-an-office-add-in-on-ipad-and-mac.md
+              - name: Chargement de versions test de compléments Office sur Mac
+                href: testing/sideload-an-office-add-in-on-mac.md
+              - name: Chargement de versions test de compléments Office sur iPad
+                href: testing/sideload-an-office-add-in-on-ipad.md
               - name: Débogage sur Mac
                 href: testing/debug-office-add-ins-on-ipad-and-mac.md
           - name: Vider le cache Office
@@ -317,16 +317,22 @@ items:
             displayName: 'uninstall, sideload'
           - name: Déboguer avec la journalisation runtime
             href: testing/runtime-logging.md
+          - name: Erreurs
+            items:
+              - name: Gestion des erreurs de l’API propre à l’application
+                href: testing/application-specific-api-error-handling.md
+              - name: Codes d’erreur d’API courants
+                href: reference/javascript-api-for-office-error-codes.md
+              - name: Résolution des erreurs de l’utilisateur
+                href: testing/testing-and-troubleshooting.md
+              - name: Résolution des erreurs de développement
+                href: testing/troubleshoot-development-errors.md
           - name: Performances
             items:
               - name: Éviter d’utiliser la méthode context.sync dans des boucles
                 href: concepts/correlated-objects-pattern.md
               - name: Limites des ressources et optimisation des performances pour les compléments Office
                 href: concepts/resource-limits-and-performance-optimization.md
-          - name: Résolution des erreurs de l’utilisateur
-            href: testing/testing-and-troubleshooting.md
-          - name: Résolution des erreurs de développement
-            href: testing/troubleshoot-development-errors.md
           - name: Tests unitaires
             href: testing/unit-testing.md
           - name: Tests d’utilisation
@@ -421,9 +427,6 @@ items:
                 displayName: 'Excel, preview'
           - name: Validation de données
             href: excel/excel-add-ins-data-validation.md
-            displayName: Excel
-          - name: Gestion des erreurs
-            href: excel/excel-add-ins-error-handling.md
             displayName: Excel
           - name: Événements
             href: excel/excel-add-ins-events.md
