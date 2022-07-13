@@ -5,19 +5,19 @@ ms.date: 10/14/2019
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: efa149a9a59ee578319e637ff922e034d64cbb43
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 1e7544d3f6957871b0779ae6fe6ab7a0227640f5
+ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659933"
+ms.lasthandoff: 07/13/2022
+ms.locfileid: "66765285"
 ---
 # <a name="task-pane-add-ins-for-project"></a>Compléments du volet Office pour Project
 
 Project Standard 2013 et Project Professionnel 2013 (version 15.1 ou ultérieure) incluent tous deux la prise en charge des compléments du volet Office. Vous pouvez exécuter des compléments généraux du volet Office développés pour Word ou Excel. Vous pouvez également développer des compléments personnalisés qui gèrent les événements de sélection dans Project et intègrent des données de tâche, de ressource, d’affichage et d’autres données au niveau des cellules dans un projet avec des listes SharePoint, des compléments SharePoint, des composants WebPart, des services web et des applications d’entreprise.
 
 > [!NOTE]
-> Le [téléchargement du kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20) inclut des exemples de compléments qui montrent comment utiliser le modèle objet du complément pour Project et le service OData pour la création de rapports de données dans Project Server 2013. Après avoir extrait et installé le SDK, accédez au sous-dossier `\Samples\Apps\`.
+> Le [téléchargement du kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435) inclut des exemples de compléments qui montrent comment utiliser le modèle objet du complément pour Project et le service OData pour la création de rapports de données dans Project Server 2013. Après avoir extrait et installé le SDK, accédez au sous-dossier `\Samples\Apps\`.
 
 Pour une introduction aux compléments Office, reportez-vous à [Vue d’ensemble de la plateforme des compléments pour Office](../overview/office-add-ins.md).
 
@@ -199,4 +199,4 @@ Vous pouvez distribuer des compléments via un partage de fichiers, un catalogue
 - [Développement de compléments Office](../develop/develop-overview.md)
 - [Créer votre premier complément du volet Office pour Project 2013 à l’aide d’un éditeur de texte](create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
 - [Créer un complément Project qui utilise REST avec un service OData Project Server local](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
-- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435%20)
+- [Téléchargement du Kit de développement logiciel (SDK) de Project 2013](https://www.microsoft.com/download/details.aspx?id=30435)
