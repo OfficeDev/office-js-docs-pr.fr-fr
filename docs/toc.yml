@@ -25,8 +25,6 @@ items:
             href: quickstarts/project-quickstart.md
           - name: Complément Word
             href: quickstarts/word-quickstart.md
-          - name: Authentification unique (SSO)
-            href: quickstarts/sso-quickstart.md
       - name: Explorer les API Office JS à l’aide de Script Lab
         href: overview/explore-with-script-lab.md
         displayName: 'Excel, Word, PowerPoint'
@@ -133,10 +131,6 @@ items:
                 items:
                   - name: Activer l’authentification unique dans un complément Office
                     href: develop/sso-in-office-add-ins.md
-                  - name: Démarrage rapide
-                    href: quickstarts/sso-quickstart.md
-                  - name: Personnaliser le démarrage rapide
-                    href: quickstarts/sso-quickstart-customize.md
                   - name: S'inscrire avec la plateforme d’identités Microsoft
                     href: develop/register-sso-add-in-aad-v2.md
                   - name: Octroi de l’accord de l’administrateur

@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 06/10/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 9b9a9a9d7d7d14fcc7d077c0a659e7404bd9e141
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 11af3d28db9d8b22790eb2e95821d5c9f34d194f
+ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091173"
+ms.lasthandoff: 07/14/2022
+ms.locfileid: "66789121"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -20,8 +20,6 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 [!include[Choose your editor](../includes/quickstart-choose-editor.md)]
 
 # <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
-
-[!include[Redirect to the single sign-on (SSO) quick start](../includes/sso-quickstart-reference.md)]
 
 ## <a name="prerequisites"></a>Conditions préalables
 
@@ -89,7 +87,7 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
 5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 

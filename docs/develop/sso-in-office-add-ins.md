@@ -3,12 +3,12 @@ title: Activer l’authentification unique (SSO) dans un complément Office
 description: Découvrez les étapes clés pour activer l’authentification unique (SSO) pour votre complément Office à l’aide de comptes Microsoft courants personnels, professionnels ou éducatifs.
 ms.date: 05/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e2a7715b6baaaf5ec4f6b398a1570c3bb4a08630
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 6667862adf0a89a2cf34dae9ee4413cf7a0c8036
+ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659968"
+ms.lasthandoff: 07/14/2022
+ms.locfileid: "66789100"
 ---
 # <a name="enable-single-sign-on-sso-in-an-office-add-in"></a>Activer l’authentification unique (SSO) dans un complément Office
 
@@ -59,9 +59,6 @@ Cette section décrit les tâches impliquées dans la création d’un compléme
 
 - [Créer un complément Office Node.js qui utilise l’authentification unique](create-sso-office-add-ins-nodejs.md)
 - [Créer un complément Office ASP.NET qui utilise l’authentification unique](create-sso-office-add-ins-aspnet.md)
-
-> [!NOTE]
-> Vous pouvez utiliser le générateur Yeoman pour créer votre complément Office compatible avec l’authentification unique, Node.js.. Le générateur Yeoman simplifie le processus de création d’un complément avec authentification unique en automatisant les étapes nécessaires pour configurer l’authentification unique dans Azure et la génération du code nécessaire pour qu’un complément utilise l’authentification unique. Pour plus d'informations, consultez [Démarrage rapide de l'authentification unique](../quickstarts/sso-quickstart.md).
 
 ### <a name="register-your-add-in-with-the-microsoft-identity-platform"></a>Enregistrez votre complément auprès de la plateforme d’identité Microsoft
 
