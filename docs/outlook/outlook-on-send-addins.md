@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cb67a813c876809440b29e029ff899cd34d7e365
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712754"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797609"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -608,7 +608,7 @@ Pour savoir comment ajouter un destinataire à la ligne Cc et vérifier que le 
 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>Déboguer les compléments Outlook qui utilisent l’envoi
 
-Pour obtenir des instructions sur le débogage de votre complément en envoi, [reportez-vous à Déboguer votre complément Outlook sans interface utilisateur](debug-ui-less.md).
+Pour obtenir des instructions sur le débogage de votre complément en envoi, consultez [les commandes de fonction de débogage dans les compléments Outlook](debug-ui-less.md).
 
 > [!TIP]
 > Si l’erreur « La fonction de rappel est inaccessible » s’affiche lorsque vos utilisateurs exécutent votre complément et que le gestionnaire d’événements de votre complément est défini dynamiquement, vous devez créer une fonction stub comme solution de contournement. Pour plus d’informations, consultez la [définition dynamique des gestionnaires](#event-handlers-are-dynamically-defined) d’événements.

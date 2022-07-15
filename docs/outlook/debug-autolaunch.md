@@ -2,14 +2,14 @@
 title: Déboguer votre complément Outlook basé sur les événements
 description: Découvrez comment déboguer votre complément Outlook qui implémente l’activation basée sur les événements.
 ms.topic: article
-ms.date: 04/28/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dbd74036cf56b5ff492315f928324a3aa1e7312
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659681"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797490"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>Déboguer votre complément Outlook basé sur les événements
 
@@ -25,13 +25,13 @@ Dans cet article, nous abordons les étapes clés pour activer le débogage.
 - [Attacher Visual Studio Code](#attach-visual-studio-code)
 - [Debug](#debug)
 
-Vous disposez de plusieurs options pour créer votre projet de complément. Selon l’option que vous utilisez, les étapes peuvent varier. Dans ce cas, si vous avez utilisé le générateur Yeoman pour compléments Office pour créer votre projet de complément (par exemple, en effectuant la procédure pas à pas sur [l’activation basée sur les événements](autolaunch.md)), suivez les étapes de **yo-office** , sinon suivez les **autres** étapes. Visual Studio Code doit être au moins version 1.56.1.
+Si vous avez utilisé yeoman Generator pour compléments Office pour créer votre projet de complément (par exemple, en effectuant la [procédure pas à pas d’activation basée sur les événements](autolaunch.md)), suivez l’option **Créer avec le générateur Yeoman** tout au long de cet article. Sinon, suivez les **autres** étapes. Visual Studio Code doit être au moins version 1.56.1.
 
 ## <a name="mark-your-add-in-for-debugging"></a>Marquer votre complément pour le débogage
 
 1. Définissez la clé `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`de Registre . `[Add-in ID]` est le **\<Id\>** manifeste du complément.
 
-    **yo office** : dans une fenêtre de ligne de commande, accédez à la racine de votre dossier de complément, puis exécutez la commande suivante.
+    **Créé avec le générateur Yeoman** : dans une fenêtre de ligne de commande, accédez à la racine de votre dossier de complément, puis exécutez la commande suivante.
 
     ```command&nbsp;line
     npm start
@@ -50,7 +50,7 @@ Vous disposez de plusieurs options pour créer votre projet de complément. Selo
 
 ## <a name="configure-visual-studio-code"></a>Configurer Visual Studio Code
 
-### <a name="yo-office"></a>yo office
+### <a name="created-with-yeoman-generator"></a>Créé avec le générateur Yeoman
 
 1. Dans la fenêtre de ligne de commande, ouvrez Visual Studio Code.
 

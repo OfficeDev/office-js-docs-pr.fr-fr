@@ -3,12 +3,12 @@ title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c02b878b6636e6736ada4a29d123dd8ff772393
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: c2717bf5d3cb440022ac31f815b7bf4c32d9eb4e
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712964"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797693"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 
@@ -17,7 +17,14 @@ L’espace de noms [Office.context.mailbox.item](/javascript/api/requirement-set
 > [!IMPORTANT]
 > **Les API REST Outlook sont déconseillées**
 >
-> Les points de terminaison REST Outlook seront entièrement désactivés en novembre 2022 (pour plus d’informations, reportez-vous à [l’annonce de novembre 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Vous devez migrer des compléments existants pour utiliser [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Comparez également les points de terminaison [de l’API REST Microsoft Graph et Outlook](/outlook/rest/compare-graph).
+> Les points de terminaison REST Outlook seront entièrement désactivés le 30 novembre 2022 (pour plus d’informations, voir [l’annonce de novembre 2020](https://developer.microsoft.com/graph/blogs/outlook-rest-api-v2-0-deprecation-notice/)). Vous devez migrer des compléments existants pour utiliser [Microsoft Graph](/outlook/rest#outlook-rest-api-via-microsoft-graph). Pour obtenir des conseils, consultez Comparer les points de terminaison [de l’API REST Microsoft Graph et Outlook](/outlook/rest/compare-graph).
+>
+> Pour vous aider à effectuer la migration, les compléments actifs qui utilisent le service REST avant le 30 novembre 2022 peuvent bénéficier d’une exemption pour continuer à utiliser le service jusqu’à la [fin du support étendu pour Outlook 2019 le 14 octobre 2025](/lifecycle/end-of-support/end-of-support-2025). Cette exemption est basée sur l’ID de manifeste du complément et s’applique aux compléments publiés en privé et hébergés par AppSource. Les compléments doivent remplir les conditions suivantes pour être éligibles à l’exemption.
+>
+> - [L’ID](/javascript/api/manifest/id) du complément doit être valide et unique. Les compléments hébergés dans AppSource reçoivent automatiquement un GUID, tandis que les compléments publiés en privé doivent être affectés manuellement à un complément dans le manifeste.
+> - Si votre complément s’adresse à plusieurs clients et n’est pas hébergé dans AppSource, l’instance de complément utilisée par chaque client doit utiliser le même ID de manifeste. Si votre complément utilise un ID différent par client, il n’est pas éligible à une exemption et doit être migré vers Microsoft Graph avant novembre 2022.
+>
+> Pour garantir l’exemption de votre complément, remplissez le [formulaire de vérification du complément de l’API REST](https://aka.ms/RESTCheck) avant novembre 2022. Pour plus d’informations, consultez le [billet de blog sur les compléments Office de février 2022](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/).
 
 ## <a name="get-an-access-token"></a>Obtenir un jeton d’accès
 

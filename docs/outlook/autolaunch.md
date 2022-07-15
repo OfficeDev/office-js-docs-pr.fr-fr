@@ -2,18 +2,18 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 06/17/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04f2dc7e6c2745df9394135b46dbd4d99b6d790a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: e31b5b305f4128e40ea3274c125e07fcaaa12aa5
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660080"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797616"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur les événements
 
-Sans la fonctionnalité d’activation basée sur les événements, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre complément d’exécuter des tâches basées sur certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également l’intégrer au volet Office et aux fonctionnalités sans interface utilisateur.
+Sans la fonctionnalité d’activation basée sur les événements, un utilisateur doit lancer explicitement un complément pour effectuer ses tâches. Cette fonctionnalité permet à votre complément d’exécuter des tâches basées sur certains événements, en particulier pour les opérations qui s’appliquent à chaque élément. Vous pouvez également l’intégrer au volet Office et aux commandes de fonction.
 
 À la fin de cette procédure pas à pas, vous disposerez d’un complément qui s’exécute chaque fois qu’un nouvel élément est créé et définit l’objet.
 
@@ -276,7 +276,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Try it out
+## <a name="try-it-out"></a>Essayez
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé de manière indépendante.
 

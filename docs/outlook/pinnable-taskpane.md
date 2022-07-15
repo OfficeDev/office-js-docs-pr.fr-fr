@@ -3,28 +3,28 @@ title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
 ms.date: 07/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: ab14f121c9f4e9ae32fc5b26740da80a0df72ce3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484149"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797462"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 
-La commande de forme UX [taskpane](add-in-commands-for-outlook.md#launching-a-task-pane) pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées (remplissage de plusieurs champs, etc.). Ce volet Office peut être affiché dans le volet de lecture lorsque vous affichez une liste des messages, ce qui permet un traitement rapide d’un message.
+La commande de forme UX [taskpane](add-in-commands-for-outlook.md#launch-a-task-pane) pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées (remplissage de plusieurs champs, etc.). Ce volet Office peut être affiché dans le volet de lecture lorsque vous affichez une liste des messages, ce qui permet un traitement rapide d’un message.
 
 Toutefois, par défaut, si un utilisateur a un complément de volet Office ouvert pour un message dans le volet de lecture et sélectionne un nouveau message, le volet Office est automatiquement fermé. Pour un complément très sollicité, l’utilisateur peut préférer conserver ce volet ouvert, supprimant ainsi le besoin de réactiver le complément sur chaque message. Avec les volets Office épinglables, votre complément peut donner à l’utilisateur cette option.
 
 > [!NOTE]
-> Bien que la fonctionnalité des volets des tâches épinglables soit une nouveauté de l’ensemble de conditions requises [1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), elle n’est actuellement disponible que pour les abonnés Microsoft 365 utilisant ce qui suit :
+> Bien que la fonctionnalité des volets office épinglés ait été introduite dans [l’ensemble de conditions requises 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), elle n’est actuellement disponible que pour les abonnés Microsoft 365 à l’aide des éléments suivants :
 >
-> - Outlook 2016 ou version ultérieure sur Windows (build 7668.2000 ou ultérieure pour les utilisateurs des canaux Insider actuels ou Office, build 7900.xxxx ou version ultérieure pour les utilisateurs des canaux différés)
-> - Outlook 2016 version ultérieure sur Mac (version 16.13.503 ou ultérieure)
+> - Outlook 2016 ou version ultérieure sur Windows (build 7668.2000 ou ultérieure pour les utilisateurs des canaux Insider Actuel ou Office, build 7900.xxxx ou ultérieure pour les utilisateurs dans les canaux différés)
+> - Outlook 2016 ou version ultérieure sur Mac (version 16.13.503 ou ultérieure)
 > - Outlook moderne sur le web
 
 > [!IMPORTANT]
-> Les volets Des tâches épinglables ne sont pas disponibles pour les tâches suivantes :
+> Les volets office épinglés ne sont pas disponibles pour les éléments suivants :
 >
 > - Rendez-vous/réunions
 > - Outlook.com

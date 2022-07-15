@@ -1,36 +1,36 @@
 ---
 title: Initialiser votre complément Office
 description: Découvrez comment initialiser votre complément Office.
-ms.date: 07/08/2021
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c20e45ea318781d9fa66764e27cf168c0594c61a
-ms.sourcegitcommit: 3c5ede9c4f9782947cea07646764f76156504ff9
+ms.openlocfilehash: 52e75770dc4852ac3905256b6ea4230552df48ca
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/06/2022
-ms.locfileid: "64682230"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797595"
 ---
 # <a name="initialize-your-office-add-in"></a>Initialiser votre complément Office
 
 Les compléments Office ont souvent une logique de démarrage pour effectuer des actions telles que :
 
-- Vérifiez que la version de Office de l’utilisateur prend en charge toutes les API Office que votre code appelle.
+- Vérifiez que la version d’Office de l’utilisateur prend en charge toutes les API Office que votre code appelle.
 
 - Vérifiez l’existence de certains artefacts, tels qu’une feuille de calcul portant un nom spécifique.
 
-- Invitez l’utilisateur à sélectionner certaines cellules dans Excel, puis insérez un graphique initialisé avec ces valeurs sélectionnées.
+- Invitez l’utilisateur à sélectionner certaines cellules dans Excel, puis insérez un graphique initialisé avec les valeurs sélectionnées.
 
 - Établir des liaisons.
 
-- Utilisez l’API de boîte de dialogue Office pour inviter l’utilisateur à entrer des valeurs de paramètres de complément par défaut.
+- Utilisez l’API de boîte de dialogue Office pour demander à l’utilisateur les valeurs de paramètres de complément par défaut.
 
-Toutefois, un complément Office ne peut pas appeler correctement des API JavaScript Office tant que la bibliothèque n’a pas été chargée. Cet article décrit les deux façons dont votre code peut s’assurer que la bibliothèque a été chargée.
+Toutefois, un complément Office ne peut pas appeler correctement les API JavaScript Office tant que la bibliothèque n’a pas été chargée. Cet article décrit les deux façons dont votre code peut s’assurer que la bibliothèque a été chargée.
 
 - Initialiser avec `Office.onReady()`.
 - Initialiser avec `Office.initialize`.
 
 > [!TIP]
-> Au lieu de `Office.initialize`, nous vous recommandons d’utiliser `Office.onReady()`. Bien qu’elle soit `Office.initialize` toujours prise en charge, `Office.onReady()` elle offre plus de flexibilité. Vous ne pouvez affecter qu’un seul gestionnaire `Office.initialize` et il n’est appelé qu’une seule fois par l’infrastructure Office. Vous pouvez appeler `Office.onReady()` à différents endroits dans votre code et utiliser différents rappels.
+> Au lieu de `Office.initialize`, nous vous recommandons d’utiliser `Office.onReady()`. Bien qu’elle soit `Office.initialize` toujours prise en charge, `Office.onReady()` elle offre plus de flexibilité. Vous ne pouvez affecter qu’un seul gestionnaire et `Office.initialize` il n’est appelé qu’une seule fois par l’infrastructure Office. Vous pouvez appeler `Office.onReady()` à différents endroits dans votre code et utiliser différents rappels.
 > 
 > Pour plus d’informations sur les différences entre ces techniques, reportez-vous à la rubrique [Différences majeures entre Office.initialize et Office.onReady()](#major-differences-between-officeinitialize-and-officeonready).
 
@@ -104,7 +104,7 @@ Office.initialize = function () {
 };
 ```
 
-Si vous utilisez des frameworks JavaScript supplémentaires qui incluent leur propre gestionnaire d’initialisation ou tests, ceux-ci doivent *généralement* être placés dans l’événement `Office.initialize` (les exceptions décrites dans la section **Initialiser avec Office.onReady()** précédemment s’appliquent également dans ce cas). Par exemple, la fonction `$(document).ready()` de [JQuery](https://jquery.com) sera référencée comme suit :
+Si vous utilisez des frameworks JavaScript supplémentaires qui incluent leur propre gestionnaire d’initialisation ou tests, ceux-ci doivent *généralement* être placés dans l’événement `Office.initialize` (les exceptions décrites dans la section **Initialiser avec Office.onReady()** s’appliquent également dans ce cas). Par exemple, la fonction `$(document).ready()` de [JQuery](https://jquery.com) sera référencée comme suit :
 
 ```js
 Office.initialize = function () {
@@ -137,7 +137,7 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 - L’événement`Office.initialize` se déclenche à la fin du processus interne dans lequel Office.js s’initialise lui-même. Et il se déclenche *immédiatement* après la fin du processus interne. Si le code dans lequel vous attribuez un gestionnaire à l’événement s’exécute trop longtemps après le déclenchement de l’événement, votre gestionnaire ne s’exécutera pas. Par exemple, si vous utilisez le Gestionnaire des tâches WebPack, il peut configurer page d’accueil du complément pour charger les fichiers polyfill une fois que le serveur charge Office.js mais avant que le serveur ne charge votre code JavaScript personnalisé. Le temps que votre script se charge et affecte le Gestionnaire, l’événement initialisé s’est déjà produit. Mais il n’est jamais « trop tard » pour appeler `Office.onReady()`. Si l’événement initialisé s’est déjà produit, le rappel s’exécute immédiatement.
 
 > [!NOTE]
-> Même si vous n’avez aucune logique de démarrage, appelez `Office.onReady()` ou attribuez une fonction vide à `Office.initialize` lorsque votre complément JavaScript se charge. Certaines combinaisons d’applications et de plateformes Office ne chargeront pas le volet Office tant que l’une de ces combinaisons n’aura pas lieu. Les exemples suivants présentent ces deux approches.
+> Même si vous n’avez aucune logique de démarrage, appelez `Office.onReady()` ou attribuez une fonction vide à `Office.initialize` lorsque votre complément JavaScript se charge. Certaines combinaisons d’applications et de plateformes Office ne chargent pas le volet Office tant que l’une de ces combinaisons n’a pas lieu. Les exemples suivants présentent ces deux approches.
 >
 >```js    
 >Office.onReady();
@@ -147,6 +147,10 @@ Pour plus d’informations, consultez les pages relatives à l’[événement Of
 >```js
 >Office.initialize = function () {};
 >```
+
+## <a name="debug-initialization"></a>Initialisation du débogage
+
+Pour plus d’informations sur le débogage des méthodes et `Office.onReady()` des `Office.initialize` méthodes, consultez [Déboguer les méthodes initialize et onReady](../testing/debug-initialize-onready.md).
 
 ## <a name="see-also"></a>Voir aussi
 

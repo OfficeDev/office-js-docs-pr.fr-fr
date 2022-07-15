@@ -2,14 +2,14 @@
 title: Créer un complément Outlook pour un fournisseur de réunions en ligne
 description: Explique comment configurer un complément Outlook pour un fournisseur de services de réunion en ligne.
 ms.topic: article
-ms.date: 07/08/2022
+ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cc3afc58af0db7725b8e66ddbd557cfd1e75e128
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713041"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797658"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Créer un complément Outlook pour un fournisseur de réunions en ligne
 
@@ -231,7 +231,7 @@ Dans cette section, découvrez comment votre script de complément peut mettre �
         }
     );
 
-    // 2. How to define and register a UI-less function named `insertContosoMeeting` (referenced in the manifest)
+    // 2. How to define and register a function command named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -325,7 +325,7 @@ Plusieurs restrictions s’appliquent.
 - Applicable uniquement aux fournisseurs de services de réunion en ligne.
 - Seuls les compléments installés par l’administrateur apparaissent sur l’écran de composition de la réunion, en remplaçant l’option Teams ou Skype par défaut. Les compléments installés par l’utilisateur ne sont pas activés.
 - L’icône de complément doit être en nuances de gris à l’aide de code `#919191` hexadécimal ou de son équivalent dans [d’autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
-- Une seule commande sans interface utilisateur est prise en charge en mode Organisateur de rendez-vous (composition).
+- Une seule commande de fonction est prise en charge en mode Organisateur de rendez-vous (composition).
 - Le complément doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’expiration d’une minute. Toutefois, tout temps passé dans une boîte de dialogue que le complément a ouvert pour l’authentification, etc., est exclu du délai d’expiration.
 
 ## <a name="see-also"></a>Voir aussi
