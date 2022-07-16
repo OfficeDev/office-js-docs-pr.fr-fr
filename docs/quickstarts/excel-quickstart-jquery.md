@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches d’Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript pour Office.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 11af3d28db9d8b22790eb2e95821d5c9f34d194f
-ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
+ms.openlocfilehash: f4bd32e9e38e72b8cfb42db9476f6c180b151909
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2022
-ms.locfileid: "66789121"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797518"
 ---
 # <a name="build-an-excel-task-pane-add-in"></a>Créer un complément de volet de tâches Excel
 
@@ -21,7 +21,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 
 # <a name="yeoman-generator"></a>[Générateur Yeoman](#tab/yeomangenerator)
 
-## <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Conditions préalables
 
 [!include[Set up requirements](../includes/set-up-dev-environment-beforehand.md)]
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -35,7 +35,7 @@ Dans cet article, vous découvrirez comment créer un complément de volet de t�
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-![Capture d’écran de l’interface de ligne de commande du générateur de compléments Yeoman Office.](../images/yo-office-excel.png)
+![Interface de ligne de commande yeoman Generator pour les compléments Office](../images/yo-office-excel.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -53,17 +53,17 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
     cd "My Office Add-in"
     ```
 
-2. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
+1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-3. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+1. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du menu Accueil d’Excel, avec le bouton Afficher le volet Office de mis en évidence.](../images/excel-quickstart-addin-3b.png)
+    ![Menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-3b.png)
 
-4. Sélectionnez une plage de cellules dans la feuille de calcul.
+1. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-5. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
+1. En bas du volet Office, cliquez sélectionnez le lien **Exécuter** pour définir la couleur de la plage sélectionnée sur jaune.
 
-    ![Capture d’écran d’Excel, avec le volet Office du complément ouvert et le bouton Exécuter mis en surbrillance dans ce volet.](../images/excel-quickstart-addin-3c.png)
+    ![Le volet des tâches du module complémentaire s'ouvre dans Excel, et le bouton Exécuter est mis en évidence dans le volet des tâches du module complémentaire.](../images/excel-quickstart-addin-3c.png)
 
 ### <a name="next-steps"></a>Étapes suivantes
 
@@ -79,13 +79,13 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
 1. Dans Visual Studio, choisissez **Créer un nouveau projet**.
 
-2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Excel**, puis sélectionnez **Suivant**.
+1. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web Excel**, puis sélectionnez **Suivant**.
 
-3. Nommez votre projet **ExcelWebAddIn1**, puis sélectionnez **Créer**.
+1. Nommez votre projet **ExcelWebAddIn1**, puis sélectionnez **Créer**.
 
-4. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
+1. Dans la fenêtre de dialogue **Créer un complément Office**, sélectionnez **Ajouter de nouvelles fonctionnalités à Excel**, puis sélectionnez **Terminer** pour créer le projet.
 
-5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+1. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
 ### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
@@ -113,7 +113,7 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
     </body>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+1. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -132,7 +132,7 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
         async function setColor() {
             await Excel.run(async (context) => {
-                var range = context.workbook.getSelectedRange();
+                const range = context.workbook.getSelectedRange();
                 range.format.fill.color = 'green';
 
                 await context.sync();
@@ -146,7 +146,7 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
     })();
     ```
 
-3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+1. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```css
     #content-header {
@@ -179,13 +179,13 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
 1. Dans l’**explorateur de solutions**, accédez au projet de complément **ExcelWebAddIn1**, puis ouvrez le répertoire **ExcelWebAddIn1Manifest**. Ce répertoire contient votre fichier manifeste, **ExcelWebAddIn1.xml**. Un fichier manifeste XML définit les paramètres et les fonctionnalités du complément. Consultez la section [Explore the Visual Studio solution](#explore-the-visual-studio-solution) précédente pour plus d’informations sur les deux projets créés par votre solution Visual Studio.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+1. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
+1. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
 
-4. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.
+1. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Excel**.
 
-5. Enregistrez le fichier.
+1. Enregistrez le fichier.
 
     ```xml
     ...
@@ -201,15 +201,15 @@ Félicitations, vous avez créé un complément du volet Office Excel ! Maintena
 
 1. À l’aide de Visual Studio, testez le nouveau complément Excel en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer Excel avec le bouton du complément **Afficher le volet Office** qui apparaît dans le ruban. Le complément est hébergé localement sur IIS. Si on vous demande d’approuver un certificat, faites-le pour autoriser le complément à se connecter à son application Office.
 
-2. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
+1. Dans Excel, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-2a.png)
+    ![Menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-2a.png)
 
-3. Sélectionnez une plage de cellules dans la feuille de calcul.
+1. Sélectionnez une plage de cellules dans la feuille de calcul.
 
-4. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
+1. Dans le volet Office, cliquez sur le bouton **Définir couleur** pour définir la couleur de la plage sélectionnée en vert.
 
-    ![Capture d’écran d’ Excel avec le volet Office Complément ouvert.](../images/excel-quickstart-addin-2c.png)
+    ![Le volet Office du complément s’ouvre dans Excel.](../images/excel-quickstart-addin-2c.png)
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

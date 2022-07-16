@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet des tâches de Project
 description: Découvrez comment créer un complément simple de volet des tâches Project à l’aide de l’API JavaScript pour Office.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: project
 ms.localizationpriority: high
-ms.openlocfilehash: 486752d53b49d305ed4cc52c07fd8043264f1e58
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: c2f0e31b5a4c958cd155dfeb6d1648f7a2697c69
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091040"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797476"
 ---
 # <a name="build-your-first-project-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Project
 
@@ -31,7 +31,7 @@ Cet article décrit comment créer un complément du volet des tâches de Projec
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Project`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
+![Les invites et les réponses du générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-project.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -44,49 +44,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 - Le fichier **./manifest.xml** du répertoire racine du projet définit les paramètres et fonctionnalités du complément.
 - Le fichier **./src/taskpane/taskpane.html** contient les balises HTML du volet Office.
 - Le fichier **./src/taskpane/taskpane.css** contient le style CSS appliqué au contenu du volet Office.
-- Le fichier **./src/taskpane/taskpane.js** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office.
-
-## <a name="update-the-code"></a>Mettre à jour le code
-
-Ouvrez le fichier **./src/taskpane/taskpane.js** dans votre éditeur de code et ajoutez le code suivant à la fonction `run`. Ce code utilise l’API JavaScript Office pour définir le champ `Name` et le champ `Notes` de la tâche sélectionnée.
-
-```js
-var taskGuid;
-
-// Get the GUID of the selected task
-Office.context.document.getSelectedTaskAsync(
-    function (result) {
-        if (result.status === Office.AsyncResultStatus.Succeeded) {
-            taskGuid = result.value;
-
-            // Set the specified fields for the selected task.
-            var targetFields = [Office.ProjectTaskFields.Name, Office.ProjectTaskFields.Notes];
-            var fieldValues = ['New task name', 'Notes for the task.'];
-
-            // Set the field value. If the call is successful, set the next field.
-            for (var i = 0; i < targetFields.length; i++) {
-                Office.context.document.setTaskFieldAsync(
-                    taskGuid,
-                    targetFields[i],
-                    fieldValues[i],
-                    function (result) {
-                        if (result.status === Office.AsyncResultStatus.Succeeded) {
-                            i++;
-                        }
-                        else {
-                            var err = result.error;
-                            console.log(err.name + ' ' + err.code + ' ' + err.message);
-                        }
-                    }
-                );
-            }
-        } else {
-            var err = result.error;
-            console.log(err.name + ' ' + err.code + ' ' + err.message);
-        }
-    }
-);
-```
+- Le fichier **./src/taskpane/taskpane.js** contient le code d’API JavaScript pour Office qui facilite l’interaction entre le volet des tâches et l’application cliente Office. Dans ce démarrage rapide, le code définit le champ `Name` et le champ `Notes` de la tâche sélectionnée d’un projet.
 
 ## <a name="try-it-out"></a>Essayez
 
@@ -114,7 +72,7 @@ Office.context.document.getSelectedTaskAsync(
 
 1. Au bas du volet des tâches, sélectionnez le lien **Exécuter** pour renommer la tâche sélectionnée et ajouter des notes à la tâche sélectionnée.
 
-    ![Capture d'écran de l'application Project avec le complément du volet des tâches chargé.](../images/project-quickstart-addin-1.png)
+    ![L'application Project avec le complément du volet Office chargé.](../images/project-quickstart-addin-1.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

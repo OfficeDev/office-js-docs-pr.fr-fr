@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 06/08/2022
+ms.date: 07/11/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: fcdc6dc87deff67138f18a2bc1b7bd58ea0fd85c
-ms.sourcegitcommit: 2eeb0423a793b3a6db8a665d9ae6bcb10e867be3
+ms.openlocfilehash: 6c0b5d9547bbc0661d6410391f894586cdaffab3
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/10/2022
-ms.locfileid: "66019625"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797504"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -34,7 +34,7 @@ Les points d’extension correspondent à la manière dont les compléments sont
 
     **Complément avec boutons de commande dans le ruban**
 
-    ![Complément de commande Forme sans interface utilisateur.](../images/uiless-command-shape.png)
+    ![Commande de fonction de complément](../images/uiless-command-shape.png)
 
 - Les compléments peuvent désactiver les correspondances d’expressions régulières ou des entités détectées dans les messages et les rendez-vous. Pour plus d’informations, voir [Compléments Outlook contextuels](contextual-outlook-add-ins.md).
 

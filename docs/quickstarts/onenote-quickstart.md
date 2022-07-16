@@ -1,15 +1,15 @@
 ---
 title: Créer votre premier complément du volet Office de OneNote
 description: Découvrez comment créer un complément simple de volet des tâches OneNote simple à l’aide de l’API JavaScript pour Office.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: onenote
 ms.localizationpriority: high
-ms.openlocfilehash: 9b5f4dd941ed8cc107bee04bc67a368520439948
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 294b315c3d5ebc80d908d0bd4f3d4ee36a32b908
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090851"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797630"
 ---
 # <a name="build-your-first-onenote-task-pane-add-in"></a>Créer votre premier complément du volet Office de OneNote
 
@@ -29,7 +29,7 @@ Cet article décrit comment créer un complément du volet Office de OneNote.
 - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `OneNote`
 
-![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-onenote.png)
+![Les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande](../images/yo-office-onenote.png)
 
 Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -53,13 +53,13 @@ try {
     await OneNote.run(async (context) => {
 
         // Get the current page.
-        var page = context.application.getActivePage();
+        const page = context.application.getActivePage();
 
         // Queue a command to set the page title.
         page.title = "Hello World";
 
         // Queue a command to add an outline to the page.
-        var html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
+        const html = "<p><ol><li>Item #1</li><li>Item #2</li></ol></p>";
         page.addOutline(40, 90, html);
 
         // Run the queued commands.
@@ -96,7 +96,7 @@ try {
 
     L’image suivante montre l’onglet **MES COMPLÉMENTS** pour les blocs-notes de consommateurs.
 
-    ![Capture d’écran de la boîte de dialogue Compléments Office affichant l’onglet MES COMPLÉMENTS.](../images/onenote-office-add-ins-dialog.png)
+    ![Boîte de dialogue Compléments Office affichant l’onglet MES COMPLÉMENTS](../images/onenote-office-add-ins-dialog.png)
 
 1. Dans la boîte de dialogue Télécharger le complément, accédez à **manifest.xml** dans le dossier de projet, puis choisissez **Télécharger**.
 
@@ -104,7 +104,7 @@ try {
 
 1. Au bas du volet Office, sélectionnez le lien **Exécuter** pour définir le titre de la page et ajouter un plan au corps de celle-ci.
 
-    ![Capture d’écran illustrant le complément créé à partir de cette procédure : bouton Afficher le ruban du volet Office et le volet Office dans OneNote.](../images/onenote-first-add-in-4.png)
+    ![Le complément a été conçu à partir de cette présentation, où le bouton du ruban Afficher le volet des tâches a été utilisé pour ouvrir le volet des tâches dans OneNote.](../images/onenote-first-add-in-4.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 

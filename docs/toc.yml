@@ -311,6 +311,10 @@ items:
             displayName: 'uninstall, sideload'
           - name: Déboguer avec la journalisation runtime
             href: testing/runtime-logging.md
+          - name: Déboguer une commande de fonction avec un runtime non partagé
+            href: testing/debug-function-command.md
+          - name: Déboguer les méthodes initialize et onReady
+            href: testing/debug-initialize-onready.md
           - name: Erreurs
             items:
               - name: Gestion des erreurs de l’API propre à l’application
@@ -748,7 +752,7 @@ items:
                 href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
               - name: Résoudre les problèmes d’activation de compléments
                 href: outlook/troubleshoot-outlook-add-in-activation.md
-              - name: Déboguer les compléments sans interface utilisateur
+              - name: Commandes de fonction de débogage
                 href: outlook/debug-ui-less.md
               - name: Débogage de l’activation basée sur un événement
                 href: outlook/debug-autolaunch.md

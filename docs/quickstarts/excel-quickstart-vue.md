@@ -1,15 +1,15 @@
 ---
 title: Utiliser Vue pour créer un complément du volet de tâches Excel
 description: Découvrez comment créer un complément de volet des tâches Excel simple à l’aide de l’API JavaScript et de Vue pour Office.
-ms.date: 06/10/2022
+ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: 3024e759acd787a61992b84f31850ef7f0bfbe3b
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: d172e3b61fa4b8b66cc79b2cd364b3f2f0b37d96
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713055"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797497"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Utiliser Vue pour créer un complément du volet de tâches Excel
 
@@ -61,7 +61,7 @@ Chaque complément nécessite un fichier manifeste pour définir ses paramètres
     - **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
     - **Quelle application client Office voulez-vous prendre en charge ?** `Excel`
 
-    ![Capture d’écran des invites d’interface de ligne de commande du générateur de compléments Yeoman Office pour les projets de fonctions personnalisées.](../images/yo-office-manifest-only-vue.png)
+    ![L'interface de ligne de commande de Yeoman Generator pour les compléments Office, avec le type de projet défini comme manifeste uniquement](../images/yo-office-manifest-only-vue.png)
 
 Une fois l’exécution terminée, l’Assistant crée un dossier **Mon complément Office** contenant un fichier **manifest.xml**. Vous utiliserez le manifeste pour charger une version test et tester votre complément à la fin du Démarrage rapide.
 
@@ -75,9 +75,9 @@ Une fois l’exécution terminée, l’Assistant crée un dossier **Mon complém
 1. Activez HTTPS pour votre application. Dans le dossier racine du projet Vue, créez un fichier **vue.config.js** avec le contenu suivant.
 
     ```js
-    var fs = require("fs");
-    var path = require("path");
-    var homedir = require('os').homedir()
+    const fs = require("fs");
+    const path = require("path");
+    const homedir = require('os').homedir()
   
     module.exports = {
       devServer: {
@@ -219,13 +219,13 @@ Le projet de complément que vous avez créé avec le générateur Yeoman contie
 
 1. Ouvrez le volet Office du complément dans Excel. Dans l’onglet **Accueil**, choisissez le bouton **Afficher le volet de tâches**.
 
-   ![Capture d’écran du menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence.](../images/excel-quickstart-addin-2a.png)
+   ![Menu Accueil d’ Excel, avec le bouton Afficher le volet Office mis en évidence](../images/excel-quickstart-addin-2a.png)
 
 1. Sélectionnez une plage de cellules dans la feuille de calcul.
 
 1. Définissez la couleur de la plage sélectionnée sur vert. Dans le volet Office de votre complément, choisissez le bouton **Définir la couleur** .
 
-   ![Capture d’écran d’ Excel avec le volet Office Complément ouvert.](../images/excel-quickstart-addin-2c.png)
+   ![Le volet Office du complément s’ouvre dans Excel.](../images/excel-quickstart-addin-2c.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
