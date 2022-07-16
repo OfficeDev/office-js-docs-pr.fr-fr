@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : créer un complément de composition de message Outlook'
 description: Dans ce didacticiel, vous allez créer un complément Outlook qui insère des informations GitHub dans le corps d'un nouveau message.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 69b8fbc36eba542ca6b665f3ac2e741c9257a920
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659702"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797651"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -103,7 +103,7 @@ Le complément que vous allez créer dans ce didacticiel lit les[gists](https://
 
     - **Quelle application client Office voulez-vous prendre en charge ?** - `Outlook`
 
-    ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yeoman-prompts-2.png)
+    ![Les invites et les réponses pour le générateur Yeoman dans une interface de ligne de commande.](../images/yeoman-prompts-2.png)
 
     Après avoir exécuté l’assistant, le générateur crée le projet et installe les composants Node de prise en charge.
 
@@ -171,7 +171,7 @@ Avant d’aller plus loin, nous allons tester le complément base créé par le 
 
     Si tout est configuré correctement, le volet des tâches va s’ouvrir et afficher la page d’accueil du complément.
 
-    ![Capture d’écran du bouton « Afficher le volet Office » et de la git volet Office ajouté par l’échantillon.](../images/button-and-pane.png)
+    ![Le bouton Show Taskpane et Git le volet des tâches gist ajouté par l'échantillon.](../images/button-and-pane.png)
 
 ## <a name="define-buttons"></a>Définir des boutons
 
@@ -291,11 +291,11 @@ Une fois le complément réinstallé, vous pouvez vérifier qu’il a été corr
 
 - Si vous exécutez ce complément dans Outlook 2016 ou versions ultérieures sur Windows, vous devriez voir deux nouveaux boutons dans le ruban de la fenêtre de composition d’un message : **Insérer gist** et **Insérer gist par défaut**.
 
-    ![Capture d’écran du menu de dépassement de ruban dans Outlook sur Windows avec les boutons du complément mis en évidence.](../images/add-in-buttons-in-windows.png)
+    ![Menu de dépassement de ruban dans Outlook sur Windows avec les boutons du complément mis en évidence](../images/add-in-buttons-in-windows.png)
 
 - Si vous exécutez ce complément dans Outlook sur le web, vous devriez voir apparaître un nouveau bouton en bas de la fenêtre de composition d’un message. Sélectionnez ce bouton pour afficher les options **Insérer gist** et **Insérer gist par défaut**.
 
-    ![Capture d’écran du formulaire composer message dans Outlook sur le web avec le bouton complément et menu contextuel mis en évidence.](../images/add-in-buttons-in-owa.png)
+    ![Le formulaire de composition de message dans Outlook sur le web avec le bouton complément et menu contextuel mis en évidence](../images/add-in-buttons-in-owa.png)
 
 ## <a name="implement-a-first-run-experience"></a>Mettre en œuvre une expérience de première exécution
 
@@ -424,14 +424,14 @@ Maintenant que vous avez défini la boîte de dialogue interface utilisateur, vo
     jQuery(document).ready(function(){
       if (window.location.search) {
         // Check if warning should be displayed.
-        var warn = getParameterByName('warn');
+        const warn = getParameterByName('warn');
         if (warn) {
           $('.not-configured-warning').show();
         } else {
           // See if the config values were passed.
           // If so, pre-populate the values.
-          var user = getParameterByName('gitHubUserName');
-          var gistId = getParameterByName('defaultGistId');
+          const user = getParameterByName('gitHubUserName');
+          const gistId = getParameterByName('defaultGistId');
 
           $('#github-user').val(user);
           loadGists(user, function(success){
@@ -450,7 +450,7 @@ Maintenant que vous avez défini la boîte de dialogue interface utilisateur, vo
       // try to load gists.
       $('#github-user').on('change', function(){
         $('#gist-list').empty();
-        var ghUser = $('#github-user').val();
+        const ghUser = $('#github-user').val();
         if (ghUser.length > 0) {
           loadGists(ghUser);
         }
@@ -460,11 +460,11 @@ Maintenant que vous avez défini la boîte de dialogue interface utilisateur, vo
       // values back to the caller as a serialized
       // object.
       $('#settings-done').on('click', function() {
-        var settings = {};
+        const settings = {};
 
         settings.gitHubUserName = $('#github-user').val();
 
-        var selectedGist = $('.ms-ListItem.is-selected');
+        const selectedGist = $('.ms-ListItem.is-selected');
         if (selectedGist) {
           settings.defaultGistId = selectedGist.val();
 
@@ -508,7 +508,7 @@ Maintenant que vous avez défini la boîte de dialogue interface utilisateur, vo
       url = window.location.href;
     }
     name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
       results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
@@ -649,7 +649,7 @@ Dans le dossier **./src**, créez un nouveau sous-dossier nommé **helpers**. Da
 
 ```js
 function getUserGists(user, callback) {
-  var requestUrl = 'https://api.github.com/users/' + user + '/gists';
+  const requestUrl = 'https://api.github.com/users/' + user + '/gists';
 
   $.ajax({
     url: requestUrl,
@@ -664,10 +664,10 @@ function getUserGists(user, callback) {
 function buildGistList(parent, gists, clickFunc) {
   gists.forEach(function(gist) {
 
-    var listItem = $('<div/>')
+    const listItem = $('<div/>')
       .appendTo(parent);
 
-    var radioItem = $('<input>')
+    const radioItem = $('<input>')
       .addClass('ms-ListItem')
       .addClass('is-selectable')
       .attr('type', 'radio')
@@ -676,19 +676,19 @@ function buildGistList(parent, gists, clickFunc) {
       .val(gist.id)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descPrimary = $('<span/>')
       .addClass('ms-ListItem-primaryText')
       .text(gist.description)
       .appendTo(listItem);
 
-    var desc = $('<span/>')
+    const descSecondary = $('<span/>')
       .addClass('ms-ListItem-secondaryText')
       .text(' - ' + buildFileList(gist.files))
       .appendTo(listItem);
 
-    var updated = new Date(gist.updated_at);
+    const updated = new Date(gist.updated_at);
 
-    var desc = $('<span/>')
+    const descTertiary = $('<span/>')
       .addClass('ms-ListItem-tertiaryText')
       .text(' - Last updated ' + updated.toLocaleString())
       .appendTo(listItem);
@@ -699,9 +699,9 @@ function buildGistList(parent, gists, clickFunc) {
 
 function buildFileList(files) {
 
-  var fileList = '';
+  let fileList = '';
 
-  for (var file in files) {
+  for (let file in files) {
     if (files.hasOwnProperty(file)) {
       if (fileList.length > 0) {
         fileList = fileList + ', ';
@@ -768,8 +768,8 @@ Vous avez peut-être remarqué que le fichier HTML fait référence à un fichie
 Ouvrez le fichier **./src/commands/commands.js** et remplacez tout le contenu par le code suivant. Notez que si la fonction **insertDefaultGist** détermine que le complément`?warn=1` n'a pas encore été configuré, elle ajoute le paramètre à l'URL de la boîte de dialogue. Ainsi, la boîte de dialogue des paramètres rendra la barre de message définie dans **./src/settings/dialog.html** , afin d'indiquer à l'utilisateur pourquoi il voit la boîte de dialogue.
 
 ```js
-var config;
-var btnEvent;
+let config;
+let btnEvent;
 
 // The initialize function must be run each time a new page is loaded.
 Office.initialize = function () {
@@ -783,7 +783,7 @@ function showError(error) {
   });
 }
 
-var settingsDialog;
+let settingsDialog;
 
 function insertDefaultGist(event) {
 
@@ -821,8 +821,8 @@ function insertDefaultGist(event) {
     btnEvent = event;
     // Not configured yet, display settings dialog with
     // warn=1 to display warning.
-    var url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
-    var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+    const url = new URI('dialog.html?warn=1').absoluteTo(window.location).toString();
+    const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
     Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
       settingsDialog = result.value;
@@ -858,7 +858,7 @@ Le fichier fonction HTML fait référence à un fichier nommé **addin-config.js
 
 ```js
 function getConfig() {
-  var config = {};
+  const config = {};
 
   config.gitHubUserName = Office.context.roamingSettings.get('gitHubUserName');
   config.defaultGistId = Office.context.roamingSettings.get('defaultGistId');
@@ -886,7 +886,7 @@ Ensuite, ouvrez le fichier **./src/helpers/gist-api.js** et ajoutez les fonction
 
 ```js
 function getGist(gistId, callback) {
-  var requestUrl = 'https://api.github.com/gists/' + gistId;
+  const requestUrl = 'https://api.github.com/gists/' + gistId;
 
   $.ajax({
     url: requestUrl,
@@ -901,9 +901,9 @@ function getGist(gistId, callback) {
 function buildBodyContent(gist, callback) {
   // Find the first non-truncated file in the gist
   // and use it.
-  for (var filename in gist.files) {
+  for (let filename in gist.files) {
     if (gist.files.hasOwnProperty(filename)) {
-      var file = gist.files[filename];
+      const file = gist.files[filename];
       if (!file.truncated) {
         // We have a winner.
         switch (file.language) {
@@ -913,13 +913,13 @@ function buildBodyContent(gist, callback) {
             break;
           case 'Markdown':
             // Convert Markdown to HTML.
-            var converter = new showdown.Converter();
-            var html = converter.makeHtml(file.content);
+            const converter = new showdown.Converter();
+            const html = converter.makeHtml(file.content);
             callback(html);
             break;
           default:
             // Insert contents as a <code> block.
-            var codeBlock = '<pre><code>';
+            let codeBlock = '<pre><code>';
             codeBlock = codeBlock + file.content;
             codeBlock = codeBlock + '</code></pre>';
             callback(codeBlock);
@@ -940,11 +940,11 @@ Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite 
 
 1. Dans la fenêtre composer un message, sélectionnez le bouton **Insérer gist par défaut**. Vous devriez voir une boîte de dialogue dans laquelle vous pouvez configurer le complément, en commençant par l’invite de définition de votre nom d’utilisateur GitHub.
 
-    ![Capture d’écran de l’invite de la boîte de dialogue permettant de configurer le complément.](../images/addin-prompt-configure.png)
+    ![L’invite de la boîte de dialogue permettant de configurer le complément](../images/addin-prompt-configure.png)
 
 1. Dans la boîte de dialogue des paramètres, saisissez votre nom d'utilisateur GitHub, puis appuyez sur la touche **Tab** ou cliquez ailleurs dans la boîte de dialogue pour invoquer l'événement de **modification**, qui devrait charger votre liste de listes de diffusion publiques. Sélectionnez une liste de diffusion qui sera la liste par défaut, puis sélectionnez **Done** .
 
-    ![Capture d’écran de la boîte de dialogue des paramètres du complément.](../images/addin-settings.png)
+    ![La boîte de dialogue paramètres du complément](../images/addin-settings.png)
 
 1. Sélectionnez à nouveau le bouton **Insérer un gist** par défaut. Cette fois, vous devriez voir le contenu du gist inséré dans le corps du message.
 
@@ -1198,8 +1198,8 @@ Dans le projet que vous avez créé, le code JavaScript du volet de tâches est 
 (function(){
   'use strict';
 
-  var config;
-  var settingsDialog;
+  let config;
+  let settingsDialog;
 
   Office.initialize = function(reason){
 
@@ -1219,7 +1219,7 @@ Dans le projet que vous avez créé, le code JavaScript du volet de tâches est 
       // When insert button is selected, build the content
       // and insert into the body.
       $('#insert-button').on('click', function(){
-        var gistId = $('.ms-ListItem.is-selected').val();
+        const gistId = $('.ms-ListItem.is-selected').val();
         getGist(gistId, function(gist, error) {
           if (gist) {
             buildBodyContent(gist, function (content, error) {
@@ -1243,14 +1243,14 @@ Dans le projet que vous avez créé, le code JavaScript du volet de tâches est 
       // When the settings icon is selected, open the settings dialog.
       $('#settings-icon').on('click', function(){
         // Display settings dialog.
-        var url = new URI('dialog.html').absoluteTo(window.location).toString();
+        let url = new URI('dialog.html').absoluteTo(window.location).toString();
         if (config) {
           // If the add-in has already been configured, pass the existing values
           // to the dialog.
           url = url + '?gitHubUserName=' + config.gitHubUserName + '&defaultGistId=' + config.defaultGistId;
         }
 
-        var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+        const dialogOptions = { width: 20, height: 40, displayInIframe: true };
 
         Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
           settingsDialog = result.value;
@@ -1314,7 +1314,7 @@ Enregistrez toutes vos modifications et exécutez `npm start` depuis l’invite 
 
 1. Dans le volet des tâches, sélectionnez le gist **Hello World Html**, puis sélectionnez **insérer** pour insérer ce gist dans le corps du message.
 
-![Capture d’écran du volet Office Complément et du contenu du gist sélectionné qui s’affiche dans le corps du message.](../images/addin-taskpane.png)
+![Le volet Office Complément et du contenu du gist sélectionné qui s’affiche dans le corps du message](../images/addin-taskpane.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
@@ -1328,4 +1328,4 @@ Ce didacticiel vous a appris à créer un complément Outlook qui peut être uti
 - [Manifestes de complément Outlook](../outlook/manifests.md)
 - [Instructions de création d’un complément Outlook](../outlook/outlook-addin-design.md)
 - [Commandes de complément pour Outlook](../outlook/add-in-commands-for-outlook.md)
-- [Déboguer votre complément Outlook sans interface utilisateur](../outlook/debug-ui-less.md)
+- [Commandes de fonction de débogage dans les compléments Outlook](../outlook/debug-ui-less.md)
