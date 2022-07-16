@@ -1,15 +1,15 @@
 ---
 title: Didacticiel sur les compléments PowerPoint
 description: Dans ce didacticiel, vous allez créer un complément PowerPoint qui insère une image, insère du texte, obtient les métadonnées des diapositives et navigue entre les diapositives.
-ms.date: 05/11/2022
+ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: fc5709e77dd123ed94808a86d49c15309205e0d8
-ms.sourcegitcommit: bc9beb8d82e1901e641f57d2dc5f087999ce7d12
+ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2022
-ms.locfileid: "65393931"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797665"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -24,7 +24,7 @@ Dans ce didacticiel, vous utiliserez Visual Studio pour créer un complément de
 
 ## <a name="prerequisites"></a>Conditions requises
 
-- [Visual Studio 2019, *version 16.10.3 ou antérieure*, ou Visual Studio 2022](https://www.visualstudio.com/vs/), avec la charge de travail de **développement Office/SharePoint** installée. 
+- [Visual Studio 2019, *version 16.10.3 ou antérieure*, ou Visual Studio 2022](https://www.visualstudio.com/vs/), avec la charge de travail de **développement Office/SharePoint** installée.
 
     > [!IMPORTANT]
     > Certaines versions de Visual Studio 2019 après la version 16.10.3 ont un bogue qui empêche la fin de ce didacticiel. Utilisez une version antérieure de Visual Studio 2019 ou utilisez Visual Studio 2022.
@@ -37,24 +37,23 @@ Dans ce didacticiel, vous utiliserez Visual Studio pour créer un complément de
     > [!NOTE]
     > Si vous ne disposez pas déjà d’Office, vous pouvez [ rejoindre le programme de développement de Microsoft 365](https://developer.microsoft.com/office/dev-program) pour obtenir un abonnement Microsoft 365 de 90 jours renouvelable gratuit à utiliser pendant son développement.
 
-
 ## <a name="create-your-add-in-project"></a>Créer votre projet de complément
 
 Procédez comme suit pour créer un projet complément PowerPoint à l’aide de Visual Studio.
 
 1. Choisissez **Créer un nouveau projet**.
 
-2. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web PowerPoint**, puis sélectionnez **Suivant**.
+1. À l’aide de la zone de recherche, entrez **complément**. Choisissez **Complément web PowerPoint**, puis sélectionnez **Suivant**.
 
-3. Nommez le projet `HelloWorld` et sélectionnez **Créer**.
+1. Nommez le projet `HelloWorld` et sélectionnez **Créer**.
 
-4. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
+1. Dans la fenêtre de la boîte de dialogue **Créer un complément Office**, choisissez **Ajouter de nouvelles fonctionnalités à PowerPoint**, puis sélectionnez **Terminer** pour créer le projet.
 
-5. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+1. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
 
-     ![Capture d’écran de la fenêtre de l’Explorateur de solutions Visual Studio montrant HelloWorld et HelloWorldWeb, les 2 projets de la solution HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
+     ![La fenêtre Visual Studio Solution Explorer affichant HelloWorld et HelloWorldWeb, les deux projets de la solution HelloWorld.](../images/powerpoint-tutorial-solution-explorer.png)
 
-6. Les packages NuGet suivants doivent être installés. Installez-les à l’aide de la **Gestionnaire de package NuGet** dans Visual Studio. Consultez l’aide Visual Studio pour obtenir des instructions. Le deuxième peut être installé automatiquement lorsque vous installez le premier.
+1. Les packages NuGet suivants doivent être installés. Installez-les à l’aide de la **Gestionnaire de package NuGet** dans Visual Studio. Consultez l’aide Visual Studio pour obtenir des instructions. Le deuxième peut être installé automatiquement lorsque vous installez le premier.
 
    - Microsoft.AspNet.WebApi.WebHost
    - Microsoft.AspNet.WebApi.Core
@@ -81,18 +80,18 @@ Modifiez le code de complément comme suit pour créer la structure que vous uti
     </div>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+1. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
 
     ```js
     (function () {
         "use strict";
 
-        var messageBanner;
+        let messageBanner;
 
         Office.onReady(function () {
             $(document).ready(function () {
                 // Initialize the FabricUI notification mechanism and hide it
-                var element = document.querySelector('.MessageBanner');
+                const element = document.querySelector('.MessageBanner');
                 messageBanner = new components.MessageBanner(element);
                 messageBanner.hideBanner();
 
@@ -129,18 +128,18 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 
 1. À l’aide de l’explorateur de solutions, ajoutez un nouveau dossier nommé **Controllers** au projet **HelloWorldWeb**.
 
-    ![Capture d’écran de la fenêtre de l’explorateur de solutions Visual Studio qui met en évidence le dossier Controllers du projet HelloWorldWeb.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
+    ![La fenêtre Visual Studio Solution Explorer affiche le dossier Controllers mis en surbrillance dans le projet HelloWorldWeb.](../images/powerpoint-tutorial-solution-explorer-controllers.png)
 
-2. Cliquez avec le bouton droit de la souris sur le dossier **Controllers**, puis sélectionnez **Ajouter > Nouvel élément généré automatiquement...**.
+1. Cliquez avec le bouton droit de la souris sur le dossier **Controllers**, puis sélectionnez **Ajouter > Nouvel élément généré automatiquement...**.
 
-3. Dans la fenêtre de boîte de dialogue **Ajouter une structure**, sélectionnez **Contrôleur Web API 2 - Vide** et choisissez le bouton **Ajouter**. 
+1. Dans la fenêtre de boîte de dialogue **Ajouter une structure**, sélectionnez **Contrôleur Web API 2 - Vide** et choisissez le bouton **Ajouter**.
 
-4. Dans la fenêtre de boîte de dialogue **Ajouter un contrôleur**, saisissez **PhotoController** pour le nom du contrôleur, puis sélectionnez le bouton **Ajouter**. Visual Studio crée et ouvre le fichier **PhotoController.cs**.
+1. Dans la fenêtre de boîte de dialogue **Ajouter un contrôleur**, saisissez **PhotoController** pour le nom du contrôleur, puis sélectionnez le bouton **Ajouter**. Visual Studio crée et ouvre le fichier **PhotoController.cs**.
 
     > [!NOTE]
     > Le processus de génération de modèles automatique ne se termine pas correctement sur certaines versions de Visual Studio 2019 après la version 16.10.3. Visual Studio 2022 n’est pas impacté.
 
-5. Remplacez tout le contenu du fichier **PhotoController.cs** par le code suivant qui appelle le service Bing pour récupérer la photo du jour en tant que chaîne encodée en base 64. Lorsque vous utilisez l’API JavaScript Office pour insérer une image dans un document, les données de l’image doivent être spécifiées en tant que chaîne encodée en base 64.
+1. Remplacez tout le contenu du fichier **PhotoController.cs** par le code suivant qui appelle le service Bing pour récupérer la photo du jour en tant que chaîne encodée en base 64. Lorsque vous utilisez l’API JavaScript Office pour insérer une image dans un document, les données de l’image doivent être spécifiées en tant que chaîne encodée en base 64.
 
     ```csharp
     using System;
@@ -188,7 +187,7 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
     }
     ```
 
-6. Dans le fichier **Home.html**, remplacez `TODO1` par le balisage suivant. Ce balisage définit le bouton **Insert Image** (Insérer une image) qui s’affichera dans volet Office du complément.
+1. Dans le fichier **Home.html**, remplacez `TODO1` par le balisage suivant. Ce balisage définit le bouton **Insert Image** (Insérer une image) qui s’affichera dans volet Office du complément.
 
     ```html
     <button class="Button Button--primary" id="insert-image">
@@ -198,13 +197,13 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
     </button>
     ```
 
-7. Dans le fichier **Home.js**, remplacez `TODO1` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Insert Image** (Insérer une image).
+1. Dans le fichier **Home.js**, remplacez `TODO1` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Insert Image** (Insérer une image).
 
     ```js
     $('#insert-image').click(insertImage);
     ```
 
-8. Dans le fichier **Home.js**, remplacez `TODO2` par le code suivant pour définir la fonction `insertImage`. Cette fonction extrait l’image du service web Bing, puis appelle la fonction `insertImageFromBase64String` pour insérer cette image dans le document.
+1. Dans le fichier **Home.js**, remplacez `TODO2` par le code suivant pour définir la fonction `insertImage`. Cette fonction extrait l’image du service web Bing, puis appelle la fonction `insertImageFromBase64String` pour insérer cette image dans le document.
 
     ```js
     function insertImage() {
@@ -219,7 +218,7 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
     }
     ```
 
-9. Dans le fichier **Home.js**, remplacez `TODO3` par le code suivant pour définir la fonction `insertImageFromBase64String`. Cette fonction utilise l’API JavaScript Office pour insérer l’image dans le document. Remarque :
+1. Dans le fichier **Home.js**, remplacez `TODO3` par le code suivant pour définir la fonction `insertImageFromBase64String`. Cette fonction utilise l’API JavaScript Office pour insérer l’image dans le document. Remarque :
 
     - l’option `coercionType` spécifiée comme deuxième paramètre de la demande `setSelectedDataAsync` indique le type de données insérées.
 
@@ -243,19 +242,19 @@ Procédez comme suit pour ajouter le code qui récupère la photo[Bing](https://
 
 1. À l’aide de Visual Studio, testez le nouveau complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Show Taskpane** (Afficher le volet Office) qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-    ![Capture d’écran du bouton Démarrer de Visual Studio mis en évidence.](../images/powerpoint-tutorial-start.png)
+    ![Le bouton Démarrer mis en surbrillance dans Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
+1. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran de PowerPoint avec le bouton Afficher le volet Office mis en évidence dans le ruban d’accueil.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Le bouton Afficher le volet des tâches mis en surbrillance sur le ruban Accueil de PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Dans le volet Office, sélectionnez le bouton **Insert Image** (Insérer une image) permettant d’ajouter la photo Bing du jour sur la diapositive active.
+1. Dans le volet Office, sélectionnez le bouton **Insert Image** (Insérer une image) permettant d’ajouter la photo Bing du jour sur la diapositive active.
 
-    ![Capture d’écran de PowerPoint avec le bouton Insérer une image mis en évidence dans le complément.](../images/powerpoint-tutorial-insert-image-button.png)
+    ![Le complément PowerPoint avec le bouton Insérer une image en surbrillance.](../images/powerpoint-tutorial-insert-image-button.png)
 
-4. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+1. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
-    ![Capture d’écran du bouton Arrêter mis en évidence dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![Le bouton Arrêter mis en surbrillance dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="customize-user-interface-ui-elements"></a>Personnaliser les éléments de l’interface utilisateur (IU)
 
@@ -275,25 +274,25 @@ Procédez comme suit pour ajouter des marques de révision qui personnalisent l�
     </div>
     ```
 
-2. Dans le fichier **Home.html**, recherchez la balise **div** avec `class="footer"` et supprimez toute la balise **div** pour retirer la section de pied de page du volet Office.
+1. Dans le fichier **Home.html**, recherchez la balise **div** avec `class="footer"` et supprimez toute la balise **div** pour retirer la section de pied de page du volet Office.
 
 ### <a name="test-the-add-in"></a>Test du complément
 
 1. À l’aide de Visual Studio, testez le complément PowerPoint en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-    ![Capture d’écran du bouton Démarrer mis en évidence dans Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![Le bouton Démarrer mis en surbrillance dans Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
+1. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran avec le bouton Afficher le volet Office mis en évidence dans le ruban d’accueil PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Le bouton Afficher le volet Office mis en évidence sur le ruban d’accueil PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Notez que le volet Office contient désormais une section d’en-tête et un titre, et ne contient plus de section de pied de page.
+1. Notez que le volet Office contient désormais une section d’en-tête et un titre, et ne contient plus de section de pied de page.
 
-    ![Capture d’écran du complément PowerPoint avec le bouton Insérer une image.](../images/powerpoint-tutorial-new-task-pane-ui.png)
+    ![Le complément PowerPoint avec le bouton Insérer une image.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-4. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+1. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
-    ![Capture d’écran du bouton Arrêter mis en évidence dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![Le bouton Arrêter mis en surbrillance dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="insert-text"></a>Insérer du texte
 
@@ -310,13 +309,13 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
         </button>
     ```
 
-2. Dans le fichier **Home.js**, remplacez `TODO4` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Insert Text** (Insérer du texte).
+1. Dans le fichier **Home.js**, remplacez `TODO4` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Insert Text** (Insérer du texte).
 
     ```js
     $('#insert-text').click(insertText);
     ```
 
-3. Dans le fichier **Home.js**, remplacez `TODO5` par le code suivant pour définir la fonction `insertText`. Cette fonction insère du texte dans la diapositive active.
+1. Dans le fichier **Home.js**, remplacez `TODO5` par le code suivant pour définir la fonction `insertText`. Cette fonction insère du texte dans la diapositive active.
 
     ```js
     function insertText() {
@@ -333,23 +332,23 @@ Procédez comme suit pour ajouter le code qui insère le texte dans la diapositi
 
 1. À l’aide de Visual Studio, testez le complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-    ![Capture d’écran de Visual Studio avec le bouton Démarrer mis en évidence.](../images/powerpoint-tutorial-start.png)
+    ![Le bouton Démarrer mis en surbrillance dans Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
+1. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran avec le bouton Afficher le volet Office mis en évidence dans le ruban d’accueil PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Bouton Afficher le volet Office du ruban Accueil dans PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Dans le volet Office, sélectionnez le bouton **Insert Image** (Insérer une image) pour ajouter la photo Bing du jour sur la diapositive active et choisissez une mise en page pour la diapositive qui contient une zone de texte pour le titre.
+1. Dans le volet Office, sélectionnez le bouton **Insert Image** (Insérer une image) pour ajouter la photo Bing du jour sur la diapositive active et choisissez une mise en page pour la diapositive qui contient une zone de texte pour le titre.
 
-    ![Capture d’écran de PowerPoint avec la diapositive actuelle et le bouton Insérer une image mis en évidence dans le complément.](../images/powerpoint-tutorial-insert-image-slide-design.png)
+    ![La diapositive titre de PowerPoint sélectionnée et le bouton Insérer une image mis en surbrillance dans le complément.](../images/powerpoint-tutorial-insert-image-slide-design.png)
 
-4. Placez votre curseur dans la zone de texte sur la diapositive de titre, dans le volet Office, sélectionnez le bouton **Insert Text** (Insérer du texte) permettant d’ajouter du texte à la diapositive.
+1. Placez votre curseur dans la zone de texte sur la diapositive de titre, dans le volet Office, sélectionnez le bouton **Insert Text** (Insérer du texte) permettant d’ajouter du texte à la diapositive.
 
-    ![Capture d’écran de PowerPoint avec le bouton Insérer du texte mis en évidence dans le complément.](../images/powerpoint-tutorial-insert-text.png)
+    ![La diapositive titre de PowerPoint sélectionnée avec le bouton Insérer du texte mis en surbrillance dans le complément.](../images/powerpoint-tutorial-insert-text.png)
 
-5. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+1. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
-    ![Capture d’écran de Visual Studio avec le bouton Arrêter mis en évidence.](../images/powerpoint-tutorial-stop.png)
+    ![Le bouton Arrêter mis en surbrillance dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="get-slide-metadata"></a>Obtenir les métadonnées des diapositives
 
@@ -366,13 +365,13 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
     </button>
     ```
 
-2. Dans le fichier **Home.js**, remplacez `TODO6` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Get Slide Metadata** (Obtenir les métadonnées de la diapositive).
+1. Dans le fichier **Home.js**, remplacez `TODO6` par le code suivant pour attribuer le gestionnaire d’événements pour le bouton **Get Slide Metadata** (Obtenir les métadonnées de la diapositive).
 
     ```js
     $('#get-slide-metadata').click(getSlideMetadata);
     ```
 
-3. Dans le fichier **Home.js**, remplacez `TODO7` par le code suivant pour définir la fonction `getSlideMetadata`. Cette fonction extrait les métadonnées pour la ou les diapositives sélectionnée(s), et les écrit dans une fenêtre de boîte de dialogue contextuelle dans le volet Office du complément.
+1. Dans le fichier **Home.js**, remplacez `TODO7` par le code suivant pour définir la fonction `getSlideMetadata`. Cette fonction extrait les métadonnées pour la ou les diapositives sélectionnée(s), et les écrit dans une fenêtre de boîte de dialogue contextuelle dans le volet Office du complément.
 
     ```js
     function getSlideMetadata() {
@@ -392,19 +391,19 @@ Procédez comme suit pour ajouter du code qui extrait les métadonnées pour la 
 
 1. À l’aide de Visual Studio, testez le complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-    ![Capture d’écran de Visual Studio avec le bouton Démarrer mis en évidence.](../images/powerpoint-tutorial-start.png)
+    ![Le bouton Démarrer dans Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
+1. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran avec le bouton Afficher le volet Office mis en évidence dans le ruban d’accueil PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Le bouton Afficher le volet des tâches sur le ruban d'accueil de PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Dans le volet Office, sélectionnez le bouton **Get Slide Metadata** (Obtenir les métadonnées de la diapositive) pour obtenir les métadonnées pour la diapositive sélectionnée. Les métadonnées de la diapositive sont écrites dans la fenêtre de boîte de dialogue contextuelle en bas du volet Office. Dans ce cas, le tableau `slides` figurant dans les métadonnées JSON contient un objet qui spécifie les éléments `id`, `title` et `index` de la diapositive sélectionnée. Si plusieurs diapositives étaient sélectionnées lorsque vous avez récupéré les métadonnées des diapositives, le tableau `slides` figurant dans les métadonnées JSON contiendrait un objet pour chaque diapositive sélectionnée.
+1. Dans le volet Office, sélectionnez le bouton **Get Slide Metadata** (Obtenir les métadonnées de la diapositive) pour obtenir les métadonnées pour la diapositive sélectionnée. Les métadonnées de la diapositive sont écrites dans la fenêtre de boîte de dialogue contextuelle en bas du volet Office. Dans ce cas, le tableau `slides` figurant dans les métadonnées JSON contient un objet qui spécifie les éléments `id`, `title` et `index` de la diapositive sélectionnée. Si plusieurs diapositives étaient sélectionnées lorsque vous avez récupéré les métadonnées des diapositives, le tableau `slides` figurant dans les métadonnées JSON contiendrait un objet pour chaque diapositive sélectionnée.
 
-    ![Capture d’écran de PowerPoint avec le bouton Obtenir les métadonnées de la diapositive mis en évidence dans le complément.](../images/powerpoint-tutorial-get-slide-metadata.png)
+    ![Le bouton Obtenir les métadonnées de la diapositive mis en surbrillance dans le complément.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-4. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+1. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
-    ![Capture d’écran de Visual Studio avec le bouton Arrêter mis en évidence.](../images/powerpoint-tutorial-stop.png)
+    ![Le bouton Arrêter dans Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="navigate-between-slides"></a>Naviguer entre les diapositives
 
@@ -439,7 +438,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
     </button>
     ```
 
-2. Dans le fichier **Home.js**, remplacez `TODO8` par le code suivant pour affecter les gestionnaires d’événements pour les quatre boutons de navigation.
+1. Dans le fichier **Home.js**, remplacez `TODO8` par le code suivant pour affecter les gestionnaires d’événements pour les quatre boutons de navigation.
 
     ```js
     $('#go-to-first-slide').click(goToFirstSlide);
@@ -448,7 +447,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-3. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la fonction `goToByIdAsync` pour sélectionner une diapositive suivant sa position dans le document (première, dernière, précédente et suivante).
+1. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la fonction `goToByIdAsync` pour sélectionner une diapositive suivant sa position dans le document (première, dernière, précédente et suivante).
 
     ```js
     function goToFirstSlide() {
@@ -492,33 +491,33 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
 
 1. À l’aide de Visual Studio, testez le complément en appuyant sur **F5** ou en choisissant le bouton **Démarrer** pour lancer PowerPoint avec le bouton du complément **Afficher le volet des tâches** qui apparaît dans le ruban. Le complément sera hébergé localement sur IIS.
 
-    ![Capture d’écran du bouton Démarrer mis en évidence dans la barre d’outils de Visual Studio.](../images/powerpoint-tutorial-start.png)
+    ![Le bouton Démarrer mis en évidence sur la barre d’outils de Visual Studio.](../images/powerpoint-tutorial-start.png)
 
-2. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
+1. Dans PowerPoint, sélectionnez le bouton **Afficher le volet Office** dans le ruban pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran de PowerPoint avec le bouton Afficher le volet Office mis en évidence dans le ruban d’accueil.](../images/powerpoint-tutorial-show-taskpane-button.png)
+    ![Le bouton Afficher le volet des tâches mis en surbrillance sur le ruban Accueil de PowerPoint.](../images/powerpoint-tutorial-show-taskpane-button.png)
 
-3. Utilisez le bouton **Nouvelle diapositive** dans le ruban de l’onglet **Accueil** pour ajouter deux nouvelles diapositives au document.
+1. Utilisez le bouton **Nouvelle diapositive** dans le ruban de l’onglet **Accueil** pour ajouter deux nouvelles diapositives au document.
 
-4. Dans le volet Office, sélectionnez le bouton **Go to First Slide** (Aller à la première diapositive). La première diapositive du document est sélectionnée et affichée.
+1. Dans le volet Office, sélectionnez le bouton **Go to First Slide** (Aller à la première diapositive). La première diapositive du document est sélectionnée et affichée.
 
-    ![Capture d’écran PowerPoint avec le bouton Aller à la première diapositive mis en évidence dans le complément.](../images/powerpoint-tutorial-go-to-first-slide.png)
+    ![Le bouton Aller à la première diapositive mis en surbrillance dans le complément.](../images/powerpoint-tutorial-go-to-first-slide.png)
 
-5. Dans le volet Office, sélectionnez le bouton **Aller à la diapositive suivante**. La diapositive suivante du document est sélectionnée et affichée.
+1. Dans le volet Office, sélectionnez le bouton **Go to Next Slide** (Aller à la diapositive suivante). La diapositive suivante du document est sélectionnée et affichée.
 
-    ![Capture d’écran de PowerPoint avec le bouton Aller à la diapositive suivante mis en évidence dans le complément.](../images/powerpoint-tutorial-go-to-next-slide.png)
+    ![Le bouton Atteindre la diapositive suivante mis en surbrillance dans le complément.](../images/powerpoint-tutorial-go-to-next-slide.png)
 
-6. Dans le volet Office, sélectionnez le bouton **Aller à la diapositive précédente**. La diapositive précédente du document est sélectionnée et affichée.
+1. Dans le volet Office, sélectionnez le bouton **Go to Previous Slide** (Aller à la diapositive précédente). La diapositive précédente du document est sélectionnée et affichée.
 
-    ![Capture d’écran de PowerPoint avec le bouton Aller à la diapositive précédente mis en évidence dans le complément.](../images/powerpoint-tutorial-go-to-previous-slide.png)
+    ![Le bouton Accéder à la diapositive précédente mis en surbrillance dans le complément.](../images/powerpoint-tutorial-go-to-previous-slide.png)
 
-7. Dans le volet Office, sélectionnez le bouton **Aller à la dernière diapositive**. La dernière diapositive du document est sélectionnée et affichée.
+1. Dans le volet Office, sélectionnez le bouton **Go to Last Slide** (Aller à la dernière diapositive). La dernière diapositive du document est sélectionnée et affichée.
 
-    ![Capture d’écran de PowerPoint avec le bouton Aller à la dernière diapositive mis en évidence dans le complément.](../images/powerpoint-tutorial-go-to-last-slide.png)
+    ![Le bouton Atteindre la dernière diapositive mis en surbrillance dans le complément.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-8. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
+1. Dans Visual Studio, arrêtez le complément en appuyant sur **Maj + F5** ou en choisissant le bouton **Arrêter**. PowerPoint se ferme automatiquement lorsque le complément est arrêté.
 
-    ![Capture d’écran du bouton Arrêter mis en évidence dans la barre d’outils de Visual Studio.](../images/powerpoint-tutorial-stop.png)
+    ![Le bouton Arrêter mis en surbrillance dans la barre d’outils Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
 ## <a name="next-steps"></a>Étapes suivantes
 
