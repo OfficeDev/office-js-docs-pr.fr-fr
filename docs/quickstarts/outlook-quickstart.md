@@ -1,15 +1,15 @@
 ---
 title: Création de votre premier complément Outlook
 description: Découvrez comment créer un complément de volet des tâches Outlook simple à l’aide de l’API JavaScript pour Office.
-ms.date: 06/10/2022
+ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 2752c81a95cb7f65172d775efa3160b4b7dec10b
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 33f5e0f08bbb1472dcefc764941c8b7d6b6d4dbc
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660150"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797511"
 ---
 # <a name="build-your-first-outlook-add-in"></a>Création de votre premier complément Outlook
 
@@ -85,7 +85,7 @@ Le projet de complément que vous avez créé à l’aide du générateur Yeoman
 
     ```js
     // Get a reference to the current message
-    var item = Office.context.mailbox.item;
+    const item = Office.context.mailbox.item;
 
     // Write message property value to the task pane
     document.getElementById("item-subject").innerHTML = "<b>Subject:</b> <br/>" + item.subject;
@@ -160,7 +160,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 ### <a name="update-the-code"></a>Mise à jour du code
 
 1. **MessageRead.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **MessageRead.html** , remplacez **\<body\>** l'élément par le balisage suivant et enregistrez le fichier.
- 
+
     ```HTML
     <body class="ms-font-m ms-welcome">
         <div class="ms-Fabric content-main">
@@ -275,7 +275,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 
 1. Dans le message, recherchez les points de suspension du menu de dépassement de capacité contenant le bouton du complément.
 
-    ![Capture d’écran d’une fenêtre de message dans Outlook sur le web avec les points de suspension mis en surbrillance.](../images/quick-start-button-owa-1.png)
+    ![Une fenêtre de message dans Outlook sur le web avec les points de suspension en surbrillance.](../images/quick-start-button-owa-1.png)
 
 1. Dans le menu de dépassement de capacité, recherchez le bouton du complément.
 
@@ -283,7 +283,7 @@ Quand vous arrivez au bout de l’Assistant, Visual Studio crée une solution qu
 
 1. Cliquez sur le bouton pour ouvrir le volet Office du complément.
 
-    ![Capture d’écran du volet Office du complément dans Outlook sur le web, affichant les propriétés des messages.](../images/quick-start-task-pane-owa-1.png)
+    ![Le volet Office du complément dans Outlook sur le Web affichant les propriétés du message.](../images/quick-start-task-pane-owa-1.png)
 
     > [!NOTE]
     > Si le volet Office n’est pas chargé, essayez de l’ouvrir dans un navigateur sur le même ordinateur.
