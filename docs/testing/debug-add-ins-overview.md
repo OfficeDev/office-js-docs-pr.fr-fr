@@ -1,14 +1,14 @@
 ---
 title: Débogage des compléments Office
 description: Recherchez les conseils de débogage des compléments Office pour votre environnement de développement.
-ms.date: 06/15/2022
+ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c6e9a870b322bc99bafd9bd80b0ba9030433ec12
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
+ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229700"
+ms.lasthandoff: 07/15/2022
+ms.locfileid: "66797483"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Vue d’ensemble du débogage Office des modules
 
@@ -32,15 +32,28 @@ Le débogage du code côté serveur d’un Office est identique au débogage cô
 
 Le reste de cet article ne concerne que le débogage du JavaScript côté client (qui peut être transposé de TypeScript).
 
+## <a name="special-cases"></a>Cas particuliers
+
+Dans certains cas particuliers, le processus de débogage diffère de la normale pour une combinaison donnée de plateforme, d’application Office et d’environnement de développement. Si vous déboguez l’un de ces cas spéciaux, utilisez les liens de cette section pour trouver les conseils appropriés. Sinon, continuez à [Instructions générales](#general-guidance).
+
+- **Débogage des méthodes `Office.initialize` ou `Office.onReady`** : [Déboguer les méthodes initialize et onReady](debug-initialize-onready.md).
+- **Debugging d’une fonction personnalisée Excel _dans un_ runtime non-partagé** : [Débogage de fonctions personnalisées dans un runtime non-partagé](../excel/custom-functions-debugging.md).
+- **Débogage d'une [commande de fonction](../design/add-in-commands.md#types-of-add-in-commands)dans un __ runtime non-partagée** : 
+    - Compléments Outlook sur un ordinateur de développement Windows : [commandes de fonction de débogage dans les compléments Outlook](../outlook/debug-ui-less.md) 
+    - Autres compléments d’application Office ou Outlook sur un ordinateur de développement Mac : [Déboguez une commande de fonction avec un runtime non partagé](debug-function-command.md).
+- **Débogage d'un complément Outlook basé sur des événements** : [Déboguez votre complément Outlook basé sur des événements](../outlook/debug-autolaunch.md). 
+ 
+## <a name="general-guidance"></a>Directives générales
+
 Pour trouver des conseils pour le débogage du code côté client, la première variable est le système d’exploitation de votre ordinateur de développement.
 
 - [Windows](#debug-on-windows)
 - [Mac](#debug-on-mac)
 - [Linux ou une autre variante Unix](#debug-on-linux)
 
-## <a name="debug-on-windows"></a>Débogage sur Windows
+### <a name="debug-on-windows"></a>Débogage sur Windows
 
-L’exemple suivant fournit des instructions générales sur le débogage sur Windows. Il existe des instructions spéciales pour le débogage des fonctions personnalisées dans Excel et des modules complémentaires basés sur des événements dans Outlook. Consultez [les cas particuliers Windows](#special-cases-in-windows) plus loin dans cette section. Le débogage sur Windows dépend de votre IDE :
+L’exemple suivant fournit des instructions générales sur le débogage sur Windows. Le débogage sur Windows dépend de votre IDE.
 
 - **Visual Studio** : Déboguer à l’aide des outils F12 du navigateur. Afficher [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md)
 - **Visual Studio Code**: Déboguer à l’aide [de l’extension de déboguer de Visual Studio Code](debug-with-vs-extension.md).
@@ -55,24 +68,15 @@ Pour plus d’informations sur le runtime du navigateur utilisé, voir Navigateu
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-### <a name="special-cases-in-windows"></a>Cas particuliers dans Windows
+### <a name="debug-on-mac"></a>Débogage sur Mac
 
-Pour déboguer des fonctions personnalisées sans runtime partagé sur Windows, consultez [Débogage des fonctions personnalisées](../excel/custom-functions-debugging.md).
-
-Pour déboguer des compléments basés sur des événements dans Outlook, consultez [Déboguer votre Outlook d’événement.](../outlook/debug-autolaunch.md) Le processus nécessite une Visual Studio Code.
-
-## <a name="debug-on-mac"></a>Débogage sur Mac
-
-L’exemple suivant fournit des instructions générales sur le débogage sur Mac. Il existe des instructions spéciales pour le débogage de fonctions personnalisées sans interface utilisateur dans Excel. Afficher [les cas particuliers dans Mac](#special-cases-in-mac) plus loin dans cette section
+L’exemple suivant fournit des instructions générales sur le débogage sur Mac.
 
 - Si vous utilisez Visual Studio Code, déboguer à l’aide de [l’extension de](debug-with-vs-extension.md)déboguer de Visual Studio Code .
 - Pour tout autre IDE, utilisez l’inspecteur web Safari. Les instructions sont dans [Déboguer des Office sur un Mac.](debug-office-add-ins-on-ipad-and-mac.md)
 
-### <a name="special-cases-in-mac"></a>Cas particuliers dans Mac
 
-Pour déboguer des fonctions personnalisées sans runtime partagé sur Mac, consultez [Débogage des fonctions personnalisées](../excel/custom-functions-debugging.md).
-
-## <a name="debug-on-linux"></a>Débogage sur Linux
+### <a name="debug-on-linux"></a>Débogage sur Linux
 
 Il n'existe pas de version de bureau d'Office pour Linux. Vous devrez donc charger [le complément dans Office on the web](sideload-office-add-ins-for-testing.md) pour le tester et le déboguer. Vous trouverez des conseils sur le débogage dans [Debug des compléments dans Office on the web](debug-add-ins-in-office-online.md).
 
