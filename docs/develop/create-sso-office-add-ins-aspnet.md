@@ -1,14 +1,14 @@
 ---
 title: Créer un complément Office ASP.NET qui utilise l’authentification unique
 description: Guide pas à pas pour créer (ou convertir) un complément Office avec un backend ASP.NET pour utiliser l’authentification unique (SSO).
-ms.date: 06/10/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e84c3a0bef488a07d1dd1118bd1bb254dd704d9a
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 980ae1b9c36dfdf7fcf84ad4fb1ba9088687cf7a
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659975"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889379"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -17,17 +17,17 @@ Cet article vous guide tout au long du processus d’activation de l’authentif
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* Visual Studio 2019 ou version ultérieure.
+- Visual Studio 2019 ou version ultérieure.
 
-* Charge de **travail de développement Office/SharePoint** lors de la configuration de Visual Studio.
+- Charge de **travail de développement Office/SharePoint** lors de la configuration de Visual Studio.
 
-* [Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx)
+- [Outils de développement Office](https://www.visualstudio.com/features/office-tools-vs.aspx)
 
 [!include[additional prerequisites](../includes/sso-tutorial-prereqs.md)]
 
-* Au moins quelques fichiers et dossiers stockés sur OneDrive Entreprise dans votre abonnement Microsoft 365.
+- Au moins quelques fichiers et dossiers stockés sur OneDrive Entreprise dans votre abonnement Microsoft 365.
 
-* Un compte Azure avec un abonnement actif : [créez un compte gratuitement](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+- Un compte Azure avec un abonnement actif : [créez un compte gratuitement](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
 ## <a name="set-up-the-starter-project"></a>Configurer le projet de démarrage
 
@@ -36,8 +36,8 @@ Clonez ou téléchargez le référentiel sur [Complément Office ASPNET SSO](htt
 > [!NOTE]
 > Il existe deux versions de l’exemple.
 >
-> * Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
-> * La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
+> - Le dossier **Before** est un projet de démarrage. L’interface utilisateur et d’autres aspects du complément qui ne sont pas directement liés à l’authentification unique ou à l’autorisation sont déjà terminés. Les sections suivantes de cet article vous guident tout au long de la procédure d’exécution de cette dernière.
+> - La version **Complète** de l’échantillon s’apparente au complément obtenu si vous aviez terminé les procédures de cet article, sauf que le projet final comporte des commentaires de code qui seraient redondants avec le texte de cet article. Pour utiliser la version finale, suivez simplement les instructions de cet article, mais remplacez « Avant » par « Finale » et ignorez les sections **Code côté client** et **Code côté serveur**.
 
 ## <a name="register-the-add-in-through-an-app-registration"></a>Inscrire le complément via une inscription d’application
 
@@ -45,15 +45,15 @@ Tout d’abord, suivez les étapes décrites dans démarrage [rapide : Inscrire 
 
 Utilisez les paramètres suivants pour l’inscription de votre application.
 
-* Nom : `Office-Add-in-ASPNET-SSO`
-* Types de comptes pris en charge : **comptes dans n’importe quel annuaire organisationnel (répertoire Azure AD - multilocataire) et comptes Microsoft personnels (par exemple, Skype, Xbox)**
+- Nom : `Office-Add-in-ASPNET-SSO`
+- Types de comptes pris en charge : **comptes dans n’importe quel annuaire organisationnel (répertoire Azure AD - multilocataire) et comptes Microsoft personnels (par exemple, Skype, Xbox)**
 
     > [!NOTE]
     >  Si vous souhaitez que le complément soit utilisable uniquement par les utilisateurs de la location où vous l’inscrivez, vous pouvez choisir **comptes dans cet annuaire organisationnel uniquement...** mais vous devez suivre quelques étapes de configuration supplémentaires. Consultez **le programme d’installation pour un locataire unique** plus loin dans cet article.
 
-* Plateforme : **Web**
-* URI de redirection : **https://localhost:44355/AzureADAuth/Authorize**
-* Clé secrète client : `*********` (l’application web utilise la clé secrète client pour prouver son identité lorsqu’elle demande des jetons. *Enregistrez cette valeur pour une utilisation ultérieure : elle ne s’affiche qu’une seule fois.*)
+- Plateforme : **Web**
+- URI de redirection : **https://localhost:44355/AzureADAuth/Authorize**
+- Clé secrète client : `*********` (l’application web utilise la clé secrète client pour prouver son identité lorsqu’elle demande des jetons. *Enregistrez cette valeur pour une utilisation ultérieure : elle ne s’affiche qu’une seule fois.*)
 
 ### <a name="expose-a-web-api"></a>Exposer une API web
 
@@ -167,20 +167,19 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Ouvrez le fichier HomeES6.js dans le dossier **Scripts**. Il contient déjà du code.
 
-    * Un polyfill qui affecte l’objet Office. promesse à l’objet fenêtre globale pour que le complément puisse s’exécuter lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).)
-    * Une affectation à la méthode `Office.initialize` qui affecte elle-même un gestionnaire à l’événement ClickButton `getGraphAccessTokenButton`.
-    * Une méthode `showResult` permettant d’afficher les données renvoyées par Microsoft Graph (ou un message d’erreur) en bas du volet Office.
-    * Une méthode `logErrors` qui consigne dans la console les erreurs qui ne sont pas destinées à l’utilisateur final.
-    * Code qui implémente le système d’autorisation de secours que le complément utilisera dans les scénarios où l’authentification unique n’est pas prise en charge ou une erreur s’est produite.
+    - Un polyfill qui affecte l’objet Office. promesse à l’objet fenêtre globale pour que le complément puisse s’exécuter lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).)
+    - Une affectation à la méthode `Office.initialize` qui affecte elle-même un gestionnaire à l’événement ClickButton `getGraphAccessTokenButton`.
+    - Une méthode `showResult` permettant d’afficher les données renvoyées par Microsoft Graph (ou un message d’erreur) en bas du volet Office.
+    - Une méthode `logErrors` qui consigne dans la console les erreurs qui ne sont pas destinées à l’utilisateur final.
+    - Code qui implémente le système d’autorisation de secours que le complément utilisera dans les scénarios où l’authentification unique n’est pas prise en charge ou une erreur s’est produite.
 
 1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte du code suivant :
 
-
-    * La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `retryGetAccessToken` permet de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir.
-    * La fonction `getGraphData` est définie avec le mot clé ES6 `async`. L’utilisation de la syntaxe ES6 simplifie l’utilisation de l’API d’authentification unique dans les compléments Office. Il s’agit du seul fichier dans la solution qui utilise une syntaxe non prise en charge par Internet Explorer. Nous plaçons « ES6 » dans le nom du fichier comme rappel. La solution utilise le transpondeur tsc pour transpiler ce fichier en ES5, afin que le complément puisse être exécuté lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Consultez le fichier tsconfig.json dans la racine du projet.)
+    - La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `retryGetAccessToken` permet de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir.
+    - La fonction `getGraphData` est définie avec le mot clé ES6 `async`. L’utilisation de la syntaxe ES6 simplifie l’utilisation de l’API d’authentification unique dans les compléments Office. Il s’agit du seul fichier dans la solution qui utilise une syntaxe non prise en charge par Internet Explorer. Nous plaçons « ES6 » dans le nom du fichier comme rappel. La solution utilise le transpondeur tsc pour transpiler ce fichier en ES5, afin que le complément puisse être exécuté lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Consultez le fichier tsconfig.json dans la racine du projet.)
 
     ```javascript
-    var retryGetAccessToken = 0;
+    let retryGetAccessToken = 0;
 
     async function getGraphData() {
         await getDataWithToken({ allowSignInPrompt: true, allowConsentPrompt: true, forMSGraphAccess: true });
@@ -212,17 +211,16 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-
 1. Remplacez par `TODO 1` le code suivant pour obtenir le jeton d’accès à partir de l’hôte Office. Le paramètre **options** contient les paramètres suivants passés à partir de la fonction **getGraphData()** précédente.
 
-    * `allowSignInPrompt` a la valeur true. Cela indique à Office d’inviter l’utilisateur à se connecter si l’utilisateur n’est pas déjà connecté à Office.
-    * `allowConsentPrompt` a la valeur true. Cela indique à Office d’inviter l’utilisateur à autoriser le complément à accéder au profil Microsoft Azure Active Directory de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte n’autorise *pas* l’utilisateur à donner son consentement à des étendues Microsoft Graph.)
-    * `forMSGraphAccess` a la valeur true. Cela indique à Office de retourner une erreur (code 13012) si l’utilisateur ou l’administrateur n’a pas donné son consentement aux étendues Graph pour le complément. Pour accéder à Microsoft Graph, le complément doit échanger le jeton d’accès contre un nouveau jeton d’accès via le flux on-behalf-of. La valeur `forMSGraphAccess` true permet d’éviter le scénario dans lequel **getAccessToken()** réussit, mais le flux on-behalf-of échoue ultérieurement pour Microsoft Graph. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours.
+    - `allowSignInPrompt` a la valeur true. Cela indique à Office d’inviter l’utilisateur à se connecter si l’utilisateur n’est pas déjà connecté à Office.
+    - `allowConsentPrompt` a la valeur true. Cela indique à Office d’inviter l’utilisateur à autoriser le complément à accéder au profil Microsoft Azure Active Directory de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte n’autorise *pas* l’utilisateur à donner son consentement à des étendues Microsoft Graph.)
+    - `forMSGraphAccess` a la valeur true. Cela indique à Office de retourner une erreur (code 13012) si l’utilisateur ou l’administrateur n’a pas donné son consentement aux étendues Graph pour le complément. Pour accéder à Microsoft Graph, le complément doit échanger le jeton d’accès contre un nouveau jeton d’accès via le flux on-behalf-of. La valeur `forMSGraphAccess` true permet d’éviter le scénario dans lequel **getAccessToken()** réussit, mais le flux on-behalf-of échoue ultérieurement pour Microsoft Graph. Le code côté client du complément peut répondre au 13012 en branchant un système d’autorisation de secours.
 
     Notez également le code suivant :
 
-    * Vous créez la fonction `getData` dans une étape ultérieure.
-    * Le `/api/values` paramètre est l’URL d’un contrôleur côté serveur qui utilisera le flux on-behalf-of pour échanger le jeton contre un nouveau jeton d’accès pour appeler Microsoft Graph.
+    - Vous créez la fonction `getData` dans une étape ultérieure.
+    - Le `/api/values` paramètre est l’URL d’un contrôleur côté serveur qui utilisera le flux on-behalf-of pour échanger le jeton contre un nouveau jeton d’accès pour appeler Microsoft Graph.
 
     ```javascript
     let bootstrapToken = await Office.auth.getAccessToken(options);
@@ -232,11 +230,11 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Ajoutez la fonction suivante après la fonction `getGraphData`. Tenez compte du code suivant :
 
-    * Il est utilisé par les systèmes d’authentification unique et de secours.
-    * Le paramètre `relativeUrl` est un contrôleur côté serveur.
-    * Le paramètre `accessToken` peut être un jeton d’amorçage ou un jeton d’accès complet.
-    * Le `writeFileNamesToOfficeDocument` fait déjà partie du projet.
-    * Vous créez la fonction `handleServerSideErrors` dans une étape ultérieure.
+    - Il est utilisé par les systèmes d’authentification unique et de secours.
+    - Le paramètre `relativeUrl` est un contrôleur côté serveur.
+    - Le paramètre `accessToken` peut être un jeton d’amorçage ou un jeton d’accès complet.
+    - Le `writeFileNamesToOfficeDocument` fait déjà partie du projet.
+    - Vous créez la fonction `handleServerSideErrors` dans une étape ultérieure.
 
     ```javascript
     function getData(relativeUrl, accessToken) {
@@ -335,8 +333,8 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 1. Remplacez `TODO 4` par ce qui suit. À propos de ce code, Notez que des classes d’erreur ASP.NET ont été créées avant d’être telles que l’authentification multi-facteur. Dans le cadre de la façon dont la logique côté serveur gère les demandes pour un deuxième facteur d’authentification, l’erreur côté serveur envoyée au client a une propriété de **Message**, mais aucune propriété **ExceptionMessage** n’est disponible. Cependant, toutes les autres erreurs auront une propriété **ExceptionMessage**, pour que le code côté client doit analyser la réponse pour les deux. L’une ou l’autre variable est non définie.
 
     ```javascript
-    var message = JSON.parse(result.responseText).Message;
-    var exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
+    const message = JSON.parse(result.responseText).Message;
+    const exceptionMessage = JSON.parse(result.responseText).ExceptionMessage;
     ```
 
 1. Remplacez `TODO 5` par ce qui suit. Lorsque Microsoft Graph exige un formulaire d’authentification supplémentaire, il envoie l’erreur AADSTS50076. Celle-ci inclut des informations sur la configuration requise supplémentaire dans la propriété **message les déclarations**. Pour gérer ce problème, le code effectue une deuxième tentative d’obtention du jeton d’amorçage, mais cette fois, il inclut la demande d’un facteur supplémentaire comme valeur de l’option `authChallenge`, ce qui indique à Azure AD d’inviter l’utilisateur à fournir toutes les formes requises d’authentification.
@@ -344,8 +342,8 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     ```javascript
     if (message) {
         if (message.indexOf("AADSTS50076") !== -1) {
-            var claims = JSON.parse(message).Claims;
-            var claimsAsString = JSON.stringify(claims);
+            const claims = JSON.parse(message).Claims;
+            const claimsAsString = JSON.stringify(claims);
             getDataWithToken({ authChallenge: claimsAsString });
             return;
         }
@@ -434,10 +432,10 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez le `TODO 1` par ce qui suit. Tenez compte du code suivant :
 
-    * Le code indique à OWIN de s’assurer que l’audience spécifiée dans le jeton d’amorçage provenant de l’application Office doit correspondre à la valeur spécifiée dans le web.config.
-    * Les comptes Microsoft ont un GUID d’émetteur différent de n’importe quel GUID de locataire d’organisation. Par conséquent, pour prendre en charge les deux types de comptes, nous ne validons pas l’émetteur.
-    * Le paramètre `SaveSigninToken` permet à `true` OWIN d’enregistrer le jeton d’amorçage brut à partir de l’application Office. Le complément en a besoin pour obtenir un jeton d’accès à Microsoft Graph avec le flux « de la part de ».
-    * Les étendues ne sont pas validées par l’intergiciel OWIN. Les étendues du jeton d’amorçage, qui doivent inclure `access_as_user`, sont validées dans le contrôleur.
+    - Le code indique à OWIN de s’assurer que l’audience spécifiée dans le jeton d’amorçage provenant de l’application Office doit correspondre à la valeur spécifiée dans le web.config.
+    - Les comptes Microsoft ont un GUID d’émetteur différent de n’importe quel GUID de locataire d’organisation. Par conséquent, pour prendre en charge les deux types de comptes, nous ne validons pas l’émetteur.
+    - Le paramètre `SaveSigninToken` permet à `true` OWIN d’enregistrer le jeton d’amorçage brut à partir de l’application Office. Le complément en a besoin pour obtenir un jeton d’accès à Microsoft Graph avec le flux « de la part de ».
+    - Les étendues ne sont pas validées par l’intergiciel OWIN. Les étendues du jeton d’amorçage, qui doivent inclure `access_as_user`, sont validées dans le contrôleur.
 
     ```csharp
     TokenValidationParameters tvps = new TokenValidationParameters
@@ -450,8 +448,8 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez `TODO 2` par ce qui suit. Tenez compte du code suivant :
 
-    * La méthode `UseOAuthBearerAuthentication` est appelée au lieu de la méthode `UseWindowsAzureActiveDirectoryBearerAuthentication` plus courante, car cette dernière n’est pas compatible avec le point de terminaison Azure AD V2.
-    * L’URL transmise à la méthode est l’endroit où l’intergiciel OWIN obtient des instructions pour obtenir la clé dont il a besoin pour vérifier la signature sur le jeton de démarrage reçu de l’application Office. Le segment d’autorité de l’URL provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
+    - La méthode `UseOAuthBearerAuthentication` est appelée au lieu de la méthode `UseWindowsAzureActiveDirectoryBearerAuthentication` plus courante, car cette dernière n’est pas compatible avec le point de terminaison Azure AD V2.
+    - L’URL transmise à la méthode est l’endroit où l’intergiciel OWIN obtient des instructions pour obtenir la clé dont il a besoin pour vérifier la signature sur le jeton de démarrage reçu de l’application Office. Le segment d’autorité de l’URL provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
 
     ```csharp
     string[] endAuthoritySegments = { "oauth2/v2.0" };
@@ -506,7 +504,6 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez `TODO1` par le code suivant pour confirmer que les étendues spécifiées dans le jeton incluent `access_as_user`. Notez que le deuxième paramètre de la méthode `SendErrorToClient` est un objet d’**Exception**. Dans ce cas, le code transmet `null` car même l’objet **Exception** bloque l’inclusion de la propriété **Message** dans la réponse HTTP qui est générée.
 
-
     ```csharp
     string[] addinScopes = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/scope").Value.Split(' ');
     if (!(addinScopes.Contains("access_as_user")))
@@ -517,10 +514,10 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez `TODO 2` par le code suivant pour assembler toutes les informations nécessaires pour obtenir un jeton pour Microsoft Graph à l’aide du flux « de la part de ». Tenez compte du code suivant :
 
-    * Votre complément ne joue plus le rôle de ressource (ou d’audience) à laquelle l’application Office et l’utilisateur ont besoin d’accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
-    * À partir de MSAL.NET 3. x. x, le `bootstrapContext` est simplement le jeton d’amorçage.
-    * L’autorité provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
-    * MSAL génère une erreur si votre code demande `profile`, ce qui est réellement utilisé uniquement lorsque l’application cliente Office obtient le jeton de l’application web de votre complément. Seul `Files.Read.All` est demandé explicitement.
+    - Votre complément ne joue plus le rôle de ressource (ou d’audience) à laquelle l’application Office et l’utilisateur ont besoin d’accéder. Désormais, il est lui-même un client qui a besoin d’accéder à Microsoft Graph. `ConfidentialClientApplication` est l’objet de « contexte client » MSAL.
+    - À partir de MSAL.NET 3. x. x, le `bootstrapContext` est simplement le jeton d’amorçage.
+    - L’autorité provient du fichier web.config. Il s’agit soit de la chaîne « commun », soit d’un GUID pour un complément à un seul locataire.
+    - MSAL génère une erreur si votre code demande `profile`, ce qui est réellement utilisé uniquement lorsque l’application cliente Office obtient le jeton de l’application web de votre complément. Seul `Files.Read.All` est demandé explicitement.
 
     ```csharp
     string bootstrapContext = ClaimsPrincipal.Current.Identities.First().BootstrapContext.ToString();
@@ -537,8 +534,8 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez `TODO 3` par le code suivant. Tenez compte du code suivant :
 
-    * La méthode `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` recherchera tout d’abord dans le cache MSAL, c’est-à-dire en mémoire, un jeton d’accès correspondant. Uniquement s’il n’existe pas, elle lance le flux « de la part de » avec le point de terminaison Azure AD V2.
-    * Les exceptions qui ne sont pas de type `MsalServiceException` ne sont intentionnellement pas capturées afin d’être propagées au client sous la forme de messages `500 Server Error`.
+    - La méthode `ConfidentialClientApplication.AcquireTokenOnBehalfOfAsync` recherchera tout d’abord dans le cache MSAL, c’est-à-dire en mémoire, un jeton d’accès correspondant. Uniquement s’il n’existe pas, elle lance le flux « de la part de » avec le point de terminaison Azure AD V2.
+    - Les exceptions qui ne sont pas de type `MsalServiceException` ne sont intentionnellement pas capturées afin d’être propagées au client sous la forme de messages `500 Server Error`.
 
     ```csharp
     AcquireTokenOnBehalfOfParameterBuilder parameterBuilder = null;
@@ -560,10 +557,10 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez `TODO 3a` par le code suivant. Tenez compte du code suivant :
 
-    * Si l’authentification multifacteur est requise par la ressource Microsoft Graph et que l’utilisateur ne l'a pas encore fournie, Azure AD renvoie « 400 : emande incorrecte » avec l’erreur `AADSTS50076` et une propriété **Claims**. MSAL génère une exception **MsalUiRequiredException** (qui hérite de **MsalServiceException**) avec ces informations.
-    * La valeur de la propriété **Claims** doit être passée au client qui doit la transmettre à l’application Office, qui l’inclut ensuite dans une demande de nouveau jeton d’amorçage. Azure AD demandera à l’utilisateur d’accepter tous les formulaires d’authentification requis.
-    * Les API qui créent des réponses HTTP à partir d’exceptions ne connaissent pas la propriété **Claims**, donc ils ne l’incluent pas dans l’objet de la réponse. Nous devons créer manuellement un message qui l’inclut. Une propriété **Message** personnalisé, cependant, bloque la création d’une propriété **ExceptionMessage**, afin que la seule façon de communiquer l’ID d’erreur `AADSTS50076` au client est de l’ajouter à la propriété **Message** personnalisée. JavaScript dans le client devra découvrir si une réponse a une propriété **Message** ou **ExceptionMessage**, afin qu’il sache laquelle lire.
-    * Le message personnalisé est au format JSON pour que le code JavaScript côté client puisse l’analyser avec des méthodes d’objet `JSON` JavaScript connues.
+    - Si l’authentification multifacteur est requise par la ressource Microsoft Graph et que l’utilisateur ne l'a pas encore fournie, Azure AD renvoie « 400 : emande incorrecte » avec l’erreur `AADSTS50076` et une propriété **Claims**. MSAL génère une exception **MsalUiRequiredException** (qui hérite de **MsalServiceException**) avec ces informations.
+    - La valeur de la propriété **Claims** doit être passée au client qui doit la transmettre à l’application Office, qui l’inclut ensuite dans une demande de nouveau jeton d’amorçage. Azure AD demandera à l’utilisateur d’accepter tous les formulaires d’authentification requis.
+    - Les API qui créent des réponses HTTP à partir d’exceptions ne connaissent pas la propriété **Claims**, donc ils ne l’incluent pas dans l’objet de la réponse. Nous devons créer manuellement un message qui l’inclut. Une propriété **Message** personnalisé, cependant, bloque la création d’une propriété **ExceptionMessage**, afin que la seule façon de communiquer l’ID d’erreur `AADSTS50076` au client est de l’ajouter à la propriété **Message** personnalisée. JavaScript dans le client devra découvrir si une réponse a une propriété **Message** ou **ExceptionMessage**, afin qu’il sache laquelle lire.
+    - Le message personnalisé est au format JSON pour que le code JavaScript côté client puisse l’analyser avec des méthodes d’objet `JSON` JavaScript connues.
 
     ```csharp
     if (e.Message.StartsWith("AADSTS50076"))
@@ -575,10 +572,10 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 1. Remplacez `TODO 3b` par le code suivant. Tenez compte du code suivant :
 
-    * Si l’appel à Azure AD contenait au moins une étendue (autorisation) pour laquelle ni l’utilisateur, ni un administrateur client a consenti (ou pour laquelle le consentement a été révoqué), Azure AD renvoie « 400 demande incorrecte » avec une erreur `AADSTS65001` MSAL génère une exception **MsalUiRequiredException** avec ces informations.
-    * Si l’appel à Azure AD contenait au moins une étendue non reconnue par Azure AD, AAD renvoie « 400 Demande incorrecte » avec l’erreur `AADSTS70011`. MSAL génère une exception **MsalUiRequiredException** avec ces informations.
-    * La description entière est incluse, car l’erreur 70011 est renvoyée dans d’autres conditions et elle doit être gérée dans ce complément uniquement lorsqu’elle indique une étendue non valide.
-    * L’objet **MsalUiRequiredException** est transmis à `SendErrorToClient`. Cela permet de garantir qu’une propriété **ExceptionMessage** qui contient les informations d’erreur est incluse dans la réponse HTTP.
+    - Si l’appel à Azure AD contenait au moins une étendue (autorisation) pour laquelle ni l’utilisateur, ni un administrateur client a consenti (ou pour laquelle le consentement a été révoqué), Azure AD renvoie « 400 demande incorrecte » avec une erreur `AADSTS65001` MSAL génère une exception **MsalUiRequiredException** avec ces informations.
+    - Si l’appel à Azure AD contenait au moins une étendue non reconnue par Azure AD, AAD renvoie « 400 Demande incorrecte » avec l’erreur `AADSTS70011`. MSAL génère une exception **MsalUiRequiredException** avec ces informations.
+    - La description entière est incluse, car l’erreur 70011 est renvoyée dans d’autres conditions et elle doit être gérée dans ce complément uniquement lorsqu’elle indique une étendue non valide.
+    - L’objet **MsalUiRequiredException** est transmis à `SendErrorToClient`. Cela permet de garantir qu’une propriété **ExceptionMessage** qui contient les informations d’erreur est incluse dans la réponse HTTP.
 
     ```csharp
     if ((e.Message.StartsWith("AADSTS65001")) || (e.Message.StartsWith("AADSTS70011: The provided value for the input parameter 'scope' is not valid.")))

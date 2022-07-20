@@ -1,29 +1,22 @@
 ---
 title: Appel de la communauté des compléments Microsoft Office
 description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
-ms.date: 07/11/2022
+ms.date: 07/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a953336dc277d387166dcedffb01f7775e52e9e8
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 7a96bc5d5b86164d5e7662708c357821792f9f1d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713006"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889617"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
 
 L’appel de la communauté des compléments Microsoft Office est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-july-13th-call"></a>Ordre du jour de l’appel du 13 juillet
+## <a name="agenda-for-august-10th-call"></a>Ordre du jour de l’appel du 10 août
 
-- Mise à jour de l’engagement de la communauté
-- Mise à jour des API Word
-- Mise à jour d’Outlook
-  - Mise à jour de désactivation du point de terminaison REST v2.0
-  - Prise en charge des dossiers partagés sur les serveurs exchange locaux
-  - Item Multiselect bientôt disponible
-- Mise à jour des API Outlook
-- Mise à jour des exemples d’authentification unique
+L’ordre du jour du mois d’août sera affiché environ une semaine avant l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 

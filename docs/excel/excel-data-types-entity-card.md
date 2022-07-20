@@ -1,16 +1,16 @@
 ---
-title: Excel carte de valeur d’entité des types de données de l’API JavaScript
+title: Carte de valeur d’entité des types de données de l’API JavaScript Excel
 description: Découvrez comment utiliser des cartes de valeur d’entité avec des types de données dans votre complément Excel.
-ms.date: 05/19/2022
+ms.date: 07/14/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f9b2c146826c8247abee6ece105d04a335c41f1
-ms.sourcegitcommit: 4ca3334f3cefa34e6b391eb92a429a308229fe89
+ms.openlocfilehash: 7eb6251467b73af5e592d4cf013e899207944192
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2022
-ms.locfileid: "65628167"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889158"
 ---
 # <a name="use-cards-with-entity-value-data-types-preview"></a>Utiliser des cartes avec des types de données de valeur d’entité (préversion)
 
@@ -49,6 +49,10 @@ const entity: Excel.EntityCellValue = {
             type: Excel.CellValueType.string,
             basicValue: productName || ""
         },
+        "Image": {
+            type: Excel.CellValueType.webImage,
+            address: product.productImage || ""
+        },
         "Quantity Per Unit": {
             type: Excel.CellValueType.string,
             basicValue: product.quantityPerUnit || ""
@@ -69,7 +73,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-La capture d’écran suivante montre une carte de valeur d’entité qui utilise l’extrait de code précédent. La capture d’écran montre les informations **d’ID de produit**, **de nom de produit**, **de quantité par unité** et de **prix unitaire** de l’extrait de code précédent.
+La capture d’écran suivante montre une carte de valeur d’entité qui utilise l’extrait de code précédent. La capture d’écran montre les informations **d’ID de produit**, **de nom de produit**, **d’image**, **de quantité par unité** et de **prix unitaire** de l’extrait de code précédent.
 
 :::image type="content" source="../images/excel-data-types-entity-card-properties.png" alt-text="Capture d’écran montrant un type de données de valeur d’entité avec la fenêtre de disposition de carte affichée. La carte affiche le nom du produit, l’ID de produit, la quantité par unité et les informations sur le prix unitaire.":::
 
@@ -82,7 +86,7 @@ La propriété de valeur [`layouts`](/javascript/api/excel/excel.entitycellvalue
 
 Dans la `card` propriété, utilisez l’objet [`CardLayoutStandardProperties`](/javascript/api/excel/excel.cardlayoutstandardproperties) pour définir les composants de la carte comme `title`, `subTitle`et `sections`.
 
-L’extrait de code JSON de valeur d’entité suivant montre une `card` disposition avec un objet imbriqué `title` et trois `sections` dans la carte. Notez que la `title` propriété `"Product Name"` a un type de données correspondant dans la section précédente de l’article [sur les propriétés de la carte](#card-properties) . La `sections` propriété prend un tableau imbriqué et utilise l’objet [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) pour définir l’apparence de chaque section.
+L’extrait de code JSON de valeur d’entité suivant montre une `card` disposition avec des objets imbriqués `title` , `mainImage` ainsi que trois `sections` dans la carte. Notez que la `title` propriété `"Product Name"` a un type de données correspondant dans la section précédente de l’article [sur les propriétés de la carte](#card-properties) . La `mainImage` propriété a également un type de données correspondant `"Image"` dans la section précédente. La `sections` propriété prend un tableau imbriqué et utilise l’objet [`CardLayoutSectionStandardProperties`](/javascript/api/excel/excel.cardlayoutsectionstandardproperties) pour définir l’apparence de chaque section.
 
 Dans chaque section de carte, vous pouvez spécifier des éléments comme `layout`, `title`et `properties`. La `layout` clé utilise l’objet [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) et accepte la valeur `"List"`. La `properties` clé accepte un tableau de chaînes. Notez que les `properties` valeurs, telles que `"Product ID"`, ont des types de données correspondants dans la section précédente de l’article [sur les propriétés de la carte](#card-properties) . Les sections peuvent également être réductibles et peuvent être définies avec des valeurs booléennes comme réduites ou non réduites lorsque la carte d’entité est ouverte dans l’interface utilisateur Excel.
 
@@ -100,6 +104,9 @@ const entity: Excel.EntityCellValue = {
         card: {
             title: { 
                 property: "Product Name" 
+            },
+            mainImage: { 
+                property: "Image" 
             },
             sections: [
                 {
@@ -126,7 +133,7 @@ const entity: Excel.EntityCellValue = {
 };
 ```
 
-La capture d’écran suivante montre une carte de valeur d’entité qui utilise les extraits de code précédents. La capture d’écran montre l’objet `title` , qui utilise le **nom du produit** et est défini sur **Pavlova**. La capture d’écran montre `sections`également . La section **Quantité et prix** est réductible et contient **la quantité par unité** et le **prix unitaire**. Le champ **Informations supplémentaires** est réductible et réduit lorsque la carte est ouverte.
+La capture d’écran suivante montre une carte de valeur d’entité qui utilise les extraits de code précédents. La capture d’écran montre l’objet `mainImage` en haut, suivi de l’objet `title` qui utilise le **nom du produit** et est défini sur **Tofu**. La capture d’écran montre `sections`également . La section **Quantité et prix** est réductible et contient **la quantité par unité** et le **prix unitaire**. Le champ **Informations supplémentaires** est réductible et réduit lorsque la carte est ouverte.
 
 :::image type="content" source="../images/excel-data-types-entity-card-sections.png" alt-text="Capture d’écran montrant un type de données de valeur d’entité avec la fenêtre de disposition de carte affichée. La carte affiche le titre et les sections de la carte.":::
 

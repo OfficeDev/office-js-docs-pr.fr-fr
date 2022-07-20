@@ -1,14 +1,14 @@
 ---
 title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
-ms.date: 03/12/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ca9e35026acb91a54affa8215178f2eaa6cbd4c9
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: c16d82b1c6dacc3e46f2a5170c4b43d1be899191
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659821"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889148"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -129,7 +129,7 @@ Deuxièmement, assignez des gestionnaires. Cette procédure est généralement e
 ```javascript
 Office.onReady(async () => {
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(enableChartFormat);
@@ -143,19 +143,19 @@ Troisièmement, définissez le gestionnaire `enableChartFormat`. Voici un exempl
 
 ```javascript
 function enableChartFormat() {
-    var button = {
+    const button = {
                   id: "ChartFormatButton", 
                   enabled: true
                  };
-    var parentGroup = {
+    const parentGroup = {
                        id: "MyGroup",
                        controls: [button]
                       };
-    var parentTab = {
+    const parentTab = {
                      id: "CustomChartTab", 
                      groups: [parentGroup]
                     };
-    var ribbonUpdater = {tabs: [parentTab]};
+    const ribbonUpdater = {tabs: [parentTab]};
     Office.ribbon.requestUpdate(ribbonUpdater);
 }
 ```
@@ -177,19 +177,19 @@ L’exemple suivant présente une fonction qui désactive un bouton et enregistr
 
 ```javascript
 function disableChartFormat() {
-    var button = {
+    const button = {
                   id: "ChartFormatButton", 
                   enabled: false
                  };
-    var parentGroup = {
+    const parentGroup = {
                        id: "MyGroup",
                        controls: [button]
                       };
-    var parentTab = {
+    const parentTab = {
                      id: "CustomChartTab", 
                      groups: [parentGroup]
                     };
-    var ribbonUpdater = {tabs: [parentTab]};
+    const ribbonUpdater = {tabs: [parentTab]};
     Office.ribbon.requestUpdate(ribbonUpdater);
 
     chartFormatButtonEnabled = false;
@@ -219,19 +219,19 @@ Dans certains scénarios, Office ne peut pas mettre à jour le ruban et renvoie 
 ```javascript
 function disableChartFormat() {
     try {
-        var button = {
+        const button = {
                       id: "ChartFormatButton", 
                       enabled: false
                      };
-        var parentGroup = {
+        const parentGroup = {
                            id: "MyGroup",
                            controls: [button]
                           };
-        var parentTab = {
+        const parentTab = {
                          id: "CustomChartTab", 
                          groups: [parentGroup]
                         };
-        var ribbonUpdater = {tabs: [parentTab]};
+        const ribbonUpdater = {tabs: [parentTab]};
         Office.ribbon.requestUpdate(ribbonUpdater);
 
         chartFormatButtonEnabled = false;

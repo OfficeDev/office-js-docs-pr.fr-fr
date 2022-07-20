@@ -1,31 +1,31 @@
 ---
-title: Développer votre Office pour qu’il fonctionne avec itp lors de l’utilisation de cookies tiers
-description: Utilisation des modules itp et Office de données lors de l’utilisation de cookies tiers
-ms.date: 07/8/2021
+title: Développer votre complément Office pour utiliser itp lors de l’utilisation de cookies tiers
+description: Utilisation des compléments ITP et Office lors de l’utilisation de cookies tiers
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8216e2945acf1b87306bb00b7fb868728a986bc
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: 9e2a949045fdb5bff87480d1077e692f5e8b9af6
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59150053"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889268"
 ---
-# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Développer votre Office pour qu’il fonctionne avec itp lors de l’utilisation de cookies tiers
+# <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Développer votre complément Office pour utiliser itp lors de l’utilisation de cookies tiers
 
-Si votre Office nécessite des cookies tiers, ces cookies sont bloqués si la prévention du suivi intelligent (ITP) est utilisée par le runtime du navigateur qui a chargé votre add-in. Vous pouvez utiliser des cookies tiers pour authentifier les utilisateurs ou pour d’autres scénarios, tels que le stockage des paramètres.
+Si votre complément Office nécessite des cookies tiers, ces cookies sont bloqués si la prévention du suivi intelligent (ITP) est utilisée par le runtime de navigateur qui a chargé votre complément. Vous pouvez utiliser des cookies tiers pour authentifier les utilisateurs, ou pour d’autres scénarios, tels que le stockage des paramètres.
 
-Si votre Office et votre site web doivent utiliser des cookies tiers, utilisez les étapes suivantes pour utiliser le service ITP.
+Si votre complément Office et votre site web doivent s’appuyer sur des cookies tiers, procédez comme suit pour utiliser itp.
 
-1. Configurer [l’autorisation OAuth 2.0](https://tools.ietf.org/html/rfc6749)de sorte que le domaine d’authentification (dans votre cas, le tiers qui attend des cookies) a transmis un jeton d’autorisation à votre site   web. Utilisez le jeton pour établir une session de connexion tierce avec un cookie Sécurisé et [HttpOnly](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies)de jeu de serveurs.
-2. Utilisez [l Stockage API Access](https://webkit.org/blog/8124/introducing-storage-access-api/)pour que le tiers puisse demander l’autorisation d’accéder à ses   cookies tiers. Les versions actuelles de Office sur Mac et Office sur le Web prise en charge de cette API.
+1. Configurez l’autorisation  [OAuth 2.0](https://tools.ietf.org/html/rfc6749)afin que le domaine d’authentification (dans votre cas, le tiers qui attend des cookies) transfère un jeton d’autorisation à votre site web. Utilisez le jeton pour établir une session de connexion interne avec un [cookie Sécurisé et HttpOnly](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies) défini par le serveur.
+1. Utilisez l’API  [d’accès au stockage](https://webkit.org/blog/8124/introducing-storage-access-api/)afin que le tiers puisse demander l’autorisation d’accéder à ses cookies internes. Les versions actuelles d’Office sur Mac et Office sur le Web prennent toutes les deux en charge cette API.
     > [!NOTE]
     > Si vous utilisez des cookies à des fins autres que l’authentification, envisagez d’utiliser `localStorage` pour votre scénario.
 
-L’exemple de code suivant montre comment utiliser l’API Stockage Access.
+L’exemple de code suivant montre comment utiliser l’API d’accès au stockage.
 
 ```javascript
 function displayLoginButton() {
-  var button = createLoginButton();
+  const button = createLoginButton();
   button.addEventListener("click", function(ev) {
     document.requestStorageAccess().then(function() {
       authenticateWithCookies(); 
@@ -50,17 +50,17 @@ if (document.hasStorageAccess) {
 } 
 ```
 
-## <a name="about-itp-and-third-party-cookies"></a>À propos des cookies itp et tiers
+## <a name="about-itp-and-third-party-cookies"></a>À propos des cookies ITP et tiers
 
-Les cookies tiers sont des cookies chargés dans un iframe, où le domaine est différent de l’image de niveau supérieur. Le programme itp peut affecter des scénarios d’authentification complexes, où une boîte de dialogue popup est utilisée pour entrer les informations d’identification, puis l’accès au cookie est nécessaire à un iframe de compl?ment pour terminer le flux d’authentification. Le service ITP peut également affecter les scénarios d’authentification sans fil, où vous avez déjà utilisé une boîte de dialogue popup pour s’authentifier, mais l’utilisation ultérieure du module de authentification tente de s’authentifier par le biais d’un iframe masqué.
+Les cookies tiers sont des cookies qui sont chargés dans un iframe, où le domaine est différent du cadre de niveau supérieur. ItP peut affecter les scénarios d’authentification complexes, où une boîte de dialogue contextuelle est utilisée pour entrer des informations d’identification, puis l’accès aux cookies est nécessaire par un iframe de complément pour terminer le flux d’authentification. ItP peut également affecter les scénarios d’authentification silencieuse, où vous avez précédemment utilisé une boîte de dialogue contextuelle pour l’authentification, mais l’utilisation ultérieure du complément tente de s’authentifier via un iframe masqué.
 
-Lorsque vous développez Office sur Mac, l’accès aux cookies tiers est bloqué par le SDK MacOS Big Sur. En effet, WKWebView ITP est activé par défaut sur le navigateur Safari et WKWebView bloque tous les cookies tiers. Office mac version 16.44 ou ultérieure est intégrée au SDK MacOS Big Sur.
+Lors du développement de compléments Office sur Mac, l’accès aux cookies tiers est bloqué par le SDK MacOS Big Sur. Cela est dû au fait que WKWebView ITP est activé par défaut sur le navigateur Safari et que WKWebView bloque tous les cookies tiers. Office sur Mac version 16.44 ou ultérieure est intégré au SDK MacOS Big Sur.
 
-Dans le navigateur Safari, les utilisateurs finaux peuvent activer la case à cocher Empêcher le suivi entre sites sous Confidentialité des préférences pour désactiver   >   l’itp. Toutefois, itp ne peut pas être désactivé pour le contrôle WKWebView incorporé.
+Dans le navigateur Safari, les utilisateurs finaux peuvent activer la case à cocher **Empêcher le suivi intersites** sous **Confidentialité** des **préférences** >  pour désactiver itp. Toutefois, itp ne peut pas être désactivé pour le contrôle WKWebView incorporé.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Gérer l’itp dans Safari et d’autres navigateurs où les cookies tiers sont bloqués](/azure/active-directory/develop/reference-third-party-cookies-spas)
+- [Gérer itp dans Safari et d’autres navigateurs où les cookies tiers sont bloqués](/azure/active-directory/develop/reference-third-party-cookies-spas)
 - [Prévention du suivi dans WebKit](https://webkit.org/tracking-prevention/)
-- [Chrome « Bac à sable (sandbox) de confidentialité »](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
-- [Présentation de l’API Stockage Access](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)
+- [« Bac à sable de confidentialité » de Chrome](https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html)
+- [Présentation de l’API d’accès au stockage](https://blogs.windows.com/msedgedev/2020/07/08/introducing-storage-access-api/)

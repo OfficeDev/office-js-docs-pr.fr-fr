@@ -1,24 +1,24 @@
 ---
 title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
-ms.date: 02/11/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a300791eced4504faa75973cb4184f6965e39f3
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483824"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889337"
 ---
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
-Cet article explique comment utiliser le modèle API pour la création de Excel, Word, PowerPoint et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
+Cet article explique comment utiliser le modèle d’API pour créer des compléments dans Excel, Word, PowerPoint et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
 
 > [!NOTE]
 > Ce modèle n’est pas pris en charge par les clients Office 2013. Utilisez les [Modèles communs de l’API](office-javascript-api-object-model.md) pour fonctionner avec ces versions d’Office. Pour consulter les notes sur la disponibilité complète des plateformes, consultez les [disponibilités de l’application et de la plateforme cliente Office pour les compléments Office](/javascript/api/requirement-sets).
 
 > [!TIP]
-> Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API JavaScript OneNote, PowerPoint, Visio et Word.
+> Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API OneNote, PowerPoint, Visio et Word JavaScript.
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Nature asynchrone des API basées sur la promesse
 
@@ -54,7 +54,7 @@ Les objets JavaScript Office que vous déclarez et utilisez avec les API basées
 Par exemple, l’extrait de code suivant déclare l’objet JavaScript [Excel.Range](/javascript/api/excel/excel.range), `selectedRange`, pour référencer une plage sélectionnée dans la feuille de calcul Excel, et définit certaines propriétés sur cet objet. L’objet `selectedRange` est un objet proxy. Les propriétés définies et la méthode appelée sur cet objet ne seront pas répercutées dans le document Excel tant que votre complément n’a pas appelé `context.sync()`.
 
 ```js
-var selectedRange = context.workbook.getSelectedRange();
+const selectedRange = context.workbook.getSelectedRange();
 selectedRange.format.fill.color = "#4472C4";
 selectedRange.format.font.color = "white";
 selectedRange.format.autofitColumns();
@@ -71,7 +71,7 @@ worksheet.getRange("A1").numberFormat = "0.00%";
 worksheet.getRange("A1").values = [[1]];
 
 // GOOD: Create the range proxy object once and assign to a variable.
-var range = worksheet.getRange("A1")
+const range = worksheet.getRange("A1");
 range.format.fill.color = "red";
 range.numberFormat = "0.00%";
 range.values = [[1]];
@@ -96,7 +96,7 @@ L’exemple suivant montre une fonction de traitement par lot qui définit un ob
 
 ```js
 await Excel.run(async (context) => {
-    var selectedRange = context.workbook.getSelectedRange();
+    const selectedRange = context.workbook.getSelectedRange();
     selectedRange.load('address');
     await context.sync();
     console.log('The selected range is: ' + selectedRange.address);
@@ -117,9 +117,9 @@ Pour pouvoir lire les propriétés d’un objet proxy, vous devez charger explic
 
 ```js
 await Excel.run(async (context) => {
-    var sheetName = 'Sheet1';
-    var rangeAddress = 'A1:B2';
-    var myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
+    const sheetName = 'Sheet1';
+    const rangeAddress = 'A1:B2';
+    const myRange = context.workbook.worksheets.getItem(sheetName).getRange(rangeAddress);
 
     myRange.load('address');
     await context.sync();
@@ -166,7 +166,7 @@ Les méthodes utilisées dans les API basées sur la promesse qui renvoient des 
 Le code suivant obtient le nombre total de tableaux dans un feuille de calcul Excel et enregistre ce nombre dans la console.
 
 ```js
-var tableCount = context.workbook.tables.getCount();
+const tableCount = context.workbook.tables.getCount();
 
 // This sync call implicitly loads tableCount.value.
 // Any other ClientResult values are loaded too.
@@ -184,8 +184,8 @@ L’exemple de code suivant définit plusieurs propriétés de mise en forme d�
 
 ```js
 await Excel.run(async (context) => {
-    var sheet = context.workbook.worksheets.getItem("Sample");
-    var range = sheet.getRange("B2:E2");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const range = sheet.getRange("B2:E2");
     range.set({
         format: {
             fill: {
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### <a name="some-properties-cannot-be-set-directly"></a>Certaines propriétés ne peuvent pas être définies directement
 
-Certaines propriétés ne peuvent pas être définies, même si elles sont accessibles en écriture. Ces propriétés font partie d’une propriété parente qui doit être définie en tant qu’objet unique. En effet, cette propriété parente s’appuie sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parentes doivent être définies à l’aide de la notation littérale de l’objet pour définir l’intégralité de l’objet, plutôt que de définir les sous-propriétés individuelles de cet objet. Un exemple de ce modèle est trouvé dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul [objet PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ici.
+Certaines propriétés ne peuvent pas être définies, même si elles sont accessibles en écriture. Ces propriétés font partie d’une propriété parente qui doit être définie en tant qu’objet unique. En effet, cette propriété parente s’appuie sur les sous-propriétés ayant des relations logiques spécifiques. Ces propriétés parentes doivent être définies à l’aide de la notation littérale de l’objet pour définir l’intégralité de l’objet, plutôt que de définir les sous-propriétés individuelles de cet objet. Un exemple de ce modèle est trouvé dans [PageLayout](/javascript/api/excel/excel.pagelayout). La `zoom` propriété doit être définie avec un seul objet [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) , comme illustré ici.
 
 ```js
 // PageLayout.zoom.scale must be set by assigning PageLayout.zoom to a PageLayoutZoomOptions object.
@@ -214,7 +214,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 Dans l’exemple précédent, vous ***ne pouvez pas*** affecter directement une valeur à `zoom` : `sheet.pageLayout.zoom.scale = 200;`. Cette instruction génère une erreur, car `zoom` n’est pas chargé. Même si `zoom` était chargé, l’ensemble d’échelles n’est pas pris en compte. Toutes les opérations de contexte se produisent sur `zoom`, elles actualisent l’objet proxy du complément et remplacement des valeurs définies localement.
 
-Ce comportement diffère des [propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Les propriétés peuvent `format` être définies à l’aide de la navigation d’objet, comme illustré ici.
+Ce comportement diffère des [propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Les propriétés de peuvent être définies à l’aide de `format` la navigation dans les objets, comme illustré ici.
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
@@ -239,7 +239,7 @@ L’exemple de code suivant tente de récupérer une feuille de calcul Excel nom
 
 ```js
 await Excel.run(async (context) => {
-    var dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
+    let dataSheet = context.workbook.worksheets.getItemOrNullObject("Data");
     
     await context.sync();
     
@@ -254,5 +254,5 @@ await Excel.run(async (context) => {
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Modèle d’objet API JavaScript courant](office-javascript-api-object-model.md)
-* [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)
+- [Modèle d’objet API JavaScript courant](office-javascript-api-object-model.md)
+- [Limites des ressources et optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md)

@@ -1,14 +1,14 @@
 ---
 title: Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
-ms.date: 07/05/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e14abf670ba0fe205f728461e228623604ed465
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659660"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889508"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
@@ -18,7 +18,6 @@ ms.locfileid: "66659660"
 Utilisez **[VersionOverrides](/javascript/api/manifest/versionoverrides)** dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Les commandes de complément sont un moyen de personnaliser facilement l’interface utilisateur Office par défaut en y ajoutant des éléments d’interface de votre choix qui exécutent des actions. Pour une présentation des commandes de complément, consultez [les commandes de complément pour Excel, PowerPoint et Word](../design/add-in-commands.md).
 
 Cet article explique comment modifier votre manifeste pour définir des commandes de complément et comment créer le code pour [les commandes de fonction](../design/add-in-commands.md#types-of-add-in-commands). Le schéma suivant illustre la hiérarchie des éléments utilisés pour définir des commandes de complément. Ces éléments sont décrits plus en détail dans cet article.
-
 
 ![Vue d’ensemble des éléments de commandes de complément dans le manifeste. Le nœud supérieur ici est VersionOverrides avec les hôtes enfants et les ressources. Sous Hosts se trouvent Host, puis DesktopFormFactor. Sous DesktopFormFactor se trouvent FunctionFile et ExtensionPoint. Sous ExtensionPoint, vous pouvez trouver CustomTab ou OfficeTab et le menu Office. Sous CustomTab ou l’onglet Office, il y a Groupe, puis Contrôle, puis Action. Sous Menu Office, contrôle puis action. Sous Ressources (enfant de VersionOverrides) se trouvent images, URL, ShortStrings et LongStrings.](../images/version-overrides.png)
 
@@ -172,7 +171,7 @@ Le code suivant montre comment implémenter la fonction utilisée par **\<Functi
         // Implement your custom code here. The following code is a simple example.  
         Office.context.document.setSelectedDataAsync("Function command works. Button ID=" + event.source.id,
             function (asyncResult) {
-                var error = asyncResult.error;
+                const error = asyncResult.error;
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                     // Show error message.
                 }
@@ -411,7 +410,7 @@ L’exemple suivant montre comment utiliser l’élément **\<Resources\>** . Ch
 </Resources>
 ```
 
-|Ressource|Description|
+|Resource|Description|
 |:-----|:-----|
 |**\<Images\>**/ **\<Image\>** <br/> | Fournit l’URL HTTPS d’un fichier image. Chaque image doit définir les trois tailles d’image obligatoires : <br/>  16 x 16 <br/>  32 x 32 <br/>  80 × 80 <br/>  Les tailles d’image suivantes sont également prises en charge, mais ne sont pas obligatoires : <br/>  20 × 20 <br/>  24 × 24 <br/>  40 × 40 <br/>  48 × 48 <br/>  64 x 64 <br/> |
 |**\<Urls\>**/ **\<Url\>** <br/> |Indique un emplacement d’URL HTTPS. Une URL peut comporter 2 048 caractères au maximum.  <br/> |

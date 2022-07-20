@@ -1,14 +1,14 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme de compléments Office.
-ms.date: 01/26/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c3a17678b0cc83f3217e7885d524a6815578f0
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659667"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889204"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -133,7 +133,7 @@ Suivez les recommandations générales suivantes pour prendre en charge le modè
 
 La plateforme de complément fournit un modèle d’autorisations que votre complément utilise pour déclarer le niveau d’accès aux données d’un utilisateur qui sont requises pour ses fonctionnalités. Chaque niveau d’autorisation correspond au sous-ensemble de l’interface API JavaScript pour Office que votre complément est autorisé à utiliser pour ses fonctionnalités. Par exemple, l’autorisation **WriteDocument** pour le contenu et les compléments du volet Office permet d’accéder à la méthode [Document.setSelectedDataAsync](/javascript/api/office/office.document) qui permet à un complément d’écrire dans le document de l’utilisateur, mais n’autorise pas l’accès à l’une des méthodes de lecture des données du document. Ce niveau d’autorisation est utile pour les compléments qui doivent uniquement écrire dans un document, comme par exemple un complément où l’utilisateur peut requérir des données à insérer dans son document.
 
-Nous vous recommandons vivement de demander des autorisations sur la base du  _principe de privilège minimal_. Autrement dit, vous ne devez demander l’autorisation d’accès qu’au sous-ensemble minimal de l’API que votre complément requiert pour fonctionner correctement. Par exemple, si votre complément a seulement besoin de lire des données dans le document d’un utilisateur pour ses fonctionnalités, vous ne devez pas demander plus que l’autorisation **ReadDocument**. (Gardez toutefois à l’esprit qu’en cas de demande d’autorisations insuffisantes, la plateforme du complément bloquera l’utilisation de certaines API par votre complément et des erreurs seront générées lors de l’exécution.)
+Il est recommandé de toujours demander les autorisations sur la base du principe d’*autorisation minimum*. Autrement dit, vous ne devez demander l’autorisation d’accès qu’au sous-ensemble minimal de l’API que votre complément requiert pour fonctionner correctement. Par exemple, si votre complément a seulement besoin de lire des données dans le document d’un utilisateur pour ses fonctionnalités, vous ne devez pas demander plus que l’autorisation **ReadDocument**. (Gardez toutefois à l’esprit qu’en cas de demande d’autorisations insuffisantes, la plateforme du complément bloquera l’utilisation de certaines API par votre complément et des erreurs seront générées lors de l’exécution.)
 
 Spécifiez des autorisations dans le manifeste de votre complément, comme montré dans l’exemple de la section ci-dessous, pour permettre aux utilisateurs de connaître le niveau d’autorisation requis pour un complément avant de décider de l’installer ou de l’activer pour la première fois. En outre, les compléments Outlook qui demandent l’autorisation **ReadWriteMailbox** nécessitent un privilège d’administrateur explicite pour l’installation.
 
@@ -172,7 +172,7 @@ Une façon de surmonter cette limitation consiste à utiliser JSON/P : fournisse
 // Dynamically create an HTML SCRIPT element that obtains the details for the specified video.
 function loadVideoDetails(videoIndex) {
     // Dynamically create a new HTML SCRIPT element in the webpage.
-    var script = document.createElement("script");
+    const script = document.createElement("script");
     // Specify the URL to retrieve the indicated video from a feed of a current list of videos,
     // as the value of the src attribute of the SCRIPT element. 
     script.setAttribute("src", "https://gdata.youtube.com/feeds/api/videos/" + 

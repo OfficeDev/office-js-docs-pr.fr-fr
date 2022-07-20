@@ -3,16 +3,16 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un complément Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 09/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cea50c514e266b6f72b31e537ddb2b02b9715f5
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244734"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889491"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
-Vous pouvez utiliser des commandes de complément dans votre complément Office pour étendre l’interface utilisateur Office en ajoutant des boutons au ruban application Office. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
+Vous pouvez utiliser des commandes de complément dans votre complément Office pour étendre l’interface utilisateur Office en ajoutant des boutons au ruban de l’application Office. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
 Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité de volet office d’ouverture automatique, introduite dans [l’ensemble de conditions requises AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Office lorsque votre scénario l’exige.
 
@@ -73,7 +73,7 @@ Vous pouvez baliser le document pour déclencher la fonctionnalité d’ouvertur
 
 #### <a name="tag-the-document-on-the-client-side"></a>Baliser le document côté client
 
-Utilisez la méthode Office.js [settings.set](/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** sur **true**, comme illustré dans l’exemple suivant.
+Utilisez la méthode Office.js [settings.set](/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** `true`sur , comme indiqué dans l’exemple suivant.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -155,7 +155,7 @@ Vous pouvez déployer une version de test de votre complément qui ouvre automat
 </we:webextension>
 ```
 
-Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Microsoft 365 pour tester le déploiement centralisé et vérifier que votre complément fonctionne comme prévu. Si vous n’avez pas encore d’abonnement Microsoft 365, vous pouvez bénéficier d’un abonnement gratuit Microsoft 365 renouvelable de 90 jours en rejoignant le [programme de développement Microsoft 365](https://developer.microsoft.com/office/dev-program).
+Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Microsoft 365 pour tester le déploiement centralisé et vérifier que votre complément fonctionne comme prévu. Si vous n’avez pas encore d’abonnement Microsoft 365, vous pouvez bénéficier d’un abonnement Microsoft 365 renouvelable gratuit de 90 jours en rejoignant le [programme développeur Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="see-also"></a>Voir aussi
 

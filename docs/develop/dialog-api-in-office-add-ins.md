@@ -1,14 +1,14 @@
 ---
 title: Utiliser l’API de boîte de dialogue Office dans vos compléments Office
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un complément Office.
-ms.date: 01/22/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8fbc9114d2cdedcaa8ad5be9c035e9e14430266c
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689389"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889484"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -30,7 +30,7 @@ Envisagez d’ouvrir une boîte de dialogue à partir d’un volet Office, d’u
 
 L’image suivante montre un exemple de boîte de dialogue.
 
-![Capture d’écran montrant la boîte de dialogue avec 3 options de connexion affichées devant Word.](../images/auth-o-dialog-open.png)
+![Boîte de dialogue avec 3 options de connexion affichées devant Word.](../images/auth-o-dialog-open.png)
 
 Notez que la boîte de dialogue s’ouvre toujours au centre de l’écran. L’utilisateur peut la déplacer et la redimensionner. La fenêtre n’est *pas modal*. Un utilisateur peut continuer à interagir avec le document dans l’application Office et avec la page du volet Office, le cas échéant.
 
@@ -47,6 +47,7 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 ```
 
 > [!NOTE]
+>
 > - L’URL utilise le protocole HTTP **S**. Ceci est obligatoire pour toutes les pages chargées dans une boîte de dialogue, pas seulement la première page chargée.
 > - Le domaine de la boîte de dialogue est le même que celui de la page hôte, qui peut être la page d’un volet Office ou le [fichier de fonctions](/javascript/api/manifest/functionfile) d’une commande de complément. Obligatoire : la page, la méthode du contrôleur ou toute autre ressource qui est transmise à la méthode `displayDialogAsync` doit se trouver dans le même domaine que la page hôte.
 
@@ -97,6 +98,7 @@ if (loginSuccess) {
 ```
 
 > [!IMPORTANT]
+>
 > - La `messageParent` fonction est l’une des deux *seules* API JS Office qui peuvent être appelées dans la boîte de dialogue.
 > - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported`. Pour plus d’informations, consultez [Spécifier les applications Office et les exigences de l’API](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans Outlook 2016 achat unique (autrement dit, la version MSI).
 
@@ -111,7 +113,7 @@ if (loginSuccess) {
 La page hôte doit être configurée de façon à recevoir le message. Pour ce faire, ajoutez un paramètre de rappel à l’appel d’origine de `displayDialogAsync`. Le rappel attribue un gestionnaire à l’événement `DialogMessageReceived`. Voici un exemple.
 
 ```js
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20},
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -131,7 +133,7 @@ Voici un exemple simple de gestionnaire pour l’événement `DialogMessageRecei
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     showUserName(messageFromDialog.name);
 }
 ```
@@ -176,14 +178,14 @@ Pour voir un exemple de complément qui effectue ce type d’action, consultez l
 
 ```js
 if (loginSuccess) {
-    var userProfile = getProfile();
-    var messageObject = {messageType: "signinSuccess", profile: userProfile};
-    var jsonMessage = JSON.stringify(messageObject);
+    const userProfile = getProfile();
+    const messageObject = {messageType: "signinSuccess", profile: userProfile};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
-    var errorDetails = getError();
-    var messageObject = {messageType: "signinFailure", error: errorDetails};
-    var jsonMessage = JSON.stringify(messageObject);
+    const errorDetails = getError();
+    const messageObject = {messageType: "signinFailure", error: errorDetails};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -198,7 +200,7 @@ Le code du gestionnaire dans la page hôte utilise la valeur de la propriété `
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "signinSuccess") {
         dialog.close();
         showUserName(messageFromDialog.profile.name);
@@ -255,7 +257,7 @@ Votre complément peut envoyer des messages de la [page hôte](dialog-api-in-off
 Lorsque vous appelez l’API de boîte de dialogue Office pour ouvrir une boîte de dialogue, un objet [Dialog](/javascript/api/office/office.dialog) est renvoyé. Elle doit être affectée à une variable dont l’étendue est supérieure à la méthode [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) , car l’objet est référencé par d’autres méthodes. Voici un exemple.
 
 ```javascript
-var dialog;
+let dialog;
 Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html',
     function (asyncResult) {
         dialog = asyncResult.value;
@@ -277,7 +279,7 @@ Envisagez un scénario dans lequel l’interface utilisateur de la boîte de dia
 
 ```javascript
 function sheetPropertiesChanged() {
-    var messageToDialog = JSON.stringify({
+    const messageToDialog = JSON.stringify({
                                name: "My Sheet",
                                position: 2
                            });
@@ -303,7 +305,7 @@ Ensuite, définissez le `onMessageFromParent` gestionnaire. Le code suivant pour
 
 ```javascript
 function onMessageFromParent(arg) {
-    var messageFromParent = JSON.parse(arg.message);
+    const messageFromParent = JSON.parse(arg.message);
     $('h1').text(messageFromParent.name);
 }
 ```
@@ -338,7 +340,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Messagerie inter-domaines au runtime de dialogue
 
-Le runtime JavaScript parent ou la boîte de dialogue peut s’éloigner du domaine du complément une fois la boîte de dialogue ouverte. Si l’une de ces opérations se produit, les appels échouent, `messageChild` sauf si votre code spécifie le domaine du runtime de boîte de dialogue. Pour ce faire, ajoutez un paramètre [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild`. Cet objet a une `targetOrigin` propriété qui spécifie le domaine vers lequel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que le runtime parent héberge actuellement. 
+Le runtime JavaScript parent ou la boîte de dialogue peut s’éloigner du domaine du complément une fois la boîte de dialogue ouverte. Si l’une de ces opérations se produit, les appels échouent, `messageChild` sauf si votre code spécifie le domaine du runtime de boîte de dialogue. Pour ce faire, ajoutez un paramètre [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild`. Cet objet a une `targetOrigin` propriété qui spécifie le domaine vers lequel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que le runtime parent héberge actuellement.
 
 > [!NOTE]
 > L’utilisation `messageChild` pour envoyer un message inter-domaines nécessite [l’ensemble de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures d’Office qui ne prennent pas en charge l’ensemble de conditions requises. Le comportement de la méthode n’est donc pas affecté si vous le transmettez.
@@ -387,8 +389,8 @@ Vous pouvez implémenter un bouton de fermeture dans la boîte de dialogue. Pour
 
 ```js
 function closeButtonClick() {
-    var messageObject = {messageType: "dialogClosed"};
-    var jsonMessage = JSON.stringify(messageObject);
+    const messageObject = {messageType: "dialogClosed"};
+    const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
 ```
@@ -397,7 +399,7 @@ Le gestionnaire de la page hôte pour `DialogMessageReceived` appelle `dialog.cl
 
 ```js
 function processMessage(arg) {
-    var messageFromDialog = JSON.parse(arg.message);
+    const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "dialogClosed") {
        dialog.close();
     }

@@ -1,14 +1,14 @@
 ---
 title: Afficher ou masquer le volet des tâches de votre complément Office
 description: Découvrez comment masquer ou afficher par programmation l’interface utilisateur d’un complément pendant son exécution continue.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 95f8c716bf1a0331fe47bc74e5aad49c17b65437
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660129"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889225"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Afficher ou masquer le volet des tâches de votre complément Office
 
@@ -55,7 +55,7 @@ Les `hide()` méthodes et `showAsTaskpane()` les méthodes modifient uniquement 
 
 Prenons le scénario suivant : un volet Office est conçu avec des onglets. L’onglet **Accueil** est ouvert lors du premier lancement du complément. Supposons qu’un utilisateur ouvre l’onglet **Paramètres** et, plus tard, que le code du volet Office appelle `hide()` en réponse à un événement. Des appels de code encore ultérieurs `showAsTaskpane()` en réponse à un autre événement. Le volet Office réapparaît et l’onglet **Paramètres** est toujours sélectionné.
 
-![Capture d’écran du volet Office avec quatre onglets intitulés Accueil, Paramètres, Favoris et Comptes.](../images/TaskpaneWithTabs.png)
+![Volet Office comportant quatre onglets intitulés Accueil, Paramètres, Favoris et Comptes.](../images/TaskpaneWithTabs.png)
 
 De plus, tous les écouteurs d’événements inscrits dans le volet Office continuent à s’exécuter même lorsque le volet Office est masqué.
 
@@ -80,7 +80,7 @@ Office.addin.onVisibilityModeChanged(function(args) {
 La fonction retourne une autre fonction qui *désinscrit* le gestionnaire. Voici un exemple simple, mais pas robuste.
 
 ```javascript
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.
@@ -97,7 +97,7 @@ La `onVisibilityModeChanged` méthode est asynchrone et retourne une promesse, c
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-var removeVisibilityModeHandler =
+const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
         if (args.visibilityMode = "Taskpane"); {
             // Code that runs whenever the task pane is made visible.

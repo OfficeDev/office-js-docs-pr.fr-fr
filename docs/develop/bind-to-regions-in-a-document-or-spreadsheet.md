@@ -1,18 +1,18 @@
 ---
 title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
-ms.date: 07/08/2021
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 56db3bf320e51015ae073ab882596802534f9d79
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 3516a06c74c23f7b5a72a51bbe5dd5d244e82ea5
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743540"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889372"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
-L’accès aux données basées sur une liaison permet aux compléments de contenu et du volet Office d’accéder de façon cohérente à une zone particulière d’un document ou d’une feuille de calcul au moyen d’un identificateur. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la région associée du document ou de la feuille de calcul. La création de liaisons fournit la valeur suivante à votre add-in.
+L’accès aux données basées sur une liaison permet aux compléments de contenu et du volet Office d’accéder de façon cohérente à une zone particulière d’un document ou d’une feuille de calcul au moyen d’un identificateur. Le complément doit d’abord établir la liaison en appelant l’une des méthodes qui associent une partie du document à un identificateur unique : [addFromPromptAsync], [addFromSelectionAsync] ou [addFromNamedItemAsync]. Une fois la liaison établie, le complément peut utiliser l’identificateur fourni pour accéder aux données contenues dans la région associée du document ou de la feuille de calcul. La création de liaisons fournit la valeur suivante à votre complément.
 
 - Elle permet l’accès aux structures de données communes sur les applications Office prises en charge, telles que : tableaux, plages ou texte (série contiguë de caractères).
 - Elle permet les opérations de lecture/écriture sans exiger que l’utilisateur effectue une sélection.
@@ -24,21 +24,21 @@ L’objet [Bindings] expose une méthode [getAllAsync] qui donne accès à toute
 
 ## <a name="binding-types"></a>Types de liaison
 
-Il existe [trois types différents de liaisons] [Office. BindingType] que vous spécifiez avec le paramètre _bindingType_ lorsque vous créez une liaison avec les méthodes [addFromSelectionAsync], [addFromPromptAsync] ou [addFromNamedItemAsync].
+Il existe [trois types de liaisons][Office.BindingType] que vous spécifiez avec le paramètre _bindingType_ lorsque vous créez une liaison avec les méthodes [addFromSelectionAsync], [addFromPromptAsync] ou [addFromNamedItemAsync] .
 
 1. **[Liaison de texte][TextBinding]** - Établit une liaison à une zone du document qui est représentée en tant que texte.
 
     Dans Word, la plupart des sélections contiguës sont valides, tandis que dans Excel, seules les sélections de cellules uniques peuvent être la cible d’une liaison de texte. Dans Excel, seul le texte brut est pris en charge. Dans Word, trois formats sont pris en charge : texte brut, HTML et Open XML pour Office.
 
-2. **[Matrix] [BindingMatrixBinding]** : se lie à une région fixe d’un document qui contient des données tabulaires sans en-têtes. Les données d’une liaison de matrice sont écrites ou lues sous la forme d’un tableau à deux **dimensions, qui** en JavaScript est implémenté sous la forme d’un tableau de tableaux. Par exemple, deux lignes de valeurs **string** dans deux colonnes peuvent être écrites ou lues comme `[['a', 'b'], ['c', 'd']]`, et une colonne unique de trois lignes peut être écrite ou lue comme `[['a'], ['b'], ['c']]`.
+1. **[Matrix Binding][MatrixBinding]** : lie à une région fixe d’un document qui contient des données tabulaires sans en-têtes. Les données d’une liaison de matrice sont écrites ou lues sous la forme d’un **tableau** à deux dimensions, qui est implémenté en JavaScript sous la forme d’un tableau de tableaux. Par exemple, deux lignes de valeurs **string** dans deux colonnes peuvent être écrites ou lues comme `[['a', 'b'], ['c', 'd']]`, et une colonne unique de trois lignes peut être écrite ou lue comme `[['a'], ['b'], ['c']]`.
 
     Dans Excel, toute sélection contiguë de cellules peut être utilisée pour établir une liaison de matrice. Dans Word, seuls les tableaux prennent en charge la liaison de matrice.
 
-3. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](/javascript/api/office/office.tabledata). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
+1. **[Liaison de tableau][TableBinding]** - Établit une liaison à une zone d’un document qui contient un tableau avec des en-têtes. Les données dans une liaison de tableau sont écrites ou lues comme un objet [TableData](/javascript/api/office/office.tabledata). L’objet `TableData` expose les données via les propriétés `headers` et `rows`.
 
     Tout tableau Excel ou Word peut être la base d’une liaison de tableau. Une fois que vous établissez une liaison de tableau, chaque nouvelle ligne ou colonne qu’un utilisateur ajoute au tableau est automatiquement incluse dans la liaison.
 
-Après avoir créé une liaison à l’aide de l’une des trois méthodes « addFrom » de l’objet, vous pouvez utiliser les données et propriétés `Bindings` de la liaison à l’aide des méthodes de l’objet correspondant : [MatrixBinding], [TableBinding] ou [TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l’objet `Binding` qui vous permettent d’interagir avec les données liées.
+Une fois qu’une liaison est créée à l’aide de l’une des trois méthodes « addFrom » de l’objet `Bindings` , vous pouvez utiliser les données et les propriétés de la liaison à l’aide des méthodes de l’objet correspondant : [MatrixBinding], [TableBinding] ou [TextBinding]. Ces trois objets héritent des méthodes [getDataAsync] et [setDataAsync] de l’objet `Binding` qui vous permettent d’interagir avec les données liées.
 
 > [!NOTE]
 > **Quand devez-vous utiliser une liaison de matrice ou une liaison de tableau ?** Lorsque les données tabulaires avec lesquelles vous travaillez contiennent une ligne de total, vous devez utiliser une liaison de matrice si le script de votre complément doit accéder aux valeurs figurant dans la ligne de total ou détecter que la sélection de l’utilisateur figure dans la ligne de total. Si vous établissez une liaison de tableau pour des données tabulaires qui contiennent une ligne de total, la propriété [TableBinding.rowCount] et les propriétés `rowCount` et `startRow` de l’objet [BindingSelectionChangedEventArgs] dans les gestionnaires d’événements ne reflèteront pas la ligne de total dans leurs valeurs. Pour contourner cette limitation, vous devez établir une liaison de matrice pour travailler avec la ligne de total.
@@ -93,17 +93,17 @@ Dans cet exemple, le type de liaison spécifié est « Text ». Cela signifie qu
 
 Le deuxième paramètre est un objet qui contient l’ID de la nouvelle liaison créée. Si un ID n’est pas spécifié, un ID est généré automatiquement.
 
-La fonction anonyme passée dans la fonction en tant _que troisième paramètre_ de rappel est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
+La fonction anonyme transmise à la fonction en tant que troisième paramètre _de rappel_ est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
 
 La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
 *Figure 1. Interface utilisateur de sélection de données dans Excel*
 
-![Capture d’écran montrant la boîte de dialogue Sélectionner des données.](../images/agave-api-overview-excel-selection-ui.png)
+![Boîte de dialogue Sélectionner des données.](../images/agave-api-overview-excel-selection-ui.png)
 
 ## <a name="add-a-binding-to-a-named-item"></a>Ajout d’une liaison à un élément nommé
 
-`myRange` L’exemple suivant montre comment ajouter une liaison à l’élément nommé existant en tant que liaison « matrix » à l’aide `id` de la méthode [addFromNamedItemAsync] et affecte la liaison en tant que « myMatrix ».
+L’exemple suivant montre comment ajouter une liaison à l’élément nommé existant `myRange` en tant que liaison « matrice » à l’aide de la méthode [addFromNamedItemAsync] , et affecte la liaison `id` en tant que « myMatrix ».
 
 ```js
 function bindNamedItem() {
@@ -123,12 +123,12 @@ function write(message){
 
 ```
 
-**Pour Excel**, `itemName` le paramètre de la méthode [addFromNamedItemAsync] peut faire référence à une plage nommée existante, `A1` à une plage spécifiée avec le style `("A1:A3")`de référence ou à un tableau. Par défaut, l’ajout d’un tableau dans Excel entraîne l’affectation du nom « Tableau1 » pour le premier tableau que vous ajoutez, « Tableau2 » pour le deuxième tableau que vous ajoutez, et ainsi de suite. Pour attribuer un nom significatif à une table dans l’interface utilisateur Excel, `Table Name` utilisez la propriété dans la |**Onglet** Création du ruban.
+**Pour Excel**, le `itemName` paramètre de la méthode [addFromNamedItemAsync] peut faire référence à une plage nommée existante, à une plage spécifiée avec le `A1` style `("A1:A3")`de référence ou à un tableau. Par défaut, l’ajout d’un tableau dans Excel entraîne l’affectation du nom « Tableau1 » pour le premier tableau que vous ajoutez, « Tableau2 » pour le deuxième tableau que vous ajoutez, et ainsi de suite. Pour attribuer un nom explicite à une table dans l’interface utilisateur Excel, utilisez la `Table Name` propriété sur l' **| Onglet Création** du ruban.
 
 > [!NOTE]
-> Dans Excel, lorsque vous spécifiez un tableau en tant qu’élément nommé, vous devez qualifier complètement le nom pour inclure le nom de la feuille de calcul dans le nom du tableau au format suivant :`"Sheet1!Table1"`
+> Dans Excel, lorsque vous spécifiez une table en tant qu’élément nommé, vous devez qualifier entièrement le nom pour inclure le nom de la feuille de calcul dans le nom de la table dans ce format : `"Sheet1!Table1"`
 
-L’exemple suivant crée une liaison dans Excel aux trois premières cellules de la colonne A ( `"A1:A3"`), affecte l’ID`"MyCities"`, puis écrit trois noms de ville dans cette liaison.
+L’exemple suivant crée une liaison dans Excel aux trois premières cellules de la colonne A ( `"A1:A3"`), affecte l’ID `"MyCities"`, puis écrit trois noms de villes dans cette liaison.
 
 ```js
  function bindingFromA1Range() {
@@ -154,11 +154,11 @@ function write(message){
 }
 ```
 
-**Pour Word**, le paramètre `itemName` de la méthode [addFromNamedItemAsync] `Title` fait référence à la propriété d’un contrôle `Rich Text` de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
+**Pour Word**, le `itemName` paramètre de la méthode [addFromNamedItemAsync] fait référence à la `Title` propriété d’un `Rich Text` contrôle de contenu. (Vous ne pouvez réaliser de liaison avec des contrôles de contenu différents du contrôle de contenu `Rich Text`.)
 
-Par défaut, aucune valeur n’est affectée à un contrôle `Title*`de contenu. Pour affecter un nom significatif dans l’interface utilisateur de Word, après l’insertion d’un contrôle de contenu **Texte enrichi** à partir du groupe **Contrôles** sur l’onglet **Développeur** du ruban, utilisez la commande **Propriétés** du groupe **Contrôles** pour afficher la boîte de dialogue **Propriétés du contrôle de contenu**. Définissez ensuite la `Title` propriété du contrôle de contenu sur le nom que vous souhaitez référencer à partir de votre code.
+Par défaut, aucun contrôle de contenu n’a `Title*`de valeur attribuée. Pour affecter un nom significatif dans l’interface utilisateur de Word, après l’insertion d’un contrôle de contenu **Texte enrichi** à partir du groupe **Contrôles** sur l’onglet **Développeur** du ruban, utilisez la commande **Propriétés** du groupe **Contrôles** pour afficher la boîte de dialogue **Propriétés du contrôle de contenu**. Définissez ensuite la `Title` propriété du contrôle de contenu sur le nom que vous souhaitez référencer à partir de votre code.
 
-L’exemple suivant crée une liaison de texte dans Word `"FirstName"`à un contrôle de contenu de texte enrichi nommé , affecte **l’ID**`"firstName"`, puis affiche ces informations.
+L’exemple suivant crée une liaison de texte dans Word à un contrôle de contenu de texte enrichi nommé`"FirstName"`, affecte **l’ID**`"firstName"`, puis affiche ces informations.
 
 ```js
 function bindContentControl() {
@@ -185,8 +185,8 @@ L’exemple suivant montre comment obtenir toutes les liaisons dans un document 
 
 ```js
 Office.context.document.bindings.getAllAsync(function (asyncResult) {
-    var bindingString = '';
-    for (var i in asyncResult.value) {
+    let bindingString = '';
+    for (let i in asyncResult.value) {
         bindingString += asyncResult.value[i].id + '\n';
     }
     write('Existing bindings: ' + bindingString);
@@ -198,7 +198,7 @@ function write(message){
 }
 ```
 
-La fonction anonyme qui est passée dans la fonction en tant que `callback` paramètre est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`qui contient un tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
+Fonction anonyme qui est passée dans la fonction en tant que `callback` paramètre est exécutée une fois l’opération terminée. La fonction est appelée avec un seul paramètre, `asyncResult`qui contient un tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obtention d’une liaison par ID en utilisant la méthode getByIdAsync de l’objet Bindings
 
@@ -222,7 +222,7 @@ function write(message){
 
 Dans l’exemple, le premier `id` paramètre est l’ID de la liaison à récupérer.
 
-La fonction anonyme qui est passée dans la fonction en tant _que deuxième paramètre_ de rappel est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le statut de l’appel et la liaison avec l’ID « myBinding ».
+La fonction anonyme passée dans la fonction en tant que deuxième paramètre _de rappel_ est exécutée une fois l’opération terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le statut de l’appel et la liaison avec l’ID « myBinding ».
 
 ## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>Obtention d’une liaison par ID en utilisant la méthode Select de l’objet Office
 
@@ -244,7 +244,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> `select` Si la promesse de méthode renvoie correctement un objet [Binding], cet objet expose uniquement les quatre méthodes suivantes de l’objet : [getDataAsync], [setDataAsync], [addHandlerAsync] et [removeHandlerAsync]. Si la promesse ne peut pas renvoyer un objet Binding, `onError` le rappel peut être utilisé pour accéder à un objet [asyncResult.error] pour obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet [Binding] `select` renvoyée par la méthode, utilisez plutôt la méthode [getByIdAsync] à l’aide de la propriété [Document.bindings] et de Bindings.[ méthode getByIdAsync] pour récupérer [l’objet Binding] .
+> Si la `select` promesse de méthode retourne un objet [Binding] , cet objet expose uniquement les quatre méthodes suivantes de l’objet : [getDataAsync], [setDataAsync], [addHandlerAsync] et [removeHandlerAsync]. Si la promesse ne peut pas retourner d’objet Binding, le `onError` rappel peut être utilisé pour accéder à un objet [asyncResult.error] pour obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet [Binding] retournée par la `select` méthode, utilisez plutôt la méthode [getByIdAsync] à l’aide de la propriété [Document.bindings et des] liaisons.[ méthode getByIdAsync] pour récupérer l’objet [Binding] .
 
 ## <a name="release-a-binding-by-id"></a>Publication d’une liaison par ID
 
@@ -329,9 +329,9 @@ function write(message){
 
 `myBinding` est une variable qui contient une liaison de texte existante dans le document.
 
-Le premier _paramètre eventType_ de la méthode [addHandlerAsync] spécifie le nom de l’événement à abonner. [Office.EventType] est une énumération des valeurs de types d’événement disponibles. `Office.EventType.BindingDataChanged` est évaluée à la chaîne « bindingDataChanged ».
+Le premier paramètre _eventType_ de la méthode [addHandlerAsync] spécifie le nom de l’événement auquel s’abonner. [Office.EventType] est une énumération des valeurs de types d’événement disponibles. `Office.EventType.BindingDataChanged` prend la valeur de la chaîne « bindingDataChanged ».
 
-La `dataChanged` fonction qui est passée dans la fonction en tant que deuxième paramètre de _handler_ est un handler d’événements qui est exécuté lorsque les données de la liaison sont modifiées. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à la liaison. Cette liaison peut être utilisée pour récupérer les données mises à jour.
+La `dataChanged` fonction qui est passée dans la fonction en tant que deuxième paramètre de _gestionnaire_ est un gestionnaire d’événements qui est exécuté lorsque les données de la liaison sont modifiées. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à la liaison. Cette liaison peut être utilisée pour récupérer les données mises à jour.
 
 De même, vous pouvez détecter lorsqu’un utilisateur modifie la sélection dans une liaison en ajoutant un gestionnaire d’événements à l’événement [SelectionChanged] d’une liaison. Pour ce faire, spécifiez le paramètre `eventType` de la méthode [addHandlerAsync] comme `Office.EventType.BindingSelectionChanged` ou `"bindingSelectionChanged"`.
 
@@ -349,7 +349,7 @@ function removeEventHandlerFromBinding() {
 ```
 
 > [!IMPORTANT]
-> Si le paramètre de _handler_ facultatif est omis lors de l’appel de la méthode [removeHandlerAsync] , tous les handlers d’événements `eventType` pour le paramètre spécifié sont supprimés.
+> Si le paramètre _de gestionnaire_ facultatif est omis lorsque la méthode [removeHandlerAsync] est appelée, tous les gestionnaires d’événements pour le spécifié `eventType` seront supprimés.
 
 ## <a name="see-also"></a>Voir aussi
 

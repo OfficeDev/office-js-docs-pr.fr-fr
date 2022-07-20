@@ -3,12 +3,12 @@ title: Codes d'erreur de l'API commune de l'Office
 description: Cet article documente les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API Office Common.
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ca281a007ba4c34e55972ac35757f7b31f6315d
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 80637e1573e120664ee89685a9c9579dbcfe6b2e
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713034"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889610"
 ---
 # <a name="office-common-api-error-codes"></a>Codes d'erreur de l'API commune de l'Office
 
@@ -48,12 +48,12 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |3002|Erreur de liaison incorrecte|La liaison spécifiée n’existe pas.|Le développeur tente de créer une liaison avec une liaison non existante ou supprimée.|
 |3003|Une erreur s’est produite lors de la création de la liaison|Les sélections non contiguës ne sont pas prises en charge.|L’utilisateur effectue des sélections multiples.|
 |3004|Une erreur s’est produite lors de la création de la liaison|Impossible de créer une liaison avec la sélection actuelle et le type de liaison spécifié.|Il existe plusieurs conditions dans lesquelles cela pourrait se produire. Consultez la section « Conditions d’erreur de création de liaison » plus loin dans cet article.|
-|3005|Opération de liaison incorrecte|Ce type de liaison ne prend pas en charge cette action.|Le développeur envoie une opération d’ajout de ligne ou d’ajout de colonne sur un type de liaison qui n’est pas de type  _tableau_.|
+|3005|Opération de liaison incorrecte|Ce type de liaison ne prend pas en charge cette action.|Le développeur envoie une opération d’ajout de ligne ou d’ajout de colonne sur un type de liaison qui n’est pas de type `table`forçage.|
 |3006|Une erreur s’est produite lors de la création de la liaison|L’élément nommé n’existe pas.|L’élément nommé est introuvable. Aucune table ni aucun contrôle de contenu portant ce nom n’existe.|
-|3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plus d’un contrôle de contenu du même nom existe, et l’échec en cas de collision est défini sur **true**.|
-|3008|Une erreur s’est produite lors de la création de la liaison|Le type de liaison spécifié n’est pas compatible avec l’élément nommé fourni.|L’élément nommé ne peut pas être lié au type. Par exemple, un contrôle de contenu contient du texte, mais le développeur a tenté d’effectuer une liaison à l’aide du type de forçage de type  _tableau_.|
+|3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plusieurs contrôles de contenu portant le même nom existent et l’échec lors de la collision est défini `true`sur .|
+|3008|Une erreur s’est produite lors de la création de la liaison|Le type de liaison spécifié n’est pas compatible avec l’élément nommé fourni.|L’élément nommé ne peut pas être lié au type. Par exemple, un contrôle de contenu contient du texte, mais le développeur a essayé de lier à l’aide du type `table`de contrainte .|
 |3009|Opération de liaison incorrecte|Le type de liaison n’est pas pris en charge.|Utilisé pour la compatibilité descendante.|
-|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente d’utiliser la ou `deleteAllDataValuesAsync` les `addRowsAsync` méthodes de l’objet `TableBinding` sur les données de _matrice_ de type forçage.|
+|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente d’utiliser la ou `deleteAllDataValuesAsync` les `addRowsAsync` méthodes de l’objet `TableBinding` sur des données de type `matrix`forçage.|
 |4000|Une erreur s’est produite lors de la lecture des paramètres|Le nom de paramètre spécifié n’existe pas.|Un nom de paramètre non existant est fourni.|
 |4001|Une erreur s’est produite lors de l’enregistrement des paramètres|Les paramètres n’ont pas pu être enregistrés.|Les paramètres n’ont pas pu être enregistrés.|
 |4002|Une erreur relative à des paramètres périmés s’est produite|Les paramètres n’ont pas pu être enregistrés car ils sont périmés.|Les paramètres sont périmés et le développeur a indiqué de ne pas les remplacer.|
@@ -105,8 +105,8 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 
 |**Type de liaison spécifié**|**Sélection réelle**|**Comportement**|
 |:-----|:-----|:-----|
-|Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type _matrice_ est créée dans les cellules sélectionnées. Aucune modification dans le document n’est attendue.|
-|Matrice|Texte sélectionné dans la cellule|Une liaison de type _matrice_ est créée dans la cellule entière. Aucune modification dans le document n’est attendue.|
+|Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type `matrix` est créée sur les cellules sélectionnées. Aucune modification dans le document n’est attendue.|
+|Matrice|Texte sélectionné dans la cellule|Une liaison de type `matrix` est créée sur l’ensemble de la cellule. Aucune modification dans le document n’est attendue.|
 |Matrice|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet ou un objet Word Art.)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules (y compris une cellule unique)|Impossible de créer la liaison.|
 |Tableau|Plage de cellules dans un tableau (comprend une seule cellule dans un tableau, le tableau entier, ou du texte dans la cellule d’un tableau)|Une liaison est créée dans le tableau entier.|
@@ -115,9 +115,9 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Tableau|Sélection multiple/sélection incorrecte (par exemple, l’utilisateur sélectionne une image, un objet, un objet Word Art, etc.)|Impossible de créer la liaison.|
 |Texte|Plage de cellules|Impossible de créer la liaison.|
 |Texte|Plage de cellules dans un tableau|Impossible de créer la liaison.|
-|Texte|Cellule unique|Une liaison de type  _texte_ est créée.|
-|Texte|Cellule unique dans un tableau|Une liaison de type  _texte_ est créée.|
-|Texte|Texte sélectionné dans la cellule|Une liaison de type  _texte_ dans la cellule entière est créée.|
+|Texte|Cellule unique|Une liaison de type `text` est créée.|
+|Texte|Cellule unique dans un tableau|Une liaison de type `text` est créée.|
+|Texte|Texte sélectionné dans la cellule|Une liaison de type `text` dans la cellule entière est créée.|
 
 ### <a name="behavior-in-word"></a>Comportement dans Word
 
@@ -126,16 +126,16 @@ Le tableau suivant résume le comportement de liaison dans Word.
 |**Type de liaison spécifié**|**Sélection réelle**|**Comportement**|
 |:-----|:-----|:-----|
 |Matrice|Texte|Impossible de créer la liaison.|
-|Matrice|Tableau entier|Une liaison de type  _matrice_ est créée.Le document est modifié et un contrôle de contenu doit encapsuler le tableau. |
+|Matrice|Tableau entier|Une liaison de type `matrix` est créée. Le document est modifié et un contrôle de contenu doit encapsuler la table. |
 |Matrice|Plage dans un tableau|Impossible de créer la liaison.|
 |Matrice|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 |Tableau|Texte|Impossible de créer la liaison.|
-|Tableau|Tableau entier|Une liaison de type  _texte_ est créée.|
+|Tableau|Tableau entier|Une liaison de type `text` est créée.|
 |Tableau|Plage dans un tableau|Impossible de créer la liaison.|
 |Tableau|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
-|Texte|Tableau entier|Une liaison de type  _texte_ est créée.|
+|Texte|Tableau entier|Une liaison de type `text` est créée.|
 |Texte|Plage dans un tableau|Impossible de créer la liaison.|
-|Texte|Sélection multiple|La dernière sélection sera encapsulée avec un contrôle de contenu et une liaison à ce contrôle. Un contrôle de contenu de type  _texte_ est créé.|
+|Texte|Sélection multiple|La dernière sélection sera encapsulée avec un contrôle de contenu et une liaison à ce contrôle. Un contrôle de contenu de type `text` est créé.|
 |Texte|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 
 ## <a name="see-also"></a>Voir aussi

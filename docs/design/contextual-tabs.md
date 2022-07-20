@@ -1,14 +1,14 @@
 ---
 title: Créer des onglets contextuels personnalisés dans les compléments Office
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre complément Office.
-ms.date: 05/25/2022
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c95d435a033a0bda44808cef75f12bb8d9e196f7
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2a079930bbb4523893f25604aefcff0a68f0316b
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659919"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889190"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans les compléments Office
 
@@ -92,7 +92,7 @@ Nous allons construire un exemple d’objet blob JSON d’onglets contextuels pa
       "type": "ExecuteFunction",
       "functionName": "writeData"
     }
-   ```
+    ```
 
 1. Ajoutez ce qui suit en tant que seul membre du `tabs` tableau. À propos de ce balisage, notez :
 
@@ -281,7 +281,7 @@ Office.onReady(async () => {
     await Office.ribbon.requestCreateControls(contextualTab);
 
     await Excel.run(context => {
-        var charts = context.workbook.worksheets
+        const charts = context.workbook.worksheets
             .getActiveWorksheet()
             .charts;
         charts.onActivated.add(showDataTab);
@@ -476,7 +476,7 @@ L’objet blob JSON transmis `requestCreateControls` n’est pas localisé de la
 
 ```javascript
 function GetContextualTabsJsonSupportedLocale () {
-    var displayLanguage = Office.context.displayLanguage;
+    const displayLanguage = Office.context.displayLanguage;
 
         switch (displayLanguage) {
             case 'en-US':
@@ -519,7 +519,7 @@ function GetContextualTabsJsonSupportedLocale () {
 Ensuite, votre code appelle la fonction pour obtenir l’objet blob localisé qui est passé à `requestCreateControls`, comme dans l’exemple suivant.
 
 ```javascript
-var contextualTabJSON = GetContextualTabsJsonSupportedLocale();
+const contextualTabJSON = GetContextualTabsJsonSupportedLocale();
 ```
 
 ## <a name="best-practices-for-custom-contextual-tabs"></a>Meilleures pratiques pour les onglets contextuels personnalisés

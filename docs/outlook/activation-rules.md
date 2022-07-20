@@ -3,12 +3,12 @@ title: Règles d’activation pour les compléments Outlook
 description: Outlook active certains types de complément si le message ou le rendez-vous que l’utilisateur lit ou compose respecte les règles d’activation du complément.
 ms.date: 12/09/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 6af5003108efede78fa06b220abe3c89d472c6e5
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: af9edf0254156d7bdac13d0553036a614d8c4c39
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484118"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889638"
 ---
 # <a name="activation-rules-for-contextual-outlook-add-ins"></a>Règles d’activation des compléments contextuels Outlook 
 
@@ -16,29 +16,24 @@ Outlook active certains types de compléments si le message ou le rendez-vous qu
 
 La figure suivante illustre les compléments Outlook activés dans la barre des compléments pour le message dans le volet de lecture.
 
-![Barre de l’application affichant les applications de messagerie en lecture activées.](../images/read-form-app-bar.png)
-
+![Barre d’application montrant les applications de messagerie en lecture activées.](../images/read-form-app-bar.png)
 
 ## <a name="specify-activation-rules-in-a-manifest"></a>Spécifier des règles d’activation dans un manifeste
 
-
-Pour que Outlook activer un complément pour des conditions spécifiques, spécifiez des règles d’activation dans le manifeste du complément à l’aide de l’un des éléments suivants`Rule`.
+Pour qu’Outlook active un complément pour des conditions spécifiques, spécifiez des règles d’activation dans le manifeste du complément à l’aide de l’un des éléments suivants `Rule` .
 
 - [Élément de règle (MailApp complexType)](/javascript/api/manifest/rule) : spécifie une règle individuelle.
 - [Élément de règle (RuleCollection complexType)](/javascript/api/manifest/rule#rulecollection) : combine plusieurs règles à l’aide d’opérations logiques.
 
-
  > [!NOTE]
- > L’élément `Rule` que vous utilisez pour spécifier une règle individuelle est du type complexe [Rule](/javascript/api/manifest/rule) abstrait. Chacun des types de règles suivants étend ce `Rule` type complexe abstrait. Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
- > 
- > Par exemple, la règle suivante définit une [règle ItemIs](/javascript/api/manifest/rule#itemis-rule) .
+ > L’élément `Rule` que vous utilisez pour spécifier une règle individuelle est du type complexe [de règle](/javascript/api/manifest/rule) abstraite. Chacun des types de règles suivants étend ce type complexe abstrait `Rule` . Ainsi, quand vous spécifiez une règle individuelle dans un manifeste, vous devez utiliser l’attribut [xsi:type](https://www.w3.org/TR/xmlschema-1/) pour définir plus précisément l’un des types de règle suivants.
+ >
+ > Par exemple, la règle suivante définit une règle [ItemIs](/javascript/api/manifest/rule#itemis-rule) .
  > `<Rule xsi:type="ItemIs" ItemType="Message" />`
- > 
- > L’attribut `FormType` s’applique aux règles d’activation dans le manifeste v1.1, mais n’est pas défini dans `VersionOverrides` la v1.0. Il ne peut donc pas être utilisé lorsque [itemIs](/javascript/api/manifest/rule#itemis-rule) est utilisé dans le `VersionOverrides` nœud.
+ >
+ > L’attribut `FormType` s’applique aux règles d’activation dans le manifeste v1.1, mais n’est pas défini dans `VersionOverrides` v1.0. Il ne peut donc pas être utilisé lorsque [les éléments sont](/javascript/api/manifest/rule#itemis-rule) utilisés dans le `VersionOverrides` nœud.
 
 Le tableau suivant répertorie les types de règle disponibles. Vous trouverez plus d’informations dans le tableau et dans les articles indiqués sous [Créer des compléments Outlook pour des formulaires de lecture](read-scenario.md).
-
-<br/>
 
 |**Nom de la règle**|**Formulaires applicables**|**Description**|
 |:-----|:-----|:-----|
@@ -50,36 +45,33 @@ Le tableau suivant répertorie les types de règle disponibles. Vous trouverez p
 
 ## <a name="itemis-rule"></a>Règle ItemIs
 
-Le type complexe **ItemIs** définit une règle qui a pour valeur **true** si l’élément actuel correspond au type d’élément et, éventuellement, la classe de message de l’élément s’il est indiqué dans la règle.
+Le `ItemIs` type complexe définit une règle qui prend la valeur `true` si l’élément actuel correspond au type d’élément, et éventuellement à la classe de message d’élément si elle est indiquée dans la règle.
 
-Spécifiez l’un des types d’éléments suivants dans l’attribut `ItemType` d’une **règle ItemIs** . Vous pouvez spécifier plusieurs règles **ItemIs** dans un manifeste. L’élément ItemType simpleType définit les types d’élément Outlook qui prennent en charge les compléments Outlook.
-
-<br/>
+Spécifiez l’un des types d’éléments suivants dans l’attribut `ItemType` d’une `ItemIs` règle. Vous pouvez spécifier plusieurs `ItemIs` règles dans un manifeste. L’élément ItemType simpleType définit les types d’élément Outlook qui prennent en charge les compléments Outlook.
 
 |**Value**|**Description**|
 |:-----|:-----|
 |**Rendez-vous**|Spécifie un élément dans le calendrier Outlook. Par exemple, un élément de réunion auquel une réponse a été donnée et auquel un organisateur et des participants sont associés, ou un rendez-vous auquel n’est associé aucun organisateur ou participant et qui constitue un simple élément de calendrier. Cela correspond à la classe de message IPM.Appointment dans Outlook.|
 |**Message**|Spécifie l’un des éléments suivants reçus dans la boîte de réception. <ul><li><p>Message électronique. Cela correspond à la classe de message IPM.Note dans Outlook.</p></li><li><p>Demande de réunion, réponse à une demande de réunion ou annulation d’une réunion. Cela correspond aux classes de message suivantes dans Outlook.</p><p>IPM.Schedule.Meeting.Request</p><p>IPM.Schedule.Meeting.Neg</p><p>IPM.Schedule.Meeting.Pos</p><p>IPM.Schedule.Meeting.Tent</p><p>IPM.Schedule.Meeting.Canceled</p></li></ul>|
 
-L’attribut `FormType` permet de spécifier le mode (lecture ou composition) dans lequel le module doit être activé.
-
+L’attribut `FormType` est utilisé pour spécifier le mode (lecture ou composition) dans lequel le complément doit être activé.
 
  > [!NOTE]
- > L’attribut ItemIs `FormType` est défini dans les schémas v1.1 et ultérieur, mais pas dans `VersionOverrides` la v1.0. N’incluez pas l’attribut `FormType` lors de la définition des commandes de add-in.
+ > L’attribut ItemIs `FormType` est défini dans le schéma v1.1 et versions ultérieures, mais pas dans `VersionOverrides` v1.0. N’incluez pas l’attribut lors de la `FormType` définition de commandes de complément.
 
 Une fois qu’un complément est activé, vous pouvez utiliser la propriété [mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) pour obtenir l’élément actuellement sélectionné dans Outlook, et la propriété [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour obtenir le type de l’élément actuel.
 
-Vous pouvez éventuellement `ItemClass` utiliser l’attribut pour spécifier la classe de message de l’élément et `IncludeSubClasses` l’attribut pour spécifier si la règle doit être **true** lorsque l’élément est une sous-classe de la classe spécifiée.
+Vous pouvez éventuellement utiliser l’attribut `ItemClass` pour spécifier la classe de message de l’élément, et l’attribut `IncludeSubClasses` pour spécifier si la règle doit être `true` lorsque l’élément est une sous-classe de la classe spécifiée.
 
 Pour plus d’informations sur les classes de message, reportez-vous à la rubrique [Types d’éléments et classes de messages](/office/vba/outlook/Concepts/Forms/item-types-and-message-classes).
 
-L’exemple suivant est une règle **ItemIs** qui permet aux utilisateurs de voir le add-in dans la barre de Outlook lorsque l’utilisateur lit un message.
+L’exemple suivant est une `ItemIs` règle qui permet aux utilisateurs de voir le complément dans la barre de complément Outlook lorsque l’utilisateur lit un message.
 
 ```xml
 <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
 ```
 
-L’exemple suivant illustre une règle **ItemIs** permettant aux utilisateurs d’afficher le complément dans la barre de compléments Outlook lorsqu’ils lisent un message ou un rendez-vous.
+L’exemple suivant est une `ItemIs` règle qui permet aux utilisateurs de voir le complément dans la barre de complément Outlook lorsque l’utilisateur lit un message ou un rendez-vous.
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -88,9 +80,7 @@ L’exemple suivant illustre une règle **ItemIs** permettant aux utilisateurs d
 </Rule>
 ```
 
-
 ## <a name="itemhasattachment-rule"></a>Règle ItemHasAttachment
-
 
 Le `ItemHasAttachment` type complexe définit une règle qui vérifie si l’élément sélectionné contient une pièce jointe.
 
@@ -98,12 +88,11 @@ Le `ItemHasAttachment` type complexe définit une règle qui vérifie si l’él
 <Rule xsi:type="ItemHasAttachment" />
 ```
 
-
 ## <a name="itemhasknownentity-rule"></a>Règle ItemHasKnownEntity
 
-Avant qu’un élément ne soit mis à la disposition d’un complément, le serveur l’examine pour déterminer si l’objet ou le corps contient du texte susceptible de correspondre à l’une des entités connues. Si l’une de ces entités est trouvée, elle est placée dans une collection d’entités connues accessibles `getEntities` `getEntitiesByType` à l’aide de la ou de la méthode de cet élément.
+Avant qu’un élément ne soit mis à la disposition d’un complément, le serveur l’examine pour déterminer si l’objet ou le corps contient du texte susceptible de correspondre à l’une des entités connues. Si l’une de ces entités est trouvée, elle est placée dans une collection d’entités connues auxquelles vous accédez à l’aide de la ou `getEntitiesByType` de la `getEntities` méthode de cet élément.
 
-Vous pouvez spécifier une règle à `ItemHasKnownEntity` l’aide de celle qui affiche votre add-in lorsqu’une entité du type spécifié est présente dans l’élément. Vous pouvez spécifier les entités connues suivantes dans l’attribut `EntityType` d’une `ItemHasKnownEntity` règle.
+Vous pouvez spécifier une règle à l’aide `ItemHasKnownEntity` de laquelle votre complément s’affiche lorsqu’une entité du type spécifié est présente dans l’élément. Vous pouvez spécifier les entités connues suivantes dans l’attribut `EntityType` d’une `ItemHasKnownEntity` règle.
 
 - Address
 - Contact
@@ -113,9 +102,9 @@ Vous pouvez spécifier une règle à `ItemHasKnownEntity` l’aide de celle qui 
 - TaskSuggestion
 - URL
 
-Vous pouvez éventuellement inclure une expression `RegularExpression` régulière dans l’attribut afin que votre add-in ne s’affiche qu’en présence d’une entité qui correspond à l’expression régulière. Pour obtenir des correspondances avec des expressions `ItemHasKnownEntity` régulières spécifiées dans les règles, `getRegExMatches` `getFilteredEntitiesByName` vous pouvez utiliser la ou la méthode pour l’élément Outlook actuellement sélectionné.
+Vous pouvez éventuellement inclure une expression régulière dans l’attribut `RegularExpression` afin que votre complément s’affiche uniquement lorsqu’une entité qui correspond à l’expression régulière présente. Pour obtenir des correspondances avec les expressions régulières spécifiées dans `ItemHasKnownEntity` les règles, vous pouvez utiliser la ou `getFilteredEntitiesByName` la `getRegExMatches` méthode de l’élément Outlook actuellement sélectionné.
 
-L’exemple suivant montre une collection `Rule` d’éléments qui montrent le add-in lorsque l’une des entités connues spécifiées est présente dans le message.
+L’exemple suivant montre une collection d’éléments `Rule` qui affichent le complément lorsque l’une des entités connues spécifiées est présente dans le message.
 
 ```xml
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -125,8 +114,7 @@ L’exemple suivant montre une collection `Rule` d’éléments qui montrent le 
 </Rule>
 ```
 
-L’exemple suivant `ItemHasKnownEntity` `RegularExpression` montre une règle avec un attribut qui active le module lorsqu’une URL contenant le mot « contoso » est présente dans un message.
-
+L’exemple suivant montre une `ItemHasKnownEntity` règle avec un `RegularExpression` attribut qui active le complément lorsqu’une URL contenant le mot « contoso » est présente dans un message.
 
 ```xml
 <Rule xsi:type="ItemHasKnownEntity" EntityType="Url" RegularExpression="contoso" />
@@ -134,24 +122,21 @@ L’exemple suivant `ItemHasKnownEntity` `RegularExpression` montre une règle a
 
 Pour plus d’informations sur les entités dans les règles d’activation, voir [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md).
 
-
 ## <a name="itemhasregularexpressionmatch-rule"></a>Règle ItemHasRegularExpressionMatch
 
-Le `ItemHasRegularExpressionMatch` type complexe définit une règle qui utilise une expression régulière pour correspondre au contenu de la propriété spécifiée d’un élément. Si le texte correspondant à l’expression régulière est trouvé dans la propriété spécifiée de l’élément, Outlook active la barre de compléments et affiche le complément. Vous pouvez utiliser la ou `getRegExMatches` la `getRegExMatchesByName` méthode de l’objet qui représente l’élément actuellement sélectionné pour obtenir des correspondances pour l’expression régulière spécifiée.
+Le `ItemHasRegularExpressionMatch` type complexe définit une règle qui utilise une expression régulière pour correspondre au contenu de la propriété spécifiée d’un élément. Si le texte correspondant à l’expression régulière est trouvé dans la propriété spécifiée de l’élément, Outlook active la barre de compléments et affiche le complément. Vous pouvez utiliser la ou `getRegExMatchesByName` la `getRegExMatches` méthode de l’objet qui représente l’élément actuellement sélectionné pour obtenir des correspondances pour l’expression régulière spécifiée.
 
-L’exemple `ItemHasRegularExpressionMatch` suivant montre un exemple qui active le add-in lorsque le corps de l’élément sélectionné contient « apple », « premier » ou « coco » en ignorant la cas.
+L’exemple suivant montre un `ItemHasRegularExpressionMatch` élément qui active le complément lorsque le corps de l’élément sélectionné contient « apple », « banana » ou « coconut », en ignorant la casse.
 
 ```xml
 <Rule xsi:type="ItemHasRegularExpressionMatch" RegExName="fruits" RegExValue="apple|banana|coconut" PropertyName="BodyAsPlaintext" IgnoreCase="true" />
 ```
 
-Pour plus d’informations sur l’utilisation `ItemHasRegularExpressionMatch` de la règle, voir Utiliser des règles d’activation d’expression régulière pour afficher [Outlook complément.](use-regular-expressions-to-show-an-outlook-add-in.md)
-
+Pour plus d’informations sur l’utilisation de la `ItemHasRegularExpressionMatch` règle, consultez [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md).
 
 ## <a name="rulecollection-rule"></a>Règle RuleCollection
 
-
-Le `RuleCollection` type complexe combine plusieurs règles en une seule règle. Vous pouvez spécifier si les règles de la collection doivent être combinées avec un OU logique ou un AND logique à l’aide de l’attribut `Mode` .
+Le `RuleCollection` type complexe combine plusieurs règles en une seule règle. Vous pouvez spécifier si les règles de la collection doivent être combinées avec un OR logique ou un AND logique à l’aide de l’attribut `Mode` .
 
 Quand un ET logique est spécifié, un élément doit correspondre à toutes les règles spécifiées dans le regroupement pour permettre l’affichage du complément. Quand un OU logique est spécifié, tout élément qui correspond à l’une des règles spécifiées dans le regroupement permet l’affichage du complément.
 
@@ -179,20 +164,16 @@ L’exemple suivant illustre l’activation du complément lorsque l’utilisate
 </Rule>
 ```
 
-
 ## <a name="limits-for-rules-and-regular-expressions"></a>Limites pour les règles et les expressions régulières
 
-
-Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant indique les limites générales pour les expressions régulières et les règles, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
-
-<br/>
+Pour fournir une expérience satisfaisante avec les compléments Outlook, vous devez vous conformer aux directives d’activation et d’utilisation des API. Le tableau suivant présente des limites générales pour les expressions et règles régulières, mais il existe des règles spécifiques pour différentes applications. Pour plus d’informations, voir [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md) et [Résoudre les problèmes d’activation des compléments Outlook](troubleshoot-outlook-add-in-activation.md).
 
 |**Élément de complément**|**Conseils**|
 |:-----|:-----|
 |Taille de manifeste|Inférieur à 256 Ko.|
 |Règles|Pas plus de 15 règles.|
 |ItemHasKnownEntity|Un riche client Outlook appliquera la règle au premier mégaoctet du corps, mais pas au reste.|
-|Expressions régulières|Pour les règles ItemHasKnownEntity ou ItemHasRegularExpressionMatch pour toutes Outlook applications :<br><ul><li>Ne spécifiez pas plus de 5 expressions régulières dans les règles d’activation pour un complément Outlook. Vous ne pouvez pas installer de complément si vous dépassez cette limite.</li><li>Spécifiez des expressions régulières dont les résultats sont renvoyés par l’appel de la méthode <b>getRegExMatches</b> dans les 50 premières correspondances. </li><li>**Important** : le texte est mis en surbrillement en fonction des chaînes résultant de la mise en correspondance de l’expression régulière. Toutefois, les occurrences mises en surbrillance peuvent ne pas correspondre exactement à ce qui doit résulter des assertions d’expression régulière réelles telles `(?!text)`que l’avance négative, `(?<=text)`la recherche arrière et l’arrière-arrière négatif `(?<!text)`. Par exemple, si vous utilisez l’expression `under(?!score)` régulière « Like under, under score, and underscore », la chaîne « under » est mise en surbrillance pour toutes les occurrences au lieu des deux premières.</li><li>Spécifiez des expressions régulières dont la correspondance ne dépasse pas les limites du tableau suivant.<br/><br/><table><tr><th>Limite de longueur d’une correspondance d’expression régulière</th><th>Clients riches Outlook</th><th>Outlook sur iOS et Android</th></tr><tr><td>Corps d’élément en texte brut</td><td>1,5 Ko</td><td>3 Ko</td></tr><tr><td>Corps d’élément en HTML</td><td>3 Ko</td><td>3 Ko</td></tr></table>|
+|Expressions régulières|Pour les règles ItemHasKnownEntity ou ItemHasRegularExpressionMatch pour toutes les applications Outlook :<br><ul><li>Ne spécifiez pas plus de 5 expressions régulières dans les règles d’activation pour un complément Outlook. Vous ne pouvez pas installer de complément si vous dépassez cette limite.</li><li>Spécifiez des expressions régulières dont les résultats sont renvoyés par l’appel de la méthode <b>getRegExMatches</b> dans les 50 premières correspondances. </li><li>**Important** : le texte est mis en surbrillance en fonction des chaînes qui résultent de la mise en correspondance de l’expression régulière. Toutefois, les occurrences mises en surbrillance peuvent ne pas correspondre exactement à ce qui doit résulter d’assertions d’expression régulière réelles telles que la recherche `(?!text)`négative, la recherche en arrière-plan `(?<=text)`et la recherche négative.`(?<!text)` Par exemple, si vous utilisez l’expression `under(?!score)` régulière sur « Comme sous, sous score et trait de soulignement », la chaîne « under » est mise en surbrillance pour toutes les occurrences au lieu des deux premières.</li><li>Spécifiez des expressions régulières dont la correspondance ne dépasse pas les limites du tableau suivant.<br/><br/><table><tr><th>Limite de longueur d’une correspondance d’expression régulière</th><th>Clients riches Outlook</th><th>Outlook sur iOS et Android</th></tr><tr><td>Corps d’élément en texte brut</td><td>1,5 Ko</td><td>3 Ko</td></tr><tr><td>Corps d’élément en HTML</td><td>3 Ko</td><td>3 Ko</td></tr></table>|
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -200,4 +181,3 @@ Pour fournir une expérience satisfaisante avec les compléments Outlook, vous d
 - [Limites pour l’activation et l’API JavaScript pour les compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook](use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md)
-    

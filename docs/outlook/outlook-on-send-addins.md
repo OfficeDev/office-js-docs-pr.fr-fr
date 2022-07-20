@@ -1,14 +1,14 @@
 ---
 title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
-ms.date: 07/11/2022
+ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: fc0d81a2dedd80c1f4afa2f3fd9205ff6773f933
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797609"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889603"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -65,6 +65,10 @@ Les limites de la fonctionnalité d’envoi sont les suivantes.
 
 - **Fonctionnalité d’ajout à l’envoi** &ndash; Si vous appelez [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) dans le gestionnaire d’envoi, une erreur est retournée.
 - **AppSource** &ndash; Vous ne pouvez pas publier de compléments Outlook qui utilisent la fonctionnalité d’envoi sur [AppSource](https://appsource.microsoft.com). car ils ne seront pas validés par AppSource. Les compléments qui utilisent la fonctionnalité d’envoi doivent être déployés par les administrateurs.
+  
+  > [!IMPORTANT]
+  > Lors de l’exécution `npm run validate` pour [valider le manifeste de votre complément](../testing/troubleshoot-manifest.md), vous recevez l’erreur « Le complément de boîte aux lettres contenant l’événement ItemSend n’est pas valide. Le manifeste de complément de boîte aux lettres contient l’événement ItemSend dans VersionOverrides qui n’est pas autorisé. » Ce message s’affiche, car les compléments qui utilisent l’événement `ItemSend` , qui est requis pour cette version de la fonctionnalité d’envoi, ne peuvent pas être publiés sur AppSource. Vous serez toujours en mesure de charger et d’exécuter votre complément, à condition qu’aucune autre erreur de validation ne soit trouvée.
+
 - **Manifeste** &ndash; Le complément prend en charge un seul événement `ItemSend`. Si votre manifeste comprend plusieurs événements `ItemSend`, il ne sera pas validé.
 - **Performances**&ndash; : plusieurs allers-retours vers le serveur web hébergeant le complément peuvent nuire aux performances du complément. Imaginez alors ce qu’occasionnerait la création de compléments nécessitant plusieurs opérations de messagerie ou réunions.
 - **Envoyer plus tard** (Mac uniquement) &ndash; S’il y a des compléments d’envoi, la fonctionnalité **Envoyer plus tard** n’est pas disponible.
@@ -98,7 +102,7 @@ Dans Outlook, la fonctionnalité d’envoi exige la configuration des complémen
 
 ### <a name="web-browser---classic-outlook"></a>[Navigateur web – Outlook classique](#tab/classic)
 
-Les compléments Outlook (classique) sur le web qui utilisent la fonctionnalité d’envoi s’exécutent pour les utilisateurs auxquels une stratégie de boîte aux lettres Outlook sur le web est attribuée, dont la valeur *OnSendAddinsEnabled* est définie sur **True**.
+Les compléments pour Outlook sur le web (classique) qui utilisent la fonctionnalité d’envoi s’exécutent pour les utilisateurs auxquels une stratégie de boîte aux lettres Outlook sur le web dont l’indicateur *OnSendAddinsEnabled* est défini `true`sur .
 
 Pour installer un nouveau complément, exécutez les cmdlets Exchange Online PowerShell suivantes.
 
@@ -128,13 +132,13 @@ Pour activer les compléments d’envoi pour tous les utilisateurs :
     > [!NOTE]
     > Les administrateurs peuvent utiliser une stratégie existante, mais la fonctionnalité d’envoi est uniquement prise en charge sur certains types de boîtes aux lettres. La fonctionnalité d’envoi est bloquée par défaut sur les boîtes aux lettres non prises en charge dans Outlook sur le web.
 
-2. Activez la fonctionnalité d’envoi.
+1. Activez la fonctionnalité d’envoi.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Attribuez la stratégie à des utilisateurs.
+1. Attribuez la stratégie à des utilisateurs.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -153,13 +157,13 @@ Pour activer la fonctionnalité d’envoi pour un groupe spécifique d’utilisa
    > [!NOTE]
    > Les administrateurs peuvent utiliser une stratégie existante, mais la fonctionnalité d’envoi est uniquement prise en charge sur certains types de boîtes aux lettres (pour en savoir plus, consultez la section [Limites concernant le type de boîte aux lettres](#multiple-on-send-add-ins) plus haut dans cet article). La fonctionnalité d’envoi est bloquée par défaut sur les boîtes aux lettres non prises en charge dans Outlook sur le web.
 
-2. Activez la fonctionnalité d’envoi.
+1. Activez la fonctionnalité d’envoi.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Attribuez la stratégie à des utilisateurs.
+1. Attribuez la stratégie à des utilisateurs.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members
@@ -218,13 +222,13 @@ Pour tous les utilisateurs, pour interdire la modification pendant le traitement
     > [!NOTE]
     > Les administrateurs peuvent utiliser une stratégie existante, mais la fonctionnalité d’envoi est uniquement prise en charge sur certains types de boîtes aux lettres. La fonctionnalité d’envoi est bloquée par défaut sur les boîtes aux lettres non prises en charge dans Outlook sur le web.
 
-2. Appliquer la conformité lors de l’envoi.
+1. Appliquer la conformité lors de l’envoi.
 
    ```powershell
     Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Attribuez la stratégie à des utilisateurs.
+1. Attribuez la stratégie à des utilisateurs.
 
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'}|Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
@@ -243,13 +247,13 @@ Pour appliquer la conformité à l’envoi pour un groupe spécifique d’utilis
    > [!NOTE]
    > Les administrateurs peuvent utiliser une stratégie existante, mais la fonctionnalité d’envoi est uniquement prise en charge sur certains types de boîtes aux lettres (pour en savoir plus, consultez la section [Limites concernant le type de boîte aux lettres](#multiple-on-send-add-ins) plus haut dans cet article). La fonctionnalité d’envoi est bloquée par défaut sur les boîtes aux lettres non prises en charge dans Outlook sur le web.
 
-2. Appliquer la conformité lors de l’envoi.
+1. Appliquer la conformité lors de l’envoi.
 
    ```powershell
     Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
-3. Attribuez la stratégie à des utilisateurs.
+1. Attribuez la stratégie à des utilisateurs.
 
    ```powershell
     $targetUsers = Get-Group 'Finance'|select -ExpandProperty members

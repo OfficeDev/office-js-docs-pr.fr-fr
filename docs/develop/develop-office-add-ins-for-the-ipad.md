@@ -1,14 +1,14 @@
 ---
 title: Conditions particulières pour les compléments sur iPad
 description: Découvrez quelques exigences pour la création d’un complément Office qui s’exécute sur un iPad.
-ms.date: 09/03/2020
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df8855a987bd44e657f6ddfdec9925a979449a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: cc75cc75daec756efcb066f3e3a77f865672e501
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712992"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889302"
 ---
 # <a name="special-requirements-for-add-ins-on-the-ipad"></a>Conditions particulières pour les compléments sur iPad
 
@@ -31,8 +31,8 @@ Le tableau suivant répertorie les tâches à effectuer.
 > [!NOTE]
 > Votre complément peut servir une autre interface utilisateur en fonction de l’appareil sur lequel il s’exécute. Pour détecter si votre complément s’exécute sur un iPad, vous pouvez utiliser les API suivantes.
 >
-> - var isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
-> - var allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
+> - const isTouchEnabled = [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member)
+> - const allowCommerce = [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member)
 >
 > Sur un iPad, `touchEnabled` retourne `true` et `commerceAllowed` retourne `false`.
 >
@@ -42,10 +42,10 @@ Le tableau suivant répertorie les tâches à effectuer.
 
 Appliquez les meilleures pratiques suivantes pour le développement de compléments qui s’exécutent sur iPad.
 
--  **Développez et déboguez le complément sur Windows ou Mac et chargez-le sur un iPad.**
+- **Développez et déboguez le complément sur Windows ou Mac et chargez-le sur un iPad.**
 
     Vous ne pouvez pas développer le complément directement sur un iPad, mais vous pouvez le développer et le déboguer sur un ordinateur Windows ou Mac et le charger sur un iPad à des fins de test. Étant donné qu’un complément qui s’exécute dans Office sur iOS ou Mac prend en charge les mêmes API qu’un complément s’exécutant dans Office sur Windows, le code de votre complément doit s’exécuter de la même façon sur ces plateformes. Pour plus d’informations, consultez [Test et débogage des compléments Office](../testing/test-debug-office-add-ins.md) et [chargement indépendant des compléments Office sur iPad à des fins de test](../testing/sideload-an-office-add-in-on-ipad.md).
 
--  **Précisez les conditions de fonctionnement de l’API dans le manifeste de votre complément ou avec des vérifications à l’exécution.**
+- **Précisez les conditions de fonctionnement de l’API dans le manifeste de votre complément ou avec des vérifications à l’exécution.**
 
     Lorsque vous spécifiez des exigences d’API dans le manifeste de votre complément, Office détermine si l’application cliente Office prend en charge ces membres d’API. Si les membres de l’API sont disponibles dans l’application, votre complément sera disponible. Vous pouvez également effectuer une vérification du runtime pour déterminer si une méthode est disponible dans l’application avant de l’utiliser dans votre complément. Les vérifications d’exécution vérifient que votre complément est toujours disponible dans l’application et fournissent des fonctionnalités supplémentaires si les méthodes sont disponibles. Pour plus d’informations, consultez [Spécifier les applications Office et les exigences de l’API](specify-office-hosts-and-api-requirements.md).

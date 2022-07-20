@@ -1,15 +1,15 @@
 ---
-ms.date: 04/04/2022
 title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
-ms.prod: non-product-specific
 description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
+ms.date: 07/18/2022
+ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 3ca5358071d495c409d2a4ece98e600f367b8675
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 70906199f27a5b84a9dcd71b2f36dcd16ff79f73
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659842"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889477"
 ---
 # <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
 
@@ -150,7 +150,7 @@ Vous pouvez confirmer que vous utilisez correctement le runtime JavaScript parta
     ```javascript
     /*global document, Office*/
 
-    var _count = 0;
+    let _count = 0;
 
     Office.onReady(() => {
       document.getElementById("sideload-msg").style.display = "none";
