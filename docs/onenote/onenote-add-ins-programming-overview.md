@@ -1,16 +1,16 @@
 ---
 title: Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 description: En savoir plus sur l’API JavaScript de OneNote pour les compléments OneNote sur le web.
-ms.date: 10/14/2020
+ms.date: 07/18/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 938a9f6a954162c8774cfeea970596b41afb79ee
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: dc4c35d8ec68d9af1b349b13c8bbd8a0a18b6e1d
+ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496319"
+ms.lasthandoff: 07/20/2022
+ms.locfileid: "66889176"
 ---
 # <a name="onenote-javascript-api-programming-overview"></a>Vue d’ensemble de la programmation de l’API JavaScript de OneNote
 
@@ -52,7 +52,7 @@ Utilisez l’objet `Application` pour accéder aux objets OneNote tels que **Not
 
 4. Appelez la méthode `context.sync` pour exécuter toutes les commandes en attente dans l’ordre dans lequel elles ont été mises en file d’attente. Cela permet de synchroniser l’état entre votre script d’exécution et les objets réels, en récupérant les propriétés des objets OneNote chargés à utiliser dans vos scripts. Vous pouvez utiliser l’objet Promise renvoyé pour créer une chaîne avec les actions supplémentaires.
 
-Par exemple :
+Par exemple :
 
 ```js
 async function getPagesInSection() {
@@ -97,7 +97,7 @@ function getSelectionFromPage() {
         Office.CoercionType.Text,
         { valueFormat: "unformatted" },
         function (asyncResult) {
-            var error = asyncResult.error;
+            const error = asyncResult.error;
             if (asyncResult.status === Office.AsyncResultStatus.Failed) {
                 console.log(error.message);
             }
@@ -111,15 +111,17 @@ Les compléments OneNote prennent en charge uniquement les API communes suivante
 | API | Commentaires |
 |:------|:------|
 | [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | Office.CoercionType.Text`Office.CoercionType.Text` et Office.CoercionType.Matrix`Office.CoercionType.Matrix` uniquement |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement | 
-| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Les paramètres sont pris en charge par les compléments de contenu uniquement | 
+| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`, `Office.CoercionType.Image`et `Office.CoercionType.Html` uniquement |
+| [var mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | Les paramètres sont pris en charge par les compléments de contenu uniquement |
+| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Les paramètres sont pris en charge par les compléments de contenu uniquement |
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) ||
 
 En règle générale, vous utilisez l’API commune pour effectuer une action qui n’est pas prise en charge dans l’API spécifique à l’application. Pour plus d’informations sur les API communes, voir le [Modèle d’objet API JavaScript communes](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
+
 ## <a name="onenote-object-model-diagram"></a>Diagramme du modèle objet OneNote
+
 Le diagramme suivant représente ce qui est actuellement disponible dans l’API JavaScript de OneNote.
 
   ![Diagramme de modèle objet OneNote.](../images/onenote-om.png)
