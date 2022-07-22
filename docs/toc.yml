@@ -313,7 +313,7 @@ items:
             href: testing/runtime-logging.md
           - name: Déboguer une commande de fonction avec un runtime non partagé
             href: testing/debug-function-command.md
-          - name: Déboguer les méthodes initialize et onReady
+          - name: Déboguer les fonctions initialize et onReady
             href: testing/debug-initialize-onready.md
           - name: Erreurs
             items:

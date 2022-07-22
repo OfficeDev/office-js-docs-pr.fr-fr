@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément PowerPoint qu
 ms.date: 07/13/2022
 ms.prod: powerpoint
 ms.localizationpriority: high
-ms.openlocfilehash: 14a0b249aaecce61f6f7892752970b445955d27c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: add58a3fc15f70b9c395e2f85c5eb5b2bb6e2bd5
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797665"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958880"
 ---
 # <a name="tutorial-create-a-powerpoint-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de PowerPoint
 
@@ -447,7 +447,7 @@ Procédez comme suit pour ajouter le code qui navigue entre les diapositives d�
     $('#go-to-last-slide').click(goToLastSlide);
     ```
 
-1. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la fonction `goToByIdAsync` pour sélectionner une diapositive suivant sa position dans le document (première, dernière, précédente et suivante).
+1. Dans le fichier **Home.js**, remplacez `TODO9` par le code suivant pour définir les fonctions de navigation. Chacune de ces fonctions utilise la méthode `goToByIdAsync` pour sélectionner une diapositive en fonction de sa position dans le document (première, dernière, précédente et suivante).
 
     ```js
     function goToFirstSlide() {

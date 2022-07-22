@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez cr?er un compl?ment Word qui ins?re
 ms.date: 01/13/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: 6fc01db700475d4ff2dda49e471a68d9ae59aa77
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 1f7950007a9139767cd31901ccf64c9fb1ebdf7c
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484028"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958382"
 ---
 # <a name="tutorial-create-a-word-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches Word
 
@@ -41,7 +41,7 @@ Dans ce tutoriel, vous allez créer un complément de volet de tâches Excel qui
 
 - **Sélectionnez un type de projet :** `Office Add-in Task Pane project`
 - **Sélectionnez un type de script :** `Javascript`
-- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
+- **Comment souhaitez-vous nommer votre complément ?** `My Office Add-in`
 - **Quelle application client Office voulez-vous prendre en charge ?** `Word`
 
 ![Capture d’écran montrant les invites et réponses relatives au générateur Yeoman dans une interface de ligne de commande.](../images/yo-office-word.png)
@@ -76,7 +76,7 @@ Dans cette étape du tutoriel, vous devez tester par programme que votre complé
 
     - Recherchez et supprimez la fonction `run()` entière.
 
-1. Dans l’appel de la méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Word) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
+1. Dans l’appel de fonction `Office.onReady` , recherchez la ligne `if (info.host === Office.HostType.Word) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
 
     - La première partie de ce code détermine si la version de Word de l’utilisateur prend en charge une version de Word.js qui inclut toutes les API utilisées à toutes les étapes de ce didacticiel. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l’interface utilisateur qui appellerait des API non prises en charge. Cela permet à l’utilisateur d’utiliser toujours les parties du complément prises en charge par sa version de Word.
     - La deuxième partie de ce code ajoute un gestionnaire d’événements pour le bouton `insert-paragraph`.
@@ -183,7 +183,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `insert-paragraph`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `insert-paragraph` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("apply-style").onclick = applyStyle;
@@ -227,7 +227,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `apply-style`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `apply-style` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("apply-custom-style").onclick = applyCustomStyle;
@@ -273,7 +273,7 @@ Dans cette étape du didacticiel, vous devez appliquer un style intégré au tex
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `apply-custom-style`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `apply-custom-style` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("change-font").onclick = changeFont;
@@ -345,7 +345,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `change-font`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `change-font` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("insert-text-into-range").onclick = insertTextIntoRange;
@@ -378,7 +378,7 @@ Dans cette étape du didacticiel, vous ajouterez du texte dans les plages de tex
 
 1. Dans la fonction `insertTextIntoRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - La méthode est destinée à insérer l’abréviation [« (C2R) »] à la fin de la plage dont le texte est « Click-to-Run » (Démarrer en un clic). Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - La fonction est destinée à insérer l’abréviation ["(C2R)"] à la fin de la plage dont le texte est « Démarrer en un clic ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
    - Le premier paramètre de la méthode `Range.insertText` correspond à la chaîne à insérer dans l’objet `Range`.
 
@@ -465,7 +465,7 @@ async function insertTextIntoRange() {
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `insert-text-into-range`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `insert-text-into-range` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("insert-text-outside-range").onclick = insertTextBeforeRange;
@@ -495,7 +495,7 @@ async function insertTextIntoRange() {
 
 1. Dans la fonction `insertTextBeforeRange()`, remplacez `TODO1` par le code suivant. Remarque :
 
-   - La méthode est destinée à ajouter une plage dont le texte est « Office 2019 », avant la plage contenant le texte « Microsoft 365 ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
+   - La fonction est destinée à ajouter une plage dont le texte est « Office 2019 », avant la plage avec le texte « Microsoft 365 ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
    - Le premier paramètre de la méthode `Range.insertText` correspond à la chaîne à ajouter.
 
@@ -544,7 +544,7 @@ async function insertTextIntoRange() {
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `insert-text-outside-range`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `insert-text-outside-range` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("replace-text").onclick = replaceText;
@@ -569,7 +569,7 @@ async function insertTextIntoRange() {
     }
     ```
 
-1. Dans la fonction `replaceText()`, remplacez `TODO1` par le code suivant. Notez que la méthode est destinée à remplacer la chaîne « plusieurs » par la chaîne « beaucoup ». Cela simplifie l’hypothèse que la chaîne est présente et que l’utilisateur l’a sélectionnée.
+1. À l’intérieur de la fonction `replaceText()`, remplacez `TODO1` par le code suivant. Notez que la fonction est destinée à remplacer la chaîne « plusieurs » par la chaîne « nombreux ». Cela permet d’émettre une hypothèse simplifiée selon laquelle la chaîne est présente et l’utilisateur l’a sélectionnée.
 
     ```js
     const doc = context.document;
@@ -630,13 +630,13 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Recherchez l’appel de méthode `Office.onReady` en haut du fichier, puis ajoutez le code suivant immédiatement avant cette ligne. Ce code importe la variable que vous avez définie précédemment dans le fichier **./base64Image.js**.
+1. Recherchez l’appel de fonction `Office.onReady` en haut du fichier et ajoutez le code suivant juste avant cette ligne. Ce code importe la variable que vous avez définie précédemment dans le fichier **./base64Image.js**.
 
     ```js
     import { base64Image } from "../../base64Image";
     ```
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `replace-text`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `replace-text` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("insert-image").onclick = insertImage;
@@ -679,7 +679,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `insert-image`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `insert-image` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("insert-html").onclick = insertHTML;
@@ -727,7 +727,7 @@ Procédez comme suit pour définir l’image que vous allez insérer dans le doc
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `insert-html`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `insert-html` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("insert-table").onclick = insertTable;
@@ -819,7 +819,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `insert-table`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `insert-table` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("create-content-control").onclick = createContentControl;
@@ -877,7 +877,7 @@ Dans cette étape du didacticiel, vous découvrirez comment créer des contrôle
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-content-control`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `create-content-control` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("replace-content-in-control").onclick = replaceContentInControl;

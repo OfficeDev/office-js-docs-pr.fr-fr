@@ -4,12 +4,12 @@ description: Créez un complément Excel qui crée, remplit, filtre et trie un t
 ms.date: 05/01/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: fce53d78af29cceea12f0067d22e9ced0f9c1ace
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 554fa885cb91671f97103425d572d8bf1f3b6437
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659716"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958389"
 ---
 # <a name="tutorial-create-an-excel-task-pane-add-in"></a>Didacticiel : Créer un complément de volet de tâches de Excel
 
@@ -77,7 +77,7 @@ Dans cette étape du didacticiel, vous vérifiez à l’aide de programme que vo
 
     - Recherchez et supprimez la fonction `run()` entière.
 
-1. Dans l’appel de la méthode `Office.onReady`, recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
+1. Dans l’appel de fonction `Office.onReady` , recherchez la ligne `if (info.host === Office.HostType.Excel) {` et ajoutez le code suivant immédiatement après cette ligne. Remarque :
 
     - La première partie de ce code détermine si la version d' Excel de l'utilisateur prend en charge une version d'Excel.js qui inclut toutes les API que cette série de tutoriels utilisera. Dans un complément de production, utilisez le corps du bloc conditionnel pour masquer ou désactiver l'interface utilisateur qui appellerait les API non prises en charge. Cela permettra à l'utilisateur de continuer à utiliser les parties du complément qui sont prises en charge par sa version d' Excel.
 
@@ -225,7 +225,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-table`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `create-table` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("filter-table").onclick = filterTable;
@@ -276,7 +276,7 @@ Dans cette étape du didacticiel, vous allez filtrer et trier le tableau que vou
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `filter-table`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `filter-table` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("sort-table").onclick = sortTable;
@@ -352,7 +352,7 @@ Dans cette étape du didacticiel, vous créerez un graphique à l’aide de donn
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `sort-table`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `sort-table` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("create-chart").onclick = createChart;
@@ -447,7 +447,7 @@ Lorsqu’un tableau est tellement long que l’utilisateur doit le faire défile
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Au cours de l’appel de méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `create-chart`, puis ajoutez le code suivant après cette ligne.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `create-chart` et ajoutez le code suivant après cette ligne.
 
     ```js
     document.getElementById("freeze-header").onclick = freezeHeader;
@@ -792,7 +792,7 @@ Dans cette étape finale du didacticiel, vous allez ouvrir une boîte de dialogu
 
 1. Ajoutez le code suivant au fichier **popup.js**. Notez ce qui suit à propos de ce code.
 
-   - *Toutes les pages appellent les API dans la bibliothèque Office.js doivent tout d’abord vérifier que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la méthode `Office.onReady()`. Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. Le code qui appelle `Office.onReady()` doit être exécuté avant tout appel à Office.js ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
+   - *Toutes les pages appellent les API dans la bibliothèque Office.js doivent tout d’abord vérifier que la bibliothèque est entièrement initialisée.* La meilleure façon de procéder consiste à appeler la fonction `Office.onReady()` . Si votre complément dispose de ses propres tâches d’initialisation, le code doit passer dans une méthode `then()` chaînée à l’appel de `Office.onReady()`. Le code qui appelle `Office.onReady()` doit être exécuté avant tout appel à Office.js ; l’affectation se trouve donc dans un fichier de script chargé par la page, comme dans ce cas.
 
     ```js
     (function () {
@@ -918,7 +918,7 @@ Ouvrez le fichier **webpack.config.js** situé dans le répertoire racine du pro
 
 1. Ouvrez le fichier **./src/taskpane/taskpane.js**.
 
-1. Dans l’appel de la méthode `Office.onReady`, recherchez la ligne qui attribue un gestionnaire de clic au bouton `freeze-header` et ajoutez le code suivant après cette ligne. Vous allez créer la méthode `openDialog` lors d’une étape ultérieure.
+1. Dans l’appel de fonction `Office.onReady`, recherchez la ligne qui affecte un gestionnaire de clics au bouton `freeze-header` et ajoutez le code suivant après cette ligne. Vous créerez la méthode `openDialog` lors d’une étape ultérieure.
 
     ```js
     document.getElementById("open-dialog").onclick = openDialog;

@@ -6,12 +6,12 @@ ms.prod: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 666b525dde96c6d281d5acf6d905e592b172bea3
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 0743057c2f562485c3edb5d3bd82266c13b7e13f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889624"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958887"
 ---
 # <a name="visio-javascript-api-overview"></a>Présentation des API JavaScript pour Visio
 
@@ -23,10 +23,10 @@ Les diagrammes Visio incorporés sont stockés dans une bibliothèque de documen
 
 Vous pouvez utiliser les interfaces API JavaScript pour Visio pour :
 
-* interagir avec les éléments du diagramme Visio, tels que les pages et les formes ;
-* créer une marque de révision sur la zone du diagramme Visio ;
-* écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
-* exposer les données du diagramme, tels que le texte de la forme, les données de forme et des liens hypertexte sur votre solution.
+- interagir avec les éléments du diagramme Visio, tels que les pages et les formes ;
+- créer une marque de révision sur la zone du diagramme Visio ;
+- écrire des gestionnaires personnalisés pour les événements de souris dans le dessin ;
+- exposer les données du diagramme, tels que le texte de la forme, les données de forme et des liens hypertexte sur votre solution.
 
 Cet article décrit comment utiliser les interfaces API JavaScript pour Visio avec Visio sur le web pour créer des solutions pour SharePoint Online. Il présente des concepts fondamentaux pour l’utilisation des API, notamment concernant les objets `EmbeddedSession`, `RequestContext`, les objets de proxy JavaScript, ainsi que les méthodes `sync()`, `Visio.run()` et `load()`. Les exemples de code vous montrent comment appliquer ces concepts.
 
@@ -45,7 +45,7 @@ session.init().then(function () {
 
 `Visio.run()` exécute un script de commandes qui effectue des actions sur le modèle objet Visio. Les commandes de traitement par lots incluent les définitions des objets de proxy JavaScript locaux et des méthodes `sync()` qui synchronisent l’état entre les objets locaux et Visio, ainsi que la résolution de la promesse. L’avantage de traiter les demandes par lots avec `Visio.run()` est que, une fois la promesse résolue, tous les objets de page suivis qui ont été alloués lors de l’exécution sont automatiquement publiés.
 
-La méthode d’exécution utilise les objets session et RequestContext et renvoie une promesse (en général, le résultat de la méthode `context.sync()`). Il est possible d’exécuter l’opération par lots en dehors de la méthode `Visio.run()`. Toutefois, dans ce cas, toutes les références d’objet de page doivent être suivies et gérées manuellement.
+La fonction `run` accepte l’objet session et RequestContext et retourne une promesse (en général, uniquement le résultat de `context.sync()`). Il est possible d’exécuter l’opération par lots en dehors de la méthode `Visio.run()`. Toutefois, dans ce cas, toutes les références d’objet de page doivent être suivies et gérées manuellement.
 
 ## <a name="requestcontext"></a>RequestContext
 
@@ -97,7 +97,7 @@ object.load(string: properties); //or object.load(array: properties); //or objec
 ## <a name="example-printing-all-shapes-text-in-active-page"></a>Exemple : impression du texte de toutes les formes de la page active
 
 L’exemple suivant montre comment imprimer la valeur du texte de la forme d’un objet de formes de tableau.
-La méthode `Visio.run()` contient un lot d’instructions. Dans le cadre de ce traitement par lots, un objet de proxy faisant référence à des formes est créé dans le document actif.
+La fonction `Visio.run()` contient un lot d’instructions. Dans le cadre de ce traitement par lots, un objet de proxy faisant référence à des formes est créé dans le document actif.
 
 Toutes ces commandes sont mises en file d’attente et sont exécutées lorsque la méthode `context.sync()` est appelée. La méthode `sync()` renvoie une promesse qui peut être utilisée pour y adjoindre d’autres opérations.
 
@@ -137,7 +137,7 @@ Les erreurs sont renvoyées à l’aide d’un objet d’erreur qui se compose d
 
 Vous pouvez utiliser l’exemple de cette section pour commencer. Cet exemple montre comment programmer l’affichage du texte de la forme de la forme sélectionnée dans un diagramme Visio. Pour commencer, créez une page classique dans SharePoint Online ou modifiez une page existante. Ajoutez un composant WebPart Script Editor sur la page, puis copiez-collez le code suivant.
 
-```js
+```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
 
 Enter Visio File Url:<br/>
