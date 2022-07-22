@@ -3,12 +3,12 @@ title: Débogage des compléments Office
 description: Recherchez les conseils de débogage des compléments Office pour votre environnement de développement.
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: e8f4270a133e068333703796c10b091bae31ed0a
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797483"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958761"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Vue d’ensemble du débogage Office des modules
 
@@ -36,7 +36,7 @@ Le reste de cet article ne concerne que le débogage du JavaScript côté client
 
 Dans certains cas particuliers, le processus de débogage diffère de la normale pour une combinaison donnée de plateforme, d’application Office et d’environnement de développement. Si vous déboguez l’un de ces cas spéciaux, utilisez les liens de cette section pour trouver les conseils appropriés. Sinon, continuez à [Instructions générales](#general-guidance).
 
-- **Débogage des méthodes `Office.initialize` ou `Office.onReady`** : [Déboguer les méthodes initialize et onReady](debug-initialize-onready.md).
+- **Débogage la fonction `Office.initialize` ou `Office.onReady`** : [Déboguer les fonctions initialize et onReady](debug-initialize-onready.md).
 - **Debugging d’une fonction personnalisée Excel _dans un_ runtime non-partagé** : [Débogage de fonctions personnalisées dans un runtime non-partagé](../excel/custom-functions-debugging.md).
 - **Débogage d'une [commande de fonction](../design/add-in-commands.md#types-of-add-in-commands)dans un __ runtime non-partagée** : 
     - Compléments Outlook sur un ordinateur de développement Windows : [commandes de fonction de débogage dans les compléments Outlook](../outlook/debug-ui-less.md) 

@@ -3,12 +3,12 @@ title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
 ms.date: 09/03/2021
 ms.localizationpriority: high
-ms.openlocfilehash: 708b02cabdfafad599171839b29195d49009f37c
-ms.sourcegitcommit: fcb8d5985ca42537808c6e4ebb3bc2427eabe4d4
+ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/24/2022
-ms.locfileid: "65650583"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958361"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 

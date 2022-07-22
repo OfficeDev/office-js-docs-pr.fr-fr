@@ -3,12 +3,12 @@ title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code 
 description: Apprenez à déboguer les modules complémentaires Office qui utilisent Microsoft Edge WebView2 (basé sur Chromium) dans VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c30875e385ecb4d73c492a8a2b6a4a4391bc60ea
-ms.sourcegitcommit: 4a7b9b9b359d51688752851bf3b41b36f95eea00
+ms.openlocfilehash: 10c65ef26e59433e1215daa4b7a49b17413e102d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/22/2022
-ms.locfileid: "63711013"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959076"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
@@ -77,7 +77,7 @@ Ces instructions supposent que vous avez l’expérience de l’utilisation de l
 1. Exécutez la fonctionnalité dans votre add-in qui appelle les lignes avec des points d'arrêt. Vous verrez que les points d’arrêt ont été atteints et que vous pouvez inspecter les variables locales.
 
    > [!NOTE]
-   > Les points d’arrêt dans les appels de `Office.initialize` ou de `Office.onReady` sont ignorés. Pour plus d’informations sur ces méthodes, consultez [Initialiser votre complément Office](../develop/initialize-add-in.md).
+   > Les points d’arrêt dans les appels de `Office.initialize` ou de `Office.onReady` sont ignorés. Pour plus d’informations sur ces fonctions, consultez [Initialiser votre complément Office](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
 > La meilleure façon d’arrêter une session de débogage consiste à sélectionner **Shift+F5** ou à choisir **Exécuter > Arrêter le débogage** dans le menu. Cette action doit fermer la fenêtre du serveur Node et tenter de fermer l’application hôte, mais une invite s’affiche sur l’application hôte vous demandant s’il faut enregistrer le document ou non. Faites un choix approprié et laissez l’application hôte se fermer. Évitez de fermer manuellement la fenêtre Node ou l’application hôte. Cela peut entraîner des bogues en particulier lorsque vous arrêtez et démarrez des sessions de débogage à plusieurs reprises.

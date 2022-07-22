@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 ms.localizationpriority: high
-ms.openlocfilehash: 58400dfd1772ff5c3adbd846dd44c9cb0d57fff2
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746088"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959055"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -88,7 +88,7 @@ Le code communique avec le document par le biais d’objets .NET tels que `Micro
 
 La logique métier, les algorithmes, les fonctions d’assistance et autres codes similaires constituent souvent le cœur d’un complément VSTO. Ce code fonctionne indépendamment de l’interface utilisateur et du code de document pour effectuer une analyse, se connecter à un service principale, effectuer des calculs, etc. Il s’agit du code qui peut être partagé pour que vous n’ayez pas à le réécrire dans JavaScript.
 
-Examinons le complément VSTO. Dans le code suivant, chaque section est identifiée en tant que code DOCUMENT, interface utilisateur ou ALGORITHME.
+Examinez le complément VSTO. Dans le code suivant, chaque section est identifiée en tant que code de DOCUMENT, d’interface utilisateur ou d’ALGORITHME.
 
 ```csharp
 // *** UI CODE ***
@@ -308,7 +308,7 @@ Deux projets sont créés :
 
 1. Dans le code précédent, entrez le numéro de **sslPort** que vous avez enregistré précédemment à partir du fichier **launchSettings.json**.
 
-Dans le code précédent, la chaîne renvoyée est traitée pour remplacer les sauts de ligne avec retour chariot par des balises HTML `<br>`. Vous pouvez parfois être confronté(e) à des situations dans lesquelles une valeur de retour fonctionnant parfaitement pour .NET dans le complément VSTO doit être ajustée sur le côté du complément Office pour fonctionner comme attendu. Dans ce cas, l’API REST et la bibliothèque de classes partagées s'intéressent uniquement au retour de chaîne. La méthode `showUnicode()` est chargée de la mise en forme correcte des valeurs de retour pour la présentation.
+Dans le code précédent, la chaîne renvoyée est traitée pour remplacer les sauts de ligne avec retour chariot par des balises HTML `<br>`. Vous pouvez parfois être confronté(e) à des situations dans lesquelles une valeur de retour fonctionnant parfaitement pour .NET dans le complément VSTO doit être ajustée sur le côté du complément Office pour fonctionner comme attendu. Dans ce cas, l’API REST et la bibliothèque de classes partagées s'intéressent uniquement au retour de chaîne. La fonction `showUnicode()` est chargée de la mise en forme correcte des valeurs de retour pour la présentation.
 
 ### <a name="allow-cors-from-the-office-add-in"></a>Autoriser CORS à partir d'un complément Office
 
