@@ -3,12 +3,12 @@ title: Programmation asynchrone dans des compléments Office
 description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans les compléments Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 64965d06544126584d7b17d078f4db9d464b39f0
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f2d8682488f41786d60c8fcec02b120f35e696ae
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889498"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958859"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -191,7 +191,7 @@ function write(message){
 
 Plutôt que de transmettre une fonction de rappel et d’attendre le renvoi de la fonction pour poursuivre l’exécution, le motif de programmation des promesses renvoie immédiatement un objet de promesse qui représente le résultat souhaité. Toutefois, contrairement à la vraie programmation synchrone, en arrière-plan, la concrétisation du résultat prévu est en fait différée jusqu’à ce que l’environnement d’exécution des compléments Office puisse réaliser la demande. Un gestionnaire *onError* est fourni pour couvrir les cas où la demande ne peut pas être remplie.
 
-L’API JavaScript Office fournit la méthode [Office.select](/javascript/api/office#Office_select_expression__callback_) pour prendre en charge le modèle de promesses pour l’utilisation d’objets de liaison existants. L’objet promise retourné à la `Office.select` méthode prend en charge uniquement les quatre méthodes auxquelles vous pouvez accéder directement à partir de l’objet [Binding](/javascript/api/office/office.binding) : [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) et [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
+L’API JavaScript Office fournit la fonction [Office.select](/javascript/api/office#Office_select_expression__callback_) pour prendre en charge le modèle de promesses pour l’utilisation d’objets de liaison existants. L’objet promise retourné à la `Office.select` fonction prend en charge uniquement les quatre méthodes auxquelles vous pouvez accéder directement à partir de l’objet [Binding](/javascript/api/office/office.binding) : [getDataAsync](/javascript/api/office/office.binding#office-office-binding-getdataasync-member(1)), [setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)), [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) et [removeHandlerAsync](/javascript/api/office/office.binding#office-office-binding-removehandlerasync-member(1)).
 
 Le modèle de promesses pour l’utilisation des liaisons prend cette forme.
 
@@ -199,7 +199,7 @@ Le modèle de promesses pour l’utilisation des liaisons prend cette forme.
 
 Le paramètre *selectorExpression* prend la forme `"bindings#bindingId"`, où *bindingId* est le nom ( `id`) d’une liaison que vous avez créée précédemment dans le document ou la feuille de calcul (à l’aide de l’une des méthodes « addFrom » de la `Bindings` collection : `addFromNamedItemAsync`, `addFromPromptAsync`ou `addFromSelectionAsync`). Par exemple, l’expression `bindings#cities` de sélecteur spécifie que vous souhaitez accéder à la liaison avec un **ID** « cities ».
 
-Le paramètre *onError* est une fonction de gestion des erreurs qui prend un seul paramètre de type `AsyncResult` qui peut être utilisé pour accéder à un `Error` objet, si la `select` méthode ne parvient pas à accéder à la liaison spécifiée. L’exemple suivant montre une fonction de gestion des erreurs de base pouvant être passée au paramètre *onError*.
+Le paramètre *onError* est une fonction de gestion des erreurs qui prend un seul paramètre de type `AsyncResult` qui peut être utilisé pour accéder à un `Error` objet, si la `select` fonction ne parvient pas à accéder à la liaison spécifiée. L’exemple suivant montre une fonction de gestion des erreurs de base pouvant être passée au paramètre *onError*.
 
 ```js
 function onError(result){
@@ -217,7 +217,7 @@ Remplacez l’espace réservé *BindingObjectAsyncMethod* par un appel à l’un
 
 Une fois qu’une `Binding` promesse d’objet est remplie, elle peut être réutilisée dans l’appel de méthode chaîné comme s’il s’agissait d’une liaison (le runtime de complément ne réessayera pas de manière asynchrone de remplir la promesse). Si la `Binding` promesse d’objet ne peut pas être satisfaite, le runtime de complément tente à nouveau d’accéder à l’objet de liaison la prochaine fois qu’une de ses méthodes asynchrones est appelée.
 
-L’exemple de code suivant utilise la `select` méthode pour récupérer une liaison avec le `id` «`cities` » de la `Bindings` collection, puis appelle la méthode [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) pour ajouter un gestionnaire d’événements pour l’événement [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) de la liaison.
+L’exemple de code suivant utilise la `select` fonction pour récupérer une liaison avec le `id` «`cities` » de la `Bindings` collection, puis appelle la méthode [addHandlerAsync](/javascript/api/office/office.binding#office-office-binding-addhandlerasync-member(1)) pour ajouter un gestionnaire d’événements pour l’événement [dataChanged](/javascript/api/office/office.bindingdatachangedeventargs) de la liaison.
 
 ```js
 function addBindingDataChangedEventHandler() {
@@ -230,7 +230,7 @@ function addBindingDataChangedEventHandler() {
 ```
 
 > [!IMPORTANT]
-> La `Binding` promesse d’objet retournée par la `Office.select` méthode permet d’accéder uniquement aux quatre méthodes de l’objet `Binding` . Si vous devez accéder à l’un des autres membres de l’objet `Binding` , vous devez utiliser la `Document.bindings` propriété et `Bindings.getByIdAsync` ou `Bindings.getAllAsync` les méthodes pour récupérer l’objet `Binding` . Par exemple, si vous devez accéder à l’une des propriétés de l’objet `Binding` (les `document`, `id`ou `type` propriétés) ou accéder aux propriétés des objets [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding](/javascript/api/office/office.tablebinding) , vous devez utiliser la `getByIdAsync` ou `getAllAsync` les méthodes pour récupérer un `Binding` objet.
+> La `Binding` promesse d’objet retournée par la `Office.select` fonction permet d’accéder uniquement aux quatre méthodes de l’objet `Binding` . Si vous devez accéder à l’un des autres membres de l’objet `Binding` , vous devez utiliser la `Document.bindings` propriété et `Bindings.getByIdAsync` ou `Bindings.getAllAsync` les méthodes pour récupérer l’objet `Binding` . Par exemple, si vous devez accéder à l’une des propriétés de l’objet `Binding` (les `document`, `id`ou `type` propriétés) ou accéder aux propriétés des objets [MatrixBinding](/javascript/api/office/office.matrixbinding) ou [TableBinding](/javascript/api/office/office.tablebinding) , vous devez utiliser la `getByIdAsync` ou `getAllAsync` les méthodes pour récupérer un `Binding` objet.
 
 ## <a name="pass-optional-parameters-to-asynchronous-methods"></a>Passer des paramètres facultatifs aux méthodes asynchrones
 
@@ -363,10 +363,10 @@ function getDocumentFilePath() {
 }
 ```
 
-Lorsque cette méthode doit être attendue, elle peut être appelée avec le `await` mot clé ou en tant que fonction passée à une `then` fonction.
+Lorsque cette fonction doit être attendue, elle peut être appelée avec le `await` mot clé ou transmise à une `then` fonction.
 
 > [!NOTE]
-> Cette technique est particulièrement utile lorsque vous devez appeler l’une des API communes à l’intérieur d’un appel de la `run` méthode dans l’un des modèles objet spécifiques à l’application. Pour obtenir un exemple de la fonction ci-dessus utilisée de cette façon, consultez le fichier [Home.js dans l’exemple Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
+> Cette technique est particulièrement utile lorsque vous devez appeler une API commune à l’intérieur d’un appel de la `run` fonction dans un modèle objet spécifique à l’application. Pour obtenir un exemple de la `getDocumentFilePath` fonction utilisée de cette façon, consultez le fichier [Home.js dans l’exemple Word-Add-in-JavaScript-MDConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion/blob/master/Word-Add-in-JavaScript-MDConversionWeb/Home.js).
 
 Voici un exemple d’utilisation de TypeScript.
 

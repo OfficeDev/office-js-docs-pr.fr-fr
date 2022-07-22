@@ -3,12 +3,12 @@ title: Éviter d’utiliser la méthode context.sync dans des boucles
 description: Découvrez comment utiliser la boucle fractionnée et les modèles d’objets corrélés pour éviter d’appeler context.sync dans une boucle.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8327ad0b6c91a23452cf3efc791876f30408ceb
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 6b0239e05a597949160afbb2604143f3d6626462
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889211"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958698"
 ---
 # <a name="avoid-using-the-contextsync-method-in-loops"></a>Éviter d’utiliser la méthode context.sync dans des boucles
 
@@ -42,7 +42,7 @@ Pour certains scénarios de programmation dans les compléments Office qui utili
 Dans le cas le plus simple, vous écrivez uniquement aux membres d’un objet de collection, sans lire leurs propriétés. Par exemple, le code suivant met en évidence en jaune chaque instance de « the » dans un document Word.
 
 > [!NOTE]
-> Il est généralement recommandé de placer une finale `context.sync` juste avant le caractère « } » fermant de la méthode d’application `run` (par `Excel.run`exemple, , `Word.run`etc.). Cela est dû au fait que la `run` méthode effectue un appel masqué comme `context.sync` dernière chose qu’elle fait si, et seulement si, il existe des commandes en file d’attente qui n’ont pas encore été synchronisées. Le fait que cet appel soit masqué peut prêter à confusion, donc nous vous recommandons généralement d’ajouter l’explicite `context.sync`. Cependant, étant donné que cet article est sur la réduction des appels de `context.sync`, il est en fait plus déroutant d’ajouter une finale `context.sync`entièrement inutile . Ainsi, dans cet article, nous laissons de l’extérieur quand il n’y a pas de commandes non synchronisées à la fin de la `run`.
+> Il est généralement recommandé d’avoir une finale `context.sync` juste avant le caractère « } » fermant de la fonction d’application `run` (par `Excel.run`exemple, , `Word.run`etc.). Cela est dû au fait que la `run` fonction effectue un appel masqué comme `context.sync` dernière chose qu’elle fait si, et seulement si, il existe des commandes en file d’attente qui n’ont pas encore été synchronisées. Le fait que cet appel soit masqué peut prêter à confusion, donc nous vous recommandons généralement d’ajouter l’explicite `context.sync`. Cependant, étant donné que cet article est sur la réduction des appels de `context.sync`, il est en fait plus déroutant d’ajouter une finale `context.sync`entièrement inutile . Ainsi, dans cet article, nous laissons de l’extérieur quand il n’y a pas de commandes non synchronisées à la fin de la `run`.
 
 ```javascript
 await Word.run(async function (context) {

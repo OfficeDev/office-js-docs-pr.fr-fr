@@ -1,35 +1,35 @@
 ---
-title: Utiliser des balises personnalisées sur les présentations, diapositives et formes dans PowerPoint
-description: Découvrez comment utiliser des balises pour des métadonnées personnalisées sur les présentations, les diapositives et les formes.
+title: Utiliser des balises personnalisées sur des présentations, des diapositives et des formes dans PowerPoint
+description: Découvrez comment utiliser des balises pour les métadonnées personnalisées sur les présentations, les diapositives et les formes.
 ms.date: 12/14/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 01c8ce5c5e3689ef6bd2131334363b3a77710cac
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: a30beea56286437b1c69461534ca13912107cecf
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746968"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958901"
 ---
-# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Utiliser des balises personnalisées pour les présentations, diapositives et formes dans PowerPoint
+# <a name="use-custom-tags-for-presentations-slides-and-shapes-in-powerpoint"></a>Utiliser des balises personnalisées pour les présentations, les diapositives et les formes dans PowerPoint
 
-Un add-in peut joindre des métadonnées personnalisées, sous la forme de paires clé-valeur, appelées « balises », à des présentations, des diapositives spécifiques et des formes spécifiques sur une diapositive.
+Un complément peut attacher des métadonnées personnalisées, sous la forme de paires clé-valeur, appelées « balises », à des présentations, à des diapositives spécifiques et à des formes spécifiques sur une diapositive.
 
 Il existe deux scénarios principaux pour l’utilisation de balises :
 
-- Lorsqu’elle est appliquée à une diapositive ou à une forme, une balise permet de classer l’objet pour le traitement par lots. Par exemple, supposons qu’une présentation possède des diapositives qui doivent être incluses dans les présentations de la région Est, mais pas de la région Ouest. De même, il existe d’autres diapositives qui doivent être affichées uniquement à l’Ouest. Votre application peut créer `REGION` `East` une balise avec la clé et la valeur et l’appliquer aux diapositives qui ne doivent être utilisées qu’à l’Est. La valeur de la balise est définie pour `West` les diapositives qui doivent uniquement être affichées dans la région Ouest. Juste avant une présentation à l’Est, un bouton du add-in exécute un code qui pare toutes les diapositives en vérifiant la valeur de la `REGION` balise. Diapositives dans laquelle la région est `West` supprimée. L’utilisateur ferme ensuite le module et démarre le diaporama.
-- Lorsqu’elle est appliquée à une présentation, une balise est en fait une propriété personnalisée dans le document de présentation (semblable à [une propriété](/javascript/api/word/word.customproperty) personnalisée dans Word).
+- Lorsqu’elle est appliquée à une diapositive ou à une forme, une balise permet de catégoriser l’objet pour le traitement par lots. Par exemple, supposons qu’une présentation comporte des diapositives qui doivent être incluses dans les présentations dans la région Est, mais pas dans la région Ouest. De même, il existe d’autres diapositives qui doivent être affichées uniquement à l’Ouest. Votre complément peut créer une balise avec la clé `REGION` et la valeur `East` et l’appliquer aux diapositives qui ne doivent être utilisées qu’à l’est. La valeur de la balise est définie `West` pour les diapositives qui ne doivent être affichées que dans la région Ouest. Juste avant une présentation à l’Est, un bouton du complément exécute du code qui effectue une boucle dans toutes les diapositives en vérifiant la valeur de la `REGION` balise. Diapositives dans lesquelles la région est `West` supprimée. L’utilisateur ferme ensuite le complément et démarre le diaporama.
+- Lorsqu’elle est appliquée à une présentation, une balise est en fait une propriété personnalisée dans le document de présentation (similaire à une [customProperty](/javascript/api/word/word.customproperty) dans Word).
 
-## <a name="tag-slides-and-shapes"></a>Baliser les diapositives et les formes
+## <a name="tag-slides-and-shapes"></a>Baliser des diapositives et des formes
 
-Une balise est une paire clé-valeur, où la valeur est toujours de type `string` et est représentée par un [objet Tag](/javascript/api/powerpoint/powerpoint.tag) . Chaque type d’objet parent, tel qu’un objet [Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide) ou [Shape](/javascript/api/powerpoint/powerpoint.shape) , possède une `tags` propriété de type [TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
+Une balise est une paire clé-valeur, où la valeur est toujours de type `string` et est représentée par un objet [Tag](/javascript/api/powerpoint/powerpoint.tag) . Chaque type d’objet parent, tel qu’un objet [Presentation](/javascript/api/powerpoint/powerpoint.presentation), [Slide](/javascript/api/powerpoint/powerpoint.slide) ou [Shape](/javascript/api/powerpoint/powerpoint.shape) , a une `tags` propriété de type [TagsCollection](/javascript/api/powerpoint/powerpoint.tagcollection).
 
 ### <a name="add-update-and-delete-tags"></a>Ajouter, mettre à jour et supprimer des balises
 
-Pour ajouter une balise à un objet, appelez la méthode [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#powerpoint-powerpoint-tagcollection-add-member(1)) de la propriété de l’objet `tags` parent. Le code suivant ajoute deux balises à la première diapositive d’une présentation. Tenez compte du code suivant :
+Pour ajouter une balise à un objet, appelez la méthode [TagCollection.add](/javascript/api/powerpoint/powerpoint.tagcollection#powerpoint-powerpoint-tagcollection-add-member(1)) de la propriété de `tags` l’objet parent. Le code suivant ajoute deux balises à la première diapositive d’une présentation. Tenez compte du code suivant :
 
-- Le premier paramètre de la méthode `add` est la clé de la paire clé-valeur.
+- Le premier paramètre de la `add` méthode est la clé dans la paire clé-valeur.
 - Le deuxième paramètre est la valeur.
-- La clé est en lettres majuscules. Cela n’est `add` pas strictement obligatoire pour la méthode ; toutefois, la clé est toujours stockée par PowerPoint en tant que minuscules, et certaines méthodes *liées aux balises* nécessitent que la clé soit exprimée en minuscules. Nous vous recommandons donc de toujours utiliser des minuscules dans votre code pour une clé de balise.
+- La clé est en lettres majuscules. Cela n’est pas strictement obligatoire pour la `add` méthode. Toutefois, la clé est toujours stockée par PowerPoint en majuscules, et *certaines méthodes liées aux balises nécessitent que la clé soit exprimée en majuscules*. Nous vous recommandons donc de toujours utiliser des majuscules dans votre code pour une clé de balise.
 
 ```javascript
 async function addMultipleSlideTags() {
@@ -56,16 +56,16 @@ async function updateTag() {
 }
 ```
 
-Pour supprimer une balise, appelez la `delete` méthode sur son objet parent `TagsCollection` et passez la clé de la balise en tant que paramètre. Pour obtenir un exemple, voir [Définir des métadonnées personnalisées dans la présentation](#set-custom-metadata-on-the-presentation).
+Pour supprimer une balise, appelez la `delete` méthode sur son objet parent `TagsCollection` et passez la clé de la balise en tant que paramètre. Pour obtenir un exemple, consultez [Définir des métadonnées personnalisées sur la présentation](#set-custom-metadata-on-the-presentation).
 
 ### <a name="use-tags-to-selectively-process-slides-and-shapes"></a>Utiliser des balises pour traiter de manière sélective les diapositives et les formes
 
-Envisagez le scénario suivant : Contoso Consulting présente une présentation qu’il présente à tous les nouveaux clients. Toutefois, certaines diapositives ne doivent être affichées qu’aux clients qui ont payé l’état « premium ». Avant d’afficher la présentation aux clients non premium, ils en font une copie et suppriment les diapositives que seuls les clients premium doivent voir. Un add-in permet à Contoso de baliser les diapositives qui sont pour les clients premium et de supprimer ces diapositives si nécessaire. La liste suivante décrit les principales étapes de codage pour créer cette fonctionnalité.
+Prenons le scénario suivant : Contoso Consulting propose une présentation qu’il présente à tous les nouveaux clients. Toutefois, certaines diapositives ne doivent être affichées qu’aux clients qui ont payé pour l’état « Premium ». Avant d’afficher la présentation aux clients non Premium, ils en font une copie et suppriment les diapositives que seuls les clients Premium doivent voir. Un complément permet à Contoso de baliser les diapositives destinées aux clients Premium et de supprimer ces diapositives si nécessaire. La liste suivante décrit les principales étapes de codage pour créer cette fonctionnalité.
 
-1. Créez une méthode qui balise la diapositive actuellement sélectionnée comme prévu pour les `Premium` clients. Tenez compte du code suivant :
+1. Créez une fonction qui balise la diapositive actuellement sélectionnée comme prévu pour les `Premium` clients. Tenez compte du code suivant :
 
-    - La `getSelectedSlideIndex` fonction est définie à l’étape suivante. Elle renvoie l’index de base 1 de la diapositive actuellement sélectionnée.
-    - La valeur renvoyée par la `getSelectedSlideIndex` fonction doit être décrémentée car la méthode [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getitemat-member(1)) est basée sur 0.
+    - La `getSelectedSlideIndex` fonction est définie à l’étape suivante. Elle retourne l’index basé sur 1 de la diapositive actuellement sélectionnée.
+    - La valeur retournée par la `getSelectedSlideIndex` fonction doit être décrémentée, car la méthode [SlideCollection.getItemAt](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-getitemat-member(1)) est basée sur 0.
 
     ```javascript
     async function addTagToSelectedSlide() {
@@ -82,10 +82,10 @@ Envisagez le scénario suivant : Contoso Consulting présente une présentation 
 
 2. Le code suivant crée une méthode pour obtenir l’index de la diapositive sélectionnée. Tenez compte du code suivant :
 
-    - Il utilise la [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) des API JavaScript communes.
-    - L’appel est `getSelectedDataAsync` incorporé dans une fonction de renvoi de promesse. Pour plus d’informations sur la raison et la façon de le faire, voir [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
-    - `getSelectedDataAsync` renvoie un tableau car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’en a sélectionné qu’une seule, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
-    - La `index` valeur de la diapositive est la valeur basée sur 1 que l’utilisateur voit en regard de la diapositive dans le PowerPoint miniatures de l’interface utilisateur.
+    - Il utilise la méthode [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) des API JavaScript courantes.
+    - L’appel à `getSelectedDataAsync` est incorporé dans une fonction de retour de promesse. Pour plus d’informations sur la raison et la procédure à suivre, consultez [Wrap Common API in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+    - `getSelectedDataAsync` retourne un tableau, car plusieurs diapositives peuvent être sélectionnées. Dans ce scénario, l’utilisateur n’a sélectionné qu’une seule diapositive, de sorte que le code obtient la première (0e) diapositive, qui est la seule sélectionnée.
+    - La `index` valeur de la diapositive est la valeur basée sur 1 que l’utilisateur voit à côté de la diapositive dans le volet miniatures de l’interface utilisateur PowerPoint.
 
     ```javascript
     function getSelectedSlideIndex() {
@@ -106,9 +106,9 @@ Envisagez le scénario suivant : Contoso Consulting présente une présentation 
     }
     ```
 
-3. Le code suivant crée une méthode pour supprimer les diapositives marquées pour les clients premium. Tenez compte du code suivant :
+3. Le code suivant crée une fonction pour supprimer les diapositives marquées pour les clients Premium. Tenez compte du code suivant :
 
-    - Étant donné que `key` les propriétés `value` des balises vont être lues après `context.sync`le , elles doivent être chargées en premier.
+    - Étant donné que les propriétés et `value` les `key` balises vont être lues après la `context.sync`balise, elles doivent d’abord être chargées.
 
     ```javascript
     async function deleteSlidesByAudience() {
@@ -135,7 +135,7 @@ Envisagez le scénario suivant : Contoso Consulting présente une présentation 
 
 ## <a name="set-custom-metadata-on-the-presentation"></a>Définir des métadonnées personnalisées sur la présentation
 
-Les add-ins peuvent également appliquer des balises à la présentation dans son ensemble. Cela vous permet d’utiliser des balises pour les métadonnées au niveau du document, de la même façon que la [classe CustomProperty](/javascript/api/word/word.customproperty) est utilisée dans Word. Toutefois, contrairement à la classe Word`CustomProperty`, la valeur d’une balise PowerPoint ne peut être que de type `string`.
+Les compléments peuvent également appliquer des balises à la présentation dans son ensemble. Cela vous permet d’utiliser des balises pour les métadonnées au niveau du document, comme la classe [CustomProperty](/javascript/api/word/word.customproperty)est utilisée dans Word. Mais contrairement à la classe Word `CustomProperty` , la valeur d’une balise PowerPoint ne peut être que de type `string`.
 
 Le code suivant est un exemple d’ajout d’une balise à une présentation. 
 
@@ -150,7 +150,7 @@ async function addPresentationTag() {
 }
 ```
 
-Le code suivant est un exemple de suppression d’une balise d’une présentation. Notez que la clé de la balise est transmise à la `delete` méthode de l’objet parent `TagsCollection` .
+Le code suivant est un exemple de suppression d’une balise d’une présentation. Notez que la clé de la balise est passée à la `delete` méthode de l’objet parent `TagsCollection` .
 
 ```javascript
 async function deletePresentationTag() {

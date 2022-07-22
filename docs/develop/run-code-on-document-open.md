@@ -1,26 +1,26 @@
 ---
 title: Exécuter un cote dans votre complément Office lors de l’ouverture du document
-description: Découvrez comment exécuter du code dans votre Office de votre add-in à l’ouverture du document.
+description: Découvrez comment exécuter du code dans votre complément Office lorsque le document s’ouvre.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 20cd7a90f34c0141ca166119ceae92960a904595
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 1a1c3277a349dc4054da5f089c62331296590021
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744078"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958438"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Exécuter un cote dans votre complément Office lors de l’ouverture du document
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Vous pouvez configurer votre Office pour charger et exécuter le code dès que le document est ouvert. Cela est utile si vous devez inscrire des handlers d’événements, pré-charger des données pour le volet Des tâches, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le module ne soit visible.
+Vous pouvez configurer votre complément Office pour charger et exécuter du code dès que le document est ouvert. Cela est utile si vous devez inscrire des gestionnaires d’événements, précharger des données pour le volet Office, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le complément ne soit visible.
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
-## <a name="configure-your-add-in-to-load-when-the-document-opens"></a>Configurer votre add-in pour qu’il se charge à l’ouverture du document
+## <a name="configure-your-add-in-to-load-when-the-document-opens"></a>Configurer votre complément pour qu’il se charge à l’ouverture du document
 
-Le code suivant configure votre add-in pour qu’il se charge et démarre l’exécution à l’ouverture du document.
+Le code suivant configure votre complément pour qu’il charge et commence à s’exécuter lorsque le document est ouvert.
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.load);
@@ -31,9 +31,9 @@ Office.addin.setStartupBehavior(Office.StartupBehavior.load);
 
 ## <a name="place-startup-code-in-officeinitialize"></a>Placer le code de démarrage dans Office.initialize
 
-Lorsque votre add-in est configuré pour se charger à l’ouverture du document, il s’exécute immédiatement. Le `Office.initialize` handler d’événements est appelé. Placez votre code de démarrage dans le ou `Office.initialize` le handler `Office.onReady` d’événements.
+Lorsque votre complément est configuré pour être chargé sur le document ouvert, il s’exécute immédiatement. Le `Office.initialize` gestionnaire d’événements sera appelé. Placez votre code de démarrage dans le ou `Office.onReady` le gestionnaire d’événements`Office.initialize`.
 
-Le code Excel de la feuille de calcul active montre comment inscrire un handler d’événements pour les événements de modification à partir de la feuille de calcul active. Si vous configurez votre add-in pour qu’il se charge sur le document ouvert, ce code enregistre le handler d’événements lors de l’ouverture du document. Vous pouvez gérer les événements de modification avant l’ouverture du volet Des tâches.
+Le code de complément Excel suivant montre comment inscrire un gestionnaire d’événements pour les événements de modification à partir de la feuille de calcul active. Si vous configurez votre complément pour qu’il se charge sur le document ouvert, ce code inscrit le gestionnaire d’événements lors de l’ouverture du document. Vous pouvez gérer les événements de modification avant l’ouverture du volet Office.
 
 ```JavaScript
 // This is called as soon as the document opens.
@@ -64,7 +64,7 @@ async function onChange(event) {
 }
 ```
 
-Le code de PowerPoint suivant montre comment inscrire un handler d’événements pour les événements de modification de sélection à partir PowerPoint document. Si vous configurez votre add-in pour qu’il se charge sur le document ouvert, ce code enregistre le handler d’événements lors de l’ouverture du document. Vous pouvez gérer les événements de modification avant l’ouverture du volet Des tâches.
+Le code de complément PowerPoint suivant montre comment inscrire un gestionnaire d’événements pour les événements de modification de sélection à partir du document PowerPoint. Si vous configurez votre complément pour qu’il se charge sur le document ouvert, ce code inscrit le gestionnaire d’événements lors de l’ouverture du document. Vous pouvez gérer les événements de modification avant l’ouverture du volet Office.
 
 ```JavaScript
 // This is called as soon as the document opens.
@@ -86,17 +86,17 @@ async function onChange(event) {
 }
 ```
 
-## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>Configurer votre add-in pour qu’il n’y a aucun comportement de chargement à l’ouverture d’un document
+## <a name="configure-your-add-in-for-no-load-behavior-on-document-open"></a>Configurer votre complément pour aucun comportement de chargement lors de l’ouverture du document
 
-Le code suivant configure votre add-in pour qu’il ne démarre pas lorsque le document est ouvert. Au lieu de cela, il démarre lorsque l’utilisateur l’engage d’une manière ou d’une autre, par exemple en choisissant un bouton de ruban ou en ouvrant le volet Des tâches.
+Le code suivant configure votre complément pour qu’il ne démarre pas lorsque le document est ouvert. Au lieu de cela, il démarre lorsque l’utilisateur l’engage d’une manière ou d’une autre, par exemple en choisissant un bouton de ruban ou en ouvrant le volet Office.
 
 ```JavaScript
 Office.addin.setStartupBehavior(Office.StartupBehavior.none);
 ```
 
-## <a name="get-the-current-load-behavior"></a>Obtenir le comportement de chargement actuel
+## <a name="get-the-current-load-behavior"></a>Obtenir le comportement de charge actuel
 
-Pour déterminer le comportement de démarrage actuel, exécutez la fonction suivante, qui renvoie un `Office.StartupBehavior` objet.
+Pour déterminer le comportement de démarrage actuel, exécutez la méthode suivante, qui retourne un `Office.StartupBehavior` objet.
 
 ```JavaScript
 let behavior = await Office.addin.getStartupBehavior();
@@ -105,5 +105,5 @@ let behavior = await Office.addin.getStartupBehavior();
 ## <a name="see-also"></a>Voir aussi
 
 - [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](configure-your-add-in-to-use-a-shared-runtime.md)
-- [Partager des données et des événements entre Excel fonctions personnalisées et didacticiel du volet Des tâches](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Partager des données et des événements entre les fonctions personnalisées Excel et le didacticiel du volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Utilisation d’événements à l’aide de l’API JavaScript pour Excel](../excel/excel-add-ins-events.md)

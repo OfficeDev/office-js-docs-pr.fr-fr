@@ -3,12 +3,12 @@ title: Ajouter et supprimer des pièces jointes dans un complément Outlook
 description: Utilisez différentes API de pièce jointe pour gérer les fichiers ou les éléments Outlook attachés à l’élément que l’utilisateur compose.
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6600fc5926cdecd95e4d232223f11dd9a7b1fc41
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b82a9edb0a3ed43386b63d12f1a87b21b2ab634b
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712831"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958340"
 ---
 # <a name="manage-an-items-attachments-in-a-compose-form-in-outlook"></a>Gérer les pièces jointes d’un élément dans un formulaire de composition dans Outlook
 
@@ -24,9 +24,9 @@ Vous pouvez attacher un fichier ou un élément Outlook à un formulaire de comp
 
 Il s’agit de méthodes asynchrones, ce qui signifie que l’exécution peut continuer sans attendre la fin de l’action. Selon l’emplacement d’origine et la taille de la pièce jointe ajoutée, l’appel asynchrone peut prendre un certain temps.
 
-S’il existe des tâches qui dépendent de l’action à effectuer, vous devez les réaliser dans une méthode de rappel. Cette méthode de rappel est facultative et est appelée lorsque le chargement de la pièce jointe est terminé. La méthode de rappel utilise un objet [AsyncResult](/javascript/api/office/office.asyncresult) comme paramètre de sortie qui indique les statuts, erreurs et valeurs renvoyés par l’ajout de la pièce jointe. Si le rappel requiert des paramètres supplémentaires, vous pouvez les spécifier dans le paramètre facultatif `options.asyncContext`. L’élément `options.asyncContext` peut appartenir à n’importe quel type prévu par votre méthode de rappel.
+S’il existe des tâches qui dépendent de l’action à effectuer, vous devez effectuer ces tâches dans une fonction de rappel. Cette fonction de rappel est facultative et est appelée lorsque le chargement de la pièce jointe est terminé. La fonction de rappel prend un objet [AsyncResult](/javascript/api/office/office.asyncresult) comme paramètre de sortie qui fournit l’état, l’erreur et la valeur retournée de l’ajout de la pièce jointe. Si le rappel requiert des paramètres supplémentaires, vous pouvez les spécifier dans le paramètre facultatif `options.asyncContext`. `options.asyncContext` peut être de n’importe quel type attendu par votre fonction de rappel.
 
-Par exemple, vous pouvez définir `options.asyncContext` comme un objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de compléments Office dans la [programmation asynchrone dans les compléments Office](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). L’exemple suivant montre comment utiliser le `asyncContext` paramètre pour passer 2 arguments à une méthode de rappel.
+Par exemple, vous pouvez définir `options.asyncContext` comme un objet JSON qui contient une ou plusieurs paires clé-valeur. Vous trouverez d’autres exemples sur la transmission de paramètres facultatifs à des méthodes asynchrones dans la plateforme de compléments Office dans la [programmation asynchrone dans les compléments Office](../develop/asynchronous-programming-in-office-add-ins.md#pass-optional-parameters-to-asynchronous-methods). L’exemple suivant montre comment utiliser le `asyncContext` paramètre pour passer 2 arguments à une fonction de rappel.
 
 ```js
 const options = { asyncContext: { var1: 1, var2: 2}};
@@ -34,7 +34,7 @@ const options = { asyncContext: { var1: 1, var2: 2}};
 Office.context.mailbox.item.addFileAttachmentAsync('https://contoso.com/rtm/icon.png', 'icon.png', options, callback);
 ```
 
-Vous pouvez vérifier la réussite ou l’échec d’un appel de méthode asynchrone dans la méthode de rappel à l’aide des propriétés `status` et `error` de l’objet `AsyncResult`. Si l’ajout de pièce jointe aboutit, vous pouvez utiliser la propriété `AsyncResult.value` pour obtenir l’ID de la pièce jointe. Il s’agit d’un nombre entier que vous pouvez ensuite utiliser pour supprimer la pièce jointe.
+Vous pouvez vérifier la réussite ou l’erreur d’un appel de méthode asynchrone dans la fonction de rappel à l’aide des `status` propriétés et `error` des propriétés de l’objet `AsyncResult` . Si l’attachement se termine correctement, vous pouvez utiliser la `AsyncResult.value` propriété pour obtenir l’ID de pièce jointe. Il s’agit d’un nombre entier que vous pouvez ensuite utiliser pour supprimer la pièce jointe.
 
 > [!NOTE]
 > L’ID de pièce jointe est valide uniquement dans la même session et il n’est pas garanti qu’il soit mappé à la même pièce jointe entre les sessions. Par exemple, lorsqu’une session est terminée, citons le moment où l’utilisateur ferme le complément, ou si l’utilisateur commence à composer dans un formulaire inline et sort par la suite le formulaire inline pour continuer dans une fenêtre distincte.
@@ -43,19 +43,19 @@ Vous pouvez vérifier la réussite ou l’échec d’un appel de méthode asynch
 
 Vous pouvez joindre un fichier à un message ou un rendez-vous dans un formulaire de composition à l’aide de la `addFileAttachmentAsync` méthode et en spécifiant l’URI du fichier. Vous pouvez également utiliser la `addFileAttachmentFromBase64Async` méthode, mais spécifier la chaîne base64 comme entrée. Si le fichier est protégé, vous pouvez inclure une identité appropriée ou un jeton d’authentification comme paramètre de chaîne de requête d’URI. Exchange effectuera un appel à l’URI pour obtenir la pièce jointe, et le service web qui protège le fichier devra utiliser le jeton comme moyen d’authentification.
 
-L’exemple JavaScript suivant est un complément de composition qui joint un fichier, picture.png, au message ou au rendez-vous en cours de composition à partir d’un serveur web. La méthode de rappel prend `asyncResult` comme paramètre, vérifie le statut du résultat et obtient l’ID de pièce jointe si la méthode a abouti.
+L’exemple JavaScript suivant est un complément de composition qui joint un fichier, picture.png, à partir d’un serveur web au message ou rendez-vous en cours de composition. La fonction de rappel prend `asyncResult` comme paramètre, vérifie l’état du résultat et obtient l’ID de pièce jointe si la méthode réussit.
 
 ```js
 Office.initialize = function () {
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add the specified file attachment to the item
         // being composed.
         // When the attachment finishes uploading, the
-        // callback method is invoked and gets the attachment ID.
+        // callback function is invoked and gets the attachment ID.
         // You can optionally pass any object that you would
-        // access in the callback method as an argument to
+        // access in the callback function as an argument to
         // the asyncContext parameter.
         Office.context.mailbox.item.addFileAttachmentAsync(
             `https://webserver/picture.png`,
@@ -90,11 +90,11 @@ La fonction JavaScript suivante, `addItemAttachment`étend le premier exemple ci
 // ID is the EWS ID of the item to be attached.
 function addItemAttachment(itemId) {
     // When the attachment finishes uploading, the
-    // callback method is invoked. Here, the callback
-    // method uses only asyncResult as a parameter,
+    // callback function is invoked. Here, the callback
+    // function uses only asyncResult as a parameter,
     // and if the attaching succeeds, gets the attachment ID.
     // You can optionally pass any other object you wish to
-    // access in the callback method as an argument to
+    // access in the callback function as an argument to
     // the asyncContext parameter.
     Office.context.mailbox.item.addItemAttachmentAsync(
         itemId,
@@ -125,7 +125,7 @@ Vous pouvez utiliser la méthode [getAttachmentsAsync](/javascript/api/requireme
 
 Pour obtenir le contenu d’une pièce jointe, vous pouvez utiliser la méthode [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) . Les formats pris en charge sont répertoriés dans l’énumération [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) .
 
-Vous devez fournir une méthode de rappel pour vérifier l’état et toute erreur à l’aide de l’objet `AsyncResult` de paramètre de sortie. Vous pouvez également passer tous les paramètres supplémentaires à la méthode de rappel à l’aide du paramètre facultatif `asyncContext` .
+Vous devez fournir une fonction de rappel pour vérifier l’état et toute erreur à l’aide de l’objet `AsyncResult` de paramètre de sortie. Vous pouvez également passer tous les paramètres supplémentaires à la fonction de rappel à l’aide du paramètre facultatif `asyncContext` .
 
 L’exemple JavaScript suivant obtient les pièces jointes et vous permet de configurer une gestion distincte pour chaque format de pièce jointe pris en charge.
 
@@ -170,18 +170,18 @@ Vous pouvez supprimer un fichier ou une pièce jointe d’un message ou d’un �
 > [!IMPORTANT]
 > Si vous utilisez l’ensemble de conditions requises 1.7 ou version antérieure, vous devez supprimer uniquement les pièces jointes ajoutées par le même complément dans la même session.
 
-Similaire à la `addFileAttachmentAsync`méthode , `addItemAttachmentAsync`et `getAttachmentsAsync` aux méthodes, `removeAttachmentAsync` est une méthode asynchrone. Vous devez fournir une méthode de rappel pour vérifier l’état et toute erreur à l’aide de l’objet `AsyncResult` de paramètre de sortie. Vous pouvez également passer tous les paramètres supplémentaires à la méthode de rappel à l’aide du paramètre facultatif `asyncContext` .
+Similaire à la `addFileAttachmentAsync`méthode , `addItemAttachmentAsync`et `getAttachmentsAsync` aux méthodes, `removeAttachmentAsync` est une méthode asynchrone. Vous devez fournir une fonction de rappel pour vérifier l’état et toute erreur à l’aide de l’objet `AsyncResult` de paramètre de sortie. Vous pouvez également passer tous les paramètres supplémentaires à la fonction de rappel à l’aide du paramètre facultatif `asyncContext` .
 
 La fonction JavaScript suivante, `removeAttachment`continue d’étendre les exemples ci-dessus et supprime la pièce jointe spécifiée de l’e-mail ou du rendez-vous en cours de composition. La fonction prend comme argument l’ID de la pièce jointe à supprimer. Vous pouvez obtenir l’ID d’une pièce jointe après un `addFileAttachmentAsync``addFileAttachmentFromBase64Async`appel de méthode réussi, ou `addItemAttachmentAsync` un appel de méthode, et l’utiliser dans un appel de méthode suivant`removeAttachmentAsync`. Vous pouvez également appeler `getAttachmentsAsync` (introduit dans l’ensemble de conditions requises 1.8) pour obtenir les pièces jointes et leurs ID pour cette session de complément.
 
 ```js
 // Removes the specified attachment from the composed item.
 function removeAttachment(attachmentId) {
-    // When the attachment is removed, the callback method is invoked.
-    // Here, the callback method uses an asyncResult parameter and
+    // When the attachment is removed, the callback function is invoked.
+    // Here, the callback function uses an asyncResult parameter and
     // gets the ID of the removed attachment if the removal succeeds.
     // You can optionally pass any object you wish to access in the
-    // callback method as an argument to the asyncContext parameter.
+    // callback function as an argument to the asyncContext parameter.
     Office.context.mailbox.item.removeAttachmentAsync(
         attachmentId,
         { asyncContext: null },

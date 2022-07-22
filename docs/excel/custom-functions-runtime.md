@@ -1,14 +1,14 @@
 ---
 ms.date: 06/15/2022
-description: Comprendre Excel fonctions personnalisées qui n’utilisent pas de runtime partagé et leur runtime JavaScript spécifique.
+description: Comprendre les fonctions personnalisées Excel qui n’utilisent pas de runtime partagé et leur runtime JavaScript spécifique.
 title: Runtime JavaScript uniquement pour les fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: 614e96937c769307b58e66943caa499f1f12d92c
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 0d3298e95ab39f976c3fbfd5c0cc4ecdd1369721
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229665"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958410"
 ---
 # <a name="javascript-only-runtime-for-custom-functions"></a>Runtime JavaScript uniquement pour les fonctions personnalisées
 
@@ -51,7 +51,7 @@ Les méthodes suivantes sont disponibles sur l’objet `Storage` .
 
 ### <a name="officeruntimestorage-example"></a>Exemple OfficeRuntime.storage
 
-L’exemple de code suivant appelle la `OfficeRuntime.storage.setItem` fonction pour définir une clé et une valeur dans `storage`.
+L’exemple de code suivant appelle la `OfficeRuntime.storage.setItem` méthode pour définir une clé et une valeur dans `storage`.
 
 ```js
 function StoreValue(key, value) {
@@ -70,6 +70,6 @@ Découvrez comment [déboguer des fonctions personnalisées](custom-functions-de
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Authentification pour les fonctions personnalisées sans runtime partagé](custom-functions-authentication.md)
-* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
-* [Didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Authentification pour les fonctions personnalisées sans runtime partagé](custom-functions-authentication.md)
+- [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
+- [Didacticiel sur les fonctions personnalisées](../tutorials/excel-tutorial-create-custom-functions.md)

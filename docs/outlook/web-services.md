@@ -3,12 +3,12 @@ title: Utiliser les services Web Exchange (EWS) à partir d’un complément Out
 description: Fournit un exemple qui illustre comment un complément Outlook peut demander des informations à partir des Services Web Exchange.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab576f1c47bda85a0a33e527f483d384b264fbf2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6e8c28469859ca5ff8a4413fae8feee73c1d5e3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889631"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958943"
 ---
 # <a name="call-web-services-from-an-outlook-add-in"></a>Appeler des services Web à partir d’un complément Outlook
 
@@ -34,11 +34,11 @@ Pour utiliser la `makeEwsRequestAsync` méthode pour lancer une opération EWS, 
 
 - Code XML pour la demande SOAP pour cette opération EWS, en tant qu’argument du paramètre  _data_
 
-- Méthode de rappel (en tant qu’argument  _callback_)
+- Fonction de rappel (en tant qu’argument  _de rappel_ )
 
-- Données d’entrée facultatives pour cette méthode de rappel (en tant qu’argument  _userContext_)
+- Toutes les données d’entrée facultatives pour cette fonction de rappel (en tant qu’argument  _userContext_ )
 
-Une fois la demande SOAP EWS terminée, Outlook appelle la méthode de rappel avec un argument, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult). La méthode de rappel peut accéder à deux propriétés de l’objet `AsyncResult` : la `value` propriété, qui contient la réponse SOAP XML de l’opération EWS, et éventuellement la `asyncContext` propriété, qui contient toutes les données passées en tant que `userContext` paramètre. En règle générale, la méthode de rappel analyse ensuite le code XML dans la réponse SOAP pour obtenir les informations pertinentes et traite ces informations comme il se doit.
+Une fois la requête SOAP EWS terminée, Outlook appelle la fonction de rappel avec un argument, qui est un objet [AsyncResult](/javascript/api/office/office.asyncresult) . La fonction de rappel peut accéder à deux propriétés de l’objet `AsyncResult` : la `value` propriété, qui contient la réponse SOAP XML de l’opération EWS, et éventuellement la `asyncContext` propriété, qui contient toutes les données passées en tant que `userContext` paramètre. En règle générale, la fonction de rappel analyse ensuite le code XML dans la réponse SOAP pour obtenir des informations pertinentes et traite ces informations en conséquence.
 
 ## <a name="tips-for-parsing-ews-responses"></a>Conseils pour l’analyse des réponses EWS
 
@@ -91,7 +91,7 @@ L’exemple suivant appelle `makeEwsRequestAsync` l’utilisation de l’opérat
 
 - `getSubjectRequest`&ndash; Prend un ID d’élément comme entrée et retourne le code XML de la demande SOAP à appeler `GetItem` pour l’élément spécifié.
 
-- `sendRequest`&ndash; Appelle `getSubjectRequest` pour obtenir la requête SOAP pour l’élément sélectionné, puis transmet la requête SOAP et la méthode de rappel, `callback`pour `makeEwsRequestAsync` obtenir l’objet de l’élément spécifié.
+- `sendRequest`&ndash; Appelle `getSubjectRequest` pour obtenir la demande SOAP pour l’élément sélectionné, puis transmet la requête SOAP et la fonction de rappel, `callback`pour `makeEwsRequestAsync` obtenir l’objet de l’élément spécifié.
 
 - `callback` &ndash; Traite la réponse SOAP qui comprend l’objet et d’autres informations sur l’élément spécifié.
 
@@ -148,9 +148,9 @@ L’article suivant décrit comment utiliser la `makeEwsRequestAsync` méthode.
 
 1. Incluez la requête SOAP comme argument pour le paramètre de  _données_ de `makeEwsRequestAsync`.
 
-1. Spécifiez une méthode de rappel et un appel `makeEwsRequestAsync`.
+1. Spécifiez une fonction de rappel et un appel `makeEwsRequestAsync`.
 
-1. Dans la méthode de rappel, vérifiez les résultats de l’opération dans la réponse SOAP.
+1. Dans la fonction de rappel, vérifiez les résultats de l’opération dans la réponse SOAP.
 
 1. Utilisez les résultats de l’opération EWS en fonction de vos besoins.
 

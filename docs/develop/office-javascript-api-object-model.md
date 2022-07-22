@@ -3,12 +3,12 @@ title: Modèle d’objet d’API JavaScript courant
 description: Découvrez le modèle objet d’API commun JavaScript Office.
 ms.date: 07/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ab311c548ec0ff8448f10f3ce64e3cd33ad32b12
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 1b856866c903a61a04bcbb232790649147fdb7fc
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712981"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958621"
 ---
 # <a name="common-javascript-api-object-model"></a>Modèle d’objet d’API JavaScript courant
 
@@ -46,7 +46,7 @@ Vous pouvez également utiliser l’objet `Document` pour interagir avec les don
 
 Toutes ces formes d’accès aux données commencent à partir d’une instance de l’objet abstrait `Document` .
 
-Vous pouvez accéder à une instance de l’objet `Document` lorsque le volet office ou le complément de contenu est initialisé à l’aide de la propriété de [document](/javascript/api/office/office.context#office-office-context-document-member) de l’objet `Context` . L’objet `Document` définit les fonctions d’accès aux données communes partagées entre les documents Word et Excel, et fournit également l’accès à l’objet pour les `CustomXmlParts` documents Word.
+Vous pouvez accéder à une instance de l’objet `Document` lorsque le volet office ou le complément de contenu est initialisé à l’aide de la propriété de [document](/javascript/api/office/office.context#office-office-context-document-member) de l’objet `Context` . L’objet `Document` définit les méthodes d’accès aux données communes partagées entre les documents Word et Excel, et fournit également l’accès à l’objet pour les `CustomXmlParts` documents Word.
 
 L’objet `Document` prend en charge quatre façons pour les développeurs d’accéder au contenu du document.
 
@@ -103,7 +103,7 @@ L’accès aux données basé sur les liaisons permet aux compléments de conten
 
 L’établissement d’une liaison vous permet également de vous abonner aux données et aux événements de changement de sélection qui sont concernés par cette région particulière du document ou de la feuille de calcul. Cela signifie que le complément est seulement notifié des changements qui surviennent dans la région délimitée, par opposition aux changements généraux affectant l’ensemble du document ou de la feuille de calcul.
 
-L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) ou [Office.select](/javascript/api/office). Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de l’objet `Bindings` : [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1)), [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1)), [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) ou [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)).
+L’objet [Bindings](/javascript/api/office/office.bindings) expose une méthode [getAllAsync](/javascript/api/office/office.bindings#office-office-bindings-getallasync-member(1)) qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-getbyidasync-member(1)) ou de la fonction [Office.select](/javascript/api/office) . Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes à l’aide de l’une des méthodes suivantes de l’objet `Bindings` : [addFromSelectionAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromselectionasync-member(1)), [addFromPromptAsync](/javascript/api/office/office.bindings#office-office-bindings-addfrompromptasync-member(1)), [addFromNamedItemAsync](/javascript/api/office/office.bindings#office-office-bindings-addfromnameditemasync-member(1)) ou [releaseByIdAsync](/javascript/api/office/office.bindings#office-office-bindings-releasebyidasync-member(1)).
 
 Il existe trois types de liaisons différents que vous spécifiez avec le paramètre  _bindingType_ lorsque vous créez une liaison avec le `addFromSelectionAsync`ou `addFromPromptAsync` `addFromNamedItemAsync` les méthodes.
 

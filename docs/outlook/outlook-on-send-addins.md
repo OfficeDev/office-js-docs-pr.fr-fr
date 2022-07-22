@@ -3,12 +3,12 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a5b9d964c48496658157b4a8506bf283419fbb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8382e32953d74885098f053319e5c2718636f780
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889603"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958971"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
@@ -489,7 +489,7 @@ function validateBody(event) {
 }
 ```
 
-Le corps actuel de la fonction `validateBody` s’affiche dans le format spécifié (HTML) et transmet l’objet « event » `ItemSend` auquel le code souhaite accéder avec la méthode du rappel. En plus de la méthode `getAsync`, l’objet `Body` fournit également une méthode `setAsync` utile pour remplacer le corps du message par le texte spécifié.
+La `validateBody` fonction obtient le corps actuel au format spécifié (HTML) et transmet l’objet `ItemSend` d’événement auquel le code souhaite accéder dans la fonction de rappel. En plus de la méthode `getAsync`, l’objet `Body` fournit également une méthode `setAsync` utile pour remplacer le corps du message par le texte spécifié.
 
 > [!NOTE]
 > Pour en savoir plus, consultez les articles relatifs à l’objet [Event](/javascript/api/office/office.addincommands.event) et à la méthode [Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)).

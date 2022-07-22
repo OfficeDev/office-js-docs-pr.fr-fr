@@ -3,12 +3,12 @@ title: Obtenir ou définir l’heure de rendez-vous dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’heure de début et de fin d’un rendez-vous dans un complément Outlook.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c98ae89c4c078e77a07724536498c7791db9d05
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 6109932c9a741a65b97095a1cb97dcdfc2306e1c
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713048"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958333"
 ---
 # <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’heure lors de la composition d’un rendez-vous dans Outlook
 
@@ -48,14 +48,14 @@ Cette section présente un exemple de code qui obtient l’heure de début du re
 <Rule xsi:type="ItemIs" ItemType="Appointment" FormType="Edit"/>
 ```
 
-Pour utiliser les éléments **item.start.getAsync** ou **item.end.getAsync**, fournissez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la méthode de rappel via le paramètre facultatif _asyncContext_. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’heure de début comme objet **Date** au format UTC à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
+Pour utiliser **item.start.getAsync** ou **item.end.getAsync**, fournissez une fonction de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la fonction de rappel via le paramètre facultatif  _asyncContext_ . Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre de sortie  _asyncResult_ du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’heure de début comme objet **Date** au format UTC à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the start time of the item being composed.
@@ -91,14 +91,14 @@ Cette section présente un exemple de code qui définit l’heure de début du r
 
 Comme dans l’exemple précédent, cet exemple de code suppose l’existence d’une règle dans le manifeste de complément qui active le complément dans un formulaire de composition pour un rendez-vous.
 
-Pour utiliser les éléments **item.start.setAsync** ou **item.end.setAsync**, spécifiez une valeur **Date** au format UTC dans le paramètre _dateTime_. Si vous obtenez une date basée sur une entrée effectuée par l’utilisateur sur le client, vous pouvez utiliser [mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour convertir la valeur en objet **Date** au format UTC. Vous pouvez indiquer une méthode de rappel facultative, ainsi que les arguments associés, dans le paramètre _asyncContext_. Vous devez vérifier l’état, le résultat et tous les messages d’erreur dans le paramètre de sortie _asyncResult_ du rappel. Si l’appel asynchrone aboutit, la méthode **setAsync** insère la chaîne représentant l’heure de début ou de fin spécifiée en tant que texte brut et remplace l’heure de début ou de fin existante pour cet élément.
+Pour utiliser **item.start.setAsync** ou **item.end.setAsync**, spécifiez une valeur **Date** en UTC dans le paramètre _dateTime_ . Si vous obtenez une date basée sur une entrée effectuée par l’utilisateur sur le client, vous pouvez utiliser [mailbox.convertToUtcClientTime](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour convertir la valeur en objet **Date** au format UTC. Vous pouvez fournir une fonction de rappel facultative et tous les arguments de la fonction de rappel dans le paramètre _asyncContext_ . Vous devez vérifier l’état, le résultat et tous les messages d’erreur dans le paramètre de sortie  _asyncResult_ du rappel. Si l’appel asynchrone aboutit, **setAsync** insère la chaîne représentant l’heure de début ou de fin spécifiée en tant que texte brut et remplace l’heure de début ou de fin existante pour cet élément.
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the start time of the item being composed.

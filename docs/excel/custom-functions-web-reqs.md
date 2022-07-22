@@ -3,16 +3,16 @@ ms.date: 05/02/2022
 description: Demandez, diffusez et annulez la diffusion en continu de données externes vers votre classeur avec des fonctions personnalisées dans Excel.
 title: Recevoir et gérer des données à l’aide de fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: 78f8f5f97bfeb690873091ff7c59555e1683c05f
-ms.sourcegitcommit: 5773c76912cdb6f0c07a932ccf07fc97939f6aa1
+ms.openlocfilehash: fbe319e79d4cded5fe4b37ce5a654e633996f22a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/06/2022
-ms.locfileid: "65244848"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958544"
 ---
 # <a name="receive-and-handle-data-with-custom-functions"></a>Recevoir et gérer des données à l’aide de fonctions personnalisées
 
-L’une des façons dont les fonctions personnalisées améliorent la puissance de Excel consiste à recevoir des données à partir d’emplacements autres que le classeur, tels que le web ou un serveur (via [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
+L’une des façons dont les fonctions personnalisées améliorent la puissance d’Excel consiste à recevoir des données à partir d’emplacements autres que le classeur, tels que le web ou un serveur (via [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). Dans une fonction personnalisée, vous pouvez demander des données externes à l’aide d’une API comme[`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API)Récupérer ou à l’aide de`XmlHttpRequest` [ (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), une API web standard qui émet des demandes HTTP pour interagir avec les serveurs.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -147,7 +147,7 @@ Vous pouvez également définir une valeur de diffusion en continu par défaut p
 
 ### <a name="use-an-invocation-parameter"></a>Utiliser un paramètre d’appel
 
-Par défaut, le paramètre `invocation` est le dernier de toute fonction personnalisée. Le `invocation` paramètre donne un contexte sur la cellule (par exemple son adresse et son contenu) et vous permet d’utiliser `setResult` et `onCanceled` de méthodes. Ces méthodes définissent l’action d’une fonction quand elle diffuse (`setResult`) ou est annulée (`onCanceled`).
+Par défaut, le paramètre `invocation` est le dernier de toute fonction personnalisée. Le `invocation` paramètre donne un contexte sur la cellule (par exemple, son adresse et son contenu) et vous permet d’utiliser la méthode et `onCanceled` l’événement `setResult` pour définir ce qu’une fonction fait lorsqu’elle diffuse (`setResult`) ou est annulée (`onCanceled`).
 
 Si vous utilisez TypeScript, le gestionnaire d’appel doit être de type [`CustomFunctions.StreamingInvocation`](/javascript/api/custom-functions-runtime/customfunctions.streaminginvocation) ou [`CancelableInvocation`](/javascript/api/custom-functions-runtime/customfunctions.cancelableinvocation).
 

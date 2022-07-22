@@ -1,14 +1,14 @@
 ---
-ms.date: 06/15/2022
-description: Authentifier les utilisateurs à l’aide de fonctions personnalisées qui n’utilisent pas de runtime partagé.
 title: Authentification pour les fonctions personnalisées sans runtime partagé
+description: Authentifier les utilisateurs à l’aide de fonctions personnalisées qui n’utilisent pas de runtime partagé.
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4493f9cf68236a9d9d83ebd3299c9ce3371560
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 7ff7b1dca67e9e25f14ef07bd1c088608f254427
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229679"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958424"
 ---
 # <a name="authentication-for-custom-functions-without-a-shared-runtime"></a>Authentification pour les fonctions personnalisées sans runtime partagé
 
@@ -73,8 +73,8 @@ Lorsque le volet Office a besoin du jeton d’accès, il peut récupérer le jet
  * @customfunction GETTOKEN
  */
 function receiveTokenFromCustomFunction() {
-  var key = "token";
-  var tokenSendStatus = document.getElementById('tokenSendStatus');
+  const key = "token";
+  const tokenSendStatus = document.getElementById('tokenSendStatus');
   OfficeRuntime.storage.getItem(key).then(function (result) {
      tokenSendStatus.value = "Success: Item with key '" + key + "' read from storage.";
      document.getElementById('tokenTextBox2').value = result;
@@ -108,7 +108,7 @@ function getTokenViaDialog(url) {
       // Can only have one dialog box open at once. Wait for previous dialog box's token.
       let timeout = 5;
       let count = 0;
-      var intervalId = setInterval(function () {
+      const intervalId = setInterval(function () {
         count++;
         if(_cachedToken) {
           resolve(_cachedToken);
@@ -147,5 +147,5 @@ Découvrez comment [déboguer des fonctions personnalisées](custom-functions-de
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Runtime JavaScript uniquement pour les fonctions personnalisées](custom-functions-runtime.md)
-* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Runtime JavaScript uniquement pour les fonctions personnalisées](custom-functions-runtime.md)
+- [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

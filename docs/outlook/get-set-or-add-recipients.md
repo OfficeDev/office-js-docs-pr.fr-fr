@@ -3,12 +3,12 @@ title: Obtenir ou modifier des destinataires dans un complément Outlook
 description: Découvrez comment obtenir, définir ou ajouter des destinataires d’un message ou un rendez-vous dans un complément Outlook.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e7c59765d38e32e7552b5fdf67b6085529ccf03b
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: bcc4a76ef89e3bfaf7e884ad2fa4e1595782c62f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712782"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958319"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -45,9 +45,9 @@ Cette section présente un exemple de code qui obtient les destinataires d’un 
 
 Dans l’API JavaScript Office, étant donné que les propriétés qui représentent les destinataires d’un rendez-vous ( **optionalAttendees** et **requiredAttendees**) sont différentes de celles d’un message ([bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), **cc**, et **à**), vous devez d’abord utiliser la propriété [item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour déterminer si l’élément composé est un rendez-vous ou un message. En mode composition, toutes ces propriétés de rendez-vous et de messages sont [des objets Recipients](/javascript/api/outlook/office.recipients) . Vous pouvez donc appliquer la méthode `Recipients.getAsync`asynchrone, pour obtenir les destinataires correspondants.
 
-Pour utiliser `getAsync`, fournissez une méthode de rappel pour vérifier l’état, les résultats et toute erreur retournée par l’appel asynchrone `getAsync` . Vous pouvez fournir des arguments à la méthode de rappel à l’aide du paramètre facultatif  _asyncContext_. La méthode de rappel renvoie un paramètre de sortie  _asyncResult_. Vous pouvez utiliser les `status` propriétés de `error` l’objet de paramètre [AsyncResult](/javascript/api/office/office.asyncresult) pour vérifier l’état et les messages d’erreur de l’appel asynchrone, ainsi que la `value` propriété pour obtenir les destinataires réels. Les destinataires sont représentés dans un tableau d’objets [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails).
+Pour l’utiliser `getAsync`, fournissez une fonction de rappel pour vérifier l’état, les résultats et toute erreur retournée par l’appel asynchrone `getAsync` . Vous pouvez fournir tous les arguments à la fonction de rappel à l’aide du paramètre _asyncContext_ facultatif. La fonction de rappel retourne un paramètre _de sortie asyncResult_ . Vous pouvez utiliser les `status` propriétés de `error` l’objet de paramètre [AsyncResult](/javascript/api/office/office.asyncresult) pour vérifier l’état et les messages d’erreur de l’appel asynchrone, ainsi que la `value` propriété pour obtenir les destinataires réels. Les destinataires sont représentés dans un tableau d’objets [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails).
 
-Notez que, étant donné que la `getAsync` méthode est asynchrone, s’il existe des actions ultérieures qui dépendent de l’obtention des destinataires, vous devez organiser votre code pour démarrer ces actions uniquement dans la méthode de rappel correspondante lorsque l’appel asynchrone s’est terminé avec succès.
+Notez que, étant donné que la `getAsync` méthode est asynchrone, s’il existe des actions ultérieures qui dépendent de l’obtention des destinataires, vous devez organiser votre code pour démarrer ces actions uniquement dans la fonction de rappel correspondante lorsque l’appel asynchrone s’est terminé avec succès.
 
 > [!IMPORTANT]
 > La `getAsync` méthode retourne uniquement les destinataires résolus par le client Outlook. Un destinataire résolu présente les caractéristiques suivantes.
@@ -69,7 +69,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get all the recipients of the composed item.
@@ -163,14 +163,14 @@ Lors de l’appel `setAsync`, fournissez un tableau comme argument d’entrée p
 - Un tableau de dictionnaires, chacun contenant un nom d’affichage et une adresse de messagerie, comme indiqué dans l’exemple de code suivant.
 - Tableau d’objets `EmailAddressDetails` , similaire à celui retourné par la `getAsync` méthode.
   
-Vous pouvez éventuellement fournir une méthode de rappel en tant qu’argument d’entrée à la `setAsync` méthode, pour vous assurer que tout code qui dépend de la définition réussie des destinataires s’exécuterait uniquement lorsque cela se produit. Vous pouvez également fournir des arguments à la méthode de rappel à l’aide du paramètre facultatif _asyncContext_. Si vous utilisez une méthode de rappel, vous pouvez accéder à un paramètre de sortie _asyncResult_ et utiliser les propriétés **d’état** et **d’erreur** de l’objet de paramètre pour vérifier l’état `AsyncResult` et les messages d’erreur de l’appel asynchrone.
+Vous pouvez éventuellement fournir une fonction de rappel en tant qu’argument d’entrée à la `setAsync` méthode, pour vous assurer que tout code qui dépend de la définition réussie des destinataires s’exécuterait uniquement lorsque cela se produit. Vous pouvez également fournir des arguments pour la fonction de rappel à l’aide du paramètre _asyncContext_ facultatif. Si vous utilisez une fonction de rappel, vous pouvez accéder à un paramètre de sortie _asyncResult_ et utiliser les propriétés **d’état** et **d’erreur** de l’objet de paramètre pour vérifier l’état `AsyncResult` et les messages d’erreur de l’appel asynchrone.
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set recipients of the composed item.
@@ -273,7 +273,7 @@ function write(message){
 
 ## <a name="add-recipients"></a>Ajouter des destinataires
 
-Si vous ne souhaitez pas remplacer des destinataires existants dans un rendez-vous ou un message, au lieu d’utiliser `Recipients.setAsync`, vous pouvez utiliser la `Recipients.addAsync` méthode asynchrone pour ajouter des destinataires. `addAsync` fonctionne de la même façon que `setAsync` dans la mesure où il nécessite un argument d’entrée _des destinataires_ . Vous pouvez éventuellement fournir une méthode de rappel et tous les arguments pour le rappel à l’aide du paramètre asyncContext. Vous pouvez ensuite vérifier l’état, le résultat et toute erreur de l’appel asynchrone `addAsync` à l’aide du paramètre de sortie _asyncResult_ de la méthode de rappel. L’exemple suivant vérifie que l’élément en cours de composition est un rendez-vous et y ajoute deux participants obligatoires.
+Si vous ne souhaitez pas remplacer des destinataires existants dans un rendez-vous ou un message, au lieu d’utiliser `Recipients.setAsync`, vous pouvez utiliser la `Recipients.addAsync` méthode asynchrone pour ajouter des destinataires. `addAsync` fonctionne de la même façon que `setAsync` dans la mesure où il nécessite un argument d’entrée _des destinataires_ . Vous pouvez éventuellement fournir une fonction de rappel et tous les arguments pour le rappel à l’aide du paramètre asyncContext. Vous pouvez ensuite vérifier l’état, le résultat et toute erreur de l’appel asynchrone `addAsync` à l’aide du paramètre de sortie _asyncResult_ de la fonction de rappel. L’exemple suivant vérifie que l’élément en cours de composition est un rendez-vous et y ajoute deux participants obligatoires.
 
 ```js
 // Add specified recipients as required attendees of

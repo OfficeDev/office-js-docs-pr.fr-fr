@@ -1,27 +1,27 @@
 ---
 title: Développement de compléments Office avec Angular
-description: Utilisez Angular pour créer un Office en tant qu’application à page unique.
+description: Utilisez Angular pour créer un complément Office en tant qu’application monopage.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: daaeac63055edeadc12dcff727f63b19ffd5a00a
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743647"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958474"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
 Cet article fournit des conseils sur l’utilisation d’Angular 2+ pour créer un complément Office sous la forme d’une application monopage.
 
 > [!NOTE]
-> Avez-vous une contribution à apporter suite à votre expérience d’utilisation d’Angular pour créer des compléments Office ? Vous pouvez contribuer à [cet article dans GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md) ou fournir vos commentaires en envoyant un [problème](https://github.com/OfficeDev/office-js-docs-pr/issues) dans le dépôt.
+> Avez-vous une contribution à apporter suite à votre expérience d’utilisation d’Angular pour créer des compléments Office ? Vous pouvez contribuer à [cet article dans GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/master/docs/develop/add-ins-with-angular2.md) ou fournir vos commentaires en envoyant un [problème](https://github.com/OfficeDev/office-js-docs-pr/issues) dans le référentiel.
 
 Pour obtenir un exemple de complément Office créé à l’aide de l’infrastructure Angular, consultez [Complément de vérification du style dans Word basé sur Angular](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker).
 
 ## <a name="install-the-typescript-type-definitions"></a>Installer les définitions de type TypeScript
 
-Ouvrez une Node.js et entrez ce qui suit sur la ligne de commande.
+Ouvrez une fenêtre Node.js et entrez ce qui suit à la ligne de commande.
 
 ```command&nbsp;line
 npm install --save-dev @types/office-js
@@ -29,9 +29,9 @@ npm install --save-dev @types/office-js
 
 ## <a name="bootstrapping-must-be-inside-officeinitialize"></a>L’amorçage doit s’effectuer à l’intérieur d’Office.initialize
 
-Dans une page qui appelle les API Office, Word ou Excel JavaScript, votre code doit d’abord attribuer une méthode à la propriété `Office.initialize`. (Si vous ne possédez aucun code d’initialisation, le corps de la méthode peut contenir simplement des symboles «`{}`» vides, mais vous ne devez pas laisser la propriété `Office.initialize` non définie. Pour plus d’informations, voir [Initialize your Office Add-in](initialize-add-in.md).) Office appelle cette méthode immédiatement après l’initialisation Office bibliothèques JavaScript.
+Sur n’importe quelle page qui appelle les API JavaScript Office, Word ou Excel, votre code doit d’abord affecter une fonction à `Office.initialize`. (Si vous n’avez pas de code d’initialisation, le corps de la fonction peut simplement être des symboles «`{}` » vides, mais vous ne devez pas laisser la `Office.initialize` fonction non définie. Pour plus d’informations, consultez [Initialiser votre complément Office](initialize-add-in.md).) Office appelle cette fonction immédiatement après avoir initialisé les bibliothèques JavaScript Office.
 
-**Votre code d’amorçage Angular doit être appelé à l’intérieur de la méthode que vous affectez à `Office.initialize`** pour vous assurer que les bibliothèques JavaScript Office ont été initialisées en premier. Voici un exemple simple qui montre comment procéder. Ce code doit figurer dans le fichier main.ts du projet.
+**Votre code d’amorçage Angular doit être appelé à l’intérieur de la fonction que vous affectez pour `Office.initialize`** vous assurer que les bibliothèques JavaScript Office ont d’abord été initialisées. Voici un exemple simple qui montre comment procéder. Ce code doit figurer dans le fichier main.ts du projet.
 
 ```js
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -76,13 +76,13 @@ const routes: Routes = // route definitions go here
 export class AppRoutingModule { }
 ```
 
-## <a name="use-the-office-dialog-api-with-angular"></a>Utiliser l’API Office boîte de dialogue avec Angular
+## <a name="use-the-office-dialog-api-with-angular"></a>Utiliser l’API de boîte de dialogue Office avec Angular
 
 L’API de boîte de dialogue du complément Office permet à votre complément d’ouvrir une page dans une boîte de dialogue non modale dans laquelle vous pouvez échanger des informations avec la page principale, qui se trouve généralement dans un volet Office.
 
 La méthode [displayDialogAsync](/javascript/api/office/office.ui) accepte un paramètre qui indique l’URL de la page qui doit s’ouvrir dans la boîte de dialogue. Votre complément peut avoir une autre page HTML (différente de la page de base) pour passer à ce paramètre, ou vous pouvez passer l’URL d’un itinéraire dans votre application Angular.
 
-Il est important de ne pas oublier, si vous passez un itinéraire, que la boîte de dialogue crée une nouvelle fenêtre avec son propre contexte d’exécution. Votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application monopage dans la boîte de dialogue. Le code qui modifie des variables dans la boîte de dialogue ne change pas la version du volet Office des mêmes variables. De même, la boîte de dialogue possède son propre stockage de session (propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), qui n’est pas accessible à partir du code dans le volet Des tâches.  
+Il est important de ne pas oublier, si vous passez un itinéraire, que la boîte de dialogue crée une nouvelle fenêtre avec son propre contexte d’exécution. Votre page de base et son code d’initialisation et d’amorçage s’exécutent à nouveau dans ce nouveau contexte, et toutes les variables sont définies sur leurs valeurs initiales dans la boîte de dialogue. Par conséquent, cette technique lance une deuxième instance de votre application monopage dans la boîte de dialogue. Le code qui modifie des variables dans la boîte de dialogue ne change pas la version du volet Office des mêmes variables. De même, la boîte de dialogue possède son propre stockage de session (propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) ), qui n’est pas accessible à partir du code dans le volet Office.  
 
 ## <a name="trigger-the-ui-update"></a>Déclencher la mise à jour de l’interface utilisateur
 
@@ -102,19 +102,19 @@ export class MyComponent {
 }
 ```
 
-## <a name="use-observable"></a>Utiliser observable
+## <a name="use-observable"></a>Utiliser Observable
 
 Angular utilise RxJS (Reactive Extensions for JavaScript), et RxJS présente les objets `Observable` et `Observer` pour implémenter le traitement asynchrone. Cette section fournit une brève introduction à l’utilisation de `Observables` ; pour plus d’informations, consultez la documentation [RxJS](https://rxjs-dev.firebaseapp.com/) officielle.
 
 Un `Observable` est semblable à un objet `Promise` d’une certaine façon - il est renvoyé immédiatement à partir d’un appel asynchrone, mais il ne peut être résolu qu’après un certain délai. Toutefois, bien qu’une `Promise` soit une valeur unique (qui peut être un objet de tableau), un `Observable` est un tableau d’objets (éventuellement avec un seul membre). Cela permet d’appeler les [méthodes de tableaux](https://www.w3schools.com/jsref/jsref_obj_array.asp), telles que `concat`, `map` et `filter`, sur des objets `Observable`.
 
-### <a name="push-instead-of-pull"></a>Push au lieu de tirer
+### <a name="push-instead-of-pull"></a>Envoyer (push) au lieu de tirer (pull)
 
 Votre code « pousse » les objets `Promise` en les affectant aux variables, mais les objets `Observable` « poussent » leurs valeurs vers les objets qui *s’abonnent* à l’objet `Observable`. Les abonnés sont des objets `Observer`. L’avantage de l’architecture Push est que les nouveaux membres peuvent être ajoutés au tableau `Observable` au fil du temps. Lorsqu’un nouveau membre est ajouté, tous les objets `Observer` qui s’abonnent à `Observable` reçoivent une notification.
 
 L’`Observer` est configuré pour traiter chaque nouvel objet (appelé l’objet « suivant ») avec une fonction. (Il est également configuré pour répondre à une erreur et à une notification d’achèvement. Consultez la section suivante pour obtenir un exemple.) Pour cette raison, les objets `Observable` peuvent être utilisés dans un plus large éventail de scénarios que les objets `Promise`. Par exemple, en plus de retourner un `Observable` à partir d’un appel AJAX, de la façon dont vous pouvez retourner une `Promise`, un `Observable` peut être renvoyé à partir d’un gestionnaire d’événements, tel que le gestionnaire d’événements « modifié » pour une zone de texte. Chaque fois qu’un utilisateur saisit du texte dans la zone, tous les objets `Observer` abonnés réagissent immédiatement en utilisant le dernier texte et/ou l’état actuel de l’application en tant qu’entrée.
 
-### <a name="wait-until-all-asynchronous-calls-have-completed"></a>Attendre que tous les appels asynchrones soient terminés
+### <a name="wait-until-all-asynchronous-calls-have-completed"></a>Attendre que tous les appels asynchrones se terminent
 
 Lorsque vous voulez vous assurer qu’un rappel ne s’exécute que lorsque tous les membres d’un ensemble d’objets `Promise` sont résolus, utilisez la méthode `Promise.all()`.
 
@@ -152,9 +152,9 @@ ng serve --aot
 > [!NOTE]
 > Pour en savoir plus sur le compilateur Ahead-of-Time (AOT) d’Angular, consultez le [guide officiel](https://angular.io/guide/aot-compiler).
 
-## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Prise en charge d’Internet Explorer si vous chargez dynamiquement Office.js
+## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Prenez en charge Internet Explorer si vous chargez dynamiquement Office.js
 
-En fonction de la version Windows et du client de bureau Office sur lequel votre application est en cours d’exécution, il se peut que votre application utilise Internet Explorer 11. (Pour plus d’informations, voir [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).) Angular dépend de quelques-uns `window.history` Les API, mais ces API ne fonctionnent pas dans le runtime IE incorporé dans Windows clients de bureau. Lorsque ces API ne fonctionnent pas, il se peut que votre add-in ne fonctionne pas correctement, par exemple, qu’il charge un volet De tâches vide. Pour atténuer ce risque, Office.js annule ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant Office.js. Dans ce cas, vous devez désactiver `window.history` les API en ajoutant le code suivant à la page d'index.htmlde **votre** module.
+En fonction de la version de Windows et du client de bureau Office où votre complément est en cours d’exécution, votre complément peut utiliser Internet Explorer 11. (Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).) Angular dépend de quelques `window.history` Les API, mais ces API ne fonctionnent pas dans le runtime IE incorporé dans les clients de bureau Windows. Lorsque ces API ne fonctionnent pas, votre complément peut ne pas fonctionner correctement, par exemple, il peut charger un volet Office vide. Pour atténuer ce problème, Office.js nullifie ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant Office.js. Dans ce cas, vous devez désactiver les `window.history` API en ajoutant le code suivant à la page **index.html** de votre complément.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

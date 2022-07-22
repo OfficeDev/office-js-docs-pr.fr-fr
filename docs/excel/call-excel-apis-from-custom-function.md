@@ -1,30 +1,30 @@
 ---
-title: Appeler Excel API JavaScript à partir d’une fonction personnalisée
-description: Découvrez les Excel JavaScript que vous pouvez appeler à partir de votre fonction personnalisée.
-ms.date: 08/30/2021
+title: Appeler des API JavaScript Excel à partir d’une fonction personnalisée
+description: Découvrez les API JavaScript Excel que vous pouvez appeler à partir de votre fonction personnalisée.
+ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b60f3fbdeb317169800c688b77982580dfbf8c4
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744395"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958417"
 ---
-# <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler Excel API JavaScript à partir d’une fonction personnalisée
+# <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler des API JavaScript Excel à partir d’une fonction personnalisée
 
-Appelez Excel API JavaScript à partir de vos fonctions personnalisées pour obtenir des données de plage et obtenir plus de contexte pour vos calculs. Appeler Excel API JavaScript par le biais d’une fonction personnalisée peut être utile lorsque :
+Appelez les API JavaScript Excel à partir de vos fonctions personnalisées pour obtenir des données de plage et obtenir plus de contexte pour vos calculs. L’appel d’API JavaScript Excel via une fonction personnalisée peut être utile dans les cas suivants :
 
-- Une fonction personnalisée doit obtenir des informations de la Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de Excel informations spécifiques.
-- Une fonction personnalisée définira le format numérique de la cellule pour les valeurs de retour après le calcul.
+- Une fonction personnalisée doit obtenir des informations à partir d’Excel avant le calcul. Ces informations peuvent inclure des propriétés de document, des formats de plage, des parties XML personnalisées, un nom de classeur ou d’autres informations spécifiques à Excel.
+- Une fonction personnalisée définit le format numérique de la cellule pour les valeurs de retour après calcul.
 
 > [!IMPORTANT]
-> Pour appeler Excel API JavaScript à partir de votre fonction personnalisée, vous devez utiliser un runtime JavaScript partagé. Pour plus d’information, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+> Pour appeler des API JavaScript Excel à partir de votre fonction personnalisée, vous devez utiliser un runtime JavaScript partagé. Pour plus d’information, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="code-sample"></a>Exemple de code
 
-Pour appeler Excel API JavaScript à partir d’une fonction personnalisée, vous avez d’abord besoin d’un contexte. Utilisez le [Excel. Objet RequestContext](/javascript/api/excel/excel.requestcontext) pour obtenir un contexte. Utilisez ensuite le contexte pour appeler les API dont vous avez besoin dans le workbook.
+Pour appeler des API JavaScript Excel à partir d’une fonction personnalisée, vous avez d’abord besoin d’un contexte. Utilisez l’objet [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) pour obtenir un contexte. Utilisez ensuite le contexte pour appeler les API dont vous avez besoin dans le classeur.
 
-L’exemple de code suivant montre comment `Excel.RequestContext` utiliser pour obtenir une valeur à partir d’une cellule dans le workbook. Dans cet exemple, le `address` paramètre est transmis à la Excel de l’API JavaScript [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) et doit être entré sous forme de chaîne. Par exemple, la fonction personnalisée entrée dans l’interface utilisateur Excel doit `=CONTOSO.GETRANGEVALUE("A1")`suivre le modèle , `"A1"` où est l’adresse de la cellule à partir de laquelle récupérer la valeur.
+L’exemple de code suivant montre comment utiliser `Excel.RequestContext` pour obtenir une valeur à partir d’une cellule du classeur. Dans cet exemple, le `address` paramètre est transmis à la méthode [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) de l’API JavaScript Excel et doit être entré sous forme de chaîne. Par exemple, la fonction personnalisée entrée dans l’interface utilisateur Excel doit suivre le modèle `=CONTOSO.GETRANGEVALUE("A1")`, où `"A1"` est l’adresse de la cellule à partir de laquelle récupérer la valeur.
 
 ```JavaScript
 /**
@@ -34,10 +34,10 @@ L’exemple de code suivant montre comment `Excel.RequestContext` utiliser pour 
  **/
 async function getRangeValue(address) {
  // Retrieve the context object. 
- var context = new Excel.RequestContext();
+ const context = new Excel.RequestContext();
  
  // Use the context object to access the cell at the input address. 
- var range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+ const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
  range.load("values");
  await context.sync();
  
@@ -46,26 +46,26 @@ async function getRangeValue(address) {
 }
 ```
 
-## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitations de l’appel Excel api JavaScript via une fonction personnalisée
+## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitations de l’appel d’API JavaScript Excel par le biais d’une fonction personnalisée
 
-N’appelez pas Excel API JavaScript à partir d’une fonction personnalisée qui modifie l’environnement de Excel. Cela signifie que vos fonctions personnalisées ne doivent pas faire l’une des choses suivantes :
+N’appelez pas les API JavaScript Excel à partir d’une fonction personnalisée qui modifie l’environnement d’Excel. Cela signifie que vos fonctions personnalisées ne doivent pas effectuer l’une des opérations suivantes :
 
 - Insérer, supprimer ou mettre en forme des cellules dans la feuille de calcul.
 - Modifiez la valeur d’une autre cellule.
-- Déplacer, renommer, supprimer ou ajouter des feuilles à un workbook.
-- Modifiez l’une des options d’environnement, telles que le mode de calcul ou les affichages d’écran.
-- Ajoutez des noms à un workbook.
+- Déplacez, renommez, supprimez ou ajoutez des feuilles à un classeur.
+- Modifiez l’une des options d’environnement, telles que le mode de calcul ou les vues d’écran.
+- Ajoutez des noms à un classeur.
 - Définissez des propriétés ou exécutez la plupart des méthodes.
 
-La modification Excel d’exécution peut entraîner des performances médiocres, des temps d’insérez et des boucles infinies. Les calculs de fonction personnalisée ne doivent pas s’exécuter pendant Excel recalcul est en cours, car il se traduit par des résultats imprévisibles.
+La modification d’Excel peut entraîner des performances médiocres, des délais d’expiration et des boucles infinies. Les calculs de fonction personnalisés ne doivent pas s’exécuter pendant qu’un recalcul Excel a lieu, car cela entraîne des résultats imprévisibles.
 
-A la place, modifiez les Excel à partir du contexte d’un bouton de ruban ou d’un volet De tâches.
+Au lieu de cela, apportez des modifications à Excel à partir du contexte d’un bouton du ruban ou du volet Office.
 
-## <a name="next-steps"></a>Prochaines étapes
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Partager des données et des événements entre Excel fonctions personnalisées et didacticiel du volet Des tâches](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Partager des données et des événements entre les fonctions personnalisées Excel et le didacticiel du volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

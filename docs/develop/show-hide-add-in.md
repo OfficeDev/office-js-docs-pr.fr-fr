@@ -3,18 +3,18 @@ title: Afficher ou masquer le volet des tâches de votre complément Office
 description: Découvrez comment masquer ou afficher par programmation l’interface utilisateur d’un complément pendant son exécution continue.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 76243d9e593f06eec52fe558832a722317b88c69
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889225"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958607"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Afficher ou masquer le volet des tâches de votre complément Office
 
 [!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Vous pouvez afficher le volet Office de votre complément Office en appelant la `Office.addin.showAsTaskpane()` fonction.
+Vous pouvez afficher le volet Office de votre complément Office en appelant la `Office.addin.showAsTaskpane()` méthode.
 
 ```javascript
 function onCurrentQuarter() {
@@ -28,7 +28,7 @@ function onCurrentQuarter() {
 
 Le code précédent suppose un scénario dans lequel il existe une feuille de calcul Excel nommée **CurrentQuarterSales**. Le complément rend le volet Office visible chaque fois que cette feuille de calcul est activée. La méthode `onCurrentQuarter` est un gestionnaire pour l’événement [Office.Worksheet.onActivated](/javascript/api/excel/excel.worksheet?view=excel-js-preview&preserve-view=true#excel-excel-worksheet-onactivated-member) qui a été inscrit pour la feuille de calcul.
 
-Vous pouvez également masquer le volet Office en appelant la `Office.addin.hide()` fonction.
+Vous pouvez également masquer le volet Office en appelant la `Office.addin.hide()` méthode.
 
 ```javascript
 function onCurrentQuarterDeactivated() {
@@ -43,7 +43,7 @@ Le code précédent est un gestionnaire inscrit pour l’événement [Office.Wor
 Lorsque vous appelez `Office.addin.showAsTaskpane()`, Office affiche dans un volet Office le fichier que vous avez affecté en tant que valeur d’ID de ressource (`resid`) du volet Office. Cette `resid` valeur peut être affectée ou modifiée en ouvrant votre fichier **manifest.xml** et en se trouvant à l’intérieur de **\<SourceLocation\>** l’élément `<Action xsi:type="ShowTaskpane">` .
 (Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md) .)
 
-Étant donné `Office.addin.showAsTaskpane()` qu’il s’agit d’une méthode asynchrone, votre code continue à s’exécuter jusqu’à ce que la fonction soit terminée. Attendez cette fin avec le `await` mot clé ou une `then()` méthode, en fonction de la syntaxe JavaScript que vous utilisez.
+Étant donné `Office.addin.showAsTaskpane()` qu’il s’agit d’une méthode asynchrone, votre code continue à s’exécuter jusqu’à ce que la méthode soit terminée. Attendez cette fin avec le `await` mot clé ou une `then()` méthode, en fonction de la syntaxe JavaScript que vous utilisez.
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurer votre complément pour utiliser le runtime partagé
 

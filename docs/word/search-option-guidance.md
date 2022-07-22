@@ -3,16 +3,16 @@ title: Utiliser les options de recherche dans votre complément Word pour recher
 description: Découvrez comment utiliser les options de recherche dans votre complément Word.
 ms.date: 02/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 988349275dc350a342dfcb80e8e999c76de78e7d
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 64ffd3b32329dae98f869abaabcb3218e57a4a34
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229707"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958999"
 ---
 # <a name="use-search-options-in-your-word-add-in-to-find-text"></a>Utiliser les options de recherche dans votre complément Word pour rechercher du texte
 
-Les compléments doivent fréquemment agir en fonction du texte d’un document. Une fonction de recherche est exposée par contrôle de contenu (cela inclut [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow) et l’objet de base [ContentControl](/javascript/api/word/word.contentcontrol)). Cette fonction utilise une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](/javascript/api/word/word.searchoptions). Elle renvoie une collection de plages correspondant au texte de recherche.
+Les compléments doivent fréquemment agir en fonction du texte d’un document. Une méthode de recherche est exposée par chaque contrôle de contenu (cela inclut [Body](/javascript/api/word/word.body), [Paragraph](/javascript/api/word/word.paragraph), [Range](/javascript/api/word/word.range), [Table](/javascript/api/word/word.table), [TableRow](/javascript/api/word/word.tablerow) et l’objet [ContentControl](/javascript/api/word/word.contentcontrol) de base). Cette méthode accepte une chaîne (ou une expression générique) représentant le texte que vous recherchez et un objet [SearchOptions](/javascript/api/word/word.searchoptions) . Elle renvoie une collection de plages correspondant au texte de recherche.
 
 ## <a name="search-options"></a>Options de recherche
 

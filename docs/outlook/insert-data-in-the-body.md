@@ -3,12 +3,12 @@ title: Insérer des données dans le corps dans un complément Outlook
 description: Découvrez comment insérer des données dans le corps d’un message ou d’un rendez-vous dans un complément Outlook.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a60401156603e85975d0efad7cb721d6d27666c1
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 7319a3bb41d857fcae32ea118a3f3e60197bf751
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712740"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958326"
 ---
 # <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
@@ -33,9 +33,9 @@ En plus de  _coercionType_, comme avec la plupart des méthodes asynchrones dans
 
 Cette section présente un exemple de code qui utilise la méthode **getTypeAsync** pour vérifier le type de corps de l’élément dont la composition est en cours, puis la méthode **setSelectedDataAsync** pour insérer des données à l’emplacement du curseur.
 
-Vous pouvez transmettre une méthode de rappel et ses paramètres d’entrée facultatifs à la méthode **getTypeAsync**, et obtenir le statut et les résultats dans le paramètre de sortie _asyncResult_. Si la méthode aboutit, vous pouvez obtenir le type de corps de l’élément dans la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member), à savoir « text » ou « html ».
+Vous pouvez passer une fonction de rappel et des paramètres d’entrée facultatifs à **getTypeAsync**, et obtenir n’importe quel état et résultats dans le paramètre  _de sortie asyncResult_ . Si la méthode aboutit, vous pouvez obtenir le type de corps de l’élément dans la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member), à savoir « text » ou « html ».
 
-Vous devez transmettre une chaîne de données comme paramètre d’entrée à la méthode **setSelectedDataAsync**. Selon le type de corps de l’élément, vous pouvez spécifier cette chaîne de données au format texte ou HTML. Comme mentionné ci-dessus, vous pouvez éventuellement spécifier le type de données à insérer dans le paramètre _coercionType_. En outre, vous pouvez fournir une méthode de rappel et ses paramètres comme paramètres d’entrée facultatifs.
+Vous devez passer une chaîne de données en tant que paramètre d’entrée pour **définirSelectedDataAsync**. Selon le type de corps de l’élément, vous pouvez spécifier cette chaîne de données au format texte ou HTML. Comme mentionné ci-dessus, vous pouvez éventuellement spécifier le type de données à insérer dans le paramètre  _coercionType_. En outre, vous pouvez fournir une fonction de rappel et l’un de ses paramètres en tant que paramètres d’entrée facultatifs.
 
 Si l’utilisateur n’a pas placé le curseur dans le corps de l’élément, **setSelectedDataAsync** insère les données au début du corps de l’élément. Si l’utilisateur a sélectionné du texte dans le corps de l’élément, **setSelectedDataAsync** remplace le texte sélectionné par les données spécifiées. Notez que la méthode **setSelectedDataAsync** peut échouer si l’utilisateur change l’emplacement du curseur lors de la composition de l’élément. Vous pouvez insérer simultanément jusqu’à 1 000 000 caractères.
 
@@ -53,7 +53,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set data in the body of the composed item.
@@ -127,7 +127,7 @@ Vous pouvez également utiliser la méthode **prependAsync** pour insérer des d
 
 - Si vous prédéfinis des données HTML dans un corps de message, vous devez d’abord vérifier le type du corps du message afin d’éviter de pré-ajouter des données HTML à un message au format texte.
 
-- Fournissez les éléments suivants comme paramètres d’entrée dans la méthode **prependAsync** : une chaîne de données au format texte ou HTML et éventuellement le format des données à insérer, une méthode de rappel et ses paramètres.
+- Fournissez les paramètres suivants en tant que paramètres d’entrée pour **prependAsync** : chaîne de données au format texte ou HTML, et éventuellement le format des données à insérer, une fonction de rappel et l’un de ses paramètres.
 
 - Vous pouvez ajouter simultanément jusqu’à 1 000 000 caractères.
 
@@ -138,7 +138,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Insert data in the top of the body of the composed 

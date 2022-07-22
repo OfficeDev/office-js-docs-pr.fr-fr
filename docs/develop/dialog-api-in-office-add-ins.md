@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un complément Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 363f58f94f7e0bfc6fe4c7b9a410114b8d027b52
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889484"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958481"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -193,7 +193,7 @@ if (loginSuccess) {
 > [!NOTE]
 >
 > - La variable `loginSuccess` serait initialisée en lisant la réponse HTTP à partir du fournisseur d’identité.
-> - L’implémentation des fonctions `getProfile` et `getError` n’est pas affichée. Chacune obtient des données à partir d’un paramètre de requête ou du corps de la réponse HTTP.
+> - L’implémentation des fonctions et `getError` des `getProfile` fonctions n’est pas affichée. Chacune obtient des données à partir d’un paramètre de requête ou du corps de la réponse HTTP.
 > - Des objets anonymes de différents types sont envoyés selon que la connexion a réussi ou non. Tous deux ont une propriété `messageType`, mais un a une propriété `profile` et l’autre une propriété `error`.
 
 Le code du gestionnaire dans la page hôte utilise la valeur de la propriété `messageType` pour créer une branche comme le montre l’exemple suivant. Notez que la fonction `showUserName` est identique à celle de l’exemple précédent et que la fonction `showNotification` affiche l’erreur dans l’interface utilisateur de la page hôte.
@@ -290,7 +290,7 @@ function sheetPropertiesChanged() {
 
 ### <a name="handle-dialogparentmessagereceived-in-the-dialog-box"></a>Gérer DialogParentMessageReceived dans la boîte de dialogue
 
-Dans javaScript de la boîte de dialogue, inscrivez un gestionnaire pour l’événement `DialogParentMessageReceived` avec la méthode [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) . Cette opération est généralement effectuée dans les [méthodes Office.onReady ou Office.initialize](initialize-add-in.md), comme indiqué ci-dessous. (Un exemple plus robuste est ci-dessous.)
+Dans javaScript de la boîte de dialogue, inscrivez un gestionnaire pour l’événement `DialogParentMessageReceived` avec la méthode [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) . Cette opération est généralement effectuée dans la [fonction Office.onReady ou Office.initialize](initialize-add-in.md), comme indiqué ci-dessous. (Un exemple plus robuste est inclus plus loin dans cet article.)
 
 ```javascript
 Office.onReady()
@@ -370,7 +370,7 @@ function onMessageFromParent(arg) {
 }
 ```
 
-Par exemple, votre code peut utiliser les [méthodes Office.onReady ou Office.initialize](initialize-add-in.md) pour stocker un tableau de domaines approuvés dans une variable globale. La `arg.origin` propriété peut ensuite être vérifiée par rapport à cette liste dans le gestionnaire.
+Par exemple, votre code peut utiliser la [fonction Office.onReady ou Office.initialize](initialize-add-in.md) pour stocker un tableau de domaines approuvés dans une variable globale. La `arg.origin` propriété peut ensuite être vérifiée par rapport à cette liste dans le gestionnaire.
 
 > [!TIP]
 > Le `DialogMessageOptions` paramètre a été ajouté à la `messageChild` méthode en tant que paramètre obligatoire à la mi-2021. Les compléments plus anciens qui envoient un message inter-domaines avec la méthode ne fonctionnent plus tant qu’ils ne sont pas mis à jour pour utiliser le nouveau paramètre. Tant que le complément n’est pas mis à jour, *sur Office pour Windows uniquement*, les utilisateurs et les administrateurs système peuvent autoriser ces compléments à continuer à travailler en spécifiant le ou les domaines approuvés avec un paramètre de Registre : **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedDialogCommunicationDomains**. Pour ce faire, créez un fichier avec une `.reg` extension, enregistrez-le sur l’ordinateur Windows, puis double-cliquez dessus pour l’exécuter. Voici un exemple du contenu d’un tel fichier.
@@ -430,7 +430,7 @@ Voir [Gestion des erreurs et des événements dans la boîte de dialogue Office]
 
 Découvrez les pièges et pratiques recommandées pour l’API de boîte de dialogue Office dans les [Meilleures pratiques et règles pour l’API de boîte de dialogue Office](dialog-best-practices.md).
 
-## <a name="samples"></a>Échantillons
+## <a name="samples"></a>Exemples
 
 Tous les exemples suivants utilisent `displayDialogAsync`. Certains ont des serveurs NodeJS et d’autres ont des serveurs ASP.NET/IIS-based, mais la logique d’utilisation de la méthode est la même quelle que soit la façon dont le côté serveur du complément est implémenté.
 

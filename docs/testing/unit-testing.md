@@ -1,40 +1,40 @@
 ---
-title: Test unitaire dans les Office de test
-description: Découvrez comment unitér le code de test qui appelle Office API JavaScript.
+title: Tests unitaires dans les compléments Office
+description: Découvrez comment tester le code unitaire qui appelle les API JavaScript Office.
 ms.date: 02/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6b0483b23c3f7199a8bd308bf8a4118402ee08
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 21858a68734ca5d07621f3e9c88b147ebac7dde6
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746131"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958747"
 ---
-# <a name="unit-testing-in-office-add-ins"></a>Test unitaire dans les Office de test
+# <a name="unit-testing-in-office-add-ins"></a>Tests unitaires dans les compléments Office
 
-Les tests unitaires vérifient les fonctionnalités de votre application sans nécessiter de connexions réseau ou de service, y compris les connexions à Office application. Le code côté serveur de test unitaire et le code côté client qui n’appellent pas les API [JavaScript Office](../develop/understanding-the-javascript-api-for-office.md) sont les mêmes dans les applications Office que dans n’importe quelle application web. Il ne nécessite donc aucune documentation spéciale. Toutefois, le code côté client qui appelle Office API JavaScript est difficile à tester. Pour résoudre ces problèmes, nous avons créé une bibliothèque pour simplifier la création d’objets Office facturants dans des tests unitaires : [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). La bibliothèque facilite les tests des manières suivantes :
+Les tests unitaires vérifient les fonctionnalités de votre complément sans nécessiter de connexions réseau ou de service, y compris les connexions à l’application Office. Le code côté serveur de test unitaire, ainsi que le code côté client qui n’appelle *pas* les [API JavaScript Office](../develop/understanding-the-javascript-api-for-office.md), sont les mêmes dans les compléments Office que dans n’importe quelle application web. Il ne nécessite donc aucune documentation spéciale. Toutefois, le code côté client qui appelle les API JavaScript Office est difficile à tester. Pour résoudre ces problèmes, nous avons créé une bibliothèque pour simplifier la création d’objets Office fictifs dans les tests unitaires : [Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock). La bibliothèque facilite les tests des manières suivantes :
 
-- Les API JavaScript Office doivent s’initialiser dans un contrôle webview dans le contexte d’une application Office (Excel, Word, etc.), de sorte qu’elles ne peuvent pas être chargées dans le processus dans lequel les tests unitaires s’exécutent sur votre ordinateur de développement. La bibliothèque Office-Addin-Mock peut être importée dans vos fichiers de test, ce qui permet la simulation des API JavaScript Office à l’intérieur du processus node.js dans lequel les tests s’exécutent.
-- Les [API spécifiques à l’application](../develop/understanding-the-javascript-api-for-office.md#api-models) ont [](../develop/application-specific-api-model.md#sync) des méthodes de chargement et de synchronisation qui doivent être appelées dans un ordre particulier par rapport à d’autres fonctions et entre elles.[](../develop/application-specific-api-model.md#load) En outre, `load` la méthode doit être appelée avec certains paramètres en fonction des propriétés des objets Office qui seront lues *par code* ultérieurement dans la fonction testée. Toutefois, les frameworks de test d’unité sont intrinsèquement sans état, `load` `sync` de sorte qu’ils ne peuvent pas garder un enregistrement de l’appel ou de l’appel des paramètres qui ont été passés à `load`. Les objets facturants que vous créez avec la bibliothèque Office-Addin-Mock ont un état interne qui assure le suivi de ces éléments. Cela permet aux objets facturables d’émuler le comportement d’erreur des objets Office réels. Par exemple, si la fonction en cours de test tente de lire une propriété qui n’a `load`pas été passée pour la première fois, le test retourne une erreur semblable à ce que Office renvoyait.
+- Les API JavaScript Office doivent s’initialiser dans un contrôle webview dans le contexte d’une application Office (Excel, Word, etc.), afin qu’elles ne puissent pas être chargées dans le processus dans lequel les tests unitaires s’exécutent sur votre ordinateur de développement. La bibliothèque Office-Addin-Mock peut être importée dans vos fichiers de test, ce qui permet de simuler des API JavaScript Office dans le processus node.js dans lequel les tests s’exécutent.
+- Les [API spécifiques à l’application](../develop/understanding-the-javascript-api-for-office.md#api-models) ont des méthodes de [chargement](../develop/application-specific-api-model.md#load) et [de synchronisation](../develop/application-specific-api-model.md#sync) qui doivent être appelées dans un ordre particulier par rapport à d’autres fonctions et les unes aux autres. En outre, la `load` méthode doit être appelée avec certains paramètres en fonction des propriétés des objets Office qui seront lues par le code *plus tard* dans la fonction testée. Toutefois, les frameworks de tests unitaires sont intrinsèquement sans état, de sorte qu’ils ne peuvent pas conserver d’enregistrement indiquant si `load` ou `sync` a été appelé ou quels paramètres ont été passés à `load`. Les objets fictifs que vous créez avec la bibliothèque Office-Addin-Mock ont un état interne qui effectue le suivi de ces éléments. Cela permet aux objets fictifs d’émuler le comportement d’erreur des objets Office réels. Par exemple, si la fonction testée tente de lire une propriété qui n’a pas été transmise pour `load`la première fois, le test retourne une erreur similaire à ce qu’Office retournerait.
 
-La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisée avec n’importe quelle infrastructure de test d’unité JavaScript, telle que :
+La bibliothèque ne dépend pas des API JavaScript Office et peut être utilisée avec n’importe quelle infrastructure de test unitaire JavaScript, par exemple :
 
 - [Jest](https://jestjs.io)
-- [Mocha](https://mochajs.org/)
-- [Tso](https://jasmine.github.io/)
+- [Moka](https://mochajs.org/)
+- [Jasmin](https://jasmine.github.io/)
 
-Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha sur Office page d’accueil [de l’outil -Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
+Les exemples de cet article utilisent l’infrastructure Jest. Il existe des exemples d’utilisation de l’infrastructure Mocha sur [la page d’accueil Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#examples).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
-Cet article part du principe que vous connaissez les concepts de base des tests unitaires et de la maquette, notamment la création et l’utilisation de fichiers de test, et que vous avez une certaine expérience avec une infrastructure de test unitaire.
+Cet article part du principe que vous êtes familiarisé avec les concepts de base du test unitaire et de la simulation, notamment la création et l’exécution de fichiers de test, et que vous avez une certaine expérience avec une infrastructure de test unitaire.
 
 > [!TIP]
-> Si vous travaillez avec Visual Studio, nous vous recommandons de lire l’article Unit [testing JavaScript et TypeScript dans Visual Studio](/visualstudio/javascript/unit-testing-javascript-with-visual-studio) pour obtenir des informations de base sur le test d’unité JavaScript dans Visual Studio, puis de revenir à cet article.
+> Si vous travaillez avec Visual Studio, nous vous recommandons de lire l’article [Tests unitaires JavaScript et TypeScript dans Visual Studio](/visualstudio/javascript/unit-testing-javascript-with-visual-studio) pour obtenir des informations de base sur les tests unitaires JavaScript dans Visual Studio, puis revenir à cet article.
 
 ## <a name="install-the-tool"></a>Installer l’outil
 
-Pour installer la bibliothèque, ouvrez une invite de commandes, accédez à la racine de votre projet de add-in, puis entrez la commande suivante.
+Pour installer la bibliothèque, ouvrez une invite de commandes, accédez à la racine de votre projet de complément, puis entrez la commande suivante.
 
 ```command&nbsp;line
 npm install office-addin-mock --save-dev
@@ -42,19 +42,19 @@ npm install office-addin-mock --save-dev
 
 ## <a name="basic-usage"></a>Utilisation de base
 
-1. Votre projet aura un ou plusieurs fichiers de test. (Consultez les instructions pour votre infrastructure de test et les exemples de fichiers de test dans Examples(#examples) ci-dessous.) Importez la bibliothèque, `require` `import` avec le ou le mot clé, dans n’importe quel fichier de test qui dispose d’un test d’une fonction qui appelle les API JavaScript Office, comme illustré dans l’exemple suivant.
+1. Votre projet aura un ou plusieurs fichiers de test. (Consultez les instructions de votre infrastructure de test et les exemples de fichiers de test dans Examples (#examples) ci-dessous.) Importez la bibliothèque, avec le mot clé ou `import` le `require` mot clé, dans n’importe quel fichier de test qui a un test d’une fonction qui appelle les API JavaScript Office, comme illustré dans l’exemple suivant.
 
    ```javascript
    const OfficeAddinMock = require("office-addin-mock");
    ```
 
-1. Importez le module qui contient la fonction de module que vous souhaitez tester avec le mot clé ou le `require` mot `import` clé. L’exemple suivant suppose que votre fichier de test se trouve dans un sous-dossier du dossier contenant les fichiers de code de votre add-in.
+1. Importez le module qui contient la fonction de complément que vous souhaitez tester avec le mot clé ou `import` le `require` mot clé. Voici un exemple qui suppose que votre fichier de test se trouve dans un sous-dossier du dossier avec les fichiers de code de votre complément.
 
    ```javascript
    const myOfficeAddinFeature = require("../my-office-add-in");
    ```
 
-1. Créez un objet de données qui possède les propriétés et sous-propriétés dont vous avez besoin pour tester la fonction. Voici un exemple d’objet qui se Excel propriété [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) et la méthode [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)). Il ne s’agit pas de l’objet mock final. Pensez-le comme un objet de début utilisé pour `OfficeMockObject` créer l’objet mock final.
+1. Créez un objet de données qui a les propriétés et sous-propriétés dont vous avez besoin pour tester la fonction. Voici un exemple d’objet qui simule la propriété Excel [Workbook.range.address](/javascript/api/excel/excel.range#excel-excel-range-address-member) et la méthode [Workbook.getSelectedRange](/javascript/api/excel/excel.workbook#excel-excel-workbook-getselectedrange-member(1)) . Ce n’est pas le dernier objet fictif. Considérez-le comme un objet seed utilisé pour `OfficeMockObject` créer l’objet fictif final.
 
    ```javascript
    const mockData = {
@@ -69,20 +69,20 @@ npm install office-addin-mock --save-dev
    };
    ```
 
-1. Passez l’objet de données au `OfficeMockObject` constructeur. Notez ce qui suit sur l’objet `OfficeMockObject` renvoyé.
+1. Transmettez l’objet de données au `OfficeMockObject` constructeur. Notez ce qui suit concernant l’objet retourné `OfficeMockObject` .
 
-   - Il s’agit d’une maquette simplifiée d’un [objet OfficeExtension.ClientRequestContext](/javascript/api/office/officeextension.clientrequestcontext) .
-   - L’objet mock a tous les membres de l’objet de données et possède également des implémentations de maquettes des méthodes `load` et des `sync` objets.
-   - L’objet simulé imite le comportement d’erreur crucial de l’objet `ClientRequestContext` . Par exemple, si l’API `sync`Office que vous testez tente de lire une propriété sans avoir d’abord chargé la propriété et appelé, le test échouera avec une erreur semblable à celle qui serait lancée dans le runtime de production : « Erreur, propriété non chargée ».
+   - Il s’agit d’une simulation simplifiée d’un objet [OfficeExtension.ClientRequestContext](/javascript/api/office/officeextension.clientrequestcontext) .
+   - L’objet fictif a tous les membres de l’objet de données et possède également des implémentations fictives des méthodes et `sync` des `load` méthodes.
+   - L’objet fictif imite le comportement d’erreur crucial de l’objet `ClientRequestContext` . Par exemple, si l’API Office que vous testez tente de lire une propriété sans d’abord charger la propriété et appeler `sync`, le test échoue avec une erreur similaire à ce qui serait levé dans le runtime de production : « Erreur, propriété non chargée ».
 
    ```javascript
    const contextMock = new OfficeAddinMock.OfficeMockObject(mockData);
    ```
 
     > [!NOTE]
-    > La documentation de référence complète pour le `OfficeMockObject` type est [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
+    > La documentation de référence complète pour le `OfficeMockObject` type se trouve dans [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
 
-1. Dans la syntaxe de votre infrastructure de test, ajoutez un test de la fonction. Utilisez l’objet `OfficeMockObject` à la place de l’objet qu’il simula, dans ce cas l’objet `ClientRequestContext` . L’exemple suivant se poursuit dans Jest. Cet exemple de test suppose que la fonction de add-in en cours de test `getSelectedRangeAddress`est appelée, `ClientRequestContext` qu’elle prend un objet comme paramètre et qu’elle est destinée à renvoyer l’adresse de la plage actuellement sélectionnée. L’exemple complet est [plus loin dans cet article](#mocking-a-clientrequestcontext-object).
+1. Dans la syntaxe de votre infrastructure de test, ajoutez un test de la fonction. Utilisez l’objet `OfficeMockObject` à la place de l’objet qu’il simulacre, dans ce cas l’objet `ClientRequestContext` . L’exemple suivant se poursuit dans Jest. Cet exemple de test suppose que la fonction de complément testée est appelée `getSelectedRangeAddress`, qu’elle prend un `ClientRequestContext` objet comme paramètre et qu’elle est destinée à retourner l’adresse de la plage actuellement sélectionnée. L’exemple complet est [plus loin dans cet article](#mocking-a-clientrequestcontext-object).
 
    ```javascript
    test("getSelectedRangeAddress should return the address of the range", async function () {
@@ -90,7 +90,7 @@ npm install office-addin-mock --save-dev
    });
    ```
 
-1. Exécutez le test conformément à la documentation de l’infrastructure de test et de vos outils de développement. En règle générale, il existe **un fichier package.json** avec un script qui exécute l’infrastructure de test. Par exemple, si Jest est l’infrastructure, **package.json** contient les éléments suivants :
+1. Exécutez le test conformément à la documentation de l’infrastructure de test et de vos outils de développement. En règle générale, il existe un fichier **package.json** avec un script qui exécute l’infrastructure de test. Par exemple, si Jest est l’infrastructure, **package.json** contient les éléments suivants :
 
    ```json
    "scripts": {
@@ -107,19 +107,19 @@ npm install office-addin-mock --save-dev
 
 ## <a name="examples"></a>Exemples
 
-Les exemples de cette section utilisent Jest avec ses paramètres par défaut. Ces paramètres prise en charge les modules CommonJS. Consultez [la documentation de Jest](https://jestjs.io/docs/getting-started) pour savoir comment configurer Jest et node.js pour prendre en charge les modules ECMAScript et TypeScript. Pour exécuter l’un de ces exemples, exécutez les étapes suivantes.
+Les exemples de cette section utilisent Jest avec ses paramètres par défaut. Ces paramètres prennent en charge les modules CommonJS. Consultez la [documentation Jest](https://jestjs.io/docs/getting-started) pour savoir comment configurer Jest et node.js pour prendre en charge les modules ECMAScript et prendre en charge TypeScript. Pour exécuter l’un de ces exemples, procédez comme suit.
 
-1. Créez un Office pour l’application Office hôte appropriée (par exemple, Excel ou Word). Une façon de le faire rapidement consiste à utiliser le générateur [Yeoman pour Office de recherche](../develop/yeoman-generator-overview.md).
+1. Créez un projet de complément Office pour l’application hôte Office appropriée (par exemple, Excel ou Word). Une façon de procéder rapidement consiste à utiliser le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md).
 1. À la racine du projet, [installez Jest](https://jestjs.io/docs/getting-started).
 1. [Installez l’outil office-addin-mock](#install-the-tool).
 1. Créez un fichier exactement comme le premier fichier de l’exemple et ajoutez-le au dossier qui contient les autres fichiers sources du projet, souvent appelés `\src`.
-1. Créez un sous-dossier dans le dossier de fichier source et donnez-lui un nom approprié, tel que `\tests`.
+1. Créez un sous-dossier dans le dossier du fichier source et donnez-lui un nom approprié, tel que `\tests`.
 1. Créez un fichier exactement comme le fichier de test dans l’exemple et ajoutez-le au sous-dossier.
-1. Ajoutez un `test` script au **fichier package.json** , puis exécutez le test, comme décrit dans [Utilisation de base](#basic-usage).
+1. Ajoutez un `test` script au fichier **package.json** , puis exécutez le test, comme décrit dans [l’utilisation de base](#basic-usage).
 
-### <a name="mocking-the-office-common-apis"></a>Mocking the Office Common APIs
+### <a name="mocking-the-office-common-apis"></a>Simulation des API communes Office
 
-Cet exemple suppose qu’un Office pour tout hôte qui prend en charge les API communes [Office](../develop/office-javascript-api-object-model.md) (par exemple, Excel, PowerPoint ou Word). Le add-in possède l’une de ses fonctionnalités dans un fichier nommé `my-common-api-add-in-feature.js`. L’exemple suivant montre le contenu du fichier. La `addHelloWorldText` fonction définit le texte « Hello World! » à tout ce qui est actuellement sélectionné dans le document ; par exemple ; une plage dans Word ou une cellule dans Excel, ou une zone de texte dans PowerPoint.
+Cet exemple suppose un complément Office pour n’importe quel hôte qui prend en charge les [API courantes Office](../develop/office-javascript-api-object-model.md) (par exemple, Excel, PowerPoint ou Word). Le complément a l’une de ses fonctionnalités dans un fichier nommé `my-common-api-add-in-feature.js`. Le code suivant montre le contenu du fichier. La `addHelloWorldText` fonction définit le texte « Hello World! » à tout ce qui est actuellement sélectionné dans le document ; par exemple ; une plage dans Word, une cellule dans Excel ou une zone de texte dans PowerPoint.
 
 ```javascript
 const myCommonAPIAddinFeature = {
@@ -133,10 +133,10 @@ const myCommonAPIAddinFeature = {
 module.exports = myCommonAPIAddinFeature;
 ```
 
-Le fichier de test, nommé `my-common-api-add-in-feature.test.js` , se trouve dans un sous-dossier, par rapport à l’emplacement du fichier de code du module. L’exemple suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `context`un [Office. Objet](/javascript/api/office/office.context) de contexte, de sorte que l’objet qui est en cours de maquette est le parent de cette propriété : [Office](/javascript/api/office) objet. Tenez compte des informations suivantes à propos de ce code :
+Le fichier de test, nommé `my-common-api-add-in-feature.test.js` est dans un sous-dossier, par rapport à l’emplacement du fichier de code du complément. Le code suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `context`, un objet [Office.Context](/javascript/api/office/office.context) , de sorte que l’objet qui est simulé est le parent de cette propriété : un objet [Office](/javascript/api/office) . Tenez compte des informations suivantes à propos de ce code :
 
-- `OfficeMockObject` Le constructeur n’ajoute pas toutes les classes  `Office` d’enum Office à l’objet facturable. Par conséquent, `CoercionType.Text` la valeur référencé dans la méthode de add-in doit être ajoutée explicitement dans l’objet d’amorçage.
-- Étant donné que Office bibliothèque JavaScript n’est pas chargée dans le processus de nœud, `Office` l’objet référencé dans le code du module doit être déclaré et initialisé.
+- Le `OfficeMockObject` constructeur n’ajoute *pas* toutes les classes d’énumération Office à l’objet fictif `Office` . Par conséquent, la `CoercionType.Text` valeur référencée dans la méthode de complément doit être ajoutée explicitement dans l’objet seed.
+- Étant donné que la bibliothèque JavaScript Office n’est pas chargée dans le processus de nœud, l’objet `Office` référencé dans le code de complément doit être déclaré et initialisé.
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -173,9 +173,9 @@ test("Text of selection in document should be set to 'Hello World'", async funct
 });
 ```
 
-### <a name="mocking-the-outlook-apis"></a>Mocking the Outlook APIs
+### <a name="mocking-the-outlook-apis"></a>Simulation des API Outlook
 
-Bien qu’à proprement parler, les API Outlook font partie du modèle API commun, elles ont une architecture spéciale qui est conçue autour de l’objet [Mailbox](/javascript/api/outlook/office.mailbox), donc nous avons fourni un exemple distinct pour Outlook. Cet exemple suppose qu’un Outlook possède l’une de ses fonctionnalités dans un fichier nommé `my-outlook-add-in-feature.js`. L’exemple suivant montre le contenu du fichier. La `addHelloWorldText` fonction définit le texte « Hello World! » à tout ce qui est actuellement sélectionné dans la fenêtre de composition du message.
+Bien que strictement parlant, les API Outlook font partie du modèle d’API commune, elles ont une architecture spéciale qui est créée autour de l’objet [Mailbox](/javascript/api/outlook/office.mailbox) . Nous avons donc fourni un exemple distinct pour Outlook. Cet exemple suppose qu’Outlook possède l’une de ses fonctionnalités dans un fichier nommé `my-outlook-add-in-feature.js`. Le code suivant montre le contenu du fichier. La `addHelloWorldText` fonction définit le texte « Hello World! » vers ce qui est actuellement sélectionné dans la fenêtre de composition de message.
 
 ```javascript
 const myOutlookAddinFeature = {
@@ -188,10 +188,10 @@ const myOutlookAddinFeature = {
 module.exports = myOutlookAddinFeature;
 ```
 
-Le fichier de test, nommé `my-outlook-add-in-feature.test.js` , se trouve dans un sous-dossier, par rapport à l’emplacement du fichier de code du module. L’exemple suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `context`un [Office. Objet](/javascript/api/office/office.context) de contexte, de sorte que l’objet qui est en cours de maquette est le parent de cette propriété : [Office](/javascript/api/office) objet. Tenez compte des informations suivantes à propos de ce code :
+Le fichier de test, nommé `my-outlook-add-in-feature.test.js` est dans un sous-dossier, par rapport à l’emplacement du fichier de code du complément. Le code suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `context`, un objet [Office.Context](/javascript/api/office/office.context) , de sorte que l’objet qui est simulé est le parent de cette propriété : un objet [Office](/javascript/api/office) . Tenez compte des informations suivantes à propos de ce code :
 
-- La `host` propriété de l’objet mock est utilisée en interne par la bibliothèque de maquette pour identifier l’application Office de projet. Elle est obligatoire pour les Outlook. Il n’a actuellement aucune utilité pour toute autre application Office’application.
-- Étant donné que Office bibliothèque JavaScript n’est pas chargée dans le processus de nœud, `Office` l’objet référencé dans le code du module doit être déclaré et initialisé.
+- La `host` propriété sur l’objet fictif est utilisée en interne par la bibliothèque fictive pour identifier l’application Office. Il est obligatoire pour Outlook. Il ne sert actuellement à rien d’autre application Office.
+- Étant donné que la bibliothèque JavaScript Office n’est pas chargée dans le processus de nœud, l’objet `Office` référencé dans le code de complément doit être déclaré et initialisé.
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -227,22 +227,22 @@ test("Text of selection in message should be set to 'Hello World'", async functi
 });
 ```
 
-### <a name="mocking-the-office-application-specific-apis"></a>Maquette des API Office’application
+### <a name="mocking-the-office-application-specific-apis"></a>Simulation des API spécifiques à l’application Office
 
-Lorsque vous testez des fonctions qui utilisent les API spécifiques à l’application, assurez-vous que vous faites une simulation du bon type d’objet. Il existe deux options :
+Lorsque vous testez des fonctions qui utilisent les API spécifiques à l’application, veillez à simuler le type d’objet approprié. Il existe deux options :
 
-- Mock a [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext). Faites-le lorsque la fonction en cours de test répond aux deux conditions suivantes :
+- Simuler un [OfficeExtension.ClientRequestObject](/javascript/api/office/officeextension.clientrequestcontext). Procédez comme suit lorsque la fonction testée remplit les deux conditions suivantes :
 
-  - Il n’appelle pas un *hôte*.`run` par exemple, [Excel.run](/javascript/api/excel#Excel_run_batch_).
-  - Il ne fait référence à aucune autre propriété ou méthode directe d’un *objet Hôte* .
+  - Il n’appelle pas *d’hôte*.`run` fonction, telle [qu’Excel.run](/javascript/api/excel#Excel_run_batch_).
+  - Il ne fait référence à aucune autre propriété ou méthode directe d’un objet *Host* .
 
-- Mock a *Host* object, such as [Excel](/javascript/api/excel) or [Word](/javascript/api/word). Faites-le lorsque l’option précédente n’est pas possible.
+- Simuler un objet *Hôte* , tel [qu’Excel](/javascript/api/excel) ou [Word](/javascript/api/word). Effectuez cette opération lorsque l’option précédente n’est pas possible.
 
-Les sous-sections ci-dessous sont des exemples de ces deux types de tests.
+Les sous-sections ci-dessous présentent des exemples des deux types de tests.
 
-#### <a name="mocking-a-clientrequestcontext-object"></a>Maquette d’un objet ClientRequestContext
+#### <a name="mocking-a-clientrequestcontext-object"></a>Simulation d’un objet ClientRequestContext
 
-Cet exemple suppose qu’un Excel qui possède l’une de ses fonctionnalités dans un fichier nommé `my-excel-add-in-feature.js`. L’exemple suivant montre le contenu du fichier. Notez qu’il `getSelectedRangeAddress` s’agit d’une méthode d’aide appelée à l’intérieur du rappel transmis à `Excel.run`.
+Cet exemple suppose qu’un complément Excel possède l’une de ses fonctionnalités dans un fichier nommé `my-excel-add-in-feature.js`. Le code suivant montre le contenu du fichier. Notez qu’il `getSelectedRangeAddress` s’agit d’une méthode d’assistance appelée à l’intérieur du rappel passé à `Excel.run`.
 
 ```javascript
 const myExcelAddinFeature = {
@@ -260,7 +260,7 @@ const myExcelAddinFeature = {
 module.exports = myExcelAddinFeature;
 ```
 
-Le fichier de test, nommé `my-excel-add-in-feature.test.js` , se trouve dans un sous-dossier, par rapport à l’emplacement du fichier de code du module. L’exemple suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `workbook`, donc l’objet qui est en cours de maquette est le parent d’un `Excel.Workbook`: un `ClientRequestContext` objet.
+Le fichier de test, nommé `my-excel-add-in-feature.test.js` est dans un sous-dossier, par rapport à l’emplacement du fichier de code du complément. Le code suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `workbook`, de sorte que l’objet qui est simulé est le parent d’un `Excel.Workbook`: un `ClientRequestContext` objet.
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -272,7 +272,7 @@ const mockData = {
       range: {
         address: "C2:G3",
       },
-      // Mock the Workbook.getSelectRange method.
+      // Mock the Workbook.getSelectedRange method.
       getSelectedRange: function () {
         return this.range;
       },
@@ -292,7 +292,7 @@ test("getSelectedRangeAddress should return address of selected range", async fu
 
 #### <a name="mocking-a-host-object"></a>Simulation d’un objet hôte
 
-Cet exemple suppose qu’il s’agit d’un add-in Word qui possède l’une de ses fonctionnalités dans un fichier nommé `my-word-add-in-feature.js`. L’exemple suivant montre le contenu du fichier.
+Cet exemple suppose qu’un complément Word possède l’une de ses fonctionnalités dans un fichier nommé `my-word-add-in-feature.js`. Le code suivant montre le contenu du fichier.
 
 ```javascript
 const myWordAddinFeature = {
@@ -313,12 +313,12 @@ const myWordAddinFeature = {
 module.exports = myWordAddinFeature;
 ```
 
-Le fichier de test, nommé `my-word-add-in-feature.test.js` , se trouve dans un sous-dossier, par rapport à l’emplacement du fichier de code du module. L’exemple suivant montre le contenu du fichier. Notez que la propriété de niveau `context`supérieur est , `ClientRequestContext` un objet, de sorte que l’objet qui est en cours de maquette est le parent de cette propriété : un `Word` objet. Tenez compte des informations suivantes à propos de ce code :
+Le fichier de test, nommé `my-word-add-in-feature.test.js` est dans un sous-dossier, par rapport à l’emplacement du fichier de code du complément. Le code suivant montre le contenu du fichier. Notez que la propriété de niveau supérieur est `context`, un `ClientRequestContext` objet, de sorte que l’objet qui est simulé est le parent de cette propriété : un `Word` objet. Tenez compte des informations suivantes à propos de ce code :
 
-- Lorsque le `OfficeMockObject` constructeur crée l’objet maquette final, `ClientRequestContext` il s’assure que l’objet enfant possède `sync` et les `load` méthodes.
-- Le `OfficeMockObject` constructeur *n’ajoute* pas de `run` méthode `Word` à l’objet facturable, il doit donc être ajouté explicitement dans l’objet d’amorçage.
-- Le `OfficeMockObject` constructeur n’ajoute pas toutes les classes  `Word` d’enum Word à l’objet facturable, `InsertLocation.end` donc la valeur référencé dans la méthode de add-in doit être ajoutée explicitement dans l’objet d’amorçage.
-- Étant donné que Office bibliothèque JavaScript n’est pas chargée dans le processus de nœud, `Word` l’objet référencé dans le code du module doit être déclaré et initialisé.
+- Lorsque le `OfficeMockObject` constructeur crée l’objet fictif final, il s’assure que l’objet enfant `ClientRequestContext` a `sync` et `load` les méthodes.
+- Le `OfficeMockObject` constructeur n’ajoute *pas* de `run` fonction à l’objet fictif `Word` . Il doit donc être ajouté explicitement dans l’objet seed.
+- Le `OfficeMockObject` constructeur n’ajoute *pas* toutes les classes d’énumération Word à l’objet fictif `Word` . Par conséquent, la `InsertLocation.end` valeur référencée dans la méthode de complément doit être ajoutée explicitement dans l’objet seed.
+- Étant donné que la bibliothèque JavaScript Office n’est pas chargée dans le processus de nœud, l’objet `Word` référencé dans le code de complément doit être déclaré et initialisé.
 
 ```javascript
 const OfficeAddinMock = require("office-addin-mock");
@@ -345,7 +345,7 @@ const mockData = {
   InsertLocation: {
     end: "end",
   },
-  // Mock the Word.run method.
+  // Mock the Word.run function.
   run: async function(callback) {
     await callback(this.context);
   },
@@ -375,12 +375,12 @@ describe("Insert blue paragraph at end tests", () => {
 ```
 
 > [!NOTE]
-> La documentation de référence complète pour le `OfficeMockObject` type est [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
+> La documentation de référence complète pour le `OfficeMockObject` type se trouve dans [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock#reference).
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Office d’installation de la page npm -Addin-Mock](https://www.npmjs.com/package/office-addin-mock). 
-- Le repo open source est [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
+- [Point d’installation de la page npm Office-Addin-Mock](https://www.npmjs.com/package/office-addin-mock) . 
+- Le dépôt open source est [Office-Addin-Mock](https://github.com/OfficeDev/Office-Addin-Scripts/tree/master/packages/office-addin-mock).
 - [Jest](https://jestjs.io)
-- [Mocha](https://mochajs.org/)
-- [Tso](https://jasmine.github.io/)
+- [Moka](https://mochajs.org/)
+- [Jasmin](https://jasmine.github.io/)

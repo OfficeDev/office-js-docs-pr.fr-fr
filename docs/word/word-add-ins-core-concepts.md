@@ -3,12 +3,12 @@ title: Modèle d’objet JavaScript Word dans les compléments Office
 description: Découvrez les composants clés dans le modèle objet JavaScript spécifique à Word.
 ms.date: 3/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d3c2a43e2febbf31fe132dfb5c220bffcc7a1fef
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 07055ee2c8b16315b5c4efea5f62a85331e48445
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63746101"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958957"
 ---
 # <a name="word-javascript-object-model-in-office-add-ins"></a>Modèle d’objet JavaScript Word dans les compléments Office
 
@@ -44,8 +44,8 @@ Pour comprendre les API Word, vous devez connaître la manière dont les composa
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Présentation de l’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md)
-- [Créer votre premier complément Word](../quickstarts/word-quickstart.md)
-- [Didacticiel sur les compléments Word](../tutorials/word-tutorial.md)
-- [Référence d’API JavaScript pour Word](/javascript/api/word)
-- [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)
+* [Présentation de l’API JavaScript pour Word](../reference/overview/word-add-ins-reference-overview.md)
+* [Créer votre premier complément Word](../quickstarts/word-quickstart.md)
+* [Didacticiel sur les compléments Word](../tutorials/word-tutorial.md)
+* [Référence d’API JavaScript pour Word](/javascript/api/word)
+* [Découvrez le programme pour les développeurs Microsoft 365](https://developer.microsoft.com/microsoft-365/dev-program)

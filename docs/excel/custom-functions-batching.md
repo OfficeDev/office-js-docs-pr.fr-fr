@@ -3,14 +3,14 @@ ms.date: 07/08/2021
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 ms.localizationpriority: medium
-ms.openlocfilehash: c22a2d52ca0b144eb8ccb8acf88225cca75f0980
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744391"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958600"
 ---
-# <a name="batch-custom-function-calls-for-a-remote-service"></a>Traitement par lots d’appels de fonction personnalisée pour un service distant
+# <a name="batch-custom-function-calls-for-a-remote-service"></a>Appels de fonction personnalisée Batch pour un service distant
 
 Si vos fonctions personnalisées appellent un service à distance, vous pouvez utiliser un modèle le traitement par lots pour réduire le nombre d’appels réseau au service à distance. Pour réduire les boucles réseau, traitez par lots tous les appels en un seul appel du service web. Cette procédure est idéale lorsque la feuille de calcul est recalculée.
 
@@ -20,9 +20,9 @@ Par exemple, si une personne a utilisé votre fonction personnalisée dans 100 
 
 ## <a name="view-the-completed-sample"></a>Afficher l’exemple terminé
 
-Pour afficher l’exemple terminé, suivez cet article et collez les exemples de code dans votre propre projet. Par exemple, pour créer un projet de fonction personnalisée pour TypeScript, utilisez le générateur [Yeoman pour les](../develop/yeoman-generator-overview.md) Office, puis ajoutez tout le code de cet article au projet. Exécutez le code et testez-le.
+Pour afficher l’exemple terminé, suivez cet article et collez les exemples de code dans votre propre projet. Par exemple, pour créer un projet de fonction personnalisée pour TypeScript, utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md), puis ajoutez tout le code de cet article au projet. Exécutez le code et essayez-le.
 
-Vous pouvez également télécharger ou afficher l’exemple de projet complet sur [le modèle de traitement par lots de fonctions personnalisées](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Si vous voulez afficher l’ensemble du code avant de poursuivre la lecture, examinez le [fichier de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
+Vous pouvez également télécharger ou afficher l’exemple de projet complet au [modèle de traitement par lot de fonctions personnalisées](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). Si vous voulez afficher l’ensemble du code avant de poursuivre la lecture, examinez le [fichier de script](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## <a name="create-the-batching-pattern-in-this-article"></a>Créer le modèle le traitement par lots dans cet article
 
@@ -32,7 +32,7 @@ Pour configurer le traitement par lots pour vos fonctions personnalisées, vous 
 2. Une fonction pour créer la demande à distance lorsque le traitement par lots est prêt.
 3. Du code serveur pour répondre à la demande de traitement par lots, calculer tous les résultats de l’opération et retourner les valeurs.
 
-Dans les sections suivantes, vous allez apprendre à construire le code un exemple à la fois. Vous ajoutez chaque exemple de code à votre fichier **functions.ts**. Il est recommandé de créer un tout nouveau projet de fonctions personnalisées à l’aide du générateur [Yeoman pour Office des modules.](../develop/yeoman-generator-overview.md) Pour créer un projet, voir [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md) and use TypeScript instead of JavaScript.
+Dans les sections suivantes, vous allez apprendre à construire le code un exemple à la fois. Vous ajoutez chaque exemple de code à votre fichier **functions.ts**. Il est recommandé de créer un tout nouveau projet de fonctions personnalisées à l’aide du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) . Pour créer un projet, consultez [Prise en main du développement de fonctions personnalisées Excel](../quickstarts/excel-custom-functions-quickstart.md) et utilisation de TypeScript au lieu de JavaScript.
 
 ## <a name="batch-each-call-to-your-custom-function"></a>Traiter par lots chaque appel de votre fonction personnalisée
 
@@ -206,7 +206,7 @@ function pause(ms: number) {
 
 ### <a name="modify-_fetchfromremoteservice-for-your-live-remote-service"></a>Modifier `_fetchFromRemoteService` pour votre service à distance en direct
 
-Pour modifier la fonction `_fetchFromRemoteService` à exécuter dans votre service distant en direct, a effectuer les modifications suivantes.
+Pour modifier la `_fetchFromRemoteService` fonction à exécuter dans votre service distant en direct, apportez les modifications suivantes.
 
 - Selon votre plateforme serveur (Node.js ou autres), mappez l’appel du réseau client à cette fonction.
 - Supprimez la fonction `pause`, qui reproduit la latence du réseau dans le cadre de l’imitation.
@@ -221,6 +221,6 @@ Découvrez [les différents paramètres](custom-functions-parameter-options.md) 
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Valeurs volatiles dans les fonctions](custom-functions-volatile.md)
-* [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
-* [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Valeurs volatiles dans les fonctions](custom-functions-volatile.md)
+- [Créer des fonctions personnalisées dans Excel](custom-functions-overview.md)
+- [Didacticiel de fonctions personnalisées Excel](../tutorials/excel-tutorial-create-custom-functions.md)

@@ -1,14 +1,14 @@
 ---
 ms.date: 06/09/2022
-description: Résoudre les problèmes courants liés à Excel fonctions personnalisées.
+description: Résoudre les problèmes courants liés aux fonctions personnalisées Excel.
 title: Résoudre des problèmes de fonctions personnalisées
 ms.localizationpriority: medium
-ms.openlocfilehash: c4d07417efbc641919051c96e5da0eb910ff9ccc
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
+ms.openlocfilehash: 89d90b6ee94efac0230933313d2c16b5054dda61
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66090886"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958558"
 ---
 # <a name="troubleshoot-custom-functions"></a>Résoudre des problèmes de fonctions personnalisées
 
@@ -63,7 +63,7 @@ Lorsque vous exécutez `npm start`, une erreur indiquant que le serveur de déve
 
 ### <a name="my-functions-wont-load-associate-functions"></a>Mon fonctions ne se chargent pas : associer les fonctions
 
-Dans les cas où votre JSON n’a pas été inscrit et que vous avez créé vos propres métadonnées JSON, il se peut qu’un erreur `#VALUE!` s’affiche ou que vous receviez une notification indiquant que votre complément ne peut pas être chargé. Cela signifie généralement que vous devez associer chacune de vos fonctions personnalisées à sa propriété `id` spécifiée dans le [fichier de métadonnées JSON](custom-functions-json.md). Cette opération est effectuée à l’aide de la méthode `CustomFunctions.associate()`. Cette méthode est généralement appelée après chaque fonction ou à la fin du fichier de script. Si une fonction personnalisée n’est pas associée, elle ne fonctionne pas.
+Dans les cas où votre JSON n’a pas été inscrit et que vous avez créé vos propres métadonnées JSON, il se peut qu’un erreur `#VALUE!` s’affiche ou que vous receviez une notification indiquant que votre complément ne peut pas être chargé. Cela signifie généralement que vous devez associer chacune de vos fonctions personnalisées à sa propriété `id` spécifiée dans le [fichier de métadonnées JSON](custom-functions-json.md). Pour ce faire, utilisez la `CustomFunctions.associate()` fonction. En règle générale, cet appel de fonction est effectué après chaque fonction ou à la fin du fichier de script. Si une fonction personnalisée n’est pas associée, elle ne fonctionne pas.
 
 L’exemple suivant présente une fonction d’ajout, suivie du nom de la fonction `add` associé à l’id JSON correspondant `ADD`.
 
@@ -84,9 +84,9 @@ CustomFunctions.associate("ADD", add);
 
 Pour plus d’informations sur ce processus, consultez [Association de noms de fonctions avec des métadonnées JSON](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
 
-## <a name="known-issues"></a>Problèmes détectés
+## <a name="known-issues"></a>Problèmes connus
 
-Les problèmes connus sont suivis et signalés dans le [dépôt Excel Fonctions personnalisées GitHub](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
+Les problèmes connus sont suivis et signalés dans le [référentiel GitHub Excel Custom Functions](https://github.com/OfficeDev/Excel-Custom-Functions/issues).
 
 ## <a name="reporting-feedback"></a>Formulation de commentaires
 

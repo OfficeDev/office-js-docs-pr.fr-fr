@@ -3,12 +3,12 @@ title: Créer des commandes complémentaires dans votre formulaire pour Excel, P
 description: Utilisez VersionOverrides dans votre manifeste pour définir des commandes de complément pour Excel, PowerPoint et Word. Utilisez les commandes de complément pour créer des éléments d’interface utilisateur, ajouter des boutons ou des listes, et effectuer des actions.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 44cd5818879af6788ef58050b5ca475b5f4d3dbd
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4df14158d6a9fde9d18e75632c44e40fca235b8d
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889508"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958705"
 ---
 # <a name="create-add-in-commands-in-your-manifest-for-excel-powerpoint-and-word"></a>Créer des commandes complémentaires dans votre formulaire pour Excel, PowerPoint et Word
 
@@ -156,7 +156,7 @@ Le Code JavaScript dans le fichier HTML référencé par l’élément **\<Funct
 
 Le code suivant montre comment implémenter la fonction utilisée par **\<FunctionName\>**.
 
-```js
+```html
 <script>
     // The initialize function must be run each time a new page is loaded.
     (function () {
@@ -410,7 +410,7 @@ L’exemple suivant montre comment utiliser l’élément **\<Resources\>** . Ch
 </Resources>
 ```
 
-|Resource|Description|
+|Ressource|Description|
 |:-----|:-----|
 |**\<Images\>**/ **\<Image\>** <br/> | Fournit l’URL HTTPS d’un fichier image. Chaque image doit définir les trois tailles d’image obligatoires : <br/>  16 x 16 <br/>  32 x 32 <br/>  80 × 80 <br/>  Les tailles d’image suivantes sont également prises en charge, mais ne sont pas obligatoires : <br/>  20 × 20 <br/>  24 × 24 <br/>  40 × 40 <br/>  48 × 48 <br/>  64 x 64 <br/> |
 |**\<Urls\>**/ **\<Url\>** <br/> |Indique un emplacement d’URL HTTPS. Une URL peut comporter 2 048 caractères au maximum.  <br/> |

@@ -3,12 +3,12 @@ title: Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Ex
 description: Exemples de code qui montrent comment effectuer des tâches courantes avec des feuilles de calcul à l’aide de l’API JavaScript Excel.
 ms.date: 04/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 932666d178da827b314339bfc05c12b5553bdaa7
-ms.sourcegitcommit: d7e5c243ad65f81d479b4fead283003fc494074e
+ms.openlocfilehash: b90970c3a168c3d82d0001c0e985583e3d23f8f0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/27/2022
-ms.locfileid: "65076680"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958396"
 ---
 # <a name="work-with-worksheets-using-the-excel-javascript-api"></a>Utiliser des feuilles de calcul à l’aide de l’API JavaScript pour Excel
 
@@ -405,9 +405,9 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> Cette section décrit comment rechercher des cellules et plages à l’aide des `Worksheet` fonctions de l’objet. Plus d’informations sur l’extraction de plage sont disponibles dans les articles spécifiques.
+> Cette section explique comment rechercher des cellules et des plages à l’aide des méthodes de l’objet `Worksheet` . Plus d’informations sur l’extraction de plage sont disponibles dans les articles spécifiques.
 >
-> - Pour obtenir des exemples montrant comment obtenir une plage dans une feuille de calcul à l’aide de l’objet`Range`, consultez [Obtenir une plage à l’aide de l’API JavaScript Excel](excel-add-ins-ranges-get.md).
+> - Pour obtenir des exemples montrant comment obtenir une plage dans une feuille de calcul à l’aide de l’objet `Range` , consultez [Obtenir une plage à l’aide de l’API JavaScript Excel](excel-add-ins-ranges-get.md).
 > - Pour obtenir des exemples qui montrent comment obtenir une plage dans un objet `Table`, reportez-vous à la rubrique [Utiliser des tableaux à l’aide de l’API JavaScript pour Excel](excel-add-ins-tables.md).
 > - Pour consulter des exemples qui montrent comment rechercher une grande plage pour plusieurs sous-plages basées sur les caractéristiques de cellule, voir [Travailler avec plusieurs plages simultanément dans des compléments Excel](excel-add-ins-multiple-ranges.md).
 
@@ -502,7 +502,7 @@ L’état de protection d’une feuille de calcul peut être modifié par un com
 L’exemple de code suivant montre comment inscrire le `onProtectionChanged` gestionnaire d’événements et utiliser l’objet `WorksheetProtectionChangedEventArgs` pour récupérer les propriétés `worksheetId`, et `source` les `isProtected`propriétés de l’événement.
 
 ```js
-// This method registers an event handler for the onProtectionChanged event of a worksheet.
+// This function registers an event handler for the onProtectionChanged event of a worksheet.
 async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
@@ -514,7 +514,7 @@ async function run() {
     });
 }
 
-// This method is an event handler that returns the protection state of a worksheet 
+// This function is an event handler that returns the protection state of a worksheet 
 // and information about the changed worksheet.
 async function checkProtection(event) {
     await Excel.run(async (context) => {

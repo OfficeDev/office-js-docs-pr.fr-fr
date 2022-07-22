@@ -3,12 +3,12 @@ title: Obtenir et définir des métadonnées dans un complément Outlook
 description: Vous pouvez gérer les données personnalisées dans votre complément Outlook en utilisant les paramètres d’itinérance ou propriétés personnalisées.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a7ae9f2377c40d22b091f994de958b882507938a
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: b2cbb79288f7e62de8b4baae164ec9747cb83190
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712719"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959048"
 ---
 # <a name="get-and-set-add-in-metadata-for-an-outlook-add-in"></a>Obtenir et définir des métadonnées de complément pour un complément Outlook
 
@@ -63,7 +63,7 @@ Office.initialize = function () {
 
 Pour faire suite à l’exemple précédent, la fonction JavaScript suivante, `setAddInSetting`, montre comment utiliser la méthode [RoamingSettings.set](/javascript/api/outlook/office.roamingsettings) pour définir un paramètre nommé `cookie` avec la date du jour, et conserver les données en utilisant la méthode [RoamingSettings.saveAsync](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-saveasync-member(1)) pour réenregistrer tous les paramètres d’itinérance sur le serveur.
 
-La `set` méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de façon asynchrone. Cet exemple de code passe une méthode de rappel, `saveMyAddInSettingsCallback`à `saveAsync` Une fois l’appel asynchrone terminé,  `saveMyAddInSettingsCallback` est appelé à l’aide d’un paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
+La `set` méthode crée le paramètre si le paramètre n’existe pas déjà et affecte le paramètre à la valeur spécifiée. La `saveAsync` méthode enregistre les paramètres d’itinérance de façon asynchrone. Cet exemple de code passe une fonction de rappel, `saveMyAddInSettingsCallback`à `saveAsync` Une fois l’appel asynchrone terminé,  `saveMyAddInSettingsCallback` est appelé à l’aide d’un paramètre, _asyncResult_. Ce paramètre est un objet [AsyncResult](/javascript/api/office/office.asyncresult) qui contient le résultat des détails relatifs à l’appel asynchrone. Vous pouvez utiliser le paramètre facultatif _userContext_ pour transmettre des informations d’état de l’appel asynchrone à la fonction de rappel.
 
 ```js
 // Set a roaming setting.
@@ -75,7 +75,7 @@ function setAddInSetting() {
   _settings.saveAsync(saveMyAddInSettingsCallback);
 }
 
-// Callback method after saving custom roaming settings.
+// Callback function after saving custom roaming settings.
 function saveMyAddInSettingsCallback(asyncResult) {
   if (asyncResult.status == Office.AsyncResultStatus.Failed) {
     // Handle the failure.
@@ -116,9 +116,9 @@ Avant de pouvoir utiliser les propriétés personnalisées, vous devez les charg
 
 ### <a name="custom-properties-example"></a>Exemple de propriétés personnalisées
 
-L’exemple suivant illustre un ensemble simplifié des méthodes pour un complément Outlook qui utilise des propriétés personnalisées. Vous pouvez utiliser cet exemple comme point de départ pour votre complément qui utilise des propriétés personnalisées.
+L’exemple suivant montre un ensemble simplifié de fonctions et de méthodes pour un complément Outlook qui utilise des propriétés personnalisées. Vous pouvez utiliser cet exemple comme point de départ pour votre complément qui utilise des propriétés personnalisées.
 
-Cet exemple inclut les méthodes suivantes.
+Cet exemple inclut les fonctions et méthodes suivantes.
 
 - [Office.initialize](/javascript/api/office#Office_initialize_reason_) -- Initialise le complément et charge le conteneur de propriétés personnalisées depuis le serveur Exchange.
 

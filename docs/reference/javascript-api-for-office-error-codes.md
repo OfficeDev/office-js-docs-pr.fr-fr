@@ -3,12 +3,12 @@ title: Codes d'erreur de l'API commune de l'Office
 description: Cet article documente les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API Office Common.
 ms.date: 02/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 80637e1573e120664ee89685a9c9579dbcfe6b2e
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889610"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959062"
 ---
 # <a name="office-common-api-error-codes"></a>Codes d'erreur de l'API commune de l'Office
 
@@ -53,7 +53,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plusieurs contrôles de contenu portant le même nom existent et l’échec lors de la collision est défini `true`sur .|
 |3008|Une erreur s’est produite lors de la création de la liaison|Le type de liaison spécifié n’est pas compatible avec l’élément nommé fourni.|L’élément nommé ne peut pas être lié au type. Par exemple, un contrôle de contenu contient du texte, mais le développeur a essayé de lier à l’aide du type `table`de contrainte .|
 |3009|Opération de liaison incorrecte|Le type de liaison n’est pas pris en charge.|Utilisé pour la compatibilité descendante.|
-|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente d’utiliser la ou `deleteAllDataValuesAsync` les `addRowsAsync` méthodes de l’objet `TableBinding` sur des données de type `matrix`forçage.|
+|3010|Opération de liaison non prise en charge|Le contenu sélectionné doit être dans un format de tableau. Placez les données sous forme de tableau, puis réessayez.|Le développeur tente d’utiliser la ou `deleteAllDataValuesAsync` la `addRowsAsync` méthode de l’objet `TableBinding` sur des données de type `matrix`forçage.|
 |4000|Une erreur s’est produite lors de la lecture des paramètres|Le nom de paramètre spécifié n’existe pas.|Un nom de paramètre non existant est fourni.|
 |4001|Une erreur s’est produite lors de l’enregistrement des paramètres|Les paramètres n’ont pas pu être enregistrés.|Les paramètres n’ont pas pu être enregistrés.|
 |4002|Une erreur relative à des paramètres périmés s’est produite|Les paramètres n’ont pas pu être enregistrés car ils sont périmés.|Les paramètres sont périmés et le développeur a indiqué de ne pas les remplacer.|

@@ -3,12 +3,12 @@ title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme de compléments Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77e484244f76e399eb1f3cdb7e5de1de25619a1f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889204"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958722"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
@@ -20,7 +20,7 @@ Les Compléments Office sont sécurisées par un environnement d’exécution de
 
 - Seul l’accès indirect au thread d’interface utilisateur de l’application cliente Office est autorisé.
 
-- Les interactions modales ne sont pas autorisées , par exemple, les appels à JavaScript`alert``confirm`, et `prompt` les fonctions ne sont pas autorisées, car elles sont modales.
+- Les interactions modales ne sont pas autorisées , par exemple, les appels à JavaScript`alert``confirm`, et `prompt` les méthodes ne sont pas autorisées, car elles sont modales.
 
 En outre, l’infrastructure d’exécution offre les avantages suivants pour garantir qu’un complément Office ne peut pas endommager l’environnement de l’utilisateur.
 

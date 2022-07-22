@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour créer (ou convertir) un complément Office avec un backend ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 980ae1b9c36dfdf7fcf84ad4fb1ba9088687cf7a
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 403730f953a4f53d853a0ecd3b12cd477f7e7176
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889379"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958831"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -76,7 +76,7 @@ Utilisez les paramètres suivants pour l’inscription de votre application.
 1. Définissez **l’état** **sur Activé**, puis **sélectionnez Ajouter une étendue**.
 
     > [!NOTE]
-    > La partie domaine du **\<Scope\>** nom affichée juste en dessous du champ de texte doit correspondre automatiquement à l’URI d’ID d’application que vous avez défini précédemment, avec `/access_as_user` ajouté à la fin ; par exemple, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+    > La partie domaine du **\<Scope\>** nom affichée juste après le champ de texte doit correspondre automatiquement à l’URI d’ID d’application que vous avez défini précédemment, avec `/access_as_user` ajouté à la fin ; par exemple, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. Dans la section **Applications clientes autorisées** , entrez l’ID suivant pour pré-autoriser tous les points de terminaison d’application Microsoft Office.
 
@@ -168,12 +168,12 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 1. Ouvrez le fichier HomeES6.js dans le dossier **Scripts**. Il contient déjà du code.
 
     - Un polyfill qui affecte l’objet Office. promesse à l’objet fenêtre globale pour que le complément puisse s’exécuter lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Pour plus d’informations, voir [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).)
-    - Une affectation à la méthode `Office.initialize` qui affecte elle-même un gestionnaire à l’événement ClickButton `getGraphAccessTokenButton`.
+    - Affectation à la `Office.initialize` fonction qui, à son tour, affecte un gestionnaire à l’événement de clic de `getGraphAccessTokenButton` bouton.
     - Une méthode `showResult` permettant d’afficher les données renvoyées par Microsoft Graph (ou un message d’erreur) en bas du volet Office.
     - Une méthode `logErrors` qui consigne dans la console les erreurs qui ne sont pas destinées à l’utilisateur final.
     - Code qui implémente le système d’autorisation de secours que le complément utilisera dans les scénarios où l’authentification unique n’est pas prise en charge ou une erreur s’est produite.
 
-1. En dessous de l’affectation au `Office.initialize`, ajoutez le code ci-dessous. Tenez compte du code suivant :
+1. Après l’affectation à `Office.initialize`, ajoutez le code suivant. Tenez compte du code suivant :
 
     - La gestion des erreurs dans le complément tente parfois automatiquement d’obtenir un jeton d’accès une deuxième fois, à l’aide d’un autre jeu d’options. La variable de compteur `retryGetAccessToken` permet de s’assurer que l’utilisateur ne tente pas de manière répétée d’obtenir un jeton sans y parvenir.
     - La fonction `getGraphData` est définie avec le mot clé ES6 `async`. L’utilisation de la syntaxe ES6 simplifie l’utilisation de l’API d’authentification unique dans les compléments Office. Il s’agit du seul fichier dans la solution qui utilise une syntaxe non prise en charge par Internet Explorer. Nous plaçons « ES6 » dans le nom du fichier comme rappel. La solution utilise le transpondeur tsc pour transpiler ce fichier en ES5, afin que le complément puisse être exécuté lorsque Office utilise Internet Explorer pour l’interface utilisateur. (Consultez le fichier tsconfig.json dans la racine du projet.)
@@ -186,7 +186,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-1. Ajoutez la fonction suivante après la fonction `getGraphData`. Notez que vous créez la fonction `handleClientSideErrors` dans une étape ultérieure.
+1. Après la `getGraphData` fonction, ajoutez la fonction suivante. Notez que vous créez la fonction `handleClientSideErrors` dans une étape ultérieure.
 
     > [!NOTE]
     > Pour faire la distinction entre les deux jetons d’accès que vous utilisez dans cet article, le jeton retourné par getAccessToken() est appelé jeton d’amorçage. Il est ensuite échangé via le flux On-Behalf-Of contre un nouveau jeton avec accès à Microsoft Graph.
@@ -211,7 +211,8 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-1. Remplacez par `TODO 1` le code suivant pour obtenir le jeton d’accès à partir de l’hôte Office. Le paramètre **options** contient les paramètres suivants passés à partir de la fonction **getGraphData()** précédente.
+
+1. Remplacez par `TODO 1` le code suivant pour obtenir le jeton d’accès à partir de l’hôte Office. Le paramètre *options* contient les paramètres suivants passés à partir de la fonction précédente `getGraphData()` .
 
     - `allowSignInPrompt` a la valeur true. Cela indique à Office d’inviter l’utilisateur à se connecter si l’utilisateur n’est pas déjà connecté à Office.
     - `allowConsentPrompt` a la valeur true. Cela indique à Office d’inviter l’utilisateur à autoriser le complément à accéder au profil Microsoft Azure Active Directory de l’utilisateur, si le consentement n’a pas déjà été accordé. (L’invite qui en résulte n’autorise *pas* l’utilisateur à donner son consentement à des étendues Microsoft Graph.)
@@ -228,7 +229,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     getData("/api/values", bootstrapToken);
     ```
 
-1. Ajoutez la fonction suivante après la fonction `getGraphData`. Tenez compte du code suivant :
+1. Après la `getGraphData` fonction, ajoutez ce qui suit. Tenez compte du code suivant :
 
     - Il est utilisé par les systèmes d’authentification unique et de secours.
     - Le paramètre `relativeUrl` est un contrôleur côté serveur.
@@ -261,7 +262,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 ### <a name="handle-client-side-errors"></a>Gérer les erreurs côté client
 
-1. Sous la fonction `getData`, ajoutez la fonction suivante. Veuillez noter que `error.code` est un nombre, généralement compris dans la plage 13xxx.
+1. Après la `getData` fonction, ajoutez la fonction suivante. Veuillez noter que `error.code` est un nombre, généralement compris dans la plage 13xxx.
 
     ```javascript
     function handleClientSideErrors(error) {
@@ -284,12 +285,12 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
         // No one is signed into Office. If the add-in cannot be effectively used when no one
         // is logged into Office, then the first call of getAccessToken should pass the
         // `allowSignInPrompt: true` option.
-        showResult(["No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
+        showResult(["No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to sign in, press the Get OneDrive File Names button again."]);
         break;
     case 13002:
         // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
         // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-        showResult(["You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
+        showResult(["You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."]);
         break;
     case 13006:
         // Only seen in Office on the web.
@@ -315,7 +316,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
 
 ### <a name="handle-server-side-errors"></a>Gérer les erreurs côté serveur
 
-1. Sous la fonction `handleClientSideErrors`, ajoutez la fonction suivante.
+1. Après la `handleClientSideErrors` fonction, ajoutez la fonction suivante.
 
     ```javascript
     function handleServerSideErrors(result) {

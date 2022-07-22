@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans les compléments Offic
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre complément Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a079930bbb4523893f25604aefcff0a68f0316b
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889190"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958532"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans les compléments Office
 
@@ -253,7 +253,7 @@ Voici l’exemple complet de l’objet blob JSON.
 
 ## <a name="register-the-contextual-tab-with-office-with-requestcreatecontrols"></a>Inscrire l’onglet contextuel auprès d’Office avec requestCreateControls
 
-L’onglet contextuel est inscrit auprès d’Office en appelant la méthode [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) . Cela est généralement effectué dans la fonction qui est affectée à `Office.initialize` ou avec la `Office.onReady` méthode. Pour plus d’informations sur ces méthodes et l’initialisation du complément, consultez [Initialiser votre complément Office](../develop/initialize-add-in.md). Toutefois, vous pouvez appeler la méthode à tout moment après l’initialisation.
+L’onglet contextuel est inscrit auprès d’Office en appelant la méthode [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) . Cette opération est généralement effectuée dans la fonction affectée à `Office.initialize` la fonction ou avec celle-ci `Office.onReady` . Pour plus d’informations sur ces fonctions et l’initialisation du complément, consultez [Initialiser votre complément Office](../develop/initialize-add-in.md). Toutefois, vous pouvez appeler la méthode à tout moment après l’initialisation.
 
 > [!IMPORTANT]
 > La `requestCreateControls` méthode ne peut être appelée qu’une seule fois dans une session donnée d’un complément. Une erreur est générée si elle est appelée à nouveau.
@@ -272,7 +272,7 @@ Office.onReady(async () => {
 
 En règle générale, un onglet contextuel personnalisé doit s’afficher lorsqu’un événement initié par l’utilisateur modifie le contexte du complément. Envisagez un scénario dans lequel l’onglet doit être visible quand et uniquement quand un graphique (dans la feuille de calcul par défaut d’un classeur Excel) est activé.
 
-Commencez par attribuer des gestionnaires. Cette opération est généralement effectuée dans la `Office.onReady` méthode, comme dans l’exemple suivant, qui affecte des gestionnaires (créés dans une étape ultérieure) aux événements et `onDeactivated` aux `onActivated` graphiques de la feuille de calcul.
+Commencez par attribuer des gestionnaires. Cela est généralement fait dans la `Office.onReady` fonction, comme dans l’exemple suivant, qui affecte des gestionnaires (créés à une étape ultérieure) aux événements et `onDeactivated` aux `onActivated` graphiques de la feuille de calcul.
 
 ```javascript
 Office.onReady(async () => {

@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c16d82b1c6dacc3e46f2a5170c4b43d1be899191
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889148"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958838"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -124,7 +124,7 @@ Un scénario courant est celui lors duquel l’état du ruban peut être modifi�
 
 Imaginez un scénario dans lequel un bouton doit être activé lorsque, et seulement lorsqu'un graphique est activé. La première étape consiste à définir l'élément [Activé](/javascript/api/manifest/enabled) pour le bouton dans le manifeste `false`. Voir l'exemple ci-dessus.
 
-Deuxièmement, assignez des gestionnaires. Cette procédure est généralement effectuée dans la méthode **Office.onReady** comme illustré dans l’exemple suivant qui assigne des gestionnaires (créés dans une étape ultérieure) aux évènements **onActivated** et **onDeactivated** de tous les graphiques de la feuille de calcul.
+Deuxièmement, assignez des gestionnaires. Cette opération est généralement effectuée dans la fonction **Office.onReady** , comme dans l’exemple suivant, qui affecte des gestionnaires (créés à une étape ultérieure) aux événements **onActivated** et **onDeactivated** de tous les graphiques de la feuille de calcul.
 
 ```javascript
 Office.onReady(async () => {

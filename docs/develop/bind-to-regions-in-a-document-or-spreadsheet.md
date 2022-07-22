@@ -3,12 +3,12 @@ title: Lier des régions dans un document ou une feuille de calcul
 description: Découvrez comment utiliser la liaison pour garantir un accès cohérent à une région ou à un élément spécifique d’un document ou d’une feuille de calcul via un identificateur.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 3516a06c74c23f7b5a72a51bbe5dd5d244e82ea5
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b1624624a5664444f811b20d405fb6aefbd23d91
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889372"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958852"
 ---
 # <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Lier des régions dans un document ou une feuille de calcul
 
@@ -20,7 +20,7 @@ L’accès aux données basées sur une liaison permet aux compléments de conte
 
 L’établissement d’une liaison vous permet également de vous abonner aux données et aux événements de changement de sélection qui sont concernés par cette région particulière du document ou de la feuille de calcul. Cela signifie que le complément est seulement notifié des changements qui surviennent dans la région délimitée, par opposition aux changements généraux affectant l’ensemble du document ou de la feuille de calcul.
 
-L’objet [Bindings] expose une méthode [getAllAsync] qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide de la méthode [Bindings.getBindingByIdAsync] ou [Office.select]. Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes en utilisant l’une des méthodes suivantes de l’objet [Bindings] : [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync] ou [releaseByIdAsync].
+L’objet [Bindings] expose une méthode [getAllAsync] qui donne accès à toutes les liaisons établies dans le document ou la feuille de calcul. Une liaison individuelle est accessible par son ID à l’aide des liaisons. [méthode getByIdAsync] ou fonction [Office.select] . Vous pouvez établir de nouvelles liaisons et supprimer des liaisons existantes en utilisant l’une des méthodes suivantes de l’objet  [Bindings] : [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync] ou [releaseByIdAsync].
 
 ## <a name="binding-types"></a>Types de liaison
 
@@ -66,7 +66,7 @@ Dans cet exemple, le type de liaison spécifié est « Text ». Cela signifie qu
 
 Le deuxième paramètre facultatif est un objet qui spécifie l’ID de la nouvelle liaison créée. Si un ID n’est pas spécifié, un ID est généré automatiquement.
 
-La fonction anonyme qui est passée dans la fonction comme paramètre final _callback_ est exécutée lorsque la création de la liaison est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, ce qui donne accès à un objet [AsyncResult] qui fournit l’état de l’appel. La propriété `AsyncResult.value` contient une référence à un objet [Binding] du type spécifié pour la liaison créée récemment. Vous pouvez utiliser cet objet [Binding] pour obtenir et définir les données.
+La fonction anonyme passée dans la méthode en tant que paramètre de  _rappel_ final est exécutée lorsque la création de la liaison est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`, ce qui donne accès à un objet [AsyncResult] qui fournit l’état de l’appel. La propriété `AsyncResult.value` contient une référence à un objet [Binding] du type spécifié pour la liaison créée récemment. Vous pouvez utiliser cet objet [Binding] pour obtenir et définir les données.
 
 ## <a name="add-a-binding-from-a-prompt"></a>Ajout d’une liaison à partir d’une invite
 
@@ -93,7 +93,7 @@ Dans cet exemple, le type de liaison spécifié est « Text ». Cela signifie qu
 
 Le deuxième paramètre est un objet qui contient l’ID de la nouvelle liaison créée. Si un ID n’est pas spécifié, un ID est généré automatiquement.
 
-La fonction anonyme transmise à la fonction en tant que troisième paramètre _de rappel_ est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
+La fonction anonyme passée dans la méthode en tant que troisième paramètre _de rappel_ est exécutée lorsque la création de la liaison est terminée. Lorsque la fonction de rappel s’exécute, l’objet [AsyncResult] contient le statut de l’appel et la nouvelle liaison.
 
 La figure 1 montre l’invite de sélection de plage intégrée dans Excel.
 
@@ -198,7 +198,7 @@ function write(message){
 }
 ```
 
-Fonction anonyme qui est passée dans la fonction en tant que `callback` paramètre est exécutée une fois l’opération terminée. La fonction est appelée avec un seul paramètre, `asyncResult`qui contient un tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
+Fonction anonyme passée dans la méthode en tant que `callback` paramètre exécutée une fois l’opération terminée. La fonction est appelée avec un seul paramètre, `asyncResult`qui contient un tableau des liaisons dans le document. Le tableau est répété pour générer une chaîne qui contient les ID des liaisons. La chaîne est ensuite affichée dans une boîte de message.
 
 ## <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obtention d’une liaison par ID en utilisant la méthode getByIdAsync de l’objet Bindings
 
@@ -222,11 +222,11 @@ function write(message){
 
 Dans l’exemple, le premier `id` paramètre est l’ID de la liaison à récupérer.
 
-La fonction anonyme passée dans la fonction en tant que deuxième paramètre _de rappel_ est exécutée une fois l’opération terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le statut de l’appel et la liaison avec l’ID « myBinding ».
+La fonction anonyme passée dans la méthode en tant que deuxième paramètre _de rappel_ est exécutée lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, _asyncResult_, qui contient le statut de l’appel et la liaison avec l’ID « myBinding ».
 
-## <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>Obtention d’une liaison par ID en utilisant la méthode Select de l’objet Office
+## <a name="get-a-binding-by-id-using-the-select-function-of-the-office-object"></a>Obtenir une liaison par ID à l’aide de la fonction select de l’objet Office
 
-L’exemple suivant montre comment utiliser la méthode [Office.select] pour obtenir une promesse d’objet [Binding] dans un document en spécifiant son ID dans une chaîne de sélecteur. Il appelle ensuite la méthode [Binding.getDataAsync] pour obtenir des données à partir de la liaison spécifiée. Cet exemple suppose qu’une liaison nommée `'myBinding'` a été ajoutée au document à l’aide des méthodes décrites plus haut dans cette rubrique.
+L’exemple suivant montre comment utiliser la fonction [Office.select] pour obtenir une promesse d’objet [binding] dans un document en spécifiant son ID dans une chaîne de sélecteur. Il appelle ensuite la liaison. [méthode getDataAsync] pour obtenir des données à partir de la liaison spécifiée. Cet exemple suppose qu’une liaison nommée `'myBinding'` a été ajoutée au document à l’aide des méthodes décrites plus haut dans cette rubrique.
 
 ```js
 Office.select("bindings#myBinding", function onError(){}).getDataAsync(function (asyncResult) {
@@ -244,7 +244,7 @@ function write(message){
 ```
 
 > [!NOTE]
-> Si la `select` promesse de méthode retourne un objet [Binding] , cet objet expose uniquement les quatre méthodes suivantes de l’objet : [getDataAsync], [setDataAsync], [addHandlerAsync] et [removeHandlerAsync]. Si la promesse ne peut pas retourner d’objet Binding, le `onError` rappel peut être utilisé pour accéder à un objet [asyncResult.error] pour obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet [Binding] retournée par la `select` méthode, utilisez plutôt la méthode [getByIdAsync] à l’aide de la propriété [Document.bindings et des] liaisons.[ méthode getByIdAsync] pour récupérer l’objet [Binding] .
+> Si la `select` promesse de fonction retourne un objet [Binding] , cet objet expose uniquement les quatre méthodes suivantes de l’objet : [getDataAsync], [setDataAsync], [addHandlerAsync] et [removeHandlerAsync]. Si la promesse ne peut pas retourner d’objet Binding, le `onError` rappel peut être utilisé pour accéder à un objet [asyncResult.error] pour obtenir plus d’informations. Si vous devez appeler un membre de l’objet Binding autre que les quatre méthodes exposées par la promesse d’objet [Binding] retournée par la `select` fonction, utilisez plutôt la méthode [getByIdAsync] à l’aide de la propriété [Document.bindings et des] liaisons.[ méthode getByIdAsync] pour récupérer l’objet [Binding] .
 
 ## <a name="release-a-binding-by-id"></a>Publication d’une liaison par ID
 
@@ -263,7 +263,7 @@ function write(message){
 
 Dans l’exemple, le premier paramètre `id` est l’ID de la liaison à publier.
 
-La fonction anonyme qui est passée dans la fonction comme le deuxième paramètre est un rappel qui est exécuté lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre,  [asyncResult], qui contient le statut de l’appel.
+La fonction anonyme passée dans la méthode en tant que deuxième paramètre est un rappel exécuté une fois l’opération terminée. La fonction est appelée avec un seul paramètre,  [asyncResult], qui contient le statut de l’appel.
 
 ## <a name="read-data-from-a-binding"></a>Lecture de données à partir d’une liaison
 
@@ -290,7 +290,7 @@ function write(message){
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
-La fonction anonyme qui est passée dans la fonction est un rappel qui est exécuté lorsque l’opération est terminée. La propriété [AsyncResult].value contient les données dans `myBinding`. Le type de valeur dépend du type de liaison. La liaison dans cet exemple est une liaison de texte. Par conséquent, la valeur contiendra une chaîne. Pour obtenir des exemples supplémentaires concernant l’utilisation des liaisons de matrice et de tableau, consultez la rubrique sur la méthode [getDataAsync].
+La fonction anonyme passée dans la méthode est un rappel exécuté une fois l’opération terminée. La propriété [AsyncResult].value contient les données dans `myBinding`. Le type de valeur dépend du type de liaison. La liaison dans cet exemple est une liaison de texte. Par conséquent, la valeur contiendra une chaîne. Pour obtenir des exemples supplémentaires concernant l’utilisation des liaisons de matrice et de tableau, consultez la rubrique sur la méthode [getDataAsync].
 
 ## <a name="write-data-to-a-binding"></a>Écriture de données dans une liaison
 
@@ -304,7 +304,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 Dans l’exemple, le premier paramètre est la valeur à définir sur `myBinding`. Comme il s’agit d’une liaison de texte, la valeur est de type `string`. Différents types de liaisons acceptent divers types de données.
 
-La fonction anonyme qui est passée dans la fonction est un rappel qui est exécuté lorsque l’opération est terminée. La fonction est appelée avec un seul paramètre, `asyncResult`qui contient l’état du résultat.
+La fonction anonyme passée dans la méthode est un rappel exécuté une fois l’opération terminée. La fonction est appelée avec un seul paramètre, `asyncResult`qui contient l’état du résultat.
 
 > [!NOTE]
 > Depuis la publication d’Excel 2013 SP1 et de la version correspondante d’Excel sur le web, vous pouvez désormais [définir la mise en forme lors de l’écriture et de la mise à jour des données dans des tableaux liés](../excel/excel-add-ins-tables.md).
@@ -331,7 +331,7 @@ function write(message){
 
 Le premier paramètre _eventType_ de la méthode [addHandlerAsync] spécifie le nom de l’événement auquel s’abonner. [Office.EventType] est une énumération des valeurs de types d’événement disponibles. `Office.EventType.BindingDataChanged` prend la valeur de la chaîne « bindingDataChanged ».
 
-La `dataChanged` fonction qui est passée dans la fonction en tant que deuxième paramètre de _gestionnaire_ est un gestionnaire d’événements qui est exécuté lorsque les données de la liaison sont modifiées. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à la liaison. Cette liaison peut être utilisée pour récupérer les données mises à jour.
+La `dataChanged` fonction passée dans la méthode en tant que deuxième paramètre de _gestionnaire_ est un gestionnaire d’événements qui est exécuté lorsque les données de la liaison sont modifiées. La fonction est appelée avec un seul paramètre, _eventArgs_, qui contient une référence à la liaison. Cette liaison peut être utilisée pour récupérer les données mises à jour.
 
 De même, vous pouvez détecter lorsqu’un utilisateur modifie la sélection dans une liaison en ajoutant un gestionnaire d’événements à l’événement [SelectionChanged] d’une liaison. Pour ce faire, spécifiez le paramètre `eventType` de la méthode [addHandlerAsync] comme `Office.EventType.BindingSelectionChanged` ou `"bindingSelectionChanged"`.
 

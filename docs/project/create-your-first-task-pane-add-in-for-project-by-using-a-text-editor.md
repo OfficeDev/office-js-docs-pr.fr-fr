@@ -3,12 +3,12 @@ title: Créer votre premier complément de volet des tâches pour Microsoft Proj
 description: Créez un complément du volet Office pour Project Standard 2013, Project Professionnel 2013 ou versions ultérieures à l’aide du générateur Yeoman pour les compléments Office.
 ms.date: 07/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d4b1c392413c05a190b032ed9e3a0343470b02f
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: 69353b94da05dd0a8cfd6347beb7c5b3f4fd81e0
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765292"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66959027"
 ---
 # <a name="create-your-first-task-pane-add-in-for-microsoft-project-by-using-a-text-editor"></a>Créer votre premier complément de volet des tâches pour Microsoft Project à l’aide d’un éditeur de texte
 
@@ -107,7 +107,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
 1. Créez un fichier JavaScript nommé JSOM_Sample.js dans le même répertoire que le fichier JSOMCall.html.
 
-   Le code suivant obtient le contexte d’application et les informations de document en utilisant des fonctions dans le fichier Office.js. L’objet `text` est l’ID du `textarea` contrôle dans le fichier HTML.
+   Le code suivant obtient le contexte d’application et les informations de document à l’aide de méthodes dans le fichier Office.js. L’objet `text` est l’ID du `textarea` contrôle dans le fichier HTML.
 
    La **\_variable projDoc** est initialisée avec un `ProjectDocument` objet. Le code inclut certaines fonctions de gestion des erreurs simples, ainsi que la fonction qui obtient le `getContextValues` contexte d’application et les propriétés de contexte du document de projet. Pour plus d’informations sur le modèle d’objet JavaScript pour Project, voir [API JavaScript pour Office](../reference/javascript-api-for-office.md).
 
@@ -124,7 +124,7 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
     // The initialize function is required for all add-ins.
     Office.initialize = function (reason) {
-        // Checks for the DOM to load using the jQuery ready function.
+        // Checks for the DOM to load using the jQuery ready method.
         $(document).ready(function () {
             // After the DOM is loaded, app-specific code can run.
             _projDoc = Office.context.document;
@@ -173,25 +173,25 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
 
    Pour plus d’informations sur les fonctions dans le fichier Office.debug.js, consultez [l’API JavaScript Office](../reference/javascript-api-for-office.md). Par exemple, la `getDocumentUrl` fonction obtient l’URL ou le chemin d’accès au fichier du projet ouvert.
 
-1. Ajoutez les fonctions JavaScript qui appellent des fonctions asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
+1. Ajoutez des fonctions JavaScript qui appellent des méthodes asynchrones dans Office.js et Project-15.js pour obtenir les données sélectionnées :
 
-   - Par exemple, `getSelectedDataAsync` est une fonction générale dans Office.js qui obtient du texte non mis en forme pour les données sélectionnées. Pour plus d’informations, voir [AsyncResult, objet](/javascript/api/office/office.asyncresult).
+   - Par exemple, `getSelectedDataAsync` est une méthode générale dans Office.js qui obtient du texte non mis en forme pour les données sélectionnées. Pour plus d’informations, consultez [l’objet Document](/javascript/api/office/office.document#office-office-document-getselectedtaskasync-member(1)).
 
    - La `getSelectedTaskAsync` fonction dans Project-15.js obtient le GUID de la tâche sélectionnée. De même, la `getSelectedResourceAsync` fonction obtient le GUID de la ressource sélectionnée. Si vous appelez ces fonctions lorsqu’une tâche ou une ressource n’est pas sélectionnée, les fonctions produisent une erreur non définie.
 
    - La `getTaskAsync` fonction obtient le nom de la tâche et les noms des ressources affectées. Si la tâche se trouve dans une liste de tâches SharePoint synchronisée, `getTaskAsync` obtient l’ID de tâche dans la liste SharePoint ; sinon, l’ID de tâche SharePoint est 0.
 
      > [!NOTE]
-     > À des fins de démonstration, l’exemple de code comporte un bogue. Si `taskGuid` elle n’est pas définie, la `getTaskAsync` fonction est désactivée. Si vous obtenez un GUID de tâche valide, puis sélectionnez une autre tâche, la `getTaskAsync` fonction obtient des données pour la tâche la plus récente qui a été opérée par la `getSelectedTaskAsync` fonction.
+     > À des fins de démonstration, l’exemple de code comporte un bogue. S’il `taskGuid` n’est pas défini, la `getTaskAsync` fonction se déconnecte. Si vous obtenez un GUID de tâche valide, puis sélectionnez une autre tâche, la `getTaskAsync` fonction obtient des données pour la tâche la plus récente qui a été opérée par la `getSelectedTaskAsync` fonction.
   
    - `getTaskFields`, `getResourceFields`et sont des `getProjectFields` fonctions locales qui appellent `getTaskFieldAsync`, `getResourceFieldAsync`ou `getProjectFieldAsync` plusieurs fois pour obtenir les champs spécifiés d’une tâche ou d’une ressource. Dans le fichier project-15.debug.js, l’énumération `ProjectTaskFields` et l’énumération `ProjectResourceFields` indiquent les champs pris en charge.
 
    - La `getSelectedViewAsync` fonction obtient le type de vue (défini dans l’énumération `ProjectViewTypes` dans project-15.debug.js) et le nom de la vue.
 
-   - Si le projet est synchronisé avec une liste de tâches SharePoint, la `getWSSUrlAsync` fonction obtient l’URL et le nom de la liste de tâches. Si le projet n’est pas synchronisé avec une liste de tâches SharePoint, la `getWSSUrlAsync` fonction est désactivée.
+   - Si le projet est synchronisé avec une liste de tâches SharePoint, la `getWSSUrlAsync` fonction obtient l’URL et le nom de la liste de tâches. Si le projet n’est pas synchronisé avec une liste de tâches SharePoint, la `getWSSUrlAsync` fonction se termine par des erreurs.
 
      > [!NOTE]
-     > Pour obtenir l’URL SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la `getProjectFieldAsync` fonction avec les constantes et `WSSList` les `WSSUrl` constantes dans l’énumération [ProjectProjectFields](/javascript/api/office/office.projectprojectfields).
+     > Pour obtenir l’URL SharePoint et le nom de la liste des tâches, nous vous recommandons d’utiliser la `getProjectFieldAsync` méthode avec les constantes et `WSSList` les `WSSUrl` constantes dans l’énumération [ProjectProjectFields](/javascript/api/office/office.projectprojectfields).
 
    Chacune des fonctions utilisées dans le code suivant inclut une fonction anonyme représentée par `function (asyncResult)` et qui est un rappel qui obtient le résultat asynchrone. Au lieu de fonctions anonymes, vous pouvez utiliser les fonctions nommées, qui peuvent améliorer la maintenabilité des compléments complexes.
 
@@ -548,9 +548,9 @@ La procédure 2 montre comment créer le fichier HTML que le manifeste JSOM_Sim
     }
     ```
 
-1. Ajoutez des rappels et des fonctions du gestionnaire d’événements JavaScript pour enregistrer la sélection de tâches, la sélection de ressources et les gestionnaires d’événements de changement de sélection d’affichage, et pour annuler l’enregistrement de gestionnaires d’événements. La `manageEventHandlerAsync` fonction ajoute ou supprime le gestionnaire d’événements spécifié, en fonction du paramètre _d’opération_ . L’opération peut être `addHandlerAsync` ou `removeHandlerAsync`.
+1. Ajoutez des rappels et des fonctions du gestionnaire d’événements JavaScript pour enregistrer la sélection de tâches, la sélection de ressources et les gestionnaires d’événements de changement de sélection d’affichage, et pour annuler l’enregistrement de gestionnaires d’événements. La `manageEventHandlerAsync` fonction ajoute ou supprime le gestionnaire d’événements spécifié, en fonction du paramètre *d’opération* . L’opération peut être `addHandlerAsync` ou `removeHandlerAsync`.
 
-   Les `manageTaskEventHandler`fonctions , `manageResourceEventHandler`et `manageViewEventHandler` peuvent ajouter ou supprimer un gestionnaire d’événements, comme spécifié par le paramètre _docMethod_ .
+   Les `manageTaskEventHandler`fonctions , `manageResourceEventHandler`et `manageViewEventHandler` peuvent ajouter ou supprimer un gestionnaire d’événements, comme spécifié par le paramètre *docMethod* .
 
     ```js
     // Task selection changed event handler.
@@ -759,7 +759,7 @@ La procédure 3 montre comment installer et utiliser les fonctionnalités du co
     - Identifiant de WSS : `0`
     - ResourceNames: `R1[50%],R2[50%]`
 
-1. Sélectionnez le bouton **Obtenir les champs de tâche** . La `getTaskFields` fonction appelle la `getTaskfieldAsync` fonction plusieurs fois pour le nom de la tâche, l’index, la date de début, la durée, la priorité et les notes de tâche.
+1. Sélectionnez le bouton **Obtenir les champs de tâche** . La `getTaskFields` fonction appelle la `getTaskFieldAsync` méthode plusieurs fois pour le nom de la tâche, l’index, la date de début, la durée, la priorité et les notes de tâche.
 
     - Nom : `T2`
     - Identifiant : `2`

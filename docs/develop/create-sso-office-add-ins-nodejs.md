@@ -3,12 +3,12 @@ title: Création d’un complément Office Node.js qui utilise l’authentificat
 description: Découvrez comment créer un complément basé sur Node.js qui utilise l’authentification unique Office.
 ms.date: 07/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f71630f2694db9c53ba6d2e3e6d07f54ab91cb8
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
+ms.openlocfilehash: 470d6480308ed2695822aefd12e0b39b4abba32e
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689403"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958467"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -85,7 +85,7 @@ Vous devez créer une inscription d’application dans Azure qui représente vot
 
 1. Donnez la valeur **Administrateurs et utilisateurs** à **Qui peut donner son consentement ?** .
 
-1. Renseignez les champs permettant de configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application cliente Office d’utiliser les API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
+1. Renseignez les champs permettant de configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application cliente Office d’utiliser les API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
    - **Administration nom d’affichage du consentement** : Office peut agir en tant qu’utilisateur.
    - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
@@ -302,14 +302,14 @@ SERVER_SOURCE=https://localhost:44355
      // `allowSignInPrompt: true` option. Since this sample does that, you should not see
      // this error.
      showMessage(
-       "No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."
+       "No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to log in, press the Get OneDrive File Names button again."
      );
      break;
    case 13002:
      // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
      // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
      showMessage(
-       "You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
+       "You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
      );
      break;
    case 13006:

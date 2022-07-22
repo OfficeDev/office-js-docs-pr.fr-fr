@@ -3,12 +3,12 @@ title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
 ms.date: 07/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a9b1ce064ff069aa48f6d9c979edc2dfa4fd3a4
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66713097"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958985"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
@@ -49,7 +49,7 @@ const locations = [
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Add to the location of the item being composed.
@@ -67,7 +67,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -95,7 +95,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -119,14 +119,14 @@ Vous pouvez utiliser l’API `location` pour obtenir et définir l’emplacement
 
 Cette section présente un exemple de code qui obtient et affiche l’emplacement du rendez-vous que compose l’utilisateur.
 
-Pour utiliser `item.location.getAsync`, indiquez une méthode de rappel qui vérifie l’état et le résultat de l’appel asynchrone.  Vous pouvez fournir les arguments nécessaires à la méthode de rappel via le paramètre facultatif `asyncContext`. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre `asyncResult` de sortie du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’emplacement sous forme de chaîne à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
+Pour utiliser `item.location.getAsync`, fournissez une fonction de rappel qui vérifie l’état et le résultat de l’appel asynchrone. Vous pouvez fournir tous les arguments nécessaires à la fonction de rappel via le `asyncContext` paramètre facultatif. Vous pouvez obtenir l’état, les résultats et toute erreur à l’aide du paramètre `asyncResult` de sortie du rappel. Si l’appel asynchrone aboutit, vous pouvez obtenir l’emplacement sous forme de chaîne à l’aide de la propriété [AsyncResult.value](/javascript/api/office/office.asyncresult#office-office-asyncresult-value-member).
 
 ```js
 let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Get the location of the item being composed.
@@ -158,7 +158,7 @@ function write(message){
 
 Cette section présente un exemple de code qui définit l’emplacement du rendez-vous composé par l’utilisateur.
 
-Pour utiliser `item.location.setAsync`, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une méthode de rappel et tous les arguments de la méthode de rappel dans le paramètre `asyncContext`. Vous devez vérifier l’état, le résultat et tout message d’erreur dans le `asyncResult` paramètre de sortie du rappel. Si l’appel asynchrone aboutit, `setAsync` insère la chaîne d’emplacement spécifiée sous forme de texte brut, en écrasant tous les emplacements existants pour cet élément.
+Pour utiliser `item.location.setAsync`, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une fonction de rappel et tous les arguments de la fonction de rappel dans le `asyncContext` paramètre. Vous devez vérifier l’état, le résultat et tout message d’erreur dans le `asyncResult` paramètre de sortie du rappel. Si l’appel asynchrone aboutit, `setAsync` insère la chaîne d’emplacement spécifiée sous forme de texte brut, en écrasant tous les emplacements existants pour cet élément.
 
 > [!NOTE]
 > Vous pouvez définir plusieurs emplacements à l’aide d’un point-virgule comme séparateur (par exemple, « Salle de conférence A ; Salle de conférence B').
@@ -168,7 +168,7 @@ let item;
 
 Office.initialize = function () {
     item = Office.context.mailbox.item;
-    // Check for the DOM to load using the jQuery ready function.
+    // Check for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
         // After the DOM is loaded, app-specific code can run.
         // Set the location of the item being composed.

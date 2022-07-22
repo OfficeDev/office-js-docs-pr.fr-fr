@@ -3,12 +3,12 @@ title: Créer manuellement des métadonnées JSON pour des fonctions personnalis
 description: Définissez les métadonnées JSON pour les fonctions personnalisées dans Excel et associez vos propriétés d’ID de fonction et de nom.
 ms.date: 12/28/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: fdb3861a7924473b556020fea0ec5916e9291082
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660220"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958579"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Créer manuellement des métadonnées JSON pour des fonctions personnalisées
 
@@ -181,7 +181,7 @@ L’objet `options` vous permet de personnaliser certains aspects de comment et 
 | `cancelable`      | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, Excel appelle le gestionnaire `CancelableInvocation` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Les fonctions annulables sont généralement utilisées uniquement pour les fonctions asynchrones qui retournent un seul résultat et doivent gérer l’annulation d’une demande de données. Une fonction ne peut pas utiliser à la fois les propriétés et `cancelable` les `stream` propriétés. |
 | `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, votre fonction personnalisée peut accéder à l’adresse de la cellule qui l’a appelée. La `address` propriété du [paramètre d’appel](custom-functions-parameter-options.md#invocation-parameter) contient l’adresse de la cellule qui a appelé votre fonction personnalisée. Une fonction ne peut pas utiliser à la fois les propriétés et `requiresAddress` les `stream` propriétés. |
 | `requiresParameterAddresses` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, votre fonction personnalisée peut accéder aux adresses des paramètres d’entrée de la fonction. Cette propriété doit être utilisée en combinaison avec la `dimensionality` propriété de l’objet [de résultat](#result) et `dimensionality` doit être définie sur `matrix`. Pour plus [d’informations, consultez Détecter l’adresse d’un paramètre](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) . |
-| `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur obtenue est transmise en tant qu’argument de la méthode de rappel `StreamingInvocation.setResult`. Pour plus d’informations, consultez [Créer une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur du résultat est passée comme argument de la `StreamingInvocation.setResult` fonction de rappel. Pour plus d’informations, consultez [Créer une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
 | `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, la fonction recalcule chaque fois qu’Excel recalcule, au lieu de seulement lorsque les valeurs dépendantes de la formule ont changé. Une fonction ne peut pas utiliser à la fois les propriétés et `volatile` les `stream` propriétés. Si les propriétés et `volatile` les `stream` propriétés sont définies `true`sur , la propriété volatile est ignorée. |
 
 ### <a name="parameters"></a>paramètres
@@ -208,7 +208,7 @@ L’objet `result` définit le type des informations renvoyées par la fonction.
 
 ## <a name="associating-function-names-with-json-metadata"></a>Mappage des noms de fonction aux métadonnées JSON
 
-Pour qu’une fonction fonctionne correctement, vous devez associer la propriété de `id` la fonction à l’implémentation JavaScript. Assurez-vous qu’il existe une association, sinon la fonction ne sera pas inscrite et n’est pas utilisable dans Excel. L’exemple de code suivant montre comment créer l’association à l’aide de la `CustomFunctions.associate()` méthode. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est **AJOUTER**.
+Pour qu’une fonction fonctionne correctement, vous devez associer la propriété de `id` la fonction à l’implémentation JavaScript. Assurez-vous qu’il existe une association, sinon la fonction ne sera pas inscrite et n’est pas utilisable dans Excel. L’exemple de code suivant montre comment créer l’association à l’aide de la `CustomFunctions.associate()` fonction. L’exemple définit la fonction personnalisée `add` et associe à l’objet dans le fichier de métadonnées JSON où la valeur de la propriété`id`est **AJOUTER**.
 
 ```js
 /**
