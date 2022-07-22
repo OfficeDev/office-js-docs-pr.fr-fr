@@ -14,7 +14,7 @@ Dans cet article, vous utilisez un éditeur de texte pour créer le complément 
 
 - Un fichier manifeste XML (GetDoc_App.xml) pour le complément, disponible dans un dossier réseau partagé ou un catalogue de compléments. Le fichier manifeste doit pointer vers l’emplacement du fichier HTML mentionné précédemment.
 
-Vous pouvez également créer un complément pour PowerPoint à l’aide [de Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) ou du [générateur Yeoman pour les compléments Office](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ou pour Word à l’aide [de Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) ou [du générateur Yeoman pour Office compléments](../quickstarts/word-quickstart.md?tabs=yeomangenerator).
+Vous pouvez également créer un complément pour PowerPoint à l’aide de [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio) ou du [générateur Yeoman pour les compléments Office](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator) ou pour Word à l’aide de [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio) ou [yeoman pour les compléments Office](../quickstarts/word-quickstart.md?tabs=yeomangenerator).
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Concepts fondamentaux à connaître pour créer un complément du volet Office
 
@@ -128,10 +128,10 @@ L’exemple de code suivant montre le gestionnaire d’événements pour l’év
 // The initialize function is required for all add-ins.
 Office.initialize = function (reason) {
 
-    // Checks for the DOM to load using the jQuery ready function.
+    // Checks for the DOM to load using the jQuery ready method.
     $(document).ready(function () {
 
-        // Execute sendFile when submit is clicked
+        // Execute sendFile when submit is clicked.
         $('#submit').click(function () {
             sendFile();
         });
@@ -150,7 +150,7 @@ function updateStatus(message) {
 
 Lorsque vous choisissez le bouton **Envoyer** dans l’interface utilisateur, le complément appelle la `sendFile` fonction, qui contient un appel à la méthode [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . La `getFileAsync` méthode utilise le modèle asynchrone, similaire à d’autres méthodes dans l’API JavaScript pour Office. Elle utilise un paramètre obligatoire, _fileType_, et deux paramètres facultatifs,  _options_ et _callback_.
 
-Le paramètre _fileType_ attend l’une des trois constantes de l’énumération [FileType](/javascript/api/office/office.filetype) : `Office.FileType.Compressed` (« compressé ») **,Office.FileType.PDF** (« pdf ») ou **Office. FileType.Text** (« text »). La prise en charge actuelle du type de fichier pour chaque plateforme est répertoriée sous les remarques [document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . Lorsque vous transmettez **Compressed** pour le paramètre _fileType_, la `getFileAsync` méthode retourne le document sous forme de fichier de présentation PowerPoint 2013 (*.pptx) ou de fichier de document Word 2013 (*.docx) en créant une copie temporaire du fichier sur l’ordinateur local.
+Le paramètre  _fileType_ attend l’une des trois constantes de l’énumération [FileType](/javascript/api/office/office.filetype) : `Office.FileType.Compressed` (« compressé ») **,Office.FileType.PDF** (« pdf ») ou **Office.FileType.Text** (« texte »). La prise en charge actuelle du type de fichier pour chaque plateforme est répertoriée sous les remarques [document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) . Lorsque vous transmettez **Compressed** pour le paramètre _fileType_ , la `getFileAsync` méthode retourne le document sous forme de fichier de présentation PowerPoint 2013 (*.pptx) ou de fichier de document Word 2013 (*.docx) en créant une copie temporaire du fichier sur l’ordinateur local.
 
 La `getFileAsync` méthode retourne une référence au fichier en tant qu’objet [File](/javascript/api/office/office.file) . L’objet `File` expose quatre membres : la propriété [size](/javascript/api/office/office.file#office-office-file-size-member) , la propriété [sliceCount](/javascript/api/office/office.file#office-office-file-slicecount-member) , [la méthode getSliceAsync](/javascript/api/office/office.file#office-office-file-getsliceasync-member(1)) et la méthode [closeAsync](/javascript/api/office/office.file#office-office-file-closeasync-member(1)) . La `size` propriété retourne le nombre d’octets dans le fichier. Retourne `sliceCount` le nombre d’objets [Slice](/javascript/api/office/office.slice) (décrits plus loin dans cet article) dans le fichier.
 
@@ -183,8 +183,8 @@ function sendFile() {
 }
 ```
 
-La fonction `getSlice` locale effectue un appel à la `File.getSliceAsync` méthode pour récupérer une tranche de l’objet `File` . La `getSliceAsync` méthode renvoie un `Slice` objet de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres fonctions dans l’API JavaScript pour Office, la `getSliceAsync` méthode prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de méthode.
-ion `getSlice` effectue un appel à la méthode **File.getSliceAsync** pour récupérer une tranche de l’objet **File** . La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres fonctions dans l’API JavaScript Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de méthode.
+La fonction `getSlice` locale effectue un appel à la `File.getSliceAsync` méthode pour récupérer une tranche de l’objet `File` . La `getSliceAsync` méthode renvoie un `Slice` objet de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres méthodes dans l’API JavaScript pour Office, la `getSliceAsync` méthode prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de méthode.
+ion `getSlice` effectue un appel à la méthode **File.getSliceAsync** pour récupérer une tranche de l’objet **File** . La méthode  **getSliceAsync** retourne un objet **Slice** de la collection de tranches. Elle a deux paramètres requis, _sliceIndex_ et _callback_. Le paramètre  _sliceIndex_ utilise un entier comme indexeur dans la collection de tranches. Comme d’autres méthodes dans l’API JavaScript Office, la méthode **getSliceAsync** prend également une fonction de rappel comme paramètre pour gérer les résultats de l’appel de méthode.
 
 L’objet `Slice` vous donne accès aux données contenues dans le fichier. Sauf indication contraire dans le paramètre _options_ de la `getFileAsync` méthode, la taille de l’objet `Slice` est de 4 Mo. L’objet `Slice` expose trois propriétés : [taille](/javascript/api/office/office.slice#office-office-slice-size-member), [données](/javascript/api/office/office.slice#office-office-slice-data-member) et [index](/javascript/api/office/office.slice#office-office-slice-index-member). La `size` propriété obtient la taille, en octets, de la tranche. La `index` propriété obtient un entier qui représente la position de la tranche dans la collection de tranches.
 
@@ -203,7 +203,7 @@ function getSlice(state) {
 }
 ```
 
-La `Slice.data` propriété retourne les données brutes du fichier sous forme de tableau d’octets. Si les données sont au format texte (c’est-à-dire, XML ou texte brut), la tranche contient du texte brut. Si vous passez **Office. FileType.Compressed** pour le paramètre _fileType_ de `Document.getFileAsync`, la tranche contient les données binaires du fichier sous la forme d’un tableau d’octets. Dans le cas d’un fichier PowerPoint ou Word, les tranches contiennent des tableaux d’octets.
+La `Slice.data` propriété retourne les données brutes du fichier sous forme de tableau d’octets. Si les données sont au format texte (c’est-à-dire, XML ou texte brut), la tranche contient du texte brut. Si vous transmettez **Office.FileType.Compressed** pour le paramètre _fileType_ de `Document.getFileAsync`, la tranche contient les données binaires du fichier sous forme de tableau d’octets. Dans le cas d’un fichier PowerPoint ou Word, les tranches contiennent des tableaux d’octets.
 
 Vous devez implémenter votre propre fonction (ou utiliser une bibliothèque disponible) pour convertir les données d’un tableau d’octets en chaîne codée en Base64. Pour plus d’informations sur le codage en Base64 avec JavaScript, voir [Codage et décodage en Base64](https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding).
 
