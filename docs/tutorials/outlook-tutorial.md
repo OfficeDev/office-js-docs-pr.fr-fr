@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez créer un complément Outlook qui i
 ms.date: 07/13/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 1fb2acde8b79450741f244562467903ea6abf55c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 53b1b30c940ef3b6b1fdaeeecf95e5afb172c472
+ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797651"
+ms.lasthandoff: 07/22/2022
+ms.locfileid: "66958375"
 ---
 # <a name="tutorial-build-a-message-compose-outlook-add-in"></a>Didacticiel : créer un complément de composition de message Outlook
 
@@ -413,7 +413,7 @@ ul {
 }
 ```
 
-Maintenant que vous avez défini la boîte de dialogue interface utilisateur, vous pouvez écrire du code pour l’utiliser. Créez un fichier dans le dossier **./src/settings** nommé **dialog.js** et ajoutez le code suivant. Notez que ce code utilise jQuery pour enregistrer les événements et utilise la fonction **messageParent** pour renvoyer les choix de l'utilisateur à l'appelant.
+Maintenant que vous avez défini la boîte de dialogue interface utilisateur, vous pouvez écrire du code pour l’utiliser. Créez un fichier dans le dossier **./src/settings** nommé **dialog.js** et ajoutez le code suivant. Notez que ce code utilise jQuery pour enregistrer les événements et utilise la méthode `messageParent` pour renvoyer les choix de l'utilisateur à l'appelant.
 
 ```js
 (function(){
