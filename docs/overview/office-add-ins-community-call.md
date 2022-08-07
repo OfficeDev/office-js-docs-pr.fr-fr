@@ -1,14 +1,14 @@
 ---
 title: Appel de la communauté des compléments Microsoft Office
 description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
-ms.date: 07/13/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a96bc5d5b86164d5e7662708c357821792f9f1d
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: ad3d2c1113295c2e441a31317fc3c5ac9886b5e9
+ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889617"
+ms.lasthandoff: 08/07/2022
+ms.locfileid: "67274154"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
 
@@ -16,14 +16,15 @@ L’appel de la communauté des compléments Microsoft Office est un appel mensu
 
 ## <a name="agenda-for-august-10th-call"></a>Ordre du jour de l’appel du 10 août
 
-L’ordre du jour du mois d’août sera affiché environ une semaine avant l’appel.
+- Démonstration des bibliothèques OOXML.
+- Intégrez votre site web aux compléments Excel.
 
 ## <a name="previous-calls"></a>Appels précédents
 
 Vous avez manqué un appel de communauté précédent ? Consultez les ressources de blog suivantes pour reprendre la discussion!
 
 - [8 juin 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-06-08/)
-- [11 mai 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-05-11/)
+- [11 mai 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-05-11/)
 - [13 avril 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-04-13/)
 - [9 mars 2022](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-march-9-2022/)
 - [9 février 2022](https://pnp.github.io/blog/office-add-ins-community-call/office-add-ins-community-call-february-9-2022/)

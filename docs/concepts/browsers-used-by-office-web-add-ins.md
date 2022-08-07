@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 07/27/2022
+ms.date: 08/04/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a4063720f8866d9538865f4514841d8dc8d0a84c
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 7e5deab39ba1d28c4689a622ac9234509dcdba5c
+ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177671"
+ms.lasthandoff: 08/07/2022
+ms.locfileid: "67274161"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -20,10 +20,13 @@ Le navigateur utilisé dépend de ce qui suit :
 - Que le complément s’exécute dans Office sur le Web, Microsoft 365 ou perpétuel (également appelé « achat sans abonnement » ou « achat unique ») Office 2013 ou ultérieur.
 - Dans les versions perpétuelles d’Office, que le complément s’exécute dans la variante « consommateur » ou « commercial » (également appelée « licence en volume » ou « LTSC »).
 
+> [!NOTE]
+> Cet article part du principe que le complément s’exécute dans un document qui *n’est pas* protégé par [Windows Information Protection (WIP).](/windows/uwp/enterprise/wip-hub) Pour les documents protégés par wip, il existe certaines exceptions aux informations contenues dans cet article. Pour plus d’informations, consultez les [documents protégés par WIP](#wip-protected-documents).
+
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les compléments Office**
 >
-> Certaines combinaisons de plateformes et de versions d’Office, notamment les versions perpétuelles via Office 2019, utilisent toujours le contrôle webview fourni avec Internet Explorer 11 pour héberger des compléments, comme expliqué dans cet article. Nous vous recommandons (mais n’exigez pas) de continuer à prendre en charge ces combinaisons, du moins d’une manière minimale, en fournissant aux utilisateurs de votre complément un message d’échec approprié lorsque votre complément est lancé dans la vue web d’Internet Explorer. Gardez à l’esprit ces points supplémentaires :
+> Certaines combinaisons de plateformes et de versions d’Office, notamment les versions perpétuelles commerciales via Office 2019, utilisent toujours le contrôle webview fourni avec Internet Explorer 11 pour héberger des compléments, comme expliqué dans cet article. Nous vous recommandons (mais n’exigez pas) de continuer à prendre en charge ces combinaisons, du moins d’une manière minimale, en fournissant aux utilisateurs de votre complément un message d’échec approprié lorsque votre complément est lancé dans la vue web d’Internet Explorer. Gardez à l’esprit ces points supplémentaires :
 >
 > - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ne teste plus les compléments dans Office sur le Web à l’aide d’Internet Explorer comme navigateur.
 > - AppSource teste toujours les combinaisons de versions de plateforme et de *bureau* Office qui utilisent Internet Explorer, mais elle émet uniquement un avertissement lorsque le complément ne prend pas en charge Internet Explorer; le complément n’est pas rejeté par AppSource.
@@ -124,6 +127,17 @@ Microsoft Edge exige que localhost bénéficie d’une exemption de bouclage sur
 ### <a name="get-errors-trying-to-download-a-pdf-file"></a>Obtenir des erreurs lors de la tentative de téléchargement d’un fichier PDF
 
 Le téléchargement direct d’objets blob en tant que fichiers PDF dans un complément n’est pas pris en charge lorsque Edge est le navigateur. La solution de contournement consiste à créer une application web simple qui télécharge des objets blob en tant que fichiers PDF. Dans votre complément, appelez la `Office.context.ui.openBrowserWindow(url)` méthode et transmettez l’URL de l’application web. Cela ouvre l’application web dans une fenêtre de navigateur en dehors d’Office.
+
+## <a name="wip-protected-documents"></a>Documents protégés par WIP
+
+Les compléments qui s’exécutent dans un document [protégé par WIP](/windows/uwp/enterprise/wip-hub) n’utilisent jamais **Microsoft Edge avec WebView2 (basé sur Chromium).** Dans les sections [Versions perpétuelles d’Office sur Windows](#perpetual-versions-of-office-on-windows) et [de l’abonnement Microsoft 365 sur Windows](#microsoft-365-subscription-on-windows) plus haut dans cet article, remplacez **Microsoft Edge par Le WebView d’origine (EdgeHTML)** pour **Microsoft Edge par WebView2 (basé sur Chromium)** partout où cette dernière apparaît.
+
+Pour déterminer si un document est protégé par wip, procédez comme suit :
+
+1. Ouvrez le fichier.
+1. Sélectionnez l’onglet **Fichier** dans le ruban.
+1. Sélectionnez **Informations**.
+1. Dans le coin supérieur gauche de la page **d’informations** , juste en dessous du nom du fichier, un document compatible WIP comporte une icône en porte-documents suivie **de Managed by Work (...)**.
 
 ## <a name="see-also"></a>Voir aussi
 
