@@ -1,2 +1,0 @@
-> [!TIP]
-> Pour utiliser le générateur d’Yeoman pour créer un complément qui utilise l’authentification unique (SSO), consultez les instructions de la section [Démarrage rapide de l’authentification unique (SSO)](../quickstarts/sso-quickstart.md).
