@@ -3,12 +3,12 @@ title: Compréhension de l’API JavaScript pour Office
 description: Présentation de l’API JavaScript pour Office.
 ms.date: 03/18/2020
 ms.localizationpriority: high
-ms.openlocfilehash: dd7eb6cac4f76307d6ec9ecbb30da15057903687
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: 66e2c9b68e9514c7172c19de51373e0c4edef7d7
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63744202"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422896"
 ---
 # <a name="understanding-the-office-javascript-api"></a>Compréhension de l’API JavaScript pour Office
 
@@ -34,3 +34,4 @@ Un complément Office peut utiliser l’API JavaScript Office pour interagir ave
 - [Chargement du DOM et de l’environnement d’exécution](loading-the-dom-and-runtime-environment.md)
 - [Référencement de la bibliothèque de l’API JavaScript Office](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
 - [Initialiser votre complément Office](initialize-add-in.md)
+- [Runtimes dans les compléments Office](../testing/runtimes.md)

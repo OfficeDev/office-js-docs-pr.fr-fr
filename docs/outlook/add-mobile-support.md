@@ -1,18 +1,18 @@
 ---
 title: Ajout d’une prise en charge mobile pour un complément Outlook
-description: L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
-ms.date: 07/16/2021
+description: Découvrez comment ajouter la prise en charge d’Outlook Mobile, notamment comment mettre à jour le manifeste du complément et modifier votre code pour les scénarios mobiles, si nécessaire.
+ms.date: 04/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e99c862d4cd63590a86c757bf2b720c096826a9
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
+ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496970"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318878"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
-L’utilisation des commandes de Outlook Mobile permet à vos utilisateurs d’accéder aux mêmes fonctionnalités (avec certaines [limitations](#code-considerations)) que dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
+L’utilisation de commandes de complément dans Outlook Mobile permet à vos utilisateurs d’accéder aux [mêmes fonctionnalités](#code-considerations) (avec certaines limitations) qu’ils ont déjà dans Outlook sur le web, Windows et Mac. L’ajout de la prise en charge d’Outlook Mobile nécessite la mise à jour du manifeste de complément et éventuellement la modification de votre code pour les scénarios mobiles.
 
 ## <a name="updating-the-manifest"></a>Mise à jour du manifeste
 
@@ -20,7 +20,7 @@ La première étape de l’activation des commandes de complément dans Outlook�
 
 Cet élément contient toutes les informations pour charger le complément dans des clients mobiles. Cela vous permet de définir entièrement différents éléments de l’interface utilisateur et fichiers JavaScript pour l’expérience mobile.
 
-L’exemple suivant montre un bouton de volet de tâches unique dans un `MobileFormFactor` élément.
+L’exemple suivant montre un bouton de volet Office unique dans un `MobileFormFactor` élément.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
@@ -72,7 +72,7 @@ La conception d’un complément pour mobile implique certaines considérations 
 
 La méthode [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
 
-L’ensemble de conditions requises de la boîte aux lettres 1.5 a introduit une nouvelle version de [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) qui peut demander un jeton d’accès compatible avec les API REST et une nouvelle propriété [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
+L’ensemble de conditions requises de boîte aux lettres 1.5 a introduit une nouvelle version [d’Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) qui peut demander un jeton d’accès compatible avec les API REST et une nouvelle propriété [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
 
 ### <a name="pinch-zoom"></a>Pincer pour zoomer
 
@@ -84,11 +84,14 @@ Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et e
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 
-Actuellement, les compléments dans Outlook Mobile ne peuvent être activés que lors de la lecture de messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, les modules intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus d’informations sur cette exception (y compris les API disponibles), voir Créer un Outlook mobile pour un fournisseur de [réunion en ligne](online-meeting.md#available-apis).
+Actuellement, les compléments dans Outlook Mobile prennent uniquement en charge l’activation lors de la lecture des messages. Les compléments ne sont pas activés lors de la composition des messages, ou lors de l’affichage ou de la rédaction des rendez-vous. Toutefois, il existe deux exceptions :
+
+1. Les compléments intégrés du fournisseur de réunions en ligne peuvent être activés en mode Organisateur de rendez-vous. Pour plus d’informations sur cette exception (y compris les API disponibles), consultez [Créer un complément mobile Outlook pour un fournisseur de réunions en ligne](online-meeting.md#available-apis).
+1. Les compléments qui journalisent les notes de rendez-vous et d’autres détails sur la gestion des relations client (CRM) ou les services de prise de notes peuvent être activés en mode Participant au rendez-vous. Pour plus d’informations sur cette exception (y compris les API disponibles), [reportez-vous aux notes de rendez-vous du journal sur une application externe dans les compléments mobiles Outlook](mobile-log-appointments.md#available-apis).
 
 ### <a name="unsupported-apis"></a>API non prises en charge
 
-Les API introduites dans l’ensemble de conditions requises 1.6 ou ultérieure ne sont pas Outlook Mobile. Les API suivantes des ensembles de conditions requises antérieures ne sont pas non plus pris en charge.
+Les API introduites dans l’ensemble de conditions requises 1.6 ou version ultérieure ne sont pas prises en charge par Outlook Mobile. Les API suivantes des ensembles de conditions requises antérieurs ne sont pas non plus prises en charge.
 
 - [Office.context.officeTheme](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context#officetheme-officetheme)
 - [Office.context.mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)

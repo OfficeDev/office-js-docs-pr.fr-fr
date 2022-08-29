@@ -1,14 +1,14 @@
 ---
 title: Glossaire des termes des compléments Office
 description: Glossaire des termes couramment utilisés dans la documentation des compléments Office.
-ms.date: 06/15/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 77bf8a04886e35b3678dfa3054ca166c2aed2512
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660213"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423292"
 ---
 # <a name="office-add-ins-glossary"></a>Glossaire des compléments Office
 
@@ -74,9 +74,9 @@ Une **fonction personnalisée** est une fonction définie par l’utilisateur qu
 
 ## <a name="custom-functions-runtime"></a>runtime de fonctions personnalisées
 
-Un **runtime de fonctions personnalisées** est un runtime JavaScript uniquement qui exécute uniquement des fonctions personnalisées. Il n’a pas d’interface utilisateur et ne peut pas interagir avec Office.js API. Si votre complément a uniquement des fonctions personnalisées, il s’agit d’un bon runtime léger à utiliser. Si vos fonctions personnalisées doivent interagir avec le volet Office ou les API Office.js, configurez un runtime JavaScript partagé. Pour plus d’information, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+Un **runtime de fonctions personnalisées** est un [runtime JavaScript uniquement](../testing/runtimes.md#javascript-only-runtime) qui exécute des fonctions personnalisées sur certaines combinaisons d’hôtes et de plateformes Office. Il n’a pas d’interface utilisateur et ne peut pas interagir avec Office.js API. Si votre complément a uniquement des fonctions personnalisées, il s’agit d’un bon runtime léger à utiliser. Si vos fonctions personnalisées doivent interagir avec le volet Office ou les API Office.js, configurez un [runtime partagé](../testing/runtimes.md#shared-runtime). Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md) .
 
-Voir aussi : [Runtime JavaScript](#javascript-runtime), [runtime JavaScript partagé, runtime partagé](#shared-javascript-runtime-shared-runtime).
+Voir aussi : [runtime](#runtime), [runtime partagé](#shared-runtime).
 
 ## <a name="host"></a>host
 
@@ -84,11 +84,7 @@ Voir aussi : [Runtime JavaScript](#javascript-runtime), [runtime JavaScript part
 
 Voir aussi : [application](#application), [client](#client), [application Office, client Office](#office-application-office-client).
 
-## <a name="javascript-runtime"></a>Runtime JavaScript
 
-Le **runtime JavaScript** est l’environnement hôte du navigateur dans lequel le complément s’exécute. Dans Office sur Windows et Office sur Mac, le runtime JavaScript est un contrôle de navigateur incorporé (ou webview) tel qu’Internet Explorer, Edge Hérité, Edge WebView2 ou Safari. Différentes parties d’une exécution de complément dans des runtimes JavaScript distincts. Par exemple, les commandes de complément, les fonctions personnalisées et le code du volet Office utilisent généralement des runtimes JavaScript distincts, sauf si vous configurez un runtime JavaScript partagé. Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md) .
-
-Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), [runtime JavaScript partagé, runtime partagé](#shared-javascript-runtime-shared-runtime), [webview](#webview).
 
 ## <a name="office-application-office-client"></a>Application Office, client Office
 
@@ -116,13 +112,15 @@ Un **ruban** est une barre de commandes qui organise les fonctionnalités d’un
 
 ## <a name="runtime"></a>Duree
 
-Voir : [Runtime JavaScript](#javascript-runtime).
+Un **runtime** est l’environnement hôte (y compris un moteur JavaScript et généralement également un moteur de rendu HTML) dans lequel le complément s’exécute. Dans Office sur Windows et Office sur Mac, le runtime est un contrôle de navigateur incorporé (ou webview) tel qu’Internet Explorer, Edge Hérité, Edge WebView2 ou Safari. Différentes parties d’une exécution de complément dans des runtimes distincts. Par exemple, les commandes de complément, les fonctions personnalisées et le code du volet Office utilisent généralement des runtimes distincts, sauf si vous configurez un [runtime partagé](../testing/runtimes.md#shared-runtime). Pour plus d’informations, consultez [Runtimes in Office Add-ins](../testing/runtimes.md) and [Browsers used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) .
 
-## <a name="shared-javascript-runtime-shared-runtime"></a>runtime JavaScript partagé, runtime partagé
+Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), [runtime partagé](#shared-runtime), [webview](#webview).
 
-Un **runtime JavaScript partagé**, ou **runtime partagé**, permet à tout le code de votre complément, y compris le volet Office, les commandes de complément et les fonctions personnalisées, de s’exécuter dans le même runtime JavaScript et de continuer à s’exécuter même lorsque le volet Office est fermé. Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md) et [des conseils pour utiliser le runtime JavaScript partagé dans votre complément Office](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) .
+## <a name="shared-runtime"></a>runtime partagé
 
-Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), [runtime JavaScript](#javascript-runtime).
+Un **runtime partagé** permet à tout le code de votre complément, y compris le volet Office, les commandes de complément et les fonctions personnalisées, de s’exécuter dans le même runtime et de continuer à s’exécuter même lorsque le volet Office est fermé. Pour plus d’informations, consultez le [runtime partagé](../testing/runtimes.md#shared-runtime) et [les conseils relatifs à l’utilisation du runtime partagé dans votre complément Office](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) .
+
+Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), [runtime](#runtime).
 
 ## <a name="task-pane"></a>volet Office
 
@@ -138,7 +136,7 @@ Voir aussi : [démarrage rapide](#quick-start).
 
 ## <a name="custom-functions-only-add-in"></a>complément de fonctions personnalisées uniquement
 
-Complément qui contient une fonction personnalisée, mais aucune interface utilisateur telle qu’un volet Office. Les fonctions personnalisées de ce type de complément s’exécutent dans un runtime JavaScript uniquement. Une fonction personnalisée qui inclut une interface utilisateur peut utiliser un runtime partagé ou une combinaison d’un runtime JavaScript uniquement et d’un runtime html. Nous vous recommandons d’utiliser un runtime partagé si vous disposez d’une interface utilisateur. 
+Complément qui contient une fonction personnalisée, mais aucune interface utilisateur telle qu’un volet Office. Les fonctions personnalisées de ce type de complément s’exécutent dans un [runtime JavaScript uniquement](../testing/runtimes.md#javascript-only-runtime). Une fonction personnalisée qui inclut une interface utilisateur peut utiliser un runtime partagé ou une combinaison d’un runtime JavaScript uniquement et d’un runtime html. Nous vous recommandons d’utiliser un runtime partagé si vous disposez d’une interface utilisateur. 
 
 Voir aussi : [fonction personnalisée](#custom-function), [runtime de fonctions personnalisées](#custom-functions-runtime).
 

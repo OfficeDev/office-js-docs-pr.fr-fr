@@ -3,12 +3,12 @@ title: Commandes Activé et Désactivé pour les compléments
 description: Découvrez la modification de l'état Activé ou Désactivé des boutons de rubans et des éléments de menu personnalisés dans votre complément web Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 97aa591bfe734e3211d2e1b4e5aabac03c625ff3
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 502c9247a6c63775c562dab7479e0ca926f14154
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958838"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423047"
 ---
 # <a name="enable-and-disable-add-in-commands"></a>Commandes Activé et Désactivé pour les compléments
 
@@ -36,7 +36,7 @@ Les API enable/disable appartiennent à l’ensemble de conditions requises [Rib
 
 ## <a name="shared-runtime-required"></a>Runtime partagé requis
 
-Les API et balisages de manifeste décrits dans cet article exigent que le manifeste du complément spécifie la nécessité d’utiliser un runtime partagé. Pour ce faire, procédez comme suit.
+Les API et le balisage de manifeste décrits dans cet article nécessitent que le manifeste du complément spécifie qu’il doit utiliser un [runtime partagé](../testing/runtimes.md#shared-runtime). Pour ce faire, procédez comme suit.
 
 1. Dans l'élément [Runtimes du manifeste](/javascript/api/manifest/runtimes), ajoutez l’élément enfant suivant : `<Runtime resid="Contoso.SharedRuntime.Url" lifetime="long" />`. (S’il n’existe pas encore d’élément **\<Runtimes\>** dans le manifeste, créez-le en tant que premier enfant sous l’élément **\<Host\>** de la **\<VersionOverrides\>** section.)
 2. Dans la section [Resources.Urls](/javascript/api/manifest/resources) du manifeste, ajoutez l’élément enfant suivant : `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://{MyDomain}/{path-to-start-page}" />`, où `{MyDomain}` est le domaine du complément et `{path-to-start-page}` le chemin d’accès de la page de démarrage du complément. par exemple : `<bt:Url id="Contoso.SharedRuntime.Url" DefaultValue="https://localhost:3000/index.html" />`.

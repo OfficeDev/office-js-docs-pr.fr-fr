@@ -1,16 +1,16 @@
 ---
-title: Déboguer les fonctions initialiser et onReady
+title: Déboguer les fonctions initialize et onReady
 description: Découvrez comment déboguer les fonctions Office.initialize et Office.onReady.
 ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d26c0f2686477f74fbe65550b7d35cc69e7be71
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4dca551d8a016e7aad16cfdc02590f0a51455852
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958845"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423250"
 ---
-# <a name="debug-the-initialize-and-onready-functions"></a>Déboguer les fonctions initialiser et onReady
+# <a name="debug-the-initialize-and-onready-functions"></a>Déboguer les fonctions initialize et onReady
 
 > [!NOTE]
 > Cet article part du principe que vous connaissez bien [Initialiser votre complément Office](../develop/initialize-add-in.md).
@@ -26,3 +26,7 @@ Heureusement, il existe une exception. Vous pouvez déboguer ces fonctions à l�
 
 > [!TIP]
 > Pour plus d’informations, consultez [Les compléments de débogage dans Office sur le Web](debug-add-ins-in-office-online.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Runtimes dans les compléments Office](runtimes.md)

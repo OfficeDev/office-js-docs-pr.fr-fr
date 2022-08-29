@@ -1,18 +1,18 @@
 ---
 title: Afficher ou masquer le volet des tâches de votre complément Office
 description: Découvrez comment masquer ou afficher par programmation l’interface utilisateur d’un complément pendant son exécution continue.
-ms.date: 07/18/2022
+ms.date: 08/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 001e77553bf6e1a0eda91c9459885ccd46de6f47
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 8122282414fcc9472fc300acd07da354d5a282f0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958607"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422882"
 ---
 # <a name="show-or-hide-the-task-pane-of-your-office-add-in"></a>Afficher ou masquer le volet des tâches de votre complément Office
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 Vous pouvez afficher le volet Office de votre complément Office en appelant la `Office.addin.showAsTaskpane()` méthode.
 
@@ -47,7 +47,7 @@ Lorsque vous appelez `Office.addin.showAsTaskpane()`, Office affiche dans un vol
 
 ## <a name="configure-your-add-in-to-use-the-shared-runtime"></a>Configurer votre complément pour utiliser le runtime partagé
 
-Pour utiliser les méthodes et `hide()` les `showAsTaskpane()` méthodes, votre complément doit utiliser le runtime partagé. Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md).
+Pour utiliser les méthodes et `hide()` les `showAsTaskpane()` méthodes, votre complément doit utiliser le [runtime partagé](../testing/runtimes.md#shared-runtime). Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="preservation-of-state-and-event-listeners"></a>Préservation de l’état et des écouteurs d’événements
 
@@ -69,7 +69,7 @@ Pour inscrire un gestionnaire pour l’événement, vous n’utilisez pas de mé
 
 ```javascript
 Office.addin.onVisibilityModeChanged(function(args) {
-    if (args.visibilityMode = "Taskpane"); {
+    if (args.visibilityMode == "Taskpane") {
         // Code that runs whenever the task pane is made visible.
         // For example, an Excel.run() that loads the names of
         // all worksheets and passes them to the task pane UI.
@@ -82,7 +82,7 @@ La fonction retourne une autre fonction qui *désinscrit* le gestionnaire. Voici
 ```javascript
 const removeVisibilityModeHandler =
     Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -99,7 +99,7 @@ La `onVisibilityModeChanged` méthode est asynchrone et retourne une promesse, c
 // the returned deregister handler to removeVisibilityModeHandler.
 const removeVisibilityModeHandler =
     await Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode = "Taskpane"); {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -115,5 +115,5 @@ await removeVisibilityModeHandler();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Exécuter un cote dans votre complément Office lors de l’ouverture du document](run-code-on-document-open.md)

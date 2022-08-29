@@ -3,22 +3,22 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: f6fd5e2c184f9daceab999e371e0abab9146d5fb
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63745867"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423306"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
 Vous pouvez utiliser la journalisation runtime pour déboguer le manifeste de votre complément ainsi que plusieurs erreurs d’installation. Cette fonctionnalité peut vous aider à identifier et à résoudre les problèmes avec votre manifeste qui ne sont pas détectés par la validation de schéma XSD, comme une incompatibilité entre les ID de ressources. La journalisation runtime est particulièrement utile pour déboguer des compléments qui implémentent des commandes de complément et des fonctions personnalisées Excel.
 
 > [!NOTE]
-> La fonctionnalité de journalisation runtime est actuellement disponible Office 2016 ou version ultérieure sur ordinateur de bureau.
+> La fonctionnalité de journalisation du runtime est actuellement disponible pour Office 2016 ou version ultérieure sur le bureau.
 
 > [!IMPORTANT]
-> La journalisation runtime réduit les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
+> La journalisation runtime affecte les performances. Activez-la uniquement lorsque vous avez besoin de déboguer des problèmes avec votre manifeste de complément.
 
 ## <a name="use-runtime-logging-from-the-command-line"></a>Utiliser la journalisation de l’exécution à partir de la ligne de commande
 
@@ -85,14 +85,14 @@ L’image suivante indique à quoi doit ressembler le registre. Pour désactiver
 
     `<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution. `<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.
 
-    Définissez `<bundle id>` cette propriété sur l’une des valeurs suivantes pour activer la journalisation runtime pour l’application correspondante.
+    Définissez `<bundle id>` l’une des valeurs suivantes pour activer la journalisation du runtime pour l’application correspondante.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
     - `com.microsoft.Powerpoint`
     - `com.microsoft.Outlook`
 
-L’exemple suivant active la journalisation runtime pour Word, puis ouvre le fichier journal.
+L’exemple suivant active la journalisation du runtime pour Word, puis ouvre le fichier journal.
 
 ```command&nbsp;line
 defaults write com.microsoft.Word CEFRuntimeLoggingFile -string "runtime_logs.txt"
@@ -108,7 +108,7 @@ Pour désactiver la journalisation de l’exécution, utilisez la commande `defa
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-L’exemple suivant désactivera la journalisation runtime pour Word.
+L’exemple suivant désactive la journalisation du runtime pour Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
@@ -146,3 +146,4 @@ Vous pouvez afficher des messages dans le fichier journal qui sont source de con
 - [Déboguer des compléments à l’aide des outils de développement pour Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
 - [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Runtimes dans les compléments Office](runtimes.md)

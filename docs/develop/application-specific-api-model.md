@@ -3,12 +3,12 @@ title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8035a334f3314382f48d6cd796f46188bea9b091
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889337"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422942"
 ---
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
@@ -45,7 +45,7 @@ Excel.run(function (context) {
 
 ## <a name="request-context"></a>Contexte de demande
 
-L’application Office et votre complément s’exécutent selon deux processus différents. Dans la mesure où ils utilisent différents environnements d’exécution différents, les compléments nécessitent un objet `RequestContext` pour connecter votre complément à des objets dans Office tels que des feuilles de calcul, des plages, des paragraphes et des tableaux. Cet objet `RequestContext` est fourni en tant qu’argument lors de l’appel de `*.run`.
+L’application Office et votre complément s’exécutent dans différents processus. Dans la mesure où ils utilisent différents environnements d’exécution différents, les compléments nécessitent un objet `RequestContext` pour connecter votre complément à des objets dans Office tels que des feuilles de calcul, des plages, des paragraphes et des tableaux. Cet objet `RequestContext` est fourni en tant qu’argument lors de l’appel de `*.run`.
 
 ## <a name="proxy-objects"></a>Objets proxy
 

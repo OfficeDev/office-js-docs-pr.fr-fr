@@ -1,18 +1,18 @@
 ---
 title: Confidentialité et sécurité pour les compléments Office
 description: Découvrez les aspects de confidentialité et de sécurité de la plateforme de compléments Office.
-ms.date: 07/18/2022
+ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e505678cf13df39334a19a41dd5b018dcb12dfba
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 3092503ad8c4afedc253b0c5a2f14369572b17f3
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958722"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422963"
 ---
 # <a name="privacy-and-security-for-office-add-ins"></a>Confidentialité et sécurité pour les compléments Office
 
-## <a name="understanding-the-add-in-runtime"></a>Présentation du runtime de complément
+## <a name="process-security"></a>Sécurité des processus
 
 Les Compléments Office sont sécurisées par un environnement d’exécution de complément, un modèle d’autorisations à plusieurs niveaux et des gouverneurs de performances. Cette infrastructure protège l’expérience utilisateur des manières suivantes.
 
@@ -31,6 +31,9 @@ En outre, l’infrastructure d’exécution offre les avantages suivants pour ga
 - Simplifie l’installation et la désinstallation des compléments.
 
 De plus, l’utilisation des ressources de mémoire, de processeur et réseau par les compléments Office peut être régie afin de garantir de bonnes performances et une excellente fiabilité.
+
+> [!NOTE]
+> Dans certains scénarios, différentes fonctionnalités d’un complément s’exécutent dans des runtimes distincts. Par souci de simplicité, cet article utilise le singulier « runtime ». Pour plus d’informations, consultez [Runtimes dans les compléments Office](../testing/runtimes.md). 
 
 Les sections suivantes décrivent brièvement comment l’architecture du runtime prend en charge l’exécution de compléments dans les clients Office sur des appareils Windows, sur des appareils Mac OS X et dans des navigateurs web.
 

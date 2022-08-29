@@ -4,12 +4,12 @@ description: Découvrez comment partager des données et des événements entre 
 ms.date: 06/15/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: b61ac6305586e5de2f53a0950fd6a52a0503eafd
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: b19569ce191f0c7dafc0877984a0f05595380e05
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958727"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422746"
 ---
 # <a name="tutorial-share-data-and-events-between-excel-custom-functions-and-the-task-pane"></a>Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office
 
@@ -33,7 +33,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
 
 1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
 1. Ouvrez le fichier **manifest.xml**.
-1. Remplacer (ou ajouter) la section suivante XML **\<Requirements\>** pour exiger l'[ensemble d'exigences d'exécution partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+1. Remplacez (ou ajoutez) la section XML suivante **\<Requirements\>** pour exiger [l’ensemble de conditions requises pour le runtime partagé](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
 
     ```xml
     <Requirements>
@@ -80,7 +80,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
     ```
 
     > [!NOTE]
-    > Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
+    > Si votre complément inclut l’élément **\<Runtimes\>** dans le manifeste (requis pour un runtime partagé) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basée sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
 
 1. Recherchez l’élément **\<Page\>** . Puis remplacez l’emplacement de la source **Functions.Page.Url** par **TaskPane.Url**.
 
@@ -106,7 +106,7 @@ Suivez ces étapes pour configurer le projet de complément pour utiliser un run
 
 ## <a name="configure-the-webpackconfigjs-file"></a>Configurer le fichier webpack.config.js
 
-Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous devez le modifier pour charger uniquement le runtime JavaScript partagé via le fichier **taskpane.html**.
+Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous devez le modifier pour charger uniquement le runtime partagé via le fichier **taskpane.html** .
 
 1. Ouvrez le fichier **webpack.config.js**.
 1. Allez dans la `plugins:` rubrique.
@@ -147,7 +147,7 @@ Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous de
     ```
 
     > [!NOTE]
-    > Vous pouvez également supprimer les fichiers **functions.html** et **Commands.html**. Le **taskpane.html** charge le **code functions.js** et **Commands.js** dans l'environnement d'exécution JavaScript partagé via les mises à jour du pack Web que vous venez de faire.
+    > Vous pouvez également supprimer les fichiers **functions.html** et **Commands.html**. Le **taskpane.html** charge le **codefunctions.js** et **commands.js** dans le runtime partagé via les mises à jour webpack que vous venez d’effectuer.
 
 1. Enregistrez vos changements et exécutez le projet. Assurez-vous qu'il se charge et s'exécute sans erreur.
 
@@ -275,4 +275,4 @@ Une fois Excel démarré, vous pouvez utiliser les boutons du volet Office pour 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurer votre complément Office pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

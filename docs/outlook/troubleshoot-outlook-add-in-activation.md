@@ -1,14 +1,14 @@
 ---
 title: Résolution des problèmes d’activation de complément contextuel Outlook
 description: Les raisons possibles pour lesquelles votre complément ne s’active pas comme prévu.
-ms.date: 06/03/2022
+ms.date: 08/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 40175139f83a026226bf500c7f949ff37e3f21b2
-ms.sourcegitcommit: 81f6018ac9731ff73e36d30f5ff10df21504c093
+ms.openlocfilehash: c0034eccc1143e3af9867702cdf7cefa6f6a8c53
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2022
-ms.locfileid: "65891934"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318885"
 ---
 # <a name="troubleshoot-outlook-add-in-activation"></a>Résolution des problèmes d’activation des compléments Outlook
 
@@ -68,16 +68,15 @@ Utilisez l’une des approches suivantes pour vérifier si un complément est d�
 
 ## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>Les éléments testés prennent-ils en charge les compléments Outlook et sont-ils remis par une version d’Exchange Server correspondant au minimum à Exchange 2013 ?
 
-Si votre complément Outlook est un complément de lecture et est supposé être activé lorsque l’utilisateur visualise un message (y compris les esmails, les demandes de réunions, les réponses et les annulations) ou un rendez-vous, même si ces éléments prennent en charge les compléments de manière générale, il existe des exceptions. Vérifiez si l’élément sélectionné est l’un de ceux[ répertoriés pour lesquels les compléments Outlook ne s’activent pas](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
+Si votre complément Outlook est un complément de lecture et est supposé être activé lorsque l’utilisateur visualise un message (y compris les esmails, les demandes de réunions, les réponses et les annulations) ou un rendez-vous, même si ces éléments prennent en charge les compléments de manière générale, il existe des exceptions. Vérifiez si l’élément sélectionné est l’un des éléments [répertoriés où les compléments Outlook ne sont pas activés](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
 
-En outre, les rendez-vous étant toujours enregistrés au format RTF, une règle [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) qui spécifie une valeur **PropertyName** de **BodyAsHTML** n’active pas de complément pour un rendez-vous ou un message enregistré au format texte brut ou RTF.
+En outre, étant donné que les rendez-vous sont toujours enregistrés au format texte enrichi, une règle [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) qui spécifie une valeur **PropertyName** de **BodyAsHTML** n’active pas un complément sur un rendez-vous ou un message enregistré en texte brut ou au format texte enrichi.
 
-Même si un élément de messagerie ne correspond pas à l’un des types ci-dessus, si cet élément n’a pas été remis par une version d’Exchange Server correspondant au minimum à Exchange 2013, les entités et les propriétés connues telles que l’adresse SMTP de l’expéditeur ne sont pas identifiées pour l’élément. Les règles d’activation qui dépendent de ces entités ou propriétés ne sont pas satisfaites et le complément n’est pas activé.
+Même si un élément de messagerie n’est pas l’un des types ci-dessus, si l’élément n’a pas été remis par une version de Exchange Server qui est au moins Exchange 2013, les entités et propriétés connues, telles que l’adresse SMTP de l’expéditeur, ne seraient pas identifiées sur l’élément. Les règles d’activation qui s’appuient sur ces entités ou propriétés ne seraient pas satisfaites et le complément ne serait pas activé.
 
-Si votre complément est un complément de composition et qu’il est censé être activé lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par IRM. Toutefois, il existe quelques exceptions.
+Dans Outlook sur les clients en plus de Windows, si votre complément s’active lorsque l’utilisateur compose un message ou une demande de réunion, assurez-vous que l’élément n’est pas protégé par la Gestion des droits relatifs à l’information (IRM).
 
-1. Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
-1. Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM.  Pour plus d’informations sur cette prise en charge en préversion, consultez [l’activation du complément sur les éléments protégés par la Gestion des droits relatifs à l’information (IRM).](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm)
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 ## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>Est-ce que le manifeste du complément est correctement installé et est-ce qu’Outlook dispose d’une copie mise en cache ?
 
@@ -183,7 +182,7 @@ Les expressions régulières contenues dans les règles d’activation font part
 
 Les clients riches Outlook utilisent un moteur d’expression régulière différent de celui utilisé par Outlook sur le web et sur appareils mobiles. Les clients riches Outlook utilisent le moteur d’expressions régulières C++ fourni avec la bibliothèque de modèles standard de Visual Studio. Ce moteur est conforme aux normes ECMAScript 5. Outlook sur le web et sur appareils mobiles utilisent l’évaluation d’expression régulière incluse dans JavaScript. Celle-ci est fournie par le navigateur et prend en charge un sur-ensemble d’ECMAScript 5.
 
-Bien que dans la plupart des cas, ces clients Outlook trouvent les mêmes correspondances pour la même expression régulière dans une règle d’activation, il existe des exceptions. Par exemple, si l’expression régulière inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfinies, un client riche Outlook peut retourner des résultats différents d’Outlook sur le web et les appareils mobiles. Par exemple, les classes de caractères qui contiennent des classes de caractères abrégées  `[\d\w]` renvoient des résultats distincts. Dans ce cas, pour éviter des résultats différents sur différentes applications, utilisez `(\d|\w)` plutôt.
+Bien que dans la plupart des cas, ces clients Outlook trouvent les mêmes correspondances pour la même expression régulière dans une règle d’activation, il existe des exceptions. Par exemple, si l’expression régulière inclut une classe de caractères personnalisée basée sur des classes de caractères prédéfinies, un client riche Outlook peut retourner des résultats différents de Outlook sur le web et des appareils mobiles. Par exemple, les classes de caractères qui contiennent des classes de caractères abrégées  `[\d\w]` renvoient des résultats distincts. Dans ce cas, pour éviter des résultats différents sur différentes applications, utilisez `(\d|\w)` plutôt.
 
 Testez minutieusement l’expression régulière. Si elle renvoie des résultats différents, réécrivez l’expression régulière pour qu’elle soit compatible avec les deux moteurs. Pour vérifier les résultats d’évaluation sur un client riche Outlook, écrivez un court programme C++ qui applique l’expression régulière par rapport à un échantillon du texte auquel vous essayez de la faire correspondre. Lors de son exécution dans Visual Studio, le programme de test C++ utilise la bibliothèque de modèles standards, simulant le comportement du client riche Outlook lors de l’exécution de la même expression régulière. Pour vérifier les résultats de l’évaluation sur Outlook sur le web ou sur appareils mobiles, utilisez le testeur d’expression régulière JavaScript privilégié.
 

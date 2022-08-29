@@ -3,16 +3,16 @@ title: Développer votre complément Office pour utiliser itp lors de l’utilis
 description: Utilisation des compléments ITP et Office lors de l’utilisation de cookies tiers
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e2a949045fdb5bff87480d1077e692f5e8b9af6
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: b01051fa39441fddb2453b0bd95a0629ebf3ef65
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889268"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423089"
 ---
 # <a name="develop-your-office-add-in-to-work-with-itp-when-using-third-party-cookies"></a>Développer votre complément Office pour utiliser itp lors de l’utilisation de cookies tiers
 
-Si votre complément Office nécessite des cookies tiers, ces cookies sont bloqués si la prévention du suivi intelligent (ITP) est utilisée par le runtime de navigateur qui a chargé votre complément. Vous pouvez utiliser des cookies tiers pour authentifier les utilisateurs, ou pour d’autres scénarios, tels que le stockage des paramètres.
+Si votre complément Office nécessite des cookies tiers, ces cookies sont bloqués si le [runtime](../testing/runtimes.md) qui a chargé votre complément utilise la prévention du suivi intelligent (ITP). Vous pouvez utiliser des cookies tiers pour authentifier les utilisateurs, ou pour d’autres scénarios, tels que le stockage des paramètres.
 
 Si votre complément Office et votre site web doivent s’appuyer sur des cookies tiers, procédez comme suit pour utiliser itp.
 

@@ -1,26 +1,26 @@
 ---
-title: Activer l’authentification unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur les événements
+title: Activer l’authentification unique (SSO) dans les compléments Outlook qui utilisent l’activation basée sur les événements
 description: Découvrez comment activer l’authentification unique lors de l’utilisation d’un complément d’activation basé sur des événements.
 ms.date: 06/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 477ecb8c0ab84ab472763f83e342258998749861
-ms.sourcegitcommit: d8fbe472b35c758753e5d2e4b905a5973e4f7b52
+ms.openlocfilehash: 10fd973c0476878443d7238e8805aa4db9f62953
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/25/2022
-ms.locfileid: "66229728"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423117"
 ---
-# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Activer l’authentification unique (SSO) dans Outlook compléments qui utilisent l’activation basée sur les événements
+# <a name="enable-single-sign-on-sso-in-outlook-add-ins-that-use-event-based-activation"></a>Activer l’authentification unique (SSO) dans les compléments Outlook qui utilisent l’activation basée sur les événements
 
-Lorsqu’un complément Outlook utilise l’activation basée sur les événements, les événements s’exécutent dans un runtime JavaScript distinct. Après avoir effectué les étapes décrites dans [Authentifier un utilisateur avec un jeton d’authentification unique dans un complément Outlook](authenticate-a-user-with-an-sso-token.md), suivez les étapes supplémentaires décrites dans cet article pour activer l’authentification unique pour votre code de gestion des événements. Une fois que vous avez activé l’authentification unique, vous pouvez appeler [l’API getAccessToken()](/javascript/api/office-runtime/officeruntime.auth) pour obtenir un jeton d’accès avec l’identité de l’utilisateur.
+Lorsqu’un complément Outlook utilise l’activation basée sur les événements, les événements s’exécutent dans un [runtime](../testing/runtimes.md) distinct. Après avoir effectué les étapes décrites dans [Authentifier un utilisateur avec un jeton d’authentification unique dans un complément Outlook](authenticate-a-user-with-an-sso-token.md), suivez les étapes supplémentaires décrites dans cet article pour activer l’authentification unique pour votre code de gestion des événements. Une fois que vous avez activé l’authentification unique, vous pouvez appeler [l’API getAccessToken()](/javascript/api/office-runtime/officeruntime.auth) pour obtenir un jeton d’accès avec l’identité de l’utilisateur.
 
 > [!IMPORTANT]
-> `Office.auth.getAccessToken` Tout en `OfficeRuntime.auth.getAccessToken` effectuant les mêmes fonctionnalités de récupération d’un jeton d’accès, nous vous recommandons d’appeler `OfficeRuntime.auth.getAccessToken` votre complément basé sur les événements. Cette API est prise en charge dans toutes les versions clientes Outlook qui prennent en charge l’activation basée sur les événements et l’authentification unique. En revanche, `Office.auth.getAccessToken` est pris en charge uniquement dans Outlook sur Windows à partir de la version 2111 (build 14701.20000).
+> `Office.auth.getAccessToken` Tout en `OfficeRuntime.auth.getAccessToken` effectuant les mêmes fonctionnalités de récupération d’un jeton d’accès, nous vous recommandons d’appeler `OfficeRuntime.auth.getAccessToken` votre complément basé sur les événements. Cette API est prise en charge dans toutes les versions du client Outlook qui prennent en charge l’activation basée sur les événements et l’authentification unique. En revanche, `Office.auth.getAccessToken` est uniquement pris en charge dans Outlook sur Windows à partir de la version 2111 (build 14701.20000).
 
-Pour Outlook sur Windows, dans le manifeste de votre complément Outlook, vous identifiez un seul fichier JavaScript à charger pour l’activation basée sur les événements. Vous devez également spécifier pour Office que ce fichier est autorisé à prendre en charge l’authentification unique. Pour ce faire, vous créez une liste de tous les compléments et de leurs fichiers JavaScript à fournir à Office par le biais d’un URI connu.
+Pour Outlook sur Windows, dans le manifeste de votre complément Outlook, vous identifiez un seul fichier JavaScript à charger pour l’activation basée sur les événements. Vous devez également spécifier à Office que ce fichier est autorisé à prendre en charge l’authentification unique. Pour ce faire, vous créez une liste de tous les compléments, ainsi que leurs fichiers JavaScript, à fournir à Office via un URI connu.
 
 > [!NOTE]
-> Les étapes décrites dans cet article s’appliquent uniquement lors de l’exécution de votre complément Outlook sur Windows. Cela est dû au fait que Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript.
+> Les étapes décrites dans cet article s’appliquent uniquement lors de l’exécution de votre complément Outlook sur Windows. Cela est dû au fait qu’Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web utilise un fichier HTML qui peut référencer le même fichier JavaScript.
 
 ## <a name="list-allowed-add-ins-with-a-well-known-uri"></a>Répertorier les compléments autorisés avec un URI connu
 

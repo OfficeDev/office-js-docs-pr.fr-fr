@@ -3,12 +3,12 @@ title: Créer des onglets contextuels personnalisés dans les compléments Offic
 description: Découvrez comment ajouter des onglets contextuels personnalisés à votre complément Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 23f6c64d1b3f0e95b8dcae6bc36563566acb8b3f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 09cd7ad6e9c8f4e8370df430a5b79a70d7bf0dd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958532"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423054"
 ---
 # <a name="create-custom-contextual-tabs-in-office-add-ins"></a>Créer des onglets contextuels personnalisés dans les compléments Office
 
@@ -55,7 +55,7 @@ Voici les étapes principales pour inclure un onglet contextuel personnalisé da
 
 ## <a name="configure-the-add-in-to-use-a-shared-runtime"></a>Configurer le complément pour utiliser un runtime partagé
 
-L’ajout d’onglets contextuels personnalisés nécessite que votre complément utilise le runtime partagé. Pour plus d’informations, consultez [Configurer un complément pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+L’ajout d’onglets contextuels personnalisés nécessite que votre complément utilise le [runtime partagé](../testing/runtimes.md#shared-runtime). Pour plus d’informations, consultez [Configurer un complément pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 ## <a name="define-the-groups-and-controls-that-appear-on-the-tab"></a>Définir les groupes et les contrôles qui apparaissent sous l’onglet
 
@@ -419,7 +419,7 @@ Pour ouvrir un volet Office qui n’est pas le volet office par défaut, spécif
 
 > [!IMPORTANT]
 >
-> - Lorsqu’un `sourceLocation` élément est spécifié pour l’action, le volet Office n’utilise *pas* le runtime partagé. Il s’exécute dans un nouveau runtime JavaScript.
+> - Lorsqu’un `sourceLocation` élément est spécifié pour l’action, le volet Office n’utilise *pas* le runtime partagé. Il s’exécute dans un nouveau runtime distinct.
 > - Pas plus d’un volet office ne peut utiliser le runtime partagé. Par conséquent, aucune action de type `ShowTaskpane` ne peut omettre la `sourceLocation` propriété.
 
 ```json

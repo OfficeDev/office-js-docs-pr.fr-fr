@@ -3,12 +3,12 @@ title: Appeler des API JavaScript Excel à partir d’une fonction personnalisé
 description: Découvrez les API JavaScript Excel que vous pouvez appeler à partir de votre fonction personnalisée.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 04edd5104e0def7631352bc315a0c451ae067d98
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958417"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423187"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler des API JavaScript Excel à partir d’une fonction personnalisée
 
@@ -18,7 +18,7 @@ Appelez les API JavaScript Excel à partir de vos fonctions personnalisées pour
 - Une fonction personnalisée définit le format numérique de la cellule pour les valeurs de retour après calcul.
 
 > [!IMPORTANT]
-> Pour appeler des API JavaScript Excel à partir de votre fonction personnalisée, vous devez utiliser un runtime JavaScript partagé. Pour plus d’information, consultez [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+> Pour appeler des API JavaScript Excel à partir de votre fonction personnalisée, vous devez utiliser un [runtime partagé](../testing/runtimes.md#shared-runtime). Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md) .
 
 ## <a name="code-sample"></a>Exemple de code
 
@@ -61,11 +61,11 @@ La modification d’Excel peut entraîner des performances médiocres, des déla
 
 Au lieu de cela, apportez des modifications à Excel à partir du contexte d’un bouton du ruban ou du volet Office.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
 
 - [Concepts fondamentaux de programmation avec l’API JavaScript pour Excel](../reference/overview/excel-add-ins-reference-overview.md)
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Partager des données et des événements entre les fonctions personnalisées Excel et le didacticiel du volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
-- [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurer votre complément Office pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md)

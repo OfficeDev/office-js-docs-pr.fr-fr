@@ -4,12 +4,12 @@ ms.prod: non-product-specific
 description: Didacticiel sur le partage de codes entre un complément VSTO et un complément Office.
 title: 'Didacticiel : partage de codes entre un complément VSTO et un complément Office à l’aide d’une bibliothèque de codes partagée'
 ms.localizationpriority: high
-ms.openlocfilehash: 2a115e31352cff6a256cb993b33839eb544d77b4
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: c3d73336975b7b544b3eabbf0b83a25df0b2962d
+ms.sourcegitcommit: 41b95d8bfd3ad525908ff165bd6c9318e1f0f792
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959055"
+ms.lasthandoff: 08/17/2022
+ms.locfileid: "67364669"
 ---
 # <a name="tutorial-share-code-between-both-a-vsto-add-in-and-an-office-add-in-with-a-shared-code-library"></a>Didacticiel : partage de codes entre un complément VSTO et un complément Office avec une bibliothèque de codes partagée
 
@@ -63,10 +63,6 @@ Ce didacticiel utilise la solution PnP pour la [Bibliothèque de compléments VS
 1. Téléchargez la solution PnP pour la [Bibliothèque de compléments VSTO partagés pour les compléments Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) vers un dossier de travail de votre ordinateur.
 1. Démarrez Visual Studio 2019 et ouvrez la solution **/start/Cell-Analyzer.sln**.
 1. Dans le menu **Déboguer**, choisissez **Démarrer le débogage**.
-1. Dans l’**Explorateur de solutions**, cliquez à l'aide du bouton droit sur le projet **Analyseur de cellule**, puis choisissez **Propriétés**.
-1. Sélectionnez la catégorie de **Signature** dans les propriétés.
-1. Sélectionnez **Signer des manifestes ClickOnce**, puis choisissez **Créer un certificat de test**.
-1. Dans la boîte de dialogue **Créer un certificat de test**, saisissez et confirmez un mot de passe. Choisissez ensuite **OK**.
 
 Le complément est un volet de tâche personnalisé Office pour Excel. Vous pouvez sélectionner n’importe quelle cellule contenant un texte, puis choisissez le bouton **Afficher les Unicodes**. Dans la section **Résultat** , le complément affiche une liste de chaque caractère du texte, ainsi que leur nombre Unicode correspondant.
 

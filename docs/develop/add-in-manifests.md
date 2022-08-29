@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 09b4d5b2b9fc92c977217df94730b3e6e56cacaa
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659989"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422970"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -153,7 +153,7 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 [L’élément Facultatif VersionOverrides est](/javascript/api/manifest/versionoverrides) une mention spéciale. Il contient des marques enfants qui activent des fonctionnalités de complément supplémentaires. Certains d’entre eux sont les suivants :
 
 - Personnalisation du Office et des menus.
-- Personnalisation du fonctionnement Office avec le runtime de navigateur incorporé dans lequel les compléments s’exécutent.
+- Personnalisation du fonctionnement d’Office avec les runtimes incorporés dans lesquels les compléments s’exécutent.
 - Configuration de la façon dont le complément interagit avec Azure Active Directory et Microsoft Graph pour l’authentification unique.
 
 Certains éléments descendants `VersionOverrides` ont des valeurs qui remplacent les valeurs de l’élément `OfficeApp` parent. Par exemple, `Hosts` l’élément dans `VersionOverrides` remplace `Hosts` l’élément dans `OfficeApp` .

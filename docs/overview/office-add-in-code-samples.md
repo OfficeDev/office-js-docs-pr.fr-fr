@@ -3,12 +3,12 @@ title: Exemples de code Office
 description: Une liste d Office exemples de code pour vous aider à apprendre et à créer vos propres modules.
 ms.date: 06/10/2022
 localization_priority: high
-ms.openlocfilehash: 9accbb7e0e5297af3dd4481b5f239af2710d601f
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091026"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423264"
 ---
 # <a name="office-add-in-code-samples"></a>Exemples de code Office
 
@@ -79,7 +79,7 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 | [Sign-on (SSO) Office add-in with ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Utilisez `getAccessToken` l'API dans Office.js pour donner au complément un accès aux données Microsoft Graph. Cet exemple est construit sur ASP.NET. |
 | [Sign-on (SSO) Office add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Utilisez `getAccessToken` l'API dans Office.js pour donner au complément un accès aux données Microsoft Graph. Cet exemple est construit sur Node.js.|
 
-## <a name="shared-javascript-runtime"></a>Runtime JavaScript partagé
+## <a name="shared-runtime"></a>Runtime partagé requis
 
 | Nom                | Description         |
 |:--------------------|:--------------------|

@@ -1,2 +1,2 @@
 > [!NOTE]
-> Cet article nécessite que votre Office de service soit configuré pour utiliser un runtime partagé. Pour plus d’informations, [voir Configurer votre Office pour utiliser un runtime partagé.](../develop/configure-your-add-in-to-use-a-shared-runtime.md)
+> Cet article nécessite que votre complément Office soit configuré pour utiliser un [runtime partagé](../testing/runtimes.md#shared-runtime). Pour plus d’informations, consultez [Configurer votre complément Office pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md).

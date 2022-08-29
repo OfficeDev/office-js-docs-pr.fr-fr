@@ -2,14 +2,14 @@
 title: Créer un complément Outlook pour un fournisseur de réunions en ligne
 description: Explique comment configurer un complément Outlook pour un fournisseur de services de réunion en ligne.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d4934e3e04e566cb6badf46cd7447b754b0c94b6
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797658"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67320657"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Créer un complément Outlook pour un fournisseur de réunions en ligne
 
@@ -326,7 +326,7 @@ Plusieurs restrictions s’appliquent.
 - Seuls les compléments installés par l’administrateur apparaissent sur l’écran de composition de la réunion, en remplaçant l’option Teams ou Skype par défaut. Les compléments installés par l’utilisateur ne sont pas activés.
 - L’icône de complément doit être en nuances de gris à l’aide de code `#919191` hexadécimal ou de son équivalent dans [d’autres formats de couleur](https://convertingcolors.com/hex-color-919191.html).
 - Une seule commande de fonction est prise en charge en mode Organisateur de rendez-vous (composition).
-- Le complément doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’expiration d’une minute. Toutefois, tout temps passé dans une boîte de dialogue que le complément a ouvert pour l’authentification, etc., est exclu du délai d’expiration.
+- Le complément doit mettre à jour les détails de la réunion dans le formulaire de rendez-vous dans le délai d’expiration d’une minute. Toutefois, tout temps passé dans une boîte de dialogue le complément ouvert pour l’authentification, par exemple, est exclu du délai d’expiration.
 
 ## <a name="see-also"></a>Voir aussi
 

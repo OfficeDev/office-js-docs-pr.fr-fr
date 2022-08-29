@@ -3,16 +3,16 @@ title: Exécuter un cote dans votre complément Office lors de l’ouverture du 
 description: Découvrez comment exécuter du code dans votre complément Office lorsque le document s’ouvre.
 ms.date: 09/17/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1c3277a349dc4054da5f089c62331296590021
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ef580151a5b3289c801f3e872988cbb3474bd8e0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958438"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422916"
 ---
 # <a name="run-code-in-your-office-add-in-when-the-document-opens"></a>Exécuter un cote dans votre complément Office lors de l’ouverture du document
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 Vous pouvez configurer votre complément Office pour charger et exécuter du code dès que le document est ouvert. Cela est utile si vous devez inscrire des gestionnaires d’événements, précharger des données pour le volet Office, synchroniser l’interface utilisateur ou effectuer d’autres tâches avant que le complément ne soit visible.
 
@@ -104,6 +104,7 @@ let behavior = await Office.addin.getStartupBehavior();
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Configurer votre complément Office pour utiliser un runtime JavaScript partagé](configure-your-add-in-to-use-a-shared-runtime.md)
+- [Configurer votre complément Office pour utiliser un runtime partagé](configure-your-add-in-to-use-a-shared-runtime.md)
 - [Partager des données et des événements entre les fonctions personnalisées Excel et le didacticiel du volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Utilisation d’événements à l’aide de l’API JavaScript pour Excel](../excel/excel-add-ins-events.md)
+- [Runtimes dans les compléments Office](../testing/runtimes.md)

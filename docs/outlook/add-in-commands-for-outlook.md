@@ -3,12 +3,12 @@ title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: d58f8cd76f965007fdc9621c53fe52ed18dd6dd9
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 80f1e1f4386b41012b2aa777c16225d3f0fd8432
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797686"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423243"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
@@ -64,7 +64,7 @@ L’interface utilisateur d’une commande de complément se compose d’un bout
 - **Commandes de fonction** : le bouton ou l’élément de menu exécute n’importe quel Code JavaScript arbitraire. Le code appelle presque toujours des API dans la bibliothèque JavaScript Office, mais cela n’est pas nécessaire. Ce type de complément n’affiche généralement aucune autre interface utilisateur que le bouton ou l’élément de menu lui-même. Notez ce qui suit sur les commandes de fonction :
 
    - La fonction déclenchée peut appeler la méthode [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) pour afficher une boîte de dialogue, ce qui est un bon moyen d’afficher une erreur, d’afficher la progression ou d’inviter l’utilisateur à entrer des données.
-   - Le runtime JavaScript dans lequel la commande de fonction s’exécute est un runtime complet basé sur un navigateur. Il peut afficher un code HTML et appeler Internet pour envoyer ou obtenir des données.
+   - Le runtime dans lequel la commande de fonction s’exécute est un [runtime complet basé sur un navigateur](../testing/runtimes.md#browser-runtime). Il peut afficher un code HTML et appeler Internet pour envoyer ou obtenir des données.
 
 ### <a name="run-a-function-command"></a>Exécuter une commande de fonction
 

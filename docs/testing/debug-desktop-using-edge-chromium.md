@@ -3,12 +3,12 @@ title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code 
 description: Apprenez à déboguer les modules complémentaires Office qui utilisent Microsoft Edge WebView2 (basé sur Chromium) dans VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 10c65ef26e59433e1215daa4b7a49b17413e102d
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: 58c676ada092ff31737da4b257bbd6e5e158c0dc
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959076"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423299"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
@@ -145,3 +145,4 @@ Si votre projet n’a pas été créé avec Yo Office, vous devez créer une con
 - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
 - [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 - [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md)
+- [Runtimes dans les compléments Office](runtimes.md)

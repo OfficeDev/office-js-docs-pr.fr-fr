@@ -3,12 +3,12 @@ title: Concepts basiques pour les commandes de complément
 description: Découvrez l'ajout de boutons et d'éléments de menu personnalisés au ruban dans Office dans le cadre d’un complément Office.
 ms.date: 07/05/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a85c3e5cf4bf1a22ac3e6fe440514e19d80b2448
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: 30a548e9d831952e372d044257f520130882848c
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66659674"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423061"
 ---
 # <a name="add-in-commands-for-excel-powerpoint-and-word"></a>Commandes de complément pour Excel, PowerPoint et Word
 
@@ -36,8 +36,8 @@ Il existe deux types de commandes de complément en fonction du type d’action 
 - **Commandes du volet Office** : le bouton ou l’élément de menu qui ouvre le volet Office du complément. Vous ajoutez ce type de commande de complément avec des marques dans le manifeste. Le « code-behind » de la commande est fourni par Office.
 - **Commandes de fonction** : le bouton ou l’élément de menu exécute n’importe quel Code JavaScript arbitraire. Le code appelle presque toujours des API dans la bibliothèque JavaScript Office, mais cela n’est pas nécessaire. Ce type de complément n’affiche généralement aucune autre interface utilisateur que le bouton ou l’élément de menu lui-même. Notez ce qui suit sur les commandes de fonction :
 
-   - La fonction déclenchée peut appeler la méthode [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) pour afficher une boîte de dialogue, ce qui est un bon moyen d’afficher une erreur, d’afficher la progression ou d’inviter l’utilisateur à entrer des données. Si le complément est configuré pour utiliser un runtime partagé, la fonction peut également appeler la méthode [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)).
-   - Le runtime JavaScript dans lequel la commande de fonction s’exécute est un runtime complet basé sur un navigateur. Il peut afficher un code HTML et appeler Internet pour envoyer ou obtenir des données.
+   - La fonction déclenchée peut appeler la méthode [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) pour afficher une boîte de dialogue, ce qui est un bon moyen d’afficher une erreur, d’afficher la progression ou d’inviter l’utilisateur à entrer des données. Si le complément est configuré pour utiliser un [runtime partagé](../testing/runtimes.md#shared-runtime), la fonction peut également appeler la méthode [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) .
+   - Le runtime dans lequel la commande de fonction s’exécute est un [runtime complet basé sur un navigateur](../testing/runtimes.md#browser-runtime). Il peut afficher un code HTML et appeler Internet pour envoyer ou obtenir des données.
 
 ## <a name="command-capabilities"></a>Fonctionnalités de commande
 

@@ -3,12 +3,12 @@ title: Résolution des erreurs rencontrées par l’utilisateur avec des complé
 description: Découvrez comment résoudre les erreurs de développement dans les compléments Office.
 ms.date: 07/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18236787ad6ffa9139eb95299723c8935d584668
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177664"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423194"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -80,7 +80,7 @@ Consultez [La rubrique Résoudre les problèmes liés aux compléments Excel pou
 
 ## <a name="manifest-schema-validation-errors-in-visual-studio-projects"></a>Erreurs de validation de schéma de manifeste dans les projets Visual Studio
 
-Si vous utilisez des fonctionnalités plus récentes qui nécessitent des modifications dans le fichier manifeste, vous pouvez obtenir des erreurs de validation dans Visual Studio. Par exemple, lors de l’ajout de l’élément **\<Runtimes\>** pour implémenter le runtime JavaScript partagé, vous pouvez voir l’erreur de validation suivante.
+Si vous utilisez des fonctionnalités plus récentes qui nécessitent des modifications dans le fichier manifeste, vous pouvez obtenir des erreurs de validation dans Visual Studio. Par exemple, lors de l’ajout de l’élément **\<Runtimes\>** pour implémenter le [runtime partagé](runtimes.md#shared-runtime), vous pouvez voir l’erreur de validation suivante.
 
 **L’élément 'Host' dans l’espace de noms 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' a l’élément enfant 'Runtimes' non valide dans l’espace de noms 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 
@@ -120,4 +120,5 @@ Lorsque vous chargez la bibliothèque JavaScript Office à partir d’une copie 
 - [Valider le manifeste d’un complément Office](troubleshoot-manifest.md)
 - [Déboguer votre complément avec la journalisation runtime](runtime-logging.md)
 - [Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office](testing-and-troubleshooting.md)
+- [Runtimes dans les compléments Office](runtimes.md)
 - [Microsoft Q&A (office-js-dev)](/answers/topics/office-js-dev.html)

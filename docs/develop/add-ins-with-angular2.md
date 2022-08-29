@@ -3,12 +3,12 @@ title: Développement de compléments Office avec Angular
 description: Utilisez Angular pour créer un complément Office en tant qu’application monopage.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b139dfcd97971fca4e97ac0c6ebe175d836a5a
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bbac0f94b731b2853e17ed3db785b50ea99ef6e4
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958474"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422955"
 ---
 # <a name="develop-office-add-ins-with-angular"></a>Développement de compléments Office avec Angular
 
@@ -154,7 +154,7 @@ ng serve --aot
 
 ## <a name="support-internet-explorer-if-youre-dynamically-loading-officejs"></a>Prenez en charge Internet Explorer si vous chargez dynamiquement Office.js
 
-En fonction de la version de Windows et du client de bureau Office où votre complément est en cours d’exécution, votre complément peut utiliser Internet Explorer 11. (Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).) Angular dépend de quelques `window.history` Les API, mais ces API ne fonctionnent pas dans le runtime IE incorporé dans les clients de bureau Windows. Lorsque ces API ne fonctionnent pas, votre complément peut ne pas fonctionner correctement, par exemple, il peut charger un volet Office vide. Pour atténuer ce problème, Office.js nullifie ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant Office.js. Dans ce cas, vous devez désactiver les `window.history` API en ajoutant le code suivant à la page **index.html** de votre complément.
+En fonction de la version de Windows et du client de bureau Office où votre complément est en cours d’exécution, votre complément peut utiliser Internet Explorer 11. (Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).) Angular dépend de quelques `window.history` Les API, mais ces API ne fonctionnent pas dans le runtime Internet Explorer qui est parfois utilisé pour exécuter des compléments Office dans les clients de bureau Windows. Lorsque ces API ne fonctionnent pas, votre complément peut ne pas fonctionner correctement, par exemple, il peut charger un volet Office vide. Pour atténuer ce problème, Office.js nullifie ces API. Toutefois, si vous chargez dynamiquement Office.js, AngularJS peut se charger avant Office.js. Dans ce cas, vous devez désactiver les `window.history` API en ajoutant le code suivant à la page **index.html** de votre complément.
 
 ```js
 <script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>

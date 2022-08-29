@@ -1,14 +1,14 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 07/27/2021
+ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 07f1565432d5b6b1e0371e9238fffb835b7d8931
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
-ms.translationtype: HT
+ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484669"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318892"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -45,7 +45,7 @@ L’illustration suivante affiche les quatre niveaux d’autorisations et décri
 
 **Association du modèle d’autorisation à quatre niveaux à l’utilisateur final, au développeur et à l’administrateur**
 
-![Modèle d’autorisations à 4 niveaux pour le schéma d’applications de messagerie v1.1.](../images/add-in-permission-tiers.png)
+![Diagramme du modèle d’autorisations à quatre niveaux pour le schéma v1.1 des applications de messagerie.](../images/add-in-permission-tiers.png)
 
 ## <a name="appsource-add-in-integrity"></a>AppSource : intégrité de complément
 
@@ -61,9 +61,9 @@ L’illustration suivante affiche les quatre niveaux d’autorisations et décri
 
 ## <a name="optional-connected-experiences"></a>Expériences connectées facultatives
 
-Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les compléments Outlook, l’impact de la désactivation du paramètres **Expériences connectées optionnelles** dépend du client, mais les compléments installés par l’utilisateur et l’accès à Office Store ne sont généralement pas autorisés. Certains compléments Microsoft sont considérés comme essentiels ou stratégiques, et les compléments déployés par l’administrateur informatique d’une organisation via [Déploiement centralisé](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) restent disponibles.
+Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver [expériences connectées facultatives dans ](/deployoffice/privacy/optional-connected-experiences) les clients de bureau et mobiles Office. Pour les compléments Outlook, l’impact de la désactivation du paramètre **d’expériences connectées facultatives** dépend du client, mais signifie généralement que les compléments installés par l’utilisateur et l’accès à l’Office Store ne sont pas autorisés. Certains compléments Microsoft sont considérés comme essentiels ou stratégiques, et les compléments déployés par l’administrateur informatique d’une organisation via [Déploiement centralisé](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) restent disponibles.
 
-- Windows\*, Mac : le bouton **Obtenir des compléments** ne s’affiche pas afin que les utilisateurs ne puissent plus gérer leurs compléments ni accéder à Office Store.
+- Windows\*, Mac : le bouton **Obtenir des compléments** n’est pas affiché pour que les utilisateurs ne puissent plus gérer leurs compléments ni accéder à l’Office Store.
 - Android, iOS : la boîte de dialogue **Obtenir des compléments** affiche uniquement les compléments déployés par l’administrateur.
 - Navigateur : la disponibilité des compléments et l’accès au Store ne sont pas affectés de sorte que les utilisateurs puissent continuer à [gérer leurs compléments](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), y compris ceux déployés par l’administrateur.
 
@@ -76,16 +76,13 @@ Pour obtenir des informations générales sur le comportement des compléments, 
 
 Le modèle de sécurité résout les problèmes de sécurité, de confidentialité et de performance des utilisateurs des manières suivantes.
 
-- Les messages des utilisateurs qui sont protégés par la Gestion des droits relatifs à l’information (IRM) d’Outlook n’ont pas d’interaction avec les compléments Outlook.
+- Les messages de l’utilisateur final qui sont protégés par la gestion des droits relatifs à l’information (IRM) d’Outlook n’interagissent pas avec les compléments Outlook sur les clients non Windows.
 
-  > [!IMPORTANT]
-  > - Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
-  >
-  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, voir [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - Avant d’installer un complément de AppSource, les utilisateurs finals peuvent voir l’accès dont peut disposer le complément, ainsi que les actions qu’il peut effectuer sur leurs données, et doivent explicitement confirmer qu’ils veulent poursuivre. Aucun complément Outlook n’est automatiquement transmis sur un ordinateur client sans une validation manuelle par l’utilisateur ou l’administrateur.
 
-- L’octroi de l’autorisation **Restreint** permet au complément Outlook d’avoir un accès limité uniquement sur l’élément actuel. L’octroi de l’autorisation **Lire l’élément** permet au complément Outlook d’accéder à des informations d’identification personnelle, par exemple les noms et les adresses électroniques des expéditeurs et des destinataires, uniquement sur l’élément actuel.
+- L’octroi de l’autorisation **Restreint** permet au complément Outlook d’avoir un accès limité uniquement sur l’élément actuel.  L’octroi de l’autorisation **d’élément de lecture** permet au complément Outlook d’accéder aux informations d’identification personnelles, telles que les noms d’expéditeur et de destinataire et les adresses e-mail, uniquement sur l’élément actif.
 
 - Un utilisateur final peut installer un complément Outlook uniquement pour lui-même. Les compléments de messagerie ayant une incidence sur l’organisation sont installés par un administrateur.
 
@@ -130,7 +127,7 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
     <Permissions>ReadItem</Permissions>
   ```
 
-- Les développeurs peuvent demander l’autorisation **Restreint** si le complément Outlook est activé lorsqu’un type spécifique d’élément Outlook (rendez-vous ou message) ou des entités extraites spécifiques (numéro de téléphone, adresse, URL) sont présents dans l’objet ou le corps de l’élément. Par exemple, la règle suivante active le complément Outlook si une ou plusieurs des trois entités (numéro de téléphone, adresse postale ou URL) se trouvent dans l’objet ou le corps du message actuel.
+- Les développeurs peuvent demander l’autorisation **restreinte** si le complément Outlook s’active sur un type spécifique d’élément Outlook (rendez-vous ou message) ou sur des entités extraites spécifiques (numéro de téléphone, adresse, URL) présentes dans l’objet ou le corps de l’élément. Par exemple, la règle suivante active le complément Outlook si une ou plusieurs des trois entités (numéro de téléphone, adresse postale ou URL) se trouvent dans l'objet ou le corps du message courant.
 
   ```XML
     <Permissions>Restricted</Permissions>
@@ -144,9 +141,9 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
     </Rule>
   ```
 
-- Les développeurs doivent demander l’autorisation **Lire l’élément** si le complément Outlook doit lire les propriétés de l’élément actuel autres que les entités extraites par défaut, ou écrire des propriétés personnalisées définies par le complément sur l’élément actuel, mais ne nécessite pas de lire ou d’écrire d’autres éléments, ou de créer ou d’envoyer un message dans la boîte aux lettres de l’utilisateur. Par exemple, un développeur doit demander l’autorisation **Lire l’élément** si un complément Outlook doit rechercher une entité telle qu’une suggestion de réunion, une suggestion de tâche, une adresse électronique, ou un nom de contact dans l’objet ou le corps de l’élément, ou utilise une expression régulière pour s’activer.
+- Les développeurs doivent demander l’autorisation **d’élément de lecture** si le complément Outlook doit lire les propriétés de l’élément actif autres que les entités extraites par défaut, ou écrire des propriétés personnalisées définies par le complément sur l’élément actif, mais ne nécessite pas de lecture ou d’écriture dans d’autres éléments, ni la création ou l’envoi d’un message dans la boîte aux lettres de l’utilisateur. Par exemple, un développeur doit demander l’autorisation **lire élément** si un complément Outlook doit rechercher une entité comme une suggestion de réunion, une suggestion de tâche, une adresse e-mail ou un nom de contact dans le sujet ou le corps de l'élément, ou utilise une expression régulière pour se faire activer.
 
-- Les développeurs doivent demander l’autorisation **Lire/écrire dans l’élément** si le complément Outlook doit écrire dans les propriétés de l’élément composé, comme les noms des destinataires, les adresses de messagerie, le corps et l’objet, ou s’il a besoin d’ajouter ou de supprimer des pièces jointes d’élément.
+- Les développeurs doivent demander l’autorisation **Lire/écrire dans l’élément** si le complément Outlook doit écrire dans les propriétés de l’élément composé, comme les noms des destinataires, les adresses de messagerie, le corps et l’objet, ou s’il a besoin d’ajouter ou de supprimer des pièces jointes d’élément.
 
 - Les développeurs demandent l’autorisation **Lire/écrire dans la boîte aux lettres** uniquement si le complément Outlook doit effectuer une ou plusieurs des actions suivantes à l’aide de la méthode [mailbox.makeEWSRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods).
 
@@ -162,7 +159,7 @@ Les développeurs doivent connaître les limites de l’utilisation des ressourc
 
 Les développeurs doivent connaître et planifier les éléments suivants.
 
-- Les développeurs ne peuvent pas utiliser de contrôles ActiveX dans les compléments car ils ne sont pas pris en charge.
+- Les développeurs ne peuvent pas utiliser de contrôles ActiveX dans les compléments, car ils ne sont pas pris en charge.
 
 - Les développeurs doivent procéder comme suit lorsqu’ils envoient un complément Outlook à AppSource.
 

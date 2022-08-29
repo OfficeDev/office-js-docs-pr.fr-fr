@@ -3,12 +3,12 @@ title: Authentifier et autoriser avec l’API de dialogue Office
 description: Découvrez comment utiliser l’API de boîte de dialogue Office pour permettre aux utilisateurs de se connecter à Google, Facebook, Microsoft 365 ainsi qu'à d’autres services protégés par la plateforme Microsoft Identity.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 4788fbf42870c6b23faa4cd89c74a8547cb1a7bc
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
-ms.translationtype: HT
+ms.openlocfilehash: feb2859eb518cfd64f4b3682313452b1b452859f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743631"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423131"
 ---
 # <a name="authenticate-and-authorize-with-the-office-dialog-api"></a>Authentifier et autoriser avec l’API de dialogue Office
 
@@ -23,7 +23,7 @@ La boîte de dialogue ouverte avec cette API présente les caractéristiques sui
 
 - C'est [non modal](https://en.wikipedia.org/wiki/Dialog_box).
 - Il s’agit d’une instance de navigateur totalement distincte du volet de tâches, ce qui signifie :
-  - Elle possède ses propres environnements d’exécution JavaScript et objets de fenêtre et variables globales.
+  - Il possède son propre environnement d’exécution, son objet de fenêtre et ses variables globales.
   - Il n’existe pas d’environnement d’exécution partagé dans le volet des tâches.
   - Il ne partage pas le même espace de stockage de session (la propriété [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)) que le volet Office.
 - La première page ouverte dans la boîte de dialogue doit être hébergée dans le même domaine que le volet des tâches, y compris le protocole, les sous-domaines et le port, le cas échéant.
@@ -68,7 +68,7 @@ Quelques exemples de compléments d’authentification qui utilisent l’API de 
 
 ## <a name="use-authentication-libraries-with-the-dialog-box"></a>Utiliser la bibliothèques d’authentification avec la boîte de dialogue
 
-Le fait que la boîte de dialogue Office et le volet des tâches s’exécutent dans différents navigateurs et instances JavaScript Runtime, signifie que vous devez utiliser des bibliothèques d’authentification et d’autorisation de manière différente de la façon dont elles sont utilisées lorsque l’authentification et l’autorisation ont lieu dans la même fenêtre. Les sections suivantes décrivent les façons dont vous pouvez et ne pouvez pas utiliser ces bibliothèques.
+Étant donné que la boîte de dialogue Office et le volet Office s’exécutent dans [différentes instances du runtime de navigateur](../testing/runtimes.md#browser-runtime), vous devez utiliser les bibliothèques d’authentification/d’autorisation différemment de la façon dont elles sont utilisées lorsque l’authentification et l’autorisation ont lieu dans la même fenêtre. Les sections suivantes décrivent les façons dont vous pouvez et ne pouvez pas utiliser ces bibliothèques.
 
 ### <a name="you-usually-cannot-use-the-librarys-internal-cache-to-store-tokens"></a>En général, vous ne pouvez pas utiliser le cache interne de la bibliothèque pour stocker des jetons
 

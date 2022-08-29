@@ -3,12 +3,12 @@ title: Débogage des compléments Office
 description: Recherchez les conseils de débogage des compléments Office pour votre environnement de développement.
 ms.date: 07/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 18738896789e6b3e00734d0f7d4af0ce5cdd7458
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: f23e55b2d3ceb84e32365ffbbcb9efafedfebcfc
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958761"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423271"
 ---
 # <a name="overview-of-debugging-office-add-ins"></a>Vue d’ensemble du débogage Office des modules
 
@@ -63,7 +63,7 @@ L’exemple suivant fournit des instructions générales sur le débogage sur Wi
     - [Déboguer des compléments à l’aide des outils de développement pour la version héritée Edge](debug-add-ins-using-devtools-edge-legacy.md)
     - [Déboguer des compléments à l’aide des Outils de développement dans Microsoft Edge (basés sur Chromium)](debug-add-ins-using-devtools-edge-chromium.md)
 
-Pour plus d’informations sur le runtime du navigateur utilisé, voir Navigateurs utilisés par [les Office de recherche.](../concepts/browsers-used-by-office-web-add-ins.md)
+Pour plus d’informations sur le runtime utilisé, consultez [Navigateurs utilisés par les compléments](../concepts/browsers-used-by-office-web-add-ins.md) Office et [les runtimes dans les compléments Office](runtimes.md).
 
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
@@ -86,3 +86,7 @@ Il n'existe pas de version de bureau d'Office pour Linux. Vous devrez donc charg
 ## <a name="debug-add-ins-in-staging-or-production"></a>Déboguer des compléments en préproduction ou en production
 
 Pour déboguer un complément déjà en préproduction ou en production, attachez un débogueur à partir de l’interface utilisateur du complément. Pour obtenir des instructions, consultez [Attacher un débogueur à partir du volet Office](attach-debugger-from-task-pane.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Runtimes dans les compléments Office](runtimes.md)

@@ -1,16 +1,16 @@
 ---
 title: Présentation des compléments Outlook
 description: Les compléments Outlook sont des intégrations conçues par des tiers dans Outlook à l’aide de notre plate-forme web.
-ms.date: 07/11/2022
+ms.date: 08/09/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 6c0b5d9547bbc0661d6410391f894586cdaffab3
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 0503a0cfae39e58c11fefc6cc87a239d7ecdbc05
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797504"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318810"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
@@ -46,13 +46,9 @@ Les points d’extension correspondent à la manière dont les compléments sont
 
 Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un message ou un rendez-vous, mais pas d’autres types d’éléments. Cependant, ils ne sont *pas* activés si l’élément de message actuel, en mode de composition ou de lecture, est l’un des éléments suivants :
 
-- protégé par la Gestion des droits relatifs à l’information (IRM) ou chiffré par d’autres moyens de protection. Un message signé numériquement en est un exemple, puisque la signature numérique dépend de l’un de ces mécanismes ;
+- Protégé par la Gestion des droits relatifs à l’information (IRM) ou chiffré d’autres manières pour la protection et accessible à partir d’Outlook sur des clients non Windows. Un message signé de façon numérique constitue un exemple, puisque la signature numérique dépend de l’un de ces mécanismes ;
 
-  > [!IMPORTANT]
-  >
-  > - Les compléments s’activent sur les messages signés numériquement dans Outlook avec un abonnement Microsoft 365. Dans Windows, cette prise en charge a été introduite avec le build 8711.1000.
-  >
-  > - Démarrer avec Outlook build 13229.10000 sur Windows, les compléments peuvent désormais activer les éléments protégés par IRM. Pour plus d’informations sur cette fonctionnalité en mode aperçu, reportez-vous à [Activation de complément sur les éléments protégés par la gestion des droits relatifs à l’information (IRM)](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview#add-in-activation-on-items-protected-by-information-rights-management-irm).
+[!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
 - un rapport ou une notification de remise qui a la classe de message IPM.Report.* (notamment les rapports de remise et les notifications d’échec de remise, ainsi que les notifications de lecture, de non-lecture et de retard) ;
 
@@ -69,9 +65,9 @@ Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un 
 
 - Créé via Simple MAPI. Simple MAPI est utilisé lorsqu'un utilisateur d'Office crée ou envoie un courriel à partir d'une application Office sur Windows pendant qu'Outlook est fermé. Par exemple, un utilisateur peut créer un courrier Outlook tout en travaillant dans Word, ce qui déclenche une fenêtre de composition Outlook sans lancer l’application Outlook complète. Toutefois, si Outlook est déjà en cours d’exécution lorsque l’utilisateur crée l’e-mail à partir de Word, ce n’est pas un scénario Simple MAPI. Les compléments Outlook fonctionnent donc dans le formulaire de composition tant que d’autres exigences d’activation sont remplies.
 
-En général, Outlook peut activer des compléments sous forme de lecture pour les éléments du dossier Éléments envoyés, à l’exception des compléments qui s’activent en fonction des correspondances de chaîne d’entités connues. Pour plus d’informations sur les raisons de ce problème, consultez « Prise en charge des entités connues » dans [Mettre en correspondance des chaînes dans un élément Outlook en tant qu’entités connues](match-strings-in-an-item-as-well-known-entities.md).
+En général, Outlook peut activer des compléments sous forme de lecture pour les éléments dans le dossier Éléments envoyés, à l'exception des compléments qui s’activent en fonction des correspondances de chaînes d'entités connues. Pour plus d’informations sur les raisons de ce comportement, voir [Prise en charge des entités connues](match-strings-in-an-item-as-well-known-entities.md#support-for-well-known-entities).
 
-Il existe actuellement des considérations supplémentaires lors de la conception et de l’implémentation de compléments pour les clients mobiles. Pour plus d’informations, reportez-vous à [Ajouter une prise en charge mobile à un complément Outlook](add-mobile-support.md#compose-mode-and-appointments).
+Il existe actuellement des considérations supplémentaires lors de la conception et de l’implémentation de compléments pour les clients mobiles. Pour plus d’informations, consultez [Ajouter une prise en charge mobile à un complément Outlook](add-mobile-support.md#compose-mode-and-appointments).
 
 ## <a name="supported-clients"></a>Clients pris en charge
 

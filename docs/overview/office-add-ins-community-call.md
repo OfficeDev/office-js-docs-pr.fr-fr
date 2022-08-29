@@ -1,23 +1,22 @@
 ---
 title: Appel de la communauté des compléments Microsoft Office
 description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
-ms.date: 08/04/2022
+ms.date: 08/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ad3d2c1113295c2e441a31317fc3c5ac9886b5e9
-ms.sourcegitcommit: 76b8c79cba707c771ae25df57df14b6445f9b8fa
+ms.openlocfilehash: 4e69bf49c188d0ff9920f00bd33a38f78fc78556
+ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/07/2022
-ms.locfileid: "67274154"
+ms.lasthandoff: 08/12/2022
+ms.locfileid: "67318871"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
 
 L’appel de la communauté des compléments Microsoft Office est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-august-10th-call"></a>Ordre du jour de l’appel du 10 août
+## <a name="agenda-for-september-14th-call"></a>Ordre du jour de l’appel du 14 septembre
 
-- Démonstration des bibliothèques OOXML.
-- Intégrez votre site web aux compléments Excel.
+L’ordre du jour de l’appel de septembre sera publié environ une semaine avant l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 

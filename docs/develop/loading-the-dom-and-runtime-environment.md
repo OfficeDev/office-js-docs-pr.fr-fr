@@ -3,16 +3,16 @@ title: Chargement du DOM et de l’environnement d’exécution
 description: Chargez l’environnement d’exécution dom et des compléments Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: be93b261c8beacdb7b4e8cd08448abf06b14607e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 707b6f6f743767571cf0ab7f465ddf84f117a63b
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958684"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423075"
 ---
-# <a name="loading-the-dom-and-runtime-environment"></a>Chargement du DOM et de l’environnement d’exécution
+# <a name="load-the-dom-and-runtime-environment"></a>Charger le DOM et l’environnement d’exécution
 
-Un complément doit s’assurer que le DOM et l’environnement d’exécution des Compléments Office ont été chargés avant d’exécuter sa propre logique personnalisée.
+Avant d’exécuter sa propre logique personnalisée, un complément doit s’assurer que le DOM et l’environnement [d’exécution](../testing/runtimes.md) des compléments Office sont chargés.
 
 ## <a name="startup-of-a-content-or-task-pane-add-in"></a>Démarrage d’un complément de contenu ou du volet Office
 
@@ -62,3 +62,4 @@ Les événements suivants se produisent lorsqu’un complément Outlook démarre
 
 - [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
 - [Initialiser votre complément Office](initialize-add-in.md)
+- [Runtimes dans les compléments Office](../testing/runtimes.md)

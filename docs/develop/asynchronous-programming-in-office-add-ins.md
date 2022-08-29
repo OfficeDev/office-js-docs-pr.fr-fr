@@ -3,12 +3,12 @@ title: Programmation asynchrone dans des compléments Office
 description: Découvrez comment la bibliothèque JavaScript Office utilise la programmation asynchrone dans les compléments Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f2d8682488f41786d60c8fcec02b120f35e696ae
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ce317e2d0648d114fe3716fc47d8cc1315369fc4
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958859"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423068"
 ---
 # <a name="asynchronous-programming-in-office-add-ins"></a>Programmation asynchrone dans des compléments Office
 
@@ -398,3 +398,4 @@ readDocumentFileAsync(): Promise<any> {
 
 - [Compréhension de l’API JavaScript pour Office](understanding-the-javascript-api-for-office.md)
 - [API JavaScript pour Office](../reference/javascript-api-for-office.md)
+- [Runtimes dans les compléments Office](../testing/runtimes.md)

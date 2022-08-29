@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un complément Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 61b9da4d3d6f3182cb97402c7173bce250a52061
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958481"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423103"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -86,7 +86,7 @@ La valeur par défaut est `false`, ce qui revient à omettre entièrement la pro
 
 > [!NOTE]
 >
-> - Pour plus de clarté, dans cette section, nous appelons le message cible la *page* hôte, mais à proprement parler, les messages sont dirigés vers le *runtime JavaScript* dans le volet Office (ou le runtime qui héberge un [fichier de fonction](/javascript/api/manifest/functionfile)). La distinction n’est significative que dans le cas de la messagerie inter-domaines. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](#cross-domain-messaging-to-the-host-runtime).
+> - Pour plus de clarté, dans cette section, nous appelons le message cible la *page* hôte, mais à proprement parler, les messages sont dirigés vers le [runtime](../testing/runtimes.md) dans le volet Office (ou le runtime qui héberge un [fichier de fonction](/javascript/api/manifest/functionfile)). La distinction n’est significative que dans le cas de la messagerie inter-domaines. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](#cross-domain-messaging-to-the-host-runtime).
 > - La boîte de dialogue ne peut pas communiquer avec la page hôte dans le volet Office, sauf si la bibliothèque d’API JavaScript Office est chargée dans la page. (Comme toute page qui utilise la bibliothèque d’API JavaScript Office, le script de la page doit initialiser le complément. Pour plus d’informations, consultez [Initialiser votre complément Office](initialize-add-in.md).)
 
 Le code de la boîte de dialogue utilise la fonction [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) pour envoyer un message de chaîne à la page hôte. La chaîne peut être un mot, une phrase, un objet blob XML, un JSON stringified ou tout autre élément qui peut être sérialisé en chaîne ou converti en chaîne. Voici un exemple.
@@ -217,7 +217,7 @@ function processMessage(arg) {
 
 ### <a name="cross-domain-messaging-to-the-host-runtime"></a>Messagerie inter-domaines au runtime hôte
 
-La boîte de dialogue ou le runtime JavaScript parent peut être éloigné du domaine du complément une fois la boîte de dialogue ouverte. Si l’une de ces opérations s’est produite, un appel échoue `messageParent` , sauf si votre code spécifie le domaine du runtime parent. Pour ce faire, ajoutez un paramètre [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageParent`. Cet objet a une `targetOrigin` propriété qui spécifie le domaine vers lequel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que la boîte de dialogue héberge actuellement.
+Une fois la boîte de dialogue ouverte, le dialogue ou le runtime parent peut s’éloigner du domaine du complément. Si l’une de ces opérations se produit, un appel échoue `messageParent` , sauf si votre code spécifie le domaine du runtime parent. Pour ce faire, ajoutez un paramètre [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageParent`. Cet objet a une `targetOrigin` propriété qui spécifie le domaine vers lequel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que la boîte de dialogue héberge actuellement.
 
 > [!NOTE]
 > L’utilisation `messageParent` pour envoyer un message inter-domaines nécessite [l’ensemble de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures d’Office qui ne prennent pas en charge l’ensemble de conditions requises. Le comportement de la méthode n’est donc pas affecté si vous le transmettez.
@@ -340,7 +340,7 @@ function onRegisterMessageComplete(asyncResult) {
 
 ### <a name="cross-domain-messaging-to-the-dialog-runtime"></a>Messagerie inter-domaines au runtime de dialogue
 
-Le runtime JavaScript parent ou la boîte de dialogue peut s’éloigner du domaine du complément une fois la boîte de dialogue ouverte. Si l’une de ces opérations se produit, les appels échouent, `messageChild` sauf si votre code spécifie le domaine du runtime de boîte de dialogue. Pour ce faire, ajoutez un paramètre [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild`. Cet objet a une `targetOrigin` propriété qui spécifie le domaine vers lequel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que le runtime parent héberge actuellement.
+Une fois la boîte de dialogue ouverte, le dialogue ou le runtime parent peut s’éloigner du domaine du complément. Si l’une de ces opérations se produit, les appels échouent, `messageChild` sauf si votre code spécifie le domaine du runtime de boîte de dialogue. Pour ce faire, ajoutez un paramètre [DialogMessageOptions](/javascript/api/office/office.dialogmessageoptions) à l’appel de `messageChild`. Cet objet a une `targetOrigin` propriété qui spécifie le domaine vers lequel le message doit être envoyé. Si le paramètre n’est pas utilisé, Office suppose que la cible est le même domaine que celui que le runtime parent héberge actuellement.
 
 > [!NOTE]
 > L’utilisation `messageChild` pour envoyer un message inter-domaines nécessite [l’ensemble de conditions requises Dialog Origin 1.1](/javascript/api/requirement-sets/common/dialog-origin-requirement-sets). Le `DialogMessageOptions` paramètre est ignoré sur les versions antérieures d’Office qui ne prennent pas en charge l’ensemble de conditions requises. Le comportement de la méthode n’est donc pas affecté si vous le transmettez.
@@ -357,7 +357,7 @@ Si le message n’inclut pas de données sensibles, vous pouvez définir la `tar
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-Étant donné que le runtime JavaScript qui héberge la boîte de dialogue ne peut pas accéder à la **\<AppDomains\>** section du manifeste et ainsi déterminer si le domaine *à partir duquel le message est fourni* est approuvé, vous devez utiliser le `DialogParentMessageReceived` gestionnaire pour déterminer cela. L’objet passé au gestionnaire contient le domaine actuellement hébergé dans le parent comme propriété `origin` . Voici un exemple d’utilisation de la propriété.
+Étant donné que le runtime qui héberge la boîte de dialogue ne peut pas accéder à la **\<AppDomains\>** section du manifeste et ainsi déterminer si le domaine *à partir duquel le message est fourni* est approuvé, vous devez utiliser le `DialogParentMessageReceived` gestionnaire pour déterminer cela. L’objet passé au gestionnaire contient le domaine actuellement hébergé dans le parent comme propriété `origin` . Voici un exemple d’utilisation de la propriété.
 
 ```javascript
 function onMessageFromParent(arg) {
@@ -430,7 +430,7 @@ Voir [Gestion des erreurs et des événements dans la boîte de dialogue Office]
 
 Découvrez les pièges et pratiques recommandées pour l’API de boîte de dialogue Office dans les [Meilleures pratiques et règles pour l’API de boîte de dialogue Office](dialog-best-practices.md).
 
-## <a name="samples"></a>Exemples
+## <a name="samples"></a>Échantillons
 
 Tous les exemples suivants utilisent `displayDialogAsync`. Certains ont des serveurs NodeJS et d’autres ont des serveurs ASP.NET/IIS-based, mais la logique d’utilisation de la méthode est la même quelle que soit la façon dont le côté serveur du complément est implémenté.
 
@@ -460,3 +460,7 @@ Tous les exemples suivants utilisent `displayDialogAsync`. Certains ont des serv
 - [Complément Office dans Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 - [OAuth.io de complément Office](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 - [Code des modèles de conception d’expérience utilisateur du complément Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code)
+
+** Voir aussi**
+
+- [Runtimes dans les compléments Office](../testing/runtimes.md)

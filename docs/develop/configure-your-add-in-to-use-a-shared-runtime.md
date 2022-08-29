@@ -1,21 +1,21 @@
 ---
-title: Configurez votre complément Office pour utiliser un runtime JavaScript partagé
-description: Configurez votre complément Office afin d’utiliser un runtime JavaScript partagé pour prendre en charge un ruban supplémentaire, un volet des tâches et des fonctionnalités personnalisées.
+title: Configurer votre complément Office pour utiliser un runtime partagé
+description: Configurez votre complément Office pour utiliser un runtime partagé pour prendre en charge les fonctionnalités supplémentaires du ruban, du volet Office et des fonctions personnalisées.
 ms.date: 07/18/2022
 ms.prod: non-product-specific
 ms.localizationpriority: high
-ms.openlocfilehash: 70906199f27a5b84a9dcd71b2f36dcd16ff79f73
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
-ms.translationtype: HT
+ms.openlocfilehash: e6b10cc2d342d95a8542146ecbd95d750322421f
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889477"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422935"
 ---
-# <a name="configure-your-office-add-in-to-use-a-shared-javascript-runtime"></a>Configurez votre complément Office pour utiliser un runtime JavaScript partagé
+# <a name="configure-your-office-add-in-to-use-a-shared-runtime"></a>Configurer votre complément Office pour utiliser un runtime partagé
 
-[!include[Shared JavaScript runtime requirements](../includes/shared-runtime-requirements-note.md)]
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-Vous pouvez configurer votre complément Office pour exécuter la totalité de son code dans un seul runtime JavaScript partagé (également connu sous le nom de runtime partagé). Vous pouvez ainsi améliorer la coordination dans votre complément et accéder aux DOM et CORS à partir de toutes les parties de votre complément. Il active également des fonctionnalités supplémentaires telles que l’exécution d’un code lors de l’ouverture d’un document, ou l’activation et la désactivation des boutons du ruban. Si vous voulez configurer votre complément pour utiliser un runtime partagé JavaScript, suivez les instructions contenues dans cet article.
+Vous pouvez configurer votre complément Office pour exécuter tout son code dans un seul [runtime partagé](../testing/runtimes.md#shared-runtime). Vous pouvez ainsi améliorer la coordination dans votre complément et accéder aux DOM et CORS à partir de toutes les parties de votre complément. Il active également des fonctionnalités supplémentaires telles que l’exécution d’un code lors de l’ouverture d’un document, ou l’activation et la désactivation des boutons du ruban. Si vous voulez configurer votre complément pour utiliser un runtime partagé, suivez les instructions contenues dans cet article.
 
 ## <a name="create-the-add-in-project"></a>Création du projet de complément
 
@@ -97,7 +97,7 @@ Procédez comme suit pour configurer un projet nouveau ou existant de manière �
 
 ## <a name="configure-the-webpackconfigjs-file"></a>Configurer le fichier webpack.config.js
 
-Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous devez le modifier pour charger uniquement le runtime JavaScript partagé via le fichier **taskpane.html**.
+Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous devez le modifier pour charger uniquement le runtime partagé via le fichier **taskpane.html** .
 
 1. Démarrez Visual Studio Code et ouvrez le projet de complément que vous avez généré.
 1. Ouvrez le fichier **webpack.config.js**.
@@ -138,14 +138,14 @@ Le fichier **webpack.config.js** générera plusieurs chargeurs runtime. Vous de
    ```
 
 > [!NOTE]
-> Si votre projet a le fichier **functions.html** ou le fichier **commands.html**, vous pouvez les supprimer. Le fichier **taskpane.html** chargera le code **functions.js** et **commands.js** dans le runtime JavaScript partagé via les mises à jour webpack que vous venez d’effectuer.
+> Si votre projet a le fichier **functions.html** ou le fichier **commands.html**, vous pouvez les supprimer. Le **taskpane.html** charge le **codefunctions.js** et **commands.js** dans le runtime partagé via les mises à jour webpack que vous venez d’effectuer.
 
 ## <a name="test-your-office-add-in-changes"></a>Tester les modifications apportées à votre complément Office
 
-Vous pouvez confirmer que vous utilisez correctement le runtime JavaScript partagé en utilisant les instructions suivantes.
+Vous pouvez confirmer que vous utilisez correctement le runtime partagé en suivant les instructions suivantes.
 
 1. Ouvrez le fichier **taskpane.js**.
-1. Remplacez tout le contenu du fichier par le code suivant. Le nombre de fois où le volet Office a été ouvert s’affiche. L’ajout de l’événement onVisibilityModeChanged est uniquement pris en charge dans un runtime JavaScript partagé.
+1. Remplacez tout le contenu du fichier par le code suivant. Le nombre de fois où le volet Office a été ouvert s’affiche. L’ajout de l’événement onVisibilityModeChanged est uniquement pris en charge dans un runtime partagé.
 
     ```javascript
     /*global document, Office*/
@@ -180,7 +180,7 @@ Chaque fois que vous ouvrez le volet Office, le nombre de fois où il a été ou
 
 ## <a name="runtime-lifetime"></a>Durée de vie de l’exécution
 
-Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une durée de vie avec la valeur `long` ou `short`. Définissez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, la poursuite de l’exécution du code après la fermeture du volet Office ou l’utilisation de CORS et DOM à partir de fonctions personnalisées.
+Lorsque vous ajoutez l’élément **\<Runtime\>** , vous spécifiez également une durée de vie avec une valeur ou `long` `short`. Configurez cette valeur sur `long` pour tirer parti de fonctionnalités telles que le démarrage de votre complément lorsque le document s’ouvre, continuer à exécuter un code après la fermeture du volet des tâches, ou utiliser CORS et DOM à partir de fonctions personnalisées.
 
 > [!NOTE]
 > La valeur de la durée de vie par défaut est `short`, mais nous vous recommandons d’utiliser `long` dans les compléments Excel, PowerPoint et Word. Si vous avez défini votre runtime sur `short` dans cet exemple, votre complément démarre lorsque vous appuyez sur l’un de vos boutons du ruban, mais il se peut qu’il se ferme une fois l’exécution de votre gestionnaire de ruban terminée. De la même façon, le complément démarre lorsque le volet des tâches est ouvert, mais il se peut se fermer à la fermeture du volet des tâches.
@@ -192,13 +192,13 @@ Lorsque vous ajoutez l’élément `Runtime`, vous spécifiez également une dur
 ```
 
 > [!NOTE]
-> Si votre macro complémentaire inclut l’`Runtimes`élément dans le manifeste (runtime partagé requis) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basées sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
+> Si votre complément inclut l’élément **\<Runtimes\>** dans le manifeste (requis pour un runtime partagé) et que les conditions d’utilisation de Microsoft Edge avec WebView2 (basée sur Chromium) sont remplies, il utilise ce contrôle WebView2. Si les conditions ne sont pas remplies, il utilise Internet Explorer 11, quelle que soit la version Windows ou Microsoft 365 version. Pour plus d’informations, consultez [Runtimes](/javascript/api/manifest/runtimes) and [Browsers utilisés par les compléments Office ](../concepts/browsers-used-by-office-web-add-ins.md).
 
-## <a name="about-the-shared-javascript-runtime"></a>À propos du runtime JavaScript partagé
+## <a name="about-the-shared-runtime"></a>À propos du runtime partagé
 
-Sur Windows ou Mac, votre complément exécute le code des boutons du ruban, des fonctions personnalisées et du volet des tâches dans des environnements runtime JavaScript distincts. Cela permet de créer des limitations, telles que l'impossibilité de partager aisément des données globales ou de pouvoir accéder à l'ensemble des fonctionnalités CORS à partir d’une fonction personnalisée.
+Sur Windows ou Mac, votre complément exécute du code pour les boutons du ruban, les fonctions personnalisées et le volet Office dans des environnements d’exécution distincts. Cela permet de créer des limitations, telles que l'impossibilité de partager aisément des données globales ou de pouvoir accéder à l'ensemble des fonctionnalités CORS à partir d’une fonction personnalisée.
 
-Vous pouvez toutefois configurer votre complément Office pour partager un code dans le même runtime JavaScript (également appelé runtime partagé). Vous pouvez ainsi améliorer la coordination dans votre complément et accéder au volet des tâches DOM et CORS à partir de toutes les parties de votre complément.
+Toutefois, vous pouvez configurer votre complément Office pour partager du code dans le même runtime (également appelé runtime partagé). Vous pouvez ainsi améliorer la coordination dans votre complément et accéder au volet des tâches DOM et CORS à partir de toutes les parties de votre complément.
 
 La configuration d’un runtime partagé permet les scénarios suivants.
 
@@ -212,7 +212,7 @@ La configuration d’un runtime partagé permet les scénarios suivants.
   - Les fonctions personnalisées bénéficieront d'une prise en charge complète de CORS.
   - Les fonctions personnalisées peuvent appeler les API Office.js pour lire les données d’un document feuille de calcul.
 
-Pour Office sur Windows, le runtime partagé utilise Microsoft Edge avec WebView2 (basé sur Chromium) si les conditions de son utilisation sont remplies comme expliqué dans [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). Sinon, il utilise Internet Explorer 11. De plus, tous les boutons affichés par votre complément sur le ruban s’exécutent dans le même runtime partagé. L’image ci-après présente l'exécution des fonctions personnalisées, de interface utilisateur du ruban et du code du volet des tâches dans le même runtime JavaScript.
+Pour Office sur Windows, le runtime partagé utilise Microsoft Edge avec WebView2 (basé sur Chromium) si les conditions de son utilisation sont remplies comme expliqué dans [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). Sinon, il utilise Internet Explorer 11. De plus, tous les boutons affichés par votre complément sur le ruban s’exécutent dans le même runtime partagé. L’image suivante montre comment les fonctions personnalisées, l’interface utilisateur du ruban et le code du volet Office s’exécutent tous dans le même runtime.
 
 ![Diagramme d’une fonction personnalisée, du volet des tâches et des boutons du ruban qui s’exécutent tous dans un runtime de navigateur partagé dans Excel.](../images/custom-functions-in-browser-runtime.png)
 
@@ -233,3 +233,4 @@ Ne concevez pas votre complément pour utiliser plusieurs volets des tâches si 
 - [Exécuter un cote dans votre complément Office lors de l’ouverture du document](run-code-on-document-open.md)
 - [Afficher ou masquer le volet des tâches de votre complément Office](show-hide-add-in.md)
 - [Tutoriel : Partager des données et des événements entre des fonctions personnalisées Excel et le volet Office](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
+- [Runtimes dans les compléments Office](../testing/runtimes.md)

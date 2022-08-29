@@ -3,17 +3,17 @@ title: Déboguer une commande de fonction avec un runtime non partagé
 description: Découvrez comment déboguer des commandes de fonction.
 ms.date: 07/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 943d7ed8ccfedd961eac3fe941c8ef357964ed37
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: d2be148c05f88837610b8563c2e61618d1c37775
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797704"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67423201"
 ---
 # <a name="debug-a-function-command-with-a-non-shared-runtime"></a>Déboguer une commande de fonction avec un runtime non partagé
 
 > [!IMPORTANT]
-> Si votre complément est [configuré pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md), vous déboguez le code derrière la commande de fonction comme vous le feriez pour le code situé derrière un volet Office. Consultez [Déboguer des compléments Office](debug-add-ins-overview.md) et notez qu’une commande de fonction dans un complément avec un runtime partagé *n’est pas* un cas particulier comme décrit dans cet article. 
+> Si votre complément est [configuré pour utiliser un runtime partagé](../develop/configure-your-add-in-to-use-a-shared-runtime.md), vous déboguez le code derrière la commande de fonction comme vous le feriez pour le code situé derrière un volet Office. Consultez [Déboguer des compléments Office](debug-add-ins-overview.md) et notez qu’une commande de fonction dans un complément avec un [runtime partagé](runtimes.md#shared-runtime) *n’est pas* un cas particulier comme décrit dans cet article. 
 
 > [!NOTE]
 > Cet article suppose que vous êtes familiarisé avec [les commandes de fonction](../design/add-in-commands.md#types-of-add-in-commands).
@@ -31,3 +31,7 @@ Les commandes de fonction n’ayant pas d’interface utilisateur, un débogueur
 ## <a name="debug-function-commands-in-outlook-add-ins-on-windows"></a>Commandes de fonction de débogage dans les compléments Outlook sur Windows
 
 Si votre ordinateur de développement est Windows, vous pouvez déboguer une commande de fonction sur le bureau Outlook. Consultez [les commandes de fonction de débogage dans les compléments Outlook](../outlook/debug-ui-less.md).
+
+## <a name="see-also"></a>Voir aussi
+
+- [Runtimes dans les compléments Office](runtimes.md)

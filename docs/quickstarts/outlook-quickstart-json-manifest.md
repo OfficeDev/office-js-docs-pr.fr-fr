@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 41c39a6cf13854dd24a327e95f1857b92806b9ae
-ms.sourcegitcommit: 4f19f645c6c1e85b16014a342e5058989fe9a3d2
-ms.translationtype: HT
+ms.openlocfilehash: 0b78e36c5092e804c751569de66ef1ad41092776
+ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/15/2022
-ms.locfileid: "66091047"
+ms.lasthandoff: 08/24/2022
+ms.locfileid: "67422753"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Créer un complément Outlook avec un manifeste Teams (préversion)
 
@@ -177,7 +177,7 @@ Ajoutez un bouton personnalisé au ruban qui insère du texte dans le corps d’
 
 1. Pour écrire dans un message, les autorisations du complément doivent être levées. Faites défiler jusqu’à la propriété `authorization.permissions.resourceSpecific[0].name` et remplacez la valeur par `MailboxItem.ReadWrite.User`.
 
-1. Lorsqu’une commande de complément exécute du code au lieu d’ouvrir un volet des tâches, elle doit exécuter le code dans un runtime JavaScript distinct de la vue web incorporée dans laquelle le code du volet des tâches s’exécute. Le manifeste doit donc spécifier un runtime supplémentaire. Faites défiler jusqu’à la propriété `extension.runtimes` et ajoutez l’objet suivant au tableau `runtimes`. Veillez à placer une virgule après l’objet qui se trouve déjà dans le tableau. Notez les points suivants concernant ce balisage :
+1. Lorsqu’une commande de complément exécute du code au lieu d’ouvrir un volet Office, elle doit exécuter le code dans un runtime distinct de la vue web incorporée où s’exécute le code du volet Office. Le manifeste doit donc spécifier un runtime supplémentaire. Faites défiler jusqu’à la propriété `extension.runtimes` et ajoutez l’objet suivant au tableau `runtimes`. Veillez à placer une virgule après l’objet qui se trouve déjà dans le tableau. Notez les points suivants concernant ce balisage.
 
     - La valeur de la propriété `actions[0].id` doit être exactement identique au nom de la fonction que vous avez ajoutée au fichier **commands.ts**, dans ce cas `insertHelloWorld`. Dans une étape ultérieure, vous allez faire référence à l’élément par cet ID.
 
