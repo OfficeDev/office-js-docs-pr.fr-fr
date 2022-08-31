@@ -1,18 +1,21 @@
 ---
 title: Compléments Outlook d’extension de module
 description: Créez des applications qui s’exécutent dans Outlook pour simplifier l’accès des utilisateurs aux outils d’informations professionnelles et de productivité sans quitter Outlook.
-ms.date: 05/27/2020
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 6715a98cca70fbf5e7a2caae2fa2d37e35479d19
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
+ms.openlocfilehash: d234f4e1aad77b3cc30d0e9bc9450ec79af958aa
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59153159"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464803"
 ---
 # <a name="module-extension-outlook-add-ins"></a>Compléments Outlook d’extension de module
 
 Les compléments d’extension de module figurent dans la barre de navigation Outlook, en regard des onglets Courrier, Tâches et Calendriers. Une extension de module n’utilise pas seulement les informations de courrier et de rendez-vous. Vous pouvez créer des applications qui s’exécutent dans Outlook pour simplifier l’accès des utilisateurs aux outils d’informations professionnelles et de productivité sans quitter Outlook.
+
+> [!TIP]
+> Les extensions de module ne sont pas prises en charge dans le [manifeste Teams (préversion),](../develop/json-manifest-overview.md) mais vous pouvez créer une expérience très similaire pour les utilisateurs en créant un [onglet personnel qui s’ouvre dans Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab). Dans la première période de préversion du manifeste Teams dans les compléments Outlook, il n’est pas possible de combiner un complément Outlook et un onglet personnel dans le même manifeste et de les installer en tant qu’unité. Nous travaillons à ce sujet, mais en attendant, vous devez créer des applications distinctes pour le complément et l’onglet personnel. Ils peuvent tous deux utiliser des fichiers sur le même domaine.
 
 > [!NOTE]
 > Les extensions de module sont uniquement prises en charge par Outlook 2016 ou version ultérieure sous Windows.  
@@ -31,7 +34,9 @@ Lorsque plusieurs compléments sont chargés, elle affiche le mot **Compléments
 
 ![Affiche la barre de navigation développée lorsque plusieurs extensions de module sont chargées dans Outlook.](../images/outlook-module-navigationbar-more.png)
 
-Lorsque vous cliquez sur une extension, Outlook remplace le module intégré par votre module personnalisé pour permettre aux utilisateurs d’interagir avec le complément. Vous pouvez utiliser toutes les fonctionnalités de l’interface API JavaScript pour Outlook dans votre complément et créer des boutons de commande dans le ruban Outlook pour interagir avec le contenu du complément. Les captures d’écran ci-dessous montrent un complément intégré dans la barre de navigation Outlook et comportant des commandes de ruban qui mettent à jour le contenu du complément.
+Lorsque vous cliquez sur une extension, Outlook remplace le module intégré par votre module personnalisé pour permettre aux utilisateurs d’interagir avec le complément. Vous pouvez utiliser certaines des fonctionnalités de l’API JavaScript Outlook dans votre complément. Les API qui supposent logiquement un élément Outlook spécifique, tel qu’un message ou un rendez-vous, ne fonctionnent pas dans les extensions de module. Le module peut également inclure des commandes de fonction dans le ruban Outlook qui interagissent avec la page du complément. Pour faciliter cette opération, vos commandes de fonction appellent la [méthode Office.onReady ou Office.initialize](../develop/initialize-add-in.md) et la méthode [Event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) . Pour découvrir comment un complément Outlook d’extension de module est configuré, consultez [l’exemple d’heures facturables des extensions de module Outlook](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension).
+
+La capture d’écran suivante montre un complément intégré dans la barre de navigation Outlook et comportant des commandes de ruban qui mettent à jour la page du complément.
 
 ![Affiche l’interface utilisateur d’une extension de module.](../images/outlook-module-extension.png)
 

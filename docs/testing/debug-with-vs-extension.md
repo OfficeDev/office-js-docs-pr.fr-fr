@@ -3,12 +3,12 @@ title: Déboguer les add-ins sur Windows à l'aide de Visual Studio Code et du W
 description: Découvrez comment déboguer des compléments Office qui utilisent Version antérieure de Microsoft Edge WebView (EdgeHTML) à l’aide de l’extension de débogueur de complément Office dans VS Code.
 ms.date: 02/15/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e503d3a79b5fa4b797bb9c6ee657b7d8916109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8dc709893070e4bfd9d7ae39adb591496594c6ab
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423236"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464845"
 ---
 # <a name="microsoft-office-add-in-debugger-extension-for-visual-studio-code"></a>Complément Microsoft Office Extension de débogueur pour Visual Studio Code
 
@@ -37,7 +37,7 @@ Ces instructions supposent que vous avez de l’expérience dans l’utilisation
 
 1. La première étape dépend du projet et de la façon dont il a été créé.
 
-   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez [le générateur Yeoman pour les modules complémentaires Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l'un de nos guides de démarrage rapide, tel que [le guide de démarrage rapide du module complémentaire Outlook](../quickstarts/outlook-quickstart.md). 
+   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l’un de nos guides de démarrage rapide, comme le [démarrage rapide du complément Outlook](../quickstarts/outlook-quickstart.md).
    - Si vous souhaitez déboguer un projet existant créé avec Yo Office, passez à l’étape suivante.
    - Si vous souhaitez déboguer un projet existant qui n’a pas été créé avec Yo Office, effectuez la procédure dans [l’Annexe](#appendix) , puis revenez à l’étape suivante de cette procédure.
 

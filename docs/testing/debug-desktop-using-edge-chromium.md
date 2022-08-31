@@ -3,12 +3,12 @@ title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code 
 description: Apprenez à déboguer les modules complémentaires Office qui utilisent Microsoft Edge WebView2 (basé sur Chromium) dans VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 58c676ada092ff31737da4b257bbd6e5e158c0dc
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 314799922b8d3687d8a24e93c49143cd3aa37e06
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423299"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464817"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
@@ -37,7 +37,7 @@ Ces instructions supposent que vous avez l’expérience de l’utilisation de l
 
 1. La première étape dépend du projet et de la façon dont il a été créé.
 
-   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez [le générateur Yeoman pour les modules complémentaires Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l'un de nos guides de démarrage rapide, tel que [le guide de démarrage rapide du module complémentaire Outlook](../quickstarts/outlook-quickstart.md). 
+   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l’un de nos guides de démarrage rapide, comme le [démarrage rapide du complément Outlook](../quickstarts/outlook-quickstart.md).
    - Si vous souhaitez déboguer un projet existant créé avec Yo Office, passez à l’étape suivante.
    - Si vous souhaitez déboguer un projet existant qui n'a pas été créé avec Yo Office, suivez la procédure de [l'annexe A](#appendix-a), puis revenez à l'étape suivante de cette procédure.
 

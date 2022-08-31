@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a251f13540989aa30c3e213e1572747e08c121c4
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
-ms.translationtype: HT
+ms.openlocfilehash: 4efb3f29ee3791b78c45db01ca53f8c48c17b752
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765271"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464775"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -57,7 +57,7 @@ L’alias de type `CellValue` retourne également l’objet [CellValueExtraPrope
 
 Chaque type de valeur de cellule retourné par `valuesAsJson` utilise un schéma de métadonnées JSON conçu pour ce type. Outre les propriétés supplémentaires propres à chaque type de données, ces schémas de métadonnées JSON ont tous les propriétés `type`, `basicType`et `basicValue` en commun.
 
-Le `type` définit le [CellValueType](/javascript/api/excel/excel.cellvaluetype) des données. Le `basicType` est toujours en lecture seule et est utilisé comme solution de repli lorsque le type de données n’est pas pris en charge ou n’est pas formaté correctement. Le `basicValue` correspond à la valeur retournée par la propriété `values`. Le `basicValue` est utilisé comme solution de repli lorsque les calculs rencontrent des scénarios incompatibles, tels qu’une version antérieure d’Excel qui ne prend pas en charge la fonctionnalité des types de données. Le `basicValue` est en lecture seule pour les types de données `ArrayCellValue`, `EntityCellValue`, `LinkedEntityCellValue`et `WebImageCellValue`.
+Le `type` définit le [CellValueType](/javascript/api/excel/excel.cellvaluetype) des données. Il `basicType` est toujours en lecture seule et est utilisé comme secours lorsque le type de données n’est pas pris en charge ou est mis en forme de manière incorrecte. Le `basicValue` correspond à la valeur retournée par la propriété `values`. Le `basicValue` est utilisé comme solution de repli lorsque les calculs rencontrent des scénarios incompatibles, tels qu’une version antérieure d’Excel qui ne prend pas en charge la fonctionnalité des types de données. Il `basicValue` est en lecture seule pour `ArrayCellValue`les types de données , `EntityCellValue`, `LinkedEntityCellValue`et `WebImageCellValue` les types de données.
 
 Outre les trois champs que tous les types de données partagent, le schéma de métadonnées JSON pour chaque `*CellValue` a des propriétés disponibles en fonction de ce type. Par exemple, le type [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) inclut les propriétés `altText` et `attribution` , tandis que le type [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) offre les champs `properties` et `text`.
 
@@ -75,7 +75,7 @@ L’exemple de code JSON suivant montre le schéma complet d’une valeur numér
 const myDate: Excel.FormattedNumberCellValue = {
     type: Excel.CellValueType.formattedNumber,
     basicValue: 32889.0,
-    basicType: Excel.RangeValueType.double, // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.double, // A read-only property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
@@ -102,8 +102,8 @@ const myEntity: Excel.EntityCellValue = {
             basicValue: "I love llamas."
         }
     }, 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 
@@ -126,8 +126,8 @@ L’exemple de code JSON suivant montre le schéma complet d’une image web.
 const myImage: Excel.WebImageCellValue = {
     type: Excel.CellValueType.webImage,
     address: "https://bit.ly/2YGOwtw", 
-    basicType: Excel.RangeValueType.error, // A readonly property. Used as a fallback in incompatible scenarios.
-    basicValue: "#VALUE!" // A readonly property. Used as a fallback in incompatible scenarios.
+    basicType: Excel.RangeValueType.error, // A read-only property. Used as a fallback in incompatible scenarios.
+    basicValue: "#VALUE!" // A read-only property. Used as a fallback in incompatible scenarios.
 };
 ```
 

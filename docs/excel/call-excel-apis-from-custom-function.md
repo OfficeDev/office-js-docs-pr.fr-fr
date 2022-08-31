@@ -1,14 +1,14 @@
 ---
 title: Appeler des API JavaScript Excel à partir d’une fonction personnalisée
 description: Découvrez les API JavaScript Excel que vous pouvez appeler à partir de votre fonction personnalisée.
-ms.date: 07/18/2022
+ms.date: 08/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: aa22cb007bb4803863c17e0f72876cc58c15b992
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 8d1cbf6d07e4ede5b8309e899828f8f1d8ad1fa0
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423187"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464831"
 ---
 # <a name="call-excel-javascript-apis-from-a-custom-function"></a>Appeler des API JavaScript Excel à partir d’une fonction personnalisée
 
@@ -48,18 +48,16 @@ async function getRangeValue(address) {
 
 ## <a name="limitations-of-calling-excel-javascript-apis-through-a-custom-function"></a>Limitations de l’appel d’API JavaScript Excel par le biais d’une fonction personnalisée
 
-N’appelez pas les API JavaScript Excel à partir d’une fonction personnalisée qui modifie l’environnement d’Excel. Cela signifie que vos fonctions personnalisées ne doivent pas effectuer l’une des opérations suivantes :
+Un complément de fonctions personnalisées peut appeler des API JavaScript Excel, mais vous devez être prudent quant aux API qu’il appelle. N’appelez pas les API JavaScript Excel à partir d’une fonction personnalisée qui modifie des cellules en dehors de la cellule exécutant la fonction personnalisée. La modification d’autres cellules ou de l’environnement Excel peut entraîner des performances médiocres, des délais d’expiration et des boucles infinies dans l’application Excel. Cela signifie que vos fonctions personnalisées ne doivent pas effectuer l’une des opérations suivantes :
 
 - Insérer, supprimer ou mettre en forme des cellules dans la feuille de calcul.
 - Modifiez la valeur d’une autre cellule.
 - Déplacez, renommez, supprimez ou ajoutez des feuilles à un classeur.
-- Modifiez l’une des options d’environnement, telles que le mode de calcul ou les vues d’écran.
 - Ajoutez des noms à un classeur.
-- Définissez des propriétés ou exécutez la plupart des méthodes.
+- Définissez les propriétés.
+- Modifiez l’une des options d’environnement Excel, telles que le mode de calcul ou les vues d’écran.
 
-La modification d’Excel peut entraîner des performances médiocres, des délais d’expiration et des boucles infinies. Les calculs de fonction personnalisés ne doivent pas s’exécuter pendant qu’un recalcul Excel a lieu, car cela entraîne des résultats imprévisibles.
-
-Au lieu de cela, apportez des modifications à Excel à partir du contexte d’un bouton du ruban ou du volet Office.
+Votre complément de fonctions personnalisées peut lire des informations à partir de cellules extérieures à la cellule exécutant la fonction personnalisée, mais il ne doit pas effectuer d’opérations d’écriture dans d’autres cellules. Au lieu de cela, apportez des modifications à d’autres cellules ou à l’environnement Excel à partir du contexte d’un bouton de ruban ou d’un volet Office. En outre, les calculs de fonction personnalisés ne doivent pas s’exécuter pendant qu’un recalcul Excel est en cours, car ce scénario crée des résultats imprévisibles.
 
 ## <a name="next-steps"></a>Prochaines étapes
 

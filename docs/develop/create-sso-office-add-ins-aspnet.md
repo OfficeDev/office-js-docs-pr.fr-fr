@@ -3,12 +3,12 @@ title: Créer un complément Office ASP.NET qui utilise l’authentification uni
 description: Guide pas à pas pour créer (ou convertir) un complément Office avec un backend ASP.NET pour utiliser l’authentification unique (SSO).
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 403730f953a4f53d853a0ecd3b12cd477f7e7176
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: e3ec0982aef53e729a20f58c6be3ddb4d9389849
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958831"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464810"
 ---
 # <a name="create-an-aspnet-office-add-in-that-uses-single-sign-on"></a>Créer un complément Office ASP.NET qui utilise l’authentification unique
 
@@ -124,7 +124,7 @@ Chaque fois que vous configurez des autorisations, les utilisateurs de votre app
 
 1. Sous **Propriétés communes**, sélectionnez **Projet de démarrage**, puis **Plusieurs projets de démarrage**. Assurez-vous que l’**Action** pour les deux projets est définie sur **Démarrer**, et que le projet qui se termine par « ...WebAPI » apparaît en premier dans la liste. Fermez la boîte de dialogue.
 
-1. De retour dans **Explorateur de solutions**, sélectionnez (ne cliquez pas avec le bouton droit) le projet **Office-Add-in-ASPNET-SSO-WebAPI**. Le volet **Propriétés** s’ouvre. Assurez-vous que **SSL activé** est **Vrai**. Vérifiez que l’**URL SSL** est `http://localhost:44355/`.
+1. De retour dans **Průzkumník řešení**, sélectionnez (ne cliquez pas avec le bouton droit) le projet **Office-Add-in-ASPNET-SSO-WebAPI**. Le volet **Propriétés** s’ouvre. Assurez-vous que **SSL activé** est **Vrai**. Vérifiez que l’**URL SSL** est `http://localhost:44355/`.
 
 1. Dans « web.config », utilisez les valeurs que vous avez copiées dans le version précédente. Configurez les **Ida:ClientID** et **Ida:Audience** à votre **ID d’application (client)**, puis configurez **Ida:Password** sur votre code secret client. Définissez également **ida:Domain** `http://localhost:44355` sur (aucune barre oblique « / » à la fin).
 
@@ -133,7 +133,7 @@ Chaque fois que vous configurez des autorisations, les utilisateurs de votre app
 
 1. Si vous n’avez pas choisi « Comptes dans ce répertoire d’organisation uniquement » pour **TYPES DE COMPTES PRIS EN CHARGE** lorsque vous avez enregistré le complément, enregistrez et fermez le fichier web.config. Dans le cas contraire, enregistrez-le et laissez-le ouvert.
 
-1. Toujours dans **Explorateur de solutions**, choisissez le projet **Office-Add-in-ASPNET-SSO**, ouvrez le fichier manifeste du complément « Office-Add-in-ASPNET-SSO.xml », puis faites défiler vers le bas du fichier. Juste au-dessus de la balise de fin `</VersionOverrides>` , vous trouverez le balisage suivant.
+1. Toujours dans **Průzkumník řešení**, choisissez le projet **Office-Add-in-ASPNET-SSO**, ouvrez le fichier manifeste du complément « Office-Add-in-ASPNET-SSO.xml », puis faites défiler jusqu’au bas du fichier. Juste au-dessus de la balise de fin `</VersionOverrides>` , vous trouverez le balisage suivant.
 
     ```xml
     <WebApplicationInfo>
@@ -351,7 +351,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-1. Remplacez `TODO 6` par ce qui suit.
+1. Remplacez par `TODO 6` les éléments suivants :
 
     ```javascript
     if (exceptionMessage) {
@@ -373,7 +373,7 @@ Si vous avez choisi « Comptes dans cet annuaire organisationnel uniquement » p
     }
     ```
 
-1. Remplacez `TODO 8` par ce qui suit.
+1. Remplacez par `TODO 8` les éléments suivants :
 
     ```javascript
     else {

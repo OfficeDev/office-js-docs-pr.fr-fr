@@ -3,12 +3,12 @@ title: Débogage de compléments dans Office sur le web
 description: Découvrez comment utiliser Office sur le web pour tester et déboguer vos compléments.
 ms.date: 03/06/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 58f7bfee127b69b965720ddc84c676c9f78de5bc
-ms.sourcegitcommit: fb3b1c6055e664d015703623661d624251ceb6b7
+ms.openlocfilehash: 3071509a22f0c563b1202bd29da996f3dbaaf9cc
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/17/2022
-ms.locfileid: "66136461"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464824"
 ---
 # <a name="debug-add-ins-in-office-on-the-web"></a>Débogage de compléments dans Office sur le web
 
@@ -17,15 +17,15 @@ Cet article explique comment utiliser Office sur le Web pour déboguer vos compl
 - Pour déboguer des compléments sur un ordinateur qui n’exécute pas Windows ou le client&mdash;de bureau Office, par exemple, si vous développez sur un Mac ou Linux.
 - Comme autre processus de débogage si vous ne pouvez pas ou ne souhaitez pas déboguer dans un IDE, tel que Visual Studio ou Visual Studio Code.
 
-Cet article part du principe que vous disposez d’un projet de complément qui doit être débogué. Si vous souhaitez simplement vous exercer au débogage sur le web, créez un projet à l’aide de l’un des guides de démarrage rapide pour des applications Office spécifiques, comme ce [guide de démarrage rapide pour Word](../quickstarts/word-quickstart.md).
+Cet article part du principe que vous disposez d’un projet de complément qui doit être débogué. Si vous souhaitez simplement vous exercer au débogage sur le web, créez un projet à l’aide de l’un des démarrages rapides pour des applications Office spécifiques, comme ce [guide de démarrage rapide pour Word](../quickstarts/word-quickstart.md).
 
 ## <a name="debug-your-add-in"></a>Déboguer votre complément
 
 Pour déboguer votre complément à l’aide d’Office sur le web, procédez comme suit :
 
-1. Exécutez le projet sur localhost et chargez-le sur un document dans Office sur le Web. Pour obtenir des instructions détaillées sur le chargement indépendant, consultez [Chargement indépendant Office compléments sur le web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
+1. Exécutez le projet sur localhost et chargez-le sur un document dans Office sur le Web. Pour obtenir des instructions détaillées sur le chargement indépendant, consultez [Chargement indépendant des compléments Office sur le web](sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
 
-2. Ouvrez les outils de développement du navigateur. Pour ce faire, appuyez généralement sur F12. Ouvrez l’outil débogueur et utilisez-le pour définir des points d’arrêt et observer des variables. Pour obtenir de l’aide détaillée sur l’utilisation de l’outil de votre navigateur, consultez l’une des rubriques suivantes.  
+2. Ouvrez les outils de développement du navigateur. Pour ce faire, appuyez généralement sur F12. Ouvrez l’outil débogueur et utilisez-le pour définir des points d’arrêt et observer des variables. Pour obtenir de l’aide détaillée sur l’utilisation de l’outil de votre navigateur, consultez l’une des rubriques suivantes :
 
    - [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
    - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)

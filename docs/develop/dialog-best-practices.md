@@ -3,12 +3,12 @@ title: Pratiques recommandées et règles pour l’API de dialogue Office
 description: Fournit des règles et des bonnes pratiques pour l’API de boîte de dialogue Office, telles que les meilleures pratiques pour une application monopage (SPA).
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bdb92ba89faa63a5ca869be869f0a03cce91dba2
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: ca50e637d4b6557f508c682d2c3219f4f7dedca7
+ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958677"
+ms.lasthandoff: 08/31/2022
+ms.locfileid: "67464838"
 ---
 # <a name="best-practices-and-rules-for-the-office-dialog-api"></a>Pratiques recommandées et règles pour l’API de dialogue Office
 
@@ -29,7 +29,7 @@ Cet article fournit des règles, des trousses et des bonnes pratiques pour l’A
   - `Office.context.requirements.isSetSupported` (Pour plus d’informations, consultez [Spécifier les applications Office et les exigences de l’API](specify-office-hosts-and-api-requirements.md).)
 - La fonction [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) doit généralement être appelée à partir d’une page dans le même domaine que le complément lui-même, mais ce n’est pas obligatoire. Pour plus d’informations, consultez [Messagerie inter-domaines au runtime hôte](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
 
-## <a name="best-practices"></a>Meilleures pratiques
+## <a name="best-practices"></a>Bonnes pratiques
 
 ### <a name="avoid-overusing-dialog-boxes"></a>Éviter la surutilisation des boîtes de dialogue
 
@@ -41,7 +41,7 @@ Pour connaître les meilleures pratiques en matière de conception de boîte de 
 
 ### <a name="handle-pop-up-blockers-with-office-on-the-web"></a>Gérer les bloqueurs contextuels avec Office sur le Web
 
-Toute tentative d’affichage d’une boîte de dialogue lors de l’utilisation de Office sur le Web peut entraîner le blocage de la boîte de dialogue par le bloqueur de fenêtres contextuelles du navigateur. Si cela se produit, Office sur le Web ouvre une invite similaire à ce qui suit.
+Toute tentative d’affichage d’une boîte de dialogue lors de l’utilisation de Office sur le Web peut entraîner le blocage de la boîte de dialogue par le bloqueur de fenêtres contextuelles du navigateur. Dans ce cas, Office sur le Web ouvre une invite similaire à ce qui suit :
 
 ![Capture d’écran montrant l’invite avec une brève description et les boutons Autoriser et ignorer qu’un complément peut générer pour éviter les bloqueurs de fenêtres contextuelles dans le navigateur](../images/dialog-prompt-before-open.png)
 
