@@ -1,14 +1,14 @@
 ---
 title: Création d’un complément Office Node.js qui utilise l’authentification unique
 description: Découvrez comment créer un complément basé sur Node.js qui utilise l’authentification unique Office.
-ms.date: 07/01/2022
+ms.date: 08/31/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 470d6480308ed2695822aefd12e0b39b4abba32e
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 4e7ded29d9d2f021516348e2edbe847b6447e006
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958467"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616048"
 ---
 # <a name="create-a-nodejs-office-add-in-that-uses-single-sign-on"></a>Création d’un complément Office Node.js qui utilise l’authentification unique
 
@@ -85,7 +85,7 @@ Vous devez créer une inscription d’application dans Azure qui représente vot
 
 1. Donnez la valeur **Administrateurs et utilisateurs** à **Qui peut donner son consentement ?** .
 
-1. Renseignez les champs permettant de configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application cliente Office d’utiliser les API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
+1. Renseignez les champs permettant de configurer les invites de consentement de l’administrateur et de l’utilisateur avec des valeurs appropriées pour l’étendue `access_as_user` qui permet à l’application cliente Office d’utiliser les API web de votre complément avec les mêmes droits que l’utilisateur actuel. Suggestions :
 
    - **Administration nom d’affichage du consentement** : Office peut agir en tant qu’utilisateur.
    - **Description consentement administrateur** : activez Office pour qu’il appelle les API de complément web avec les mêmes droits que l’utilisateur actuel.
@@ -144,7 +144,7 @@ Vous devez créer une inscription d’application dans Azure qui représente vot
    CLIENT_SECRET=X7szTuPwKNts41:-/fa3p.p@l6zsyI/p
    DIRECTORY_ID=478aa78e-20ba-4c0d-9ffe-c4f62e5de3d5
    NODE_ENV=development
-SERVER_SOURCE=https://localhost:44355   
+   SERVER_SOURCE=https://localhost:44355
 
 1. Open the add-in manifest file "manifest\manifest_local.xml" and then scroll to the bottom of the file. Just above the `</VersionOverrides>` end tag, you'll find the following markup.
 
@@ -178,290 +178,257 @@ SERVER_SOURCE=https://localhost:44355
    > [!NOTE]
    > Comme leur nom l’indique, ssoAuthES6.js utilise la syntaxe JavaScript ES6, car l’utilisation de `async` et de `await` illustre le mieux la simplicité de l’API SSO. Lorsque le serveur localhost est démarré, ce fichier est transpilé en syntaxe ES5 afin que l’exemple prenne en charge Internet Explorer 11.
 
-    Une partie clé de l’exemple de code est la demande du client. La demande du client est un objet qui suit les informations sur la demande d’appel d’API REST sur le serveur de niveau intermédiaire. Cela est nécessaire, car l’état de la demande du client doit être suivi ou mis à jour dans les scénarios suivants :
+    Une partie clé de l’exemple de code est la demande du client. La demande du client est un objet qui suit les informations sur la demande d’appel d’API REST sur le serveur de niveau intermédiaire. Cela est nécessaire, car l’état de la demande du client doit être suivi ou mis à jour dans le scénario suivant :
 
-    - L’authentification unique effectue de nouvelles tentatives où l’appel de l’API REST échoue, car il a besoin d’un consentement supplémentaire. L’exemple de code appelle `getAccessToken` avec les options d’authentification mises à jour, obtient le consentement de l’utilisateur requis, puis appelle à nouveau l’API REST. L’objectif est de ne pas échouer dans les scénarios où une API REST a besoin d’un consentement supplémentaire.
     - L’authentification unique échoue et l’authentification de secours est requise. Le jeton d’accès est acquis via MSAL dans une boîte de dialogue contextuelle. L’objectif est de ne pas échouer dans ce scénario et de revenir à l’approche d’authentification alternative.
 
     L’objet de demande client effectue le suivi des données suivantes :
 
-    - `authOptions` - [Paramètres de configuration d’authentification](/javascript/api/office/office.authoptions) pour l’authentification unique.
     - `authSSO` - true si vous utilisez l’authentification unique, sinon false.
-    - `accessToken` - Jeton d’accès au serveur de niveau intermédiaire. La méthode d’obtention de ce jeton est différente pour l’authentification unique que l’authentification de secours.
-    - `url` - URL de l’API REST à appeler sur le serveur de niveau intermédiaire.
-    - `callbackHandler` - Fonction permettant de passer les résultats de l’appel de l’API REST.
-    - `callbackFunction` - Fonction à laquelle transmettre la demande du client quand elle est prête.
+    - `verb` - Verbe d’API REST tel que GET et POST.
+    - `accessToken`- Jeton d’accès au serveur ASP.NET Core.
+    - `url`- URL de l’API REST à appeler sur le serveur ASP.NET Core.
+    - `callbackRESTApiHandler` - Fonction permettant de passer les résultats de l’appel de l’API REST.
+    - `callbackFunction` - fonction à laquelle transmettre la demande du client quand elle est prête.
 
 1. Pour initialiser l’objet de demande client, dans la `createRequest` fonction, remplacez `TODO 1` par le code suivant.
 
-   ```javascript
-   const clientRequest = {
-     authOptions: {
-       allowSignInPrompt: true,
-       allowConsentPrompt: true,
-       forMSGraphAccess: true,
-     },
-     authSSO: authSSO,
-     accessToken: null,
-     url: url,
-     callbackRESTApiHandler: restApiCallback,
-     callbackFunction: callbackFunction,
-   };
-   ```
+    ```javascript
+    const clientRequest = {
+      authSSO: authSSO,
+      verb: verb,
+      accessToken: null,
+      url: url,
+      callbackRESTApiHandler: restApiCallback,
+        callbackFunction: callbackFunction,
+    };
+    ```
 
 1. Remplacez `TODO 2` par le code suivant. Tenez compte du code suivant :
 
-   - Il vérifie si l’authentification unique est utilisée. La méthode d’acquisition du jeton d’accès est différente pour l’authentification unique que pour l’authentification de secours.
-   - Si l’authentification unique retourne le jeton d’accès, elle appelle la `callbackfunction` fonction. Pour l’authentification de secours, elle appelle `dialogFallback`, qui appellera finalement la fonction de rappel une fois que l’utilisateur se connecte via MSAL.
+    - Il vérifie si l’authentification unique est utilisée. La méthode d’acquisition du jeton d’accès est différente pour l’authentification unique que pour l’authentification de secours.
+    - Si l’authentification unique retourne le jeton d’accès, elle appelle la `callbackfunction` fonction. Pour l’authentification de secours, elle appelle `dialogFallback`, qui appellera finalement la fonction de rappel une fois que l’utilisateur se connecte via MSAL.
 
-   ```javascript
-   // Get access token.
+    ```javascript
+    // Get access token.
 
-   if (authSSO) {
-     try {
-       // Get access token from Office SSO.
-       clientRequest.accessToken = await getAccessTokenFromSSO(
-         clientRequest.authOptions
-       );
-       callbackFunction(clientRequest);
-     } catch {
-       // Use fallback authentication if SSO failed to get access token.
-       switchToFallbackAuth(clientRequest);
-     }
+    if (authSSO) {
+    try {
+      // Get access token from Office SSO.
+      clientRequest.accessToken = await Office.auth.getAccessToken({
+        allowSignInPrompt: true,
+        allowConsentPrompt: true,
+        forMSGraphAccess: true,
+      });
+      callbackFunction(clientRequest);
+    } catch (error) {
+      // handle the SSO error which will inform us if we need to switch to fallback auth.
+      let fallbackRequired = handleSSOErrors(error);
+      if (fallbackRequired) switchToFallbackAuth(clientRequest);
+    }
    } else {
-     // Use fallback authentication to get access token.
+     // Use fallback auth to get access token.
      dialogFallback(clientRequest);
    }
-   ```
+    ```
 
 1. Dans la fonction `getFileNameList`, remplacez `TODO 3` par le code suivant. Tenez compte du code suivant :
 
-   - La fonction `getFileNameList` est appelée lorsque l’utilisateur choisit le bouton **Obtenir les noms de fichiers OneDrive** dans le volet Office.
-   - Il crée une demande de client pour suivre les informations relatives à l’appel, telles que l’URL de l’API REST.
-   - Lorsque l’API REST retourne un résultat, elle est passée à la `handleGetFileNameResponse` fonction. Ce rappel est passé en tant que paramètre et `createRequest` est suivi dans `clientRequest.callbackRESTApiHandler`.
-   - Le code appelle `callWebServer` avec la demande du client pour effectuer les étapes suivantes et appeler l’API REST.
+    - La fonction `getFileNameList` est appelée lorsque l’utilisateur choisit le bouton **Obtenir les noms de fichiers OneDrive** dans le volet Office.
+    - Il crée une demande de client pour suivre les informations relatives à l’appel, telles que l’URL de l’API REST.
+    - Lorsque l’API REST retourne un résultat, elle est passée à la `handleGetFileNameResponse` fonction. Ce rappel est passé en tant que paramètre et `createRequest` est suivi dans `clientRequest.callbackRESTApiHandler`.
+    - Le code appelle `callWebServer` avec la demande du client pour effectuer les étapes suivantes et appeler l’API REST.
 
-   ```javascript
-   createRequest(
-     "/getuserfilenames",
-     handleGetFileNameResponse,
-     async (clientRequest) => {
-       await callWebServer(clientRequest);
-     }
-   );
-   ```
+    ```javascript
+    createRequest(
+      "GET",
+      "/getuserfilenames",
+      handleGetFileNameResponse,
+      async (clientRequest) => {
+        await callWebServer(clientRequest);
+      }
+    );
+    ```
 
 1. Dans la fonction `handleGetFileNameResponse`, remplacez `TODO 4` par le code suivant. Tenez compte du code suivant :
 
-   - Le code transmet la réponse (qui contient une liste de noms de fichiers) pour `writeFileNamesToOfficeDocument` écrire les noms de fichier dans le document.
-   - Le code recherche les erreurs. Il affiche un message de réussite si les noms de fichier sont écrits, sinon il affiche une erreur.
+    - Le code transmet la réponse (qui contient une liste de noms de fichiers) pour `writeFileNamesToOfficeDocument` écrire les noms de fichier dans le document.
+    - Le code recherche les erreurs. Il affiche un message de réussite si les noms de fichier sont écrits, sinon il affiche une erreur.
 
-   ```javascript
-   if (response != null) {
-     try {
-       await writeFileNamesToOfficeDocument(response);
-       showMessage("Your OneDrive filenames are added to the document.");
-     } catch (error) {
-       // The error from writeFileNamesToOfficeDocument will begin
-       // "Unable to add filenames to document."
-       showMessage(error);
-     }
-   } else
-     showMessage("A null response was returned to handleGetFileNameResponse.");
-   ```
+    ```javascript
+    if (response !== null) {
+      try {
+        await writeFileNamesToOfficeDocument(response);
+        showMessage("Your OneDrive filenames are added to the document.");
+      } catch (error) {
+        // The error from writeFileNamesToOfficeDocument will begin
+        // "Unable to add filenames to document."
+        showMessage(error);
+      }
+    } else
+    showMessage("A null response was returned to handleGetFileNameResponse.");
+    ```
 
-### <a name="get-the-sso-access-token"></a>Obtenir le jeton d’accès de l’authentification unique
+1. Dans la fonction `handleSSOErrors`, remplacez `TODO 5` par le code suivant. Pour plus d’informations sur ces erreurs, reportez-vous à [Résoudre les problèmes liés à SSO dans les compléments Office](troubleshoot-sso-in-office-add-ins.md).
 
-1. Dans la fonction `getAccessTokenFromSSO`, remplacez `TODO 5` par le code suivant. Tenez compte du code suivant :
+    ```javascript
+    let fallbackRequired = false;
 
-   - Il appelle `Office.auth.getAccessToken` pour obtenir le jeton d’accès d’Office.
-   - Si une erreur se produit, elle appelle `handleSSOErrors` la fonction. Si l’erreur n’a pas pu être gérée, elle lève une erreur à l’appelant. C’est l’indication que l’appelant doit basculer vers l’authentification de secours.
-
-   ```javascript
-   try {
-     // The access token returned from getAccessToken only has permissions to your middle-tier server APIs,
-     // and it contains the identity claims of the signed-in user.
-
-     const accessToken = await Office.auth.getAccessToken(authOptions);
-     return accessToken;
-   } catch (error) {
-     let fallbackRequired = handleSSOErrors(error);
-     if (fallbackRequired) throw error; // Rethrow the error and caller will switch to fallback auth.
-     return null; // Returning a null token indicates no need for fallback (an explanation about the error condition was shown by handleSSOErrors).
-   }
-   ```
-
-1. Dans la fonction `handleSSOErrors`, remplacez `TODO 6` par le code suivant. Pour plus d’informations sur ces erreurs, reportez-vous à [Résoudre les problèmes liés à SSO dans les compléments Office](troubleshoot-sso-in-office-add-ins.md).
-
-   ```javascript
-   let fallbackRequired = false;
    switch (err.code) {
-   case 13001:
-     // No one is signed into Office. If the add-in cannot be effectively used when no one
-     // is logged into Office, then the first call of getAccessToken should pass the
-     // `allowSignInPrompt: true` option. Since this sample does that, you should not see
-     // this error.
-     showMessage(
-       "No one is signed into Office. But you can use many of the add-in's functions anyway. If you want to log in, press the Get OneDrive File Names button again."
-     );
-     break;
-   case 13002:
-     // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
-     // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
-     showMessage(
-       "You can use many of the add-in's functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
-     );
-     break;
-   case 13006:
-     // Only seen in Office on the web.
-     showMessage(
-       "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
-     );
-     break;
-   case 13008:
-     // Only seen in Office on the web.
-     showMessage(
-       "Office is still working on the last operation. When it completes, try this operation again."
-     );
-     break;
-   case 13010:
-     // Only seen in Office on the web.
+     case 13001:
+       // No one is signed into Office. If the add-in cannot be effectively used when no one
+       // is logged into Office, then the first call of getAccessToken should pass the
+       // `allowSignInPrompt: true` option. Since this sample does that, you should not see
+       // this error.
+       showMessage(
+         "No one is signed into Office. But you can use many of the add-ins functions anyway. If you want to log in, press the Get OneDrive File Names button again."
+       );
+       break;
+     case 13002:
+       // The user aborted the consent prompt. If the add-in cannot be effectively used when consent
+       // has not been granted, then the first call of getAccessToken should pass the `allowConsentPrompt: true` option.
+       showMessage(
+         "You can use many of the add-ins functions even though you have not granted consent. If you want to grant consent, press the Get OneDrive File Names button again."
+       );
+       break;
+     case 13006:
+       // Only seen in Office on the web.
+       showMessage(
+         "Office on the web is experiencing a problem. Please sign out of Office, close the browser, and then start again."
+       );
+       break;
+     case 13008:
+       // Only seen in Office on the web.
+       showMessage(
+        "Office is still working on the last operation. When it completes, try this operation again."
+       );
+       break;
+     case 13010:
+       // Only seen in Office on the web.
        showMessage(
          "Follow the instructions to change your browser's zone configuration."
        );
        break;
-   ```
+    ```
 
-1. Remplacez `TODO 7` par le code suivant. Pour plus d’informations sur ces erreurs, consultez [Résoudre les problèmes d’authentification unique dans les compléments Office](troubleshoot-sso-in-office-add-ins.md). Pour toutes les erreurs qui ne peuvent pas être gérées, `true` est retournée à l’appelant. Cela indique que l’appelant doit passer à l’utilisation de MSAL comme authentification de secours.
+1. Remplacez `TODO 6` par le code suivant. Pour plus d’informations sur ces erreurs, consultez [Résoudre les problèmes d’authentification unique dans les compléments Office](troubleshoot-sso-in-office-add-ins.md). Pour toutes les erreurs qui ne peuvent pas être gérées, `true` est retournée à l’appelant. Cela indique que l’appelant doit passer à l’utilisation de MSAL comme authentification de secours.
 
-   ```javascript
+    ```javascript
      default:
-       // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
-       // to non-SSO sign-in.
-       fallbackRequired = true;
-       break;
-   }
-   return fallbackRequired;
-   ```
+      // For all other errors, including 13000, 13003, 13005, 13007, 13012, and 50001, fall back
+      // to non-SSO sign-in.
+      fallbackRequired = true;
+      break;
+    }
+    return fallbackRequired;
+    ```
 
 ### <a name="call-the-rest-api-on-the-middle-tier-server"></a>Appeler l’API REST sur le serveur de niveau intermédiaire
 
-1. Dans la fonction `callWebServer`, remplacez `TODO 8` par le code suivant. Tenez compte du code suivant :
+1. Dans la fonction `callWebServer`, remplacez `TODO 7` par le code suivant. Tenez compte du code suivant :
 
-   - L’appel AJAX réel sera effectué par la `ajaxCallToRESTApi` fonction.
-   - Cette fonction tente d’obtenir un nouveau jeton d’accès si le serveur de niveau intermédiaire retourne une erreur indiquant que le jeton actuel a expiré.
-   - Si l’appel AJAX ne peut pas être effectué correctement, `switchToFallbackAuth` il sera appelé pour utiliser l’authentification MSAL au lieu de l’authentification unique Office.
+    - L’appel AJAX réel sera effectué par la `ajaxCallToRESTApi` fonction.
+    - Cette fonction tente d’obtenir un nouveau jeton d’accès si le serveur de niveau intermédiaire retourne une erreur indiquant que le jeton actuel a expiré.
+    - Si l’appel AJAX ne peut pas être effectué correctement, `switchToFallbackAuth` il sera appelé pour utiliser l’authentification MSAL au lieu de l’authentification unique Office.
 
-   ```javascript
-   try {
-     await ajaxCallToRESTApi(clientRequest);
-   } catch (error) {
-     if (error.statusText === "Internal Server Error") {
-       const retryCall = handleWebServerErrors(error, clientRequest);
-       if (retryCall && clientRequest.authSSO) {
-         try {
-           clientRequest.accessToken = await getAccessTokenFromSSO(
-             clientRequest.authOptions
-           );
-           await ajaxCallToRESTApi(clientRequest);
-         } catch {
-           // If still an error go to fallback.
-           switchToFallbackAuth(clientRequest);
-           return;
-         }
-       }
-     } else {
-       console.log(JSON.stringify(error)); // Log any errors.
-       showMessage(error.responseText);
-     }
-   }
-   ```
+    ```javascript
+    try {
+    const data = await $.ajax({
+      type: clientRequest.verb,
+      url: clientRequest.url,
+      headers: { Authorization: "Bearer " + clientRequest.accessToken },
+      cache: false,
+    });
+    clientRequest.callbackRESTApiHandler(data);
 
-1. Dans la fonction `ajaxCallToRESTApi`, remplacez `TODO 9` par le code suivant. Tenez compte du code suivant :
+    } catch (error) {
+     // TODO 8: Check for expired SSO token and refresh if needed.
 
-   - La fonction relance explicitement toutes les erreurs que l’appelant doit gérer.
+    // TODO 9: Check for Microsoft Graph and other errors.
 
-   ```javascript
-   try {
-     await $.ajax({
-       type: "GET",
-       url: clientRequest.url,
-       headers: { Authorization: "Bearer " + clientRequest.accessToken },
-       cache: false,
-       success: function (data) {
-         result = data;
-         // Send result to the callback handler.
-         clientRequest.callbackRESTApiHandler(result);
-       },
-     });
-   } catch (error) {
-     // This function explicitly requires the caller to handle any errors
-     throw error;
-   }
-   ```
+    }
+    ```
 
-1. Dans la fonction `handleWebServerErrors`, remplacez `TODO 10` par le code suivant. Tenez compte du code suivant :
+1. Remplacez `TODO 8` par le code suivant. Tenez compte du code suivant :
 
-   - L’erreur est retournée par le serveur de niveau intermédiaire, qui indique le type d’erreur et facilite sa gestion ici.
-   - Pour les erreurs **Microsoft Graph** , affichez le message dans le volet Office.
-   - Pour l’erreur **AADSTS500133** , retournez true afin que l’appelant sache que le jeton a expiré et doit en obtenir un nouveau.
-   - Pour tous les autres messages, affichez le message dans le volet Office.
+    - Lorsque le serveur identifie un jeton expiré, il retourne une erreur avec le type « TokenExpiredError ».
+    - L’essai... catch appelle Office.auth.getAccessToken pour obtenir un jeton actualisé avec une nouvelle expiration.
+    - Le code tente d’appeler à nouveau l’API serveur.
 
-   ```javascript
-   let retryCall = false;
-   // Our middle-tier server returns a type to help handle the known cases.
-   switch (err.responseJSON.type) {
-     case "Microsoft Graph":
-       // An error occurred when the middle-tier server called Microsoft Graph.
-       showMessage(
-         "Error from Microsoft Graph: " +
-           JSON.stringify(err.responseJSON.errorDetails)
-       );
-       retryCall = false;
-       break;
-     case "Missing access_as_user":
-       // The access_as_user scope was missing.
-       showMessage("Error: Access token is missing the access_as_user scope.");
-       retryCall = false;
-       break;
-     case "AADSTS500133": // expired token
-       // On rare occasions the access token could expire after it was sent to the middle-tier server.
-       // Microsoft identity platform will respond with
-       // "The provided value for the 'assertion' is not valid. The assertion has expired."
-       // Return true to indicate to caller they should refresh the token.
-       retryCall = true;
-       break;
-     default:
-       showMessage(
-         "Unknown error from web server: " +
-           JSON.stringify(err.responseJSON.errorDetails)
-       );
-       retryCall = false;
-       if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
-   }
-   return retryCall;
-   ```
+    ```javascript
+    // Check for expired SSO token. Refresh and retry the call if it expired.
+    if (
+      error.responseJSON &&
+      authSSO === true &&
+      error.responseJSON.type === "TokenExpiredError"
+    ) {
+      try {
+        const accessToken = await Office.auth.getAccessToken({
+          allowSignInPrompt: true,
+          allowConsentPrompt: true,
+          forMSGraphAccess: true,
+        });
+        const data = await $.ajax({
+          type: clientRequest.verb,
+          url: clientRequest.url,
+          headers: { Authorization: "Bearer " + accessToken },
+          cache: false,
+        });
+        clientRequest.callbackRESTApiHandler(data);
+      } catch (error) {
+        showMessage(error.responseText);
+        switchToFallbackAuth(clientRequest);
+        return;
+      }
+    }
+    ```
+
+1. Remplacez `TODO 9` par le code suivant. Tenez compte du code suivant :
+
+    - Pour les erreurs **Microsoft Graph** , affichez le message dans le volet Office.
+    - Pour tous les autres messages, affichez le message dans le volet Office.
+
+    ```javascript
+    // Check for a Microsoft Graph API call error. which is returned as bad request (403)
+    if (error.status === 403) {
+      if (error.responseJSON && error.responseJSON.type === "Microsoft Graph") {
+        showMessage(error.responseJSON.errorDetails);
+      } else {
+        showMessage(error);
+      }
+      return;
+    }
+
+    // For all other error scenarios, display the message and use fallback auth.
+    showMessage("Unknown error from web server: " + JSON.stringify(error));
+    if (clientRequest.authSSO) switchToFallbackAuth(clientRequest);
+    ```
 
 L’authentification de secours utilise la bibliothèque MSAL pour connecter l’utilisateur. Le complément lui-même est un spa et utilise une inscription d’application SPA pour accéder au serveur de niveau intermédiaire.
 
-1. Dans la fonction `switchToFallbackAuth`, remplacez `TODO 11` par le code suivant. Tenez compte du code suivant :
+1. Dans la fonction `switchToFallbackAuth`, remplacez `TODO 10` par le code suivant. Tenez compte du code suivant :
 
-   - Il définit la valeur globale `authSSO` sur false et crée une requête cliente qui utilise MSAL pour l’authentification. La nouvelle requête dispose d’un jeton d’accès MSAL au serveur de niveau intermédiaire.
-   - Une fois la demande créée, elle appelle `callWebServer` pour continuer à essayer d’appeler le serveur de niveau intermédiaire avec succès.
+    - Il définit la valeur globale `authSSO` sur false et crée une requête cliente qui utilise MSAL pour l’authentification. La nouvelle requête dispose d’un jeton d’accès MSAL au serveur de niveau intermédiaire.
+    - Une fois la demande créée, elle appelle `callWebServer` pour continuer à essayer d’appeler le serveur de niveau intermédiaire avec succès.
 
-   ```javascript
-   showMessage("Switching from SSO to fallback auth.");
-   authSSO = false;
-   // Create a new request for fallback auth.
-   createRequest(
-     clientRequest.url,
-     clientRequest.callbackRESTApiHandler,
-     async (fallbackRequest) => {
-       // Hand off to call using fallback auth.
-       await callWebServer(fallbackRequest);
-     }
-   );
-   ```
+    ```javascript
+    // Guard against accidental call to this function when fallback is already in use.
+
+    if (authSSO === false) return;
+
+    showMessage("Switching from SSO to fallback auth.");
+    authSSO = false;
+    // Create a new request for fallback auth.
+    createRequest(
+      clientRequest.verb,
+      clientRequest.url,
+      clientRequest.callbackRESTApiHandler,
+      async (fallbackRequest) => {
+        // Hand off to call using fallback auth.
+        await callWebServer(fallbackRequest);
+      }
+    );
+    ```
 
 ## <a name="code-the-middle-tier-server"></a>Coder le serveur de niveau intermédiaire
 
@@ -469,90 +436,101 @@ Le serveur de niveau intermédiaire fournit des API REST que le client doit appe
 
 ### <a name="create-the-route-and-implement-on-behalf-of-flow"></a>Créer l’itinéraire et implémenter le flux On-Behalf-Of
 
-1. Ouvrez le fichier `routes\getFilesRoute.js` et remplacez-le `TODO 12` par le code suivant. Tenez compte du code suivant :
+1. Ouvrez le fichier `routes\getFilesRoute.js` et remplacez-le `TODO 11` par le code suivant. Tenez compte du code suivant :
 
-   - Il appelle `authHelper.validateJwt`. Cela garantit que le jeton d’accès est valide et n’a pas été falsifié.
-   - Pour plus d’informations, consultez [Validation des jetons](/azure/active-directory/develop/access-tokens#validating-tokens).
+    - Il appelle `authHelper.validateJwt`. Cela garantit que le jeton d’accès est valide et n’a pas été falsifié.
+    - Pour plus d’informations, consultez [Validation des jetons](/azure/active-directory/develop/access-tokens#validating-tokens).
 
-   ```javascript
-   router.get(
+    ```javascript
+    router.get(
      "/getuserfilenames",
      authHelper.validateJwt,
      async function (req, res) {
-       // TODO 13: Exchange the access token for a Microsoft Graph token
+       // TODO 12: Exchange the access token for a Microsoft Graph token
        //          by using the OBO flow.
      }
-   );
-   ```
+    );
+    ```
+
+1. Remplacez `TODO 12` par le code suivant. Tenez compte du code suivant :
+
+    - Il demande uniquement les étendues minimales dont il a besoin, par `files.read`exemple .
+    - Il utilise MSAL `authHelper` pour effectuer le flux OBO dans l’appel à `acquireTokenOnBehalfOf`.
+
+    ```javascript
+    try {
+      const authHeader = req.headers.authorization;
+      let oboRequest = {
+        oboAssertion: authHeader.split(" ")[1],
+        scopes: ["files.read"],
+      };
+
+      // The Scope claim tells you what permissions the client application has in the service.
+      // In this case we look for a scope value of access_as_user, or full access to the service as the user.
+      const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(" ");
+      const accessAsUserScope = tokenScopes.find(
+        (scope) => scope === "access_as_user"
+      );
+      if (!accessAsUserScope) {
+        res.status(401).send({ type: "Missing access_as_user" });
+        return;
+      }
+      const cca = authHelper.getConfidentialClientApplication();
+      const response = await cca.acquireTokenOnBehalfOf(oboRequest);
+      // TODO 13: Call Microsoft Graph to get list of filenames.
+    } catch (err) {
+      // TODO 14: Handle any errors.
+    }
+    ```
 
 1. Remplacez `TODO 13` par le code suivant. Tenez compte du code suivant :
 
-   - Il demande uniquement les étendues minimales dont il a besoin, par `files.read`exemple .
-   - Il utilise MSAL `authHelper` pour effectuer le flux OBO dans l’appel à `acquireTokenOnBehalfOf`.
+    - Il construit l’URL de l’appel Microsoft API Graph, puis effectue l’appel via la `getGraphData` fonction.
+    - Il retourne des erreurs en envoyant une réponse HTTP 500 avec des détails.
+    - En cas de réussite, il retourne le JSON avec la liste de noms de fichiers au client.
 
-   ```javascript
-   try {
-     const authHeader = req.headers.authorization;
-     let oboRequest = {
-       oboAssertion: authHeader.split(" ")[1],
-       scopes: ["files.read"],
-     };
+    ```javascript
+    // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
+    // and only the top 10 folder or file names.
+    const rootUrl = "/me/drive/root/children";
 
-     // The Scope claim tells you what permissions the client application has in the service.
-     // In this case we look for a scope value of access_as_user, or full access to the service as the user.
-     const tokenScopes = jwt.decode(oboRequest.oboAssertion).scp.split(" ");
-     const accessAsUserScope = tokenScopes.find(
-       (scope) => scope === "access_as_user"
-     );
-     if (!accessAsUserScope) {
-       res.status(401).send({ type: "Missing access_as_user" });
-       return;
-     }
-     const cca = authHelper.getConfidentialClientApplication();
-     const response = await cca.acquireTokenOnBehalfOf(oboRequest);
-     // TODO 14: Call Microsoft Graph to get list of filenames.
-   } catch (err) {
-     // TODO 15: Handle any errors.
-   }
-   ```
+    // Note that the last parameter, for queryParamsSegment, is hardcoded. If you reuse this code in
+    // a production add-in and any part of queryParamsSegment comes from user input, be sure that it is
+    // sanitized so that it cannot be used in a Response header injection attack.
+    const params = "?$select=name&$top=10";
 
-1. Remplacez `TODO 14` par le code suivant. Tenez compte du code suivant :
+    const graphData = await getGraphData(
+      response.accessToken,
+      rootUrl,
+      params
+    );
 
-   - Il construit l’URL de l’appel Microsoft API Graph, puis effectue l’appel via la `getGraphData` fonction.
-   - Il retourne des erreurs en envoyant une réponse HTTP 500 avec des détails.
-   - En cas de réussite, il retourne le JSON avec la liste de noms de fichiers au client.
+    // If Microsoft Graph returns an error, such as invalid or expired token,
+    // there will be a code property in the returned object set to a HTTP status (e.g. 401).
+    // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
+    if (graphData.code) {
+      res
+        .status(403)
+        .send({
+          type: "Microsoft Graph",
+          errorDetails:
+            "An error occurred while calling the Microsoft Graph API.\n" +
+            graphData,
+        });
+    } else {
+      // MS Graph data includes OData metadata and eTags that we don't need.
+      // Send only what is actually needed to the client: the item names.
+      const itemNames = [];
+      const oneDriveItems = graphData["value"];
+      for (let item of oneDriveItems) {
+        itemNames.push(item["name"]);
+      }
 
-   ```javascript
-   // Minimize the data that must come from MS Graph by specifying only the property we need ("name")
-   // and only the top 10 folder or file names.
-   const rootUrl = "/me/drive/root/children";
+      res.status(200).send(itemNames);
+    }
+    ```
 
-   // Note that the last parameter, for queryParamsSegment, is hardcoded. If you reuse this code in
-   // a production add-in and any part of queryParamsSegment comes from user input, be sure that it is
-   // sanitized so that it cannot be used in a Response header injection attack.
-   const params = "?$select=name&$top=10";
-
-   const graphData = await getGraphData(response.accessToken, rootUrl, params);
-
-   // If Microsoft Graph returns an error, such as invalid or expired token,
-   // there will be a code property in the returned object set to a HTTP status (e.g. 401).
-   // Return it to the client. On client side it will get handled in the fail callback of `makeWebServerApiCall`.
-   if (graphData.code) {
-     res.status(500).send({ type: "Microsoft Graph", errorDetails: graphData });
-   } else {
-     // MS Graph data includes OData metadata and eTags that we don't need.
-     // Send only what is actually needed to the client: the item names.
-     const itemNames = [];
-     const oneDriveItems = graphData["value"];
-     for (let item of oneDriveItems) {
-       itemNames.push(item["name"]);
-     }
-
-     res.status(200).send(itemNames);
-   }
-   ```
-
-1. Remplacez `TODO 15` par le code suivant. Ce code vérifie spécifiquement si le jeton a expiré, car le client peut demander un nouveau jeton et appeler à nouveau.
+1. Remplacez `TODO 14` par le code suivant. Ce code vérifie spécifiquement si le jeton a expiré, car le client peut demander un nouveau jeton et appeler à nouveau.
 
    ```javascript
    // On rare occasions the SSO access token is unexpired when Office validates it,
@@ -560,9 +538,9 @@ Le serveur de niveau intermédiaire fournit des API REST que le client doit appe
    // with "The provided value for the 'assertion' is not valid. The assertion has expired."
    // Construct an error message to return to the client so it can refresh the SSO token.
    if (err.errorMessage.indexOf("AADSTS500133") !== -1) {
-     res.status(500).send({ type: "AADSTS500133", errorDetails: err });
+     res.status(401).send({ type: "TokenExpiredError", errorDetails: err });
    } else {
-     res.status(500).send({ type: "Unknown", errorDetails: err });
+     res.status(403).send({ type: "Unknown", errorDetails: err });
    }
    ```
 
@@ -589,9 +567,9 @@ L’exemple doit gérer l’authentification de secours par le biais de l’auth
 
 ## <a name="security-notes"></a>Notes de sécurité
 
-* L’itinéraire `/getuserfilenames` en `getFilesroute.js` cours utilise une chaîne littérale pour composer l’appel de Microsoft Graph. Si vous modifiez l’appel afin qu’une partie de la chaîne provienne d’une entrée utilisateur, désinfectez l’entrée afin qu’elle ne puisse pas être utilisée dans une attaque par injection d’en-tête Response.
+- L’itinéraire `/getuserfilenames` en `getFilesroute.js` cours utilise une chaîne littérale pour composer l’appel de Microsoft Graph. Si vous modifiez l’appel afin qu’une partie de la chaîne provienne d’une entrée utilisateur, désinfectez l’entrée afin qu’elle ne puisse pas être utilisée dans une attaque par injection d’en-tête Response.
 
-* La `app.js` stratégie de sécurité de contenu suivante est en place pour les scripts. Vous pouvez spécifier des restrictions supplémentaires en fonction de vos besoins en matière de sécurité de complément.
+- La `app.js` stratégie de sécurité de contenu suivante est en place pour les scripts. Vous pouvez spécifier des restrictions supplémentaires en fonction de vos besoins en matière de sécurité de complément.
 
     `"Content-Security-Policy": "script-src https://appsforoffice.microsoft.com https://ajax.aspnetcdn.com https://alcdn.msauth.net " +  process.env.SERVER_SOURCE,`
 

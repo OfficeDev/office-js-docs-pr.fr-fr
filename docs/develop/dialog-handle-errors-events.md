@@ -1,14 +1,14 @@
 ---
 title: Gestion des erreurs et des événements dans la boîte de dialogue Office
 description: Découvrez comment intercepter et gérer les erreurs lors de l’ouverture et de l’utilisation de la boîte de dialogue Office.
-ms.date: 07/18/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e8eefe4ee868a3cdc52ee8d425271435404bc04
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: d3bdae7d4dddcd92a54a46fec0d5854a1a18a0bc
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889456"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616034"
 ---
 # <a name="handle-errors-and-events-in-the-office-dialog-box"></a>Gérer les erreurs et les événements dans la boîte de dialogue Office
 
@@ -34,6 +34,7 @@ Outre les erreurs générales de plateforme et de système, quatre erreurs sont 
 |12005|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. (Dans certaines versions d’Office, le texte du message d’erreur retourné avec 12005 est le même que celui retourné pour 12004.)|
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois.|
 |12009|L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans Office sur le Web, où les utilisateurs peuvent choisir de ne pas autoriser un complément à présenter une boîte de dialogue. Pour plus d’informations, consultez [Gestion des bloqueurs contextuels avec Office sur le Web](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web).|
+|12011| Le complément s’exécute dans Office sur le Web et la configuration du navigateur de l’utilisateur bloque les fenêtres contextuelles. Cela se produit généralement lorsque le navigateur est hérité Edge et que le domaine du complément se trouve dans une zone de sécurité différente du domaine que la boîte de dialogue tente d’ouvrir. Un autre scénario qui déclenche cette erreur est que le navigateur est Safari et qu’il est configuré pour bloquer toutes les fenêtres contextuelles. Envisagez de répondre à cette erreur en invitant l’utilisateur à modifier la configuration de son navigateur ou à utiliser un autre navigateur.|
 
 Lorsqu’il `displayDialogAsync` est appelé, il passe un objet [AsyncResult](/javascript/api/office/office.asyncresult) à sa fonction de rappel. Lorsque l’appel réussit, la boîte de dialogue est ouverte et la `value` propriété de l’objet `AsyncResult` est un objet [Dialog](/javascript/api/office/office.dialog) . Pour obtenir un exemple, consultez [Envoyer des informations de la boîte de dialogue à la page hôte](dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page). Lorsque l’appel échoue `displayDialogAsync` , la boîte de dialogue n’est pas créée, la `status` propriété de l’objet `AsyncResult` est définie `Office.AsyncResultStatus.Failed`sur , et la `error` propriété de l’objet est remplie. Vous devez toujours fournir un rappel qui teste et `status` répond lorsqu’il s’agit d’une erreur. Pour obtenir un exemple qui signale le message d’erreur, quel que soit son numéro de code, consultez le code suivant. (La `showNotification` fonction, qui n’est pas définie dans cet article, affiche ou enregistre l’erreur. Pour obtenir un exemple de la façon dont vous pouvez implémenter cette fonction dans votre complément, consultez [l’exemple d’API](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example) de boîte de dialogue complément Office.)
 

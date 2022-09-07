@@ -1,14 +1,14 @@
 ---
 title: Codes d'erreur de l'API commune de l'Office
 description: Cet article documente les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API Office Common.
-ms.date: 02/08/2022
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a6161c658bad35be8f7ca5193a1b03889f186d12
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 024d4ef9a2f83305a42cc1844e90f7b40ffbb86a
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959062"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67615992"
 ---
 # <a name="office-common-api-error-codes"></a>Codes d'erreur de l'API commune de l'Office
 
@@ -93,6 +93,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
 |12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
 |12009|||L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
+|12011|||Le navigateur de l’utilisateur est configuré de manière à bloquer les fenêtres contextuelles. Cette erreur peut se produire dans Office sur le Web si le navigateur est Safari et qu’il est configuré pour bloquer les fenêtres contextuelles ou si le navigateur est Edge Legacy et que le domaine de complément se trouve dans une zone de sécurité différente du domaine que la boîte de dialogue tente d’ouvrir. Erreur générée par l’appel de `displayDialogAsync`.|
 |13nnn|||Consultez [Causes et gestion des erreurs de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison

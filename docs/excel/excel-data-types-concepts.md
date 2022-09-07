@@ -1,17 +1,17 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 07/11/2022
+ms.date: 09/01/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4efb3f29ee3791b78c45db01ca53f8c48c17b752
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: a5f742e47d698b215a999b966c424819e182ea49
+ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464775"
+ms.lasthandoff: 09/07/2022
+ms.locfileid: "67616020"
 ---
 # <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
 
@@ -21,10 +21,11 @@ Cet article explique comment utiliser [l’API JavaScript Excel pour](../referen
 
 ## <a name="the-valuesasjson-property"></a>la propriété `valuesAsJson`
 
-La propriété `valuesAsJson` fait partie intégrante de la création de types de données dans Excel. Cette propriété est une extension des propriétés `values`, telles que [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Les propriétés`values` et `valuesAsJson` sont utilisées pour accéder à la valeur dans une cellule, mais la propriété `values` retourne uniquement l’un des quatre types de base : chaîne, nombre, booléen ou erreur (sous forme de chaîne). En revanche, `valuesAsJson` retourne des informations développées sur les quatre types de base, et cette propriété peut retourner des types de données tels que des valeurs numériques mises en forme, des entités et des images web.
+La `valuesAsJson` propriété (ou le singulier `valueAsJson` pour [NamedItem](/javascript/api/excel/excel.nameditem)) fait partie intégrante de la création de types de données dans Excel. Cette propriété est une extension des propriétés `values`, telles que [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). Les propriétés`values` et `valuesAsJson` sont utilisées pour accéder à la valeur dans une cellule, mais la propriété `values` retourne uniquement l’un des quatre types de base : chaîne, nombre, booléen ou erreur (sous forme de chaîne). En revanche, `valuesAsJson` retourne des informations développées sur les quatre types de base, et cette propriété peut retourner des types de données tels que des valeurs numériques mises en forme, des entités et des images web.
 
 Les objets suivants proposent la propriété `valuesAsJson`.
 
+- [NamedItem](/javascript/api/excel/excel.nameditem) (as `valueAsJson`)
 - [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
 - [Range](/javascript/api/excel/excel.range)
 - [RangeView](/javascript/api/excel/excel.rangeview)
