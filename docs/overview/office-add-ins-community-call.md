@@ -1,14 +1,14 @@
 ---
 title: Appel de la communauté des compléments Microsoft Office
 description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
-ms.date: 09/01/2022
+ms.date: 09/08/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d7b33a4d1ce69641b6750f15963f4e4695574512
-ms.sourcegitcommit: 2ea81c2bf181c185de9c1508ab8e618f3e396708
+ms.openlocfilehash: 7726bbb6d25fa658183f2207834592ef6fedf8e3
+ms.sourcegitcommit: d10e5dd1ad95678bbe232acba7d3f12796f806cb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/09/2022
-ms.locfileid: "67633742"
+ms.lasthandoff: 09/10/2022
+ms.locfileid: "67642662"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
 
@@ -16,7 +16,9 @@ L’appel de la communauté des compléments Microsoft Office est un appel mensu
 
 ## <a name="agenda-for-september-14th-call"></a>Ordre du jour de l’appel du 14 septembre
 
-L’ordre du jour de l’appel de septembre sera publié environ une semaine avant l’appel.
+- Mise à jour de l’extensibilité word.
+- Démonstration de l’utilisation de Blazor dans un complément Outlook.
+- Mise à jour de l’engagement de la communauté.
 
 ## <a name="previous-calls"></a>Appels précédents
 
