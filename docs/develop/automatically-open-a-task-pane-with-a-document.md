@@ -1,20 +1,23 @@
 ---
 title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un complément Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
-ms.date: 09/14/2021
+ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8cc40ce6ed3188118cd9cc6384805ac15130fcb2
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: ea5981fc8469d391ff03c1d3eefd70c57e41d4cb
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889491"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674629"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser des commandes de complément dans votre complément Office pour étendre l’interface utilisateur Office en ajoutant des boutons au ruban de l’application Office. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
 Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité de volet office d’ouverture automatique, introduite dans [l’ensemble de conditions requises AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Office lorsque votre scénario l’exige.
+
+> [!NOTE]
+> Pour configurer un volet Office pour qu’il s’ouvre immédiatement lorsque le complément est installé, mais pas nécessairement chaque fois que le document est ouvert ultérieurement, consultez [Ouvrir automatiquement un volet Office lorsqu’un complément est installé](automatically-open-on-installation.md).
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
@@ -160,4 +163,5 @@ Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Micro
 ## <a name="see-also"></a>Voir aussi
 
 - Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
+- [Ouvrir automatiquement un volet Office lorsqu’un complément est installé](automatically-open-on-installation.md)
 - [Rejoignez le programme de développement Microsoft 365.](/office/developer-program/office-365-developer-program)

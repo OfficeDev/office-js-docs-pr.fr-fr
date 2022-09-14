@@ -8,4 +8,4 @@ Les éléments suivants sont des exemples.
 - `npm run start:web -- --document https://1drv.ms/x/s!jkcH7spkM4EGgcZUgqthk4IK3NOypVw?e=Z6G1qp`
 - `npm run start:web -- --document https://contoso-my.sharepoint-df.com/:t:/p/user/EQda453DNTpFnl1bFPhOVR0BwlrzetbXvnaRYii2lDr_oQ?e=RSccmNP`
 
-Si votre add-in ne charge pas une version de version sideload dans le document, chargez-le manuellement en suivant les instructions dans [sideload Office Add-ins in Office sur le Web manually](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web-manually).
+Si votre complément ne charge pas de version test dans le document, chargez-le manuellement en suivant les instructions [fournies dans Chargement indépendant des compléments pour Office sur le Web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).

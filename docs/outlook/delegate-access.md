@@ -1,14 +1,14 @@
 ---
 title: Activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans un complément Outlook
 description: Explique comment configurer la prise en charge des compléments pour les dossiers partagés (par exemple, déléguer l’accès) et aux boîtes aux lettres partagées.
-ms.date: 07/11/2022
+ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a01c81dcc1bcae4fa92e2d659c1aa40af4cdac5
-ms.sourcegitcommit: 9fbb656afa1b056cf284bc5d9a094a1749d62c3e
+ms.openlocfilehash: bae8a0f8cd63eed5feea7460e57ecfc212a06d61
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/13/2022
-ms.locfileid: "66765278"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674665"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans un complément Outlook
 
@@ -20,13 +20,13 @@ Le tableau suivant présente les combinaisons client-serveur prises en charge po
 
 | Client | Exchange Online | Exchange 2019 local<br>(Mise à jour cumulative 1 ou ultérieure) | Exchange 2016 local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
-|Windows :<br>version 1910 (build 12130.20272) ou ultérieure|Oui|En préversion\*|En préversion\*|En préversion\*|
+|Windows :<br>version 1910 (build 12130.20272) ou ultérieure|Oui|Oui\*|Oui\*|Oui\*|
 |Mac:<br>build 16.47 ou ultérieure|Oui|Oui|Oui|Oui|
 |Navigateur web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|Non applicable|
 |Navigateur web :<br>Interface utilisateur Outlook classique|Non applicable|Non|Non|Non|
 
 > [!NOTE]
-> \* La prise en charge de cette fonctionnalité dans un environnement Exchange local est actuellement en préversion à partir de la version 2205 (build 15228.10000).
+> \* La prise en charge de cette fonctionnalité dans un environnement Exchange local est disponible à partir de la version 2206 (build 15330.20000) pour le canal actuel et de la version 2207 (build 15427.20000) pour le canal Entreprise mensuel.
 
 > [!IMPORTANT]
 > La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (pour plus d’informations, reportez-vous aux [clients et aux plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.
@@ -43,7 +43,7 @@ Le propriétaire de la boîte aux lettres doit [d’abord fournir l’accès à 
 
 #### <a name="shared-mailboxes-preview"></a>Boîtes aux lettres partagées (préversion)
 
-Les administrateurs de serveur Exchange peuvent créer et gérer des boîtes aux lettres partagées aux fins d’accès à des ensembles d’utilisateurs. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) et [les environnements Exchange locaux (en préversion)](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) sont pris en charge.
+Les administrateurs de serveur Exchange peuvent créer et gérer des boîtes aux lettres partagées aux fins d’accès à des ensembles d’utilisateurs. [les environnements Exchange Exchange Online](/exchange/collaboration-exo/shared-mailboxes) et [locaux](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) sont pris en charge.
 
 Une fonctionnalité de Exchange Server appelée « mise en page automatique » est activée par défaut, ce qui signifie que par la suite, la [boîte aux lettres partagée doit apparaître automatiquement](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) dans l’application Outlook d’un utilisateur après la fermeture et la réouverture d’Outlook. Toutefois, si un administrateur a désactivé le mappage automatique, l’utilisateur doit suivre les étapes manuelles décrites dans la section « Ajouter une boîte aux lettres partagée à Outlook » de l’article [Ouvrir et utiliser une boîte aux lettres partagée dans Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
@@ -90,7 +90,7 @@ Le tableau suivant décrit les autorisations prises en charge par l’API JavaSc
 
 |Autorisation|Valeur|Description|
 |---|---:|---|
-|Lire|1 (000001)|Peut lire des éléments.|
+|Lecture|1 (000001)|Peut lire des éléments.|
 |Write|2 (000010)|Peut créer des éléments.|
 |DeleteOwn|4 (000100)|Peut supprimer uniquement les éléments qu’ils ont créés.|
 |DeleteAll|8 (001000)|Peut supprimer tous les éléments.|

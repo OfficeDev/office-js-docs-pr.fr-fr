@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Excel
 ms.date: 07/12/2022
 ms.prod: excel
 ms.localizationpriority: high
-ms.openlocfilehash: d172e3b61fa4b8b66cc79b2cd364b3f2f0b37d96
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
-ms.translationtype: HT
+ms.openlocfilehash: 7dc9219988743bd4dbebfbfa28e6570bc56f9c56
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797497"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674651"
 ---
 # <a name="use-vue-to-build-an-excel-task-pane-add-in"></a>Utiliser Vue pour créer un complément du volet de tâches Excel
 
@@ -213,7 +213,7 @@ Le projet de complément que vous avez créé avec le générateur Yeoman contie
 1. Exécutez votre complément et chargez-le de manière indépendante dans Excel. Suivez les instructions pour la plateforme que vous utiliserez :
 
    - Windows : [Chargement de version test des compléments Office sur Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
-   - Navigateur web : [Chargement de version test des compléments Office dans Office sur le web](../testing/sideload-office-add-ins-for-testing.md#sideload-an-office-add-in-in-office-on-the-web)
+   - Navigateur web : [Chargement indépendant des compléments Office pour Office sur le Web](../testing/sideload-office-add-ins-for-testing.md#sideload-a-yeoman-created-add-in-to-office-on-the-web)
    - iPad : [Chargement de version test des compléments Office sur iPad](../testing/sideload-an-office-add-in-on-ipad.md)
    - Mac : [Chargement de version test des compléments Office sur Mac](../testing/sideload-an-office-add-in-on-mac.md)
 

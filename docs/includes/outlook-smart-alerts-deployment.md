@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Les compléments qui utilisent la [fonctionnalité Alertes intelligentes](../outlook/smart-alerts-onmessagesend-walkthrough.md) ne peuvent être publiés sur AppSource que si la [propriété SendMode](/javascript/api/manifest/launchevent#available-sendmode-options) du manifeste est définie sur l’option ou `PromptUser` l’option`SoftBlock`. Si la propriété **SendMode** d’un complément est définie `Block`sur , elle ne peut être déployée que par l’administrateur d’une organisation, car elle échouera à la validation AppSource.

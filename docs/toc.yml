@@ -93,6 +93,9 @@ items:
               - name: Ouvrir automatiquement un volet de tâches avec un document
                 href: develop/automatically-open-a-task-pane-with-a-document.md
                 displayName: manifest
+              - name: Ouvrir automatiquement un volet Office lors de l’installation du complément
+                href: develop/automatically-open-on-installation.md
+                displayName: manifest
               - name: Configurer votre complément pour utiliser un runtime partagé
                 href: develop/configure-your-add-in-to-use-a-shared-runtime.md
               - name: Exécuter le code sur le document ouvert
@@ -626,7 +629,7 @@ items:
             href: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
             displayName: Outlook
           - name: Référence API - dernière version
-            href: reference/outlook-api-reference-1-11.md
+            href: reference/outlook-api-reference-latest.md
             displayName: Outlook
           - name: Instructions de création d’un complément Outlook
             href: outlook/outlook-addin-design.md

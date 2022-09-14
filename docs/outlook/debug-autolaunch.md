@@ -2,23 +2,23 @@
 title: Déboguer votre complément Outlook basé sur les événements
 description: Découvrez comment déboguer votre complément Outlook qui implémente l’activation basée sur les événements.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d36a23b34132071077e3eb192e562288befb8a5
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 9b6a1d9a013b7c8e22632bdd04fb74e06c804a01
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797490"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674688"
 ---
 # <a name="debug-your-event-based-outlook-add-in"></a>Déboguer votre complément Outlook basé sur les événements
 
-Cet article fournit des conseils de débogage lorsque vous implémentez [l’activation basée sur les événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur les événements a été introduite dans [l’ensemble de conditions requises 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) avec des événements supplémentaires désormais disponibles en préversion. Pour plus d’informations, [reportez-vous aux événements pris en charge](autolaunch.md#supported-events).
+Cet article fournit des conseils de débogage lorsque vous implémentez [l’activation basée sur les événements](autolaunch.md) dans votre complément. La fonctionnalité d’activation basée sur les événements a été introduite dans [l’ensemble de conditions requises 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), avec des événements supplémentaires désormais disponibles dans les ensembles de conditions requises suivants. Pour plus d’informations, consultez [Événements pris en charge](autolaunch.md#supported-events).
 
 > [!IMPORTANT]
 > Cette fonctionnalité de débogage est uniquement prise en charge dans Outlook sur Windows avec un abonnement Microsoft 365.
 
-Dans cet article, nous abordons les étapes clés pour activer le débogage.
+Cet article décrit les étapes clés pour activer le débogage.
 
 - [Marquer le complément pour le débogage](#mark-your-add-in-for-debugging)
 - [Configurer Visual Studio Code](#configure-visual-studio-code)
@@ -43,10 +43,10 @@ Si vous avez utilisé yeoman Generator pour compléments Office pour créer votr
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. Démarrez le bureau Outlook (ou redémarrez Outlook s’il est déjà ouvert).
-1. Composez un nouveau message ou rendez-vous. La boîte de dialogue suivante doit s’afficher. *N’interagissez pas* encore avec la boîte de dialogue.
+1. Démarrez Outlook ou redémarrez-le s’il est déjà ouvert.
+1. Composez un nouveau message ou rendez-vous. La boîte de dialogue Gestionnaire d’événements de débogage doit s’afficher. *N’interagissez pas* encore avec la boîte de dialogue.
 
-    ![Capture d’écran de la boîte de dialogue Gestionnaire basé sur les événements de débogage.](../images/outlook-win-autolaunch-debug-dialog.png)
+    ![Boîte de dialogue Gestionnaire basé sur les événements de débogage dans Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
 ## <a name="configure-visual-studio-code"></a>Configurer Visual Studio Code
 
@@ -77,13 +77,13 @@ Si vous avez utilisé yeoman Generator pour compléments Office pour créer votr
 1. Créez un dossier appelé **Débogage** (peut-être dans votre dossier **Bureau** ).
 1. Ouvrez Visual Studio Code.
 1. Accédez au **dossier Ouvrir** un **fichier** > , accédez au dossier que vous venez de créer, puis **sélectionnez Sélectionner un dossier**.
-1. Dans la barre d’activité, sélectionnez l’élément **de débogage** (Ctrl+Maj+D).
+1. Dans la barre d’activité, **sélectionnez Exécuter et déboguer** (Ctrl+Maj+D).
 
-    ![Capture d’écran de l’icône Déboguer dans la barre d’activité.](../images/vs-code-debug.png)
+    ![Icône Exécuter et déboguer dans la barre d’activité.](../images/vs-code-debug.png)
 
 1. Sélectionnez le lien **créer un fichier launch.json** .
 
-    ![Capture d’écran du lien permettant de créer un fichier launch.json dans Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    ![Lien situé sous l’option Exécuter et déboguer pour créer un fichier launch.json dans Visual Studio Code.](../images/vs-code-create-launch.json.png)
 
 1. Dans la liste déroulante **Sélectionner un environnement** , sélectionnez **Edge : Lancer** pour créer un fichier launch.json.
 1. Ajoutez l’extrait suivant à votre liste de configurations. Enregistrez vos modifications.
@@ -113,9 +113,9 @@ Si vous avez utilisé yeoman Generator pour compléments Office pour créer votr
     `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]\bundle.js`
 
 1. Placez les points d’arrêt dans bundle.js où vous souhaitez que le débogueur s’arrête.
-1. Dans la liste **déroulante DEBUG** , sélectionnez le nom **Débogage direct**, puis sélectionnez **Exécuter**.
+1. Dans la liste **déroulante DÉBOguer** , sélectionnez **Débogage direct**, puis sélectionnez l’icône **Démarrer le débogage** .
 
-    ![Capture d’écran de la sélection du débogage direct dans les options de configuration dans la liste déroulante Débogage Visual Studio Code.](../images/outlook-win-autolaunch-debug-vsc.png)
+    ![Option de débogage direct sélectionnée dans les options de configuration dans la liste déroulante Débogage Visual Studio Code.](../images/outlook-win-autolaunch-debug-vsc.png)
 
 ## <a name="debug"></a>Débogage
 

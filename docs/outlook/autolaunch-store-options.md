@@ -2,18 +2,18 @@
 title: Options de liste AppSource pour votre complément Outlook basé sur les événements
 description: Découvrez les options de liste AppSource disponibles pour votre complément Outlook qui implémente l’activation basée sur les événements.
 ms.topic: article
-ms.date: 07/11/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d8d2c2e9960d2aef2d32ede6e20eb5f1db125a6c
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: cf99959b31bae665df250941abf88405906acb5c
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797679"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674722"
 ---
 # <a name="appsource-listing-options-for-your-event-based-outlook-add-in"></a>Options de liste AppSource pour votre complément Outlook basé sur les événements
 
-À l’heure actuelle, les compléments doivent être déployés par les administrateurs d’une organisation pour que les utilisateurs finaux puissent accéder à la fonctionnalité basée sur les événements. Nous limitons l’activation basée sur les événements si l’utilisateur final a acquis le complément directement à partir d’AppSource. Par exemple, si le complément Contoso inclut le `LaunchEvent` point d’extension avec au moins un point défini `LaunchEvent Type` sous le `LaunchEvents` nœud, l’appel automatique du complément se produit uniquement si le complément a été installé pour l’utilisateur final par l’administrateur de son organisation. Sinon, l’appel automatique du complément est bloqué. Consultez l’extrait suivant d’un exemple de manifeste de complément.
+Les compléments doivent être déployés par les administrateurs d’une organisation pour que les utilisateurs finaux puissent accéder à la fonctionnalité basée sur les événements. L’activation basée sur les événements est limitée si l’utilisateur final a acquis le complément directement à partir [d’AppSource](https://appsource.microsoft.com). Par exemple, si le complément Contoso inclut le `LaunchEvent` point d’extension avec au moins un point défini `LaunchEvent Type` sous le `LaunchEvents` nœud, l’appel automatique du complément se produit uniquement si le complément a été installé pour l’utilisateur final par l’administrateur de son organisation. Sinon, l’appel automatique du complément est bloqué. Consultez l’extrait suivant d’un exemple de manifeste de complément.
 
 ```xml
 ...
@@ -32,11 +32,13 @@ Les utilisateurs et les administrateurs ne peuvent pas rechercher explicitement 
 > [!NOTE]
 > Bien que les utilisateurs finaux puissent installer le complément à l’aide d’un code de version d’évaluation, le complément n’inclut pas l’activation basée sur les événements.
 
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
 ## <a name="specify-a-flight-code"></a>Spécifier un code de vol
 
-Pour spécifier le code de version d’évaluation souhaité pour votre complément, partagez ces informations dans les **notes de certification** lorsque vous publiez votre complément. _**Important** :_ Les codes de vol respectent la casse.
+Pour spécifier le code de version d’évaluation de votre complément, partagez le code dans les **notes de certification** lorsque vous publiez votre complément. **Important** : les codes de vol respectent la casse.
 
-![Capture d’écran montrant l’exemple de demande de code de version d’évaluation dans l’écran Notes pour la certification pendant le processus de publication.](../images/outlook-publish-notes-for-certification-1.png)
+![Exemple de demande de code de version d’évaluation dans l’écran Notes pour la certification pendant le processus de publication.](../images/outlook-publish-notes-for-certification.png)
 
 ## <a name="deploy-add-in-with-flight-code"></a>Déployer un complément avec du code de version d’évaluation
 
@@ -61,7 +63,7 @@ Vous pouvez mettre à jour votre complément existant pour inclure l’activatio
 
 Une fois le complément mis à jour approuvé, les administrateurs de l’organisation qui ont déjà déployé le complément recevront un message de mise à jour dans la section **Applications intégrées** du Centre d’administration. Le message informe l’administrateur des modifications apportées à l’activation basée sur les événements. Une fois que l’administrateur a accepté les modifications, la mise à jour est déployée pour les utilisateurs finaux.
 
-![Capture d’écran de la notification de mise à jour d’application sur l’écran « Applications intégrées ».](../images/outlook-deploy-update-notification.png)
+![Notifications de mise à jour d’application sur l’écran « Applications intégrées ».](../images/outlook-deploy-update-notification.png)
 
 Pour les utilisateurs finaux qui ont installé le complément seuls, la fonctionnalité d’activation basée sur les événements ne fonctionnera pas même après la mise à jour du complément.
 
@@ -69,13 +71,13 @@ Pour les utilisateurs finaux qui ont installé le complément seuls, la fonction
 
 Chaque fois qu’un complément basé sur les événements est déployé à partir de l’écran **Applications intégrées** , l’administrateur obtient des détails sur les fonctionnalités d’activation basées sur les événements du complément dans l’Assistant déploiement. Les détails s’affichent dans la section **Autorisations et fonctionnalités de l’application** . L’administrateur doit voir tous les événements où le complément peut s’activer automatiquement.
 
-![Capture d’écran de l’écran « Accepter les demandes d’autorisations » lors du déploiement d’une nouvelle application.](../images/outlook-deploy-accept-permissions-requests.png)
+![L’écran « Accepter les demandes d’autorisations » lors du déploiement d’une nouvelle application.](../images/outlook-deploy-accept-permissions-requests.png)
 
 De même, lorsqu’un complément existant est mis à jour vers des fonctionnalités basées sur des événements, l’administrateur voit un état « Mise à jour en attente » sur le complément. Le complément mis à jour est déployé uniquement si l’administrateur accepte les modifications indiquées dans la section **Autorisations et fonctionnalités** de l’application, y compris l’ensemble d’événements où le complément peut s’activer automatiquement.
 
 Chaque fois que vous ajoutez des nouveautés `LaunchEvent Type` à votre complément, les administrateurs voient le flux de mise à jour dans le portail d’administration et doivent donner leur consentement pour des événements supplémentaires.
 
-![Capture d’écran du flux « Mises à jour » lors du déploiement d’une application mise à jour.](../images/outlook-deploy-update-flow.png)
+![Flux « Mises à jour » lors du déploiement d’une application mise à jour.](../images/outlook-deploy-update-flow.png)
 
 ## <a name="see-also"></a>Voir aussi
 

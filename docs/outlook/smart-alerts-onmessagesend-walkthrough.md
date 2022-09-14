@@ -1,28 +1,28 @@
 ---
-title: Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
+title: Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook
 description: Découvrez comment gérer les événements en envoi dans votre complément Outlook à l’aide de l’activation basée sur les événements.
 ms.topic: article
-ms.date: 08/10/2022
+ms.date: 09/09/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e5c94cc13898ec64dcdedc0afdd627bfeb2323c
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: cabe56d247a009886939f1738b5f135724c40f1d
+ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320650"
+ms.lasthandoff: 09/14/2022
+ms.locfileid: "67674637"
 ---
-# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in-preview"></a>Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook (préversion)
+# <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Utiliser des alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook
 
 Les `OnMessageSend` événements et `OnAppointmentSend` les alertes actives tirent parti des alertes intelligentes, qui vous permettent d’exécuter la logique après qu’un utilisateur a sélectionné **Envoyer** dans son message ou rendez-vous Outlook. Votre gestionnaire d’événements vous permet de donner à vos utilisateurs la possibilité d’améliorer leurs e-mails et invitations aux réunions avant qu’ils ne soient envoyés.
 
 La procédure pas à pas suivante utilise l’événement `OnMessageSend` . À la fin de cette procédure pas à pas, vous disposerez d’un complément qui s’exécute chaque fois qu’un message est envoyé et vérifie si l’utilisateur a oublié d’ajouter un document ou une image qu’il a mentionné dans son e-mail.
 
-> [!IMPORTANT]
-> Les `OnMessageSend` événements et `OnAppointmentSend` les événements sont uniquement disponibles en préversion avec un abonnement Microsoft 365 dans Outlook sur Windows et sur le web. Pour plus d’informations, consultez [La préversion](autolaunch.md#how-to-preview). Les événements d’aperçu ne doivent pas être utilisés dans les compléments de production.
+> [!NOTE]
+> Les `OnMessageSend` événements et `OnAppointmentSend` les événements ont été introduits dans [l’ensemble de conditions requises 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets) qui prennent en charge cet ensemble de conditions requises.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prerequisites
 
-L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur les événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, utilisez d’autres événements disponibles, configurez la préversion pour cet événement, déboguez votre complément, etc., [reportez-vous à Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md).
+L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur les événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, utilisez d’autres événements disponibles, déboguez votre complément, etc., consultez [Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md).
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -40,7 +40,7 @@ Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.11">
+      <bt:Sets DefaultMinVersion="1.12">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -137,7 +137,7 @@ Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md
 
 > [!TIP]
 >
-> - Pour **les options SendMode** disponibles avec les événements et `OnAppointmentSend` les `OnMessageSend` événements, reportez-vous aux [options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options-preview).
+> - Pour **les options SendMode** disponibles avec les événements et `OnAppointmentSend` les `OnMessageSend` événements, consultez [Options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options).
 > - Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).
 
 ## <a name="implement-event-handling"></a>Implémenter la gestion des événements
@@ -256,7 +256,7 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé de manière indépendante.
 
@@ -278,9 +278,16 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Ajoutez une pièce jointe, puis renvoyez le message. Il ne doit pas y avoir d’alerte cette fois.
 
+## <a name="deploy-to-users"></a>Déployer sur les utilisateurs
+
+Comme pour les autres compléments basés sur des événements, les compléments qui utilisent la fonctionnalité Alertes intelligentes doivent être déployés par l’administrateur d’une organisation. Pour obtenir des conseils sur le déploiement de votre complément via le Centre d'administration Microsoft 365, consultez la section **Déployer pour les utilisateurs** dans [Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md#deploy-to-users).
+
+> [!IMPORTANT]
+> Les compléments qui utilisent la fonctionnalité Alertes intelligentes ne peuvent être publiés sur AppSource que si la [propriété SendMode](/javascript/api/manifest/launchevent#available-sendmode-options) du manifeste est définie sur l’option ou `PromptUser` l’option`SoftBlock`. Si la propriété **SendMode** d’un complément est définie `Block`sur , elle ne peut être déployée que par l’administrateur d’une organisation, car elle échouera à la validation AppSource. Pour en savoir plus sur la publication de votre complément basé sur des événements dans AppSource, consultez [les options de liste AppSource pour votre complément Outlook basé sur les événements](autolaunch-store-options.md).
+
 ## <a name="smart-alerts-feature-behavior-and-scenarios"></a>Comportement et scénarios des fonctionnalités d’alertes intelligentes
 
-Les descriptions des options **SendMode** et les recommandations relatives au moment de leur utilisation sont détaillées dans les [options SendMode disponibles](/javascript/api/manifest/launchevent). L’article suivant décrit le comportement de la fonctionnalité pour certains scénarios.
+Les descriptions des options **SendMode** et les recommandations relatives au moment de leur utilisation sont détaillées dans les [options SendMode disponibles](/javascript/api/manifest/launchevent#available-sendmode-options). L’article suivant décrit le comportement de la fonctionnalité pour certains scénarios.
 
 ### <a name="add-in-is-unavailable"></a>Le complément n’est pas disponible
 
@@ -320,7 +327,7 @@ Si l’option ou `Block` l’option `SoftBlock` est utilisée, l’utilisateur n
 
 ## <a name="limitations"></a>Limites
 
-Étant donné que les événements et `OnAppointmentSend` les `OnMessageSend` événements sont pris en charge par le biais de la fonctionnalité d’activation basée sur les événements, les mêmes limitations de fonctionnalité s’appliquent aux compléments qui s’activent à la suite de ces événements. Pour obtenir une description de ces limitations, [reportez-vous au comportement et aux limitations de l’activation basée sur les événements](autolaunch.md#event-based-activation-behavior-and-limitations).
+Étant donné que les événements et `OnAppointmentSend` les `OnMessageSend` événements sont pris en charge par le biais de la fonctionnalité d’activation basée sur les événements, les mêmes limitations de fonctionnalité s’appliquent aux compléments qui s’activent à la suite de ces événements. Pour obtenir une description de ces limitations, consultez [comportement et limitations de l’activation basée sur les événements](autolaunch.md#event-based-activation-behavior-and-limitations).
 
 En plus de ces contraintes, une seule instance de l’événement `OnMessageSend` peut `OnAppointmentSend` être déclarée dans le manifeste. Si vous avez besoin de plusieurs `OnMessageSend` événements, `OnAppointmentSend` vous devez les déclarer dans un manifeste ou un complément distinct.
 
@@ -328,7 +335,7 @@ Bien qu’un message de boîte de dialogue Alertes intelligentes puisse être mo
 
 - Barre de titre de la boîte de dialogue. Le nom de votre complément s’y affiche toujours.
 - Format du message. Par exemple, vous ne pouvez pas modifier la taille et la couleur de police du texte ou insérer une liste à puces.
-- Options de la boîte de dialogue. Par exemple, les options **Envoyer quand même** et **Ne pas envoyer** sont fixes et dépendent de [l’option SendMode](/javascript/api/manifest/launchevent) que vous sélectionnez.
+- Options de la boîte de dialogue. Par exemple, les options **Envoyer quand même** et **Ne pas envoyer** sont fixes et dépendent de [l’option SendMode](/javascript/api/manifest/launchevent#available-sendmode-options) que vous sélectionnez.
 - Boîtes de dialogue d’informations sur le traitement et la progression de l’activation basée sur les événements. Par exemple, le texte et les options qui apparaissent dans les dialogues d’expiration et d’opération de longue durée ne peuvent pas être modifiés.
 
 ## <a name="see-also"></a>Voir aussi
