@@ -3,12 +3,12 @@ title: Glossaire des termes des compléments Office
 description: Glossaire des termes couramment utilisés dans la documentation des compléments Office.
 ms.date: 08/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: db15b4afcdf37122edc563ae9257ce7a61fb4580
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
+ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423292"
+ms.lasthandoff: 09/16/2022
+ms.locfileid: "67735322"
 ---
 # <a name="office-add-ins-glossary"></a>Glossaire des compléments Office
 
@@ -78,13 +78,17 @@ Un **runtime de fonctions personnalisées** est un [runtime JavaScript uniquemen
 
 Voir aussi : [runtime](#runtime), [runtime partagé](#shared-runtime).
 
+## <a name="custom-functions-only-add-in"></a>complément de fonctions personnalisées uniquement
+
+Complément qui contient une fonction personnalisée, mais aucune interface utilisateur telle qu’un volet Office. Les fonctions personnalisées de ce type de complément s’exécutent dans un [runtime JavaScript uniquement](../testing/runtimes.md#javascript-only-runtime). Une fonction personnalisée qui inclut une interface utilisateur peut utiliser un runtime partagé ou une combinaison d’un runtime JavaScript uniquement et d’un runtime html. Nous vous recommandons d’utiliser un runtime partagé si vous disposez d’une interface utilisateur.
+
+Voir aussi : [fonction personnalisée](#custom-function), [runtime de fonctions personnalisées](#custom-functions-runtime).
+
 ## <a name="host"></a>host
 
 **\<Host\>** fait généralement référence à une application Office. Les applications Office ou hôtes qui prennent en charge les compléments Office sont Excel, OneNote, Outlook, PowerPoint, Project et Word.
 
 Voir aussi : [application](#application), [client](#client), [application Office, client Office](#office-application-office-client).
-
-
 
 ## <a name="office-application-office-client"></a>Application Office, client Office
 
@@ -134,12 +138,6 @@ Un **didacticiel** est une aide pédagogique conçue pour aider les gens à appr
 
 Voir aussi : [démarrage rapide](#quick-start).
 
-## <a name="custom-functions-only-add-in"></a>complément de fonctions personnalisées uniquement
-
-Complément qui contient une fonction personnalisée, mais aucune interface utilisateur telle qu’un volet Office. Les fonctions personnalisées de ce type de complément s’exécutent dans un [runtime JavaScript uniquement](../testing/runtimes.md#javascript-only-runtime). Une fonction personnalisée qui inclut une interface utilisateur peut utiliser un runtime partagé ou une combinaison d’un runtime JavaScript uniquement et d’un runtime html. Nous vous recommandons d’utiliser un runtime partagé si vous disposez d’une interface utilisateur. 
-
-Voir aussi : [fonction personnalisée](#custom-function), [runtime de fonctions personnalisées](#custom-functions-runtime).
-
 ## <a name="web-add-in"></a>complément web
 
 **Le complément web** est un terme hérité pour un complément Office. Ce terme peut être utilisé lorsque la documentation Microsoft 365 doit distinguer les compléments Office modernes des autres types de compléments tels que VBA, COM ou VSTO.
@@ -160,7 +158,7 @@ Voir aussi : [fonction personnalisée](#custom-function).
 
 ## <a name="yeoman-generator-yo-office"></a>Générateur Yeoman, yo office
 
-Le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) utilise l’outil open source [Yeoman](https://github.com/yeoman/yo) pour générer un complément Office via la ligne de commande. `yo office` est la commande qui exécute le générateur Yeoman pour les compléments Office. Les guides de démarrage rapide des compléments Office et les didacticiels utilisent le générateur Yeoman.
+Le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) utilise l’outil Open Source [Yeoman](https://github.com/yeoman/yo) pour générer un complément Office via la ligne de commande. `yo office` est la commande qui exécute le générateur Yeoman pour les compléments Office. Les guides de démarrage rapide des compléments Office et les didacticiels utilisent le générateur Yeoman.
 
 ## <a name="see-also"></a>Voir aussi
 
