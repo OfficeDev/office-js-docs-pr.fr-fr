@@ -4,12 +4,12 @@ description: Chemin d’accès recommandé pour les développeurs de complément
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 4cafa1221a24c7537d84fb662761e7ec66a0125d
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
+ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152910"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857521"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guide du développeur de compléments VSTO
 
@@ -50,7 +50,7 @@ Vous ne pouvez pas apprendre à conduire en lisant le manuel du propriétaire, a
 
 ## <a name="step-4-understand-the-javascript-library"></a>Étape 4 : Comprendre la bibliothèque JavaScript
 
-Obtenez une vue d’ensemble de la bibliothèque JavaScript pour Office avec ce didacticiel de Microsoft Learn : [Comprendre les API JavaScript pour Office](/learn/modules/intro-office-add-ins/3-apis).
+Obtenez une vue d’ensemble de la bibliothèque JavaScript Office avec ce didacticiel à partir de la formation Microsoft Learn : [Comprendre les API JavaScript Office](/training/modules/intro-office-add-ins/3-apis).
 
 Explorez ensuite les API JavaScript pour Office à l’aide de l’[outil Script Lab](explore-with-script-lab.md), un bac à sable pour l’exécution et l’exploration des API.
 

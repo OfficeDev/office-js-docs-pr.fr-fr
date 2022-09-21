@@ -4,12 +4,12 @@ description: Un parcours recommandé pour les débutants à travers les ressourc
 ms.date: 02/12/2021
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: beafa972129133955ddebef9ebaaeae6dda101b6
-ms.sourcegitcommit: 1306faba8694dea203373972b6ff2e852429a119
-ms.translationtype: HT
+ms.openlocfilehash: 097be9f7aa1563dc513da9cb27eeb7daa344aa41
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "59152913"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857541"
 ---
 # <a name="beginners-guide"></a>Guide du débutant
 
@@ -45,7 +45,7 @@ Vous ne pouvez pas apprendre à conduire en lisant le manuel du propriétaire, a
 
 ## <a name="step-4-understand-the-javascript-library"></a>Étape 4 : Comprendre la bibliothèque JavaScript
 
-Tout d’abord, obtenez une vue d’ensemble de la bibliothèque JavaScript pour Office avec ce didacticiel de Microsoft Learn : [Comprendre les API JavaScript pour Office](/learn/modules/understand-office-javascript-apis/index).
+Tout d’abord, obtenez une vue d’ensemble de la bibliothèque JavaScript Office avec ce didacticiel à partir de la formation Microsoft Learn : [Comprendre les API JavaScript Office](/training/modules/understand-office-javascript-apis/index).
 
 Explorez ensuite les API JavaScript pour Office à l’aide de notre [outil Script Lab](explore-with-script-lab.md), un bac à sable pour l’exécution et l’exploration des API.
 

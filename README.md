@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Documentation pour compléments Office
 
-Bienvenue dans le référentiel de documentation des compléments Office. Dans ce référentiel, vous trouverez les fichiers sources de documentation pour les concepts de l’API JavaScript Office, les démarrages rapides, les didacticiels et les guides pratiques. Pour une expérience optimale, nous vous recommandons d’afficher ce contenu sur le site [Microsoft Docs](https://docs.microsoft.com/office/dev/add-ins).
+Bienvenue dans le référentiel de documentation des compléments Office. Dans ce référentiel, vous trouverez les fichiers sources de documentation pour les concepts de l’API JavaScript Office, les démarrages rapides, les didacticiels et les guides pratiques. Pour une expérience optimale, nous vous recommandons d’afficher ce contenu sur le site [Microsoft Docs](https://learn.microsoft.com/office/dev/add-ins).
 
 > **Remarque** : Vous trouverez les fichiers sources de la documentation de référence de l’API JavaScript Office dans le référentiel [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) .
 

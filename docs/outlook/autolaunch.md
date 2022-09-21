@@ -2,14 +2,14 @@
 title: Configurer votre complément Outlook pour l’activation basée sur les événements
 description: Découvrez comment configurer votre complément Outlook pour l’activation basée sur les événements.
 ms.topic: article
-ms.date: 09/09/2022
+ms.date: 09/16/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 11f3f96125aaf83a80586dbe70f4902e73ed7d17
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 17f6815728beeb722f79db4ddc3c61e0f8e96f59
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674752"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857577"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur les événements
 
@@ -177,7 +177,7 @@ Pour activer l’activation basée sur les événements de votre complément, vo
 Outlook sur Windows utilise un fichier JavaScript, tandis que Outlook sur le web et sur la nouvelle interface utilisateur Mac utilisent un fichier HTML qui peut référencer le même fichier JavaScript. Vous devez fournir des références à ces deux fichiers dans le `Resources` nœud du manifeste, car la plateforme Outlook détermine en fin de compte s’il faut utiliser html ou JavaScript en fonction du client Outlook. Par conséquent, pour configurer la gestion des événements, indiquez l’emplacement du code HTML dans l’élément **\<Runtime\>** , puis, dans son `Override` élément enfant, indiquez l’emplacement du fichier JavaScript incorporé ou référencé par le code HTML.
 
 > [!TIP]
-> 
+>
 > - Pour en savoir plus sur les runtimes dans les compléments, consultez [Runtimes dans les compléments Office](../testing/runtimes.md).
 > - Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).
 
@@ -230,7 +230,7 @@ Dans ce scénario, vous allez ajouter la gestion de la composition de nouveaux �
 1. Enregistrez vos modifications.
 
 > [!IMPORTANT]
-> Windows : à l’heure actuelle, les importations ne sont pas prises en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur les événements.
+> Windows : À l’heure actuelle, les importations ne sont pas prises en charge dans le fichier JavaScript où vous implémentez la gestion de l’activation basée sur les événements.
 
 ## <a name="update-the-commands-html-file"></a>Mettre à jour le fichier HTML des commandes
 
@@ -316,7 +316,7 @@ Vous pouvez déployer des compléments basés sur des événements en chargeant 
 
 ## <a name="event-based-activation-behavior-and-limitations"></a>Comportement et limitations de l’activation basée sur les événements
 
-Les gestionnaires d’événements de lancement de complément sont censés être de courte durée, légers et aussi peuvasifs que possible. Après l’activation, votre complément expire dans un délai d’environ 300 secondes, soit la durée maximale autorisée pour l’exécution de compléments basés sur des événements. Pour signaler que votre complément a terminé le traitement d’un événement de lancement, nous vous recommandons d’appeler la `event.completed` méthode par le gestionnaire associé. (Notez que l’exécution du code inclus après l’instruction `event.completed` n’est pas garantie.) Chaque fois qu’un événement que vos handles de complément déclenchent, le complément est réactivé et exécute le gestionnaire d’événements associé, et la fenêtre de délai d’expiration est réinitialisée. Le complément se termine après son expiration, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
+Les gestionnaires d’événements de lancement de complément sont censés être de courte durée, légers et aussi peuvasifs que possible. Après l’activation, votre complément expire dans un délai d’environ 300 secondes, soit la durée maximale autorisée pour l’exécution de compléments basés sur des événements. Pour signaler que votre complément a terminé le traitement d’un événement de lancement, votre gestionnaire d’événements associé doit appeler la `event.completed` méthode. (Notez que le code inclus après l’exécution de l’instruction `event.completed` n’est pas garanti.) Chaque fois qu’un événement que vos handles de complément déclenchent, le complément est réactivé et exécute le gestionnaire d’événements associé, et la fenêtre de délai d’expiration est réinitialisée. Le complément se termine après son expiration, ou l’utilisateur ferme la fenêtre de composition ou envoie l’élément.
 
 Si l’utilisateur a plusieurs compléments qui se sont abonnés au même événement, la plateforme Outlook lance les compléments dans un ordre particulier. Actuellement, seuls cinq compléments basés sur des événements peuvent être en cours d’exécution active.
 

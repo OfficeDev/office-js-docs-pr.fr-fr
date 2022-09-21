@@ -3,12 +3,12 @@ title: Activer les dossiers partagés et les scénarios de boîte aux lettres pa
 description: Explique comment configurer la prise en charge des compléments pour les dossiers partagés (par exemple, déléguer l’accès) et aux boîtes aux lettres partagées.
 ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bae8a0f8cd63eed5feea7460e57ecfc212a06d61
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 1c6884c18e4cb9916fcec20e6b732b0d20918e2f
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674665"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857556"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans un complément Outlook
 
@@ -214,7 +214,7 @@ if (item.getSharedPropertiesAsync) {
   // Perform operation for shared item.
 } else {
   // In general, this is not a shared item, so construct the REST URL using info from the Call REST APIs article:
-  // https://docs.microsoft.com/office/dev/add-ins/outlook/use-rest-api
+  // https://learn.microsoft.com/office/dev/add-ins/outlook/use-rest-api
 
   // Perform operation for non-shared item.
 }

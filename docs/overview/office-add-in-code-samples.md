@@ -1,14 +1,14 @@
 ---
 title: Exemples de code Office
 description: Une liste d Office exemples de code pour vous aider à apprendre et à créer vos propres modules.
-ms.date: 06/10/2022
+ms.date: 09/16/2022
 localization_priority: high
-ms.openlocfilehash: 16a1f92992c397772559468c27033aa58f6b6a6d
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 25a2312d26578c25c0ed2a3098df0d43008f9ac4
+ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423264"
+ms.lasthandoff: 09/21/2022
+ms.locfileid: "67857563"
 ---
 # <a name="office-add-in-code-samples"></a>Exemples de code Office
 
@@ -23,21 +23,19 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 - [Complément PowerPoint « Hello World »](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Complément Word « Hello World »](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
-<br>
-
----
-
----
-
 ## <a name="blazor-webassembly"></a>Blazor WebAssembly
 
+Si votre expérience de développement est dans la création de compléments VSTO, les exemples suivants montrent comment créer des compléments Web Office à l’aide de .NET Blazor WebAssembly. Vous pouvez conserver une grande partie de votre code en C# et Visual Studio.
+
 - [Créer un complément Blazor WebAssembly Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
+- [Créer un complément Blazor WebAssembly Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in)
 - [Créer un complément Blazor WebAssembly Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
 
 ## <a name="excel"></a>Excel
 
 | Nom                | Description         |
 |:--------------------|:--------------------|
+| [Explorateur de types de données](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) (préversion) | Crée un complément Excel qui vous permet de créer et d’explorer des types de données dans vos classeurs. Les types de données permettent aux développeurs de compléments d’organiser des structures de données complexes en tant qu’objets, tels que des valeurs numériques mises en forme, des images web et des valeurs d’entité. |
 | [Ouvrir dans Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Créez une feuille Excel feuille de calcul Microsoft Teams contenant les données que vous définissez.|
 | [Insérez un fichier Excel externe et remplissez-le avec des données JSON](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | Insérez un modèle existant à partir d'un fichier Excel externe dans le classeur Excel actuellement ouvert. Ensuite, remplissez le modèle avec les données d'un service Web JSON. |
 | [Créer des onglets contextuels personnalisés sur le ruban](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Créez un onglet contextuel personnalisé sur le ruban dans l’interface de l’utilisateur Office. L’exemple crée un tableau et lorsque l’utilisateur déplace le focus à l’intérieur du tableau, l’onglet personnalisé s’affiche. Lorsque l’utilisateur se déplace en dehors du tableau, l’onglet personnalisé est masqué. |
@@ -62,12 +60,6 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 | [Obtenir, modifier et définir le contenu OOXML dans un document Word avec un complément Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml) | Cet exemple montre comment obtenir, modifier et définir le contenu OOXML dans un document Word. L’exemple de complément fournit un bloc-notes pour obtenir Office Open XML pour votre propre contenu et tester vos propres extraits de code Office Open XML modifiés.|
 | [Charger et écrire Open XML dans votre complément Word](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)  | Cet exemple de complément vous montre comment ajouter une variété de types de contenu riche à un document Word à l’aide de la méthode setSelectedDataAsync avec le type de forçage ooxml. Le complément vous permet également d’afficher les marques de révision Office Open XML pour chaque exemple de type de contenu directement sur la page. |
 
-<br>
-
----
-
----
-
 ## <a name="authentication-authorization-and-single-sign-on-sso"></a>Authentification, autorisation et authentification unique (SSO)
 
 | Nom                | Description         |
@@ -78,6 +70,12 @@ Les exemples suivants montrent comment créer le complément Office le plus simp
 | [Autorisation du module d'extension Outlook pour Microsoft Graph](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). | Créez un module complémentaire Outlook qui se connecte à Microsoft Graph et accède aux classeurs stockés dans OneDrive Entreprise pour composer un nouveau message électronique. |
 | [Sign-on (SSO) Office add-in with ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO) | Utilisez `getAccessToken` l'API dans Office.js pour donner au complément un accès aux données Microsoft Graph. Cet exemple est construit sur ASP.NET. |
 | [Sign-on (SSO) Office add-in with Node.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) | Utilisez `getAccessToken` l'API dans Office.js pour donner au complément un accès aux données Microsoft Graph. Cet exemple est construit sur Node.js.|
+
+## <a name="office"></a>Office
+
+| Nom                | Description         |
+|:--------------------|:--------------------|
+| [Enregistrer les paramètres personnalisés dans votre complément Office](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings) | Enregistrez les paramètres personnalisés dans un complément Office. Le complément stocke les données en tant que paires clé-valeur, à l’aide du conteneur de propriétés de l’API JavaScript pour Office, des cookies de navigateur, du stockage web (localStorage et sessionStorage) ou en stockant les données dans un div masqué dans le document. |
 
 ## <a name="shared-runtime"></a>Runtime partagé requis
 
