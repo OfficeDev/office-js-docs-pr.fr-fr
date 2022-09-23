@@ -1,24 +1,22 @@
 ---
 title: Appel de la communauté des compléments Microsoft Office
 description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
-ms.date: 09/08/2022
+ms.date: 09/21/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7726bbb6d25fa658183f2207834592ef6fedf8e3
-ms.sourcegitcommit: d10e5dd1ad95678bbe232acba7d3f12796f806cb
+ms.openlocfilehash: 17a7c9831e715583051ba3eaf6c289aab53195dc
+ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2022
-ms.locfileid: "67642662"
+ms.lasthandoff: 09/23/2022
+ms.locfileid: "67990419"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
 
 L’appel de la communauté des compléments Microsoft Office est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
 
-## <a name="agenda-for-september-14th-call"></a>Ordre du jour de l’appel du 14 septembre
+## <a name="agenda-for-october-12th-call"></a>Ordre du jour de l’appel du 12 octobre
 
-- Mise à jour de l’extensibilité word.
-- Démonstration de l’utilisation de Blazor dans un complément Outlook.
-- Mise à jour de l’engagement de la communauté.
+L’ordre du jour de l’appel d’octobre sera publié environ une semaine avant l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 
