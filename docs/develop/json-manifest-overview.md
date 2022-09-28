@@ -3,12 +3,12 @@ title: Manifeste Teams pour les compléments Office (préversion)
 description: Obtenez une vue d’ensemble du manifeste JSON en préversion.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 8e10d553673b2c6a67166bb8d5e30a3f655c550d
-ms.sourcegitcommit: c62d087c27422db51f99ed7b14216c1acfda7fba
-ms.translationtype: HT
+ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/08/2022
-ms.locfileid: "66689382"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092881"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifeste Teams pour les compléments Office (préversion)
 
@@ -77,21 +77,21 @@ Les enfants **\<OfficeApp\>** de sont communément divisés en deux catégories 
 
 Les propriétés du manifeste de base spécifient les caractéristiques du complément que *tout* type d’extension de Microsoft 365 doit avoir. Cela inclut les onglets Teams et les extensions de message, pas seulement les compléments Office. Ces caractéristiques incluent un nom public et un ID unique. Le tableau suivant montre un mappage de certaines propriétés de niveau supérieur critiques dans le manifeste JSON en préversion aux éléments XML du manifeste actuel, où le principe de mappage est *l’objectif* du balisage.
 
-|Propriété JSON|Objectif|Élément(s) XML|Commentaires|
+|Propriété JSON|Objectif|Éléments XML|Commentaires|
 |:-----|:-----|:-----|:-----|
-|« $schema »| Identifie le schéma de manifeste. | attributs de **\<OfficeApp\>** et **\<VersionOverrides\>** | |
-|"id"| GUID du complément. | **\<Id\>**| |
-|« version »| Version du complément. | **\<Version\>** | |
-|« manifestVersion »| Version du schéma de manifeste. |  attributs de **\<OfficeApp\>** | |
-|« nom »| Nom public du complément. | **\<DisplayName\>** | |
-|« description »| Description publique du complément.  | **\<Description\>** | |
-|« accentColor »||| Cette propriété n’a pas d’équivalent dans le manifeste XML actuel et n’est pas utilisée dans la préversion du manifeste JSON. Mais il doit être présent. |
-|« développeur »| Identifie le développeur du complément. | **\<ProviderName\>** | |
-|« localizationInfo »| Configure les paramètres régionaux par défaut et les autres paramètres régionaux pris en charge. | **\<DefaultLocale\>** et **\<Override\>** | |
+|« $schema »| Identifie le schéma de manifeste. | attributs de **\<OfficeApp\>** et **\<VersionOverrides\>** |*Aucun.* |
+|"id"| GUID du complément. | **\<Id\>**|*Aucun.* |
+|« version »| Version du complément. | **\<Version\>** |*Aucun.* |
+|« manifestVersion »| Version du schéma de manifeste. |  attributs de **\<OfficeApp\>** |*Aucun.* |
+|« nom »| Nom public du complément. | **\<DisplayName\>** |*Aucun.* |
+|« description »| Description publique du complément.  | **\<Description\>** |*Aucun.* |
+|« accentColor »|*Aucun.* |*Aucun.* | Cette propriété n’a pas d’équivalent dans le manifeste XML actuel et n’est pas utilisée dans la préversion du manifeste JSON. Mais il doit être présent. |
+|« développeur »| Identifie le développeur du complément. | **\<ProviderName\>** |*Aucun.* |
+|« localizationInfo »| Configure les paramètres régionaux par défaut et les autres paramètres régionaux pris en charge. | **\<DefaultLocale\>** et **\<Override\>** |*Aucun.* |
 |« webApplicationInfo »| Identifie l’application web du complément telle qu’elle est connue dans Azure Active Directory. | **\<WebApplicationInfo\>** | Dans le manifeste XML actuel, **\<WebApplicationInfo\>** l'élément se trouve à l'intérieur, et **\<VersionOverrides\>** non dans le manifeste de base. |
 |« autorisation »| Identifie les autorisations Microsoft Graph dont le complément a besoin. | **\<WebApplicationInfo\>** | Dans le manifeste XML actuel, **\<WebApplicationInfo\>** l'élément se trouve à l'intérieur, et **\<VersionOverrides\>** non dans le manifeste de base. |
 
-Les éléments **\<Hosts\>**, , **\<Requirements\>** et **\<ExtendedOverrides\>** font partie du manifeste de base dans le manifeste XML actuel. Toutefois, les concepts et les objectifs associés à ces éléments sont configurés dans la propriété « extension » du manifeste JSON en préversion. 
+Les éléments **\<Hosts\>**, , **\<Requirements\>** et **\<ExtendedOverrides\>** font partie du manifeste de base dans le manifeste XML actuel. Toutefois, les concepts et les objectifs associés à ces éléments sont configurés dans la propriété « extension » du manifeste JSON en préversion.
 
 #### <a name="extension-property"></a>Propriété « extension »
 
@@ -102,22 +102,22 @@ La propriété « extension » dans le manifeste JSON en préversion représente
 
 Le tableau suivant montre un mappage de certaines propriétés enfants de haut niveau de la propriété « extension » dans le manifeste JSON d’aperçu aux éléments XML du manifeste actuel. La notation par points est utilisée pour référencer les propriétés enfants.
 
-|Propriété JSON|Objectif|Élément(s) XML|Commentaires|
+|Propriété JSON|Objectif|Éléments XML|Commentaires|
 |:-----|:-----|:-----|:-----|
-| « requirements.capabilities » | Identifie les ensembles de conditions requises que le complément doit être installable. | **\<Requirements\>** et **\<Sets\>** | |
-| « étendues des conditions » | Identifie les applications Office dans lesquelles le complément peut être installé. | **\<Hosts\>** |  |
+| « requirements.capabilities » | Identifie les ensembles de conditions requises que le complément doit être installable. | **\<Requirements\>** et **\<Sets\>** |*Aucun.* |
+| « étendues des conditions » | Identifie les applications Office dans lesquelles le complément peut être installé. | **\<Hosts\>** |*Aucun.* |
 | « rubans » | Rubans personnalisés par le complément. | **\<Hosts\>**, **ExtensionPoints**, et divers **\*éléments** FormFactor | La propriété « rubans » est un tableau d’objets anonymes qui fusionnent chacun les objectifs de ces trois éléments. Consultez le [tableau « rubans](#ribbons-table) ».|
 | « alternatives » | Spécifie la compatibilité descendante avec un complément COM équivalent, XLL ou les deux. | **\<EquivalentAddins\>** | Consultez [EquivalentAddins - Consultez également](/javascript/api/manifest/equivalentaddins#see-also) pour obtenir des informations générales. |
-| « runtimes »  | Configure différents types de compléments qui ont peu ou pas d’interface utilisateur, tels que des compléments de fonction uniquement personnalisés et [commandes de fonction](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, et **\<ExtensionPoint\>** (de type CustomFunctions) |  |
-| « AutoRunEvents » | Configure un gestionnaire d’événements pour un événement spécifié. | **\<Event\>** et **\<ExtensionPoint\>** (de type Événements) |  |
+| « runtimes »  | Configure différents types de compléments qui ont peu ou pas d’interface utilisateur, tels que des compléments de fonction uniquement personnalisés et [commandes de fonction](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, et **\<ExtensionPoint\>** (de type CustomFunctions) |*Aucun.* |
+| « AutoRunEvents » | Configure un gestionnaire d’événements pour un événement spécifié. | **\<Event\>** et **\<ExtensionPoint\>** (de type Événements) |*Aucun.* |
 
 ##### <a name="ribbons-table"></a>Tableau « rubans »
 
 Le tableau suivant mappe les propriétés enfants des objets enfants anonymes du tableau « rubans » aux éléments XML du manifeste actuel. 
 
-|Propriété JSON|Objectif|Élément(s) XML|Commentaires|
+|Propriété JSON|Objectif|Éléments XML|Commentaires|
 |:-----|:-----|:-----|:-----|
-| « contextes » | Spécifie les surfaces de commande que le complément personnalise. | divers éléments **\*CommandSurface**, tels que **PrimaryCommandSurface** et **MessageReadCommandSurface** |  |
+| « contextes » | Spécifie les surfaces de commande que le complément personnalise. | divers éléments **\*CommandSurface**, tels que **PrimaryCommandSurface** et **MessageReadCommandSurface** |*Aucun.* |
 | « onglets » | Configure les onglets du ruban personnalisé. | **\<CustomTab\>** | Les noms et la hiérarchie des propriétés descendantes de « onglets » correspondent étroitement aux descendants de **\<CustomTab\>**.  |
 
 ## <a name="sample-preview-json-manifest"></a>Exemple de manifeste JSON d’aperçu

@@ -3,16 +3,16 @@ title: Fonctionnalité d’envoi des compléments Outlook
 description: Permet de traiter un élément ou d’empêcher les utilisateurs d’effectuer certaines actions. Permet aussi aux compléments de définir certaines propriétés pendant l’envoi.
 ms.date: 07/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8382e32953d74885098f053319e5c2718636f780
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: f4507fdf442e55cfa6e1b3310f6009f9c6a0b85d
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958971"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68093000"
 ---
 # <a name="on-send-feature-for-outlook-add-ins"></a>Fonctionnalité d’envoi des compléments Outlook
 
-La fonctionnalité d’envoi des compléments Outlook vous permet de traiter un élément de message ou réunion, ou d’empêcher les utilisateurs d’effectuer certaines actions. Elle permet aussi aux compléments de définir certaines propriétés pendant l’envoi. Par exemple, vous pouvez utiliser la fonctionnalité d’envoi pour :
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send. For example, you can use the on-send feature to:
 
 - Empêcher un utilisateur d’envoyer des informations sensibles ou de laisser la ligne d’objet vide.  
 - Ajouter un destinataire spécifique à la ligne CC dans les messages ou à la ligne destinataires facultatifs des réunions.
@@ -27,7 +27,7 @@ Le tableau suivant présente les combinaisons client-serveur prises en charge po
 
 | Client | Exchange Online | Exchange 2016 local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2019 local<br>(Mise à jour cumulative 1 ou ultérieure) |
 |---|:---:|:---:|:---:|
-|Windows :<br>version 1910 (build 12130.20272) ou ultérieure|Oui|Oui|Oui|
+|Windows :<br>Version 1910 (build 12130.20272) ou ultérieure|Oui|Oui|Oui|
 |Mac:<br>build 16.47 ou ultérieure|Oui|Oui|Oui|
 |Navigateur web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|
 |Navigateur web :<br>Interface utilisateur Outlook classique|Non applicable|Oui|Oui|
@@ -70,7 +70,7 @@ Les limites de la fonctionnalité d’envoi sont les suivantes.
   > Lors de l’exécution `npm run validate` pour [valider le manifeste de votre complément](../testing/troubleshoot-manifest.md), vous recevez l’erreur « Le complément de boîte aux lettres contenant l’événement ItemSend n’est pas valide. Le manifeste de complément de boîte aux lettres contient l’événement ItemSend dans VersionOverrides qui n’est pas autorisé. » Ce message s’affiche, car les compléments qui utilisent l’événement `ItemSend` , qui est requis pour cette version de la fonctionnalité d’envoi, ne peuvent pas être publiés sur AppSource. Vous serez toujours en mesure de charger et d’exécuter votre complément, à condition qu’aucune autre erreur de validation ne soit trouvée.
 
 - **Manifeste** &ndash; Le complément prend en charge un seul événement `ItemSend`. Si votre manifeste comprend plusieurs événements `ItemSend`, il ne sera pas validé.
-- **Performances**&ndash; : plusieurs allers-retours vers le serveur web hébergeant le complément peuvent nuire aux performances du complément. Imaginez alors ce qu’occasionnerait la création de compléments nécessitant plusieurs opérations de messagerie ou réunions.
+- **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Envoyer plus tard** (Mac uniquement) &ndash; S’il y a des compléments d’envoi, la fonctionnalité **Envoyer plus tard** n’est pas disponible.
 
 En outre, il n’est pas recommandé d’appeler `item.close()` le gestionnaire d’événements en envoi, car la fermeture de l’élément doit se produire automatiquement une fois l’événement terminé.
@@ -357,8 +357,8 @@ Les compléments s’exécutent pendant l’événement d’envoi pour autoriser
 
 |Scénario|Fonctionnalité d’envoi (Boîte aux lettres 1)|Fonctionnalité d’envoi (Boîte aux lettres 2)|Session web Outlook (classique)|Résultat|Pris en charge ?|
 |:------------|:------------|:--------------------------|:---------|:-------------|:-------------|
-|1|Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
-|2|Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|N’est pas pris en charge actuellement. Pour y remédier, utilisez le scénario 3.|
+|1|Activé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|Not currently supported. As a workaround, use scenario 3.|
+|2|Désactivé|Activé|Nouvelle session|La boîte aux lettres 1 ne peut pas envoyer un message ou un élément de réunion provenant de la boîte aux lettres 2.|Not currently supported. As a workaround, use scenario 3.|
 |3|Activé|Activé|Même session|Les compléments d’envoi attribués à la boîte aux lettres 1 exécutent la fonctionnalité d’envoi.|Pris en charge.|
 |4|Activé|Désactivé|Nouvelle session|Aucun complément d’envoi ne s’exécute ; un message ou un élément de réunion est envoyé.|Pris en charge.|
 
@@ -608,7 +608,7 @@ function subjectOnSendChange(subject, event) {
 }
 ```
 
-Pour savoir comment ajouter un destinataire à la ligne Cc et vérifier que le message comporte une ligne d’objet pendant l’envoi, et découvrir les API disponibles, consultez l’article relatif à l’exemple [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send). Le code est accompagné de commentaires détaillés.
+To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
 
 ## <a name="debug-outlook-add-ins-that-use-on-send"></a>Déboguer les compléments Outlook qui utilisent l’envoi
 

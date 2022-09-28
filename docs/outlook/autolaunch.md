@@ -4,12 +4,12 @@ description: Découvrez comment configurer votre complément Outlook pour l’ac
 ms.topic: article
 ms.date: 09/21/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c544f9c10a6fec30d26a994f8e29a48c0d02aa49
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: 0e38f7e9c9d9f06ec7f427b12c04b30d6abf0112
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990426"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68093007"
 ---
 # <a name="configure-your-outlook-add-in-for-event-based-activation"></a>Configurer votre complément Outlook pour l’activation basée sur les événements
 

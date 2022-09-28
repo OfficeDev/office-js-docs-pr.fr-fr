@@ -1,6 +1,6 @@
 # <a name="office-add-ins-documentation"></a>Documentation pour compléments Office
 
-Bienvenue dans le référentiel de documentation des compléments Office. Dans ce référentiel, vous trouverez les fichiers sources de documentation pour les concepts de l’API JavaScript Office, les démarrages rapides, les didacticiels et les guides pratiques. Pour une expérience optimale, nous vous recommandons d’afficher ce contenu sur le site [Microsoft Docs](https://learn.microsoft.com/office/dev/add-ins).
+Bienvenue dans le référentiel de documentation des compléments Office. Dans ce référentiel, vous trouverez les fichiers sources de documentation pour les concepts de l’API JavaScript Office, les démarrages rapides, les didacticiels et les guides pratiques. Pour une expérience optimale, nous vous recommandons d’afficher la [documentation des compléments Office](https://learn.microsoft.com/office/dev/add-ins) sur Microsoft Learn.
 
 > **Remarque** : Vous trouverez les fichiers sources de la documentation de référence de l’API JavaScript Office dans le référentiel [office-js-docs-reference](https://github.com/OfficeDev/office-js-docs-reference) .
 
@@ -19,7 +19,7 @@ Si vous constatez un comportement de produit différent de la documentation, fou
 - Étapes pour reproduire le problème.
 - Messages de sortie et d’erreur de la console.
 
-Nous vous encourageons également à apporter les modifications et à générer une demande de déchargement des modifications proposées. Pour plus de détails, consultez la rubrique [Contribuer à cette documentation](Contributing.md).
+We also encourage you to fork, make the fix, and do a pull request of your proposed changes. For details, see [Contribute to this documentation](Contributing.md).
 
 Si votre problème n’est pas lié à la documentation des compléments Office, publiez-le sur l’un des canaux suivants à la place.
 
@@ -39,7 +39,7 @@ Tirez parti d’un bac à sable gratuit, des outils et d’autres ressources don
 
 ## <a name="copyright"></a>Copyright
 
-Copyright (c) 2016 Microsoft Corporation. Tous droits réservés.
+Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
 
-Ce projet a adopté le [code de conduite Open Source de Microsoft](https://opensource.microsoft.com/codeofconduct/). Pour plus d’informations, reportez-vous à la [FAQ relative au code de conduite](https://opensource.microsoft.com/codeofconduct/faq/) ou contactez [opencode@microsoft.com](mailto:opencode@microsoft.com) pour toute question ou tout commentaire.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.

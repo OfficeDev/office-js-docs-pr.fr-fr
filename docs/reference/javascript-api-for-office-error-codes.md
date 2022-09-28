@@ -3,12 +3,12 @@ title: Codes d'erreur de l'API commune de l'Office
 description: Cet article documente les messages d’erreur que vous pouvez rencontrer lors de l’utilisation de l’API Office Common.
 ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 024d4ef9a2f83305a42cc1844e90f7b40ffbb86a
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: d77b4c0c458e11da0057f06a5088ef8a28e4ccd2
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67615992"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092979"
 ---
 # <a name="office-common-api-error-codes"></a>Codes d'erreur de l'API commune de l'Office
 
@@ -20,7 +20,7 @@ Consultez [les modèles d’API](../develop/understanding-the-javascript-api-for
 
 Le tableau suivant répertorie les codes d’erreur, les noms et les messages affichés, ainsi que les conditions qu’ils indiquent.
 
-|**Code d’erreur**|**Nom de l’erreur**|**Message de l’erreur**|**Condition**|
+|Error.code|Nom de l’erreur|Error.message|Condition|
 |:-----|:-----|:-----|:-----|
 |1000|Le type de forçage de type est incorrect|Le type de forçage de type spécifié n’est pas pris en charge.|Le type de contrainte n’est pas pris en charge dans l’application Office. (Par exemple, les types de forçage de type OOXML et  HTML ne sont pas pris en charge dans Excel.)|
 |1001|Une erreur s’est produite lors de la lecture des données|La sélection actuelle n’est pas prise en charge.|La sélection actuelle de l’utilisateur n’est pas prise en charge (autrement dit, cela ne correspond pas aux types de forçage de type pris en charge).|
@@ -33,7 +33,7 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |1008|Une erreur s’est produite lors de la lecture des données|La taille du jeu de données demandé est trop importante.|L’utilisateur demande à lire des données au-delà des limites de données définies par l’application Office.|
 |1009|Une erreur s’est produite lors de la lecture des données|Le type de fichier spécifié n’est pas pris en charge.|L’utilisateur envoie un type de fichier incorrect.|
 |2000|Une erreur s’est produite lors de l’écriture des données|Le type d’objet de données fourni n’est pas pris en charge. |Un objet de données non pris en charge est fourni.|
-|2001|Une erreur s’est produite lors de l’écriture des données|Impossible d’écrire dans la sélection actuelle.|La sélection actuelle de l’utilisateur n’est pas prise en charge pour une opération d’écriture. (Par exemple, lorsque l’utilisateur sélectionne une image.)|
+|2001|Une erreur s’est produite lors de l’écriture des données|Impossible d’écrire dans la sélection actuelle.|The user's current selection is not supported for a write operation. (For example, when the user selects an image.)|
 |2002|Une erreur s’est produite lors de l’écriture des données|L’objet de données fourni n’est pas compatible avec la forme ou les dimensions de la sélection actuelle.|Plusieurs cellules sont sélectionnées (et la forme de sélection ne correspond pas à la forme des données). Plusieurs cellules sont sélectionnées (et les dimensions de la sélection ne correspondent pas aux dimensions des données).|
 |2003|Une erreur s’est produite lors de l’écriture des données|L’opération SET a échoué, car l’objet de données fourni remplacera les données.|Une seule cellule est sélectionnée et l’objet de données fourni remplace les données dans la feuille de calcul.|
 |2004|Une erreur s’est produite lors de l’écriture des données|L’objet de données fourni ne correspond pas à la taille de la sélection actuelle.|L’utilisateur fournit un objet plus grand que la taille de la sélection actuelle.|
@@ -43,13 +43,13 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |2008|Une erreur s’est produite lors de l’écriture des données|TBD|TBD|
 |2009|Une erreur s’est produite lors de l’écriture des données|L’objet de données spécifié est trop volumineux.|L’utilisateur tente de définir des données au-delà des limites de données définies par l’application Office.|
 |2010|Une erreur s’est produite lors de l’écriture des données|Les paramètres de coordonnées ne peuvent pas être utilisés avec le type de forçage de type Tableau lorsque le tableau contient des cellules fusionnées.|L’utilisateur tente de définir des données partielles à partir d’un tableau non uniforme (c’est-à-dire un tableau qui contient des cellules fusionnées.)|
-|3000|Une erreur s’est produite lors de la création de la liaison|Impossible d’effectuer de liaison avec la sélection actuelle.|La sélection de l’utilisateur n’est pas prise en charge pour la liaison. (Par exemple, l’utilisateur sélectionne une image ou un autre objet non pris en charge.)|
+|3000|Une erreur s’est produite lors de la création de la liaison|Impossible d’effectuer de liaison avec la sélection actuelle.|The user's selection is not supported for binding. (For example, the user is selecting an image or other non-supported object.)|
 |3001|Une erreur s’est produite lors de la création de la liaison|TBD|TBD|
 |3002|Erreur de liaison incorrecte|La liaison spécifiée n’existe pas.|Le développeur tente de créer une liaison avec une liaison non existante ou supprimée.|
 |3003|Une erreur s’est produite lors de la création de la liaison|Les sélections non contiguës ne sont pas prises en charge.|L’utilisateur effectue des sélections multiples.|
-|3004|Une erreur s’est produite lors de la création de la liaison|Impossible de créer une liaison avec la sélection actuelle et le type de liaison spécifié.|Il existe plusieurs conditions dans lesquelles cela pourrait se produire. Consultez la section « Conditions d’erreur de création de liaison » plus loin dans cet article.|
+|3004|Une erreur s’est produite lors de la création de la liaison|Impossible de créer une liaison avec la sélection actuelle et le type de liaison spécifié.|There are several conditions under which this might happen. Please see the "Binding creation error conditions" section later in this article.|
 |3005|Opération de liaison incorrecte|Ce type de liaison ne prend pas en charge cette action.|Le développeur envoie une opération d’ajout de ligne ou d’ajout de colonne sur un type de liaison qui n’est pas de type `table`forçage.|
-|3006|Une erreur s’est produite lors de la création de la liaison|L’élément nommé n’existe pas.|L’élément nommé est introuvable. Aucune table ni aucun contrôle de contenu portant ce nom n’existe.|
+|3006|Une erreur s’est produite lors de la création de la liaison|L’élément nommé n’existe pas.|The named item cannot be found. No content control or table with that name exists.|
 |3007|Une erreur s’est produite lors de la création de la liaison|Nous avons trouvé plusieurs objets du même nom.|Erreur de collision : plusieurs contrôles de contenu portant le même nom existent et l’échec lors de la collision est défini `true`sur .|
 |3008|Une erreur s’est produite lors de la création de la liaison|Le type de liaison spécifié n’est pas compatible avec l’élément nommé fourni.|L’élément nommé ne peut pas être lié au type. Par exemple, un contrôle de contenu contient du texte, mais le développeur a essayé de lier à l’aide du type `table`de contrainte .|
 |3009|Opération de liaison incorrecte|Le type de liaison n’est pas pris en charge.|Utilisé pour la compatibilité descendante.|
@@ -70,15 +70,15 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |6000|Nœud incorrect|Le nœud spécifié est introuvable.|Le `CustomXmlPart` nœud est introuvable.|
 |6100|Une erreur relative à du code XML personnalisé s’est produite.|Une erreur relative à du code XML personnalisé s’est produite.|L’appel d’API est incorrect.|
 |7000|ID incorrect|L’ID spécifié n’existe pas.|L’ID est incorrect.|
-|7001|Navigation non valide|L’objet se trouve à un emplacement dans lequel la navigation n’est pas prise en charge.|L’utilisateur peut trouver l’objet, mais ne peut pas naviguer jusqu’à celui-ci. (Par exemple, dans Word, la liaison est effectuée avec l’en-tête, le pied de page ou un commentaire.)|
+|7001|Navigation non valide|L’objet se trouve à un emplacement dans lequel la navigation n’est pas prise en charge.|The user can find the object, but cannot navigate to it. (For example, in Word, the binding is to the header, footer, or a comment.)|
 |7002|Navigation non valide|L’objet est verrouillé ou protégé.|L’utilisateur tente d’accéder à une plage verrouillée ou protégée.|
 |7004|Navigation non valide|Échec de l’opération car l’index est hors limites.|L’utilisateur tente d’accéder à un index qui est hors limites.|
-|8000|Paramètre manquant|Nous n’avons pas pu mettre en forme la cellule de tableau, car certaines valeurs de paramètre sont manquantes. Vérifiez à nouveau les paramètres et réessayez.|Il manque certains paramètres à la méthode cellFormat. Par exemple, il manque les paramètres cells, format ou tableOptions.|
-|8010|Valeur non valide|Un ou plusieurs paramètres cells contiennent des valeurs qui ne sont pas autorisées. Vérifiez les valeurs et réessayez.|L’énumération de référence des cellules communes n’est pas définie. Par exemple, Tout, Données, En-têtes.|
-|8011|Valeur non valide|Un ou plusieurs paramètres tableOptions contiennent des valeurs qui ne sont pas autorisées. Vérifiez les valeurs et réessayez.|Une des valeurs saisies dans tableOptions n’est pas valide.|
-|8012|Valeur non valide|Un ou plusieurs paramètres format contiennent des valeurs qui ne sont pas autorisées. Vérifiez les valeurs et réessayez.|Une des valeurs de format n’est pas valide.|
-|8020|En dehors de la plage|La valeur d’index de ligne se trouve en dehors de la plage autorisée. Utilisez une valeur (supérieure ou égale à 0) inférieure au nombre de lignes.|L’index de ligne est supérieur à l’index de ligne le plus élevé du tableau ou est inférieur à 0.|
-|8021|En dehors de la plage|La valeur d’index de colonne se trouve en dehors de la plage autorisée. Utilisez une valeur (supérieure ou égale à 0) inférieure au nombre de colonnes.|L’index de colonne est supérieur à l’index de colonne le plus élevé du tableau ou est inférieur à 0.|
+|8000|Paramètre manquant|We couldn't format the table cell because some parameter values are missing. Double-check the parameters and try again.|The cellFormat method is missing some parameters. For example, there are missing cells, format, or tableOptions parameters.|
+|8010|Valeur non valide|One or more of the cells parameters have values that aren't allowed. Double-check the values and try again.|The common cells reference enumeration is not defined. For example, All, Data, Headers.|
+|8011|Valeur non valide|One or more of the tableOptions parameters have values that aren't allowed. Double-check the values and try again.|Une des valeurs saisies dans tableOptions n’est pas valide.|
+|8012|Valeur non valide|One or more of the format parameters have values that aren't allowed. Double-check the values and try again.|Une des valeurs de format n’est pas valide.|
+|8020|En dehors de la plage|The row index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of rows.|L’index de ligne est supérieur à l’index de ligne le plus élevé du tableau ou est inférieur à 0.|
+|8021|En dehors de la plage|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|L’index de colonne est supérieur à l’index de colonne le plus élevé du tableau ou est inférieur à 0.|
 |8022|En dehors de la plage|La valeur se trouve en dehors de la plage autorisée.|Certaines des valeurs dans le format se trouvent en dehors des plages prises en charge.|
 |9016|Autorisation refusée|Autorisation refusée|L’accès est refusé.|
 |9020|Erreur de réponse générique|Une erreur interne s’est produite.|Fait référence à une condition d’erreur interne, qui peut se produire pour plusieurs raisons.|
@@ -86,25 +86,25 @@ Le tableau suivant répertorie les codes d’erreur, les noms et les messages af
 |9022|Message d’erreur dans un autre magasin|Impossible de récupérer l’ID EWS, car le message est enregistré dans un autre magasin.|L’ID EWS du message actuel n’a pas pu être récupéré, car le message a peut-être été déplacé ou la boîte aux lettres d’envoi a peut-être changé.|
 |9041|Erreur réseau|L’utilisateur n’est plus connecté au réseau. Veuillez vérifier la connexion réseau et réessayer.|L’utilisateur n’a plus accès au réseau ou à Internet.|
 |9043|Type de pièce jointe non pris en charge|Le type de pièce jointe n’est pas pris en charge.|L’API ne prend pas en charge le type de pièce jointe. Par exemple, `item.getAttachmentContentAsync` génère cette erreur si la pièce jointe est une image incorporée au format texte enrichi ou s’il s’agit d’un type d’élément autre qu’un e-mail ou un élément de calendrier (par exemple, un contact ou un élément de tâche).|
-|12002|||Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
-|12003|||La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
-|12004|||Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port). Erreur générée par l’appel de `displayDialogAsync`.|
-|12005|||L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur générée par l’appel de `displayDialogAsync`. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
-|12006|||La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
-|12007|||Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
-|12009|||L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
-|12011|||Le navigateur de l’utilisateur est configuré de manière à bloquer les fenêtres contextuelles. Cette erreur peut se produire dans Office sur le Web si le navigateur est Safari et qu’il est configuré pour bloquer les fenêtres contextuelles ou si le navigateur est Edge Legacy et que le domaine de complément se trouve dans une zone de sécurité différente du domaine que la boîte de dialogue tente d’ouvrir. Erreur générée par l’appel de `displayDialogAsync`.|
-|13nnn|||Consultez [Causes et gestion des erreurs de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
+|12002|*Non applicable.*|*Non applicable.*|Un des éléments suivants :<br> - Aucune page n’existe à l’URL qui a été transmise à `displayDialogAsync`.<br> - La page qui a été transmise à `displayDialogAsync` a été chargée, mais la boîte de dialogue a été redirigée vers une page introuvable ou impossible à charger, ou a été redirigée vers une URL dont la syntaxe n’est pas valide. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
+|12003|*Non applicable.*|*Non applicable.*|La boîte de dialogue a été redirigée vers une URL avec le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
+|12004|*Non applicable.*|*Non applicable.*|Le domaine de l’URL transmis à `displayDialogAsync` n’est pas approuvé. Le domaine doit être le même domaine que celui de la page hôte (y compris le protocole et le numéro de port). Erreur générée par l’appel de `displayDialogAsync`.|
+|12005|*Non applicable.*|*Non applicable.*|L’URL transmise à `displayDialogAsync` utilise le protocole HTTP. C’est le protocole HTTPS qui est requis. Erreur générée par l’appel de `displayDialogAsync`. (Dans certaines versions d’Office, le message d’erreur renvoyé avec le code 12005 est identique à celui renvoyé avec le code 12004.)|
+|12006|*Non applicable.*|*Non applicable.*|La boîte de dialogue a été fermée, généralement parce que l’utilisateur choisit le bouton **X**. Erreur signalée dans la boîte de dialogue. Elle déclenche un événement `DialogEventReceived` dans la page hôte.|
+|12007|*Non applicable.*|*Non applicable.*|Une boîte de dialogue est déjà ouverte à partir de cette fenêtre hôte. Une fenêtre hôte, par exemple un volet Office, ne peut avoir qu’une seule boîte de dialogue ouverte à la fois. Erreur générée par l’appel de `displayDialogAsync`.|
+|12009|*Non applicable.*|*Non applicable.*|L’utilisateur a choisi d’ignorer la boîte de dialogue. Cette erreur peut se produire dans les versions en ligne d’Office, quand les utilisateurs peuvent choisir d’autoriser ou non un complément à afficher une boîte de dialogue. Erreur générée par l’appel de `displayDialogAsync`.|
+|12011|*Non applicable.*|*Non applicable.*|Le navigateur de l’utilisateur est configuré de manière à bloquer les fenêtres contextuelles. Cette erreur peut se produire dans Office sur le Web si le navigateur est Safari et qu’il est configuré pour bloquer les fenêtres contextuelles ou si le navigateur est Edge Legacy et que le domaine de complément se trouve dans une zone de sécurité différente du domaine que la boîte de dialogue tente d’ouvrir. Erreur générée par l’appel de `displayDialogAsync`.|
+|13nnn|*Non applicable.*|*Non applicable.*|Consultez [Causes et gestion des erreurs de getAccessToken](../develop/troubleshoot-sso-in-office-add-ins.md#causes-and-handling-of-errors-from-getaccesstoken).|
 
 ## <a name="binding-creation-error-conditions"></a>Conditions d’erreur de création de liaison
 
-Lorsqu’une liaison est créée dans l’API, indiquez le type de liaison que vous souhaitez utiliser. Le tableau suivant répertorie les types de liaisons et les comportements de liaison attendus.
+When a binding is created in the API, indicate the binding type that you want to use. The following tables lists the binding types and the resulting binding behaviors that are expected.
 
 ### <a name="behavior-in-excel"></a>Comportement dans Excel
 
 Le tableau suivant résume le comportement de liaison dans Excel.
 
-|**Type de liaison spécifié**|**Sélection réelle**|**Comportement**|
+|Type de liaison spécifié|Sélection réelle|Comportement|
 |:-----|:-----|:-----|
 |Matrice|Plage de cellules (y compris dans un tableau et une cellule unique)|Une liaison de type `matrix` est créée sur les cellules sélectionnées. Aucune modification dans le document n’est attendue.|
 |Matrice|Texte sélectionné dans la cellule|Une liaison de type `matrix` est créée sur l’ensemble de la cellule. Aucune modification dans le document n’est attendue.|
@@ -117,14 +117,14 @@ Le tableau suivant résume le comportement de liaison dans Excel.
 |Texte|Plage de cellules|Impossible de créer la liaison.|
 |Texte|Plage de cellules dans un tableau|Impossible de créer la liaison.|
 |Texte|Cellule unique|Une liaison de type `text` est créée.|
-|Texte|Cellule unique dans un tableau|Une liaison de type `text` est créée.|
-|Texte|Texte sélectionné dans la cellule|Une liaison de type `text` dans la cellule entière est créée.|
+|Text|Cellule unique dans un tableau|Une liaison de type `text` est créée.|
+|Text|Texte sélectionné dans la cellule|Une liaison de type `text` dans la cellule entière est créée.|
 
 ### <a name="behavior-in-word"></a>Comportement dans Word
 
 Le tableau suivant résume le comportement de liaison dans Word.
 
-|**Type de liaison spécifié**|**Sélection réelle**|**Comportement**|
+|Type de liaison spécifié|Sélection réelle|Comportement|
 |:-----|:-----|:-----|
 |Matrice|Texte|Impossible de créer la liaison.|
 |Matrice|Tableau entier|Une liaison de type `matrix` est créée. Le document est modifié et un contrôle de contenu doit encapsuler la table. |
@@ -135,9 +135,9 @@ Le tableau suivant résume le comportement de liaison dans Word.
 |Tableau|Plage dans un tableau|Impossible de créer la liaison.|
 |Tableau|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 |Texte|Tableau entier|Une liaison de type `text` est créée.|
-|Texte|Plage dans un tableau|Impossible de créer la liaison.|
+|Text|Plage dans un tableau|Impossible de créer la liaison.|
 |Texte|Sélection multiple|La dernière sélection sera encapsulée avec un contrôle de contenu et une liaison à ce contrôle. Un contrôle de contenu de type `text` est créé.|
-|Texte|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
+|Text|Sélection non valide (par exemple, objets multiples, incorrects, etc.)|Impossible de créer la liaison.|
 
 ## <a name="see-also"></a>Voir aussi
 

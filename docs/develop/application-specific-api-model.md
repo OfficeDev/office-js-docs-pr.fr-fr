@@ -1,14 +1,14 @@
 ---
 title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
-ms.date: 07/18/2022
+ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 4fc0733806b2b29de37f77ffa2864163cb544f12
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422942"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092888"
 ---
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
@@ -26,9 +26,9 @@ Les compléments Office sont des sites web qui apparaissent à l’intérieur d�
 
 ## <a name="run-function"></a>*fonction .run
 
-`Excel.run`, `Word.run`et `OneNote.run` exécutent une fonction qui spécifie les actions à effectuer dans Excel, Word et OneNote. `*.run` crée automatiquement un contexte de demande que vous pouvez utiliser pour interagir avec des objets Office. Lorsque `*.run` a terminé, une promesse est résolue et tous les objets alloués lors de l’exécution sont automatiquement publiés.
+`Excel.run`, `OneNote.run`, `PowerPoint.run`et `Word.run` exécutez une fonction qui spécifie les actions à effectuer sur Excel, Word et OneNote. `*.run` crée automatiquement un contexte de demande que vous pouvez utiliser pour interagir avec des objets Office. Lorsque `*.run` a terminé, une promesse est résolue et tous les objets alloués lors de l’exécution sont automatiquement publiés.
 
-L’exemple suivant vous montre comment utiliser `Excel.run`. Le même modèle est également utilisé avec Word et OneNote.
+L’exemple suivant vous montre comment utiliser `Excel.run`. Le même modèle est également utilisé avec OneNote, PowerPoint et Word.
 
 ```js
 Excel.run(function (context) {
@@ -134,7 +134,7 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > Si vous effectuez uniquement un appel de méthodes ou que vous avez des propriétés sur un objet proxy, vous n’avez pas besoin d’effectuer l’appel de la méthode `load()`. La méthode `load()` n’est requise que lorsque vous souhaitez lire les propriétés d’un objet proxy.
 
-À l’instar des demandes de définition de propriétés ou d’appel de méthodes sur des objets proxy, des demandes de chargement de propriétés sur des objets proxy sont ajoutées à la file d’attente des commandes sur le contexte de demande, qui s’exécutera la prochaine fois que vous appellerez la méthode `sync()`. Vous pouvez mettre en file d’attente autant d’appels `load()` sur le contexte de la demande que nécessaire.
+Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
 #### <a name="scalar-and-navigation-properties"></a>Propriétés scalaires et de navigation
 
@@ -180,7 +180,7 @@ console.log (tableCount.value);
 
 La définition de propriétés sur un objet avec des propriétés de navigation imbriquées peut être laborieuse. Au lieu de définir des propriétés individuelles à l’aide de chemins de navigation comme décrit ci-dessus, vous pouvez utiliser la méthode `object.set()` disponible sur les objets dans les API JavaScript basées sur une promesse. Grâce à cette méthode, vous pouvez définir plusieurs propriétés d’un objet à la fois en transmettant soit un autre objet du même type Office.js, soit un objet JavaScript avec des propriétés structurées comme celles de l’objet sur lequel la méthode est appelée.
 
-L’exemple de code suivant définit plusieurs propriétés de mise en forme d’une plage en appelant la méthode `set()` et en transmettant un objet JavaScript avec des noms et des types de propriétés reflétant la structure des propriétés dans l’objet `Range`. Cet exemple part du principe que des données sont présentes dans la plage **B2:E2**.
+The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
 
 ```js
 await Excel.run(async (context) => {

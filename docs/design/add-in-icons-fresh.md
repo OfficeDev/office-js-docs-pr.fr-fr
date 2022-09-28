@@ -1,40 +1,40 @@
 ---
-title: Recommandations en matière d’icônes de style Office pour les modules
-description: Recommandations en matière d’utilisation d’icônes de style Office dans les add-ins.
+title: Instructions relatives aux icônes de style frais pour les compléments Office
+description: Instructions pour l’utilisation d’icônes de style frais dans les compléments Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: aa5e93eeced9a2accb6ad9f1f6dc32a72f9386e7
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 261f684648e8fb57a3aa291b785b33e511f83865
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483543"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092944"
 ---
-# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Recommandations en matière d’icônes de style Office pour les modules
+# <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style frais pour les compléments Office
 
-Les Office versions 2013 et ultérieures (sans abonnement) Office l’iconographie du style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style monoligne de Microsoft 365, consultez les instructions relatives aux icônes de [style Monoline pour Office les modules.](add-in-icons-monoline.md)
+Les versions Office 2013+ (sans abonnement) d’Office utilisent l’iconographie de style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, consultez [les instructions relatives aux icônes de style Monoline pour les compléments Office](add-in-icons-monoline.md).
 
-## <a name="office-fresh-visual-style"></a>Office style visuel Fresh
+## <a name="office-fresh-visual-style"></a>Style visuel Office Fresh
 
-Les icônes Fresh incluent uniquement les éléments de communication essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux s’adapter Office clients sans abonnement.
+Les icônes Fresh incluent uniquement des éléments communicatifs essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux s’adapter aux clients Office non-abonnement.
 
-## <a name="best-practices"></a>Meilleures pratiques
+## <a name="best-practices"></a>Bonnes pratiques
 
 Suivez ces instructions lorsque vous créez vos icônes.
 
 |À faire|À ne pas faire|
 |:---|:---|
-|Conservez des éléments visuels simples et clairs, en vous concentrant sur les éléments clés de la communication.| N’utilisez pas d’artefacts qui rendent votre icône désordonnée.|
-|Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne réaffectez pas les glyphes Fabric Core pour les commandes de application Office du ruban ou des menus contextuels. Les icônes Fabric Core sont stylistiquement différentes et ne correspondent pas.|
+|Gardez les visuels simples et clairs, en vous concentrant sur les éléments clés de la communication.| N’utilisez pas d’artefacts qui rendent votre icône désordonnée.|
+|Utilisez le langage d’icône Office pour représenter des comportements ou des concepts.|Ne réutilisez pas les glyphes Fabric Core pour les commandes de complément dans le ruban de l’application Office ou les menus contextuels. Les icônes Fabric Core sont différentes sur le plan stylistique et ne correspondent pas.|
 |Réutilisez les métaphores visuelles d’Office courantes telles que le pinceau pour mettre en forme ou la loupe pour rechercher.|Ne réutilisez pas les métaphores visuelles pour différentes commandes. L’utilisation de la même icône pour différents comportements et concepts peut semer la confusion. |
 |Redessinez vos icônes pour les réduire ou les agrandir. Prenez le temps de redessiner les découpages, les coins et des bords arrondis pour optimiser la netteté de ligne. |Ne redimensionnez pas vos icônes en réduisant ou en agrandissant leurs tailles. Cela peut entraîner une mauvaise qualité visuelle et des actions peu claires. Les icônes complexes créées dans une plus grande taille risquent de perdre en clarté si elles sont redimensionnées pour être réduites sans être redessinées. |
-|Utilisez un remplissage blanc pour améliorer l’accessibilité. La plupart des objets dans les icônes nécessitent un arrière-plan blanc pour être lisibles sur les thèmes de l’interface utilisateur d’Office et en mode contraste élevé.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque entrent souvent en conflit application Office styles d’icône du ruban et peuvent attirer l’attention des utilisateurs dans un environnement saturé. |
-|Utilisez le format PNG avec un arrière-plan transparent. ||
-|Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. ||
+|Use a white fill for accessibility. Most objects in your icons will require a white background to be legible across Office UI themes and in high-contrast modes.  |Évitez de vous fier à votre logo ou marque pour communiquer ce que fait une commande de complément. Les repères de marque ne sont pas toujours reconnaissables sur des icônes de petites tailles et lorsque des modificateurs sont appliqués. Les marques de marque sont souvent en conflit avec les styles d’icône du ruban de l’application Office et peuvent faire concurrence à l’attention des utilisateurs dans un environnement saturé. |
+|Utilisez le format PNG avec un arrière-plan transparent. |*Aucun.*|
+|Évitez le contenu localisable dans les icônes, y compris les caractères typographiques, les paragraphes en drapeau et les points d’interrogation. |*Aucun.*|
 
 ## <a name="icon-size-recommendations-and-requirements"></a>Configuration requise et recommandations sur la taille des icônes
 
-Les icônes du bureau Office sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Les tailles suivantes sont les suivantes : trois sont requises.
+Les icônes du bureau Office sont des images bitmap. Différentes tailles apparaissent en fonction du paramètre PPP de l’utilisateur et du mode tactile. Incluez les huit tailles prises en charge pour créer la meilleure expérience possible dans tous les contextes et résolutions pris en charge. Les tailles prises en charge sont les suivantes : trois sont requises.
 
 - 16 px (obligatoire)
 - 20 px
@@ -46,21 +46,21 @@ Les icônes du bureau Office sont des images bitmap. Différentes tailles appara
 - 80 px (obligatoire)
 
 > [!IMPORTANT]
-> Pour obtenir une image représentant l’icône représentant votre application, voir Créer des [listes efficaces dans AppSource](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) et dans Office pour la taille et d’autres exigences.
+> Pour obtenir une image représentant l’icône représentative de votre complément, consultez [Créer des descriptions efficaces dans AppSource et dans Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) pour connaître la taille et d’autres exigences.
 
 Veillez à renouveler les icônes pour chaque taille au lieu de les réduire pour les ajuster.
 
-![Illustration de la recommandation pour redesscrire les icônes par taille plutôt que de réduire les icônes. Par exemple, vous devrez peut-être utiliser moins d’éléments dans une petite icône plutôt que simplement mettre à l’échelle une image plus grande.](../images/icon-resizing.png)
+![Illustration de la recommandation de redessiner les icônes par taille plutôt que de réduire les icônes. Par exemple, vous devrez peut-être utiliser moins d’éléments dans une petite icône plutôt que de simplement réduire une image plus grande.](../images/icon-resizing.png)
 
 ## <a name="icon-anatomy-and-layout"></a>Mise en page et structure de l’icône
 
-Office icônes sont généralement composées d’un élément de base avec des modificateurs d’action et conceptuels superposés. Les modificateurs d’action représentent des concepts tels qu’ajouter, ouvrir, nouveau ou fermer. Les modificateurs conceptuels représentent l’état, l’altération ou une description de l’icône.
+Les icônes Office sont généralement composées d’un élément de base avec des modificateurs d’action et conceptuels superposés. Les modificateurs d’action représentent des concepts tels qu’ajouter, ouvrir, nouveau ou fermer. Les modificateurs conceptuels représentent l’état, l’altération ou une description de l’icône.
 
-Pour créer des commandes qui s’alignent sur l’interface utilisateur d’Office, suivez les instructions de mise en forme pour les éléments de base et les modificateurs. Cela garantit que vos commandes auront un aspect professionnel et que vos clients auront confiance en votre complément. Si vous apportez des exceptions à ces instructions, faites-le intentionnellement.
+To create commands that align with the Office UI, follow layout guidelines for the base element and modifiers. This ensures that your commands look professional and that your customers will trust your add-in. If you make exceptions to these guidelines, do so intentionally.
 
 L’image suivante montre la disposition des éléments de base et modificateurs dans une icône Office.
 
-![Diagramme montrant un élément de base d’icône au centre avec un modificateur en bas à droite et un modificateur d’action dans le coin supérieur gauche.](../images/icon-layouts.png)
+![Diagramme montrant un élément de base d’icône au centre avec un modificateur en bas à droite et un modificateur d’action en haut à gauche.](../images/icon-layouts.png)
 
 - Éléments de base centraux dans le cadre de pixel avec remplissage vide tout autour.
 - Placez les modificateurs d’action dans le coin supérieur gauche.
@@ -69,11 +69,11 @@ L’image suivante montre la disposition des éléments de base et modificateurs
 
 ### <a name="base-element-padding"></a>Remplissage d’un élément de base
 
-Placez les éléments de base de façon cohérente en fonction des tailles. Si les éléments de base ne peuvent pas être centrés dans le cadre, alignez-les en haut à gauche, en laissant les pixels supplémentaires dans la partie inférieure droite. Pour obtenir de meilleurs résultats, appliquez les instructions de remplissage répertoriées dans le tableau de la section suivante.
+Placez les éléments de base de façon cohérente en fonction des tailles. Si les éléments de base ne peuvent pas être centrés dans le cadre, alignez-les en haut à gauche, en laissant les pixels supplémentaires dans la partie inférieure droite. Pour de meilleurs résultats, appliquez les instructions de remplissage répertoriées dans le tableau de la section suivante.
 
 ### <a name="modifiers"></a>Modificateurs
 
-Tous les modificateurs doivent avoir un cutout transparent de 1 px entre chaque élément, y compris l’arrière-plan. Les éléments ne doivent pas se chevaucher directement. Créez des espaces entre les règles et les bords. Les modificateurs peuvent varier légèrement en taille, mais utilisez ces dimensions comme point de départ.
+Tous les modificateurs doivent avoir un découpage transparent de 1 px entre chaque élément, y compris l’arrière-plan. Les éléments ne doivent pas se chevaucher directement. Créez des espaces entre les règles et les bords. Les modificateurs peuvent varier légèrement en taille, mais utilisez ces dimensions comme point de départ.
 
 |Taille de l’icône|Remplissage autour de l’élément de base|Taille du modificateur|
 |:---|:---|:---|
@@ -89,36 +89,36 @@ Tous les modificateurs doivent avoir un cutout transparent de 1 px entre chaque 
 ## <a name="icon-colors"></a>Couleurs de l’icône
 
 > [!NOTE]
-> Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas restitues avec Fluent’interface utilisateur et la palette de couleurs est différente de la palette décrite dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
+> Les couleurs recommandées concernent les icônes du ruban utilisées dans les [Commandes de complément](add-in-commands.md). Ces icônes ne sont pas affichées avec l’interface utilisateur Fluent et la palette de couleurs est différente de la palette décrite dans [Microsoft UI Fabric | Couleurs | Partagé](https://fluentfabric.azurewebsites.net/#/color/shared).
 
 Les icônes Office ont une palette de couleurs limitée. Utilisez les couleurs répertoriées dans le tableau suivant pour garantir une intégration parfaite avec l’interface utilisateur d’Office. Appliquez les instructions suivantes à l’utilisation de la couleur.
 
-- Utilisez la couleur pour véhiculer une signification plutôt que pour embellir. Elle doit mettre en surbrillance ou mettre en évidence une action, un état ou un élément qui différencie explicitement le repère.
+- Use color to communicate meaning rather than for embellishment. It should highlight or emphasize an action, status, or an element that explicitly differentiates the mark.
 - Si possible, n’utilisez qu’une seule couleur supplémentaire au-delà du gris. Limitez les couleurs supplémentaires à deux au maximum.
-- Les couleurs ont une apparence cohérente dans toutes les tailles d’icône. Les icônes Office ont des palettes de couleurs légèrement différentes pour des tailles d’icônes différentes. Les icônes de 16 px et plus petites sont légèrement plus sombres et plus dynamiques que les icônes de 32 px et plus grandes. Sans ces ajustements discrets, les couleurs semblent varier en taille.
+- Les couleurs ont une apparence cohérente dans toutes les tailles d’icône. Les icônes Office ont des palettes de couleurs légèrement différentes pour des tailles d’icônes différentes. Les icônes 16 px et plus petites sont légèrement plus sombres et plus vibrantes que 32 px et plus grandes icônes. Sans ces ajustements discrets, les couleurs semblent varier en taille.
 
 |Nom de la couleur|RVB|Hex|Couleur|Catégorie|
 |:---|:---|:---|:---|:---|
-|Texte gris (80)|80, 80, 80|#505050| ![Gris 80 pour le texte.](../images/color-text-gray-80.png) |Texte|
-|Texte gris (95)|95, 95, 95|#5F5F5F| ![Gris 95 pour le texte.](../images/color-text-gray-95.png) |Texte|
-|Texte gris (105)|105, 105, 105|#696969| ![Gris 105 pour le texte.](../images/color-text-gray-105.png) |Texte|
-|Gris foncé 32|128, 128, 128|#808080| ![Gris foncé pour 32 px et plus.](../images/color-dark-gray-32.png) |32 px et supérieures|
-|Gris moyen 32|158, 158, 158|#9E9E9E| ![Gris moyen pour 32 px et plus.](../images/color-medium-gray-32.png) |32 px et supérieures|
-|TOUT gris clair|179, 179, 179|#B3B3B3| ![Gris clair pour toutes les tailles d’image.](../images/color-light-gray-all.png) |Toutes les tailles|
-|Gris foncé 16|114, 114, 114|#727272| ![Gris foncé pour 16 px et moins.](../images/color-dark-gray-16.png) |16 px et inférieur|
-|Gris moyen 16|144, 144, 144|#909090| ![Gris moyen pour 16 px et plus petit.](../images/color-medium-gray-16.png) |16 et moins|
-|Bleu 32|77, 130, 184|#4d82B8| ![Bleu pour 32 px et plus.](../images/color-blue-32.png) |32 px et supérieures|
-|Bleu 16|74, 125, 177|#4A7DB1| ![Bleu pour 16 px et moins.](../images/color-blue-16.png) |16 px et inférieur|
+|Texte gris (80)|80, 80, 80|#505050| ![Couleur grise 80 pour le texte.](../images/color-text-gray-80.png) |Texte|
+|Texte gris (95)|95, 95, 95|#5F5F5F| ![Couleur grise 95 pour le texte.](../images/color-text-gray-95.png) |Texte|
+|Texte gris (105)|105, 105, 105|#696969| ![Couleur grise 105 pour le texte.](../images/color-text-gray-105.png) |Texte|
+|Gris foncé 32|128, 128, 128|#808080| ![Couleur gris foncé pour 32 px et plus.](../images/color-dark-gray-32.png) |32 px et versions ultérieures|
+|Gris moyen 32|158, 158, 158|#9E9E9E| ![Couleur grise moyenne pour 32 px et plus.](../images/color-medium-gray-32.png) |32 px et versions ultérieures|
+|TOUT gris clair|179, 179, 179|#B3B3B3| ![Couleur gris clair pour toutes les tailles d’image.](../images/color-light-gray-all.png) |Toutes les tailles|
+|Gris foncé 16|114, 114, 114|#727272| ![Couleur gris foncé pour 16 px et plus petit.](../images/color-dark-gray-16.png) |16 px et versions inférieures|
+|Gris moyen 16|144, 144, 144|#909090| ![Couleur grise moyenne pour 16 px et plus petit.](../images/color-medium-gray-16.png) |16 et moins|
+|Bleu 32|77, 130, 184|#4d82B8| ![Couleur bleue pour 32 px et plus.](../images/color-blue-32.png) |32 px et versions ultérieures|
+|Bleu 16|74, 125, 177|#4A7DB1| ![Couleur bleue pour 16 px et plus petit.](../images/color-blue-16.png) |16 px et versions inférieures|
 |TOUT jaune|234, 194, 130|#EAC282| ![Couleur jaune pour toutes les tailles d’image.](../images/color-yellow-all.png) |Toutes les tailles|
-|Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus.](../images/color-orange-32.png) |32 px et supérieures|
-|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et moins.](../images/color-orange-16.png) |16 px et inférieur|
-|TOUT rose|230, 132, 151|#E68497| ![Rose pour toutes les tailles d’image.](../images/color-pink-all.png) |Toutes les tailles|
-|Vert 32|118, 167, 151|#76A797| ![Vert pour 32 px et plus.](../images/color-green-32.png) |32 px et supérieures|
-|Vert 16|104, 164, 144|#68A490| ![Vert pour 16 px et moins.](../images/color-green-16.png) |16 px et inférieur|
-|Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus.](../images/color-red-32.png) |32 px et supérieures|
-|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et moins.](../images/color-red-16.png) |16 px et inférieur|
-|Violet 32|152, 104, 185|#9868B9| ![Violet pour 32 px et plus.](../images/color-purple-32.png) |32 px et supérieures|
-|Violet 16|137, 89, 171|#8959AB| ![Violet pour 16 px et plus petit.](../images/color-purple-16.png) |16 px et inférieur|
+|Orange 32|231, 142, 70|#E78E46| ![Couleur orange pour 32 px et plus.](../images/color-orange-32.png) |32 px et versions ultérieures|
+|Orange 16|227, 142, 70|#E3751C| ![Couleur orange pour 16 px et plus petit.](../images/color-orange-16.png) |16 px et versions inférieures|
+|TOUT rose|230, 132, 151|#E68497| ![Couleur rose pour toutes les tailles d’image.](../images/color-pink-all.png) |Toutes les tailles|
+|Vert 32|118, 167, 151|#76A797| ![Couleur verte pour 32 px et plus.](../images/color-green-32.png) |32 px et versions ultérieures|
+|Vert 16|104, 164, 144|#68A490| ![Couleur verte pour 16 px et plus petit.](../images/color-green-16.png) |16 px et versions inférieures|
+|Rouge 32|216, 99, 68|#D86344| ![Couleur rouge pour 32 px et plus.](../images/color-red-32.png) |32 px et versions ultérieures|
+|Rouge 16|214, 85, 50|#D65532| ![Couleur rouge pour 16 px et plus petit.](../images/color-red-16.png) |16 px et versions inférieures|
+|Violet 32|152, 104, 185|#9868B9| ![Couleur pourpre pour 32 px et plus.](../images/color-purple-32.png) |32 px et versions ultérieures|
+|Violet 16|137, 89, 171|#8959AB| ![Couleur violet pour 16 px et plus petit.](../images/color-purple-16.png) |16 px et versions inférieures|
 
 ## <a name="icons-in-high-contrast-modes"></a>Icônes en modes de contraste élevé
 
@@ -133,6 +133,6 @@ Les icônes Office sont conçues pour un rendu correct en mode de contraste éle
 ## <a name="see-also"></a>Voir aussi
 
 - [Élément de manifeste d’icône](/javascript/api/manifest/icon)
-- [Élément manifeste IconUrl](/javascript/api/manifest/iconurl)
+- [Élément de manifeste IconUrl](/javascript/api/manifest/iconurl)
 - [Élément manifeste HighResolutionIconUrl](/javascript/api/manifest/highresolutioniconurl)
-- [Créer une icône pour votre add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)
+- [Créer une icône pour votre complément](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)

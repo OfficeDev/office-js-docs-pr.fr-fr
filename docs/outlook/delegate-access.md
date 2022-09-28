@@ -3,12 +3,12 @@ title: Activer les dossiers partagés et les scénarios de boîte aux lettres pa
 description: Explique comment configurer la prise en charge des compléments pour les dossiers partagés (par exemple, déléguer l’accès) et aux boîtes aux lettres partagées.
 ms.date: 09/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c6884c18e4cb9916fcec20e6b732b0d20918e2f
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 70efecda863e26f085b6f93cf26091fe0b9a9ea6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857556"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092923"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans un complément Outlook
 
@@ -20,13 +20,13 @@ Le tableau suivant présente les combinaisons client-serveur prises en charge po
 
 | Client | Exchange Online | Exchange 2019 local<br>(Mise à jour cumulative 1 ou ultérieure) | Exchange 2016 local<br>(Mise à jour cumulative 6 ou ultérieure) | Exchange 2013 local |
 |---|:---:|:---:|:---:|:---:|
-|Windows :<br>version 1910 (build 12130.20272) ou ultérieure|Oui|Oui\*|Oui\*|Oui\*|
+|Windows :<br>Version 1910 (build 12130.20272) ou ultérieure|Oui|Oui\*|Oui\*|Oui\*|
 |Mac:<br>build 16.47 ou ultérieure|Oui|Oui|Oui|Oui|
 |Navigateur web :<br>interface utilisateur Outlook moderne|Oui|Non applicable|Non applicable|Non applicable|
 |Navigateur web :<br>Interface utilisateur Outlook classique|Non applicable|Non|Non|Non|
 
 > [!NOTE]
-> \* La prise en charge de cette fonctionnalité dans un environnement Exchange local est disponible à partir de la version 2206 (build 15330.20000) pour le canal actuel et de la version 2207 (build 15427.20000) pour le canal Entreprise mensuel.
+> \* La prise en charge de cette fonctionnalité dans un environnement Exchange local est disponible à partir de la version 2206 (build 15330.20000) pour le canal actuel et la version 2207 (build 15427.20000) pour le canal Entreprise mensuel.
 
 > [!IMPORTANT]
 > La prise en charge de cette fonctionnalité a été introduite dans [l’ensemble de conditions requises 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) (pour plus d’informations, reportez-vous aux [clients et aux plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients)). Toutefois, notez que la matrice de prise en charge de la fonctionnalité est un sur-ensemble de l’ensemble de conditions requises.

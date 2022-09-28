@@ -3,16 +3,16 @@ title: Limites des ressources et optimisation des performances pour les complém
 description: Découvrez les limites de ressources de la plateforme de complément Office, notamment le processeur et la mémoire.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f9bec9579db1461f16d36d97646c4fce418c2e11
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: 8465eb654795b538182e01d33b2fc57ddb35eaa0
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889197"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092902"
 ---
 # <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Limites des ressources et optimisation des performances pour les compléments Office
 
-Afin d’offrir la meilleure expérience utilisateur, assurez-vous que votre complément Office fonctionne dans les limites prévues en matière d’utilisation du cœur du processeur et de la mémoire, ainsi qu’en matière de fiabilité et, pour les compléments Outlook, de temps de réponse lors de l’évaluation des expressions régulières. Ces limites propres à l’utilisation des ressources d’exécution s’appliquent aux compléments exécutés sur des clients Office sous Windows et OS X mais pas sur des applications mobiles, ni dans un navigateur.
+To create the best experience for your users, ensure that your Office Add-in performs within specific limits for CPU core and memory usage, reliability, and, for Outlook add-ins, the response time for evaluating regular expressions. These run-time resource usage limits apply to add-ins running in Office clients on Windows and OS X, but not on mobile apps or in a browser.
 
 Par ailleurs, cette rubrique suggère des techniques de conception et d’implémentation de complément qui permettent de mieux contrôler les performances des compléments sur ordinateurs de bureau et périphériques mobiles.
 
@@ -36,16 +36,16 @@ Les limites d’utilisation des ressources au moment de l’exécution s’appli
 
    Cela affecte les expériences de l’utilisateur du complément et de l’application Office. Lorsque cela se produit, l’application Office redémarre automatiquement tous les compléments actifs d’un document ou d’une boîte aux lettres (le cas échéant) et avertit l’utilisateur de l’absence de réponse du complément. Les compléments peuvent atteindre ce seuil lorsqu’ils ne cèdent pas régulièrement le traitement lors de l’exécution de tâches longues. Il existe des techniques permettant de garantir qu’aucun blocage ne se produira. Les administrateurs ne peuvent pas remplacer ce seuil.
 
-### <a name="outlook-add-ins"></a>Compléments Outlook
+### <a name="outlook-add-ins"></a>Compléments Outlook
 
-§LTA Si un complément Outlook dépasse les seuils précédents en matière d’utilisation du cœur du processeur ou de la mémoire, ou en matière de tolérance d’incident, Outlook désactive le complément. Le Centre d’administration Exchange indique que l’état de l’application est désactivé.
+If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, Outlook disables the add-in. The Exchange Admin Center displays the disabled status of the app.
 
 > [!NOTE]
 > Même si seuls les clients enrichis Outlook et non les clients non-Outlook sur le web ou les appareils mobiles contrôlent l’utilisation des ressources, si un client enrichi désactive un complément Outlook, ce complément est également désactivé pour une utilisation dans Outlook sur le web et les appareils mobiles.
 
 Outre les règles de base, de mémoire et de fiabilité du processeur, les compléments Outlook doivent respecter les règles suivantes sur l’activation.
 
-- **Temps de réponse des expressions régulières** - Seuil par défaut de 1 000 millisecondes pour Outlook afin d’évaluer toutes les expressions régulières contenues dans le manifeste d’un complément Outlook. Le dépassement du seuil oblige Outlook à retenter l’évaluation un peu plus tard.
+- **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
     À l’aide d’une stratégie de groupe ou d’un paramètre spécifique de l’application dans le Registre Windows, les administrateurs peuvent ajuster cette valeur seuil par défaut de 1 000 millisecondes dans le paramètre **OutlookActivationAlertThreshold**.
 
@@ -69,7 +69,7 @@ Ces limitations sont généralement dépassées par de grandes plages. Votre com
 Si un complément de contenu ou de volet Office dépasse les seuils précédents sur l’utilisation du cœur du processeur ou de la mémoire, ou la limite de tolérance pour les incidents, l’application Office correspondante affiche un avertissement pour l’utilisateur. À ce stade, l’utilisateur peut effectuer l’une des actions suivantes :
 
 - Redémarrer le complément.
-- Annuler les alertes supplémentaires de dépassement de seuil. Dans l’idéal, l’utilisateur devrait supprimer le complément du document. La poursuite de l’exécution du complément risquerait d’entraîner des problèmes supplémentaires au niveau des performances et de la stabilité.  
+- Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document; continuing the add-in would risk further performance and stability issues.  
 
 ## <a name="verify-resource-usage-issues-in-the-telemetry-log"></a>Vérifier les problèmes d’utilisation des ressources dans le journal de télémétrie
 
@@ -77,23 +77,23 @@ Office propose un journal de télémétrie qui tient à jour un enregistrement d
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\15.0\Telemetry`
 
-Le journal de télémétrie comprend pour chaque événement suivi pour un complément, les date/heure de l’occurrence, l’ID d’événement, la gravité et une courte description de l’événement, le nom convivial et l’ID unique du complément, ainsi que l’application qui a enregistré l’événement. Vous pouvez actualiser le journal de télémétrie pour afficher les événements suivis. Le tableau suivant répertorie des exemples de compléments Outlook qui ont été suivis dans le journal de télémétrie.
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. You can refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
 
-|**Date/Heure**|**ID d’évènement**|**Gravité**|**Titre**|**Fichier**|**ID**|**Application**|
+|Date/Heure|ID d’événement|Severity|Titre|File|ID|Application|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|08/10/2012 17:57:10|7 ||Le manifeste du complément a été correctement téléchargé|Who’s Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|08/10/2012 17:57:01|7 ||Le manifeste du complément a été correctement téléchargé|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+|08/10/2012 17:57:10|7 |*Non applicable*|Le manifeste du complément a été correctement téléchargé|Who’s Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|08/10/2012 17:57:01|7 |*Non applicable*|Le manifeste du complément a été correctement téléchargé|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
 
 Le tableau suivant répertorie les événements que le journal de télémétrie suit pour les Compléments Office en général.
 
-|**ID d’évènement**|**Titre**|**Gravité**|**Description**|
+|ID d’événement|Titre|Severity|Description|
 |:-----|:-----|:-----|:-----|
-|7 |Le manifeste du complément a été correctement téléchargé||Le manifeste du complément Office a été correctement chargé et lu par l’application Office.|
+|7 |Le manifeste du complément a été correctement téléchargé|*Non applicable*|Le manifeste du complément Office a été correctement chargé et lu par l’application Office.|
 |8 |Échec du téléchargement du manifeste du complément|Critique|L’application Office n’a pas pu charger le fichier manifeste du complément Office à partir du catalogue SharePoint, du catalogue d’entreprise ou d’AppSource.|
 |9 |Impossible d’analyser le balisage du complément|Critique|L’application Office a chargé le manifeste du complément Office, mais n’a pas pu lire le balisage HTML de l’application.|
 |10|Le complément a trop sollicité le processeur|Critique|L’Complément Office a utilisé plus de 90 % des ressources du processeur sur une période de temps définie.|
-|15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne||§LTA Les compléments Outlook recherchent la ligne d’objet et le corps du message d’un courrier électronique pour déterminer s’ils doivent être affichés avec une expression régulière. Le complément Outlook répertorié dans la colonne **Fichier** a été désactivé par Outlook, car il a expiré à plusieurs reprises lors d’une tentative de mise en correspondance d’une expression régulière.|
-|18 |Le complément a été fermé||L’application Office a pu fermer le complément Office avec succès.|
+|15|Le complément a été désactivé en raison de l’expiration de la recherche de chaîne|*Non applicable*|Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|
+|18 |Le complément a été fermé|*Non applicable*|L’application Office a pu fermer le complément Office avec succès.|
 |19|Le complément a rencontré une erreur d’exécution|Critique|L'Complément Office a rencontré un problème qui l'a empêchée de s'exécuter. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 |20|Le complément n’a pas pu vérifier la licence|Critique|Les informations de licence de l'Complément Office n'ont pas pu être vérifiées et la licence a peut-être expiré. Pour plus de détails, consultez le journal **Alertes Microsoft Office** à l’aide de l’Observateur d’événements Windows sur l’ordinateur sur lequel l’erreur s’est produite.|
 
@@ -105,7 +105,7 @@ Bien que les limites en matière d’utilisation des ressources de l’UC et de 
 
 - Dans un scénario où votre complément a besoin de lire un important volume de données à partir d’un jeu de données illimité, vous pouvez appliquer la pagination lors de la lecture des données dans une table ou réduire la taille des données à chaque opération de lecture raccourcie, plutôt que de tenter de terminer la lecture en une seule opération. Pour ce faire, vous pouvez utiliser la méthode [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) de l’objet global pour limiter la durée d’entrée et de sortie. It also handles the data in defined chunks instead of randomly unbounded data. Une autre option consiste à utiliser [asynchrone](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) pour gérer vos promesses.
 
-- Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive pour traiter un important volume de données, vous pouvez recourir aux API Web Worker afin d’effectuer une tâche de longue durée en arrière-plan pendant qu’un script distinct s’exécute au premier plan (par exemple, l’affichage de la progression d’une opération dans l’interface utilisateur). Les API Web Worker ne bloquent pas les activités des utilisateurs. En outre, elles permettent à la page HTML de rester réactive. Pour obtenir un exemple d’API Web Worker, voir les [bases des API Web Worker](https://www.html5rocks.com/tutorials/workers/basics/). Pour plus d’informations sur l’API Web Worker, voir [API Web Worker](https://developer.mozilla.org/docs/Web/API/Web_Workers_API).
+- If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use web workers to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers do not block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/tutorials/workers/basics/). See [Web Workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) for more information about the Web Workers API.
 
 - Si votre complément utilise un algorithme qui sollicite l’UC de manière intensive et si vous pouvez décomposer les entrées ou sorties de données en jeux de données de plus petite taille, créez un service web afin de lui passer les données et d’alléger la charge de l’UC, puis attendez un rappel asynchrone.
 

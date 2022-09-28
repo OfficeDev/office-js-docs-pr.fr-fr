@@ -3,12 +3,12 @@ title: Confidentialité, autorisations et sécurité pour les compléments Outlo
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
 ms.date: 08/09/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 939d32d48275266b3c30a3e4a2c72a806a301cee
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
+ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318892"
+ms.lasthandoff: 09/28/2022
+ms.locfileid: "68092874"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -26,7 +26,7 @@ Cet article décrit les autorisations que les compléments Outlook peuvent deman
 
 ## <a name="permissions-model"></a>Modèle d’autorisations
 
-Comme la façon dont les clients perçoivent la sécurité des compléments peut avoir une incidence sur l’adoption de ces derniers, la sécurité des compléments Outlook repose sur un modèle d’autorisations à plusieurs niveaux. Un complément Outlook indique le niveau d’autorisations dont il a besoin, identifiant ainsi l’accès dont il peut disposer et les actions qu’il peut effectuer sur les données de la boîte aux lettres du client.
+Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
 Le schéma de manifeste version 1.1 comprend quatre niveaux d’autorisation.
 
@@ -68,7 +68,7 @@ Les utilisateurs finaux et les administrateurs informatiques peuvent désactiver
 - Navigateur : la disponibilité des compléments et l’accès au Store ne sont pas affectés de sorte que les utilisateurs puissent continuer à [gérer leurs compléments](https://support.microsoft.com/office/8f2ce816-5df4-44a5-958c-f7f9d6dabdce), y compris ceux déployés par l’administrateur.
 
   > [!NOTE]
-  > \* Pour Windows, la prise en charge de cette expérience/ce comportement est disponible à partir de la version 2008 (build 13127.20296). Pour plus d’informations en fonction de votre version, consultez la page de l’historique des mises à jour de [Miicrosoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version du client et le canal de mise à jour Office que vous utilisez](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
+  > \* Pour Windows, la prise en charge de cette expérience/comportement est disponible à partir de la version 2008 (build 13127.20296). Pour plus d’informations en fonction de votre version, consultez la page de l’historique des mises à jour de [Miicrosoft 365](/officeupdates/update-history-office365-proplus-by-date) et [comment trouver la version du client et le canal de mise à jour Office que vous utilisez](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).
 
 Pour obtenir des informations générales sur le comportement des compléments, consultez [Confidentialité et sécurité pour les compléments Office](../concepts/privacy-and-security.md#optional-connected-experiences).
 
@@ -80,11 +80,11 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
 
 [!INCLUDE [outlook-irm-add-in-activation](../includes/outlook-irm-add-in-activation.md)]
 
-- Avant d’installer un complément de AppSource, les utilisateurs finals peuvent voir l’accès dont peut disposer le complément, ainsi que les actions qu’il peut effectuer sur leurs données, et doivent explicitement confirmer qu’ils veulent poursuivre. Aucun complément Outlook n’est automatiquement transmis sur un ordinateur client sans une validation manuelle par l’utilisateur ou l’administrateur.
+- Before installing an add-in from AppSource, end users can see the access and actions that the add-in can make on their data and must explicitly confirm to proceed. No Outlook add-in is automatically pushed onto a client computer without manual validation by the user or administrator.
 
 - L’octroi de l’autorisation **Restreint** permet au complément Outlook d’avoir un accès limité uniquement sur l’élément actuel.  L’octroi de l’autorisation **d’élément de lecture** permet au complément Outlook d’accéder aux informations d’identification personnelles, telles que les noms d’expéditeur et de destinataire et les adresses e-mail, uniquement sur l’élément actif.
 
-- Un utilisateur final peut installer un complément Outlook uniquement pour lui-même. Les compléments de messagerie ayant une incidence sur l’organisation sont installés par un administrateur.
+- An end user can install an Outlook add-in for only himself or herself. Outlook add-ins that affect an organization are installed by an administrator.
 
 - Les utilisateurs peuvent installer des compléments Outlook qui activent des scénarios contextuels prisés par les utilisateurs tout en minimisant les risques de sécurité pour ces derniers.
 
@@ -102,7 +102,7 @@ Le modèle de sécurité résout les problèmes de sécurité, de confidentialit
 
   - Utilisation du processeur  
 
-  La gouvernance dissuade les attaques par déni de service et maintient les performances des compléments à un niveau raisonnable. La barre Entreprise indique aux utilisateurs les compléments Outlook que le client riche Outlook a désactivés sur la base d’un tel contrôle de gouvernance.
+  Governance deters denial-of-service attacks and maintains add-in performance at a reasonable level. The Business Bar alerts end users about Outlook add-ins that the Outlook rich client has disabled based on such governance control.
 
 - À tout moment, les utilisateurs finals peuvent vérifier les autorisations demandées par les compléments Outlook installés, et désactiver ou activer ultérieurement tout complément Outlook dans le Centre d’administration Exchange.
 
@@ -153,7 +153,7 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
 
 ### <a name="resource-usage-tuning"></a>Réglage de l’utilisation des ressources
 
-Les développeurs doivent connaître les limites de l’utilisation des ressources pour l’activation, incorporer le réglage des performances dans leur flux de travail de développement, afin de réduire le risque d’un complément peu performant refusant le service de l’hôte. Les développeurs doivent suivre les directives concernant la conception des règles d’activation telles que décrites dans [Limites d’activation et d’API JavaScript des compléments Outlook](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). Si un complément Outlook est destiné à être exécuté sur un client riche Outlook, les développeurs doivent vérifier que les performances du complément se situent dans les limites d’utilisation des ressources.
+Developers should be aware of resource usage limits for activation, incorporate performance tuning in their development workflow, so as to reduce the chance of a poorly performing add-in denying service of the host. Developers should follow the guidelines in designing activation rules as described in [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md). If an Outlook add-in is intended to run on an Outlook rich client, then developers should verify that the add-in performs within the resource usage limits.
 
 ### <a name="other-measures-to-promote-user-security"></a>Autres mesures visant à promouvoir la sécurité de l’utilisateur
 
