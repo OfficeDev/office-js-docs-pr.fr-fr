@@ -1,14 +1,14 @@
 ---
-ms.date: 07/08/2021
+ms.date: 09/09/2022
 description: Traitez ensemble les fonctions personnalisées pour réduire les appels réseau à un service à distance.
 title: Le traitement par lots de fonctions personnalisées nécessite un service à distance
 ms.localizationpriority: medium
-ms.openlocfilehash: 71af149154ea39dc71b682502c54bb3a03282652
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: f779351789350bbc591b1b5d7a975ff9f70cda26
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958600"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234920"
 ---
 # <a name="batch-custom-function-calls-for-a-remote-service"></a>Appels de fonction personnalisée Batch pour un service distant
 
@@ -28,11 +28,11 @@ Vous pouvez également télécharger ou afficher l’exemple de projet complet a
 
 Pour configurer le traitement par lots pour vos fonctions personnalisées, vous devez écrire trois sections principales de code.
 
-1. Une opération push pour ajouter une nouvelle opération au traitement par lots des appels chaque fois qu’Excel appelle votre fonction personnalisée.
-2. Une fonction pour créer la demande à distance lorsque le traitement par lots est prêt.
-3. Du code serveur pour répondre à la demande de traitement par lots, calculer tous les résultats de l’opération et retourner les valeurs.
+1. Opération [push](#add-the-_pushoperation-function) pour ajouter une nouvelle opération au lot d’appels chaque fois qu’Excel appelle votre fonction personnalisée.
+2. [Fonction permettant d’effectuer la requête à distance](#make-the-remote-request) lorsque le lot est prêt.
+3. [Code du serveur pour répondre à la demande de lot](#process-the-batch-call-on-the-remote-service), calculer tous les résultats de l’opération et retourner les valeurs.
 
-Dans les sections suivantes, vous allez apprendre à construire le code un exemple à la fois. Vous ajoutez chaque exemple de code à votre fichier **functions.ts**. Il est recommandé de créer un tout nouveau projet de fonctions personnalisées à l’aide du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) . Pour créer un projet, consultez [Prise en main du développement de fonctions personnalisées Excel](../quickstarts/excel-custom-functions-quickstart.md) et utilisation de TypeScript au lieu de JavaScript.
+Dans les sections suivantes, vous allez apprendre à construire le code un exemple à la fois. Il est recommandé de créer un tout nouveau projet de fonctions personnalisées à l’aide du [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) . Pour créer un projet, consultez [Prise en main du développement de fonctions personnalisées Excel](../quickstarts/excel-custom-functions-quickstart.md). Vous pouvez utiliser TypeScript ou JavaScript.
 
 ## <a name="batch-each-call-to-your-custom-function"></a>Traiter par lots chaque appel de votre fonction personnalisée
 
@@ -40,53 +40,51 @@ Vos fonctions personnalisées sont basées sur l’appel d’un service à dista
 
 Dans le code suivant, la fonction personnalisée effectue une division, mais s’appuie sur un service à distance pour effectuer le calcul réel. Elle appelle `_pushOperation` pour traiter l’opération par lots, ainsi que d’autres opérations sur le service à distance. Elle nomme l’opération **div2**. Vous pouvez utiliser un schéma d’affectation de noms de votre choix pour les opérations tant que le service à distance utilise également le même schéma (plus d’informations sur le service à distance disponibles plus tard). En outre, les arguments dont le service à distance a besoin pour exécuter l’opération sont transmis.
 
-### <a name="add-the-div2-custom-function-to-functionsts"></a>Ajouter la fonction personnalisée div2 à functions.ts
+### <a name="add-the-div2-custom-function"></a>Ajouter la fonction personnalisée div2
 
-```typescript
+Ajoutez le code suivant à votre **fichierfunctions.js** ou **functions.ts** (selon si vous avez utilisé JavaScript ou TypeScript).
+
+```javascript
 /**
- * @CustomFunction
  * Divides two numbers using batching
+ * @CustomFunction
  * @param dividend The number being divided
  * @param divisor The number the dividend is divided by
  * @returns The result of dividing the two numbers
  */
-function div2(dividend: number, divisor: number) {
-  return _pushOperation(
-    "div2",
-    [dividend, divisor]
-  );
+function div2(dividend, divisor) {
+  return _pushOperation("div2", [dividend, divisor]);
 }
 ```
 
-Ensuite, vous allez définir le tableau de traitement par lots qui va stocker toutes les opérations à transmettre en un seul appel réseau. Le code suivant montre comment définir une interface en décrivant chaque entrée de traitement par lots dans le tableau. L’interface définit une opération, qui est un nom de chaîne de l’opération à exécuter. Par exemple, si vous aviez deux fonctions personnalisées nommées `multiply` et `divide`, vous pouvez les réutiliser comme noms d’opération dans vos entrées de traitement par lots. `args` contient les arguments transmis à votre fonction personnalisée à partir d’Excel. Et enfin, `resolve` ou `reject` stocke une promesse en conservant les informations que le service à distance renvoie.
+### <a name="add-global-variables-for-tracking-batch-requests"></a>Ajouter des variables globales pour le suivi des requêtes par lots
 
-```typescript
-interface IBatchEntry {
-  operation: string;
-  args: any[];
-  resolve: (data: any) => void;
-  reject: (error: Error) => void;
-}
-```
+Ensuite, ajoutez deux variables globales à votre **fichierfunctions.js** ou **functions.ts** . `_isBatchedRequestScheduled` est important ultérieurement pour le minutage des appels par lots au service distant.
 
-Ensuite, créez le tableau de traitement par lots qui utilise l’interface précédente. Pour savoir si un traitement par lots est prévu ou non, créez une variable `_isBatchedRequestSchedule`. Cette opération s’avère importante pour plus tard pour minuter les appels au service à distance.
-
-```typescript
-const _batch: IBatchEntry[] = [];
+```javascript
+let _batch = [];
 let _isBatchedRequestScheduled = false;
 ```
 
-Enfin, lorsqu’Excel appelle votre fonction personnalisée, vous devez transmettre l’opération au tableau de traitement par lots. Le code suivant montre comment ajouter une nouvelle opération à partir d’une fonction personnalisée. Il crée une nouvelle entrée de traitement par lots, crée une nouvelle promesse de résolution ou de rejet de l’opération, et transmet l’entrée dans le tableau de traitement par lots.
+### <a name="add-the-_pushoperation-function"></a>Ajouter la `_pushOperation` fonction
+
+Quand Excel appelle votre fonction personnalisée, vous devez envoyer l’opération dans le tableau de commandes. Le code **de fonction _pushOperation** suivant montre comment ajouter une nouvelle opération à partir d’une fonction personnalisée. Il crée une nouvelle entrée de traitement par lots, crée une nouvelle promesse de résolution ou de rejet de l’opération, et transmet l’entrée dans le tableau de traitement par lots.
 
 Ce code vérifie également si un traitement par lots est planifié. Dans cet exemple, l’exécution de chaque traitement par lots est prévue toutes les 100 millisecondes. Vous pouvez ajuster cette valeur si nécessaire. Des valeurs supérieures entraînent l’envoi de traitements par lots plus grands au service à distance et l’augmentation du temps d’attente pour que l’utilisateur puisse afficher les résultats. Des valeurs inférieures ont tendance à envoyer davantage de traitements par lots au service à distance, mais avec un temps de réponse rapide pour les utilisateurs.
 
-### <a name="add-the-_pushoperation-function-to-functionsts"></a>Ajouter la fonction `_pushOperation` à functions.ts
+La fonction crée un objet **invocationEntry** qui contient le nom de chaîne de l’opération à exécuter. Par exemple, si vous aviez deux fonctions personnalisées nommées `multiply` et `divide`, vous pouvez les réutiliser comme noms d’opération dans vos entrées de traitement par lots. `args` contient les arguments passés à votre fonction personnalisée à partir d’Excel. Enfin, `resolve` ou `reject` les méthodes stockent une promesse contenant les informations retournées par le service distant.
 
-```typescript
-function _pushOperation(op: string, args: any[]) {
+Ajoutez le code suivant à votre **fichierfunctions.js** ou **functions.ts** .
+
+```javascript
+// This function encloses your custom functions as individual entries,
+// which have some additional properties so you can keep track of whether or not
+// a request has been resolved or rejected.
+function _pushOperation(op, args) {
   // Create an entry for your custom function.
-  const invocationEntry: IBatchEntry = {
-    operation: op, // e.g. sum
+  console.log("pushOperation");
+  const invocationEntry = {
+    operation: op, // e.g., sum
     args: args,
     resolve: undefined,
     reject: undefined,
@@ -103,8 +101,9 @@ function _pushOperation(op: string, args: any[]) {
   _batch.push(invocationEntry);
 
   // If a remote request hasn't been scheduled yet,
-  // schedule it after a certain timeout, e.g. 100 ms.
+  // schedule it after a certain timeout, e.g., 100 ms.
   if (!_isBatchedRequestScheduled) {
+    console.log("schedule remote request");
     _isBatchedRequestScheduled = true;
     setTimeout(_makeRemoteRequest, 100);
   }
@@ -118,13 +117,19 @@ function _pushOperation(op: string, args: any[]) {
 
 L’objectif de la fonction `_makeRemoteRequest` consiste à transmettre le traitement par lots d’opérations au service à distance, puis de renvoyer les résultats à chaque fonction personnalisée. Elle crée tout d’abord une copie du tableau de traitement par lots. Cela permet aux appels simultanés de fonctions personnalisées à partir d’Excel de commencer immédiatement le traitement par lots dans un nouveau tableau. La copie est ensuite transformée en un tableau plus simple qui ne contient pas les informations sur la promesse. Transmettre les promesses à un service à distance n’aurait aucun sens, car elles ne fonctionneraient pas. `_makeRemoteRequest` rejette ou résout chaque promesse en fonction de ce que le service à distance renvoie.
 
-### <a name="add-the-following-_makeremoterequest-method-to-functionsts"></a>Ajouter la méthode `_makeRemoteRequest` suivante à functions.ts
+Ajoutez le code suivant à votre **fichierfunctions.js** ou **functions.ts** .
 
-```typescript
+```javascript
+// This is a private helper function, used only within your custom function add-in.
+// You wouldn't call _makeRemoteRequest in Excel, for example.
+// This function makes a request for remote processing of the whole batch,
+// and matches the response batch to the request batch.
 function _makeRemoteRequest() {
   // Copy the shared batch and allow the building of a new batch while you are waiting for a response.
   // Note the use of "splice" rather than "slice", which will modify the original _batch array
   // to empty it out.
+  try{
+  console.log("makeRemoteRequest");
   const batchCopy = _batch.splice(0, _batch.length);
   _isBatchedRequestScheduled = false;
 
@@ -132,21 +137,31 @@ function _makeRemoteRequest() {
   const requestBatch = batchCopy.map((item) => {
     return { operation: item.operation, args: item.args };
   });
-
+  console.log("makeRemoteRequest2");
   // Make the remote request.
   _fetchFromRemoteService(requestBatch)
     .then((responseBatch) => {
+      console.log("responseBatch in fetchFromRemoteService");
       // Match each value from the response batch to its corresponding invocation entry from the request batch,
       // and resolve the invocation promise with its corresponding response value.
       responseBatch.forEach((response, index) => {
         if (response.error) {
           batchCopy[index].reject(new Error(response.error));
+          console.log("rejecting promise");
         } else {
+          console.log("fulfilling promise");
           console.log(response);
+
           batchCopy[index].resolve(response.result);
         }
       });
     });
+    console.log("makeRemoteRequest3");
+  } catch (error) {
+    console.log("error name:" + error.name);
+    console.log("error message:" + error.message);
+    console.log(error);
+  }
 }
 ```
 
@@ -159,18 +174,23 @@ La fonction `_makeRemoteRequest` appelle `_fetchFromRemoteService` qui, comme vo
 
 ## <a name="process-the-batch-call-on-the-remote-service"></a>Traiter l’appel de traitement par lots sur le service à distance
 
-La dernière étape consiste à gérer l’appel de traitement par lots dans le service à distance. L’exemple de code suivant affiche la fonction `_fetchFromRemoteService`. Cette fonction décompresse chaque opération, effectue l’opération spécifiée et renvoie les résultats. À des fins d’apprentissage dans cet article, la fonction `_fetchFromRemoteService` est conçue de manière à s’exécuter dans votre complément web et à imiter un service à distance. Vous pouvez ajouter ce code à votre fichier **functions.ts** afin d’examiner et d’exécuter l’ensemble du code de cet article sans devoir configurer de service à distance réel.
+La dernière étape consiste à gérer l’appel de traitement par lots dans le service à distance. L’exemple de code suivant affiche la fonction `_fetchFromRemoteService`. Cette fonction décompresse chaque opération, effectue l’opération spécifiée et renvoie les résultats. À des fins d’apprentissage dans cet article, la fonction `_fetchFromRemoteService` est conçue de manière à s’exécuter dans votre complément web et à imiter un service à distance. Vous pouvez ajouter ce code à votre **fichierfunctions.js** ou **functions.ts** afin de pouvoir étudier et exécuter tout le code de cet article sans avoir à configurer un service distant réel.
 
-### <a name="add-the-following-_fetchfromremoteservice-function-to-functionsts"></a>Ajouter la fonction `_fetchFromRemoteService` suivante à functions.ts
+Ajoutez le code suivant à votre **fichierfunctions.js** ou **functions.ts** .
 
-```typescript
-async function _fetchFromRemoteService(
-  requestBatch: Array<{ operation: string, args: any[] }>
-): Promise<IServerResponse[]> {
-  // Simulate a slow network request to the server;
+```javascript
+// This function simulates the work of a remote service. Because each service
+// differs, you will need to modify this function appropriately to work with the service you are using. 
+// This function takes a batch of argument sets and returns a promise that may contain a batch of values.
+// NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
+//       to ensure only the correct callers can access it.
+async function _fetchFromRemoteService(requestBatch) {
+  // Simulate a slow network request to the server.
+  console.log("_fetchFromRemoteService");
   await pause(1000);
-
-  return requestBatch.map((request): IServerResponse => {
+  console.log("postpause");
+  return requestBatch.map((request) => {
+    console.log("requestBatch server side");
     const { operation, args } = request;
 
     try {
@@ -181,10 +201,10 @@ async function _fetchFromRemoteService(
         };
       } else if (operation === "mul2") {
         // Multiply the arguments for the given entry.
-        const myresult = args[0] * args[1];
-        console.log(myresult);
+        const myResult = args[0] * args[1];
+        console.log(myResult);
         return {
-          result: myresult
+          result: myResult
         };
       } else {
         return {
@@ -199,7 +219,8 @@ async function _fetchFromRemoteService(
   });
 }
 
-function pause(ms: number) {
+function pause(ms) {
+  console.log("pause");
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 ```

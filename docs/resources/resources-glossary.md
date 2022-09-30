@@ -1,14 +1,14 @@
 ---
 title: Glossaire des termes des compléments Office
 description: Glossaire des termes couramment utilisés dans la documentation des compléments Office.
-ms.date: 08/19/2022
+ms.date: 09/14/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 41eb138dac6fc9c3ab14cd795549853f0358e75d
-ms.sourcegitcommit: 65f46911640bf4becc67b718b0eac9106fff3925
+ms.openlocfilehash: ef8df6e344698f7d67ebe7afe1759e13630b385d
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2022
-ms.locfileid: "67735322"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234913"
 ---
 # <a name="office-add-ins-glossary"></a>Glossaire des compléments Office
 
@@ -96,6 +96,14 @@ Voir aussi : [application](#application), [client](#client), [application Office
 
 Voir aussi : [application](#application), [client](#client), [hôte](#host).
 
+## <a name="perpetual"></a>Perpétuel
+
+**Perpetual** fait référence aux versions d’Office disponibles via un contrat de licence en volume ou des canaux de vente au détail.
+
+D’autres contenus Microsoft peuvent utiliser le terme **non-abonnement** pour représenter ce concept.
+
+Voir aussi : [vente au détail, vente au détail perpétuelle](#retail-retail-perpetual), [licence en volume, licence en volume perpétuelle, licence en volume](#volume-licensed-volume-licensed-perpetual-volume-licensing)
+
 ## <a name="platform"></a>platform
 
 Une **plateforme** fait généralement référence au système d’exploitation exécutant l’application Office. Les plateformes qui prennent en charge les compléments Office incluent windows, Mac, iPad et navigateurs web.
@@ -109,6 +117,14 @@ Voir aussi : [didacticiel](#tutorial).
 ## <a name="requirement-set"></a>ensemble de conditions requises
 
 [!include[Requirement set note](../includes/office-js-requirement-sets.md)]
+
+## <a name="retail-retail-perpetual"></a>retail, retail perpetual
+
+**La vente au détail** fait référence aux versions perpétuelles d’Office disponibles via les canaux de vente au détail. Celles-ci n’incluent pas les versions fournies par un abonnement Microsoft 365 ni un contrat de licence en volume.
+
+D’autres contenus Microsoft peuvent utiliser le terme **achat** unique ou **consommateur** pour représenter ce concept.
+
+Voir aussi : [perpétuel](#perpetual)
 
 ## <a name="ribbon-ribbon-button"></a>ruban, bouton du ruban
 
@@ -126,6 +142,10 @@ Un **runtime partagé** permet à tout le code de votre complément, y compris l
 
 Voir aussi : [runtime de fonctions personnalisées](#custom-functions-runtime), [runtime](#runtime).
 
+## <a name="subscription"></a>Abonnement
+
+**L’abonnement** fait référence aux versions d’Office disponibles avec un abonnement Microsoft 365.
+
 ## <a name="task-pane"></a>volet Office
 
 Les volets Office sont des surfaces d’interface ou des vues web qui apparaissent généralement sur le côté droit de la fenêtre dans Excel, Outlook, PowerPoint et Word. Les volets des tâches permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou des e-mails, ou afficher des données d’une source de données. Utilisez les volets Office lorsque vous n’avez pas besoin ou ne pouvez pas incorporer de fonctionnalités directement dans le document. Pour en savoir plus, consultez [les volets Office dans les compléments Office](../design/task-pane-add-ins.md) .
@@ -137,6 +157,14 @@ Voir aussi : [webview](#webview).
 Un **didacticiel** est une aide pédagogique conçue pour aider les gens à apprendre à utiliser un produit ou une procédure. Dans le contexte des compléments Office, un didacticiel guide un développeur de compléments tout au long du processus de développement de complément complet pour une application particulière, telle qu’Excel. Cela implique de suivre 20 étapes ou plus et représente un investissement de temps plus important qu’un [démarrage rapide](#quick-start).
 
 Voir aussi : [démarrage rapide](#quick-start).
+
+## <a name="volume-licensed-volume-licensed-perpetual-volume-licensing"></a>licence en volume, licence en volume perpétuelle, licence en volume
+
+**La licence en volume** fait référence à une version perpétuelle d’Office disponible par le biais d’un contrat de licence en volume entre Microsoft et votre entreprise.
+
+D’autres contenus Microsoft peuvent utiliser le terme **commercial** pour représenter ce concept.
+
+Voir aussi : [perpétuel](#perpetual)
 
 ## <a name="web-add-in"></a>complément web
 
@@ -158,7 +186,7 @@ Voir aussi : [fonction personnalisée](#custom-function).
 
 ## <a name="yeoman-generator-yo-office"></a>Générateur Yeoman, yo office
 
-Le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) utilise l’outil Open Source [Yeoman](https://github.com/yeoman/yo) pour générer un complément Office via la ligne de commande. `yo office` est la commande qui exécute le générateur Yeoman pour les compléments Office. Les guides de démarrage rapide des compléments Office et les didacticiels utilisent le générateur Yeoman.
+Le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md) utilise l’outil open source [Yeoman](https://github.com/yeoman/yo) pour générer un complément Office via la ligne de commande. `yo office` est la commande qui exécute le générateur Yeoman pour les compléments Office. Les guides de démarrage rapide des compléments Office et les didacticiels utilisent le générateur Yeoman.
 
 ## <a name="see-also"></a>Voir aussi
 

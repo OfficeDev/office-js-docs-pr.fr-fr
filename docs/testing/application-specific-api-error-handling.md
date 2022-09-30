@@ -1,20 +1,20 @@
 ---
 title: Gestion des erreurs avec les API JavaScript spécifiques à l’application
 description: Découvrez Excel, Word, PowerPoint et une autre logique de gestion des erreurs de l’API JavaScript spécifique à l’application pour prendre en compte les erreurs d’exécution.
-ms.date: 07/05/2022
+ms.date: 09/27/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b6f25f5740892df4729b72ee5ad87403853f45fb
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: f26c38e7582fbb372deae8b160b8a284d8ce4ce9
+ms.sourcegitcommit: cff5d3450f0c02814c1436f94cd1fc1537094051
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092993"
+ms.lasthandoff: 09/30/2022
+ms.locfileid: "68234892"
 ---
 # <a name="error-handling-with-the-application-specific-javascript-apis"></a>Gestion des erreurs avec les API JavaScript spécifiques à l’application
 
 Lorsque vous générez un complément à l’aide [des API JavaScript Office spécifiques à l’application, veillez](../develop/application-specific-api-model.md) à inclure une logique de gestion des erreurs pour tenir compte des erreurs d’exécution. Cette opération est essentielle en raison de la nature asynchrone des API.
 
-## <a name="best-practices"></a>Bonnes pratiques
+## <a name="best-practices"></a>Meilleures pratiques
 
 Dans nos [exemples de code](https://github.com/OfficeDev/Office-Add-in-samples) et [Script Lab](../overview/explore-with-script-lab.md) extraits de code, vous remarquerez que chaque appel à `Excel.run`, `PowerPoint.run`ou `Word.run` est accompagné d’une `catch` instruction pour intercepter les erreurs. Nous vous recommandons d’utiliser le même modèle lorsque vous générez un complément à l’aide des API spécifiques à l’application.
 
@@ -86,8 +86,8 @@ Les tableaux suivants répertorient les erreurs que les API spécifiques à l’
 |`MemoryLimitReached`|La limite de mémoire a été atteinte. Votre action n’a pas pu être effectuée.|*Aucun.* |
 |`NotImplemented`|La fonctionnalité demandée n’est pas implémentée| Cela peut signifier que l’API est en préversion ou uniquement prise en charge sur une plateforme particulière (par exemple, en ligne uniquement). Pour plus d’informations, consultez [la disponibilité des applications clientes et de la plateforme Office pour les compléments Office](/javascript/api/requirement-sets) .|
 |`RequestAborted`|La demande a été interrompue pendant l’exécution.|*Aucun.* |
-|`RequestPayloadSizeLimitExceeded`|La taille de la charge utile de la demande a dépassé la limite. Pour plus d’informations, consultez l’article Sur [les limites de ressources et l’optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) .| Cette erreur se produit uniquement dans Office sur le Web.|
-|`ResponsePayloadSizeLimitExceeded`|La taille de la charge utile de la réponse a dépassé la limite. Pour plus d’informations, consultez l’article Sur [les limites de ressources et l’optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) .|  Cette erreur se produit uniquement dans Office sur le Web.|
+|`RequestPayloadSizeLimitExceeded`|La taille de la charge utile de la demande a dépassé la limite. Pour plus d’informations, consultez l’article Sur [les limites de ressources et l’optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) .| Cette erreur se produit uniquement dans Office لەسەر وێب.|
+|`ResponsePayloadSizeLimitExceeded`|La taille de la charge utile de la réponse a dépassé la limite. Pour plus d’informations, consultez l’article Sur [les limites de ressources et l’optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) .|  Cette erreur se produit uniquement dans Office لەسەر وێب.|
 |`ServiceNotAvailable`|Le service n’est pas disponible.|*Aucun.* |
 |`Unauthenticated` |Les informations d’authentification requises sont manquantes ou incorrectes.|*Aucun.* |
 |`UnsupportedFeature`|L’opération a échoué, car la feuille de calcul source contient une ou plusieurs fonctionnalités non prises en charge.|*Aucun.* |
@@ -99,11 +99,12 @@ Les tableaux suivants répertorient les erreurs que les API spécifiques à l’
 |:----------|:--------------|:------|
 |`EmptyChartSeries`|L’opération tentée a échoué, car la série de graphiques est vide.|*Aucun.* |
 |`FilteredRangeConflict`|La tentative d’opération provoque un conflit avec une plage filtrée.|*Aucun.* |
-|`FormulaLengthExceedsLimit`|L’octet de la formule appliquée dépasse la limite de longueur maximale. Pour Office sur les machines 32 bits, la limite de longueur d’octet est de 16 384 caractères. Sur les machines 64 bits, la longueur d’octet est de 32 768 caractères.| Cette erreur se produit à la fois dans Excel sur le Web et sur le bureau.|
+|`FormulaLengthExceedsLimit`|L’octet de la formule appliquée dépasse la limite de longueur maximale. Pour Office sur les machines 32 bits, la limite de longueur d’octet est de 16 384 caractères. Sur les machines 64 bits, la longueur d’octet est de 32 768 caractères.| Cette erreur se produit à la fois dans Excel لەسەر وێب et sur le bureau.|
+|`GeneralException`|*Divers.*|Les API de types de données retournent `GeneralException` des erreurs avec des messages d’erreur dynamiques. Ces messages référencent la cellule qui est la source de l’erreur et le problème à l’origine de l’erreur, par exemple : « La cellule A1 ne dispose pas de la propriété `type`requise ».|
 |`InactiveWorkbook`|L’opération a échoué, car plusieurs classeurs sont ouverts et le classeur appelé par cette API a perdu le focus.|*Aucun.* |
 |`MergedRangeConflict`|Impossible de terminer l’opération. Une table ne peut pas chevaucher une autre table, un rapport de tableau croisé dynamique, des résultats de requête, des cellules fusionnées ou une carte XML.|*Aucun.* |
 |`NonBlankCellOffSheet`|Microsoft Excel ne peut pas insérer de nouvelles cellules, car il pousserait les cellules non vides à la fin de la feuille de calcul. Ces cellules non vides peuvent apparaître vides, mais ont des valeurs vides, une certaine mise en forme ou une formule. Supprimez suffisamment de lignes ou de colonnes pour faire place à ce que vous voulez insérer, puis réessayez.|*Aucun.* |
-|`OperationCellsExceedLimit`|L’opération tentée affecte plus que la limite de 33554000 cellules.| Si l’erreur `TableColumnCollection.add API` se déclenche, vérifiez qu’il n’y a pas de données involontaires dans la feuille de calcul, mais en dehors de la table. En particulier, recherchez les données dans les colonnes les plus à droite de la feuille de calcul. Supprimez les données inattendues pour résoudre cette erreur. Une façon de vérifier le nombre de cellules qu’une opération traite consiste à exécuter le calcul suivant : `(number of table rows) x (16383 - (number of table columns))`. Le nombre 16383 correspond au nombre maximal de colonnes prises en charge par Excel. <br><br>Cette erreur se produit uniquement dans Excel sur le Web. |
+|`OperationCellsExceedLimit`|L’opération tentée affecte plus que la limite de 33554000 cellules.| Si l’erreur `TableColumnCollection.add API` se déclenche, vérifiez qu’il n’y a pas de données involontaires dans la feuille de calcul, mais en dehors de la table. En particulier, recherchez les données dans les colonnes les plus à droite de la feuille de calcul. Supprimez les données inattendues pour résoudre cette erreur. Une façon de vérifier le nombre de cellules qu’une opération traite consiste à exécuter le calcul suivant : `(number of table rows) x (16383 - (number of table columns))`. Le nombre 16383 correspond au nombre maximal de colonnes prises en charge par Excel. <br><br>Cette erreur se produit uniquement dans Excel لەسەر وێب. |
 |`PivotTableRangeConflict`|La tentative d’opération provoque un conflit avec une plage de tableaux croisés dynamiques.|*Aucun.* |
 |`RangeExceedsLimit`|Le nombre de cellules dans la plage a dépassé le nombre maximal pris en charge. Pour plus d’informations, consultez l’article Sur [les limites de ressources et l’optimisation des performances pour les compléments Office](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) .|*Aucun.* |
 |`RefreshWorkbookLinksBlocked`|L’opération a échoué, car l’utilisateur n’a pas accordé l’autorisation d’actualiser les liens de classeur externes.|*Aucun.* |

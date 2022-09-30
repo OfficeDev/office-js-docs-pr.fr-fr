@@ -25,6 +25,8 @@ items:
             href: quickstarts/project-quickstart.md
           - name: Complément Word
             href: quickstarts/word-quickstart.md
+          - name: Authentification unique (SSO)
+            href: quickstarts/sso-quickstart.md
       - name: Explorer les API Office JS à l’aide de Script Lab
         href: overview/explore-with-script-lab.md
         displayName: 'Excel, Word, PowerPoint'
@@ -134,6 +136,8 @@ items:
                 items:
                   - name: Activer l’authentification unique dans un complément Office
                     href: develop/sso-in-office-add-ins.md
+                  - name: Démarrage rapide
+                    href: quickstarts/sso-quickstart.md
                   - name: S'inscrire avec la plateforme d’identités Microsoft
                     href: develop/register-sso-add-in-aad-v2.md
                   - name: Octroi de l’accord de l’administrateur
@@ -889,6 +893,9 @@ items:
         displayName: Excel
       - name: Copier l’extrait de script lab dans Yo Office
         href: overview/create-an-office-add-in-from-script-lab.md
+      - name: Traitement par lots des appels distants de fonction personnalisée
+        href: excel/custom-functions-batching.md
+        displayName: 'Excel, Custom Functions'
   - name: Ressources
     items:
       - name: Glossaire
