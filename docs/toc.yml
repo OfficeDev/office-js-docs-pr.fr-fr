@@ -55,6 +55,8 @@ items:
           - name: Navigateurs utilisés par les compléments Office
             href: concepts/browsers-used-by-office-web-add-ins.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
+          - name: Runtimes dans les compléments Office
+            href: testing/runtimes.md
           - name: Prise en charge d’Internet Explorer 11
             href: develop/support-ie-11.md
             displayName: 'Excel, Word, OneNote, Project, PowerPoint, Outlook'
@@ -344,8 +346,6 @@ items:
             href: develop/usability-testing.md
           - name: Valider le manifeste d’un complément Office
             href: testing/troubleshoot-manifest.md
-          - name: Runtimes dans les compléments Office
-            href: testing/runtimes.md
       - name: Publier
         items:
           - name: Publier des compléments Office
