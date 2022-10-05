@@ -1,18 +1,20 @@
 ---
 title: Utiliser les règles d’activation d’expression régulière afin d’afficher un complément
 description: Découvrez comment utiliser les règles d’activation d’expression régulière pour les compléments contextuels Outlook.
-ms.date: 08/19/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 74eb466201ec576599abb7d9efbcbc44ed0b5ae0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: ed2fbbfcf7bf55e04f4ec6f225e29fb43ec99639
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423313"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467089"
 ---
 # <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Utiliser des règles d’activation d’expression régulière pour afficher un complément Outlook
 
 Vous pouvez spécifier des règles d’expressions régulières pour qu’un [complément contextuel](contextual-outlook-add-ins.md) soit activé lorsqu’une correspondance est trouvée dans les champs spécifiques du message. Les compléments contextuels s’activent uniquement en mode lecture. Outlook n’active pas les compléments contextuels lorsque l’utilisateur compose un élément. Il existe également d’autres scénarios où Outlook n’active pas les compléments, par exemple, les éléments signés numériquement. Pour plus d’informations, reportez-vous à la rubrique [Règles d’activation pour les compléments Outlook](activation-rules.md).
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 Vous pouvez spécifier une expression régulière dans le cadre d’une règle [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) ou [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) dans le manifeste XML du complément. Les règles sont spécifiées dans un point d’extension [DetectedEntity](/javascript/api/manifest/extensionpoint#detectedentity).
 
@@ -144,7 +146,7 @@ L’exemple suivant utilise `getRegExMatches` dans l’élément actuel pour dé
 const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ```
 
-Plusieurs correspondances sont stockées comme éléments d’un tableau dans cet objet. L’exemple de code suivant montre comment réaliser une itération sur les correspondances pour une expression régulière nommée  `reg1` pour construire une chaîne à afficher sous la forme HTML.
+Multiple matches are stored as array elements in that object. The following code example shows how to iterate over the matches for a regular expression named  `reg1` to build a string to display as HTML.
 
 ```js
 function initDialer()

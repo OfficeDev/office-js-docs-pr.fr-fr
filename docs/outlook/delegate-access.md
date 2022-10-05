@@ -1,14 +1,14 @@
 ---
 title: Activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans un complément Outlook
 description: Explique comment configurer la prise en charge des compléments pour les dossiers partagés (par exemple, déléguer l’accès) et aux boîtes aux lettres partagées.
-ms.date: 09/12/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 70efecda863e26f085b6f93cf26091fe0b9a9ea6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 707be0fb71931b80314750b435dca18d23247a23
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092923"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467166"
 ---
 # <a name="enable-shared-folders-and-shared-mailbox-scenarios-in-an-outlook-add-in"></a>Activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans un complément Outlook
 
@@ -113,11 +113,18 @@ Toutefois, si les opérations REST ou Exchange Web Services (EWS) ont été util
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans votre complément, vous devez définir l’élément `true` [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) sur dans le manifeste sous l’élément `DesktopFormFactor`parent. À l’heure actuelle, d’autres facteurs de forme ne sont pas pris en charge.
+Pour activer les dossiers partagés et les scénarios de boîte aux lettres partagées dans votre complément, vous devez activer les autorisations requises dans le manifeste.
 
-Pour prendre en charge les appels REST à partir d’un délégué, définissez le nœud [Autorisations](/javascript/api/manifest/permissions) dans le manifeste `ReadWriteMailbox`sur .
+Tout d’abord, pour prendre en charge les appels REST d’un délégué, le complément doit demander l’autorisation de **boîte aux lettres en lecture-écriture** . Le balisage varie en fonction du type de manifeste.
 
-L’exemple suivant montre l’élément `SupportsSharedFolders` défini `true` dans une section du manifeste.
+- **Manifeste XML** : définissez l’élément **\<Permissions\>** sur **ReadWriteMailbox**.
+- **Manifeste Teams (préversion)** : définissez la propriété « name » d’un objet dans le tableau « authorization.permissions.resourceSpecific » sur « Mailbox.ReadWrite.User ».
+
+Ensuite, activez la prise en charge des dossiers partagés. Le balisage varie en fonction du type de manifeste.
+
+# <a name="xml-manifest"></a>[Manifeste XML](#tab/xmlmanifest)
+
+Définissez l’élément [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) sur `true` dans le manifeste sous l’élément `DesktopFormFactor`parent. À l’heure actuelle, d’autres facteurs de forme ne sont pas pris en charge.
 
 ```XML
 ...
@@ -143,6 +150,26 @@ L’exemple suivant montre l’élément `SupportsSharedFolders` défini `true` 
 </VersionOverrides>
 ...
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion du développeur)](#tab/jsonmanifest)
+
+Ajoutez un objet supplémentaire au tableau « authorization.permissions.resourceSpecific » et définissez sa propriété « name » sur « Mailbox.SharedFolder ».
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "Mailbox.SharedFolder",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
+---
 
 ## <a name="perform-an-operation-as-delegate-or-shared-mailbox-user"></a>Effectuer une opération en tant qu’utilisateur délégué ou de boîte aux lettres partagée
 
@@ -244,7 +271,12 @@ Le message se trouve maintenant dans un contexte partagé et les compléments qu
 
 ### <a name="rest-and-ews"></a>REST et EWS
 
-Votre complément peut utiliser REST et l’autorisation du complément doit être définie pour `ReadWriteMailbox` activer l’accès REST à la boîte aux lettres du propriétaire ou à la boîte aux lettres partagée, le cas échéant. EWS n’est pas pris en charge.
+Votre complément peut utiliser REST. Pour activer l’accès REST à la boîte aux lettres du propriétaire ou à la boîte aux lettres partagée le cas échéant, le complément doit demander l’autorisation de **boîte aux lettres en lecture/écriture** dans le manifeste. Le balisage varie en fonction du type de manifeste.
+
+- **Manifeste XML** : définissez l’élément **\<Permissions\>** sur **ReadWriteMailbox**.
+- **Manifeste Teams (préversion)** : définissez la propriété « name » d’un objet dans le tableau « authorization.permissions.resourceSpecific » sur « Mailbox.ReadWrite.User ».
+
+EWS n’est pas pris en charge.
 
 ### <a name="user-or-shared-mailbox-hidden-from-an-address-list"></a>Boîte aux lettres utilisateur ou partagée masquée dans une liste d’adresses
 

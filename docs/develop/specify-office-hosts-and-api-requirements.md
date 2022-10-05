@@ -3,26 +3,26 @@ title: Spécification des exigences en matière d’hôtes Office et d’API
 description: Découvrez comment spécifier les applications Office et les exigences d’API pour que votre complément fonctionne comme prévu.
 ms.date: 05/19/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b1520160e75c0e67eddfae8f8413bc929f35f7f
-ms.sourcegitcommit: df7964b6509ee6a807d754fbe895d160bc52c2d3
+ms.openlocfilehash: f4953d18a0d9d09c7f7e15a5fdfbad8525a1fdb8
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/20/2022
-ms.locfileid: "66889365"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466907"
 ---
 # <a name="specify-office-applications-and-api-requirements"></a>Spécifier les applications Office et les exigences de l’API
 
 Votre complément Office peut dépendre d’une application Office spécifique (également appelée hôte Office) ou de membres spécifiques de l’API JavaScript Office (office.js). Par exemple, votre complément peut :
 
 - Exécuter dans une application Office (Word ou Excel), ou plusieurs applications.
-- Utilisez les API JavaScript Office disponibles uniquement dans certaines versions d’Office. Par exemple, la version d’achat unique de Excel 2016 ne prend pas en charge toutes les API liées à Excel dans la bibliothèque JavaScript Office.
+- Utilisez les API JavaScript Office disponibles uniquement dans certaines versions d’Office. Par exemple, la version perpétuelle sous licence en volume de Excel 2016 ne prend pas en charge toutes les API liées à Excel dans la bibliothèque JavaScript Office.
 
 Dans ces situations, vous devez vous assurer que votre complément n’est jamais installé sur les applications Office ou les versions d’Office dans lesquelles il ne peut pas s’exécuter.
 
 Il existe également des scénarios dans lesquels vous souhaitez contrôler les fonctionnalités de votre complément qui sont visibles par les utilisateurs en fonction de leur application Office et de leur version d’Office. Voici deux exemples :
 
 - Votre complément comporte des fonctionnalités utiles dans Word et PowerPoint, telles que la manipulation de texte, mais il a des fonctionnalités supplémentaires qui n’ont de sens que dans PowerPoint, telles que les fonctionnalités de gestion des diapositives. Vous devez masquer les fonctionnalités PowerPoint uniquement lorsque le complément est en cours d’exécution dans Word.
-- Votre complément dispose d’une fonctionnalité qui nécessite une méthode d’API JavaScript Office prise en charge dans certaines versions d’une application Office, comme l’abonnement Excel, mais qui n’est pas prise en charge dans d’autres, comme l’achat unique Excel 2016. Toutefois, votre complément a d’autres fonctionnalités qui nécessitent uniquement des méthodes d’API JavaScript *Office prises* en charge dans Excel 2016. Dans ce scénario, vous avez besoin que le complément soit installable sur Excel 2016, mais la fonctionnalité qui nécessite la méthode non prise en charge doit être masquée par les utilisateurs de Excel 2016.
+- Votre complément dispose d’une fonctionnalité qui nécessite une méthode d’API JavaScript Office prise en charge dans certaines versions d’une application Office, comme l’abonnement Microsoft 365 Excel, mais qui n’est pas prise en charge dans d’autres, telles que les Excel 2016 perpétuelles sous licence en volume. Toutefois, votre complément a d’autres fonctionnalités qui nécessitent uniquement des méthodes d’API JavaScript *Office prises* en charge dans les Excel 2016 perpétuelles sous licence en volume. Dans ce scénario, vous avez besoin que le complément soit installable sur cette version de Excel 2016, mais la fonctionnalité qui nécessite la méthode non prise en charge doit être masquée pour ces utilisateurs.
 
 Cet article vous aidera à comprendre les options que vous devez choisir afin de vous assurer que votre complément fonctionne comme prévu et atteint l’audience la plus large possible.
 
@@ -88,7 +88,7 @@ Pour simplifier le processus de spécification des API dont votre complément a 
 
 Les ensembles de conditions requises sont versionnées. Par exemple, les API qui prennent en charge [les boîtes de dialogue](../develop/dialog-api-in-office-add-ins.md) se trouvent dans l’ensemble de conditions requises DialogApi 1.1. Lorsque des API supplémentaires qui activent la messagerie d’un volet Office vers une boîte de dialogue ont été publiées, elles ont été regroupées dans DialogApi 1.2, ainsi que toutes les API dans DialogApi 1.1. *Chaque version d’un ensemble de conditions requises est un sur-ensemble de toutes les versions antérieures.*
 
-La prise en charge de l’ensemble de conditions requises varie en fonction de l’application Office, de la version de l’application Office et de la plateforme sur laquelle elle s’exécute. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions d’achat unique d’Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions d’achat unique dans Office 2013. Vous souhaitez que votre complément soit installable sur chaque combinaison de plateforme et de version d’Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises requise par votre complément. Vous trouverez plus d’informations sur la procédure à suivre plus loin dans cet article.
+La prise en charge de l’ensemble de conditions requises varie en fonction de l’application Office, de la version de l’application Office et de la plateforme sur laquelle elle s’exécute. Par exemple, DialogApi 1.2 n’est pas pris en charge sur les versions perpétuelles avec licence en volume d’Office avant Office 2021, mais DialogApi 1.1 est pris en charge sur toutes les versions perpétuelles d’Office 2013. Vous souhaitez que votre complément soit installable sur chaque combinaison de plateforme et de version d’Office qui prend en charge les API qu’il utilise. Vous devez donc toujours spécifier dans le manifeste la version *minimale* de chaque ensemble de conditions requises requise par votre complément. Vous trouverez plus d’informations sur la procédure à suivre plus loin dans cet article.
 
 > [!TIP]
 > Pour plus d’informations sur le contrôle de version des ensembles de conditions requises, consultez [la disponibilité des ensembles de conditions requises Office](office-versions-and-requirement-sets.md#office-requirement-sets-availability) et, pour obtenir des listes complètes d’ensembles de conditions requises et des informations sur les API de chacun d’eux, commencez par les [ensembles de conditions requises du complément Office](/javascript/api/requirement-sets/common/office-add-in-requirement-sets). Les rubriques de référence de la plupart des API Office.js spécifient également l’ensemble de conditions requises auquel elles appartiennent (le cas échéant).
@@ -163,7 +163,7 @@ if (Office.context.requirements.isSetSupported('WordApi', '1.1'))
 {
    // Code that uses API members from the WordApi 1.1 requirement set.
 } else {
-   // Provide diminished experience here. E.g., run alternate code when the user's Word is one-time purchase Word 2013 (which does not support WordApi 1.1).
+   // Provide diminished experience here. E.g., run alternate code when the user's Word is perpetual Word 2013 (which does not support WordApi 1.1).
 }
 ```
 

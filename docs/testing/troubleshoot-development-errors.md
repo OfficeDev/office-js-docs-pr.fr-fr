@@ -1,14 +1,14 @@
 ---
 title: Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 description: Découvrez comment résoudre les erreurs de développement dans les compléments Office.
-ms.date: 07/28/2022
+ms.date: 09/30/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dc0c2b7614a4d1ea43219ccfd440fd019811d79
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 9271322bd37fece80decb527891a2f2faadce654
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423194"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467176"
 ---
 # <a name="troubleshoot-development-errors-with-office-add-ins"></a>Résolution des erreurs rencontrées par l’utilisateur avec des compléments Office
 
@@ -90,8 +90,11 @@ Si cela se produit, vous pouvez mettre à jour les fichiers XSD utilisés par Vi
 
 1. Ouvrez votre projet dans Visual Studio.
 1. Dans **Explorateur de solutions**, ouvrez le fichier manifest.xml. Le manifeste se trouve généralement dans le premier projet sous votre solution.
-1. Choisir **la****fenêtre Propriétés** >  de l’affichage (F4).
-1. Dans la **fenêtre Propriétés**, choisissez les points de suspension (...) pour ouvrir l’éditeur **de schémas XML** . Vous trouverez ici l’emplacement exact du dossier de tous les fichiers de schéma utilisés par votre projet.
+1. Sélectionner **la****fenêtre Propriétés** de l’affichage  >  (F4).
+1. Définissez la sélection du curseur dans le manifest.xml afin que la fenêtre **Propriétés** affiche les propriétés **du document XML** .
+1. Dans la fenêtre **Propriétés** , sélectionnez la propriété **Schémas** , puis sélectionnez les points de suspension (...) pour ouvrir l’éditeur **de schémas XML** . Vous trouverez ici l’emplacement exact du dossier de tous les fichiers de schéma utilisés par votre projet.
+
+:::image type="content" source="../images/visual-studio-xml-document-properties.png" alt-text="Fenêtre Propriétés montrant les propriétés du document XML.":::
 
 ### <a name="update-the-xsd-files"></a>Mettre à jour les fichiers XSD
 

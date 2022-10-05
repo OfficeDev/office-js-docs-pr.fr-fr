@@ -3,12 +3,12 @@ title: Manifeste Teams pour les compléments Office (préversion)
 description: Obtenez une vue d’ensemble du manifeste JSON en préversion.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 9eb2a886ed700bee0d7ba91d8a2c48e5de92fea1
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: c0b9b2432d29a1a02fb23fad506a05dfe4f41430
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092881"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466900"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifeste Teams pour les compléments Office (préversion)
 
@@ -19,11 +19,11 @@ Une amélioration importante sur laquelle nous travaillons est la possibilité d
 Nous avons effectué une première étape importante vers ces objectifs en vous permettant de créer des compléments Outlook, s’exécutant uniquement sur Windows, avec une version du manifeste JSON Teams.
 
 > [!NOTE]
-> Le nouveau manifeste est disponible en préversion et peut être modifié en fonction des commentaires. Nous encourageons les développeurs de compléments expérimentés à l’expérimenter. Le manifeste d’aperçu ne doit pas être utilisé dans les compléments de production. 
+> Le nouveau manifeste est disponible en préversion et peut être modifié en fonction des commentaires. Nous encourageons les développeurs de compléments expérimentés à l’expérimenter. Le manifeste d’aperçu ne doit pas être utilisé dans les compléments de production.
 
 Pendant la période de préversion anticipée, les limitations suivantes s’appliquent.
 
-- La préversion du manifeste Teams prend uniquement en charge les compléments Outlook et uniquement sur l’abonnement Office pour Windows. Nous travaillons à l’extension de la prise en charge à Excel, PowerPoint et Word.
+- La préversion du manifeste Teams prend uniquement en charge les compléments Outlook et uniquement sur l’abonnement Microsoft 365 Office sur Windows. Nous travaillons à l’extension de la prise en charge à Excel, PowerPoint et Word.
 - Il n’est pas encore possible de combiner et de charger une version test d’un complément avec une application Teams, telle qu’un onglet personnel Teams ou d’autres types d’extensions Microsoft 365. Dans les prochains mois, nous continuerons à étendre la préversion pour prendre en charge ces scénarios et fournir des outils supplémentaires pour mettre à jour les manifestes au format d’aperçu.
 
 > [!TIP]

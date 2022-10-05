@@ -5,38 +5,38 @@ ms.date: 08/09/2022
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 0503a0cfae39e58c11fefc6cc87a239d7ecdbc05
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: fd17728f840188fbedfdeba7d3ee8f97852d702a
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318810"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467257"
 ---
 # <a name="outlook-add-ins-overview"></a>Présentation des compléments Outlook
 
-Les compléments Outlook sont des intégrations créées par des tiers dans Outlook à l’aide de notre plateforme web. Les compléments Outlook ont trois aspects clés :
+Outlook add-ins are integrations built by third parties into Outlook by using our web-based platform. Outlook add-ins have three key aspects:
 
 - La même logique complémentaire et commerciale fonctionne sur les ordinateurs de bureau (Outlook sur Windows et Mac), sur le web (Microsoft 365 et Outlook.com) et sur les téléphones portables.
 - Les compléments Outlook se composent d’un manifeste, qui décrit la manière dont le complément s’intègre dans Outlook (par exemple, un bouton ou un volet de tâches), ainsi que d’un code JavaScript/HTML, qui constitue l’interface utilisateur et la logique métier du complément.
 - Les compléments Outlook peuvent être acquis à partir d’[AppSource](https://appsource.microsoft.com) ou [chargés séparément](sideload-outlook-add-ins-for-testing.md) par les utilisateurs finals ou les administrateurs.
 
-Les compléments Outlook sont différents des compléments COM ou VSTO, qui sont de plus anciennes intégrations propres à Outlook s’exécutant sur Windows. Contrairement aux compléments COM, les compléments Outlook ne disposent d’aucun code installé physiquement sur l’appareil ou le client Outlook de l’utilisateur. Dans le cas d’un complément Outlook, Outlook lit le manifeste et raccorde des contrôles spécifiés dans l’interface utilisateur, puis charge le code JavaScript et HTML. Les composants web s’exécutent tous dans le contexte d’un navigateur dans un bac à sable (sandbox).
+Outlook add-ins are different from COM or VSTO add-ins, which are older integrations specific to Outlook running on Windows. Unlike COM add-ins, Outlook add-ins don't have any code physically installed on the user's device or Outlook client. For an Outlook add-in, Outlook reads the manifest and hooks up the specified controls in the UI, and then loads the JavaScript and HTML. The web components all run in the context of a browser in a sandbox.
 
-Les éléments Outlook qui prennent en charge les compléments incluent notamment les messages électroniques, les demandes de réunion, les réponses à des demandes de réunion, les annulations de réunion et les rendez-vous. Chaque complément définit le contexte dans lequel il est disponible, y compris les types d’éléments et si l’utilisateur lit ou compose un élément.
+The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## <a name="extension-points"></a>Points d’extension
 
-Les points d’extension correspondent à la manière dont les compléments sont intégrés à Outlook. Voici les méthodes possibles.
+Extension points are the ways that add-ins integrate with Outlook. The following are the ways this can be done.
 
-- Les compléments peuvent indiquer des boutons qui apparaissent dans les surfaces de commande dans les messages et les rendez-vous. Pour plus d’informations, voir [Commandes de complément pour Outlook](add-in-commands-for-outlook.md).
+- Add-ins can declare buttons that appear in command surfaces across messages and appointments. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
     **Complément avec boutons de commande dans le ruban**
 
     ![Commande de fonction de complément](../images/uiless-command-shape.png)
 
-- Les compléments peuvent désactiver les correspondances d’expressions régulières ou des entités détectées dans les messages et les rendez-vous. Pour plus d’informations, voir [Compléments Outlook contextuels](contextual-outlook-add-ins.md).
+- Add-ins can link off regular expression matches or detected entities in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     **Complément contextuel pour une entité en surbrillance (adresse)**
 
@@ -56,7 +56,7 @@ Les compléments Outlook s’activent lorsque l’utilisateur compose ou lit un 
 
 - un fichier .msg ou .eml ouvert à partir du système de fichiers ;
 
-- Dans une [boîte aux lettres de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), dans une boîte aux lettres partagée\*, dans la boîte aux lettres d’un autre utilisateur\*, dans une [boîte aux lettres d’archivage](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-features#archive-mailbox), ou dans un dossier public.
+- Dans une [boîte aux lettres de groupe](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), dans une boîte aux lettres partagée\*, dans la boîte aux lettres d’un autre utilisateur\*, dans une [boîte aux lettres d’archivage](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-client-and-compliance-&-security-feature-details?tabs=Archive-features#archive-mailbox), ou dans un dossier public.
 
   > [!IMPORTANT]
   > \* La prise en charge des scénarios d’accès délégué (par exemple, les dossiers partagés à partir de la boîte aux lettres d’un autre utilisateur) a été introduite dans [ensemble de conditions requises 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8). La prise en charge des boîtes aux lettres partagées est désormais en préversion dans Outlook sur Windows et sur Mac. Pour plus d’informations, consultez [Activer les dossiers partagés et les scénarios de boîte aux lettres partagées](delegate-access.md).

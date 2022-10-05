@@ -1,32 +1,29 @@
 ---
 title: Runtimes dans les compléments Office
 description: Découvrez les runtimes utilisés par les compléments Office.
-ms.date: 08/29/2022
+ms.date: 09/28/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d28f6db028d2f4c7036db51ccc5dbcc2144bdf3
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: c20845e6df6adfa2fa382f10e8c7f5de786aeab8
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616041"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467229"
 ---
 # <a name="runtimes-in-office-add-ins"></a>Runtimes dans les compléments Office
 
-Les compléments Office s’exécutent dans des runtimes incorporés dans Office. En tant que langage interprété, JavaScript doit s’exécuter dans un moteur JavaScript. En tant que langage synchrone monothread, JavaScript n’a aucune capacité inhérente pour l’exécution simultanée ; mais les moteurs JavaScript modernes peuvent demander des opérations simultanées (y compris la communication réseau) au système d’exploitation hôte et recevoir des données du système d’exploitation en réponse. Ce type de moteur rend JavaScript *efficacement* asynchrone. Dans cet article, les moteurs de ce type sont *appelés runtimes*. [Node.js](https://nodejs.org) et les navigateurs modernes sont des exemples de ces runtimes. 
+Les compléments Office s’exécutent dans des runtimes incorporés dans Office. En tant que langage interprété, JavaScript doit s’exécuter dans un runtime JavaScript. [Node.js](https://nodejs.org) et les navigateurs modernes sont des exemples de ces runtimes. 
 
 ## <a name="types-of-runtimes"></a>Types de runtimes
 
 Il existe deux types de runtimes utilisés par les compléments Office :
 
-- **Runtime JavaScript uniquement** : moteur JavaScript complété par la prise en charge de [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [cors complet (partage de ressources cross-origin)](https://developer.mozilla.org/docs/Web/HTTP/CORS) et stockage côté client des données. (Il ne prend pas en charge le [stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou les cookies.) 
-- **Runtime de navigateur** : inclut toutes les fonctionnalités d’un runtime JavaScript uniquement et ajoute la prise en charge du [stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage), [du moteur de rendu](https://developer.mozilla.org/docs/Glossary/Rendering_engine) qui affiche du code HTML et des cookies.
+- **Runtime JavaScript uniquement** : moteur JavaScript complété par la prise en charge de [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [cors complet (partage de ressources cross-origin)](https://developer.mozilla.org/docs/Web/HTTP/CORS) et stockage côté client des données. Il ne prend pas en charge le [stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage) ou les cookies.
+- **Runtime de navigateur** : inclut toutes les fonctionnalités d’un runtime JavaScript uniquement et ajoute la prise en charge du [stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage), un [moteur de rendu](https://developer.mozilla.org/docs/Glossary/Rendering_engine) qui affiche du code HTML et des cookies.
 
 Vous trouverez plus de détails sur ces types plus loin dans cet article sur le [runtime JavaScript uniquement](#javascript-only-runtime) et le [runtime browser](#browser-runtime).
 
 Le tableau suivant indique les fonctionnalités possibles d’un complément qui utilisent chaque type d’exécution. 
-
-> [!NOTE]
-> Le choix du type d’exécution à utiliser est un détail d’implémentation que Microsoft peut modifier à tout moment. La bibliothèque JavaScript Office ne suppose pas que le même type d’exécution sera toujours utilisé pour une fonctionnalité donnée et que votre architecture de complément ne doit pas l’assumer non plus.
 
 | Type d’exécution | Fonctionnalité de complément |
 |:-----|:-----|
@@ -118,7 +115,7 @@ Pour plus d’informations, consultez [Conserver l’état et les paramètres du
 
 ## <a name="javascript-only-runtime"></a>Runtime JavaScript uniquement
 
-Le runtime JavaScript uniquement utilisé dans les compléments Office est une modification d’un runtime open source créé à l’origine pour [React Native](https://reactnative.dev/). Il contient un moteur JavaScript complété par la prise en charge de [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS complet (partage de ressources cross-origin)](https://developer.mozilla.org/docs/Web/HTTP/CORS) et [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). Il n’a pas de moteur de rendu et ne prend pas en charge les cookies ni le [stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
+Le runtime JavaScript uniquement utilisé dans les compléments Office est une modification d’un runtime open source créé à l’origine pour [React Native](https://reactnative.dev/). Il contient un moteur JavaScript complété par la prise en charge de [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS complet (partage de ressources cross-origin)](https://developer.mozilla.org/docs/Web/HTTP/CORS) et [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). Il n’a pas de moteur de rendu et ne prend pas en charge les cookies ni le [stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage). 
 
 Ce type de runtime est utilisé dans les tâches basées sur les événements Outlook dans Office sur Windows uniquement et dans les fonctions personnalisées Excel *, sauf* lorsque les fonctions personnalisées [partagent un runtime](#shared-runtime). 
 
@@ -135,7 +132,7 @@ Un runtime JavaScript utilise moins de mémoire et démarre plus rapidement qu�
 
 Les compléments Office utilisent un autre runtime de type de navigateur en fonction de la plateforme dans laquelle Office s’exécute (web, Mac ou Windows), ainsi que de la version et de la build de Windows et Office. Par exemple, si l’utilisateur exécute Office sur le Web dans un navigateur FireFox, le runtime Firefox est utilisé. Si l’utilisateur exécute Office sur Mac, le runtime Safari est utilisé. Si l’utilisateur exécute Office sur Windows, un Edge ou Internet Explorer fournit le runtime, en fonction de la version de Windows et d’Office. Vous trouverez plus d’informations dans [les navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
 
-Tous ces runtimes incluent un moteur de rendu HTML et prennent en charge [webSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS complet (partage de ressources cross-origin)](https://developer.mozilla.org/docs/Web/HTTP/CORS) et [le stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage) et les cookies. 
+Tous ces runtimes incluent un moteur de rendu HTML et prennent en charge [webSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [CORS complet (partage de ressources cross-origin)](https://developer.mozilla.org/docs/Web/HTTP/CORS) et [le stockage local](https://developer.mozilla.org/docs/Web/API/Window/localStorage) et les cookies.
 
 La durée de vie d’un runtime de navigateur varie en fonction de la fonctionnalité qu’il implémente et de son partage ou non.
 

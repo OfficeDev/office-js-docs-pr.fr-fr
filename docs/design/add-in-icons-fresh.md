@@ -3,22 +3,22 @@ title: Instructions relatives aux icônes de style frais pour les compléments O
 description: Instructions pour l’utilisation d’icônes de style frais dans les compléments Office.
 ms.date: 07/08/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: 261f684648e8fb57a3aa291b785b33e511f83865
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: bd2cb372b79bef7f8c81deb778862f6bfd91d742
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092944"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467005"
 ---
 # <a name="fresh-style-icon-guidelines-for-office-add-ins"></a>Instructions relatives aux icônes de style frais pour les compléments Office
 
-Les versions Office 2013+ (sans abonnement) d’Office utilisent l’iconographie de style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, consultez [les instructions relatives aux icônes de style Monoline pour les compléments Office](add-in-icons-monoline.md).
+Les versions Office 2013+ (perpétuelles) d’Office utilisent l’iconographie de style Fresh de Microsoft. Si vous préférez que vos icônes correspondent au style Monoline de Microsoft 365, consultez [les instructions relatives aux icônes de style Monoline pour les compléments Office](add-in-icons-monoline.md).
 
 ## <a name="office-fresh-visual-style"></a>Style visuel Office Fresh
 
-Les icônes Fresh incluent uniquement des éléments communicatifs essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour mieux s’adapter aux clients Office non-abonnement.
+Les icônes Fresh incluent uniquement des éléments communicatifs essentiels. Les éléments non essentiels, tels que la source de lumière, les dégradés et les perspectives, sont supprimés. Les icônes simplifiées prennent en charge l’analyse rapide des commandes et des contrôles. Suivez ce style pour s’adapter au mieux aux clients perpétuels Office.
 
-## <a name="best-practices"></a>Bonnes pratiques
+## <a name="best-practices"></a>Meilleures pratiques
 
 Suivez ces instructions lorsque vous créez vos icônes.
 

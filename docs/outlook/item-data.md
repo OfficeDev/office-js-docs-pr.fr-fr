@@ -1,14 +1,14 @@
 ---
 title: Obtenir ou définir des données d’élément dans un complément Outlook
 description: Selon qu’un complément est activé dans un formulaire de lecture ou de composition, les propriétés disponibles pour le complément sur un élément diffèrent.
-ms.date: 12/10/2019
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dbd512f45dc9e77fc4a150da4ee8b8924799670a
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 8349d81b376aa55d239a88a5d4598381fd8bfc4d
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483391"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467271"
 ---
 # <a name="get-and-set-outlook-item-data-in-read-or-compose-forms"></a>Obtenir et définir des données d’élément Outlook dans des formulaires de lecture ou de composition
 
@@ -18,7 +18,7 @@ Par exemple, les propriétés [dateTimeCreated](/javascript/api/requirement-sets
 
 ## <a name="item-properties-available-in-compose-and-read-forms"></a>Propriétés d’éléments disponibles dans les formulaires de composition et de lecture
 
-Le tableau 1 présente les propriétés au niveau de l’élément dans l’API JavaScript Office disponibles dans chaque mode (lecture et composition) des modules de messagerie. En règle générale, ces propriétés disponibles dans les formulaires de lecture sont en lecture seule et celles disponibles dans les formulaires de composition sont en lecture/écriture, à l’exception des propriétés [itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), [conversationId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) et [itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), qui sont toujours en lecture seule, quelle que soit la valeur.
+Le tableau 1 présente les propriétés au niveau de l’élément dans l’API JavaScript Office qui sont disponibles dans chaque mode (lecture et composition) des compléments de messagerie. En règle générale, les propriétés disponibles dans les formulaires de lecture sont en lecture seule, et celles disponibles dans les formulaires de composition sont en lecture/écriture, à l’exception des propriétés [itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), [conversationId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) et [itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) , qui sont toujours en lecture seule indépendamment.
 
 Pour les propriétés restantes au niveau de l’élément disponibles dans les formulaires de composition, étant donné que le complément et l’utilisateur peuvent lire ou écrire la même propriété simultanément, les méthodes pour les obtenir ou les définir dans le mode de composition sont asynchrones et par conséquent, les types des objets renvoyés par ces propriétés peuvent également être différents dans les formulaires de compositions et les formulaires de lecture. Pour plus d’informations sur l’utilisation des méthodes asynchrones pour obtenir ou définir des propriétés au niveau de l’élément en mode de composition, reportez-vous à [Obtenir et définir des données d’élément dans un formulaire de composition dans Outlook](get-and-set-item-data-in-a-compose-form.md).
 
@@ -33,7 +33,7 @@ Pour les propriétés restantes au niveau de l’élément disponibles dans les 
 |Rendez-vous et messages|[dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|Objet **Date** JavaScript|Propriété non disponible|
 |Rendez-vous et messages|[itemClass](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|String|Propriété non disponible|
 |Rendez-vous et messages|[itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|String|Propriété non disponible|
-|Rendez-vous et messages|[itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|Chaîne dans l’énumération [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)|Chaîne dans [l’éumération ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) (lecture seule)|
+|Rendez-vous et messages|[itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|Chaîne dans l’énumération [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype)|Chaîne dans l’énumération [ItemType](/javascript/api/outlook/office.mailboxenums.itemtype) (en lecture seule)|
 |Rendez-vous et messages|[attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|[AttachmentDetails](/javascript/api/outlook/office.attachmentdetails)|Propriété non disponible|
 |Rendez-vous et messages|[body](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|[Corps](/javascript/api/outlook/office.body)|[Body](/javascript/api/outlook/office.body)|
 |Rendez-vous et messages|[normalizedSubject](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|String|Propriété non disponible|
@@ -56,12 +56,11 @@ Pour les propriétés restantes au niveau de l’élément disponibles dans les 
 
 Si votre complément Outlook est activé dans les formulaires de lecture, vous pouvez obtenir un jeton de rappel Exchange. Ce jeton peut être utilisé dans le code côté serveur pour accéder à l’élément complet via les services web Exchange (EWS).
 
-En spécifiant l’autorisation **ReadItem** dans le manifeste du complément, vous pouvez utiliser la méthode [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour obtenir un jeton de rappel Exchange, la propriété [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) pour obtenir l’URL du point de terminaison EWS de la boîte aux lettres de l’utilisateur, et [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour obtenir l’ID EWS de l’élément sélectionné. Vous pouvez ensuite transmettre le jeton de rappel, l’URL du point de terminaison EWS et l’ID d’élément EWS dans le code côté serveur pour accéder à l’opération [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) afin d’obtenir d’autres propriétés de l’élément.
-
+En spécifiant [l’autorisation d’élément de lecture](understanding-outlook-add-in-permissions.md#read-item-permission) dans le manifeste du complément, vous pouvez utiliser la méthode [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour obtenir un jeton de rappel Exchange, la propriété [mailbox.ewsUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) pour obtenir l’URL du point de terminaison EWS pour la boîte aux lettres de l’utilisateur et [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour obtenir l’ID EWS de l’élément sélectionné. Vous pouvez ensuite transmettre le jeton de rappel, l’URL du point de terminaison EWS et l’ID d’élément EWS dans le code côté serveur pour accéder à l’opération [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) afin d’obtenir d’autres propriétés de l’élément.
 
 ## <a name="access-ews-from-a-read-or-compose-add-in"></a>Accès à EWS à partir d’un complément de composition ou de lecture
 
-Vous pouvez également utiliser la méthode [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour accéder aux opérations des services web Exchange [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) et [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) directement à partir du complément. Vous pouvez utiliser ces opérations pour obtenir et définir de nombreuses propriétés d’un élément spécifié. Cette méthode est disponible pour les compléments Outlook que le complément ait été activé ou non dans un formulaire de lecture ou de composition, tant que vous spécifiez l’autorisation **ReadWriteMailbox** dans le manifeste de complément.
+Vous pouvez également utiliser la méthode [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour accéder aux opérations des services web Exchange [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) et [UpdateItem](/exchange/client-developer/web-service-reference/updateitem-operation) directement à partir du complément. Vous pouvez utiliser ces opérations pour obtenir et définir de nombreuses propriétés d’un élément spécifié. Cette méthode est disponible pour les compléments Outlook, que le complément ait été activé dans un formulaire de lecture ou de composition, tant que vous spécifiez l’autorisation de **boîte aux lettres en lecture/écriture** dans le manifeste du complément. Pour plus d’informations sur l’autorisation de **boîte aux lettres en lecture/écriture** , consultez [Présentation des autorisations de complément Outlook](understanding-outlook-add-in-permissions.md)
 
 Pour plus d’informations sur l’utilisation de **makeEwsRequestAsync** pour accéder aux opérations EWS, reportez-vous à [Appeler des services web à partir d’un complément Outlook](web-services.md).
 

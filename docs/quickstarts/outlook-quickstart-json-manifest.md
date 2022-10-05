@@ -4,21 +4,21 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 0b78e36c5092e804c751569de66ef1ad41092776
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 407c4ccd4249008c203c760a01d8579989a12e4c
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422753"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467222"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Créer un complément Outlook avec un manifeste Teams (préversion)
 
 Dans cet article, vous allez parcourir le processus de création d’un complément de volet des tâches Outlook qui affiche une propriété d’un message sélectionné, déclenche une notification dans le volet de lecture et insère du texte dans un message dans le volet de composition. Ce complément utilise une préversion du manifeste au format JSON que les extensions Teams, telles que les onglets personnalisés et les extensions de messagerie, utilisent. Pour plus d’informations sur ce manifeste, consultez [le manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
 > [!NOTE]
-> Le nouveau manifeste est disponible en préversion et peut être modifié en fonction des commentaires. Nous encourageons les développeurs de compléments expérimentés à l’expérimenter. Le manifeste d’aperçu ne doit pas être utilisé dans les compléments de production. 
+> Le nouveau manifeste est disponible en préversion et peut être modifié en fonction des commentaires. Nous encourageons les développeurs de compléments expérimentés à l’expérimenter. Le manifeste d’aperçu ne doit pas être utilisé dans les compléments de production.
 
-La préversion est uniquement prise en charge sur l’abonnement Office sur Windows. 
+La préversion est uniquement prise en charge sur l’abonnement Microsoft 365 Office sur Windows.
 
 > [!TIP]
 > Si vous souhaitez créer un complément Outlook à l’aide du manifeste XML, consultez [Générer votre premier complément Outlook](outlook-quickstart.md).

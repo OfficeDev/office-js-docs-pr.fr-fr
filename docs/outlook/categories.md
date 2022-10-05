@@ -1,14 +1,14 @@
 ---
 title: Obtenir et définir des catégories
 description: Guide pratique pour gérer les catégories sur la boîte aux lettres et l’élément.
-ms.date: 07/07/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d31cb8da4cdaf4a88141a1eac927748b1399e0d9
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: a94aba61d513becf2fa1af27ff388b1286e94707
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712824"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467103"
 ---
 # <a name="get-and-set-categories"></a>Obtenir et définir des catégories
 
@@ -22,7 +22,10 @@ Dans Outlook, un utilisateur peut appliquer des catégories aux messages et aux 
 Seules les catégories de la liste maître de votre boîte aux lettres peuvent s’appliquer à un message ou à un rendez-vous. Vous pouvez utiliser l’API pour ajouter, obtenir et supprimer des catégories principales.
 
 > [!IMPORTANT]
-> Pour que le complément gère la liste maître des catégories, vous devez définir le `Permissions` nœud dans le manifeste `ReadWriteMailbox`sur .
+> Pour que le complément gère la liste maître des catégories, il doit demander l’autorisation de **boîte aux lettres en lecture/écriture** dans le manifeste. Le balisage varie en fonction du type de manifeste.
+>
+> - **Manifeste XML** : définissez l’élément **\<Permissions\>** sur **ReadWriteMailbox**.
+> - **Manifeste Teams (préversion)** : définissez la propriété « name » d’un objet dans le tableau « authorization.permissions.resourceSpecific » sur « Mailbox.ReadWrite.User ».
 
 ### <a name="add-master-categories"></a>Ajouter des catégories de maîtres
 
@@ -141,4 +144,3 @@ Office.context.mailbox.item.categories.removeAsync(categoriesToRemove, function 
 ## <a name="see-also"></a>Voir aussi
 
 - [Autorisations Outlook](understanding-outlook-add-in-permissions.md)
-- [Élément Permissions dans le manifeste](/javascript/api/manifest/permissions)

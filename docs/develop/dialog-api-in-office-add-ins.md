@@ -3,12 +3,12 @@ title: Utiliser l’API de boîte de dialogue Office dans vos compléments Offic
 description: Découvrez les principes de base de la création d’une boîte de dialogue dans un complément Office.
 ms.date: 07/18/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f4bdbcbcf725e04d0fd44886b6bf5520fe9ebd0
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 947b08575d100c639a440c1ca25d45199b4507ad
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423103"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466956"
 ---
 # <a name="use-the-office-dialog-api-in-office-add-ins"></a>Utiliser l’API de boîte de dialogue Office dans les compléments Office
 
@@ -64,7 +64,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 
 Pour voir un exemple de complément qui effectue ce type d’action, consultez la rubrique relative à l’[exemple d’API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example). Pour plus d’exemples qui utilisent `displayDialogAsync`, consultez [Exemples](#samples).
 
-Définissez les deux valeurs sur 100 % pour bénéficier d’une réelle d’expérience de plein écran. (Le maximum réel est de 99,5 %, et la fenêtre peut toujours être déplacée et redimensionnée.)
+Set both values to 100% to get what is effectively a full screen experience. (The effective maximum is 99.5%, and the window is still moveable and resizable.)
 
 > [!NOTE]
 > Vous ne pouvez ouvrir qu’une seule boîte de dialogue à partir d’une fenêtre hôte. Toute tentative d’ouverture d’une autre boîte de dialogue génère une erreur. Par exemple, si un utilisateur ouvre une boîte de dialogue à partir d’un volet Office, il ne peut pas ouvrir une deuxième boîte de dialogue à partir d’une autre page du volet Office. Toutefois, quand une boîte de dialogue est ouverte à partir d’une [commande de complément](../design/add-in-commands.md), la commande ouvre un nouveau fichier HTML (mais invisible) chaque fois qu’elle est sélectionnée. Cela crée une nouvelle fenêtre hôte (invisible), afin que chaque fenêtre de ce type puisse lancer sa propre boîte de dialogue. Pour plus d’informations, reportez-vous à [Erreurs provenant de displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).
@@ -100,7 +100,7 @@ if (loginSuccess) {
 > [!IMPORTANT]
 >
 > - La `messageParent` fonction est l’une des deux *seules* API JS Office qui peuvent être appelées dans la boîte de dialogue.
-> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported`. Pour plus d’informations, consultez [Spécifier les applications Office et les exigences de l’API](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans Outlook 2016 achat unique (autrement dit, la version MSI).
+> - L’autre API JS qui peut être appelée dans la boîte de dialogue est `Office.context.requirements.isSetSupported`. Pour plus d’informations, consultez [Spécifier les applications Office et les exigences de l’API](specify-office-hosts-and-api-requirements.md). Toutefois, dans la boîte de dialogue, cette API n’est pas prise en charge dans les Outlook 2016 perpétuelles sous licence en volume (autrement dit, la version MSI).
 
 Dans l’exemple suivant, `googleProfile` est une version convertie en chaîne du profil Google de l’utilisateur.
 
@@ -126,7 +126,7 @@ Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 
 >
 > - Office transmet un objet [AsyncResult](/javascript/api/office/office.asyncresult) au rappel. Il représente le résultat de la tentative d’ouverture de la boîte de dialogue. Il ne représente pas le résultat de tous les événements dans la boîte de dialogue. Pour plus d’informations sur cette distinction, consultez la [Gestion des erreurs et des événements](dialog-handle-errors-events.md).
 > - La propriété `value` de `asyncResult` est définie sur un objet [Dialog](/javascript/api/office/office.dialog), qui existe dans la page hôte, pas dans le contexte d’exécution de la boîte de dialogue.
-> - `processMessage` est la fonction qui gère l’événement. Vous pouvez lui donner le nom que vous souhaitez.
+> - The `processMessage` is the function that handles the event. You can give it any name you want.
 > - La variable `dialog` est déclarée avec une portée plus large que le rappel, car elle est également référencée dans `processMessage`.
 
 Voici un exemple simple de gestionnaire pour l’événement `DialogMessageReceived`.
@@ -159,7 +159,7 @@ function processMessage(arg) {
 
 Pour voir un exemple de complément qui utilise ces techniques, consultez la rubrique relative à l’[exemple d’API de dialogue de complément Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-Si le complément a besoin d’ouvrir une autre page du volet Office après avoir reçu le message, vous pouvez utiliser la méthode `window.location.replace` (ou `window.location.href`) en tant que dernière ligne du gestionnaire. Voici un exemple.
+If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example.
 
 ```js
 function processMessage(arg) {
@@ -194,9 +194,9 @@ if (loginSuccess) {
 >
 > - La variable `loginSuccess` serait initialisée en lisant la réponse HTTP à partir du fournisseur d’identité.
 > - L’implémentation des fonctions et `getError` des `getProfile` fonctions n’est pas affichée. Chacune obtient des données à partir d’un paramètre de requête ou du corps de la réponse HTTP.
-> - Des objets anonymes de différents types sont envoyés selon que la connexion a réussi ou non. Tous deux ont une propriété `messageType`, mais un a une propriété `profile` et l’autre une propriété `error`.
+> - Anonymous objects of different types are sent depending on whether the sign in was successful. Both have a `messageType` property, but one has a `profile` property and the other has an `error` property.
 
-Le code du gestionnaire dans la page hôte utilise la valeur de la propriété `messageType` pour créer une branche comme le montre l’exemple suivant. Notez que la fonction `showUserName` est identique à celle de l’exemple précédent et que la fonction `showNotification` affiche l’erreur dans l’interface utilisateur de la page hôte.
+The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
 
 ```js
 function processMessage(arg) {
@@ -385,7 +385,7 @@ Par exemple, votre code peut utiliser la [fonction Office.onReady ou Office.init
 
 ## <a name="close-the-dialog-box"></a>Fermer la boîte de dialogue
 
-Vous pouvez implémenter un bouton de fermeture dans la boîte de dialogue. Pour ce faire, le gestionnaire d'événements Click du bouton doit utiliser `messageParent` pour indiquer à la page hôte que vous avez cliqué sur le bouton. Voici un exemple.
+You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
 ```js
 function closeButtonClick() {

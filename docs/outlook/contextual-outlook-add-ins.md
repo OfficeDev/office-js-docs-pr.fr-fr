@@ -1,18 +1,20 @@
 ---
 title: Compléments Outlook contextuels
 description: Lancer des tâches liées à un message sans laisser le message lui-même pour faciliter et enrichir l'expérience utilisateur.
-ms.date: 04/09/2020
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a9e9e29862449911550c8c3a6dd44819816bd69
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
+ms.openlocfilehash: 73a13787dac7a6e74db6b919cc01a6dd33d29ab5
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660136"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467022"
 ---
 # <a name="contextual-outlook-add-ins"></a>Compléments Outlook contextuels
 
-Les compléments contextuels sont des compléments Outlook qui s’activent en fonction du texte d’un message ou d’un rendez-vous. Grâce aux compléments contextuels, vous pouvez initier des tâches associées à un message sans avoir à quitter ce dernier. L’expérience utilisateur en est ainsi facilitée et enrichie.
+Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a message without leaving the message itself, which results in an easier and richer user experience.
+
+[!include[JSON manifest does not support contextual add-ins](../includes/json-manifest-outlook-contextual-not-supported.md)]
 
 Voici des exemples de compléments contextuels.
 
@@ -56,11 +58,11 @@ Il existe plusieurs restrictions sur les compléments contextuels :
 Une entité ou une expression régulière qui n’est pas mise en surbrillance ne permettant pas le lancement d’un complément contextuel, les compléments doivent inclure au moins un élément `Rule` avec l’attribut `Highlight` défini sur `all`.
 
 > [!NOTE]
-> Les types d’entité `EmailAddress` et `Url` ne prennent pas en charge la mise en surbrillance. Ils ne peuvent donc pas être utilisés pour lancer un complément contextuel. Ils peuvent toutefois être combinés dans un type de règle `RuleCollection` comme un critère d’activation supplémentaire.
+> The `EmailAddress` and `Url` entity types do not support highlighting, so they cannot be used to launch a contextual add-in. They can however be combined in a `RuleCollection` rule type as an additional activation criteria.
 
 ## <a name="how-to-launch-a-contextual-add-in"></a>Lancement d’un complément contextuel
 
-Un utilisateur lance un complément contextuel par le biais du texte, une entité connue ou une expression régulière du développeur. En règle générale, un utilisateur identifie un complément contextuel car l’entité est mise en surbrillance. L’exemple suivant montre comment la mise en surbrillance s’affiche dans un message. Ici, l’entité (une adresse) est colorée en bleu et soulignée avec une ligne bleue en pointillés. Un utilisateur lance le complément contextuel en cliquant sur l’entité en surbrillance. 
+A user launches a contextual add-in through text, either a known entity or a developer's regular expression. Typically, a user identifies a contextual add-in because the entity is highlighted. The following example shows how highlighting appears in a message. Here the entity (an address) is colored blue and underlined with a dotted blue line. A user launches the contextual add-in by clicking the highlighted entity. 
 
 **Exemple de texte avec l’entité (une adresse) en surbrillance**
 
@@ -70,11 +72,11 @@ Lorsque plusieurs entités ou compléments contextuels sont présents dans un me
 
 - S’il existe plusieurs entités, l’utilisateur doit cliquer sur une autre entité pour lancer le complément de celle-ci.
 - Si une entité active plusieurs compléments, chaque complément ouvre un nouvel onglet. L’utilisateur bascule entre les onglets pour passer d’un complément à l’autre. Par exemple, un nom et une adresse peuvent déclencher un complément de téléphone et une carte.
-- Si une chaîne unique contient plusieurs entités qui activent plusieurs compléments, la chaîne entière est mise en surbrillance et lorsque l’utilisateur clique sur cette chaîne, tous les compléments concernés par la chaîne s’affichent dans des onglets distincts. Par exemple, une chaîne qui décrit une proposition de réunion dans un restaurant peut activer le complément de suggestion de réunion et un complément d’avis sur des restaurants.
+- If a single string contains multiple entities that activate multiple add-ins, the entire string is highlighted, and clicking the string shows all add-ins relevant to the string on separate tabs. For example, a string that describes a proposed meeting at a restaurant might activate the Suggested Meeting add-in and a restaurant rating add-in.
 
 ## <a name="how-a-contextual-add-in-displays"></a>Affichage des compléments contextuels
 
-Un complément contextuel activé s’affiche sur une carte, qui est une fenêtre séparée près de l’entité. La carte s’affiche normalement en-dessous de l’entité et le plus centrée possible par rapport à l’entité. S’il n’existe pas suffisamment d’espace en-dessous de l’entité, la carte est placée au-dessus. La capture d’écran suivante illustre l’entité en surbrillance et, dessous, un complément activé (Plans Bing) sur une carte.
+An activated contextual add-in appears in a card, which is a separate window near the entity. The card will normally appear below the entity and centered with respect to the entity as much as possible. If there is not enough room below the entity, the card is placed above it. The following screenshot shows the highlighted entity, and below it, an activated add-in (Bing Maps) in a card.
 
 **Exemple d’un complément affiché sur une carte**
 

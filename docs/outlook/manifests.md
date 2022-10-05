@@ -3,19 +3,19 @@ title: Manifestes des compléments Outlook
 description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
 ms.date: 05/27/2020
 ms.localizationpriority: high
-ms.openlocfilehash: 330e40c4377edf832d91196ba4599ea351629296
-ms.sourcegitcommit: 4ba5f750358c139c93eb2170ff2c97322dfb50df
-ms.translationtype: HT
+ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/06/2022
-ms.locfileid: "66660283"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466977"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
-Un complément Outlook contient deux composants : le manifeste du complément XML et une page web, pris en charge par la bibliothèque JavaScript pour les compléments Office (office.js). Le manifeste décrit l’intégration du complément avec les clients Outlook. Voici un exemple.
+An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
 
  > [!NOTE]
- > Dans l’exemple suivant, toutes les valeurs d’URL commencent par «https://appdemo.contoso.com». Cette valeur est un espace réservé. Dans un manifeste valide réel, ces valeurs contiendraient des URL web HTTPS valides.
+ > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -227,7 +227,7 @@ Un complément Outlook contient deux composants : le manifeste du complément XM
 
 ## <a name="schema-versions"></a>Versions de schéma
 
-Tous les clients Outlook ne prennent pas en charge les fonctionnalités les plus récentes, et certains utilisateurs Outlook disposeront d’une version antérieure d’Outlook. Le fait de disposer de versions de schéma permet aux développeurs de créer des compléments à compatibilité descendante, en utilisant les fonctionnalités les plus récentes lorsqu’elles sont disponibles mais qui fonctionnent toujours sur les versions antérieures.
+Not all Outlook clients support the latest features, and some Outlook users will have an older version of Outlook. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
 L’élément **\<VersionOverrides\>** dans le manifeste en est un exemple. Tous les éléments définis à l’intérieur de **\<VersionOverrides\>** remplacent le même élément dans l’autre partie du manifeste. Cela signifie que, dans la mesure du possible, Outlook utilise ce qui se trouve dans la section **\<VersionOverrides\>** pour configurer le complément. Toutefois, si la version d’Outlook ne prend pas en charge une certaine version de **\<VersionOverrides\>**, Outlook l’ignore et dépend des informations contenues dans le reste du manifeste. 
 
@@ -238,15 +238,15 @@ Les versions actuelles du schéma sont les suivantes :
 
 |Version|Description|
 |:-----|:-----|
-|v1.0|Prend en charge la version 1.0 de l’API Office JavaScript. Pour les compléments Outlook, la prise en charge des formulaires de lecture est également incluse. |
+|v1.0|Supports version 1.0 of the Office JavaScript API. For Outlook add-ins, this supports read form. |
 |v1.1|Prend en charge la version 1.1 de l’API JavaScript Office et **\<VersionOverrides\>**. Pour les compléments Outlook, la prise en charge des formulaires de composition est incluse.|
 |**\<VersionOverrides\>** 1.0|Prend en charge les versions ultérieures de l’API JavaScript Office. La prise en charge des commandes de complément est incluse.|
-|**\<VersionOverrides\>** 1.1|Prend en charge les versions ultérieures de l’interface API Office JavaScript. Les commandes de complément sont prises en charge, ainsi que de nouvelles fonctionnalités, telles que les [volets Office à épingler](pinnable-taskpane.md) et les compléments mobiles.|
+|**\<VersionOverrides\>** 1.1|Supports later versions of the Office JavaScript API. This supports add-in commands and adds support for newer features, such as [pinnable task panes](pinnable-taskpane.md) and mobile add-ins.|
 
 Cet article porte sur les conditions requises pour la version 1.1 du manifeste. Même si votre manifeste de complément utilise l’élément **\<VersionOverrides\>** , il est toujours important d’inclure les éléments de manifeste v1.1 pour permettre à votre complément d’utiliser des clients plus anciens qui ne prennent pas en charge **\<VersionOverrides\>**.
 
 > [!NOTE]
-> Outlook utilise un schéma pour valider les manifestes. Ce schéma requiert que les éléments du manifeste apparaissent dans un ordre spécifique. Si vous incluez des éléments dans un ordre autre que celui demandé, vous pouvez obtenir des erreurs lors du chargement de votre complément. Vous pouvez télécharger le [schéma de définition XML (XSD, XML Schema Definition)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) pour créer votre manifeste avec les éléments dans l’ordre requis.
+> Outlook uses a schema to validate manifests. The schema requires that elements in the manifest appear in a specific order. If you include elements out of the required order, you may get errors when sideloading your add-in. You can download the [XML Schema Definition (XSD)](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8) to help create your manifest with elements in the required order.
 
 ## <a name="root-element"></a>Élément racine
 
@@ -268,9 +268,9 @@ L’élément racine du manifeste du complément Outlook est **\<OfficeApp\>**. 
 
 ## <a name="version"></a>Version
 
-Il s’agit de la version du complément spécifique. Si un développeur met à jour un élément du manifeste, la version doit être incrémentée. Ainsi, lorsque le nouveau manifeste sera installé, il remplacera l’existant et l’utilisateur recevra les nouvelles fonctionnalités. Si ce complément a été soumis dans le magasin, le nouveau manifeste devra être soumis une deuxième fois et validé à nouveau. Ensuite, les utilisateurs de ce complément recevront le nouveau manifeste mis à jour automatiquement dans quelques heures, une fois approuvé.
+This is the version of the specific add-in. If a developer updates something in the manifest, the version must be incremented as well. This way, when the new manifest is installed, it will overwrite the existing one and the user will get the new functionality. If this add-in was submitted to the store, the new manifest will have to be re-submitted and re-validated. Then, users of this add-in will get the new updated manifest automatically in a few hours, after it is approved.
 
-If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in.
+If the add-in's requested permissions change, users will be prompted to upgrade and re-consent to the add-in. If the admin installed this add-in for the entire organization, the admin will have to re-consent first. Users will continue to see old functionality in the meantime.
 
 ## <a name="versionoverrides"></a>VersionOverrides
 
@@ -379,7 +379,7 @@ Le tableau suivant décrit le comportement du navigateur lorsque votre compléme
 |Client Outlook|Domaine défini<br>dans AppDomains|Comportement du navigateur|
 |---|---|---|
 |Tous les clients|Oui|Le lien s’ouvre dans le volet Office du complément.|
-|Outlook 2016 pour Windows (achat unique)<br>Outlook 2013 sous Windows|Non|Le lien s’ouvre dans Internet Explorer 11.|
+|- Outlook 2016 sur Windows (perpétuel avec licence en volume)<br>- Outlook 2013 sur Windows (perpétuel)|Non|Le lien s’ouvre dans Internet Explorer 11.|
 |Autres clients|Non|Le lien s’ouvre dans le navigateur par défaut de l’utilisateur.|
 
 Pour plus d’informations, voir [Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément](../develop/add-in-manifests.md?tabs=tabid-1#specify-domains-you-want-to-open-in-the-add-in-window).
@@ -422,13 +422,13 @@ Pour plus de détails et des exemples de règles d’activation, voir [Règles d
 
 ## <a name="next-steps-add-in-commands"></a>Prochaines étapes : commandes de complément
 
-Après avoir défini un manifeste de base, définissez des commandes pour votre complément. Les commandes de complément se présentent sous forme de bouton dans le ruban. Ainsi, les utilisateurs peuvent activer votre complément de façon simple et intuitive. Pour plus d’informations, voir [Commandes de complément pour Outlook](add-in-commands-for-outlook.md).
+After defining a basic manifest, define add-in commands for your add-in. Add-in commands present a button in the ribbon so users can activate your add-in in a simple, intuitive way. For more information, see [Add-in commands for Outlook](add-in-commands-for-outlook.md).
 
 Pour un exemple de complément qui définit les commandes de complément, voir [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo).
 
 ## <a name="next-steps-add-mobile-support"></a>Étapes suivantes : Ajouter la prise en charge mobile
 
-Les compléments peuvent éventuellement ajouter la prise en charge d’Outlook Mobile. Outlook Mobile prend en charge les commandes de complément de la même manière qu’Outlook sous Windows et Mac. Pour plus d’informations, voir la section [Ajouter la prise en charge des commandes de complément pour Outlook Mobile](add-mobile-support.md).
+Add-ins can optionally add support for Outlook mobile. Outlook mobile supports add-in commands in a similar fashion to Outlook on Windows and Mac. For more information, see [Add support for add-in commands for Outlook Mobile](add-mobile-support.md).
 
 ## <a name="see-also"></a>Voir aussi
 

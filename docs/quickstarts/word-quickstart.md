@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Word 
 ms.date: 06/10/2022
 ms.prod: word
 ms.localizationpriority: high
-ms.openlocfilehash: cf16287aa7bc52b9a716ca07db3b86a9ec5ff22c
-ms.sourcegitcommit: d1541634997c26f8ea22057b1d39074b01757c27
-ms.translationtype: HT
+ms.openlocfilehash: b0d60a9b86847a968efa82eaf556af107f21f390
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/14/2022
-ms.locfileid: "66789114"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467264"
 ---
 # <a name="build-your-first-word-task-pane-add-in"></a>Créer votre premier complément du volet des tâches de Word
 
@@ -84,7 +84,7 @@ Après avoir exécuté l’assistant, le générateur crée le projet et install
 
 ### <a name="next-steps"></a>Étapes suivantes
 
-Félicitations, vous avez réussi à créer un complément pour le volet des tâches de Word ! Ensuite, apprenez-en davantage sur les capacités d'un complément [Word et créez un complément plus complexe en suivant le tutoriel sur les compléments Word](../tutorials/word-tutorial.md).
+Congratulations, you've successfully created a Word task pane add-in! Next, learn more about the capabilities of a Word add-in and build a more complex add-in by following along with the [Word add-in tutorial](../tutorials/word-tutorial.md).
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/visualstudio)
 
@@ -100,15 +100,15 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
 
 3. Nommez votre projet et sélectionnez **Créer**.
 
-4. Visual Studio crée une solution et ses deux projets apparaissent dans l’**explorateur de solutions**. Le fichier **Home.html** s’ouvre dans Visual Studio.
+4. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
+### <a name="explore-the-visual-studio-solution"></a>Explorer la solution Visual Studio
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
 ### <a name="update-the-code"></a>Mise à jour du code
 
-1. **Home.html** spécifie le code HTML qui s’affichera dans le volet Office du complément. Dans **Home.html**, remplacez l’élément `<body>` par le balisage suivant et enregistrez le fichier.
+1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
     ```html
     <body>
@@ -134,7 +134,7 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
     </body>
     ```
 
-2. Ouvrez le fichier **Home.js** à la racine du projet d’application web. Ce fichier spécifie le script pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     [!include[Information about the use of ES6 JavaScript](../includes/modern-js-note.md)]
 
@@ -234,7 +234,7 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
     })();
     ```
 
-3. Ouvrez le fichier **Home.css** à la racine du projet d’application web. Ce fichier spécifie les styles personnalisés pour le complément. Remplacez tout le contenu par le code suivant, puis enregistrez le fichier.
+3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -265,13 +265,13 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
 
 ### <a name="update-the-manifest"></a>Mise à jour du manifeste
 
-1. Ouvrez le fichier manifeste XML dans le projet de complément. Ce fichier définit les paramètres et les fonctionnalités du complément.
+1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
-2. L’élément `ProviderName` possède une valeur d’espace réservé. Remplacez-le par votre nom.
+2. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. L’attribut `DefaultValue` de l’élément `DisplayName` possède un espace réservé. Remplacez-le par **My Office Add-in**.
+3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. L’attribut `DefaultValue` de l’élément `Description` possède un espace réservé. Remplacez-le par **A task pane add-in for Word**.
+4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for Word**.
 
 5. Enregistrez le fichier.
 
@@ -287,9 +287,9 @@ Félicitations, vous avez réussi à créer un complément pour le volet des tâ
 
 ### <a name="try-it-out"></a>Try it out
 
-1. À l'aide de Visual Studio, testez le complément Word nouvellement créé en appuyant sur **F5** ou en choisissant **Debug** > **Start Debugging** pour lancer Word avec le bouton du complément Show Taskpane **affiché dans le ruban**. Le module complémentaire sera hébergé localement sur IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed in the ribbon. The add-in will be hosted locally on IIS.
 
-2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version d’Office en achat définitif au lieu de la version Microsoft 365, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
+2. Dans Word, sélectionnez l’onglet **Accueil**, puis choisissez le bouton **Afficher le volet Office** du ruban pour ouvrir le volet Office du complément. (Si vous utilisez la version perpétuelle sous licence en volume d’Office, au lieu de la version microsoft 365 ou d’une version perpétuelle de vente au détail, les boutons personnalisés ne sont pas pris en charge. Le volet Office s’ouvre immédiatement.)
 
     ![Capture d’écran de l’application Word avec le bouton Afficher le volet des tâches mis en évidence.](../images/word-quickstart-addin-0.png)
 

@@ -1,14 +1,14 @@
 ---
 title: Navigateurs utilisés par les compléments Office
 description: Indique comment le système d’exploitation et la version d’Office déterminent le navigateur utilisé par les compléments Office.
-ms.date: 08/04/2022
+ms.date: 09/29/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c40ff7ccc8a3b88e6e9f7dcd4e107fdb13f99109
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: bd4f20c969acf07423e15269b361469ea17eee39
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422949"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68466942"
 ---
 # <a name="browsers-used-by-office-add-ins"></a>Navigateurs utilisés par les compléments Office
 
@@ -17,8 +17,8 @@ Les compléments Office sont des applications web qui sont affichées à l’aid
 Le navigateur utilisé dépend de ce qui suit :
 
 - Système d’exploitation de l’ordinateur.
-- Que le complément s’exécute dans Office sur le Web, Microsoft 365 ou perpétuel (également appelé « achat sans abonnement » ou « achat unique ») Office 2013 ou ultérieur.
-- Dans les versions perpétuelles d’Office, que le complément s’exécute dans la variante « consommateur » ou « commercial » (également appelée « licence en volume » ou « LTSC »).
+- Que le complément s’exécute dans Office sur le Web, dans Office téléchargé à partir d’un abonnement Microsoft 365 ou dans Office 2013 perpétuel ou ultérieur.
+- Dans les versions perpétuelles d’Office sur Windows, que le complément s’exécute dans la variante « vente au détail » ou « sous licence en volume ».
 
 > [!NOTE]
 > Cet article part du principe que le complément s’exécute dans un document qui *n’est pas* protégé par [Windows Information Protection (WIP).](/windows/uwp/enterprise/wip-hub) Pour les documents protégés par wip, il existe certaines exceptions aux informations contenues dans cet article. Pour plus d’informations, consultez les [documents protégés par WIP](#wip-protected-documents).
@@ -26,10 +26,10 @@ Le navigateur utilisé dépend de ce qui suit :
 > [!IMPORTANT]
 > **Internet Explorer toujours utilisé dans les compléments Office**
 >
-> Certaines combinaisons de plateformes et de versions d’Office, notamment les versions perpétuelles commerciales via Office 2019, utilisent toujours le contrôle webview fourni avec Internet Explorer 11 pour héberger des compléments, comme expliqué dans cet article. Nous vous recommandons (mais n’exigez pas) de continuer à prendre en charge ces combinaisons, du moins d’une manière minimale, en fournissant aux utilisateurs de votre complément un message d’échec approprié lorsque votre complément est lancé dans la vue web d’Internet Explorer. Gardez à l’esprit ces points supplémentaires :
+> Certaines combinaisons de plateformes et de versions d’Office, notamment les versions perpétuelles sous licence en volume via Office 2019, utilisent toujours le contrôle webview fourni avec Internet Explorer 11 pour héberger des compléments, comme expliqué dans cet article. Nous vous recommandons (mais n’exigez pas) de continuer à prendre en charge ces combinaisons, du moins d’une manière minimale, en fournissant aux utilisateurs de votre complément un message d’échec approprié lorsque votre complément est lancé dans la vue web d’Internet Explorer. Gardez à l’esprit ces points supplémentaires :
 >
 > - Office sur le Web ne s’ouvre plus dans Internet Explorer. Par conséquent, [AppSource](/office/dev/store/submit-to-appsource-via-partner-center) ne teste plus les compléments dans Office sur le Web à l’aide d’Internet Explorer comme navigateur.
-> - AppSource teste toujours les combinaisons de versions de plateforme et de *bureau* Office qui utilisent Internet Explorer, mais elle émet uniquement un avertissement lorsque le complément ne prend pas en charge Internet Explorer; le complément n’est pas rejeté par AppSource.
+> - AppSource teste toujours les combinaisons de versions de plateforme et de *bureau* Office qui utilisent Internet Explorer. Toutefois, il émet uniquement un avertissement lorsque le complément ne prend pas en charge Internet Explorer ; le complément n’est pas rejeté par AppSource.
 > - [L’outil Script Lab](../overview/explore-with-script-lab.md) ne prend plus en charge Internet Explorer.
 >
 > Pour plus d’informations sur la prise en charge d’Internet Explorer et la configuration d’un message d’échec approprié sur votre complément, consultez [Support Internet Explorer 11](../develop/support-ie-11.md).
@@ -49,24 +49,23 @@ Pour ces plateformes, la plateforme détermine à elle seule le navigateur utili
 
 ## <a name="perpetual-versions-of-office-on-windows"></a>Versions perpétuelles d’Office sur Windows
 
-Pour les versions perpétuelles d’Office sur Windows, le navigateur utilisé est déterminé par la version d’Office, si la licence est consommateur ou commerciale, et si edge WebView2 (basé sur Chromium) est installé. La version de Windows n’a pas d’importance, mais notez que les compléments Web Office ne sont pas pris en charge sur les versions antérieures à Windows 7 et Office 2021 n’est pas pris en charge sur les versions antérieures à Windows 10.
+Pour les versions perpétuelles d’Office sur Windows, le navigateur utilisé est déterminé par la version d’Office, si la licence est commercialisée ou sous licence en volume, et si edge WebView2 (basé sur Chromium) est installé. La version de Windows n’a pas d’importance, mais notez que les compléments Web Office ne sont pas pris en charge sur les versions antérieures à Windows 7 et Office 2021 n’est pas pris en charge sur les versions antérieures à Windows 10.
 
-Pour déterminer si Office 2016 ou Office 2019 est consommateur ou commercial, utilisez le format de la version et du numéro de build d’Office. (Pour Office 2013 et Office 2021, la distinction entre commercial et consommateur n’a pas d’importance.)
+Pour déterminer si Office 2016 ou Office 2019 est commercialisé ou sous licence en volume, utilisez le format de la version d’Office et du numéro de build. (Pour Office 2013 et Office 2021, la distinction entre les licences en volume et la vente au détail n’a pas d’importance.)
 
-- **Consommateur** : pour Office 2016 et 2019, le format est `YYMM (xxxxx.xxxxxx)`, se terminant par deux blocs de cinq chiffres ; par exemple, `2206 (Build 15330.20264`.
-- **Commercial** : 
+- **Vente au détail** : pour Office 2016 et 2019, le format est `YYMM (xxxxx.xxxxxx)`, se terminant par deux blocs de cinq chiffres ; par exemple, `2206 (Build 15330.20264`.
+- **Licence en volume** :
+  - Pour Office 2016, le format est `16.0.xxxx.xxxxx`, se terminant par deux blocs de *quatre* chiffres ; par exemple, `16.0.5197.1000`.
+  - Pour Office 2019, le format est `1808 (xxxxx.xxxxxx)`, se terminant par deux blocs de *cinq* chiffres ; par exemple, `1808 (Build 10388.20027)`. Notez que l’année et le mois sont toujours `1808`.
 
-    - Pour Office 2016, le format est `16.0.xxxx.xxxxx`, se terminant par deux blocs de *quatre* chiffres ; par exemple, `16.0.5197.1000`.
-    - Pour Office 2019, le format est `1808 (xxxxx.xxxxxx)`, se terminant par deux blocs de *cinq* chiffres ; par exemple, `1808 (Build 10388.20027)`. Notez que l’année et le mois sont toujours `1808`.
-
-|Version d’Office|Consommateur et commercial|Edge WebView2 (basé sur Chromium) installé ?|Navigateur|
-|:-----|:-----|:-----|:-----|:-----|
-|Office 2013 | Peu importe |Peu importe|Internet Explorer 11|
-|Office 2016| Commerciale |Peu importe|Internet Explorer 11|
-|Office 2019| Commerciale |Peu importe|Internet Explorer 11|
-|Office 2016 vers Office 2019| Grand public |Non |Microsoft Edge<sup>1, 2</sup> avec WebView d’origine (EdgeHTML)</br>Si Edge n’est pas installé, Internet Explorer 11 est utilisé.|
-|Office 2016 vers Office 2019|  Grand public |Oui<sup>3</sup>|Microsoft Edge<sup>1</sup> avec WebView2 (basé sur Chromium)|
-|Office 2021| Peu importe |Oui<sup>3</sup> |Microsoft Edge<sup>1</sup> avec WebView2 (basé sur Chromium)|
+| Version d’Office | Vente au détail et licence en volume | Edge WebView2 (basé sur Chromium) installé ? | Navigateur |
+|:-----|:-----|:-----|:-----|
+| Office 2013 | Peu importe | Peu importe | Internet Explorer 11 |
+| Office 2016 | Licence en volume | Peu importe | Internet Explorer 11 |
+| Office 2019 | Licence en volume | Peu importe | Internet Explorer 11 |
+| Office 2016 vers Office 2019 | Commerce | Non | Microsoft Edge<sup>1, 2</sup> avec WebView d’origine (EdgeHTML)</br>Si Edge n’est pas installé, Internet Explorer 11 est utilisé. |
+| Office 2016 vers Office 2019 | Commerce | Oui<sup>3</sup> | Microsoft Edge<sup>1</sup> avec WebView2 (basé sur Chromium) |
+| Office 2021 | Peu importe | Oui<sup>3</sup> | Microsoft Edge<sup>1</sup> avec WebView2 (basé sur Chromium) |
 
 <sup>1</sup> Lorsque vous utilisez Microsoft Edge, le Narrateur Windows (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Dans Internet Explorer 11, le Narrateur lit la barre de titre du volet Office, qui provient de la **\<DisplayName\>** valeur dans le manifeste du complément.
 
@@ -74,7 +73,7 @@ Pour déterminer si Office 2016 ou Office 2019 est consommateur ou commercial, u
 
 <sup>3</sup> Sur les versions windows antérieures à Windows 11, le contrôle WebView2 doit être installé afin qu’Office puisse l’incorporer. Il est installé avec des Office 2021 perpétuelles ou ultérieures, mais il n’est pas installé automatiquement avec Microsoft Edge. Si vous disposez d’une version antérieure d’Office perpétuel, suivez les instructions d’installation du contrôle sur [Microsoft Edge WebView2 / Incorporer du contenu web ... avec Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-## <a name="microsoft-365-subscription-on-windows"></a>Abonnement Microsoft 365 sur Windows
+## <a name="microsoft-365-subscription-office-on-windows"></a>Microsoft 365 abonnement Office sur Windows
 
 Pour l’abonnement Office sur Windows, le navigateur utilisé est déterminé par le système d’exploitation, la version d’Office et si edge WebView2 (basé sur Chromium) est installé.
 
@@ -82,10 +81,10 @@ Pour l’abonnement Office sur Windows, le navigateur utilisé est déterminé p
 |:-----|:-----|:-----|:-----|
 |Windows 7 | Microsoft 365| Peu importe | Internet Explorer 11|
 |Windows 8.1,<br>Windows 10 ver.&nbsp;<&nbsp; 1903| Microsoft 365 | Non| Internet Explorer 11|
-|Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp; 16.0.11629<sup>2</sup>| Peu importe|Internet Explorer 11|
-|Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.11629&nbsp;_ET_&nbsp;<&nbsp;16.0.13530.20424 <sup>2</sup>| Peu importe|Microsoft Edge<sup>1, 3</sup> avec WebView d’origine (EdgeHTML)|
+|Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;<&nbsp; 16.0.11629<sup>2</sup>| Peu importe|Internet Explorer 11|
+|Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Windows 11 | Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.11629&nbsp;_ET_&nbsp;<&nbsp;16.0.13530.20424 <sup>2</sup>| Peu importe|Microsoft Edge<sup>1, 3</sup> avec WebView d’origine (EdgeHTML)|
 |Windows 10 ver.&nbsp;>=&nbsp; 1903,<br>Fenêtre 11 | Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.20424<sup>2</sup>| Non |Microsoft Edge<sup>1, 3</sup> avec WebView d’origine (EdgeHTML)|
-|Windows 8.1<br>Windows 10,<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.20424<sup>2</sup>| Oui<sup>4</sup>|  Microsoft Edge<sup>1</sup> avec WebView2 (basé sur Chromium) |
+|Windows 8.1<br>Windows 10,<br>Windows 11| Microsoft 365 ver.&nbsp;>=&nbsp; 16.0.13530.20424<sup>2</sup>| Oui<sup>4</sup>|  Microsoft Edge<sup>1</sup> avec WebView2 (basé sur Chromium) |
 
 <sup>1</sup> Lorsque vous utilisez Microsoft Edge, le Narrateur Windows (parfois appelé « lecteur d’écran ») lit la `<title>` balise dans la page qui s’ouvre dans le volet Office. Dans Internet Explorer 11, le Narrateur lit la barre de titre du volet Office, qui provient de la **\<DisplayName\>** valeur dans le manifeste du complément.
 
@@ -130,7 +129,7 @@ Le téléchargement direct d’objets blob en tant que fichiers PDF dans un comp
 
 ## <a name="wip-protected-documents"></a>Documents protégés par WIP
 
-Les compléments qui s’exécutent dans un document [protégé par WIP](/windows/uwp/enterprise/wip-hub) n’utilisent jamais **Microsoft Edge avec WebView2 (basé sur Chromium).** Dans les sections [Versions perpétuelles d’Office sur Windows](#perpetual-versions-of-office-on-windows) et [de l’abonnement Microsoft 365 sur Windows](#microsoft-365-subscription-on-windows) plus haut dans cet article, remplacez **Microsoft Edge par Le WebView d’origine (EdgeHTML)** pour **Microsoft Edge par WebView2 (basé sur Chromium)** partout où cette dernière apparaît.
+Les compléments qui s’exécutent dans un document [protégé par WIP](/windows/uwp/enterprise/wip-hub) n’utilisent jamais **Microsoft Edge avec WebView2 (basé sur Chromium).** Dans les sections [Versions perpétuelles d’Office sur Windows](#perpetual-versions-of-office-on-windows) et [d’Office d’abonnement Microsoft 365 sur Windows](#microsoft-365-subscription-office-on-windows) plus haut dans cet article, remplacez **Microsoft Edge par Le WebView d’origine (EdgeHTML)** pour **Microsoft Edge par WebView2 (basé sur Chromium) où celui-ci** apparaît.
 
 Pour déterminer si un document est protégé par wip, procédez comme suit :
 

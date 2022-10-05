@@ -3,12 +3,12 @@ title: Test des compléments Office
 description: Découvrez comment tester votre complément Office.
 ms.date: 07/28/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 0cb3241bf88edf10f165587ddac24d1261b30162
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
-ms.translationtype: HT
+ms.openlocfilehash: 56052182eafae59d42044ce4be40e086e51e8103
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177678"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467243"
 ---
 # <a name="test-office-add-ins"></a>Test des compléments Office
 
@@ -16,7 +16,7 @@ Cet article contient des recommandations sur les tests, le débogage et la réso
 
 ## <a name="test-cross-platform-and-for-multiple-versions-of-office"></a>Tester sur plusieurs plateformes et pour plusieurs versions d’Office
 
-Les compléments Office s’exécutent sur les principales plateformes. Vous devez donc tester un complément sur toutes les plateformes sur lesquelles vos utilisateurs peuvent exécuter Office. Cela inclut généralement Office sur le web, Office sur Windows (abonnement et achat unique), Office sur Mac, Office sur iOS et (pour les compléments Outlook) Office sur Android. Toutefois, dans certaines situations, vous pouvez être sûr qu’aucun de vos utilisateurs ne travaillera sur certaines plateformes. Par exemple, si vous créez un complément pour une entreprise qui exige que ses utilisateurs utilisent des ordinateurs Windows et un abonnement Office, vous n’avez pas besoin de tester Office sur Mac ou Windows achat unique.
+Les compléments Office s’exécutent sur les principales plateformes. Vous devez donc tester un complément sur toutes les plateformes sur lesquelles vos utilisateurs peuvent exécuter Office. Cela inclut généralement Office sur le Web, Office sur Windows (abonnement perpétuel et Microsoft 365), Office sur Mac, Office sur iOS et (pour les compléments Outlook) Office sur Android. Toutefois, dans certaines situations, vous pouvez être sûr qu’aucun de vos utilisateurs ne travaillera sur certaines plateformes. Par exemple, si vous créez un complément pour une entreprise qui exige que ses utilisateurs travaillent avec des ordinateurs Windows et un abonnement Office, vous n’avez pas besoin de tester Office sur Mac ou Office perpétuel sur Windows.
 
 > [!NOTE]
 > Sur les ordinateurs Windows, la version de Windows et d’Office détermine le contrôle de navigateur utilisé par les compléments. Pour plus d’informations, consultez [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -28,7 +28,7 @@ Les compléments Office s’exécutent sur les principales plateformes. Vous dev
 
 ## <a name="sideload-an-office-add-in-for-testing"></a>Chargement de version test d’un complément Office
 
-Vous pouvez utiliser le chargement indépendant pour installer un complément Office à des fins de test sans avoir à le placer au préalable dans un catalogue de compléments. La procédure de chargement indépendant d’un complément varie selon la plateforme et, dans certains cas, le produit. Les articles suivants décrivent chacun comment charger une version test des compléments Office sur une plateforme spécifique ou dans un produit spécifique.
+You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
 - [Chargement de version test des compléments Office sur Windows](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
 

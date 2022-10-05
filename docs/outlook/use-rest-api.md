@@ -1,18 +1,18 @@
 ---
 title: Utilisation des API REST Outlook d’un complément Outlook
 description: Découvrez comment utiliser des API REST Outlook à partir d’un complément Outlook pour obtenir un jeton d’accès.
-ms.date: 09/02/2022
+ms.date: 10/03/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: b460dbd150ec4806c562cf0fb2bc6e920beaa4c5
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: 9f62b2514f05341531a826c29e18c593a590fca0
+ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857549"
+ms.lasthandoff: 10/05/2022
+ms.locfileid: "68467215"
 ---
 # <a name="use-the-outlook-rest-apis-from-an-outlook-add-in"></a>Utilisation des API REST Outlook d’un complément Outlook
 
-L’espace de noms [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) permet d’accéder à de nombreux champs communs pour les messages et les rendez-vous. Toutefois, dans certains scénarios, un complément peut avoir besoin d’accéder aux données qui ne sont pas exposées par l’espace de noms. Par exemple, le complément peut dépendre de propriétés personnalisées définies par une application extérieure ou avoir besoin rechercher dans la boîte aux lettres de l’utilisateur des messages provenant du même expéditeur. Dans ces scénarios, l’[API REST Outlook](/outlook/rest) est la méthode recommandée pour récupérer les informations.
+The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that is not exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
 
 > [!IMPORTANT]
 > **Les API REST Outlook sont déconseillées**
@@ -25,15 +25,16 @@ L’espace de noms [Office.context.mailbox.item](/javascript/api/requirement-set
 
 ## <a name="get-an-access-token"></a>Obtenir un jeton d’accès
 
-Les API REST Outlook nécessitent un jeton du porteur dans l’en-tête `Authorization`. En règle générale, les applications utilisent les flux OAuth2 pour extraire un jeton. Toutefois, les compléments peuvent récupérer un jeton sans mettre en œuvre OAuth2 à l’aide de la nouvelle méthode [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) introduite dans la version 1.5 de l’ensemble de conditions de boîte aux lettres.
+The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method introduced in the Mailbox requirement set 1.5.
 
 En définissant l’option `isRest` sur `true`, vous pouvez demander un jeton compatible avec les API REST.
 
 ### <a name="add-in-permissions-and-token-scope"></a>Autorisations des compléments et étendue du jeton
 
-Il est important de savoir de quel niveau d’accès votre complément aura besoin avec les API REST. Dans la plupart des cas, le jeton renvoyé par `getCallbackTokenAsync` fournit un accès en lecture seule à l’élément actif uniquement. Cela est vrai même si votre complément spécifie le niveau d’autorisation `ReadWriteItem` dans son manifeste.
+Il est important de savoir de quel niveau d’accès votre complément aura besoin avec les API REST. Dans la plupart des cas, le jeton renvoyé par `getCallbackTokenAsync` fournit un accès en lecture seule à l’élément actif uniquement. Cela est vrai même si votre complément spécifie le niveau [d’autorisation d’élément en lecture/écriture](understanding-outlook-add-in-permissions.md#readwrite-item-permission) dans son manifeste.
 
-Si votre complément nécessitera un accès en écriture à l’élément actif ou à d’autres éléments de la boîte aux lettres de l’utilisateur, votre complément doit spécifier le niveau d’autorisation `ReadWriteMailbox` dans son manifeste. Dans ce cas, le jeton renvoyé contiendra l’accès en lecture/écriture aux messages, événements et contacts de l’utilisateur.
+Si votre complément nécessite un accès en écriture à l’élément actif ou à d’autres éléments de la boîte aux lettres de l’utilisateur, votre complément doit spécifier [l’autorisation de boîte aux lettres en lecture-écriture](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
+niveau dans son manifeste. Dans ce cas, le jeton renvoyé contiendra l’accès en lecture/écriture aux messages, événements et contacts de l’utilisateur.
 
 ### <a name="example"></a>Exemple
 
@@ -79,7 +80,7 @@ function getItemRestId() {
 
 ## <a name="get-the-rest-api-url"></a>Obtenir l’URL de l’API REST
 
-La dernière information dont votre complément a besoin pour appeler l’API REST est le nom d’hôte qu'il doit utiliser pour envoyer des demandes d’API. Cette information figure dans la propriété [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties).
+The final piece of information your add-in needs to call the REST API is the hostname it should use to send API requests. This information is in the [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property.
 
 ### <a name="example"></a>Exemple
 
