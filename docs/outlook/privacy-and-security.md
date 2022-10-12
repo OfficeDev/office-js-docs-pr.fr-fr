@@ -1,14 +1,14 @@
 ---
 title: Confidentialité, autorisations et sécurité pour les compléments Outlook
 description: Découvrez comment gérer la confidentialité, les autorisations et la sécurité dans un complément Outlook.
-ms.date: 08/09/2022
+ms.date: 10/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: a19284c6a8371deadcb3986978eabaf605189df6
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: 560c9bbdfcde849b66d86e9c000d78f094b3e561
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092874"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541249"
 ---
 # <a name="privacy-permissions-and-security-for-outlook-add-ins"></a>Confidentialité, autorisations et sécurité pour les compléments Outlook
 
@@ -28,16 +28,9 @@ Cet article décrit les autorisations que les compléments Outlook peuvent deman
 
 Because customers' perception of add-in security can affect add-in adoption, Outlook add-in security relies on a tiered permissions model. An Outlook add-in would disclose the level of permissions it needs, identifying the possible access and actions that the add-in can make on the customer's mailbox data.
 
-Le schéma de manifeste version 1.1 comprend quatre niveaux d’autorisation.
+Il existe quatre niveaux d’autorisations possibles.
 
-**Tableau 1. Niveaux d’autorisation d’un complément**
-
-|**Niveau d’autorisation**|**Valeur dans le manifeste du complément Outlook**|
-|:-----|:-----|
-|Restricted|Restreint|
-|Lire l’élément|ReadItem|
-|Lire/écrire dans l’élément|ReadWriteItem|
-|Lire/écrire dans la boîte aux lettres|ReadWriteMailbox|
+[!include[Table of Outlook permissions](../includes/outlook-permission-levels-table.md)]
 
 Les quatre niveaux d’autorisations sont cumulatifs : l’autorisation **boîte aux lettres en lecture/écriture** inclut les autorisations de **élément en lecture/écriture**, **lire élément** et **restreint**, l’autorisation **élément en lecture/écriture** inclut **lire élément** et **restreint** et l’autorisation **lire élément** inclut **restreint**.
 
@@ -116,18 +109,34 @@ Les développeurs doivent suivre le modèle d’autorisations à plusieurs nivea
 
 - Les développeurs demandent un niveau approprié d’autorisation pour un complément Outlook en fonction de la manière dont il doit être activé, et de son besoin de lire ou d’écrire certaines propriétés d’un élément, ou de créer et d’envoyer un élément.
 
-- Les développeurs demandent une autorisation en utilisant l’élément [Permissions](/javascript/api/manifest/permissions) dans le manifeste du complément Outlook, en affectant une valeur **Restricted**, **ReadItem**, **ReadWriteItem** ou **ReadWriteMailbox**, selon le cas.
+- Comme indiqué ci-dessus, les développeurs demandent l’autorisation dans le manifeste.
 
-  > [!NOTE]
-  > Notez que l’autorisation **ReadWriteItem** est disponible à partir du schéma de manifeste version 1.1.
-
-  L’exemple suivant demande l’autorisation **Lire l’élément**.
+  L’exemple suivant demande l’autorisation **d’élément de lecture** dans le manifeste XML.
 
   ```XML
-    <Permissions>ReadItem</Permissions>
+  <Permissions>ReadItem</Permissions>
   ```
 
+  L’exemple suivant demande l’autorisation **d’élément de lecture** dans le manifeste Teams (préversion).
+
+```json
+"authorization": {
+  "permissions": {
+    "resourceSpecific": [
+      ...
+      {
+        "name": "MailboxItem.Read.User",
+        "type": "Delegated"
+      },
+    ]
+  }
+},
+```
+
 - Les développeurs peuvent demander l’autorisation **restreinte** si le complément Outlook s’active sur un type spécifique d’élément Outlook (rendez-vous ou message) ou sur des entités extraites spécifiques (numéro de téléphone, adresse, URL) présentes dans l’objet ou le corps de l’élément. Par exemple, la règle suivante active le complément Outlook si une ou plusieurs des trois entités (numéro de téléphone, adresse postale ou URL) se trouvent dans l'objet ou le corps du message courant.
+
+> [!NOTE]
+> Les règles d’activation, comme illustré dans cet exemple, ne sont pas prises en charge dans les compléments qui utilisent le [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
   ```XML
     <Permissions>Restricted</Permissions>

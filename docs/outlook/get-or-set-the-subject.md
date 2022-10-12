@@ -1,20 +1,20 @@
 ---
 title: Obtenir ou définir l’objet dans un complément Outlook
 description: Découvrez comment obtenir ou définir l’objet d’un message ou d’un rendez-vous dans un complément Outlook.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: cf221b03753fd76966eb5c6270da68e94abfe0f9
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: 79e38a310bf62eae55ef020c2f6c978ace824255
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66959069"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541128"
 ---
 # <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
-L’API JavaScript Office fournit des méthodes asynchrones ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) et [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) pour obtenir et définir l’objet d’un rendez-vous ou d’un message que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour composer des compléments. Pour utiliser ces méthodes, assurez-vous que vous avez correctement configuré le manifeste du complément pour qu’Outlook active le complément dans les formulaires de composition.
+L’API JavaScript Office fournit des méthodes asynchrones ([subject.getAsync](/javascript/api/outlook/office.subject#outlook-office-subject-getasync-member(1)) et [subject.setAsync](/javascript/api/outlook/office.subject#outlook-office-subject-setasync-member(1))) pour obtenir et définir l’objet d’un rendez-vous ou d’un message que l’utilisateur compose. Ces méthodes asynchrones sont disponibles uniquement pour composer des compléments. Pour utiliser ces méthodes, assurez-vous que vous avez correctement configuré le manifeste XML du complément pour qu’Outlook [active le complément dans les formulaires de composition](compose-scenario.md). Les règles d’activation ne sont pas prises en charge dans les compléments qui utilisent un [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
-La propriété **subject** est disponible pour un accès en lecture dans les formulaires de lecture et de composition des rendez-vous et des messages. Dans un formulaire de lecture, vous pouvez accéder à la propriété directement à partir de l’objet parent, comme dans l’exemple suivant :
+The **subject** property is available for read access in both compose and read forms of appointments and messages. In a read form, you can access the property directly from the parent object, as in:
 
 ```js
 item.subject
@@ -32,7 +32,7 @@ Comme avec la plupart des méthodes asynchrones dans l’API JavaScript Office, 
 
 ## <a name="get-the-subject"></a>Obtention de l’objet
 
-Cette section présente un exemple de code qui obtient l’objet du rendez-vous ou du message que l’utilisateur compose, et affiche l’objet. Cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message, comme indiqué ci-dessous.
+Cette section présente un exemple de code qui obtient l’objet du rendez-vous ou du message que l’utilisateur compose, et affiche l’objet. Cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message, comme indiqué ci-dessous. Les règles d’activation ne sont pas prises en charge dans les compléments qui utilisent un [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -78,7 +78,7 @@ function write(message){
 
 ## <a name="set-the-subject"></a>Définition de l’objet
 
-Cette section présente un exemple de code qui définit l’objet du rendez-vous ou du message que l’utilisateur compose. Comme dans l’exemple précédent, cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message.
+Cette section présente un exemple de code qui définit l’objet du rendez-vous ou du message que l’utilisateur compose. Comme dans l’exemple précédent, cet exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message. Les règles d’activation ne sont pas prises en charge dans les compléments qui utilisent un [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
 Pour utiliser **item.subject.setAsync**, spécifiez une chaîne de 255 caractères maximum dans le paramètre de données. Si vous le souhaitez, vous pouvez fournir une fonction de rappel et tous les arguments de la fonction de rappel dans le paramètre  _asyncContext_ . Vous devez vérifier l’état, le résultat et tous les messages d’erreur dans le paramètre de sortie  _asyncResult_ du rappel. Si l’appel asynchrone aboutit, **setAsync** insère la chaîne d’objet spécifiée sous forme de texte brut, en écrasant tous les objets existants pour cet élément.
 

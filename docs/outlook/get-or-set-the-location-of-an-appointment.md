@@ -1,14 +1,14 @@
 ---
 title: Obtenir ou définir le lieu de rendez-vous dans un complément
 description: Découvrez comment obtenir ou définir l’heure d’un rendez-vous à partir d’un complément Outlook.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 045de4e01be1feb70237937d43ca111d3bea6316
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: bf03e0e470bb5aea811c09bb7b88cc5a915a7a13
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958985"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541238"
 ---
 # <a name="get-or-set-the-location-when-composing-an-appointment-in-outlook"></a>Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook
 
@@ -28,7 +28,7 @@ Le tableau suivant répertorie les API d’emplacement et les modes (c’est-à-
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organisateur/Composition |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organisateur/Composition |
 
-Pour utiliser les méthodes disponibles uniquement pour composer des compléments, configurez le manifeste de complément pour activer le complément en mode Organisateur/Composition. Pour plus d’informations, consultez [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md) .
+Pour utiliser les méthodes disponibles uniquement pour composer des compléments, configurez le manifeste XML du complément pour activer le complément en mode Organisateur/Composition. Pour plus d’informations, consultez [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md) . Les règles d’activation ne sont pas prises en charge dans les compléments qui utilisent un [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
 ## <a name="use-the-enhancedlocation-api"></a>Utiliser l’API `enhancedLocation`
 
@@ -202,4 +202,4 @@ function write(message){
 ## <a name="see-also"></a>Voir aussi
 
 - [Créer votre premier complément Outlook](../quickstarts/outlook-quickstart.md)
-- [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Programmation asynchrone dans les compléments Office](../develop/asynchronous-programming-in-office-add-ins.md)

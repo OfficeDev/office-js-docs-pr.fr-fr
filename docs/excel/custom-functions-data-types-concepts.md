@@ -1,20 +1,18 @@
 ---
 title: Fonctions personnalisées et types de données
 description: Utilisez des types de données Excel avec vos fonctions personnalisées et compléments Office.
-ms.date: 12/27/2021
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 361be486ee45cae87b5cd66e2099dc939418a491
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 5dbe42af2edcfc9860ce27dc5c8dbe2ad88b9ecf
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422872"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540990"
 ---
-# <a name="use-data-types-with-custom-functions-in-excel-preview"></a>Utiliser des types de données avec des fonctions personnalisées dans Excel (préversion)
-
-[!include[Custom functions and data types availability note](../includes/excel-custom-functions-data-types-note.md)]
+# <a name="use-data-types-with-custom-functions-in-excel"></a>Utiliser des types de données avec des fonctions personnalisées dans Excel
 
 Les types de données développent l’API JavaScript Excel pour prendre en charge les types de données au-delà des quatre types de valeurs de cellule d’origine (chaîne, nombre, booléen et erreur). Les types de données incluent la prise en charge des images Web, des valeurs numériques formatées, des valeurs d'entité et des tableaux au sein des valeurs d'entité.
 
@@ -37,7 +35,7 @@ Pour utiliser cette fonctionnalité, vous devez mettre à jour manuellement vos 
 
 Les projets de fonctions personnalisées incluent un fichier de métadonnées JSON. Ce fichier de métadonnées JSON diffère du schéma JSON utilisé par les API de types de données. Pour utiliser l’intégration des types de données avec des fonctions personnalisées, le fichier de métadonnées JSON des fonctions personnalisées doit être mis à jour manuellement pour inclure la propriété `allowCustomDataForDataTypeAny`. Définissez cette propriété sur `true`.
 
-Pour une description complète du processus de création manuelle de JSON, consultez [Créer manuellement des métadonnées JSON pour les fonctions personnalisées](custom-functions-json.md). Voir [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany-preview) pour plus de détails sur cette propriété.
+For a full description of the manual JSON creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
 ### <a name="script-lab-option"></a>L’option Script Lab
 

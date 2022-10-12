@@ -1,22 +1,22 @@
 ---
 title: Obtenir ou modifier des destinataires dans un complément Outlook
 description: Découvrez comment obtenir, définir ou ajouter des destinataires d’un message ou un rendez-vous dans un complément Outlook.
-ms.date: 07/08/2022
+ms.date: 10/07/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: bcc4a76ef89e3bfaf7e884ad2fa4e1595782c62f
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: de47d2ee238ffe55ab0b5ee460096717557e4dba
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958319"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541267"
 ---
 # <a name="get-set-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtenir, définir ou ajouter des destinataires lors de la composition d’un rendez-vous ou d’un message dans Outlook
 
-L’API JavaScript Office fournit des méthodes asynchrones ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) ou [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) respectivement pour obtenir, définir ou ajouter des destinataires sous une forme de composition d’un rendez-vous ou d’un message. Ces méthodes asynchrones sont disponibles uniquement pour composer des compléments. Pour utiliser ces méthodes, assurez-vous d’avoir correctement configuré le manifeste de complément pour qu’Outlook active le complément dans les formulaires de composition, comme décrit dans [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md).
+L’API JavaScript Office fournit des méthodes asynchrones ([Recipients.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)), [Recipients.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) ou [Recipients.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))) respectivement pour obtenir, définir ou ajouter des destinataires sous une forme de composition d’un rendez-vous ou d’un message. Ces méthodes asynchrones sont disponibles uniquement pour composer des compléments. Pour utiliser ces méthodes, assurez-vous d’avoir correctement configuré le manifeste de complément pour qu’Outlook active le complément dans les formulaires de composition, comme décrit dans [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md). Les règles d’activation ne sont pas prises en charge dans les compléments qui utilisent un [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
 
-Certaines des propriétés qui représentent les destinataires dans un rendez-vous ou un message sont disponibles pour l’accès en lecture dans un formulaire de composition et de lecture. Ces propriétés sont [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) et [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour les rendez-vous et [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) et [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) pour les messages. 
+Some of the properties that represent recipients in an appointment or message are available for read access in a compose form and in a read form. These properties include  [optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for appointments, and [cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties), and  [to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) for messages.
 
-Dans un formulaire de lecture, vous pouvez accéder à la propriété directement à partir de l’objet parent, comme :
+Dans un formulaire de lecture, vous pouvez accéder à la propriété directement dans l’objet parent, comme dans l’exemple suivant :
 
 ```js
 item.cc
@@ -34,7 +34,7 @@ Comme avec la plupart des méthodes asynchrones dans l’API JavaScript pour Off
 
 ## <a name="get-recipients"></a>Pour obtenir les destinataires
 
-Cette section présente un exemple de code qui obtient les destinataires d’un rendez-vous ou d’un message dont la composition est en cours et affiche les adresses de messagerie des destinataires. L’exemple de code suppose l’existence d’une règle dans le manifeste du complément qui active le complément dans un formulaire de composition pour un rendez-vous ou un message, comme indiqué ci-dessous.
+This section shows a code sample that gets the recipients of the appointment or message that is being composed, and displays the email addresses of the recipients. The code sample assumes a rule in the add-in manifest that activates the add-in in a compose form for an appointment or message, as shown below.
 
 ```XML
 <Rule xsi:type="RuleCollection" Mode="Or">
@@ -307,7 +307,7 @@ function addAttendees() {
 - [Obtenir et définir des données d’élément dans un formulaire de composition dans Outlook](get-and-set-item-data-in-a-compose-form.md)
 - [Obtenir et définir des données d’élément Outlook dans des formulaires de lecture ou de composition](item-data.md)
 - [Créer des compléments Outlook pour les formulaires de composition](compose-scenario.md)
-- [Programmation asynchrone dans les compléments Office](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Programmation asynchrone dans des compléments Office](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Obtenir ou définir l’objet lors de la composition d’un rendez-vous ou d’un message dans Outlook](get-or-set-the-subject.md)
 - [Insérer des données dans le corps lors de la composition d’un rendez-vous ou d’un message dans Outlook](insert-data-in-the-body.md)
 - [Obtenir ou définir l’emplacement lors de la composition d’un rendez-vous dans Outlook](get-or-set-the-location-of-an-appointment.md)

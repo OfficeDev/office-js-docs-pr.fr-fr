@@ -2,14 +2,14 @@
 title: Implémenter append-on-send dans votre complément Outlook
 description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 07/07/2022
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 762d8d14bb09d50c836b9a097534d1d23c493e66
-ms.sourcegitcommit: d8ea4b761f44d3227b7f2c73e52f0d2233bf22e2
+ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/11/2022
-ms.locfileid: "66712971"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541142"
 ---
 # <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter append-on-send dans votre complément Outlook
 
@@ -22,7 +22,14 @@ ms.locfileid: "66712971"
 
 Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
 
+> [!NOTE]
+> Si vous souhaitez utiliser le [manifeste Teams pour les compléments Office (préversion),](../develop/json-manifest-overview.md) **suivez** le guide de démarrage rapide [d’Outlook avec un manifeste Teams (préversion),](../quickstarts/outlook-quickstart-json-manifest.md) mais ignorez toutes les sections après la section Essayer.
+
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
+
+Pour configurer le manifeste, ouvrez l’onglet correspondant au type de manifeste que vous utilisez.
+
+# <a name="xml-manifest"></a>[Manifeste XML](#tab/xmlmanifest)
 
 Pour activer la fonctionnalité d’ajout à l’envoi dans votre complément, vous devez inclure l’autorisation `AppendOnSend` dans la collection de [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
@@ -38,7 +45,7 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du b
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.3">
+          <bt:Sets DefaultMinVersion="1.9">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -118,6 +125,58 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du b
       </VersionOverrides>
     </VersionOverrides>
     ```
+
+# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion du développeur)](#tab/jsonmanifest)
+
+1. Ouvrez le fichier manifest.json.
+
+1. Ajoutez l’objet suivant au tableau « extensions.runtimes ». Notez ce qui suit à propos de ce code.
+
+   - La valeur « minVersion » de l’ensemble de conditions requises de boîte aux lettres est définie sur « 1.9 » afin que le complément ne puisse pas être installé sur les plateformes et les versions d’Office où cette fonctionnalité n’est pas prise en charge. 
+   - L'« ID » du runtime est défini sur le nom descriptif « function_command_runtime ».
+   - La propriété « code.page » est définie sur l’URL du fichier HTML sans interface utilisateur qui chargera la commande de fonction.
+   - La propriété « lifetime » est définie sur « short », ce qui signifie que le runtime démarre lorsque le bouton de commande de fonction est sélectionné et s’arrête une fois la fonction terminée. (Dans certains cas rares, le runtime s’arrête avant la fin du gestionnaire. Voir [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - Il existe une action pour exécuter une fonction nommée « appendDisclaimerOnSend ». Vous allez créer cette fonction dans une étape ultérieure.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.9"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "function_command_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "appendDisclaimerOnSend",
+                "type": "executeFunction",
+                "displayName": "appendDisclaimerOnSend"
+            }
+        ]
+    }
+    ```
+
+1. Dans le tableau « authorization.permissions.resourceSpecific », ajoutez l’objet suivant. Assurez-vous qu’il est séparé des autres objets du tableau par une virgule.
+
+    ```json
+    {
+      "name": "Mailbox.AppendOnSend.User",
+      "type": "Delegated"
+    }
+    ```
+
+---
 
 > [!TIP]
 > Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).

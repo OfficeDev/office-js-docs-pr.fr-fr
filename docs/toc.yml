@@ -643,6 +643,11 @@ items:
             href: outlook/contextual-outlook-add-ins.md
           - name: Compléments d’extension de module
             href: outlook/extension-module-outlook-add-ins.md
+          - name: Sélection multiple d’éléments
+            href: outlook/item-multi-select.md
+            displayName: preview
+          - name: Volet des tâches pouvant être épinglé
+            href: outlook/pinnable-taskpane.md
           - name: Compléments pour Outlook Mobile
             href: outlook/outlook-mobile-addins.md
           - name: Créer un complément de réunion en ligne
@@ -666,8 +671,6 @@ items:
               - name: Options AppSource
                 href: outlook/autolaunch-store-options.md
                 displayName: event-based activation
-          - name: Volet des tâches pouvant être épinglé
-            href: outlook/pinnable-taskpane.md
           - name: Dossiers et boîtes aux lettres partagés
             href: outlook/delegate-access.md
             displayName: delegate access

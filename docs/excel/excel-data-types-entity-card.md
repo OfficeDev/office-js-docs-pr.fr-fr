@@ -1,20 +1,18 @@
 ---
 title: Carte de valeur d’entité des types de données de l’API JavaScript Excel
 description: Découvrez comment utiliser des cartes de valeur d’entité avec des types de données dans votre complément Excel.
-ms.date: 07/28/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e7f9446c884c7ab24df8d08a221a21fa8ed8156
-ms.sourcegitcommit: 143ab022c9ff6ba65bf20b34b5b3a5836d36744c
+ms.openlocfilehash: eb2b3e88953bee54c1efa54a419db2518a1d2518
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/03/2022
-ms.locfileid: "67177652"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540983"
 ---
-# <a name="use-cards-with-entity-value-data-types-preview"></a>Utiliser des cartes avec des types de données de valeur d’entité (préversion)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="use-cards-with-entity-value-data-types"></a>Utiliser des cartes avec des types de données de valeur d’entité
 
 Cet article explique comment utiliser [l’API JavaScript Excel](../reference/overview/excel-add-ins-reference-overview.md) pour créer des fenêtres modales de carte dans l’interface utilisateur Excel avec des types de données de valeur d’entité. Ces cartes peuvent afficher des informations supplémentaires contenues dans une valeur d’entité, au-delà de ce qui est déjà visible dans une cellule, telles que les images associées, les informations de catégorie de produit et les attributions de données.
 

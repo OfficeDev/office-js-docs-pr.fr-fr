@@ -1,14 +1,14 @@
 ---
 title: Créer manuellement des métadonnées JSON pour des fonctions personnalisées dans Excel
 description: Définissez les métadonnées JSON pour les fonctions personnalisées dans Excel et associez vos propriétés d’ID de fonction et de nom.
-ms.date: 12/28/2021
+ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cd3b5266334e3397cd90fc24e29858250dfb284
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
+ms.openlocfilehash: b4bc9139b3e46bc64749a58537737db2f048ee82
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958579"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68540997"
 ---
 # <a name="manually-create-json-metadata-for-custom-functions"></a>Créer manuellement des métadonnées JSON pour des fonctions personnalisées
 
@@ -56,7 +56,7 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 
 ```json
 {
-  "allowCustomDataForDataTypeAny": true, // This property is currently only available in public preview.
+  "allowCustomDataForDataTypeAny": true,
   "allowErrorForDataTypeAny": true,
   "functions": [
     {
@@ -140,16 +140,12 @@ L’exemple suivant montre le contenu d’un fichier de métadonnées JSON pour 
 
 ## <a name="metadata-reference"></a>Informations de référence sur les métadonnée
 
-### <a name="allowcustomdatafordatatypeany-preview"></a>allowCustomDataForDataTypeAny (préversion)
-
-> [!NOTE]
-> La `allowCustomDataForDataTypeAny` propriété est actuellement disponible en préversion publique et n’est compatible qu’avec Office sur Windows. Les fonctionnalités en préversion sont sujettes à modification et ne sont pas destinées à être utilisés dans un environnement de production. Nous vous recommandons de les tester uniquement dans les environnements de test et de développement. N’utilisez pas les fonctionnalités en préversion dans un environnement de production ou dans des documents critiques pour l’entreprise.
->
-> Pour essayer cette propriété dans Office sur Windows, vous devez avoir un numéro de build Excel supérieur ou égal à 16.0.14623.20002. Pour utiliser cette fonctionnalité, vous devez participer au [programme Office Insider](https://insider.office.com/), puis choisir le niveau Insider **Cana bêta**. Pour en savoir plus, consultez le [Programme Office Insider](https://insider.office.com/join/windows).
+### <a name="allowcustomdatafordatatypeany"></a>allowCustomDataForDataTypeAny
 
 La `allowCustomDataForDataTypeAny` propriété est un type de données booléen. La définition de cette valeur permet à `true` une fonction personnalisée d’accepter les types de données en tant que paramètres et valeurs de retour. Pour en savoir plus, consultez [Fonctions personnalisées et types de données](custom-functions-data-types-concepts.md).
 
-Contrairement à la plupart des autres propriétés de métadonnées JSON, `allowCustomDataForDataTypeAny` il s’agit d’une propriété de niveau supérieur qui ne contient aucune sous-propriété. Consultez [l’exemple de code de métadonnées JSON](#json-metadata-example) précédent pour obtenir un exemple de mise en forme de cette propriété.
+> [!NOTE]
+> Contrairement à la plupart des autres propriétés de métadonnées JSON, `allowCustomDataForDataTypeAny` il s’agit d’une propriété de niveau supérieur qui ne contient aucune sous-propriété. Consultez [l’exemple de code de métadonnées JSON](#json-metadata-example) précédent pour obtenir un exemple de mise en forme de cette propriété.
 
 ### <a name="allowerrorfordatatypeany"></a>allowErrorForDataTypeAny
 
@@ -162,13 +158,13 @@ La `allowErrorForDataTypeAny` propriété est un type de données booléen. La d
 
 La propriété `functions` est un tableau d’objets de fonction personnalisés. Le tableau suivant répertorie les propriétés de chaque objet.
 
-| Propriété      | Type de données | Requis | Description                                                                                                                                                                      |
+| Propriété      | Type de données | Obligatoire | Description                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | Non       | Description de la fonction que voient les utilisateurs finaux dans Excel. Par exemple, **convertit une valeur Celsius en valeur Fahrenheit**.                                                            |
 | `helpUrl`     | string    | Non       | URL fournissant des informations sur la fonction (elle est affichée dans un volet des tâches). Par exemple, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Oui      | Un ID unique pour la fonction. Cet ID peut contenir uniquement des points et caractères alphanumériques et ne doit pas être modifié une fois défini.                                            |
 | `name`        | string    | Oui      | Nom de la fonction que voient les utilisateurs finaux dans Excel. Dans Excel, ce nom de fonction est préfixé par l’espace de noms des fonctions personnalisées spécifié dans le fichier manifeste XML. |
-| `options`     | object    | Non       | Vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Reportez-vous aux [options](#options) pour plus d’informations.                                                          |
+| `options`     | objet    | Non       | Vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Reportez-vous aux [options](#options) pour plus d’informations.                                                          |
 | `parameters`  | tableau     | Oui      | Tableau qui définit les paramètres d’entrée de la fonction. Pour plus d’informations, consultez [les paramètres](#parameters) .                                                                             |
 | `result`      | objet    | Oui      | Objet qui définit le type d’informations renvoyées par la fonction. Reportez-vous au [résultat](#result) pour plus d’informations.                                                                 |
 
@@ -176,32 +172,32 @@ La propriété `functions` est un tableau d’objets de fonction personnalisés.
 
 L’objet `options` vous permet de personnaliser certains aspects de comment et quand Excel exécute la fonction. Le tableau suivant répertorie les propriétés de l’objet `options`.
 
-| Propriété          | Type de données | Requis                               | Description |
+| Propriété          | Type de données | Obligatoire                               | Description |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, Excel appelle le gestionnaire `CancelableInvocation` chaque fois que l’utilisateur effectue une action ayant pour effet d’annuler la fonction, par exemple, en déclenchant manuellement un recalcul ou en modifiant une cellule référencée par la fonction. Les fonctions annulables sont généralement utilisées uniquement pour les fonctions asynchrones qui retournent un seul résultat et doivent gérer l’annulation d’une demande de données. Une fonction ne peut pas utiliser à la fois les propriétés et `cancelable` les `stream` propriétés. |
-| `requiresAddress` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, votre fonction personnalisée peut accéder à l’adresse de la cellule qui l’a appelée. La `address` propriété du [paramètre d’appel](custom-functions-parameter-options.md#invocation-parameter) contient l’adresse de la cellule qui a appelé votre fonction personnalisée. Une fonction ne peut pas utiliser à la fois les propriétés et `requiresAddress` les `stream` propriétés. |
-| `requiresParameterAddresses` | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, votre fonction personnalisée peut accéder aux adresses des paramètres d’entrée de la fonction. Cette propriété doit être utilisée en combinaison avec la `dimensionality` propriété de l’objet [de résultat](#result) et `dimensionality` doit être définie sur `matrix`. Pour plus [d’informations, consultez Détecter l’adresse d’un paramètre](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) . |
-| `stream`          | boolean   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur du résultat est passée comme argument de la `StreamingInvocation.setResult` fonction de rappel. Pour plus d’informations, consultez [Créer une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `volatile`        | boolean   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, la fonction recalcule chaque fois qu’Excel recalcule, au lieu de seulement lorsque les valeurs dépendantes de la formule ont changé. Une fonction ne peut pas utiliser à la fois les propriétés et `volatile` les `stream` propriétés. Si les propriétés et `volatile` les `stream` propriétés sont définies `true`sur , la propriété volatile est ignorée. |
+| `requiresAddress` | valeur booléenne   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, votre fonction personnalisée peut accéder à l’adresse de la cellule qui l’a appelée. La `address` propriété du [paramètre d’appel](custom-functions-parameter-options.md#invocation-parameter) contient l’adresse de la cellule qui a appelé votre fonction personnalisée. Une fonction ne peut pas utiliser à la fois les propriétés et `requiresAddress` les `stream` propriétés. |
+| `requiresParameterAddresses` | valeur booléenne   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, votre fonction personnalisée peut accéder aux adresses des paramètres d’entrée de la fonction. Cette propriété doit être utilisée en combinaison avec la `dimensionality` propriété de l’objet [de résultat](#result) et `dimensionality` doit être définie sur `matrix`. Pour plus [d’informations, consultez Détecter l’adresse d’un paramètre](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) . |
+| `stream`          | valeur booléenne   | Non<br/><br/>La valeur par défaut est `false`.  | Si la valeur est `true`, la fonction peut envoyer une sortie à la cellule à plusieurs reprises, même en cas d’appel unique. Cette option est utile pour des sources de données qui changent rapidement, telles que des valeurs boursières. La fonction ne doit pas utiliser d’instruction `return`. Au lieu de cela, la valeur du résultat est passée comme argument de la `StreamingInvocation.setResult` fonction de rappel. Pour plus d’informations, consultez [Créer une fonction de diffusion en continu](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `volatile`        | valeur booléenne   | Non <br/><br/>La valeur par défaut est `false`. | Si `true`, la fonction recalcule chaque fois qu’Excel recalcule, au lieu de seulement lorsque les valeurs dépendantes de la formule ont changé. Une fonction ne peut pas utiliser à la fois les propriétés et `volatile` les `stream` propriétés. Si les propriétés et `volatile` les `stream` propriétés sont définies `true`sur , la propriété volatile est ignorée. |
 
 ### <a name="parameters"></a>paramètres
 
 La propriété `parameters` est un tableau d’objets paramètre. Le tableau suivant répertorie les propriétés de chaque objet.
 
-|  Propriété  |  Type de données  |  Requis  |  Description  |
+|  Propriété  |  Type de données  |  Obligatoire  |  Description  |
 |:-----|:-----|:-----|:-----|
 |  `description`  |  string  |  Non |  Description du paramètre. Cela s’affiche dans IntelliSense d’Excel.  |
 |  `dimensionality`  |  string  |  Non  |  Doit être `scalar` (valeur non matricielle) ou `matrix` (tableau à 2 dimensions).  |
 |  `name`  |  string  |  Oui  |  Le nom du paramètre. Ce nom s’affiche dans IntelliSense d’Excel.  |
 |  `type`  |  string  |  Non  |  Type de données du paramètre. Peut être `boolean`, `number`, `string`ou `any`, qui vous permet d’utiliser l’un des trois types précédents. Si cette propriété n’est pas spécifiée, le type de données est défini par défaut `any`sur . |
-|  `optional`  | boolean | Non | Si la valeur est `true`, le paramètre est facultatif. |
-|`repeating`| boolean | Non | Si `true`, les paramètres sont renseignés à partir d’un tableau spécifié. Notez que les fonctions de tous les paramètres répétitifs sont considérées comme des paramètres facultatifs par définition.  |
+|  `optional`  | valeur booléenne | Non | Si la valeur est `true`, le paramètre est facultatif. |
+|`repeating`| valeur booléenne | Non | Si `true`, les paramètres sont renseignés à partir d’un tableau spécifié. Notez que les fonctions de tous les paramètres répétitifs sont considérées comme des paramètres facultatifs par définition.  |
 
-### <a name="result"></a>résultat
+### <a name="result"></a>result
 
 L’objet `result` définit le type des informations renvoyées par la fonction. Le tableau suivant répertorie les propriétés de l’objet `result`.
 
-| Propriété         | Type de données | Requis | Description                                                                          |
+| Propriété         | Type de données | Obligatoire | Description                                                                          |
 | :--------------- | :-------- | :------- | :----------------------------------------------------------------------------------- |
 | `dimensionality` | string    | Non       | Doit être `scalar` (valeur non matricielle) ou `matrix` (tableau à 2 dimensions). |
 | `type` | string    | Non       | Type de données du résultat. Peut être `boolean`, `number`, `string`ou `any` (ce qui vous permet d’utiliser l’un des trois types précédents). Si cette propriété n’est pas spécifiée, le type de données est défini par défaut `any`sur . |
@@ -284,7 +280,7 @@ L’exemple suivant montre les métadonnées JSON qui correspondent aux fonction
 }
 ```
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Prochaines étapes
 
 Découvrez les [meilleures pratiques pour nommer votre fonction](custom-functions-naming.md) ou découvrez comment [localiser votre fonction](custom-functions-localize.md) à l’aide de la méthode JSON manuscrite décrite précédemment.
 

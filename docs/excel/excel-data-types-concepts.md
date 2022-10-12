@@ -1,21 +1,19 @@
 ---
 title: Excel Concepts fondamentaux des types de données de l’API JavaScript
 description: Découvrez les concepts de base pour l’utilisation Excel types de données dans votre Office de données.
-ms.date: 09/01/2022
+ms.date: 10/10/2022
 ms.topic: conceptual
 ms.prod: excel
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: a5f742e47d698b215a999b966c424819e182ea49
-ms.sourcegitcommit: 889d23061a9413deebf9092d675655f13704c727
+ms.openlocfilehash: b46639bdf44155f9e3de50526ce7eac48c278b12
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2022
-ms.locfileid: "67616020"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541149"
 ---
-# <a name="excel-data-types-core-concepts-preview"></a>Excel concepts fondamentaux des types de données (prévisualisation)
-
-[!include[Data types preview availability note](../includes/excel-data-types-preview.md)]
+# <a name="excel-data-types-core-concepts"></a>Concepts de base des types de données Excel
 
 Cet article explique comment utiliser [l’API JavaScript Excel pour](../reference/overview/excel-add-ins-reference-overview.md) utiliser des types de données. Il présente des concepts fondamentaux pour le développement de types de données.
 
@@ -116,7 +114,7 @@ Les valeurs d’entité liées, ou objets [LinkedEntityCellValue](/javascript/ap
 
 ## <a name="web-image-values"></a>Valeurs d’image Web
 
-L’objet [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) crée la possibilité de stocker une image dans le cadre d’une [entité](#entity-values) ou en tant que valeur indépendante dans une plage. Cet objet offre de nombreuses propriétés, notamment `address`, `altText` et `relatedImagesAddress`.
+The [WebImageCellValue](/javascript/api/excel/excel.webimagecellvalue) object creates the ability to store an image as part of an [entity](#entity-values) or as an independent value in a range. This object offers many properties, including `address`, `altText`, and `relatedImagesAddress`.
 
 Les propriétés `basicType` et `basicValue` définissent la manière dont les calculs lisent le type de données d’image web si les exigences de compatibilité minimales requises pour utiliser la fonctionnalité des types de données ne sont pas remplies. Dans ce scénario, ce type de données d’image web s’affiche en tant que **#VALUE!** erreur dans l’interface Excel IU.
 
