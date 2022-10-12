@@ -1,20 +1,20 @@
 ---
 title: Implémenter un volet Office épinglable dans un complément Outlook
 description: La commande de forme UX taskpane pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées.
-ms.date: 07/07/2020
+ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c295094a9568487b043fdfb0b5f07620c50ea76
-ms.sourcegitcommit: 9bb790f6264f7206396b32a677a9133ab4854d4e
+ms.openlocfilehash: 834d43a6046ddaa63a7c8899cfd5b07d0ea80ef6
+ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/15/2022
-ms.locfileid: "66797462"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68541121"
 ---
 # <a name="implement-a-pinnable-task-pane-in-outlook"></a>Implémenter un volet Office épinglable dans Outlook
 
-La commande de forme UX [taskpane](add-in-commands-for-outlook.md#launch-a-task-pane) pour complément ouvre un volet Office vertical à droite d’un message ou demande de réunion, ce qui permet au complément de fournir une interface utilisateur pour des interactions plus détaillées (remplissage de plusieurs champs, etc.). Ce volet Office peut être affiché dans le volet de lecture lorsque vous affichez une liste des messages, ce qui permet un traitement rapide d’un message.
+The [task pane](add-in-commands-for-outlook.md#launch-a-task-pane) UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions (filling in multiple fields, etc.). This task pane can be shown in the Reading Pane when viewing a list of messages, allowing for quick processing of a message.
 
-Toutefois, par défaut, si un utilisateur a un complément de volet Office ouvert pour un message dans le volet de lecture et sélectionne un nouveau message, le volet Office est automatiquement fermé. Pour un complément très sollicité, l’utilisateur peut préférer conserver ce volet ouvert, supprimant ainsi le besoin de réactiver le complément sur chaque message. Avec les volets Office épinglables, votre complément peut donner à l’utilisateur cette option.
+However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
 > Bien que la fonctionnalité des volets office épinglés ait été introduite dans [l’ensemble de conditions requises 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), elle n’est actuellement disponible que pour les abonnés Microsoft 365 à l’aide des éléments suivants :
@@ -29,14 +29,16 @@ Toutefois, par défaut, si un utilisateur a un complément de volet Office ouver
 > - Rendez-vous/réunions
 > - Outlook.com
 
+> [!TIP]
+> Si vous envisagez de [publier](../publish/publish.md) votre complément Outlook sur [AppSource](https://appsource.microsoft.com) et qu’il est configuré pour un volet Office épinglé, pour passer la [validation AppSource](/legal/marketplace/certification-policies), votre contenu de complément ne doit pas être statique et doit afficher clairement les données relatives au message ouvert ou sélectionné dans la boîte aux lettres.
+
 ## <a name="support-task-pane-pinning"></a>Prise en charge de l’épinglage des volets des tâches
 
-La première étape consiste à ajouter une prise en charge de l’épinglage, ce qui est effectué dans le [manifeste](manifests.md) du complément. Cette opération est effectuée en ajoutant l’élément [SupportsPinning](/javascript/api/manifest/action#supportspinning) à l’élément `Action` qui décrit le bouton du volet Office.
+La première étape consiste à ajouter une prise en charge de l’épinglage, ce qui est effectué dans le manifeste du complément. Le balisage varie en fonction du type de manifeste.
 
-L’élément `SupportsPinning` est défini dans le schéma VersionOverrides v1.1, vous devez donc inclure un élément [VersionOverrides](/javascript/api/manifest/versionoverrides) pour les versions 1.0 et 1.1.
+# <a name="xml-manifest"></a>[Manifeste XML](#tab/xmlmanifest)
 
-> [!NOTE]
-> Si vous envisagez de [publier](../publish/publish.md) votre complément Outlook sur [AppSource](https://appsource.microsoft.com), lorsque vous utilisez l’élément **SupportsPinning** afin d’obtenir la [validation d’AppSource](/legal/marketplace/certification-policies), le contenu de votre complément ne doit pas être statique et doit afficher clairement les données liées au message qui est ouvert ou sélectionné dans la boîte aux lettres.
+Ajoutez l’élément [SupportsPinning](/javascript/api/manifest/action#supportspinning) à l’élément **\<Action\>** qui décrit le bouton du volet Office. Voici un exemple.
 
 ```xml
 <!-- Task pane button -->
@@ -58,6 +60,26 @@ L’élément `SupportsPinning` est défini dans le schéma VersionOverrides v1
 </Control>
 ```
 
+L’élément **\<SupportsPinning\>** est défini dans le schéma VersionOverrides v1.1. Vous devez donc inclure un élément [VersionOverrides](/javascript/api/manifest/versionoverrides) à la fois pour v1.0 et v1.1.
+
+# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion du développeur)](#tab/jsonmanifest)
+
+Ajoutez une propriété « pinnable », définie `true`sur , à l’objet dans le tableau « actions » qui définit le bouton ou l’élément de menu qui ouvre le volet Office. Voici un exemple.
+
+```json
+"actions": [
+    {
+        "id": "OpenTaskPane",
+        "type": "openPage",
+        "view": "TaskPaneView",
+        "displayName": "OpenTaskPane",
+        "pinnable": true
+    }
+]
+```
+
+---
+
 Pour obtenir un exemple complet, consultez le contrôle `msgReadOpenPaneButton` dans l’[exemple de manifeste command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
 
 ## <a name="handling-ui-updates-based-on-currently-selected-message"></a>Gestion des mises à jour de l’interface utilisateur en fonction du message actuellement sélectionné
@@ -66,7 +88,7 @@ Pour mettre à jour l’interface utilisateur ou les variables internes de votre
 
 ### <a name="implement-the-event-handler"></a>Mettre en œuvre le gestionnaire d’événements
 
-Le gestionnaire d’événements doit accepter un seul paramètre, qui est un littéral d’objet. La propriété `type` de cet objet est réglée sur `Office.EventType.ItemChanged`. Lorsque l’événement est appelé, l’objet `Office.context.mailbox.item` est déjà mis à jour pour refléter l’élément actuellement sélectionné.
+The event handler should accept a single parameter, which is an object literal. The `type` property of this object will be set to `Office.EventType.ItemChanged`. When the event is called, the `Office.context.mailbox.item` object is already updated to reflect the currently selected item.
 
 ```js
 function itemChanged(eventArgs) {
@@ -89,7 +111,7 @@ function itemChanged(eventArgs) {
 
 ### <a name="register-the-event-handler"></a>Enregistrement du gestionnaire d’événements
 
-Utilisez la méthode [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour inscrire votre gestionnaire d’événements pour l’événement `Office.EventType.ItemChanged`. Cette opération doit être effectuée dans la fonction `Office.initialize` de votre volet Office.
+Use the [Office.context.mailbox.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to register your event handler for the `Office.EventType.ItemChanged` event. This should be done in the `Office.initialize` function for your task pane.
 
 ```js
 Office.initialize = function (reason) {
