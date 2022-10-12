@@ -1,14 +1,14 @@
 ---
 title: Comparer la prise en charge des compléments Outlook dans Outlook sur Mac
 description: Découvrez comment la prise en charge des compléments dans Outlook sur Mac se compare à d’autres clients Outlook.
-ms.date: 09/21/2022
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: c3f991865921583561e4c2db2132fad3ceba3625
-ms.sourcegitcommit: 09bb0b5edd6af03c9822e1742095c7df94735120
+ms.openlocfilehash: c38e546575446254d54ad13e5d75d997ca6cd6d8
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2022
-ms.locfileid: "67990412"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546444"
 ---
 # <a name="compare-outlook-add-in-support-in-outlook-on-mac-with-other-outlook-clients"></a>Comparer la prise en charge des compléments Outlook dans Outlook sur Mac avec d’autres clients Outlook
 
@@ -20,7 +20,7 @@ Pour plus d’informations sur la nouvelle prise en charge de l’interface util
 
 | Zone | Outlook sur le web, Windows et les appareils mobiles | Outlook sur Mac |
 |:-----|:-----|:-----|
-| Versions d’office.js et du schéma de manifeste des Compléments Office pris en charge | Toutes les API dans Office.js et le schéma version 1.1. | Toutes les API dans Office.js et le schéma version 1.1.<br><br>**REMARQUE** : Dans Outlook sur Mac, seule la build 16.35.308 ou ultérieure prend en charge l’enregistrement d’une réunion. Sinon, la `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745). |
+| Versions prises en charge de office.js| Toutes les API dans Office.js. | Toutes les API dans Office.js.<br><br>**REMARQUE** : Dans Outlook sur Mac, seule la build 16.35.308 ou ultérieure prend en charge l’enregistrement d’une réunion. Sinon, la `saveAsync` méthode échoue lorsqu’elle est appelée à partir d’une réunion en mode composition. Pour contourner ce problème, voir [Impossible d’enregistrer une réunion en tant que brouillon dans Outlook pour Mac à l’aide des API de JS Office](https://support.microsoft.com/help/4505745). |
 | Instances d’une série de rendez-vous périodiques | <ul><li>Peut obtenir l’ID d’élément et d’autres propriétés d’un rendez-vous principal ou d’une instance de rendez-vous d’une série périodique.</li><li>peut utiliser [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) pour afficher une instance ou le masque d’une série périodique.</li></ul> | <ul><li>Peut obtenir l’ID d’élément et d’autres propriétés du rendez-vous principal, mais pas ceux d’une instance d’une série périodique.</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
 | Type de destinataire d’un participant de rendez-vous | Peut utiliser [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) pour identifier le type de destinataire d’un participant. | `EmailAddressDetails.recipientType` Renvoie `undefined` pour les participants à un rendez-vous. |
 | Chaîne de version de l’application cliente | Le format de la chaîne de version retournée par [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) dépend du type réel du client. Par exemple :<ul><li>Outlook sur Windows : `15.0.4454.1002`</li><li>Outlook sur le web :`15.0.918.2`</li></ul> |Exemple de chaîne de version retournée par `Diagnostics.hostVersion` Outlook sur Mac : `15.0 (140325)` |
