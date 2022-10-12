@@ -1,14 +1,14 @@
 ---
 title: Présentation du jeton d’identité Exchange dans un complément Outlook
 description: Découvrez le contenu d’un jeton d’identité d’utilisateur Exchange généré à partir d’un complément Outlook.
-ms.date: 10/31/2019
+ms.date: 10/11/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 843bd76b66f784b1e380bdde5e33adf05755e268
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: 7d586203395521deb14e18a3ae52b01459224b75
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64484053"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546430"
 ---
 # <a name="inside-the-exchange-identity-token"></a>Présentation du jeton d’identité Exchange
 
@@ -42,7 +42,7 @@ Le tableau suivant décrit les parties de l’en-tête du jeton.
 
 ## <a name="identity-token-payload"></a>Charge utile du jeton d’identité
 
-La charge utile contient les revendications d’authentification qui identifient le compte de messagerie et identifient le serveur Exchange qui a envoyé le jeton. L’exemple suivant montre à quoi ressemble la section de charge utile.
+The payload contains the authentication claims that identify the email account and identify the Exchange server that sent the token. The following example shows what the payload section looks like.
 
 ```JSON
 { 
@@ -66,10 +66,10 @@ Le tableau suivant répertorie les différentes parties de la charge utile du je
 
 | Revendication | Description |
 |:-----|:-----|
-| `aud` | L’URL du complément ayant demandé le jeton. Un jeton est valide uniquement s’il est envoyé par le complément en cours d’exécution dans le navigateur du client. Si le complément utilise la version 1.1 du schéma des manifestes des compléments Office, cette URL correspond à celle indiquée dans le premier élément `SourceLocation`, sous le type de formulaire `ItemRead` ou `ItemEdit`, selon celui qui apparaît en premier dans l’élément [FormSettings](/javascript/api/manifest/formsettings) du manifeste de complément. |
+| `aud` | L’URL du complément ayant demandé le jeton. Un jeton est valide uniquement s’il est envoyé par le complément en cours d’exécution dans le navigateur du client. L’URL du complément est spécifiée dans le manifeste. Le balisage dépend du type de manifeste.</br></br>**Manifeste XML :** Si le complément utilise le schéma de manifestes de compléments Office v1.1, cette URL est l’URL spécifiée dans le premier **\<SourceLocation\>** élément, sous le type `ItemRead` de formulaire ou `ItemEdit`, selon ce qui se produit en premier dans le cadre de l’élément [FormSettings](/javascript/api/manifest/formsettings) dans le manifeste du complément.</br></br>**Manifeste Teams (préversion) :** L’URL est spécifiée dans la propriété « extensions.audienceClaimUrl ». |
 | `iss` | Un identificateur unique du serveur Exchange qui a émis le jeton. Tous les jetons émis par ce serveur Exchange auront le même identificateur. |
-| `nbf` | La date et l’heure de début de validité du jeton. La valeur correspond au nombre de secondes depuis le 1er janvier 1970. |
-| `exp` | La date et l’heure de fin de validité du jeton. La valeur correspond au nombre de secondes depuis le 1er janvier 1970. |
+| `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
+| `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
 | `appctxsender` | Identificateur unique du serveur Exchange qui a envoyé le contexte de l’application. |
 | `isbrowserhostedapp` | Indique si le complément est hébergé dans un navigateur. |
 | `appctx` | Contexte d’application du jeton. |
@@ -84,7 +84,7 @@ Les informations contenues dans la réclamation appctx fournissent l’identific
 
 ## <a name="identity-token-signature"></a>Signature du jeton d’identité
 
-La signature est créée par hachage des sections d’en-tête et de charge utile avec l’algorithme spécifié dans l’en-tête et en utilisant le certificat X509 autosigné situé sur le serveur à l’emplacement spécifié dans la charge utile. Votre service web peut valider cette signature pour contribuer à assurer que le jeton d’identité provient bien du serveur prévu pour son envoie.
+The signature is created by hashing the header and payload sections with the algorithm specified in the header and using the self-signed X509 certificate located on the server at the location specified in the payload. Your web service can validate this signature to help make sure that the identity token comes from the server that you expect to send it.
 
 ## <a name="see-also"></a>Voir aussi
 
