@@ -1,18 +1,18 @@
 ---
 title: Commandes de complément Outlook
 description: Les commandes de complément Outlook permettent de lancer des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants.
-ms.date: 07/11/2022
+ms.date: 10/11/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 80f1e1f4386b41012b2aa777c16225d3f0fd8432
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: d029fd4acc1a32c912c73d6e5f468b9c217b9262
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423243"
+ms.lasthandoff: 10/12/2022
+ms.locfileid: "68546458"
 ---
 # <a name="add-in-commands-for-outlook"></a>Commandes de complément pour Outlook
 
-Les commandes de complément Outlook permettent d’initier des actions de complément spécifiques à partir du ruban en ajoutant des boutons ou des menus déroulants. Les utilisateurs peuvent ainsi accéder aux compléments d’une manière simple, intuitive et discrète. Parce qu’elles offrent des fonctionnalités optimales en toute transparence, les commandes de complément vous permettent de créer des solutions plus attrayantes.
+Outlook add-in commands provide ways to initiate specific add-in actions from the ribbon by adding buttons or drop-down menus. This lets users access add-ins in a simple, intuitive, and unobtrusive way. Because they offer increased functionality in a seamless manner, you can use add-in commands to create more engaging solutions.
 
 > [!NOTE]
 > Les commandes complémentaires sont disponibles uniquement dans Outlook 2013 ou plus récent sur Windows, Outlook 2016 ou plus récent sur Mac, Outlook sur iOS, Outlook sur Android, Outlook sur le web pour Exchange 2016 ou plus récent, et Outlook sur le web pour Microsoft 365 et Outlook.com.
@@ -24,17 +24,31 @@ Les commandes de complément Outlook permettent d’initier des actions de compl
 >
 > La prise en charge des commandes de complément dans Exchange 2016 nécessite la [mise à jour cumulative 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
-Les commandes de complément sont uniquement disponibles pour les compléments qui n’utilisent pas les règles [ItemHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](activation-rules.md) pour limiter les types d’éléments sur lesquels elles s’activent. Toutefois, les [compléments contextuels](contextual-outlook-add-ins.md) peuvent présenter diverses commandes selon que l’élément actuellement sélectionné est un message ou un rendez-vous, et peuvent apparaître dans des scénarios de lecture ou de composition. L’utilisation des commandes de complément constitue une [meilleure pratique](../concepts/add-in-development-best-practices.md).
+> [!TIP]
+> Si votre complément utilise un manifeste XML, les commandes de complément sont uniquement disponibles pour les compléments qui n’utilisent pas [les règles ItemHasAttachment, ItemHasKnownEntity ou ItemHasRegularExpressionMatch](activation-rules.md) pour limiter les types d’éléments sur lesquels ils s’activent. Toutefois, [les compléments contextuels](contextual-outlook-add-ins.md) peuvent présenter différentes commandes selon que l’élément actuellement sélectionné est un message ou un rendez-vous, et peuvent choisir d’apparaître dans des scénarios de lecture ou de composition. L’utilisation des commandes de complément constitue une [meilleure pratique](../concepts/add-in-development-best-practices.md).
 
-## <a name="create-the-add-in-command"></a>Création d’une commande de complément
+## <a name="create-the-ui-for-the-add-in-command"></a>Créer l’interface utilisateur de la commande de complément
 
-Les commandes de complément sont déclarées dans le manifeste de complément dans l’élément [VersionOverrides](/javascript/api/manifest/versionoverrides). Cet élément est un ajout au schéma de manifeste version 1.1 qui assure la compatibilité descendante. Dans un client qui ne prend pas en charge **\<VersionOverrides\>**, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
+Les commandes de complément sont déclarées dans le manifeste du complément. Le balisage dépend du type de manifeste.
+
+# <a name="xml-manifest"></a>[Manifeste XML](#tab/xmlmanifest)
+
+Les commandes de complément sont déclarées dans [l’élément VersionOverrides](/javascript/api/manifest/versionoverrides). Cet élément est un ajout au schéma de manifeste XML v1.1 qui garantit la compatibilité descendante. Dans un client qui ne prend pas en charge **\<VersionOverrides\>**, les compléments existants continuent à fonctionner comme ils le feraient sans commande de complément.
 
 Les entrées de manifeste **\<VersionOverrides\>** spécifient plusieurs éléments pour le complément, notamment l’application, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
 
-Lorsqu’un complément doit fournir des mises à jour d’état, telles que des indicateurs de progression ou des messages d’erreur, il doit le faire via les [API de notification](/javascript/api/outlook/office.notificationmessages). Le traitement pour les notifications doit également être défini dans un fichier HTML distinct qui est spécifié dans le nœud `FunctionFile` du manifeste.
+When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
 
-Les développeurs doivent définir des icônes pour toutes les tailles requises afin que les commandes de complément s’ajustent parfaitement avec le ruban. Les tailles d’icône requises sont 80 x 80 pixels, 32 x 32 pixels, 16 x 16 pixels pour les versions de bureau et 48 x 48 pixels, 32 x 32 pixels et 25 x 25 pixels pour les versions mobiles.
+# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion du développeur)](#tab/jsonmanifest)
+
+Les commandes de complément sont déclarées avec les propriétés « extensions.runtimes » et « extensions.ribbons ». Ces propriétés spécifient de nombreuses choses pour le complément, telles que l’application, les types de contrôles à ajouter au ruban, le texte, les icônes et toutes les fonctions associées.
+
+Lorsqu’un complément doit fournir des mises à jour d’état, telles que des indicateurs de progression ou des messages d’erreur, il doit le faire à travers les [API de notification](/javascript/api/outlook/office.notificationmessages). Le traitement des notifications doit également être défini dans un fichier HTML distinct spécifié dans la propriété « runtimes.code.page » du manifeste.
+
+---
+### <a name="icons"></a>Icônes
+
+Developers should define icons for all required sizes so that the add-in commands will adjust smoothly along with the ribbon. The required icon sizes are 80 x 80 pixels, 32 x 32 pixels, and 16 x 16 pixels for desktop, and 48 x 48 pixels, 32 x 32 pixels, and 25 x 25 pixels for mobile.
 
 ## <a name="how-do-add-in-commands-appear"></a>Comment les commandes de complément apparaissent-elles ?
 
@@ -46,7 +60,7 @@ Au fur et à mesure du ruban, les commandes de complément s’affichent dans le
 
 ![Boutons de commande des modules complémentaires sur le ruban et dans le menu déroulant.](../images/commands-collapsed.png)
 
-Lorsqu’une commande de complément est ajoutée à un complément, le nom du complément est supprimé de la barre d’application. Seul le bouton de commande du complément dans le ruban est conservé.
+When an add-in command is added to an add-in, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
 ### <a name="modern-outlook-on-the-web"></a>Outlook moderne sur le web
 
@@ -68,7 +82,7 @@ L’interface utilisateur d’une commande de complément se compose d’un bout
 
 ### <a name="run-a-function-command"></a>Exécuter une commande de fonction
 
-Utilisez un bouton de commande de complément qui exécute une fonction JavaScript pour les scénarios dans lesquels l’utilisateur n’a pas besoin d’effectuer de sélections supplémentaires pour lancer l’action. Cela peut être utile, entre autres, pour les actions de suivi, de rappel, d’impression ou de scénario quand l’utilisateur souhaite obtenir des informations supplémentaires d’un service.
+Use an add-in command button that executes a JavaScript function for scenarios where the user doesn't need to make any additional selections to initiate the action. This can be for actions such as track, remind me, or print, or scenarios when the user wants more in-depth information from a service.
 
 Dans les extensions de module, le bouton de commande de complément peut exécuter les fonctions JavaScript qui interagissent avec le contenu de l’interface utilisateur principale.
 
@@ -76,17 +90,17 @@ Dans les extensions de module, le bouton de commande de complément peut exécut
 
 ### <a name="launch-a-task-pane"></a>Lancement d’un volet Office
 
-Utilisez un bouton de commande de complément pour lancer un volet Office pour les scénarios dans lesquels l’utilisateur doit interagir avec un complément pour une durée plus longue. Par exemple, le complément nécessite des modifications de paramètres ou la saisie de données dans de nombreux champs.
+Use an add-in command button to launch a task pane for scenarios where a user needs to interact with an add-in for a longer period of time. For example, the add-in requires changes to settings or the completion of many fields.
 
-La largeur par défaut du volet de tâche vertical est de 320 px. Celui-ci peut être redimensionné à la fois dans l’explorateur Outlook et dans l’inspecteur. Le volet peut redimensionner le volet de tâche et l’affichage Liste de façon identique.
+The default width of the vertical task pane is 320 px. The vertical task pane can be resized in both the Outlook Explorer and inspector. The pane can be resized in the same way the to-do pane and list view resize.
 
 ![Bouton permettant d’ouvrir un volet Office sur le ruban Outlook.](../images/commands-task-pane-button-1.png)
 
 <br/>
 
-Cette capture d’écran montre un exemple de volet Office vertical. Le volet s’ouvre avec le nom de la commande du complément dans le coin supérieur gauche. Les utilisateurs peuvent utiliser le bouton **X** situé dans le coin supérieur droit du volet pour fermer le complément lorsqu’ils ont terminé de l’utiliser. Par défaut, ce volet n’est pas conservé sur plusieurs messages. Les compléments peuvent [prendre en charge l’épinglage](pinnable-taskpane.md) pour le volet Office et recevoir des événements lorsqu’un nouveau message est sélectionné. Tous les éléments d’interface utilisateur affichés dans le volet Office, mis à part le nom et le bouton Fermer, sont fournis par le complément.
+This screenshot shows an example of a vertical task pane. The pane opens with the name of the add-in command in the top left corner. Users can use the **X** button in the upper-right corner of the pane to close the add-in when they are finished using it. By default, this pane will not persist across messages. Add-ins can [support pinning](pinnable-taskpane.md) for the task pane and receive events when a new message is selected. All UI elements rendered in the task pane, aside from the add-in name and the close button, are provided by the add-in.
 
-Si l’utilisateur sélectionne une autre commande de complément qui ouvre un volet Office, le volet est remplacé par la commande qui vient d’être utilisée. Si l’utilisateur sélectionne un bouton de commande de complément qui exécute une fonction ou sur un menu déroulant alors que le volet Office est ouvert, l’action est exécutée et le volet Office reste ouvert.
+If a user chooses another add-in command that opens a task pane, the task pane is replaced with the recently used command. If a user chooses an add-in command button that executes a function, or drop-down menu while the task pane is open, the action will be completed and the task pane will remain open.
 
 ### <a name="drop-down-menu"></a>Menu déroulant
 
@@ -108,11 +122,11 @@ Lorsque l’utilisateur crée un message, les commandes de complément ajoutées
 
 ### <a name="creating-or-viewing-an-appointment-or-meeting-as-the-organizer"></a>Création ou affichage d’un rendez-vous ou d’une réunion en tant qu’organisateur
 
-Lorsque vous créez ou visualisez un rendez-vous ou une réunion en tant qu’organisateur, les commandes de complément ajoutées à l’onglet par défaut apparaissent dans les onglets **Réunion**, **Occurrence de réunion**, **Série de réunions** ou **Rendez-vous** des formulaires contextuels. Toutefois, si l’utilisateur sélectionne un élément dans le calendrier sans ouvrir la fenêtre contextuelle, le groupe Ruban du complément n’apparaît pas sur le ruban.
+When creating or viewing an appointment or meeting as the organizer, add-in commands added to the default tab appear on the **Meeting**, **Meeting Occurrence**, **Meeting Series**, or **Appointment** tabs on pop-out forms. However, if the user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon.
 
 ### <a name="viewing-a-meeting-as-an-attendee"></a>Affichage d’une réunion en tant que participant
 
-Lorsque vous visualisez une réunion en tant que participant, les commandes de complément ajoutées à l’onglet par défaut apparaissent dans les onglets **Réunion**, **Occurrence de réunion** ou **Série de réunions** des formulaires contextuels. Toutefois, si l’utilisateur sélectionne un élément dans le calendrier sans ouvrir la fenêtre contextuelle, le groupe Ruban du complément n’apparaît pas sur le ruban.
+When viewing a meeting as an attendee, add-in commands added to the default tab appear on the **Meeting**, **Meeting Occurrence**, or **Meeting Series** tabs on pop-out forms. However, if a user selects an item in the calendar but doesn't open the pop-out, the add-in's ribbon group won't be visible in the ribbon
 
 ### <a name="using-a-module-extension"></a>Utilisation d’une extension de module
 

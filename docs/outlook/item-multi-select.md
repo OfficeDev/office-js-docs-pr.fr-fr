@@ -4,12 +4,12 @@ description: Découvrez comment activer votre complément Outlook lorsque plusie
 ms.topic: article
 ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 335ee2303bfff9c5a4193e863c626e11133fa8fb
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: 2b77772aa2fc661e4be84c48555e3ddceda224c4
+ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
 ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541285"
+ms.locfileid: "68546437"
 ---
 # <a name="activate-your-outlook-add-in-on-multiple-messages-preview"></a>Activer votre complément Outlook sur plusieurs messages (préversion)
 
@@ -33,7 +33,7 @@ Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour permettre à votre complément de s’activer sur plusieurs messages sélectionnés, vous devez ajouter l’élément enfant [SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect) à l’élément **\<Action\>** et définir sa valeur `true`sur . Étant donné que l’élément multi-sélection prend uniquement en charge les messages pour le moment, la valeur d’attribut de l’élément **\<ExtensionPoint\>** doit être définie `MessageReadCommandSurface` sur ou `MessageComposeCommandSurface`.`xsi:type`
+Pour permettre à votre complément de s’activer sur plusieurs messages sélectionnés, vous devez ajouter l’élément enfant [SupportsMultiSelect](/javascript/api/manifest/action?view=outlook-js-preview&preserve-view=true#supportsmultiselect-preview) à l’élément **\<Action\>** et définir sa valeur `true`sur . Étant donné que l’élément multi-sélection prend uniquement en charge les messages pour le moment, la valeur d’attribut de l’élément **\<ExtensionPoint\>** doit être définie `MessageReadCommandSurface` sur ou `MessageComposeCommandSurface`.`xsi:type`
 
 1. Dans votre éditeur de code préféré, ouvrez le projet de démarrage rapide Outlook que vous avez créé.
 
@@ -163,7 +163,7 @@ Pour alerter votre complément lorsque l’événement `SelectedItemsChanged` se
 
 ## <a name="retrieve-the-subject-line-of-selected-messages"></a>Récupérer la ligne d’objet des messages sélectionnés
 
-Maintenant que vous avez inscrit un gestionnaire d’événements, vous appelez la méthode [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getSelectedItemsAsync-member(1)) pour récupérer la ligne d’objet des messages sélectionnés et les consigner dans le volet Office. La `getSelectedItemsAsync` méthode peut également être utilisée pour obtenir d’autres propriétés de message, telles que l’ID d’élément, le type d’élément (`Message` est le seul type pris en charge pour l’instant) et le mode élément (`Read` ou `Compose`).
+Maintenant que vous avez inscrit un gestionnaire d’événements, vous appelez la méthode [getSelectedItemsAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-getselecteditemsasync-member(1)) pour récupérer la ligne d’objet des messages sélectionnés et les consigner dans le volet Office. La `getSelectedItemsAsync` méthode peut également être utilisée pour obtenir d’autres propriétés de message, telles que l’ID d’élément, le type d’élément (`Message` est le seul type pris en charge pour l’instant) et le mode élément (`Read` ou `Compose`).
 
 1. Dans **taskpane.js**, accédez à la `run` fonction et insérez le code suivant.
 
