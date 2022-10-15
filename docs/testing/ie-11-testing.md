@@ -1,14 +1,14 @@
 ---
 title: Test d’Internet Explorer 11
 description: Testez votre complément Office sur Internet Explorer 11.
-ms.date: 05/01/2022
+ms.date: 10/12/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ab904a3b086990cb9b10e2f266ddacafb4cba94
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 887d71e8e054a39c474ef300aeeb588933499ed8
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423327"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574160"
 ---
 # <a name="test-your-office-add-in-on-internet-explorer-11"></a>Tester votre complément Office sur Internet Explorer 11
 
@@ -47,6 +47,8 @@ Il existe deux façons de changer la vue web d’Internet Explorer. Vous pouvez 
 
 - Votre projet a été développé avec Visual Studio et IIS. Il n’est pas basé sur node.js.
 - Vous voulez être absolument robuste dans vos tests.
+- Vous ne pouvez pas utiliser le canal bêta pour Microsoft 365 sur votre ordinateur de développement.
+- Vous développez sur un Mac. 
 - Si, pour une raison quelconque, l’outil en ligne de commande ne fonctionne pas.
 
 ### <a name="switch-via-the-command-line"></a>Basculer via la ligne de commande
