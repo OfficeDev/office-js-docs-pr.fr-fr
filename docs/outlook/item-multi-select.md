@@ -4,12 +4,12 @@ description: Découvrez comment activer votre complément Outlook lorsque plusie
 ms.topic: article
 ms.date: 10/10/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b77772aa2fc661e4be84c48555e3ddceda224c4
-ms.sourcegitcommit: 787fbe4d4a5462ff6679ad7fd00748bf07391610
+ms.openlocfilehash: 9d81d698facfc4535b3945d8cee4c97492fc8a88
+ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68546437"
+ms.lasthandoff: 10/14/2022
+ms.locfileid: "68574143"
 ---
 # <a name="activate-your-outlook-add-in-on-multiple-messages-preview"></a>Activer votre complément Outlook sur plusieurs messages (préversion)
 
@@ -21,7 +21,7 @@ Les sections suivantes expliquent comment configurer votre complément pour réc
 > La fonctionnalité de sélection multiple de l’élément est disponible uniquement en préversion avec un abonnement Microsoft 365 dans Outlook sur Windows. Les fonctionnalités en préversion ne doivent pas être utilisées dans les compléments de production. Nous vous invitons à tester cette fonctionnalité dans des environnements de test ou de développement et à recevoir des commentaires sur votre expérience via GitHub (voir la section **Commentaires** à la fin de cette page).
 
 > [!NOTE]
-> La fonctionnalité multi-sélection d’élément n’est actuellement pas prise en charge dans le [manifeste Teams (préversion),](../develop/json-manifest-overview.md) mais l’équipe de fonctionnalités s’efforce de rendre cette fonctionnalité disponible.
+> La fonctionnalité de sélection multiple de l’élément n’est pas prise en charge dans le [manifeste Teams (préversion),](../develop/json-manifest-overview.md) mais l’équipe travaille à la rendre disponible.
 
 ## <a name="prerequisites-to-preview-item-multi-select"></a>Prérequis pour afficher un aperçu de l’élément à sélection multiple
 
