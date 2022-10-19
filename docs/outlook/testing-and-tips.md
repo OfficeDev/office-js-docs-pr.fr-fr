@@ -1,14 +1,14 @@
 ---
 title: Déployer et installer des compléments Outlook à des fins de test
 description: Créez un fichier manifeste, déployez le fichier IU de complément, installez le complément dans votre boîte aux lettres, puis testez-le.
-ms.date: 07/08/2021
+ms.date: 10/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b627dbf4b32daee4327cb139db58a56c4a704580
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
-ms.translationtype: HT
+ms.openlocfilehash: 1b6d29fa85b855adbf75a33345850582d2eecc02
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496879"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607519"
 ---
 # <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Déployer et installer des compléments Outlook à des fins de test
 
@@ -24,11 +24,11 @@ Dans le cadre du processus de développement d’un complément Outlook, vous se
 
 ## <a name="create-a-manifest-file-for-the-add-in"></a>Création d’un fichier manifeste pour le complément
 
-Chaque complément est décrit par un manifeste XML, un document qui fournit au serveur des informations sur le complément, fournit des informations descriptives sur le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier ou un serveur local, tant que l’emplacement est accessible par le serveur Exchange de la boîte aux lettres que vous testez. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, consultez [manifestes de complément Outlook](manifests.md).
+Chaque complément est décrit par un manifeste, un document qui fournit au serveur des informations sur le complément, fournit des informations descriptives sur le complément pour l’utilisateur et identifie l’emplacement du fichier HTML de l’interface utilisateur du complément. Vous pouvez stocker le manifeste dans un dossier ou un serveur local, tant que l’emplacement est accessible par le serveur Exchange de la boîte aux lettres que vous testez. Nous partons du principe que vous stockez votre manifeste dans un dossier local. Pour plus d’informations sur la création d’un fichier manifeste, voir [Manifestes des compléments Outlook](manifests.md).
 
 ## <a name="deploy-an-add-in-to-a-web-server"></a>Déploiement d’un complément sur un serveur web
 
-Vous pouvez utiliser du code HTML et JavaScript pour créer le complément. Les fichiers source obtenus sont stockés sur un serveur web accessible par le biais du serveur Exchange qui héberge le complément. Après le déploiement initial des fichiers source pour le complément, vous pouvez mettre à jour l’interface utilisateur et le comportement du complément en remplaçant les fichiers HTML ou JavaScript stocké sur le serveur web par une nouvelle version du fichier HTML.
+You can use HTML and JavaScript to create the add-in. The resulting source files are stored on a web server that can be accessed by the Exchange server that hosts the add-in. After initially deploying the source files for the add-in, you can update the add-in UI and behavior by replacing the HTML files or JavaScript files stored on the web server with a new version of the HTML file.
 
 ## <a name="install-the-add-in"></a>Installer le complément
 
@@ -36,9 +36,9 @@ Après la préparation du fichier manifeste du complément et le déploiement de
 
 ### <a name="sideload-the-add-in"></a>Charger une version test du complément
 
-Vous pouvez installer un complément si votre boîte aux lettres est sur Exchange Online, Exchange 2013 ou une version ultérieure. Les compléments de chargement de version test nécessitent au minimum le rôle **Mes compléments personnalisés** pour votre serveur Exchange. Pour tester votre complément ou installer des compléments en général en spécifiant une URL ou un nom de fichier pour le manifeste de complément, vous devez demander à votre administrateur Exchange de vous octroyer les autorisations nécessaires.
+You can install an add-in if your mailbox is on Exchange Online, Exchange 2013 or a later release. Sideloading add-ins requires at minimum the **My Custom Apps** role for your Exchange Server. In order to test your add-in, or install add-ins in general by specifying a URL or file name for the add-in manifest, you should request your Exchange administrator to provide the necessary permissions.
 
-L’administrateur Exchange peut exécuter la cmdlet PowerShell suivante pour affecter les autorisations nécessaires à un seul utilisateur. Dans cet exemple, `wendyri` est l’alias de messagerie de l’utilisateur.
+The Exchange administrator can run the following PowerShell cmdlet to assign a single user the necessary permissions. In this example, `wendyri` is the user's email alias.
 
 ```powershell
 New-ManagementRoleAssignment -Role "My Custom Apps" -User "wendyri"
@@ -74,9 +74,9 @@ Utilisez les applets de commande PowerShell supplémentaires suivantes pour gér
 
 Le choix des versions du client Outlook à tester dépend de vos besoins en matière de développement.
 
-- Si vous développez un complément pour une utilisation privée ou uniquement pour les membres de votre organisation, il est important de tester les versions d’Outlook utilisées par votre entreprise. N’oubliez pas que certains utilisateurs peuvent utiliser Outlook sur le web. Il est donc également important de tester les versions de navigateur standard de votre entreprise.
+- If you're developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
-- Si vous développez un complément pour [AppSource](https://appsource.microsoft.com), vous devez tester les versions requises tel que spécifié dans les [Stratégies de certification de la Place de marché commerciale 1120.3](/legal/marketplace/certification-policies#11203-functionality). Cela inclut notamment :
+- If you're developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
   - la dernière et avant-dernière version d’Outlook sur Windows ;
   - la dernière version d’Outlook sur Mac ;
   - la dernière version d’Outlook sur iOS et Android (si votre complément [prend en charge le facteur de forme pour mobile](add-mobile-support.md)) ;
@@ -91,7 +91,7 @@ Les utilisateurs de comptes consommateurs et de Microsoft 365 voient la version 
 
 Pour atténuer ce problème, nous vous recommandons de tester votre module d'extension dans Outlook sur le web, connecté à votre propre environnement Exchange privé sur site. Pour plus d'informations, voir les conseils sur la façon d´[Établir un environnement d'essai pour Exchange 2016 ou Exchange 2019](/Exchange/plan-and-deploy/plan-and-deploy?view=exchserver-2019&preserve-view=true#establish-an-exchange-2016-or-exchange-2019-test-environment) et comment gérer [Outlook on the web in Exchange Server](/exchange/clients/outlook-on-the-web/outlook-on-the-web?view=exchserver-2019&preserve-view=true).
 
-Autrement, vous pouvez également choisir de payer et d'utiliser un service qui héberge et gère sur son site des serveurs Exchange. Voici quelques options:
+Vous pouvez également choisir de payer et d'utiliser un service qui héberge et gère des serveurs Exchange sur place. Il existe plusieurs options :
 
 - [Rackspace](https://www.rackspace.com/email-hosting/exchange-server)
 - [Hostway](https://hostway.com/microsoft-exchange/)

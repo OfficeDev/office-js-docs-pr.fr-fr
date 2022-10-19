@@ -1,14 +1,14 @@
 ---
 title: Ajout d’une prise en charge mobile pour un complément Outlook
 description: Découvrez comment ajouter la prise en charge d’Outlook Mobile, notamment comment mettre à jour le manifeste du complément et modifier votre code pour les scénarios mobiles, si nécessaire.
-ms.date: 04/15/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 50f1613e83d9b23178714cfb3da8110a4c561b05
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: c84b4aeb04cd2c8b3c2f0a7afa9fd1631c22afc5
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318878"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607542"
 ---
 # <a name="add-support-for-add-in-commands-for-outlook-mobile"></a>Ajouter la prise en charge des commandes de complément pour Outlook Mobile
 
@@ -16,9 +16,11 @@ L’utilisation de commandes de complément dans Outlook Mobile permet à vos ut
 
 ## <a name="updating-the-manifest"></a>Mise à jour du manifeste
 
-La première étape de l’activation des commandes de complément dans Outlook Mobile est de les définir dans le manifeste du complément. Le schéma [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 définit un nouveau facteur de forme pour les versions mobiles, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
-Cet élément contient toutes les informations pour charger le complément dans des clients mobiles. Cela vous permet de définir entièrement différents éléments de l’interface utilisateur et fichiers JavaScript pour l’expérience mobile.
+The first step to enabling add-in commands in Outlook Mobile is to define them in the add-in manifest. The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+
+This element contains all of the information for loading the add-in in mobile clients. This enables you to define completely different UI elements and JavaScript files for the mobile experience.
 
 L’exemple suivant montre un bouton de volet Office unique dans un `MobileFormFactor` élément.
 
@@ -59,10 +61,10 @@ L’exemple suivant montre un bouton de volet Office unique dans un `MobileFormF
 Cet exemple est semblable aux éléments qui apparaissent dans un élément [DesktopFormFactor](/javascript/api/manifest/desktopformfactor), avec toutefois quelques différences importantes.
 
 - L’élément [OfficeTab](/javascript/api/manifest/officetab) n’est pas utilisé.
-- L’élément [ExtensionPoint](/javascript/api/manifest/extensionpoint) doit avoir un seul élément enfant. Si le complément ajoute uniquement un bouton, l’élément enfant doit être un élément [Control](/javascript/api/manifest/control). Si le complément ajoute plusieurs boutons, l’élément enfant doit être un élément [Group](/javascript/api/manifest/group) qui contient plusieurs éléments `Control`.
+- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If the add-in only adds one button, the child element should be a [Control](/javascript/api/manifest/control) element. If the add-in adds more than one button, the child element should be a [Group](/javascript/api/manifest/group) element that contains multiple `Control` elements.
 - Il n’existe aucun équivalent de type `Menu` pour l’élément `Control`.
 - L’élément [Supertip](/javascript/api/manifest/supertip) n’est pas utilisé.
-- Les tailles d’icône requises sont différentes. Au minimum, les compléments mobiles doivent prendre en charge les icônes 25 x 25, 32 x 32 et 48 x 48 pixels.
+- The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons.
 
 ## <a name="code-considerations"></a>Éléments à prendre en compte pour le code
 
@@ -70,17 +72,17 @@ La conception d’un complément pour mobile implique certaines considérations 
 
 ### <a name="use-rest-instead-of-exchange-web-services"></a>Utiliser REST plutôt que les services web Exchange
 
-La méthode [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) n’est pas prise en charge dans Outlook Mobile. Les compléments doivent privilégier l’obtention d’informations auprès de l’API Office.js lorsque cela est possible. Si les compléments requièrent des informations non exposées par l’API Office.js, ils doivent utiliser les [API REST Outlook](/outlook/rest/) pour accéder à la boîte aux lettres de l’utilisateur.
+The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method is not supported in Outlook Mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](/outlook/rest/) to access the user's mailbox.
 
 L’ensemble de conditions requises de boîte aux lettres 1.5 a introduit une nouvelle version [d’Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) qui peut demander un jeton d’accès compatible avec les API REST et une nouvelle propriété [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) qui peut être utilisée pour rechercher le point de terminaison de l’API REST pour l’utilisateur.
 
 ### <a name="pinch-zoom"></a>Pincer pour zoomer
 
-Par défaut les utilisateurs peuvent utiliser le mouvement pincer pour zoomer sur les volets Office. Si ce mouvement n’est pas pertinent pour votre scénario, veillez à désactiver la fonction « pincer pour zoomer » dans votre code HTML.
+By default users can use the "pinch zoom" gesture to zoom in on task panes. If this does not make sense for your scenario, be sure to disable pinch zoom in your HTML.
 
 ### <a name="close-task-panes"></a>Fermeture des volets Office
 
-Dans Outlook Mobile, les volets Office occupent la totalité de l’écran et exigent par défaut que l’utilisateur les ferme pour revenir au message. Envisagez d’utiliser la méthode [Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) pour fermer le volet Office lorsque votre scénario est terminé.
+In Outlook Mobile, task panes take up the entire screen and by default require the user to close them to return to the message. Consider using the [Office.context.ui.closeContainer](/javascript/api/office/office.ui#office-office-ui-closecontainer-member(1)) method to close the task pane when your scenario is complete.
 
 ### <a name="compose-mode-and-appointments"></a>Mode composition et rendez-vous
 

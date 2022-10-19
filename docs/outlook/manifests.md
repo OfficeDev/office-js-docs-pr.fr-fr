@@ -1,18 +1,22 @@
 ---
 title: Manifestes des compléments Outlook
-description: Le manifeste décrit l’intégration d’un complément Outlook avec les clients Outlook et comprend un exemple.
-ms.date: 05/27/2020
+description: Obtenez une vue d’ensemble des deux types de manifestes disponibles pour les compléments Outlook.
+ms.date: 10/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c09c483519e4d5cd0dce7dda840130698820b6ee
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: a22b5180fee6b4f9f0663eff54b57510016202a2
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68466977"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607554"
 ---
 # <a name="outlook-add-in-manifests"></a>Manifestes des compléments Outlook
 
-An Outlook add-in consists of two components: the XML add-in manifest and a web page supported by the JavaScript library for Office Add-ins (office.js). The manifest describes how the add-in integrates across Outlook clients. The following is an example.
+Un complément Outlook se compose de deux composants : le manifeste du complément et une application web prise en charge par la bibliothèque JavaScript pour les compléments Office (office.js). Le manifeste décrit la manière dont le complément est intégré dans les clients Outlook.
+
+Il existe deux formats possibles pour le manifeste : XML et JSON. Vous pouvez en savoir plus sur le manifeste JSON dans le [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md) Cet article traite du manifeste XML.
+
+Voici un exemple de manifeste XML.
 
  > [!NOTE]
  > All URL values in the following sample begin with "https://appdemo.contoso.com". This value is a placeholder. In an actual valid manifest, these values would contain valid https web URLs.
@@ -418,7 +422,6 @@ Les règles d’activation peuvent être utilisées pour activer un complément 
 - L’existence d’une pièce jointe
 
 Pour plus de détails et des exemples de règles d’activation, voir [Règles d’activation pour les compléments Outlook](activation-rules.md).
-
 
 ## <a name="next-steps-add-in-commands"></a>Prochaines étapes : commandes de complément
 

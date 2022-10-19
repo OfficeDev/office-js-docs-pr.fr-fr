@@ -1,14 +1,14 @@
 ---
 title: Options d’authentification dans les compléments Outlook
 description: Les compléments Outlook offrent différentes méthodes qui permettent de s’authentifier en fonction de votre scénario.
-ms.date: 09/03/2021
+ms.date: 10/17/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 17ab09a1f0cdbf7668fa80080e587dd3d800f2c6
-ms.sourcegitcommit: b6a3815a1ad17f3522ca35247a3fd5d7105e174e
-ms.translationtype: HT
+ms.openlocfilehash: d8ae8971c4095e5314885514226cd8f52728fb07
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/22/2022
-ms.locfileid: "66958361"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607526"
 ---
 # <a name="authentication-options-in-outlook-add-ins"></a>Options d’authentification dans les compléments Outlook
 
@@ -19,7 +19,8 @@ Votre complément Outlook peut accéder à des informations à partir de n’imp
 Les jetons d’accès à authentification unique permettent à votre complément de s’authentifier en toute transparence et d’obtenir des jetons d’accès pour appeler l’[API Microsoft Graph](/graph/overview). Cette fonctionnalité réduit la friction étant donné que l’utilisateur n’a pas besoin de saisir ses informations d’identification.
 
 > [!NOTE]
-> L’API d’authentification unique est actuellement prise en charge pour Word, Excel, Outlook et PowerPoint. Pour plus d’informations sur l’emplacement où l’API d’authentification unique est actuellement prise en charge, consultez [ensembles de conditions requises IdentityAPI](/javascript/api/requirement-sets/common/identity-api-requirement-sets). Si vous utilisez un complément Outlook, veillez à activer l’authentification moderne pour la location Microsoft 365. Pour plus d’informations sur la procédure à suivre, consultez [Exchange Online : comment activer votre locataire pour l’authentification moderne](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
+> The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+> If you are working with an Outlook add-in, be sure to enable Modern Authentication for the Microsoft 365 tenancy. For information about how to do this, see [Exchange Online: How to enable your tenant for modern authentication](https://social.technet.microsoft.com/wiki/contents/articles/32711.exchange-online-how-to-enable-your-tenant-for-modern-authentication.aspx).
 
 Vous pouvez utiliser des jetons d’accès d’authentification unique si votre complément :
 
@@ -29,6 +30,9 @@ Vous pouvez utiliser des jetons d’accès d’authentification unique si votre 
   - Service non-Microsoft que vous contrôlez.
 
 La méthode d’authentification unique utilise le flux [OAuth2 De la part de fourni par Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). Cela nécessite l’enregistrement du complément dans le [portail d’inscription des applications](https://apps.dev.microsoft.com/) et la spécification de toute étendue Microsoft Graph requise dans son manifeste.
+
+> [!NOTE]
+> Si le complément utilise le [manifeste Teams pour les compléments Office (préversion),](../develop/json-manifest-overview.md) il existe une configuration de manifeste, mais les étendues Microsoft Graph ne sont pas spécifiées. Les compléments prenant en charge l’authentification unique qui utilisent le manifeste Teams peuvent être chargés de manière indépendante, mais ne peuvent pas être déployés d’une autre manière pour l’instant.
 
 Grâce à cette méthode, votre complément peut obtenir un jeton d’accès inclus dans l’API principale de votre serveur. Le complément l’utilise comme un jeton du porteur dans l’en-tête `Authorization` pour authentifier un rappel de votre API. À ce stade, votre serveur peut :
 
@@ -61,7 +65,7 @@ Grâce à cette méthode, votre module complémentaire invite l'utilisateur à s
 
 ## <a name="callback-tokens"></a>Jetons de rappel
 
-Les jetons de rappel fournissent l’accès à la boîte aux lettres de l’utilisateur à partir de votre serveur principal, à l’aide des [Services web Exchange (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange) ou de l’[API REST Outlook](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Envisagez d’utiliser des jetons de rappel si votre complément :
+Callback tokens provide access to the user's mailbox from your server back-end, either using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange), or the [Outlook REST API](/previous-versions/office/office-365-api/api/version-2.0/use-outlook-rest-api). Consider using callback tokens if your add-in:
 
 - Doit accéder à la boîte aux lettres de l’utilisateur à partir de votre serveur principal.
 

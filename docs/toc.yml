@@ -364,6 +364,8 @@ items:
             href: /legal/marketplace/certification-policies
           - name: Publier des compléments dans un catalogue d’applications SharePoint
             href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
+          - name: Conseils pour le déploiement sur des clouds gouvernementaux
+            href: publish/government-cloud-guidance.md
           - name: Maintenir votre complément Office
             href: publish/maintain-breaking-changes.md
   - name: Excel

@@ -2,14 +2,14 @@
 title: Créer un complément Outlook pour un fournisseur de réunions en ligne
 description: Explique comment configurer un complément Outlook pour un fournisseur de services de réunion en ligne.
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: e1775d8cf8cc45887dfb1058603c103583d5e5dc
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: f422107d69dd3cdcc9a01feaee0b97dcd7e5e1f3
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320657"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607575"
 ---
 # <a name="create-an-outlook-add-in-for-an-online-meeting-provider"></a>Créer un complément Outlook pour un fournisseur de réunions en ligne
 
@@ -24,9 +24,22 @@ Dans cet article, vous allez apprendre à configurer votre complément Outlook p
 
 Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
 
+> [!NOTE]
+> Si vous souhaitez utiliser le [manifeste Teams pour les compléments Office (préversion),](../develop/json-manifest-overview.md) **suivez** le guide de démarrage rapide [d’Outlook avec un manifeste Teams (préversion),](../quickstarts/outlook-quickstart-json-manifest.md) mais ignorez toutes les sections après la section Essayer.
+
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
-Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer le **\<VersionOverrides\>** nœud dans le manifeste. Si vous créez un complément qui ne sera pris en charge que dans Outlook sur le web, Windows et Mac, sélectionnez l’onglet **Windows, Mac et web** pour obtenir des conseils. Toutefois, si votre complément est également pris en charge dans Outlook sur Android et iOS, sélectionnez l’onglet **Mobile** .
+Pour permettre aux utilisateurs de créer des réunions en ligne avec votre complément, vous devez configurer le manifeste. Le balisage diffère en fonction de deux variables :
+
+- Type de plateforme cible ; mobile ou non mobile.
+- Type de manifeste ; Manifeste XML ou [Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md)
+
+Si votre complément utilise un manifeste XML et que le complément est pris en charge uniquement dans Outlook sur le web, Windows et Mac, sélectionnez l’onglet **Windows, Mac et web** pour obtenir des conseils. Toutefois, si votre complément est également pris en charge dans Outlook sur Android et iOS, sélectionnez l’onglet **Mobile** .
+
+Si le complément utilise le manifeste Teams (préversion), sélectionnez l’onglet **Manifeste Teams (préversion du développeur** ).
+
+> [!NOTE]
+> Le manifeste Teams (préversion) est actuellement pris en charge uniquement dans Outlook sur Windows. Nous nous efforçons de prendre en charge d’autres plateformes, y compris les plateformes mobiles.
 
 # <a name="windows-mac-web"></a>[Windows, Mac, web](#tab/non-mobile)
 
@@ -194,6 +207,137 @@ Pour permettre aux utilisateurs de créer une réunion en ligne à partir de leu
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion du développeur)](#tab/jsonmanifest)
+
+1. Ouvrez le fichier **manifest.json** .
+
+1. Recherchez le *premier* objet dans le tableau « authorization.permissions.resourceSpecific » et définissez sa propriété « name » sur « MailboxItem.ReadWrite.User ». Il devrait ressembler à ceci quand vous avez terminé.
+
+    ```json
+    {
+        "name": "MailboxItem.ReadWrite.User",
+        "type": "Delegated"
+    }
+    ```
+
+1. Dans le tableau « validDomains », remplacez l’URL par « »,https://contoso.com qui est l’URL du fournisseur de réunion en ligne fictif. Le tableau doit ressembler à ceci lorsque vous avez terminé.
+
+    ```json
+    "validDomains": [
+        "https://contoso.com"
+    ],
+    ```
+
+1. Ajoutez l’objet suivant au tableau « extensions.runtimes ». Notez ce qui suit à propos de ce code.
+
+   - La valeur « minVersion » de l’ensemble de conditions requises de boîte aux lettres est définie sur « 1.3 » afin que le runtime ne soit pas lancé sur les plateformes et les versions d’Office où cette fonctionnalité n’est pas prise en charge.
+   - L'« ID » du runtime est défini sur le nom descriptif « online_meeting_runtime ».
+   - La propriété « code.page » est définie sur l’URL du fichier HTML sans interface utilisateur qui chargera la commande de fonction.
+   - La propriété « lifetime » est définie sur « short », ce qui signifie que le runtime démarre lorsque le bouton de commande de fonction est sélectionné et s’arrête une fois la fonction terminée. (Dans certains cas rares, le runtime s’arrête avant la fin du gestionnaire. Voir [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - Il existe une action pour exécuter une fonction nommée « insertContosoMeeting ». Vous allez créer cette fonction dans une étape ultérieure.
+
+    ```json
+    {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "id": "online_meeting_runtime",
+        "type": "general",
+        "code": {
+            "page": "https://contoso.com/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": "insertContosoMeeting",
+                "type": "executeFunction",
+                "displayName": "insertContosoMeeting"
+            }
+        ]
+    }
+    ```
+
+1. Remplacez le tableau « extensions.ribbons » par ce qui suit. Notez les points suivants concernant ce balisage.
+
+   - La valeur « minVersion » de l’ensemble de conditions requises de boîte aux lettres est définie sur « 1.3 » afin que les personnalisations du ruban n’apparaissent pas sur les plateformes et les versions d’Office où cette fonctionnalité n’est pas prise en charge.
+   - Le tableau « contexts » spécifie que le ruban est disponible uniquement dans la fenêtre d’organisateur des détails de la réunion.
+   - Il y aura un groupe de contrôle personnalisé sous l’onglet du ruban par défaut (de la fenêtre d’organisateur des détails de la réunion) étiqueté **réunion Contoso**.
+   - Le groupe aura un bouton intitulé **Ajouter une réunion Contoso**.
+   - L’actionId du bouton a été définie sur « insertContosoMeeting », qui correspond à l'« ID » de l’action que vous avez créée à l’étape précédente.
+
+    ```json
+    "ribbons": [
+      {
+        "requirements": {
+            "capabilities": [
+                {
+                    "name": "Mailbox",
+                    "minVersion": "1.3"
+                }
+            ],
+            "scopes": [
+                "mail"
+            ],
+            "formFactors": [
+                "desktop"
+            ]
+        },
+        "contexts": [
+            "meetingDetailsOrganizer"
+        ],
+        "tabs": [
+            {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                    {
+                        "id": "apptComposeGroup",
+                        "label": "Contoso meeting",
+                        "controls": [
+                            {
+                                "id": "insertMeetingButton",
+                                "type": "button",
+                                "label": "Add a Contoso meeting",
+                                "icons": [
+                                    {
+                                        "size": 16,
+                                        "file": "icon-16.png"
+                                    },
+                                    {
+                                        "size": 32,
+                                        "file": "icon-32.png"
+                                    },
+                                    {
+                                        "size": 64,
+                                        "file": "icon-64_02.png"
+                                    },
+                                    {
+                                        "size": 80,
+                                        "file": "icon-80.png"
+                                    }
+                                ],
+                                "supertip": {
+                                    "title": "Add a Contoso meeting",
+                                    "description": "Add a Contoso meeting to this appointment."
+                                },
+                                "actionId": "insertContosoMeeting",
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+      }
+    ]
+    ```
 
 ---
 

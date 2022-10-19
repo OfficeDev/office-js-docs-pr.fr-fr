@@ -1,18 +1,18 @@
 ---
 title: Compléments Outlook pour Outlook Mobile
 description: Les compléments mobiles Outlook sont pris en charge sur tous les comptes d’entreprise Microsoft 365 et les comptes Outlook.com.
-ms.date: 04/15/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: dfa314ad91646e2ed4de47cae1bcbb8cfb1f121a
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: ca09ba550d8d2ed6e9003e85a8d042f413a6ab52
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67318801"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607561"
 ---
 # <a name="add-ins-for-outlook-mobile"></a>Compléments pour Outlook Mobile
 
-Les compléments fonctionnent désormais sur Outlook Mobile, avec les mêmes API que celles disponibles pour d’autres points de terminaison Outlook. Si vous avez déjà créé un complément pour Outlook, il est facile de le faire fonctionner sur Outlook Mobile.
+Add-ins now work on Outlook Mobile, using the same APIs available for other Outlook endpoints. If you've built an add-in for Outlook already, it's easy to get it working on Outlook Mobile.
 
 Les compléments mobiles Outlook sont pris en charge sur tous les comptes d’entreprise Microsoft 365 et les comptes Outlook.com. Toutefois, la prise en charge n’est actuellement pas disponible sur les comptes Gmail.
 
@@ -28,15 +28,17 @@ Les compléments mobiles Outlook sont pris en charge sur tous les comptes d’en
 
 ## <a name="whats-different-on-mobile"></a>Qu’est-ce qui est différent sur mobile ?
 
-- La taille réduite et la rapidité des interactions compliquent la conception pour les environnements mobiles. Pour garantir la qualité des expériences pour nos clients, nous définissons des critères de validation stricts qui doivent être respectés par un complément qui déclare prendre en charge les environnements mobiles pour être approuvé dans AppSource.
+- The small size and quick interactions make designing for mobile a challenge. To ensure quality experiences for our customers, we are setting strict validation criteria that must be met by an add-in declaring mobile support, in order to be approved in AppSource.
   - Le complément **DOIT** respecter les [instructions concernant l’interface utilisateur](outlook-addin-design.md).
   - Le scénario du complément **DOIT** [être pertinent sur mobile](#what-makes-a-good-scenario-for-mobile-add-ins).
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 - En général, seul le mode lecture des messages est pris en charge pour l’instant. Cela signifie qu’il `MobileMessageReadCommandSurface` s’agit du seul [Point d’extension](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) que vous devez déclarer dans la section mobile de votre manifeste. Toutefois, il existe quelques exceptions :
   1. Le mode Organisateur de rendez-vous est pris en charge pour les compléments intégrés du fournisseur de réunion en ligne qui déclarent à la place le [point d’extension MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface). Pour plus d’informations sur ce scénario, consultez l’article [Créer un complément mobile Outlook pour un fournisseur de réunions en ligne](online-meeting.md) .
   1. Le mode Participant au rendez-vous est pris en charge pour les compléments intégrés créés par les fournisseurs d’applications CRM (Customer Relationship Management). Ces compléments doivent à la place déclarer le [point d’extension MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee). Pour plus d’informations sur ce scénario, consultez les [notes de rendez-vous du journal d’une application externe dans les compléments mobiles Outlook](mobile-log-appointments.md) .
 
-- L’API [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) n’est pas prise en charge sur mobile dans la mesure où l’application mobile utilise les API REST pour communiquer avec le serveur. Si le serveur principal de votre application doit se connecter au serveur Exchange, vous pouvez utiliser le jeton de rappel pour émettre des appels d’API REST. Pour plus d’informations, voir [Utilisation des API REST Outlook à partir d’un complément Outlook](use-rest-api.md).
+- The [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API is not supported on mobile since the mobile app uses REST APIs to communicate with the server. If your app backend needs to connect to the Exchange server, you can use the callback token to make REST API calls. For details, see [Use the Outlook REST APIs from an Outlook add-in](use-rest-api.md).
 
 - Lorsque vous soumettez votre complément dans le magasin avec l’élément [MobileFormFactor](/javascript/api/manifest/mobileformfactor) dans le manifeste, vous devez accepter notre addendum pour les développeurs de compléments sur iOS, et envoyer votre ID de développeur Apple pour vérification.
 
@@ -44,13 +46,13 @@ Les compléments mobiles Outlook sont pris en charge sur tous les comptes d’en
 
 ## <a name="what-makes-a-good-scenario-for-mobile-add-ins"></a>Qu’est-ce qu’un bon scénario pour les compléments mobiles ?
 
-N’oubliez pas que la durée moyenne d’une session Outlook sur un téléphone est beaucoup plus courte que sur un PC. Cela signifie que votre complément doit être rapide et que le scénario doit permettre à l’utilisateur d’accéder à votre complément, d’en sortir et de traiter ses messages.
+Remember that the average Outlook session length on a phone is much shorter than on a PC. That means your add-in must be fast, and the scenario must allow the user to get in, get out, and get on with their email workflow.
 
 Voici quelques exemples de scénarios pertinents dans Outlook Mobile.
 
-- Le complément apporte des informations précieuses dans Outlook et aide les utilisateurs à trier leurs messages et à y répondre correctement. Exemple : un complément CRM qui permet à l’utilisateur de voir les informations client et de partager des informations appropriées.
+- The add-in brings valuable information into Outlook, helping users triage their email and respond appropriately. Example: a CRM add-in that lets the user see customer information and share appropriate information.
 
-- Le complément apporte de la valeur ajoutée au contenu des messages de l’utilisateur en enregistrant les informations dans un système de suivi, de collaboration ou de type similaire. Exemple : un complément qui permet aux utilisateurs de transformer les messages électroniques en tâches afin de suivre des projets ou en demandes d’aide pour une équipe de support technique.
+- The add-in adds value to the user's email content by saving the information to a tracking, collaboration, or similar system. Example: an add-in that lets users turn emails into task items for project tracking, or help tickets for a support team.
 
 **Exemple d’interaction utilisateur pour créer une carte Trello à partir d’un message électronique sur iOS**
 
@@ -66,7 +68,7 @@ Voici quelques exemples de scénarios pertinents dans Outlook Mobile.
 
 Pour tester un complément sur Outlook Mobile, [commencez par charger un complément](sideload-outlook-add-ins-for-testing.md) sur un compte Microsoft 365 ou Outlook.com sur le web, Windows ou Mac. Assurez-vous que votre manifeste est correctement mis en forme pour contenir `MobileFormFactor` ou qu’il ne se charge pas dans votre client Outlook sur mobile.
 
-Une fois que votre complément fonctionne, testez-le sur différentes tailles d’écran, y compris sur des téléphones et des tablettes. Vous devez vous assurer qu’il respecte les instructions d’accessibilité en matière de contraste, de taille de police et de couleur, et qu’il peut être utilisé avec un lecteur d’écran comme VoiceOver sur iOS ou TalkBack sur Android.
+After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
 
 La résolution des problèmes sur les appareils mobiles peut être difficile, car vous n’avez peut-être pas les outils auxquels vous êtes habitué. Toutefois, une option de résolution des problèmes sur iOS consiste à utiliser Fiddler (consultez [ce tutoriel sur son utilisation avec un appareil iOS](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 

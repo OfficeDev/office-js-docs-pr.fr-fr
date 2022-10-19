@@ -2,14 +2,14 @@
 title: Consigner les notes de rendez-vous dans une application externe dans les compléments mobiles Outlook
 description: Découvrez comment configurer un complément mobile Outlook pour consigner les notes de rendez-vous et d’autres détails dans une application externe.
 ms.topic: article
-ms.date: 08/11/2022
+ms.date: 10/17/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 310585d821f12bfd400b7b1eaf780ab756bf5a3f
-ms.sourcegitcommit: 57258dd38507f791bbb39cbb01d6bbd5a9d226b9
+ms.openlocfilehash: a980b68c603154c42112f525ec6285b740ce38a5
+ms.sourcegitcommit: eca6c16d0bb74bed2d35a21723dd98c6b41ef507
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/12/2022
-ms.locfileid: "67320679"
+ms.lasthandoff: 10/18/2022
+ms.locfileid: "68607582"
 ---
 # <a name="log-appointment-notes-to-an-external-application-in-outlook-mobile-add-ins"></a>Consigner les notes de rendez-vous dans une application externe dans les compléments mobiles Outlook
 
@@ -35,6 +35,8 @@ Cette option permet à un utilisateur de journaliser et d’afficher ses notes e
 ### <a name="configure-the-manifest"></a>Configurer le manifeste
 
 Pour permettre aux utilisateurs de consigner les notes de rendez-vous avec votre complément, vous devez configurer le [point d’extension MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) dans le manifeste sous l’élément `MobileFormFactor`parent. D’autres facteurs de forme ne sont pas pris en charge.
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
@@ -284,6 +286,8 @@ Cette option permet à un utilisateur de journaliser et d’afficher ses notes e
 ### <a name="configure-the-manifest"></a>Configurer le manifeste
 
 Pour permettre aux utilisateurs de consigner les notes de rendez-vous avec votre complément, vous devez configurer le [point d’extension MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) dans le manifeste sous l’élément `MobileFormFactor`parent. D’autres facteurs de forme ne sont pas pris en charge.
+
+[!INCLUDE [Teams manifest not supported on mobile devices](../includes/no-mobile-with-json-note.md)]
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 

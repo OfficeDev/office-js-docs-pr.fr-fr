@@ -1,0 +1,2 @@
+> [!NOTE]
+> Les compléments utilisant le [manifeste Teams pour les compléments Office (préversion)](../develop/json-manifest-overview.md) ne sont actuellement pas pris en charge sur les appareils mobiles.
