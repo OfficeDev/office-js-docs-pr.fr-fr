@@ -1,29 +1,26 @@
 ---
-title: Implémenter append-on-send dans votre complément Outlook
-description: Découvrez comment implémenter la fonctionnalité d’ajout à l’envoi dans votre complément Outlook.
+title: Implémenter l’ajout sur l’envoi dans votre complément Outlook
+description: Découvrez comment implémenter la fonctionnalité d’ajout sur envoi dans votre complément Outlook.
 ms.topic: article
-ms.date: 10/13/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3e8300a53d08cf484f14cd4fd05adf6382fe3
-ms.sourcegitcommit: a2df9538b3deb32ae3060ecb09da15f5a3d6cb8d
+ms.openlocfilehash: c8239634b6c9ca281255caf89276fb1b454efc84
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2022
-ms.locfileid: "68541142"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767160"
 ---
-# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter append-on-send dans votre complément Outlook
+# <a name="implement-append-on-send-in-your-outlook-add-in"></a>Implémenter l’ajout sur l’envoi dans votre complément Outlook
 
-À la fin de cette procédure pas à pas, vous disposerez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lors de l’envoi d’un message.
+À la fin de cette procédure pas à pas, vous disposez d’un complément Outlook qui peut insérer une clause d’exclusion de responsabilité lorsqu’un message est envoyé.
 
 > [!NOTE]
 > La prise en charge de cette fonctionnalité a été introduite dans l’ensemble de conditions requises 1.9. Voir [les clients et les plateformes](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) qui prennent en charge cet ensemble de conditions requises.
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
-Terminez le [démarrage rapide d’Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
-
-> [!NOTE]
-> Si vous souhaitez utiliser le [manifeste Teams pour les compléments Office (préversion),](../develop/json-manifest-overview.md) **suivez** le guide de démarrage rapide [d’Outlook avec un manifeste Teams (préversion),](../quickstarts/outlook-quickstart-json-manifest.md) mais ignorez toutes les sections après la section Essayer.
+Suivez le [guide de démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) qui crée un projet de complément avec le générateur Yeoman pour les compléments Office.
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -31,15 +28,15 @@ Pour configurer le manifeste, ouvrez l’onglet correspondant au type de manifes
 
 # <a name="xml-manifest"></a>[Manifeste XML](#tab/xmlmanifest)
 
-Pour activer la fonctionnalité d’ajout à l’envoi dans votre complément, vous devez inclure l’autorisation `AppendOnSend` dans la collection de [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
+Pour activer la fonctionnalité d’ajout sur envoi dans votre complément, vous devez inclure l’autorisation `AppendOnSend` dans la collection de [ExtendedPermissions](/javascript/api/manifest/extendedpermissions).
 
-Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du bouton **Exécuter une action** , vous allez exécuter la `appendOnSend` fonction.
+Pour ce scénario, au lieu d’exécuter la `action` fonction en choisissant le bouton **Effectuer une action** , vous allez exécuter la `appendOnSend` fonction.
 
 1. Dans votre éditeur de code, ouvrez le projet de démarrage rapide.
 
 1. Ouvrez le fichier **manifest.xml** situé à la racine de votre projet.
 
-1. Sélectionnez l’intégralité **\<VersionOverrides\>** du nœud (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
+1. Sélectionnez le nœud entier **\<VersionOverrides\>** (y compris les balises d’ouverture et de fermeture) et remplacez-le par le code XML suivant.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -126,16 +123,19 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du b
     </VersionOverrides>
     ```
 
-# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion du développeur)](#tab/jsonmanifest)
+# <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion pour les développeurs)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> L’ajout à l’envoi n’est pas encore pris en charge pour le [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md) Cet onglet est destiné à une utilisation ultérieure.
 
 1. Ouvrez le fichier manifest.json.
 
 1. Ajoutez l’objet suivant au tableau « extensions.runtimes ». Notez ce qui suit à propos de ce code.
 
-   - La valeur « minVersion » de l’ensemble de conditions requises de boîte aux lettres est définie sur « 1.9 » afin que le complément ne puisse pas être installé sur les plateformes et les versions d’Office où cette fonctionnalité n’est pas prise en charge. 
-   - L'« ID » du runtime est défini sur le nom descriptif « function_command_runtime ».
+   - La valeur « minVersion » de l’ensemble de conditions requises pour la boîte aux lettres est définie sur « 1.9 », de sorte que le complément ne peut pas être installé sur les plateformes et les versions d’Office où cette fonctionnalité n’est pas prise en charge. 
+   - Le « id » du runtime est défini sur le nom descriptif « function_command_runtime ».
    - La propriété « code.page » est définie sur l’URL du fichier HTML sans interface utilisateur qui chargera la commande de fonction.
-   - La propriété « lifetime » est définie sur « short », ce qui signifie que le runtime démarre lorsque le bouton de commande de fonction est sélectionné et s’arrête une fois la fonction terminée. (Dans certains cas rares, le runtime s’arrête avant la fin du gestionnaire. Voir [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - La propriété « lifetime » est définie sur « short », ce qui signifie que le runtime démarre lorsque le bouton de commande de la fonction est sélectionné et s’arrête une fois la fonction terminée. (Dans certains cas rares, le runtime s’arrête avant la fin du gestionnaire. Voir [Runtimes dans les compléments Office](../testing/runtimes.md).)
    - Il existe une action pour exécuter une fonction nommée « appendDisclaimerOnSend ». Vous allez créer cette fonction dans une étape ultérieure.
 
     ```json
@@ -179,16 +179,16 @@ Pour ce scénario, au lieu d’exécuter la `action` fonction lors du choix du b
 ---
 
 > [!TIP]
-> Pour en savoir plus sur les manifestes pour les compléments Outlook, consultez [les manifestes de complément Outlook](manifests.md).
+> Pour en savoir plus sur les manifestes pour les compléments Outlook, voir [Manifestes de complément Outlook](manifests.md).
 
-## <a name="implement-append-on-send-handling"></a>Implémenter la gestion des ajouts sur l’envoi
+## <a name="implement-append-on-send-handling"></a>Implémenter la gestion de l’ajout lors de l’envoi
 
 Ensuite, implémentez l’ajout sur l’événement d’envoi.
 
 > [!IMPORTANT]
-> Si votre complément implémente également la [gestion des événements lors de l’envoi à l’aide `ItemSend`](outlook-on-send-addins.md), l’appel `AppendOnSendAsync` dans le gestionnaire d’envoi retourne une erreur, car ce scénario n’est pas pris en charge.
+> Si votre complément implémente également la [gestion des événements lors de l’envoi à l’aide `ItemSend`](outlook-on-send-addins.md)de , l’appel `AppendOnSendAsync` dans le gestionnaire d’envoi retourne une erreur, car ce scénario n’est pas pris en charge.
 
-Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur l’envoie.
+Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusion de responsabilité à l’élément lorsque l’utilisateur envoie.
 
 1. À partir du même projet de démarrage rapide, ouvrez le fichier **./src/commands/commands.js** dans votre éditeur de code.
 
@@ -226,7 +226,7 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
 
 ## <a name="try-it-out"></a>Essayez
 
-1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et que votre complément est chargé de manière indépendante.
+1. Exécutez la commande suivante dans le répertoire racine de votre projet. Lorsque vous exécutez cette commande, le serveur web local démarre s’il n’est pas déjà en cours d’exécution et votre complément est chargé de manière indépendante.
 
     ```command&nbsp;line
     npm start
@@ -234,11 +234,11 @@ Pour ce scénario, vous allez implémenter l’ajout d’une clause d’exclusio
 
 1. Créez un message et ajoutez-vous à la ligne **À** .
 
-1. Dans le menu du ruban ou du dépassement de capacité, choisissez **Effectuer une action**.
+1. Dans le ruban ou le menu de dépassement, choisissez **Effectuer une action**.
 
-1. Envoyez le message, puis ouvrez-le à partir de votre dossier **Boîte de réception** ou **Éléments envoyés** pour afficher la clause d’exclusion de responsabilité ajoutée.
+1. Envoyez le message, puis ouvrez-le à partir de votre **boîte de réception** ou dossier **Éléments envoyés** pour afficher l’exclusion de responsabilité ajoutée.
 
-    ![Exemple de message avec l’exclusion de responsabilité ajoutée lors de l’envoi de Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
+    ![Exemple de message avec l’exclusion de responsabilité ajoutée lors de l’envoi dans Outlook sur le web.](../images/outlook-web-append-disclaimer.png)
 
 ## <a name="see-also"></a>Voir aussi
 

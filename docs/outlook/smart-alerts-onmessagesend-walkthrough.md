@@ -2,14 +2,14 @@
 title: Utiliser les alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook
 description: Découvrez comment gérer les événements lors de l’envoi dans votre complément Outlook à l’aide de l’activation basée sur les événements.
 ms.topic: article
-ms.date: 10/19/2022
+ms.date: 10/24/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: f047323be0752023eee0c357f0a2e90627c0b896
-ms.sourcegitcommit: d402c37fc3388bd38761fedf203a7d10fce4e899
+ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
+ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/21/2022
-ms.locfileid: "68664650"
+ms.lasthandoff: 10/28/2022
+ms.locfileid: "68767167"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Utiliser les alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook
 
@@ -27,9 +27,6 @@ L’événement `OnMessageSend` est disponible via la fonctionnalité d’activa
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
 Suivez le [guide de démarrage rapide Outlook](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), qui crée un projet de complément avec le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md).
-
-> [!NOTE]
-> Si vous souhaitez utiliser le [manifeste Teams pour les compléments Office (préversion),](../develop/json-manifest-overview.md) effectuez l’autre démarrage rapide dans [Outlook avec un manifeste Teams (préversion),](../quickstarts/outlook-quickstart-json-manifest.md) mais ignorez toutes les sections après la section **Essayer** .
 
 ## <a name="configure-the-manifest"></a>Configurer le manifeste
 
@@ -148,6 +145,9 @@ Pour configurer le manifeste, sélectionnez l’onglet correspondant au type de 
 > - Pour en savoir plus sur les manifestes pour les compléments Outlook, voir [Manifestes de complément Outlook](manifests.md).
 
 # <a name="teams-manifest-developer-preview"></a>[Manifeste Teams (préversion pour les développeurs)](#tab/jsonmanifest)
+
+> [!IMPORTANT]
+> Les alertes intelligentes ne sont pas encore prises en charge pour le [manifeste Teams pour les compléments Office (préversion).](../develop/json-manifest-overview.md) Cet onglet est destiné à une utilisation ultérieure.
 
 1. Ouvrez le fichier **manifest.json** .
 
@@ -431,10 +431,13 @@ Bien qu’un message de boîte de dialogue Alertes intelligentes puisse être mo
 
 Bien que les alertes intelligentes et la [fonctionnalité d’envoi](outlook-on-send-addins.md) offrent à vos utilisateurs la possibilité d’améliorer leurs messages et invitations à une réunion avant leur envoi, les alertes intelligentes sont une fonctionnalité plus récente qui vous offre plus de flexibilité quant à la façon dont vous invitez vos utilisateurs à effectuer d’autres actions. Les principales différences entre les deux fonctionnalités sont décrites dans le tableau suivant.
 
+> [!IMPORTANT]
+> Les alertes intelligentes ne sont pas encore prises en charge pour le manifeste Teams (préversion). Nous travaillons à fournir ce support bientôt.
+
 |Attribut|Alertes intelligentes|En cours d’envoi|
 |-----|-----|-----|
 |**Ensemble de conditions requises minimales prises en charge**|[Boîte aux lettres 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
-|**Clients Outlook pris en charge**|-Windows<br>- Navigateur web (interface utilisateur moderne)|-Windows<br>- Navigateur web (interface utilisateur classique et moderne)<br>- Mac (interface utilisateur classique et nouvelle) |
+|**Clients Outlook pris en charge**|-Windows<br>- Navigateur web (interface utilisateur moderne)<br>- Mac (nouvelle interface utilisateur)|-Windows<br>- Navigateur web (interface utilisateur classique et moderne)<br>- Mac (interface utilisateur classique et nouvelle) |
 |**Événements pris en charge**|**Manifeste XML**<br>- `OnMessageSend`<br>- `OnAppointmentSend`<br><br>**Manifeste Teams (préversion)**<br>- « messageSending »<br>- « appointmentSending »|**Manifeste XML**<br>- `ItemSend`<br><br>**Manifeste Teams (préversion)**<br>- Non pris en charge|
 |**Propriété d’extension de manifeste**|**Manifeste XML**<br>- `LaunchEvent`<br><br>**Manifeste Teams (préversion)**<br>- « autoRunEvents »|**Manifeste XML**<br>- `Events`<br><br>**Manifeste Teams (préversion)**<br>- Non pris en charge|
 |**Options du mode d’envoi prises en charge**|- Demander à l’utilisateur<br>- Bloc souple<br>- Bloquer (non pris en charge si le complément utilise un manifeste Teams (préversion))|Bloquer|
