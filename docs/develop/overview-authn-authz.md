@@ -3,18 +3,18 @@ title: Vue d’ensemble de l’authentification et de l’autorisation dans les 
 description: Découvrez le fonctionnement de l’authentification et de l’autorisation dans les compléments Office.
 ms.date: 01/25/2022
 ms.localizationpriority: high
-ms.openlocfilehash: b3bab99be6c1218d3caa32fab522cf2d7fcbda44
-ms.sourcegitcommit: 287a58de82a09deeef794c2aa4f32280efbbe54a
-ms.translationtype: HT
+ms.openlocfilehash: c93e4c36155f582a56f42f5aeb6c567b61df0e1d
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/28/2022
-ms.locfileid: "64496752"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810322"
 ---
 # <a name="overview-of-authentication-and-authorization-in-office-add-ins"></a>Vue d’ensemble de l’authentification et de l’autorisation dans les compléments Office
 
 Les compléments Office autorisent l’accès anonyme par défaut, mais vous pouvez demander aux utilisateurs de se connecter pour utiliser votre complément avec un compte Microsoft, un compte Microsoft 365 Éducation ou professionnel ou un autre compte commun. Cette tâche est appelée authentification des utilisateurs, car elle permet au complément de déterminer l’identité de l’utilisateur.
 
-Votre complément peut également obtenir le consentement de l’utilisateur pour accéder à ses données Microsoft Graph (telles que son profil Microsoft 365, ses fichiers OneDrive et ses données SharePoint) ou à des données d’autres sources externes telles que Google, Facebook, LinkedIn, SalesForce et GitHub. . Cette tâche est appelée autorisation de complément (ou d'application), car c’est le *complément* qui est autorisé, et non l’utilisateur.
+Your add-in can also get the user's consent to access their Microsoft Graph data (such as their Microsoft 365 profile, OneDrive files, and SharePoint data) or to data in other external sources such as Google, Facebook, LinkedIn, SalesForce, and GitHub. This task is called add-in (or app) authorization, because it is the *add-in* that is being authorized, not the user.
 
 ## <a name="key-resources-for-authentication-and-authorization"></a>Ressources clés pour l’authentification et l’autorisation
 
@@ -102,7 +102,7 @@ Dans certains scénarios, vous ne souhaiterez peut-être pas utiliser l’authen
 
 Votre complément peut connecter des utilisateurs à l’aide de la [Plateforme d’identités Microsoft](/azure/active-directory/develop) en tant que fournisseur d’authentification. Une fois que vous êtes connecté à l’utilisateur, vous pouvez utiliser la plateforme d’identités Microsoft pour autoriser le complément de [Microsoft Graph](/graph) ou d’autres services gérés par Microsoft. Utilisez cette approche comme autre méthode de connexion lorsque l’authentification unique via Office n’est pas disponible. Il existe également des scénarios dans lesquels vous voulez que vos utilisateurs se connectent à votre complément séparément, même lorsque l’authentification unique est disponible. Par exemple, si vous voulez qu’ils aient la possibilité de se connecter au complément avec un ID différent de celui avec lequel ils sont actuellement connectés à Office.
 
-Il est important de noter que la plateforme d’identités Microsoft n’autorise pas l’ouverture de sa page de connexion dans un iframe. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Cela signifie que vous devrez ouvrir la page de connexion à l’aide d’une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a une incidence sur la manière dont vous utilisez les bibliothèques d’aide à l’authentification. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+Il est important de noter que la plateforme d’identités Microsoft n’autorise pas l’ouverture de sa page de connexion dans un iframe. Lorsqu’un complément Office s’exécute dans *Office sur le Web*, le volet Office est un iframe. Cela signifie que vous devrez ouvrir la page de connexion à l’aide d’une boîte de dialogue ouverte avec l’API de boîte de dialogue Office. Cela a une incidence sur la manière dont vous utilisez les bibliothèques d’aide à l’authentification. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
 Pour plus d’informations sur l’implémentation de l’authentification avec la plateforme d’identités Microsoft, consultez la[vue d’ensemble de la Plateforme d’identités Microsoft (v2.0)](/azure/active-directory/develop/v2-overview). La documentation contient de nombreux didacticiels et guides, ainsi que des liens vers des exemples et des bibliothèques pertinents. Comme expliqué dans [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md), vous devrez peut-être ajuster le code dans les exemples pour qu’il s’exécute dans la boîte de dialogue Office.
 
@@ -115,7 +115,7 @@ Vous pouvez obtenir l’autorisation données Microsoft Graph pour votre complé
 Les services en ligne populaires, dont Google, Facebook, LinkedIn, SalesForce et GitHub, permettent aux développeurs d’accorder aux utilisateurs l’accès à leurs comptes dans d’autres applications. Vous avez ainsi la possibilité d’inclure ces services dans votre complément Office. Pour obtenir une vue d’ensemble des méthodes que votre complément peut utiliser, voir [Autoriser des services externes dans votre complément Office](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Avant de commencer le codage, déterminez si la source de données autorise l’ouverture de sa page de connexion dans un IFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Si la source de données n’autorise pas l’ouverture de la page connexion dans un IFrame, vous devrez ouvrir la page de connexion dans une boîte de dialogue ouverte avec l’API de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+> Avant de commencer le codage, déterminez si la source de données autorise l’ouverture de sa page de connexion dans un IFrame. Lorsqu’un complément Office s’exécute dans *Office sur le Web*, le volet Office est un iframe. Si la source de données n’autorise pas l’ouverture de la page connexion dans un IFrame, vous devrez ouvrir la page de connexion dans une boîte de dialogue ouverte avec l’API de dialogue Office. Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,27 +3,27 @@ title: Manifeste Teams pour les compléments Office (préversion)
 description: Obtenez une vue d’ensemble du manifeste JSON en préversion.
 ms.date: 06/15/2022
 ms.localizationpriority: high
-ms.openlocfilehash: c0b9b2432d29a1a02fb23fad506a05dfe4f41430
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: 130fa48ed9426d9a63dbdde4f1bdb24ca31cad73
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68466900"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810350"
 ---
 # <a name="teams-manifest-for-office-add-ins-preview"></a>Manifeste Teams pour les compléments Office (préversion)
 
-Microsoft apporte un certain nombre d’améliorations à la plateforme de développement Microsoft 365. Ces améliorations offrent une cohérence accrue dans le développement, le déploiement, l’installation et l’administration de tous les types d’extensions de Microsoft 365, y compris les compléments Office. Ces modifications sont compatibles avec les compléments existants. 
+Microsoft apporte un certain nombre d’améliorations à la plateforme de développement Microsoft 365. Ces améliorations offrent une cohérence accrue dans le développement, le déploiement, l’installation et l’administration de tous les types d’extensions de Microsoft 365, y compris les compléments Office. Ces modifications sont compatibles avec les compléments existants.
 
 Une amélioration importante sur laquelle nous travaillons est la possibilité de créer une unité de distribution unique pour toutes vos extensions Microsoft 365 à l’aide du même format de manifeste et du même schéma, en fonction du manifeste Teams au format JSON actuel.
 
-Nous avons effectué une première étape importante vers ces objectifs en vous permettant de créer des compléments Outlook, s’exécutant uniquement sur Windows, avec une version du manifeste JSON Teams.
+Nous avons fait un premier pas important vers ces objectifs en vous permettant de créer des compléments Outlook, exécutés sur Windows uniquement, avec une version du manifeste JSON Teams.
 
 > [!NOTE]
 > Le nouveau manifeste est disponible en préversion et peut être modifié en fonction des commentaires. Nous encourageons les développeurs de compléments expérimentés à l’expérimenter. Le manifeste d’aperçu ne doit pas être utilisé dans les compléments de production.
 
 Pendant la période de préversion anticipée, les limitations suivantes s’appliquent.
 
-- La préversion du manifeste Teams prend uniquement en charge les compléments Outlook et uniquement sur l’abonnement Microsoft 365 Office sur Windows. Nous travaillons à l’extension de la prise en charge à Excel, PowerPoint et Word.
+- La préversion du manifeste Teams prend uniquement en charge les compléments Outlook et uniquement dans Office téléchargés à partir d’un abonnement Microsoft 365 puis installé sur Windows. Nous travaillons à l’extension de la prise en charge à Excel, PowerPoint et Word.
 - Il n’est pas encore possible de combiner et de charger une version test d’un complément avec une application Teams, telle qu’un onglet personnel Teams ou d’autres types d’extensions Microsoft 365. Dans les prochains mois, nous continuerons à étendre la préversion pour prendre en charge ces scénarios et fournir des outils supplémentaires pour mettre à jour les manifestes au format d’aperçu.
 
 > [!TIP]

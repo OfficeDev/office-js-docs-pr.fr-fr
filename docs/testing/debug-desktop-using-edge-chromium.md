@@ -3,12 +3,12 @@ title: Déboguer des compléments sur Windows à l’aide de Visual Studio Code 
 description: Apprenez à déboguer les modules complémentaires Office qui utilisent Microsoft Edge WebView2 (basé sur Chromium) dans VS Code.
 ms.date: 02/18/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 314799922b8d3687d8a24e93c49143cd3aa37e06
-ms.sourcegitcommit: eef2064d7966db91f8401372dd255a32d76168c2
+ms.openlocfilehash: b84c468f2a31317921217e4b11b537af53fe471c
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2022
-ms.locfileid: "67464817"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810049"
 ---
 # <a name="debug-add-ins-on-windows-using-visual-studio-code-and-microsoft-edge-webview2-chromium-based"></a>Déboguer des compléments sur Windows à l’aide de Visual Studio Code et Microsoft Edge WebView2 (basé sur Chromium)
 
@@ -29,7 +29,7 @@ Ce mode de débogage est dynamique et vous permet de définir des points d'arrê
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
-- La combinaison d’une plateforme et d’une application Office qui prend en charge Microsoft Edge avec WebView2 (basé sur Chromium), comme expliqué dans [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). Si votre version de Microsoft 365 est antérieure à 2101, vous devez installer WebView2. Suivez les instructions pour l’installer sur [Microsoft Edge WebView2/Incorporer du contenu web... avec Microsoft Edge webView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+- Combinaison de plateforme et d’application Office qui prend en charge Microsoft Edge avec WebView2 (basé sur Chromium), comme expliqué dans [Navigateurs utilisés par les compléments Office](../concepts/browsers-used-by-office-web-add-ins.md). Si votre version d’Office à partir d’un abonnement Microsoft 365 est antérieure à la version 2101, vous devez installer WebView2. Suivez les instructions pour l’installer sur [Microsoft Edge WebView2/Incorporer du contenu web... avec Microsoft Edge webView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## <a name="use-the-visual-studio-code-debugger"></a>Utiliser le débogueur de Visual Studio Code
 
@@ -37,15 +37,15 @@ Ces instructions supposent que vous avez l’expérience de l’utilisation de l
 
 1. La première étape dépend du projet et de la façon dont il a été créé.
 
-   - Si vous souhaitez créer un projet pour expérimenter le débogage dans Visual Studio Code, utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l’un de nos guides de démarrage rapide, comme le [démarrage rapide du complément Outlook](../quickstarts/outlook-quickstart.md).
+   - Si vous souhaitez créer un projet pour tester le débogage dans Visual Studio Code, utilisez le [générateur Yeoman pour les compléments Office](../develop/yeoman-generator-overview.md). Pour ce faire, utilisez l’un de nos guides de démarrage rapide, comme le [guide de démarrage rapide du complément Outlook](../quickstarts/outlook-quickstart.md).
    - Si vous souhaitez déboguer un projet existant créé avec Yo Office, passez à l’étape suivante.
    - Si vous souhaitez déboguer un projet existant qui n'a pas été créé avec Yo Office, suivez la procédure de [l'annexe A](#appendix-a), puis revenez à l'étape suivante de cette procédure.
 
 1. Ouvrez VS Code et ouvrez votre projet dans celui-ci. 
 
-1. Choisissez **View > Run** ou entrez **Ctrl+Shift+D** pour passer en mode débogage.
+1. Choisissez  **Afficher** > **l’exécution** ou **entrez Ctrl+Maj+D** pour basculer vers l’affichage de débogage.
 
-1. Dans les options **RUN AND DEBUG**, choisissez l'option Edge Chromium pour votre application hôte, telle que **Outlook Desktop (Edge Chromium)**. Sélectionnez **F5** ou choisissez **Exécuter > Démarrer le débogage** dans le menu pour commencer le débogage. Cette action lance automatiquement un serveur local dans une fenêtre Node pour héberger votre complément, puis ouvre automatiquement l’application hôte, telle qu’Excel ou Word. Cela peut prendre plusieurs heures.
+1. Dans les options **RUN AND DEBUG**, choisissez l'option Edge Chromium pour votre application hôte, telle que **Outlook Desktop (Edge Chromium)**. Sélectionnez **F5** ou choisissez **Exécuter** > **Démarrer le débogage** dans le menu pour commencer le débogage. Cette action lance automatiquement un serveur local dans une fenêtre Node pour héberger votre complément, puis ouvre automatiquement l’application hôte, telle qu’Excel ou Word. Cela peut prendre plusieurs heures.
 
    > [!TIP]
    > Si vous n’utilisez pas un projet créé avec Yo Office, vous pouvez être invité à ajuster une clé de Registre. Dans le dossier racine de votre projet, exécutez ce qui suit dans la ligne de commande.
@@ -60,7 +60,7 @@ Ces instructions supposent que vous avez l’expérience de l’utilisation de l
    > ![Erreur qui dit que le type de débogage configuré bord n'est pas pris en charge.](../images/configured-debug-type-error.jpg)
    >
    > Terminez les tâches de [l’Annexe B](#appendix-b) , puis redémarrez cette procédure.
-   
+
 1. Dans l’application hôte, votre complément est désormais prêt à être utilisé. Sélectionnez **Afficher le volet de tâches** ou exécutez toute autre commande de complément. Une boîte de dialogue s’affiche avec un texte semblable à ce qui suit :
 
    > Arrêter sur chargement WebView.
@@ -80,28 +80,28 @@ Ces instructions supposent que vous avez l’expérience de l’utilisation de l
    > Les points d’arrêt dans les appels de `Office.initialize` ou de `Office.onReady` sont ignorés. Pour plus d’informations sur ces fonctions, consultez [Initialiser votre complément Office](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
-> La meilleure façon d’arrêter une session de débogage consiste à sélectionner **Shift+F5** ou à choisir **Exécuter > Arrêter le débogage** dans le menu. Cette action doit fermer la fenêtre du serveur Node et tenter de fermer l’application hôte, mais une invite s’affiche sur l’application hôte vous demandant s’il faut enregistrer le document ou non. Faites un choix approprié et laissez l’application hôte se fermer. Évitez de fermer manuellement la fenêtre Node ou l’application hôte. Cela peut entraîner des bogues en particulier lorsque vous arrêtez et démarrez des sessions de débogage à plusieurs reprises.
+> La meilleure façon d’arrêter une session de débogage consiste à sélectionner **Maj+F5** ou à choisir **Exécuter** > **Arrêter le débogage** dans le menu. Cette action doit fermer la fenêtre du serveur Node et tenter de fermer l’application hôte, mais une invite s’affiche sur l’application hôte vous demandant s’il faut enregistrer le document ou non. Faites un choix approprié et laissez l’application hôte se fermer. Évitez de fermer manuellement la fenêtre Node ou l’application hôte. Cela peut entraîner des bogues en particulier lorsque vous arrêtez et démarrez des sessions de débogage à plusieurs reprises.
 >
 > Si le débogage cesse de fonctionner ; par exemple, si les points d’arrêt sont ignorés ; arrêter le débogage. Ensuite, si nécessaire, fermez toutes les fenêtres d’application hôte et la fenêtre Nœud. Enfin, fermez Visual Studio Code et rouvrez-le.
 
 ### <a name="appendix-a"></a>Annexe A
 
-Si votre projet n’a pas été créé avec Yo Office, vous devez créer une configuration de débogage pour Visual Studio Code. 
+Si votre projet n’a pas été créé avec Yo Office, vous devez créer une configuration de débogage pour Visual Studio Code.
 
-1. Créez un fichier nommé `launch.json` dans le dossier du projet `\.vscode` s'il n'y en a pas déjà un. 
+1. Créez un fichier nommé `launch.json` dans le dossier du projet `\.vscode` s'il n'y en a pas déjà un.
 1. Assurez-vous que le fichier possède un `configurations` tableau. Voici un exemple simple d’un `launch.json`.
 
    ```json
    {
-     // other properities may be here.
+     // Other properties may be here.
    
      "configurations": [
    
-       // configuration objects may be here.
+       // Configuration objects may be here.
    
      ]
    
-     //other properies may be here.
+     // Other properties may be here.
    }
    ```
 
@@ -127,11 +127,11 @@ Si votre projet n’a pas été créé avec Yo Office, vous devez créer une con
 ### <a name="appendix-b"></a>Annexe B
 
 1. Dans la boîte de dialogue d’erreur, sélectionnez le bouton **Annuler**.
-1. Si le débogage ne s'arrête pas automatiquement, sélectionnez **Shift+F5** ou choisissez **Exécuter > Arrêter le débogage** dans le menu. 
+1. Si le débogage ne s’arrête pas automatiquement, sélectionnez **Maj+F5** ou choisissez **Exécuter** > **Arrêter le débogage** dans le menu.
 1. Fermez la fenêtre Nœud sur laquelle le serveur local est en cours d’exécution, s’il ne se ferme pas automatiquement.
 1. Fermez l'application Office si elle ne se ferme pas automatiquement.
 1. Ouvrez le fichier `\.vscode\launch.json` dans le projet. 
-1. Dans le tableau `configurations`, il existe plusieurs objets de configuration. Recherchez celui dont le nom a le modèle `$HOST$ Desktop (Edge Chromium)` où $HOST$ est une application Office dans laquelle votre complément s’exécute ; par exemple, `Outlook Desktop (Edge Chromium)` ou `Word Desktop (Edge Chromium)`. 
+1. In the `configurations` array, there are several configuration objects. Find the one whose name has the pattern `$HOST$ Desktop (Edge Chromium)`, where $HOST$ is an Office application that your add-in runs in; for example, `Outlook Desktop (Edge Chromium)` or `Word Desktop (Edge Chromium)`.
 1. Modifiez la valeur de la propriété de `"type"` par `"edge"` ou `"pwa-msedge"`.
 1. Changez la valeur de la propriété `"useWebView"` de la chaîne `"advanced"` par la chaîne de caractères au booléen `true` (notez qu'il n'y a pas de guillemets autour du `true`).
 1. Enregistrez le fichier.

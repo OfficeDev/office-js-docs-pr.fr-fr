@@ -3,25 +3,25 @@ title: Ouvrir automatiquement un volet Office avec un document
 description: Découvrez comment configurer un complément Office pour qu’il s’ouvre automatiquement lorsqu’un document s’ouvre.
 ms.date: 09/01/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: ea5981fc8469d391ff03c1d3eefd70c57e41d4cb
-ms.sourcegitcommit: a32f5613d2bb44a8c812d7d407f106422a530f7a
+ms.openlocfilehash: 125e6bcccceb9fe0ced6992ba04a954695235ed4
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2022
-ms.locfileid: "67674629"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810189"
 ---
 # <a name="automatically-open-a-task-pane-with-a-document"></a>Ouvrir automatiquement un volet de tâches avec un document
 
 Vous pouvez utiliser des commandes de complément dans votre complément Office pour étendre l’interface utilisateur Office en ajoutant des boutons au ruban de l’application Office. Lorsque les utilisateurs cliquent sur le bouton de commande, une action est réalisée, comme l’ouverture d’un volet des tâches.
 
-Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité de volet office d’ouverture automatique, introduite dans [l’ensemble de conditions requises AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Office lorsque votre scénario l’exige.
+Certains scénarios nécessitent qu’un volet des tâches s’ouvre automatiquement quand un document s’ouvre, sans intervention explicite de l’utilisateur. Vous pouvez utiliser la fonctionnalité de volet Office d’ouverture automatique, introduite dans [l’ensemble de conditions requises AddInCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), pour ouvrir automatiquement un volet Office lorsque votre scénario l’exige.
 
 > [!NOTE]
-> Pour configurer un volet Office pour qu’il s’ouvre immédiatement lorsque le complément est installé, mais pas nécessairement chaque fois que le document est ouvert ultérieurement, consultez [Ouvrir automatiquement un volet Office lorsqu’un complément est installé](automatically-open-on-installation.md).
+> Pour configurer un volet Office de manière à ce qu’il s’ouvre immédiatement lors de l’installation du complément, mais pas nécessairement à chaque ouverture ultérieure du document, voir [Ouvrir automatiquement un volet Office lors de l’installation d’un complément](automatically-open-on-installation.md).
 
 ## <a name="how-is-the-autoopen-feature-different-from-inserting-a-task-pane"></a>En quoi la fonctionnalité d’ouverture automatique est-elle différente de l’insertion d’un volet des tâches ?
 
-Quand un utilisateur lance des compléments qui n’utilisent pas les commandes de complément, par exemple, les compléments qui s’exécutent dans Office 2013, ils sont insérés et conservés dans le document. Par conséquent, lorsque d’autres utilisateurs ouvrent le document, ils sont invités à installer le complément, puis le volet des tâches s’ouvre. Le défi avec ce modèle est que, dans de nombreux cas, les utilisateurs ne veulent pas que le complément soit conservé dans le document. Par exemple, un étudiant qui utilise un complément de dictionnaire dans un document Word ne voudra peut-être pas que ses camarades de classe ou enseignants soient invités à installer ce complément lorsqu’ils ouvrent le document.
+Quand un utilisateur lance des compléments qui n’utilisent pas les commandes de complément, par exemple, les compléments qui s’exécutent dans Office 2013, ils sont insérés et conservés dans le document. Par conséquent, lorsque d’autres utilisateurs ouvrent le document, ils sont invités à installer le complément, puis le volet des tâches s’ouvre. La difficulté de ce modèle est que, dans de nombreux cas, les utilisateurs ne souhaitent pas que le complément soit conservé dans le document. Par exemple, un étudiant qui utilise un complément de dictionnaire dans un document Word ne voudra peut-être pas que ses camarades de classe ou enseignants soient invités à installer ce complément lorsqu’ils ouvrent le document.
 
 Avec la fonctionnalité d’ouverture automatique, vous pouvez explicitement définir ou autoriser l’utilisateur à déterminer si un complément de volet des tâches spécifique est conservé dans un document spécifique.
 
@@ -31,23 +31,23 @@ La fonctionnalité d’ouverture automatique est actuellement prise en charge da
 
 |Produits|Plateformes|
 |:-----------|:------------|
-|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plateformes prises en charge pour tous les produits :<ul><li>Office pour bureau Windows. Build 16.0.8121.1000+</li><li>Office sur Mac. Build 15.34.17051500+</li><li>Office sur le web</li></ul>|
+|<ul><li>Word</li><li>Excel</li><li>PowerPoint</li></ul>|Plateformes prises en charge pour tous les produits pris en charge :<ul><li>Office sur Windows Desktop. Build 16.0.8121.1000 et versions ultérieures</li><li>Office on Mac. Build 15.34.17051500+</li><li>Office sur le web</li></ul>|
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
 Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionnalité d’ouverture automatique.
 
 - Utilisez la fonctionnalité d’ouverture automatique quand elle vous aide à rendre vos utilisateurs de complément plus efficaces, comme dans les cas suivants :
-  - Lorsque le document a besoin du complément pour fonctionner correctement. Par exemple, une feuille de calcul qui contient des valeurs de stock régulièrement actualisées par un complément. Le complément doit s’ouvrir automatiquement lorsque la feuille de calcul est ouverte pour maintenir les valeurs à jour.
-  - Lorsque l’utilisateur sera le plus susceptible d’utiliser le complément avec un document particulier. Par exemple, un complément qui permet aux utilisateurs de renseigner ou de modifier des données dans un document en extrayant des informations à partir d’un système principal.
-- Autorisez les utilisateurs à activer ou à désactiver la fonctionnalité d’ouverture automatique. Incluez une option dans votre interface utilisateur pour choisir de ne plus ouvrir automatiquement le volet des tâches de complément.  
-- Utilisez la détection de l’ensemble de conditions requises pour déterminer si la fonctionnalité d’ouverture automatique est disponible et fournissez un comportement de secours si ce n’est pas le cas.
-- N’utilisez pas la fonctionnalité d’ouverture automatique pour augmenter artificiellement l’utilisation de votre complément. S’il n’est pas judicieux pour votre complément de s’ouvrir automatiquement avec certains documents, cette fonctionnalité peut gêner les utilisateurs.
+  - When the document needs the add-in in order to function properly. For example, a spreadsheet that includes stock values that are periodically refreshed by an add-in. The add-in should open automatically when the spreadsheet is opened to keep the values up to date.
+  - When the user will most likely always use the add-in with a particular document. For example, an add-in that helps users fill in or change data in a document by pulling information from a backend system.
+- Allow users to turn on or turn off the autoopen feature. Include an option in your UI for users to choose to no longer automatically open the add-in task pane.  
+- Utilisez la détection de l’ensemble de conditions requises pour déterminer si la fonctionnalité d’ouverture automatique est disponible et fournir un comportement de secours si ce n’est pas le cas.
+- N’utilisez pas la fonctionnalité d’ouverture automatique pour augmenter artificiellement l’utilisation de votre complément. S’il n’est pas judicieux que votre complément s’ouvre automatiquement avec certains documents, cette fonctionnalité peut gêner les utilisateurs.
 
     > [!NOTE]
     > Si Microsoft détecte un abus de la fonctionnalité d’ouverture automatique, votre complément peut être rejeté d’AppSource.
 
-- N’utilisez pas cette fonctionnalité pour épingler plusieurs volets de tâches. Vous pouvez uniquement définir l’ouverture automatique d’un volet de votre complément avec un document.  
+- Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
 
 ## <a name="implement-the-autoopen-feature"></a>Implémenter la fonctionnalité d’ouverture automatique
 
@@ -55,11 +55,11 @@ Appliquez les meilleures pratiques suivantes lorsque vous utilisez la fonctionna
 - Ajoutez des balises au document pour ouvrir automatiquement le volet des tâches.
 
 > [!IMPORTANT]
-> Le volet des tâches à ouvrir automatiquement s’ouvre uniquement si le complément est déjà installé sur l’appareil de l’utilisateur. Si le complément n’est pas installé lorsque l’utilisateur ouvre un document, la fonctionnalité d’ouverture automatique ne fonctionnera pas et le paramètre sera ignoré. Si vous avez également besoin que le complément soit distribué avec le document, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’OpenXML. Un exemple est fourni plus loin dans cet article.
+> The pane that you designate to open automatically will only open if the add-in is already installed on the user's device. If the user does not have the add-in installed when they open a document, the autoopen feature will not work and the setting will be ignored. If you also require the add-in to be distributed with the document you need to set the visibility property to 1; this can only be done using OpenXML, an example is provided later in this article.
 
 ### <a name="step-1-specify-the-task-pane-to-open"></a>Étape 1 : Spécifier le volet des tâches à ouvrir
 
-Pour spécifier le volet de tâches à ouvrir automatiquement, définissez la valeur [TaskpaneId](/javascript/api/manifest/action#taskpaneid) sur **Office.AutoShowTaskpaneWithDocument**. Vous pouvez uniquement définir cette valeur sur un seul volet de tâches. Si vous définissez cette valeur sur plusieurs volets de tâches, la première occurrence de la valeur sera reconnue et les autres seront ignorées.
+To specify the task pane to open automatically, set the [TaskpaneId](/javascript/api/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
 L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTaskpaneWithDocument.
 
@@ -72,11 +72,11 @@ L’exemple suivant illustre la valeur TaskPaneId définie sur Office.AutoShowTa
 
 ### <a name="step-2-tag-the-document-to-automatically-open-the-task-pane"></a>Étape 2 : Baliser le document pour ouvrir automatiquement le volet de tâches
 
-Vous pouvez baliser le document pour déclencher la fonctionnalité d’ouverture automatique de deux façons possibles. Choisissez l’alternative qui convient le mieux à votre scénario.  
+You can tag the document to trigger the autoopen feature in one of two ways. Pick the alternative that works best for your scenario.  
 
 #### <a name="tag-the-document-on-the-client-side"></a>Baliser le document côté client
 
-Utilisez la méthode Office.js [settings.set](/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** `true`sur , comme indiqué dans l’exemple suivant.
+Utilisez la méthode Office.js [settings.set](/javascript/api/office/office.settings) pour définir **Office.AutoShowTaskpaneWithDocument** sur `true`, comme illustré dans l’exemple suivant.
 
 ```js
 Office.context.document.settings.set("Office.AutoShowTaskpaneWithDocument", true);
@@ -87,7 +87,7 @@ Utilisez cette méthode si vous devez baliser le document dans le cadre de vos i
 
 #### <a name="use-open-xml-to-tag-the-document"></a>Utiliser Open XML pour baliser le document
 
-Vous pouvez utiliser Open XML pour créer ou modifier un document et ajouter le balisage Open Office XML approprié afin de déclencher la fonctionnalité d’ouverture automatique. Pour obtenir un exemple montrant comment procéder, voir [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
+You can use Open XML to create or modify a document and add the appropriate Open Office XML markup to trigger the autoopen feature. For a sample that shows you how to do this, see [Office-OOXML-EmbedAddin](https://github.com/OfficeDev/Office-OOXML-EmbedAddin).
 
 Ajoutez deux parties Open XML au document.
 
@@ -114,14 +114,14 @@ Le composant `webextension` comprend également une référence au store ou au c
 
 |Valeur `storeType`|Valeur `id`|Valeur `store`|Valeur `version`|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|ID de ressource AppSource du complément (voir remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|Version du catalogue AppSource (voir remarque).|
-|WOPICatalog (hôtes [WOPI](/microsoft-365/cloud-storage-partner-program/online/) partenaires)| ID de ressource AppSource du complément (voir remarque). | « wopicatalog ». Utilisez cette valeur pour les compléments publiés dans App Source et installés dans les hôtes WOPI. Pour plus d’informations, consultez [Intégration à Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | La version dans le manifeste de complément.|
+|OMEX (AppSource)|ID de ressource AppSource du complément (voir Remarque).|Les paramètres régionaux d’AppSource ; par exemple, « fr-fr ».|Version dans le catalogue AppSource (voir Remarque).|
+|WOPICatalog (hôtes [WOPI](/microsoft-365/cloud-storage-partner-program/online/) partenaires)| ID de ressource AppSource du complément (voir Remarque). | « wopicatalog ». Utilisez cette valeur pour les compléments publiés dans la source de l’application et installés sur des hôtes WOPI. Pour plus d’informations, voir [Intégration à Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | La version dans le manifeste de complément.|
 |Système de fichiers (un partage réseau)|Le GUID du complément dans le manifeste de complément.|Le chemin du partage réseau ; par exemple, « \\\\MyComputer\\MySharedFolder ».|La version dans le manifeste de complément.|
 |EXCatalog (déploiement via le serveur Exchange) |Le GUID du complément dans le manifeste de complément.|« EXCatalog » La ligne EXCatalog est la ligne à utiliser avec les compléments qui utilisent le déploiement centralisé dans le Centre d'administration Microsoft 365.|La version dans le manifeste de complément.|
 |Registre (Registre système)|Le GUID du complément dans le manifeste de complément.|« développeur »|La version dans le manifeste de complément.|
 
 > [!NOTE]
-> Pour trouver l’ID de ressource et la version d’un complément dans AppSource, accédez à la page d’accueil d’AppSource pour le complément. L’ID de ressource apparaît dans la barre d’adresse dans le navigateur. La version est répertoriée dans la section **Détails** de la page.
+> To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
 
 Pour plus d’informations sur le balisage webextension, reportez-vous à [[MS-OWEXML] 2.2.5. WebExtensionReference](/openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1).
 
@@ -135,14 +135,14 @@ L’exemple suivant montre comment ajouter le composant `taskpane`.
 
 Notez que dans cet exemple, l’attribut `visibility` est défini sur « 0 ». Ainsi, après l’ajout des composants `taskpane` et du volet de tâches, l’utilisateur doit installer le complément via le bouton **Complément** sur le ruban lorsqu’il ouvre le document pour la première fois. Par la suite, le volet de tâches de complément s’ouvre automatiquement lorsque le fichier est ouvert. En outre, lorsque vous définissez `visibility` sur « 0 », vous pouvez utiliser Office.js pour autoriser les utilisateurs à activer ou à désactiver la fonctionnalité d’ouverture automatique. Plus spécifiquement, le script définit le paramètre de document **Office.AutoShowTaskpaneWithDocument** sur `true` ou `false`. (Pour plus d’informations, reportez-vous à la section [Baliser le document côté client](#tag-the-document-on-the-client-side).)
 
-Si `visibility` est défini sur « 1 », le volet de tâches s’ouvre automatiquement à la première ouverture du document. L’utilisateur est invité à approuver le complément. Lorsque ce dernier est approuvé, le complément s’ouvre. Par la suite, le volet de tâches de complément s’ouvre automatiquement lorsque le fichier est ouvert. Toutefois, lorsque `visibility` est défini sur « 1 », vous ne pouvez pas utiliser Office.js pour autoriser les utilisateurs à activer ou à désactiver la fonctionnalité d’ouverture automatique.
+If `visibility` is set to "1", the task pane opens automatically the first time the document is opened. The user is prompted to trust the add-in, and when trust is granted, the add-in opens. Thereafter, the add-in task pane opens automatically when the file is opened. However, when `visibility` is set to "1", you can't use Office.js to enable users to turn on or turn off the autoopen feature.
 
 Définir `visibility` sur « 1 » est un bon choix lorsque le complément et le modèle ou contenu du document sont tellement étroitement intégrés que l’utilisateur ne choisirait pas de désactiver la fonctionnalité d’ouverture automatique.
 
 > [!NOTE]
-> Si vous voulez distribuer votre complément avec le document, pour que les utilisateurs soient invités à l’installer, vous devez définir la propriété de visibilité sur 1. Cette opération peut uniquement être effectuée à l’aide d’Open XML.
+> If you want to distribute your add-in with the document, so that users are prompted to install it, you must set the visibility property to 1. You can only do this via Open XML.
 
-Un moyen simple d’écrire le code XML consiste à exécuter d’abord votre complément et à [baliser le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, puis à enregistrer le document et à inspecter le code XML généré. Office détecte et fournit les valeurs d’attribut appropriées. Vous pouvez également utiliser [l’outil de productivité du Kit de développement logiciel (SDK) Open XML](https://www.nuget.org/packages/Open-XML-SDK) pour générer du code C# afin d’ajouter par programmation le balisage en fonction du code XML que vous générez.
+Un moyen simple d’écrire le code XML consiste d’abord à exécuter votre complément et à [étiqueter le document côté client](#tag-the-document-on-the-client-side) pour écrire la valeur, puis à enregistrer le document et à inspecter le code XML généré. Office détecte et fournit les valeurs d’attribut appropriées. Vous pouvez également utiliser [l’outil de productivité du Kit de développement logiciel (SDK) Open XML](https://www.nuget.org/packages/Open-XML-SDK) pour générer du code C# afin d’ajouter par programmation le balisage basé sur le code XML que vous générez.
 
 ## <a name="test-and-verify-opening-task-panes"></a>Tester et vérifier l’ouverture des volets Office
 
@@ -158,10 +158,10 @@ Vous pouvez déployer une version de test de votre complément qui ouvre automat
 </we:webextension>
 ```
 
-Vous pouvez tester l’exemple précédent à l’aide de votre abonnement Microsoft 365 pour tester le déploiement centralisé et vérifier que votre complément fonctionne comme prévu. Si vous n’avez pas encore d’abonnement Microsoft 365, vous pouvez bénéficier d’un abonnement Microsoft 365 renouvelable gratuit de 90 jours en rejoignant le [programme développeur Microsoft 365](https://developer.microsoft.com/office/dev-program).
+Vous pouvez tester l’exemple précédent en utilisant votre abonnement Microsoft 365 pour tester le déploiement centralisé et vérifier que votre complément fonctionne comme prévu. Si vous n’avez pas encore d’abonnement Microsoft 365, vous pouvez obtenir un abonnement Microsoft 365 gratuit et renouvelable de 90 jours en rejoignant le [programme pour les développeurs Microsoft 365](https://developer.microsoft.com/office/dev-program).
 
 ## <a name="see-also"></a>Voir aussi
 
 - Pour voir un exemple illustrant comment utiliser la fonctionnalité d’ouverture automatique, reportez-vous à [Exemples de commandes de complément Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/tree/master/AutoOpenTaskpane).
-- [Ouvrir automatiquement un volet Office lorsqu’un complément est installé](automatically-open-on-installation.md)
-- [Rejoignez le programme de développement Microsoft 365.](/office/developer-program/office-365-developer-program)
+- [Ouvrir automatiquement un volet Office lors de l’installation d’un complément](automatically-open-on-installation.md)
+- [Rejoignez le programme des développeurs Microsoft 365.](/office/developer-program/office-365-developer-program)

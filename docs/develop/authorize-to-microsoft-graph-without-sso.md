@@ -1,25 +1,25 @@
 ---
-title: Autoriser l’accès à Microsoft Graph à partir d’un Office de conférence
-description: Découvrez comment autoriser microsoft à Graph à partir d’un Office de conférence.
+title: Autoriser sur Microsoft Graph à partir d’un complément Office
+description: Découvrez comment autoriser Microsoft Graph à partir d’un complément Office.
 ms.date: 01/25/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: 8166b7a71767abd0456662dbe8573f59bb2c7e82
-ms.sourcegitcommit: 968d637defe816449a797aefd930872229214898
+ms.openlocfilehash: 37dd4be3acb92dc7884972de923d94936fa870f4
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/23/2022
-ms.locfileid: "63743583"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810168"
 ---
-# <a name="authorize-to-microsoft-graph-from-an-office-add-in"></a>Autoriser l’accès à Microsoft Graph à partir d’un Office de conférence
+# <a name="authorize-to-microsoft-graph-from-an-office-add-in"></a>Autoriser sur Microsoft Graph à partir d’un complément Office
 
-Votre add-in peut obtenir l’autorisation d’accès aux données microsoft Graph en obtenant un jeton d’accès à Microsoft Graph à partir du Plateforme d'identités Microsoft. Utilisez le flux de code d’autorisation ou le flux implicite comme vous le feriez dans d’autres applications web, mais à une exception près : le Plateforme d'identités Microsoft n’autorise pas l’ouverture de sa page de signature dans un iFrame. Lorsqu’un complément Office est exécuté sur *Office sur le Web*, le volet des tâches est un IFrame. Cela signifie que vous devez ouvrir la page de connexion dans une boîte de dialogue à l’aide de l’API Office dialogue. Cela a un effet sur votre utilisation des bibliothèques d’aide à l’authentification et l’autorisation. Pour plus d’informations, consultez l'[Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
+Votre complément peut obtenir l’autorisation pour les données Microsoft Graph en obtenant un jeton d’accès à Microsoft Graph à partir du Plateforme d'identités Microsoft. Utilisez le flux de code d’autorisation ou le flux implicite comme vous le feriez dans d’autres applications web, mais à une exception près : le Plateforme d'identités Microsoft n’autorise pas l’ouverture de sa page de connexion dans un iframe. Lorsqu’un complément Office s’exécute dans *Office sur le Web*, le volet Office est un iframe. Cela signifie que vous devez ouvrir la page de connexion dans une boîte de dialogue à l’aide de l’API de boîte de dialogue Office. Cela a un effet sur votre utilisation des bibliothèques d’aide à l’authentification et l’autorisation. Pour plus d’informations, consultez l'[Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md).
 
 > [!NOTE]
-> Si vous implémentez l’oD SSO et prévoyez d’accéder à Microsoft Graph, consultez Autoriser [l’accès à Microsoft Graph avec sso](authorize-to-microsoft-graph.md).
+> Si vous implémentez l’authentification unique et envisagez d’accéder à Microsoft Graph, consultez [Autoriser Microsoft Graph avec l’authentification unique](authorize-to-microsoft-graph.md).
 
-Pour plus d’informations sur la programmation de l’authentification à l’Plateforme d'identités Microsoft, voir [Plateforme d'identités Microsoft documentation](/azure/active-directory/develop). Vous trouverez des didacticiels et des guides dans cet ensemble de documentation, ainsi que des liens vers des exemples pertinents. Une fois encore, vous devrez peut-être ajuster le code des exemples à exécuter dans la boîte de dialogue Office pour prendre en compte la boîte de dialogue Office qui s’exécute dans un processus distinct du volet Des tâches.
+Pour plus d’informations sur la programmation de l’authentification à l’aide du Plateforme d'identités Microsoft, consultez [Plateforme d'identités Microsoft documentation](/azure/active-directory/develop). Vous trouverez des tutoriels et des guides dans cet ensemble de documentation, ainsi que des liens vers des exemples pertinents. Une fois de plus, vous devrez peut-être ajuster le code dans les exemples à exécuter dans la boîte de dialogue Office pour tenir compte de la boîte de dialogue Office qui s’exécute dans un processus distinct du volet Office.
 
-Une fois que votre code a obtenu le jeton d’accès à Microsoft Graph, il transmet le jeton d’accès de la boîte de dialogue au volet Des tâches, ou il stocke le jeton dans une base de données et signale au volet Des tâches que le jeton est disponible. (Pour plus [d’informations, voir l’authentification Office’API de boîte](auth-with-office-dialog-api.md) de dialogue.) Le code du volet Des tâches demande des données à Microsoft Graph et inclut le jeton dans ces demandes. Pour plus d’informations sur l’appel de Microsoft Graph et des SDK Microsoft Graph, consultez la [documentation de Microsoft Graph](/graph/).
+Une fois que votre code a obtenu le jeton d’accès à Microsoft Graph, il transmet le jeton d’accès de la boîte de dialogue au volet Office, ou il stocke le jeton dans une base de données et signale au volet Office que le jeton est disponible. (Pour plus d’informations, consultez [Authentification avec l’API de boîte de dialogue Office](auth-with-office-dialog-api.md) .) Le code dans le volet Office demande des données à Microsoft Graph et inclut le jeton dans ces demandes. Pour plus d’informations sur l’appel de Microsoft Graph et des Kits de développement logiciel (SDK) Microsoft Graph, consultez [la documentation Microsoft Graph](/graph/).
 
 ## <a name="recommended-libraries-and-samples"></a>Bibliothèques et exemples recommandés
 
@@ -31,7 +31,7 @@ Nous vous recommandons d’utiliser les bibliothèques suivantes lors de l’acc
 
 Pour plus d’informations sur les bibliothèques recommandées avec la plateforme d’identité Microsoft (anciennement AAD v. 2.0), voir [Bibliothèques d’authentification de la plateforme d’identité Microsoft](/azure/active-directory/develop/reference-v2-libraries).
 
-Les exemples suivants obtiennent des données microsoft Graph à partir d’un Office de gestion.
+Les exemples suivants obtiennent des données Microsoft Graph à partir d’un complément Office.
 
 - [Complément Office Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Complément Outlook Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET)

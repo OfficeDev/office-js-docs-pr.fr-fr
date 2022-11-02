@@ -4,12 +4,12 @@ description: Découvrez comment créer un complément de volet des tâches Outlo
 ms.date: 06/06/2022
 ms.prod: outlook
 ms.localizationpriority: high
-ms.openlocfilehash: 407c4ccd4249008c203c760a01d8579989a12e4c
-ms.sourcegitcommit: 005783ddd43cf6582233be1be6e3463d7ab9b0e5
+ms.openlocfilehash: fcb553e10649c6cdcf430267e72f67ece8a5cb3f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/05/2022
-ms.locfileid: "68467222"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810056"
 ---
 # <a name="build-an-outlook-add-in-with-a-teams-manifest-preview"></a>Créer un complément Outlook avec un manifeste Teams (préversion)
 
@@ -18,7 +18,7 @@ Dans cet article, vous allez parcourir le processus de création d’un complém
 > [!NOTE]
 > Le nouveau manifeste est disponible en préversion et peut être modifié en fonction des commentaires. Nous encourageons les développeurs de compléments expérimentés à l’expérimenter. Le manifeste d’aperçu ne doit pas être utilisé dans les compléments de production.
 
-La préversion est uniquement prise en charge sur l’abonnement Microsoft 365 Office sur Windows.
+La préversion est uniquement prise en charge dans Office téléchargé à partir d’un abonnement Microsoft 365 et installé sur Windows.
 
 > [!TIP]
 > Si vous souhaitez créer un complément Outlook à l’aide du manifeste XML, consultez [Générer votre premier complément Outlook](outlook-quickstart.md).
@@ -177,7 +177,7 @@ Ajoutez un bouton personnalisé au ruban qui insère du texte dans le corps d’
 
 1. Pour écrire dans un message, les autorisations du complément doivent être levées. Faites défiler jusqu’à la propriété `authorization.permissions.resourceSpecific[0].name` et remplacez la valeur par `MailboxItem.ReadWrite.User`.
 
-1. Lorsqu’une commande de complément exécute du code au lieu d’ouvrir un volet Office, elle doit exécuter le code dans un runtime distinct de la vue web incorporée où s’exécute le code du volet Office. Le manifeste doit donc spécifier un runtime supplémentaire. Faites défiler jusqu’à la propriété `extension.runtimes` et ajoutez l’objet suivant au tableau `runtimes`. Veillez à placer une virgule après l’objet qui se trouve déjà dans le tableau. Notez les points suivants concernant ce balisage.
+1. Lorsqu’une commande de complément exécute du code au lieu d’ouvrir un volet Office, elle doit exécuter le code dans un runtime distinct de la vue web incorporée où le code du volet Office s’exécute. Le manifeste doit donc spécifier un runtime supplémentaire. Faites défiler jusqu’à la propriété `extension.runtimes` et ajoutez l’objet suivant au tableau `runtimes`. Veillez à placer une virgule après l’objet qui se trouve déjà dans le tableau. Notez les points suivants concernant ce balisage.
 
     - La valeur de la propriété `actions[0].id` doit être exactement identique au nom de la fonction que vous avez ajoutée au fichier **commands.ts**, dans ce cas `insertHelloWorld`. Dans une étape ultérieure, vous allez faire référence à l’élément par cet ID.
 

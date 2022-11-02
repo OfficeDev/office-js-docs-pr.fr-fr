@@ -3,12 +3,12 @@ title: Manifeste XML des compléments Office
 description: Obtenez une vue d’ensemble du manifeste de Complément Office et de ses applications.
 ms.date: 05/24/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 2b429ce54ec03f7c5ba437b16451b0532ea3ce38
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: 60368d74cad0d1b8c0562888613d960f52b21a74
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67422970"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810224"
 ---
 # <a name="office-add-ins-xml-manifest"></a>Manifeste XML des compléments Office
 
@@ -44,7 +44,7 @@ Le tableau suivant spécifie les éléments qui sont requis pour les trois types
 
 ### <a name="required-elements-by-office-add-in-type"></a>Éléments requis par type de complément Office
 
-| Élément                                                                                      | Contenu    | Volet de tâches    | Outlook      |
+| Élément                                                                                      | Contenu    | Volet de tâches    | Courrier<br>(Outlook)      |
 | :------------------------------------------------------------------------------------------- | :--------: | :----------: | :--------:   |
 | [OfficeApp][]                                                                                | Obligatoire   | Obligatoire     | Obligatoire     |
 | [Id][]                                                                                       | Obligatoire   | Obligatoire     | Obligatoire     |
@@ -107,7 +107,7 @@ Toutes les URL, telles que les emplacements des fichiers source spécifiés dans
 
 ## <a name="best-practices-for-submitting-to-appsource"></a>Bonnes pratiques pour l’envoi dans AppSource
 
-Vérifiez que l’ID du complément est un GUID valide et unique. Vous trouverez des outils de génération de GUID sur Internet pour vous aider à créer un GUID unique.
+Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
 Les compléments envoyés à AppSource doivent également inclure l’élément [SupportUrl](/javascript/api/manifest/supporturl). Pour plus d’informations, reportez-vous à [Stratégies de validation pour les applications et les compléments envoyés à AppSource](/legal/marketplace/certification-policies).
 
@@ -115,7 +115,7 @@ Utilisez uniquement l’élément [AppDomains](/javascript/api/manifest/appdomai
 
 ## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Spécifier les domaines que vous souhaitez ouvrir dans la fenêtre de complément
 
-Lors de l’exécution d’Office sur le web, votre volet des tâches peut naviguer vers des URL. Cependant, sur les plateformes de bureau, si votre complément tente d’accéder à une URL située dans un autre domaine que celui qui héberge la page de démarrage (comme indiqué dans l’élément [SourceLocation](/javascript/api/manifest/sourcelocation) du fichier manifeste), cette URL s’ouvre dans une nouvelle fenêtre de navigateur en dehors du volet de complément de l’application Office.
+When running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 Pour remplacer ce comportement (version de bureau d’Office), spécifiez chaque domaine à ouvrir dans la fenêtre de complément dans la liste des domaines spécifiés dans l’élément [AppDomains](/javascript/api/manifest/appdomains) du fichier manifeste. Si le complément tente d’accéder à une URL située dans un domaine figurant dans cette liste, il s’ouvre dans le volet Office d’Office sur le web et de la version de bureau d’Office. S’il tente d’accéder à une URL qui ne figure pas dans la liste, dans la version de bureau d’Office, cette URL s’ouvre dans une nouvelle fenêtre de navigateur (en dehors du volet de complément).
 
@@ -158,7 +158,7 @@ L’exemple de manifeste XML suivant héberge sa page de complément principale 
 
 Certains éléments descendants `VersionOverrides` ont des valeurs qui remplacent les valeurs de l’élément `OfficeApp` parent. Par exemple, `Hosts` l’élément dans `VersionOverrides` remplace `Hosts` l’élément dans `OfficeApp` .
 
-L’élément `VersionOverrides` a son propre schéma, en fait quatre schémas, selon le type de complément et les fonctionnalités qu’il utilise. Les schémas sont :
+The `VersionOverrides` element has its own schema, actually four of them, depending on the type of add-in and the features it uses. The schemas are:
 
 - [Volet De tâches 1.0](/openspecs/office_file_formats/ms-owemxml/82e93ec5-de22-42a8-86e3-353c8336aa40)
 - [Contenu 1.0](/openspecs/office_file_formats/ms-owemxml/c9cb8dca-e9e7-45a7-86b7-f1f0833ce2c7)
@@ -205,7 +205,7 @@ Votre complément peut effectuer des appels d’API Office.js à partir du domai
 
 ## <a name="manifest-v11-xml-file-examples-and-schemas"></a>Exemples et schémas de fichier XML manifeste version 1.1
 
-Les sections suivantes présentent des exemples de fichiers manifeste XML version 1.1 pour des compléments de contenu, de volet Office et Outlook.
+Les sections suivantes présentent des exemples de fichiers XML de manifeste v1.1 pour les compléments de contenu, de volet Office et de courrier (Outlook).
 
 # <a name="task-pane"></a>[Volet Office](#tab/tabid-1)
 

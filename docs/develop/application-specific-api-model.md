@@ -3,22 +3,22 @@ title: Utilisation du modèle de l’API propre à l’application
 description: Découvrez le modèle d’API basé sur la promesse pour les compléments Excel, OneNote et Word.
 ms.date: 09/23/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: d7cb6f1f47c853d5c6e389c2c81ec2d36d21eb43
-ms.sourcegitcommit: 05be1086deb2527c6c6ff3eafcef9d7ed90922ec
+ms.openlocfilehash: d24b435318e1f462cd05ba25dbdd7f9a6018715f
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2022
-ms.locfileid: "68092888"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810175"
 ---
 # <a name="application-specific-api-model"></a>Modèle d’API spécifique à l’application
 
 Cet article explique comment utiliser le modèle d’API pour créer des compléments dans Excel, Word, PowerPoint et OneNote. Il présente les concepts fondamentaux de l’utilisation des API basées sur la promesse.
 
 > [!NOTE]
-> Ce modèle n’est pas pris en charge par les clients Office 2013. Utilisez les [Modèles communs de l’API](office-javascript-api-object-model.md) pour fonctionner avec ces versions d’Office. Pour consulter les notes sur la disponibilité complète des plateformes, consultez les [disponibilités de l’application et de la plateforme cliente Office pour les compléments Office](/javascript/api/requirement-sets).
+> Ce modèle n’est pas pris en charge par les clients Office 2013 ni Outlook. Utilisez les [Modèles communs de l’API](office-javascript-api-object-model.md) pour fonctionner avec ces versions d’Office. Pour consulter les notes sur la disponibilité complète des plateformes, consultez les [disponibilités de l’application et de la plateforme cliente Office pour les compléments Office](/javascript/api/requirement-sets).
 
 > [!TIP]
-> Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API OneNote, PowerPoint, Visio et Word JavaScript.
+> Les exemples de cette page utilisent les API JavaScript Excel, mais les concepts s’appliquent également aux API JavaScript OneNote, PowerPoint, Visio et Word.
 
 ## <a name="asynchronous-nature-of-the-promise-based-apis"></a>Nature asynchrone des API basées sur la promesse
 
@@ -26,7 +26,7 @@ Les compléments Office sont des sites web qui apparaissent à l’intérieur d�
 
 ## <a name="run-function"></a>*fonction .run
 
-`Excel.run`, `OneNote.run`, `PowerPoint.run`et `Word.run` exécutez une fonction qui spécifie les actions à effectuer sur Excel, Word et OneNote. `*.run` crée automatiquement un contexte de demande que vous pouvez utiliser pour interagir avec des objets Office. Lorsque `*.run` a terminé, une promesse est résolue et tous les objets alloués lors de l’exécution sont automatiquement publiés.
+`Excel.run`, `OneNote.run`, `PowerPoint.run`et `Word.run` exécutent une fonction qui spécifie les actions à effectuer sur Excel, Word et OneNote. `*.run` crée automatiquement un contexte de demande que vous pouvez utiliser pour interagir avec des objets Office. Lorsque `*.run` a terminé, une promesse est résolue et tous les objets alloués lors de l’exécution sont automatiquement publiés.
 
 L’exemple suivant vous montre comment utiliser `Excel.run`. Le même modèle est également utilisé avec OneNote, PowerPoint et Word.
 
@@ -214,7 +214,7 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 Dans l’exemple précédent, vous ***ne pouvez pas*** affecter directement une valeur à `zoom` : `sheet.pageLayout.zoom.scale = 200;`. Cette instruction génère une erreur, car `zoom` n’est pas chargé. Même si `zoom` était chargé, l’ensemble d’échelles n’est pas pris en compte. Toutes les opérations de contexte se produisent sur `zoom`, elles actualisent l’objet proxy du complément et remplacement des valeurs définies localement.
 
-Ce comportement diffère des [propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Les propriétés de peuvent être définies à l’aide de `format` la navigation dans les objets, comme illustré ici.
+Ce comportement diffère des [propriétés de navigation](application-specific-api-model.md#scalar-and-navigation-properties) telles que [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Les propriétés de peuvent être définies à l’aide de `format` la navigation d’objet, comme illustré ici.
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.

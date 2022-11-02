@@ -3,12 +3,12 @@ title: Déboguez votre complément avec la journalisation runtime
 description: Découvrez l’utilisation de la journalisation runtime pour déboguer votre complément.
 ms.date: 11/04/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: cf917915ae875f9a3ea27c85e21c87f847eb4542
-ms.sourcegitcommit: 0be4cd0680d638cf96c12263a71af59ff9f51f5a
+ms.openlocfilehash: b89212b859274d4ac52ecb92be4ac995d3a8790b
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2022
-ms.locfileid: "67423306"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810042"
 ---
 # <a name="debug-your-add-in-with-runtime-logging"></a>Déboguez votre complément avec la journalisation runtime
 
@@ -75,7 +75,7 @@ L’image suivante indique à quoi doit ressembler le registre. Pour désactiver
 
 ## <a name="runtime-logging-on-mac"></a>Journalisation de l’exécution sur Mac
 
-1. Vérifiez que vous exécutez la version Bureau d’Office 2016 **16.27** (19071500) ou une version ultérieure.
+1. Vérifiez que vous exécutez office 2016 version de bureau **16.27.19071500** ou ultérieure.
 
 2. Ouvrez **Terminal** et configurez une préférence de journalisation de l’exécution à l’aide de la commande `defaults` :
 
@@ -85,7 +85,7 @@ L’image suivante indique à quoi doit ressembler le registre. Pour désactiver
 
     `<bundle id>` identifie l’hôte pour lequel activer la journalisation de l’exécution. `<file_name>` est le nom du fichier texte dans lequel le journal sera écrit.
 
-    Définissez `<bundle id>` l’une des valeurs suivantes pour activer la journalisation du runtime pour l’application correspondante.
+    Définissez `<bundle id>` sur l’une des valeurs suivantes pour activer la journalisation du runtime pour l’application correspondante.
 
     - `com.microsoft.Word`
     - `com.microsoft.Excel`
@@ -125,17 +125,17 @@ Pour utiliser la journalisation runtime pour résoudre les problèmes de chargem
 
 2. Si rien ne se produit et que votre complément n’apparaît pas (et ne s’affiche pas dans la boîte de dialogue des compléments), ouvrez le fichier journal.
 
-3. Recherchez le fichier journal pour l’ID de votre complément, que vous définissez dans votre manifeste. Dans le fichier journal, cet ID est intitulé `SolutionId`.
+3. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
 
 ## <a name="known-issues-with-runtime-logging"></a>Problèmes connus avec la journalisation runtime
 
-Vous pouvez afficher des messages dans le fichier journal qui sont source de confusion ou classés de façon incorrecte. Par exemple :
+You might see messages in the log file that are confusing or that are classified incorrectly. For example:
 
 - Le message `Medium Current host not in add-in's host list` suivi de `Unexpected Parsed manifest targeting different host` est classé incorrectement en tant qu’erreur.
 
 - Si vous voyez le message `Unexpected Add-in is missing required manifest fields    DisplayName` et qu’il ne contient pas de SolutionId, l’erreur n’est probablement pas liée au complément que vous déboguez.
 
-- Tous les messages `Monitorable` sont des erreurs attendues du point de vue du système. Parfois, ils indiquent un problème avec votre manifeste, comme un élément mal orthographié qui a été ignoré, mais n’a pas provoqué l’échec du manifeste.
+- Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.
 
 ## <a name="see-also"></a>Voir aussi
 

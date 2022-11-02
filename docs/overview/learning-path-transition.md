@@ -4,18 +4,18 @@ description: Chemin d’accès recommandé pour les développeurs de complément
 ms.date: 10/14/2020
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
-ms.openlocfilehash: 676fe794e2d4d813993432fb94c723b9b917789b
-ms.sourcegitcommit: 54a7dc07e5f31dd5111e4efee3e85b4643c4bef5
+ms.openlocfilehash: bc27177c67028e57030c9baed6b416d0c57c77d1
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/21/2022
-ms.locfileid: "67857521"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810126"
 ---
 # <a name="vsto-add-in-developers-guide"></a>Guide du développeur de compléments VSTO
 
-Par conséquent, vous avez créé des compléments VSTO pour les applications Office qui s’exécutent sur Windows et vous explorez maintenant la nouvelle façon d’étendre Office qui s’exécute sur Windows, Mac et la version en ligne de la suite Office : compléments web Office.
+Vous avez donc créé des compléments VSTO pour les applications Office qui s’exécutent sur Windows et vous explorez maintenant la nouvelle façon d’étendre Office qui s’exécutera sur Windows, Mac et la version de navigateur web de la suite Office : Compléments web Office.
 
-Votre compréhension des modèles objet pour Excel, Word et les autres applications Office sera très utile, car les modèles objet dans les compléments Web Office suivent des modèles similaires. Mais il y aura des défis à relever :
+Your understanding of the object models for the Excel, Word, and the other Office applications will be a huge help because the object models in Office Web Add-ins follow similar patterns. But there are going to be some challenges:
 
 - Vous utiliserez une langue différente (JavaScript ou TypeScript) au lieu de, C# ou Visual Basic .NET. (Il existe également un moyen, décrit ci-dessous, de réutiliser une partie de votre code existant dans un complément web.)
 - Les compléments web Office ne sont pas déployés différemment des compléments VSTO.
@@ -50,7 +50,7 @@ Vous ne pouvez pas apprendre à conduire en lisant le manuel du propriétaire, a
 
 ## <a name="step-4-understand-the-javascript-library"></a>Étape 4 : Comprendre la bibliothèque JavaScript
 
-Obtenez une vue d’ensemble de la bibliothèque JavaScript Office avec ce didacticiel à partir de la formation Microsoft Learn : [Comprendre les API JavaScript Office](/training/modules/intro-office-add-ins/3-apis).
+Obtenez une vue d’ensemble de la bibliothèque JavaScript Office avec ce tutoriel de la formation Microsoft Learn : [Comprendre les API JavaScript Office](/training/modules/intro-office-add-ins/3-apis).
 
 Explorez ensuite les API JavaScript pour Office à l’aide de l’[outil Script Lab](explore-with-script-lab.md), un bac à sable pour l’exécution et l’exploration des API.
 

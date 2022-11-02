@@ -3,12 +3,12 @@ title: Compléments Office de contenu
 description: Les compléments de contenu sont des surfaces qui peuvent être incorporées directement dans des documents Excel ou PowerPoint. Ils permettent aux utilisateurs d’accéder aux contrôles d’interface qui exécutent le code pour modifier des documents ou afficher des données d’une source de données.
 ms.date: 05/12/2021
 ms.localizationpriority: medium
-ms.openlocfilehash: ea167f338834245975f2e752803e264ddb8da5e6
-ms.sourcegitcommit: b66ba72aee8ccb2916cd6012e66316df2130f640
+ms.openlocfilehash: c10893d60f64d875d92aec979a5700630b2cf96c
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/26/2022
-ms.locfileid: "64483931"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810245"
 ---
 # <a name="content-office-add-ins"></a>Compléments Office de contenu
 
@@ -16,7 +16,7 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 *Figure 1. Mise en page type pour les compléments de contenu*
 
-![Mise en page classique pour les applications de contenu dans une application Office de contenu.](../images/overview-with-app-content.png)
+![Disposition classique des compléments de contenu dans une application Office.](../images/overview-with-app-content.png)
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
@@ -25,17 +25,17 @@ Les compléments de contenu sont des surfaces qui peuvent être incorporées dir
 
 ## <a name="variants"></a>Variantes
 
-Les tailles des Excel de contenu PowerPoint dans Office bureau et Microsoft 365 sont spécifiées par l’utilisateur.
+Les tailles de complément de contenu pour Excel et PowerPoint dans le bureau Office et dans un navigateur web sont spécifiées par l’utilisateur.
 
 ## <a name="personality-menu"></a>Menu Caractéristique
 
-Les menus Caractéristique peuvent entraver les éléments de navigation et de commande se trouvant en haut à droite du complément. Voici les dimensions actuelles du menu Caractéristique sur Windows et Mac.
+Personality menus can obstruct navigational and commanding elements located near the top right of the add-in. The following are the current dimensions of the personality menu on Windows and Mac.
 
 Pour Windows, le menu Caractéristique mesure 12 x 32 pixels, comme illustré.
 
 *Figure 2. Menu Caractéristique sur Windows*
 
-![Menu de personnalité de 12 x 32 pixels sur Windows bureau.](../images/personality-menu-win.png)
+![Menu de personnalité de 12 x 32 pixels sur le bureau Windows.](../images/personality-menu-win.png)
 
 Pour Mac, le menu Caractéristique mesure 26 x 26 pixels, mais flotte à 8 pixels de la droite et à 6 pixels du haut, ce qui permet d’augmenter l’espace occupé à 34 x 32 pixels, comme illustré.
 
@@ -49,9 +49,9 @@ Pour consulter un exemple qui implémente un complément de contenu, reportez-vo
 
 ## <a name="support-considerations"></a>Considérations relatives à la prise en charge
 
-- Vérifiez si votre Office fonctionne sur une application ou une plateforme [Office spécifique](/javascript/api/requirement-sets).
+- Vérifiez si votre complément Office fonctionnera sur une [application ou une plateforme Office spécifique](/javascript/api/requirement-sets).
 - Certains compléments de contenu peuvent exiger que l’utilisateur accepte que le complément lise et écrive dans Excel ou PowerPoint. Vous pouvez déclarer le [niveau des autorisations](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) que vous souhaitez attribuer à votre utilisateur dans le manifeste du complément.  
-- Les compléments de contenu sont pris en charge dans Excel et PowerPoint dans Office 2013 et versions ultérieures. Si vous ouvrez un complément dans une version d’Office qui ne prend pas en charge les compléments web Office, le complément s’affichera comme une image.
+- Content add-ins are supported in Excel and PowerPoint in Office 2013 version and later. If you open an add-in in a version of Office that doesn't support Office web add-ins, the add-in will be displayed as an image.
 
 ## <a name="see-also"></a>Voir aussi
 

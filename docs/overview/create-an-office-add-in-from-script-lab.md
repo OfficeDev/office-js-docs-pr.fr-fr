@@ -4,12 +4,12 @@ description: Découvrez comment déplacer votre extrait de code de Script Lab ve
 ms.topic: how-to
 ms.date: 04/07/2022
 ms.localizationpriority: high
-ms.openlocfilehash: 038d25610e5ef5cc3e4cdbedb2d2a184294c673e
-ms.sourcegitcommit: 5ef2c3ed9eb92b56e36c6de77372d3043ad5b021
-ms.translationtype: HT
+ms.openlocfilehash: 725ce9b44c55b46e6d0ab0c085973947fcf88201
+ms.sourcegitcommit: 3abcf7046446e7b02679c79d9054843088312200
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/15/2022
-ms.locfileid: "64863297"
+ms.lasthandoff: 11/02/2022
+ms.locfileid: "68810147"
 ---
 # <a name="create-a-standalone-office-add-in-from-your-script-lab-code"></a>Créer un complément Office autonome à partir de votre code Script Lab
 
@@ -58,7 +58,7 @@ Dans les étapes suivantes, vous allez copier le code à partir de plusieurs ong
 
 1. Dans VS Code, ouvrez le fichier **/src/taskpane/taskpane.ts**. Si vous utilisez un projet JavaScript, le nom de fichier est **taskpane.js**.
 1. Dans Script Lab, sélectionnez l’onglet **Script** .
-1. Copiez tout le code dans l’onglet **Script** dans le Presse-papiers. Remplacez l’intégralité du contenu de **taskpane.ts** (ou **taskpane.js** pour javaScript) par le code que vous avez copié.
+1. Copiez tout le code dans l’onglet **Script** dans le Presse-papiers. Remplacez tout le contenu de **taskpane.ts** (ou **taskpane.js** pour JavaScript) par le code que vous avez copié.
 
 ### <a name="copy-task-pane-html"></a>Copier le code HTML du volet Office
 
@@ -174,7 +174,7 @@ Si votre extrait de code utilise des fonctions personnalisées, vous devez utili
 1. Dans le volet office Script Lab, choisissez **Exemples**, puis choisissez l’exemple **Fonction personnalisée de base**.
 1. Ouvrez le fichier **/src/functions/functions.ts** . Si vous utilisez un projet JavaScript, le nom de fichier est **functions.js**.
 1. Dans Script Lab, sélectionnez l’onglet **Script** .
-1. Copiez tout le code dans l’onglet **Script** dans le Presse-papiers. Collez le code en haut de **functions.ts** (ou **functions.js** pour javaScript) avec le code que vous avez copié.
+1. Copiez tout le code dans l’onglet **Script** dans le Presse-papiers. Collez le code en haut de **functions.ts** (ou **functions.js** pour JavaScript) avec le code que vous avez copié.
 1. Enregistrez le fichier.
 
 ## <a name="test-the-standalone-add-in"></a>Tester le complément autonome
