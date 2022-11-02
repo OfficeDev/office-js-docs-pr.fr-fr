@@ -1,8 +1,8 @@
-Les macros sont souvent mises en cache Office sur Mac pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
+Les compléments sont souvent mis en cache dans Office sur Mac pour des raisons de performances. En règle générale, vous pouvez effacer le cache en rechargeant le complément. En présence de plusieurs compléments dans le même document, il se peut que le processus d’effacement automatique du cache lors du rechargement ne fonctionne pas systématiquement.
 
-### <a name="use-the-personality-menu-to-clear-the-cache"></a>Utiliser le menu Personnalité pour effacer le cache
+### <a name="use-the-personality-menu-to-clear-the-cache"></a>Utiliser le menu personnalité pour effacer le cache
 
-Vous pouvez vider le cache à l’aide du menu personnalité de n’importe quel complément du volet Office. Toutefois, étant donné que le menu de personnalité n’est pas pris en charge dans les Outlook, vous pouvez essayer d’effacer le [cache](#clear-the-cache-manually) manuellement si vous utilisez Outlook.
+Vous pouvez vider le cache à l’aide du menu personnalité de n’importe quel complément du volet Office. Toutefois, étant donné que le menu de personnalité n’est pas pris en charge dans les compléments Outlook, vous pouvez essayer [d’effacer le cache manuellement](#clear-the-cache-manually) si vous utilisez Outlook.
 
 - Sélectionnez le menu personnalité. Sélectionnez **Effacer le cache web**.
     > [!NOTE]
@@ -12,14 +12,14 @@ Vous pouvez vider le cache à l’aide du menu personnalité de n’importe quel
 
 ### <a name="clear-the-cache-manually"></a>Effacer le cache manuellement
 
-Vous pouvez également effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Recherchez ce dossier via terminal.
+Vous pouvez également effacer le cache manuellement en supprimant le contenu du dossier `~/Library/Containers/com.Microsoft.OsfWebHost/Data/`. Recherchez ce dossier via le terminal.
 
 > [!NOTE]
-> Si ce dossier n’existe pas, recherchez les dossiers suivants via le terminal et, si ce dossier est trouvé, supprimez le contenu du dossier.
+> Si ce dossier n’existe pas, recherchez les dossiers suivants via le terminal et, le cas échéant, supprimez le contenu du dossier.
 >
 > - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` où `{host}` est l’application Office (par exemple, `Excel`)
 > - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` où `{host}` est l’application Office (par exemple, `Excel`)
 > - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
 > - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 >
-> Pour rechercher ces dossiers via Finder, vous devez définir Finder pour afficher les fichiers masqués. Finder affiche les dossiers à l’intérieur du répertoire containers par nom de produit,  par exemple Microsoft Excel au lieu de **com.microsoft.Excel**.
+> Pour rechercher ces dossiers via le Finder, vous devez définir finder pour afficher les fichiers masqués. Finder affiche les dossiers dans le répertoire **Conteneurs** par nom de produit, par exemple **Microsoft Excel** au lieu de **com.microsoft.Excel**.
