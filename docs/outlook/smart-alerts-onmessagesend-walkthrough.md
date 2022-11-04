@@ -2,14 +2,14 @@
 title: Utiliser les alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook
 description: Découvrez comment gérer les événements lors de l’envoi dans votre complément Outlook à l’aide de l’activation basée sur les événements.
 ms.topic: article
-ms.date: 10/24/2022
+ms.date: 11/2/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: a0fca566862455cd8a3981c1cfffba117145b39f
-ms.sourcegitcommit: 693e9a9b24bb81288d41508cb89c02b7285c4b08
+ms.openlocfilehash: 408c3684d325a9cbdd4a3f6e489db636ff52e028
+ms.sourcegitcommit: 9c65c19298bf749836e3db1b7cf5e8c1387a2bf2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/28/2022
-ms.locfileid: "68767167"
+ms.lasthandoff: 11/04/2022
+ms.locfileid: "68842088"
 ---
 # <a name="use-smart-alerts-and-the-onmessagesend-and-onappointmentsend-events-in-your-outlook-add-in"></a>Utiliser les alertes intelligentes et les événements OnMessageSend et OnAppointmentSend dans votre complément Outlook
 
@@ -23,6 +23,18 @@ La procédure pas à pas suivante utilise l’événement `OnMessageSend` . À l
 ## <a name="prerequisites"></a>Configuration requise
 
 L’événement `OnMessageSend` est disponible via la fonctionnalité d’activation basée sur les événements. Pour comprendre comment configurer votre complément pour utiliser cette fonctionnalité, utiliser d’autres événements disponibles, déboguer votre complément et bien plus encore, voir [Configurer votre complément Outlook pour l’activation basée sur les événements](autolaunch.md).
+
+### <a name="supported-clients-and-platforms"></a>Clients et plateformes pris en charge
+
+Le tableau suivant répertorie les combinaisons client-serveur prises en charge pour la fonctionnalité Alertes intelligentes, y compris la mise à jour cumulative minimale requise Exchange Server le cas échéant. Les combinaisons exclues ne sont pas prises en charge.
+
+|Client|Exchange Online|Exchange 2019 en local (mise à jour cumulative 12 ou ultérieure)|Exchange 2016 en local (mise à jour cumulative 22 ou ultérieure) |
+|-----|-----|-----|-----|
+|**Fenêtres**<br>Version 2206 (build 15330.20196) ou ultérieure|Oui|Oui|Oui|
+|**Mac**<br>Version 16.65.827.0 ou ultérieure|Oui|Non applicable|Non applicable|
+|**Navigateur web (interface utilisateur moderne)**|Oui|Non applicable|Non applicable|
+|**iOS**|Non applicable|Non applicable|Non applicable|
+|**Android**|Non applicable|Non applicable|Non applicable|
 
 ## <a name="set-up-your-environment"></a>Configuration de votre environnement
 
@@ -345,7 +357,7 @@ Dans ce scénario, vous allez ajouter la gestion de l’envoi d’un message. Vo
 
 1. Enregistrez vos modifications.
 
-## <a name="try-it-out"></a>Essayez
+## <a name="try-it-out"></a>Try it out
 
 1. Exécutez les commandes suivantes dans le répertoire racine de votre projet. Lorsque vous exécutez `npm start`, le serveur web local démarre (s’il n’est pas déjà en cours d’exécution) et votre complément est chargé de manière indépendante.
 
