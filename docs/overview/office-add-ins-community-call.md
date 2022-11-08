@@ -1,27 +1,28 @@
 ---
 title: Appel de la communauté des compléments Microsoft Office
-description: L’agenda, la planification et les ressources des appels de la communauté des compléments Microsoft Office mensuels.
+description: L’ordre du jour, la planification et les ressources mensuels des appels de la communauté des compléments Microsoft Office.
 ms.date: 10/13/2022
 ms.localizationpriority: medium
-ms.openlocfilehash: be3f6af3f0d5122ed270333c00abd559aeb888d1
-ms.sourcegitcommit: 5544cf174d145e356e33866e2480bde999514ada
+ms.openlocfilehash: 85fc4dc26834aff583409ea859e49e8fb945efca
+ms.sourcegitcommit: 110c2614b1006a0cfea1546668aefa1d365d50db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/14/2022
-ms.locfileid: "68574150"
+ms.lasthandoff: 11/08/2022
+ms.locfileid: "68877265"
 ---
 # <a name="microsoft-office-add-ins-community-call"></a>Appel de la communauté des compléments Microsoft Office
 
-L’appel de la communauté des compléments Microsoft Office est un appel mensuel qui vous permet d’en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
+L’appel de la communauté des compléments Microsoft Office est un appel mensuel dans lequel vous pouvez en savoir plus sur les nouvelles fonctionnalités, les pratiques de développement et des informations supplémentaires sur la création de compléments Office. L’appel communautaire a lieu le deuxième mercredi de chaque mois à 8h00 heure du Pacifique. Vous pouvez télécharger l’invitation de calendrier à l’adresse https://aka.ms/officeaddinscommunitycall.
 
 ## <a name="agenda-for-november-9-2022-call"></a>Ordre du jour de l’appel du 9 novembre 2022
 
-L’ordre du jour de l’appel de novembre sera publié environ une semaine avant l’appel.
+L’ordre du jour de l’appel de novembre sera affiché la semaine de l’appel.
 
 ## <a name="previous-calls"></a>Appels précédents
 
-Vous avez manqué un appel de communauté précédent ? Consultez les ressources de blog suivantes pour reprendre la discussion!
+Vous avez manqué un appel communautaire précédent ? Consultez les ressources de blog suivantes pour vous rattraper sur la discussion !
 
+- [12 octobre 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-10-12/)
 - [14 septembre 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-09-14/)
 - [10 août 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-08-10/)
 - [13 juillet 2022](https://pnp.github.io/blog/office-add-ins-community-call/2022-07-13/)
@@ -45,9 +46,9 @@ Vous avez manqué un appel de communauté précédent ? Consultez les ressources
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Invitation périodique et mensuelle au calendrier d’appel de la communauté](https://aka.ms/officeaddinscommunitycall)
-- [Demandes et questions relatives aux rubriques d’appel de la communauté](https://aka.ms/officeaddinsform)
-- [Canal YouTube du développeur Microsoft 365](https://aka.ms/m365devyoutube)
-- [Canal YouTube de la communauté Microsoft 365](https://aka.ms/m365pnp/videos)
+- [Invitation périodique de calendrier d’appels communautaires mensuels](https://aka.ms/officeaddinscommunitycall)
+- [Demandes et questions sur les rubriques d’appel de la communauté](https://aka.ms/officeaddinsform)
+- [Chaîne YouTube pour les développeurs Microsoft 365](https://aka.ms/m365devyoutube)
+- [Chaîne YouTube de la communauté Microsoft 365](https://aka.ms/m365pnp/videos)
 - [Site de la communauté Microsoft 365](https://aka.ms/m365pnp/community)
 - [Blog de la communauté Microsoft 365](https://aka.ms/m365pnp/community/blog)
